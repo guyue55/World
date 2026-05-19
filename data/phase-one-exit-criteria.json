@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段退出标准",
+  "principle": "第一阶段退出不是功能全做完，而是地基可运行、可验证、可交接、可扩展。",
+  "mustPass": [
+    {
+      "id": "world-core-check",
+      "command": "npm run check:world-core"
+    },
+    {
+      "id": "real-build",
+      "command": "npm run build"
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck"
+    },
+    {
+      "id": "route-check",
+      "command": "npm run check:routes"
+    },
+    {
+      "id": "public-safety-check",
+      "command": "npm run check:public"
+    },
+    {
+      "id": "visual-qa",
+      "manual": "核心页面 PC/移动端视觉和交互检查"
+    },
+    {
+      "id": "performance-qa",
+      "manual": "核心页面 Lighthouse 或等价性能检查"
+    },
+    {
+      "id": "deployment-preview",
+      "manual": "预览部署检查"
+    }
+  ],
+  "canDefer": [
+    "完整 AI RAG",
+    "完整后台 CMS",
+    "完整私密档案在线访问",
+    "2.5D/3D/WebXR",
+    "完整搜索服务",
+    "评论/社交系统",
+    "大量真实内容填充",
+    "年度册/展览/时间胶囊正式实现"
+  ],
+  "exitStatement": "第一阶段可退出的标志：不是宇宙已完整，而是宇宙地基已经能承载未来。"
+}

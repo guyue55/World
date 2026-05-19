@@ -1,0 +1,58 @@
+[
+  {
+    "visibility": "public",
+    "searchable": true,
+    "recommendable": true,
+    "aiIndexable": true,
+    "buildTarget": "public"
+  },
+  {
+    "visibility": "semiPublic",
+    "searchable": true,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "public"
+  },
+  {
+    "visibility": "private",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "private"
+  },
+  {
+    "visibility": "family",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "private"
+  },
+  {
+    "visibility": "partner",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "private"
+  },
+  {
+    "visibility": "vault",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "vault"
+  },
+  {
+    "visibility": "sealed",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "none"
+  },
+  {
+    "visibility": "silent",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "none"
+  }
+]

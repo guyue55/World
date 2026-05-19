@@ -1,0 +1,14 @@
+CHANGELOG.md
+CHECK_REPORT.md
+data/documentation-registry.json
+data/foundation-freeze-manifest.json
+data/phase-two-backlog-seed.json
+data/phase-two-handoff-contract.json
+docs/00-overview/v1-thirtysix-phase-two-handoff-note.md
+docs/05-engineering/v1-phase-two-handoff.md
+package.json
+scripts/check-phase-two-handoff.ts
+scripts/print-phase-two-handoff.ts
+src/components/world/PhaseTwoHandoffPanel.tsx
+src/components/world/WorldFoundationStack.tsx
+src/lib/phase-two-handoff.ts

@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 CI 准备契约",
+  "principle": "CI 不是为了形式，而是让地基每次变更都能重新证明自己。",
+  "workflow": ".github/workflows/ci.yml",
+  "node": "20",
+  "steps": [
+    "checkout",
+    "setup-node",
+    "npm install or npm ci",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run check:world-core",
+    "npm run build"
+  ],
+  "rules": [
+    "CI 必须至少覆盖 lint、typecheck、world-core、build。",
+    "若存在 package-lock.json，优先 npm ci；否则使用 npm install。",
+    "CI 不应访问私密内容源。",
+    "CI 失败必须转化为缺陷或修复任务。"
+  ]
+}

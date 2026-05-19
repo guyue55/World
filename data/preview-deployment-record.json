@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 预览部署记录",
+  "principle": "预览部署必须留下可追踪 URL、构建环境和冒烟结果。",
+  "status": "pending",
+  "previewUrl": "",
+  "provider": "",
+  "commit": "",
+  "createdAt": "",
+  "checks": {
+    "build": "pending",
+    "routeSmoke": "pending",
+    "publicEndpointSmoke": "pending",
+    "privacySmoke": "pending",
+    "visualQa": "pending",
+    "performanceMeasurement": "pending"
+  },
+  "blockingIssues": [],
+  "rules": [
+    "previewUrl 为空时不得关闭第一阶段。",
+    "privacySmoke 未通过时不得发布。",
+    "blockingIssues 不为空时不得标记 complete。",
+    "预览部署记录应与 acceptance report 一起归档。"
+  ]
+}

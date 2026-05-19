@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 性能指标模型",
+  "principle": "性能必须可度量，才能在未来扩展中不退化。",
+  "metrics": [
+    {
+      "id": "lcp",
+      "name": "Largest Contentful Paint",
+      "target": "<= 2.5s",
+      "scope": "public critical route",
+      "priority": "high"
+    },
+    {
+      "id": "inp",
+      "name": "Interaction to Next Paint",
+      "target": "<= 200ms",
+      "scope": "interactive route",
+      "priority": "high"
+    },
+    {
+      "id": "cls",
+      "name": "Cumulative Layout Shift",
+      "target": "<= 0.1",
+      "scope": "all public routes",
+      "priority": "high"
+    },
+    {
+      "id": "ttfb",
+      "name": "Time to First Byte",
+      "target": "<= 800ms",
+      "scope": "static hosting",
+      "priority": "medium"
+    },
+    {
+      "id": "first-load-js",
+      "name": "First Load JS",
+      "target": "<= 180KB gzip",
+      "scope": "core route",
+      "priority": "high"
+    },
+    {
+      "id": "critical-data-size",
+      "name": "Critical Data Size",
+      "target": "route projection only",
+      "scope": "route data",
+      "priority": "high"
+    },
+    {
+      "id": "initial-card-count",
+      "name": "Initial Card Count",
+      "target": "<= 100",
+      "scope": "archive/list route",
+      "priority": "medium"
+    },
+    {
+      "id": "heavy-panel-isolation",
+      "name": "Heavy Panel Isolation",
+      "target": "behind stack/provider boundary",
+      "scope": "status/skeleton",
+      "priority": "medium"
+    },
+    {
+      "id": "no-ai-first-paint",
+      "name": "AI Not Required For First Paint",
+      "target": "true",
+      "scope": "ask route",
+      "priority": "high"
+    }
+  ],
+  "rules": [
+    "核心路由必须优先关注 LCP、CLS、First Load JS。",
+    "交互路由必须关注 INP 和即时反馈。",
+    "无法在静态检查中得到的指标，应保留人工/CI Lighthouse 扩展位。",
+    "性能指标下降时，优先分析是否违反关键路径和运行时拆分契约。"
+  ]
+}

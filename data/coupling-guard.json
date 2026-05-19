@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "principle": "低耦合不是少写代码，而是让变化只发生在该发生的地方。",
+  "antiPatterns": [
+    {
+      "id": "page-domain-rule",
+      "description": "在 src/app 页面中硬编码权限、AI、schema、投影核心规则。"
+    },
+    {
+      "id": "component-protocol-owner",
+      "description": "组件成为协议事实来源。"
+    },
+    {
+      "id": "script-rule-duplication",
+      "description": "脚本复制 src/lib 中已经存在的领域规则。"
+    },
+    {
+      "id": "data-hidden-runtime",
+      "description": "data 中出现不可序列化或运行时副作用。"
+    },
+    {
+      "id": "god-lib-file",
+      "description": "单个 lib 文件无限膨胀，承载多个领域职责。"
+    },
+    {
+      "id": "future-core-leak",
+      "description": "未来实验能力直接修改 core 协议。"
+    },
+    {
+      "id": "docs-out-of-band",
+      "description": "核心规则只写在文档，不进入 data/check。"
+    }
+  ],
+  "softLimits": {
+    "maxLibFileLines": 260,
+    "maxComponentFileLines": 220,
+    "maxPageFileLines": 180,
+    "maxScriptFileLines": 260
+  },
+  "rules": [
+    "触发 softLimit 时不一定阻断，但必须考虑拆分。",
+    "反模式出现时优先新增 lib、data contract 或 panel 分层。",
+    "中大型项目演进优先保护模块边界。"
+  ]
+}

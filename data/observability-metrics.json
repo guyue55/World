@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "principle": "世界需要可观测，不是为了炫技，而是为了知道骨架是否仍然健康。",
+  "metrics": [
+    {
+      "id": "kernelScore",
+      "source": "world-kernel",
+      "target": ">= 85"
+    },
+    {
+      "id": "blockingErrors",
+      "source": "world-kernel",
+      "target": "0"
+    },
+    {
+      "id": "foundationScore",
+      "source": "foundation-quality",
+      "target": ">= 85"
+    },
+    {
+      "id": "publicNodeCount",
+      "source": "public-index",
+      "target": ">= 12"
+    },
+    {
+      "id": "relationCount",
+      "source": "relations",
+      "target": ">= 6"
+    },
+    {
+      "id": "pathCount",
+      "source": "paths",
+      "target": ">= 3"
+    },
+    {
+      "id": "worldEventCount",
+      "source": "world-events",
+      "target": ">= 5"
+    },
+    {
+      "id": "registeredDocs",
+      "source": "documentation-registry",
+      "target": ">= 10"
+    },
+    {
+      "id": "adrCount",
+      "source": "adr-index",
+      "target": ">= 6"
+    },
+    {
+      "id": "fallbackCount",
+      "source": "fallback-strategy",
+      "target": ">= 8"
+    }
+  ],
+  "rules": [
+    "观测指标不能替代人工判断。",
+    "阻断错误必须优先于分数。",
+    "指标下降需要进入维护日志。",
+    "新增核心能力应新增观测指标。"
+  ]
+}

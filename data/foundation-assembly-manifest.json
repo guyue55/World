@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 地基装配清单",
+  "principle": "地基必须能被重新装配，未来才不会依赖某一次聊天或某一个人。",
+  "mergeOrder": [
+    "古月浮屿_V1项目骨架首批代码_delta.zip",
+    "古月浮屿_V1项目骨架第二批增强_delta.zip",
+    "古月浮屿_V1项目骨架第三批产品化增强_delta.zip",
+    "古月浮屿_V1项目骨架第四批检查与SEO增强_delta.zip",
+    "古月浮屿_V1项目骨架第五批发布准备增强_delta.zip",
+    "古月浮屿_V1世界骨架第六批打磨_delta.zip",
+    "古月浮屿_V1第七批地基打磨_delta.zip",
+    "古月浮屿_V1第八批地基打磨_delta.zip",
+    "古月浮屿_V1第九批边界地基打磨_delta.zip",
+    "古月浮屿_V1第十批扩展地基打磨_delta.zip",
+    "古月浮屿_V1第十一批空间与语义骨架打磨_delta.zip",
+    "古月浮屿_V1第十二批世界内核打磨_delta.zip",
+    "古月浮屿_V1第十三批地基门禁打磨_delta.zip",
+    "古月浮屿_V1第十四批文档内核打磨_delta.zip",
+    "古月浮屿_V1第十五批运行态骨架打磨_delta.zip",
+    "古月浮屿_V1第十六批骨架审计打磨_delta.zip",
+    "古月浮屿_V1第十七批地基封装与阶段交接_delta.zip"
+  ],
+  "requiredRoots": [
+    "src/app",
+    "src/components",
+    "src/lib",
+    "data",
+    "content",
+    "docs",
+    "scripts",
+    "public"
+  ],
+  "requiredFiles": [
+    "package.json",
+    "README.md",
+    "next.config.ts",
+    "tsconfig.json",
+    "data/world-kernel-manifest.json",
+    "data/foundation-baseline.json",
+    "data/foundation-handoff-manifest.json",
+    "docs/00-overview/v1-world-kernel-doc-index.md",
+    "docs/00-overview/v1-foundation-acceptance-checklist.md",
+    "docs/05-engineering/v1-world-kernel.md",
+    "docs/05-engineering/v1-foundation-baseline.md"
+  ],
+  "requiredCommands": [
+    "npm run check:world-core",
+    "npm run check:baseline",
+    "npm run handoff:print",
+    "npm run docs:print",
+    "npm run audit:print"
+  ]
+}

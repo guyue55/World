@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "principle": "仓库结构是世界骨架的物理显影。",
+  "roots": [
+    {
+      "path": "data",
+      "role": "世界协议与结构化数据"
+    },
+    {
+      "path": "content",
+      "role": "Markdown 内容星体"
+    },
+    {
+      "path": "docs",
+      "role": "世界设计、工程协议、ADR 与运行手册"
+    },
+    {
+      "path": "src/app",
+      "role": "世界入口与页面投影"
+    },
+    {
+      "path": "src/components",
+      "role": "世界体验组件"
+    },
+    {
+      "path": "src/lib",
+      "role": "世界运行时、规则与检查逻辑"
+    },
+    {
+      "path": "scripts",
+      "role": "构建、验证、报告与守门脚本"
+    },
+    {
+      "path": "public",
+      "role": "公开静态资源和生成索引"
+    }
+  ],
+  "forbidden": [
+    "把核心数据硬编码在组件里",
+    "让页面直接决定 visibility",
+    "让 AI 逻辑读取私密层",
+    "让未来实验能力覆盖 core namespace",
+    "把文档只作为说明而不进入检查"
+  ]
+}

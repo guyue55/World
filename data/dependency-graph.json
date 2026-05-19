@@ -1,0 +1,120 @@
+{
+  "version": "0.1.0",
+  "principle": "依赖必须可见，才能避免未来扩展反向污染内核。",
+  "nodes": [
+    {
+      "id": "data",
+      "type": "layer"
+    },
+    {
+      "id": "content",
+      "type": "layer"
+    },
+    {
+      "id": "world-core",
+      "type": "runtime"
+    },
+    {
+      "id": "governance",
+      "type": "runtime"
+    },
+    {
+      "id": "projection",
+      "type": "runtime"
+    },
+    {
+      "id": "kernel",
+      "type": "runtime"
+    },
+    {
+      "id": "operations",
+      "type": "runtime"
+    },
+    {
+      "id": "docs",
+      "type": "knowledge"
+    },
+    {
+      "id": "routes",
+      "type": "projection"
+    },
+    {
+      "id": "future",
+      "type": "extension"
+    }
+  ],
+  "edges": [
+    {
+      "from": "data",
+      "to": "world-core",
+      "rule": "data feeds core"
+    },
+    {
+      "from": "content",
+      "to": "projection",
+      "rule": "content is projected"
+    },
+    {
+      "from": "world-core",
+      "to": "kernel",
+      "rule": "core summary feeds kernel"
+    },
+    {
+      "from": "governance",
+      "to": "kernel",
+      "rule": "rules feed kernel"
+    },
+    {
+      "from": "projection",
+      "to": "kernel",
+      "rule": "projection contracts feed kernel"
+    },
+    {
+      "from": "kernel",
+      "to": "operations",
+      "rule": "kernel feeds runtime state"
+    },
+    {
+      "from": "docs",
+      "to": "kernel",
+      "rule": "docs are checked by kernel chain"
+    },
+    {
+      "from": "kernel",
+      "to": "routes",
+      "rule": "status and skeleton expose kernel"
+    },
+    {
+      "from": "future",
+      "to": "kernel",
+      "rule": "future must pass extension registry"
+    },
+    {
+      "from": "future",
+      "to": "routes",
+      "rule": "future projection needs fallback"
+    }
+  ],
+  "forbiddenEdges": [
+    {
+      "from": "routes",
+      "to": "private",
+      "reason": "public routes must not directly read private layer"
+    },
+    {
+      "from": "ai",
+      "to": "vault",
+      "reason": "AI cannot read vault/sealed/silent"
+    },
+    {
+      "from": "future",
+      "to": "core",
+      "reason": "future extensions cannot overwrite core namespace"
+    },
+    {
+      "from": "projection",
+      "to": "visibility",
+      "reason": "projection cannot decide visibility"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "name": "V1 世界骨架阶段交接清单",
+  "fromStage": "foundation",
+  "toStage": "v1-product",
+  "handoffPrinciple": "交接不是结束，而是让下一阶段有清晰边界、入口和禁区。",
+  "handoffItems": [
+    {
+      "id": "read-doc-index",
+      "title": "阅读世界内核文档索引",
+      "path": "docs/00-overview/v1-world-kernel-doc-index.md"
+    },
+    {
+      "id": "run-world-core-check",
+      "title": "执行世界核心检查",
+      "command": "npm run check:world-core"
+    },
+    {
+      "id": "inspect-kernel-report",
+      "title": "查看世界内核报告",
+      "command": "npm run kernel:report"
+    },
+    {
+      "id": "inspect-foundation-gate",
+      "title": "查看地基门禁",
+      "command": "npm run foundation:print"
+    },
+    {
+      "id": "inspect-audit",
+      "title": "查看骨架审计",
+      "command": "npm run audit:print"
+    },
+    {
+      "id": "review-change-admission",
+      "title": "确认本次开发属于哪一层变更",
+      "path": "data/change-admission-policy.json"
+    },
+    {
+      "id": "review-extension-guardrails",
+      "title": "确认未来扩展护栏",
+      "path": "data/future-expansion-guardrails.json"
+    }
+  ],
+  "nextStageAllowed": [
+    "visual polish",
+    "content seed expansion",
+    "route UX refinement",
+    "component accessibility polish",
+    "deployment hardening",
+    "SEO polish",
+    "performance baseline"
+  ],
+  "nextStageBlocked": [
+    "breaking schema without migration",
+    "public/private boundary weakening",
+    "AI boundary weakening",
+    "removing fallback paths",
+    "activating future extension without registry entry",
+    "treating V6 visual experience as V1 dependency"
+  ]
+}

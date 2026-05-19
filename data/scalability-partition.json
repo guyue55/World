@@ -1,0 +1,69 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 中大型项目扩展分区",
+  "principle": "未来变大之前，先决定复杂度应该流向哪里。",
+  "partitions": [
+    {
+      "id": "core-domain",
+      "scaleStrategy": "stable, small, strongly typed",
+      "examples": [
+        "world-core",
+        "schema",
+        "visibility"
+      ]
+    },
+    {
+      "id": "feature-domain",
+      "scaleStrategy": "feature modules with clear owns",
+      "examples": [
+        "node",
+        "paths",
+        "archive",
+        "operations"
+      ]
+    },
+    {
+      "id": "experience-layer",
+      "scaleStrategy": "replaceable panels and visual providers",
+      "examples": [
+        "atlas",
+        "2.5d-map",
+        "star-graph"
+      ]
+    },
+    {
+      "id": "integration-layer",
+      "scaleStrategy": "provider interface and registry",
+      "examples": [
+        "AI",
+        "export",
+        "search"
+      ]
+    },
+    {
+      "id": "governance-layer",
+      "scaleStrategy": "contracts, ledgers, checks",
+      "examples": [
+        "risk",
+        "ADR",
+        "audit"
+      ]
+    },
+    {
+      "id": "documentation-layer",
+      "scaleStrategy": "registered docs and runbooks",
+      "examples": [
+        "docs",
+        "ADR",
+        "checklists"
+      ]
+    }
+  ],
+  "rules": [
+    "核心领域层保持小而稳定。",
+    "体验层可以快速迭代，但不得修改核心协议。",
+    "集成层必须通过 Provider 或 Registry。",
+    "治理层负责阻止复杂度失控。",
+    "文档层必须伴随核心变化更新。"
+  ]
+}

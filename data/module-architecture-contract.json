@@ -1,0 +1,116 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 模块化架构契约",
+  "principle": "模块化不是目录好看，而是让未来复杂度不会互相污染。",
+  "layers": [
+    {
+      "id": "app",
+      "path": "src/app",
+      "owns": [
+        "routing",
+        "page composition",
+        "metadata"
+      ],
+      "mustNotOwn": [
+        "domain rules",
+        "permission matrix",
+        "data mutation",
+        "AI policy"
+      ]
+    },
+    {
+      "id": "components",
+      "path": "src/components",
+      "owns": [
+        "presentational UI",
+        "reusable panels",
+        "layout fragments"
+      ],
+      "mustNotOwn": [
+        "world protocol",
+        "privacy rules",
+        "schema validation",
+        "content indexing"
+      ]
+    },
+    {
+      "id": "lib",
+      "path": "src/lib",
+      "owns": [
+        "domain logic",
+        "projection",
+        "validation",
+        "query helpers",
+        "kernel evaluation"
+      ],
+      "mustNotOwn": [
+        "route rendering",
+        "visual-only layout",
+        "raw page markup"
+      ]
+    },
+    {
+      "id": "data",
+      "path": "data",
+      "owns": [
+        "world protocol data",
+        "contracts",
+        "policies",
+        "registries"
+      ],
+      "mustNotOwn": [
+        "React UI",
+        "runtime side effects"
+      ]
+    },
+    {
+      "id": "content",
+      "path": "content",
+      "owns": [
+        "markdown source",
+        "article body",
+        "memory fragments"
+      ],
+      "mustNotOwn": [
+        "permission logic",
+        "route decisions"
+      ]
+    },
+    {
+      "id": "scripts",
+      "path": "scripts",
+      "owns": [
+        "checks",
+        "reports",
+        "build helpers",
+        "migration helpers"
+      ],
+      "mustNotOwn": [
+        "app runtime UI",
+        "manual-only undocumented rules"
+      ]
+    },
+    {
+      "id": "docs",
+      "path": "docs",
+      "owns": [
+        "architecture decisions",
+        "runbooks",
+        "contracts",
+        "acceptance criteria"
+      ],
+      "mustNotOwn": [
+        "untracked source of truth that bypasses data"
+      ]
+    }
+  ],
+  "rules": [
+    "src/app 只能装配，不承载核心领域规则。",
+    "src/components 只表达 UI，不直接读取私密层、不决策 visibility。",
+    "src/lib 是领域逻辑主入口，按主题拆分，避免巨型单文件。",
+    "data 是协议源，代码只能解释协议，不应另起隐藏协议。",
+    "scripts 只能调用 lib 或读取 data，不应复制另一套业务规则。",
+    "docs 的核心文档必须进入 documentation-registry。",
+    "未来新增模块必须声明 owns 与 mustNotOwn。"
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "index": 1,
+    "title": "世界入口｜Gateway to the Floating World",
+    "file": "01_01_gateway_to_world.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_wide_panoramic_fantasy_sci_fi_landscape_concept_1.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 2,
+    "title": "世界地图｜World Atlas",
+    "file": "02_02_world_atlas.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_wide_cinematic_fantasy_map_infographic_scene_a_2_batch_1.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 3,
+    "title": "典藏星馆｜Archive Library",
+    "file": "03_03_archive_library.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_vast_fantastical_ultra_detailed_fantasy_archit_3_batch_2.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 4,
+    "title": "创作工坊｜Creation Atelier",
+    "file": "04_04_creation_atelier.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_wide_highly_detailed_fantasy_sci_fi_fantasy_int_4_batch_3.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 5,
+    "title": "生活浮岛｜Life Island",
+    "file": "05_05_life_island.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_wide_highly_detailed_fantasy_landscape_scene_a_5_batch_4.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 6,
+    "title": "家族花园｜Family Sanctuary",
+    "file": "06_06_family_sanctuary.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_wide_ultra_detailed_fantasy_landscape_scene_at_6_batch_5.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 7,
+    "title": "时间长河｜Time River",
+    "file": "07_07_time_river.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_sweeping_highly_detailed_fantasy_steampunk_sci_7_batch_6.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 8,
+    "title": "AI 灯塔｜AI Lighthouse",
+    "file": "08_08_ai_lighthouse.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_wide_epic_fantasy_sci_fi_landscape_scene_a_gra_8_batch_7.png",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "index": 9,
+    "title": "生长四季｜Living Seasons",
+    "file": "09_09_living_seasons.svg",
+    "source_png": "/mnt/data/ghostwriter_images/generated/a_sweeping_ultra_detailed_fantasy_landscape_conce_9_batch_8.png",
+    "width": 1672,
+    "height": 941
+  }
+]

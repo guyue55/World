@@ -1,0 +1,90 @@
+[
+  {
+    "id": "origin",
+    "worldName": "创世原点",
+    "realName": "世界入口与宪章",
+    "description": "一切从这里开始。这里解释古月浮屿是什么，以及如何进入这个世界。",
+    "level": 1,
+    "status": "active",
+    "defaultVisibility": "public",
+    "icon": "✦",
+    "order": 1
+  },
+  {
+    "id": "tech",
+    "worldName": "技术星域",
+    "realName": "技术文章与工程实践",
+    "description": "工程实践、AI Agent、CLI 工具、系统排查与技术复盘在这里汇成星图。",
+    "level": 1,
+    "status": "active",
+    "defaultVisibility": "public",
+    "icon": "✧",
+    "order": 2
+  },
+  {
+    "id": "workshop",
+    "worldName": "产品工坊",
+    "realName": "产品、工具与实验",
+    "description": "想法在这里被拆解、打磨、装配，最终变成工具、产品或实验。",
+    "level": 1,
+    "status": "active",
+    "defaultVisibility": "public",
+    "icon": "◈",
+    "order": 3
+  },
+  {
+    "id": "fragments",
+    "worldName": "灵感云层",
+    "realName": "灵感、草稿与思想种子",
+    "description": "尚未成形的想法先在这里漂浮，等待发芽、归位或沉睡。",
+    "level": 1,
+    "status": "active",
+    "defaultVisibility": "public",
+    "icon": "☁",
+    "order": 4
+  },
+  {
+    "id": "memory",
+    "worldName": "记忆湖",
+    "realName": "生活、照片与私人记忆",
+    "description": "生活中的光影沉入这里，随时间泛起涟漪。公开层只显示被允许看见的片刻。",
+    "level": 1,
+    "status": "quiet",
+    "defaultVisibility": "private",
+    "icon": "≈",
+    "order": 5
+  },
+  {
+    "id": "timeline",
+    "worldName": "时间河",
+    "realName": "世界事件与成长记录",
+    "description": "这里记录节点、区域、法则与世界自身如何在时间中生长。",
+    "level": 1,
+    "status": "active",
+    "defaultVisibility": "public",
+    "icon": "⌁",
+    "order": 6
+  },
+  {
+    "id": "archive",
+    "worldName": "档案馆",
+    "realName": "搜索、归档与现实视图",
+    "description": "当世界太浪漫时，档案馆提供一条清晰的现实道路。",
+    "level": 1,
+    "status": "active",
+    "defaultVisibility": "public",
+    "icon": "▣",
+    "order": 7
+  },
+  {
+    "id": "lighthouse",
+    "worldName": "AI 灯塔",
+    "realName": "AI 辅助、低光导览与未来增强",
+    "description": "灯塔照亮路径，但不替造物主选择道路。无 AI 时，它以低光模式继续指引。",
+    "level": 1,
+    "status": "experimental",
+    "defaultVisibility": "public",
+    "icon": "◉",
+    "order": 8
+  }
+]

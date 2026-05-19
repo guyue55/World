@@ -1,0 +1,162 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 世界协议注册表",
+  "principle": "页面只是投影，数据是骨架，关系是星线，时间是河流，治理是边界，互操作是传承。",
+  "coreObjects": [
+    {
+      "id": "worldState",
+      "file": "data/world-state.json",
+      "owner": "src/lib/world-events.ts",
+      "description": "世界当前状态。"
+    },
+    {
+      "id": "area",
+      "file": "data/areas.json",
+      "owner": "src/lib/areas.ts",
+      "description": "世界空间层的区域。"
+    },
+    {
+      "id": "node",
+      "file": "data/nodes.json",
+      "owner": "src/lib/nodes.ts",
+      "description": "世界内容层的基本生命单位。"
+    },
+    {
+      "id": "relation",
+      "file": "data/relations.json",
+      "owner": "src/lib/relations.ts",
+      "description": "节点之间的星线。"
+    },
+    {
+      "id": "path",
+      "file": "data/paths.json",
+      "owner": "src/lib/paths.ts",
+      "description": "为旅人准备的行走路线。"
+    },
+    {
+      "id": "worldEvent",
+      "file": "data/world-events.json",
+      "owner": "src/lib/world-events.ts",
+      "description": "时间河的源头。"
+    },
+    {
+      "id": "permission",
+      "file": "data/permissions.json",
+      "owner": "src/lib/visibility.ts",
+      "description": "公开、半公开、私密、保险箱等边界。"
+    },
+    {
+      "id": "rule",
+      "file": "data/rules.json",
+      "owner": "src/lib/rules.ts",
+      "description": "世界运行和构建守门规则。"
+    }
+  ],
+  "layers": [
+    {
+      "id": "space",
+      "requiredObjects": [
+        "area",
+        "path"
+      ],
+      "requiredPages": [
+        "/atlas"
+      ]
+    },
+    {
+      "id": "content",
+      "requiredObjects": [
+        "node"
+      ],
+      "requiredPages": [
+        "/node/[slug]",
+        "/archive"
+      ]
+    },
+    {
+      "id": "relation",
+      "requiredObjects": [
+        "relation"
+      ],
+      "requiredLibs": [
+        "src/lib/backlinks.ts",
+        "src/lib/star-lines.ts"
+      ]
+    },
+    {
+      "id": "time",
+      "requiredObjects": [
+        "worldState",
+        "worldEvent"
+      ],
+      "requiredPages": [
+        "/timeline"
+      ]
+    },
+    {
+      "id": "projection",
+      "requiredObjects": [
+        "node",
+        "path",
+        "worldEvent"
+      ],
+      "requiredLibs": [
+        "src/lib/projections.ts"
+      ]
+    },
+    {
+      "id": "governance",
+      "requiredObjects": [
+        "permission",
+        "rule"
+      ],
+      "requiredLibs": [
+        "src/lib/governance.ts",
+        "src/lib/schemas.ts"
+      ]
+    },
+    {
+      "id": "interoperability",
+      "requiredObjects": [
+        "node",
+        "area",
+        "relation",
+        "path",
+        "worldEvent"
+      ],
+      "requiredFiles": [
+        "README.md",
+        "package.json"
+      ]
+    }
+  ],
+  "publicBuild": {
+    "allowedVisibility": [
+      "public",
+      "semiPublic"
+    ],
+    "blockedVisibility": [
+      "private",
+      "family",
+      "partner",
+      "vault",
+      "sealed",
+      "silent"
+    ],
+    "searchAllowedVisibility": [
+      "public",
+      "semiPublic"
+    ],
+    "aiIndexAllowedVisibility": [
+      "public"
+    ]
+  },
+  "minimums": {
+    "areas": 8,
+    "publicNodes": 12,
+    "relations": 6,
+    "paths": 3,
+    "worldEvents": 5,
+    "worldLayers": 7
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 性能实测运行手册",
+  "principle": "性能实测必须关注首屏、交互和布局稳定，而不只是分数。",
+  "tools": [
+    {
+      "id": "lighthouse",
+      "usage": "核心路由移动端/桌面端基线"
+    },
+    {
+      "id": "bundle-analyzer",
+      "usage": "JS 体积和首屏依赖分析"
+    },
+    {
+      "id": "web-vitals",
+      "usage": "未来真实用户体验指标扩展"
+    },
+    {
+      "id": "manual-network-throttle",
+      "usage": "弱网下首屏和图片策略检查"
+    }
+  ],
+  "requiredRoutes": [
+    "/",
+    "/archive",
+    "/node/[slug]",
+    "/paths",
+    "/status",
+    "/skeleton"
+  ],
+  "metrics": [
+    "LCP",
+    "INP or TBT",
+    "CLS",
+    "First Load JS",
+    "route data size"
+  ],
+  "rules": [
+    "移动端首页优先。",
+    "若状态页较重，应确认其不影响首页首屏。",
+    "性能失败先看 critical path、runtime split 和 projection density。",
+    "所有结果回写 performance-measurement-records。"
+  ]
+}

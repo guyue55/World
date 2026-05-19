@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 内容产品化基线",
+  "principle": "首页不是数据堆叠，而是世界入口的第一次说明。",
+  "homeSections": [
+    {
+      "id": "world-entrance",
+      "purpose": "用一句话解释古月浮屿是什么",
+      "mustContain": [
+        "slogan",
+        "world definition",
+        "primary action"
+      ],
+      "performanceRule": "critical-static"
+    },
+    {
+      "id": "representative-nodes",
+      "purpose": "展示最能代表世界的公开节点",
+      "mustContain": [
+        "title",
+        "summary",
+        "area",
+        "cover strategy",
+        "clear link"
+      ],
+      "performanceRule": "summary projection only"
+    },
+    {
+      "id": "active-paths",
+      "purpose": "给第一次访问者可走的路径",
+      "mustContain": [
+        "path title",
+        "audience",
+        "estimated minutes",
+        "first node"
+      ],
+      "performanceRule": "path projection only"
+    },
+    {
+      "id": "world-rhythm",
+      "purpose": "让首页有生活、技术、记忆、未来的节奏",
+      "mustContain": [
+        "tech",
+        "life",
+        "memory",
+        "future"
+      ],
+      "performanceRule": "small curated set"
+    },
+    {
+      "id": "low-light-ai",
+      "purpose": "说明 AI 灯塔存在但不是前置依赖",
+      "mustContain": [
+        "AI boundary",
+        "no-AI fallback",
+        "ask entry"
+      ],
+      "performanceRule": "static copy first"
+    }
+  ],
+  "rules": [
+    "首页只使用代表性公开投影，不加载完整宇宙。",
+    "首页必须同时体现技术、生活、记忆、未来，而不是只有工程面板。",
+    "每个首页板块必须有明确访问动作。",
+    "配图可以缺省，但缺省时必须有明确 cover 策略，不能无意义空白。",
+    "内容产品化不得破坏性能预算和公开/私密边界。"
+  ]
+}

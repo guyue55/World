@@ -1,0 +1,327 @@
+{
+  "version": "0.1.0",
+  "principle": "文档不是附属物，文档是世界骨架的一部分。",
+  "requiredDocs": [
+    {
+      "id": "world-kernel",
+      "path": "docs/05-engineering/v1-world-kernel.md",
+      "layer": "kernel"
+    },
+    {
+      "id": "foundation-gate",
+      "path": "docs/05-engineering/v1-foundation-gate.md",
+      "layer": "governance"
+    },
+    {
+      "id": "change-admission",
+      "path": "docs/05-engineering/v1-change-admission-policy.md",
+      "layer": "governance"
+    },
+    {
+      "id": "spatial-protocol",
+      "path": "docs/05-engineering/v1-spatial-protocol.md",
+      "layer": "space"
+    },
+    {
+      "id": "world-ontology",
+      "path": "docs/05-engineering/v1-world-ontology-and-semantics.md",
+      "layer": "semantics"
+    },
+    {
+      "id": "extension-architecture",
+      "path": "docs/05-engineering/v1-extensibility-architecture.md",
+      "layer": "future"
+    },
+    {
+      "id": "ai-boundary",
+      "path": "docs/05-engineering/v1-ai-boundary-contract.md",
+      "layer": "boundary"
+    },
+    {
+      "id": "projection-contracts",
+      "path": "docs/05-engineering/v1-projection-contracts.md",
+      "layer": "projection"
+    },
+    {
+      "id": "schema-versioning",
+      "path": "docs/05-engineering/v1-schema-versioning-and-migration.md",
+      "layer": "evolution"
+    },
+    {
+      "id": "fallback-export",
+      "path": "docs/05-engineering/v1-fallback-and-export-contract.md",
+      "layer": "interoperability"
+    },
+    {
+      "id": "compatibility-matrix",
+      "path": "docs/05-engineering/v1-compatibility-matrix.md",
+      "layer": "future"
+    },
+    {
+      "id": "foundation-baseline",
+      "path": "docs/05-engineering/v1-foundation-baseline.md",
+      "layer": "kernel"
+    },
+    {
+      "id": "foundation-handoff",
+      "path": "docs/05-engineering/v1-foundation-handoff.md",
+      "layer": "governance"
+    },
+    {
+      "id": "future-expansion-guardrails",
+      "path": "docs/05-engineering/v1-future-expansion-guardrails.md",
+      "layer": "future"
+    },
+    {
+      "id": "developer-onboarding",
+      "path": "docs/05-engineering/v1-developer-onboarding.md",
+      "layer": "operations"
+    },
+    {
+      "id": "foundation-assembly",
+      "path": "docs/05-engineering/v1-foundation-assembly.md",
+      "layer": "interoperability"
+    },
+    {
+      "id": "environment-repository-contract",
+      "path": "docs/05-engineering/v1-environment-and-repository-contract.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "reproducibility-contract",
+      "path": "docs/05-engineering/v1-reproducibility-contract.md",
+      "layer": "interoperability"
+    },
+    {
+      "id": "governance-ledger",
+      "path": "docs/05-engineering/v1-governance-ledger.md",
+      "layer": "governance"
+    },
+    {
+      "id": "risk-register",
+      "path": "docs/05-engineering/v1-risk-register.md",
+      "layer": "governance"
+    },
+    {
+      "id": "decision-traceability",
+      "path": "docs/05-engineering/v1-decision-traceability.md",
+      "layer": "governance"
+    },
+    {
+      "id": "capability-maturity-model",
+      "path": "docs/05-engineering/v1-capability-maturity-model.md",
+      "layer": "future"
+    },
+    {
+      "id": "world-charter-runtime",
+      "path": "docs/05-engineering/v1-world-charter-runtime.md",
+      "layer": "governance"
+    },
+    {
+      "id": "long-term-invariants",
+      "path": "docs/05-engineering/v1-long-term-invariants.md",
+      "layer": "kernel"
+    },
+    {
+      "id": "anti-fragility-stress-tests",
+      "path": "docs/05-engineering/v1-anti-fragility-and-stress-tests.md",
+      "layer": "future"
+    },
+    {
+      "id": "principle-check-map",
+      "path": "docs/05-engineering/v1-principle-check-map.md",
+      "layer": "governance"
+    },
+    {
+      "id": "modular-architecture-contract",
+      "path": "docs/05-engineering/v1-modular-architecture-contract.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "dependency-direction-coupling-guard",
+      "path": "docs/05-engineering/v1-dependency-direction-and-coupling-guard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "component-extension-interface",
+      "path": "docs/05-engineering/v1-component-and-extension-interface.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "page-composition-contract",
+      "path": "docs/05-engineering/v1-page-composition-contract.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "feature-module-data-flow",
+      "path": "docs/05-engineering/v1-feature-module-and-data-flow.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "scalability-partition",
+      "path": "docs/05-engineering/v1-scalability-partition.md",
+      "layer": "future"
+    },
+    {
+      "id": "performance-budget",
+      "path": "docs/05-engineering/v1-performance-budget.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "rendering-loading-strategy",
+      "path": "docs/05-engineering/v1-rendering-and-loading-strategy.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "interaction-smoothness",
+      "path": "docs/05-engineering/v1-interaction-smoothness.md",
+      "layer": "experience"
+    },
+    {
+      "id": "critical-path-runtime-split",
+      "path": "docs/05-engineering/v1-critical-path-and-runtime-split.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "static-assets-cache-strategy",
+      "path": "docs/05-engineering/v1-static-assets-and-cache-strategy.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "performance-guard",
+      "path": "docs/05-engineering/v1-performance-guard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "performance-metrics-route-profiles",
+      "path": "docs/05-engineering/v1-performance-metrics-and-route-profiles.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "smoothness-audit-large-content",
+      "path": "docs/05-engineering/v1-smoothness-audit-and-large-content.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "performance-regression-guard",
+      "path": "docs/05-engineering/v1-performance-regression-guard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-one-closure-assessment",
+      "path": "docs/00-overview/v1-phase-one-closure-assessment.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-one-exit-criteria",
+      "path": "docs/05-engineering/v1-phase-one-exit-criteria.md",
+      "layer": "governance"
+    },
+    {
+      "id": "phase-one-remaining-work",
+      "path": "docs/05-engineering/v1-phase-one-remaining-work.md",
+      "layer": "governance"
+    },
+    {
+      "id": "tooling-baseline",
+      "path": "docs/05-engineering/v1-tooling-baseline.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "visual-interaction-qa",
+      "path": "docs/05-engineering/v1-visual-interaction-qa.md",
+      "layer": "experience"
+    },
+    {
+      "id": "layout-responsive-contract",
+      "path": "docs/05-engineering/v1-layout-responsive-contract.md",
+      "layer": "design"
+    },
+    {
+      "id": "visual-defect-register",
+      "path": "docs/05-engineering/v1-visual-defect-register.md",
+      "layer": "experience"
+    },
+    {
+      "id": "content-productization-baseline",
+      "path": "docs/04-content/v1-content-productization-baseline.md",
+      "layer": "content"
+    },
+    {
+      "id": "cover-seed-content-quality",
+      "path": "docs/04-content/v1-cover-and-seed-content-quality.md",
+      "layer": "content"
+    },
+    {
+      "id": "projection-density-strategy",
+      "path": "docs/05-engineering/v1-projection-density-strategy.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "stage-acceptance-gate",
+      "path": "docs/05-engineering/v1-stage-acceptance-gate.md",
+      "layer": "governance"
+    },
+    {
+      "id": "ci-preview-readiness",
+      "path": "docs/05-engineering/v1-ci-and-preview-readiness.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-execution-evidence",
+      "path": "docs/05-engineering/v1-real-execution-evidence.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "build-failure-playbook",
+      "path": "docs/05-engineering/v1-build-failure-playbook.md",
+      "layer": "operations"
+    },
+    {
+      "id": "local-acceptance-runner",
+      "path": "docs/05-engineering/v1-local-acceptance-runner.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "stage-closure-update-protocol",
+      "path": "docs/05-engineering/v1-stage-closure-update-protocol.md",
+      "layer": "governance"
+    },
+    {
+      "id": "preview-smoke-performance-runbook",
+      "path": "docs/05-engineering/v1-preview-smoke-and-performance-runbook.md",
+      "layer": "release"
+    },
+    {
+      "id": "final-closure-report",
+      "path": "docs/05-engineering/v1-final-closure-report.md",
+      "layer": "governance"
+    },
+    {
+      "id": "stage-completion-transition",
+      "path": "docs/05-engineering/v1-stage-completion-transition.md",
+      "layer": "governance"
+    },
+    {
+      "id": "phase-two-handoff",
+      "path": "docs/05-engineering/v1-phase-two-handoff.md",
+      "layer": "governance"
+    }
+  ],
+  "docTypes": [
+    "overview",
+    "architecture",
+    "protocol",
+    "contract",
+    "policy",
+    "checklist",
+    "adr",
+    "runbook"
+  ],
+  "rules": [
+    "核心 data 文件必须有对应说明文档。",
+    "核心检查脚本必须在文档中说明用途。",
+    "破坏性变更必须新增或更新 ADR。",
+    "文档不得只描述 UI，应描述协议、边界与检查。"
+  ]
+}

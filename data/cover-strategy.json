@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 配图与封面策略",
+  "principle": "配图服务于内容理解，不服务于装饰堆砌。",
+  "coverKinds": [
+    {
+      "id": "natural-tech",
+      "useFor": [
+        "技术文章",
+        "工程札记"
+      ],
+      "style": "自然光、书桌、屏幕、植物、低饱和科技感"
+    },
+    {
+      "id": "memory-photo",
+      "useFor": [
+        "生活记忆",
+        "旅行",
+        "家庭"
+      ],
+      "style": "真实照片优先，保持生活质感"
+    },
+    {
+      "id": "abstract-world",
+      "useFor": [
+        "世界规则",
+        "宪章",
+        "系统文档"
+      ],
+      "style": "抽象星图、纸张、岛屿、线条，不喧宾夺主"
+    },
+    {
+      "id": "project-artifact",
+      "useFor": [
+        "项目节点",
+        "作品"
+      ],
+      "style": "截图、流程图、产物局部，强调可验证"
+    },
+    {
+      "id": "fallback-gradient",
+      "useFor": [
+        "无图内容"
+      ],
+      "style": "柔和渐变 + 节点类型图标 + 区域色彩"
+    }
+  ],
+  "rules": [
+    "封面必须有 alt 或语义说明。",
+    "无图时使用 fallback-gradient，不能出现破图或空洞占位。",
+    "首页代表节点优先有 cover 或明确 fallback。",
+    "图片不得阻塞首屏关键路径。",
+    "未来图片资产进入 static-asset-policy 管理。"
+  ]
+}

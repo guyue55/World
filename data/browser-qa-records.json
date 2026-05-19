@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 浏览器 QA 记录模板",
+  "principle": "浏览器 QA 必须覆盖真实路由、真实视口、真实交互。",
+  "matrix": [
+    {
+      "viewport": "375x812",
+      "routes": [
+        "/",
+        "/atlas",
+        "/archive",
+        "/ask"
+      ],
+      "status": "pending"
+    },
+    {
+      "viewport": "430x932",
+      "routes": [
+        "/",
+        "/node/[slug]",
+        "/paths",
+        "/status"
+      ],
+      "status": "pending"
+    },
+    {
+      "viewport": "768x1024",
+      "routes": [
+        "/",
+        "/atlas",
+        "/archive",
+        "/skeleton"
+      ],
+      "status": "pending"
+    },
+    {
+      "viewport": "1440x900",
+      "routes": [
+        "/",
+        "/archive",
+        "/status",
+        "/skeleton"
+      ],
+      "status": "pending"
+    },
+    {
+      "viewport": "1920x1080",
+      "routes": [
+        "/",
+        "/status",
+        "/skeleton"
+      ],
+      "status": "pending"
+    }
+  ],
+  "interactionFocus": [
+    "navigation active state",
+    "mobile nav open/close",
+    "tab selected state",
+    "collapse/expand click",
+    "search/filter empty state",
+    "card click target",
+    "focus visibility",
+    "layout no horizontal overflow"
+  ],
+  "rules": [
+    "发现问题必须写入 visual-interaction-defect-register。",
+    "P0 视觉/交互问题未关闭前不得标记阶段完成。",
+    "宽屏和移动端都必须检查，不得只看一种设备。"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 能力成熟度模型",
+  "principle": "能力成熟度决定下一步建设优先级，而不是幻想路线图决定优先级。",
+  "levels": [
+    {
+      "level": 0,
+      "name": "absent",
+      "meaning": "能力尚未存在"
+    },
+    {
+      "level": 1,
+      "name": "prepared",
+      "meaning": "协议/数据/入口已准备"
+    },
+    {
+      "level": 2,
+      "name": "implemented",
+      "meaning": "基础实现已存在"
+    },
+    {
+      "level": 3,
+      "name": "verified",
+      "meaning": "真实环境已验证"
+    },
+    {
+      "level": 4,
+      "name": "operational",
+      "meaning": "可持续维护和迭代"
+    },
+    {
+      "level": 5,
+      "name": "evolving",
+      "meaning": "可扩展、可迁移、可传承"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "world-skeleton",
+      "level": 2,
+      "targetLevel": 3
+    },
+    {
+      "id": "privacy-boundary",
+      "level": 2,
+      "targetLevel": 3
+    },
+    {
+      "id": "ai-lighthouse",
+      "level": 1,
+      "targetLevel": 2
+    },
+    {
+      "id": "public-projection",
+      "level": 2,
+      "targetLevel": 3
+    },
+    {
+      "id": "content-productization",
+      "level": 1,
+      "targetLevel": 3
+    },
+    {
+      "id": "visual-qa",
+      "level": 1,
+      "targetLevel": 3
+    },
+    {
+      "id": "performance-measurement",
+      "level": 1,
+      "targetLevel": 3
+    },
+    {
+      "id": "preview-release",
+      "level": 1,
+      "targetLevel": 3
+    }
+  ],
+  "rules": [
+    "prepared 不等于 verified。",
+    "第二阶段优先把 P0 能力从 prepared/implemented 推到 verified。",
+    "成熟度提升必须有证据报告。"
+  ]
+}

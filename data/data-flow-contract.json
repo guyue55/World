@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 数据流契约",
+  "principle": "数据流必须单向、可追踪、可降级。",
+  "flow": [
+    {
+      "from": "data/content",
+      "to": "src/lib",
+      "purpose": "load and validate world objects"
+    },
+    {
+      "from": "src/lib",
+      "to": "projection helpers",
+      "purpose": "create page-safe projection"
+    },
+    {
+      "from": "projection helpers",
+      "to": "src/app",
+      "purpose": "route-level composition"
+    },
+    {
+      "from": "src/app",
+      "to": "src/components",
+      "purpose": "render UI with projected data"
+    },
+    {
+      "from": "scripts",
+      "to": "src/lib/data",
+      "purpose": "check and report without changing runtime"
+    }
+  ],
+  "forbidden": [
+    {
+      "from": "src/components",
+      "to": "data/private",
+      "reason": "components must not query private source directly"
+    },
+    {
+      "from": "src/app",
+      "to": "visibility decision",
+      "reason": "pages must not decide visibility"
+    },
+    {
+      "from": "AI",
+      "to": "raw private content",
+      "reason": "AI boundary"
+    },
+    {
+      "from": "future visual layer",
+      "to": "kernel mutation",
+      "reason": "visual layer is projection only"
+    }
+  ],
+  "rules": [
+    "数据从协议到投影再到 UI，不能反向流动。",
+    "组件只消费投影后的数据。",
+    "脚本可以检查数据，但不成为运行时依赖。",
+    "未来交互状态应隔离在 feature 层，不污染 world kernel。"
+  ]
+}

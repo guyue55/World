@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 静态资源治理策略",
+  "principle": "资源可以丰富，但必须按用途、尺寸、加载时机治理。",
+  "assetKinds": [
+    {
+      "id": "hero-image",
+      "policy": "optimized, responsive, meaningful alt, avoid blocking all routes"
+    },
+    {
+      "id": "decorative-image",
+      "policy": "lazy, optional, hidden from critical meaning"
+    },
+    {
+      "id": "icon",
+      "policy": "inline svg or small component, avoid large icon bundles"
+    },
+    {
+      "id": "json-index",
+      "policy": "public-only, split when large, cacheable"
+    },
+    {
+      "id": "markdown-body",
+      "policy": "load only for detail page or build-time projection"
+    },
+    {
+      "id": "future-visual-asset",
+      "policy": "behind provider, never first paint dependency"
+    }
+  ],
+  "rules": [
+    "图片必须区分内容图片与装饰图片。",
+    "首页不因装饰图片阻塞世界入口。",
+    "公共索引只包含公开投影摘要。",
+    "未来大型资源必须登记 provider 与 fallback。",
+    "资源优化不能破坏可访问性和语义。"
+  ]
+}

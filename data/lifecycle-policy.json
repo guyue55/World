@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "lifeStages": [
+    "seed",
+    "sprout",
+    "growing",
+    "bloom",
+    "fruit",
+    "archive",
+    "relic",
+    "dormant",
+    "silent"
+  ],
+  "allowedTransitions": {
+    "seed": [
+      "sprout",
+      "dormant",
+      "silent"
+    ],
+    "sprout": [
+      "growing",
+      "bloom",
+      "dormant",
+      "archive"
+    ],
+    "growing": [
+      "bloom",
+      "fruit",
+      "archive",
+      "dormant"
+    ],
+    "bloom": [
+      "fruit",
+      "archive",
+      "dormant"
+    ],
+    "fruit": [
+      "archive",
+      "relic"
+    ],
+    "archive": [
+      "relic",
+      "dormant",
+      "growing"
+    ],
+    "relic": [
+      "archive",
+      "dormant"
+    ],
+    "dormant": [
+      "sprout",
+      "growing",
+      "archive",
+      "silent"
+    ],
+    "silent": [
+      "dormant"
+    ]
+  },
+  "publicHomeMinimumStage": "sprout",
+  "recommendedCorePathMinimumStage": "bloom",
+  "notes": [
+    "seed 可以存在，但不建议进入首页。",
+    "silent 默认不主动展示。",
+    "archive 不代表删除，而是进入可回望状态。",
+    "relic 是历史价值高于活跃价值的旧节点。"
+  ]
+}

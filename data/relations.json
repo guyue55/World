@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rel-001",
+    "from": "node-world-manifesto",
+    "to": "node-digital-universe",
+    "type": "derived",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-002",
+    "from": "node-digital-universe",
+    "to": "node-world-space",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-003",
+    "from": "node-ai-lighthouse",
+    "to": "node-no-ai",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-004",
+    "from": "node-world-space",
+    "to": "node-backlinks",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-005",
+    "from": "node-backlinks",
+    "to": "node-everything-node",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-006",
+    "from": "node-feishu-mcp",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-007",
+    "from": "node-cli-agent",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-008",
+    "from": "node-novel-editor",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  }
+]

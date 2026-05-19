@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 页面性能档案",
+  "principle": "不同页面有不同性能风险，不能用同一把尺粗暴衡量。",
+  "profiles": [
+    {
+      "route": "/",
+      "kind": "entrance",
+      "primaryRisk": "hero and representative content overweight",
+      "mustKeep": [
+        "static readable",
+        "small representative data",
+        "clear next action"
+      ]
+    },
+    {
+      "route": "/atlas",
+      "kind": "map",
+      "primaryRisk": "future visual map becomes core dependency",
+      "mustKeep": [
+        "static fallback",
+        "area summary first",
+        "visual provider optional"
+      ]
+    },
+    {
+      "route": "/archive",
+      "kind": "archive",
+      "primaryRisk": "too many cards and search index growth",
+      "mustKeep": [
+        "summary index",
+        "chunkable list",
+        "empty state"
+      ]
+    },
+    {
+      "route": "/node/[slug]",
+      "kind": "detail",
+      "primaryRisk": "loading unrelated world graph",
+      "mustKeep": [
+        "single node projection",
+        "markdown only for current node",
+        "related nodes summary"
+      ]
+    },
+    {
+      "route": "/paths",
+      "kind": "path-list",
+      "primaryRisk": "route contains full node detail",
+      "mustKeep": [
+        "path summary",
+        "node references",
+        "progressive detail"
+      ]
+    },
+    {
+      "route": "/paths/[id]",
+      "kind": "path-detail",
+      "primaryRisk": "all path markdown loaded eagerly",
+      "mustKeep": [
+        "path projection",
+        "current path nodes only"
+      ]
+    },
+    {
+      "route": "/ask",
+      "kind": "ai-entry",
+      "primaryRisk": "AI provider blocks first paint",
+      "mustKeep": [
+        "low-light fallback",
+        "static guide",
+        "AI boundary"
+      ]
+    },
+    {
+      "route": "/status",
+      "kind": "operations",
+      "primaryRisk": "panel stack grows without boundary",
+      "mustKeep": [
+        "summary first",
+        "WorldFoundationStack boundary"
+      ]
+    },
+    {
+      "route": "/skeleton",
+      "kind": "kernel",
+      "primaryRisk": "too many governance panels in page file",
+      "mustKeep": [
+        "stack boundary",
+        "kernel summary first"
+      ]
+    }
+  ],
+  "rules": [
+    "每个核心页面必须有性能风险描述。",
+    "新增页面必须登记 profile。",
+    "高风险页面优先通过组件栈、provider、projection helper 降低耦合和加载压力。"
+  ]
+}

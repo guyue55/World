@@ -1,0 +1,93 @@
+{
+  "version": "0.1.0",
+  "principle": "V1 不做 3D，但必须先有稳定空间协议；未来地图、星图、2.5D 和 WebXR 都从这里投影。",
+  "coordinateSystem": {
+    "type": "logical-grid",
+    "axes": {
+      "x": "horizontal relation / domain spread",
+      "y": "depth / intimacy / abstraction",
+      "z": "future optional visual elevation"
+    },
+    "depths": [
+      "surface",
+      "middle",
+      "deep",
+      "vault"
+    ],
+    "defaultDepthByVisibility": {
+      "public": "surface",
+      "semiPublic": "surface",
+      "private": "deep",
+      "family": "deep",
+      "partner": "deep",
+      "vault": "vault",
+      "sealed": "vault",
+      "silent": "vault"
+    }
+  },
+  "areaCoordinates": [
+    {
+      "areaId": "origin",
+      "x": 0,
+      "y": 0,
+      "depth": "surface",
+      "zone": "center"
+    },
+    {
+      "areaId": "tech",
+      "x": -2,
+      "y": 1,
+      "depth": "surface",
+      "zone": "north-west"
+    },
+    {
+      "areaId": "workshop",
+      "x": 2,
+      "y": 1,
+      "depth": "surface",
+      "zone": "north-east"
+    },
+    {
+      "areaId": "fragments",
+      "x": 0,
+      "y": 1,
+      "depth": "surface",
+      "zone": "upper-cloud"
+    },
+    {
+      "areaId": "memory",
+      "x": -2,
+      "y": 2,
+      "depth": "deep",
+      "zone": "lake"
+    },
+    {
+      "areaId": "timeline",
+      "x": 0,
+      "y": 2,
+      "depth": "surface",
+      "zone": "river"
+    },
+    {
+      "areaId": "archive",
+      "x": 2,
+      "y": 2,
+      "depth": "surface",
+      "zone": "library"
+    },
+    {
+      "areaId": "lighthouse",
+      "x": 0,
+      "y": 3,
+      "depth": "surface",
+      "zone": "beacon"
+    }
+  ],
+  "rules": [
+    "坐标用于投影，不用于替代信息架构。",
+    "vault/deep 不得被公开 Atlas 强制展开。",
+    "2.5D/3D 只能读取公开空间索引。",
+    "同一节点可有多个投影，但主 areaId 只能有一个。",
+    "空间坐标必须允许无图形降级。"
+  ]
+}

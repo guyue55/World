@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 治理台账",
+  "principle": "治理不是额外流程，而是让世界在长期扩展中不失控。",
+  "status": "active",
+  "ledgers": [
+    {
+      "id": "architecture-governance",
+      "scope": "模块边界、依赖方向、页面化组件化",
+      "owner": "engineering",
+      "evidence": "data/modular-architecture-contract.json"
+    },
+    {
+      "id": "content-governance",
+      "scope": "公开内容、种子内容、首页代表内容",
+      "owner": "content",
+      "evidence": "data/seed-content-quality-gate.json"
+    },
+    {
+      "id": "privacy-governance",
+      "scope": "公开/私密边界、AI 可见边界",
+      "owner": "privacy",
+      "evidence": "data/ai-boundary-policy.json"
+    },
+    {
+      "id": "performance-governance",
+      "scope": "首屏、运行时拆分、性能回归",
+      "owner": "engineering",
+      "evidence": "data/performance-regression-guard.json"
+    },
+    {
+      "id": "release-governance",
+      "scope": "构建、预览、冒烟、阶段关闭",
+      "owner": "release",
+      "evidence": "data/stage-completion-gate.json"
+    }
+  ],
+  "rules": [
+    "新增治理项必须有 owner、scope 和 evidence。",
+    "治理项不得只存在于文档，必须能被数据或脚本引用。",
+    "任何绕过治理项的变更都必须在 CHECK_REPORT.md 中说明。"
+  ]
+}

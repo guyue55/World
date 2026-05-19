@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "principle": "环境基线要简单、明确、可替换，不让工具链绑架世界。",
+  "runtime": {
+    "node": ">=20",
+    "packageManager": "npm",
+    "framework": "Next.js",
+    "language": "TypeScript"
+  },
+  "requiredScripts": [
+    "dev",
+    "build",
+    "validate:world",
+    "check:public",
+    "check:world-core",
+    "check:baseline",
+    "check:audit",
+    "check:docs",
+    "check:operations",
+    "build:world-index"
+  ],
+  "optionalScripts": [
+    "kernel:report",
+    "foundation:print",
+    "audit:print",
+    "docs:print",
+    "handoff:print",
+    "operations:print"
+  ],
+  "rules": [
+    "V1 不强依赖数据库。",
+    "V1 不强依赖后台服务。",
+    "V1 不强依赖 AI 服务。",
+    "V1 不强依赖 3D/WebXR。",
+    "环境失败时应优先运行数据和文档检查。"
+  ]
+}

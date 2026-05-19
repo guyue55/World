@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "dimensions": [
+    {
+      "id": "structure",
+      "weight": 18,
+      "description": "世界对象、层级、协议是否完整。"
+    },
+    {
+      "id": "boundary",
+      "weight": 18,
+      "description": "公开、私密、AI、导出边界是否清晰。"
+    },
+    {
+      "id": "evolution",
+      "weight": 14,
+      "description": "版本、快照、生命周期、世界事件是否可演化。"
+    },
+    {
+      "id": "projection",
+      "weight": 12,
+      "description": "页面投影是否受协议约束。"
+    },
+    {
+      "id": "interoperability",
+      "weight": 12,
+      "description": "Markdown/JSON/Git/导出是否可迁移。"
+    },
+    {
+      "id": "fallback",
+      "weight": 10,
+      "description": "高级能力是否有降级路径。"
+    },
+    {
+      "id": "future",
+      "weight": 10,
+      "description": "未来扩展是否有注册点和插槽。"
+    },
+    {
+      "id": "craft",
+      "weight": 6,
+      "description": "格式、命名、文档、可读性是否稳。"
+    }
+  ],
+  "minimumTotalScore": 85,
+  "blockingDimensions": [
+    "boundary",
+    "structure"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 地基冻结清单",
+  "principle": "地基可以扩展，但不能被无意识重写。",
+  "freezeLevel": "soft-freeze-until-stage-complete",
+  "items": [
+    {
+      "id": "schema-core",
+      "scope": "Node/Area/Relation/Path/WorldEvent core schema",
+      "changeRule": "ADR + migration plan required"
+    },
+    {
+      "id": "visibility-model",
+      "scope": "public/semiPublic/private/family/partner/vault/sealed/silent",
+      "changeRule": "security review required"
+    },
+    {
+      "id": "ai-boundary",
+      "scope": "AI lighthouse and no-AI fallback",
+      "changeRule": "AI boundary check required"
+    },
+    {
+      "id": "projection-contract",
+      "scope": "public projection and cache generation",
+      "changeRule": "projection check required"
+    },
+    {
+      "id": "module-architecture",
+      "scope": "src/lib/src/components/src/app dependency direction",
+      "changeRule": "architecture check required"
+    },
+    {
+      "id": "performance-critical-path",
+      "scope": "critical route and runtime split",
+      "changeRule": "performance evidence required"
+    },
+    {
+      "id": "stage-evidence-chain",
+      "scope": "acceptance/preview/final closure/stage complete scripts",
+      "changeRule": "must not be bypassed"
+    }
+  ],
+  "rules": [
+    "冻结不等于不能改，而是必须有证据和迁移方案。",
+    "任何冻结项修改都必须更新 CHECK_REPORT。",
+    "冻结项修改不得混入普通视觉小改。"
+  ]
+}

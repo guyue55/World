@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "principle": "长期不变量是世界未来扩张时仍不可破坏的压舱石。",
+  "invariants": [
+    {
+      "id": "no-private-public-leak",
+      "level": "critical",
+      "statement": "private/family/partner/vault/sealed/silent 不得进入 public build。"
+    },
+    {
+      "id": "no-ai-vault-access",
+      "level": "critical",
+      "statement": "AI 不得读取 vault/sealed/silent。"
+    },
+    {
+      "id": "no-core-overwrite-by-future",
+      "level": "critical",
+      "statement": "未来扩展不得覆盖 core namespace。"
+    },
+    {
+      "id": "no-advanced-experience-without-fallback",
+      "level": "high",
+      "statement": "高级体验必须有 fallback。"
+    },
+    {
+      "id": "no-schema-breaking-without-snapshot",
+      "level": "critical",
+      "statement": "破坏性 schema 变更前必须有 snapshot plan。"
+    },
+    {
+      "id": "no-projection-without-permission",
+      "level": "high",
+      "statement": "投影不得绕过权限协议。"
+    },
+    {
+      "id": "no-untracked-major-decision",
+      "level": "high",
+      "statement": "重大架构判断必须进入 ADR 或治理台账。"
+    },
+    {
+      "id": "no-world-without-export",
+      "level": "high",
+      "statement": "世界必须保留导出、迁移、重建路径。"
+    },
+    {
+      "id": "no-maintenance-as-burden",
+      "level": "medium",
+      "statement": "维护节奏不得让生活服务世界。"
+    },
+    {
+      "id": "no-future-feature-as-v1-foundation",
+      "level": "high",
+      "statement": "V6 体验不得反向成为 V1 基础依赖。"
+    }
+  ]
+}

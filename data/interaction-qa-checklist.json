@@ -1,0 +1,85 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 交互 QA 清单",
+  "principle": "交互 QA 的核心是状态一致、反馈即时、失败可退。",
+  "interactions": [
+    {
+      "id": "primary-navigation",
+      "priority": "P0",
+      "checks": [
+        "active item matches route",
+        "mobile nav opens and closes",
+        "focus state visible"
+      ]
+    },
+    {
+      "id": "tabs",
+      "priority": "P0",
+      "checks": [
+        "selected indicator follows content",
+        "keyboard reachable",
+        "state persists only when intended"
+      ]
+    },
+    {
+      "id": "collapse-panel",
+      "priority": "P0",
+      "checks": [
+        "manual click works",
+        "default expanded/collapsed is intentional",
+        "content not trapped"
+      ]
+    },
+    {
+      "id": "search-filter",
+      "priority": "P0",
+      "checks": [
+        "input responsive",
+        "empty result state",
+        "clear action visible"
+      ]
+    },
+    {
+      "id": "card-link",
+      "priority": "P0",
+      "checks": [
+        "click target comfortable",
+        "hover/focus visible",
+        "route target correct"
+      ]
+    },
+    {
+      "id": "status-panel-stack",
+      "priority": "P1",
+      "checks": [
+        "scan order logical",
+        "not all heavy detail required at once",
+        "summary appears first"
+      ]
+    },
+    {
+      "id": "motion",
+      "priority": "P1",
+      "checks": [
+        "subtle only",
+        "does not express unique information",
+        "reduced motion compatible"
+      ]
+    },
+    {
+      "id": "form-like-entry",
+      "priority": "P1",
+      "checks": [
+        "disabled/loading/error states",
+        "no AI fallback visible"
+      ]
+    }
+  ],
+  "rules": [
+    "所有状态变化必须有视觉反馈。",
+    "内容切换和选中态必须同步。",
+    "无结果、加载、错误、禁用状态必须可见。",
+    "移动端点击目标不得只依赖小文本。",
+    "动效不得让页面产生布局跳动。"
+  ]
+}

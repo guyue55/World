@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "principle": "可复现不是为了机械复制，而是为了让世界在未来仍能被理解和重建。",
+  "checks": [
+    {
+      "id": "assembly-manifest",
+      "target": "data/foundation-assembly-manifest.json"
+    },
+    {
+      "id": "environment-baseline",
+      "target": "data/environment-baseline.json"
+    },
+    {
+      "id": "repository-contract",
+      "target": "data/repository-structure-contract.json"
+    },
+    {
+      "id": "required-roots",
+      "target": "repo roots"
+    },
+    {
+      "id": "required-files",
+      "target": "repo files"
+    },
+    {
+      "id": "required-scripts",
+      "target": "package.json scripts"
+    },
+    {
+      "id": "documentation-index",
+      "target": "data/documentation-registry.json"
+    },
+    {
+      "id": "baseline-evidence",
+      "target": "data/foundation-baseline.json"
+    }
+  ],
+  "passStatement": "如果可复现检查通过，说明 V1 世界骨架可以被重新装配、检查和交接。"
+}

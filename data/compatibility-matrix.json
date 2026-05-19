@@ -1,0 +1,105 @@
+{
+  "version": "0.1.0",
+  "principle": "V1 骨架必须兼容未来，但未来不得反向破坏 V1。",
+  "matrix": [
+    {
+      "future": "V2 creator-console",
+      "dependsOn": [
+        "world-protocol-registry",
+        "rules",
+        "world-invariants"
+      ],
+      "v1Status": "ready"
+    },
+    {
+      "future": "V2 rule-engine",
+      "dependsOn": [
+        "rules",
+        "governance",
+        "build-pipeline"
+      ],
+      "v1Status": "ready"
+    },
+    {
+      "future": "V3 semantic-search",
+      "dependsOn": [
+        "public-index",
+        "ai-boundary",
+        "projection-contracts"
+      ],
+      "v1Status": "ready"
+    },
+    {
+      "future": "V3 ai-draft-zone",
+      "dependsOn": [
+        "ai-boundary",
+        "schema-version",
+        "lifecycle"
+      ],
+      "v1Status": "ready"
+    },
+    {
+      "future": "V4 private-archive",
+      "dependsOn": [
+        "visibility",
+        "permissions",
+        "export-contract"
+      ],
+      "v1Status": "reserved"
+    },
+    {
+      "future": "V4 time-capsule",
+      "dependsOn": [
+        "snapshot-policy",
+        "world-events",
+        "visibility"
+      ],
+      "v1Status": "reserved"
+    },
+    {
+      "future": "V5 yearbook",
+      "dependsOn": [
+        "snapshots",
+        "world-events",
+        "export-contract"
+      ],
+      "v1Status": "reserved"
+    },
+    {
+      "future": "V5 exhibition",
+      "dependsOn": [
+        "projection-contracts",
+        "paths",
+        "public-index"
+      ],
+      "v1Status": "reserved"
+    },
+    {
+      "future": "V6 2.5d-map",
+      "dependsOn": [
+        "spatial-protocol",
+        "atlas-contract",
+        "fallback-strategy"
+      ],
+      "v1Status": "reserved"
+    },
+    {
+      "future": "V6 star-graph",
+      "dependsOn": [
+        "star-lines",
+        "relation-policy",
+        "public-index"
+      ],
+      "v1Status": "reserved"
+    },
+    {
+      "future": "V6 optional-webxr",
+      "dependsOn": [
+        "spatial-protocol",
+        "fallback-strategy",
+        "public-index"
+      ],
+      "v1Status": "reserved"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段验收报告结构",
+  "principle": "验收报告必须同时记录命令结果、人工 QA 和延期项。",
+  "requiredFields": [
+    "generatedAt",
+    "project",
+    "commands",
+    "manualQa",
+    "performance",
+    "previewDeployment",
+    "blockingDefects",
+    "deferredItems",
+    "finalDecision"
+  ],
+  "finalDecisionValues": [
+    "complete",
+    "not-yet-complete",
+    "complete-with-deferred-items"
+  ],
+  "rules": [
+    "commands 必须包含 lint/typecheck/world-core/build。",
+    "manualQa 必须包含 mobile/tablet/desktop。",
+    "performance 必须至少包含首页移动端和桌面端。",
+    "blockingDefects 为空时才允许 complete。",
+    "complete-with-deferred-items 必须说明延期项不阻断第一阶段地基。"
+  ]
+}

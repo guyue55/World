@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "principle": "扩展接口先于扩展实现，避免未来功能直接侵入内核。",
+  "interfaces": [
+    {
+      "id": "ProjectionProvider",
+      "owner": "projection",
+      "status": "reserved",
+      "input": "world object",
+      "output": "page-safe projection"
+    },
+    {
+      "id": "SearchProvider",
+      "owner": "archive",
+      "status": "reserved",
+      "input": "public index",
+      "output": "ranked public result"
+    },
+    {
+      "id": "AIGuideProvider",
+      "owner": "ai",
+      "status": "guarded",
+      "input": "public reviewed context",
+      "output": "reviewable suggestion"
+    },
+    {
+      "id": "ExportProvider",
+      "owner": "interoperability",
+      "status": "reserved",
+      "input": "bundle contract",
+      "output": "portable artifact"
+    },
+    {
+      "id": "VisualExperienceProvider",
+      "owner": "future",
+      "status": "experimental",
+      "input": "public spatial graph",
+      "output": "fallback-safe visual layer"
+    },
+    {
+      "id": "PrivateArchiveProvider",
+      "owner": "private",
+      "status": "guarded",
+      "input": "non-public data",
+      "output": "creator-only archive view"
+    }
+  ],
+  "rules": [
+    "Provider 只能通过注册表激活。",
+    "Provider 不得弱化 visibility。",
+    "实验 Provider 必须声明 fallback。",
+    "AI Provider 必须遵守 AI boundary。",
+    "Visual Provider 不得成为核心导航前置条件。"
+  ]
+}

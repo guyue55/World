@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "principle": "组件是世界的投影部件，不是世界规则本身。",
+  "componentKinds": [
+    {
+      "id": "shell",
+      "path": "src/components/world",
+      "responsibility": "layout and world surface composition"
+    },
+    {
+      "id": "panel",
+      "path": "src/components/world",
+      "responsibility": "read-only status, report and protocol display"
+    },
+    {
+      "id": "card",
+      "path": "src/components/*",
+      "responsibility": "small reusable content display"
+    },
+    {
+      "id": "navigation",
+      "path": "src/components/world",
+      "responsibility": "navigation projection only"
+    },
+    {
+      "id": "content-renderer",
+      "path": "src/components/common",
+      "responsibility": "safe markdown and content rendering"
+    }
+  ],
+  "rules": [
+    "组件 props 应优先接收已投影数据，而不是直接重算世界规则。",
+    "组件可以读取 read-only helper，但不得改变数据协议。",
+    "组件不得把 private/family/partner/vault/sealed/silent 显示逻辑硬编码成例外。",
+    "大型页面区块优先拆成 panel/card，不写巨型页面文件。",
+    "未来视觉升级应替换组件实现，不改变 lib/data 协议。"
+  ]
+}

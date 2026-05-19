@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "principle": "错误必须分级，否则维护者无法判断什么会真正破坏世界。",
+  "levels": [
+    {
+      "id": "info",
+      "blocksBuild": false,
+      "description": "提示信息，不影响构建。"
+    },
+    {
+      "id": "warning",
+      "blocksBuild": false,
+      "description": "需要关注，但不阻断构建。"
+    },
+    {
+      "id": "error",
+      "blocksBuild": true,
+      "description": "破坏协议或边界，必须修复。"
+    },
+    {
+      "id": "critical",
+      "blocksBuild": true,
+      "requiresSnapshotReview": true,
+      "description": "影响 schema、权限、AI、私密或内核，必须人工审查。"
+    }
+  ],
+  "categories": [
+    {
+      "id": "schema",
+      "defaultLevel": "error"
+    },
+    {
+      "id": "visibility",
+      "defaultLevel": "critical"
+    },
+    {
+      "id": "ai-boundary",
+      "defaultLevel": "critical"
+    },
+    {
+      "id": "projection",
+      "defaultLevel": "error"
+    },
+    {
+      "id": "relation",
+      "defaultLevel": "warning"
+    },
+    {
+      "id": "content",
+      "defaultLevel": "warning"
+    },
+    {
+      "id": "docs",
+      "defaultLevel": "warning"
+    },
+    {
+      "id": "kernel",
+      "defaultLevel": "critical"
+    }
+  ],
+  "rules": [
+    "visibility、AI、kernel 默认按 critical 处理。",
+    "docs 可以 warning，但注册文档缺失是 error。",
+    "schema 错误必须阻断构建。",
+    "warning 不能无限累积，应进入维护日历。"
+  ]
+}

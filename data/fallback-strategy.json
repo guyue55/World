@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "principle": "任何高级体验都必须可降级；世界核心不依赖 AI、3D、后台或网络服务才能成立。",
+  "fallbacks": [
+    {
+      "capability": "AI lighthouse",
+      "fallback": "low-light path guide",
+      "required": true
+    },
+    {
+      "capability": "semantic search",
+      "fallback": "local Fuse.js search / archive filters",
+      "required": true
+    },
+    {
+      "capability": "2.5D map",
+      "fallback": "Atlas list/grid view",
+      "required": true
+    },
+    {
+      "capability": "3D/WebXR",
+      "fallback": "2D Atlas + breadcrumbs",
+      "required": true
+    },
+    {
+      "capability": "web audio",
+      "fallback": "silent visual mode",
+      "required": true
+    },
+    {
+      "capability": "creator console",
+      "fallback": "VS Code + Git + validation scripts",
+      "required": true
+    },
+    {
+      "capability": "private online access",
+      "fallback": "excluded from public build",
+      "required": true
+    },
+    {
+      "capability": "RAG",
+      "fallback": "public index + curated paths",
+      "required": true
+    }
+  ],
+  "rules": [
+    "高级体验不能成为核心导航前置条件。",
+    "AI 不能成为内容可读前置条件。",
+    "私密层不能依赖公开构建保护。",
+    "任何未来能力都必须先声明 fallback。",
+    "fallback 不得访问比原能力更高权限的数据。"
+  ]
+}

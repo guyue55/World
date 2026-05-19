@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 大规模内容策略",
+  "principle": "未来内容可以增长，但页面永远只消费被投影过的必要切片。",
+  "growthStages": [
+    {
+      "stage": "seed",
+      "nodeCount": "0-100",
+      "strategy": "static JSON summaries are enough"
+    },
+    {
+      "stage": "garden",
+      "nodeCount": "100-1000",
+      "strategy": "split public index by type/area/year"
+    },
+    {
+      "stage": "island",
+      "nodeCount": "1000-10000",
+      "strategy": "precomputed search index and paged projections"
+    },
+    {
+      "stage": "archipelago",
+      "nodeCount": "10000+",
+      "strategy": "dedicated indexing pipeline, route-level chunks, optional backend/search provider"
+    }
+  ],
+  "rules": [
+    "列表页永远不读取所有 markdown body。",
+    "搜索索引必须只包含 public/semiPublic 投影。",
+    "关系图必须按视窗、区域或路径分块。",
+    "大规模内容阶段切换必须更新性能预算和缓存策略。",
+    "后端或搜索服务只能作为 provider 引入，不改写核心协议。"
+  ]
+}

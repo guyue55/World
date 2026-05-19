@@ -1,0 +1,77 @@
+{
+  "version": "0.1.0",
+  "principle": "AI 是灯塔，不是太阳。",
+  "allowed": [
+    "summarize public nodes",
+    "suggest tags for reviewed public content",
+    "suggest relations as unreviewed candidates",
+    "guide users through public paths",
+    "explain public world rules",
+    "generate drafts marked as ai.generated=true"
+  ],
+  "forbidden": [
+    "read vault/sealed/silent content",
+    "publish content automatically",
+    "change visibility automatically",
+    "delete or overwrite original content",
+    "index private/family/partner/vault/sealed/silent content",
+    "treat imagination as fact",
+    "create public AI content without review"
+  ],
+  "visibilityAccess": {
+    "public": {
+      "search": true,
+      "summarize": true,
+      "index": true,
+      "recommend": true
+    },
+    "semiPublic": {
+      "search": true,
+      "summarize": true,
+      "index": false,
+      "recommend": false
+    },
+    "private": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    },
+    "family": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    },
+    "partner": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    },
+    "vault": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    },
+    "sealed": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    },
+    "silent": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    }
+  },
+  "draftRules": {
+    "generatedMustMark": true,
+    "publicRequiresReview": true,
+    "relationSuggestionRequiresReview": true,
+    "visibilityChangeRequiresHuman": true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "version": "0.1.0",
+  "principle": "能力先预留插槽，后逐步实现；插槽不是承诺，而是未来不会撞坏骨架的接口。",
+  "slots": [
+    {
+      "id": "creator-console",
+      "phase": "v2",
+      "status": "reserved",
+      "boundary": "must use world protocol registry"
+    },
+    {
+      "id": "rule-engine",
+      "phase": "v2",
+      "status": "reserved",
+      "boundary": "must not bypass governance rules"
+    },
+    {
+      "id": "semantic-search",
+      "phase": "v3",
+      "status": "reserved",
+      "boundary": "public and reviewed content only"
+    },
+    {
+      "id": "ai-draft-zone",
+      "phase": "v3",
+      "status": "reserved",
+      "boundary": "drafts require human approval"
+    },
+    {
+      "id": "private-archive",
+      "phase": "v4",
+      "status": "reserved",
+      "boundary": "not in public build"
+    },
+    {
+      "id": "family-memory",
+      "phase": "v4",
+      "status": "reserved",
+      "boundary": "family visibility only"
+    },
+    {
+      "id": "time-capsule",
+      "phase": "v4",
+      "status": "reserved",
+      "boundary": "sealed until release policy"
+    },
+    {
+      "id": "yearbook",
+      "phase": "v5",
+      "status": "reserved",
+      "boundary": "uses snapshots and reviewed nodes"
+    },
+    {
+      "id": "exhibition",
+      "phase": "v5",
+      "status": "reserved",
+      "boundary": "projection contract required"
+    },
+    {
+      "id": "inheritance-export",
+      "phase": "v5",
+      "status": "reserved",
+      "boundary": "manifest and snapshot required"
+    },
+    {
+      "id": "2.5d-map",
+      "phase": "v6",
+      "status": "reserved",
+      "boundary": "must have non-3D fallback"
+    },
+    {
+      "id": "star-graph",
+      "phase": "v6",
+      "status": "reserved",
+      "boundary": "uses public star graph only by default"
+    },
+    {
+      "id": "web-audio",
+      "phase": "v6",
+      "status": "reserved",
+      "boundary": "optional and accessible"
+    },
+    {
+      "id": "optional-webxr",
+      "phase": "v6",
+      "status": "reserved",
+      "boundary": "never required for core navigation"
+    }
+  ]
+}

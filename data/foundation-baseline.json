@@ -1,0 +1,117 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 世界骨架基线",
+  "principle": "基线不是终点，而是未来所有建设的地平线。",
+  "baselineItems": [
+    {
+      "id": "world-core",
+      "status": "established",
+      "evidence": [
+        "src/lib/world-core.ts",
+        "data/world-protocol-registry.json"
+      ]
+    },
+    {
+      "id": "kernel",
+      "status": "established",
+      "evidence": [
+        "src/lib/world-kernel.ts",
+        "data/world-kernel-manifest.json"
+      ]
+    },
+    {
+      "id": "visibility-boundary",
+      "status": "established",
+      "evidence": [
+        "data/permissions.json",
+        "data/ai-boundary-policy.json"
+      ]
+    },
+    {
+      "id": "projection-contract",
+      "status": "established",
+      "evidence": [
+        "data/projection-contracts.json",
+        "src/lib/projection-contracts.ts"
+      ]
+    },
+    {
+      "id": "schema-versioning",
+      "status": "established",
+      "evidence": [
+        "data/schema-versions.json",
+        "src/lib/schema-version.ts"
+      ]
+    },
+    {
+      "id": "lifecycle",
+      "status": "established",
+      "evidence": [
+        "data/lifecycle-policy.json",
+        "src/lib/lifecycle.ts"
+      ]
+    },
+    {
+      "id": "spatial-protocol",
+      "status": "established",
+      "evidence": [
+        "data/spatial-protocol.json",
+        "src/lib/spatial.ts"
+      ]
+    },
+    {
+      "id": "ontology",
+      "status": "established",
+      "evidence": [
+        "data/world-ontology.json",
+        "src/lib/ontology.ts"
+      ]
+    },
+    {
+      "id": "extension-registry",
+      "status": "established",
+      "evidence": [
+        "data/extension-registry.json",
+        "src/lib/extensions.ts"
+      ]
+    },
+    {
+      "id": "fallback-export",
+      "status": "established",
+      "evidence": [
+        "data/fallback-strategy.json",
+        "data/export-contract.json"
+      ]
+    },
+    {
+      "id": "operations",
+      "status": "established",
+      "evidence": [
+        "data/world-runtime-protocol.json",
+        "data/recovery-playbook.json"
+      ]
+    },
+    {
+      "id": "documentation-kernel",
+      "status": "established",
+      "evidence": [
+        "data/documentation-registry.json",
+        "data/adr-index.json"
+      ]
+    },
+    {
+      "id": "audit-gate",
+      "status": "established",
+      "evidence": [
+        "data/foundation-audit-criteria.json",
+        "data/foundation-certification.json"
+      ]
+    }
+  ],
+  "minimumCommands": [
+    "npm run check:world-core",
+    "npm run check:foundation",
+    "npm run check:audit",
+    "npm run kernel:report"
+  ]
+}

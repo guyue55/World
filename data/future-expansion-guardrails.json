@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "principle": "未来可以无限扩展，但任何扩展都必须经过护栏而不是绕过骨架。",
+  "guardrails": [
+    {
+      "id": "registry-first",
+      "rule": "新增能力必须先登记 extension point 或 capability slot。"
+    },
+    {
+      "id": "fallback-required",
+      "rule": "高级体验必须有 fallback。"
+    },
+    {
+      "id": "privacy-first",
+      "rule": "涉及 private/family/partner/vault/sealed/silent 的扩展必须默认不进入 public build。"
+    },
+    {
+      "id": "ai-reviewed",
+      "rule": "AI 生成、AI 关系、AI 摘要进入公开层前必须可审核。"
+    },
+    {
+      "id": "snapshot-before-breaking",
+      "rule": "schema、visibility、AI boundary、kernel 破坏性变更前必须有 snapshot plan。"
+    },
+    {
+      "id": "docs-required",
+      "rule": "核心协议变化必须同步文档和 ADR。"
+    },
+    {
+      "id": "kernel-check-required",
+      "rule": "任何合并前必须通过 check:world-core。"
+    },
+    {
+      "id": "no-visual-lock-in",
+      "rule": "2.5D/3D/WebXR 不得成为核心导航前置条件。"
+    },
+    {
+      "id": "export-preserved",
+      "rule": "未来传承、导出、快照路径不得被移除。"
+    },
+    {
+      "id": "life-first",
+      "rule": "世界为生活服务，不让生活服务世界。"
+    }
+  ],
+  "appliesTo": [
+    "v1-product",
+    "v1-content",
+    "v2",
+    "v3",
+    "v4",
+    "v5",
+    "v6"
+  ]
+}

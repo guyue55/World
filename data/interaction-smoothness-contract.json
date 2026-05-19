@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 交互流畅度契约",
+  "principle": "流畅不是动画多，而是用户每一步都有即时反馈和稳定布局。",
+  "rules": [
+    {
+      "id": "stable-layout",
+      "description": "页面切换和过滤时避免大幅布局跳动。"
+    },
+    {
+      "id": "instant-feedback",
+      "description": "交互控件应有 hover/focus/active 或 loading 状态。"
+    },
+    {
+      "id": "reduced-motion-ready",
+      "description": "动效应可降级，避免强依赖动画表达信息。"
+    },
+    {
+      "id": "no-blocking-heavy-panel",
+      "description": "重面板不得阻塞核心阅读路径。"
+    },
+    {
+      "id": "mobile-first-hit-area",
+      "description": "移动端触控目标应清晰可点。"
+    },
+    {
+      "id": "empty-and-loading-state",
+      "description": "搜索、筛选、加载都必须有空状态或提示。"
+    },
+    {
+      "id": "progressive-disclosure",
+      "description": "复杂信息分层展示，避免一次性压给用户。"
+    }
+  ],
+  "futureChecks": [
+    "interaction state audit",
+    "reduced motion audit",
+    "mobile tap target audit",
+    "visual stability audit"
+  ]
+}

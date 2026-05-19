@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段最终决策模板",
+  "currentDecision": "not-yet-complete",
+  "decisionReason": "awaiting real local acceptance, browser QA, performance measurement and preview deployment evidence",
+  "summary": {
+    "foundation": "prepared",
+    "architecture": "prepared",
+    "privacyBoundary": "prepared",
+    "performanceContracts": "prepared",
+    "visualQa": "awaiting-real-evidence",
+    "contentProductization": "prepared",
+    "localBuild": "awaiting-real-evidence",
+    "previewDeploy": "awaiting-real-evidence"
+  },
+  "requiredBeforeComplete": [
+    "reports/first-stage-acceptance-report.json passed",
+    "reports/preview-smoke-report.json passed",
+    "browser QA matrix completed",
+    "performance measurement completed",
+    "preview deployment record completed",
+    "blocking defects empty"
+  ],
+  "rules": [
+    "不要把 prepared 当成 complete。",
+    "若 currentDecision 改为 complete，必须同步更新 stage-completion-gate。"
+  ]
+}

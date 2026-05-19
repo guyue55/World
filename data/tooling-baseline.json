@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 工具链基线",
+  "principle": "工具链是地基的一部分，但不能反过来绑架世界。",
+  "runtime": {
+    "node": "20",
+    "packageManager": "npm"
+  },
+  "requiredFiles": [
+    "package.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "postcss.config.mjs",
+    ".gitignore",
+    ".nvmrc"
+  ],
+  "requiredScripts": [
+    "dev",
+    "build",
+    "lint",
+    "lint:fix",
+    "typecheck",
+    "check:world-core",
+    "check:strict",
+    "check:tooling"
+  ],
+  "requiredDevDependencies": [
+    "eslint",
+    "typescript-eslint",
+    "@eslint/js",
+    "eslint-config-next",
+    "autoprefixer",
+    "postcss",
+    "tailwindcss",
+    "tsx",
+    "typescript"
+  ],
+  "rules": [
+    "Next 15 不再依赖 next lint，统一使用 eslint .。",
+    "PostCSS 若声明 autoprefixer，package.json 必须安装 autoprefixer。",
+    "check:strict 必须包含 lint、typecheck 和 world-core 检查。",
+    "工具链修复不得改变世界协议语义。"
+  ]
+}

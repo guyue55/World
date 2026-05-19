@@ -1,0 +1,135 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 多端视觉 QA 清单",
+  "principle": "视觉 QA 不是看起来漂亮，而是每个页面在真实设备上都能稳定使用。",
+  "viewports": [
+    {
+      "id": "mobile-small",
+      "width": 375,
+      "height": 812,
+      "priority": "P0"
+    },
+    {
+      "id": "mobile-large",
+      "width": 430,
+      "height": 932,
+      "priority": "P0"
+    },
+    {
+      "id": "tablet",
+      "width": 768,
+      "height": 1024,
+      "priority": "P0"
+    },
+    {
+      "id": "desktop",
+      "width": 1440,
+      "height": 900,
+      "priority": "P0"
+    },
+    {
+      "id": "wide-desktop",
+      "width": 1920,
+      "height": 1080,
+      "priority": "P1"
+    }
+  ],
+  "routes": [
+    {
+      "route": "/",
+      "mustCheck": [
+        "content fills usable width",
+        "hero not squeezed",
+        "representative nodes visible",
+        "mobile first action visible"
+      ]
+    },
+    {
+      "route": "/atlas",
+      "mustCheck": [
+        "map fallback readable",
+        "area cards wrap cleanly",
+        "no horizontal overflow"
+      ]
+    },
+    {
+      "route": "/archive",
+      "mustCheck": [
+        "filters wrap",
+        "cards readable",
+        "empty state visible",
+        "search input usable"
+      ]
+    },
+    {
+      "route": "/node/[slug]",
+      "mustCheck": [
+        "markdown line length comfortable",
+        "cover image stable",
+        "related nodes not overflowing"
+      ]
+    },
+    {
+      "route": "/paths",
+      "mustCheck": [
+        "path cards clear",
+        "progress visual not cramped",
+        "mobile stack usable"
+      ]
+    },
+    {
+      "route": "/ask",
+      "mustCheck": [
+        "low-light mode readable",
+        "AI boundary clear",
+        "input/control states visible"
+      ]
+    },
+    {
+      "route": "/status",
+      "mustCheck": [
+        "summary first",
+        "panel stack readable",
+        "cards not overly narrow on desktop"
+      ]
+    },
+    {
+      "route": "/skeleton",
+      "mustCheck": [
+        "foundation stack readable",
+        "wide desktop uses space",
+        "mobile panels not cramped"
+      ]
+    },
+    {
+      "route": "/about",
+      "mustCheck": [
+        "identity copy readable",
+        "layout balanced"
+      ]
+    },
+    {
+      "route": "/manifesto",
+      "mustCheck": [
+        "long text readable",
+        "section rhythm stable"
+      ]
+    }
+  ],
+  "knownRisks": [
+    "desktop content squeezed into narrow center while both sides are empty",
+    "navigation active state not matching current route",
+    "tab switch changes content but selected indicator remains stale",
+    "cards or panels do not collapse/expand as expected",
+    "mobile panels become too dense",
+    "heavy status/skeleton panel stack reduces scanability",
+    "image placeholders or missing covers reduce content value"
+  ],
+  "rules": [
+    "桌面端主内容不应长期限制在过窄宽度。",
+    "移动端优先保证可读、可点、可返回。",
+    "导航状态必须由当前 route 派生，不靠手写状态。",
+    "复杂页面优先使用分区、折叠、栈组件，不让 page.tsx 膨胀。",
+    "真实浏览器 QA 结果必须反写到本清单或缺陷台账。"
+  ]
+}

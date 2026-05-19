@@ -1,0 +1,113 @@
+{
+  "version": "0.1.0",
+  "principle": "原则必须能落到检查链路，否则只是口号。",
+  "mappings": [
+    {
+      "principle": "一张书桌连接星河。",
+      "checks": [
+        "check:skeleton",
+        "check:kernel"
+      ],
+      "evidence": [
+        "world-core",
+        "world-kernel"
+      ]
+    },
+    {
+      "principle": "AI 是灯塔，不是太阳。",
+      "checks": [
+        "check:ai-boundary"
+      ],
+      "evidence": [
+        "ai-boundary-policy"
+      ]
+    },
+    {
+      "principle": "公开层不是完整世界。",
+      "checks": [
+        "check:public",
+        "check:kernel"
+      ],
+      "evidence": [
+        "permissions",
+        "export-contract"
+      ]
+    },
+    {
+      "principle": "页面只是投影。",
+      "checks": [
+        "check:projections"
+      ],
+      "evidence": [
+        "projection-contracts",
+        "route-manifest"
+      ]
+    },
+    {
+      "principle": "数据是骨架。",
+      "checks": [
+        "validate:world",
+        "check:contracts"
+      ],
+      "evidence": [
+        "schema-versions",
+        "world-protocol-registry"
+      ]
+    },
+    {
+      "principle": "关系是星线。",
+      "checks": [
+        "check:spatial-ontology"
+      ],
+      "evidence": [
+        "relation-policy"
+      ]
+    },
+    {
+      "principle": "时间是河流。",
+      "checks": [
+        "check:contracts"
+      ],
+      "evidence": [
+        "world-events",
+        "evolution-policy"
+      ]
+    },
+    {
+      "principle": "治理是边界。",
+      "checks": [
+        "check:governance-ledger",
+        "check:foundation"
+      ],
+      "evidence": [
+        "risk-register",
+        "change-admission-policy"
+      ]
+    },
+    {
+      "principle": "互操作是传承。",
+      "checks": [
+        "check:reproducibility"
+      ],
+      "evidence": [
+        "export-contract",
+        "reproducibility-contract"
+      ]
+    },
+    {
+      "principle": "世界为生活服务，不让生活服务世界。",
+      "checks": [
+        "check:operations"
+      ],
+      "evidence": [
+        "maintenance-calendar",
+        "future-expansion-guardrails"
+      ]
+    }
+  ],
+  "rules": [
+    "每个核心原则至少映射一个检查。",
+    "每个核心原则至少映射一个数据或文档证据。",
+    "新增原则必须进入本映射表。"
+  ]
+}

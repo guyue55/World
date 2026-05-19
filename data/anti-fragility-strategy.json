@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "principle": "世界不只要稳定，还要在变更、失败、扩展和降级中变得更清楚。",
+  "strategies": [
+    {
+      "id": "small-deltas",
+      "description": "每次变更保持 delta 包，降低回滚成本。"
+    },
+    {
+      "id": "contract-first",
+      "description": "先定义数据和契约，再堆 UI 和体验。"
+    },
+    {
+      "id": "fallback-first",
+      "description": "高级能力出现前先设计降级路径。"
+    },
+    {
+      "id": "audit-before-growth",
+      "description": "进入下一阶段前先审计地基。"
+    },
+    {
+      "id": "docs-as-kernel",
+      "description": "文档进入检查链路，避免知识失散。"
+    },
+    {
+      "id": "risk-register",
+      "description": "把未来可能破坏世界的风险显性化。"
+    },
+    {
+      "id": "maturity-model",
+      "description": "未来能力分级成熟，避免实验能力变核心依赖。"
+    },
+    {
+      "id": "reproducible-assembly",
+      "description": "地基可重建，避免依赖单次对话。"
+    }
+  ],
+  "rules": [
+    "每次失败应转化为检查或文档。",
+    "每次重大争议应转化为 ADR。",
+    "每次未来扩展应转化为注册点、护栏或成熟度记录。",
+    "每次恢复应转化为恢复路径或维护条目。"
+  ]
+}

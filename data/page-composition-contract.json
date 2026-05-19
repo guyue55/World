@@ -1,0 +1,133 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 页面装配契约",
+  "principle": "页面是装配层，不是领域规则层。",
+  "pageKinds": [
+    {
+      "id": "entrance",
+      "routes": [
+        "/"
+      ],
+      "owns": [
+        "first impression",
+        "primary projections"
+      ],
+      "mustUse": [
+        "metadata",
+        "world shell",
+        "public projection"
+      ]
+    },
+    {
+      "id": "map",
+      "routes": [
+        "/atlas"
+      ],
+      "owns": [
+        "spatial navigation"
+      ],
+      "mustUse": [
+        "spatial protocol",
+        "atlas contract",
+        "fallback list"
+      ]
+    },
+    {
+      "id": "kernel-status",
+      "routes": [
+        "/skeleton",
+        "/status"
+      ],
+      "owns": [
+        "kernel reports",
+        "foundation status"
+      ],
+      "mustUse": [
+        "read-only panels",
+        "registered checks"
+      ]
+    },
+    {
+      "id": "archive",
+      "routes": [
+        "/archive"
+      ],
+      "owns": [
+        "public discovery"
+      ],
+      "mustUse": [
+        "public index",
+        "filters",
+        "empty state"
+      ]
+    },
+    {
+      "id": "path",
+      "routes": [
+        "/paths",
+        "/paths/[id]"
+      ],
+      "owns": [
+        "curated journeys"
+      ],
+      "mustUse": [
+        "path projections",
+        "node visibility"
+      ]
+    },
+    {
+      "id": "node-detail",
+      "routes": [
+        "/node/[slug]"
+      ],
+      "owns": [
+        "node projection"
+      ],
+      "mustUse": [
+        "node projection",
+        "markdown renderer",
+        "visibility filter"
+      ]
+    },
+    {
+      "id": "identity",
+      "routes": [
+        "/about",
+        "/manifesto"
+      ],
+      "owns": [
+        "world identity"
+      ],
+      "mustUse": [
+        "site metadata",
+        "charter copy"
+      ]
+    },
+    {
+      "id": "ai-entry",
+      "routes": [
+        "/ask"
+      ],
+      "owns": [
+        "AI lighthouse entrance"
+      ],
+      "mustUse": [
+        "AI boundary",
+        "low-light fallback"
+      ]
+    }
+  ],
+  "rules": [
+    "page.tsx 只负责页面装配、metadata 和数据投影选择。",
+    "page.tsx 不直接写权限矩阵、不直接遍历私密层。",
+    "复杂页面必须拆成 section/panel/card。",
+    "动态页面必须通过 lib 读取可投影数据。",
+    "页面必须有 fallback 或 empty state。",
+    "未来页面必须先登记 route manifest 和 page kind。"
+  ],
+  "softLimits": {
+    "maxPageImports": 18,
+    "maxPageSections": 8,
+    "maxPageFileLines": 180
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 世界内核",
+  "principle": "内核不负责华丽，内核负责世界能长期成立。",
+  "requiredData": [
+    "world-protocol-registry",
+    "world-manifest",
+    "schema-versions",
+    "areas",
+    "nodes",
+    "relations",
+    "paths",
+    "world-events",
+    "permissions",
+    "rules",
+    "spatial-protocol",
+    "world-ontology",
+    "extension-registry",
+    "fallback-strategy",
+    "export-contract",
+    "compatibility-matrix"
+  ],
+  "requiredChecks": [
+    "validate:world",
+    "check:public",
+    "check:skeleton",
+    "check:invariants",
+    "check:contracts",
+    "check:projections",
+    "check:ai-boundary",
+    "check:extensions",
+    "check:spatial-ontology",
+    "check:kernel"
+  ],
+  "healthThresholds": {
+    "blockingErrors": 0,
+    "minimumAreas": 8,
+    "minimumPublicNodes": 12,
+    "minimumRelations": 6,
+    "minimumPaths": 3,
+    "minimumWorldEvents": 5,
+    "minimumExtensionPoints": 10,
+    "minimumFallbacks": 8
+  }
+}

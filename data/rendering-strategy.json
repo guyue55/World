@@ -1,0 +1,58 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 渲染分层策略",
+  "principle": "先让世界可读，再让世界丰富，再让世界动起来。",
+  "layers": [
+    {
+      "id": "critical-static",
+      "description": "首屏必须静态可读。",
+      "examples": [
+        "home headline",
+        "primary navigation",
+        "representative nodes"
+      ]
+    },
+    {
+      "id": "progressive-content",
+      "description": "内容列表、路径、归档可以分组呈现。",
+      "examples": [
+        "archive cards",
+        "path sections",
+        "timeline"
+      ]
+    },
+    {
+      "id": "interactive-enhancement",
+      "description": "搜索、过滤、面板切换作为增强。",
+      "examples": [
+        "Fuse search",
+        "filter controls",
+        "status panels"
+      ]
+    },
+    {
+      "id": "visual-enhancement",
+      "description": "动画、图谱、空间视觉不进入核心依赖。",
+      "examples": [
+        "atlas visual",
+        "future 2.5d",
+        "star graph"
+      ]
+    },
+    {
+      "id": "future-heavy",
+      "description": "AI、3D、WebXR、音频等必须独立边界。",
+      "examples": [
+        "AI RAG",
+        "WebXR",
+        "web audio"
+      ]
+    }
+  ],
+  "rules": [
+    "critical-static 不依赖客户端重 JS 才可读。",
+    "interactive-enhancement 失败时必须保留静态路径。",
+    "visual-enhancement 不得成为主导航唯一方式。",
+    "future-heavy 必须经过 capability maturity 和 fallback 检查。"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "stages": [
+    {
+      "id": "foundation",
+      "name": "世界骨架阶段",
+      "status": "active",
+      "exitCriteria": [
+        "world kernel exists",
+        "all core data registered",
+        "visibility boundary checked",
+        "AI boundary checked",
+        "extension registry checked",
+        "fallback strategy checked",
+        "export contract checked"
+      ]
+    },
+    {
+      "id": "v1-product",
+      "name": "V1 产品化阶段",
+      "status": "next",
+      "entryCriteria": [
+        "foundation gate passed",
+        "kernel report has zero blocking errors",
+        "public index can be generated",
+        "core routes exist"
+      ]
+    },
+    {
+      "id": "v1-content",
+      "name": "V1 内容种子阶段",
+      "status": "next",
+      "entryCriteria": [
+        "content schema stable",
+        "archive and path projections stable",
+        "seed nodes can be reviewed"
+      ]
+    },
+    {
+      "id": "future-expansion",
+      "name": "未来扩展阶段",
+      "status": "reserved",
+      "entryCriteria": [
+        "extension point registered",
+        "fallback declared",
+        "privacy boundary reviewed"
+      ]
+    }
+  ]
+}

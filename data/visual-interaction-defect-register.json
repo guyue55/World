@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 视觉与交互缺陷登记册",
+  "principle": "真实 QA 发现的问题必须进入缺陷登记，而不是靠记忆处理。",
+  "defects": [
+    {
+      "id": "VIS-001",
+      "status": "watch",
+      "severity": "high",
+      "title": "桌面端内容可能过窄，未充分利用宽屏空间",
+      "source": "prior visual feedback",
+      "affectedRoutes": [
+        "/",
+        "/status",
+        "/skeleton"
+      ],
+      "expectedFix": "使用 layout zone 和 dashboard/content 宽度策略复核页面容器。"
+    },
+    {
+      "id": "INT-001",
+      "status": "watch",
+      "severity": "high",
+      "title": "标签切换内容变化但选中态可能不同步",
+      "source": "prior interaction feedback",
+      "affectedRoutes": [
+        "routes with tabs"
+      ],
+      "expectedFix": "选中态必须由同一状态源驱动，不使用独立手写样式状态。"
+    },
+    {
+      "id": "INT-002",
+      "status": "watch",
+      "severity": "medium",
+      "title": "折叠/展开类模块可能不可点击或缺少反馈",
+      "source": "prior interaction feedback",
+      "affectedRoutes": [
+        "/",
+        "/status",
+        "/skeleton"
+      ],
+      "expectedFix": "折叠组件必须有 aria-expanded、focus、hover、open/close 状态。"
+    },
+    {
+      "id": "CNT-001",
+      "status": "watch",
+      "severity": "medium",
+      "title": "首页缺少有价值配图或真实内容代表性不足",
+      "source": "prior content feedback",
+      "affectedRoutes": [
+        "/"
+      ],
+      "expectedFix": "补真实种子内容和 cover 策略，不使用无意义占位。"
+    }
+  ],
+  "rules": [
+    "真实浏览器复现后，watch 应改为 open 或 closed。",
+    "closed 必须有修复文件或验证说明。",
+    "高严重度缺陷必须优先于新增功能。"
+  ]
+}

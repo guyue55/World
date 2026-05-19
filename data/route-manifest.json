@@ -1,0 +1,117 @@
+{
+  "version": "0.1.0",
+  "principle": "路线不是页面堆叠，而是世界入口投影。",
+  "routes": [
+    {
+      "path": "/",
+      "id": "home",
+      "layer": "projection",
+      "required": true,
+      "fallback": "/archive"
+    },
+    {
+      "path": "/atlas",
+      "id": "atlas",
+      "layer": "space",
+      "required": true,
+      "fallback": "/archive"
+    },
+    {
+      "path": "/skeleton",
+      "id": "skeleton",
+      "layer": "kernel",
+      "required": true,
+      "fallback": "/status"
+    },
+    {
+      "path": "/status",
+      "id": "status",
+      "layer": "operations",
+      "required": true,
+      "fallback": "/skeleton"
+    },
+    {
+      "path": "/archive",
+      "id": "archive",
+      "layer": "content",
+      "required": true,
+      "fallback": "/"
+    },
+    {
+      "path": "/timeline",
+      "id": "timeline",
+      "layer": "time",
+      "required": true,
+      "fallback": "/archive"
+    },
+    {
+      "path": "/paths",
+      "id": "paths",
+      "layer": "projection",
+      "required": true,
+      "fallback": "/archive"
+    },
+    {
+      "path": "/ask",
+      "id": "ask",
+      "layer": "ai-boundary",
+      "required": true,
+      "fallback": "/paths"
+    },
+    {
+      "path": "/about",
+      "id": "about",
+      "layer": "identity",
+      "required": true,
+      "fallback": "/"
+    },
+    {
+      "path": "/manifesto",
+      "id": "manifesto",
+      "layer": "world-charter",
+      "required": true,
+      "fallback": "/about"
+    },
+    {
+      "path": "/node/[slug]",
+      "id": "node-detail",
+      "layer": "content",
+      "required": true,
+      "fallback": "/archive"
+    },
+    {
+      "path": "/paths/[id]",
+      "id": "path-detail",
+      "layer": "projection",
+      "required": true,
+      "fallback": "/paths"
+    },
+    {
+      "path": "/world-index.json",
+      "id": "world-index",
+      "layer": "interoperability",
+      "required": true,
+      "fallback": "/archive"
+    },
+    {
+      "path": "/world-manifest.json",
+      "id": "world-manifest",
+      "layer": "interoperability",
+      "required": true,
+      "fallback": "/"
+    },
+    {
+      "path": "/rss.xml",
+      "id": "rss",
+      "layer": "interoperability",
+      "required": false,
+      "fallback": "/archive"
+    }
+  ],
+  "rules": [
+    "核心入口必须有 fallback。",
+    "世界内核相关入口必须可从导航或状态页抵达。",
+    "JSON 路由只能暴露公开世界索引或公开 manifest。",
+    "动态详情页不得绕过 visibility。"
+  ]
+}

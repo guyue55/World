@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "name": "V1 世界骨架阶段完成证书",
+  "status": "candidate",
+  "scope": [
+    "world core",
+    "data protocol",
+    "visibility boundary",
+    "ai boundary",
+    "projection contract",
+    "extension registry",
+    "spatial protocol",
+    "ontology",
+    "kernel",
+    "operations",
+    "documentation"
+  ],
+  "notIncluded": [
+    "final visual polish",
+    "production deployment",
+    "full content population",
+    "full AI RAG",
+    "admin console",
+    "private online archive",
+    "2.5D/3D experience"
+  ],
+  "exitStatement": "世界骨架阶段的目标不是完成功能宇宙，而是确认未来宇宙可以稳定生长。"
+}

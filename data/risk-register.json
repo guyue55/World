@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 风险登记册",
+  "principle": "风险不是为了制造焦虑，而是为了提前给未来留退路。",
+  "status": "active",
+  "risks": [
+    {
+      "id": "RISK-001",
+      "severity": "high",
+      "title": "公开层泄露私密内容",
+      "mitigation": "AI boundary、projection contracts、preview smoke privacy tokens"
+    },
+    {
+      "id": "RISK-002",
+      "severity": "high",
+      "title": "项目扩展后模块耦合失控",
+      "mitigation": "modular architecture contract、dependency direction、feature boundaries"
+    },
+    {
+      "id": "RISK-003",
+      "severity": "medium",
+      "title": "首页和状态页过重影响首屏",
+      "mitigation": "critical path policy、projection density、performance regression guard"
+    },
+    {
+      "id": "RISK-004",
+      "severity": "medium",
+      "title": "抽象协议过多但真实体验不足",
+      "mitigation": "content productization、visual QA、phase two backlog"
+    },
+    {
+      "id": "RISK-005",
+      "severity": "medium",
+      "title": "阶段完成被提前宣布",
+      "mitigation": "final closure report、stage completion transition guard"
+    },
+    {
+      "id": "RISK-006",
+      "severity": "medium",
+      "title": "未来重构破坏世界协议",
+      "mitigation": "foundation freeze manifest、ADR、migration plan"
+    }
+  ],
+  "rules": [
+    "高风险项必须有可执行 mitigation。",
+    "风险状态变化必须进入治理台账。",
+    "风险关闭必须有证据。"
+  ]
+}

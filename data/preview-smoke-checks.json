@@ -1,0 +1,106 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 预览部署冒烟检查",
+  "principle": "预览环境要先证明世界入口、安全边界和公开端点可用。",
+  "env": {
+    "baseUrl": "GUYUE_PREVIEW_URL"
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "required": true,
+      "expect": [
+        "古月浮屿"
+      ]
+    },
+    {
+      "id": "atlas",
+      "path": "/atlas",
+      "required": true,
+      "expect": []
+    },
+    {
+      "id": "archive",
+      "path": "/archive",
+      "required": true,
+      "expect": []
+    },
+    {
+      "id": "paths",
+      "path": "/paths",
+      "required": true,
+      "expect": []
+    },
+    {
+      "id": "ask",
+      "path": "/ask",
+      "required": true,
+      "expect": []
+    },
+    {
+      "id": "status",
+      "path": "/status",
+      "required": true,
+      "expect": []
+    },
+    {
+      "id": "skeleton",
+      "path": "/skeleton",
+      "required": true,
+      "expect": []
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "required": false,
+      "expect": []
+    },
+    {
+      "id": "manifesto",
+      "path": "/manifesto",
+      "required": false,
+      "expect": []
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "world-index",
+      "path": "/world-index.json",
+      "required": true,
+      "contentType": "application/json"
+    },
+    {
+      "id": "world-manifest",
+      "path": "/world-manifest.json",
+      "required": true,
+      "contentType": "application/json"
+    },
+    {
+      "id": "rss",
+      "path": "/rss.xml",
+      "required": false,
+      "contentType": "xml"
+    },
+    {
+      "id": "sitemap",
+      "path": "/sitemap.xml",
+      "required": false,
+      "contentType": "xml"
+    }
+  ],
+  "privacyForbiddenTokens": [
+    "vault",
+    "sealed",
+    "partner",
+    "privateSourceOf",
+    "silent"
+  ],
+  "rules": [
+    "核心路由必须返回 2xx。",
+    "公开 JSON 端点必须存在且可解析。",
+    "公开端点不得泄露私密层 token。",
+    "冒烟检查通过不等于视觉 QA 通过。",
+    "失败结果必须回写真实执行证据台账。"
+  ]
+}

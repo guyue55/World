@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段完成证书模板",
+  "principle": "完成证书是阶段交接凭证，不是宣传文案。",
+  "fields": [
+    "generatedAt",
+    "stage",
+    "decision",
+    "sourceReport",
+    "evidenceSummary",
+    "completedDomains",
+    "deferredItems",
+    "nextStageEntry",
+    "signature"
+  ],
+  "defaultStage": "V1 第一阶段｜世界骨架与地基夯实",
+  "nextStageEntry": "V1 第二阶段｜真实内容产品化、视觉体验和发布迭代",
+  "signature": "古月浮屿工程守门"
+}

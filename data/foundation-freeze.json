@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "name": "V1 世界骨架冻结线",
+  "principle": "冻结的是骨架底线，不是未来想象力。",
+  "frozen": [
+    "core object names",
+    "visibility boundary",
+    "world layer model",
+    "public/private separation",
+    "AI boundary principle",
+    "schema versioning requirement",
+    "world event contract",
+    "snapshot-before-breaking-change rule",
+    "fallback-before-advanced-experience rule",
+    "extension registry requirement"
+  ],
+  "flexible": [
+    "visual style",
+    "copywriting",
+    "component layout",
+    "additional optional fields",
+    "additional public nodes",
+    "additional paths",
+    "future capability slots",
+    "non-breaking projections"
+  ],
+  "changeRequires": {
+    "frozen": [
+      "snapshot plan",
+      "migration note",
+      "world event",
+      "human review",
+      "check:world-core"
+    ],
+    "flexible": [
+      "basic check",
+      "changelog"
+    ]
+  }
+}

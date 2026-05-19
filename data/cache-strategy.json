@@ -1,0 +1,48 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 静态缓存与再生成策略",
+  "principle": "静态优先不是静止不动，而是让变化以可控成本进入世界。",
+  "strategies": [
+    {
+      "id": "content-json",
+      "target": "data/*.json",
+      "strategy": "build-time read, deterministic output"
+    },
+    {
+      "id": "public-index",
+      "target": "public/world-index.json",
+      "strategy": "generated, cacheable, public-only"
+    },
+    {
+      "id": "world-manifest",
+      "target": "public/world-manifest.json",
+      "strategy": "generated, cacheable, versioned"
+    },
+    {
+      "id": "rss",
+      "target": "rss.xml",
+      "strategy": "generated from public nodes"
+    },
+    {
+      "id": "sitemap",
+      "target": "sitemap",
+      "strategy": "generated from public routes"
+    },
+    {
+      "id": "markdown",
+      "target": "content/**/*.md",
+      "strategy": "parsed on build or detail projection"
+    },
+    {
+      "id": "future-search-index",
+      "target": "search index",
+      "strategy": "split by public projection when archive grows"
+    }
+  ],
+  "rules": [
+    "缓存对象必须来自公开投影或公开 manifest。",
+    "私密层不得生成公开缓存。",
+    "生成物必须可删除后重建。",
+    "缓存策略变化必须进入可复现契约或构建文档。"
+  ]
+}

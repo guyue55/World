@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "principle": "世界为生活服务，不让生活服务世界；维护必须轻量、规律、可停止。",
+  "cadence": [
+    {
+      "id": "weekly",
+      "tasks": [
+        "run check:world-core",
+        "review warnings",
+        "review new nodes"
+      ]
+    },
+    {
+      "id": "monthly",
+      "tasks": [
+        "create snapshot plan if needed",
+        "review relations",
+        "review docs registry"
+      ]
+    },
+    {
+      "id": "quarterly",
+      "tasks": [
+        "review foundation gate",
+        "review compatibility matrix",
+        "review extension slots"
+      ]
+    },
+    {
+      "id": "before-major-change",
+      "tasks": [
+        "create snapshot plan",
+        "update ADR",
+        "run check:foundation"
+      ]
+    }
+  ],
+  "rules": [
+    "没有新增内容时也可以不维护。",
+    "维护节奏服务于生活，不反过来支配生活。",
+    "重大变更才需要完整流程。",
+    "warning 可以排期，但 error 必须修。"
+  ]
+}

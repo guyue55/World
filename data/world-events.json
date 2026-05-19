@@ -1,0 +1,82 @@
+[
+  {
+    "id": "evt-001",
+    "type": "world-concept-formed",
+    "title": "古月浮屿的世界观开始形成",
+    "date": "2026-05-19",
+    "description": "一个普通博客的设想被重构为个人数字世界。",
+    "nodeIds": [
+      "node-world-manifesto"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-002",
+    "type": "principle-created",
+    "title": "AI 是灯塔，不是太阳",
+    "date": "2026-05-19",
+    "description": "AI 被限定为照亮、整理和导览，而不是替造物主选择道路。",
+    "nodeIds": [
+      "node-ai-lighthouse"
+    ],
+    "areaIds": [
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-003",
+    "type": "principle-created",
+    "title": "宇宙感不是 3D",
+    "date": "2026-05-19",
+    "description": "数字宇宙的核心被定义为空间、时间、关系、法则与长期存在，而不是过早 3D 化。",
+    "nodeIds": [
+      "node-digital-universe"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-004",
+    "type": "area-awakened",
+    "title": "第一张世界地图被点亮",
+    "date": "2026-05-19",
+    "description": "创世原点、技术星域、产品工坊、灵感云层、记忆湖、时间河、档案馆和 AI 灯塔被安放。",
+    "areaIds": [
+      "origin",
+      "tech",
+      "workshop",
+      "fragments",
+      "memory",
+      "timeline",
+      "archive",
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-005",
+    "type": "node-created",
+    "title": "第一批节点被安放",
+    "date": "2026-05-19",
+    "description": "V1 首批公开节点进入世界，用于验证首页、地图、档案馆、时间河和路径。",
+    "visibility": "public",
+    "actor": "system",
+    "nodeIds": [
+      "node-world-manifesto",
+      "node-digital-universe",
+      "node-ai-lighthouse",
+      "node-no-ai",
+      "node-world-space"
+    ]
+  }
+]

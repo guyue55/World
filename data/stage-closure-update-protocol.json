@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 阶段完成状态更新协议",
+  "principle": "只有证据完整时，状态才能从 not-yet-complete 改为 complete。",
+  "from": "not-yet-complete",
+  "to": "complete",
+  "requiredEvidence": [
+    "reports/first-stage-acceptance-report.json",
+    "data/real-execution-evidence-ledger.json all required records passed or explicitly deferred",
+    "data/performance-measurement-records.json measured or documented",
+    "data/browser-qa-records.json completed for P0 viewports/routes",
+    "data/visual-interaction-defect-register.json no open P0/P1 blocking defects",
+    "preview deployment URL recorded",
+    "CHECK_REPORT.md updated"
+  ],
+  "updateTargets": [
+    "data/stage-completion-gate.json",
+    "data/phase-one-completion-matrix.json",
+    "CHANGELOG.md",
+    "CHECK_REPORT.md"
+  ],
+  "rules": [
+    "不得只因为脚本通过就宣布完成。",
+    "不得在预览部署前宣布完成。",
+    "若有延期项，必须说明影响范围和下一阶段承接位置。",
+    "状态更新必须作为单独 delta 提交。"
+  ]
+}

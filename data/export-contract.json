@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "principle": "世界必须可导出、可迁移、可重建。",
+  "bundles": [
+    {
+      "id": "public-world",
+      "description": "公开世界导出包。",
+      "include": [
+        "data/world-index.json",
+        "data/world-manifest.json",
+        "content/public",
+        "README.md"
+      ],
+      "excludeVisibility": [
+        "private",
+        "family",
+        "partner",
+        "vault",
+        "sealed",
+        "silent"
+      ]
+    },
+    {
+      "id": "source-world",
+      "description": "造物主源码与内容包。",
+      "include": [
+        "data/",
+        "content/",
+        "docs/",
+        "src/",
+        "scripts/",
+        "package.json"
+      ],
+      "excludeVisibility": []
+    },
+    {
+      "id": "archive-snapshot",
+      "description": "历史快照与恢复包。",
+      "include": [
+        "data/",
+        "content/",
+        "docs/00-overview/",
+        "docs/01-world/",
+        "docs/05-engineering/"
+      ],
+      "excludeVisibility": []
+    }
+  ],
+  "rules": [
+    "public-world 不得包含私密 visibility。",
+    "source-world 仅供造物主掌控。",
+    "archive-snapshot 应与 schema version 绑定。",
+    "导出包必须包含 manifest。",
+    "未来传承系统不得绕过 visibility。"
+  ]
+}

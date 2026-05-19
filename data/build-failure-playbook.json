@@ -1,0 +1,116 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 构建失败处置手册",
+  "principle": "构建失败不是中断，而是把隐性风险变成可修复任务。",
+  "failureTypes": [
+    {
+      "id": "dependency-install-fail",
+      "symptoms": [
+        "npm install fails",
+        "peer dependency conflict"
+      ],
+      "firstActions": [
+        "record package/version",
+        "do not downgrade blindly",
+        "check package.json baseline"
+      ]
+    },
+    {
+      "id": "eslint-fail",
+      "symptoms": [
+        "lint errors",
+        "unused vars",
+        "next/core-web-vitals"
+      ],
+      "firstActions": [
+        "fix source if structural",
+        "avoid blanket disable",
+        "document intentional exception"
+      ]
+    },
+    {
+      "id": "typecheck-fail",
+      "symptoms": [
+        "TS compile errors",
+        "json module typing",
+        "Next route params"
+      ],
+      "firstActions": [
+        "fix types at lib boundary",
+        "avoid any unless justified",
+        "check dynamic route signature"
+      ]
+    },
+    {
+      "id": "world-core-fail",
+      "symptoms": [
+        "contract check fails",
+        "missing registry",
+        "privacy boundary issue"
+      ],
+      "firstActions": [
+        "fix data contract",
+        "update docs registry",
+        "do not bypass guard"
+      ]
+    },
+    {
+      "id": "next-build-fail",
+      "symptoms": [
+        "static generation error",
+        "metadata error",
+        "route import error"
+      ],
+      "firstActions": [
+        "identify route",
+        "move logic to lib",
+        "fix page composition"
+      ]
+    },
+    {
+      "id": "preview-fail",
+      "symptoms": [
+        "404",
+        "asset missing",
+        "JSON endpoint missing"
+      ],
+      "firstActions": [
+        "compare local build",
+        "check route manifest",
+        "check public generated files"
+      ]
+    },
+    {
+      "id": "performance-fail",
+      "symptoms": [
+        "slow LCP",
+        "large JS",
+        "layout shift"
+      ],
+      "firstActions": [
+        "check critical path",
+        "split heavy component",
+        "defer visual enhancement"
+      ]
+    },
+    {
+      "id": "visual-qa-fail",
+      "symptoms": [
+        "desktop too narrow",
+        "mobile cramped",
+        "state mismatch"
+      ],
+      "firstActions": [
+        "update defect register",
+        "fix layout zone",
+        "validate route state"
+      ]
+    }
+  ],
+  "rules": [
+    "先定位失败类型，再修复。",
+    "不要为了通过构建删除守门脚本。",
+    "不要为了通过 lint 牺牲模块边界。",
+    "失败修复后必须补 CHECK_REPORT。"
+  ]
+}
