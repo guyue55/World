@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "治理强化阶段收口",
+  "batch": 20,
+  "stage": 5,
+  "stageName": "生产级观测、成本、安全与治理强化",
+  "stageProgress": "V5 / 第 5 阶段 / 第 20 批 / 共 24 批",
+  "slug": "governance-final",
+  "status": "complete",
+  "goals": [
+    "收束治理强化阶段",
+    "观测/成本/安全/恢复方案完整",
+    "V5 平台可持续"
+  ],
+  "outputs": [
+    "GovernanceFinal"
+  ],
+  "mustKeep": [
+    "recovery plan"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-observability-governance",
+    "dataDirectory": "data/v5/stage-05",
+    "docsDirectory": "docs/51-v5/stage-05",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

@@ -1,0 +1,30 @@
+{
+  "version": "5.0.0",
+  "name": "联邦世界模型",
+  "batch": 5,
+  "stage": 2,
+  "stageName": "联邦世界协议与跨世界连接",
+  "stageProgress": "V5 / 第 2 阶段 / 第 5 批 / 共 24 批",
+  "slug": "federated-world-model",
+  "status": "complete",
+  "goals": [
+    "定义联邦世界模型",
+    "多世界实例与信任策略",
+    "世界间边界隔离"
+  ],
+  "outputs": [
+    "FederatedWorld",
+    "WorldEndpoint",
+    "WorldTrustPolicy"
+  ],
+  "mustKeep": [
+    "trust policy required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-federation",
+    "dataDirectory": "data/v5/stage-02",
+    "docsDirectory": "docs/51-v5/stage-02",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

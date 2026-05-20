@@ -1,0 +1,44 @@
+{
+  "version": "5.0.0",
+  "name": "古月浮屿 V5 到 V6 前最终收口报告",
+  "createdAt": "2026-05-20T08:24:29Z",
+  "completedLine": "v5-to-v6-full-structure-and-local-engineering",
+  "completedStages": 6,
+  "completedBatches": 24,
+  "v5Status": "local-engineering-ready",
+  "v6PlanningAllowed": true,
+  "v6FormalDevelopmentAllowed": true,
+  "releaseReady": true,
+  "productionLive": false,
+  "completedCapabilities": [
+    "V5 scope and V4 evidence inheritance",
+    "federated world model and cross-world references",
+    "world sync and conflict policy",
+    "agent registry and orchestration protocol",
+    "runtime task queue",
+    "plugin catalog and install sandbox",
+    "external ecosystem adapters",
+    "observability center",
+    "cost and budget governance",
+    "security privacy upgrade",
+    "world migration and import/export",
+    "V5 release candidate gate",
+    "V6 entry candidate map",
+    "V5 real implementation minimum proof"
+  ],
+  "commandEvidence": "data/v5/v5-real-command-results.json",
+  "externalStillRequiredForProductionLive": [
+    "real staging/production deployment",
+    "target browser and device smoke test",
+    "manual security and privacy owner signoff",
+    "real external service credentials and integration smoke"
+  ],
+  "rules": [
+    "V5 local engineering gates passed.",
+    "V6 formal development may start from this local engineering baseline.",
+    "productionLive remains false until external deploy and manual signoff.",
+    "Agents cannot publish without owner approval.",
+    "Plugins cannot install without approved review and owner approval.",
+    "Cross-world references cannot include private raw vault content."
+  ]
+}

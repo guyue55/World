@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "世界迁移与导入导出",
+  "batch": 21,
+  "stage": 6,
+  "stageName": "V5 收口、世界迁移能力与 V6 入口门禁",
+  "stageProgress": "V5 / 第 6 阶段 / 第 21 批 / 共 24 批",
+  "slug": "world-migration-export-import",
+  "status": "complete",
+  "goals": [
+    "定义世界迁移能力",
+    "V4->V5 upgrade",
+    "导入导出与 checksum"
+  ],
+  "outputs": [
+    "WorldMigrationPlan",
+    "ExportSnapshot"
+  ],
+  "mustKeep": [
+    "compatibility matrix"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-migration-v6-gate",
+    "dataDirectory": "data/v5/stage-06",
+    "docsDirectory": "docs/51-v5/stage-06",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "成本治理与预算中心",
+  "batch": 18,
+  "stage": 5,
+  "stageName": "生产级观测、成本、安全与治理强化",
+  "stageProgress": "V5 / 第 5 阶段 / 第 18 批 / 共 24 批",
+  "slug": "cost-budget-center",
+  "status": "complete",
+  "goals": [
+    "建立成本治理",
+    "预算、台账、预警、预测",
+    "高成本动作人工确认"
+  ],
+  "outputs": [
+    "BudgetPolicy",
+    "CostLedger"
+  ],
+  "mustKeep": [
+    "budget alert"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-observability-governance",
+    "dataDirectory": "data/v5/stage-05",
+    "docsDirectory": "docs/51-v5/stage-05",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

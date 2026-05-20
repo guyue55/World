@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "V5 Release Candidate Gate",
+  "batch": 22,
+  "stage": 6,
+  "stageName": "V5 收口、世界迁移能力与 V6 入口门禁",
+  "stageProgress": "V5 / 第 6 阶段 / 第 22 批 / 共 24 批",
+  "slug": "v5-release-candidate-gate",
+  "status": "complete",
+  "goals": [
+    "建立 V5 RC 门禁",
+    "check:v5:all/lint/typecheck/build/security",
+    "插件/Agent/联邦/迁移证明"
+  ],
+  "outputs": [
+    "V5ReleaseCandidateGate"
+  ],
+  "mustKeep": [
+    "all local gates"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-migration-v6-gate",
+    "dataDirectory": "data/v5/stage-06",
+    "docsDirectory": "docs/51-v5/stage-06",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

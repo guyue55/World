@@ -1,0 +1,34 @@
+{
+  "version": "5.0.0",
+  "name": "V5 最终收口",
+  "batch": 24,
+  "stage": 6,
+  "stageName": "V5 收口、世界迁移能力与 V6 入口门禁",
+  "stageProgress": "V5 / 第 6 阶段 / 第 24 批 / 共 24 批",
+  "slug": "v5-final-closure",
+  "status": "complete-local-engineering-ready",
+  "goals": [
+    "最终收口 V5",
+    "允许 V6 规划",
+    "生产仍需外部部署与签收"
+  ],
+  "outputs": [
+    "V5FinalClosure"
+  ],
+  "mustKeep": [
+    "v6PlanningAllowed=true"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-migration-v6-gate",
+    "dataDirectory": "data/v5/stage-06",
+    "docsDirectory": "docs/51-v5/stage-06",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false,
+  "completedBatches": 24,
+  "v5Status": "local-engineering-ready",
+  "v6PlanningAllowed": true,
+  "v6FormalDevelopmentAllowed": true,
+  "releaseReady": true,
+  "localEngineeringReady": true
+}
