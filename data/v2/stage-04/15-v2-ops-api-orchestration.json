@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "stage": 4,
+  "batch": 15,
+  "totalBatches": 20,
+  "name": "运营 API 与任务编排",
+  "stageProgress": "V2 / 第 4 阶段：AI 服务化与运营 API / 第 15 批 / 共 20 批",
+  "status": "prepared",
+  "apis": [
+    "/api/v2/content",
+    "/api/v2/vault",
+    "/api/v2/audit",
+    "/api/v2/ai/suggestions",
+    "/api/v2/export/jobs",
+    "/api/v2/ops/tasks"
+  ],
+  "taskTypes": [
+    "quality-patrol",
+    "content-calendar",
+    "export-run",
+    "backup-check",
+    "release-gate"
+  ],
+  "ready": false,
+  "rules": [
+    "AI 服务只产生可审计建议，不自动发布。",
+    "私密内容进入 AI 前必须经过显式授权与脱敏。",
+    "运营 API 必须进入 RBAC、AuditEvent 与 rate limit。"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "stage": 4,
+  "batch": 13,
+  "totalBatches": 20,
+  "name": "AI 服务适配与 Provider 边界",
+  "stageProgress": "V2 / 第 4 阶段：AI 服务化与运营 API / 第 13 批 / 共 20 批",
+  "status": "prepared",
+  "providers": [
+    "openai-compatible",
+    "google-vertex",
+    "local-adapter",
+    "mock-adapter"
+  ],
+  "adapterRules": [
+    "no key in client",
+    "audit prompt metadata",
+    "redact private content",
+    "human approval for publish"
+  ],
+  "ready": false,
+  "rules": [
+    "AI 服务只产生可审计建议，不自动发布。",
+    "私密内容进入 AI 前必须经过显式授权与脱敏。",
+    "运营 API 必须进入 RBAC、AuditEvent 与 rate limit。"
+  ]
+}

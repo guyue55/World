@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "stage": 2,
+  "batch": 8,
+  "totalBatches": 20,
+  "name": "审计事件与证据基础",
+  "stageProgress": "V2 / 第 2 阶段：数据认证权限审计 / 第 8 批 / 共 20 批",
+  "status": "prepared",
+  "events": [
+    "auth.login",
+    "content.create",
+    "content.publish",
+    "vault.accessDenied",
+    "permission.change",
+    "ai.suggestion.accepted",
+    "export.created",
+    "release.signoff"
+  ],
+  "decision": "v2-data-auth-rbac-audit-structure-complete-stage-three-allowed",
+  "ready": false,
+  "rules": [
+    "身份、权限、审计是 V2 服务化最小闭环。",
+    "vault 权限默认拒绝，必须显式授权。",
+    "所有关键写操作必须生成 AuditEvent。"
+  ]
+}

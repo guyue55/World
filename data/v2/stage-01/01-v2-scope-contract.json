@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "stage": 1,
+  "batch": 1,
+  "totalBatches": 20,
+  "name": "V2 范围契约与版本原则",
+  "stageProgress": "V2 / 第 1 阶段：平台服务架构 / 第 1 批 / 共 20 批",
+  "status": "prepared",
+  "principle": "V2 从静态优先的个人数字世界升级为服务化、可治理、可审计的平台系统。",
+  "focus": [
+    "backend api",
+    "identity",
+    "rbac",
+    "audit",
+    "storage",
+    "private vault",
+    "ai service adapter",
+    "admin console"
+  ],
+  "nonGoals": [
+    "replace V1 release evidence",
+    "claim production live",
+    "store secrets in repo",
+    "expose private content"
+  ],
+  "ready": false,
+  "rules": [
+    "V2 不继承 V1 的 release-ready 状态。",
+    "所有服务化能力必须保留审计与人工治理边界。",
+    "私密档案服务必须独立隔离。"
+  ]
+}

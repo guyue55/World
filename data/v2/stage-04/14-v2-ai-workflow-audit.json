@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "stage": 4,
+  "batch": 14,
+  "totalBatches": 20,
+  "name": "AI 工作流与建议审计",
+  "stageProgress": "V2 / 第 4 阶段：AI 服务化与运营 API / 第 14 批 / 共 20 批",
+  "status": "prepared",
+  "workflows": [
+    "content-outline",
+    "review-assist",
+    "path-suggestion",
+    "exhibition-curation",
+    "maintenance-reminder",
+    "risk-warning"
+  ],
+  "approvalStates": [
+    "suggested",
+    "reviewing",
+    "accepted",
+    "rejected",
+    "expired"
+  ],
+  "ready": false,
+  "rules": [
+    "AI 服务只产生可审计建议，不自动发布。",
+    "私密内容进入 AI 前必须经过显式授权与脱敏。",
+    "运营 API 必须进入 RBAC、AuditEvent 与 rate limit。"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "version": "2.1.0",
+  "name": "V2.1 真实服务基础层",
+  "stageProgress": "V2.1 / 第 1 批 / 共 4 批",
+  "status": "service-foundation-implemented",
+  "capabilities": [
+    "typed service context",
+    "RBAC permission guard",
+    "audit recorder",
+    "in-memory repository adapter",
+    "safe API response helpers",
+    "private vault deny-by-default boundary"
+  ],
+  "ready": false,
+  "rules": [
+    "服务基础层可以本地运行，但还没有接入真实数据库。",
+    "私密档案默认拒绝非 owner 访问。",
+    "所有写动作必须生成审计事件。",
+    "V3 入口不得绕过 V2.1 的服务边界。"
+  ]
+}

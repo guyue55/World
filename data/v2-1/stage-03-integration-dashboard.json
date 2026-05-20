@@ -1,0 +1,21 @@
+{
+  "version": "2.1.0",
+  "name": "V2.1 集成控制台与门禁",
+  "stageProgress": "V2.1 / 第 3 批 / 共 4 批",
+  "status": "integration-dashboard-implemented",
+  "dashboardRoute": "/v2-console",
+  "checks": [
+    "service foundation",
+    "api routes",
+    "rbac deny-by-default",
+    "audit event wiring",
+    "vault privacy boundary",
+    "ai no-autopublish"
+  ],
+  "ready": false,
+  "rules": [
+    "控制台只展示服务边界状态，不替代真实数据库。",
+    "进入 V3 前必须保留 V2.1 权限与审计边界。",
+    "AI 不自动发布，Vault 不自动公开。"
+  ]
+}

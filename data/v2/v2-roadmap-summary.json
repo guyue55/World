@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "name": "古月浮屿 V2 路线图总览",
+  "completedStages": 5,
+  "completedBatches": 20,
+  "stageNames": [
+    "平台服务架构",
+    "数据认证权限审计",
+    "后台档案导出",
+    "AI 服务化与运营 API",
+    "生产化迁移收口"
+  ],
+  "decision": "v2-structure-complete-v2-1-real-implementation-pending",
+  "v2Status": "structure-complete",
+  "productionStatus": "not-live",
+  "releaseReady": false,
+  "nextVersion": "V2.1",
+  "nextVersionFocus": [
+    "real backend implementation",
+    "database schema and migrations",
+    "auth provider integration",
+    "RBAC enforcement",
+    "audit storage",
+    "private vault service implementation",
+    "AI adapter implementation",
+    "staging deployment evidence"
+  ],
+  "rules": [
+    "V2 完成的是服务化平台结构，不是真实后端上线。",
+    "V2.1 应进入真实实现，而不是继续扩结构。",
+    "V1 发布修复线仍可独立保留。"
+  ]
+}

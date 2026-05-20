@@ -1,0 +1,20 @@
+{
+  "version": "2.1.0",
+  "name": "V2.1 真实 API 路由层",
+  "stageProgress": "V2.1 / 第 2 批 / 共 4 批",
+  "status": "api-routes-implemented",
+  "routes": [
+    "/api/v2/content",
+    "/api/v2/vault",
+    "/api/v2/audit",
+    "/api/v2/ai/suggestions",
+    "/api/v2/export/jobs"
+  ],
+  "ready": false,
+  "rules": [
+    "API route 已具备本地 handler，但仍使用内存仓储。",
+    "vault route 默认拒绝非 owner。",
+    "所有关键访问必须返回 audit 片段。",
+    "AI suggestions 不自动发布内容。"
+  ]
+}
