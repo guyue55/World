@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 运营助手计划",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 1 / 4",
+  "status": "ai-ops-assistant-plan-prepared",
+  "assistantReady": false,
+  "capabilities": [
+    {
+      "id": "topic-planning",
+      "title": "选题建议",
+      "output": "suggestion-only",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "content-review-support",
+      "title": "内容复核辅助",
+      "output": "review-hints",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "ops-reminder",
+      "title": "运营提醒",
+      "output": "reminder-only",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "quality-patrol",
+      "title": "质量巡检",
+      "output": "audit-report",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "insight-summary",
+      "title": "长期洞察摘要",
+      "output": "summary-only",
+      "humanReviewRequired": true
+    }
+  ],
+  "forbiddenActions": [
+    "auto-publish",
+    "auto-delete",
+    "auto-change-visibility",
+    "auto-export-private",
+    "auto-reply-sensitive-feedback",
+    "auto-claim-release-ready"
+  ],
+  "rules": [
+    "assistantReady=false 必须保持，直到真实 AI 集成与人工确认流完成。",
+    "所有能力均为 suggestion/review/reminder/report/summary，不执行发布动作。",
+    "敏感反馈不得自动回复。",
+    "AI 运营助手不得读取私密档案。"
+  ]
+}

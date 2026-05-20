@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 个人品牌系统",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 1 / 4",
+  "status": "brand-system-prepared",
+  "brandEssence": "一张书桌连接星河。",
+  "positioning": "一个以真实生活、技术思考、AI 协作和个人世界建造为核心的长期数字世界。",
+  "voice": [
+    "真诚",
+    "克制",
+    "有东方审美",
+    "技术但不冰冷",
+    "生活但不松散",
+    "长期主义"
+  ],
+  "visualKeywords": [
+    "真实星空",
+    "浮岛",
+    "书桌",
+    "光雾",
+    "东方留白",
+    "温润科技"
+  ],
+  "contentBoundaries": [
+    "不暴露私密档案",
+    "不消费家庭/伴侣/孩子内容",
+    "不让 AI 自动发布",
+    "不为流量牺牲世界一致性"
+  ]
+}

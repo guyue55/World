@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 长期可持续治理计划",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 3 / 4",
+  "status": "sustainability-plan-prepared",
+  "sustainabilityReady": false,
+  "tracks": [
+    {
+      "id": "maintenance-budget",
+      "title": "维护预算",
+      "cadence": "quarterly"
+    },
+    {
+      "id": "dependency-review",
+      "title": "依赖复查",
+      "cadence": "monthly"
+    },
+    {
+      "id": "security-review",
+      "title": "安全复查",
+      "cadence": "monthly"
+    },
+    {
+      "id": "content-health",
+      "title": "内容健康度",
+      "cadence": "monthly"
+    },
+    {
+      "id": "backup-recovery-drill",
+      "title": "备份恢复演练",
+      "cadence": "quarterly"
+    },
+    {
+      "id": "governance-retrospective",
+      "title": "治理复盘",
+      "cadence": "quarterly"
+    }
+  ],
+  "rules": [
+    "sustainabilityReady=false 必须保持，直到真实运营机制建立。",
+    "长期可持续必须覆盖工程、内容、安全、备份和治理。",
+    "依赖升级必须可回滚。",
+    "安全复查必须覆盖密钥与私密边界。"
+  ]
+}

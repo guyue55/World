@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 服务边界设计",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 1 / 4",
+  "status": "service-boundary-prepared",
+  "serviceBoundaryReady": false,
+  "services": [
+    {
+      "id": "public-site",
+      "title": "公开站点",
+      "dataScope": "public",
+      "state": "static-ready"
+    },
+    {
+      "id": "operator-console",
+      "title": "运营控制台",
+      "dataScope": "metadata-only",
+      "state": "planned-service"
+    },
+    {
+      "id": "approval-service",
+      "title": "审批服务",
+      "dataScope": "metadata-only",
+      "state": "planned-service"
+    },
+    {
+      "id": "evidence-service",
+      "title": "证据服务",
+      "dataScope": "metadata-only",
+      "state": "planned-service"
+    },
+    {
+      "id": "private-vault-service",
+      "title": "私密档案服务",
+      "dataScope": "private-encrypted",
+      "state": "future-service"
+    },
+    {
+      "id": "analytics-service",
+      "title": "分析服务",
+      "dataScope": "public-aggregate",
+      "state": "planned-service"
+    }
+  ],
+  "rules": [
+    "serviceBoundaryReady=false 必须保持，直到真实服务拆分实现。",
+    "private-vault-service 必须独立隔离，不进入 public build。",
+    "analytics-service 只能读取公开聚合数据。",
+    "approval/evidence 服务不得保存私密正文。"
+  ]
+}

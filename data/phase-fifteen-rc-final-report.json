@@ -1,0 +1,64 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十五阶段真实命令执行与 Release Candidate 线最终报告",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 4 / 4",
+  "decision": "phase-fifteen-rc-preparation-structure-complete-real-release-not-ready",
+  "releaseDecision": "not-ready-for-release",
+  "productionDecision": "production-not-live",
+  "rcDecision": "release-candidate-structure-prepared-real-command-pass-not-complete",
+  "completedBatches": [
+    "rc-scope-and-eslint-blocker-fix-plan",
+    "real-command-attempts-and-result-summary",
+    "rc-evidence-package-and-manifest",
+    "phase-fifteen-closure"
+  ],
+  "completedCapabilities": [
+    "phase fifteen RC scope contract",
+    "release candidate plan",
+    "dependency eslint blocker fix plan",
+    "real command execution attempts",
+    "real execution queue update",
+    "real execution result summary update",
+    "blocker closure plan",
+    "RC evidence package checklist",
+    "release candidate manifest"
+  ],
+  "realCommandAttemptSummary": {
+    "attempted": 6,
+    "passed": 0,
+    "failedOrBlocked": 6,
+    "queuePassed": 0,
+    "queueBlocked": 4,
+    "queuePending": 4
+  },
+  "notCompletedByDesign": [
+    "npm install success proof",
+    "lint pass proof",
+    "typecheck pass proof",
+    "build pass proof",
+    "world-core pass proof",
+    "release-local-gate pass proof",
+    "evidence-capture pass proof",
+    "manual release signoff",
+    "release-ready transition",
+    "production live"
+  ],
+  "finalDecision": "continue-only-after-real-environment-command-pass",
+  "mustCarryForward": [
+    "fix eslint permission blocker",
+    "run npm install",
+    "rerun lint/typecheck/build/world-core/release-local-gate",
+    "archive evidence outputs",
+    "close blockers",
+    "complete manual signoff",
+    "do not mark blocked as passed",
+    "do not claim release-ready"
+  ],
+  "rules": [
+    "第十五阶段完成的是 RC 准备结构和真实命令尝试记录，不是真实发布。",
+    "当前没有剩余结构阶段继续推进；下一步必须在真实环境修复阻断并重跑命令。",
+    "未通过命令不得计为通过。",
+    "没有用户要求，本阶段未打包。",
+    "release-ready 仍必须等待真实命令、证据包和人工签收通过。"
+  ]
+}

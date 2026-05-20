@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 存储治理矩阵",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 2 / 4",
+  "status": "storage-governance-prepared",
+  "storageReady": false,
+  "stores": [
+    {
+      "id": "public-static",
+      "dataScope": "public",
+      "encryption": "optional",
+      "backup": "per-release"
+    },
+    {
+      "id": "public-metadata",
+      "dataScope": "public-metadata",
+      "encryption": "optional",
+      "backup": "weekly"
+    },
+    {
+      "id": "approval-metadata",
+      "dataScope": "metadata-only",
+      "encryption": "required",
+      "backup": "weekly"
+    },
+    {
+      "id": "audit-log",
+      "dataScope": "metadata-only",
+      "encryption": "required",
+      "backup": "daily"
+    },
+    {
+      "id": "private-vault",
+      "dataScope": "private-encrypted",
+      "encryption": "required",
+      "backup": "owner-controlled"
+    },
+    {
+      "id": "secret-store",
+      "dataScope": "secret",
+      "encryption": "required",
+      "backup": "provider-managed"
+    }
+  ],
+  "rules": [
+    "storageReady=false 必须保持，直到真实存储接入。",
+    "private-vault 必须 owner-controlled。",
+    "secret-store 不进入项目包。",
+    "audit-log 不保存私密正文。"
+  ]
+}

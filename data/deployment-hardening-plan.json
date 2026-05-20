@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 部署硬化计划",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 3 / 4",
+  "status": "deployment-hardening-plan-prepared",
+  "deploymentHardeningReady": false,
+  "items": [
+    {
+      "id": "build-reproducibility",
+      "title": "构建可复现",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "env-validation",
+      "title": "环境变量校验",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "headers-policy",
+      "title": "安全响应头策略",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "cache-policy",
+      "title": "缓存策略验证",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "rollback-target",
+      "title": "回滚目标验证",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "smoke-suite",
+      "title": "Smoke 套件",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "preview-production-diff",
+      "title": "预览/生产差异复查",
+      "required": true,
+      "status": "pending-real-proof"
+    }
+  ],
+  "rules": [
+    "deploymentHardeningReady=false 必须保持，直到真实部署硬化证明完成。",
+    "所有 required=true 项必须有真实证明。",
+    "Smoke 套件失败不得进入 release-ready 转换。",
+    "回滚目标必须可追溯到 manifest。"
+  ]
+}

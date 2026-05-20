@@ -1,0 +1,64 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 自动质量巡检计划",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 3 / 4",
+  "status": "quality-patrol-plan-prepared",
+  "patrolReady": false,
+  "checks": [
+    {
+      "id": "broken-links",
+      "title": "断链检查",
+      "source": "public-site",
+      "status": "planned",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "route-coverage",
+      "title": "路由覆盖",
+      "source": "public-site",
+      "status": "planned",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "content-staleness",
+      "title": "内容陈旧度",
+      "source": "public-content",
+      "status": "planned",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "privacy-boundary",
+      "title": "私密边界复查",
+      "source": "policy",
+      "status": "planned",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "ai-boundary",
+      "title": "AI 边界复查",
+      "source": "policy",
+      "status": "planned",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "mobile-layout",
+      "title": "移动端布局风险",
+      "source": "visual-qa",
+      "status": "planned",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "performance-budget",
+      "title": "性能预算",
+      "source": "metrics",
+      "status": "planned",
+      "humanReviewRequired": true
+    }
+  ],
+  "rules": [
+    "patrolReady=false 必须保持，直到真实巡检脚本和证据完成。",
+    "自动巡检只输出报告，不自动修改代码。",
+    "隐私边界问题必须人工优先处理。",
+    "巡检结果不得替代人工签收。"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 长期数据洞察计划",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 3 / 4",
+  "status": "long-term-insight-plan-prepared",
+  "insightReady": false,
+  "signals": [
+    {
+      "id": "content-frequency",
+      "title": "内容频率",
+      "privacy": "public-aggregate",
+      "status": "planned"
+    },
+    {
+      "id": "topic-balance",
+      "title": "主题平衡",
+      "privacy": "public-aggregate",
+      "status": "planned"
+    },
+    {
+      "id": "reading-path-usage",
+      "title": "路径使用",
+      "privacy": "anonymous-or-manual",
+      "status": "planned"
+    },
+    {
+      "id": "feedback-themes",
+      "title": "反馈主题",
+      "privacy": "reviewed-feedback",
+      "status": "planned"
+    },
+    {
+      "id": "quality-trend",
+      "title": "质量趋势",
+      "privacy": "internal-report",
+      "status": "planned"
+    }
+  ],
+  "rules": [
+    "insightReady=false 必须保持，直到真实数据管道和隐私评审完成。",
+    "只使用公开聚合或人工复核后的反馈。",
+    "不得采集私密档案数据。",
+    "洞察结果只作为运营建议，不自动发布。"
+  ]
+}

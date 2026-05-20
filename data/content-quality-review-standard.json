@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 内容质量评审标准",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 3 / 4",
+  "status": "quality-review-standard-prepared",
+  "criteria": [
+    {
+      "id": "truthfulness",
+      "title": "真实可信",
+      "required": true
+    },
+    {
+      "id": "world-consistency",
+      "title": "世界一致性",
+      "required": true
+    },
+    {
+      "id": "privacy-boundary",
+      "title": "私密边界",
+      "required": true
+    },
+    {
+      "id": "brand-voice",
+      "title": "品牌语气",
+      "required": true
+    },
+    {
+      "id": "visual-quality",
+      "title": "视觉质量",
+      "required": true
+    },
+    {
+      "id": "ai-boundary",
+      "title": "AI 边界",
+      "required": true
+    },
+    {
+      "id": "reader-value",
+      "title": "读者价值",
+      "required": true
+    }
+  ],
+  "reviewStates": [
+    "draft",
+    "reviewing",
+    "approved",
+    "rejected",
+    "scheduled"
+  ],
+  "rules": [
+    "approved 之前不得公开发布。",
+    "privacy-boundary 必须通过。",
+    "AI 生成或改写内容必须标记并人工复核。",
+    "内容质量评审不等于生产发布证据。"
+  ]
+}

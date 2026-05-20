@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "name": "古月浮屿 V1 lint 执行准备台账",
   "principle": "lint 必须真实执行；无法执行时必须明确原因和替代检查范围。",
-  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 4 / 4",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 4 / 4",
   "environmentProbe": {
     "node": "available",
     "npm": "available",
@@ -13,14 +13,12 @@
     "interpretation": "missing-local-dependencies; lint cannot be judged as code pass/fail here"
   },
   "requiredCommand": "npm run lint",
-  "currentStatus": "missing-local-dependencies",
+  "currentStatus": "not-passed",
   "latestAttempt": {
     "attempted": true,
     "command": "npm run lint",
-    "exitCode": 127,
     "result": "not-passed",
-    "outputExcerpt": "sh: 1: eslint: Permission denied\n\n\n> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0",
-    "interpretation": "missing local eslint/node_modules in this workspace; rerun after npm install"
+    "outputExcerpt": "sh: 1: eslint: Permission denied\n\n\n> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0"
   },
   "fallbackChecks": [
     "JSON parse check",

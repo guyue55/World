@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 生产监控与错误追踪计划",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 3 / 4",
+  "status": "monitoring-error-tracking-plan-prepared",
+  "channels": [
+    {
+      "id": "uptime",
+      "title": "可用性监控",
+      "enabled": false,
+      "evidence": "pending-provider"
+    },
+    {
+      "id": "error-tracking",
+      "title": "前端错误追踪",
+      "enabled": false,
+      "evidence": "pending-provider"
+    },
+    {
+      "id": "web-vitals",
+      "title": "核心 Web 指标",
+      "enabled": false,
+      "evidence": "pending-provider"
+    },
+    {
+      "id": "manual-report",
+      "title": "人工问题记录",
+      "enabled": true,
+      "evidence": "manual-log"
+    }
+  ],
+  "alertRules": [
+    "home page unreachable",
+    "production route unreachable",
+    "rss/world-index unavailable",
+    "private route exposed unexpectedly",
+    "client error spike",
+    "performance regression"
+  ],
+  "rules": [
+    "enabled=false 的供应商集成不得宣称已接入。",
+    "manual-report 可立即使用，但不能替代真实监控。",
+    "任何隐私相关告警必须优先处理。",
+    "生产错误必须可关联版本与 release manifest。"
+  ]
+}

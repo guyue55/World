@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十二阶段入口门禁",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 4 / 4",
+  "status": "phase-twelve-planning-allowed",
+  "entryDecision": "phase-twelve-planning-allowed-real-platformization-and-governance-not-started",
+  "structureReady": [
+    "phase-eleven-runtime-automation-scope-contract",
+    "human-approval-workflow",
+    "runtime-action-registry",
+    "runtime-growth-loop-plan",
+    "runtime-evidence-record-plan",
+    "operator-dashboard-plan",
+    "runtime-integration-gates",
+    "runtime-adapter-contract",
+    "runtime-readiness-board"
+  ],
+  "phaseTwelveCandidateFocus": [
+    "real platformization",
+    "permission and role governance",
+    "service boundary design",
+    "team collaboration workflow",
+    "audit log and compliance",
+    "real storage and secret management",
+    "governance dashboard",
+    "long-term sustainability"
+  ],
+  "mustNotDo": [
+    "bypass human approval",
+    "skip evidence record",
+    "store secrets in repository",
+    "expose private content",
+    "claim runtimeReady without real execution",
+    "claim production live without deployment evidence"
+  ],
+  "entryRules": [
+    "第十二阶段必须以平台化治理和真实服务边界为中心。",
+    "权限、角色、审计、密钥和存储必须先设计边界。",
+    "团队协作不得绕过私密边界和人工审批。",
+    "所有真实服务化能力必须具备审计记录和回滚策略。"
+  ]
+}

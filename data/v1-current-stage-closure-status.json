@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 当前阶段收束状态",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 4 / 4",
+  "status": "all-planned-structure-stages-complete-real-release-blocked",
+  "completedThroughStage": 15,
+  "remainingStructuralStages": 0,
+  "remainingRealWorldWork": [
+    "repair local dependency and eslint permission blocker",
+    "execute npm install successfully",
+    "execute npm run lint successfully",
+    "execute npm run typecheck successfully",
+    "execute npm run build successfully",
+    "execute npm run check:world-core successfully",
+    "execute npm run release:local-gate successfully",
+    "execute npm run evidence:capture successfully",
+    "complete manual release signoff",
+    "generate package only when requested"
+  ],
+  "releaseDecision": "not-ready-for-release",
+  "productionDecision": "production-not-live",
+  "packageGenerated": false,
+  "rules": [
+    "结构阶段已收束，但真实发布工作未完成。",
+    "下一步不是继续增加阶段，而是在真实环境执行命令和关闭阻断。",
+    "未通过真实命令前不能 release-ready。",
+    "没有要求无需打包。"
+  ]
+}

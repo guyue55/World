@@ -1,0 +1,63 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十三阶段依赖与构建证据矩阵",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 1 / 4",
+  "status": "dependency-build-evidence-matrix-prepared",
+  "evidenceReady": false,
+  "checks": [
+    {
+      "id": "install",
+      "command": "npm install",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "release-local-gate",
+      "command": "npm run release:local-gate",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "evidence-capture",
+      "command": "npm run evidence:capture",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "security-baseline",
+      "command": "npm run phase-thirteen-security:print",
+      "required": true,
+      "status": "pending-static-only"
+    }
+  ],
+  "rules": [
+    "evidenceReady=false 必须保持，直到所有 required 真实执行通过。",
+    "pending-real-run 不得记为 passed。",
+    "静态证据不能替代真实构建证据。",
+    "证据矩阵必须能追溯命令、状态和输出摘要。"
+  ]
+}

@@ -11,6 +11,8 @@ function read(file: string) {
 
 function main() {
   const errors: string[] = []
+  const latestLintAttempt = lintExecutionReadiness.latestAttempt as { exitCode?: number } | undefined
+
 
   if (phaseTwoClosureContract.completedBatches.length < 12) {
     errors.push('phase two closure must list 12 completed batches')
@@ -24,7 +26,7 @@ function main() {
     errors.push('phase two closure must not mark stage one complete')
   }
 
-  if (lintExecutionReadiness.currentStatus === 'passed' && lintExecutionReadiness.latestAttempt?.exitCode !== 0) {
+  if (lintExecutionReadiness.currentStatus === 'passed' && latestLintAttempt?.exitCode !== 0) {
     errors.push('lint cannot be marked passed without exitCode 0')
   }
 

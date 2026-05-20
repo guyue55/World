@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 智能运营反馈闭环",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 3 / 4",
+  "status": "ops-feedback-loop-prepared",
+  "loopReady": false,
+  "steps": [
+    "收集巡检报告",
+    "收集内容与反馈洞察",
+    "AI 生成运营建议",
+    "人工筛选与排序",
+    "形成下一轮内容/体验计划",
+    "记录采纳与拒绝原因"
+  ],
+  "rules": [
+    "loopReady=false 必须保持，直到真实运营流程完成。",
+    "AI 建议必须可拒绝、可延后、可改写。",
+    "反馈闭环不得触发自动发布。",
+    "所有采纳必须留下人工记录。"
+  ]
+}

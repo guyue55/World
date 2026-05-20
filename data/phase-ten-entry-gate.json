@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十阶段入口门禁",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 4 / 4",
+  "status": "phase-ten-planning-allowed",
+  "entryDecision": "phase-ten-planning-allowed-intelligent-operations-and-multi-device-expansion-not-started",
+  "structureReady": [
+    "phase-nine-brand-scope-contract",
+    "personal-brand-system",
+    "content-topic-pillars",
+    "content-calendar-plan",
+    "content-column-operations-plan",
+    "public-world-book-publishing-plan",
+    "content-quality-review-standard",
+    "community-feedback-loop-plan"
+  ],
+  "phaseTenCandidateFocus": [
+    "AI assisted topic planning",
+    "AI content review support",
+    "mobile experience deep optimization",
+    "PWA and offline access",
+    "multi-device export",
+    "automated quality patrol",
+    "long-term data insight"
+  ],
+  "mustNotDo": [
+    "AI autonomous publishing",
+    "skip human content review",
+    "publish private content",
+    "claim production live without evidence",
+    "ignore mobile QA",
+    "collect analytics without privacy review"
+  ],
+  "entryRules": [
+    "第十阶段必须以智能化运营和多端体验为中心。",
+    "AI 仍只能辅助，不得自动发布。",
+    "多端扩展必须保留公开/私密边界。",
+    "自动巡检结果不得替代人工签收。"
+  ]
+}

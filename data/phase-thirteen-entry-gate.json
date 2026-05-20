@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十三阶段入口门禁",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 4 / 4",
+  "status": "phase-thirteen-planning-allowed",
+  "entryDecision": "phase-thirteen-planning-allowed-real-implementation-hardening-and-evidence-not-started",
+  "structureReady": [
+    "phase-twelve-platform-governance-scope-contract",
+    "permission-role-governance-model",
+    "service-boundary-design",
+    "audit-compliance-ledger",
+    "secret-governance-policy",
+    "storage-governance-matrix",
+    "team-collaboration-governance-workflow",
+    "platform-governance-dashboard-plan",
+    "long-term-sustainability-governance-plan"
+  ],
+  "phaseThirteenCandidateFocus": [
+    "real implementation hardening",
+    "dependency and build evidence",
+    "security baseline implementation",
+    "real service adapters",
+    "identity and RBAC proof",
+    "deployment hardening",
+    "evidence package consolidation",
+    "release readiness transition"
+  ],
+  "mustNotDo": [
+    "claim release-ready without real evidence",
+    "claim services live without implementation",
+    "store secrets in repository",
+    "skip RBAC enforcement",
+    "skip audit logging",
+    "expose private content"
+  ],
+  "entryRules": [
+    "第十三阶段必须以真实实现加固和证据闭环为中心。",
+    "不能继续只增加结构而不补真实执行证据。",
+    "身份、权限、审计、密钥、存储必须逐步接入真实实现。",
+    "release-ready 的转换必须有完整证据包支持。"
+  ]
+}

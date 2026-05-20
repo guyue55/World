@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段发布看板",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 2 / 4",
+  "status": "implemented-static-release-dashboard",
+  "releaseReady": false,
+  "cards": [
+    {
+      "id": "evidence-ledger",
+      "title": "真实证据台账",
+      "state": "pending",
+      "route": "/release"
+    },
+    {
+      "id": "seo-readiness",
+      "title": "SEO 准备",
+      "state": "prepared-static",
+      "route": "/release"
+    },
+    {
+      "id": "analytics-plan",
+      "title": "访问分析计划",
+      "state": "prepared-static",
+      "route": "/release"
+    },
+    {
+      "id": "manual-signoff",
+      "title": "人工签收",
+      "state": "pending-human",
+      "route": "/release"
+    },
+    {
+      "id": "blocker-review",
+      "title": "阻断复查",
+      "state": "pending-human",
+      "route": "/release"
+    }
+  ],
+  "rules": [
+    "发布看板只展示状态，不自动变更 releaseReady。",
+    "releaseReady=false 必须保持，直到真实证据完成。",
+    "manual-signoff 和 blocker-review 必须人工完成。"
+  ]
+}

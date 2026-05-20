@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十五阶段入口门禁",
+  "stageProgress": "phase-fourteen-real-execution-evidence-sprint line batch 4 / 4",
+  "status": "phase-fifteen-planning-allowed",
+  "entryDecision": "phase-fifteen-planning-allowed-real-command-execution-and-release-candidate-not-started",
+  "structureReady": [
+    "phase-fourteen-execution-sprint-scope-contract",
+    "real-execution-queue",
+    "real-execution-blocker-ledger",
+    "real-execution-result-summary",
+    "manual-signoff-preparation-checklist",
+    "real-execution-runner-plan",
+    "evidence-collector-plan",
+    "release-readiness-transition-gate"
+  ],
+  "phaseFifteenCandidateFocus": [
+    "fix local dependency and eslint blocker",
+    "execute npm install",
+    "execute lint typecheck build",
+    "execute world-core and release-local-gate",
+    "capture evidence outputs",
+    "close blockers",
+    "prepare release candidate package",
+    "manual release signoff"
+  ],
+  "mustNotDo": [
+    "claim release-ready before commands pass",
+    "ignore eslint permission blocker",
+    "skip npm install",
+    "skip build",
+    "skip world-core",
+    "skip manual signoff",
+    "mark blocked as passed"
+  ],
+  "entryRules": [
+    "第十五阶段必须以真实命令执行和 release candidate 为中心。",
+    "必须优先修复 eslint 权限或依赖阻断。",
+    "必须真实执行 lint/typecheck/build/world-core/release-local-gate。",
+    "所有输出必须归档到证据包。",
+    "只有真实通过且人工签收后，才允许考虑 release-ready 转换。"
+  ]
+}

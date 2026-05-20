@@ -23,7 +23,12 @@ export function getEvolutionRequirement(changeType: string): EvolutionRequiremen
     }
   }
 
-  return found
+  return {
+    changeType: found.id,
+    requiresSnapshot: found.requiresSnapshot,
+    requiresWorldEvent: found.requiresWorldEvent,
+    requiresReview: found.requiresReview,
+  }
 }
 
 export function shouldCreateWorldEvent(changeType: string): boolean {

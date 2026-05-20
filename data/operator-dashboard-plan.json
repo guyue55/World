@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运营控制台",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 2 / 4",
+  "status": "operator-dashboard-prepared",
+  "dashboardReady": false,
+  "cards": [
+    {
+      "id": "approval-workflow",
+      "title": "审批工作流",
+      "state": "prepared",
+      "route": "/operator"
+    },
+    {
+      "id": "runtime-actions",
+      "title": "运行态动作",
+      "state": "prepared",
+      "route": "/operator"
+    },
+    {
+      "id": "growth-loop",
+      "title": "增长闭环",
+      "state": "prepared",
+      "route": "/operator"
+    },
+    {
+      "id": "runtime-evidence",
+      "title": "运行态证据",
+      "state": "prepared",
+      "route": "/operator"
+    },
+    {
+      "id": "readiness-flags",
+      "title": "真实运行态标记",
+      "state": "not-ready",
+      "route": "/operator"
+    }
+  ],
+  "rules": [
+    "dashboardReady=false 必须保持，直到真实操作控制台实现。",
+    "控制台只展示结构，不执行动作。",
+    "所有执行入口未来必须绑定审批和证据。",
+    "控制台不得展示私密正文。"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 栏目运营计划",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 2 / 4",
+  "status": "column-operations-prepared",
+  "columns": [
+    {
+      "id": "desk-to-galaxy",
+      "title": "一张书桌连接星河",
+      "type": "manifesto-column",
+      "cadence": "monthly",
+      "visibility": "public"
+    },
+    {
+      "id": "engineering-notes",
+      "title": "工程札记",
+      "type": "technical-column",
+      "cadence": "weekly",
+      "visibility": "public"
+    },
+    {
+      "id": "ai-lighthouse",
+      "title": "AI 灯塔",
+      "type": "ai-boundary-column",
+      "cadence": "biweekly",
+      "visibility": "public"
+    },
+    {
+      "id": "nature-life",
+      "title": "自然与生活观察",
+      "type": "life-column",
+      "cadence": "biweekly",
+      "visibility": "public"
+    },
+    {
+      "id": "world-exhibitions",
+      "title": "世界展览",
+      "type": "visual-column",
+      "cadence": "monthly",
+      "visibility": "public"
+    },
+    {
+      "id": "operation-review",
+      "title": "运营复盘",
+      "type": "review-column",
+      "cadence": "monthly",
+      "visibility": "public"
+    }
+  ],
+  "rules": [
+    "所有栏目必须 public。",
+    "栏目运营只使用公开素材。",
+    "每个栏目必须有 cadence。",
+    "AI 只能提供选题建议。"
+  ]
+}

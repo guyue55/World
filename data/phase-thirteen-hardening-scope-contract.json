@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十三阶段真实实现加固与证据闭环范围契约",
+  "principle": "第十三阶段必须从结构规划转向真实实现加固、真实证据闭环和 release-ready 转换准备。",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 1 / 4",
+  "status": "implemented-static-hardening-scope",
+  "focus": [
+    "real implementation hardening",
+    "dependency and build evidence",
+    "security baseline implementation",
+    "real service adapters",
+    "identity and RBAC proof",
+    "deployment hardening",
+    "evidence package consolidation",
+    "release readiness transition"
+  ],
+  "nonGoals": [
+    "claim release-ready without real evidence",
+    "claim services live without implementation",
+    "store secrets in repository",
+    "skip RBAC enforcement",
+    "skip audit logging",
+    "expose private content"
+  ],
+  "entryGuards": [
+    "phase twelve completed",
+    "all governance readiness flags remain false until real implementation",
+    "release-ready remains not-ready until evidence package passes",
+    "production remains not live",
+    "hardening must produce evidence"
+  ],
+  "rules": [
+    "第十三阶段不能继续只增加结构而不补真实执行证据。",
+    "依赖、lint、typecheck、build、world-core、security baseline 必须形成证据矩阵。",
+    "身份、RBAC、审计、密钥、存储必须逐步接入真实实现。",
+    "release-ready 的转换必须有完整证据包支持。",
+    "任何证据缺失都不能声明 ready。"
+  ]
+}

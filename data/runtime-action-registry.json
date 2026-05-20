@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行态动作注册表",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 1 / 4",
+  "status": "runtime-action-registry-prepared",
+  "registryReady": false,
+  "actions": [
+    {
+      "id": "generate-topic-suggestions",
+      "type": "ai-assist",
+      "default": "approval-required",
+      "writes": false
+    },
+    {
+      "id": "run-quality-patrol",
+      "type": "automation",
+      "default": "approval-required",
+      "writes": false
+    },
+    {
+      "id": "create-public-export",
+      "type": "export",
+      "default": "approval-required",
+      "writes": true
+    },
+    {
+      "id": "refresh-pwa-cache",
+      "type": "pwa",
+      "default": "approval-required",
+      "writes": true
+    },
+    {
+      "id": "ingest-public-analytics",
+      "type": "analytics",
+      "default": "approval-required",
+      "writes": true
+    },
+    {
+      "id": "publish-approved-content",
+      "type": "publish",
+      "default": "approval-required",
+      "writes": true
+    }
+  ],
+  "rules": [
+    "registryReady=false 必须保持，直到真实运行态动作接入。",
+    "所有动作 default 必须为 approval-required。",
+    "writes=true 的动作必须有 evidence record。",
+    "任何动作不得访问 private/family/partner/vault/sealed/silent。"
+  ]
+}

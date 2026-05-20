@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十一阶段入口门禁",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 4 / 4",
+  "status": "phase-eleven-planning-allowed",
+  "entryDecision": "phase-eleven-planning-allowed-real-runtime-automation-and-growth-loop-not-started",
+  "structureReady": [
+    "phase-ten-intelligent-ops-scope-contract",
+    "ai-operations-assistant-plan",
+    "multi-device-experience-matrix",
+    "pwa-offline-access-plan",
+    "multi-device-export-plan",
+    "automated-quality-patrol-plan",
+    "long-term-data-insight-plan",
+    "intelligent-operations-feedback-loop"
+  ],
+  "phaseElevenCandidateFocus": [
+    "real runtime automation",
+    "human approval workflow",
+    "content growth loop",
+    "real analytics ingestion",
+    "PWA implementation",
+    "device QA evidence",
+    "export execution evidence",
+    "operator dashboard"
+  ],
+  "mustNotDo": [
+    "AI autonomous publishing",
+    "skip human approval",
+    "cache private content offline",
+    "export private content without permission",
+    "claim production live without evidence",
+    "replace manual signoff with automation"
+  ],
+  "entryRules": [
+    "第十一阶段必须以真实运行态、真实证据和人工确认流为中心。",
+    "任何自动化必须先有人工审批工作流。",
+    "增长闭环不能绕过内容质量评审。",
+    "PWA、导出、数据洞察都必须有隐私评审。"
+  ]
+}

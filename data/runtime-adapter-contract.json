@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行态适配层契约",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 3 / 4",
+  "status": "runtime-adapter-contract-prepared",
+  "adapterReady": false,
+  "adapters": [
+    {
+      "id": "approval-adapter",
+      "kind": "approval",
+      "writes": true,
+      "requiresEvidence": true
+    },
+    {
+      "id": "pwa-cache-adapter",
+      "kind": "pwa",
+      "writes": true,
+      "requiresEvidence": true
+    },
+    {
+      "id": "export-adapter",
+      "kind": "export",
+      "writes": true,
+      "requiresEvidence": true
+    },
+    {
+      "id": "analytics-adapter",
+      "kind": "analytics",
+      "writes": true,
+      "requiresEvidence": true
+    },
+    {
+      "id": "patrol-adapter",
+      "kind": "quality",
+      "writes": false,
+      "requiresEvidence": true
+    },
+    {
+      "id": "notification-adapter",
+      "kind": "ops",
+      "writes": false,
+      "requiresEvidence": true
+    }
+  ],
+  "privacyRules": [
+    "adapter 不得读取 private/family/partner/vault/sealed/silent。",
+    "pwa-cache-adapter 只允许缓存 public 内容。",
+    "export-adapter 默认只允许 public scope。",
+    "analytics-adapter 只能处理公开聚合或匿名数据。"
+  ],
+  "rules": [
+    "adapterReady=false 必须保持，直到真实适配层实现。",
+    "所有写入型 adapter 必须有 evidence。",
+    "所有 adapter 都必须通过 approval workflow。",
+    "适配层不得持久化密钥。"
+  ]
+}

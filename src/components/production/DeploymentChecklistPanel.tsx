@@ -1,0 +1,20 @@
+import { getPhaseEightProductionDeploymentChecklist } from '@/lib/phase-eight-production'
+
+export function DeploymentChecklistPanel() {
+  const checklist = getPhaseEightProductionDeploymentChecklist()
+
+  return (
+    <section className="rounded-world border border-ink/10 bg-white/45 p-6 shadow-soft">
+      <h2 className="text-2xl font-semibold">部署执行清单</h2>
+      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+        {checklist.steps.map((item) => (
+          <article key={item.id} className="rounded-2xl bg-paper/70 p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-moss">{item.status}</p>
+            <h3 className="mt-3 text-lg font-semibold">{item.title}</h3>
+            <p className="mt-3 text-sm text-ink/60">required: {String(item.required)}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}

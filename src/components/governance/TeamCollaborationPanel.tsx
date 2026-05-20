@@ -1,0 +1,22 @@
+import { getTeamCollaborationGovernanceWorkflow } from '@/lib/phase-twelve-team'
+
+export function TeamCollaborationPanel() {
+  const workflow = getTeamCollaborationGovernanceWorkflow()
+
+  return (
+    <section className="rounded-world border border-ink/10 bg-white/45 p-6 shadow-soft">
+      <h2 className="text-2xl font-semibold">团队协作治理</h2>
+      <p className="mt-2 text-sm text-ink/55">teamReady: {String(workflow.teamReady)}</p>
+      <div className="mt-5 grid gap-4 md:grid-cols-3">
+        {workflow.workflows.map((item) => (
+          <article key={item.id} className="rounded-2xl bg-paper/70 p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-moss">{item.id}</p>
+            <h3 className="mt-3 text-lg font-semibold">{item.title}</h3>
+            <p className="mt-3 text-sm text-ink/60">approval: {String(item.requiresApproval)}</p>
+            <p className="mt-2 text-sm text-ink/60">privateSafe: {String(item.privateSafe)}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
