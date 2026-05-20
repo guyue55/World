@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "stage": 5,
+  "batch": 20,
+  "totalBatches": 20,
+  "name": "V2 最终收口与 V2.1 入口",
+  "stageProgress": "V2 / 第 5 阶段：生产化迁移收口 / 第 20 批 / 共 20 批",
+  "status": "prepared",
+  "decision": "v2-structure-complete-v2-1-planning-allowed-real-implementation-pending",
+  "next": "v2.1-real-service-implementation-and-private-vault",
+  "releaseDecision": "not-ready-for-production",
+  "ready": false,
+  "rules": [
+    "V2 结构完成不等于真实服务上线。",
+    "V1 公开路径必须尽量兼容。",
+    "V2.1 才进入真实服务实现与私密档案落地。"
+  ]
+}

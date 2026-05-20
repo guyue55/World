@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "stage": 2,
+  "batch": 6,
+  "totalBatches": 20,
+  "name": "认证与会话边界",
+  "stageProgress": "V2 / 第 2 阶段：数据认证权限审计 / 第 6 批 / 共 20 批",
+  "status": "prepared",
+  "authOptions": [
+    "Auth.js",
+    "Clerk",
+    "Supabase Auth",
+    "custom OAuth boundary"
+  ],
+  "selectedDefault": "Auth.js-compatible-interface",
+  "sessionRules": [
+    "httpOnly cookie",
+    "csrf protection",
+    "owner bootstrap",
+    "no private token in client"
+  ],
+  "ready": false,
+  "rules": [
+    "身份、权限、审计是 V2 服务化最小闭环。",
+    "vault 权限默认拒绝，必须显式授权。",
+    "所有关键写操作必须生成 AuditEvent。"
+  ]
+}

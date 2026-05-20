@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "stage": 3,
+  "batch": 10,
+  "totalBatches": 20,
+  "name": "私密档案服务边界",
+  "stageProgress": "V2 / 第 3 阶段：后台档案导出 / 第 10 批 / 共 20 批",
+  "status": "prepared",
+  "vaultModules": [
+    "vault-index",
+    "encrypted-item-metadata",
+    "access-policy",
+    "owner-key-boundary",
+    "redaction-layer",
+    "inheritance-plan"
+  ],
+  "privacyDefaults": [
+    "deny-by-default",
+    "owner-only",
+    "no-public-build",
+    "audit-all-access"
+  ],
+  "ready": false,
+  "rules": [
+    "后台操作必须进入 RBAC 与 AuditEvent。",
+    "私密档案默认拒绝访问且不进入公开构建。",
+    "导出任务必须可追踪、可取消、可审计。"
+  ]
+}

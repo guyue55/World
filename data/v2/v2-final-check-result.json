@@ -1,0 +1,9 @@
+{
+  "command": "npm run check:v2:all",
+  "repairSteps": [
+    "node_modules missing; skip npm install because packaging/development task is structural and install may be long"
+  ],
+  "exitCode": 127,
+  "status": "blocked-or-failed",
+  "outputExcerpt": "> guyue-floating-world@0.1.0 check:v2:all\n> tsx scripts/check-v2-all.ts\n\n\nsh: 1: tsx: Permission denied"
+}

@@ -1,0 +1,52 @@
+{
+  "version": "2.1.0",
+  "name": "古月浮屿 V2 到 V3 前全部补全收口报告",
+  "createdAt": "2026-05-20T05:27:11Z",
+  "workspace": "/mnt/data/guyue_v2_to_v3_completion_workspace",
+  "completedBatches": 4,
+  "v2BeforeV3Status": "structure-and-local-service-skeleton-complete",
+  "v3PlanningAllowed": true,
+  "v3DevelopmentRecommended": false,
+  "releaseReady": false,
+  "productionLive": false,
+  "checks": {
+    "static": [
+      "JSON parse check passed.",
+      "Static logic check passed.",
+      "Changed TS/TSX transpile parse passed for 18 files.",
+      "Static lint risk scan passed.",
+      "Basic format check on changed files passed."
+    ],
+    "realCommand": {
+      "command": "npm run check:v2-before-v3",
+      "status": "blocked-or-failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 check:v2-before-v3\n> tsx scripts/check-v2-before-v3.ts\n\n\nsh: 1: tsx: Permission denied"
+    }
+  },
+  "changedFiles": [
+    "data/v2-1/stage-01-real-service-foundation.json",
+    "data/v2-1/stage-02-real-api-routes.json",
+    "data/v2-1/stage-03-integration-dashboard.json",
+    "data/v2-1/stage-04-v3-entry-gate.json",
+    "package.json",
+    "scripts/check-v2-1-stage-01.ts",
+    "scripts/check-v2-1-stage-02.ts",
+    "scripts/check-v2-1-stage-03.ts",
+    "scripts/check-v2-before-v3.ts",
+    "scripts/print-v2-before-v3.ts",
+    "src/app/api/v2/ai/suggestions/route.ts",
+    "src/app/api/v2/audit/route.ts",
+    "src/app/api/v2/content/route.ts",
+    "src/app/api/v2/export/jobs/route.ts",
+    "src/app/api/v2/vault/route.ts",
+    "src/app/v2-console/page.tsx",
+    "src/lib/v2-1/status.ts",
+    "src/server/v2/audit.ts",
+    "src/server/v2/context.ts",
+    "src/server/v2/domain.ts",
+    "src/server/v2/permissions.ts",
+    "src/server/v2/repository.ts",
+    "src/server/v2/response.ts"
+  ],
+  "next": "V2.1 real infrastructure implementation before V3 formal development"
+}
