@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "Observability Center",
+  "batch": 17,
+  "stage": 5,
+  "stageName": "生产级观测、成本、安全与治理强化",
+  "stageProgress": "V5 / 第 5 阶段 / 第 17 批 / 共 24 批",
+  "slug": "observability-center",
+  "status": "complete",
+  "goals": [
+    "建立观测中心",
+    "健康/错误/延迟/构建/Agent/插件/发布指标",
+    "页面入口"
+  ],
+  "outputs": [
+    "HealthSignal",
+    "MetricEvent"
+  ],
+  "mustKeep": [
+    "observability required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-observability-governance",
+    "dataDirectory": "data/v5/stage-05",
+    "docsDirectory": "docs/51-v5/stage-05",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

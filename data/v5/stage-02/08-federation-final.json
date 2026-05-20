@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "联邦世界阶段收口",
+  "batch": 8,
+  "stage": 2,
+  "stageName": "联邦世界协议与跨世界连接",
+  "stageProgress": "V5 / 第 2 阶段 / 第 8 批 / 共 24 批",
+  "slug": "federation-final",
+  "status": "complete",
+  "goals": [
+    "收束联邦世界阶段",
+    "检查私密隔离",
+    "检查审计 trail"
+  ],
+  "outputs": [
+    "FederationFinal"
+  ],
+  "mustKeep": [
+    "authorized snapshot only"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-federation",
+    "dataDirectory": "data/v5/stage-02",
+    "docsDirectory": "docs/51-v5/stage-02",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

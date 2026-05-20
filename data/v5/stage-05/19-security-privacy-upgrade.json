@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "安全与隐私策略升级",
+  "batch": 19,
+  "stage": 5,
+  "stageName": "生产级观测、成本、安全与治理强化",
+  "stageProgress": "V5 / 第 5 阶段 / 第 19 批 / 共 24 批",
+  "slug": "security-privacy-upgrade",
+  "status": "complete",
+  "goals": [
+    "升级安全隐私策略",
+    "多世界/Agent/插件隔离",
+    "导出脱敏与密钥轮换"
+  ],
+  "outputs": [
+    "SecurityUpgrade",
+    "PrivacyBoundary"
+  ],
+  "mustKeep": [
+    "no private leak"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-observability-governance",
+    "dataDirectory": "data/v5/stage-05",
+    "docsDirectory": "docs/51-v5/stage-05",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

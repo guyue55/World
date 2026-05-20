@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "第 1 阶段收口",
+  "batch": 4,
+  "stage": 1,
+  "stageName": "V5 范围契约与 V4 证据继承",
+  "stageProgress": "V5 / 第 1 阶段 / 第 4 批 / 共 24 批",
+  "slug": "stage-one-final",
+  "status": "complete",
+  "goals": [
+    "收口 V5 第 1 阶段",
+    "确认 V5 正式本地开发允许",
+    "V6 仍只可候选规划"
+  ],
+  "outputs": [
+    "StageOneFinal"
+  ],
+  "mustKeep": [
+    "v5ImplementationAllowed=true"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-entry",
+    "dataDirectory": "data/v5/stage-01",
+    "docsDirectory": "docs/51-v5/stage-01",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

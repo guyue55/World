@@ -1,0 +1,31 @@
+{
+  "version": "5.0.0",
+  "name": "V5 信息架构与页面矩阵",
+  "batch": 3,
+  "stage": 1,
+  "stageName": "V5 范围契约与 V4 证据继承",
+  "stageProgress": "V5 / 第 1 阶段 / 第 3 批 / 共 24 批",
+  "slug": "v5-ia-page-matrix",
+  "status": "complete",
+  "goals": [
+    "建立 V5 页面矩阵",
+    "定义 V5 模块归属",
+    "保证页面化与组件化"
+  ],
+  "outputs": [
+    "RouteMatrix",
+    "FeatureMatrix"
+  ],
+  "mustKeep": [
+    "/v5",
+    "/v5-federation",
+    "/v5-agent-orchestration"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-entry",
+    "dataDirectory": "data/v5/stage-01",
+    "docsDirectory": "docs/51-v5/stage-01",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

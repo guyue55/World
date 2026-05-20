@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "Agent Registry",
+  "batch": 9,
+  "stage": 3,
+  "stageName": "多 Agent 编排与世界维护运行态",
+  "stageProgress": "V5 / 第 3 阶段 / 第 9 批 / 共 24 批",
+  "slug": "agent-registry",
+  "status": "complete",
+  "goals": [
+    "定义 Agent 注册表",
+    "能力/权限/成本/审计",
+    "多 Agent 类型"
+  ],
+  "outputs": [
+    "AgentProfile",
+    "AgentCapability"
+  ],
+  "mustKeep": [
+    "cost policy required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-agent-orchestration",
+    "dataDirectory": "data/v5/stage-03",
+    "docsDirectory": "docs/51-v5/stage-03",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

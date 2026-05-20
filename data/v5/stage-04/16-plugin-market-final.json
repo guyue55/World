@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "插件市场阶段收口",
+  "batch": 16,
+  "stage": 4,
+  "stageName": "真实插件市场与外部生态接入",
+  "stageProgress": "V5 / 第 4 阶段 / 第 16 批 / 共 24 批",
+  "slug": "plugin-market-final",
+  "status": "complete",
+  "goals": [
+    "收束插件市场阶段",
+    "越权禁止、输出校验",
+    "安装必须 owner approval"
+  ],
+  "outputs": [
+    "PluginMarketFinal"
+  ],
+  "mustKeep": [
+    "schema validate"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-plugin-market",
+    "dataDirectory": "data/v5/stage-04",
+    "docsDirectory": "docs/51-v5/stage-04",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}
