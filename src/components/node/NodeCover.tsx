@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import type { Node } from '@/lib/types'
+import { resolveNodeCover } from '@/lib/homepage'
 
 const coverText: Record<string, string> = {
   origin: '创世原点',
@@ -10,17 +12,18 @@ const coverText: Record<string, string> = {
 }
 
 export function NodeCover({ node }: { node: Node }) {
-  if (node.cover) {
+  const cover = resolveNodeCover(node)
+
+  if (cover) {
     return (
       <div className="overflow-hidden rounded-world border border-ink/10 bg-white/45 shadow-soft">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={node.cover} alt={node.title} className="h-64 w-full object-cover" />
+        <Image src={cover} alt={node.title} width={1440} height={640} className="h-72 w-full object-cover md:h-80" priority />
       </div>
     )
   }
 
   return (
-    <div className="flex h-64 items-end overflow-hidden rounded-world border border-ink/10 bg-gradient-to-br from-white/70 via-mist/50 to-gold/20 p-6 shadow-soft">
+    <div className="flex h-72 items-end overflow-hidden rounded-world border border-ink/10 bg-gradient-to-br from-white/70 via-mist/50 to-gold/20 p-6 shadow-soft md:h-80">
       <div>
         <p className="text-sm tracking-[0.35em] text-moss">{coverText[node.areaId] ?? node.areaId}</p>
         <p className="mt-3 text-3xl font-semibold">{node.worldTitle ?? node.title}</p>

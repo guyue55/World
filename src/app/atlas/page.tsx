@@ -1,8 +1,13 @@
 import { getAllAreas } from '@/lib/areas'
-import { getPublicNodesByArea } from '@/lib/nodes'
+import { getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
+import { getAtlasStats, getVisibleAreaLinks } from '@/lib/atlas'
 import { AtlasMap } from '@/components/world/AtlasMap'
 import { AreaNodeCluster } from '@/components/world/AreaNodeCluster'
 import { createPageMetadata } from '@/lib/metadata'
+import { AtlasHero } from '@/components/atlas/AtlasHero'
+import { AtlasStats } from '@/components/atlas/AtlasStats'
+import { AtlasStarLines } from '@/components/atlas/AtlasStarLines'
+import { AtlasFallbackList } from '@/components/atlas/AtlasFallbackList'
 
 export const metadata = createPageMetadata({
   title: '世界地图',
@@ -12,18 +17,22 @@ export const metadata = createPageMetadata({
 
 export default function AtlasPage() {
   const areas = getAllAreas()
+  const publicNodes = getPublicNodes()
+  const stats = getAtlasStats(areas, publicNodes)
+  const areaLinks = getVisibleAreaLinks(areas)
 
   return (
     <main className="world-container space-y-14 py-16">
-      <header className="max-w-3xl space-y-4">
-        <p className="text-sm tracking-[0.35em] text-moss">ATLAS</p>
-        <h1 className="text-5xl font-semibold">世界地图</h1>
-        <p className="leading-8 text-ink/70">
-          Atlas 不是分类页，而是空间导航。你可以从区域进入内容，也可以随时返回档案馆进行现实检索。
-        </p>
-      </header>
-
-      <AtlasMap areas={areas} />
+      <AtlasHero />
+      <AtlasStats
+        areaCount={stats.areaCount}
+        publicAreaCount={stats.publicAreaCount}
+        publicNodeCount={stats.publicNodeCount}
+        areaLinkCount={stats.areaLinkCount}
+      />
+      <AtlasMap areas={areas} nodes={publicNodes} />
+      <AtlasStarLines areas={areas} links={areaLinks} />
+      <AtlasFallbackList areas={areas} nodes={publicNodes} />
 
       <section className="space-y-14">
         {areas.map((area) => (

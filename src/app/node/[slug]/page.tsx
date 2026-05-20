@@ -1,27 +1,41 @@
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getNodeBySlug, getPublicNodes } from '@/lib/nodes'
 import { getAreaById } from '@/lib/areas'
-import { getBacklinks, getForwardLinks } from '@/lib/backlinks'
 import { readContentFile } from '@/lib/content'
+import {
+  estimateReadingMinutes,
+  getNodeExplorationGroups,
+} from '@/lib/node-reading'
+import {
+  extractReadingHeadings,
+  getReadingComfortSummary,
+} from '@/lib/reading-comfort'
 import { NodePassport } from '@/components/node/NodePassport'
-import { NodeLifeStageBadge } from '@/components/node/NodeLifeStageBadge'
-import { NodeCard } from '@/components/node/NodeCard'
 import { NodeCover } from '@/components/node/NodeCover'
-import { MarkdownContent } from '@/components/common/MarkdownContent'
 import { Breadcrumbs } from '@/components/common/Breadcrumbs'
-import { EmptyState } from '@/components/common/EmptyState'
 import { createPageMetadata } from '@/lib/metadata'
 import { JsonLd } from '@/components/common/JsonLd'
 import { nodeArticleJsonLd } from '@/lib/jsonld'
+import { NodeReadingHeader } from '@/components/node/NodeReadingHeader'
+import { NodeReadingBody } from '@/components/node/NodeReadingBody'
+import { NodeRelationRail } from '@/components/node/NodeRelationRail'
+import { NodeReadingActions } from '@/components/node/NodeReadingActions'
+import { ReadingComfortBar } from '@/components/reading/ReadingComfortBar'
+import { ReadingToc } from '@/components/reading/ReadingToc'
+
+type NodePageParams = {
+  slug: string
+}
 
 export function generateStaticParams() {
   return getPublicNodes().map((node) => ({ slug: node.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const node = getNodeBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<NodePageParams> }) {
+  const { slug } = await params
+  const node = getNodeBySlug(slug)
   if (!node) return createPageMetadata({ title: '节点不存在', path: '/archive' })
+
   return createPageMetadata({
     title: node.title,
     description: node.summary,
@@ -29,17 +43,20 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   })
 }
 
-export default function NodePage({ params }: { params: { slug: string } }) {
-  const node = getNodeBySlug(params.slug)
+export default async function NodePage({ params }: { params: Promise<NodePageParams> }) {
+  const { slug } = await params
+  const node = getNodeBySlug(slug)
   if (!node || node.visibility !== 'public') notFound()
 
   const area = getAreaById(node.areaId)
-  const backlinks = getBacklinks(node.id).slice(0, 3)
-  const forwardLinks = getForwardLinks(node.id).slice(0, 3)
   const content = readContentFile(node.contentPath)
+  const readingMinutes = estimateReadingMinutes(content)
+  const explorationGroups = getNodeExplorationGroups(node)
+  const headings = extractReadingHeadings(content)
+  const comfort = getReadingComfortSummary(content, readingMinutes)
 
   return (
-    <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_360px]">
+    <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
       <article className="space-y-8">
         <JsonLd data={nodeArticleJsonLd(node)} />
         <Breadcrumbs
@@ -51,45 +68,24 @@ export default function NodePage({ params }: { params: { slug: string } }) {
         />
 
         <NodeCover node={node} />
-
-        <header className="space-y-4">
-          <NodeLifeStageBadge stage={node.lifeStage} />
-          <h1 className="text-5xl font-semibold leading-tight">{node.title}</h1>
-          {node.worldTitle && <p className="text-2xl text-moss">{node.worldTitle}</p>}
-          {node.summary && <p className="text-lg leading-9 text-ink/75">{node.summary}</p>}
-        </header>
-
-        <section className="rounded-world border border-ink/10 bg-white/45 p-8 shadow-soft">
-          {content ? (
-            <MarkdownContent content={content} />
-          ) : (
-            <EmptyState
-              title="这颗星还没有完整正文"
-              description="它已经被安放在世界中，拥有位置、权限、生命周期与关系。后续可以通过 contentPath 接入 Markdown / MDX 正文。"
-              href="/archive"
-              action="打开档案馆"
-            />
-          )}
-        </section>
-
-        <section className="grid gap-6 md:grid-cols-2">
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">从这里可以去哪里</h2>
-            {forwardLinks.length ? forwardLinks.map((item) => <NodeCard key={item.id} node={item} />) : <p className="text-ink/60">暂无前向星线。</p>}
-          </div>
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">哪些节点提到它</h2>
-            {backlinks.length ? backlinks.map((item) => <NodeCard key={item.id} node={item} />) : <p className="text-ink/60">暂无反向星线。</p>}
-          </div>
-        </section>
-
-        <div className="flex flex-wrap gap-3">
-          <Link className="rounded-full border border-ink/10 bg-white/45 px-5 py-3" href="/atlas">返回地图</Link>
-          <Link className="rounded-full border border-ink/10 bg-white/45 px-5 py-3" href="/archive">打开档案馆</Link>
+        <NodeReadingHeader node={node} areaName={area?.worldName} readingMinutes={readingMinutes} />
+        <ReadingComfortBar
+          readingMinutes={comfort.readingMinutes}
+          headingCount={comfort.headingCount}
+          readingWidth={comfort.readingWidth}
+        />
+        <div className="xl:hidden">
+          <ReadingToc headings={headings} />
         </div>
+        <NodeReadingBody content={content} />
+        <NodeRelationRail groups={explorationGroups} />
+        <NodeReadingActions />
       </article>
 
-      <aside>
+      <aside className="space-y-6 xl:sticky xl:top-24 xl:self-start">
+        <div className="hidden xl:block">
+          <ReadingToc headings={headings} />
+        </div>
         <NodePassport node={node} area={area} />
       </aside>
     </main>

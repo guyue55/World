@@ -6,8 +6,12 @@ export function getAllWorldEvents(): WorldEvent[] {
   return [...(events as WorldEvent[])].sort((a, b) => b.date.localeCompare(a.date))
 }
 
+export function getPublicWorldEvents(): WorldEvent[] {
+  return getAllWorldEvents().filter((event) => event.visibility !== 'private')
+}
+
 export function getRecentWorldEvents(limit = 5): WorldEvent[] {
-  return getAllWorldEvents().slice(0, limit)
+  return getPublicWorldEvents().slice(0, limit)
 }
 
 export function getWorldState(): WorldState {

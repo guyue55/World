@@ -3,46 +3,67 @@
 import { useMemo, useState } from 'react'
 import type { Area, Node } from '@/lib/types'
 import { searchNodes } from '@/lib/search'
+import {
+  filterArchiveNodes,
+  getArchiveStats,
+  getLifeStages,
+  getNodeTypes,
+  getPopularTags,
+  type ArchiveFilters as ArchiveFilterState,
+} from '@/lib/archive'
 import { NodeCard } from '@/components/node/NodeCard'
+import { ArchiveEmptyState } from '@/components/archive/ArchiveEmptyState'
+import { ArchiveFilters } from '@/components/archive/ArchiveFilters'
+import { ArchiveStats } from '@/components/archive/ArchiveStats'
+
+const initialFilters: ArchiveFilterState = {
+  query: '',
+  areaId: 'all',
+  type: 'all',
+  lifeStage: 'all',
+  tag: 'all',
+  sort: 'newest',
+}
 
 export function ArchiveView({ nodes, areas }: { nodes: Node[]; areas: Area[] }) {
-  const [query, setQuery] = useState('')
-  const [areaId, setAreaId] = useState('all')
-  const [lifeStage, setLifeStage] = useState('all')
+  const [filters, setFilters] = useState<ArchiveFilterState>(initialFilters)
+  const areaMap = useMemo(() => new Map(areas.map((area) => [area.id, area])), [areas])
+  const stats = useMemo(() => getArchiveStats(nodes, areas), [nodes, areas])
+  const popularTags = useMemo(() => getPopularTags(nodes), [nodes])
+  const nodeTypes = useMemo(() => getNodeTypes(nodes), [nodes])
+  const lifeStages = useMemo(() => getLifeStages(nodes), [nodes])
 
   const filtered = useMemo(() => {
-    let result = searchNodes(nodes, query)
-    if (areaId !== 'all') result = result.filter((node) => node.areaId === areaId)
-    if (lifeStage !== 'all') result = result.filter((node) => node.lifeStage === lifeStage)
-    return result
-  }, [nodes, query, areaId, lifeStage])
+    return filterArchiveNodes(nodes, filters, searchNodes)
+  }, [nodes, filters])
+
+  const reset = () => setFilters(initialFilters)
 
   return (
     <section className="space-y-6">
-      <div className="grid gap-3 rounded-world border border-ink/10 bg-white/45 p-4 md:grid-cols-[1fr_220px_220px]">
-        <input
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="搜索一颗星、一份卷宗或一个旧想法"
-          className="rounded-full border border-ink/10 bg-white/70 px-5 py-3 outline-none"
-        />
-        <select value={areaId} onChange={(event) => setAreaId(event.target.value)} className="rounded-full border border-ink/10 bg-white/70 px-5 py-3">
-          <option value="all">全部区域</option>
-          {areas.map((area) => <option key={area.id} value={area.id}>{area.worldName}</option>)}
-        </select>
-        <select value={lifeStage} onChange={(event) => setLifeStage(event.target.value)} className="rounded-full border border-ink/10 bg-white/70 px-5 py-3">
-          <option value="all">全部阶段</option>
-          {['seed','sprout','growing','bloom','fruit','archive','relic','dormant','silent'].map((item) => <option key={item} value={item}>{item}</option>)}
-        </select>
+      <ArchiveStats {...stats} />
+      <ArchiveFilters
+        filters={filters}
+        areas={areas}
+        nodeTypes={nodeTypes}
+        lifeStages={lifeStages}
+        popularTags={popularTags}
+        onChange={setFilters}
+        onReset={reset}
+      />
+
+      <div className="flex items-center justify-between gap-4 text-sm text-ink/55">
+        <p>当前显示 {filtered.length} / {nodes.length} 颗公开星体</p>
+        <p>排序：{filters.sort}</p>
       </div>
 
       {filtered.length === 0 ? (
-        <p className="rounded-world border border-ink/10 bg-white/45 p-8 text-ink/60">
-          罗盘没有找到对应的星。也许它还没有被命名。
-        </p>
+        <ArchiveEmptyState filters={filters} onReset={reset} />
       ) : (
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {filtered.map((node) => <NodeCard key={node.id} node={node} />)}
+          {filtered.map((node) => (
+            <NodeCard key={node.id} node={node} area={areaMap.get(node.areaId)} />
+          ))}
         </div>
       )}
     </section>

@@ -1,5 +1,13 @@
 import { CodeBlock } from './CodeBlock'
 
+function slugifyHeading(text: string, index: number) {
+  return `${text
+    .toLowerCase()
+    .replace(/[^\u4e00-\u9fa5a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 48) || 'section'}-${index}`
+}
+
 function inlineMarkdown(text: string) {
   const parts = text.split(/(`[^`]+`)/g)
 
@@ -44,19 +52,22 @@ export function MarkdownContent({ content }: { content: string }) {
     }
 
     if (trimmed.startsWith('# ')) {
-      blocks.push(<h1 key={blocks.length} className="text-4xl font-semibold">{trimmed.slice(2)}</h1>)
+      const text = trimmed.slice(2)
+      blocks.push(<h1 id={slugifyHeading(text, blocks.length)} key={blocks.length} className="text-4xl font-semibold leading-tight">{text}</h1>)
       i += 1
       continue
     }
 
     if (trimmed.startsWith('## ')) {
-      blocks.push(<h2 key={blocks.length} className="pt-6 text-2xl font-semibold">{trimmed.slice(3)}</h2>)
+      const text = trimmed.slice(3)
+      blocks.push(<h2 id={slugifyHeading(text, i)} key={blocks.length} className="scroll-mt-24 pt-8 text-2xl font-semibold leading-snug">{text}</h2>)
       i += 1
       continue
     }
 
     if (trimmed.startsWith('### ')) {
-      blocks.push(<h3 key={blocks.length} className="pt-4 text-xl font-semibold">{trimmed.slice(4)}</h3>)
+      const text = trimmed.slice(4)
+      blocks.push(<h3 id={slugifyHeading(text, i)} key={blocks.length} className="scroll-mt-24 pt-5 text-xl font-semibold leading-snug">{text}</h3>)
       i += 1
       continue
     }
@@ -95,5 +106,5 @@ export function MarkdownContent({ content }: { content: string }) {
     )
   }
 
-  return <div className="space-y-5">{blocks}</div>
+  return <div className="prose-guyue space-y-5">{blocks}</div>
 }

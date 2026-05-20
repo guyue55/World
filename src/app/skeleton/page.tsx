@@ -1,4 +1,8 @@
 import { createPageMetadata } from '@/lib/metadata'
+import { getSkeletonLayers, getStatusSkeletonContract } from '@/lib/status-skeleton'
+import { SkeletonHero } from '@/components/status-skeleton/SkeletonHero'
+import { SkeletonLayerSummary } from '@/components/status-skeleton/SkeletonLayerSummary'
+import { StatusPanelGroup } from '@/components/status-skeleton/StatusPanelGroup'
 import { WorldFoundationStack } from '@/components/world/WorldFoundationStack'
 
 export const metadata = createPageMetadata({
@@ -8,17 +12,21 @@ export const metadata = createPageMetadata({
 })
 
 export default function SkeletonPage() {
+  const layers = getSkeletonLayers()
+  const skeletonGroup = getStatusSkeletonContract().groups.find((group) => group.id === 'skeleton')
+
   return (
     <main className="world-container space-y-12 py-16">
-      <header className="max-w-3xl space-y-4">
-        <p className="text-sm tracking-[0.35em] text-moss">SKELETON</p>
-        <h1 className="text-5xl font-semibold">世界骨架</h1>
-        <p className="text-lg leading-9 text-ink/70">
-          古月浮屿的宇宙感不是从 3D 开始，而是从空间、内容、关系、时间、投影、治理和互操作这些骨架层开始。
-        </p>
-      </header>
+      <SkeletonHero />
+      <SkeletonLayerSummary layers={layers} />
 
-      <WorldFoundationStack />
+      <StatusPanelGroup
+        id="complete-foundation-stack"
+        title="完整骨架面板"
+        purpose={skeletonGroup?.purpose ?? '按需展开完整世界骨架与工程守门面板。'}
+      >
+        <WorldFoundationStack />
+      </StatusPanelGroup>
     </main>
   )
 }
