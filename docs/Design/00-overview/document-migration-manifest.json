@@ -1,0 +1,155 @@
+{
+  "copied": [
+    {
+      "source": "00_总目录_README.md",
+      "destination": "docs/00-overview/README.md"
+    },
+    {
+      "source": "00_产品设计文档集_README.md",
+      "destination": "docs/00-overview/product-design-docs.md"
+    },
+    {
+      "source": "00_补充工程文档_README.md",
+      "destination": "docs/00-overview/engineering-docs.md"
+    },
+    {
+      "source": "00_未来阶段补充文档_README.md",
+      "destination": "docs/00-overview/future-docs.md"
+    },
+    {
+      "source": "15_古月浮屿_阶段划分与文档映射.md",
+      "destination": "docs/00-overview/phases-and-docs-map.md"
+    },
+    {
+      "source": "01_古月浮屿_世界宪章.md",
+      "destination": "docs/01-world/world-charter.md"
+    },
+    {
+      "source": "02_古月浮屿_世界手册.md",
+      "destination": "docs/01-world/world-manual.md"
+    },
+    {
+      "source": "03_古月浮屿_世界规则.md",
+      "destination": "docs/01-world/world-rules.md"
+    },
+    {
+      "source": "06_古月浮屿_术语词典.md",
+      "destination": "docs/01-world/glossary.md"
+    },
+    {
+      "source": "01_古月浮屿_产品总览.md",
+      "destination": "docs/02-product/product-overview.md"
+    },
+    {
+      "source": "02_古月浮屿_PRD产品需求文档.md",
+      "destination": "docs/02-product/prd.md"
+    },
+    {
+      "source": "03_古月浮屿_信息架构与导航设计.md",
+      "destination": "docs/03-design/information-architecture.md"
+    },
+    {
+      "source": "04_古月浮屿_交互体验设计文档.md",
+      "destination": "docs/03-design/interaction-design.md"
+    },
+    {
+      "source": "05_古月浮屿_视觉设计系统.md",
+      "destination": "docs/03-design/visual-design-system.md"
+    },
+    {
+      "source": "06_古月浮屿_内容系统与编辑规范.md",
+      "destination": "docs/04-content/content-system-and-editorial-guide.md"
+    },
+    {
+      "source": "05_古月浮屿_V1实施蓝图.md",
+      "destination": "docs/05-engineering/v1-implementation-blueprint.md"
+    },
+    {
+      "source": "07_古月浮屿_技术架构设计.md",
+      "destination": "docs/05-engineering/technical-architecture.md"
+    },
+    {
+      "source": "09_古月浮屿_系统设计文档.md",
+      "destination": "docs/05-engineering/system-design.md"
+    },
+    {
+      "source": "10_古月浮屿_数据模型与内容协议.md",
+      "destination": "docs/05-engineering/data-model-and-content-protocol.md"
+    },
+    {
+      "source": "11_古月浮屿_接口与集成设计.md",
+      "destination": "docs/05-engineering/interface-and-integration-design.md"
+    },
+    {
+      "source": "13_古月浮屿_测试验收与质量保障.md",
+      "destination": "docs/05-engineering/testing-and-quality-assurance.md"
+    },
+    {
+      "source": "14_古月浮屿_V1开发任务拆解.md",
+      "destination": "docs/05-engineering/v1-development-task-breakdown.md"
+    },
+    {
+      "source": "04_古月浮屿_AI守则.md",
+      "destination": "docs/06-privacy-ai/ai-policy.md"
+    },
+    {
+      "source": "12_古月浮屿_安全隐私与发布守门.md",
+      "destination": "docs/06-privacy-ai/security-privacy-release-gate.md"
+    },
+    {
+      "source": "08_古月浮屿_路线图与版本计划.md",
+      "destination": "docs/07-roadmap/roadmap-and-release-plan.md"
+    },
+    {
+      "source": "16_古月浮屿_私密档案系统设计.md",
+      "destination": "docs/08-future/private-archive-system.md"
+    },
+    {
+      "source": "17_古月浮屿_家庭与孩子内容规范.md",
+      "destination": "docs/08-future/family-and-child-content-policy.md"
+    },
+    {
+      "source": "18_古月浮屿_时间胶囊产品设计.md",
+      "destination": "docs/08-future/time-capsule-product-design.md"
+    },
+    {
+      "source": "19_古月浮屿_年度世界册设计.md",
+      "destination": "docs/08-future/annual-worldbook-design.md"
+    },
+    {
+      "source": "20_古月浮屿_主题展览系统设计.md",
+      "destination": "docs/08-future/exhibition-system-design.md"
+    },
+    {
+      "source": "21_古月浮屿_导出与传承系统设计.md",
+      "destination": "docs/08-future/export-and-legacy-system.md"
+    },
+    {
+      "source": "22_古月浮屿_高级世界体验设计.md",
+      "destination": "docs/08-future/advanced-world-experience.md"
+    }
+  ],
+  "missing": [],
+  "structure": [
+    "docs/00-overview",
+    "docs/01-world",
+    "docs/02-product",
+    "docs/03-design",
+    "docs/04-content",
+    "docs/05-engineering",
+    "docs/06-privacy-ai",
+    "docs/07-roadmap",
+    "docs/08-future",
+    "docs/assets",
+    "content/manifesto",
+    "content/articles",
+    "content/projects",
+    "content/fragments",
+    "content/memory",
+    "data",
+    "src/app",
+    "src/components",
+    "src/lib",
+    "scripts"
+  ]
+}
