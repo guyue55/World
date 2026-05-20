@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 多端导出计划",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 2 / 4",
+  "status": "multi-device-export-plan-prepared",
+  "exportReady": false,
+  "formats": [
+    {
+      "id": "markdown",
+      "title": "Markdown",
+      "scope": "public-content",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "json",
+      "title": "JSON",
+      "scope": "public-protocol",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "static-html",
+      "title": "静态 HTML",
+      "scope": "public-site",
+      "humanReviewRequired": true
+    },
+    {
+      "id": "world-book-pdf-placeholder",
+      "title": "世界册 PDF 占位",
+      "scope": "public-world-book",
+      "humanReviewRequired": true
+    }
+  ],
+  "rules": [
+    "exportReady=false 必须保持，直到真实导出与校验完成。",
+    "所有导出必须 humanReviewRequired=true。",
+    "多端导出不得包含私密内容。",
+    "PDF 仍为未来占位，不在本批实现真实生成。"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 身份、RBAC 与审计证明计划",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 2 / 4",
+  "status": "identity-rbac-audit-proof-plan-prepared",
+  "proofReady": false,
+  "proofs": [
+    {
+      "id": "identity-provider-proof",
+      "title": "身份提供方证明",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "owner-role-proof",
+      "title": "Owner 角色证明",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "non-owner-private-deny-proof",
+      "title": "非 Owner 私密拒绝证明",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "critical-permission-approval-proof",
+      "title": "关键权限审批证明",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "audit-event-write-proof",
+      "title": "审计事件写入证明",
+      "required": true,
+      "status": "pending-real-proof"
+    },
+    {
+      "id": "audit-private-redaction-proof",
+      "title": "审计私密脱敏证明",
+      "required": true,
+      "status": "pending-real-proof"
+    }
+  ],
+  "rules": [
+    "proofReady=false 必须保持，直到真实证明完成。",
+    "非 Owner 私密拒绝证明必须通过。",
+    "审计证明不得包含私密正文。",
+    "关键权限必须走人工审批。"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 多端体验矩阵",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 2 / 4",
+  "status": "multi-device-matrix-prepared",
+  "deviceReady": false,
+  "devices": [
+    {
+      "id": "mobile",
+      "title": "手机端",
+      "priority": "high",
+      "qaStatus": "pending-real-device"
+    },
+    {
+      "id": "tablet",
+      "title": "平板端",
+      "priority": "medium",
+      "qaStatus": "pending-real-device"
+    },
+    {
+      "id": "desktop",
+      "title": "桌面端",
+      "priority": "high",
+      "qaStatus": "pending-real-device"
+    },
+    {
+      "id": "wide-screen",
+      "title": "宽屏端",
+      "priority": "medium",
+      "qaStatus": "pending-real-device"
+    }
+  ],
+  "rules": [
+    "deviceReady=false 必须保持，直到真实多端 QA 完成。",
+    "移动端必须优先保证阅读和导航。",
+    "宽屏端不得出现过大空白和内容失衡。",
+    "多端 QA 不得只依赖静态结构检查。"
+  ]
+}

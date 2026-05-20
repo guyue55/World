@@ -11,6 +11,8 @@ function read(file: string) {
 
 function main() {
   const errors: string[] = []
+  const latestLintAttempt = lintExecutionReadiness.latestAttempt as { exitCode?: number } | undefined
+
 
   if (phaseTwoFinalHandoffGate.handoffScope.completedPhaseTwoBatches !== 12) {
     errors.push('handoff gate must record 12 phase two batches')
@@ -32,7 +34,7 @@ function main() {
     errors.push('next stage readiness must include 3 tracks')
   }
 
-  if (lintExecutionReadiness.currentStatus === 'passed' && lintExecutionReadiness.latestAttempt?.exitCode !== 0) {
+  if (lintExecutionReadiness.currentStatus === 'passed' && latestLintAttempt?.exitCode !== 0) {
     errors.push('lint cannot be marked passed unless latest attempt exitCode is 0')
   }
 

@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 内容主题支柱",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 1 / 4",
+  "status": "topic-pillars-prepared",
+  "pillars": [
+    {
+      "id": "world-building",
+      "title": "个人数字世界建造",
+      "cadence": "weekly",
+      "visibility": "public"
+    },
+    {
+      "id": "technology-notes",
+      "title": "技术与工程札记",
+      "cadence": "weekly",
+      "visibility": "public"
+    },
+    {
+      "id": "ai-collaboration",
+      "title": "AI 协作与边界",
+      "cadence": "biweekly",
+      "visibility": "public"
+    },
+    {
+      "id": "life-observation",
+      "title": "生活观察与自然感",
+      "cadence": "biweekly",
+      "visibility": "public"
+    },
+    {
+      "id": "visual-world",
+      "title": "视觉世界与主题展览",
+      "cadence": "monthly",
+      "visibility": "public"
+    },
+    {
+      "id": "operations-review",
+      "title": "长期运营复盘",
+      "cadence": "monthly",
+      "visibility": "public"
+    }
+  ],
+  "rules": [
+    "所有主题支柱默认 public。",
+    "涉及 private/family/partner/vault/sealed/silent 的素材不得直接发布。",
+    "每个支柱必须服务世界长期生长，而不是短期流量。",
+    "AI 只能参与建议，不自动发布。"
+  ]
+}

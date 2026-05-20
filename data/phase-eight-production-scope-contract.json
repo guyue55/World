@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第八阶段真实生产发布与运维闭环范围契约",
+  "principle": "第八阶段以真实生产环境为中心，但仍不能在缺少证据时声明 release-ready。",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 1 / 4",
+  "status": "implemented-static-production-scope",
+  "focus": [
+    "production deployment",
+    "domain and HTTPS",
+    "CDN and cache policy",
+    "environment variable contract",
+    "production smoke evidence",
+    "monitoring and error tracking",
+    "rollback execution"
+  ],
+  "nonGoals": [
+    "claim production live without deployment evidence",
+    "ship private content",
+    "enable AI autonomous publishing",
+    "skip dry-run",
+    "skip manual signoff",
+    "skip blocker review"
+  ],
+  "entryGuards": [
+    "phase seven completed",
+    "release evidence ledger still required",
+    "private tiers remain excluded",
+    "AI remains suggestion-only",
+    "production release requires explicit operator signoff"
+  ],
+  "rules": [
+    "第八阶段必须绑定真实生产环境证据。",
+    "域名、HTTPS、CDN、环境变量必须有可追溯记录。",
+    "任何生产发布前必须完成 dry-run、manual signoff 与 blocker review。",
+    "生产发布不得携带 private/family/partner/vault/sealed/silent。",
+    "release-ready 只能由真实证据闭环决定。"
+  ]
+}

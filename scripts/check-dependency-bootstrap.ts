@@ -10,6 +10,8 @@ function read(file: string) {
 
 function main() {
   const errors: string[] = []
+  const latestLintAttempt = lintExecutionReadiness.latestAttempt as { exitCode?: number } | undefined
+
 
   if (dependencyBootstrapContract.requiredTools.length < 6) {
     errors.push('dependency bootstrap required tools too few')
@@ -27,7 +29,7 @@ function main() {
     errors.push('dependency bootstrap record checks too few')
   }
 
-  if (lintExecutionReadiness.currentStatus === 'passed' && lintExecutionReadiness.latestAttempt?.exitCode !== 0) {
+  if (lintExecutionReadiness.currentStatus === 'passed' && latestLintAttempt?.exitCode !== 0) {
     errors.push('lint cannot be passed without exitCode 0')
   }
 

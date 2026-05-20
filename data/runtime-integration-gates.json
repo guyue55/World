@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行态真实接入门禁",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 3 / 4",
+  "status": "runtime-integration-gates-prepared",
+  "integrationReady": false,
+  "gates": [
+    {
+      "id": "approval-service",
+      "title": "审批服务接入",
+      "ready": false,
+      "requiresHumanReview": true
+    },
+    {
+      "id": "pwa-service-worker",
+      "title": "PWA Service Worker",
+      "ready": false,
+      "requiresHumanReview": true
+    },
+    {
+      "id": "export-runner",
+      "title": "导出执行器",
+      "ready": false,
+      "requiresHumanReview": true
+    },
+    {
+      "id": "analytics-ingestion",
+      "title": "分析数据接入",
+      "ready": false,
+      "requiresHumanReview": true
+    },
+    {
+      "id": "quality-patrol-runner",
+      "title": "质量巡检执行器",
+      "ready": false,
+      "requiresHumanReview": true
+    },
+    {
+      "id": "operator-action-runner",
+      "title": "控制台动作执行器",
+      "ready": false,
+      "requiresHumanReview": true
+    }
+  ],
+  "rules": [
+    "integrationReady=false 必须保持，直到真实接入完成。",
+    "所有 gate.ready 必须默认为 false。",
+    "所有 gate 必须 requiresHumanReview=true。",
+    "接入门禁不得绕过人工审批工作流。"
+  ]
+}

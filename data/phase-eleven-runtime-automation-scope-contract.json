@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十一阶段真实运行态自动化与增长闭环范围契约",
+  "principle": "第十一阶段进入真实运行态前，所有自动化必须先绑定人工审批、证据追踪和私密边界。",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 1 / 4",
+  "status": "implemented-static-runtime-scope",
+  "focus": [
+    "real runtime automation",
+    "human approval workflow",
+    "runtime evidence tracking",
+    "content growth loop",
+    "real analytics ingestion",
+    "PWA implementation gate",
+    "export execution evidence",
+    "operator dashboard"
+  ],
+  "nonGoals": [
+    "AI autonomous publishing",
+    "skip human approval",
+    "cache private content offline",
+    "export private content without permission",
+    "claim production live without evidence",
+    "replace manual signoff with automation"
+  ],
+  "entryGuards": [
+    "phase ten completed",
+    "all readiness flags remain false until real execution",
+    "private tiers remain excluded",
+    "AI remains suggestion-only until approved",
+    "automation must produce evidence"
+  ],
+  "rules": [
+    "任何自动化执行前必须进入人工审批工作流。",
+    "审批通过只授权单次动作，不授权持续自动化。",
+    "所有运行态动作必须产生 evidence record。",
+    "私密内容不得进入离线缓存、公开导出或增长分析。",
+    "自动化不得替代 release signoff、production signoff 或 content review。"
+  ]
+}

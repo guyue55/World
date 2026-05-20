@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 PWA 与离线访问计划",
+  "stageProgress": "phase-ten-intelligent-operations-multi-device line batch 2 / 4",
+  "status": "pwa-offline-plan-prepared",
+  "pwaReady": false,
+  "features": [
+    {
+      "id": "manifest",
+      "title": "Web App Manifest",
+      "status": "planned"
+    },
+    {
+      "id": "offline-shell",
+      "title": "离线壳",
+      "status": "planned"
+    },
+    {
+      "id": "cache-public-assets",
+      "title": "公开资源缓存",
+      "status": "planned"
+    },
+    {
+      "id": "offline-reading-list",
+      "title": "离线阅读列表",
+      "status": "future-optional"
+    },
+    {
+      "id": "install-prompt",
+      "title": "安装提示",
+      "status": "future-optional"
+    }
+  ],
+  "rules": [
+    "PWA 只缓存公开内容。",
+    "不得缓存 private/family/partner/vault/sealed/silent。",
+    "pwaReady=false 必须保持，直到真实 service worker 和浏览器测试完成。",
+    "离线模式不得误导为完整私密档案可用。"
+  ]
+}

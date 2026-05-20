@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段公开发布与长期运营范围契约",
+  "principle": "第七阶段以真实发布证据为中心，不再用结构封版代替发布验收。",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 1 / 4",
+  "status": "implemented-static-release-scope",
+  "focus": [
+    "real dry-run evidence",
+    "release handoff manifest",
+    "acceptance scan",
+    "manual signoff",
+    "blocker review",
+    "public SEO readiness",
+    "long-term operations"
+  ],
+  "nonGoals": [
+    "claim release-ready without evidence",
+    "production deploy without dry-run",
+    "AI autonomous publishing",
+    "private content public exposure",
+    "skip manual signoff",
+    "hide known blockers"
+  ],
+  "entryGuards": [
+    "phase six completed",
+    "release-ready remains not-ready until evidence passes",
+    "private tiers remain excluded",
+    "AI remains suggestion-only",
+    "all release claims must be evidence-backed"
+  ],
+  "rules": [
+    "第七阶段必须以真实发布证据为中心。",
+    "不能只因为完成文档或页面就声明 release-ready。",
+    "必须保留 dry-run、handoff、acceptance scan、manual signoff、blocker review 缺口。",
+    "生产发布前必须有人工签收。",
+    "公开发布不得携带 private/family/partner/vault/sealed/silent 内容。"
+  ]
+}

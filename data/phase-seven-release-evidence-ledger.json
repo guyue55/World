@@ -1,0 +1,85 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段真实发布证据台账",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 1 / 4",
+  "status": "evidence-ledger-open",
+  "releaseReady": false,
+  "items": [
+    {
+      "id": "dependency-install",
+      "title": "依赖安装",
+      "command": "npm install",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "lint",
+      "title": "Lint 检查",
+      "command": "npm run lint",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "typecheck",
+      "title": "TypeScript 检查",
+      "command": "npm run typecheck",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "build",
+      "title": "生产构建",
+      "command": "npm run build",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "world-core",
+      "title": "世界核心门禁",
+      "command": "npm run check:world-core",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "release-dry-run",
+      "title": "发布干跑",
+      "command": "npm run release:dry-run",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "handoff-manifest",
+      "title": "交接清单",
+      "command": "npm run release-handoff:manifest",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "acceptance-scan",
+      "title": "候选验收扫描",
+      "command": "npm run release-candidate-acceptance:scan",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "manual-signoff",
+      "title": "人工签收",
+      "command": "manual",
+      "status": "pending-human",
+      "required": true
+    },
+    {
+      "id": "blocker-review",
+      "title": "阻断复查",
+      "command": "manual",
+      "status": "pending-human",
+      "required": true
+    }
+  ],
+  "rules": [
+    "所有 required=true 的项目必须完成后才可改 releaseReady=true。",
+    "pending-real-run 不得记为通过。",
+    "pending-human 必须由人工签收。",
+    "证据台账只记录状态，不伪造结果。"
+  ]
+}

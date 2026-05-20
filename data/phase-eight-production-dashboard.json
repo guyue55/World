@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 生产发布看板",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 2 / 4",
+  "status": "implemented-static-production-dashboard",
+  "productionLive": false,
+  "cards": [
+    {
+      "id": "environment",
+      "title": "生产环境矩阵",
+      "state": "prepared",
+      "route": "/production"
+    },
+    {
+      "id": "deployment-checklist",
+      "title": "部署执行清单",
+      "state": "pending-real-run",
+      "route": "/production"
+    },
+    {
+      "id": "domain-https-cdn",
+      "title": "域名 HTTPS CDN",
+      "state": "pending-operator",
+      "route": "/production"
+    },
+    {
+      "id": "production-smoke",
+      "title": "生产 Smoke",
+      "state": "pending-real-run",
+      "route": "/production"
+    },
+    {
+      "id": "signoff",
+      "title": "发布签收",
+      "state": "pending-human",
+      "route": "/production"
+    }
+  ],
+  "rules": [
+    "生产发布看板只展示状态，不声明生产已上线。",
+    "productionLive=false 必须保持。",
+    "production-smoke 和 signoff 必须真实完成。"
+  ]
+}

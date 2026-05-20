@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 生产 Smoke 测试计划",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 3 / 4",
+  "status": "production-smoke-plan-prepared",
+  "productionSmokePassed": false,
+  "checks": [
+    {
+      "id": "home-load",
+      "title": "首页可访问",
+      "type": "manual-or-browser",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "archive-load",
+      "title": "档案馆可访问",
+      "type": "manual-or-browser",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "release-load",
+      "title": "发布看板可访问",
+      "type": "manual-or-browser",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "production-load",
+      "title": "生产看板可访问",
+      "type": "manual-or-browser",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "rss-load",
+      "title": "RSS 可访问",
+      "type": "manual-or-http",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "world-json-load",
+      "title": "世界索引 JSON 可访问",
+      "type": "manual-or-http",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "private-excluded",
+      "title": "私密层级未进入公开构建",
+      "type": "manual-review",
+      "status": "pending-human",
+      "required": true
+    },
+    {
+      "id": "ai-no-autonomy",
+      "title": "AI 未自动执行发布/删除/导出",
+      "type": "manual-review",
+      "status": "pending-human",
+      "required": true
+    }
+  ],
+  "rules": [
+    "productionSmokePassed=false 必须保持，直到真实生产 smoke 完成。",
+    "所有 required=true 检查必须有真实证据。",
+    "manual-review 必须人工确认。",
+    "smoke 失败必须进入缺陷与回滚流程。"
+  ]
+}

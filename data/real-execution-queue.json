@@ -1,0 +1,79 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行队列",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 2 / 4",
+  "status": "execution-queue-prepared",
+  "executionQueueReady": false,
+  "items": [
+    {
+      "id": "install",
+      "command": "npm install",
+      "kind": "dependency",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "kind": "quality",
+      "required": true,
+      "status": "attempted-failed",
+      "latestExitCode": 127,
+      "latestOutputExcerpt": "> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0\n\n\nsh: 1: eslint: Permission denied"
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "kind": "quality",
+      "required": true,
+      "status": "attempted-failed",
+      "latestExitCode": 2,
+      "latestOutputExcerpt": "> guyue-floating-world@0.1.0 typecheck\n> tsc --noEmit\n\nnext.config.ts(1,23): error TS2307: Cannot find module '@next/mdx' or its corresponding type declarations.\nnext.config.ts(2,33): error TS2307: Cannot find module 'next' or its corresponding type declarations.\nscripts/build-public-world-index.ts(1,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/build-public-world-index.ts(2,18): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.\nscripts/build-public-world-index.ts(6,28): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/capture-real-evidence.ts(1,27): error TS2307: Cannot find module 'node:child_process' or its corresponding type declarations.\nscripts/capture-real-evidence.ts(2,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/capture-real-evidence.ts(3,18): error TS2307: "
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "kind": "build",
+      "required": true,
+      "status": "attempted-failed",
+      "latestExitCode": 127,
+      "latestOutputExcerpt": "> guyue-floating-world@0.1.0 build\n> npm run validate:world && npm run check:public && next build\n\n\n> guyue-floating-world@0.1.0 validate:world\n> tsx scripts/validate-world-data.ts\n\n\nsh: 1: tsx: Permission denied"
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "kind": "domain-gate",
+      "required": true,
+      "status": "attempted-failed",
+      "latestExitCode": 127,
+      "latestOutputExcerpt": "> guyue-floating-world@0.1.0 check:world-core\n> npm run validate:world && npm run check:public && npm run check:skeleton && npm run check:invariants && npm run check:contracts && npm run check:projections && npm run check:ai-boundary && npm run check:extensions && npm run check:spatial-ontology && npm run check:kernel && npm run check:foundation && npm run check:docs && npm run check:operations && npm run check:audit && npm run check:baseline && npm run check:reproducibility && npm run check:governance-ledger && npm run check:ballast && npm run check:architecture && npm run check:feature-architecture && npm run check:performance && npm run check:performance-implementation && npm run check:performance-regression && npm run check:phase-one && npm run check:tooling && npm run check:visual-qa && npm run check:content-productization && npm run check:stage-acceptance && npm run check:real-evidence && npm run check:local-acceptance && npm run check:preview-smoke-config && npm run check:final-"
+    },
+    {
+      "id": "release-local-gate",
+      "command": "npm run release:local-gate",
+      "kind": "release-gate",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "evidence-capture",
+      "command": "npm run evidence:capture",
+      "kind": "evidence",
+      "required": true,
+      "status": "pending-real-run"
+    },
+    {
+      "id": "security-baseline",
+      "command": "npm run phase-thirteen-security:print",
+      "kind": "security",
+      "required": true,
+      "status": "static-only-not-sufficient"
+    }
+  ],
+  "rules": [
+    "executionQueueReady=false 必须保持，直到真实执行队列跑完并通过。",
+    "blocked-local-dependencies 不能计为 passed。",
+    "static-only-not-sufficient 不能替代真实安全扫描。",
+    "所有 required=true 项必须最终有真实证据或阻断说明。"
+  ]
+}

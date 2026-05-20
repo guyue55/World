@@ -10,6 +10,8 @@ function read(file: string) {
 
 function main() {
   const errors: string[] = []
+  const latestLintAttempt = lintExecutionReadiness.latestAttempt as { exitCode?: number } | undefined
+
 
   if (realValidationFinalReport.releaseDecision !== 'not-ready-for-release') {
     errors.push('real validation final report must not mark release ready')
@@ -35,7 +37,7 @@ function main() {
     errors.push('release blocker register must include at least four blockers')
   }
 
-  if (lintExecutionReadiness.currentStatus === 'passed' && lintExecutionReadiness.latestAttempt?.exitCode !== 0) {
+  if (lintExecutionReadiness.currentStatus === 'passed' && latestLintAttempt?.exitCode !== 0) {
     errors.push('lint cannot be passed without exitCode 0')
   }
 

@@ -1,0 +1,63 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 RC 证据包清单",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 3 / 4",
+  "status": "rc-evidence-package-checklist-prepared",
+  "rcEvidencePackageReady": false,
+  "sections": [
+    {
+      "id": "command-attempts",
+      "title": "真实命令尝试记录",
+      "required": true,
+      "status": "partial-recorded"
+    },
+    {
+      "id": "dependency-install",
+      "title": "依赖安装证据",
+      "required": true,
+      "status": "missing"
+    },
+    {
+      "id": "lint-typecheck-build",
+      "title": "lint/typecheck/build 证据",
+      "required": true,
+      "status": "not-passed"
+    },
+    {
+      "id": "world-core-release-gate",
+      "title": "world-core 与 release-local-gate 证据",
+      "required": true,
+      "status": "not-passed"
+    },
+    {
+      "id": "security-privacy",
+      "title": "安全与私密边界证据",
+      "required": true,
+      "status": "static-only"
+    },
+    {
+      "id": "manual-signoff",
+      "title": "人工签收证据",
+      "required": true,
+      "status": "missing"
+    },
+    {
+      "id": "rc-manifest",
+      "title": "RC manifest",
+      "required": true,
+      "status": "prepared-structure"
+    },
+    {
+      "id": "blocker-closure",
+      "title": "阻断关闭证据",
+      "required": true,
+      "status": "open"
+    }
+  ],
+  "rules": [
+    "rcEvidencePackageReady=false 必须保持，直到所有 section status 为 passed/complete。",
+    "partial-recorded、missing、not-passed、static-only、open 均不能视为完成。",
+    "RC 证据包不得包含 node_modules、.next、密钥或私密正文。",
+    "RC manifest 只能描述候选，不代表发布。"
+  ]
+}

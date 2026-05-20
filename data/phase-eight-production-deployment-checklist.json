@@ -1,0 +1,75 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 生产部署执行清单",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 2 / 4",
+  "status": "production-deployment-checklist-prepared",
+  "productionLive": false,
+  "steps": [
+    {
+      "id": "preflight-evidence",
+      "title": "确认发布证据台账",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "build-artifact",
+      "title": "生成可追溯构建产物",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "preview-deploy",
+      "title": "预览环境部署",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "preview-smoke",
+      "title": "预览 smoke",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "domain-bind",
+      "title": "绑定域名",
+      "status": "pending-operator",
+      "required": true
+    },
+    {
+      "id": "https-verify",
+      "title": "验证 HTTPS",
+      "status": "pending-operator",
+      "required": true
+    },
+    {
+      "id": "cdn-cache",
+      "title": "确认 CDN 与缓存策略",
+      "status": "pending-operator",
+      "required": true
+    },
+    {
+      "id": "production-deploy",
+      "title": "生产发布",
+      "status": "pending-operator",
+      "required": true
+    },
+    {
+      "id": "production-smoke",
+      "title": "生产 smoke",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "post-release-signoff",
+      "title": "发布后签收",
+      "status": "pending-human",
+      "required": true
+    }
+  ],
+  "rules": [
+    "productionLive=false 必须保持，直到真实生产部署完成。",
+    "所有 required=true 步骤必须有证据。",
+    "production-deploy 前必须完成 preview-smoke。",
+    "发布后必须执行 production-smoke 与人工签收。"
+  ]
+}

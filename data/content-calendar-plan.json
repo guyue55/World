@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 内容日历",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 2 / 4",
+  "status": "content-calendar-prepared",
+  "publicationReady": false,
+  "monthlyPlan": [
+    {
+      "week": "week-1",
+      "focus": "个人数字世界建造",
+      "deliverable": "长文 + 路径更新",
+      "visibility": "public",
+      "humanReviewRequired": true
+    },
+    {
+      "week": "week-2",
+      "focus": "技术与工程札记",
+      "deliverable": "技术札记 + 代码复盘",
+      "visibility": "public",
+      "humanReviewRequired": true
+    },
+    {
+      "week": "week-3",
+      "focus": "AI 协作与边界",
+      "deliverable": "AI 协作观察 + 边界复盘",
+      "visibility": "public",
+      "humanReviewRequired": true
+    },
+    {
+      "week": "week-4",
+      "focus": "生活观察与自然感",
+      "deliverable": "生活札记 + 图文展览",
+      "visibility": "public",
+      "humanReviewRequired": true
+    }
+  ],
+  "rules": [
+    "publicationReady=false 必须保持，直到真实内容完成人工复核。",
+    "所有公开发布必须 humanReviewRequired=true。",
+    "内容日历不得引入私密素材。",
+    "AI 可辅助草拟，但不能自动发布。"
+  ]
+}

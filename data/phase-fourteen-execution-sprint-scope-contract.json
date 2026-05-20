@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十四阶段真实执行证据冲刺范围契约",
+  "principle": "第十四阶段必须减少 pending-real-run，不能继续只增加结构。",
+  "stageProgress": "phase-fourteen-real-execution-evidence-sprint line batch 1 / 4",
+  "status": "implemented-static-execution-sprint-scope",
+  "focus": [
+    "real dependency install execution",
+    "real lint typecheck build execution",
+    "world-core real verification",
+    "security baseline real scan",
+    "release-local-gate execution",
+    "evidence capture execution",
+    "manual signoff preparation",
+    "blocker closure sprint"
+  ],
+  "nonGoals": [
+    "claim release-ready without passing real commands",
+    "mark pending-real-run as passed",
+    "skip manual signoff",
+    "skip blocker review",
+    "store secrets in repository",
+    "expose private content"
+  ],
+  "entryGuards": [
+    "phase thirteen completed",
+    "releaseReady remains false until real evidence passes",
+    "production remains not live",
+    "pending-real-run items must be executed or explicitly blocked",
+    "evidence output must be traceable"
+  ],
+  "rules": [
+    "所有 pending-real-run 项必须真实执行或明确记录阻断原因。",
+    "不能把环境阻断误记为通过。",
+    "不能在 lint/typecheck/build/world-core 未真实通过时声明 release-ready。",
+    "手工签收与 blocker review 必须保留。",
+    "本阶段允许产出真实执行辅助器和证据汇总器，但不伪造真实通过。"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实服务适配器实现计划",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 2 / 4",
+  "status": "real-service-adapter-plan-prepared",
+  "adapterImplementationReady": false,
+  "adapters": [
+    {
+      "id": "identity-adapter",
+      "service": "identity",
+      "proofRequired": true,
+      "status": "pending-real-implementation"
+    },
+    {
+      "id": "rbac-adapter",
+      "service": "permission",
+      "proofRequired": true,
+      "status": "pending-real-implementation"
+    },
+    {
+      "id": "audit-adapter",
+      "service": "audit",
+      "proofRequired": true,
+      "status": "pending-real-implementation"
+    },
+    {
+      "id": "secret-manager-adapter",
+      "service": "secret",
+      "proofRequired": true,
+      "status": "pending-real-implementation"
+    },
+    {
+      "id": "storage-adapter",
+      "service": "storage",
+      "proofRequired": true,
+      "status": "pending-real-implementation"
+    },
+    {
+      "id": "deployment-adapter",
+      "service": "deployment",
+      "proofRequired": true,
+      "status": "pending-real-implementation"
+    }
+  ],
+  "rules": [
+    "adapterImplementationReady=false 必须保持，直到真实适配器实现并有证明。",
+    "所有 adapter 必须 proofRequired=true。",
+    "secret-manager-adapter 不得输出密钥值。",
+    "storage-adapter 必须证明 private-vault 隔离。"
+  ]
+}

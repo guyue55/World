@@ -1186,6 +1186,411 @@
       "id": "phase-six-ai-batch-04-closure",
       "path": "docs/00-overview/v1-phase-six-ai-batch-04-closure.md",
       "layer": "overview"
+    },
+    {
+      "id": "phase-seven-release-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-seven-release-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-seven-release-evidence-ledger",
+      "path": "docs/05-engineering/v1-phase-seven-release-evidence-ledger.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-seven-release-batch-02-dashboard",
+      "path": "docs/00-overview/v1-phase-seven-release-batch-02-dashboard.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-seven-seo-analytics",
+      "path": "docs/05-engineering/v1-phase-seven-seo-analytics.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-seven-release-batch-03-operations",
+      "path": "docs/00-overview/v1-phase-seven-release-batch-03-operations.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-seven-operations-backup-governance",
+      "path": "docs/05-engineering/v1-phase-seven-operations-backup-governance.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-seven-release-final-report",
+      "path": "docs/00-overview/v1-phase-seven-release-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eight-entry-gate",
+      "path": "docs/05-engineering/v1-phase-eight-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-seven-release-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-seven-release-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eight-production-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-eight-production-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eight-production-environment",
+      "path": "docs/05-engineering/v1-phase-eight-production-environment.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eight-production-batch-02-dashboard",
+      "path": "docs/00-overview/v1-phase-eight-production-batch-02-dashboard.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eight-domain-https-cdn",
+      "path": "docs/05-engineering/v1-phase-eight-domain-https-cdn.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eight-production-batch-03-operations",
+      "path": "docs/00-overview/v1-phase-eight-production-batch-03-operations.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eight-smoke-monitoring-rollback",
+      "path": "docs/05-engineering/v1-phase-eight-smoke-monitoring-rollback.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eight-production-final-report",
+      "path": "docs/00-overview/v1-phase-eight-production-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-nine-entry-gate",
+      "path": "docs/05-engineering/v1-phase-nine-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eight-production-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-eight-production-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-nine-brand-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-nine-brand-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-nine-brand-system",
+      "path": "docs/05-engineering/v1-phase-nine-brand-system.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-nine-brand-batch-02-content-calendar",
+      "path": "docs/00-overview/v1-phase-nine-brand-batch-02-content-calendar.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-nine-content-calendar",
+      "path": "docs/05-engineering/v1-phase-nine-content-calendar.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-nine-brand-batch-03-feedback",
+      "path": "docs/00-overview/v1-phase-nine-brand-batch-03-feedback.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-nine-world-book-feedback",
+      "path": "docs/05-engineering/v1-phase-nine-world-book-feedback.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-nine-content-brand-final-report",
+      "path": "docs/00-overview/v1-phase-nine-content-brand-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-ten-entry-gate",
+      "path": "docs/05-engineering/v1-phase-ten-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-nine-brand-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-nine-brand-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-ten-intelligent-ops-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-ten-intelligent-ops-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-ten-ai-ops-assistant",
+      "path": "docs/05-engineering/v1-phase-ten-ai-ops-assistant.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-ten-intelligent-ops-batch-02-experience",
+      "path": "docs/00-overview/v1-phase-ten-intelligent-ops-batch-02-experience.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-ten-multi-device-pwa-export",
+      "path": "docs/05-engineering/v1-phase-ten-multi-device-pwa-export.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-ten-intelligent-ops-batch-03-quality",
+      "path": "docs/00-overview/v1-phase-ten-intelligent-ops-batch-03-quality.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-ten-quality-insight-feedback",
+      "path": "docs/05-engineering/v1-phase-ten-quality-insight-feedback.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-ten-intelligent-ops-final-report",
+      "path": "docs/00-overview/v1-phase-ten-intelligent-ops-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eleven-entry-gate",
+      "path": "docs/05-engineering/v1-phase-eleven-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-ten-intelligent-ops-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-ten-intelligent-ops-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eleven-runtime-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-eleven-runtime-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eleven-approval-workflow",
+      "path": "docs/05-engineering/v1-phase-eleven-approval-workflow.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eleven-runtime-batch-02-operator",
+      "path": "docs/00-overview/v1-phase-eleven-runtime-batch-02-operator.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eleven-operator-dashboard",
+      "path": "docs/05-engineering/v1-phase-eleven-operator-dashboard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eleven-runtime-batch-03-integration",
+      "path": "docs/00-overview/v1-phase-eleven-runtime-batch-03-integration.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-eleven-runtime-adapters",
+      "path": "docs/05-engineering/v1-phase-eleven-runtime-adapters.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eleven-runtime-final-report",
+      "path": "docs/00-overview/v1-phase-eleven-runtime-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-twelve-entry-gate",
+      "path": "docs/05-engineering/v1-phase-twelve-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-eleven-runtime-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-eleven-runtime-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-twelve-platform-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-twelve-platform-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-twelve-rbac-service-boundary",
+      "path": "docs/05-engineering/v1-phase-twelve-rbac-service-boundary.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-twelve-platform-batch-02-governance",
+      "path": "docs/00-overview/v1-phase-twelve-platform-batch-02-governance.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-twelve-audit-secret-storage",
+      "path": "docs/05-engineering/v1-phase-twelve-audit-secret-storage.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-twelve-platform-batch-03-team",
+      "path": "docs/00-overview/v1-phase-twelve-platform-batch-03-team.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-twelve-team-sustainability",
+      "path": "docs/05-engineering/v1-phase-twelve-team-sustainability.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-twelve-platform-final-report",
+      "path": "docs/00-overview/v1-phase-twelve-platform-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-thirteen-entry-gate",
+      "path": "docs/05-engineering/v1-phase-thirteen-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-twelve-platform-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-twelve-platform-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-thirteen-hardening-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-thirteen-hardening-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-thirteen-dependency-build-security",
+      "path": "docs/05-engineering/v1-phase-thirteen-dependency-build-security.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-thirteen-hardening-batch-02-adapters",
+      "path": "docs/00-overview/v1-phase-thirteen-hardening-batch-02-adapters.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-thirteen-service-adapters-proof",
+      "path": "docs/05-engineering/v1-phase-thirteen-service-adapters-proof.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-thirteen-hardening-batch-03-release",
+      "path": "docs/00-overview/v1-phase-thirteen-hardening-batch-03-release.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-thirteen-release-evidence-transition",
+      "path": "docs/05-engineering/v1-phase-thirteen-release-evidence-transition.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-thirteen-hardening-final-report",
+      "path": "docs/00-overview/v1-phase-thirteen-hardening-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fourteen-entry-gate",
+      "path": "docs/05-engineering/v1-phase-fourteen-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-thirteen-hardening-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-thirteen-hardening-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fourteen-evidence-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-fourteen-evidence-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fourteen-execution-queue-blockers",
+      "path": "docs/05-engineering/v1-phase-fourteen-execution-queue-blockers.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fourteen-evidence-batch-02-dashboard",
+      "path": "docs/00-overview/v1-phase-fourteen-evidence-batch-02-dashboard.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fourteen-evidence-dashboard",
+      "path": "docs/05-engineering/v1-phase-fourteen-evidence-dashboard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fourteen-evidence-batch-03-runner",
+      "path": "docs/00-overview/v1-phase-fourteen-evidence-batch-03-runner.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fourteen-runner-collector",
+      "path": "docs/05-engineering/v1-phase-fourteen-runner-collector.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fourteen-evidence-final-report",
+      "path": "docs/00-overview/v1-phase-fourteen-evidence-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fifteen-entry-gate",
+      "path": "docs/05-engineering/v1-phase-fifteen-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fourteen-evidence-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-fourteen-evidence-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fifteen-rc-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-fifteen-rc-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fifteen-rc-scope",
+      "path": "docs/05-engineering/v1-phase-fifteen-rc-scope.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fifteen-rc-batch-02-command-attempts",
+      "path": "docs/00-overview/v1-phase-fifteen-rc-batch-02-command-attempts.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fifteen-command-attempts",
+      "path": "docs/05-engineering/v1-phase-fifteen-command-attempts.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fifteen-rc-batch-03-package",
+      "path": "docs/00-overview/v1-phase-fifteen-rc-batch-03-package.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-fifteen-rc-evidence-package",
+      "path": "docs/05-engineering/v1-phase-fifteen-rc-evidence-package.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fifteen-rc-final-report",
+      "path": "docs/00-overview/v1-phase-fifteen-rc-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "current-stage-closure-status",
+      "path": "docs/05-engineering/v1-current-stage-closure-status.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-fifteen-rc-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-fifteen-rc-batch-04-closure.md",
+      "layer": "overview"
     }
   ],
   "docTypes": [

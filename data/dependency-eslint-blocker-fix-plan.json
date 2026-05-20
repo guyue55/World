@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 本地依赖与 eslint 阻断修复计划",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 1 / 4",
+  "status": "dependency-eslint-fix-plan-prepared",
+  "fixReady": false,
+  "fixSteps": [
+    {
+      "id": "clean-node-modules",
+      "command": "rm -rf node_modules",
+      "risk": "medium",
+      "manualReview": true
+    },
+    {
+      "id": "clean-lock-if-needed",
+      "command": "only remove lockfile if dependency conflict is confirmed",
+      "risk": "medium",
+      "manualReview": true
+    },
+    {
+      "id": "install-dependencies",
+      "command": "npm install",
+      "risk": "medium",
+      "manualReview": true
+    },
+    {
+      "id": "repair-eslint-permission",
+      "command": "chmod +x node_modules/.bin/eslint || reinstall eslint",
+      "risk": "medium",
+      "manualReview": true
+    },
+    {
+      "id": "rerun-lint",
+      "command": "npm run lint",
+      "risk": "high",
+      "manualReview": true
+    }
+  ],
+  "rules": [
+    "fixReady=false 必须保持，直到真实修复执行并验证。",
+    "不能跳过 npm install。",
+    "不能忽略 eslint permission blocker。",
+    "修复动作必须保留命令输出。"
+  ]
+}

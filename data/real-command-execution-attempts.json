@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十五阶段真实命令执行尝试记录",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 2 / 4",
+  "status": "real-command-attempts-recorded",
+  "allRequiredCommandsPassed": false,
+  "attemptedAt": "2026-05-20T04:12:31Z",
+  "environment": "chatgpt-sandbox-workspace",
+  "results": [
+    {
+      "id": "phase-fifteen-rc-scope-print",
+      "command": "npm run phase-fifteen-rc-scope:print",
+      "attempted": true,
+      "exitCode": 127,
+      "status": "failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 phase-fifteen-rc-scope:print\n> tsx scripts/print-phase-fifteen-rc-scope.ts\n\n\nsh: 1: tsx: Permission denied"
+    },
+    {
+      "id": "phase-fourteen-final-print",
+      "command": "npm run phase-fourteen-final:print",
+      "attempted": true,
+      "exitCode": 127,
+      "status": "failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 phase-fourteen-final:print\n> tsx scripts/print-phase-fourteen-final.ts\n\n\nsh: 1: tsx: Permission denied"
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "attempted": true,
+      "exitCode": 127,
+      "status": "failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 check:world-core\n> npm run validate:world && npm run check:public && npm run check:skeleton && npm run check:invariants && npm run check:contracts && npm run check:projections && npm run check:ai-boundary && npm run check:extensions && npm run check:spatial-ontology && npm run check:kernel && npm run check:foundation && npm run check:docs && npm run check:operations && npm run check:audit && npm run check:baseline && npm run check:reproducibility && npm run check:governance-ledger && npm run check:ballast && npm run check:architecture && npm run check:feature-architecture && npm run check:performance && npm run check:performance-implementation && npm run check:performance-regression && npm run check:phase-one && npm run check:tooling && npm run check:visual-qa && npm run check:content-productization && npm run check:stage-acceptance && npm run check:real-evidence && npm run check:local-acceptance && npm run check:preview-smoke-config && npm run check:final-closure && npm run check:stage-completion-transition && npm run check:phase-two-handoff && npm run check:phase-two-kickoff && npm run check:homepage && npm run check:interaction && npm run check:content-archive && npm run check:node-reading && npm run check:path-guidance && npm run check:atlas && npm run check:timeline && npm run check:lighthouse && npm run check:status-skeleton && npm run check:reading-comfort && npm run check:acceptance-readiness && npm run check:phase-two-closure && npm run check:lint-env && npm run check:real-execution-rerun && npm run check:final-handoff && npm run check:real-validation-runner && npm run check:browser-qa-matrix && npm run check:preview-performance && npm run check:validation-closure && npm run check:release-gate && npm run check:release-environment && npm run check:public-seo-release && npm run check:release-closure && npm run check:phase-three-planning && npm run check:content-growth && npm run check:ai-lighthouse-planning && npm run check:operations-export-planning && npm run check:theme-exhibitions && npm run check:ai-workbench && npm run check:export-center && npm run check:phase-three-implementation && npm run check:phase-three-routes && npm run check:phase-three-qa && npm run check:phase-three-entry && npm run check:phase-three-integration && npm run check:dependency-bootstrap && npm run check:real-evidence-capture && npm run check:non-command-evidence && npm run check:real-evidence-preparation && npm run check:evidence-dashboard && npm run check:blocker-closure-assist && npm run check:defect-execution && npm run check:real-evidence-assist && npm run check:real-execution-runbook && npm run check:real-execution-aggregator && npm run check:manual-release-review && npm run check:real-execution-landing && npm run check:release-dry-run && npm run check:release-handoff && npm run check:release-rollback && npm run check:release-dry-run-handoff && npm run check:release-candidate-freeze && npm run check:release-candidate-boundary "
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "attempted": true,
+      "exitCode": 2,
+      "status": "failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 typecheck\n> tsc --noEmit\n\nnext.config.ts(1,23): error TS2307: Cannot find module '@next/mdx' or its corresponding type declarations.\nnext.config.ts(2,33): error TS2307: Cannot find module 'next' or its corresponding type declarations.\nscripts/build-public-world-index.ts(1,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/build-public-world-index.ts(2,18): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.\nscripts/build-public-world-index.ts(6,28): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/capture-real-evidence.ts(1,27): error TS2307: Cannot find module 'node:child_process' or its corresponding type declarations.\nscripts/capture-real-evidence.ts(2,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/capture-real-evidence.ts(3,18): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.\nscripts/capture-real-evidence.ts(37,28): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/capture-real-evidence.ts(42,3): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/check-acceptance-readiness.ts(1,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/check-acceptance-readiness.ts(2,18): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.\nscripts/check-acceptance-readiness.ts(9,36): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/check-ai-lighthouse-planning.ts(1,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/check-ai-lighthouse-planning.ts(2,18): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.\nscripts/check-ai-lighthouse-planning.ts(9,36): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/check-ai-suggestion-audit.ts(1,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscripts/check-ai-suggestion-audit.ts(2,18): error TS2307: Cannot find module 'node:path' or its corresponding type declarations.\nscripts/check-ai-suggestion-audit.ts(7,34): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/check-ai-suggestion-audit.ts(11,36): error TS2580: Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.\nscripts/check-ai-workbench.ts(1,16): error TS2307: Cannot find module 'node:fs' or its corresponding type declarations.\nscr"
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "attempted": true,
+      "exitCode": 127,
+      "status": "failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 build\n> npm run validate:world && npm run check:public && next build\n\n\n> guyue-floating-world@0.1.0 validate:world\n> tsx scripts/validate-world-data.ts\n\n\nsh: 1: tsx: Permission denied"
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "attempted": true,
+      "exitCode": 127,
+      "status": "failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0\n\n\nsh: 1: eslint: Permission denied"
+    }
+  ],
+  "summary": {
+    "attempted": 6,
+    "passed": 0,
+    "failedOrBlocked": 6,
+    "releaseReadyEligible": false
+  },
+  "rules": [
+    "只有 exitCode=0 的命令可记为 passed。",
+    "timeout、script-missing、failed、error 均不计入通过。",
+    "本记录不能替代 npm install 与人工签收。",
+    "releaseReadyEligible=false 必须保持，直到全部 required evidence 真实通过。"
+  ]
+}

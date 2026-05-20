@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行态增长闭环计划",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 2 / 4",
+  "status": "runtime-growth-loop-prepared",
+  "growthLoopReady": false,
+  "steps": [
+    {
+      "id": "collect-public-signal",
+      "title": "收集公开信号",
+      "automation": "approval-required",
+      "writes": false
+    },
+    {
+      "id": "generate-growth-suggestions",
+      "title": "生成增长建议",
+      "automation": "approval-required",
+      "writes": false
+    },
+    {
+      "id": "human-prioritize",
+      "title": "人工排序",
+      "automation": "manual",
+      "writes": true
+    },
+    {
+      "id": "schedule-content",
+      "title": "排期内容",
+      "automation": "approval-required",
+      "writes": true
+    },
+    {
+      "id": "publish-after-review",
+      "title": "复核后发布",
+      "automation": "approval-required",
+      "writes": true
+    },
+    {
+      "id": "review-results",
+      "title": "复盘结果",
+      "automation": "approval-required",
+      "writes": true
+    }
+  ],
+  "rules": [
+    "growthLoopReady=false 必须保持，直到真实增长流程上线。",
+    "所有 writes=true 步骤必须有审批记录。",
+    "增长建议不能绕过内容质量评审。",
+    "增长闭环不得采集私密档案数据。"
+  ]
+}

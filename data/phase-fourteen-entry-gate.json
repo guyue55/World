@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十四阶段入口门禁",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 4 / 4",
+  "status": "phase-fourteen-planning-allowed",
+  "entryDecision": "phase-fourteen-planning-allowed-real-execution-evidence-sprint-not-started",
+  "structureReady": [
+    "phase-thirteen-hardening-scope-contract",
+    "dependency-build-evidence-matrix",
+    "security-baseline-implementation-plan",
+    "real-service-adapter-implementation-plan",
+    "identity-rbac-audit-proof-plan",
+    "deployment-hardening-plan",
+    "release-evidence-package-plan",
+    "release-readiness-transition-gate"
+  ],
+  "phaseFourteenCandidateFocus": [
+    "real dependency install execution",
+    "real lint typecheck build execution",
+    "world-core real verification",
+    "security baseline real scan",
+    "release-local-gate execution",
+    "evidence capture execution",
+    "manual signoff preparation",
+    "blocker closure sprint"
+  ],
+  "mustNotDo": [
+    "claim release-ready without passing real commands",
+    "mark pending-real-run as passed",
+    "skip manual signoff",
+    "skip blocker review",
+    "store secrets in repository",
+    "expose private content"
+  ],
+  "entryRules": [
+    "第十四阶段必须以真实执行证据冲刺为中心。",
+    "所有 pending-real-run 项必须真实执行或明确记录阻断原因。",
+    "release-ready 转换前必须完成证据包、人工签收和 blocker review。",
+    "不能继续只增加结构而不减少真实证据缺口。"
+  ]
+}

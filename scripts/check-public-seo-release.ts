@@ -17,7 +17,7 @@ function main() {
   const forbidden = new Set(publicSeoReleaseContract.forbiddenVisibility)
   const publicLeakNodes = nodes.filter((node) => forbidden.has(node.visibility))
 
-  if (publicLeakNodes.some((node) => node.featured === true)) {
+  if (publicLeakNodes.some((node) => Boolean(node.featured))) {
     errors.push('forbidden visibility node must not be featured')
   }
 

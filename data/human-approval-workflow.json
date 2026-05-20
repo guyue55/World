@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 人工审批工作流",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 1 / 4",
+  "status": "human-approval-workflow-prepared",
+  "workflowReady": false,
+  "states": [
+    "draft",
+    "requested",
+    "reviewing",
+    "approved-once",
+    "rejected",
+    "expired",
+    "executed",
+    "revoked"
+  ],
+  "approvalTypes": [
+    {
+      "id": "publish-content",
+      "title": "公开发布内容",
+      "risk": "high",
+      "requiresEvidence": true
+    },
+    {
+      "id": "run-automation",
+      "title": "执行自动化",
+      "risk": "medium",
+      "requiresEvidence": true
+    },
+    {
+      "id": "export-public-package",
+      "title": "导出公开包",
+      "risk": "medium",
+      "requiresEvidence": true
+    },
+    {
+      "id": "enable-pwa-cache",
+      "title": "启用 PWA 缓存",
+      "risk": "high",
+      "requiresEvidence": true
+    },
+    {
+      "id": "ingest-analytics",
+      "title": "接入数据洞察",
+      "risk": "high",
+      "requiresEvidence": true
+    },
+    {
+      "id": "production-action",
+      "title": "生产环境动作",
+      "risk": "critical",
+      "requiresEvidence": true
+    }
+  ],
+  "rules": [
+    "workflowReady=false 必须保持，直到真实审批系统实现。",
+    "approved-once 只允许一次执行。",
+    "critical 风险必须人工复核。",
+    "审批记录不得包含私密正文。",
+    "rejected/revoked 不得执行。"
+  ]
+}

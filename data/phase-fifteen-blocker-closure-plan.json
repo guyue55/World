@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十五阶段阻断关闭计划",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 3 / 4",
+  "status": "blocker-closure-plan-prepared",
+  "blockerClosureReady": false,
+  "blockers": [
+    {
+      "id": "eslint-permission-denied",
+      "source": "real-command-attempts",
+      "severity": "high",
+      "status": "open",
+      "closeCriteria": [
+        "npm install completed successfully",
+        "node_modules/.bin/eslint executable",
+        "npm run lint exitCode=0"
+      ]
+    },
+    {
+      "id": "world-core-not-passed",
+      "source": "real-command-attempts",
+      "severity": "high",
+      "status": "open",
+      "closeCriteria": [
+        "npm run check:world-core exitCode=0",
+        "world-core output archived"
+      ]
+    },
+    {
+      "id": "typecheck-build-not-passed",
+      "source": "real-command-attempts",
+      "severity": "high",
+      "status": "open",
+      "closeCriteria": [
+        "npm run typecheck exitCode=0",
+        "npm run build exitCode=0"
+      ]
+    },
+    {
+      "id": "manual-signoff-not-done",
+      "source": "manual-review",
+      "severity": "high",
+      "status": "open",
+      "closeCriteria": [
+        "manual release signoff completed",
+        "blocker review completed",
+        "privacy boundary reviewed"
+      ]
+    }
+  ],
+  "rules": [
+    "blockerClosureReady=false 必须保持，直到所有 blocker status=closed。",
+    "open blocker 不得进入 release-ready。",
+    "关闭 blocker 必须引用真实证据。",
+    "不能用静态检查替代真实命令通过。"
+  ]
+}

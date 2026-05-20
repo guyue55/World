@@ -1,0 +1,30 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 Release Candidate 候选计划",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 1 / 4",
+  "status": "release-candidate-plan-prepared",
+  "releaseCandidateReady": false,
+  "candidate": {
+    "id": "v1-rc-1",
+    "sourceWorkspace": "guyue_phase15_rc_4_closure_workspace",
+    "packagingPolicy": "no-package-unless-user-requests",
+    "requiresRealCommandEvidence": true,
+    "requiresManualSignoff": true
+  },
+  "requiredEvidence": [
+    "npm install",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run build",
+    "npm run check:world-core",
+    "npm run release:local-gate",
+    "npm run evidence:capture",
+    "manual release signoff"
+  ],
+  "rules": [
+    "releaseCandidateReady=false 必须保持，直到真实命令通过且人工签收完成。",
+    "RC 候选可以准备结构，但不等于已封版。",
+    "没有用户要求时不打包。",
+    "RC 包不得包含 node_modules、.next、密钥或私密正文。"
+  ]
+}

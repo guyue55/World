@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行态证据记录计划",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 2 / 4",
+  "status": "runtime-evidence-plan-prepared",
+  "evidenceReady": false,
+  "records": [
+    {
+      "id": "approval-record",
+      "title": "审批记录",
+      "required": true
+    },
+    {
+      "id": "action-record",
+      "title": "动作记录",
+      "required": true
+    },
+    {
+      "id": "input-snapshot",
+      "title": "输入快照",
+      "required": true
+    },
+    {
+      "id": "output-summary",
+      "title": "输出摘要",
+      "required": true
+    },
+    {
+      "id": "rollback-hint",
+      "title": "回滚提示",
+      "required": true
+    },
+    {
+      "id": "human-result",
+      "title": "人工结果",
+      "required": true
+    }
+  ],
+  "rules": [
+    "evidenceReady=false 必须保持，直到真实证据写入实现。",
+    "证据记录不得包含私密正文。",
+    "所有运行态动作必须关联 approval-record。",
+    "证据记录必须可追溯版本、操作者和时间。"
+  ]
+}

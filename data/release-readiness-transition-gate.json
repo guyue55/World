@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 release-ready 转换门槛",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 3 / 4",
+  "status": "release-readiness-transition-gate-prepared",
+  "releaseReady": false,
+  "transitionAllowed": false,
+  "conditions": [
+    {
+      "id": "all-build-checks-passed",
+      "required": true,
+      "met": false
+    },
+    {
+      "id": "security-baseline-passed",
+      "required": true,
+      "met": false
+    },
+    {
+      "id": "service-proof-passed",
+      "required": true,
+      "met": false
+    },
+    {
+      "id": "deployment-hardening-passed",
+      "required": true,
+      "met": false
+    },
+    {
+      "id": "manual-signoff-complete",
+      "required": true,
+      "met": false
+    },
+    {
+      "id": "blocker-review-closed",
+      "required": true,
+      "met": false
+    },
+    {
+      "id": "production-smoke-passed",
+      "required": true,
+      "met": false
+    }
+  ],
+  "rules": [
+    "releaseReady=false 必须保持，直到所有 conditions met=true。",
+    "transitionAllowed=false 必须保持，直到证据包完成。",
+    "任何 required 条件未满足都不能声明 release-ready。",
+    "release-ready 转换必须保留人工签收。"
+  ]
+}

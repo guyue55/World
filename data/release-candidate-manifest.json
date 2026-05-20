@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 Release Candidate Manifest",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 3 / 4",
+  "status": "rc-manifest-structure-prepared",
+  "releaseCandidateReady": false,
+  "candidateId": "v1-rc-1",
+  "sourceStage": "phase-fifteen-real-command-execution-release-candidate",
+  "sourceWorkspace": "guyue_phase15_rc_4_closure_workspace",
+  "packageGenerated": false,
+  "packagePolicy": "not-generated-without-user-request",
+  "evidenceStatus": "incomplete",
+  "releaseDecision": "not-ready-for-release",
+  "productionDecision": "production-not-live",
+  "exclusions": [
+    "node_modules",
+    ".next",
+    ".git",
+    ".turbo",
+    "dist",
+    "build",
+    ".cache",
+    "coverage",
+    "secrets",
+    "private-vault"
+  ],
+  "rules": [
+    "packageGenerated=false，除非用户明确要求打包。",
+    "releaseCandidateReady=false，直到真实证据和人工签收通过。",
+    "manifest 不得宣称 release-ready。",
+    "打包时必须排除依赖、构建缓存、密钥和私密正文。"
+  ]
+}

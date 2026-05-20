@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 社区反馈闭环计划",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 3 / 4",
+  "status": "feedback-loop-prepared",
+  "feedbackChannels": [
+    {
+      "id": "site-comment-placeholder",
+      "title": "站内反馈占位",
+      "status": "future-optional",
+      "visibility": "public"
+    },
+    {
+      "id": "email-feedback",
+      "title": "邮件反馈",
+      "status": "optional",
+      "visibility": "public"
+    },
+    {
+      "id": "social-reply",
+      "title": "社交回复",
+      "status": "optional",
+      "visibility": "public"
+    },
+    {
+      "id": "manual-notes",
+      "title": "人工读者笔记",
+      "status": "ready-manual",
+      "visibility": "private-review-only"
+    }
+  ],
+  "loopSteps": [
+    "收集公开反馈",
+    "分类为内容、体验、品牌、技术、风险",
+    "筛除私密或敏感内容",
+    "进入人工复盘",
+    "形成下一轮内容计划",
+    "记录反馈处理结果"
+  ],
+  "rules": [
+    "反馈不能直接改动公开内容。",
+    "反馈中出现私密信息必须进入人工隔离处理。",
+    "AI 可辅助分类，但不能自动回复敏感反馈。",
+    "社区反馈不能替代内容质量评审。"
+  ]
+}

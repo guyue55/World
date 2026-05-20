@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段公开 SEO 与访问分析计划",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 2 / 4",
+  "status": "implemented-static-seo-analytics-plan",
+  "seoChecks": [
+    {
+      "id": "metadata",
+      "title": "页面元信息",
+      "status": "prepared-static-check"
+    },
+    {
+      "id": "sitemap",
+      "title": "站点地图",
+      "status": "prepared-static-check"
+    },
+    {
+      "id": "rss",
+      "title": "RSS 输出",
+      "status": "prepared-static-check"
+    },
+    {
+      "id": "open-graph",
+      "title": "Open Graph 预览",
+      "status": "prepared-static-check"
+    },
+    {
+      "id": "robots",
+      "title": "robots 策略",
+      "status": "prepared-static-check"
+    },
+    {
+      "id": "canonical",
+      "title": "Canonical URL 策略",
+      "status": "prepared-static-check"
+    }
+  ],
+  "analyticsPlan": [
+    {
+      "id": "privacy-first-analytics",
+      "title": "隐私优先访问分析",
+      "mode": "optional"
+    },
+    {
+      "id": "no-private-tracking",
+      "title": "不追踪私密档案",
+      "mode": "required"
+    },
+    {
+      "id": "content-performance-review",
+      "title": "内容表现复盘",
+      "mode": "manual"
+    },
+    {
+      "id": "search-intent-review",
+      "title": "搜索意图复盘",
+      "mode": "manual"
+    }
+  ],
+  "rules": [
+    "SEO 和分析只作用于公开页面。",
+    "不得追踪 private/family/partner/vault/sealed/silent。",
+    "不得把分析接入作为 release-ready 通过依据。",
+    "真实上线前仍需部署环境证据。"
+  ]
+}

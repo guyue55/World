@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行态就绪度看板",
+  "stageProgress": "phase-eleven-real-runtime-automation-growth-loop line batch 3 / 4",
+  "status": "runtime-readiness-board-prepared",
+  "runtimeReady": false,
+  "readiness": [
+    {
+      "id": "workflowReady",
+      "value": false
+    },
+    {
+      "id": "registryReady",
+      "value": false
+    },
+    {
+      "id": "growthLoopReady",
+      "value": false
+    },
+    {
+      "id": "evidenceReady",
+      "value": false
+    },
+    {
+      "id": "dashboardReady",
+      "value": false
+    },
+    {
+      "id": "integrationReady",
+      "value": false
+    },
+    {
+      "id": "adapterReady",
+      "value": false
+    }
+  ],
+  "rules": [
+    "runtimeReady=false 必须保持，直到所有 readiness 为 true 且有真实证据。",
+    "任何单项 true 都不能自动推导 runtimeReady=true。",
+    "就绪度看板只显示状态，不执行动作。"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第九阶段入口门禁",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 4 / 4",
+  "status": "phase-nine-planning-allowed",
+  "entryDecision": "phase-nine-planning-allowed-real-content-ecosystem-and-brand-not-started",
+  "structureReady": [
+    "phase-eight-production-scope-contract",
+    "phase-eight-production-environment-matrix",
+    "phase-eight-production-deployment-checklist",
+    "phase-eight-domain-https-cdn-policy",
+    "phase-eight-production-smoke-plan",
+    "phase-eight-monitoring-error-tracking-plan",
+    "phase-eight-rollback-drill-plan"
+  ],
+  "phaseNineCandidateFocus": [
+    "real content ecosystem",
+    "personal brand system",
+    "content calendar",
+    "public communication channels",
+    "topic pillars",
+    "world book publishing",
+    "community feedback loop"
+  ],
+  "mustNotDo": [
+    "claim production live without deployment evidence",
+    "publish private content",
+    "use AI autonomous publishing",
+    "skip content quality review",
+    "ignore release evidence",
+    "ship brand assets without visual QA"
+  ],
+  "entryRules": [
+    "第九阶段必须以真实内容生态和个人品牌为中心。",
+    "内容发布仍必须遵守公开/私密边界。",
+    "AI 可辅助选题和复盘，但不能自动发布。",
+    "生产发布证据缺口必须继续显式保留。"
+  ]
+}

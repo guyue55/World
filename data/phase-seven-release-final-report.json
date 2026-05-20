@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段公开发布与长期运营线最终报告",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 4 / 4",
+  "decision": "phase-seven-release-ops-structure-complete-phase-eight-planning-allowed",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "release-scope-and-evidence-ledger",
+    "release-dashboard-seo-analytics",
+    "long-term-operations-backup-version-governance",
+    "phase-seven-closure"
+  ],
+  "completedCapabilities": [
+    "phase seven release scope contract",
+    "real release evidence ledger",
+    "release dashboard route",
+    "public SEO and analytics plan",
+    "long-term operations cadence",
+    "backup and rollback plan",
+    "version governance plan"
+  ],
+  "notCompletedByDesign": [
+    "real production deployment",
+    "real dry-run completion",
+    "real handoff manifest completion",
+    "real acceptance scan completion",
+    "manual release signoff",
+    "blocker review closure"
+  ],
+  "phaseEightEntryDecision": "phase-eight-planning-allowed-real-production-release-not-started",
+  "mustCarryForward": [
+    "release-ready not-ready",
+    "real deployment evidence still required",
+    "private content excluded from public build",
+    "AI remains suggestion-only",
+    "manual signoff required"
+  ],
+  "rules": [
+    "第七阶段完成的是公开发布与长期运营结构，不是真实生产上线。",
+    "第八阶段可以规划真实生产发布与运维闭环。",
+    "不能在缺少真实 dry-run、handoff、acceptance、人工签收和 blocker review 时声明 release-ready。",
+    "发布与运营不得绕过私密边界和 AI 边界。"
+  ]
+}
