@@ -1,5 +1,5 @@
-import auditCriteria from '../../data/foundation-audit-criteria.json'
-import certification from '../../data/foundation-certification.json'
+import auditCriteria from '../../data/domains/governance/foundation-audit-criteria.json'
+import certification from '../../data/core/foundation-certification.json'
 import { validateRouteManifest } from './route-manifest'
 import { validateDependencyGraph } from './dependency-graph'
 import { evaluateWorldKernel } from './world-kernel'

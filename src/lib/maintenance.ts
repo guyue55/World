@@ -1,5 +1,5 @@
-import maintenanceCalendar from '../../data/maintenance-calendar.json'
-import recoveryPlaybook from '../../data/recovery-playbook.json'
+import maintenanceCalendar from '../../data/domains/content/maintenance-calendar.json'
+import recoveryPlaybook from '../../data/core/recovery-playbook.json'
 
 export type MaintenanceCadence = {
   id: string

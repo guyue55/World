@@ -1,5 +1,5 @@
-import defectExecutionQueue from '../data/defect-execution-queue.json'
-import defectExecutionQueueContract from '../data/defect-execution-queue-contract.json'
+import defectExecutionQueue from '../data/engineering/defect-execution-queue.json'
+import defectExecutionQueueContract from '../data/engineering/defect-execution-queue-contract.json'
 
 function main() {
   console.log(`${defectExecutionQueueContract.name}`)

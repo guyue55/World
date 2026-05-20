@@ -1,11 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import aiPathExhibitionRecommendations from '../data/ai-path-exhibition-recommendations.json'
-import aiPermissionMatrix from '../data/ai-permission-matrix.json'
-import aiSuggestionAuditQueue from '../data/ai-suggestion-audit-queue.json'
-import aiReadableProtocol from '../data/ai-readable-protocol.json'
-import phaseSevenEntryGate from '../data/phase-seven-entry-gate.json'
-import phaseSixAiFinalReport from '../data/phase-six-ai-final-report.json'
+import aiPathExhibitionRecommendations from '../data/domains/ai/ai-path-exhibition-recommendations.json'
+import aiPermissionMatrix from '../data/domains/ai/ai-permission-matrix.json'
+import aiSuggestionAuditQueue from '../data/domains/ai/ai-suggestion-audit-queue.json'
+import aiReadableProtocol from '../data/domains/ai/ai-readable-protocol.json'
+import phaseSevenEntryGate from '../data/release/phase-seven-entry-gate.json'
+import phaseSixAiFinalReport from '../data/domains/ai/phase-six-ai-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

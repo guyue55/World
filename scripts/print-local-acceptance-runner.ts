@@ -1,5 +1,5 @@
-import localAcceptanceRunner from '../data/local-acceptance-runner.json'
-import stageClosureUpdateProtocol from '../data/stage-closure-update-protocol.json'
+import localAcceptanceRunner from '../data/release/local-acceptance-runner.json'
+import stageClosureUpdateProtocol from '../data/release/stage-closure-update-protocol.json'
 
 function main() {
   console.log(`${localAcceptanceRunner.name}`)

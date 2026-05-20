@@ -1,0 +1,46 @@
+{
+  "version": "pre-v4-code-structure",
+  "name": "V4 前 src 代码结构整理迁移图",
+  "decision": "use feature/platform/shared layering; keep old versioned paths as compatibility re-exports",
+  "moves": [
+    {
+      "from": "src/lib/v2",
+      "to": "src/features/platform-v2",
+      "compatibility": "src/lib/v2/* re-export"
+    },
+    {
+      "from": "src/lib/v2-1",
+      "to": "src/features/platform-v2-1",
+      "compatibility": "src/lib/v2-1/* re-export"
+    },
+    {
+      "from": "src/lib/v3",
+      "to": "src/features/intelligent-world-v3",
+      "compatibility": "src/lib/v3/* re-export"
+    },
+    {
+      "from": "src/lib/v3-concept",
+      "to": "src/features/v3-concept",
+      "compatibility": "src/lib/v3-concept/* re-export"
+    },
+    {
+      "from": "src/lib/pre-v4",
+      "to": "src/features/pre-v4-gate",
+      "compatibility": "src/lib/pre-v4/* re-export"
+    },
+    {
+      "from": "src/server/v2",
+      "to": "src/platform/server/v2",
+      "compatibility": "src/server/v2/* re-export"
+    }
+  ],
+  "v4Rule": [
+    "do not create src/lib/v4",
+    "new V4 business capabilities go to src/features/v4-*",
+    "new cross-cutting utilities go to src/shared",
+    "new server platform capabilities go to src/platform/server",
+    "API route versioning may remain in src/app/api/v4"
+  ],
+  "releaseReady": false,
+  "productionLive": false
+}

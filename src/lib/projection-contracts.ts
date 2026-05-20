@@ -1,4 +1,4 @@
-import contracts from '../../data/projection-contracts.json'
+import contracts from '../../data/domains/experience/projection-contracts.json'
 import type { Node } from './types'
 import { getPublicNodes } from './nodes'
 import { getAllPaths } from './paths'

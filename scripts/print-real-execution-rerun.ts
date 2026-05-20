@@ -1,5 +1,5 @@
-import realExecutionRerunContract from '../data/real-execution-rerun-contract.json'
-import realExecutionRerunRecord from '../data/real-execution-rerun-record.json'
+import realExecutionRerunContract from '../data/engineering/real-execution-rerun-contract.json'
+import realExecutionRerunRecord from '../data/engineering/real-execution-rerun-record.json'
 
 function main() {
   console.log(`${realExecutionRerunContract.name}`)

@@ -1,4 +1,4 @@
-import observabilityMetrics from '../../data/observability-metrics.json'
+import observabilityMetrics from '../../data/operations/observability-metrics.json'
 import { evaluateWorldKernel } from './world-kernel'
 import { evaluateFoundationQuality } from './foundation-quality'
 import { getPublicNodes } from './nodes'

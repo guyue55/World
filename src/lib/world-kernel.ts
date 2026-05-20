@@ -1,4 +1,4 @@
-import kernelManifest from '../../data/world-kernel-manifest.json'
+import kernelManifest from '../../data/core/world-kernel-manifest.json'
 import { evaluateWorldSkeletonHealth } from './world-skeleton-health'
 import { evaluateWorldInvariants } from './world-invariants'
 import { validateFallbackStrategy } from './fallbacks'

@@ -1,9 +1,9 @@
-import evidenceCollectorPlan from '../data/evidence-collector-plan.json'
-import manualSignoffPreparationChecklist from '../data/manual-signoff-preparation-checklist.json'
-import realExecutionBlockerLedger from '../data/real-execution-blocker-ledger.json'
-import realExecutionQueue from '../data/real-execution-queue.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
-import releaseReadinessTransitionGate from '../data/release-readiness-transition-gate.json'
+import evidenceCollectorPlan from '../data/release/evidence-collector-plan.json'
+import manualSignoffPreparationChecklist from '../data/release/manual-signoff-preparation-checklist.json'
+import realExecutionBlockerLedger from '../data/release/real-execution-blocker-ledger.json'
+import realExecutionQueue from '../data/engineering/real-execution-queue.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
+import releaseReadinessTransitionGate from '../data/release/release-readiness-transition-gate.json'
 
 function section(title: string) {
   console.log(`\n## ${title}`)

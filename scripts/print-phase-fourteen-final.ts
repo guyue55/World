@@ -1,6 +1,6 @@
-import phaseFifteenEntryGate from '../data/phase-fifteen-entry-gate.json'
-import phaseFourteenEvidenceSprintFinalReport from '../data/phase-fourteen-evidence-sprint-final-report.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
+import phaseFifteenEntryGate from '../data/release/phase-fifteen-entry-gate.json'
+import phaseFourteenEvidenceSprintFinalReport from '../data/release/phase-fourteen-evidence-sprint-final-report.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
 
 function main() {
   console.log(`${phaseFourteenEvidenceSprintFinalReport.name}`)

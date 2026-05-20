@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseGateContract from '../data/release-gate-contract.json'
-import releaseGateRecord from '../data/release-gate-record.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import releaseGateContract from '../data/release/release-gate-contract.json'
+import releaseGateRecord from '../data/release/release-gate-record.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

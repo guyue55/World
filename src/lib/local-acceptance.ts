@@ -1,6 +1,6 @@
-import localAcceptanceRunner from '../../data/local-acceptance-runner.json'
-import stageClosureUpdateProtocol from '../../data/stage-closure-update-protocol.json'
-import firstStageAcceptanceReportSchema from '../../data/first-stage-acceptance-report-schema.json'
+import localAcceptanceRunner from '../../data/release/local-acceptance-runner.json'
+import stageClosureUpdateProtocol from '../../data/release/stage-closure-update-protocol.json'
+import firstStageAcceptanceReportSchema from '../../data/release/first-stage-acceptance-report-schema.json'
 
 export function getLocalAcceptanceRunner() {
   return localAcceptanceRunner

@@ -1,6 +1,6 @@
-import permissionRoleGovernanceModel from '../data/permission-role-governance-model.json'
-import phaseTwelvePlatformGovernanceScopeContract from '../data/phase-twelve-platform-governance-scope-contract.json'
-import serviceBoundaryDesign from '../data/service-boundary-design.json'
+import permissionRoleGovernanceModel from '../data/domains/governance/permission-role-governance-model.json'
+import phaseTwelvePlatformGovernanceScopeContract from '../data/domains/governance/phase-twelve-platform-governance-scope-contract.json'
+import serviceBoundaryDesign from '../data/core/service-boundary-design.json'
 
 function main() {
   console.log(`${phaseTwelvePlatformGovernanceScopeContract.name}`)

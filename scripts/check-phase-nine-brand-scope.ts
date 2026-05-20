@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import contentTopicPillars from '../data/content-topic-pillars.json'
-import personalBrandSystem from '../data/personal-brand-system.json'
-import phaseEightProductionFinalReport from '../data/phase-eight-production-final-report.json'
-import phaseNineBrandScopeContract from '../data/phase-nine-brand-scope-contract.json'
-import phaseNineEntryGate from '../data/phase-nine-entry-gate.json'
+import contentTopicPillars from '../data/domains/content/content-topic-pillars.json'
+import personalBrandSystem from '../data/domains/content/personal-brand-system.json'
+import phaseEightProductionFinalReport from '../data/release/phase-eight-production-final-report.json'
+import phaseNineBrandScopeContract from '../data/domains/content/phase-nine-brand-scope-contract.json'
+import phaseNineEntryGate from '../data/release/phase-nine-entry-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,6 +1,6 @@
-import longTermSustainabilityGovernancePlan from '../../data/long-term-sustainability-governance-plan.json'
-import platformGovernanceDashboardPlan from '../../data/platform-governance-dashboard-plan.json'
-import teamCollaborationGovernanceWorkflow from '../../data/team-collaboration-governance-workflow.json'
+import longTermSustainabilityGovernancePlan from '../../data/domains/governance/long-term-sustainability-governance-plan.json'
+import platformGovernanceDashboardPlan from '../../data/domains/governance/platform-governance-dashboard-plan.json'
+import teamCollaborationGovernanceWorkflow from '../../data/domains/governance/team-collaboration-governance-workflow.json'
 
 export function getTeamCollaborationGovernanceWorkflow() {
   return teamCollaborationGovernanceWorkflow

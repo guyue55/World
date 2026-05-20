@@ -1,5 +1,5 @@
-import phaseFourScopeContract from '../data/phase-four-scope-contract.json'
-import phaseFourContentProgram from '../data/phase-four-content-program.json'
+import phaseFourScopeContract from '../data/core/phase-four-scope-contract.json'
+import phaseFourContentProgram from '../data/domains/content/phase-four-content-program.json'
 
 function main() {
   console.log(`${phaseFourScopeContract.name}`)

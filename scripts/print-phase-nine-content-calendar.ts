@@ -1,6 +1,6 @@
-import contentCalendarPlan from '../data/content-calendar-plan.json'
-import contentColumnOperationsPlan from '../data/content-column-operations-plan.json'
-import contentCommunicationChannels from '../data/content-communication-channels.json'
+import contentCalendarPlan from '../data/domains/content/content-calendar-plan.json'
+import contentColumnOperationsPlan from '../data/domains/content/content-column-operations-plan.json'
+import contentCommunicationChannels from '../data/domains/content/content-communication-channels.json'
 
 function main() {
   console.log(`${contentCalendarPlan.name}`)

@@ -1,4 +1,4 @@
-import releaseCandidateChangeBoundaryContract from '../data/release-candidate-change-boundary-contract.json'
+import releaseCandidateChangeBoundaryContract from '../data/release/release-candidate-change-boundary-contract.json'
 
 function main() {
   console.log(`${releaseCandidateChangeBoundaryContract.name}`)

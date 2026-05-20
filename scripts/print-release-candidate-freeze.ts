@@ -1,5 +1,5 @@
-import releaseCandidateFreezeContract from '../data/release-candidate-freeze-contract.json'
-import releaseCandidateFreezeRecord from '../data/release-candidate-freeze-record.json'
+import releaseCandidateFreezeContract from '../data/release/release-candidate-freeze-contract.json'
+import releaseCandidateFreezeRecord from '../data/release/release-candidate-freeze-record.json'
 
 function main() {
   console.log(`${releaseCandidateFreezeContract.name}`)

@@ -1,7 +1,7 @@
-import areas from '../data/areas.json'
-import nodes from '../data/nodes.json'
-import areaLinks from '../data/area-links.json'
-import atlasProductizationContract from '../data/atlas-productization-contract.json'
+import areas from '../data/domains/experience/areas.json'
+import nodes from '../data/domains/experience/nodes.json'
+import areaLinks from '../data/domains/experience/area-links.json'
+import atlasProductizationContract from '../data/domains/experience/atlas-productization-contract.json'
 
 function main() {
   const publicNodes = nodes.filter((node) => node.visibility === 'public' || node.visibility === 'semiPublic')

@@ -1,6 +1,6 @@
-import nodes from '../data/nodes.json'
-import relations from '../data/relations.json'
-import nodeReadingContract from '../data/node-reading-contract.json'
+import nodes from '../data/domains/experience/nodes.json'
+import relations from '../data/core/relations.json'
+import nodeReadingContract from '../data/domains/experience/node-reading-contract.json'
 
 function main() {
   const publicNodes = nodes.filter((node) => node.visibility === 'public' || node.visibility === 'semiPublic')

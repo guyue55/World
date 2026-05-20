@@ -1,5 +1,5 @@
-import themeExhibitionMap from '../../data/theme-exhibition-map.json'
-import themeExhibitionImplementationContract from '../../data/theme-exhibition-implementation-contract.json'
+import themeExhibitionMap from '../../data/domains/experience/theme-exhibition-map.json'
+import themeExhibitionImplementationContract from '../../data/domains/experience/theme-exhibition-implementation-contract.json'
 
 export function getThemeExhibitionImplementationContract() {
   return themeExhibitionImplementationContract

@@ -1,8 +1,8 @@
-import phaseEightDomainHttpsCdnPolicy from '../../data/phase-eight-domain-https-cdn-policy.json'
-import phaseEightProductionDashboard from '../../data/phase-eight-production-dashboard.json'
-import phaseEightProductionDeploymentChecklist from '../../data/phase-eight-production-deployment-checklist.json'
-import phaseEightProductionEnvironmentMatrix from '../../data/phase-eight-production-environment-matrix.json'
-import phaseEightProductionScopeContract from '../../data/phase-eight-production-scope-contract.json'
+import phaseEightDomainHttpsCdnPolicy from '../../data/domains/governance/phase-eight-domain-https-cdn-policy.json'
+import phaseEightProductionDashboard from '../../data/release/phase-eight-production-dashboard.json'
+import phaseEightProductionDeploymentChecklist from '../../data/release/phase-eight-production-deployment-checklist.json'
+import phaseEightProductionEnvironmentMatrix from '../../data/release/phase-eight-production-environment-matrix.json'
+import phaseEightProductionScopeContract from '../../data/release/phase-eight-production-scope-contract.json'
 
 export function getPhaseEightProductionScopeContract() {
   return phaseEightProductionScopeContract

@@ -1,5 +1,5 @@
-import phaseEightProductionFinalReport from '../data/phase-eight-production-final-report.json'
-import phaseNineEntryGate from '../data/phase-nine-entry-gate.json'
+import phaseEightProductionFinalReport from '../data/release/phase-eight-production-final-report.json'
+import phaseNineEntryGate from '../data/release/phase-nine-entry-gate.json'
 
 function main() {
   console.log(`${phaseEightProductionFinalReport.name}`)

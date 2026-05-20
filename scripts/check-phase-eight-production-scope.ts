@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseEightEntryGate from '../data/phase-eight-entry-gate.json'
-import phaseEightProductionEnvironmentMatrix from '../data/phase-eight-production-environment-matrix.json'
-import phaseEightProductionScopeContract from '../data/phase-eight-production-scope-contract.json'
-import phaseSevenReleaseFinalReport from '../data/phase-seven-release-final-report.json'
+import phaseEightEntryGate from '../data/release/phase-eight-entry-gate.json'
+import phaseEightProductionEnvironmentMatrix from '../data/release/phase-eight-production-environment-matrix.json'
+import phaseEightProductionScopeContract from '../data/release/phase-eight-production-scope-contract.json'
+import phaseSevenReleaseFinalReport from '../data/release/phase-seven-release-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

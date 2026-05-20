@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import nodes from '../data/nodes.json'
-import publicSeoReleaseContract from '../data/public-seo-release-contract.json'
-import publicSeoReleaseRecord from '../data/public-seo-release-record.json'
+import nodes from '../data/domains/experience/nodes.json'
+import publicSeoReleaseContract from '../data/release/public-seo-release-contract.json'
+import publicSeoReleaseRecord from '../data/release/public-seo-release-record.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,5 +1,5 @@
-import phaseThreeRouteIntegrationContract from '../data/phase-three-route-integration-contract.json'
-import phaseThreeImplementationRoutes from '../data/phase-three-implementation-routes.json'
+import phaseThreeRouteIntegrationContract from '../data/domains/experience/phase-three-route-integration-contract.json'
+import phaseThreeImplementationRoutes from '../data/domains/experience/phase-three-implementation-routes.json'
 
 function main() {
   console.log(`${phaseThreeRouteIntegrationContract.name}`)

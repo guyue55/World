@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseDryRunHandoffFinalReport from '../data/release-dry-run-handoff-final-report.json'
-import releaseDryRunHandoffReadiness from '../data/release-dry-run-handoff-readiness.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import releaseDryRunHandoffFinalReport from '../data/release/release-dry-run-handoff-final-report.json'
+import releaseDryRunHandoffReadiness from '../data/release/release-dry-run-handoff-readiness.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

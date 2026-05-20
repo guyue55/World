@@ -1,5 +1,5 @@
-import aiOperationsAssistantPlan from '../data/ai-operations-assistant-plan.json'
-import phaseTenIntelligentOpsScopeContract from '../data/phase-ten-intelligent-ops-scope-contract.json'
+import aiOperationsAssistantPlan from '../data/domains/ai/ai-operations-assistant-plan.json'
+import phaseTenIntelligentOpsScopeContract from '../data/core/phase-ten-intelligent-ops-scope-contract.json'
 
 function main() {
   console.log(`${phaseTenIntelligentOpsScopeContract.name}`)

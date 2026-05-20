@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseGateContract from '../data/release-gate-contract.json'
+import releaseGateContract from '../data/release/release-gate-contract.json'
 
 const commands = [
   ['npm', ['run', 'check:lint-env']],

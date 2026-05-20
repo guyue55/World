@@ -1,8 +1,8 @@
-import worldCharterRuntime from '../../data/world-charter-runtime.json'
-import principleCheckMap from '../../data/principle-check-map.json'
-import longTermInvariants from '../../data/long-term-invariants.json'
-import antiFragilityStrategy from '../../data/anti-fragility-strategy.json'
-import futureStressTests from '../../data/future-stress-tests.json'
+import worldCharterRuntime from '../../data/core/world-charter-runtime.json'
+import principleCheckMap from '../../data/engineering/principle-check-map.json'
+import longTermInvariants from '../../data/core/long-term-invariants.json'
+import antiFragilityStrategy from '../../data/core/anti-fragility-strategy.json'
+import futureStressTests from '../../data/engineering/future-stress-tests.json'
 
 export type BallastIssue = {
   id: string

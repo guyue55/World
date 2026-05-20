@@ -1,6 +1,6 @@
-import phaseThreeRouteIntegrationContract from '../../data/phase-three-route-integration-contract.json'
-import phaseThreeImplementationRoutes from '../../data/phase-three-implementation-routes.json'
-import releasePreparationFinalReport from '../../data/release-preparation-final-report.json'
+import phaseThreeRouteIntegrationContract from '../../data/domains/experience/phase-three-route-integration-contract.json'
+import phaseThreeImplementationRoutes from '../../data/domains/experience/phase-three-implementation-routes.json'
+import releasePreparationFinalReport from '../../data/release/release-preparation-final-report.json'
 
 export function getPhaseThreeRouteIntegrationContract() {
   return phaseThreeRouteIntegrationContract

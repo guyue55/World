@@ -1,6 +1,6 @@
-import phaseTwoHandoffContract from '../data/phase-two-handoff-contract.json'
-import foundationFreezeManifest from '../data/foundation-freeze-manifest.json'
-import phaseTwoBacklogSeed from '../data/phase-two-backlog-seed.json'
+import phaseTwoHandoffContract from '../data/release/phase-two-handoff-contract.json'
+import foundationFreezeManifest from '../data/release/foundation-freeze-manifest.json'
+import phaseTwoBacklogSeed from '../data/versions/archive/phase-two-backlog-seed.json'
 
 function main() {
   const errors: string[] = []

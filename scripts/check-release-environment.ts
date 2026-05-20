@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseEnvironmentContract from '../data/release-environment-contract.json'
-import releaseConfig from '../data/release-config.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import releaseEnvironmentContract from '../data/release/release-environment-contract.json'
+import releaseConfig from '../data/release/release-config.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

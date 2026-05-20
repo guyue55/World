@@ -1,4 +1,4 @@
-import nodes from '../../data/nodes.json'
+import nodes from '../../data/domains/experience/nodes.json'
 import type { Node } from './types'
 import { isPublicVisible } from './visibility'
 

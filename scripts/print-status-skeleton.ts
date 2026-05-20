@@ -1,5 +1,5 @@
-import statusSkeletonContract from '../data/status-skeleton-productization-contract.json'
-import stageCompletionGate from '../data/stage-completion-gate.json'
+import statusSkeletonContract from '../data/core/status-skeleton-productization-contract.json'
+import stageCompletionGate from '../data/release/stage-completion-gate.json'
 
 function main() {
   console.log(`${statusSkeletonContract.name}`)

@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import permissionRoleGovernanceModel from '../data/permission-role-governance-model.json'
-import phaseTwelveEntryGate from '../data/phase-twelve-entry-gate.json'
-import phaseTwelvePlatformGovernanceScopeContract from '../data/phase-twelve-platform-governance-scope-contract.json'
-import serviceBoundaryDesign from '../data/service-boundary-design.json'
+import permissionRoleGovernanceModel from '../data/domains/governance/permission-role-governance-model.json'
+import phaseTwelveEntryGate from '../data/release/phase-twelve-entry-gate.json'
+import phaseTwelvePlatformGovernanceScopeContract from '../data/domains/governance/phase-twelve-platform-governance-scope-contract.json'
+import serviceBoundaryDesign from '../data/core/service-boundary-design.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

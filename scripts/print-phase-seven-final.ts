@@ -1,6 +1,6 @@
-import phaseEightEntryGate from '../data/phase-eight-entry-gate.json'
-import phaseSevenReleaseEvidenceLedger from '../data/phase-seven-release-evidence-ledger.json'
-import phaseSevenReleaseFinalReport from '../data/phase-seven-release-final-report.json'
+import phaseEightEntryGate from '../data/release/phase-eight-entry-gate.json'
+import phaseSevenReleaseEvidenceLedger from '../data/release/phase-seven-release-evidence-ledger.json'
+import phaseSevenReleaseFinalReport from '../data/release/phase-seven-release-final-report.json'
 
 function main() {
   console.log(`${phaseSevenReleaseFinalReport.name}`)

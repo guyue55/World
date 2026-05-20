@@ -1,5 +1,5 @@
-import phaseThreeIntegrationFinalReport from '../data/phase-three-integration-final-report.json'
-import phaseThreeIntegrationReadiness from '../data/phase-three-integration-readiness.json'
+import phaseThreeIntegrationFinalReport from '../data/release/phase-three-integration-final-report.json'
+import phaseThreeIntegrationReadiness from '../data/release/phase-three-integration-readiness.json'
 
 function main() {
   console.log(`${phaseThreeIntegrationFinalReport.name}`)

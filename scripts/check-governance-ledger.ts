@@ -1,7 +1,7 @@
-import governanceLedger from '../data/governance-ledger.json'
-import riskRegister from '../data/risk-register.json'
-import decisionTraceability from '../data/decision-traceability.json'
-import capabilityMaturityModel from '../data/capability-maturity-model.json'
+import governanceLedger from '../data/domains/governance/governance-ledger.json'
+import riskRegister from '../data/domains/governance/risk-register.json'
+import decisionTraceability from '../data/engineering/decision-traceability.json'
+import capabilityMaturityModel from '../data/core/capability-maturity-model.json'
 
 function main() {
   const errors: string[] = []

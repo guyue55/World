@@ -1,5 +1,5 @@
-import phaseFivePrivateFinalReport from '../data/phase-five-private-final-report.json'
-import phaseSixEntryGate from '../data/phase-six-entry-gate.json'
+import phaseFivePrivateFinalReport from '../data/domains/archive/phase-five-private-final-report.json'
+import phaseSixEntryGate from '../data/release/phase-six-entry-gate.json'
 
 function main() {
   console.log(`${phaseFivePrivateFinalReport.name}`)

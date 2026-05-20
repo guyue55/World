@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import defectExecutionQueue from '../data/defect-execution-queue.json'
-import defectExecutionQueueContract from '../data/defect-execution-queue-contract.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import defectExecutionQueue from '../data/engineering/defect-execution-queue.json'
+import defectExecutionQueueContract from '../data/engineering/defect-execution-queue-contract.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

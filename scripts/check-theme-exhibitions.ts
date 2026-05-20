@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import themeExhibitionMap from '../data/theme-exhibition-map.json'
-import themeExhibitionImplementationContract from '../data/theme-exhibition-implementation-contract.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import themeExhibitionMap from '../data/domains/experience/theme-exhibition-map.json'
+import themeExhibitionImplementationContract from '../data/domains/experience/theme-exhibition-implementation-contract.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

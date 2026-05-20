@@ -1,5 +1,5 @@
-import realEvidencePreparationFinalReport from '../data/real-evidence-preparation-final-report.json'
-import releaseReadyEvidenceMatrix from '../data/release-ready-evidence-matrix.json'
+import realEvidencePreparationFinalReport from '../data/release/real-evidence-preparation-final-report.json'
+import releaseReadyEvidenceMatrix from '../data/release/release-ready-evidence-matrix.json'
 
 function main() {
   console.log(`${realEvidencePreparationFinalReport.name}`)

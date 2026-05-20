@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseSevenBackupRollbackPlan from '../data/phase-seven-backup-rollback-plan.json'
-import phaseSevenLongTermOperationsPlan from '../data/phase-seven-long-term-operations-plan.json'
-import phaseSevenVersionGovernance from '../data/phase-seven-version-governance.json'
+import phaseSevenBackupRollbackPlan from '../data/operations/phase-seven-backup-rollback-plan.json'
+import phaseSevenLongTermOperationsPlan from '../data/operations/phase-seven-long-term-operations-plan.json'
+import phaseSevenVersionGovernance from '../data/domains/governance/phase-seven-version-governance.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

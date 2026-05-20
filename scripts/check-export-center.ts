@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import exportCenterImplementationContract from '../data/export-center-implementation-contract.json'
-import exportInheritanceMatrix from '../data/export-inheritance-matrix.json'
+import exportCenterImplementationContract from '../data/core/export-center-implementation-contract.json'
+import exportInheritanceMatrix from '../data/domains/archive/export-inheritance-matrix.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFourHandoffIndex from '../data/phase-four-handoff-index.json'
-import phaseFourEntryGate from '../data/phase-four-entry-gate.json'
+import phaseFourHandoffIndex from '../data/release/phase-four-handoff-index.json'
+import phaseFourEntryGate from '../data/release/phase-four-entry-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

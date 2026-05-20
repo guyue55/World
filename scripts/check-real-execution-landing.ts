@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realExecutionLandingFinalReport from '../data/real-execution-landing-final-report.json'
-import realExecutionLandingReadiness from '../data/real-execution-landing-readiness.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
-import manualReleaseReviewRecord from '../data/manual-release-review-record.json'
+import realExecutionLandingFinalReport from '../data/release/real-execution-landing-final-report.json'
+import realExecutionLandingReadiness from '../data/release/real-execution-landing-readiness.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
+import manualReleaseReviewRecord from '../data/release/manual-release-review-record.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

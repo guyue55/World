@@ -1,4 +1,4 @@
-import qualityRadar from '../../data/foundation-quality-radar.json'
+import qualityRadar from '../../data/engineering/foundation-quality-radar.json'
 import { evaluateWorldKernel } from './world-kernel'
 import { validateExtensionRegistry } from './extensions'
 import { validateFallbackStrategy } from './fallbacks'

@@ -1,5 +1,5 @@
-import releaseCandidateSignoffContract from '../data/release-candidate-signoff-contract.json'
-import releaseCandidateSignoffRecord from '../data/release-candidate-signoff-record.json'
+import releaseCandidateSignoffContract from '../data/release/release-candidate-signoff-contract.json'
+import releaseCandidateSignoffRecord from '../data/release/release-candidate-signoff-record.json'
 
 function main() {
   console.log(`${releaseCandidateSignoffContract.name}`)

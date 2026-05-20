@@ -1,5 +1,5 @@
-import privateArchiveBoundaryPolicy from '../../data/private-archive-boundary-policy.json'
-import privateArchiveIndex from '../../data/private-archive-index.json'
+import privateArchiveBoundaryPolicy from '../../data/domains/archive/private-archive-boundary-policy.json'
+import privateArchiveIndex from '../../data/domains/archive/private-archive-index.json'
 
 export function getPrivateArchiveBoundaryPolicy() {
   return privateArchiveBoundaryPolicy

@@ -1,4 +1,4 @@
-import atlasLayoutContract from '../../data/atlas-layout-contract.json'
+import atlasLayoutContract from '../../data/domains/experience/atlas-layout-contract.json'
 import { getAllAreaCoordinates, validateSpatialProtocol } from './spatial'
 import { getAllAreas } from './areas'
 

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import evidenceDashboardContract from '../data/evidence-dashboard-contract.json'
-import releaseReadyEvidenceMatrix from '../data/release-ready-evidence-matrix.json'
+import evidenceDashboardContract from '../data/release/evidence-dashboard-contract.json'
+import releaseReadyEvidenceMatrix from '../data/release/release-ready-evidence-matrix.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

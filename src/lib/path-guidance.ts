@@ -1,5 +1,5 @@
-import pathProductizationContract from '../../data/path-productization-contract.json'
-import pathQualityGate from '../../data/path-quality-gate.json'
+import pathProductizationContract from '../../data/domains/experience/path-productization-contract.json'
+import pathQualityGate from '../../data/domains/experience/path-quality-gate.json'
 import type { Node, Path } from './types'
 import { getNodeBySlug } from './nodes'
 import { getAllPaths, getPathById } from './paths'

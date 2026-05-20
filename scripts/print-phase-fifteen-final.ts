@@ -1,6 +1,6 @@
-import phaseFifteenRcFinalReport from '../data/phase-fifteen-rc-final-report.json'
-import releaseCandidateManifest from '../data/release-candidate-manifest.json'
-import v1CurrentStageClosureStatus from '../data/v1-current-stage-closure-status.json'
+import phaseFifteenRcFinalReport from '../data/release/phase-fifteen-rc-final-report.json'
+import releaseCandidateManifest from '../data/release/release-candidate-manifest.json'
+import v1CurrentStageClosureStatus from '../data/release/v1-current-stage-closure-status.json'
 
 function main() {
   console.log(`${phaseFifteenRcFinalReport.name}`)

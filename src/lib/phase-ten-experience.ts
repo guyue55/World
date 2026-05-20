@@ -1,6 +1,6 @@
-import multiDeviceExperienceMatrix from '../../data/multi-device-experience-matrix.json'
-import multiDeviceExportPlan from '../../data/multi-device-export-plan.json'
-import pwaOfflineAccessPlan from '../../data/pwa-offline-access-plan.json'
+import multiDeviceExperienceMatrix from '../../data/domains/experience/multi-device-experience-matrix.json'
+import multiDeviceExportPlan from '../../data/operations/multi-device-export-plan.json'
+import pwaOfflineAccessPlan from '../../data/core/pwa-offline-access-plan.json'
 
 export function getMultiDeviceExperienceMatrix() {
   return multiDeviceExperienceMatrix

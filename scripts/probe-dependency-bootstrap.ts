@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import dependencyBootstrapContract from '../data/dependency-bootstrap-contract.json'
+import dependencyBootstrapContract from '../data/engineering/dependency-bootstrap-contract.json'
 
 function run(command: string) {
   const [bin, ...args] = command.split(' ')

@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFourteenEntryGate from '../data/phase-fourteen-entry-gate.json'
-import phaseFourteenExecutionSprintScopeContract from '../data/phase-fourteen-execution-sprint-scope-contract.json'
-import realExecutionBlockerLedger from '../data/real-execution-blocker-ledger.json'
-import realExecutionQueue from '../data/real-execution-queue.json'
-import releaseReadinessTransitionGate from '../data/release-readiness-transition-gate.json'
+import phaseFourteenEntryGate from '../data/release/phase-fourteen-entry-gate.json'
+import phaseFourteenExecutionSprintScopeContract from '../data/engineering/phase-fourteen-execution-sprint-scope-contract.json'
+import realExecutionBlockerLedger from '../data/release/real-execution-blocker-ledger.json'
+import realExecutionQueue from '../data/engineering/real-execution-queue.json'
+import releaseReadinessTransitionGate from '../data/release/release-readiness-transition-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

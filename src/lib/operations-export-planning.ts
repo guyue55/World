@@ -1,7 +1,7 @@
-import phaseThreeOperationsExportContract from '../../data/phase-three-operations-export-contract.json'
-import phaseThreePlanningFinalReport from '../../data/phase-three-planning-final-report.json'
-import exportInheritanceMatrix from '../../data/export-inheritance-matrix.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import phaseThreeOperationsExportContract from '../../data/core/phase-three-operations-export-contract.json'
+import phaseThreePlanningFinalReport from '../../data/release/phase-three-planning-final-report.json'
+import exportInheritanceMatrix from '../../data/domains/archive/export-inheritance-matrix.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getPhaseThreeOperationsExportContract() {
   return phaseThreeOperationsExportContract

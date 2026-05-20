@@ -1,4 +1,4 @@
-import prePhaseFourTaskboard from '../data/pre-phase-four-taskboard.json'
+import prePhaseFourTaskboard from '../data/versions/archive/pre-phase-four-taskboard.json'
 
 function main() {
   console.log(`${prePhaseFourTaskboard.name}`)

@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFiveEntryGate from '../data/phase-five-entry-gate.json'
-import phaseFourContentOpsFinalReport from '../data/phase-four-content-ops-final-report.json'
-import phaseFourContentSeeds from '../data/phase-four-content-seeds.json'
-import phaseFiveHandoffPreparation from '../data/phase-five-handoff-preparation.json'
+import phaseFiveEntryGate from '../data/release/phase-five-entry-gate.json'
+import phaseFourContentOpsFinalReport from '../data/domains/content/phase-four-content-ops-final-report.json'
+import phaseFourContentSeeds from '../data/domains/content/phase-four-content-seeds.json'
+import phaseFiveHandoffPreparation from '../data/release/phase-five-handoff-preparation.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

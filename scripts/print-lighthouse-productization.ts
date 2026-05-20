@@ -1,7 +1,7 @@
-import nodes from '../data/nodes.json'
-import paths from '../data/paths.json'
-import lighthousePrompts from '../data/lighthouse-prompts.json'
-import lighthouseProductizationContract from '../data/lighthouse-productization-contract.json'
+import nodes from '../data/domains/experience/nodes.json'
+import paths from '../data/domains/experience/paths.json'
+import lighthousePrompts from '../data/domains/ai/lighthouse-prompts.json'
+import lighthouseProductizationContract from '../data/domains/ai/lighthouse-productization-contract.json'
 
 function main() {
   const publicNodes = nodes.filter((node) => node.visibility === 'public')

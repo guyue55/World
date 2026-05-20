@@ -1,7 +1,7 @@
-import realValidationRunnerContract from '../data/real-validation-runner-contract.json'
-import realExecutionRerunContract from '../data/real-execution-rerun-contract.json'
-import browserQaRecords from '../data/browser-qa-records.json'
-import performanceMeasurementRecords from '../data/performance-measurement-records.json'
+import realValidationRunnerContract from '../data/release/real-validation-runner-contract.json'
+import realExecutionRerunContract from '../data/engineering/real-execution-rerun-contract.json'
+import browserQaRecords from '../data/domains/experience/browser-qa-records.json'
+import performanceMeasurementRecords from '../data/engineering/performance-measurement-records.json'
 
 function main() {
   console.log(`# ${realValidationRunnerContract.name}`)

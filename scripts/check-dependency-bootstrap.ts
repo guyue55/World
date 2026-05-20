@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import dependencyBootstrapContract from '../data/dependency-bootstrap-contract.json'
-import dependencyBootstrapRecord from '../data/dependency-bootstrap-record.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
+import dependencyBootstrapContract from '../data/engineering/dependency-bootstrap-contract.json'
+import dependencyBootstrapRecord from '../data/engineering/dependency-bootstrap-record.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

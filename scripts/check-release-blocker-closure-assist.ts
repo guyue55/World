@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseBlockerClosureAssistContract from '../data/release-blocker-closure-assist-contract.json'
-import releaseBlockerClosureRequests from '../data/release-blocker-closure-requests.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import releaseBlockerClosureAssistContract from '../data/release/release-blocker-closure-assist-contract.json'
+import releaseBlockerClosureRequests from '../data/release/release-blocker-closure-requests.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

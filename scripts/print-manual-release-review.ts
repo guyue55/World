@@ -1,5 +1,5 @@
-import manualReleaseReviewContract from '../data/manual-release-review-contract.json'
-import manualReleaseReviewRecord from '../data/manual-release-review-record.json'
+import manualReleaseReviewContract from '../data/release/manual-release-review-contract.json'
+import manualReleaseReviewRecord from '../data/release/manual-release-review-record.json'
 
 function main() {
   console.log(`${manualReleaseReviewContract.name}`)

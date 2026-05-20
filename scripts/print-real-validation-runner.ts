@@ -1,7 +1,7 @@
-import realValidationRunnerContract from '../data/real-validation-runner-contract.json'
-import realValidationDefectRegister from '../data/real-validation-defect-register.json'
-import browserQaRecords from '../data/browser-qa-records.json'
-import performanceMeasurementRecords from '../data/performance-measurement-records.json'
+import realValidationRunnerContract from '../data/release/real-validation-runner-contract.json'
+import realValidationDefectRegister from '../data/release/real-validation-defect-register.json'
+import browserQaRecords from '../data/domains/experience/browser-qa-records.json'
+import performanceMeasurementRecords from '../data/engineering/performance-measurement-records.json'
 
 function main() {
   const browserQaItems = browserQaRecords.matrix.reduce((sum, item) => sum + item.routes.length, 0)

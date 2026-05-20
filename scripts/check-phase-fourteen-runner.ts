@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import evidenceCollectorPlan from '../data/evidence-collector-plan.json'
-import realExecutionRunnerPlan from '../data/real-execution-runner-plan.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
-import releaseReadinessTransitionGate from '../data/release-readiness-transition-gate.json'
+import evidenceCollectorPlan from '../data/release/evidence-collector-plan.json'
+import realExecutionRunnerPlan from '../data/engineering/real-execution-runner-plan.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
+import releaseReadinessTransitionGate from '../data/release/release-readiness-transition-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

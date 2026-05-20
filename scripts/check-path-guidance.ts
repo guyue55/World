@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import paths from '../data/paths.json'
-import nodes from '../data/nodes.json'
-import pathProductizationContract from '../data/path-productization-contract.json'
-import pathQualityGate from '../data/path-quality-gate.json'
+import paths from '../data/domains/experience/paths.json'
+import nodes from '../data/domains/experience/nodes.json'
+import pathProductizationContract from '../data/domains/experience/path-productization-contract.json'
+import pathQualityGate from '../data/domains/experience/path-quality-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

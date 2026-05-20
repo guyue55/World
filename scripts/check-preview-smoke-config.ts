@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import previewSmokeChecks from '../data/preview-smoke-checks.json'
-import previewDeploymentRecord from '../data/preview-deployment-record.json'
-import performanceRunbook from '../data/performance-runbook.json'
+import previewSmokeChecks from '../data/release/preview-smoke-checks.json'
+import previewDeploymentRecord from '../data/release/preview-deployment-record.json'
+import performanceRunbook from '../data/engineering/performance-runbook.json'
 
 function main() {
   const errors: string[] = []

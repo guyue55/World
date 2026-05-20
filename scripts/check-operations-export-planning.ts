@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseThreeOperationsExportContract from '../data/phase-three-operations-export-contract.json'
-import phaseThreePlanningFinalReport from '../data/phase-three-planning-final-report.json'
-import exportInheritanceMatrix from '../data/export-inheritance-matrix.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import phaseThreeOperationsExportContract from '../data/core/phase-three-operations-export-contract.json'
+import phaseThreePlanningFinalReport from '../data/release/phase-three-planning-final-report.json'
+import exportInheritanceMatrix from '../data/domains/archive/export-inheritance-matrix.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

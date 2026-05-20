@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import statusSkeletonContract from '../data/status-skeleton-productization-contract.json'
-import statusSkeletonQualityGate from '../data/status-skeleton-quality-gate.json'
-import stageCompletionGate from '../data/stage-completion-gate.json'
+import statusSkeletonContract from '../data/core/status-skeleton-productization-contract.json'
+import statusSkeletonQualityGate from '../data/release/status-skeleton-quality-gate.json'
+import stageCompletionGate from '../data/release/stage-completion-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

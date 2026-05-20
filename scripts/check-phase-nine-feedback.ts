@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import communityFeedbackLoopPlan from '../data/community-feedback-loop-plan.json'
-import contentQualityReviewStandard from '../data/content-quality-review-standard.json'
-import publicWorldBookPublishingPlan from '../data/public-world-book-publishing-plan.json'
+import communityFeedbackLoopPlan from '../data/domains/content/community-feedback-loop-plan.json'
+import contentQualityReviewStandard from '../data/domains/content/content-quality-review-standard.json'
+import publicWorldBookPublishingPlan from '../data/core/public-world-book-publishing-plan.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

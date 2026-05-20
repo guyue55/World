@@ -1,6 +1,6 @@
 import https from 'node:https'
 import http from 'node:http'
-import previewSmokeConfig from '../data/preview-smoke-config.json'
+import previewSmokeConfig from '../data/release/preview-smoke-config.json'
 
 const baseUrl = process.env[previewSmokeConfig.previewUrlEnv]
 

@@ -1,4 +1,4 @@
-import phaseFourHandoffIndex from '../data/phase-four-handoff-index.json'
+import phaseFourHandoffIndex from '../data/release/phase-four-handoff-index.json'
 
 function main() {
   console.log(`${phaseFourHandoffIndex.name}`)

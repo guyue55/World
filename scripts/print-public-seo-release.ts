@@ -1,5 +1,5 @@
-import publicSeoReleaseContract from '../data/public-seo-release-contract.json'
-import publicSeoReleaseRecord from '../data/public-seo-release-record.json'
+import publicSeoReleaseContract from '../data/release/public-seo-release-contract.json'
+import publicSeoReleaseRecord from '../data/release/public-seo-release-record.json'
 
 function main() {
   console.log(`${publicSeoReleaseContract.name}`)

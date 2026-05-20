@@ -1,5 +1,5 @@
-import guard from '../data/stage-completion-transition-guard.json'
-import certificateTemplate from '../data/stage-completion-certificate-template.json'
+import guard from '../data/versions/archive/stage-completion-transition-guard.json'
+import certificateTemplate from '../data/versions/archive/stage-completion-certificate-template.json'
 
 function main() {
   console.log(`${guard.name}`)

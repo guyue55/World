@@ -1,5 +1,5 @@
-import prePhaseFourFinalReport from '../data/pre-phase-four-final-report.json'
-import prePhaseFourFinalReadiness from '../data/pre-phase-four-final-readiness.json'
+import prePhaseFourFinalReport from '../data/release/pre-phase-four-final-report.json'
+import prePhaseFourFinalReadiness from '../data/release/pre-phase-four-final-readiness.json'
 
 function main() {
   console.log(`${prePhaseFourFinalReport.name}`)

@@ -1,4 +1,4 @@
-import spatialProtocol from '../../data/spatial-protocol.json'
+import spatialProtocol from '../../data/core/spatial-protocol.json'
 import type { Area, Node } from './types'
 import { getAllAreas, getAreaById } from './areas'
 import { VISIBILITY_DEPTH, type WorldDepth } from './world-core'

@@ -1,4 +1,4 @@
-import toolingBaseline from '../../data/tooling-baseline.json'
+import toolingBaseline from '../../data/engineering/tooling-baseline.json'
 
 export type ToolingIssue = {
   id: string

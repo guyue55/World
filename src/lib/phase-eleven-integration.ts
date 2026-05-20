@@ -1,6 +1,6 @@
-import runtimeAdapterContract from '../../data/runtime-adapter-contract.json'
-import runtimeIntegrationGates from '../../data/runtime-integration-gates.json'
-import runtimeReadinessBoard from '../../data/runtime-readiness-board.json'
+import runtimeAdapterContract from '../../data/core/runtime-adapter-contract.json'
+import runtimeIntegrationGates from '../../data/release/runtime-integration-gates.json'
+import runtimeReadinessBoard from '../../data/release/runtime-readiness-board.json'
 
 export function getRuntimeIntegrationGates() {
   return runtimeIntegrationGates

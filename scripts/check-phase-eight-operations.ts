@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseEightMonitoringErrorTrackingPlan from '../data/phase-eight-monitoring-error-tracking-plan.json'
-import phaseEightProductionSmokePlan from '../data/phase-eight-production-smoke-plan.json'
-import phaseEightRollbackDrillPlan from '../data/phase-eight-rollback-drill-plan.json'
+import phaseEightMonitoringErrorTrackingPlan from '../data/versions/archive/phase-eight-monitoring-error-tracking-plan.json'
+import phaseEightProductionSmokePlan from '../data/release/phase-eight-production-smoke-plan.json'
+import phaseEightRollbackDrillPlan from '../data/versions/archive/phase-eight-rollback-drill-plan.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

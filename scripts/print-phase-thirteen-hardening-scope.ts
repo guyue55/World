@@ -1,6 +1,6 @@
-import dependencyBuildEvidenceMatrix from '../data/dependency-build-evidence-matrix.json'
-import phaseThirteenHardeningScopeContract from '../data/phase-thirteen-hardening-scope-contract.json'
-import securityBaselineImplementationPlan from '../data/security-baseline-implementation-plan.json'
+import dependencyBuildEvidenceMatrix from '../data/release/dependency-build-evidence-matrix.json'
+import phaseThirteenHardeningScopeContract from '../data/core/phase-thirteen-hardening-scope-contract.json'
+import securityBaselineImplementationPlan from '../data/domains/governance/security-baseline-implementation-plan.json'
 
 function main() {
   console.log(`${phaseThirteenHardeningScopeContract.name}`)

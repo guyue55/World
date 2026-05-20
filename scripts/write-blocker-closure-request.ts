@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseBlockerClosureAssistContract from '../data/release-blocker-closure-assist-contract.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import releaseBlockerClosureAssistContract from '../data/release/release-blocker-closure-assist-contract.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 type Payload = {
   id: string

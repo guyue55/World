@@ -1,5 +1,5 @@
-import releaseEnvironmentContract from '../data/release-environment-contract.json'
-import releaseConfig from '../data/release-config.json'
+import releaseEnvironmentContract from '../data/release/release-environment-contract.json'
+import releaseConfig from '../data/release/release-config.json'
 
 function main() {
   console.log(`${releaseEnvironmentContract.name}`)

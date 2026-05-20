@@ -1,8 +1,8 @@
-import performanceMetricsModel from '../../data/performance-metrics-model.json'
-import routePerformanceProfiles from '../../data/route-performance-profiles.json'
-import smoothnessAuditChecklist from '../../data/smoothness-audit-checklist.json'
-import largeContentStrategy from '../../data/large-content-strategy.json'
-import performanceRegressionGuard from '../../data/performance-regression-guard.json'
+import performanceMetricsModel from '../../data/engineering/performance-metrics-model.json'
+import routePerformanceProfiles from '../../data/domains/experience/route-performance-profiles.json'
+import smoothnessAuditChecklist from '../../data/domains/governance/smoothness-audit-checklist.json'
+import largeContentStrategy from '../../data/domains/content/large-content-strategy.json'
+import performanceRegressionGuard from '../../data/engineering/performance-regression-guard.json'
 
 export type PerformanceRegressionIssue = {
   id: string

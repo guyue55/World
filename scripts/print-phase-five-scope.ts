@@ -1,5 +1,5 @@
-import phaseFiveScopeContract from '../data/phase-five-scope-contract.json'
-import privateArchiveBoundaryPolicy from '../data/private-archive-boundary-policy.json'
+import phaseFiveScopeContract from '../data/core/phase-five-scope-contract.json'
+import privateArchiveBoundaryPolicy from '../data/domains/archive/private-archive-boundary-policy.json'
 
 function main() {
   console.log(`${phaseFiveScopeContract.name}`)

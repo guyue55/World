@@ -1,5 +1,5 @@
-import lintEnvironmentContract from '../data/lint-environment-contract.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
+import lintEnvironmentContract from '../data/engineering/lint-environment-contract.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
 
 function main() {
   console.log(`${lintEnvironmentContract.name}`)

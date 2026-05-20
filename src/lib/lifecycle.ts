@@ -1,4 +1,4 @@
-import policy from '../../data/lifecycle-policy.json'
+import policy from '../../data/domains/governance/lifecycle-policy.json'
 import type { LifeStage, Node } from './types'
 
 export type LifeStageTransition = {

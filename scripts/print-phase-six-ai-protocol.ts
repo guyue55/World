@@ -1,5 +1,5 @@
-import aiPermissionMatrix from '../data/ai-permission-matrix.json'
-import aiReadableProtocol from '../data/ai-readable-protocol.json'
+import aiPermissionMatrix from '../data/domains/ai/ai-permission-matrix.json'
+import aiReadableProtocol from '../data/domains/ai/ai-readable-protocol.json'
 
 function main() {
   console.log(`${aiReadableProtocol.name}`)

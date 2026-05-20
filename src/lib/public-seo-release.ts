@@ -1,6 +1,6 @@
-import publicSeoReleaseContract from '../../data/public-seo-release-contract.json'
-import publicSeoReleaseRecord from '../../data/public-seo-release-record.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import publicSeoReleaseContract from '../../data/release/public-seo-release-contract.json'
+import publicSeoReleaseRecord from '../../data/release/public-seo-release-record.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getPublicSeoReleaseContract() {
   return publicSeoReleaseContract

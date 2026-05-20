@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段交接契约",
+  "principle": "第一阶段完成后，第二阶段只能在稳定地基上建设，不能反复挖地基。",
+  "status": "prepared",
+  "requiresBeforeActivation": [
+    "data/release/stage-completion-gate.json currentStatus = complete",
+    "reports/first-stage-completion-certificate.json exists",
+    "reports/first-stage-final-closure-report.json decision = complete"
+  ],
+  "frozenAfterStageOne": [
+    "world data protocol",
+    "visibility boundary",
+    "AI boundary",
+    "projection contracts",
+    "module dependency direction",
+    "critical path policy",
+    "stage completion evidence chain"
+  ],
+  "phaseTwoFocus": [
+    "真实内容产品化",
+    "首页与归档体验优化",
+    "多端视觉修复",
+    "配图与封面资产落地",
+    "搜索与路径体验增强",
+    "预览部署后的缺陷修复",
+    "性能实测后的针对性优化"
+  ],
+  "forbiddenInPhaseTwo": [
+    "绕过公开/私密边界",
+    "删除核心守门脚本",
+    "把完整 3D/WebXR/RAG 当成前置需求",
+    "为了视觉效果破坏首屏关键路径",
+    "无证据地修改第一阶段完成状态"
+  ],
+  "rules": [
+    "第二阶段新增能力必须挂入 extension/capability/feature contract。",
+    "页面改动必须继续遵守页面化与组件边界。",
+    "性能优化必须基于实测数据。",
+    "内容体验优先于继续增加抽象协议。"
+  ]
+}

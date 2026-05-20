@@ -1,5 +1,5 @@
-import realEvidenceCaptureContract from '../data/real-evidence-capture-contract.json'
-import realEvidenceCaptureRecord from '../data/real-evidence-capture-record.json'
+import realEvidenceCaptureContract from '../data/release/real-evidence-capture-contract.json'
+import realEvidenceCaptureRecord from '../data/release/real-evidence-capture-record.json'
 
 function main() {
   console.log(`${realEvidenceCaptureContract.name}`)

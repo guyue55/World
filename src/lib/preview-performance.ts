@@ -1,7 +1,7 @@
-import previewSmokeExecutionContract from '../../data/preview-smoke-execution-contract.json'
-import previewSmokeConfig from '../../data/preview-smoke-config.json'
-import performanceExecutionContract from '../../data/performance-execution-contract.json'
-import performanceMeasurementRecords from '../../data/performance-measurement-records.json'
+import previewSmokeExecutionContract from '../../data/release/preview-smoke-execution-contract.json'
+import previewSmokeConfig from '../../data/release/preview-smoke-config.json'
+import performanceExecutionContract from '../../data/engineering/performance-execution-contract.json'
+import performanceMeasurementRecords from '../../data/engineering/performance-measurement-records.json'
 
 export function getPreviewSmokeExecutionContract() {
   return previewSmokeExecutionContract

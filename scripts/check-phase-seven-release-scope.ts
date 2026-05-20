@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseSevenEntryGate from '../data/phase-seven-entry-gate.json'
-import phaseSevenReleaseEvidenceLedger from '../data/phase-seven-release-evidence-ledger.json'
-import phaseSevenReleaseScopeContract from '../data/phase-seven-release-scope-contract.json'
+import phaseSevenEntryGate from '../data/release/phase-seven-entry-gate.json'
+import phaseSevenReleaseEvidenceLedger from '../data/release/phase-seven-release-evidence-ledger.json'
+import phaseSevenReleaseScopeContract from '../data/release/phase-seven-release-scope-contract.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

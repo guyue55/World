@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段主题展览实现契约",
+  "principle": "主题展览是世界节点的策展入口，不是脱离世界结构的新孤岛。",
+  "stageProgress": "phase-three-implementation line batch 1 / 4",
+  "status": "implemented-static-prototype",
+  "route": "/exhibitions",
+  "dataSource": "data/domains/experience/theme-exhibition-map.json",
+  "rules": [
+    "只展示 public 展览和 planning-only 的边界说明。",
+    "展览卡片必须包含来源路由、输出形式和可见性。",
+    "planning-only 不得伪装为可发布展览。",
+    "主题展览不得关闭 release blockers。"
+  ]
+}

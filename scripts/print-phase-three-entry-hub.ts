@@ -1,4 +1,4 @@
-import phaseThreeEntryHubContract from '../data/phase-three-entry-hub-contract.json'
+import phaseThreeEntryHubContract from '../data/core/phase-three-entry-hub-contract.json'
 
 function main() {
   console.log(`${phaseThreeEntryHubContract.name}`)

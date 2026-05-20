@@ -1,11 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFifteenRcFinalReport from '../data/phase-fifteen-rc-final-report.json'
-import realCommandExecutionAttempts from '../data/real-command-execution-attempts.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
-import releaseCandidateManifest from '../data/release-candidate-manifest.json'
-import releaseReadinessTransitionGate from '../data/release-readiness-transition-gate.json'
-import v1CurrentStageClosureStatus from '../data/v1-current-stage-closure-status.json'
+import phaseFifteenRcFinalReport from '../data/release/phase-fifteen-rc-final-report.json'
+import realCommandExecutionAttempts from '../data/engineering/real-command-execution-attempts.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
+import releaseCandidateManifest from '../data/release/release-candidate-manifest.json'
+import releaseReadinessTransitionGate from '../data/release/release-readiness-transition-gate.json'
+import v1CurrentStageClosureStatus from '../data/release/v1-current-stage-closure-status.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

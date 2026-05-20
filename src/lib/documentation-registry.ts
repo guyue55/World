@@ -1,6 +1,6 @@
-import documentationRegistry from '../../data/documentation-registry.json'
-import adrIndex from '../../data/adr-index.json'
-import glossary from '../../data/glossary.json'
+import documentationRegistry from '../../data/core/documentation-registry.json'
+import adrIndex from '../../data/core/adr-index.json'
+import glossary from '../../data/core/glossary.json'
 
 export type DocumentationIssue = {
   id: string

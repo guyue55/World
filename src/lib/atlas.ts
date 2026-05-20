@@ -1,6 +1,6 @@
-import atlasProductizationContract from '../../data/atlas-productization-contract.json'
-import atlasQualityGate from '../../data/atlas-quality-gate.json'
-import areaLinks from '../../data/area-links.json'
+import atlasProductizationContract from '../../data/domains/experience/atlas-productization-contract.json'
+import atlasQualityGate from '../../data/domains/experience/atlas-quality-gate.json'
+import areaLinks from '../../data/domains/experience/area-links.json'
 import type { Area, Node } from './types'
 import { isPublicVisible } from './visibility'
 

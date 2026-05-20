@@ -1,5 +1,5 @@
-import realExecutionLandingFinalReport from '../data/real-execution-landing-final-report.json'
-import realExecutionLandingReadiness from '../data/real-execution-landing-readiness.json'
+import realExecutionLandingFinalReport from '../data/release/real-execution-landing-final-report.json'
+import realExecutionLandingReadiness from '../data/release/real-execution-landing-readiness.json'
 
 function main() {
   console.log(`${realExecutionLandingFinalReport.name}`)

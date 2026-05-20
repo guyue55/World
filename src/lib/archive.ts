@@ -1,5 +1,5 @@
-import archiveProductizationContract from '../../data/archive-productization-contract.json'
-import contentInventoryRules from '../../data/content-inventory-rules.json'
+import archiveProductizationContract from '../../data/domains/archive/archive-productization-contract.json'
+import contentInventoryRules from '../../data/domains/content/content-inventory-rules.json'
 import type { Area, Node, NodeType, LifeStage } from './types'
 
 export type ArchiveSort = 'newest' | 'oldest' | 'title'

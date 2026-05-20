@@ -1,7 +1,7 @@
-import completionMatrix from '../../data/phase-one-completion-matrix.json'
-import remainingWork from '../../data/phase-one-remaining-work.json'
-import exitCriteria from '../../data/phase-one-exit-criteria.json'
-import nextPhaseReadiness from '../../data/next-phase-readiness.json'
+import completionMatrix from '../../data/core/phase-one-completion-matrix.json'
+import remainingWork from '../../data/versions/archive/phase-one-remaining-work.json'
+import exitCriteria from '../../data/versions/archive/phase-one-exit-criteria.json'
+import nextPhaseReadiness from '../../data/release/next-phase-readiness.json'
 
 export type PhaseOneClosureIssue = {
   id: string

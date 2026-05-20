@@ -1,5 +1,5 @@
-import previewSmokeExecutionContract from '../data/preview-smoke-execution-contract.json'
-import previewSmokeConfig from '../data/preview-smoke-config.json'
+import previewSmokeExecutionContract from '../data/release/preview-smoke-execution-contract.json'
+import previewSmokeConfig from '../data/release/preview-smoke-config.json'
 
 function main() {
   console.log(`# ${previewSmokeExecutionContract.name}`)

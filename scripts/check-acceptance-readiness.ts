@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import acceptanceReadinessContract from '../data/acceptance-readiness-contract.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
-import phaseTwoExperienceAcceptanceChecklist from '../data/phase-two-experience-acceptance-checklist.json'
-import stageCompletionGate from '../data/stage-completion-gate.json'
+import acceptanceReadinessContract from '../data/release/acceptance-readiness-contract.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
+import phaseTwoExperienceAcceptanceChecklist from '../data/domains/experience/phase-two-experience-acceptance-checklist.json'
+import stageCompletionGate from '../data/release/stage-completion-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

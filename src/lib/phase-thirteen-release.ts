@@ -1,6 +1,6 @@
-import deploymentHardeningPlan from '../../data/deployment-hardening-plan.json'
-import releaseEvidencePackagePlan from '../../data/release-evidence-package-plan.json'
-import releaseReadinessTransitionGate from '../../data/release-readiness-transition-gate.json'
+import deploymentHardeningPlan from '../../data/release/deployment-hardening-plan.json'
+import releaseEvidencePackagePlan from '../../data/release/release-evidence-package-plan.json'
+import releaseReadinessTransitionGate from '../../data/release/release-readiness-transition-gate.json'
 
 export function getDeploymentHardeningPlan() {
   return deploymentHardeningPlan

@@ -1,5 +1,5 @@
-import nonCommandEvidenceFeedbackContract from '../data/non-command-evidence-feedback-contract.json'
-import nonCommandEvidenceFeedbackRecord from '../data/non-command-evidence-feedback-record.json'
+import nonCommandEvidenceFeedbackContract from '../data/domains/content/non-command-evidence-feedback-contract.json'
+import nonCommandEvidenceFeedbackRecord from '../data/domains/content/non-command-evidence-feedback-record.json'
 
 function main() {
   console.log(`${nonCommandEvidenceFeedbackContract.name}`)

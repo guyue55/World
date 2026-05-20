@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseCandidateRiskAcceptanceContract from '../data/release-candidate-risk-acceptance-contract.json'
+import releaseCandidateRiskAcceptanceContract from '../data/domains/governance/release-candidate-risk-acceptance-contract.json'
 
 type Payload = {
   id: string

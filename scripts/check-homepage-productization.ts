@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import homepageComposition from '../data/homepage-composition.json'
-import homeCoverAssets from '../data/home-cover-assets.json'
-import nodes from '../data/nodes.json'
+import homepageComposition from '../data/domains/experience/homepage-composition.json'
+import homeCoverAssets from '../data/core/home-cover-assets.json'
+import nodes from '../data/domains/experience/nodes.json'
 
 function main() {
   const errors: string[] = []

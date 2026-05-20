@@ -1,8 +1,8 @@
-import dependencyBuildEvidenceMatrix from '../../data/dependency-build-evidence-matrix.json'
-import identityRbacAuditProofPlan from '../../data/identity-rbac-audit-proof-plan.json'
-import phaseThirteenHardeningScopeContract from '../../data/phase-thirteen-hardening-scope-contract.json'
-import realServiceAdapterImplementationPlan from '../../data/real-service-adapter-implementation-plan.json'
-import securityBaselineImplementationPlan from '../../data/security-baseline-implementation-plan.json'
+import dependencyBuildEvidenceMatrix from '../../data/release/dependency-build-evidence-matrix.json'
+import identityRbacAuditProofPlan from '../../data/domains/governance/identity-rbac-audit-proof-plan.json'
+import phaseThirteenHardeningScopeContract from '../../data/core/phase-thirteen-hardening-scope-contract.json'
+import realServiceAdapterImplementationPlan from '../../data/core/real-service-adapter-implementation-plan.json'
+import securityBaselineImplementationPlan from '../../data/domains/governance/security-baseline-implementation-plan.json'
 
 export function getPhaseThirteenHardeningScopeContract() {
   return phaseThirteenHardeningScopeContract

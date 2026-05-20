@@ -1,4 +1,4 @@
-import realExecutionAggregatorContract from '../data/real-execution-aggregator-contract.json'
+import realExecutionAggregatorContract from '../data/engineering/real-execution-aggregator-contract.json'
 
 function main() {
   console.log(`${realExecutionAggregatorContract.name}`)

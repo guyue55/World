@@ -1,5 +1,5 @@
-import phaseFiveHandoffPreparation from '../../data/phase-five-handoff-preparation.json'
-import phaseFourOperationsBoard from '../../data/phase-four-operations-board.json'
+import phaseFiveHandoffPreparation from '../../data/release/phase-five-handoff-preparation.json'
+import phaseFourOperationsBoard from '../../data/operations/phase-four-operations-board.json'
 
 export function getPhaseFourOperationsBoard() {
   return phaseFourOperationsBoard

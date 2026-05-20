@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import identityRbacAuditProofPlan from '../data/identity-rbac-audit-proof-plan.json'
-import realServiceAdapterImplementationPlan from '../data/real-service-adapter-implementation-plan.json'
+import identityRbacAuditProofPlan from '../data/domains/governance/identity-rbac-audit-proof-plan.json'
+import realServiceAdapterImplementationPlan from '../data/core/real-service-adapter-implementation-plan.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

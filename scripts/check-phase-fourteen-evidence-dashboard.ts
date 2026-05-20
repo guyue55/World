@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import manualSignoffPreparationChecklist from '../data/manual-signoff-preparation-checklist.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
+import manualSignoffPreparationChecklist from '../data/release/manual-signoff-preparation-checklist.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

@@ -1,5 +1,5 @@
-import phaseThreeImplementationFinalReport from '../data/phase-three-implementation-final-report.json'
-import phaseThreeImplementationRoutes from '../data/phase-three-implementation-routes.json'
+import phaseThreeImplementationFinalReport from '../data/release/phase-three-implementation-final-report.json'
+import phaseThreeImplementationRoutes from '../data/domains/experience/phase-three-implementation-routes.json'
 
 function main() {
   console.log(`${phaseThreeImplementationFinalReport.name}`)

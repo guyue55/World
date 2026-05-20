@@ -1,5 +1,5 @@
-import phaseFourteenEntryGate from '../data/phase-fourteen-entry-gate.json'
-import phaseThirteenHardeningFinalReport from '../data/phase-thirteen-hardening-final-report.json'
+import phaseFourteenEntryGate from '../data/release/phase-fourteen-entry-gate.json'
+import phaseThirteenHardeningFinalReport from '../data/release/phase-thirteen-hardening-final-report.json'
 
 function main() {
   console.log(`${phaseThirteenHardeningFinalReport.name}`)

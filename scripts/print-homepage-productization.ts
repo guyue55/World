@@ -1,6 +1,6 @@
-import homepageComposition from '../data/homepage-composition.json'
-import homeCoverAssets from '../data/home-cover-assets.json'
-import nodes from '../data/nodes.json'
+import homepageComposition from '../data/domains/experience/homepage-composition.json'
+import homeCoverAssets from '../data/core/home-cover-assets.json'
+import nodes from '../data/domains/experience/nodes.json'
 
 function main() {
   const featured = nodes.filter((node) => node.visibility === 'public' && (node.featured?.home || node.featured?.representative))

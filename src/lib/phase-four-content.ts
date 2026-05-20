@@ -1,6 +1,6 @@
-import phaseFourContentProgram from '../../data/phase-four-content-program.json'
-import phaseFourContentSeeds from '../../data/phase-four-content-seeds.json'
-import phaseFourScopeContract from '../../data/phase-four-scope-contract.json'
+import phaseFourContentProgram from '../../data/domains/content/phase-four-content-program.json'
+import phaseFourContentSeeds from '../../data/domains/content/phase-four-content-seeds.json'
+import phaseFourScopeContract from '../../data/core/phase-four-scope-contract.json'
 
 export function getPhaseFourContentProgram() {
   return phaseFourContentProgram

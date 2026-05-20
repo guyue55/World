@@ -1,5 +1,5 @@
-import releaseDryRunHandoffFinalReport from '../data/release-dry-run-handoff-final-report.json'
-import releaseDryRunHandoffReadiness from '../data/release-dry-run-handoff-readiness.json'
+import releaseDryRunHandoffFinalReport from '../data/release/release-dry-run-handoff-final-report.json'
+import releaseDryRunHandoffReadiness from '../data/release/release-dry-run-handoff-readiness.json'
 
 function main() {
   console.log(`${releaseDryRunHandoffFinalReport.name}`)

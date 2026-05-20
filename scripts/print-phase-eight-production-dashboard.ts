@@ -1,5 +1,5 @@
-import phaseEightProductionDashboard from '../data/phase-eight-production-dashboard.json'
-import phaseEightProductionDeploymentChecklist from '../data/phase-eight-production-deployment-checklist.json'
+import phaseEightProductionDashboard from '../data/release/phase-eight-production-dashboard.json'
+import phaseEightProductionDeploymentChecklist from '../data/release/phase-eight-production-deployment-checklist.json'
 
 function main() {
   console.log(`${phaseEightProductionDashboard.name}`)

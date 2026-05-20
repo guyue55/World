@@ -1,4 +1,4 @@
-import routeManifest from '../../data/route-manifest.json'
+import routeManifest from '../../data/domains/experience/route-manifest.json'
 
 export type RouteManifestItem = {
   path: string

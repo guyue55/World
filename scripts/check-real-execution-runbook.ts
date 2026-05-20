@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realExecutionRunbookContract from '../data/real-execution-runbook-contract.json'
-import realEvidenceExecutionAssistFinalReport from '../data/real-evidence-execution-assist-final-report.json'
+import realExecutionRunbookContract from '../data/engineering/real-execution-runbook-contract.json'
+import realEvidenceExecutionAssistFinalReport from '../data/release/real-evidence-execution-assist-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

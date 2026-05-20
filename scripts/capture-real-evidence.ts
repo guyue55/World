@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import realEvidenceCaptureContract from '../data/real-evidence-capture-contract.json'
+import realEvidenceCaptureContract from '../data/release/real-evidence-capture-contract.json'
 
 function run(command: string) {
   const result = spawnSync(command, {

@@ -1,4 +1,4 @@
-import compatibilityMatrix from '../../data/compatibility-matrix.json'
+import compatibilityMatrix from '../../data/core/compatibility-matrix.json'
 
 export type CompatibilityItem = {
   future: string

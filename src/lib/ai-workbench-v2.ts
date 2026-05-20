@@ -1,7 +1,7 @@
-import aiPermissionMatrix from '../../data/ai-permission-matrix.json'
-import aiReadableProtocol from '../../data/ai-readable-protocol.json'
-import aiSuggestionAuditContract from '../../data/ai-suggestion-audit-contract.json'
-import aiSuggestionAuditQueue from '../../data/ai-suggestion-audit-queue.json'
+import aiPermissionMatrix from '../../data/domains/ai/ai-permission-matrix.json'
+import aiReadableProtocol from '../../data/domains/ai/ai-readable-protocol.json'
+import aiSuggestionAuditContract from '../../data/domains/ai/ai-suggestion-audit-contract.json'
+import aiSuggestionAuditQueue from '../../data/domains/ai/ai-suggestion-audit-queue.json'
 
 export function getAiReadableProtocol() {
   return aiReadableProtocol

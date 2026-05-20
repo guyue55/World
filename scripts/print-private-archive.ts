@@ -1,4 +1,4 @@
-import privateArchiveIndex from '../data/private-archive-index.json'
+import privateArchiveIndex from '../data/domains/archive/private-archive-index.json'
 
 function main() {
   console.log(`${privateArchiveIndex.name}`)

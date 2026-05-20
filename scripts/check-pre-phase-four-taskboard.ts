@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import prePhaseFourTaskboard from '../data/pre-phase-four-taskboard.json'
-import releaseCandidateAcceptanceFinalReport from '../data/release-candidate-acceptance-final-report.json'
+import prePhaseFourTaskboard from '../data/versions/archive/pre-phase-four-taskboard.json'
+import releaseCandidateAcceptanceFinalReport from '../data/release/release-candidate-acceptance-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

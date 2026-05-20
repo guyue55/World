@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realValidationFinalReport from '../data/real-validation-final-report.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
+import realValidationFinalReport from '../data/release/real-validation-final-report.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

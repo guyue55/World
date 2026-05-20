@@ -1,5 +1,5 @@
-import phaseEightProductionEnvironmentMatrix from '../data/phase-eight-production-environment-matrix.json'
-import phaseEightProductionScopeContract from '../data/phase-eight-production-scope-contract.json'
+import phaseEightProductionEnvironmentMatrix from '../data/release/phase-eight-production-environment-matrix.json'
+import phaseEightProductionScopeContract from '../data/release/phase-eight-production-scope-contract.json'
 
 function main() {
   console.log(`${phaseEightProductionScopeContract.name}`)

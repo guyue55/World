@@ -1,5 +1,5 @@
-import releaseCandidateAcceptanceFinalReport from '../data/release-candidate-acceptance-final-report.json'
-import releaseCandidateAcceptanceReadiness from '../data/release-candidate-acceptance-readiness.json'
+import releaseCandidateAcceptanceFinalReport from '../data/release/release-candidate-acceptance-final-report.json'
+import releaseCandidateAcceptanceReadiness from '../data/release/release-candidate-acceptance-readiness.json'
 
 function main() {
   console.log(`${releaseCandidateAcceptanceFinalReport.name}`)

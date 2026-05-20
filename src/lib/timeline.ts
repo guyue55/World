@@ -1,5 +1,5 @@
-import timelineProductizationContract from '../../data/timeline-productization-contract.json'
-import timelineQualityGate from '../../data/timeline-quality-gate.json'
+import timelineProductizationContract from '../../data/domains/experience/timeline-productization-contract.json'
+import timelineQualityGate from '../../data/domains/experience/timeline-quality-gate.json'
 import type { Area, Node, WorldEvent } from './types'
 
 export type TimelineFilters = {

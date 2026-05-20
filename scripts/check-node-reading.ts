@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import nodes from '../data/nodes.json'
-import relations from '../data/relations.json'
-import nodeReadingContract from '../data/node-reading-contract.json'
-import nodeReadingQualityGate from '../data/node-reading-quality-gate.json'
+import nodes from '../data/domains/experience/nodes.json'
+import relations from '../data/core/relations.json'
+import nodeReadingContract from '../data/domains/experience/node-reading-contract.json'
+import nodeReadingQualityGate from '../data/domains/experience/node-reading-quality-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,4 +1,4 @@
-import changeAdmissionPolicy from '../../data/change-admission-policy.json'
+import changeAdmissionPolicy from '../../data/domains/governance/change-admission-policy.json'
 
 export type ChangeLevel = {
   id: string

@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFourScopeContract from '../data/phase-four-scope-contract.json'
-import phaseFourContentProgram from '../data/phase-four-content-program.json'
-import prePhaseFourFinalReport from '../data/pre-phase-four-final-report.json'
+import phaseFourScopeContract from '../data/core/phase-four-scope-contract.json'
+import phaseFourContentProgram from '../data/domains/content/phase-four-content-program.json'
+import prePhaseFourFinalReport from '../data/release/pre-phase-four-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

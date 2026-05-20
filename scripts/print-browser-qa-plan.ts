@@ -1,6 +1,6 @@
-import browserQaExecutionContract from '../data/browser-qa-execution-contract.json'
-import browserQaRecords from '../data/browser-qa-records.json'
-import browserQaRouteCoverage from '../data/browser-qa-route-coverage.json'
+import browserQaExecutionContract from '../data/domains/experience/browser-qa-execution-contract.json'
+import browserQaRecords from '../data/domains/experience/browser-qa-records.json'
+import browserQaRouteCoverage from '../data/domains/experience/browser-qa-route-coverage.json'
 
 function main() {
   console.log(`# ${browserQaExecutionContract.name}`)

@@ -1,4 +1,4 @@
-import runtimeProtocol from '../../data/world-runtime-protocol.json'
+import runtimeProtocol from '../../data/core/world-runtime-protocol.json'
 
 export type RuntimeState = {
   id: string

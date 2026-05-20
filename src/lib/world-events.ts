@@ -1,5 +1,5 @@
-import events from '../../data/world-events.json'
-import state from '../../data/world-state.json'
+import events from '../../data/core/world-events.json'
+import state from '../../data/core/world-state.json'
 import type { WorldEvent, WorldState } from './types'
 
 export function getAllWorldEvents(): WorldEvent[] {

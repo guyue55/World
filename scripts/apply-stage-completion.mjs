@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import guard from '../data/stage-completion-transition-guard.json' assert { type: 'json' }
-import certificateTemplate from '../data/stage-completion-certificate-template.json' assert { type: 'json' }
+import guard from '../data/versions/archive/stage-completion-transition-guard.json' assert { type: 'json' }
+import certificateTemplate from '../data/versions/archive/stage-completion-certificate-template.json' assert { type: 'json' }
 
 function readJson(path) {
   const full = join(process.cwd(), path)
@@ -38,22 +38,22 @@ if (blocked) {
   process.exit(1)
 }
 
-const gate = readJson('data/stage-completion-gate.json')
+const gate = readJson('data/release/stage-completion-gate.json')
 if (!gate) {
-  console.error('Missing data/stage-completion-gate.json')
+  console.error('Missing data/release/stage-completion-gate.json')
   process.exit(1)
 }
 
 gate.currentStatus = 'complete'
 gate.completedAt = new Date().toISOString()
 gate.completionSource = guard.requiredReport
-writeJson('data/stage-completion-gate.json', gate)
+writeJson('data/release/stage-completion-gate.json', gate)
 
-const decision = readJson('data/phase-one-final-decision-template.json') || {}
+const decision = readJson('data/release/phase-one-final-decision-template.json') || {}
 decision.currentDecision = 'complete'
 decision.decisionReason = 'all final closure evidence passed'
 decision.completedAt = gate.completedAt
-writeJson('data/phase-one-final-decision-template.json', decision)
+writeJson('data/release/phase-one-final-decision-template.json', decision)
 
 const certificate = {
   generatedAt: gate.completedAt,

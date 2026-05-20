@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import aiWorkbenchImplementationContract from '../data/ai-workbench-implementation-contract.json'
-import aiWorkbenchSuggestions from '../data/ai-workbench-suggestions.json'
-import phaseThreeAiLighthouseRoadmap from '../data/phase-three-ai-lighthouse-roadmap.json'
+import aiWorkbenchImplementationContract from '../data/domains/ai/ai-workbench-implementation-contract.json'
+import aiWorkbenchSuggestions from '../data/domains/ai/ai-workbench-suggestions.json'
+import phaseThreeAiLighthouseRoadmap from '../data/domains/ai/phase-three-ai-lighthouse-roadmap.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

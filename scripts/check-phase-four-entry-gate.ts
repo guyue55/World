@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFourEntryGate from '../data/phase-four-entry-gate.json'
-import prePhaseFourTaskboard from '../data/pre-phase-four-taskboard.json'
+import phaseFourEntryGate from '../data/release/phase-four-entry-gate.json'
+import prePhaseFourTaskboard from '../data/versions/archive/pre-phase-four-taskboard.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

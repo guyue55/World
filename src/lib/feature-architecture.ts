@@ -1,7 +1,7 @@
-import pageCompositionContract from '../../data/page-composition-contract.json'
-import featureModuleContract from '../../data/feature-module-contract.json'
-import dataFlowContract from '../../data/data-flow-contract.json'
-import scalabilityPartition from '../../data/scalability-partition.json'
+import pageCompositionContract from '../../data/core/page-composition-contract.json'
+import featureModuleContract from '../../data/core/feature-module-contract.json'
+import dataFlowContract from '../../data/core/data-flow-contract.json'
+import scalabilityPartition from '../../data/core/scalability-partition.json'
 
 export type FeatureArchitectureIssue = {
   id: string

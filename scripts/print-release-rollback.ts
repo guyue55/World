@@ -1,4 +1,4 @@
-import releaseRollbackContract from '../data/release-rollback-contract.json'
+import releaseRollbackContract from '../data/release/release-rollback-contract.json'
 
 function main() {
   console.log(`${releaseRollbackContract.name}`)

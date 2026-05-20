@@ -1,5 +1,5 @@
-import permissions from '../../data/permissions.json'
-import aiBoundaryPolicy from '../../data/ai-boundary-policy.json'
+import permissions from '../../data/domains/governance/permissions.json'
+import aiBoundaryPolicy from '../../data/domains/ai/ai-boundary-policy.json'
 import type { Visibility } from './types'
 
 export type PermissionRecord = {

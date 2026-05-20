@@ -1,5 +1,5 @@
-import manualSignoffPreparationChecklist from '../data/manual-signoff-preparation-checklist.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
+import manualSignoffPreparationChecklist from '../data/release/manual-signoff-preparation-checklist.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
 
 function main() {
   console.log(`${realExecutionResultSummary.name}`)

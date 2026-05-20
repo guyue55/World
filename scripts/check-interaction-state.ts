@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import navigationStateContract from '../data/navigation-state-contract.json'
-import interactionComponentContract from '../data/interaction-component-contract.json'
+import navigationStateContract from '../data/domains/experience/navigation-state-contract.json'
+import interactionComponentContract from '../data/core/interaction-component-contract.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

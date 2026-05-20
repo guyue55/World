@@ -1,7 +1,7 @@
-import assemblyManifest from '../../data/foundation-assembly-manifest.json'
-import environmentBaseline from '../../data/environment-baseline.json'
-import repositoryContract from '../../data/repository-structure-contract.json'
-import reproducibilityContract from '../../data/reproducibility-contract.json'
+import assemblyManifest from '../../data/core/foundation-assembly-manifest.json'
+import environmentBaseline from '../../data/engineering/environment-baseline.json'
+import repositoryContract from '../../data/core/repository-structure-contract.json'
+import reproducibilityContract from '../../data/engineering/reproducibility-contract.json'
 
 export type AssemblyIssue = {
   id: string

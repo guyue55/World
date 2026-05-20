@@ -1,4 +1,4 @@
-import developmentGates from '../../data/development-gates.json'
+import developmentGates from '../../data/release/development-gates.json'
 import { evaluateWorldKernel } from './world-kernel'
 
 export type DevelopmentGate = {

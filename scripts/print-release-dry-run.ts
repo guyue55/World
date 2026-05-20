@@ -1,4 +1,4 @@
-import releaseDryRunContract from '../data/release-dry-run-contract.json'
+import releaseDryRunContract from '../data/release/release-dry-run-contract.json'
 
 function main() {
   console.log(`${releaseDryRunContract.name}`)

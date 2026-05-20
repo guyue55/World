@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseHandoffPackageContract from '../data/release-handoff-package-contract.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import releaseHandoffPackageContract from '../data/release/release-handoff-package-contract.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

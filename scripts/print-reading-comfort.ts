@@ -1,4 +1,4 @@
-import readingComfortContract from '../data/reading-comfort-contract.json'
+import readingComfortContract from '../data/domains/experience/reading-comfort-contract.json'
 
 function main() {
   console.log(`${readingComfortContract.name}`)

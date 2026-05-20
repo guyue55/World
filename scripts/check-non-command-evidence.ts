@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import nonCommandEvidenceFeedbackContract from '../data/non-command-evidence-feedback-contract.json'
-import nonCommandEvidenceFeedbackRecord from '../data/non-command-evidence-feedback-record.json'
-import browserQaRecords from '../data/browser-qa-records.json'
-import previewSmokeConfig from '../data/preview-smoke-config.json'
-import performanceMeasurementRecords from '../data/performance-measurement-records.json'
+import nonCommandEvidenceFeedbackContract from '../data/domains/content/non-command-evidence-feedback-contract.json'
+import nonCommandEvidenceFeedbackRecord from '../data/domains/content/non-command-evidence-feedback-record.json'
+import browserQaRecords from '../data/domains/experience/browser-qa-records.json'
+import previewSmokeConfig from '../data/release/preview-smoke-config.json'
+import performanceMeasurementRecords from '../data/engineering/performance-measurement-records.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,7 +1,7 @@
-import statusSkeletonContract from '../../data/status-skeleton-productization-contract.json'
-import statusSkeletonQualityGate from '../../data/status-skeleton-quality-gate.json'
-import stageCompletionGate from '../../data/stage-completion-gate.json'
-import phaseTwoCharter from '../../data/phase-two-charter.json'
+import statusSkeletonContract from '../../data/core/status-skeleton-productization-contract.json'
+import statusSkeletonQualityGate from '../../data/release/status-skeleton-quality-gate.json'
+import stageCompletionGate from '../../data/release/stage-completion-gate.json'
+import phaseTwoCharter from '../../data/versions/archive/phase-two-charter.json'
 
 export function getStatusSkeletonContract() {
   return statusSkeletonContract

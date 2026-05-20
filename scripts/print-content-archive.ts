@@ -1,7 +1,7 @@
-import nodes from '../data/nodes.json'
-import areas from '../data/areas.json'
-import paths from '../data/paths.json'
-import archiveProductizationContract from '../data/archive-productization-contract.json'
+import nodes from '../data/domains/experience/nodes.json'
+import areas from '../data/domains/experience/areas.json'
+import paths from '../data/domains/experience/paths.json'
+import archiveProductizationContract from '../data/domains/archive/archive-productization-contract.json'
 
 function main() {
   const publicNodes = nodes.filter((node) => node.visibility === 'public' || node.visibility === 'semiPublic')

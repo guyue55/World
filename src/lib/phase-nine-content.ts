@@ -1,8 +1,8 @@
-import contentCalendarPlan from '../../data/content-calendar-plan.json'
-import contentColumnOperationsPlan from '../../data/content-column-operations-plan.json'
-import contentCommunicationChannels from '../../data/content-communication-channels.json'
-import contentTopicPillars from '../../data/content-topic-pillars.json'
-import personalBrandSystem from '../../data/personal-brand-system.json'
+import contentCalendarPlan from '../../data/domains/content/content-calendar-plan.json'
+import contentColumnOperationsPlan from '../../data/domains/content/content-column-operations-plan.json'
+import contentCommunicationChannels from '../../data/domains/content/content-communication-channels.json'
+import contentTopicPillars from '../../data/domains/content/content-topic-pillars.json'
+import personalBrandSystem from '../../data/domains/content/personal-brand-system.json'
 
 export function getPersonalBrandSystem() {
   return personalBrandSystem

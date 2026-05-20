@@ -1,5 +1,5 @@
-import exportCenterImplementationContract from '../data/export-center-implementation-contract.json'
-import exportInheritanceMatrix from '../data/export-inheritance-matrix.json'
+import exportCenterImplementationContract from '../data/core/export-center-implementation-contract.json'
+import exportInheritanceMatrix from '../data/domains/archive/export-inheritance-matrix.json'
 
 function main() {
   console.log(`${exportCenterImplementationContract.name}`)

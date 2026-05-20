@@ -1,5 +1,5 @@
-import phaseElevenEntryGate from '../data/phase-eleven-entry-gate.json'
-import phaseTenIntelligentOpsFinalReport from '../data/phase-ten-intelligent-ops-final-report.json'
+import phaseElevenEntryGate from '../data/release/phase-eleven-entry-gate.json'
+import phaseTenIntelligentOpsFinalReport from '../data/release/phase-ten-intelligent-ops-final-report.json'
 
 function main() {
   console.log(`${phaseTenIntelligentOpsFinalReport.name}`)

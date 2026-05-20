@@ -1,9 +1,9 @@
-import dependencyBootstrapRecord from '../../data/dependency-bootstrap-record.json'
-import evidenceDashboardContract from '../../data/evidence-dashboard-contract.json'
-import nonCommandEvidenceFeedbackRecord from '../../data/non-command-evidence-feedback-record.json'
-import realEvidenceCaptureRecord from '../../data/real-evidence-capture-record.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
-import releaseReadyEvidenceMatrix from '../../data/release-ready-evidence-matrix.json'
+import dependencyBootstrapRecord from '../../data/engineering/dependency-bootstrap-record.json'
+import evidenceDashboardContract from '../../data/release/evidence-dashboard-contract.json'
+import nonCommandEvidenceFeedbackRecord from '../../data/domains/content/non-command-evidence-feedback-record.json'
+import realEvidenceCaptureRecord from '../../data/release/real-evidence-capture-record.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
+import releaseReadyEvidenceMatrix from '../../data/release/release-ready-evidence-matrix.json'
 
 export function getEvidenceDashboardContract() {
   return evidenceDashboardContract

@@ -1,5 +1,5 @@
-import aiPathExhibitionRecommendations from '../../data/ai-path-exhibition-recommendations.json'
-import aiWorldCompanionPlan from '../../data/ai-world-companion-plan.json'
+import aiPathExhibitionRecommendations from '../../data/domains/ai/ai-path-exhibition-recommendations.json'
+import aiWorldCompanionPlan from '../../data/domains/ai/ai-world-companion-plan.json'
 
 export function getAiWorldCompanionPlan() {
   return aiWorldCompanionPlan

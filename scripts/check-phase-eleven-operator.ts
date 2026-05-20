@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import operatorDashboardPlan from '../data/operator-dashboard-plan.json'
-import runtimeEvidenceRecordPlan from '../data/runtime-evidence-record-plan.json'
-import runtimeGrowthLoopPlan from '../data/runtime-growth-loop-plan.json'
+import operatorDashboardPlan from '../data/operations/operator-dashboard-plan.json'
+import runtimeEvidenceRecordPlan from '../data/release/runtime-evidence-record-plan.json'
+import runtimeGrowthLoopPlan from '../data/operations/runtime-growth-loop-plan.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))
