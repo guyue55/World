@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0-concept-completion",
+  "name": "V3 验收标准、风险台账与 V4 入口映射",
+  "batch": 6,
+  "totalBatches": 6,
+  "stageProgress": "V3 概念深化与实现任务拆解线 / 第 6 批 / 共 6 批",
+  "acceptanceCriteria": [
+    "页面可访问",
+    "路由完整",
+    "数据模型稳定",
+    "AI 权限可审计",
+    "私密内容不泄漏",
+    "导出可用",
+    "移动端可用",
+    "低性能设备可用",
+    "构建通过",
+    "核心命令通过",
+    "人工安全复核完成"
+  ],
+  "riskRegister": [
+    {
+      "id": "v3-risk-privacy-leak",
+      "risk": "私密档案或家庭内容泄漏",
+      "control": "redaction + owner approval + audit trail",
+      "severity": "critical"
+    },
+    {
+      "id": "v3-risk-ai-overreach",
+      "risk": "AI 自动发布、删除或改变可见性",
+      "control": "L5 forbidden layer + human approval",
+      "severity": "critical"
+    },
+    {
+      "id": "v3-risk-visual-overload",
+      "risk": "宇宙视图过重导致移动端不可用",
+      "control": "semantic fallback + reduced motion + low-end mode",
+      "severity": "high"
+    },
+    {
+      "id": "v3-risk-false-memory",
+      "risk": "AI 生成错误记忆或关系",
+      "control": "requiresReview edge + audit + human reject",
+      "severity": "high"
+    },
+    {
+      "id": "v3-risk-legacy-misrelease",
+      "risk": "传承内容错误释放",
+      "control": "recipient verification + no automatic public release",
+      "severity": "critical"
+    },
+    {
+      "id": "v3-risk-cost-growth",
+      "risk": "AI 与存储成本不可控",
+      "control": "budget alert + manual high-cost AI + cold archive",
+      "severity": "medium"
+    }
+  ],
+  "v3ToV4EntryMap": [
+    {
+      "v3Capability": "world memory graph",
+      "v4Candidate": "real-time collaborative semantic graph",
+      "entryCondition": "graph persistence and permission proof"
+    },
+    {
+      "v3Capability": "multi-space model",
+      "v4Candidate": "multi-user world governance",
+      "entryCondition": "real invitation and role enforcement"
+    },
+    {
+      "v3Capability": "visual universe",
+      "v4Candidate": "optional WebGL/3D universe",
+      "entryCondition": "semantic fallback and performance proof"
+    },
+    {
+      "v3Capability": "AI companion",
+      "v4Candidate": "plugin-based AI maintenance agents",
+      "entryCondition": "AI audit, cost guard and human approval proof"
+    },
+    {
+      "v3Capability": "legacy protocol",
+      "v4Candidate": "federated legacy and publishing workflows",
+      "entryCondition": "manual safety review and recipient verification proof"
+    }
+  ],
+  "finalDecision": "v3-concept-completion-finished-v3-real-implementation-next-v4-planning-only",
+  "v3ConceptCompletionStatus": "complete",
+  "v3RealImplementationRecommendedNext": true,
+  "v4PlanningAllowed": true,
+  "v4FormalDevelopmentAllowed": false,
+  "releaseReady": false,
+  "productionLive": false
+}

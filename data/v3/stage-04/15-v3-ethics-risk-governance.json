@@ -1,0 +1,31 @@
+{
+  "version": "3.0.0",
+  "stage": 4,
+  "batch": 15,
+  "totalBatches": 20,
+  "name": "治理、伦理与风险登记",
+  "stageProgress": "V3 / 第 4 阶段：长期生命档案与传承治理 / 第 15 批 / 共 20 批",
+  "status": "prepared",
+  "riskClasses": [
+    "privacy-leak",
+    "ai-overreach",
+    "false-memory",
+    "unauthorized-handover",
+    "identity-conflict",
+    "data-loss"
+  ],
+  "controls": [
+    "human review",
+    "audit trail",
+    "redaction",
+    "export checksum",
+    "recovery plan",
+    "appeal workflow"
+  ],
+  "ready": false,
+  "rules": [
+    "传承协议必须 owner-first。",
+    "不得自动公开私密或封存内容。",
+    "长期档案必须可导出、可撤回、可审计。"
+  ]
+}

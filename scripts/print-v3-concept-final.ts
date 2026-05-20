@@ -1,0 +1,16 @@
+import { getV3ConceptCompletionStatus } from '../src/lib/v3-concept/final'
+
+const status = getV3ConceptCompletionStatus()
+console.log('古月浮屿 V3 Concept Completion')
+console.log(`completedBatches=${status.summary.completedBatches}`)
+console.log(`routes=${status.summary.routes}`)
+console.log(`domainModels=${status.summary.domainModels}`)
+console.log(`services=${status.summary.services}`)
+console.log(`aiLayers=${status.summary.aiLayers}`)
+console.log(`visualViews=${status.summary.visualViews}`)
+console.log(`acceptanceCriteria=${status.summary.acceptanceCriteria}`)
+console.log(`risks=${status.summary.risks}`)
+console.log(`v4PlanningAllowed=${status.summary.v4PlanningAllowed}`)
+console.log(`v4FormalDevelopmentAllowed=${status.summary.v4FormalDevelopmentAllowed}`)
+console.log(`releaseReady=${status.summary.releaseReady}`)
+console.log(`productionLive=${status.summary.productionLive}`)

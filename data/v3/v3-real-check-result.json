@@ -1,0 +1,6 @@
+{
+  "command": "npm run check:v3:all",
+  "status": "blocked-or-failed",
+  "outputExcerpt": "> guyue-floating-world@0.1.0 check:v3:all\n> tsx scripts/check-v3-all.ts\n\n\nsh: 1: tsx: Permission denied",
+  "note": "真实命令只有 exitCode=0 才能记为 passed。"
+}

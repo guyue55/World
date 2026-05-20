@@ -1,0 +1,26 @@
+{
+  "version": "3.0.0",
+  "stage": 2,
+  "batch": 7,
+  "totalBatches": 20,
+  "name": "空间切换与权限桥",
+  "stageProgress": "V3 / 第 2 阶段：多空间与协作身份 / 第 7 批 / 共 20 批",
+  "status": "prepared",
+  "bridges": [
+    "public-to-exhibition",
+    "private-to-legacy-redacted",
+    "studio-to-public-review",
+    "ai-to-owner-suggestion"
+  ],
+  "blockedBridges": [
+    "private-to-public-auto",
+    "ai-to-private-raw",
+    "guest-to-vault"
+  ],
+  "ready": false,
+  "rules": [
+    "空间切换必须经过权限桥。",
+    "私密空间默认拒绝公开桥接。",
+    "AI 协作者只能提出建议，不能成为 owner。"
+  ]
+}

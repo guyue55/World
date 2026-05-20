@@ -1,0 +1,32 @@
+{
+  "version": "3.0.0",
+  "stage": 1,
+  "batch": 1,
+  "totalBatches": 20,
+  "name": "V3 智能世界范围契约",
+  "stageProgress": "V3 / 第 1 阶段：智能世界内核 / 第 1 批 / 共 20 批",
+  "status": "prepared",
+  "principle": "V3 从服务化平台走向长期生长的智能个人世界，但 AI 仍是灯塔，不是太阳。",
+  "focus": [
+    "world memory",
+    "semantic graph",
+    "growth loop",
+    "multi-space preparation",
+    "AI companion",
+    "human approval",
+    "privacy redaction",
+    "V4 gate"
+  ],
+  "nonGoals": [
+    "autonomous publishing",
+    "private auto-reading",
+    "production claim",
+    "replace human review"
+  ],
+  "ready": false,
+  "rules": [
+    "AI 是灯塔，不是太阳。",
+    "私密内容不得被自动读取或自动公开。",
+    "长期记忆必须可解释、可撤回、可审计。"
+  ]
+}

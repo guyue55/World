@@ -1,0 +1,25 @@
+{
+  "version": "3.1.0-pre-v4",
+  "name": "V4 前最终补证第 3 批：入口门禁与安全策略聚合",
+  "stageProgress": "V4 前最终补证线 / 第 3 批 / 共 4 批",
+  "status": "entry-dashboard-prepared",
+  "dashboardRoute": "/pre-v4-gate",
+  "gateGroups": [
+    "evidence matrix",
+    "command environment",
+    "security blockers",
+    "privacy blockers",
+    "cost blockers",
+    "accessibility blockers",
+    "V4 planning boundary"
+  ],
+  "v4PlanningAllowed": true,
+  "v4DevelopmentAllowed": false,
+  "releaseReady": false,
+  "productionLive": false,
+  "rules": [
+    "V4 前门禁页面只展示状态，不自动解锁 V4 开发。",
+    "任何 private/vault/legacy 自动公开都必须被拒绝。",
+    "成本、安全、可访问性是 V4 正式开发前置条件。"
+  ]
+}

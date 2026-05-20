@@ -1,0 +1,17 @@
+{
+  "version": "3.0.0",
+  "stage": 4,
+  "batch": 16,
+  "totalBatches": 20,
+  "name": "第 4 阶段收口与 V4 前入口",
+  "stageProgress": "V3 / 第 4 阶段：长期生命档案与传承治理 / 第 16 批 / 共 20 批",
+  "status": "prepared",
+  "decision": "v3-life-archive-legacy-governance-complete-stage-five-allowed",
+  "next": "v4-entry-hardening-and-final-gate",
+  "ready": false,
+  "rules": [
+    "传承协议必须 owner-first。",
+    "不得自动公开私密或封存内容。",
+    "长期档案必须可导出、可撤回、可审计。"
+  ]
+}
