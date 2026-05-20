@@ -1,3 +1,4 @@
+import { PhaseTwoKickoffPanel } from '@/components/world/PhaseTwoKickoffPanel'
 import { PhaseTwoHandoffPanel } from '@/components/world/PhaseTwoHandoffPanel'
 import { StageCompletionTransitionPanel } from '@/components/world/StageCompletionTransitionPanel'
 import { FinalClosurePanel } from '@/components/world/FinalClosurePanel'
@@ -42,6 +43,7 @@ import { StarLineSummary } from '@/components/world/StarLineSummary'
 export function WorldFoundationStack() {
   return (
     <>
+      <PhaseTwoKickoffPanel />
       <PhaseTwoHandoffPanel />
       <StageCompletionTransitionPanel />
       <FinalClosurePanel />

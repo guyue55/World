@@ -32,3 +32,38 @@ body {
   width: min(100% - 2rem, 860px);
   margin-inline: auto;
 }
+
+
+.prose-guyue {
+  max-width: 72ch;
+  font-size: 1.03rem;
+}
+
+.prose-guyue p {
+  margin-block: 1.15rem;
+}
+
+.prose-guyue h1,
+.prose-guyue h2,
+.prose-guyue h3 {
+  letter-spacing: -0.015em;
+}
+
+.prose-guyue code {
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .reading-container {
+    width: min(100%, 100%);
+  }
+
+  .prose-guyue {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .prose-guyue p {
+    line-height: 1.95;
+  }
+}

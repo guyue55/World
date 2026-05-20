@@ -16,7 +16,7 @@ export default function ArchivePage() {
         <p className="text-sm tracking-[0.35em] text-moss">ARCHIVE</p>
         <h1 className="text-5xl font-semibold">档案馆</h1>
         <p className="leading-8 text-ink/70">
-          当你不想漫游世界时，可以在这里直接查找文章、项目、灵感和归档内容。
+          当你不想漫游世界时，可以在这里直接查找文章、项目、灵感和归档内容。档案馆负责现实检索，世界地图负责空间漫游。
         </p>
       </header>
       <ArchiveView nodes={getPublicNodes()} areas={getAllAreas()} />
