@@ -1,5 +1,5 @@
-import finalClosureReportContract from '../../data/final-closure-report-contract.json'
-import phaseOneFinalDecisionTemplate from '../../data/phase-one-final-decision-template.json'
+import finalClosureReportContract from '../../data/release/final-closure-report-contract.json'
+import phaseOneFinalDecisionTemplate from '../../data/release/phase-one-final-decision-template.json'
 
 export function getFinalClosureReportContract() {
   return finalClosureReportContract

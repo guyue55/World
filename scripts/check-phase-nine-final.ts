@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import contentCalendarPlan from '../data/content-calendar-plan.json'
-import phaseNineContentBrandFinalReport from '../data/phase-nine-content-brand-final-report.json'
-import phaseTenEntryGate from '../data/phase-ten-entry-gate.json'
-import publicWorldBookPublishingPlan from '../data/public-world-book-publishing-plan.json'
+import contentCalendarPlan from '../data/domains/content/content-calendar-plan.json'
+import phaseNineContentBrandFinalReport from '../data/domains/content/phase-nine-content-brand-final-report.json'
+import phaseTenEntryGate from '../data/release/phase-ten-entry-gate.json'
+import publicWorldBookPublishingPlan from '../data/core/public-world-book-publishing-plan.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

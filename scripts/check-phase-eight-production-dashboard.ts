@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseEightDomainHttpsCdnPolicy from '../data/phase-eight-domain-https-cdn-policy.json'
-import phaseEightProductionDashboard from '../data/phase-eight-production-dashboard.json'
-import phaseEightProductionDeploymentChecklist from '../data/phase-eight-production-deployment-checklist.json'
+import phaseEightDomainHttpsCdnPolicy from '../data/domains/governance/phase-eight-domain-https-cdn-policy.json'
+import phaseEightProductionDashboard from '../data/release/phase-eight-production-dashboard.json'
+import phaseEightProductionDeploymentChecklist from '../data/release/phase-eight-production-deployment-checklist.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

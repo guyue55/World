@@ -1,4 +1,4 @@
-import relationPolicy from '../../data/relation-policy.json'
+import relationPolicy from '../../data/domains/governance/relation-policy.json'
 import type { Relation } from './types'
 import { getAllRelations } from './relations'
 

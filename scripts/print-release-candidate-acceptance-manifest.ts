@@ -1,4 +1,4 @@
-import releaseCandidateAcceptanceEvidenceManifest from '../data/release-candidate-acceptance-evidence-manifest.json'
+import releaseCandidateAcceptanceEvidenceManifest from '../data/release/release-candidate-acceptance-evidence-manifest.json'
 
 function main() {
   console.log(`${releaseCandidateAcceptanceEvidenceManifest.name}`)

@@ -1,6 +1,6 @@
-import releaseBlockerClosureAssistContract from '../../data/release-blocker-closure-assist-contract.json'
-import releaseBlockerClosureRequests from '../../data/release-blocker-closure-requests.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import releaseBlockerClosureAssistContract from '../../data/release/release-blocker-closure-assist-contract.json'
+import releaseBlockerClosureRequests from '../../data/release/release-blocker-closure-requests.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getReleaseBlockerClosureAssistContract() {
   return releaseBlockerClosureAssistContract

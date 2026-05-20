@@ -1,7 +1,7 @@
-import foundationBaseline from '../../data/foundation-baseline.json'
-import handoffManifest from '../../data/foundation-handoff-manifest.json'
-import futureGuardrails from '../../data/future-expansion-guardrails.json'
-import developerOnboarding from '../../data/developer-onboarding.json'
+import foundationBaseline from '../../data/core/foundation-baseline.json'
+import handoffManifest from '../../data/release/foundation-handoff-manifest.json'
+import futureGuardrails from '../../data/core/future-expansion-guardrails.json'
+import developerOnboarding from '../../data/core/developer-onboarding.json'
 
 export type BaselineIssue = {
   id: string

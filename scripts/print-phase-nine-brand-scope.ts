@@ -1,6 +1,6 @@
-import contentTopicPillars from '../data/content-topic-pillars.json'
-import personalBrandSystem from '../data/personal-brand-system.json'
-import phaseNineBrandScopeContract from '../data/phase-nine-brand-scope-contract.json'
+import contentTopicPillars from '../data/domains/content/content-topic-pillars.json'
+import personalBrandSystem from '../data/domains/content/personal-brand-system.json'
+import phaseNineBrandScopeContract from '../data/domains/content/phase-nine-brand-scope-contract.json'
 
 function main() {
   console.log(`${phaseNineBrandScopeContract.name}`)

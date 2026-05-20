@@ -1,5 +1,5 @@
-import aiWorkbenchImplementationContract from '../data/ai-workbench-implementation-contract.json'
-import aiWorkbenchSuggestions from '../data/ai-workbench-suggestions.json'
+import aiWorkbenchImplementationContract from '../data/domains/ai/ai-workbench-implementation-contract.json'
+import aiWorkbenchSuggestions from '../data/domains/ai/ai-workbench-suggestions.json'
 
 function main() {
   console.log(`${aiWorkbenchImplementationContract.name}`)

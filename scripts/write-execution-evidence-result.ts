@@ -16,7 +16,7 @@ if (!payloadRaw) {
 }
 
 const payload = JSON.parse(payloadRaw) as ResultPayload
-const recordPath = path.join(process.cwd(), 'data/real-execution-rerun-record.json')
+const recordPath = path.join(process.cwd(), 'data/engineering/real-execution-rerun-record.json')
 const record = JSON.parse(fs.readFileSync(recordPath, 'utf-8'))
 const run = record.runs.find((item: { id: string }) => item.id === payload.id)
 

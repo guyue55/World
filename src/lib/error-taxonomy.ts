@@ -1,4 +1,4 @@
-import errorTaxonomy from '../../data/error-taxonomy.json'
+import errorTaxonomy from '../../data/core/error-taxonomy.json'
 
 export type ErrorLevel = {
   id: 'info' | 'warning' | 'error' | 'critical'

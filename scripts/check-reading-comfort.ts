@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import readingComfortContract from '../data/reading-comfort-contract.json'
-import readingComfortQualityGate from '../data/reading-comfort-quality-gate.json'
+import readingComfortContract from '../data/domains/experience/reading-comfort-contract.json'
+import readingComfortQualityGate from '../data/domains/experience/reading-comfort-quality-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

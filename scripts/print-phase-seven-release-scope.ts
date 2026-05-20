@@ -1,5 +1,5 @@
-import phaseSevenReleaseEvidenceLedger from '../data/phase-seven-release-evidence-ledger.json'
-import phaseSevenReleaseScopeContract from '../data/phase-seven-release-scope-contract.json'
+import phaseSevenReleaseEvidenceLedger from '../data/release/phase-seven-release-evidence-ledger.json'
+import phaseSevenReleaseScopeContract from '../data/release/phase-seven-release-scope-contract.json'
 
 function main() {
   console.log(`${phaseSevenReleaseScopeContract.name}`)

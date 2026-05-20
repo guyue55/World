@@ -1,4 +1,4 @@
-import foundationFreeze from '../../data/foundation-freeze.json'
+import foundationFreeze from '../../data/release/foundation-freeze.json'
 
 export type FoundationFreezeReport = {
   frozen: string[]

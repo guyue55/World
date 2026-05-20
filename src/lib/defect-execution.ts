@@ -1,7 +1,7 @@
-import defectExecutionQueue from '../../data/defect-execution-queue.json'
-import defectExecutionQueueContract from '../../data/defect-execution-queue-contract.json'
-import realValidationDefectRegister from '../../data/real-validation-defect-register.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import defectExecutionQueue from '../../data/engineering/defect-execution-queue.json'
+import defectExecutionQueueContract from '../../data/engineering/defect-execution-queue-contract.json'
+import realValidationDefectRegister from '../../data/release/real-validation-defect-register.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getDefectExecutionQueueContract() {
   return defectExecutionQueueContract

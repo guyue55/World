@@ -1,5 +1,5 @@
-import stageCompletionTransitionGuard from '../../data/stage-completion-transition-guard.json'
-import stageCompletionCertificateTemplate from '../../data/stage-completion-certificate-template.json'
+import stageCompletionTransitionGuard from '../../data/versions/archive/stage-completion-transition-guard.json'
+import stageCompletionCertificateTemplate from '../../data/versions/archive/stage-completion-certificate-template.json'
 
 export function getStageCompletionTransitionGuard() {
   return stageCompletionTransitionGuard

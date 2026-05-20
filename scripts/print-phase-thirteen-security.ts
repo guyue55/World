@@ -1,4 +1,4 @@
-import securityBaselineImplementationPlan from '../data/security-baseline-implementation-plan.json'
+import securityBaselineImplementationPlan from '../data/domains/governance/security-baseline-implementation-plan.json'
 
 function main() {
   console.log(`${securityBaselineImplementationPlan.name}`)

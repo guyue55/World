@@ -1,5 +1,5 @@
-import releaseCandidateFreezeFinalReport from '../data/release-candidate-freeze-final-report.json'
-import releaseCandidateFreezeReadiness from '../data/release-candidate-freeze-readiness.json'
+import releaseCandidateFreezeFinalReport from '../data/release/release-candidate-freeze-final-report.json'
+import releaseCandidateFreezeReadiness from '../data/release/release-candidate-freeze-readiness.json'
 
 function main() {
   console.log(`${releaseCandidateFreezeFinalReport.name}`)

@@ -1,4 +1,4 @@
-import releaseCandidateAcceptanceScannerContract from '../data/release-candidate-acceptance-scanner-contract.json'
+import releaseCandidateAcceptanceScannerContract from '../data/release/release-candidate-acceptance-scanner-contract.json'
 
 function main() {
   console.log(`${releaseCandidateAcceptanceScannerContract.name}`)

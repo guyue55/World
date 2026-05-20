@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选变更边界审计契约",
+  "principle": "冻结后的变更必须可审计；允许变更与禁止变更必须落到目录和文件层级。",
+  "stageProgress": "release-candidate-freeze line batch 2 / 4",
+  "status": "implemented-static-boundary-audit",
+  "allowedPaths": [
+    "reports/",
+    "docs/",
+    "data/*record*.json",
+    "data/*request*.json",
+    "data/*final-report*.json",
+    "data/release/release-candidate-freeze-record.json",
+    "CHECK_REPORT.md",
+    "CHANGELOG.md",
+    "CHANGED_FILES.txt"
+  ],
+  "protectedPaths": [
+    "src/app/",
+    "src/components/",
+    "src/lib/",
+    "data/domains/experience/nodes.json",
+    "data/domains/experience/areas.json",
+    "data/domains/experience/paths.json",
+    "data/core/world-manifest.json",
+    "data/release/release-ready-evidence-matrix.json",
+    "data/release/release-blocker-register.json",
+    "package.json",
+    "vercel.json"
+  ],
+  "allowedReasons": [
+    "evidence-update",
+    "documentation-correction",
+    "manual-review-record",
+    "blocker-closure-request",
+    "defect-fix-with-review",
+    "minor-accessibility-fix"
+  ],
+  "rules": [
+    "protectedPaths 变更必须有人工 review reason。",
+    "release-ready 相关数据不得被自动改为 passed。",
+    "src/ 变更默认需要 defect-fix-with-review。",
+    "reports/ 可写入真实执行产物。"
+  ]
+}

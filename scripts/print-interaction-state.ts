@@ -1,5 +1,5 @@
-import navigationStateContract from '../data/navigation-state-contract.json'
-import interactionComponentContract from '../data/interaction-component-contract.json'
+import navigationStateContract from '../data/domains/experience/navigation-state-contract.json'
+import interactionComponentContract from '../data/core/interaction-component-contract.json'
 
 function main() {
   console.log(`${navigationStateContract.name}`)

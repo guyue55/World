@@ -1,4 +1,4 @@
-import policy from '../../data/ai-boundary-policy.json'
+import policy from '../../data/domains/ai/ai-boundary-policy.json'
 import type { Node, Relation, Visibility } from './types'
 import { getAllNodes } from './nodes'
 import { getAllRelations } from './relations'

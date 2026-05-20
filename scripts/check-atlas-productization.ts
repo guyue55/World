@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import areas from '../data/areas.json'
-import nodes from '../data/nodes.json'
-import areaLinks from '../data/area-links.json'
-import atlasQualityGate from '../data/atlas-quality-gate.json'
-import atlasProductizationContract from '../data/atlas-productization-contract.json'
+import areas from '../data/domains/experience/areas.json'
+import nodes from '../data/domains/experience/nodes.json'
+import areaLinks from '../data/domains/experience/area-links.json'
+import atlasQualityGate from '../data/domains/experience/atlas-quality-gate.json'
+import atlasProductizationContract from '../data/domains/experience/atlas-productization-contract.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

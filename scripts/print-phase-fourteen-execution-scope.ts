@@ -1,6 +1,6 @@
-import phaseFourteenExecutionSprintScopeContract from '../data/phase-fourteen-execution-sprint-scope-contract.json'
-import realExecutionBlockerLedger from '../data/real-execution-blocker-ledger.json'
-import realExecutionQueue from '../data/real-execution-queue.json'
+import phaseFourteenExecutionSprintScopeContract from '../data/engineering/phase-fourteen-execution-sprint-scope-contract.json'
+import realExecutionBlockerLedger from '../data/release/real-execution-blocker-ledger.json'
+import realExecutionQueue from '../data/engineering/real-execution-queue.json'
 
 function main() {
   console.log(`${phaseFourteenExecutionSprintScopeContract.name}`)

@@ -1,8 +1,8 @@
-import criticalPathContract from '../../data/critical-path-contract.json'
-import staticAssetPolicy from '../../data/static-asset-policy.json'
-import cacheStrategy from '../../data/cache-strategy.json'
-import runtimeSplitContract from '../../data/runtime-split-contract.json'
-import performanceGuard from '../../data/performance-guard.json'
+import criticalPathContract from '../../data/domains/experience/critical-path-contract.json'
+import staticAssetPolicy from '../../data/domains/governance/static-asset-policy.json'
+import cacheStrategy from '../../data/engineering/cache-strategy.json'
+import runtimeSplitContract from '../../data/core/runtime-split-contract.json'
+import performanceGuard from '../../data/engineering/performance-guard.json'
 
 export type PerformanceImplementationIssue = {
   id: string

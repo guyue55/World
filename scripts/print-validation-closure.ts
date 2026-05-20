@@ -1,5 +1,5 @@
-import realValidationFinalReport from '../data/real-validation-final-report.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import realValidationFinalReport from '../data/release/real-validation-final-report.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function main() {
   console.log(`${realValidationFinalReport.name}`)

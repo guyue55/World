@@ -1,6 +1,6 @@
-import phaseThreeQaExpansionContract from '../../data/phase-three-qa-expansion-contract.json'
-import browserQaRouteCoverage from '../../data/browser-qa-route-coverage.json'
-import browserQaRecords from '../../data/browser-qa-records.json'
+import phaseThreeQaExpansionContract from '../../data/release/phase-three-qa-expansion-contract.json'
+import browserQaRouteCoverage from '../../data/domains/experience/browser-qa-route-coverage.json'
+import browserQaRecords from '../../data/domains/experience/browser-qa-records.json'
 
 export function getPhaseThreeQaExpansionContract() {
   return phaseThreeQaExpansionContract

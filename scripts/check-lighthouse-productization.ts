@@ -1,11 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import nodes from '../data/nodes.json'
-import paths from '../data/paths.json'
-import aiBoundaryPolicy from '../data/ai-boundary-policy.json'
-import lighthousePrompts from '../data/lighthouse-prompts.json'
-import lighthouseQualityGate from '../data/lighthouse-quality-gate.json'
-import lighthouseProductizationContract from '../data/lighthouse-productization-contract.json'
+import nodes from '../data/domains/experience/nodes.json'
+import paths from '../data/domains/experience/paths.json'
+import aiBoundaryPolicy from '../data/domains/ai/ai-boundary-policy.json'
+import lighthousePrompts from '../data/domains/ai/lighthouse-prompts.json'
+import lighthouseQualityGate from '../data/domains/ai/lighthouse-quality-gate.json'
+import lighthouseProductizationContract from '../data/domains/ai/lighthouse-productization-contract.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

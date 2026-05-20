@@ -1,5 +1,5 @@
-import nodeReadingContract from '../../data/node-reading-contract.json'
-import nodeReadingQualityGate from '../../data/node-reading-quality-gate.json'
+import nodeReadingContract from '../../data/domains/experience/node-reading-contract.json'
+import nodeReadingQualityGate from '../../data/domains/experience/node-reading-quality-gate.json'
 import type { Node } from './types'
 import { getPublicNodes } from './nodes'
 import { getBacklinks, getForwardLinks } from './backlinks'

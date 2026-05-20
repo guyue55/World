@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import aiOperationsAssistantPlan from '../data/ai-operations-assistant-plan.json'
-import phaseNineContentBrandFinalReport from '../data/phase-nine-content-brand-final-report.json'
-import phaseTenEntryGate from '../data/phase-ten-entry-gate.json'
-import phaseTenIntelligentOpsScopeContract from '../data/phase-ten-intelligent-ops-scope-contract.json'
+import aiOperationsAssistantPlan from '../data/domains/ai/ai-operations-assistant-plan.json'
+import phaseNineContentBrandFinalReport from '../data/domains/content/phase-nine-content-brand-final-report.json'
+import phaseTenEntryGate from '../data/release/phase-ten-entry-gate.json'
+import phaseTenIntelligentOpsScopeContract from '../data/core/phase-ten-intelligent-ops-scope-contract.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

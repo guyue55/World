@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import auditComplianceLedger from '../data/audit-compliance-ledger.json'
-import secretGovernancePolicy from '../data/secret-governance-policy.json'
-import storageGovernanceMatrix from '../data/storage-governance-matrix.json'
+import auditComplianceLedger from '../data/domains/governance/audit-compliance-ledger.json'
+import secretGovernancePolicy from '../data/domains/governance/secret-governance-policy.json'
+import storageGovernanceMatrix from '../data/domains/governance/storage-governance-matrix.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

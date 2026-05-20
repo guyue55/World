@@ -1,4 +1,4 @@
-import paths from '../../data/paths.json'
+import paths from '../../data/domains/experience/paths.json'
 import type { Path } from './types'
 
 export function getAllPaths(): Path[] {

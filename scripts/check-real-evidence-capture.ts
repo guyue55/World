@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realEvidenceCaptureContract from '../data/real-evidence-capture-contract.json'
-import realEvidenceCaptureRecord from '../data/real-evidence-capture-record.json'
-import releaseReadyMatrix from '../data/release-ready-matrix.json'
+import realEvidenceCaptureContract from '../data/release/real-evidence-capture-contract.json'
+import realEvidenceCaptureRecord from '../data/release/real-evidence-capture-record.json'
+import releaseReadyMatrix from '../data/release/release-ready-matrix.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

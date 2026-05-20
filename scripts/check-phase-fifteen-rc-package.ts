@@ -1,10 +1,10 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFifteenBlockerClosurePlan from '../data/phase-fifteen-blocker-closure-plan.json'
-import rcEvidencePackageChecklist from '../data/rc-evidence-package-checklist.json'
-import releaseCandidateManifest from '../data/release-candidate-manifest.json'
-import releaseCandidatePlan from '../data/release-candidate-plan.json'
-import releaseReadinessTransitionGate from '../data/release-readiness-transition-gate.json'
+import phaseFifteenBlockerClosurePlan from '../data/release/phase-fifteen-blocker-closure-plan.json'
+import rcEvidencePackageChecklist from '../data/release/rc-evidence-package-checklist.json'
+import releaseCandidateManifest from '../data/release/release-candidate-manifest.json'
+import releaseCandidatePlan from '../data/release/release-candidate-plan.json'
+import releaseReadinessTransitionGate from '../data/release/release-readiness-transition-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

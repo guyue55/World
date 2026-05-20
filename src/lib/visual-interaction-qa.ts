@@ -1,7 +1,7 @@
-import visualQaChecklist from '../../data/visual-qa-checklist.json'
-import interactionQaChecklist from '../../data/interaction-qa-checklist.json'
-import layoutResponsiveContract from '../../data/layout-responsive-contract.json'
-import visualInteractionDefectRegister from '../../data/visual-interaction-defect-register.json'
+import visualQaChecklist from '../../data/domains/experience/visual-qa-checklist.json'
+import interactionQaChecklist from '../../data/release/interaction-qa-checklist.json'
+import layoutResponsiveContract from '../../data/core/layout-responsive-contract.json'
+import visualInteractionDefectRegister from '../../data/domains/experience/visual-interaction-defect-register.json'
 
 export type VisualInteractionIssue = {
   id: string

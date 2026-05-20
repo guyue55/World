@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFourContentSeeds from '../data/phase-four-content-seeds.json'
+import phaseFourContentSeeds from '../data/domains/content/phase-four-content-seeds.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

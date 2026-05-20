@@ -1,7 +1,7 @@
-import performanceBudget from '../../data/performance-budget.json'
-import renderingStrategy from '../../data/rendering-strategy.json'
-import loadingStrategy from '../../data/loading-strategy.json'
-import interactionSmoothnessContract from '../../data/interaction-smoothness-contract.json'
+import performanceBudget from '../../data/engineering/performance-budget.json'
+import renderingStrategy from '../../data/core/rendering-strategy.json'
+import loadingStrategy from '../../data/core/loading-strategy.json'
+import interactionSmoothnessContract from '../../data/core/interaction-smoothness-contract.json'
 
 export type PerformanceIssue = {
   id: string

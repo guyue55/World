@@ -1,4 +1,4 @@
-import realExecutionRunbookContract from '../data/real-execution-runbook-contract.json'
+import realExecutionRunbookContract from '../data/engineering/real-execution-runbook-contract.json'
 
 function main() {
   console.log(`${realExecutionRunbookContract.name}`)

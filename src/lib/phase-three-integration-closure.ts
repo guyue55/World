@@ -1,6 +1,6 @@
-import phaseThreeIntegrationFinalReport from '../../data/phase-three-integration-final-report.json'
-import phaseThreeIntegrationReadiness from '../../data/phase-three-integration-readiness.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import phaseThreeIntegrationFinalReport from '../../data/release/phase-three-integration-final-report.json'
+import phaseThreeIntegrationReadiness from '../../data/release/phase-three-integration-readiness.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getPhaseThreeIntegrationFinalReport() {
   return phaseThreeIntegrationFinalReport

@@ -1,4 +1,4 @@
-import snapshotPolicy from '../../data/snapshot-policy.json'
+import snapshotPolicy from '../../data/domains/governance/snapshot-policy.json'
 import { summarizeWorldCore } from './world-core'
 import { evaluateWorldInvariants } from './world-invariants'
 import { getSchemaVersionReport } from './schema-version'

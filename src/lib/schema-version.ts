@@ -1,4 +1,4 @@
-import schemaVersions from '../../data/schema-versions.json'
+import schemaVersions from '../../data/core/schema-versions.json'
 
 export type SchemaVersionReport = {
   current: string

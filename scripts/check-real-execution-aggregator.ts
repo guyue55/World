@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realExecutionAggregatorContract from '../data/real-execution-aggregator-contract.json'
-import releaseReadyEvidenceMatrix from '../data/release-ready-evidence-matrix.json'
+import realExecutionAggregatorContract from '../data/engineering/real-execution-aggregator-contract.json'
+import releaseReadyEvidenceMatrix from '../data/release/release-ready-evidence-matrix.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

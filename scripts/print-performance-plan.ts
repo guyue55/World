@@ -1,5 +1,5 @@
-import performanceExecutionContract from '../data/performance-execution-contract.json'
-import performanceMeasurementRecords from '../data/performance-measurement-records.json'
+import performanceExecutionContract from '../data/engineering/performance-execution-contract.json'
+import performanceMeasurementRecords from '../data/engineering/performance-measurement-records.json'
 
 function main() {
   console.log(`# ${performanceExecutionContract.name}`)

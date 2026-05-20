@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseThreeEntryHubContract from '../data/phase-three-entry-hub-contract.json'
-import phaseThreeRouteIntegrationContract from '../data/phase-three-route-integration-contract.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import phaseThreeEntryHubContract from '../data/core/phase-three-entry-hub-contract.json'
+import phaseThreeRouteIntegrationContract from '../data/domains/experience/phase-three-route-integration-contract.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

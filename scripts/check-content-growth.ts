@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseThreeContentGrowthContract from '../data/phase-three-content-growth-contract.json'
-import themeExhibitionMap from '../data/theme-exhibition-map.json'
-import contentGrowthBoard from '../data/content-growth-board.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import phaseThreeContentGrowthContract from '../data/domains/content/phase-three-content-growth-contract.json'
+import themeExhibitionMap from '../data/domains/experience/theme-exhibition-map.json'
+import contentGrowthBoard from '../data/domains/content/content-growth-board.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

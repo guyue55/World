@@ -1,4 +1,4 @@
-import exportContract from '../../data/export-contract.json'
+import exportContract from '../../data/core/export-contract.json'
 import type { Visibility } from './types'
 import { getPublicNodes } from './nodes'
 
@@ -38,7 +38,7 @@ export function validateExportContract(): ExportContractIssue[] {
 
     bundleIds.add(bundle.id)
 
-    if (!bundle.include.includes('data/world-manifest.json') && bundle.id !== 'archive-snapshot') {
+    if (!bundle.include.includes('data/core/world-manifest.json') && bundle.id !== 'archive-snapshot') {
       issues.push({
         id: `missing-manifest-${bundle.id}`,
         severity: 'warning',

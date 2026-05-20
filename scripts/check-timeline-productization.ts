@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import events from '../data/world-events.json'
-import timelineQualityGate from '../data/timeline-quality-gate.json'
-import timelineProductizationContract from '../data/timeline-productization-contract.json'
+import events from '../data/core/world-events.json'
+import timelineQualityGate from '../data/domains/experience/timeline-quality-gate.json'
+import timelineProductizationContract from '../data/domains/experience/timeline-productization-contract.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

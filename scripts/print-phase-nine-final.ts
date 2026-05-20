@@ -1,5 +1,5 @@
-import phaseNineContentBrandFinalReport from '../data/phase-nine-content-brand-final-report.json'
-import phaseTenEntryGate from '../data/phase-ten-entry-gate.json'
+import phaseNineContentBrandFinalReport from '../data/domains/content/phase-nine-content-brand-final-report.json'
+import phaseTenEntryGate from '../data/release/phase-ten-entry-gate.json'
 
 function main() {
   console.log(`${phaseNineContentBrandFinalReport.name}`)

@@ -1,6 +1,6 @@
-import realExecutionRerunContract from '../../data/real-execution-rerun-contract.json'
-import realExecutionRerunRecord from '../../data/real-execution-rerun-record.json'
-import lintExecutionReadiness from '../../data/lint-execution-readiness.json'
+import realExecutionRerunContract from '../../data/engineering/real-execution-rerun-contract.json'
+import realExecutionRerunRecord from '../../data/engineering/real-execution-rerun-record.json'
+import lintExecutionReadiness from '../../data/release/lint-execution-readiness.json'
 
 export function getRealExecutionRerunContract() {
   return realExecutionRerunContract

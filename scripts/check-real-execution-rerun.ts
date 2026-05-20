@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realExecutionRerunContract from '../data/real-execution-rerun-contract.json'
-import realExecutionRerunRecord from '../data/real-execution-rerun-record.json'
+import realExecutionRerunContract from '../data/engineering/real-execution-rerun-contract.json'
+import realExecutionRerunRecord from '../data/engineering/real-execution-rerun-record.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

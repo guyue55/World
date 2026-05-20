@@ -1,6 +1,6 @@
-import phaseTwoFinalHandoffGate from '../data/phase-two-final-handoff-gate.json'
-import phaseTwoFinalCheckMatrix from '../data/phase-two-final-check-matrix.json'
-import nextStageReadiness from '../data/next-stage-readiness.json'
+import phaseTwoFinalHandoffGate from '../data/release/phase-two-final-handoff-gate.json'
+import phaseTwoFinalCheckMatrix from '../data/release/phase-two-final-check-matrix.json'
+import nextStageReadiness from '../data/release/next-stage-readiness.json'
 
 function main() {
   console.log(`${phaseTwoFinalHandoffGate.name}`)

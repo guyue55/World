@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseThreeIntegrationFinalReport from '../data/phase-three-integration-final-report.json'
-import phaseThreeIntegrationReadiness from '../data/phase-three-integration-readiness.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import phaseThreeIntegrationFinalReport from '../data/release/phase-three-integration-final-report.json'
+import phaseThreeIntegrationReadiness from '../data/release/phase-three-integration-readiness.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

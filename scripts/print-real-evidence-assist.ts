@@ -1,5 +1,5 @@
-import realEvidenceExecutionAssistFinalReport from '../data/real-evidence-execution-assist-final-report.json'
-import realEvidenceExecutionAssistReadiness from '../data/real-evidence-execution-assist-readiness.json'
+import realEvidenceExecutionAssistFinalReport from '../data/release/real-evidence-execution-assist-final-report.json'
+import realEvidenceExecutionAssistReadiness from '../data/release/real-evidence-execution-assist-readiness.json'
 
 function main() {
   console.log(`${realEvidenceExecutionAssistFinalReport.name}`)

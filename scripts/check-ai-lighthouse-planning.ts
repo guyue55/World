@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseThreeAiLighthouseRoadmap from '../data/phase-three-ai-lighthouse-roadmap.json'
-import aiSuggestionProtocol from '../data/ai-suggestion-protocol.json'
-import phaseThreeAiSafetyGate from '../data/phase-three-ai-safety-gate.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import phaseThreeAiLighthouseRoadmap from '../data/domains/ai/phase-three-ai-lighthouse-roadmap.json'
+import aiSuggestionProtocol from '../data/domains/ai/ai-suggestion-protocol.json'
+import phaseThreeAiSafetyGate from '../data/domains/ai/phase-three-ai-safety-gate.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

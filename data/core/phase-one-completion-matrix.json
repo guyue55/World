@@ -1,0 +1,150 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段完成矩阵",
+  "principle": "第一阶段不是把产品做完，而是确认世界骨架能支撑后续建设。",
+  "status": "near-closure",
+  "completedDomains": [
+    {
+      "id": "project-skeleton",
+      "status": "done",
+      "evidence": [
+        "src/app",
+        "src/components",
+        "src/lib",
+        "data",
+        "content",
+        "docs",
+        "scripts"
+      ]
+    },
+    {
+      "id": "world-data-protocol",
+      "status": "done",
+      "evidence": [
+        "data/core/world-protocol-registry.json",
+        "data/core/schema-versions.json"
+      ]
+    },
+    {
+      "id": "visibility-boundary",
+      "status": "done",
+      "evidence": [
+        "data/domains/governance/permissions.json",
+        "data/domains/ai/ai-boundary-policy.json"
+      ]
+    },
+    {
+      "id": "projection-contracts",
+      "status": "done",
+      "evidence": [
+        "data/domains/experience/projection-contracts.json"
+      ]
+    },
+    {
+      "id": "world-kernel",
+      "status": "done",
+      "evidence": [
+        "data/core/world-kernel-manifest.json",
+        "src/lib/world-kernel.ts"
+      ]
+    },
+    {
+      "id": "foundation-gate",
+      "status": "done",
+      "evidence": [
+        "data/release/foundation-freeze.json",
+        "data/release/development-gates.json"
+      ]
+    },
+    {
+      "id": "documentation-kernel",
+      "status": "done",
+      "evidence": [
+        "data/core/documentation-registry.json",
+        "data/core/adr-index.json"
+      ]
+    },
+    {
+      "id": "operations-and-recovery",
+      "status": "done",
+      "evidence": [
+        "data/core/world-runtime-protocol.json",
+        "data/core/recovery-playbook.json"
+      ]
+    },
+    {
+      "id": "audit-and-handoff",
+      "status": "done",
+      "evidence": [
+        "data/domains/governance/foundation-audit-criteria.json",
+        "data/release/foundation-handoff-manifest.json"
+      ]
+    },
+    {
+      "id": "modular-architecture",
+      "status": "done",
+      "evidence": [
+        "data/core/module-architecture-contract.json",
+        "data/core/feature-module-contract.json"
+      ]
+    },
+    {
+      "id": "performance-foundation",
+      "status": "done",
+      "evidence": [
+        "data/engineering/performance-budget.json",
+        "data/engineering/performance-regression-guard.json"
+      ]
+    },
+    {
+      "id": "future-guardrails",
+      "status": "done",
+      "evidence": [
+        "data/core/future-expansion-guardrails.json",
+        "data/core/capability-maturity-model.json"
+      ]
+    }
+  ],
+  "remainingDomains": [
+    {
+      "id": "actual-runtime-build-validation",
+      "status": "pending",
+      "reason": "当前环境主要做静态解析和结构检查，尚未在完整 node_modules 环境执行真实 npm install/build。"
+    },
+    {
+      "id": "visual-responsive-qa",
+      "status": "pending",
+      "reason": "需要在真实浏览器逐页验证 PC、平板、手机布局和交互流畅度。"
+    },
+    {
+      "id": "content-quality-fill",
+      "status": "pending",
+      "reason": "V1 需要更高质量真实种子内容、配图、路径和首页代表内容。"
+    },
+    {
+      "id": "accessibility-baseline",
+      "status": "pending",
+      "reason": "需要键盘焦点、语义结构、aria、对比度、移动端触控检查。"
+    },
+    {
+      "id": "seo-and-social-preview-final",
+      "status": "pending",
+      "reason": "已有基础 SEO，但仍需真实域名、OG 图、站点描述和最终 sitemap 复核。"
+    },
+    {
+      "id": "deployment-preview",
+      "status": "pending",
+      "reason": "需要 Vercel/Cloudflare Pages 预览部署并检查静态导出/路由行为。"
+    },
+    {
+      "id": "real-performance-measurement",
+      "status": "pending",
+      "reason": "已有性能契约，但还需要 Lighthouse/WebPageTest/Bundle Analyzer 实测。"
+    },
+    {
+      "id": "dependency-and-tooling-fix",
+      "status": "pending",
+      "reason": "需要在真实项目中修复/确认 eslint、autoprefixer、Next 版本脚本等工程工具链。"
+    }
+  ]
+}

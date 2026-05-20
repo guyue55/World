@@ -1,7 +1,7 @@
-import stageCompletionGate from '../../data/stage-completion-gate.json'
-import ciReadinessContract from '../../data/ci-readiness-contract.json'
-import releasePreviewChecklist from '../../data/release-preview-checklist.json'
-import finalAcceptanceChecklist from '../../data/final-acceptance-checklist.json'
+import stageCompletionGate from '../../data/release/stage-completion-gate.json'
+import ciReadinessContract from '../../data/release/ci-readiness-contract.json'
+import releasePreviewChecklist from '../../data/release/release-preview-checklist.json'
+import finalAcceptanceChecklist from '../../data/release/final-acceptance-checklist.json'
 
 export type StageAcceptanceIssue = {
   id: string

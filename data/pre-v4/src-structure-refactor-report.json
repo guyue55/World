@@ -1,0 +1,52 @@
+{
+  "version": "pre-v4-code-structure",
+  "name": "V4 前 src 代码结构整理报告",
+  "createdAt": "2026-05-20T06:03:07Z",
+  "sourceWorkspace": "/mnt/data/guyue_v3_concept_completion_workspace",
+  "workspace": "/mnt/data/guyue_pre_v4_code_structure_workspace",
+  "decision": "features/platform/shared layering with compatibility re-exports",
+  "professionalRecommendation": [
+    "do not keep expanding src/lib/v1/v2/v3/v4 as active implementation folders",
+    "use src/features for business capabilities",
+    "use src/platform for platform/server/infrastructure capabilities",
+    "use src/shared for cross-version utilities and contracts",
+    "keep version names only in API routes, protocol versions, migration layers and compatibility exports"
+  ],
+  "newStructure": {
+    "src/features": [
+      "platform-v2",
+      "platform-v2-1",
+      "intelligent-world-v3",
+      "v3-concept",
+      "pre-v4-gate"
+    ],
+    "src/platform/server": [
+      "v2"
+    ],
+    "src/shared": []
+  },
+  "compatibilityKept": [
+    "src/lib/v2/*",
+    "src/lib/v2-1/*",
+    "src/lib/v3/*",
+    "src/lib/v3-concept/*",
+    "src/lib/pre-v4/*",
+    "src/server/v2/*"
+  ],
+  "checks": {
+    "static": [
+      "JSON parse check passed.",
+      "Static structure logic check passed.",
+      "Import path migration scan passed.",
+      "Static lint risk scan passed.",
+      "Basic format check on changed files passed."
+    ],
+    "realCommand": {
+      "command": "npm run check:pre-v4:src-structure",
+      "status": "blocked-or-failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 check:pre-v4:src-structure\n> tsx scripts/check-pre-v4-src-structure.ts\n\n\nsh: 1: tsx: Permission denied"
+    }
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

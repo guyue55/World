@@ -1,6 +1,6 @@
-import lighthouseProductizationContract from '../../data/lighthouse-productization-contract.json'
-import lighthouseQualityGate from '../../data/lighthouse-quality-gate.json'
-import lighthousePrompts from '../../data/lighthouse-prompts.json'
+import lighthouseProductizationContract from '../../data/domains/ai/lighthouse-productization-contract.json'
+import lighthouseQualityGate from '../../data/domains/ai/lighthouse-quality-gate.json'
+import lighthousePrompts from '../../data/domains/ai/lighthouse-prompts.json'
 import type { Node, Path } from './types'
 
 export type LighthousePrompt = {

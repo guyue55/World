@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import aiPathExhibitionRecommendations from '../data/ai-path-exhibition-recommendations.json'
-import aiWorldCompanionPlan from '../data/ai-world-companion-plan.json'
+import aiPathExhibitionRecommendations from '../data/domains/ai/ai-path-exhibition-recommendations.json'
+import aiWorldCompanionPlan from '../data/domains/ai/ai-world-companion-plan.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

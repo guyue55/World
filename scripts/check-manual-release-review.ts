@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import manualReleaseReviewContract from '../data/manual-release-review-contract.json'
-import manualReleaseReviewRecord from '../data/manual-release-review-record.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import manualReleaseReviewContract from '../data/release/manual-release-review-contract.json'
+import manualReleaseReviewRecord from '../data/release/manual-release-review-record.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

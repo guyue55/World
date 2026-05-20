@@ -1,8 +1,8 @@
-import humanApprovalWorkflow from '../../data/human-approval-workflow.json'
-import operatorDashboardPlan from '../../data/operator-dashboard-plan.json'
-import runtimeActionRegistry from '../../data/runtime-action-registry.json'
-import runtimeEvidenceRecordPlan from '../../data/runtime-evidence-record-plan.json'
-import runtimeGrowthLoopPlan from '../../data/runtime-growth-loop-plan.json'
+import humanApprovalWorkflow from '../../data/core/human-approval-workflow.json'
+import operatorDashboardPlan from '../../data/operations/operator-dashboard-plan.json'
+import runtimeActionRegistry from '../../data/core/runtime-action-registry.json'
+import runtimeEvidenceRecordPlan from '../../data/release/runtime-evidence-record-plan.json'
+import runtimeGrowthLoopPlan from '../../data/operations/runtime-growth-loop-plan.json'
 
 export function getHumanApprovalWorkflow() {
   return humanApprovalWorkflow

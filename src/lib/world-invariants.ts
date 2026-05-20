@@ -1,4 +1,4 @@
-import registry from '../../data/world-protocol-registry.json'
+import registry from '../../data/core/world-protocol-registry.json'
 import { getAllAreas } from './areas'
 import { getAllNodes, getPublicNodes } from './nodes'
 import { getAllPaths } from './paths'

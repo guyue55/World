@@ -1,4 +1,4 @@
-import pipeline from '../../data/build-pipeline.json'
+import pipeline from '../../data/engineering/build-pipeline.json'
 
 export type BuildPipelineStage = {
   id: string

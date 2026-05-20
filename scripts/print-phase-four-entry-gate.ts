@@ -1,4 +1,4 @@
-import phaseFourEntryGate from '../data/phase-four-entry-gate.json'
+import phaseFourEntryGate from '../data/release/phase-four-entry-gate.json'
 
 function main() {
   console.log(`${phaseFourEntryGate.name}`)

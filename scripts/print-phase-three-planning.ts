@@ -1,7 +1,7 @@
-import phaseThreePlanningCharter from '../data/phase-three-planning-charter.json'
-import phaseThreeArchitectureContract from '../data/phase-three-architecture-contract.json'
-import phaseThreeRoadmap from '../data/phase-three-roadmap.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import phaseThreePlanningCharter from '../data/versions/archive/phase-three-planning-charter.json'
+import phaseThreeArchitectureContract from '../data/core/phase-three-architecture-contract.json'
+import phaseThreeRoadmap from '../data/versions/archive/phase-three-roadmap.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function main() {
   console.log(`${phaseThreePlanningCharter.name}`)

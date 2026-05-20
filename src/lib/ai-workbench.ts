@@ -1,7 +1,7 @@
-import aiSuggestionProtocol from '../../data/ai-suggestion-protocol.json'
-import aiWorkbenchImplementationContract from '../../data/ai-workbench-implementation-contract.json'
-import aiWorkbenchSuggestions from '../../data/ai-workbench-suggestions.json'
-import phaseThreeAiSafetyGate from '../../data/phase-three-ai-safety-gate.json'
+import aiSuggestionProtocol from '../../data/domains/ai/ai-suggestion-protocol.json'
+import aiWorkbenchImplementationContract from '../../data/domains/ai/ai-workbench-implementation-contract.json'
+import aiWorkbenchSuggestions from '../../data/domains/ai/ai-workbench-suggestions.json'
+import phaseThreeAiSafetyGate from '../../data/domains/ai/phase-three-ai-safety-gate.json'
 
 export function getAiWorkbenchImplementationContract() {
   return aiWorkbenchImplementationContract

@@ -1,8 +1,8 @@
-import auditComplianceLedger from '../../data/audit-compliance-ledger.json'
-import permissionRoleGovernanceModel from '../../data/permission-role-governance-model.json'
-import secretGovernancePolicy from '../../data/secret-governance-policy.json'
-import serviceBoundaryDesign from '../../data/service-boundary-design.json'
-import storageGovernanceMatrix from '../../data/storage-governance-matrix.json'
+import auditComplianceLedger from '../../data/domains/governance/audit-compliance-ledger.json'
+import permissionRoleGovernanceModel from '../../data/domains/governance/permission-role-governance-model.json'
+import secretGovernancePolicy from '../../data/domains/governance/secret-governance-policy.json'
+import serviceBoundaryDesign from '../../data/core/service-boundary-design.json'
+import storageGovernanceMatrix from '../../data/domains/governance/storage-governance-matrix.json'
 
 export function getPermissionRoleGovernanceModel() {
   return permissionRoleGovernanceModel

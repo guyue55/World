@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realExecutionAggregatorContract from '../data/real-execution-aggregator-contract.json'
+import realExecutionAggregatorContract from '../data/engineering/real-execution-aggregator-contract.json'
 
 function readJsonIfExists(file: string) {
   const full = path.join(process.cwd(), file)

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseRollbackContract from '../data/release-rollback-contract.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import releaseRollbackContract from '../data/release/release-rollback-contract.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

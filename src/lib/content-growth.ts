@@ -1,7 +1,7 @@
-import phaseThreeContentGrowthContract from '../../data/phase-three-content-growth-contract.json'
-import themeExhibitionMap from '../../data/theme-exhibition-map.json'
-import contentGrowthBoard from '../../data/content-growth-board.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import phaseThreeContentGrowthContract from '../../data/domains/content/phase-three-content-growth-contract.json'
+import themeExhibitionMap from '../../data/domains/experience/theme-exhibition-map.json'
+import contentGrowthBoard from '../../data/domains/content/content-growth-board.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getPhaseThreeContentGrowthContract() {
   return phaseThreeContentGrowthContract

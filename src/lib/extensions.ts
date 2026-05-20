@@ -1,6 +1,6 @@
-import extensionRegistry from '../../data/extension-registry.json'
-import capabilitySlots from '../../data/capability-slots.json'
-import moduleBoundaries from '../../data/module-boundaries.json'
+import extensionRegistry from '../../data/core/extension-registry.json'
+import capabilitySlots from '../../data/core/capability-slots.json'
+import moduleBoundaries from '../../data/core/module-boundaries.json'
 
 export type ExtensionPoint = {
   id: string

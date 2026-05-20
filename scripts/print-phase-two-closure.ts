@@ -1,6 +1,6 @@
-import phaseTwoClosureContract from '../data/phase-two-closure-contract.json'
-import phaseTwoClosureReport from '../data/phase-two-closure-report.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
+import phaseTwoClosureContract from '../data/release/phase-two-closure-contract.json'
+import phaseTwoClosureReport from '../data/release/phase-two-closure-report.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
 
 function main() {
   console.log(`${phaseTwoClosureReport.name}`)

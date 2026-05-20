@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseCandidateFreezeFinalReport from '../data/release-candidate-freeze-final-report.json'
-import releaseCandidateFreezeReadiness from '../data/release-candidate-freeze-readiness.json'
-import releaseCandidateSignoffRecord from '../data/release-candidate-signoff-record.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
+import releaseCandidateFreezeFinalReport from '../data/release/release-candidate-freeze-final-report.json'
+import releaseCandidateFreezeReadiness from '../data/release/release-candidate-freeze-readiness.json'
+import releaseCandidateSignoffRecord from '../data/release/release-candidate-signoff-record.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

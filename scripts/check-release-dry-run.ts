@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseDryRunContract from '../data/release-dry-run-contract.json'
-import realExecutionLandingFinalReport from '../data/real-execution-landing-final-report.json'
+import releaseDryRunContract from '../data/release/release-dry-run-contract.json'
+import realExecutionLandingFinalReport from '../data/release/real-execution-landing-final-report.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,5 +1,5 @@
-import inheritanceExportPlan from '../data/inheritance-export-plan.json'
-import timeCapsuleAnnualBookPlan from '../data/time-capsule-annual-book-plan.json'
+import inheritanceExportPlan from '../data/domains/archive/inheritance-export-plan.json'
+import timeCapsuleAnnualBookPlan from '../data/domains/archive/time-capsule-annual-book-plan.json'
 
 function main() {
   console.log(`${timeCapsuleAnnualBookPlan.name}`)

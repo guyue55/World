@@ -1,6 +1,6 @@
-import releasePreparationFinalReport from '../../data/release-preparation-final-report.json'
-import releaseReadyMatrix from '../../data/release-ready-matrix.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import releasePreparationFinalReport from '../../data/release/release-preparation-final-report.json'
+import releaseReadyMatrix from '../../data/release/release-ready-matrix.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getReleasePreparationFinalReport() {
   return releasePreparationFinalReport

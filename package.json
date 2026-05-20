@@ -367,7 +367,9 @@
     "check:v3-concept:05": "tsx scripts/check-v3-concept-05.ts",
     "check:v3-concept:06": "tsx scripts/check-v3-concept-06.ts",
     "check:v3-concept:all": "tsx scripts/check-v3-concept-all.ts",
-    "v3-concept:final:print": "tsx scripts/print-v3-concept-final.ts"
+    "v3-concept:final:print": "tsx scripts/print-v3-concept-final.ts",
+    "check:pre-v4:src-structure": "tsx scripts/check-pre-v4-src-structure.ts",
+    "check:pre-v4:data-structure": "tsx scripts/check-pre-v4-data-structure.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

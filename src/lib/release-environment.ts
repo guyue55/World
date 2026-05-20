@@ -1,6 +1,6 @@
-import releaseEnvironmentContract from '../../data/release-environment-contract.json'
-import releaseConfig from '../../data/release-config.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import releaseEnvironmentContract from '../../data/release/release-environment-contract.json'
+import releaseConfig from '../../data/release/release-config.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getReleaseEnvironmentContract() {
   return releaseEnvironmentContract

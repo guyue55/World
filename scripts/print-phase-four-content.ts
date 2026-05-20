@@ -1,4 +1,4 @@
-import phaseFourContentSeeds from '../data/phase-four-content-seeds.json'
+import phaseFourContentSeeds from '../data/domains/content/phase-four-content-seeds.json'
 
 function main() {
   console.log(`${phaseFourContentSeeds.name}`)

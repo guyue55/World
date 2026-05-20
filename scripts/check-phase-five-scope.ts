@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFiveScopeContract from '../data/phase-five-scope-contract.json'
-import privateArchiveBoundaryPolicy from '../data/private-archive-boundary-policy.json'
-import phaseFiveEntryGate from '../data/phase-five-entry-gate.json'
+import phaseFiveScopeContract from '../data/core/phase-five-scope-contract.json'
+import privateArchiveBoundaryPolicy from '../data/domains/archive/private-archive-boundary-policy.json'
+import phaseFiveEntryGate from '../data/release/phase-five-entry-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

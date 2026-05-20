@@ -1,5 +1,5 @@
-import paths from '../data/paths.json'
-import pathProductizationContract from '../data/path-productization-contract.json'
+import paths from '../data/domains/experience/paths.json'
+import pathProductizationContract from '../data/domains/experience/path-productization-contract.json'
 
 function main() {
   const publicPaths = paths.filter((item) => item.visibility === 'public')

@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realCommandExecutionAttempts from '../data/real-command-execution-attempts.json'
-import realExecutionQueue from '../data/real-execution-queue.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
-import releaseReadinessTransitionGate from '../data/release-readiness-transition-gate.json'
+import realCommandExecutionAttempts from '../data/engineering/real-command-execution-attempts.json'
+import realExecutionQueue from '../data/engineering/real-execution-queue.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
+import releaseReadinessTransitionGate from '../data/release/release-readiness-transition-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

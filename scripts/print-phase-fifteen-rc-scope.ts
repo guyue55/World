@@ -1,6 +1,6 @@
-import dependencyEslintBlockerFixPlan from '../data/dependency-eslint-blocker-fix-plan.json'
-import phaseFifteenRcScopeContract from '../data/phase-fifteen-rc-scope-contract.json'
-import releaseCandidatePlan from '../data/release-candidate-plan.json'
+import dependencyEslintBlockerFixPlan from '../data/release/dependency-eslint-blocker-fix-plan.json'
+import phaseFifteenRcScopeContract from '../data/core/phase-fifteen-rc-scope-contract.json'
+import releaseCandidatePlan from '../data/release/release-candidate-plan.json'
 
 function main() {
   console.log(`${phaseFifteenRcScopeContract.name}`)

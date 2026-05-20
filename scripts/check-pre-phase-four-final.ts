@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import prePhaseFourFinalReport from '../data/pre-phase-four-final-report.json'
-import prePhaseFourFinalReadiness from '../data/pre-phase-four-final-readiness.json'
-import phaseFourEntryGate from '../data/phase-four-entry-gate.json'
-import releaseCandidateAcceptanceReadiness from '../data/release-candidate-acceptance-readiness.json'
+import prePhaseFourFinalReport from '../data/release/pre-phase-four-final-report.json'
+import prePhaseFourFinalReadiness from '../data/release/pre-phase-four-final-readiness.json'
+import phaseFourEntryGate from '../data/release/phase-four-entry-gate.json'
+import releaseCandidateAcceptanceReadiness from '../data/release/release-candidate-acceptance-readiness.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

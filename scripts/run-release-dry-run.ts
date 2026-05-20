@@ -1,7 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseDryRunContract from '../data/release-dry-run-contract.json'
+import releaseDryRunContract from '../data/release/release-dry-run-contract.json'
 
 function run(command: string) {
   const result = spawnSync(command, {

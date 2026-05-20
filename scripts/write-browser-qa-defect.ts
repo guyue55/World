@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realValidationDefectProtocol from '../data/real-validation-defect-protocol.json'
+import realValidationDefectProtocol from '../data/release/real-validation-defect-protocol.json'
 
 type DefectPayload = {
   id: string
@@ -30,7 +30,7 @@ required.forEach((key) => {
   if (!payload[key]) throw new Error(`Missing required payload field: ${key}`)
 })
 
-const registerPath = path.join(process.cwd(), 'data/real-validation-defect-register.json')
+const registerPath = path.join(process.cwd(), 'data/release/real-validation-defect-register.json')
 const register = JSON.parse(fs.readFileSync(registerPath, 'utf-8'))
 
 if (register.defects.some((defect: { id: string }) => defect.id === payload.id)) {

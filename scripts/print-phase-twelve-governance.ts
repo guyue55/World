@@ -1,6 +1,6 @@
-import auditComplianceLedger from '../data/audit-compliance-ledger.json'
-import secretGovernancePolicy from '../data/secret-governance-policy.json'
-import storageGovernanceMatrix from '../data/storage-governance-matrix.json'
+import auditComplianceLedger from '../data/domains/governance/audit-compliance-ledger.json'
+import secretGovernancePolicy from '../data/domains/governance/secret-governance-policy.json'
+import storageGovernanceMatrix from '../data/domains/governance/storage-governance-matrix.json'
 
 function main() {
   console.log(`${auditComplianceLedger.name}`)

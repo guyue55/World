@@ -1,5 +1,5 @@
-import realCommandExecutionAttempts from '../data/real-command-execution-attempts.json'
-import realExecutionResultSummary from '../data/real-execution-result-summary.json'
+import realCommandExecutionAttempts from '../data/engineering/real-command-execution-attempts.json'
+import realExecutionResultSummary from '../data/engineering/real-execution-result-summary.json'
 
 function main() {
   console.log(`${realCommandExecutionAttempts.name}`)

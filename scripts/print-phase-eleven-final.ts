@@ -1,5 +1,5 @@
-import phaseElevenRuntimeFinalReport from '../data/phase-eleven-runtime-final-report.json'
-import phaseTwelveEntryGate from '../data/phase-twelve-entry-gate.json'
+import phaseElevenRuntimeFinalReport from '../data/release/phase-eleven-runtime-final-report.json'
+import phaseTwelveEntryGate from '../data/release/phase-twelve-entry-gate.json'
 
 function main() {
   console.log(`${phaseElevenRuntimeFinalReport.name}`)

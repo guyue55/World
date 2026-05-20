@@ -1,6 +1,6 @@
-import realEvidenceExecutionAssistFinalReport from '../../data/real-evidence-execution-assist-final-report.json'
-import realEvidenceExecutionAssistReadiness from '../../data/real-evidence-execution-assist-readiness.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import realEvidenceExecutionAssistFinalReport from '../../data/release/real-evidence-execution-assist-final-report.json'
+import realEvidenceExecutionAssistReadiness from '../../data/release/real-evidence-execution-assist-readiness.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getEvidenceAssistFinalReport() {
   return realEvidenceExecutionAssistFinalReport

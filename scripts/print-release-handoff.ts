@@ -1,4 +1,4 @@
-import releaseHandoffPackageContract from '../data/release-handoff-package-contract.json'
+import releaseHandoffPackageContract from '../data/release/release-handoff-package-contract.json'
 
 function main() {
   console.log(`${releaseHandoffPackageContract.name}`)

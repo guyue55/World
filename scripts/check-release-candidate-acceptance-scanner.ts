@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseCandidateAcceptanceScannerContract from '../data/release-candidate-acceptance-scanner-contract.json'
-import releaseCandidateAcceptanceEvidenceManifest from '../data/release-candidate-acceptance-evidence-manifest.json'
+import releaseCandidateAcceptanceScannerContract from '../data/release/release-candidate-acceptance-scanner-contract.json'
+import releaseCandidateAcceptanceEvidenceManifest from '../data/release/release-candidate-acceptance-evidence-manifest.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import contentCalendarPlan from '../data/content-calendar-plan.json'
-import contentColumnOperationsPlan from '../data/content-column-operations-plan.json'
-import contentCommunicationChannels from '../data/content-communication-channels.json'
+import contentCalendarPlan from '../data/domains/content/content-calendar-plan.json'
+import contentColumnOperationsPlan from '../data/domains/content/content-column-operations-plan.json'
+import contentCommunicationChannels from '../data/domains/content/content-communication-channels.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

@@ -1,7 +1,7 @@
-import phaseSevenReleaseDashboard from '../../data/phase-seven-release-dashboard.json'
-import phaseSevenReleaseEvidenceLedger from '../../data/phase-seven-release-evidence-ledger.json'
-import phaseSevenReleaseScopeContract from '../../data/phase-seven-release-scope-contract.json'
-import phaseSevenSeoAnalyticsPlan from '../../data/phase-seven-seo-analytics-plan.json'
+import phaseSevenReleaseDashboard from '../../data/release/phase-seven-release-dashboard.json'
+import phaseSevenReleaseEvidenceLedger from '../../data/release/phase-seven-release-evidence-ledger.json'
+import phaseSevenReleaseScopeContract from '../../data/release/phase-seven-release-scope-contract.json'
+import phaseSevenSeoAnalyticsPlan from '../../data/operations/phase-seven-seo-analytics-plan.json'
 
 export function getPhaseSevenReleaseScopeContract() {
   return phaseSevenReleaseScopeContract

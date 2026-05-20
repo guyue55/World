@@ -37,7 +37,7 @@ const report = {
   generatedAt: new Date().toISOString(),
   project: '古月浮屿 V1',
   commands: results,
-  manualQa: { status: 'pending', note: 'Fill after browser QA using data/browser-qa-records.json.' },
+  manualQa: { status: 'pending', note: 'Fill after browser QA using data/domains/experience/browser-qa-records.json.' },
   performance: { status: 'pending', note: 'Fill after Lighthouse or equivalent measurement.' },
   previewDeployment: { status: 'pending', url: '' },
   blockingDefects: [],

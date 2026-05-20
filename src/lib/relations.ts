@@ -1,4 +1,4 @@
-import relations from '../../data/relations.json'
+import relations from '../../data/core/relations.json'
 import type { Relation } from './types'
 
 export function getAllRelations(): Relation[] {

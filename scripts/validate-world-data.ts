@@ -1,9 +1,9 @@
-import areas from '../data/areas.json'
-import nodes from '../data/nodes.json'
-import relations from '../data/relations.json'
-import paths from '../data/paths.json'
-import events from '../data/world-events.json'
-import state from '../data/world-state.json'
+import areas from '../data/domains/experience/areas.json'
+import nodes from '../data/domains/experience/nodes.json'
+import relations from '../data/core/relations.json'
+import paths from '../data/domains/experience/paths.json'
+import events from '../data/core/world-events.json'
+import state from '../data/core/world-state.json'
 import {
   areasSchema,
   nodesSchema,

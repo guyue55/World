@@ -1,6 +1,6 @@
-import phaseThreeImplementationFinalReport from '../../data/phase-three-implementation-final-report.json'
-import phaseThreeImplementationRoutes from '../../data/phase-three-implementation-routes.json'
-import releaseBlockerRegister from '../../data/release-blocker-register.json'
+import phaseThreeImplementationFinalReport from '../../data/release/phase-three-implementation-final-report.json'
+import phaseThreeImplementationRoutes from '../../data/domains/experience/phase-three-implementation-routes.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
 
 export function getPhaseThreeImplementationFinalReport() {
   return phaseThreeImplementationFinalReport

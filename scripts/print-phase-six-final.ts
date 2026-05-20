@@ -1,5 +1,5 @@
-import phaseSevenEntryGate from '../data/phase-seven-entry-gate.json'
-import phaseSixAiFinalReport from '../data/phase-six-ai-final-report.json'
+import phaseSevenEntryGate from '../data/release/phase-seven-entry-gate.json'
+import phaseSixAiFinalReport from '../data/domains/ai/phase-six-ai-final-report.json'
 
 function main() {
   console.log(`${phaseSixAiFinalReport.name}`)

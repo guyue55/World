@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import defectExecutionQueueContract from '../data/defect-execution-queue-contract.json'
+import defectExecutionQueueContract from '../data/engineering/defect-execution-queue-contract.json'
 
 type Payload = {
   id: string

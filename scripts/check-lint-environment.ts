@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import lintEnvironmentContract from '../data/lint-environment-contract.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
+import lintEnvironmentContract from '../data/engineering/lint-environment-contract.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

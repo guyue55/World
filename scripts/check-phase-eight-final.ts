@@ -1,11 +1,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseEightProductionDashboard from '../data/phase-eight-production-dashboard.json'
-import phaseEightProductionDeploymentChecklist from '../data/phase-eight-production-deployment-checklist.json'
-import phaseEightProductionFinalReport from '../data/phase-eight-production-final-report.json'
-import phaseEightProductionSmokePlan from '../data/phase-eight-production-smoke-plan.json'
-import phaseEightRollbackDrillPlan from '../data/phase-eight-rollback-drill-plan.json'
-import phaseNineEntryGate from '../data/phase-nine-entry-gate.json'
+import phaseEightProductionDashboard from '../data/release/phase-eight-production-dashboard.json'
+import phaseEightProductionDeploymentChecklist from '../data/release/phase-eight-production-deployment-checklist.json'
+import phaseEightProductionFinalReport from '../data/release/phase-eight-production-final-report.json'
+import phaseEightProductionSmokePlan from '../data/release/phase-eight-production-smoke-plan.json'
+import phaseEightRollbackDrillPlan from '../data/versions/archive/phase-eight-rollback-drill-plan.json'
+import phaseNineEntryGate from '../data/release/phase-nine-entry-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

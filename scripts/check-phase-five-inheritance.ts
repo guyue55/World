@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import inheritanceExportPlan from '../data/inheritance-export-plan.json'
-import timeCapsuleAnnualBookPlan from '../data/time-capsule-annual-book-plan.json'
+import inheritanceExportPlan from '../data/domains/archive/inheritance-export-plan.json'
+import timeCapsuleAnnualBookPlan from '../data/domains/archive/time-capsule-annual-book-plan.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

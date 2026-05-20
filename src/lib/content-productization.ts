@@ -1,7 +1,7 @@
-import contentProductizationBaseline from '../../data/content-productization-baseline.json'
-import coverStrategy from '../../data/cover-strategy.json'
-import projectionDensityStrategy from '../../data/projection-density-strategy.json'
-import seedContentQualityGate from '../../data/seed-content-quality-gate.json'
+import contentProductizationBaseline from '../../data/domains/content/content-productization-baseline.json'
+import coverStrategy from '../../data/core/cover-strategy.json'
+import projectionDensityStrategy from '../../data/domains/experience/projection-density-strategy.json'
+import seedContentQualityGate from '../../data/domains/content/seed-content-quality-gate.json'
 
 export type ContentProductizationIssue = {
   id: string

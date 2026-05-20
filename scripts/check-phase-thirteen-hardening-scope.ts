@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import dependencyBuildEvidenceMatrix from '../data/dependency-build-evidence-matrix.json'
-import phaseThirteenEntryGate from '../data/phase-thirteen-entry-gate.json'
-import phaseThirteenHardeningScopeContract from '../data/phase-thirteen-hardening-scope-contract.json'
-import securityBaselineImplementationPlan from '../data/security-baseline-implementation-plan.json'
+import dependencyBuildEvidenceMatrix from '../data/release/dependency-build-evidence-matrix.json'
+import phaseThirteenEntryGate from '../data/release/phase-thirteen-entry-gate.json'
+import phaseThirteenHardeningScopeContract from '../data/core/phase-thirteen-hardening-scope-contract.json'
+import securityBaselineImplementationPlan from '../data/domains/governance/security-baseline-implementation-plan.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

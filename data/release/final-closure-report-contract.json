@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段最终关闭报告契约",
+  "principle": "最终关闭报告必须汇总所有真实证据，而不是重新制造一个主观结论。",
+  "status": "prepared",
+  "output": "reports/first-stage-final-closure-report.json",
+  "inputReports": [
+    "reports/first-stage-acceptance-report.json",
+    "reports/preview-smoke-report.json",
+    "data/release/real-execution-evidence-ledger.json",
+    "data/engineering/performance-measurement-records.json",
+    "data/domains/experience/browser-qa-records.json",
+    "data/release/preview-deployment-record.json",
+    "data/domains/experience/visual-interaction-defect-register.json",
+    "data/release/stage-completion-gate.json"
+  ],
+  "decisionValues": [
+    "complete",
+    "not-yet-complete",
+    "complete-with-deferred-items"
+  ],
+  "completionRules": [
+    "local acceptance commands must pass",
+    "preview smoke must pass",
+    "browser QA P0 matrix must pass or be explicitly deferred",
+    "performance measurement must pass or be documented",
+    "no blocking public/private boundary issue",
+    "no open P0/P1 blocking defects",
+    "preview URL must be recorded"
+  ],
+  "rules": [
+    "最终报告只汇总结论，不替代真实执行。",
+    "状态 complete 必须能追溯到输入报告。",
+    "延期项必须说明为什么不阻断第一阶段地基。"
+  ]
+}

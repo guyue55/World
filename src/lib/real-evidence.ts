@@ -1,7 +1,7 @@
-import realExecutionEvidenceLedger from '../../data/real-execution-evidence-ledger.json'
-import buildFailurePlaybook from '../../data/build-failure-playbook.json'
-import performanceMeasurementRecords from '../../data/performance-measurement-records.json'
-import browserQaRecords from '../../data/browser-qa-records.json'
+import realExecutionEvidenceLedger from '../../data/release/real-execution-evidence-ledger.json'
+import buildFailurePlaybook from '../../data/engineering/build-failure-playbook.json'
+import performanceMeasurementRecords from '../../data/engineering/performance-measurement-records.json'
+import browserQaRecords from '../../data/domains/experience/browser-qa-records.json'
 
 export type RealEvidenceIssue = {
   id: string

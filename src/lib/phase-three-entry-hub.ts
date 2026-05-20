@@ -1,6 +1,6 @@
-import phaseThreeEntryHubContract from '../../data/phase-three-entry-hub-contract.json'
-import phaseThreeImplementationFinalReport from '../../data/phase-three-implementation-final-report.json'
-import releasePreparationFinalReport from '../../data/release-preparation-final-report.json'
+import phaseThreeEntryHubContract from '../../data/core/phase-three-entry-hub-contract.json'
+import phaseThreeImplementationFinalReport from '../../data/release/phase-three-implementation-final-report.json'
+import releasePreparationFinalReport from '../../data/release/release-preparation-final-report.json'
 
 export function getPhaseThreeEntryHubContract() {
   return phaseThreeEntryHubContract

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFiveHandoffPreparation from '../data/phase-five-handoff-preparation.json'
-import phaseFourOperationsBoard from '../data/phase-four-operations-board.json'
+import phaseFiveHandoffPreparation from '../data/release/phase-five-handoff-preparation.json'
+import phaseFourOperationsBoard from '../data/operations/phase-four-operations-board.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

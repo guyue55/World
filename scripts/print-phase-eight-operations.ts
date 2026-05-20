@@ -1,6 +1,6 @@
-import phaseEightMonitoringErrorTrackingPlan from '../data/phase-eight-monitoring-error-tracking-plan.json'
-import phaseEightProductionSmokePlan from '../data/phase-eight-production-smoke-plan.json'
-import phaseEightRollbackDrillPlan from '../data/phase-eight-rollback-drill-plan.json'
+import phaseEightMonitoringErrorTrackingPlan from '../data/versions/archive/phase-eight-monitoring-error-tracking-plan.json'
+import phaseEightProductionSmokePlan from '../data/release/phase-eight-production-smoke-plan.json'
+import phaseEightRollbackDrillPlan from '../data/versions/archive/phase-eight-rollback-drill-plan.json'
 
 function main() {
   console.log(`${phaseEightProductionSmokePlan.name}`)

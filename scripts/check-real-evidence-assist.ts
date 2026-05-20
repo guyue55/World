@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import realEvidenceExecutionAssistFinalReport from '../data/real-evidence-execution-assist-final-report.json'
-import realEvidenceExecutionAssistReadiness from '../data/real-evidence-execution-assist-readiness.json'
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
-import releaseBlockerRegister from '../data/release-blocker-register.json'
+import realEvidenceExecutionAssistFinalReport from '../data/release/real-evidence-execution-assist-final-report.json'
+import realEvidenceExecutionAssistReadiness from '../data/release/real-evidence-execution-assist-readiness.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
+import releaseBlockerRegister from '../data/release/release-blocker-register.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

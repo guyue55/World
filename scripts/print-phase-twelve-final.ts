@@ -1,5 +1,5 @@
-import phaseThirteenEntryGate from '../data/phase-thirteen-entry-gate.json'
-import phaseTwelvePlatformFinalReport from '../data/phase-twelve-platform-final-report.json'
+import phaseThirteenEntryGate from '../data/release/phase-thirteen-entry-gate.json'
+import phaseTwelvePlatformFinalReport from '../data/release/phase-twelve-platform-final-report.json'
 
 function main() {
   console.log(`${phaseTwelvePlatformFinalReport.name}`)

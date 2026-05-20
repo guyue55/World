@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import contract from '../data/final-closure-report-contract.json' assert { type: 'json' }
-import decisionTemplate from '../data/phase-one-final-decision-template.json' assert { type: 'json' }
+import contract from '../data/release/final-closure-report-contract.json' assert { type: 'json' }
+import decisionTemplate from '../data/release/phase-one-final-decision-template.json' assert { type: 'json' }
 
 function readJson(path) {
   const full = join(process.cwd(), path)
@@ -13,8 +13,8 @@ const missingInputs = Object.entries(inputs).filter(([, value]) => value === nul
 
 const local = inputs['reports/first-stage-acceptance-report.json']
 const preview = inputs['reports/preview-smoke-report.json']
-const previewRecord = inputs['data/preview-deployment-record.json']
-const defects = inputs['data/visual-interaction-defect-register.json']
+const previewRecord = inputs['data/release/preview-deployment-record.json']
+const defects = inputs['data/domains/experience/visual-interaction-defect-register.json']
 
 const commandPassed = Boolean(local?.commands?.every((item) => item.status === 'passed'))
 const manualQaPassed = local?.manualQa?.status === 'passed'

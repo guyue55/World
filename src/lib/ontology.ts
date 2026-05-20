@@ -1,4 +1,4 @@
-import ontology from '../../data/world-ontology.json'
+import ontology from '../../data/core/world-ontology.json'
 import type { Node } from './types'
 import { getAllNodes } from './nodes'
 

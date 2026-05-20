@@ -1,5 +1,5 @@
-import rules from '../../data/rules.json'
-import registry from '../../data/world-protocol-registry.json'
+import rules from '../../data/core/rules.json'
+import registry from '../../data/core/world-protocol-registry.json'
 import type { Node, Path, Relation, WorldEvent } from './types'
 import { getAllNodes } from './nodes'
 import { getAllRelations } from './relations'

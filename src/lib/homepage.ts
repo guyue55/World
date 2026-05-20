@@ -1,5 +1,5 @@
-import homepageComposition from '../../data/homepage-composition.json'
-import homeCoverAssets from '../../data/home-cover-assets.json'
+import homepageComposition from '../../data/domains/experience/homepage-composition.json'
+import homeCoverAssets from '../../data/core/home-cover-assets.json'
 import type { Node } from './types'
 
 export function getHomepageComposition() {

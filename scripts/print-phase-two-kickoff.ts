@@ -1,7 +1,7 @@
-import phaseTwoCharter from '../data/phase-two-charter.json'
-import phaseTwoExecutionBoard from '../data/phase-two-execution-board.json'
-import phaseTwoRoutePlan from '../data/phase-two-route-plan.json'
-import phaseTwoContentCoverPlan from '../data/phase-two-content-cover-plan.json'
+import phaseTwoCharter from '../data/versions/archive/phase-two-charter.json'
+import phaseTwoExecutionBoard from '../data/engineering/phase-two-execution-board.json'
+import phaseTwoRoutePlan from '../data/domains/experience/phase-two-route-plan.json'
+import phaseTwoContentCoverPlan from '../data/domains/content/phase-two-content-cover-plan.json'
 
 function main() {
   console.log(`${phaseTwoCharter.name}`)

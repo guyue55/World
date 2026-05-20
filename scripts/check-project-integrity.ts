@@ -27,11 +27,11 @@ type PathRecord = { id: string; nodeSlugs: string[]; visibility: string }
 type EventRecord = { id: string; nodeIds?: string[]; areaIds?: string[] }
 
 function main() {
-  const nodes = readJson<NodeRecord[]>('data/nodes.json')
-  const areas = readJson<AreaRecord[]>('data/areas.json')
-  const relations = readJson<RelationRecord[]>('data/relations.json')
-  const paths = readJson<PathRecord[]>('data/paths.json')
-  const events = readJson<EventRecord[]>('data/world-events.json')
+  const nodes = readJson<NodeRecord[]>('data/domains/experience/nodes.json')
+  const areas = readJson<AreaRecord[]>('data/domains/experience/areas.json')
+  const relations = readJson<RelationRecord[]>('data/core/relations.json')
+  const paths = readJson<PathRecord[]>('data/domains/experience/paths.json')
+  const events = readJson<EventRecord[]>('data/core/world-events.json')
 
   const nodeIds = new Set(nodes.map((node) => node.id))
   const nodeSlugs = new Set(nodes.map((node) => node.slug))

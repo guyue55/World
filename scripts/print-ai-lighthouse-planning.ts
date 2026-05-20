@@ -1,6 +1,6 @@
-import phaseThreeAiLighthouseRoadmap from '../data/phase-three-ai-lighthouse-roadmap.json'
-import aiSuggestionProtocol from '../data/ai-suggestion-protocol.json'
-import phaseThreeAiSafetyGate from '../data/phase-three-ai-safety-gate.json'
+import phaseThreeAiLighthouseRoadmap from '../data/domains/ai/phase-three-ai-lighthouse-roadmap.json'
+import aiSuggestionProtocol from '../data/domains/ai/ai-suggestion-protocol.json'
+import phaseThreeAiSafetyGate from '../data/domains/ai/phase-three-ai-safety-gate.json'
 
 function main() {
   console.log(`${phaseThreeAiLighthouseRoadmap.name}`)

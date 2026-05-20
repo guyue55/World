@@ -1,4 +1,4 @@
-import evolutionPolicy from '../../data/evolution-policy.json'
+import evolutionPolicy from '../../data/domains/governance/evolution-policy.json'
 
 export type EvolutionRequirement = {
   changeType: string

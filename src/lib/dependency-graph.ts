@@ -1,4 +1,4 @@
-import dependencyGraph from '../../data/dependency-graph.json'
+import dependencyGraph from '../../data/engineering/dependency-graph.json'
 
 export type DependencyGraphIssue = {
   id: string

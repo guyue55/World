@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseTwoFinalHandoffGate from '../data/phase-two-final-handoff-gate.json'
-import phaseTwoFinalCheckMatrix from '../data/phase-two-final-check-matrix.json'
-import nextStageReadiness from '../data/next-stage-readiness.json'
-import lintExecutionReadiness from '../data/lint-execution-readiness.json'
+import phaseTwoFinalHandoffGate from '../data/release/phase-two-final-handoff-gate.json'
+import phaseTwoFinalCheckMatrix from '../data/release/phase-two-final-check-matrix.json'
+import nextStageReadiness from '../data/release/next-stage-readiness.json'
+import lintExecutionReadiness from '../data/release/lint-execution-readiness.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

@@ -1,6 +1,6 @@
-import communityFeedbackLoopPlan from '../../data/community-feedback-loop-plan.json'
-import contentQualityReviewStandard from '../../data/content-quality-review-standard.json'
-import publicWorldBookPublishingPlan from '../../data/public-world-book-publishing-plan.json'
+import communityFeedbackLoopPlan from '../../data/domains/content/community-feedback-loop-plan.json'
+import contentQualityReviewStandard from '../../data/domains/content/content-quality-review-standard.json'
+import publicWorldBookPublishingPlan from '../../data/core/public-world-book-publishing-plan.json'
 
 export function getPublicWorldBookPublishingPlan() {
   return publicWorldBookPublishingPlan

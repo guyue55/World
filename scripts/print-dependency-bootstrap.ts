@@ -1,5 +1,5 @@
-import dependencyBootstrapContract from '../data/dependency-bootstrap-contract.json'
-import dependencyBootstrapRecord from '../data/dependency-bootstrap-record.json'
+import dependencyBootstrapContract from '../data/engineering/dependency-bootstrap-contract.json'
+import dependencyBootstrapRecord from '../data/engineering/dependency-bootstrap-record.json'
 
 function main() {
   console.log(`${dependencyBootstrapContract.name}`)

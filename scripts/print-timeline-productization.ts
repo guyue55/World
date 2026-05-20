@@ -1,5 +1,5 @@
-import events from '../data/world-events.json'
-import timelineProductizationContract from '../data/timeline-productization-contract.json'
+import events from '../data/core/world-events.json'
+import timelineProductizationContract from '../data/domains/experience/timeline-productization-contract.json'
 
 function main() {
   const publicEvents = events.filter((event) => event.visibility !== 'private')

@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseCandidateAcceptanceEvidenceManifest from '../data/release-candidate-acceptance-evidence-manifest.json'
-import releaseCandidateAcceptanceScannerContract from '../data/release-candidate-acceptance-scanner-contract.json'
+import releaseCandidateAcceptanceEvidenceManifest from '../data/release/release-candidate-acceptance-evidence-manifest.json'
+import releaseCandidateAcceptanceScannerContract from '../data/release/release-candidate-acceptance-scanner-contract.json'
 
 function readJson(file: string) {
   const full = path.join(process.cwd(), file)

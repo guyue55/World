@@ -1,8 +1,8 @@
-import moduleArchitectureContract from '../../data/module-architecture-contract.json'
-import dependencyDirectionContract from '../../data/dependency-direction-contract.json'
-import componentContract from '../../data/component-contract.json'
-import extensionInterfaceContract from '../../data/extension-interface-contract.json'
-import couplingGuard from '../../data/coupling-guard.json'
+import moduleArchitectureContract from '../../data/core/module-architecture-contract.json'
+import dependencyDirectionContract from '../../data/engineering/dependency-direction-contract.json'
+import componentContract from '../../data/core/component-contract.json'
+import extensionInterfaceContract from '../../data/core/extension-interface-contract.json'
+import couplingGuard from '../../data/core/coupling-guard.json'
 
 export type ArchitectureIssue = {
   id: string

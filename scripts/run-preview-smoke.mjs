@@ -1,6 +1,6 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import previewSmokeChecks from '../data/preview-smoke-checks.json' assert { type: 'json' }
+import previewSmokeChecks from '../data/release/preview-smoke-checks.json' assert { type: 'json' }
 
 const baseUrl = process.env[previewSmokeChecks.env.baseUrl]
 

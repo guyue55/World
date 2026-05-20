@@ -1,5 +1,5 @@
-import phaseThreeQaExpansionContract from '../data/phase-three-qa-expansion-contract.json'
-import browserQaRouteCoverage from '../data/browser-qa-route-coverage.json'
+import phaseThreeQaExpansionContract from '../data/release/phase-three-qa-expansion-contract.json'
+import browserQaRouteCoverage from '../data/domains/experience/browser-qa-route-coverage.json'
 
 function main() {
   console.log(`${phaseThreeQaExpansionContract.name}`)

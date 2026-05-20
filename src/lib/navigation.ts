@@ -1,4 +1,4 @@
-import navigationStateContract from '../../data/navigation-state-contract.json'
+import navigationStateContract from '../../data/domains/experience/navigation-state-contract.json'
 
 export type NavigationItem = {
   id: string

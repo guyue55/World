@@ -1,5 +1,5 @@
-import releaseCandidateRiskAcceptanceContract from '../data/release-candidate-risk-acceptance-contract.json'
-import releaseCandidateRiskAcceptanceRecord from '../data/release-candidate-risk-acceptance-record.json'
+import releaseCandidateRiskAcceptanceContract from '../data/domains/governance/release-candidate-risk-acceptance-contract.json'
+import releaseCandidateRiskAcceptanceRecord from '../data/domains/governance/release-candidate-risk-acceptance-record.json'
 
 function main() {
   console.log(`${releaseCandidateRiskAcceptanceContract.name}`)

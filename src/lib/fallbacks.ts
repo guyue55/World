@@ -1,4 +1,4 @@
-import fallbackStrategy from '../../data/fallback-strategy.json'
+import fallbackStrategy from '../../data/core/fallback-strategy.json'
 
 export type FallbackRule = {
   capability: string

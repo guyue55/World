@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import releaseHandoffPackageContract from '../data/release-handoff-package-contract.json'
+import releaseHandoffPackageContract from '../data/release/release-handoff-package-contract.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

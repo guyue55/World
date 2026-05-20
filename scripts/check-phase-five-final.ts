@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import phaseFivePrivateFinalReport from '../data/phase-five-private-final-report.json'
-import phaseSixEntryGate from '../data/phase-six-entry-gate.json'
-import privateArchiveIndex from '../data/private-archive-index.json'
-import inheritanceExportPlan from '../data/inheritance-export-plan.json'
+import phaseFivePrivateFinalReport from '../data/domains/archive/phase-five-private-final-report.json'
+import phaseSixEntryGate from '../data/release/phase-six-entry-gate.json'
+import privateArchiveIndex from '../data/domains/archive/private-archive-index.json'
+import inheritanceExportPlan from '../data/domains/archive/inheritance-export-plan.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

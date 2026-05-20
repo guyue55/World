@@ -1,5 +1,5 @@
-import phaseFiveEntryGate from '../data/phase-five-entry-gate.json'
-import phaseFourContentOpsFinalReport from '../data/phase-four-content-ops-final-report.json'
+import phaseFiveEntryGate from '../data/release/phase-five-entry-gate.json'
+import phaseFourContentOpsFinalReport from '../data/domains/content/phase-four-content-ops-final-report.json'
 
 function main() {
   console.log(`${phaseFourContentOpsFinalReport.name}`)

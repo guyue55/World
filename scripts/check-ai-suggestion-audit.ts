@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import aiSuggestionAuditContract from '../data/ai-suggestion-audit-contract.json'
-import aiSuggestionAuditQueue from '../data/ai-suggestion-audit-queue.json'
+import aiSuggestionAuditContract from '../data/domains/ai/ai-suggestion-audit-contract.json'
+import aiSuggestionAuditQueue from '../data/domains/ai/ai-suggestion-audit-queue.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

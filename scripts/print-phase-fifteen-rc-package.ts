@@ -1,6 +1,6 @@
-import phaseFifteenBlockerClosurePlan from '../data/phase-fifteen-blocker-closure-plan.json'
-import rcEvidencePackageChecklist from '../data/rc-evidence-package-checklist.json'
-import releaseCandidateManifest from '../data/release-candidate-manifest.json'
+import phaseFifteenBlockerClosurePlan from '../data/release/phase-fifteen-blocker-closure-plan.json'
+import rcEvidencePackageChecklist from '../data/release/rc-evidence-package-checklist.json'
+import releaseCandidateManifest from '../data/release/release-candidate-manifest.json'
 
 function main() {
   console.log(`${releaseCandidateManifest.name}`)

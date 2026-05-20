@@ -1,4 +1,4 @@
-import areas from '../../data/areas.json'
+import areas from '../../data/domains/experience/areas.json'
 import type { Area } from './types'
 
 export function getAllAreas(): Area[] {

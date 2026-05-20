@@ -1,5 +1,5 @@
-import releasePreparationFinalReport from '../data/release-preparation-final-report.json'
-import releaseReadyMatrix from '../data/release-ready-matrix.json'
+import releasePreparationFinalReport from '../data/release/release-preparation-final-report.json'
+import releaseReadyMatrix from '../data/release/release-ready-matrix.json'
 
 function main() {
   console.log(`${releasePreparationFinalReport.name}`)

@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import privateArchiveIndex from '../data/private-archive-index.json'
+import privateArchiveIndex from '../data/domains/archive/private-archive-index.json'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))

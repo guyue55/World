@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import humanApprovalWorkflow from '../data/human-approval-workflow.json'
-import phaseElevenEntryGate from '../data/phase-eleven-entry-gate.json'
-import phaseElevenRuntimeAutomationScopeContract from '../data/phase-eleven-runtime-automation-scope-contract.json'
-import runtimeActionRegistry from '../data/runtime-action-registry.json'
+import humanApprovalWorkflow from '../data/core/human-approval-workflow.json'
+import phaseElevenEntryGate from '../data/release/phase-eleven-entry-gate.json'
+import phaseElevenRuntimeAutomationScopeContract from '../data/core/phase-eleven-runtime-automation-scope-contract.json'
+import runtimeActionRegistry from '../data/core/runtime-action-registry.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')

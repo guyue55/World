@@ -1,9 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import aiReadableProtocol from '../data/ai-readable-protocol.json'
-import aiPermissionMatrix from '../data/ai-permission-matrix.json'
-import privateArchiveBoundaryPolicy from '../data/private-archive-boundary-policy.json'
-import phaseSixEntryGate from '../data/phase-six-entry-gate.json'
+import aiReadableProtocol from '../data/domains/ai/ai-readable-protocol.json'
+import aiPermissionMatrix from '../data/domains/ai/ai-permission-matrix.json'
+import privateArchiveBoundaryPolicy from '../data/domains/archive/private-archive-boundary-policy.json'
+import phaseSixEntryGate from '../data/release/phase-six-entry-gate.json'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')
