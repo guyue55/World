@@ -1,0 +1,80 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段内容运营节奏板",
+  "stageProgress": "phase-four-content-growth-operations line batch 3 / 4",
+  "status": "implemented-static-operations-board",
+  "lanes": [
+    {
+      "id": "capture",
+      "title": "捕捉",
+      "goal": "把真实生活、技术思考、项目演进捕捉为可整理素材。",
+      "cadence": "daily-light",
+      "items": [
+        "quick-note",
+        "photo-note",
+        "idea-fragment"
+      ]
+    },
+    {
+      "id": "shape",
+      "title": "成形",
+      "goal": "把素材整理为文章、节点、路径、展览种子。",
+      "cadence": "twice-weekly",
+      "items": [
+        "essay-draft",
+        "node-expansion",
+        "path-outline"
+      ]
+    },
+    {
+      "id": "publish",
+      "title": "公开",
+      "goal": "只发布明确 public visibility 的内容。",
+      "cadence": "weekly",
+      "items": [
+        "public-note",
+        "weekly-review",
+        "exhibition-update"
+      ]
+    },
+    {
+      "id": "review",
+      "title": "复盘",
+      "goal": "复盘内容增长、访问体验、边界风险和下一周重点。",
+      "cadence": "weekly",
+      "items": [
+        "ops-review",
+        "risk-note",
+        "next-week-plan"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "public-content-count",
+      "target": ">= 5 seeds expanded"
+    },
+    {
+      "id": "reading-path-count",
+      "target": ">= 2 paths refreshed"
+    },
+    {
+      "id": "timeline-event-count",
+      "target": ">= 6 events"
+    },
+    {
+      "id": "exhibition-update-count",
+      "target": ">= 1 update"
+    },
+    {
+      "id": "privacy-incident-count",
+      "target": "0"
+    }
+  ],
+  "rules": [
+    "发布 lane 只允许 public visibility。",
+    "任何私密素材只能进入第五阶段，不进入第四阶段 public content。",
+    "AI 可辅助整理，但不能自动发布。",
+    "复盘必须记录边界风险。"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第五阶段前置交接准备",
+  "stageProgress": "phase-four-content-growth-operations line batch 3 / 4",
+  "status": "handoff-structure-prepared",
+  "phaseFiveCandidateFocus": [
+    "private archive",
+    "family and child content",
+    "time capsule",
+    "annual world book",
+    "inheritance and export",
+    "privacy tier operations"
+  ],
+  "mustNotImplementInPhaseFour": [
+    "private vault data entry",
+    "family archive pages",
+    "child content workflows",
+    "inheritance package automation",
+    "sealed/silent content exposure"
+  ],
+  "handoffQuestions": [
+    "哪些内容只适合私人档案？",
+    "哪些公开文章需要未来转入年度世界册？",
+    "哪些时间河事件应进入时间胶囊？",
+    "哪些导出格式需要服务传承系统？"
+  ],
+  "rules": [
+    "第五阶段仅准备交接，不在第四阶段实现私密系统。",
+    "任何 private/family/partner/vault/sealed/silent 内容不得进入 public build。",
+    "第五阶段需要单独 scope contract。"
+  ]
+}

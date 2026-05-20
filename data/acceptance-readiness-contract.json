@@ -1,0 +1,58 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段真实验收与 lint 收口契约",
+  "principle": "第二阶段体验开发必须最终回到真实执行证据，而不是停留在静态构造。",
+  "status": "implemented-static-readiness",
+  "stageProgress": "phase-two batch 11 / 12",
+  "executionGroups": [
+    {
+      "id": "local-tooling",
+      "title": "本地工具链",
+      "commands": [
+        "npm install",
+        "npm run lint",
+        "npm run typecheck"
+      ],
+      "mustRecord": true
+    },
+    {
+      "id": "world-core",
+      "title": "世界核心检查",
+      "commands": [
+        "npm run check:world-core"
+      ],
+      "mustRecord": true
+    },
+    {
+      "id": "production-build",
+      "title": "生产构建",
+      "commands": [
+        "npm run build"
+      ],
+      "mustRecord": true
+    },
+    {
+      "id": "browser-qa",
+      "title": "浏览器 QA",
+      "commands": [
+        "manual browser QA matrix"
+      ],
+      "mustRecord": true
+    },
+    {
+      "id": "preview-smoke",
+      "title": "预览冒烟",
+      "commands": [
+        "GUYUE_PREVIEW_URL=<url> npm run preview:smoke"
+      ],
+      "mustRecord": true
+    }
+  ],
+  "rules": [
+    "每次阶段开发完成必须说明 lint 状态。",
+    "没有 node_modules 时不得宣称真实 lint 通过。",
+    "静态解析、TS 转译检查、JSON 检查不能替代 npm run lint。",
+    "真实 lint/typecheck/build 结果必须写入 evidence ledger。",
+    "第一阶段完成状态仍不得被第二阶段开发改为 complete。"
+  ]
+}

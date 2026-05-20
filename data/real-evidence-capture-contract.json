@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行证据采集契约",
+  "principle": "release-ready 必须由可复验的命令证据驱动。",
+  "stageProgress": "real-evidence-preparation line batch 2 / 4",
+  "status": "implemented-static-capture-plan",
+  "commands": [
+    {
+      "id": "dependency-bootstrap",
+      "command": "npm run dependency-bootstrap:probe",
+      "required": true
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "required": true
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "required": true
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "required": true
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "required": true
+    },
+    {
+      "id": "release-local-gate",
+      "command": "npm run release:local-gate",
+      "required": true
+    }
+  ],
+  "output": "reports/real-evidence-capture.json",
+  "rules": [
+    "每条命令必须记录 command、exitCode、status、stdout/stderr 摘要。",
+    "任一 required 命令非 0 时不能 release-ready。",
+    "证据采集失败必须保留失败输出。",
+    "证据采集不替代浏览器 QA、preview smoke、performance。"
+  ]
+}

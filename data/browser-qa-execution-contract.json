@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 浏览器 QA 执行契约",
+  "principle": "浏览器 QA 必须从真实视口、真实路由、真实交互和缺陷回写开始。",
+  "stageProgress": "real-validation line batch 2 / 4",
+  "status": "implemented-static-matrix",
+  "requiredViewports": [
+    "375x812",
+    "430x932",
+    "768x1024",
+    "1440x900",
+    "1920x1080"
+  ],
+  "requiredRoutes": [
+    "/",
+    "/atlas",
+    "/archive",
+    "/ask",
+    "/node/[slug]",
+    "/paths",
+    "/paths/[id]",
+    "/timeline",
+    "/status",
+    "/skeleton"
+  ],
+  "requiredInteractionFocus": [
+    "navigation active state",
+    "mobile nav open/close",
+    "tab selected state",
+    "collapse/expand click",
+    "search/filter empty state",
+    "card click target",
+    "focus visibility",
+    "layout no horizontal overflow",
+    "reading toc anchor",
+    "relation collapsible"
+  ],
+  "rules": [
+    "浏览器 QA 只在真实浏览器中标记 passed。",
+    "静态矩阵校验只能证明计划完整，不能证明体验通过。",
+    "发现问题必须写入 real-validation-defect-register。",
+    "P0/P1 必须阻断发布级完成声明。",
+    "每条 QA 记录必须包含 viewport、route、status 和 checkedItems。"
+  ]
+}

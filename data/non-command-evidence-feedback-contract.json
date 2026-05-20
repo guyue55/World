@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 非命令类真实证据回写契约",
+  "principle": "浏览器 QA、预览冒烟和性能实测必须像命令结果一样可记录、可复验、可阻断发布。",
+  "stageProgress": "real-evidence-preparation line batch 3 / 4",
+  "status": "implemented-static-feedback-plan",
+  "evidenceTypes": [
+    {
+      "id": "browser-qa",
+      "source": "manual",
+      "required": true
+    },
+    {
+      "id": "preview-smoke",
+      "source": "network",
+      "required": true
+    },
+    {
+      "id": "performance",
+      "source": "measurement",
+      "required": false
+    }
+  ],
+  "writeTargets": [
+    "data/browser-qa-records.json",
+    "data/preview-smoke-config.json",
+    "data/performance-measurement-records.json",
+    "data/real-validation-defect-register.json"
+  ],
+  "rules": [
+    "browser QA 必须保留 route、viewport、status、defectIds。",
+    "preview smoke 必须保留 route、statusCode、checkedAt。",
+    "performance 必须保留 route、device、metrics、measuredAt。",
+    "任何 P0/P1 问题必须进入 defect register。",
+    "非命令类证据不能由本阶段自动标记 passed。"
+  ]
+}

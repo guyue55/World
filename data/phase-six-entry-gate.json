@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第六阶段入口门禁",
+  "stageProgress": "phase-five-private-archive-inheritance line batch 4 / 4",
+  "status": "phase-six-planning-allowed",
+  "entryDecision": "phase-six-planning-allowed-ai-boundary-must-inherit-private-policy",
+  "structureReady": [
+    "phase-five-scope-contract",
+    "private-archive-boundary-policy",
+    "private-archive-index",
+    "time-capsule-annual-book-plan",
+    "inheritance-export-plan"
+  ],
+  "phaseSixCandidateFocus": [
+    "AI world reading protocol",
+    "AI suggestion audit trail",
+    "AI route recommendation",
+    "AI exhibition curation assistant",
+    "AI maintenance companion",
+    "AI privacy boundary enforcement"
+  ],
+  "mustNotDo": [
+    "read private/family/partner/vault/sealed/silent without permission",
+    "auto publish",
+    "auto delete",
+    "auto change visibility",
+    "auto export inheritance package",
+    "summarize sealed or silent content"
+  ],
+  "entryRules": [
+    "第六阶段必须先建立 AI 可读协议和不越权协议。",
+    "AI 只能建议、解释、整理、提醒。",
+    "任何影响发布、删除、导出、可见性的动作都需要人工确认。",
+    "AI 不得绕过第五阶段私密边界。"
+  ]
+}

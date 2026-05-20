@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 建议与审计队列契约",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 2 / 4",
+  "status": "implemented-static-suggestion-contract",
+  "suggestionTypes": [
+    "reading-path",
+    "exhibition-curation",
+    "content-maintenance",
+    "timeline-digest",
+    "world-structure-explanation",
+    "risk-reminder"
+  ],
+  "queueRules": [
+    "所有 AI 输出默认进入建议队列，不直接执行。",
+    "建议必须包含 sourceTier 和 requiredHumanAction。",
+    "sourceTier 只能是 public 或 semiPublic。",
+    "requiredHumanAction 为 true 时，系统不得自动执行。",
+    "队列可审计、可拒绝、可延后。"
+  ],
+  "forbiddenExecutions": [
+    "auto-publish",
+    "auto-delete",
+    "auto-change-visibility",
+    "auto-export",
+    "auto-read-private",
+    "auto-summarize-sealed-silent"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第六阶段 AI 可读协议与不越权契约",
+  "principle": "AI 是灯塔，不是太阳；AI 可以照亮世界，但不能替人决定世界。",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 1 / 4",
+  "status": "implemented-static-protocol",
+  "readableTiers": [
+    "public",
+    "semiPublic"
+  ],
+  "forbiddenTiers": [
+    "private",
+    "family",
+    "partner",
+    "vault",
+    "sealed",
+    "silent"
+  ],
+  "allowedActions": [
+    "summarize public content",
+    "suggest reading paths",
+    "suggest exhibition curation",
+    "suggest maintenance tasks",
+    "explain world structure",
+    "draft non-publishing recommendations"
+  ],
+  "humanRequiredActions": [
+    "publish",
+    "delete",
+    "change visibility",
+    "export package",
+    "read private content",
+    "use family or partner content",
+    "open sealed content",
+    "summarize silent content"
+  ],
+  "mustInherit": [
+    "private archive boundary policy",
+    "phase five final report",
+    "AI lighthouse principle",
+    "release-ready not-ready"
+  ],
+  "rules": [
+    "AI 默认只能读取 public / semiPublic。",
+    "AI 不得读取 private/family/partner/vault/sealed/silent。",
+    "AI 只能建议、解释、整理、提醒。",
+    "任何发布、删除、导出、改可见性的动作必须人工确认。",
+    "第六阶段不自动关闭 release-ready 缺口。"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段体验整合线收口报告",
+  "stageProgress": "phase-three-integration line batch 4 / 4",
+  "decision": "phase-three-integration-complete-real-qa-pending",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "route-navigation-integration",
+    "qa-matrix-expansion",
+    "phase-three-entry-hub",
+    "integration-closure"
+  ],
+  "integratedRoutes": [
+    "/phase-three",
+    "/exhibitions",
+    "/ai-workbench",
+    "/export-center"
+  ],
+  "pendingEvidence": [
+    "real browser QA for new routes",
+    "release local gate",
+    "CI release gate",
+    "preview smoke",
+    "performance measurement"
+  ],
+  "rules": [
+    "体验整合完成不等于真实浏览器 QA 通过。",
+    "新增路由仍保持 static-prototype。",
+    "release-ready 仍由 release-ready matrix 决定。",
+    "下一步应优先真实环境补证或缺陷驱动修复。"
+  ]
+}

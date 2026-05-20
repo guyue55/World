@@ -1,0 +1,59 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实环境补证依赖启动契约",
+  "principle": "先证明依赖环境可执行，再判断代码是否通过。",
+  "stageProgress": "real-evidence-preparation line batch 1 / 4",
+  "status": "implemented-static-bootstrap-plan",
+  "requiredTools": [
+    {
+      "id": "node",
+      "command": "node -v",
+      "required": true
+    },
+    {
+      "id": "npm",
+      "command": "npm -v",
+      "required": true
+    },
+    {
+      "id": "local-eslint",
+      "command": "npx eslint --version",
+      "required": true
+    },
+    {
+      "id": "local-tsc",
+      "command": "npx tsc --version",
+      "required": true
+    },
+    {
+      "id": "local-next",
+      "command": "npx next --version",
+      "required": true
+    },
+    {
+      "id": "local-tsx",
+      "command": "npx tsx --version",
+      "required": true
+    }
+  ],
+  "installStrategy": {
+    "preferred": "npm install",
+    "ci": "npm ci when package-lock.json exists, otherwise npm install",
+    "reason": "当前项目包无 node_modules，真实 lint/typecheck/build 必须先安装依赖。"
+  },
+  "failureClasses": [
+    "missing-node",
+    "missing-npm",
+    "missing-node-modules",
+    "missing-local-binary",
+    "permission-denied",
+    "lockfile-mismatch",
+    "dependency-install-failed"
+  ],
+  "rules": [
+    "不能把缺依赖导致的 lint 失败记为代码 lint failed。",
+    "不能把缺依赖导致的 lint 失败记为 lint passed。",
+    "只有本地二进制存在且命令退出 0，才可进入代码质量判断。",
+    "依赖补证仍不关闭 browser QA / preview / performance 阻断项。"
+  ]
+}

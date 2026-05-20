@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 建议协议",
+  "stageProgress": "phase-three-planning line batch 3 / 4",
+  "status": "protocol-draft",
+  "suggestionSchema": {
+    "id": "string",
+    "source": "route|node|path|exhibition|maintenance",
+    "scope": "public-only|user-provided|planning-only",
+    "suggestion": "string",
+    "risk": "low|medium|high",
+    "requiresUserAction": true,
+    "status": "draft|accepted|rejected|archived"
+  },
+  "allowedStatuses": [
+    "draft",
+    "accepted",
+    "rejected",
+    "archived"
+  ],
+  "riskRules": [
+    "high risk suggestions cannot be auto-applied",
+    "medium risk suggestions need explicit confirmation",
+    "low risk suggestions can be shown as guidance only",
+    "private-scope suggestions are not allowed in public build"
+  ]
+}

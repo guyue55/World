@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段体验整合就绪矩阵",
+  "stageProgress": "phase-three-integration line batch 4 / 4",
+  "status": "integrated-not-qa-passed",
+  "items": [
+    {
+      "id": "routes-integrated",
+      "status": "passed-static",
+      "evidence": "phase-three-route-integration-contract"
+    },
+    {
+      "id": "qa-matrix-expanded",
+      "status": "passed-static",
+      "evidence": "phase-three-qa-expansion-contract"
+    },
+    {
+      "id": "entry-hub-added",
+      "status": "passed-static",
+      "evidence": "phase-three-entry-hub-contract"
+    },
+    {
+      "id": "browser-qa-real",
+      "status": "pending-real-browser-qa",
+      "evidence": "manual QA"
+    },
+    {
+      "id": "release-ready",
+      "status": "blocked",
+      "evidence": "release-ready-matrix"
+    }
+  ],
+  "rules": [
+    "passed-static 只代表静态结构通过。",
+    "pending-real-browser-qa 必须由真实浏览器检查更新。",
+    "blocked 不得被整合线自动关闭。"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布前人工核验记录",
+  "stageProgress": "real-execution-landing line batch 3 / 4",
+  "status": "pending-manual-review",
+  "items": [
+    {
+      "id": "real-execution-summary",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "lint-typecheck-build",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "browser-qa",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "preview-smoke",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "performance",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "defect-review",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "blocker-review",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "public-private-boundary",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    }
+  ],
+  "rules": [
+    "pending 不等于 failed，也不等于 passed。",
+    "reviewer 与 evidence 必须真实填写。",
+    "本记录不自动修改 release-ready matrix。"
+  ]
+}

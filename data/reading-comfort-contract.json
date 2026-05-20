@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段阅读舒适度产品化契约",
+  "principle": "阅读页首先要让人愿意读完，其次才是展示世界结构。",
+  "status": "implemented-static",
+  "pageParts": [
+    {
+      "id": "reading-body",
+      "component": "NodeReadingBody",
+      "purpose": "正文舒适阅读容器"
+    },
+    {
+      "id": "reading-toc",
+      "component": "ReadingToc",
+      "purpose": "从 Markdown 标题生成轻量目录"
+    },
+    {
+      "id": "reading-comfort-bar",
+      "component": "ReadingComfortBar",
+      "purpose": "展示阅读时间、正文宽度与移动端提示"
+    },
+    {
+      "id": "reading-related",
+      "component": "NodeRelationRail",
+      "purpose": "相关内容默认可收纳"
+    },
+    {
+      "id": "reading-passport",
+      "component": "NodePassport",
+      "purpose": "元信息让位于正文，桌面侧栏显示"
+    },
+    {
+      "id": "markdown-content",
+      "component": "MarkdownContent",
+      "purpose": "正文语义、段落节奏与代码块一致性"
+    }
+  ],
+  "rules": [
+    "正文宽度控制在 68-76ch。",
+    "段落行高必须保证中文长文舒适阅读。",
+    "相关内容和反向链接默认不压过正文。",
+    "移动端优先正文，其次目录，再其次元信息。",
+    "目录只能来自正文标题，不手写重复结构。",
+    "阅读页不得加载 WorldFoundationStack。"
+  ],
+  "performanceRules": [
+    "目录解析只处理当前节点正文。",
+    "相关内容最多展示少量卡片。",
+    "阅读体验组件必须轻量，不引入重型 Markdown 运行时。",
+    "正文页可未来升级 MDX，但当前保持静态 Markdown renderer。"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行证据采集记录",
+  "stageProgress": "real-evidence-preparation line batch 2 / 4",
+  "status": "pending-real-run",
+  "latestCapture": null,
+  "requiredEvidence": [
+    "dependency-bootstrap",
+    "lint",
+    "typecheck",
+    "world-core",
+    "build",
+    "release-local-gate"
+  ],
+  "rules": [
+    "pending-real-run 不等于通过。",
+    "latestCapture 只能由真实执行脚本更新。",
+    "所有 requiredEvidence 通过后才可考虑关闭对应 release blocker。"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布准备线本地与 CI 门禁契约",
+  "principle": "发布准备不是宣布完成，而是把真实执行门禁放到本地与 CI 的同一条线上。",
+  "stageProgress": "release-preparation line batch 1 / 4",
+  "status": "implemented-static-ci-gate",
+  "localGateCommand": "npm run release:local-gate",
+  "ciWorkflow": ".github/workflows/release-gate.yml",
+  "requiredCommands": [
+    "npm ci",
+    "npm run check:lint-env",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run check:world-core",
+    "npm run build",
+    "npm run validation-closure:print"
+  ],
+  "blockingSources": [
+    "dependency",
+    "lint",
+    "type",
+    "world-gate",
+    "build",
+    "browser-qa",
+    "preview-smoke",
+    "performance"
+  ],
+  "rules": [
+    "本地 release gate 与 CI release gate 必须使用同一组核心命令。",
+    "CI 通过不替代浏览器 QA、预览冒烟和性能实测。",
+    "没有 package-lock.json 时 CI 可选择 npm install，但必须记录锁文件策略。",
+    "发布准备线不得把 pending 验证项改成 passed。"
+  ]
+}

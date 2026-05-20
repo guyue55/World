@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段前最终封版报告",
+  "stageProgress": "pre-phase-four-finalization line batch 4 / 4",
+  "decision": "pre-phase-four-structure-complete-phase-four-planning-allowed",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "pre-phase-four-taskboard",
+    "phase-four-entry-gate",
+    "phase-four-handoff-index",
+    "pre-phase-four-final-closure"
+  ],
+  "phaseFourEntryDecision": "phase-four-planning-allowed-release-ready-blocked",
+  "completedBeforePhaseFour": [
+    "all structure lines through release candidate acceptance evidence",
+    "pre-phase-four taskboard",
+    "phase-four entry gate",
+    "phase-four handoff index",
+    "final closure report"
+  ],
+  "mustRemainVisible": [
+    "release-ready not-ready",
+    "real dry-run pending",
+    "handoff manifest pending",
+    "acceptance scan pending",
+    "manual signoff pending",
+    "blocker review pending"
+  ],
+  "rules": [
+    "到第四阶段前的结构任务已经收束完成。",
+    "第四阶段可以开始规划/立项，但不能宣称 V1 已生产发布。",
+    "第四阶段新增功能必须单独定义 scope。",
+    "真实执行缺口必须继续保留在第四阶段入口上下文。",
+    "release-ready 仍由真实证据、人工签收和阻断关闭决定。"
+  ]
+}

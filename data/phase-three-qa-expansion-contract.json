@@ -1,0 +1,31 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段新增路由 QA 扩展契约",
+  "principle": "新增路由进入体验前，必须进入真实浏览器 QA 矩阵。",
+  "stageProgress": "phase-three-integration line batch 2 / 4",
+  "status": "implemented-static-qa-expansion",
+  "newRoutes": [
+    "/exhibitions",
+    "/ai-workbench",
+    "/export-center"
+  ],
+  "requiredViewports": [
+    "375x812",
+    "768x1024",
+    "1440x900"
+  ],
+  "interactionFocus": [
+    "route visible from status integration panel",
+    "cards readable without overflow",
+    "keyboard focus visible",
+    "mobile vertical rhythm acceptable",
+    "confirmation boundary visible",
+    "static-prototype label visible"
+  ],
+  "rules": [
+    "新增路由 QA 仍为 pending-real-browser-qa。",
+    "静态矩阵扩展不等于真实 QA 通过。",
+    "发现问题必须写入 real-validation-defect-register。",
+    "新增路由不得关闭 release blockers。"
+  ]
+}

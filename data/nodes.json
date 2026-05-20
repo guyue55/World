@@ -22,7 +22,8 @@
       "representative": true,
       "pathCore": true
     },
-    "createdAt": "2026-05-19"
+    "createdAt": "2026-05-19",
+    "cover": "/covers/cover-world-gateway.svg"
   },
   {
     "id": "node-digital-universe",
@@ -46,7 +47,8 @@
       "representative": true
     },
     "createdAt": "2026-05-19",
-    "contentPath": "content/articles/personal-digital-universe-definition.md"
+    "contentPath": "content/articles/personal-digital-universe-definition.md",
+    "cover": "/covers/cover-world-gateway.svg"
   },
   {
     "id": "node-ai-lighthouse",
@@ -70,7 +72,8 @@
       "pathCore": true
     },
     "createdAt": "2026-05-19",
-    "contentPath": "content/articles/ai-lighthouse-boundary.md"
+    "contentPath": "content/articles/ai-lighthouse-boundary.md",
+    "cover": "/covers/cover-natural-tech.svg"
   },
   {
     "id": "node-no-ai",
@@ -93,7 +96,8 @@
       "home": true
     },
     "createdAt": "2026-05-19",
-    "contentPath": "content/articles/no-ai-natural-evolution.md"
+    "contentPath": "content/articles/no-ai-natural-evolution.md",
+    "cover": "/covers/cover-world-gateway.svg"
   },
   {
     "id": "node-world-space",
@@ -116,7 +120,8 @@
       "home": true
     },
     "createdAt": "2026-05-19",
-    "contentPath": "content/articles/world-space-layer.md"
+    "contentPath": "content/articles/world-space-layer.md",
+    "cover": "/covers/cover-abstract-world.svg"
   },
   {
     "id": "node-data-guardian",
@@ -140,7 +145,8 @@
       "home": true
     },
     "createdAt": "2026-05-19",
-    "contentPath": "content/articles/world-data-guardian.md"
+    "contentPath": "content/articles/world-data-guardian.md",
+    "cover": "/covers/cover-natural-tech.svg"
   },
   {
     "id": "node-backlinks",
@@ -160,7 +166,8 @@
     "source": "manual",
     "layer": "interpretation",
     "createdAt": "2026-05-19",
-    "contentPath": "content/articles/backlinks-and-star-lines.md"
+    "contentPath": "content/articles/backlinks-and-star-lines.md",
+    "cover": "/covers/cover-world-gateway.svg"
   },
   {
     "id": "node-feishu-mcp",
@@ -186,7 +193,8 @@
       "pathCore": true
     },
     "createdAt": "2026-05-18",
-    "contentPath": "content/articles/feishu-mcp-adk-agent.md"
+    "contentPath": "content/articles/feishu-mcp-adk-agent.md",
+    "cover": "/covers/cover-natural-tech.svg"
   },
   {
     "id": "node-cli-agent",
@@ -204,7 +212,8 @@
     "lifeStage": "growing",
     "source": "chat",
     "layer": "fact",
-    "createdAt": "2026-05-18"
+    "createdAt": "2026-05-18",
+    "cover": "/covers/cover-natural-tech.svg"
   },
   {
     "id": "node-docker-cleanup",
@@ -222,7 +231,8 @@
     "lifeStage": "archive",
     "source": "chat",
     "layer": "fact",
-    "createdAt": "2026-05-18"
+    "createdAt": "2026-05-18",
+    "cover": "/covers/cover-natural-tech.svg"
   },
   {
     "id": "node-novel-editor",
@@ -247,7 +257,8 @@
       "pathCore": true
     },
     "createdAt": "2026-05-14",
-    "contentPath": "content/projects/static-ai-novel-editor.md"
+    "contentPath": "content/projects/static-ai-novel-editor.md",
+    "cover": "/covers/cover-natural-tech.svg"
   },
   {
     "id": "node-moonframe",
@@ -265,7 +276,8 @@
     "lifeStage": "growing",
     "source": "chat",
     "layer": "interpretation",
-    "createdAt": "2026-05-09"
+    "createdAt": "2026-05-09",
+    "cover": "/covers/cover-product-artifact.svg"
   },
   {
     "id": "node-everything-node",
@@ -287,7 +299,8 @@
       "pathCore": true
     },
     "createdAt": "2026-05-19",
-    "contentPath": "content/fragments/everything-is-node.md"
+    "contentPath": "content/fragments/everything-is-node.md",
+    "cover": "/covers/cover-world-gateway.svg"
   },
   {
     "id": "node-clear-deep",
@@ -306,7 +319,8 @@
     "source": "manual",
     "layer": "interpretation",
     "createdAt": "2026-05-19",
-    "contentPath": "content/fragments/clear-entrance-deep-world.md"
+    "contentPath": "content/fragments/clear-entrance-deep-world.md",
+    "cover": "/covers/cover-world-gateway.svg"
   },
   {
     "id": "node-memory-light",
@@ -325,6 +339,7 @@
     "source": "manual",
     "layer": "interpretation",
     "createdAt": "2026-05-19",
-    "contentPath": "content/memory/memory-lake-first-light.md"
+    "contentPath": "content/memory/memory-lake-first-light.md",
+    "cover": "/covers/cover-memory-river.svg"
   }
 ]

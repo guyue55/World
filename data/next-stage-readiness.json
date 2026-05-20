@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 后续阶段进入条件",
+  "principle": "下一阶段可以规划，但发布级完成必须由真实证据驱动。",
+  "stageProgress": "phase-two post-closure hardening batch 3 / 3",
+  "tracks": [
+    {
+      "id": "real-validation",
+      "title": "真实验证线",
+      "entryCondition": "有真实项目环境和 node_modules",
+      "firstActions": [
+        "npm install",
+        "npm run lint",
+        "npm run typecheck",
+        "npm run build"
+      ]
+    },
+    {
+      "id": "phase-three-planning",
+      "title": "第三阶段规划线",
+      "entryCondition": "承认真实证据仍待补齐，不宣称发布级完成",
+      "firstActions": [
+        "定义第三阶段目标",
+        "划定 AI / 内容 / 视觉 / 发布边界",
+        "保留第二阶段补证台账"
+      ]
+    },
+    {
+      "id": "phase-two-polish",
+      "title": "第二阶段后续打磨线",
+      "entryCondition": "围绕真实浏览器 QA 问题修复",
+      "firstActions": [
+        "执行 route viewport QA",
+        "记录缺陷",
+        "按 defect register 修复"
+      ]
+    }
+  ],
+  "rules": [
+    "三条线可以并行，但状态必须分开记录。",
+    "真实验证线失败时，不得阻塞第三阶段规划，但必须保留风险。",
+    "第三阶段不得回滚第二阶段的模块化边界。"
+  ]
+}

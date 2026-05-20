@@ -1,0 +1,87 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段导航状态契约",
+  "principle": "导航选中态必须来自当前路由，而不是组件内部猜测。",
+  "status": "implemented",
+  "items": [
+    {
+      "id": "home",
+      "label": "首页",
+      "href": "/",
+      "match": "exact",
+      "desktop": true,
+      "mobile": false
+    },
+    {
+      "id": "atlas",
+      "label": "地图",
+      "href": "/atlas",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "skeleton",
+      "label": "骨架",
+      "href": "/skeleton",
+      "match": "section",
+      "desktop": true,
+      "mobile": false
+    },
+    {
+      "id": "timeline",
+      "label": "时间河",
+      "href": "/timeline",
+      "match": "section",
+      "desktop": true,
+      "mobile": false
+    },
+    {
+      "id": "archive",
+      "label": "档案馆",
+      "href": "/archive",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "paths",
+      "label": "路径",
+      "href": "/paths",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "ask",
+      "label": "灯塔",
+      "href": "/ask",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "status",
+      "label": "状态",
+      "href": "/status",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "manifesto",
+      "label": "宪章",
+      "href": "/manifesto",
+      "match": "section",
+      "desktop": true,
+      "mobile": false
+    }
+  ],
+  "rules": [
+    "根路径只允许 exact 匹配。",
+    "非根路径使用 pathname === href 或 pathname.startsWith(`${href}/`)。",
+    "桌面和移动端必须共用同一份导航数据。",
+    "aria-current 必须随 active 状态出现。",
+    "底部导航不得遮挡正文末尾。"
+  ]
+}

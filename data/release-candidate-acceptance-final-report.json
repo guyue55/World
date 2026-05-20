@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选验收证据线最终报告",
+  "stageProgress": "release-candidate-acceptance-evidence line batch 4 / 4",
+  "decision": "acceptance-evidence-structure-complete-real-evidence-scan-required",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "acceptance-evidence-manifest",
+    "acceptance-evidence-scanner",
+    "risk-acceptance-record",
+    "acceptance-evidence-closure"
+  ],
+  "preparedCapabilities": [
+    "acceptance evidence manifest",
+    "acceptance evidence scanner",
+    "risk acceptance records",
+    "acceptance readiness matrix"
+  ],
+  "mustRunForRealAcceptance": [
+    "npm run release:dry-run",
+    "npm run release-handoff:manifest",
+    "npm run release-candidate-acceptance:scan",
+    "npm run release-candidate-risk:write when needed",
+    "manual signoff review",
+    "blocker closure review"
+  ],
+  "rules": [
+    "验收证据线完成不等于候选验收通过。",
+    "缺少 required evidence 时不得 release-ready。",
+    "风险接受不能绕过 P0/P1、隐私边界、AI 边界或缺失证据。",
+    "release-ready 仍由真实证据扫描、人工签收和阻断状态共同决定。"
+  ]
+}

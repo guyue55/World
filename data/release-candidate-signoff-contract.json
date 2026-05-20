@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选签收前检查表契约",
+  "principle": "签收前必须同时看冻结、干跑、交接、人工核验、阻断、边界和回滚。",
+  "stageProgress": "release-candidate-freeze line batch 3 / 4",
+  "status": "implemented-static-signoff-checklist",
+  "checklist": [
+    {
+      "id": "freeze-contract",
+      "title": "发布候选冻结契约已存在",
+      "required": true
+    },
+    {
+      "id": "change-boundary",
+      "title": "变更边界审计契约已存在",
+      "required": true
+    },
+    {
+      "id": "dry-run-summary",
+      "title": "release dry-run summary 已真实生成",
+      "required": true
+    },
+    {
+      "id": "handoff-manifest",
+      "title": "release handoff manifest 已真实生成",
+      "required": true
+    },
+    {
+      "id": "manual-review",
+      "title": "人工核验完成",
+      "required": true
+    },
+    {
+      "id": "blocker-review",
+      "title": "阻断关闭请求已 review",
+      "required": true
+    },
+    {
+      "id": "rollback-plan",
+      "title": "失败处置与回滚手册已确认",
+      "required": true
+    },
+    {
+      "id": "public-private-boundary",
+      "title": "公开/私密边界已复核",
+      "required": true
+    },
+    {
+      "id": "ai-boundary",
+      "title": "AI 灯塔边界已复核",
+      "required": true
+    }
+  ],
+  "rules": [
+    "签收表默认 pending。",
+    "required 项全部通过之前不得进入 release-ready。",
+    "签收不能替代真实证据。",
+    "签收不能自动关闭 blocker。"
+  ]
+}

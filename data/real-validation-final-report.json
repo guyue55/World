@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实验证线最终报告",
+  "stageProgress": "real-validation line batch 4 / 4",
+  "decision": "validation-structure-complete-real-execution-pending",
+  "summary": {
+    "rerunSteps": 7,
+    "pendingRerunSteps": 7,
+    "browserQaMatrixItems": 5,
+    "pendingBrowserQaItems": 5,
+    "previewRoutes": 10,
+    "pendingPreviewRoutes": 10,
+    "performanceRoutes": 6,
+    "pendingPerformanceRoutes": 6,
+    "openDefects": 0,
+    "lintStatus": "missing-local-dependencies"
+  },
+  "releaseDecision": "not-ready-for-release",
+  "whyNotReady": [
+    "真实 npm install / lint / typecheck / build 尚未在真实项目环境通过。",
+    "浏览器 QA 矩阵仍为 pending。",
+    "预览冒烟仍为 pending-preview-url。",
+    "性能实测仍为 pending-real-measurement。",
+    "lint 当前状态为 missing-local-dependencies，不能记为 passed。"
+  ],
+  "canProceedTo": [
+    "run-real-validation-in-actual-project",
+    "record-defects-from-browser-qa",
+    "prepare-phase-three-planning-with-risk-ledger"
+  ],
+  "rules": [
+    "本报告只收口验证结构，不伪造真实通过结果。",
+    "发布级完成必须由真实执行记录驱动。",
+    "任何 pending 项都必须保留在阻断清单中。"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选冻结就绪矩阵",
+  "stageProgress": "release-candidate-freeze line batch 4 / 4",
+  "status": "candidate-freeze-ready-real-signoff-pending",
+  "items": [
+    {
+      "id": "freeze-contract",
+      "status": "ready",
+      "evidence": "data/release-candidate-freeze-contract.json"
+    },
+    {
+      "id": "change-boundary",
+      "status": "ready",
+      "evidence": "data/release-candidate-change-boundary-contract.json"
+    },
+    {
+      "id": "signoff-checklist",
+      "status": "pending-signoff",
+      "evidence": "data/release-candidate-signoff-record.json"
+    },
+    {
+      "id": "real-dry-run",
+      "status": "pending-real-run",
+      "evidence": "reports/release-dry-run-summary.json"
+    },
+    {
+      "id": "handoff-manifest",
+      "status": "pending-real-run",
+      "evidence": "reports/release-handoff-manifest.json"
+    },
+    {
+      "id": "release-ready",
+      "status": "blocked",
+      "evidence": "data/release-ready-evidence-matrix.json"
+    }
+  ],
+  "rules": [
+    "ready 表示结构完成，不表示真实通过。",
+    "pending-signoff 必须由真实人工签收更新。",
+    "blocked 不得被冻结线自动关闭。"
+  ]
+}

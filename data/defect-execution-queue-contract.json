@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实缺陷流转执行契约",
+  "principle": "真实 QA、预览冒烟和性能测量发现的问题必须进入同一条缺陷流转队列。",
+  "stageProgress": "real-evidence-execution-assist line batch 3 / 4",
+  "status": "implemented-static-defect-queue",
+  "sources": [
+    "browser-qa",
+    "preview-smoke",
+    "performance",
+    "release-gate",
+    "manual-review"
+  ],
+  "severity": [
+    "P0",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "allowedStatuses": [
+    "new",
+    "triaged",
+    "fixing",
+    "fixed",
+    "verified",
+    "wont-fix"
+  ],
+  "rules": [
+    "P0/P1 缺陷必须阻断 release-ready。",
+    "fixed 不等于 verified。",
+    "verified 必须有复测证据。",
+    "缺陷来源必须可追溯到真实证据或人工记录。",
+    "缺陷队列不自动删除历史记录。"
+  ]
+}

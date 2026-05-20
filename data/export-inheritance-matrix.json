@@ -1,0 +1,58 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 导出与传承矩阵",
+  "stageProgress": "phase-three-planning line batch 4 / 4",
+  "status": "planned-not-built",
+  "packages": [
+    {
+      "id": "public-world-package",
+      "visibility": "public",
+      "formats": [
+        "markdown",
+        "json",
+        "static-html"
+      ],
+      "requiresConfirmation": false
+    },
+    {
+      "id": "annual-world-book",
+      "visibility": "public-or-private",
+      "formats": [
+        "markdown",
+        "pdf-ready"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "theme-exhibition-package",
+      "visibility": "public",
+      "formats": [
+        "markdown",
+        "json"
+      ],
+      "requiresConfirmation": false
+    },
+    {
+      "id": "private-inheritance-package",
+      "visibility": "private",
+      "formats": [
+        "markdown",
+        "json"
+      ],
+      "requiresConfirmation": true
+    },
+    {
+      "id": "maintenance-ledger-export",
+      "visibility": "planning-only",
+      "formats": [
+        "json"
+      ],
+      "requiresConfirmation": true
+    }
+  ],
+  "rules": [
+    "private-inheritance-package 不进入 public build。",
+    "public-world-package 只包含允许公开的节点和路径。",
+    "requiresConfirmation=true 的包不得自动生成发布产物。"
+  ]
+}

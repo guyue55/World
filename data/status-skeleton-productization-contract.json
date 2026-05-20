@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段状态中心产品化契约",
+  "principle": "状态页不是面板堆叠，而是让世界健康度可理解、可追踪、可行动。",
+  "status": "implemented-static",
+  "pageParts": [
+    {
+      "id": "status-hero",
+      "component": "StatusHero",
+      "purpose": "解释当前状态和未完成边界"
+    },
+    {
+      "id": "status-summary",
+      "component": "StatusSummaryGrid",
+      "purpose": "提供阶段、证据、体验、风险摘要"
+    },
+    {
+      "id": "status-section-nav",
+      "component": "StatusSectionNav",
+      "purpose": "提供状态页锚点导航"
+    },
+    {
+      "id": "status-panel-group",
+      "component": "StatusPanelGroup",
+      "purpose": "按主题折叠展示面板"
+    },
+    {
+      "id": "skeleton-hero",
+      "component": "SkeletonHero",
+      "purpose": "解释骨架不是 UI 堆叠，而是世界协议"
+    },
+    {
+      "id": "skeleton-layer-summary",
+      "component": "SkeletonLayerSummary",
+      "purpose": "按空间、内容、关系、时间、投影、治理、互操作理解骨架"
+    }
+  ],
+  "groups": [
+    {
+      "id": "experience",
+      "title": "真实体验层",
+      "purpose": "首页、交互、档案馆、节点、路径、Atlas、Timeline、Ask 等第二阶段产品化结果"
+    },
+    {
+      "id": "evidence",
+      "title": "验收证据层",
+      "purpose": "真实执行、预览、构建、QA、最终关闭与阶段转换"
+    },
+    {
+      "id": "architecture",
+      "title": "工程结构层",
+      "purpose": "模块化、组件化、性能、治理、文档和操作台账"
+    },
+    {
+      "id": "skeleton",
+      "title": "世界骨架层",
+      "purpose": "空间、内容、关系、时间、AI 边界、生命周期和不变量"
+    }
+  ],
+  "rules": [
+    "状态页必须先给摘要，再给重型面板。",
+    "状态页不得把第一阶段标记为 complete。",
+    "骨架页必须解释骨架层，而不是只展示工程面板。",
+    "面板必须按主题分组，避免一个巨型 WorldFoundationStack 直接暴露给用户。",
+    "新增状态面板必须归入明确分组。"
+  ]
+}

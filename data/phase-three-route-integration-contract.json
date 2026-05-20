@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段新增路由导航整合契约",
+  "principle": "新增原型路由必须被世界导航看见，但不能伪装成 release-ready。",
+  "stageProgress": "phase-three-integration line batch 3 / 4",
+  "status": "implemented-static-integration",
+  "routes": [
+    {
+      "route": "/phase-three",
+      "title": "第三阶段入口",
+      "group": "phase-three",
+      "releaseStatus": "static-prototype"
+    },
+    {
+      "route": "/exhibitions",
+      "title": "主题展览",
+      "group": "phase-three",
+      "releaseStatus": "static-prototype"
+    },
+    {
+      "route": "/ai-workbench",
+      "title": "AI 建议工作台",
+      "group": "phase-three",
+      "releaseStatus": "static-prototype"
+    },
+    {
+      "route": "/export-center",
+      "title": "导出中心",
+      "group": "phase-three",
+      "releaseStatus": "static-prototype"
+    }
+  ],
+  "rules": [
+    "新增路由可以进入状态页与规划面板。",
+    "新增路由必须标记 static-prototype。",
+    "新增路由进入导航不等于浏览器 QA 通过。",
+    "release-ready 仍由真实执行证据决定。"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段入口门禁",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 4 / 4",
+  "status": "phase-seven-planning-allowed",
+  "entryDecision": "phase-seven-planning-allowed-public-release-and-long-term-operations-not-started",
+  "structureReady": [
+    "phase-six-ai-readable-protocol",
+    "phase-six-ai-permission-matrix",
+    "phase-six-ai-suggestion-audit",
+    "phase-six-ai-world-companion",
+    "phase-six-final-report"
+  ],
+  "phaseSevenCandidateFocus": [
+    "public release readiness",
+    "real deployment evidence",
+    "public SEO and analytics",
+    "long-term content operations",
+    "backup and recovery",
+    "version governance",
+    "performance and accessibility hardening"
+  ],
+  "mustNotDo": [
+    "claim release-ready without real evidence",
+    "publish production without dry-run",
+    "enable AI autonomous publishing",
+    "ship private content to public build",
+    "skip manual signoff",
+    "skip blocker review"
+  ],
+  "entryRules": [
+    "第七阶段必须以真实发布证据为中心。",
+    "生产发布前必须补齐 dry-run、handoff、acceptance scan、manual signoff、blocker review。",
+    "长期运营不能绕过私密边界和 AI 边界。",
+    "第七阶段需要单独 release/ops scope contract。"
+  ]
+}

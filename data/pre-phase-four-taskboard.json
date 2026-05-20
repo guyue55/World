@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段前置任务总清单",
+  "principle": "进入第四阶段前，必须清楚哪些已经结构完成，哪些仍需真实执行，哪些不能被带病进入下一阶段。",
+  "stageProgress": "pre-phase-four-finalization line batch 1 / 4",
+  "status": "implemented-static-taskboard",
+  "completedStructureLines": [
+    "phase-two",
+    "phase-two-hardening",
+    "real-validation-line",
+    "release-preparation-line",
+    "phase-three-planning-line",
+    "phase-three-implementation-line",
+    "phase-three-integration-line",
+    "real-evidence-preparation-line",
+    "real-evidence-execution-assist-line",
+    "real-execution-landing-line",
+    "release-dry-run-handoff-line",
+    "release-candidate-freeze-line",
+    "release-candidate-acceptance-evidence-line"
+  ],
+  "mustNotSkipBeforePhaseFour": [
+    "real dry-run execution",
+    "real handoff manifest generation",
+    "release candidate acceptance scan",
+    "manual candidate signoff",
+    "blocker review",
+    "risk acceptance review",
+    "public/private boundary review",
+    "AI boundary review"
+  ],
+  "carryForwardToPhaseFour": [
+    "release-ready remains not-ready",
+    "real evidence must be produced under reports/",
+    "no private vault public exposure",
+    "AI remains lighthouse, not autonomous operator",
+    "new features require phase-four scope contract"
+  ],
+  "rules": [
+    "第四阶段不能用新功能掩盖 release-ready 缺口。",
+    "第四阶段前置任务清单不自动通过真实执行。",
+    "所有 pending-real-run 项必须显式带入。",
+    "任何 privacy/AI boundary 风险不得延期模糊处理。"
+  ]
+}

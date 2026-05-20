@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 区域星线",
+  "principle": "区域之间的关系先用轻量星线表达，未来再扩展为空间图谱。",
+  "links": [
+    {
+      "id": "area-origin-tech",
+      "from": "origin",
+      "to": "tech",
+      "type": "foundation",
+      "label": "世界观落到工程实践"
+    },
+    {
+      "id": "area-origin-fragments",
+      "from": "origin",
+      "to": "fragments",
+      "type": "inspiration",
+      "label": "世界原则生成灵感种子"
+    },
+    {
+      "id": "area-tech-workshop",
+      "from": "tech",
+      "to": "workshop",
+      "type": "implementation",
+      "label": "技术变成产品与工具"
+    },
+    {
+      "id": "area-fragments-workshop",
+      "from": "fragments",
+      "to": "workshop",
+      "type": "creation",
+      "label": "想法进入工坊"
+    },
+    {
+      "id": "area-memory-timeline",
+      "from": "memory",
+      "to": "timeline",
+      "type": "time",
+      "label": "记忆沉入时间河"
+    },
+    {
+      "id": "area-timeline-archive",
+      "from": "timeline",
+      "to": "archive",
+      "type": "indexing",
+      "label": "时间事件进入现实检索"
+    },
+    {
+      "id": "area-archive-origin",
+      "from": "archive",
+      "to": "origin",
+      "type": "return",
+      "label": "档案帮助回到入口"
+    },
+    {
+      "id": "area-lighthouse-all",
+      "from": "lighthouse",
+      "to": "origin",
+      "type": "guidance",
+      "label": "灯塔只照亮，不替代选择"
+    }
+  ],
+  "rules": [
+    "区域星线只能连接公开可见的区域。",
+    "区域星线用于解释空间结构，不承担复杂图谱计算。",
+    "未来可以升级到 SVG path 或 canvas，但当前保持 DOM 轻量实现。"
+  ]
+}

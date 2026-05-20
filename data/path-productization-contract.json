@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段路径导览产品化契约",
+  "principle": "路径不是分类页，而是为不同旅人准备的进入世界方式。",
+  "status": "implemented-static",
+  "pageParts": [
+    {
+      "id": "path-hero",
+      "component": "PathHero",
+      "purpose": "解释路径对象与访问者收益"
+    },
+    {
+      "id": "audience-tabs",
+      "component": "PathTabs",
+      "purpose": "按访问者类型筛路径"
+    },
+    {
+      "id": "path-card",
+      "component": "PathCard",
+      "purpose": "展示目标、节点数、预计时间和起点"
+    },
+    {
+      "id": "path-detail-hero",
+      "component": "PathDetailHero",
+      "purpose": "说明当前路径定位"
+    },
+    {
+      "id": "node-sequence",
+      "component": "PathNodeSequence",
+      "purpose": "让路径有清晰行走顺序"
+    },
+    {
+      "id": "next-steps",
+      "component": "PathNextSteps",
+      "purpose": "路径结束后继续探索"
+    }
+  ],
+  "audiences": [
+    "first-time",
+    "tech",
+    "life",
+    "deep-dive",
+    "creator"
+  ],
+  "rules": [
+    "每条公开路径必须至少包含 4 个公开节点。",
+    "每条路径必须有 audience、estimatedMinutes 和 description。",
+    "路径详情页必须显示节点顺序、路径进度和下一步。",
+    "路径页不得只展示标签分类，必须解释每类旅人该怎么走。",
+    "路径结束后必须提供下一条路径、地图或档案馆入口。"
+  ],
+  "performanceRules": [
+    "路径页只读取公开路径和路径节点 projection。",
+    "路径详情页只解析当前路径的节点序列。",
+    "路径卡片和进度组件必须保持轻量，不引入重型地图或状态面板。"
+  ]
+}

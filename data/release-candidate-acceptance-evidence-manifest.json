@@ -1,0 +1,65 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选验收证据清单",
+  "principle": "候选验收必须以真实证据为中心，而不是以阶段完成叙述为中心。",
+  "stageProgress": "release-candidate-acceptance-evidence line batch 1 / 4",
+  "status": "implemented-static-acceptance-manifest",
+  "requiredEvidence": [
+    {
+      "id": "release-dry-run-summary",
+      "path": "reports/release-dry-run-summary.json",
+      "required": true
+    },
+    {
+      "id": "release-handoff-manifest",
+      "path": "reports/release-handoff-manifest.json",
+      "required": true
+    },
+    {
+      "id": "real-execution-summary",
+      "path": "reports/real-execution-summary.json",
+      "required": true
+    },
+    {
+      "id": "manual-release-review",
+      "path": "data/manual-release-review-record.json",
+      "required": true
+    },
+    {
+      "id": "candidate-signoff",
+      "path": "data/release-candidate-signoff-record.json",
+      "required": true
+    },
+    {
+      "id": "blocker-closure-requests",
+      "path": "reports/release-blocker-closure-requests.json",
+      "required": true
+    },
+    {
+      "id": "defect-execution-queue",
+      "path": "reports/defect-execution-queue.json",
+      "required": true
+    },
+    {
+      "id": "non-command-evidence-notes",
+      "path": "reports/non-command-evidence-notes.json",
+      "required": true
+    },
+    {
+      "id": "performance-evidence",
+      "path": "reports/performance-evidence.json",
+      "required": false
+    }
+  ],
+  "acceptanceRules": [
+    "requiredEvidence 缺失时不得进入候选验收通过。",
+    "任何 required evidence status=failed/blocked 时不得 release-ready。",
+    "人工签收 pending 时不得 release-ready。",
+    "performance 可风险接受，但必须有记录。"
+  ],
+  "rules": [
+    "本清单只声明验收证据要求，不伪造证据。",
+    "reports/ 产物必须来自真实执行或真实人工记录。",
+    "验收证据清单不得自动关闭 blocker。"
+  ]
+}

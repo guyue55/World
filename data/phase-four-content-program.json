@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段内容运营计划",
+  "stageProgress": "phase-four-content-growth-operations line batch 1 / 4",
+  "status": "scope-ready",
+  "theme": "让世界真正有内容、有生命、有运营节奏。",
+  "operatingPrinciples": [
+    "少量真实内容优先于大量空结构。",
+    "每一篇内容都要能进入节点、路径、时间或展览。",
+    "首页要有新鲜感，档案馆要有可回访价值。",
+    "AI 只做建议和整理，不做自动发布。",
+    "公开内容不暴露私密档案。"
+  ],
+  "firstMonthCadence": [
+    {
+      "week": "week-1",
+      "focus": "世界入口内容真实化",
+      "output": "3 public notes + 1 exhibition seed"
+    },
+    {
+      "week": "week-2",
+      "focus": "阅读路径与节点扩写",
+      "output": "2 paths + 4 node expansions"
+    },
+    {
+      "week": "week-3",
+      "focus": "时间河与事件整理",
+      "output": "6 timeline events + 1 digest"
+    },
+    {
+      "week": "week-4",
+      "focus": "运营复盘与第五阶段交接",
+      "output": "1 operation review + phase-five handoff"
+    }
+  ]
+}

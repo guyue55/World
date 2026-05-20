@@ -9,9 +9,33 @@
         "/",
         "/atlas",
         "/archive",
-        "/ask"
+        "/ask",
+        "/exhibitions",
+        "/ai-workbench"
       ],
-      "status": "pending"
+      "status": "pending",
+      "checkedItems": [
+        "navigation active state",
+        "mobile nav open/close",
+        "tab selected state",
+        "collapse/expand click",
+        "search/filter empty state",
+        "card click target",
+        "focus visibility",
+        "layout no horizontal overflow",
+        "reading toc anchor",
+        "relation collapsible"
+      ],
+      "defectIds": [],
+      "checkedAt": null,
+      "phaseThreeCheckedItems": [
+        "route visible from status integration panel",
+        "cards readable without overflow",
+        "keyboard focus visible",
+        "mobile vertical rhythm acceptable",
+        "confirmation boundary visible",
+        "static-prototype label visible"
+      ]
     },
     {
       "viewport": "430x932",
@@ -19,9 +43,32 @@
         "/",
         "/node/[slug]",
         "/paths",
-        "/status"
+        "/status",
+        "/paths/[id]"
       ],
-      "status": "pending"
+      "status": "pending",
+      "checkedItems": [
+        "navigation active state",
+        "mobile nav open/close",
+        "tab selected state",
+        "collapse/expand click",
+        "search/filter empty state",
+        "card click target",
+        "focus visibility",
+        "layout no horizontal overflow",
+        "reading toc anchor",
+        "relation collapsible"
+      ],
+      "defectIds": [],
+      "checkedAt": null,
+      "phaseThreeCheckedItems": [
+        "route visible from status integration panel",
+        "cards readable without overflow",
+        "keyboard focus visible",
+        "mobile vertical rhythm acceptable",
+        "confirmation boundary visible",
+        "static-prototype label visible"
+      ]
     },
     {
       "viewport": "768x1024",
@@ -29,9 +76,34 @@
         "/",
         "/atlas",
         "/archive",
-        "/skeleton"
+        "/skeleton",
+        "/timeline",
+        "/exhibitions",
+        "/export-center"
       ],
-      "status": "pending"
+      "status": "pending",
+      "checkedItems": [
+        "navigation active state",
+        "mobile nav open/close",
+        "tab selected state",
+        "collapse/expand click",
+        "search/filter empty state",
+        "card click target",
+        "focus visibility",
+        "layout no horizontal overflow",
+        "reading toc anchor",
+        "relation collapsible"
+      ],
+      "defectIds": [],
+      "checkedAt": null,
+      "phaseThreeCheckedItems": [
+        "route visible from status integration panel",
+        "cards readable without overflow",
+        "keyboard focus visible",
+        "mobile vertical rhythm acceptable",
+        "confirmation boundary visible",
+        "static-prototype label visible"
+      ]
     },
     {
       "viewport": "1440x900",
@@ -39,9 +111,34 @@
         "/",
         "/archive",
         "/status",
-        "/skeleton"
+        "/skeleton",
+        "/exhibitions",
+        "/ai-workbench",
+        "/export-center"
       ],
-      "status": "pending"
+      "status": "pending",
+      "checkedItems": [
+        "navigation active state",
+        "mobile nav open/close",
+        "tab selected state",
+        "collapse/expand click",
+        "search/filter empty state",
+        "card click target",
+        "focus visibility",
+        "layout no horizontal overflow",
+        "reading toc anchor",
+        "relation collapsible"
+      ],
+      "defectIds": [],
+      "checkedAt": null,
+      "phaseThreeCheckedItems": [
+        "route visible from status integration panel",
+        "cards readable without overflow",
+        "keyboard focus visible",
+        "mobile vertical rhythm acceptable",
+        "confirmation boundary visible",
+        "static-prototype label visible"
+      ]
     },
     {
       "viewport": "1920x1080",
@@ -50,7 +147,29 @@
         "/status",
         "/skeleton"
       ],
-      "status": "pending"
+      "status": "pending",
+      "checkedItems": [
+        "navigation active state",
+        "mobile nav open/close",
+        "tab selected state",
+        "collapse/expand click",
+        "search/filter empty state",
+        "card click target",
+        "focus visibility",
+        "layout no horizontal overflow",
+        "reading toc anchor",
+        "relation collapsible"
+      ],
+      "defectIds": [],
+      "checkedAt": null,
+      "phaseThreeCheckedItems": [
+        "route visible from status integration panel",
+        "cards readable without overflow",
+        "keyboard focus visible",
+        "mobile vertical rhythm acceptable",
+        "confirmation boundary visible",
+        "static-prototype label visible"
+      ]
     }
   ],
   "interactionFocus": [
@@ -66,6 +185,11 @@
   "rules": [
     "发现问题必须写入 visual-interaction-defect-register。",
     "P0 视觉/交互问题未关闭前不得标记阶段完成。",
-    "宽屏和移动端都必须检查，不得只看一种设备。"
-  ]
+    "宽屏和移动端都必须检查，不得只看一种设备。",
+    "每条记录必须保留 checkedItems。",
+    "真实浏览器检查后才能将 status 改为 passed。",
+    "发现缺陷时必须写入 real-validation-defect-register 并关联 defectIds。"
+  ],
+  "stageProgress": "phase-three-integration line batch 2 / 4",
+  "status": "matrix-ready"
 }

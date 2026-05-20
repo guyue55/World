@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 lint 环境诊断契约",
+  "principle": "先判断 lint 是否具备执行条件，再判断代码是否通过 lint。",
+  "stageProgress": "phase-two post-closure hardening batch 1 / 3",
+  "status": "implemented-static-diagnostic",
+  "requiredFiles": [
+    "package.json",
+    "eslint.config.mjs"
+  ],
+  "requiredRuntime": [
+    "node",
+    "npm"
+  ],
+  "requiredLocalDependencies": [
+    "node_modules/.bin/eslint",
+    "node_modules/typescript",
+    "node_modules/tsx",
+    "node_modules/next"
+  ],
+  "diagnosticStates": [
+    {
+      "id": "ready",
+      "meaning": "依赖存在，可以执行 npm run lint"
+    },
+    {
+      "id": "missing-local-dependencies",
+      "meaning": "缺少 node_modules 或 eslint，本轮不能把 lint 结果当作代码质量结论"
+    },
+    {
+      "id": "command-failed",
+      "meaning": "具备执行条件但 npm run lint 非 0，此时需要修代码或配置"
+    }
+  ],
+  "rules": [
+    "没有本地 eslint 时，lint 状态必须记录为 missing-local-dependencies。",
+    "不得用 npx 临时下载替代项目锁定依赖的 lint 结果。",
+    "不得把 Permission denied 或 command not found 直接归因于业务代码。",
+    "真实项目环境必须先 npm install，再 npm run lint。"
+  ]
+}

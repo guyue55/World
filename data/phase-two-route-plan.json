@@ -1,0 +1,105 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段页面改造计划",
+  "principle": "页面是世界投影的装配边界，不能成为无序堆叠。",
+  "routes": [
+    {
+      "route": "/",
+      "phaseTwoGoal": "成为真正有吸引力且轻量的世界入口。",
+      "priority": "P0",
+      "problemsToCheck": [
+        "宽屏过窄",
+        "缺少代表图片",
+        "信息层级模糊",
+        "首屏过重"
+      ],
+      "targetState": "清晰、开阔、有世界感、首屏轻量。"
+    },
+    {
+      "route": "/archive",
+      "phaseTwoGoal": "成为可扫描、可搜索、可回访的内容入口。",
+      "priority": "P0",
+      "problemsToCheck": [
+        "筛选状态",
+        "空状态",
+        "卡片密度",
+        "移动端列表效率"
+      ],
+      "targetState": "快速找到内容，不像数据库。"
+    },
+    {
+      "route": "/node/[slug]",
+      "phaseTwoGoal": "成为沉浸阅读与关系导航的节点详情。",
+      "priority": "P0",
+      "problemsToCheck": [
+        "正文宽度",
+        "封面策略",
+        "关联节点",
+        "路径入口"
+      ],
+      "targetState": "阅读稳定，关系清楚。"
+    },
+    {
+      "route": "/paths",
+      "phaseTwoGoal": "成为第一次访问者的导览路径。",
+      "priority": "P0",
+      "problemsToCheck": [
+        "路径价值",
+        "进度感",
+        "目标人群",
+        "移动端点击"
+      ],
+      "targetState": "能引导人走进世界。"
+    },
+    {
+      "route": "/atlas",
+      "phaseTwoGoal": "成为空间感和结构感入口。",
+      "priority": "P1",
+      "problemsToCheck": [
+        "图形复杂度",
+        "fallback 列表",
+        "移动端可读性"
+      ],
+      "targetState": "不用 3D 也能看见世界结构。"
+    },
+    {
+      "route": "/ask",
+      "phaseTwoGoal": "成为 AI 灯塔的低光模式入口。",
+      "priority": "P1",
+      "problemsToCheck": [
+        "无 AI 时可读性",
+        "边界说明",
+        "引导问题质量"
+      ],
+      "targetState": "AI 不可用时也有价值。"
+    },
+    {
+      "route": "/status",
+      "phaseTwoGoal": "成为工程状态摘要，而不是信息噪声。",
+      "priority": "P1",
+      "problemsToCheck": [
+        "信息过载",
+        "折叠交互",
+        "性能负担"
+      ],
+      "targetState": "摘要先行，详情可展开。"
+    },
+    {
+      "route": "/skeleton",
+      "phaseTwoGoal": "成为世界骨架说明页。",
+      "priority": "P1",
+      "problemsToCheck": [
+        "面板过多",
+        "阅读路径",
+        "视觉负担"
+      ],
+      "targetState": "结构清楚，可逐层理解。"
+    }
+  ],
+  "rules": [
+    "每个页面必须有主任务。",
+    "每个页面必须有移动端策略。",
+    "每个页面必须有性能边界。",
+    "页面问题不得只靠视觉堆叠解决。"
+  ]
+}

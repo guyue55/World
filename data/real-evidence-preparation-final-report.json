@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实环境补证准备线最终报告",
+  "stageProgress": "real-evidence-preparation line batch 4 / 4",
+  "decision": "real-evidence-preparation-complete-real-run-still-required",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "dependency-bootstrap",
+    "real-command-evidence-capture",
+    "non-command-evidence-feedback",
+    "evidence-preparation-closure"
+  ],
+  "preparedEvidence": [
+    "dependency environment probe",
+    "lint/typecheck/world-core/build/release-gate capture",
+    "browser QA feedback",
+    "preview smoke feedback",
+    "performance feedback",
+    "defect note writing"
+  ],
+  "stillRequired": [
+    "npm install in real project environment",
+    "npm run evidence:capture",
+    "manual browser QA",
+    "GUYUE_PREVIEW_URL=<url> npm run preview:smoke",
+    "performance measurement",
+    "close release blockers with evidence"
+  ],
+  "rules": [
+    "本阶段完成的是补证准备结构，不是真实证据本身。",
+    "release-ready 仍需真实执行结果。",
+    "任何 pending 证据都不得被自动改成 passed。",
+    "后续执行应优先真实环境补证，不再继续堆规划。"
+  ]
+}

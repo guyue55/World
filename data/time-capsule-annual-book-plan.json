@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 时间胶囊与年度世界册计划",
+  "stageProgress": "phase-five-private-archive-inheritance line batch 3 / 4",
+  "status": "implemented-static-capsule-plan",
+  "timeCapsules": [
+    {
+      "id": "year-end-letter-placeholder",
+      "title": "年末写给未来的信",
+      "tier": "private",
+      "contentStored": false,
+      "openRule": "manual-future-date"
+    },
+    {
+      "id": "family-memory-capsule-placeholder",
+      "title": "家庭记忆胶囊",
+      "tier": "family",
+      "contentStored": false,
+      "openRule": "manual-family-review"
+    },
+    {
+      "id": "sealed-project-capsule-placeholder",
+      "title": "项目封存胶囊",
+      "tier": "sealed",
+      "contentStored": false,
+      "openRule": "sealed-until-explicit-open"
+    }
+  ],
+  "annualWorldBook": {
+    "id": "annual-world-book-placeholder",
+    "title": "年度世界册占位",
+    "contentStored": false,
+    "sections": [
+      "公开文章精选",
+      "时间河回顾",
+      "主题展览摘要",
+      "私密档案索引摘要",
+      "下一年世界计划"
+    ],
+    "exportModes": [
+      "markdown",
+      "json",
+      "static-html-placeholder"
+    ]
+  },
+  "rules": [
+    "时间胶囊不得存储真实私密正文。",
+    "sealed 胶囊不得被 AI 摘要或导出。",
+    "年度世界册仅记录结构，不自动打包私密内容。",
+    "未来生成真实导出前必须人工确认。"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布前人工核验清单契约",
+  "principle": "release-ready 不能只看脚本结果，还必须有人核验证据、缺陷、预览和阻断项。",
+  "stageProgress": "real-execution-landing line batch 3 / 4",
+  "status": "implemented-static-review-checklist",
+  "checklist": [
+    {
+      "id": "real-execution-summary",
+      "title": "真实执行汇总存在且无 required 缺口",
+      "required": true
+    },
+    {
+      "id": "lint-typecheck-build",
+      "title": "lint/typecheck/build 均通过",
+      "required": true
+    },
+    {
+      "id": "browser-qa",
+      "title": "新增路由与核心路由完成浏览器 QA",
+      "required": true
+    },
+    {
+      "id": "preview-smoke",
+      "title": "preview smoke 完成并记录",
+      "required": true
+    },
+    {
+      "id": "performance",
+      "title": "性能测量完成或风险接受",
+      "required": false
+    },
+    {
+      "id": "defect-review",
+      "title": "无未验证 P0/P1 缺陷",
+      "required": true
+    },
+    {
+      "id": "blocker-review",
+      "title": "阻断关闭请求经过人工 review",
+      "required": true
+    },
+    {
+      "id": "public-private-boundary",
+      "title": "公开/私密边界复核",
+      "required": true
+    }
+  ],
+  "rules": [
+    "人工核验清单不得自动勾选。",
+    "required 项未通过时不得 release-ready。",
+    "performance 可风险接受，但必须写明原因。",
+    "公开/私密边界必须人工复核。"
+  ]
+}

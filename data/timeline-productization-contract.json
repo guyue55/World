@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段时间河产品化契约",
+  "principle": "时间河记录世界如何生长，而不是简单罗列发布时间。",
+  "status": "implemented-static",
+  "pageParts": [
+    {
+      "id": "timeline-hero",
+      "component": "TimelineHero",
+      "purpose": "解释时间河与世界生长的关系"
+    },
+    {
+      "id": "timeline-stats",
+      "component": "TimelineStats",
+      "purpose": "展示事件、节点、区域和阶段摘要"
+    },
+    {
+      "id": "timeline-grouped-events",
+      "component": "TimelineEventStream",
+      "purpose": "按日期分组展示事件流"
+    },
+    {
+      "id": "timeline-event-card",
+      "component": "WorldEventCard",
+      "purpose": "展示事件、actor、关联节点和区域"
+    },
+    {
+      "id": "timeline-filters",
+      "component": "TimelineFilters",
+      "purpose": "按事件类型和 actor 过滤"
+    },
+    {
+      "id": "timeline-quality-gate",
+      "component": "check-timeline-productization",
+      "purpose": "验证时间河数据和组件完整性"
+    }
+  ],
+  "rules": [
+    "时间河只展示公开事件。",
+    "事件必须至少包含 title、date、description、type。",
+    "事件应尽量关联 nodeIds 或 areaIds，避免成为孤立日志。",
+    "时间河是世界生长记录，不替代档案馆检索和路径导览。",
+    "时间河组件必须轻量，不引入重型图表库。"
+  ],
+  "performanceRules": [
+    "时间河使用静态 JSON 数据。",
+    "事件分组和过滤在客户端轻量完成。",
+    "事件卡片只解析局部节点和区域名称。",
+    "不在时间河加载 WorldFoundationStack。"
+  ]
+}

@@ -17,11 +17,17 @@
     {
       "id": "exec-lint",
       "command": "npm run lint",
-      "status": "pending",
+      "status": "blocked-missing-local-dependencies",
       "requiredEvidence": [
         "pass/fail",
         "eslint warnings/errors"
-      ]
+      ],
+      "latestObservation": {
+        "stageProgress": "phase-two post-closure hardening batch 1 / 3",
+        "nodeModules": "absent",
+        "localEslint": "missing",
+        "requiredNextStep": "npm install && npm run lint in real project environment"
+      }
     },
     {
       "id": "exec-typecheck",

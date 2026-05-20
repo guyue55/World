@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 建议工作台实现契约",
+  "principle": "AI 建议工作台只展示建议、风险和确认入口，不自动执行世界变更。",
+  "stageProgress": "phase-three-implementation line batch 2 / 4",
+  "status": "implemented-static-prototype",
+  "route": "/ai-workbench",
+  "dataSources": [
+    "data/ai-suggestion-protocol.json",
+    "data/phase-three-ai-lighthouse-roadmap.json",
+    "data/phase-three-ai-safety-gate.json"
+  ],
+  "rules": [
+    "所有建议默认 draft。",
+    "高风险建议不得自动应用。",
+    "工作台不读取 private/family/partner/vault/sealed/silent 内容。",
+    "工作台不得关闭 release blockers。"
+  ]
+}

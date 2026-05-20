@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段路线图",
+  "stageProgress": "phase-three-planning line batch 1 / 4",
+  "status": "planned-not-started",
+  "batches": [
+    {
+      "batch": 1,
+      "id": "planning-foundation",
+      "title": "第三阶段规划宪章与模块化契约",
+      "status": "in-progress"
+    },
+    {
+      "batch": 2,
+      "id": "content-growth-map",
+      "title": "内容生长线地图与主题展览规划",
+      "status": "pending"
+    },
+    {
+      "batch": 3,
+      "id": "ai-lighthouse-roadmap",
+      "title": "AI 灯塔增强路线与安全门禁",
+      "status": "pending"
+    },
+    {
+      "batch": 4,
+      "id": "operations-export-plan",
+      "title": "运营、导出与传承系统规划",
+      "status": "pending"
+    }
+  ],
+  "entryRisks": [
+    "release-ready 仍未达成",
+    "真实 lint/typecheck/build 仍待真实项目环境执行",
+    "浏览器 QA / preview smoke / performance 仍 pending",
+    "第三阶段若扩展过快会冲击模块边界"
+  ],
+  "exitCriteria": [
+    "形成第三阶段能力地图",
+    "形成 AI 灯塔增强边界",
+    "形成内容生长与展览规划",
+    "形成运营与导出规划",
+    "不关闭任何未有证据的 release blocker"
+  ]
+}
