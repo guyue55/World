@@ -1,0 +1,33 @@
+{
+  "version": "4.0.0",
+  "name": "外部数据接入",
+  "batch": 10,
+  "stage": 3,
+  "stageName": "插件系统与外部集成生态",
+  "stageProgress": "V4 / 第 3 阶段 / 第 10 批 / 共 24 批",
+  "slug": "external-integrations",
+  "status": "complete",
+  "goals": [
+    "定义外部接入",
+    "GitHub/Drive/Feishu/Notion/RSS/Calendar",
+    "导入审查与脱敏"
+  ],
+  "outputs": [
+    "IntegrationSource",
+    "ImportReview",
+    "RedactionPolicy"
+  ],
+  "mustKeep": [
+    "owner approval",
+    "redaction",
+    "audit event"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-plugin-ecosystem",
+    "dataDirectory": "data/v4/stage-03",
+    "docsDirectory": "docs/41-v4/stage-03",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

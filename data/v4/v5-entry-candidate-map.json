@@ -1,0 +1,38 @@
+{
+  "version": "5.0.0-candidate",
+  "name": "V5 入口候选图",
+  "status": "planning-and-formal-development-ready-local-baseline",
+  "v5PlanningAllowed": true,
+  "v5FormalDevelopmentAllowed": true,
+  "candidateDirections": [
+    {
+      "name": "federated-world-network",
+      "description": "跨个人世界的联邦式世界网络",
+      "entryCondition": "V4 publishing protocol and governance proof"
+    },
+    {
+      "name": "agent-orchestrated-world-ops",
+      "description": "多 AI 代理编排的世界维护系统",
+      "entryCondition": "V4 AI/plugin audit and cost guard proof"
+    },
+    {
+      "name": "immersive-shared-universe",
+      "description": "多人共享沉浸式宇宙工作台",
+      "entryCondition": "V4 realtime collaboration and visual fallback proof"
+    },
+    {
+      "name": "long-term-civilization-archive",
+      "description": "长期文明档案、传承与出版体系",
+      "entryCondition": "V4 legacy, privacy, export and publishing proof"
+    }
+  ],
+  "releaseReady": true,
+  "productionLive": false,
+  "entryEvidence": [
+    "check:v4:all passed",
+    "check:v4:real-implementation passed",
+    "lint passed",
+    "typecheck passed",
+    "build passed"
+  ]
+}

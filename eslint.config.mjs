@@ -21,6 +21,7 @@ export default [
       '.next/**',
       'out/**',
       'node_modules/**',
+      'next-env.d.ts',
       'public/world-index.json',
       'public/world-manifest.json',
       '*.config.js',

@@ -1,0 +1,31 @@
+{
+  "version": "4.0.0",
+  "name": "多渠道发布",
+  "batch": 18,
+  "stage": 5,
+  "stageName": "发布网络、世界协议与内容分发",
+  "stageProgress": "V4 / 第 5 阶段 / 第 18 批 / 共 24 批",
+  "slug": "multi-channel-publishing",
+  "status": "complete",
+  "goals": [
+    "定义多渠道发布",
+    "静态站/RSS/Markdown/JSON/PDF/EPUB",
+    "社交摘要"
+  ],
+  "outputs": [
+    "PublishingChannel",
+    "DistributionJob"
+  ],
+  "mustKeep": [
+    "review required",
+    "rollback available"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-publishing-network",
+    "dataDirectory": "data/v4/stage-05",
+    "docsDirectory": "docs/41-v4/stage-05",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

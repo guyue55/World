@@ -1,0 +1,30 @@
+{
+  "version": "4.0.0",
+  "name": "平台治理中心",
+  "batch": 21,
+  "stage": 6,
+  "stageName": "平台治理、安全、成本与 V5 入口门禁",
+  "stageProgress": "V4 / 第 6 阶段 / 第 21 批 / 共 24 批",
+  "slug": "platform-governance-center",
+  "status": "complete",
+  "goals": [
+    "平台治理中心",
+    "用户/角色/插件/AI/发布/导出/成本",
+    "统一治理台账"
+  ],
+  "outputs": [
+    "GovernanceCenter",
+    "PolicyRegistry"
+  ],
+  "mustKeep": [
+    "audit all critical actions"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-governance",
+    "dataDirectory": "data/v4/stage-06",
+    "docsDirectory": "docs/41-v4/stage-06",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

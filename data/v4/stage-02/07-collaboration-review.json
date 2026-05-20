@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "协作审核工作流",
+  "batch": 7,
+  "stage": 2,
+  "stageName": "多人协作与实时世界编辑",
+  "stageProgress": "V4 / 第 2 阶段 / 第 7 批 / 共 24 批",
+  "slug": "collaboration-review",
+  "status": "complete",
+  "goals": [
+    "建立协作审核流",
+    "owner 审核与 AI 风险提示",
+    "发布前签收"
+  ],
+  "outputs": [
+    "ReviewWorkflow",
+    "ApprovalGate",
+    "AuditTrail"
+  ],
+  "mustKeep": [
+    "human approval",
+    "owner signoff"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-collaboration",
+    "dataDirectory": "data/v4/stage-02",
+    "docsDirectory": "docs/41-v4/stage-02",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

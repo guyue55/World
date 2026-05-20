@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "宇宙工作台交互模型",
+  "batch": 13,
+  "stage": 4,
+  "stageName": "沉浸式宇宙工作台与 3D/WebGL 可选层",
+  "stageProgress": "V4 / 第 4 阶段 / 第 13 批 / 共 24 批",
+  "slug": "universe-workbench-interactions",
+  "status": "complete",
+  "goals": [
+    "定义宇宙工作台操作模型",
+    "拖拽节点、连接关系、创建星座",
+    "AI 建议覆盖层"
+  ],
+  "outputs": [
+    "UniverseWorkbench",
+    "NodeOperation",
+    "ConstellationEditor"
+  ],
+  "mustKeep": [
+    "semantic fallback",
+    "audit operation"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-universe-workbench",
+    "dataDirectory": "data/v4/stage-04",
+    "docsDirectory": "docs/41-v4/stage-04",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}
