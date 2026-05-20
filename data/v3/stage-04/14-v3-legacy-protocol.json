@@ -1,0 +1,28 @@
+{
+  "version": "3.0.0",
+  "stage": 4,
+  "batch": 14,
+  "totalBatches": 20,
+  "name": "传承协议与访问窗口",
+  "stageProgress": "V3 / 第 4 阶段：长期生命档案与传承治理 / 第 14 批 / 共 20 批",
+  "status": "prepared",
+  "legacyWindows": [
+    "owner-active",
+    "trusted-review",
+    "family-handover",
+    "sealed-period",
+    "posthumous-release-review"
+  ],
+  "safetyRules": [
+    "owner-first",
+    "no automatic public release",
+    "recipient verification",
+    "redaction before handover"
+  ],
+  "ready": false,
+  "rules": [
+    "传承协议必须 owner-first。",
+    "不得自动公开私密或封存内容。",
+    "长期档案必须可导出、可撤回、可审计。"
+  ]
+}

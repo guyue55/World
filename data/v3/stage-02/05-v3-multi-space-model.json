@@ -1,0 +1,24 @@
+{
+  "version": "3.0.0",
+  "stage": 2,
+  "batch": 5,
+  "totalBatches": 20,
+  "name": "多空间模型",
+  "stageProgress": "V3 / 第 2 阶段：多空间与协作身份 / 第 5 批 / 共 20 批",
+  "status": "prepared",
+  "spaces": [
+    "public-world",
+    "private-vault",
+    "family-archive",
+    "creator-studio",
+    "ai-lighthouse",
+    "exhibition-hall",
+    "legacy-room"
+  ],
+  "rules": [
+    "空间切换必须经过权限桥。",
+    "私密空间默认拒绝公开桥接。",
+    "AI 协作者只能提出建议，不能成为 owner。"
+  ],
+  "ready": false
+}

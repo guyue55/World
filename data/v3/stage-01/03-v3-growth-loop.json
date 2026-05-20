@@ -1,0 +1,31 @@
+{
+  "version": "3.0.0",
+  "stage": 1,
+  "batch": 3,
+  "totalBatches": 20,
+  "name": "长期生长循环",
+  "stageProgress": "V3 / 第 1 阶段：智能世界内核 / 第 3 批 / 共 20 批",
+  "status": "prepared",
+  "loops": [
+    "capture",
+    "classify",
+    "connect",
+    "review",
+    "publish-or-archive",
+    "reflect",
+    "export"
+  ],
+  "humanGates": [
+    "visibility-change",
+    "private-access",
+    "publish",
+    "delete",
+    "inheritance"
+  ],
+  "ready": false,
+  "rules": [
+    "AI 是灯塔，不是太阳。",
+    "私密内容不得被自动读取或自动公开。",
+    "长期记忆必须可解释、可撤回、可审计。"
+  ]
+}

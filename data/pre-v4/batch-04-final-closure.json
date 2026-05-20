@@ -1,0 +1,40 @@
+{
+  "version": "3.1.0-pre-v4",
+  "name": "V4 前最终补证第 4 批：最终收口与入口判定",
+  "stageProgress": "V4 前最终补证线 / 第 4 批 / 共 4 批",
+  "status": "pre-v4-final-closure-complete",
+  "completedBatches": 4,
+  "completedCapabilities": [
+    "V3 production evidence matrix",
+    "command environment blocker ledger",
+    "pre-V4 aggregate check command",
+    "pre-V4 entry dashboard",
+    "pre-V4 gate status library",
+    "final V4 entry decision"
+  ],
+  "v4PlanningAllowed": true,
+  "v4FormalDevelopmentAllowed": false,
+  "v4DevelopmentRecommended": false,
+  "releaseReady": false,
+  "productionLive": false,
+  "finalDecision": "v4-planning-allowed-formal-development-blocked-until-real-production-evidence",
+  "remainingExternalWork": [
+    "fix tsx Permission denied in executable environment",
+    "npm install in clean local/CI environment",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run build",
+    "npm run check:v3:all",
+    "npm run check:pre-v4:all",
+    "real database and graph persistence",
+    "real auth provider",
+    "real vault encryption",
+    "staging deployment smoke",
+    "manual safety review"
+  ],
+  "rules": [
+    "本批完成 V4 前最终结构补证，不等于生产上线。",
+    "V4 可以规划，但正式开发必须等待真实生产证据。",
+    "blocked 命令不得记为 passed。"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "3.0.0",
+  "stage": 4,
+  "batch": 13,
+  "totalBatches": 20,
+  "name": "长期生命档案模型",
+  "stageProgress": "V3 / 第 4 阶段：长期生命档案与传承治理 / 第 13 批 / 共 20 批",
+  "status": "prepared",
+  "archives": [
+    "life-events",
+    "annual-worldbook",
+    "family-memory",
+    "creative-works",
+    "technical-records",
+    "legacy-capsule"
+  ],
+  "retentionModes": [
+    "public",
+    "private",
+    "family",
+    "sealed",
+    "expired",
+    "export-only"
+  ],
+  "ready": false,
+  "rules": [
+    "传承协议必须 owner-first。",
+    "不得自动公开私密或封存内容。",
+    "长期档案必须可导出、可撤回、可审计。"
+  ]
+}

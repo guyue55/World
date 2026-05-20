@@ -1,0 +1,17 @@
+{
+  "version": "3.0.0",
+  "stage": 3,
+  "batch": 12,
+  "totalBatches": 20,
+  "name": "第 3 阶段收口与长期生命入口",
+  "stageProgress": "V3 / 第 3 阶段：可视化宇宙与沉浸式导航 / 第 12 批 / 共 20 批",
+  "status": "prepared",
+  "decision": "v3-visual-universe-navigation-complete-stage-four-allowed",
+  "next": "long-term-life-archive-and-legacy",
+  "ready": false,
+  "rules": [
+    "可视化宇宙必须有语义降级路径。",
+    "不能依赖 WebXR 才能访问核心内容。",
+    "展览与世界册必须保留导出路径。"
+  ]
+}

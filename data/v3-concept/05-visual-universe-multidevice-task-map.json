@@ -1,0 +1,74 @@
+{
+  "version": "3.0.0-concept-completion",
+  "name": "V3 可视化宇宙与多端体验任务拆解",
+  "batch": 5,
+  "totalBatches": 6,
+  "stageProgress": "V3 概念深化与实现任务拆解线 / 第 5 批 / 共 6 批",
+  "visualViews": [
+    {
+      "name": "星图视图",
+      "purpose": "展示世界总体结构和高层路径",
+      "fallback": "语义列表 + 路径卡片"
+    },
+    {
+      "name": "岛屿视图",
+      "purpose": "展示多空间和主题分区",
+      "fallback": "空间网格"
+    },
+    {
+      "name": "时间河视图",
+      "purpose": "展示时间、事件、成长轨迹",
+      "fallback": "时间线列表"
+    },
+    {
+      "name": "展览星座视图",
+      "purpose": "展示策展关系和主题路径",
+      "fallback": "展览卡片列表"
+    },
+    {
+      "name": "记忆轨道视图",
+      "purpose": "展示记忆之间的关联和演化",
+      "fallback": "关系表格"
+    }
+  ],
+  "deviceModes": [
+    "desktop-rich",
+    "tablet-balanced",
+    "mobile-stacked",
+    "low-end-device",
+    "reduced-motion",
+    "semantic-list-only"
+  ],
+  "performanceBudgets": [
+    {
+      "target": "first meaningful view",
+      "budget": "under 2.5s on normal network"
+    },
+    {
+      "target": "animation workload",
+      "budget": "disabled under reduced-motion"
+    },
+    {
+      "target": "initial data payload",
+      "budget": "summary-first, lazy detail"
+    }
+  ],
+  "implementationTasks": [
+    "define visual universe data adapter",
+    "define semantic fallback renderer",
+    "define device mode detector",
+    "define reduced motion policy",
+    "define low-end-device mode",
+    "define view transition registry",
+    "define accessibility QA matrix",
+    "define performance budget check"
+  ],
+  "nonNegotiableRules": [
+    "视觉震撼不能牺牲可用性",
+    "宇宙视图必须有语义降级",
+    "移动端不能只是缩小桌面端",
+    "低性能设备必须可关闭动画",
+    "核心内容不能依赖 3D/WebXR 才能访问"
+  ],
+  "ready": false
+}

@@ -1,0 +1,92 @@
+{
+  "version": "3.0.0-concept-completion",
+  "name": "V3 AI 智能能力与审计任务拆解",
+  "batch": 4,
+  "totalBatches": 6,
+  "stageProgress": "V3 概念深化与实现任务拆解线 / 第 4 批 / 共 6 批",
+  "capabilityLayers": [
+    {
+      "level": "L1",
+      "name": "解释",
+      "allowed": [
+        "解释节点",
+        "解释路径",
+        "解释内容关系",
+        "解释世界状态"
+      ],
+      "requiresApproval": false
+    },
+    {
+      "level": "L2",
+      "name": "建议",
+      "allowed": [
+        "建议归档",
+        "建议标签",
+        "建议路径",
+        "建议展览"
+      ],
+      "requiresApproval": true
+    },
+    {
+      "level": "L3",
+      "name": "协助",
+      "allowed": [
+        "生成草稿",
+        "整理摘要",
+        "制作世界册草案",
+        "生成审计说明"
+      ],
+      "requiresApproval": true
+    },
+    {
+      "level": "L4",
+      "name": "守护",
+      "allowed": [
+        "发现风险",
+        "提醒维护",
+        "发现断链",
+        "提示隐私边界"
+      ],
+      "requiresApproval": true
+    },
+    {
+      "level": "L5",
+      "name": "禁止",
+      "forbidden": [
+        "自动发布",
+        "自动删除",
+        "自动改可见性",
+        "自动读取私密原文",
+        "绕过人工确认"
+      ],
+      "requiresApproval": "not-allowed"
+    }
+  ],
+  "auditWorkflow": [
+    "context request",
+    "context approval",
+    "prompt metadata record",
+    "suggestion creation",
+    "human review",
+    "accept/reject decision",
+    "audit event persistence",
+    "rollback or expiry"
+  ],
+  "contextSafety": [
+    "approved context only",
+    "redacted private summary only",
+    "no raw vault payload",
+    "scope-limited session",
+    "audit every AI suggestion"
+  ],
+  "implementationTasks": [
+    "define AI session schema",
+    "define approved context loader",
+    "define prompt metadata log",
+    "define suggestion queue API",
+    "define review action endpoint",
+    "define expiry and rollback job",
+    "define AI usage cost guard"
+  ],
+  "ready": false
+}
