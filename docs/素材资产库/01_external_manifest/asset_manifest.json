@@ -1,0 +1,104 @@
+{
+  "project": "古月浮屿｜数据世界/宇宙视觉套图真实素材库",
+  "created_at": "2026-05-20T00:00:00+09:00",
+  "status": "manifest_ready_binary_download_pending_due_to_container_dns_failure",
+  "source_strategy": {
+    "priority_s": ["NASA Image and Video Library", "ESO Public Images / Videos"],
+    "priority_a": ["Wikimedia Commons"],
+    "priority_b": ["Pexels", "Pixabay", "Unsplash reference only"]
+  },
+  "local_storage": {
+    "original_suite": "00_original_suite/",
+    "external_manifest": "01_external_manifest/",
+    "scripts": "02_scripts/",
+    "reports": "03_reports/",
+    "download_logs": "04_download_logs/",
+    "scene_mapping": "05_scene_mapping/"
+  },
+  "external_collections": [
+    {
+      "id": "nasa_space_images",
+      "source": "NASA Image and Video Library",
+      "api_root": "https://images-api.nasa.gov",
+      "media_types": ["image", "video"],
+      "license_note": "NASA content generally not subject to U.S. copyright; acknowledge NASA; avoid endorsement/logo/personality-right issues.",
+      "queries": [
+        "milky way galaxy panorama",
+        "nebula Hubble Webb",
+        "planet Jupiter Saturn Mars Earth",
+        "star field deep space",
+        "moon starry sky",
+        "star trails time lapse",
+        "spectral lines stars",
+        "Earth from space night lights"
+      ],
+      "intended_download_count": 48
+    },
+    {
+      "id": "eso_observatory_space",
+      "source": "ESO Public Images / Videos",
+      "source_root": "https://www.eso.org/public/images/",
+      "media_types": ["image", "video"],
+      "license_note": "Usually CC BY 4.0 unless noted; full credit must remain visible/readable.",
+      "queries": [
+        "observatory telescope stars",
+        "milky way panorama",
+        "nebula",
+        "star trails",
+        "telescope close up",
+        "night sky over observatory"
+      ],
+      "intended_download_count": 24
+    },
+    {
+      "id": "wikimedia_commons_nature_architecture",
+      "source": "Wikimedia Commons",
+      "api_root": "https://commons.wikimedia.org/w/api.php",
+      "media_types": ["image", "video"],
+      "license_note": "Per-file license required; store artist, licenseShortName, creditLine, attributionRequired, usageTerms.",
+      "queries": [
+        "mountain cloud sea sunrise",
+        "stone arch ruins wide angle",
+        "brass astrolabe compass telescope",
+        "baroque library interior",
+        "cliff rock waterfall moss",
+        "botanical garden greenhouse glass dome",
+        "stone bridge clock tower river night",
+        "large telescope brass close up",
+        "tree rings bark close up"
+      ],
+      "intended_download_count": 54
+    },
+    {
+      "id": "pexels_nature_video",
+      "source": "Pexels",
+      "api_root": "https://api.pexels.com",
+      "requires_api_key": true,
+      "media_types": ["image", "video"],
+      "license_note": "Free to use and modify; attribution not required but recommended; do not redistribute/sell unaltered as stock/wallpaper; avoid endorsement/trademark misuse.",
+      "queries": [
+        "milky way mountains",
+        "waterfall mist slow motion",
+        "mountain cabin garden",
+        "flower petals dew close up",
+        "river reflection milky way",
+        "spring flowers mountain valley",
+        "summer green forest valley",
+        "autumn forest mountain valley",
+        "winter snow forest valley"
+      ],
+      "intended_download_count": 72
+    }
+  ],
+  "scene_targets": [
+    {"scene": "01 世界入口", "minimum_assets": 12, "must_include": ["stone arch", "cloud sea", "milky way", "planet"]},
+    {"scene": "02 世界地图", "minimum_assets": 12, "must_include": ["celestial map", "astrolabe", "telescope", "snow mountain"]},
+    {"scene": "03 典藏星馆", "minimum_assets": 12, "must_include": ["library", "books close up", "nebula", "dust"]},
+    {"scene": "04 创作工坊", "minimum_assets": 12, "must_include": ["desk", "manuscript", "keyboard", "window galaxy"]},
+    {"scene": "05 生活浮屿", "minimum_assets": 12, "must_include": ["cliff rock", "waterfall", "moss", "cabin"]},
+    {"scene": "06 家族花园", "minimum_assets": 12, "must_include": ["greenhouse", "flowers", "warm light", "moon"]},
+    {"scene": "07 时间长河", "minimum_assets": 12, "must_include": ["river reflection", "watch", "old paper", "star trails"]},
+    {"scene": "08 AI 灯塔", "minimum_assets": 12, "must_include": ["observatory", "telescope", "lighthouse", "spectrum"]},
+    {"scene": "09 生长四季", "minimum_assets": 16, "must_include": ["spring", "summer", "autumn", "winter", "tree rings"]}
+  ]
+}
