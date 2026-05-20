@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 公开边界与 SEO 发布门禁契约",
+  "principle": "发布前必须同时确认：公开内容可被发现，私密内容不可被暴露。",
+  "stageProgress": "release-preparation line batch 3 / 4",
+  "status": "implemented-static-public-seo-gate",
+  "publicArtifacts": [
+    "public/world-index.json",
+    "public/world-manifest.json",
+    "rss.xml",
+    "metadata/canonical",
+    "sitemap route if enabled"
+  ],
+  "forbiddenVisibility": [
+    "private",
+    "family",
+    "partner",
+    "vault",
+    "sealed",
+    "silent"
+  ],
+  "requiredSeoChecks": [
+    "canonical source configurable",
+    "public nodes only",
+    "rss excludes private content",
+    "world-index excludes private content",
+    "robots policy documented",
+    "metadata titles/descriptions present"
+  ],
+  "rules": [
+    "公开索引只能包含 public/semiPublic 允许的内容。",
+    "RSS 不得包含 private/family/partner/vault/sealed/silent 内容。",
+    "canonical URL 不得硬编码到组件。",
+    "SEO 优化不得越过 AI 与隐私边界。",
+    "发布前必须检查 public build 输出。"
+  ]
+}

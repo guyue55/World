@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实验证运行器契约",
+  "principle": "真实验证必须有统一入口、统一顺序、统一证据和统一失败分类。",
+  "stageProgress": "real-validation line batch 1 / 4",
+  "status": "implemented-static-runner",
+  "runner": {
+    "script": "scripts/run-real-validation-plan.ts",
+    "printCommand": "npm run validation:plan",
+    "checkCommand": "npm run check:real-validation-runner"
+  },
+  "requiredSteps": [
+    "install",
+    "lint-env",
+    "lint",
+    "typecheck",
+    "world-core",
+    "build",
+    "browser-qa",
+    "preview-smoke",
+    "performance",
+    "evidence"
+  ],
+  "evidenceTargets": [
+    "data/real-execution-rerun-record.json",
+    "data/browser-qa-records.json",
+    "data/performance-measurement-records.json",
+    "data/real-execution-evidence-ledger.json"
+  ],
+  "rules": [
+    "真实验证运行器只生成和检查计划，不伪造真实执行结果。",
+    "浏览器 QA、预览冒烟、性能实测必须保留 pending，直到真实执行。",
+    "运行器输出必须能被复制到终端执行。",
+    "失败必须回写到复跑记录或缺陷台账。"
+  ]
+}

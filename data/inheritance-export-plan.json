@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 导出与传承占位计划",
+  "stageProgress": "phase-five-private-archive-inheritance line batch 3 / 4",
+  "status": "implemented-static-inheritance-plan",
+  "packages": [
+    {
+      "id": "public-world-export",
+      "visibility": "public",
+      "containsPrivate": false,
+      "confirmationRequired": false
+    },
+    {
+      "id": "annual-world-book",
+      "visibility": "mixed-metadata-only",
+      "containsPrivate": false,
+      "confirmationRequired": true
+    },
+    {
+      "id": "private-inheritance-package",
+      "visibility": "private",
+      "containsPrivate": false,
+      "confirmationRequired": true
+    },
+    {
+      "id": "sealed-index-export",
+      "visibility": "sealed",
+      "containsPrivate": false,
+      "confirmationRequired": true
+    }
+  ],
+  "confirmationRules": [
+    "containsPrivate=true 的导出在本阶段禁止。",
+    "private-inheritance-package 只可作为占位计划存在。",
+    "任何真实私密导出必须未来单独权限设计。",
+    "导出不会自动改变可见性。"
+  ]
+}

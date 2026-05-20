@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 私密档案索引占位",
+  "stageProgress": "phase-five-private-archive-inheritance line batch 2 / 4",
+  "status": "metadata-only-placeholder",
+  "items": [
+    {
+      "id": "private-journal-placeholder",
+      "title": "私人札记占位",
+      "tier": "private",
+      "kind": "journal",
+      "contentStored": false,
+      "publicBuild": "excluded",
+      "description": "仅记录未来档案类型，不存储真实私人内容。"
+    },
+    {
+      "id": "family-memory-placeholder",
+      "title": "家庭记忆占位",
+      "tier": "family",
+      "kind": "family-memory",
+      "contentStored": false,
+      "publicBuild": "excluded",
+      "description": "仅记录未来家庭内容类型，不写入家庭真实资料。"
+    },
+    {
+      "id": "partner-memory-placeholder",
+      "title": "伴侣记忆占位",
+      "tier": "partner",
+      "kind": "partner-memory",
+      "contentStored": false,
+      "publicBuild": "excluded",
+      "description": "仅记录未来伴侣内容类型，不写入真实内容。"
+    },
+    {
+      "id": "vault-record-placeholder",
+      "title": "高敏档案占位",
+      "tier": "vault",
+      "kind": "vault-record",
+      "contentStored": false,
+      "publicBuild": "excluded",
+      "description": "仅记录未来 vault 类型，需要独立加密/权限设计。"
+    },
+    {
+      "id": "sealed-capsule-placeholder",
+      "title": "封存内容占位",
+      "tier": "sealed",
+      "kind": "sealed-capsule",
+      "contentStored": false,
+      "publicBuild": "excluded",
+      "description": "封存内容不可读、不可摘要、不可导出。"
+    },
+    {
+      "id": "silent-marker-placeholder",
+      "title": "静默标记占位",
+      "tier": "silent",
+      "kind": "silent-marker",
+      "contentStored": false,
+      "publicBuild": "excluded",
+      "description": "只保留存在性，不进入常规索引。"
+    }
+  ],
+  "rules": [
+    "所有 item 必须 contentStored=false。",
+    "所有 item 必须 publicBuild=excluded。",
+    "本索引不得包含真实私密正文。",
+    "页面只能展示占位与边界，不展示私密内容。"
+  ]
+}

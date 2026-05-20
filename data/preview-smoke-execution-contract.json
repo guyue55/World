@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 预览冒烟执行契约",
+  "principle": "预览冒烟验证的是已部署环境的核心路由可达性，不替代浏览器 QA 和性能实测。",
+  "stageProgress": "real-validation line batch 3 / 4",
+  "status": "implemented-static-plan",
+  "env": {
+    "required": "GUYUE_PREVIEW_URL",
+    "example": "GUYUE_PREVIEW_URL=https://example.vercel.app npm run preview:smoke"
+  },
+  "routes": [
+    "/",
+    "/archive",
+    "/node/[slug]",
+    "/paths",
+    "/paths/[id]",
+    "/atlas",
+    "/timeline",
+    "/ask",
+    "/status",
+    "/skeleton"
+  ],
+  "expected": [
+    "HTTP 2xx/3xx for public routes",
+    "no blank page",
+    "critical metadata present",
+    "no private route exposure"
+  ],
+  "rules": [
+    "没有 GUYUE_PREVIEW_URL 时只能打印计划，不得标记 passed。",
+    "预览冒烟只检查可达性与基本响应，不等于视觉通过。",
+    "失败必须写入 real-validation-defect-register。",
+    "动态占位路由必须使用代表性真实 slug/id 替换。"
+  ]
+}

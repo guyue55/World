@@ -306,6 +306,886 @@
       "id": "phase-two-handoff",
       "path": "docs/05-engineering/v1-phase-two-handoff.md",
       "layer": "governance"
+    },
+    {
+      "id": "phase-two-kickoff",
+      "path": "docs/00-overview/v1-phase-two-kickoff.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-two-product-plan",
+      "path": "docs/02-product/v1-phase-two-product-plan.md",
+      "layer": "product"
+    },
+    {
+      "id": "phase-two-visual-experience-plan",
+      "path": "docs/03-design/v1-phase-two-visual-experience-plan.md",
+      "layer": "design"
+    },
+    {
+      "id": "phase-two-content-cover-plan",
+      "path": "docs/04-content/v1-phase-two-content-cover-plan.md",
+      "layer": "content"
+    },
+    {
+      "id": "phase-two-homepage-productization",
+      "path": "docs/03-design/v1-phase-two-homepage-productization.md",
+      "layer": "design"
+    },
+    {
+      "id": "homepage-performance-boundary",
+      "path": "docs/05-engineering/v1-homepage-performance-boundary.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-navigation-interaction-state",
+      "path": "docs/03-design/v1-phase-two-navigation-interaction-state.md",
+      "layer": "design"
+    },
+    {
+      "id": "interaction-component-contract",
+      "path": "docs/05-engineering/v1-interaction-component-contract.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-archive-productization",
+      "path": "docs/02-product/v1-phase-two-archive-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "phase-two-content-inventory",
+      "path": "docs/04-content/v1-phase-two-content-inventory.md",
+      "layer": "content"
+    },
+    {
+      "id": "phase-two-node-reading-productization",
+      "path": "docs/02-product/v1-phase-two-node-reading-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "node-reading-quality-gate",
+      "path": "docs/05-engineering/v1-node-reading-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-path-guidance-productization",
+      "path": "docs/02-product/v1-phase-two-path-guidance-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "path-guidance-quality-gate",
+      "path": "docs/05-engineering/v1-path-guidance-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-atlas-productization",
+      "path": "docs/02-product/v1-phase-two-atlas-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "atlas-quality-gate",
+      "path": "docs/05-engineering/v1-atlas-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-timeline-productization",
+      "path": "docs/02-product/v1-phase-two-timeline-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "timeline-quality-gate",
+      "path": "docs/05-engineering/v1-timeline-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-lighthouse-productization",
+      "path": "docs/02-product/v1-phase-two-lighthouse-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "lighthouse-quality-gate",
+      "path": "docs/05-engineering/v1-lighthouse-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-status-skeleton-productization",
+      "path": "docs/02-product/v1-phase-two-status-skeleton-productization.md",
+      "layer": "product"
+    },
+    {
+      "id": "status-skeleton-quality-gate",
+      "path": "docs/05-engineering/v1-status-skeleton-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-reading-comfort",
+      "path": "docs/03-design/v1-phase-two-reading-comfort.md",
+      "layer": "design"
+    },
+    {
+      "id": "reading-comfort-quality-gate",
+      "path": "docs/05-engineering/v1-reading-comfort-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-acceptance-readiness",
+      "path": "docs/05-engineering/v1-phase-two-acceptance-readiness.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "lint-execution-ledger",
+      "path": "docs/05-engineering/v1-lint-execution-ledger.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-closure-report",
+      "path": "docs/00-overview/v1-phase-two-closure-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-two-lint-risk-fix",
+      "path": "docs/05-engineering/v1-phase-two-lint-risk-fix.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "lint-environment-diagnostic",
+      "path": "docs/05-engineering/v1-lint-environment-diagnostic.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-post-closure-hardening-01-lint-env",
+      "path": "docs/00-overview/v1-phase-two-post-closure-hardening-01-lint-env.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-execution-rerun-runbook",
+      "path": "docs/05-engineering/v1-real-execution-rerun-runbook.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-post-closure-hardening-02-rerun",
+      "path": "docs/00-overview/v1-phase-two-post-closure-hardening-02-rerun.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-two-final-handoff",
+      "path": "docs/00-overview/v1-phase-two-final-handoff.md",
+      "layer": "overview"
+    },
+    {
+      "id": "final-handoff-quality-gate",
+      "path": "docs/05-engineering/v1-final-handoff-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-two-post-closure-hardening-03-final-handoff",
+      "path": "docs/00-overview/v1-phase-two-post-closure-hardening-03-final-handoff.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-validation-runner",
+      "path": "docs/05-engineering/v1-real-validation-runner.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-validation-defect-protocol",
+      "path": "docs/05-engineering/v1-real-validation-defect-protocol.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-validation-batch-01-runner",
+      "path": "docs/00-overview/v1-real-validation-batch-01-runner.md",
+      "layer": "overview"
+    },
+    {
+      "id": "browser-qa-execution-matrix",
+      "path": "docs/05-engineering/v1-browser-qa-execution-matrix.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-validation-batch-02-browser-qa",
+      "path": "docs/00-overview/v1-real-validation-batch-02-browser-qa.md",
+      "layer": "overview"
+    },
+    {
+      "id": "preview-smoke-execution",
+      "path": "docs/05-engineering/v1-preview-smoke-execution.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "performance-measurement-execution",
+      "path": "docs/05-engineering/v1-performance-measurement-execution.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-validation-batch-03-preview-performance",
+      "path": "docs/00-overview/v1-real-validation-batch-03-preview-performance.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-validation-final-report",
+      "path": "docs/00-overview/v1-real-validation-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-blocker-register",
+      "path": "docs/05-engineering/v1-release-blocker-register.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-validation-batch-04-closure",
+      "path": "docs/00-overview/v1-real-validation-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-gate-ci",
+      "path": "docs/05-engineering/v1-release-gate-ci.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-preparation-batch-01-ci-gate",
+      "path": "docs/00-overview/v1-release-preparation-batch-01-ci-gate.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-environment-config",
+      "path": "docs/05-engineering/v1-release-environment-config.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-preparation-batch-02-deploy-config",
+      "path": "docs/00-overview/v1-release-preparation-batch-02-deploy-config.md",
+      "layer": "overview"
+    },
+    {
+      "id": "public-seo-release-gate",
+      "path": "docs/05-engineering/v1-public-seo-release-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-preparation-batch-03-public-seo",
+      "path": "docs/00-overview/v1-release-preparation-batch-03-public-seo.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-preparation-final-report",
+      "path": "docs/00-overview/v1-release-preparation-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-ready-matrix",
+      "path": "docs/05-engineering/v1-release-ready-matrix.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-preparation-batch-04-final-closure",
+      "path": "docs/00-overview/v1-release-preparation-batch-04-final-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-planning-charter",
+      "path": "docs/00-overview/v1-phase-three-planning-charter.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-architecture-contract",
+      "path": "docs/05-engineering/v1-phase-three-architecture-contract.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-planning-batch-01-foundation",
+      "path": "docs/00-overview/v1-phase-three-planning-batch-01-foundation.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-content-growth-plan",
+      "path": "docs/00-overview/v1-phase-three-content-growth-plan.md",
+      "layer": "overview"
+    },
+    {
+      "id": "content-growth-quality-gate",
+      "path": "docs/05-engineering/v1-content-growth-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-planning-batch-02-content-growth",
+      "path": "docs/00-overview/v1-phase-three-planning-batch-02-content-growth.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-ai-lighthouse-roadmap",
+      "path": "docs/00-overview/v1-phase-three-ai-lighthouse-roadmap.md",
+      "layer": "overview"
+    },
+    {
+      "id": "ai-suggestion-protocol",
+      "path": "docs/05-engineering/v1-ai-suggestion-protocol.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-planning-batch-03-ai-lighthouse",
+      "path": "docs/00-overview/v1-phase-three-planning-batch-03-ai-lighthouse.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-operations-export-plan",
+      "path": "docs/00-overview/v1-phase-three-operations-export-plan.md",
+      "layer": "overview"
+    },
+    {
+      "id": "export-inheritance-matrix",
+      "path": "docs/05-engineering/v1-export-inheritance-matrix.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-planning-final-report",
+      "path": "docs/00-overview/v1-phase-three-planning-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-planning-batch-04-operations-export",
+      "path": "docs/00-overview/v1-phase-three-planning-batch-04-operations-export.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-implementation-batch-01-exhibitions",
+      "path": "docs/00-overview/v1-phase-three-implementation-batch-01-exhibitions.md",
+      "layer": "overview"
+    },
+    {
+      "id": "theme-exhibition-implementation",
+      "path": "docs/05-engineering/v1-theme-exhibition-implementation.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-implementation-batch-02-ai-workbench",
+      "path": "docs/00-overview/v1-phase-three-implementation-batch-02-ai-workbench.md",
+      "layer": "overview"
+    },
+    {
+      "id": "ai-workbench-implementation",
+      "path": "docs/05-engineering/v1-ai-workbench-implementation.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-implementation-batch-03-export-center",
+      "path": "docs/00-overview/v1-phase-three-implementation-batch-03-export-center.md",
+      "layer": "overview"
+    },
+    {
+      "id": "export-center-implementation",
+      "path": "docs/05-engineering/v1-export-center-implementation.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-implementation-final-report",
+      "path": "docs/00-overview/v1-phase-three-implementation-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-implementation-quality-gate",
+      "path": "docs/05-engineering/v1-phase-three-implementation-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-implementation-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-three-implementation-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-integration-batch-01-routes",
+      "path": "docs/00-overview/v1-phase-three-integration-batch-01-routes.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-route-integration",
+      "path": "docs/05-engineering/v1-phase-three-route-integration.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-integration-batch-02-qa",
+      "path": "docs/00-overview/v1-phase-three-integration-batch-02-qa.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-qa-expansion",
+      "path": "docs/05-engineering/v1-phase-three-qa-expansion.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-integration-batch-03-entry-hub",
+      "path": "docs/00-overview/v1-phase-three-integration-batch-03-entry-hub.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-entry-hub",
+      "path": "docs/05-engineering/v1-phase-three-entry-hub.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-integration-final-report",
+      "path": "docs/00-overview/v1-phase-three-integration-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-three-integration-quality-gate",
+      "path": "docs/05-engineering/v1-phase-three-integration-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-three-integration-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-three-integration-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "dependency-bootstrap",
+      "path": "docs/05-engineering/v1-dependency-bootstrap.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-preparation-batch-01-dependencies",
+      "path": "docs/00-overview/v1-real-evidence-preparation-batch-01-dependencies.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-evidence-capture",
+      "path": "docs/05-engineering/v1-real-evidence-capture.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-preparation-batch-02-capture",
+      "path": "docs/00-overview/v1-real-evidence-preparation-batch-02-capture.md",
+      "layer": "overview"
+    },
+    {
+      "id": "non-command-evidence-feedback",
+      "path": "docs/05-engineering/v1-non-command-evidence-feedback.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-preparation-batch-03-feedback",
+      "path": "docs/00-overview/v1-real-evidence-preparation-batch-03-feedback.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-evidence-preparation-final-report",
+      "path": "docs/00-overview/v1-real-evidence-preparation-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-ready-evidence-matrix",
+      "path": "docs/05-engineering/v1-release-ready-evidence-matrix.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-preparation-batch-04-closure",
+      "path": "docs/00-overview/v1-real-evidence-preparation-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-evidence-assist-batch-01-dashboard",
+      "path": "docs/00-overview/v1-real-evidence-assist-batch-01-dashboard.md",
+      "layer": "overview"
+    },
+    {
+      "id": "evidence-dashboard",
+      "path": "docs/05-engineering/v1-evidence-dashboard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-assist-batch-02-blocker-closure",
+      "path": "docs/00-overview/v1-real-evidence-assist-batch-02-blocker-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-blocker-closure-assist",
+      "path": "docs/05-engineering/v1-release-blocker-closure-assist.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-assist-batch-03-defect-flow",
+      "path": "docs/00-overview/v1-real-evidence-assist-batch-03-defect-flow.md",
+      "layer": "overview"
+    },
+    {
+      "id": "defect-execution-flow",
+      "path": "docs/05-engineering/v1-defect-execution-flow.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-assist-final-report",
+      "path": "docs/00-overview/v1-real-evidence-assist-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-evidence-assist-quality-gate",
+      "path": "docs/05-engineering/v1-real-evidence-assist-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-evidence-assist-batch-04-closure",
+      "path": "docs/00-overview/v1-real-evidence-assist-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-execution-landing-batch-01-runbook",
+      "path": "docs/00-overview/v1-real-execution-landing-batch-01-runbook.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-execution-runbook",
+      "path": "docs/05-engineering/v1-real-execution-runbook.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-execution-landing-batch-02-aggregator",
+      "path": "docs/00-overview/v1-real-execution-landing-batch-02-aggregator.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-execution-aggregator",
+      "path": "docs/05-engineering/v1-real-execution-aggregator.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-execution-landing-batch-03-manual-review",
+      "path": "docs/00-overview/v1-real-execution-landing-batch-03-manual-review.md",
+      "layer": "overview"
+    },
+    {
+      "id": "manual-release-review",
+      "path": "docs/05-engineering/v1-manual-release-review.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-execution-landing-final-report",
+      "path": "docs/00-overview/v1-real-execution-landing-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "real-execution-landing-quality-gate",
+      "path": "docs/05-engineering/v1-real-execution-landing-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "real-execution-landing-batch-04-closure",
+      "path": "docs/00-overview/v1-real-execution-landing-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-dry-run-batch-01-plan",
+      "path": "docs/00-overview/v1-release-dry-run-batch-01-plan.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-dry-run",
+      "path": "docs/05-engineering/v1-release-dry-run.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-dry-run-batch-02-handoff",
+      "path": "docs/00-overview/v1-release-dry-run-batch-02-handoff.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-handoff-package",
+      "path": "docs/05-engineering/v1-release-handoff-package.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-dry-run-batch-03-rollback",
+      "path": "docs/00-overview/v1-release-dry-run-batch-03-rollback.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-rollback",
+      "path": "docs/05-engineering/v1-release-rollback.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-dry-run-handoff-final-report",
+      "path": "docs/00-overview/v1-release-dry-run-handoff-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-dry-run-handoff-quality-gate",
+      "path": "docs/05-engineering/v1-release-dry-run-handoff-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-dry-run-batch-04-closure",
+      "path": "docs/00-overview/v1-release-dry-run-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-freeze-batch-01-contract",
+      "path": "docs/00-overview/v1-release-candidate-freeze-batch-01-contract.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-freeze",
+      "path": "docs/05-engineering/v1-release-candidate-freeze.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-freeze-batch-02-boundary",
+      "path": "docs/00-overview/v1-release-candidate-freeze-batch-02-boundary.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-change-boundary",
+      "path": "docs/05-engineering/v1-release-candidate-change-boundary.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-freeze-batch-03-signoff",
+      "path": "docs/00-overview/v1-release-candidate-freeze-batch-03-signoff.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-signoff",
+      "path": "docs/05-engineering/v1-release-candidate-signoff.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-freeze-final-report",
+      "path": "docs/00-overview/v1-release-candidate-freeze-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-freeze-quality-gate",
+      "path": "docs/05-engineering/v1-release-candidate-freeze-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-freeze-batch-04-closure",
+      "path": "docs/00-overview/v1-release-candidate-freeze-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-acceptance-batch-01-manifest",
+      "path": "docs/00-overview/v1-release-candidate-acceptance-batch-01-manifest.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-acceptance-evidence",
+      "path": "docs/05-engineering/v1-release-candidate-acceptance-evidence.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-acceptance-batch-02-scanner",
+      "path": "docs/00-overview/v1-release-candidate-acceptance-batch-02-scanner.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-acceptance-scanner",
+      "path": "docs/05-engineering/v1-release-candidate-acceptance-scanner.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-acceptance-batch-03-risk",
+      "path": "docs/00-overview/v1-release-candidate-acceptance-batch-03-risk.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-risk-acceptance",
+      "path": "docs/05-engineering/v1-release-candidate-risk-acceptance.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-acceptance-final-report",
+      "path": "docs/00-overview/v1-release-candidate-acceptance-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "release-candidate-acceptance-quality-gate",
+      "path": "docs/05-engineering/v1-release-candidate-acceptance-quality-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "release-candidate-acceptance-batch-04-closure",
+      "path": "docs/00-overview/v1-release-candidate-acceptance-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "pre-phase-four-finalization-batch-01-taskboard",
+      "path": "docs/00-overview/v1-pre-phase-four-finalization-batch-01-taskboard.md",
+      "layer": "overview"
+    },
+    {
+      "id": "pre-phase-four-taskboard",
+      "path": "docs/05-engineering/v1-pre-phase-four-taskboard.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "pre-phase-four-finalization-batch-02-entry-gate",
+      "path": "docs/00-overview/v1-pre-phase-four-finalization-batch-02-entry-gate.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-four-entry-gate",
+      "path": "docs/05-engineering/v1-phase-four-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "pre-phase-four-finalization-batch-03-handoff-index",
+      "path": "docs/00-overview/v1-pre-phase-four-finalization-batch-03-handoff-index.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-four-handoff-index",
+      "path": "docs/05-engineering/v1-phase-four-handoff-index.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "pre-phase-four-final-report",
+      "path": "docs/00-overview/v1-pre-phase-four-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "pre-phase-four-final-gate",
+      "path": "docs/05-engineering/v1-pre-phase-four-final-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "pre-phase-four-finalization-batch-04-closure",
+      "path": "docs/00-overview/v1-pre-phase-four-finalization-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-four-content-ops-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-four-content-ops-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-four-content-ops-scope",
+      "path": "docs/05-engineering/v1-phase-four-content-ops-scope.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-four-content-ops-batch-02-content-seeds",
+      "path": "docs/00-overview/v1-phase-four-content-ops-batch-02-content-seeds.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-four-content-seeds",
+      "path": "docs/05-engineering/v1-phase-four-content-seeds.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-four-content-ops-batch-03-operations",
+      "path": "docs/00-overview/v1-phase-four-content-ops-batch-03-operations.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-four-operations-board",
+      "path": "docs/05-engineering/v1-phase-four-operations-board.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-four-content-ops-final-report",
+      "path": "docs/00-overview/v1-phase-four-content-ops-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-five-entry-gate",
+      "path": "docs/05-engineering/v1-phase-five-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-four-content-ops-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-four-content-ops-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-five-private-batch-01-scope",
+      "path": "docs/00-overview/v1-phase-five-private-batch-01-scope.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-five-private-boundary",
+      "path": "docs/05-engineering/v1-phase-five-private-boundary.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-five-private-batch-02-archive",
+      "path": "docs/00-overview/v1-phase-five-private-batch-02-archive.md",
+      "layer": "overview"
+    },
+    {
+      "id": "private-archive-placeholder",
+      "path": "docs/05-engineering/v1-private-archive-placeholder.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-five-private-batch-03-capsule-inheritance",
+      "path": "docs/00-overview/v1-phase-five-private-batch-03-capsule-inheritance.md",
+      "layer": "overview"
+    },
+    {
+      "id": "time-capsule-inheritance",
+      "path": "docs/05-engineering/v1-time-capsule-inheritance.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-five-private-final-report",
+      "path": "docs/00-overview/v1-phase-five-private-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-six-entry-gate",
+      "path": "docs/05-engineering/v1-phase-six-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-five-private-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-five-private-batch-04-closure.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-six-ai-batch-01-protocol",
+      "path": "docs/00-overview/v1-phase-six-ai-batch-01-protocol.md",
+      "layer": "overview"
+    },
+    {
+      "id": "ai-readable-protocol",
+      "path": "docs/05-engineering/v1-ai-readable-protocol.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-six-ai-batch-02-suggestion-audit",
+      "path": "docs/00-overview/v1-phase-six-ai-batch-02-suggestion-audit.md",
+      "layer": "overview"
+    },
+    {
+      "id": "ai-suggestion-audit",
+      "path": "docs/05-engineering/v1-ai-suggestion-audit.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-six-ai-batch-03-world-companion",
+      "path": "docs/00-overview/v1-phase-six-ai-batch-03-world-companion.md",
+      "layer": "overview"
+    },
+    {
+      "id": "ai-world-companion",
+      "path": "docs/05-engineering/v1-ai-world-companion.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-six-ai-final-report",
+      "path": "docs/00-overview/v1-phase-six-ai-final-report.md",
+      "layer": "overview"
+    },
+    {
+      "id": "phase-seven-entry-gate",
+      "path": "docs/05-engineering/v1-phase-seven-entry-gate.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "phase-six-ai-batch-04-closure",
+      "path": "docs/00-overview/v1-phase-six-ai-batch-04-closure.md",
+      "layer": "overview"
     }
   ],
   "docTypes": [

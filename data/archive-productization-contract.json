@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段档案馆产品化契约",
+  "principle": "档案馆要帮助人快速找到内容，而不是把数据库直接摊开。",
+  "status": "implemented-static",
+  "controls": [
+    {
+      "id": "query",
+      "type": "text",
+      "purpose": "搜索标题、摘要、标签、世界名"
+    },
+    {
+      "id": "area",
+      "type": "select",
+      "purpose": "按世界区域过滤"
+    },
+    {
+      "id": "type",
+      "type": "select",
+      "purpose": "按节点类型过滤"
+    },
+    {
+      "id": "lifeStage",
+      "type": "select",
+      "purpose": "按生命周期过滤"
+    },
+    {
+      "id": "tag",
+      "type": "chip",
+      "purpose": "按常用标签快速过滤"
+    },
+    {
+      "id": "sort",
+      "type": "select",
+      "purpose": "按更新时间、创建时间或标题排序"
+    }
+  ],
+  "summaryCards": [
+    "public node count",
+    "area count",
+    "featured node count",
+    "tag count"
+  ],
+  "rules": [
+    "归档页必须可扫描，不应像纯数据库表。",
+    "筛选控件必须有清空入口。",
+    "空状态必须解释当前筛选，而不是只说没有。",
+    "节点卡片应展示封面、类型、生命周期、摘要和标签。",
+    "归档页最多只做轻客户端筛选，不引入后端依赖。"
+  ],
+  "performanceRules": [
+    "初始渲染使用公开节点 projection。",
+    "过滤使用 useMemo，避免无意义重复计算。",
+    "封面使用本地 SVG 或 fallback。",
+    "未来节点过多时切换分页或 Pagefind，不在当前阶段提前引入复杂搜索。"
+  ]
+}

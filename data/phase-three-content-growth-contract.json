@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段内容生长线契约",
+  "principle": "内容生长不是堆文章，而是让节点、主题、展览、时间胶囊和年度册形成可维护的世界叙事。",
+  "stageProgress": "phase-three-planning line batch 2 / 4",
+  "status": "planned",
+  "growthModules": [
+    {
+      "id": "theme-exhibition",
+      "title": "主题展览",
+      "purpose": "围绕一个问题、季节、记忆或技术主题组织节点"
+    },
+    {
+      "id": "annual-world-book",
+      "title": "年度世界册",
+      "purpose": "按年份生成可导出的世界总结"
+    },
+    {
+      "id": "time-capsule",
+      "title": "时间胶囊",
+      "purpose": "记录未来打开的节点、信件和阶段状态"
+    },
+    {
+      "id": "curation-board",
+      "title": "策展看板",
+      "purpose": "管理待完善、待发布、待归档内容"
+    },
+    {
+      "id": "content-rhythm",
+      "title": "内容节律",
+      "purpose": "定义月度/季度/年度的更新节奏"
+    }
+  ],
+  "publicBoundaryRules": [
+    "主题展览只引用 public/semiPublic 允许内容。",
+    "年度世界册允许有私密版本规划，但 V1 public build 只保留公开版本。",
+    "时间胶囊默认不进入 public build，除非显式标记 public。",
+    "策展看板不得暴露私密草稿。"
+  ],
+  "rules": [
+    "每个内容生长模块必须有输入、输出、可见性规则和导出边界。",
+    "内容生长必须复用已有 nodes/areas/paths/timeline，不创建孤立数据岛。",
+    "任何主题展览都必须能降级为静态 JSON/Markdown。",
+    "第三阶段内容能力不得关闭 release blockers。"
+  ]
+}

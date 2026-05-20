@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 公开边界与 SEO 发布记录",
+  "stageProgress": "release-preparation line batch 3 / 4",
+  "status": "pending-real-build-output",
+  "checks": [
+    {
+      "id": "public-index",
+      "status": "pending",
+      "evidence": null
+    },
+    {
+      "id": "rss",
+      "status": "pending",
+      "evidence": null
+    },
+    {
+      "id": "canonical",
+      "status": "pending",
+      "evidence": null
+    },
+    {
+      "id": "robots",
+      "status": "pending",
+      "evidence": null
+    },
+    {
+      "id": "private-boundary",
+      "status": "pending",
+      "evidence": null
+    }
+  ],
+  "rules": [
+    "真实构建输出存在后才能把 SEO 记录改为 passed。",
+    "静态配置检查不等于真实发布输出检查。",
+    "发现隐私泄漏必须创建 P0 缺陷。"
+  ]
+}

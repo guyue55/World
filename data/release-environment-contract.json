@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布环境与部署配置契约",
+  "principle": "部署配置必须把公开边界、预览 URL、构建命令、环境变量和回滚入口写清楚。",
+  "stageProgress": "release-preparation line batch 2 / 4",
+  "status": "implemented-static-deploy-config",
+  "platformTargets": [
+    "vercel",
+    "static-hosting-compatible"
+  ],
+  "requiredCommands": {
+    "install": "npm install",
+    "build": "npm run build",
+    "localGate": "npm run release:local-gate",
+    "previewSmoke": "GUYUE_PREVIEW_URL=<url> npm run preview:smoke"
+  },
+  "environmentVariables": [
+    {
+      "name": "GUYUE_PREVIEW_URL",
+      "requiredFor": "preview smoke",
+      "secret": false
+    },
+    {
+      "name": "NEXT_PUBLIC_SITE_URL",
+      "requiredFor": "metadata/canonical/rss",
+      "secret": false
+    }
+  ],
+  "publicBoundaryRules": [
+    "禁止 private/family/partner/vault/sealed/silent 内容进入 public build。",
+    "发布配置不得读取私密档案。",
+    "预览 URL 只用于冒烟检查，不写入公开内容。",
+    "生产站点 URL 必须可替换，不写死到组件内部。"
+  ],
+  "rollbackRules": [
+    "发布失败时回滚到上一成功部署。",
+    "P0/P1 阻断项未关闭不得推广到生产。",
+    "回滚后必须保留失败记录。"
+  ]
+}

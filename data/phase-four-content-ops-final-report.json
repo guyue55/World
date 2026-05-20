@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段真实内容生长与运营线最终报告",
+  "stageProgress": "phase-four-content-growth-operations line batch 4 / 4",
+  "decision": "phase-four-content-ops-complete-phase-five-planning-allowed",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "phase-four-scope-contract",
+    "real-content-seeds",
+    "operations-board-and-phase-five-prep",
+    "phase-four-closure"
+  ],
+  "completedCapabilities": [
+    "phase-four content scope",
+    "real public content seed catalog",
+    "phase-four route and public dashboard",
+    "content operations rhythm board",
+    "phase-five handoff preparation"
+  ],
+  "phaseFiveEntryDecision": "phase-five-planning-allowed-private-implementation-not-started",
+  "mustCarryForward": [
+    "release-ready not-ready",
+    "real release evidence still required",
+    "private archive not implemented",
+    "AI remains lighthouse",
+    "phase-five needs separate scope contract"
+  ],
+  "rules": [
+    "第四阶段完成的是真实内容生长与运营结构，不是第五阶段私密档案实现。",
+    "第五阶段可以开始规划，但不能默认已有 private vault。",
+    "所有 public 内容种子必须继续保留 visibility。",
+    "release-ready 仍由真实证据、人工签收和阻断关闭决定。"
+  ]
+}

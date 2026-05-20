@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选签收记录",
+  "stageProgress": "release-candidate-freeze line batch 3 / 4",
+  "status": "pending-signoff",
+  "items": [
+    {
+      "id": "freeze-contract",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "change-boundary",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "dry-run-summary",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "handoff-manifest",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "manual-review",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "blocker-review",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "rollback-plan",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "public-private-boundary",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    },
+    {
+      "id": "ai-boundary",
+      "status": "pending",
+      "reviewer": null,
+      "evidence": null
+    }
+  ],
+  "releaseDecision": "not-ready-for-release",
+  "rules": [
+    "pending-signoff 不等于失败，也不等于通过。",
+    "reviewer 和 evidence 必须由真实签收填写。",
+    "本记录不得自动改写 release-ready evidence matrix。"
+  ]
+}

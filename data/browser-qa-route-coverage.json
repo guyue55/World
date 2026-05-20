@@ -1,0 +1,132 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 浏览器 QA 路由覆盖矩阵",
+  "stageProgress": "phase-three-integration line batch 2 / 4",
+  "routes": [
+    {
+      "route": "/",
+      "viewports": [
+        "1440x900",
+        "1920x1080",
+        "375x812",
+        "430x932",
+        "768x1024"
+      ],
+      "coverageCount": 5,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/ai-workbench",
+      "viewports": [
+        "1440x900",
+        "375x812"
+      ],
+      "coverageCount": 2,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/archive",
+      "viewports": [
+        "1440x900",
+        "375x812",
+        "768x1024"
+      ],
+      "coverageCount": 3,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/ask",
+      "viewports": [
+        "375x812"
+      ],
+      "coverageCount": 1,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/atlas",
+      "viewports": [
+        "375x812",
+        "768x1024"
+      ],
+      "coverageCount": 2,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/exhibitions",
+      "viewports": [
+        "1440x900",
+        "375x812",
+        "768x1024"
+      ],
+      "coverageCount": 3,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/export-center",
+      "viewports": [
+        "1440x900",
+        "768x1024"
+      ],
+      "coverageCount": 2,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/node/[slug]",
+      "viewports": [
+        "430x932"
+      ],
+      "coverageCount": 1,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/paths",
+      "viewports": [
+        "430x932"
+      ],
+      "coverageCount": 1,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/paths/[id]",
+      "viewports": [
+        "430x932"
+      ],
+      "coverageCount": 1,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/skeleton",
+      "viewports": [
+        "1440x900",
+        "1920x1080",
+        "768x1024"
+      ],
+      "coverageCount": 3,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/status",
+      "viewports": [
+        "1440x900",
+        "1920x1080",
+        "430x932"
+      ],
+      "coverageCount": 3,
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/timeline",
+      "viewports": [
+        "768x1024"
+      ],
+      "coverageCount": 1,
+      "status": "pending-real-browser-qa"
+    }
+  ],
+  "rules": [
+    "核心路由至少覆盖 1 个移动端或桌面端视口。",
+    "首页、档案馆、状态页和骨架页必须覆盖至少 2 个视口。",
+    "第三阶段新增路由必须至少覆盖 2 个视口。",
+    "pending-real-browser-qa 不代表失败，也不代表通过。"
+  ]
+}

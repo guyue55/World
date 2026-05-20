@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 导出中心实现契约",
+  "principle": "导出中心展示可导出结构、格式和确认边界，不自动生成私密传承包。",
+  "stageProgress": "phase-three-implementation line batch 3 / 4",
+  "status": "implemented-static-prototype",
+  "route": "/export-center",
+  "dataSource": "data/export-inheritance-matrix.json",
+  "rules": [
+    "public-world-package 可以展示公开导出计划。",
+    "private-inheritance-package 必须显示确认要求。",
+    "requiresConfirmation=true 的包不得自动执行。",
+    "导出中心不得绕过可见性边界。"
+  ]
+}

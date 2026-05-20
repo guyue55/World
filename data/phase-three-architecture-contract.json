@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段模块化架构契约",
+  "stageProgress": "phase-three-planning line batch 1 / 4",
+  "status": "draft-ready",
+  "layers": [
+    {
+      "id": "data-contracts",
+      "path": "data/*.json",
+      "rule": "所有阶段能力先落契约与记录结构"
+    },
+    {
+      "id": "domain-lib",
+      "path": "src/lib/*",
+      "rule": "读取契约并提供纯函数聚合，不直接写 UI"
+    },
+    {
+      "id": "feature-components",
+      "path": "src/components/*",
+      "rule": "组件只渲染结构和状态，不隐藏业务规则"
+    },
+    {
+      "id": "routes",
+      "path": "src/app/*",
+      "rule": "页面组合组件，不堆叠复杂逻辑"
+    },
+    {
+      "id": "scripts",
+      "path": "scripts/*",
+      "rule": "每个能力必须有检查脚本和打印脚本"
+    },
+    {
+      "id": "docs",
+      "path": "docs/*",
+      "rule": "每批必须补文档并写清边界"
+    }
+  ],
+  "featureModuleTemplate": [
+    "data/<feature>-contract.json",
+    "data/<feature>-record.json",
+    "src/lib/<feature>.ts",
+    "src/components/<feature>/<FeaturePanel>.tsx",
+    "scripts/check-<feature>.ts",
+    "scripts/print-<feature>.ts",
+    "docs/05-engineering/<feature>.md"
+  ],
+  "rules": [
+    "禁止在页面中直接散落复杂数据推导。",
+    "禁止组件直接绕过 contract 读取不稳定结构。",
+    "禁止新增能力没有 check 脚本。",
+    "禁止将发布阻断项从状态页隐藏。"
+  ]
+}

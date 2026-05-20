@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段收口契约",
+  "principle": "第二阶段可以完成体验闭环，但不得替代第一阶段真实验收。",
+  "stageProgress": "phase-two batch 12 / 12",
+  "status": "closed-with-real-execution-pending",
+  "completedBatches": [
+    "homepage-productization",
+    "navigation-interaction",
+    "content-archive",
+    "node-reading",
+    "path-guidance",
+    "atlas",
+    "timeline",
+    "lighthouse",
+    "status-skeleton",
+    "reading-comfort",
+    "acceptance-lint-readiness",
+    "closure-lint-risk-fix"
+  ],
+  "remainingExternalEvidence": [
+    "npm install in real project",
+    "npm run lint exits 0",
+    "npm run typecheck exits 0",
+    "npm run check:world-core exits 0",
+    "npm run build exits 0",
+    "browser QA route/viewport matrix",
+    "preview deployment smoke test",
+    "performance measurement records"
+  ],
+  "rules": [
+    "第二阶段收口不等于第一阶段完成。",
+    "真实 lint 未通过前不得标记 lint passed。",
+    "真实浏览器 QA 未执行前不得关闭视觉交互验收。",
+    "第 12 批之后如果继续开发，应进入第二阶段后续迭代或第三阶段规划，不再伪装为本阶段基础批次。"
+  ]
+}

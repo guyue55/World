@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段 AI 灯塔产品化契约",
+  "principle": "AI 灯塔先提供安全导览，再考虑真实 AI 能力接入。",
+  "status": "implemented-low-light",
+  "pageParts": [
+    {
+      "id": "lighthouse-hero",
+      "component": "LighthouseHero",
+      "purpose": "解释 AI 是灯塔，不是太阳"
+    },
+    {
+      "id": "lighthouse-status",
+      "component": "LighthouseStatus",
+      "purpose": "显示低光模式与边界状态"
+    },
+    {
+      "id": "lighthouse-prompts",
+      "component": "LighthousePromptGuide",
+      "purpose": "提供可点击的安全提问入口"
+    },
+    {
+      "id": "lighthouse-recommendations",
+      "component": "LighthouseRecommendationGrid",
+      "purpose": "基于公开节点和路径给出导览建议"
+    },
+    {
+      "id": "lighthouse-boundary",
+      "component": "LighthouseBoundarySummary",
+      "purpose": "展示允许/禁止能力边界"
+    },
+    {
+      "id": "lighthouse-fallback",
+      "component": "LighthouseFallbackActions",
+      "purpose": "无 AI 时仍可进入地图、档案馆和路径"
+    }
+  ],
+  "rules": [
+    "Ask 页面不得假装已经接入实时 AI。",
+    "低光模式必须可独立工作。",
+    "推荐内容只能来自 public / semiPublic projection。",
+    "页面必须明确 AI 不会发布、删除、改权限或读取私密层。",
+    "问题引导只生成导航意图，不执行敏感动作。",
+    "未来接入真实 AI 时，必须先经过 AI boundary policy。"
+  ],
+  "performanceRules": [
+    "Ask 页面只读取公开节点、公开路径和 AI 边界策略。",
+    "不加载聊天 SDK、向量库或远程 AI 客户端。",
+    "交互状态只在客户端轻量维护。",
+    "边界说明用静态数据渲染。"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第五阶段入口门禁",
+  "stageProgress": "phase-four-content-growth-operations line batch 4 / 4",
+  "status": "phase-five-planning-allowed",
+  "entryDecision": "phase-five-planning-allowed-private-implementation-not-started",
+  "structureReady": [
+    "phase-four-content-program",
+    "phase-four-content-seeds",
+    "phase-four-operations-board",
+    "phase-five-handoff-preparation"
+  ],
+  "notYetImplemented": [
+    "private archive",
+    "family and child content system",
+    "time capsule product",
+    "annual world book",
+    "inheritance package automation",
+    "privacy tier operations UI"
+  ],
+  "entryRules": [
+    "第五阶段必须先建立私密边界 scope contract。",
+    "第五阶段不得复用 public content pipeline 写入 private 内容。",
+    "任何 family/child/vault/sealed/silent 内容必须独立隔离。",
+    "第五阶段仍不得绕过 release-ready 真实证据。"
+  ]
+}

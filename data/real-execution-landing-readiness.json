@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行落地就绪矩阵",
+  "stageProgress": "real-execution-landing line batch 4 / 4",
+  "status": "landing-ready-real-run-pending",
+  "items": [
+    {
+      "id": "runbook",
+      "status": "ready",
+      "evidence": "data/real-execution-runbook-contract.json"
+    },
+    {
+      "id": "aggregator",
+      "status": "ready",
+      "evidence": "data/real-execution-aggregator-contract.json"
+    },
+    {
+      "id": "manual-review",
+      "status": "pending-manual-review",
+      "evidence": "data/manual-release-review-record.json"
+    },
+    {
+      "id": "real-reports",
+      "status": "pending-real-run",
+      "evidence": "reports/real-execution-summary.json"
+    },
+    {
+      "id": "release-ready",
+      "status": "blocked",
+      "evidence": "data/release-ready-evidence-matrix.json"
+    }
+  ],
+  "rules": [
+    "ready 表示结构可用，不表示真实通过。",
+    "pending-real-run 必须由真实 reports 更新。",
+    "blocked 不得被本阶段自动关闭。"
+  ]
+}

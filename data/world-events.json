@@ -78,5 +78,107 @@
       "node-no-ai",
       "node-world-space"
     ]
+  },
+  {
+    "id": "evt-phase2-001",
+    "type": "node-updated",
+    "title": "首页从骨架入口转向真实世界入口",
+    "date": "2026-05-19",
+    "description": "第二阶段第一批把首页信息层级、代表节点、封面资产和首屏性能边界落地。",
+    "nodeIds": [
+      "node-world-manifesto",
+      "node-world-space"
+    ],
+    "areaIds": [
+      "origin",
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-phase2-002",
+    "type": "rule-triggered",
+    "title": "导航与交互状态修复",
+    "date": "2026-05-19",
+    "description": "路由感知导航、移动端选中态、折叠组件和标签组件被纳入交互契约。",
+    "areaIds": [
+      "archive",
+      "timeline"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-phase2-003",
+    "type": "node-updated",
+    "title": "档案馆成为现实检索入口",
+    "date": "2026-05-19",
+    "description": "归档统计、多维筛选、标签过滤、排序和带封面节点卡片完成产品化。",
+    "nodeIds": [
+      "node-world-space",
+      "node-backlinks"
+    ],
+    "areaIds": [
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-phase2-004",
+    "type": "node-updated",
+    "title": "节点详情页形成阅读与探索闭环",
+    "date": "2026-05-19",
+    "description": "节点阅读页头、正文版心、关系导航、同区域 fallback 和阅读质量门槛完成落地。",
+    "nodeIds": [
+      "node-backlinks",
+      "node-everything-node"
+    ],
+    "areaIds": [
+      "origin",
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-phase2-005",
+    "type": "node-updated",
+    "title": "路径导览面向不同访问者成形",
+    "date": "2026-05-19",
+    "description": "first-time、tech、life、deep-dive、creator 五类路径形成导览体验。",
+    "nodeIds": [
+      "node-world-manifesto",
+      "node-ai-lighthouse"
+    ],
+    "areaIds": [
+      "origin",
+      "tech",
+      "memory"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-phase2-006",
+    "type": "area-awakened",
+    "title": "Atlas 从区域网格升级为空间入口",
+    "date": "2026-05-19",
+    "description": "Atlas Hero、统计摘要、区域星线和线性 fallback 让世界结构可被看见。",
+    "nodeIds": [
+      "node-world-space"
+    ],
+    "areaIds": [
+      "origin",
+      "tech",
+      "workshop",
+      "fragments",
+      "timeline",
+      "archive",
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "system"
   }
 ]

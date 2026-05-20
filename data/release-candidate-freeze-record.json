@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选冻结记录",
+  "stageProgress": "release-candidate-freeze line batch 1 / 4",
+  "status": "candidate-freeze-structure-ready",
+  "candidateId": "v1-rc-structure-001",
+  "releaseDecision": "not-ready-for-release",
+  "approvals": [],
+  "rules": [
+    "无人工 approval 时不得进入真实发布。",
+    "candidateId 只标识结构候选，不表示生产候选已验收。",
+    "releaseDecision 仍由证据矩阵决定。"
+  ]
+}

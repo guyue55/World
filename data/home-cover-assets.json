@@ -1,0 +1,74 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 首页封面资产",
+  "principle": "封面服务内容理解，不做无意义装饰。",
+  "fallback": "/covers/cover-abstract-world.svg",
+  "covers": [
+    {
+      "id": "cover-world-gateway",
+      "path": "/covers/cover-world-gateway.svg",
+      "kind": "abstract-world",
+      "useFor": [
+        "world",
+        "manifesto",
+        "origin"
+      ]
+    },
+    {
+      "id": "cover-natural-tech",
+      "path": "/covers/cover-natural-tech.svg",
+      "kind": "natural-tech",
+      "useFor": [
+        "tech",
+        "engineering",
+        "ai"
+      ]
+    },
+    {
+      "id": "cover-memory-river",
+      "path": "/covers/cover-memory-river.svg",
+      "kind": "memory-photo-or-illustration",
+      "useFor": [
+        "memory",
+        "time",
+        "life"
+      ]
+    },
+    {
+      "id": "cover-product-artifact",
+      "path": "/covers/cover-product-artifact.svg",
+      "kind": "project-artifact",
+      "useFor": [
+        "project",
+        "product",
+        "design"
+      ]
+    },
+    {
+      "id": "cover-life-island",
+      "path": "/covers/cover-life-island.svg",
+      "kind": "memory-photo-or-illustration",
+      "useFor": [
+        "life",
+        "daily",
+        "family"
+      ]
+    },
+    {
+      "id": "cover-abstract-world",
+      "path": "/covers/cover-abstract-world.svg",
+      "kind": "fallback-gradient",
+      "useFor": [
+        "fallback",
+        "rule",
+        "archive"
+      ]
+    }
+  ],
+  "rules": [
+    "首页代表节点必须能解析到 cover。",
+    "未配置 cover 的节点按 type/tags 匹配 fallback。",
+    "封面必须是本地资产或明确可缓存资产。",
+    "不得为了封面引入远程阻塞请求。"
+  ]
+}

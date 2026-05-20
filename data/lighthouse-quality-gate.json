@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 灯塔质量门槛",
+  "principle": "灯塔的第一责任是安全照路，而不是制造智能幻觉。",
+  "minimums": {
+    "promptSuggestions": 6,
+    "recommendedNodes": 6,
+    "recommendedPaths": 3,
+    "allowedRules": 5,
+    "forbiddenRules": 5,
+    "requiredComponents": 6
+  },
+  "requiredComponents": [
+    "LighthouseHero",
+    "LighthousePromptGuide",
+    "LighthouseRecommendationGrid",
+    "LighthouseBoundarySummary",
+    "LighthouseFallbackActions",
+    "LighthouseStatus"
+  ],
+  "rules": [
+    "所有推荐必须基于公开内容。",
+    "页面文案必须明确 low-light / no real-time AI。",
+    "禁止暗示 AI 可以读取私密内容。",
+    "禁止提供自动发布、删除、改权限入口。",
+    "Ask 页面必须保持可替换架构，未来可接入真实 AI provider。"
+  ]
+}

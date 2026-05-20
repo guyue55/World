@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选验收证据读取器契约",
+  "principle": "候选验收应能读取真实证据并明确缺口，而不是靠人工猜测。",
+  "stageProgress": "release-candidate-acceptance-evidence line batch 2 / 4",
+  "status": "implemented-static-scanner",
+  "inputManifest": "data/release-candidate-acceptance-evidence-manifest.json",
+  "output": "reports/release-candidate-acceptance-summary.json",
+  "statusRules": [
+    "缺失 required evidence => blocked",
+    "required evidence invalid json => blocked",
+    "manual signoff pending => blocked",
+    "dry-run blocked/failed => blocked",
+    "optional performance missing => risk-accepted-required"
+  ],
+  "rules": [
+    "scanner 只读取证据，不改写证据。",
+    "scanner 输出 reports/，不改 data/ 状态源。",
+    "scanner blocked 不等于代码失败，表示验收缺口仍存在。"
+  ]
+}

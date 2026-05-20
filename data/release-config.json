@@ -1,0 +1,31 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布配置清单",
+  "stageProgress": "release-preparation line batch 2 / 4",
+  "status": "pending-real-platform-binding",
+  "build": {
+    "framework": "next",
+    "installCommand": "npm install",
+    "buildCommand": "npm run build",
+    "output": ".next"
+  },
+  "vercel": {
+    "framework": "nextjs",
+    "buildCommand": "npm run build",
+    "installCommand": "npm install"
+  },
+  "smoke": {
+    "requiredEnv": "GUYUE_PREVIEW_URL",
+    "command": "GUYUE_PREVIEW_URL=<url> npm run preview:smoke"
+  },
+  "releasePromotion": {
+    "status": "blocked",
+    "requires": [
+      "npm run release:local-gate passes",
+      "CI release gate passes",
+      "browser QA blockers closed",
+      "preview smoke passes",
+      "performance measurement recorded"
+    ]
+  }
+}

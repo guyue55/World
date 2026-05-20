@@ -12,7 +12,10 @@
         "inp": null,
         "cls": null,
         "score": null
-      }
+      },
+      "tool": "Lighthouse or equivalent",
+      "defectIds": [],
+      "measuredAt": null
     },
     {
       "route": "/",
@@ -23,7 +26,10 @@
         "inp": null,
         "cls": null,
         "score": null
-      }
+      },
+      "tool": "Lighthouse or equivalent",
+      "defectIds": [],
+      "measuredAt": null
     },
     {
       "route": "/archive",
@@ -34,7 +40,10 @@
         "inp": null,
         "cls": null,
         "score": null
-      }
+      },
+      "tool": "Lighthouse or equivalent",
+      "defectIds": [],
+      "measuredAt": null
     },
     {
       "route": "/node/[slug]",
@@ -45,7 +54,10 @@
         "inp": null,
         "cls": null,
         "score": null
-      }
+      },
+      "tool": "Lighthouse or equivalent",
+      "defectIds": [],
+      "measuredAt": null
     },
     {
       "route": "/status",
@@ -56,7 +68,10 @@
         "inp": null,
         "cls": null,
         "score": null
-      }
+      },
+      "tool": "Lighthouse or equivalent",
+      "defectIds": [],
+      "measuredAt": null
     },
     {
       "route": "/skeleton",
@@ -67,7 +82,10 @@
         "inp": null,
         "cls": null,
         "score": null
-      }
+      },
+      "tool": "Lighthouse or equivalent",
+      "defectIds": [],
+      "measuredAt": null
     }
   ],
   "thresholds": {
@@ -80,6 +98,11 @@
     "移动端首页优先级最高。",
     "状态页/骨架页可较重，但不得破坏核心路径。",
     "低分必须关联具体优化任务。",
-    "指标无法采集时必须说明环境。"
-  ]
+    "指标无法采集时必须说明环境。",
+    "真实性能测量后才能将 status 改为 measured。",
+    "低于阈值必须关联 defectIds 或优化任务。",
+    "不得用开发环境热更新结果替代生产预览性能结果。"
+  ],
+  "stageProgress": "real-validation line batch 3 / 4",
+  "status": "pending-real-measurement"
 }

@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段规划宪章",
+  "principle": "第三阶段从体验能力增长开始，但不能绕过发布级真实证据。",
+  "stageProgress": "phase-three-planning line batch 1 / 4",
+  "status": "planning-started-with-release-blockers-open",
+  "positioning": "从可访问的数字世界，走向可持续生长的个人世界系统。",
+  "goals": [
+    "深化真实内容创作与主题展览能力",
+    "增强 AI 灯塔的低风险辅助能力",
+    "建立用户侧维护、导览、策展与导出流程",
+    "保持公开/私密/家庭/伴侣/封存边界",
+    "为中大型项目演进保留模块化架构"
+  ],
+  "nonGoals": [
+    "不宣称 release-ready",
+    "不引入后端私密档案读写",
+    "不实现全量 AI 自动发布",
+    "不绕过真实 lint/typecheck/build/browser QA",
+    "不把第三阶段规划当作生产发布"
+  ],
+  "tracks": [
+    {
+      "id": "content-growth",
+      "title": "内容生长线",
+      "focus": "主题展览、年度世界册、时间胶囊、内容策展"
+    },
+    {
+      "id": "ai-lighthouse",
+      "title": "AI 灯塔增强线",
+      "focus": "低风险推荐、解释、摘要、导览，不做发布决策"
+    },
+    {
+      "id": "world-operations",
+      "title": "世界运营线",
+      "focus": "维护台账、健康度、缺陷与发布证据"
+    },
+    {
+      "id": "experience-polish",
+      "title": "体验打磨线",
+      "focus": "真实浏览器 QA 后的问题修复与交互细节"
+    },
+    {
+      "id": "export-inheritance",
+      "title": "导出与传承线",
+      "focus": "Markdown/JSON/年度册/可迁移导出"
+    }
+  ],
+  "rules": [
+    "第三阶段所有新增能力必须先有 contract，再有 lib，再有 component，再有 script/check。",
+    "AI 能力只能照亮、解释、建议，不得决定发布、删除、改可见性。",
+    "任何涉及私密层的能力必须默认不进入 public build。",
+    "release blockers open 时，第三阶段只能规划或开发非发布承诺能力。"
+  ]
+}

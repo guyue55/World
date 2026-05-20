@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段交互组件契约",
+  "principle": "可展开、可切换、可导航的组件必须有状态、反馈和可访问语义。",
+  "status": "implemented",
+  "components": [
+    {
+      "id": "RouteAwareNav",
+      "purpose": "统一桌面/移动端路由选中态",
+      "mustHave": [
+        "usePathname",
+        "aria-current",
+        "shared nav data"
+      ]
+    },
+    {
+      "id": "AccessibleCollapsible",
+      "purpose": "统一折叠/展开面板",
+      "mustHave": [
+        "button",
+        "aria-expanded",
+        "aria-controls",
+        "visible focus"
+      ]
+    },
+    {
+      "id": "AccessibleTabs",
+      "purpose": "统一标签切换，保证选中态与内容同源",
+      "mustHave": [
+        "role=tablist",
+        "role=tab",
+        "role=tabpanel",
+        "single source of truth"
+      ]
+    }
+  ],
+  "rules": [
+    "交互状态不得只改变内容而不改变选中态。",
+    "折叠交互必须支持键盘触发。",
+    "标签切换必须保证 tab 与 panel 使用同一个 activeId。",
+    "状态组件必须能够在未来抽离到独立 feature 模块。"
+  ]
+}

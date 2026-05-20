@@ -1,0 +1,72 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 灯塔低光提问引导",
+  "status": "active",
+  "prompts": [
+    {
+      "id": "start",
+      "label": "第一次来，我该从哪里开始？",
+      "intent": "path",
+      "href": "/paths/first-visit",
+      "tags": [
+        "first-time",
+        "world"
+      ]
+    },
+    {
+      "id": "tech",
+      "label": "我想看技术与 AI 相关内容",
+      "intent": "path",
+      "href": "/paths/tech-ai",
+      "tags": [
+        "tech",
+        "ai"
+      ]
+    },
+    {
+      "id": "life",
+      "label": "我想看生活、记忆和柔软的一面",
+      "intent": "path",
+      "href": "/paths/life-memory",
+      "tags": [
+        "life",
+        "memory"
+      ]
+    },
+    {
+      "id": "deep",
+      "label": "我想理解这个世界是如何构造的",
+      "intent": "path",
+      "href": "/paths/deep-world",
+      "tags": [
+        "deep-dive",
+        "architecture"
+      ]
+    },
+    {
+      "id": "search",
+      "label": "帮我去档案馆查找内容",
+      "intent": "archive",
+      "href": "/archive",
+      "tags": [
+        "search",
+        "archive"
+      ]
+    },
+    {
+      "id": "map",
+      "label": "我想先看看世界结构",
+      "intent": "atlas",
+      "href": "/atlas",
+      "tags": [
+        "atlas",
+        "space"
+      ]
+    }
+  ],
+  "rules": [
+    "低光提问不调用远程模型。",
+    "每个 prompt 只指向公开页面或公开路径。",
+    "prompt 只能导航，不能执行发布、删除、改权限等动作。"
+  ]
+}

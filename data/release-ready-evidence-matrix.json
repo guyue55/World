@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 Release Ready 证据矩阵",
+  "stageProgress": "real-evidence-preparation line batch 4 / 4",
+  "status": "prepared-not-satisfied",
+  "items": [
+    {
+      "id": "dependency-bootstrap",
+      "kind": "command",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "lint",
+      "kind": "command",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "typecheck",
+      "kind": "command",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "world-core",
+      "kind": "command",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "build",
+      "kind": "command",
+      "status": "pending-real-run",
+      "required": true
+    },
+    {
+      "id": "browser-qa",
+      "kind": "manual",
+      "status": "pending-real-feedback",
+      "required": true
+    },
+    {
+      "id": "preview-smoke",
+      "kind": "network",
+      "status": "pending-real-feedback",
+      "required": true
+    },
+    {
+      "id": "performance",
+      "kind": "measurement",
+      "status": "pending-real-feedback",
+      "required": false
+    },
+    {
+      "id": "release-blockers",
+      "kind": "governance",
+      "status": "open",
+      "required": true
+    }
+  ],
+  "rules": [
+    "所有 required=true 的 item 必须 passed/closed，release-ready 才能成立。",
+    "performance 若不通过，必须有风险接受说明。",
+    "open 阻断项不得被本矩阵自动关闭。"
+  ]
+}

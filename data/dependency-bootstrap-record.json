@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 依赖环境补证记录",
+  "stageProgress": "real-evidence-preparation line batch 1 / 4",
+  "status": "pending-real-install",
+  "checks": [
+    {
+      "id": "node",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    },
+    {
+      "id": "npm",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    },
+    {
+      "id": "node-modules",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    },
+    {
+      "id": "eslint",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    },
+    {
+      "id": "typescript",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    },
+    {
+      "id": "next",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    },
+    {
+      "id": "tsx",
+      "status": "pending",
+      "version": null,
+      "evidence": null
+    }
+  ],
+  "rules": [
+    "真实安装后更新本记录。",
+    "pending 不等于 failed，也不等于 passed。",
+    "permission-denied 必须记录实际命令输出。"
+  ]
+}

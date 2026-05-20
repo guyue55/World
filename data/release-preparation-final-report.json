@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布准备线最终报告",
+  "stageProgress": "release-preparation line batch 4 / 4",
+  "decision": "release-preparation-structure-complete-release-blocked-by-real-evidence",
+  "releaseDecision": "not-ready-for-release",
+  "summary": {
+    "releaseGateStatus": "pending-real-ci-run",
+    "releasePromotionStatus": "blocked",
+    "publicSeoStatus": "pending-real-build-output",
+    "validationDecision": "validation-structure-complete-real-execution-pending",
+    "lintStatus": "missing-local-dependencies",
+    "openBlockers": 4
+  },
+  "completedReleasePrepBatches": [
+    "ci-local-gate",
+    "deployment-environment-config",
+    "public-seo-boundary-gate",
+    "release-preparation-final-closure"
+  ],
+  "mustRunToBecomeReleaseReady": [
+    "npm install",
+    "npm run release:local-gate",
+    "CI release gate passes",
+    "npm run browser-qa:plan then manual QA",
+    "GUYUE_PREVIEW_URL=<url> npm run preview:smoke",
+    "npm run performance:plan then record metrics",
+    "close P0/P1 blockers with evidence"
+  ],
+  "rules": [
+    "发布准备线完成不等于 release-ready。",
+    "release-ready 必须由真实执行证据驱动。",
+    "没有 lint/typecheck/build/browser QA/preview/performance 证据不得关闭阻断项。",
+    "后续若继续开发，应进入真实执行补证或第三阶段规划。"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行本地运行手册契约",
+  "principle": "真实执行必须有固定顺序、固定产物、固定失败分类。",
+  "stageProgress": "real-execution-landing line batch 1 / 4",
+  "status": "implemented-static-runbook",
+  "orderedSteps": [
+    {
+      "id": "install",
+      "command": "npm install",
+      "expectedArtifact": "node_modules/"
+    },
+    {
+      "id": "dependency-probe",
+      "command": "npm run dependency-bootstrap:probe",
+      "expectedArtifact": "reports/dependency-bootstrap-probe.json"
+    },
+    {
+      "id": "evidence-capture",
+      "command": "npm run evidence:capture",
+      "expectedArtifact": "reports/real-evidence-capture.json"
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "expectedArtifact": "terminal output"
+    },
+    {
+      "id": "release-gate",
+      "command": "npm run release:local-gate",
+      "expectedArtifact": "release gate output"
+    },
+    {
+      "id": "browser-qa",
+      "command": "manual browser QA",
+      "expectedArtifact": "reports/non-command-evidence-notes.json"
+    },
+    {
+      "id": "blocker-review",
+      "command": "manual blocker review",
+      "expectedArtifact": "reports/release-blocker-closure-requests.json"
+    }
+  ],
+  "failureHandling": [
+    "缺依赖：先 npm install，不判断业务代码失败。",
+    "lint/typecheck/build 失败：记录 reports/real-evidence-capture.json。",
+    "浏览器 QA 失败：写入 defect-execution queue。",
+    "阻断项关闭：只创建 request，不直接改 register。"
+  ],
+  "rules": [
+    "orderedSteps 顺序不得跳过 install。",
+    "任一 required evidence 未通过时不得 release-ready。",
+    "本手册不会自动执行命令，只提供可复验顺序。"
+  ]
+}

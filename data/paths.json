@@ -49,5 +49,41 @@
       "clear-entrance-deep-world"
     ],
     "visibility": "public"
+  },
+  {
+    "id": "life-memory",
+    "title": "生活与记忆的柔光路径",
+    "description": "从记忆湖、生活片段和自然演化进入古月浮屿柔软的一面。",
+    "audience": "life",
+    "estimatedMinutes": 10,
+    "nodeSlugs": [
+      "memory-lake-first-light",
+      "clear-entrance-deep-world",
+      "no-ai-natural-evolution",
+      "world-manifesto"
+    ],
+    "nextPathIds": [
+      "first-visit"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "deep-world",
+    "title": "深潜世界骨架路径",
+    "description": "面向想理解系统结构的读者，沿着节点、星线、空间层和守门机制深入。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 20,
+    "nodeSlugs": [
+      "everything-is-node",
+      "backlinks-and-star-lines",
+      "world-space-layer",
+      "world-data-guardian",
+      "personal-digital-universe-definition"
+    ],
+    "nextPathIds": [
+      "how-world-created",
+      "tech-ai"
+    ],
+    "visibility": "public"
   }
 ]

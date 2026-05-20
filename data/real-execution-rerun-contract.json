@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行复跑契约",
+  "principle": "复跑不是重新开发，而是把安装、lint、类型检查、构建、世界检查和证据回写串成可重复流程。",
+  "stageProgress": "phase-two post-closure hardening batch 2 / 3",
+  "status": "implemented-static-rerun-plan",
+  "steps": [
+    {
+      "id": "install",
+      "command": "npm install",
+      "expected": "node_modules exists and local eslint/tsx/next/tsc are available"
+    },
+    {
+      "id": "lint-env",
+      "command": "npm run check:lint-env",
+      "expected": "diagnostic is ready or reports missing-local-dependencies"
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "expected": "eslint exits 0"
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "expected": "tsc exits 0"
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "expected": "all world gates exit 0"
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "expected": "Next build exits 0"
+    },
+    {
+      "id": "evidence",
+      "command": "npm run evidence:print",
+      "expected": "execution evidence is readable"
+    }
+  ],
+  "failureClasses": [
+    {
+      "id": "dependency",
+      "meaning": "node_modules / local binaries missing; run npm install first"
+    },
+    {
+      "id": "lint",
+      "meaning": "eslint found code/config issues"
+    },
+    {
+      "id": "type",
+      "meaning": "TypeScript diagnostics"
+    },
+    {
+      "id": "world-gate",
+      "meaning": "world-core check failed"
+    },
+    {
+      "id": "build",
+      "meaning": "Next.js build failed"
+    },
+    {
+      "id": "browser-qa",
+      "meaning": "manual visual/interaction issue"
+    }
+  ],
+  "rules": [
+    "先安装，再 lint；不得跳过依赖环境诊断。",
+    "每个命令必须记录 exitCode、status、outputExcerpt。",
+    "失败必须分类为 dependency/lint/type/world-gate/build/browser-qa。",
+    "本契约不把任何真实执行结果预设为通过。"
+  ]
+}

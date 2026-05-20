@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第六阶段 AI 深度协作与世界智能线最终报告",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 4 / 4",
+  "decision": "phase-six-ai-collaboration-structure-complete-phase-seven-planning-allowed",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "ai-readable-protocol-and-authority-boundary",
+    "ai-suggestion-audit-workbench",
+    "ai-world-companion",
+    "phase-six-closure"
+  ],
+  "completedCapabilities": [
+    "AI readable protocol",
+    "AI permission matrix",
+    "AI suggestion audit queue",
+    "AI workbench v2 route",
+    "AI world companion plan",
+    "AI path/exhibition/maintenance recommendations"
+  ],
+  "notImplementedByDesign": [
+    "real AI service integration",
+    "automatic publish/delete/export",
+    "private archive reading",
+    "sealed/silent summarization",
+    "autonomous visibility changes",
+    "release-ready automation"
+  ],
+  "phaseSevenEntryDecision": "phase-seven-planning-allowed-public-release-and-long-term-operations-not-started",
+  "mustCarryForward": [
+    "AI is lighthouse, not sun",
+    "private tiers excluded from AI default read",
+    "all AI suggestions must be auditable",
+    "release-ready not-ready",
+    "real release evidence still required"
+  ],
+  "rules": [
+    "第六阶段完成的是 AI 协作结构，不是真实 AI 自动化执行系统。",
+    "第七阶段可以规划公开发布与长期运营，但仍不能绕过真实发布证据。",
+    "AI 不得自动读取私密档案、发布、删除、导出或改变可见性。",
+    "所有 AI 建议必须可审计、可拒绝、可延后。"
+  ]
+}

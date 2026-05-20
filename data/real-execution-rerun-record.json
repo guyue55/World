@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行复跑记录模板",
+  "stageProgress": "phase-two post-closure hardening batch 2 / 3",
+  "status": "template-ready",
+  "runs": [
+    {
+      "id": "install",
+      "command": "npm install",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    },
+    {
+      "id": "lint-env",
+      "command": "npm run check:lint-env",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    },
+    {
+      "id": "evidence",
+      "command": "npm run evidence:print",
+      "status": "pending",
+      "exitCode": null,
+      "failureClass": null,
+      "outputExcerpt": null,
+      "updatedAt": null
+    }
+  ],
+  "rules": [
+    "真实执行后必须更新本文件或生成 reports/real-execution-rerun-result.json。",
+    "pending 不等于 failed，也不等于 passed。",
+    "无法执行必须写明原因，例如 missing-local-dependencies。"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段内容盘点规则",
+  "principle": "真实内容是第二阶段的燃料，空结构不能再继续伪装成进展。",
+  "minimums": {
+    "publicNodes": 12,
+    "featuredNodes": 6,
+    "nodesWithSummary": 12,
+    "nodesWithContentPath": 10,
+    "nodesWithCover": 6,
+    "publicAreas": 5,
+    "publicPaths": 3
+  },
+  "qualitySignals": [
+    "summary",
+    "contentPath",
+    "cover",
+    "tags",
+    "areaId",
+    "lifeStage",
+    "visibility"
+  ],
+  "rules": [
+    "首页代表节点必须优先满足 summary、cover、contentPath。",
+    "归档节点必须至少满足 summary 和 tags。",
+    "内容不足时优先补真实内容，不继续新增抽象协议。",
+    "私密内容不得为了满足数量进入公开层。"
+  ]
+}

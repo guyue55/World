@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布前阻断清单",
+  "stageProgress": "real-validation line batch 4 / 4",
+  "status": "blocking-release",
+  "blockers": [
+    {
+      "id": "block-install-lint-type-build",
+      "severity": "P0",
+      "title": "真实安装、lint、typecheck、build 未完成",
+      "source": "real-execution",
+      "requiredActions": [
+        "npm install",
+        "npm run lint",
+        "npm run typecheck",
+        "npm run check:world-core",
+        "npm run build"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "block-browser-qa",
+      "severity": "P0",
+      "title": "浏览器 QA 矩阵未执行",
+      "source": "browser-qa",
+      "requiredActions": [
+        "npm run browser-qa:plan",
+        "manual QA for all matrix items",
+        "write defects through npm run browser-qa:defect"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "block-preview-smoke",
+      "severity": "P0",
+      "title": "预览冒烟未执行",
+      "source": "preview-smoke",
+      "requiredActions": [
+        "deploy preview",
+        "GUYUE_PREVIEW_URL=<url> npm run preview:smoke"
+      ],
+      "status": "open"
+    },
+    {
+      "id": "block-performance",
+      "severity": "P1",
+      "title": "性能实测未执行",
+      "source": "performance",
+      "requiredActions": [
+        "npm run performance:plan",
+        "measure target routes with Lighthouse or equivalent",
+        "write low-score defects"
+      ],
+      "status": "open"
+    }
+  ],
+  "rules": [
+    "P0 阻断未关闭前不得宣称 release-ready。",
+    "P1 性能阻断可按风险评估延期，但必须记录原因。",
+    "关闭阻断项必须提供真实证据引用。"
+  ]
+}

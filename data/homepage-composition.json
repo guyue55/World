@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段首页组合契约",
+  "principle": "首页必须在首屏解释世界，在下滑中证明世界值得继续进入。",
+  "status": "implemented-static",
+  "sections": [
+    {
+      "id": "hero",
+      "component": "HomeHero",
+      "priority": "critical",
+      "purpose": "解释古月浮屿是什么并给出主要入口",
+      "maxInitialData": 0
+    },
+    {
+      "id": "representative",
+      "component": "FeaturedNodeGrid",
+      "priority": "critical",
+      "purpose": "展示代表性公开节点",
+      "maxInitialData": 6
+    },
+    {
+      "id": "paths",
+      "component": "HomePathRail",
+      "priority": "important",
+      "purpose": "给第一次访问者可走路径",
+      "maxInitialData": 3
+    },
+    {
+      "id": "rhythm",
+      "component": "HomeWorldRhythm",
+      "priority": "important",
+      "purpose": "展示技术、生活、记忆、未来节奏",
+      "maxInitialData": 4
+    },
+    {
+      "id": "status",
+      "component": "HomeStatusSummary",
+      "priority": "supporting",
+      "purpose": "用轻摘要说明世界状态",
+      "maxInitialData": 4
+    }
+  ],
+  "layoutRules": [
+    "首页使用 wide world-container，不把内容挤成窄栏。",
+    "首屏必须包含主标题、定义、主要行动和世界感视觉。",
+    "代表节点卡片必须有封面或 fallback cover。",
+    "状态和骨架信息只能作为摘要，不在首页首屏堆全部面板。",
+    "移动端单列，平板两列，桌面三列或宽屏组合。"
+  ],
+  "performanceRules": [
+    "首页首屏不加载完整 WorldFoundationStack。",
+    "首页只读取 curated projection，不读取全量深层治理面板。",
+    "封面使用本地轻量 SVG，不依赖远程图片。",
+    "大块工程状态页延后到 /status 或 /skeleton。"
+  ]
+}

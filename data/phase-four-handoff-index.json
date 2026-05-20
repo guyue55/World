@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段交接索引",
+  "principle": "第四阶段开始前，下一阶段执行者必须能快速定位阶段状态、核心文档、核心命令与未完成证据。",
+  "stageProgress": "pre-phase-four-finalization line batch 3 / 4",
+  "status": "implemented-static-handoff-index",
+  "stageStatus": [
+    {
+      "id": "phase-two",
+      "status": "completed"
+    },
+    {
+      "id": "phase-three-planning",
+      "status": "completed"
+    },
+    {
+      "id": "phase-three-implementation",
+      "status": "completed"
+    },
+    {
+      "id": "phase-three-integration",
+      "status": "completed"
+    },
+    {
+      "id": "release-candidate-acceptance-evidence",
+      "status": "completed-structure-only"
+    },
+    {
+      "id": "release-ready",
+      "status": "not-ready"
+    }
+  ],
+  "keyDocuments": [
+    "docs/00-overview/v1-release-candidate-acceptance-final-report.md",
+    "docs/05-engineering/v1-phase-four-entry-gate.md",
+    "docs/05-engineering/v1-pre-phase-four-taskboard.md",
+    "docs/05-engineering/v1-release-candidate-acceptance-evidence.md",
+    "docs/05-engineering/v1-release-candidate-acceptance-scanner.md",
+    "docs/05-engineering/v1-release-candidate-risk-acceptance.md"
+  ],
+  "keyCommands": [
+    "npm run pre-phase-four-taskboard:print",
+    "npm run phase-four-entry-gate:print",
+    "npm run release-candidate-acceptance-final:print",
+    "npm run release-candidate-acceptance:scan",
+    "npm run release:dry-run",
+    "npm run release-handoff:manifest"
+  ],
+  "openEvidence": [
+    "reports/release-dry-run-summary.json",
+    "reports/release-handoff-manifest.json",
+    "reports/release-candidate-acceptance-summary.json",
+    "data/release-candidate-signoff-record.json",
+    "reports/release-blocker-closure-requests.json"
+  ],
+  "rules": [
+    "交接索引只做定位，不改变任何状态。",
+    "第四阶段启动前必须阅读 entry gate。",
+    "release-ready not-ready 必须显式传递。",
+    "未完成真实证据不得被隐藏。"
+  ]
+}

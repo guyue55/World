@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选验收证据就绪矩阵",
+  "stageProgress": "release-candidate-acceptance-evidence line batch 4 / 4",
+  "status": "acceptance-structure-ready-real-scan-pending",
+  "items": [
+    {
+      "id": "acceptance-manifest",
+      "status": "ready",
+      "evidence": "data/release-candidate-acceptance-evidence-manifest.json"
+    },
+    {
+      "id": "acceptance-scanner",
+      "status": "ready",
+      "evidence": "data/release-candidate-acceptance-scanner-contract.json"
+    },
+    {
+      "id": "risk-acceptance",
+      "status": "ready",
+      "evidence": "data/release-candidate-risk-acceptance-contract.json"
+    },
+    {
+      "id": "real-acceptance-scan",
+      "status": "pending-real-run",
+      "evidence": "reports/release-candidate-acceptance-summary.json"
+    },
+    {
+      "id": "manual-signoff",
+      "status": "pending-signoff",
+      "evidence": "data/release-candidate-signoff-record.json"
+    },
+    {
+      "id": "release-ready",
+      "status": "blocked",
+      "evidence": "data/release-ready-evidence-matrix.json"
+    }
+  ],
+  "rules": [
+    "ready 表示结构完成，不表示真实验收通过。",
+    "pending-real-run 必须由真实 reports 更新。",
+    "blocked 不得被验收证据线自动关闭。"
+  ]
+}

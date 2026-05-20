@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布阻断关闭请求台账",
+  "stageProgress": "real-evidence-execution-assist line batch 2 / 4",
+  "status": "no-approved-closures",
+  "requests": [],
+  "rules": [
+    "本台账记录关闭请求，不直接关闭阻断项。",
+    "release-blocker-register 仍是阻断状态源。",
+    "任何关闭都需要人工 review。"
+  ]
+}

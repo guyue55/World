@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段最终检查矩阵",
+  "stageProgress": "phase-two 12 / 12 completed; post-closure hardening batch 3 / 3",
+  "checks": [
+    {
+      "id": "json",
+      "name": "JSON 解析",
+      "status": "passed-in-current-batch",
+      "scope": "all json files"
+    },
+    {
+      "id": "syntax",
+      "name": "TS/TSX 转译语法",
+      "status": "passed-in-current-batch",
+      "scope": "changed ts/tsx files"
+    },
+    {
+      "id": "logic",
+      "name": "静态逻辑一致性",
+      "status": "passed-in-current-batch",
+      "scope": "handoff gate, closure report, rerun records"
+    },
+    {
+      "id": "lint-risk",
+      "name": "静态 lint 风险扫描",
+      "status": "passed-in-current-batch",
+      "scope": "eslint-disable / explicit any scan"
+    },
+    {
+      "id": "format",
+      "name": "基础格式",
+      "status": "passed-in-current-batch",
+      "scope": "changed files"
+    },
+    {
+      "id": "real-lint",
+      "name": "真实 npm run lint",
+      "status": "missing-local-dependencies",
+      "scope": "current workspace"
+    },
+    {
+      "id": "typecheck",
+      "name": "真实 npm run typecheck",
+      "status": "pending-real-project-run",
+      "scope": "real project"
+    },
+    {
+      "id": "build",
+      "name": "真实 npm run build",
+      "status": "pending-real-project-run",
+      "scope": "real project"
+    },
+    {
+      "id": "browser-qa",
+      "name": "浏览器 QA",
+      "status": "pending-manual-qa",
+      "scope": "routes/viewports"
+    }
+  ],
+  "rules": [
+    "passed-in-current-batch 只代表本批静态检查通过。",
+    "missing-local-dependencies 不等于代码失败，也不等于通过。",
+    "pending-real-project-run 必须在真实项目依赖安装后执行。",
+    "pending-manual-qa 必须由真实浏览器观察记录。"
+  ]
+}

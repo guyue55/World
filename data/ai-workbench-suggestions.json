@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 建议工作台样例",
+  "stageProgress": "phase-three-implementation line batch 2 / 4",
+  "status": "sample-only",
+  "suggestions": [
+    {
+      "id": "ai-sg-001",
+      "source": "route",
+      "scope": "public-only",
+      "title": "为首次访问者推荐主题展览入口",
+      "suggestion": "在首页增加通往 /exhibitions 的温和入口。",
+      "risk": "low",
+      "requiresUserAction": true,
+      "status": "draft"
+    },
+    {
+      "id": "ai-sg-002",
+      "source": "exhibition",
+      "scope": "planning-only",
+      "title": "补充“AI 是灯塔”展览说明",
+      "suggestion": "将 AI 边界、安全门禁和建议协议作为展览的三个章节。",
+      "risk": "medium",
+      "requiresUserAction": true,
+      "status": "draft"
+    },
+    {
+      "id": "ai-sg-003",
+      "source": "maintenance",
+      "scope": "public-only",
+      "title": "保留 release blockers 警示",
+      "suggestion": "在状态页持续展示 release-ready 未达成的原因。",
+      "risk": "low",
+      "requiresUserAction": true,
+      "status": "draft"
+    }
+  ],
+  "rules": [
+    "样例只用于静态工作台展示。",
+    "accepted 不等于自动执行。",
+    "任何建议都必须经过正常内容或工程流程。"
+  ]
+}

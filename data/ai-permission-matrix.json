@@ -1,0 +1,74 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 权限矩阵",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 1 / 4",
+  "status": "authority-matrix-ready",
+  "permissions": [
+    {
+      "operation": "read-public",
+      "default": "allow",
+      "humanConfirmation": false
+    },
+    {
+      "operation": "read-semi-public",
+      "default": "allow",
+      "humanConfirmation": false
+    },
+    {
+      "operation": "read-private",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "read-family",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "read-partner",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "read-vault",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "read-sealed",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "read-silent",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "publish",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "delete",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "change-visibility",
+      "default": "deny",
+      "humanConfirmation": true
+    },
+    {
+      "operation": "export",
+      "default": "deny",
+      "humanConfirmation": true
+    }
+  ],
+  "rules": [
+    "deny 表示默认不可执行，不代表用户授权后立即可自动化。",
+    "humanConfirmation=true 表示必须有人工明确操作。",
+    "sealed/silent 即使有确认，也需要未来单独协议。",
+    "权限矩阵只定义边界，不连接真实 AI 服务。"
+  ]
+}

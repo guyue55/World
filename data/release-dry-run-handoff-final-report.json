@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布干跑与交接线最终报告",
+  "stageProgress": "release-dry-run-handoff line batch 4 / 4",
+  "decision": "release-dry-run-handoff-complete-real-dry-run-required",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "release-dry-run-plan",
+    "release-handoff-package",
+    "release-rollback-plan",
+    "release-dry-run-handoff-closure"
+  ],
+  "preparedCapabilities": [
+    "release dry-run runner",
+    "release handoff manifest",
+    "failure and rollback playbook",
+    "handoff readiness matrix"
+  ],
+  "mustRunForReal": [
+    "npm install",
+    "npm run release:dry-run",
+    "npm run release-handoff:manifest",
+    "npm run release-rollback:print",
+    "manual release review",
+    "blocker closure review"
+  ],
+  "rules": [
+    "本阶段完成的是干跑与交接结构，不是真实发布。",
+    "release:dry-run 必须在真实项目环境执行。",
+    "handoff-incomplete 不得进入发布。",
+    "rollback plan 只规定处置，不自动执行生产回滚。",
+    "release-ready 仍由证据矩阵、人工核验和阻断状态共同决定。"
+  ]
+}

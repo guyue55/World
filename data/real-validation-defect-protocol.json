@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实验证缺陷回写协议",
+  "principle": "真实验证发现的问题必须进入缺陷流，而不是只停留在观察描述。",
+  "stageProgress": "real-validation line batch 1 / 4",
+  "defectLevels": [
+    {
+      "id": "P0",
+      "meaning": "阻断发布或破坏公开/私密边界"
+    },
+    {
+      "id": "P1",
+      "meaning": "核心路径不可用或移动端/宽屏明显异常"
+    },
+    {
+      "id": "P2",
+      "meaning": "体验瑕疵、文案问题或局部布局问题"
+    },
+    {
+      "id": "P3",
+      "meaning": "优化建议，不阻断阶段推进"
+    }
+  ],
+  "requiredFields": [
+    "id",
+    "source",
+    "route",
+    "viewport",
+    "severity",
+    "title",
+    "description",
+    "status",
+    "owner",
+    "createdAt"
+  ],
+  "allowedSources": [
+    "lint",
+    "typecheck",
+    "build",
+    "world-core",
+    "browser-qa",
+    "preview-smoke",
+    "performance"
+  ],
+  "rules": [
+    "P0/P1 必须进入修复队列，不能仅备注。",
+    "缺陷必须关联 route 或 command。",
+    "关闭缺陷必须记录验证方式。",
+    "真实验证线只记录事实，不把 pending 改成 passed。"
+  ]
+}

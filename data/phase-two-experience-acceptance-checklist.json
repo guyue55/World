@@ -1,0 +1,106 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段体验验收清单",
+  "principle": "第二阶段不是继续扩协议，而是确认真实体验能被访问、阅读、搜索、导航和理解。",
+  "stageProgress": "phase-two batch 11 / 12",
+  "routes": [
+    {
+      "route": "/",
+      "focus": [
+        "首屏解释世界",
+        "代表节点封面",
+        "宽屏版心",
+        "移动端首屏"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/archive",
+      "focus": [
+        "搜索",
+        "多维筛选",
+        "标签过滤",
+        "空状态"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/node/[slug]",
+      "focus": [
+        "正文阅读",
+        "目录",
+        "相关内容收纳",
+        "移动端正文优先"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/paths",
+      "focus": [
+        "访问者导览",
+        "路径卡片",
+        "标签同源状态"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/paths/[id]",
+      "focus": [
+        "节点序列",
+        "下一步推荐",
+        "路径进度"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/atlas",
+      "focus": [
+        "空间入口",
+        "区域星线",
+        "线性 fallback"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/timeline",
+      "focus": [
+        "事件分组",
+        "过滤",
+        "关联节点区域"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/ask",
+      "focus": [
+        "低光导览",
+        "安全边界",
+        "无 AI fallback"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/status",
+      "focus": [
+        "状态摘要",
+        "分组面板",
+        "未完成边界"
+      ],
+      "status": "pending-real-browser-qa"
+    },
+    {
+      "route": "/skeleton",
+      "focus": [
+        "骨架层说明",
+        "完整面板按需展开"
+      ],
+      "status": "pending-real-browser-qa"
+    }
+  ],
+  "rules": [
+    "所有核心路由都必须有移动端和桌面端检查记录。",
+    "体验问题必须写入缺陷台账，不得只在聊天中描述。",
+    "通过静态检查不等于浏览器 QA 通过。",
+    "第二阶段第 12 批前应生成阶段收口报告。"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 私密档案边界策略",
+  "stageProgress": "phase-five-private-archive-inheritance line batch 1 / 4",
+  "status": "boundary-policy-ready",
+  "layers": [
+    {
+      "tier": "private",
+      "publicBuild": "excluded",
+      "description": "个人私密资料与未公开札记。"
+    },
+    {
+      "tier": "family",
+      "publicBuild": "excluded",
+      "description": "家庭叙事、亲子内容和共同记忆。"
+    },
+    {
+      "tier": "partner",
+      "publicBuild": "excluded",
+      "description": "伴侣相关内容和双人记忆。"
+    },
+    {
+      "tier": "vault",
+      "publicBuild": "excluded",
+      "description": "高敏感档案与加密/封存候选。"
+    },
+    {
+      "tier": "sealed",
+      "publicBuild": "excluded",
+      "description": "暂时不可读、不可公开、不可被 AI 总结的封存内容。"
+    },
+    {
+      "tier": "silent",
+      "publicBuild": "excluded",
+      "description": "只保留存在性，不进入任何常规索引。"
+    }
+  ],
+  "publicAllowed": [
+    "public",
+    "semiPublic"
+  ],
+  "rules": [
+    "publicAllowed 之外的层级不得进入 public build。",
+    "sealed/silent 不得被 AI 摘要、推荐或导出。",
+    "vault 需要未来单独加密/权限设计。",
+    "本阶段不保存真实私密内容。"
+  ]
+}

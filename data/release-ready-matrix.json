@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 Release Ready 判断矩阵",
+  "stageProgress": "release-preparation line batch 4 / 4",
+  "status": "not-ready",
+  "items": [
+    {
+      "id": "local-gate",
+      "required": true,
+      "status": "pending",
+      "evidence": "npm run release:local-gate"
+    },
+    {
+      "id": "ci-gate",
+      "required": true,
+      "status": "pending",
+      "evidence": ".github/workflows/release-gate.yml run"
+    },
+    {
+      "id": "public-seo",
+      "required": true,
+      "status": "pending",
+      "evidence": "npm run check:public-seo-release after build"
+    },
+    {
+      "id": "browser-qa",
+      "required": true,
+      "status": "pending",
+      "evidence": "manual route/viewport matrix"
+    },
+    {
+      "id": "preview-smoke",
+      "required": true,
+      "status": "pending",
+      "evidence": "GUYUE_PREVIEW_URL=<url> npm run preview:smoke"
+    },
+    {
+      "id": "performance",
+      "required": false,
+      "status": "pending-risk-accepted-or-measured",
+      "evidence": "performance metrics or accepted risk note"
+    },
+    {
+      "id": "blockers",
+      "required": true,
+      "status": "open",
+      "evidence": "release-blocker-register"
+    }
+  ],
+  "rules": [
+    "所有 required 项必须 passed 或 closed，才可 release-ready。",
+    "performance 可风险接受，但必须记录原因和负责人。",
+    "任何 P0 阻断 open 时不得 release-ready。"
+  ]
+}
