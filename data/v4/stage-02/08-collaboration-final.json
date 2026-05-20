@@ -1,0 +1,29 @@
+{
+  "version": "4.0.0",
+  "name": "协作阶段收口",
+  "batch": 8,
+  "stage": 2,
+  "stageName": "多人协作与实时世界编辑",
+  "stageProgress": "V4 / 第 2 阶段 / 第 8 批 / 共 24 批",
+  "slug": "collaboration-final",
+  "status": "complete",
+  "goals": [
+    "收束协作阶段",
+    "汇总协作模型/实时协议/审核流"
+  ],
+  "outputs": [
+    "collaboration-final-report"
+  ],
+  "mustKeep": [
+    "no auto publish",
+    "no unauthorized collaboration"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-collaboration",
+    "dataDirectory": "data/v4/stage-02",
+    "docsDirectory": "docs/41-v4/stage-02",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

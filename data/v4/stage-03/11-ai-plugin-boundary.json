@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "AI 插件与工具调用边界",
+  "batch": 11,
+  "stage": 3,
+  "stageName": "插件系统与外部集成生态",
+  "stageProgress": "V4 / 第 3 阶段 / 第 11 批 / 共 24 批",
+  "slug": "ai-plugin-boundary",
+  "status": "complete",
+  "goals": [
+    "AI 插件工具调用边界",
+    "禁止高风险自动动作",
+    "成本限制与 prompt metadata"
+  ],
+  "outputs": [
+    "AiPluginBoundary",
+    "ToolCallPolicy",
+    "CostGuard"
+  ],
+  "mustKeep": [
+    "no vault raw read",
+    "no auto external publish"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-plugin-ecosystem",
+    "dataDirectory": "data/v4/stage-03",
+    "docsDirectory": "docs/41-v4/stage-03",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

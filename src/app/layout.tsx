@@ -9,7 +9,7 @@ export const metadata = createPageMetadata()
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body>
+      <body suppressHydrationWarning>
         <JsonLd data={websiteJsonLd()} />
         <WorldShell>{children}</WorldShell>
       </body>

@@ -1,0 +1,29 @@
+{
+  "version": "4.0.0",
+  "name": "发布网络阶段收口",
+  "batch": 20,
+  "stage": 5,
+  "stageName": "发布网络、世界协议与内容分发",
+  "stageProgress": "V4 / 第 5 阶段 / 第 20 批 / 共 24 批",
+  "slug": "publishing-final",
+  "status": "complete",
+  "goals": [
+    "收束发布网络阶段",
+    "发布协议与分发任务完整",
+    "仍需真实部署证据"
+  ],
+  "outputs": [
+    "publishing-network-final-report"
+  ],
+  "mustKeep": [
+    "productionLive=false until real deploy"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-publishing-network",
+    "dataDirectory": "data/v4/stage-05",
+    "docsDirectory": "docs/41-v4/stage-05",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

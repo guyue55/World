@@ -1,0 +1,69 @@
+{
+  "version": "4.0.1",
+  "name": "古月浮屿 V5 前剩余工作一次性完成报告",
+  "createdAt": "2026-05-20T07:46:31Z",
+  "workspace": "/mnt/data/guyue_v5_before_remaining_completion_workspace",
+  "status": "completed",
+  "scope": [
+    "fix hydration mismatch",
+    "fix tsx Permission denied",
+    "merge V4 check scripts into package.json",
+    "run V4 structural checks",
+    "add V4 real implementation minimum proof",
+    "run lint",
+    "run typecheck",
+    "run production build",
+    "update V5 entry gate"
+  ],
+  "commandResults": {
+    "check_v4_all": {
+      "name": "check_v4_all",
+      "command": "npm run check:v4:all",
+      "status": "passed",
+      "exitCode": 0,
+      "output": "> guyue-floating-world@0.1.0 check:v4:all\n> tsx scripts/check-v4-all.ts\n\nV4 batch 01 check passed.\nV4 batch 02 check passed.\nV4 batch 03 check passed.\nV4 batch 04 check passed.\nV4 stage 01 checks passed.\nV4 batch 05 check passed.\nV4 batch 06 check passed.\nV4 batch 07 check passed.\nV4 batch 08 check passed.\nV4 stage 02 checks passed.\nV4 batch 09 check passed.\nV4 batch 10 check passed.\nV4 batch 11 check passed.\nV4 batch 12 check passed.\nV4 stage 03 checks passed.\nV4 batch 13 check passed.\nV4 batch 14 check passed.\nV4 batch 15 check passed.\nV4 batch 16 check passed.\nV4 stage 04 checks passed.\nV4 batch 17 check passed.\nV4 batch 18 check passed.\nV4 batch 19 check passed.\nV4 batch 20 check passed.\nV4 stage 05 checks passed.\nV4 batch 21 check passed.\nV4 batch 22 check passed.\nV4 batch 23 check passed.\nV4 batch 24 check passed.\nV4 stage 06 checks passed.\nAll V4 structural checks passed."
+    },
+    "check_v4_real_implementation": {
+      "name": "check_v4_real_implementation",
+      "command": "npm run check:v4:real-implementation",
+      "status": "passed",
+      "exitCode": 0,
+      "output": "> guyue-floating-world@0.1.0 check:v4:real-implementation\n> tsx scripts/check-v4-real-implementation.ts\n\nV4 real implementation minimum proof passed."
+    },
+    "lint": {
+      "name": "lint",
+      "command": "npm run lint",
+      "status": "passed",
+      "exitCode": 0,
+      "output": "> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0"
+    },
+    "typecheck": {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "status": "passed",
+      "exitCode": 0,
+      "output": "> guyue-floating-world@0.1.0 typecheck\n> tsc --noEmit"
+    },
+    "build": {
+      "name": "build",
+      "command": "npm run build",
+      "status": "passed",
+      "exitCode": 0,
+      "output": "> guyue-floating-world@0.1.0 build\n> npm run validate:world && npm run check:public && next build\n\n\n> guyue-floating-world@0.1.0 validate:world\n> tsx scripts/validate-world-data.ts\n\nWorld data validation passed.\n\n> guyue-floating-world@0.1.0 check:public\n> tsx scripts/check-public-build.ts\n\nPublic build check passed.\n   \u001b[1m\u001b[38;2;173;127;168m▲ Next.js 15.5.18\u001b[39m\u001b[22m\n   - Experiments (use with caution):\n     \u001b[1m✓\u001b[22m mdxRs\n\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Creating an optimized production build ...\n \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled successfully in 10.5s\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Linting and checking validity of types ...\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Collecting page data ...\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Generating static pages (0/70) ...\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Generating static pages (17/70) \n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Generating static pages (34/70) \n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Generating static pages (52/70) \n \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Generating static pages (70/70)\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Finalizing page optimization ...\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Collecting build traces ...\n\n\u001b[4mRoute (app)\u001b[24m                                          \u001b[4mSize\u001b[24m  \u001b[4mFirst Load JS\u001b[24m  \u001b[4m\u001b[24m  \u001b[4m\u001b[24m\n┌ ○ /                                               172 B         \u001b[37m\u001b[1m106 kB\u001b[22m\u001b[39m\n├ ○ /_not-found                                     228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /about                                          171 B         \u001b[37m\u001b[1m106 kB\u001b[22m\u001b[39m\n├ ○ /ai-workbench                                   228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /ai-workbench-v2                                228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ƒ /api/v2/ai/suggestions                          228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ƒ /api/v2/audit                                   228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ƒ /api/v2/content                                 228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ƒ /api/v2/export/jobs                             228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ƒ /api/v2/vault                                   228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /archive                                      11.7 kB         \u001b[37m\u001b[1m117 kB\u001b[22m\u001b[39m\n├ ○ /ask                                          1.01 kB         \u001b[37m\u001b[1m107 kB\u001b[22m\u001b[39m\n├ ○ /atlas                                          172 B         \u001b[37m\u001b[1m106 kB\u001b[22m\u001b[39m\n├ ○ /content-ecosystem                              228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /evidence                                       228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /evidence-sprint                                228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /exhibitions                                    228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /export-center                                  228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /forbidden                                      171 B         \u001b[37m\u001b[1m106 kB\u001b[22m\u001b[39m\n├ ○ /governance                                     228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /hardening                                      228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /intelligent-ops                                228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /manifest.webmanifest                           228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /manifesto                                      228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ● /node/[slug]                                  5.84 kB         \u001b[37m\u001b[1m112 kB\u001b[22m\u001b[39m\n├   ├ /node/world-manifesto\n├   ├ /node/personal-digital-universe-definition\n├   ├ /node/ai-lighthouse-boundary\n├   └ [+12 more paths]\n├ ○ /operator                                       228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /paths                                          714 B         \u001b[37m\u001b[1m106 kB\u001b[22m\u001b[39m\n├ ● /paths/[id]                                     172 B         \u001b[37m\u001b[1m106 kB\u001b[22m\u001b[39m\n├   ├ /paths/first-visit\n├   ├ /paths/tech-ai\n├   ├ /paths/how-world-created\n├   └ [+2 more paths]\n├ ○ /phase-four                                     228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /phase-three                                    228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /pre-v4-gate                                    228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /private-archive                                228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /production                                     228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /release                                        228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /robots.txt                                     228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /rss.xml                                        228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /sitemap.xml                                    228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /skeleton                                       663 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /status                                         663 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /timeline                                      1.5 kB         \u001b[37m\u001b[1m104 kB\u001b[22m\u001b[39m\n├ ○ /v2-console                                     228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v3-universe                                    228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v4                                             228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v4-collaboration                               228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v4-governance                                  228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v4-plugin-center                               228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v4-publishing                                  228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ○ /v4-universe-workbench                          228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n├ ƒ /world-index.json                               228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n└ ƒ /world-manifest.json                            228 B         \u001b[37m\u001b[1m103 kB\u001b[22m\u001b[39m\n+ First Load JS shared by all                      \u001b[37m\u001b[1m102 kB\u001b[22m\u001b[39m\n  ├ chunks/1255-b28ea36bf0cdbd65.js               46.2 kB\n  ├ chunks/4bd1b696-f785427dddbba9fb.js           54.2 kB\n  └ other shared chunks (total)                   1.93 kB\n\n\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses \u001b[36mgenerateStaticParams\u001b[39m)\nƒ  (Dynamic)  server-rendered on demand\n\n\n\n \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config"
+    }
+  },
+  "finalState": {
+    "v4Status": "local-engineering-ready",
+    "v5PlanningAllowed": true,
+    "v5FormalDevelopmentAllowed": true,
+    "releaseReady": true,
+    "productionLive": false
+  },
+  "externalStillRequiredForProductionLive": [
+    "real hosting deploy",
+    "browser smoke on target devices",
+    "manual security/privacy owner signoff",
+    "real external service credentials where needed"
+  ],
+  "honestyNote": "productionLive remains false because no external deployment or human signoff can be completed inside this local workspace."
+}

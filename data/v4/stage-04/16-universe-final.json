@@ -1,0 +1,29 @@
+{
+  "version": "4.0.0",
+  "name": "沉浸式宇宙阶段收口",
+  "batch": 16,
+  "stage": 4,
+  "stageName": "沉浸式宇宙工作台与 3D/WebGL 可选层",
+  "stageProgress": "V4 / 第 4 阶段 / 第 16 批 / 共 24 批",
+  "slug": "universe-final",
+  "status": "complete",
+  "goals": [
+    "收束沉浸式宇宙阶段",
+    "工作台能力可访问且可降级"
+  ],
+  "outputs": [
+    "universe-workbench-final-report"
+  ],
+  "mustKeep": [
+    "3D optional",
+    "core content accessible"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-universe-workbench",
+    "dataDirectory": "data/v4/stage-04",
+    "docsDirectory": "docs/41-v4/stage-04",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

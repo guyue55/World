@@ -1,0 +1,31 @@
+{
+  "version": "4.0.0",
+  "name": "安全与隐私硬化",
+  "batch": 22,
+  "stage": 6,
+  "stageName": "平台治理、安全、成本与 V5 入口门禁",
+  "stageProgress": "V4 / 第 6 阶段 / 第 22 批 / 共 24 批",
+  "slug": "security-privacy-hardening",
+  "status": "complete",
+  "goals": [
+    "安全与隐私硬化",
+    "RBAC/ABAC/密钥轮换/插件沙箱",
+    "导出脱敏"
+  ],
+  "outputs": [
+    "SecurityPolicy",
+    "PrivacyHardening"
+  ],
+  "mustKeep": [
+    "vault encryption required",
+    "prompt leakage guard"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-governance",
+    "dataDirectory": "data/v4/stage-06",
+    "docsDirectory": "docs/41-v4/stage-06",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

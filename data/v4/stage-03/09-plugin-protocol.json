@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "插件协议",
+  "batch": 9,
+  "stage": 3,
+  "stageName": "插件系统与外部集成生态",
+  "stageProgress": "V4 / 第 3 阶段 / 第 9 批 / 共 24 批",
+  "slug": "plugin-protocol",
+  "status": "complete",
+  "goals": [
+    "定义插件协议",
+    "插件声明权限/输入输出/risk/audit",
+    "插件默认关闭"
+  ],
+  "outputs": [
+    "PluginManifest",
+    "PluginPermission",
+    "PluginRisk"
+  ],
+  "mustKeep": [
+    "enabled=false by default",
+    "audit requirements"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-plugin-ecosystem",
+    "dataDirectory": "data/v4/stage-03",
+    "docsDirectory": "docs/41-v4/stage-03",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

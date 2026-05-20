@@ -1,0 +1,31 @@
+{
+  "version": "4.0.0",
+  "name": "3D/WebGL 可选视觉层",
+  "batch": 14,
+  "stage": 4,
+  "stageName": "沉浸式宇宙工作台与 3D/WebGL 可选层",
+  "stageProgress": "V4 / 第 4 阶段 / 第 14 批 / 共 24 批",
+  "slug": "optional-webgl-layer",
+  "status": "complete",
+  "goals": [
+    "定义 3D/WebGL 可选层",
+    "WebGL 失败仍可用",
+    "移动端默认轻量"
+  ],
+  "outputs": [
+    "OptionalWebGLLayer",
+    "RendererPolicy"
+  ],
+  "mustKeep": [
+    "not required",
+    "reduced motion"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-universe-workbench",
+    "dataDirectory": "data/v4/stage-04",
+    "docsDirectory": "docs/41-v4/stage-04",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

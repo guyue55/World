@@ -1,0 +1,33 @@
+{
+  "version": "4.0.0",
+  "name": "V4 范围契约与边界",
+  "batch": 1,
+  "stage": 1,
+  "stageName": "范围契约与真实前置门禁",
+  "stageProgress": "V4 / 第 1 阶段 / 第 1 批 / 共 24 批",
+  "slug": "scope-contract",
+  "status": "complete",
+  "goals": [
+    "定义 V4 做什么/不做什么",
+    "继承 V3 边界但不伪装 production-ready",
+    "禁止绕过 V3 真实证据"
+  ],
+  "outputs": [
+    "v4-scope-contract",
+    "V4 入口边界",
+    "V4 非目标"
+  ],
+  "mustKeep": [
+    "v4FormalDevelopmentAllowed=false",
+    "releaseReady=false",
+    "productionLive=false"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-scope",
+    "dataDirectory": "data/v4/stage-01",
+    "docsDirectory": "docs/41-v4/stage-01",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}
