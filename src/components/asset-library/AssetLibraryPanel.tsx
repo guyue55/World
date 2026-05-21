@@ -1,16 +1,2 @@
 import { visualAssets } from '@/features/asset-library'
-
-export function AssetLibraryPanel() {
-  return (
-    <section className="grid gap-4 md:grid-cols-3">
-      {visualAssets.map((asset) => (
-        <article key={asset.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft">
-          <p className="text-xs tracking-[0.3em] text-moss">{asset.kind.toUpperCase()} · {asset.usage}</p>
-          <h3 className="mt-3 text-xl font-semibold">{asset.title}</h3>
-          <p className="mt-3 text-sm leading-6 text-ink/60">{asset.licenseNote}</p>
-          <p className="mt-4 rounded-2xl bg-sand/70 p-3 text-xs text-ink/50">{asset.pathHint}</p>
-        </article>
-      ))}
-    </section>
-  )
-}
+export function AssetLibraryPanel(){return <section className="grid gap-4 md:grid-cols-3">{visualAssets.map(asset=><article key={asset.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft"><p className="text-xs tracking-[0.3em] text-moss">{asset.kind.toUpperCase()} · {asset.usage} · {asset.status}</p><h3 className="mt-3 text-xl font-semibold">{asset.title}</h3><p className="mt-3 text-sm leading-6 text-ink/60">{asset.licenseNote}</p><p className="mt-4 rounded-2xl bg-sand/70 p-3 text-xs text-ink/50">{asset.pathHint}</p><p className="mt-3 text-xs text-ink/45">productionReady: {asset.productionReady?'true':'false'}</p></article>)}</section>}
