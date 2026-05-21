@@ -1,0 +1,23 @@
+{
+  "version": "V5",
+  "stage": 3,
+  "batch": 12,
+  "status": "complete",
+  "completedBatches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "阶段 4 必须完成内容安全审查、真实内容完成度仪表、封版报告和 V6 私密档案/AI 助手交接。",
+    "newTasks": [
+      "content safety audit",
+      "readiness panel",
+      "seal report",
+      "V6 handoff"
+    ]
+  },
+  "productionLive": false
+}

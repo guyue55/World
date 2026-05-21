@@ -1,0 +1,22 @@
+{
+  "version": "V5",
+  "name": "真实内容版",
+  "status": "complete",
+  "createdAt": "2026-05-21T11:12:02Z",
+  "completedStages": 4,
+  "completedBatches": 16,
+  "localContentReady": true,
+  "highlights": [
+    "真实内容种子",
+    "照片故事",
+    "项目记录",
+    "生活记录",
+    "真实时间河",
+    "真实主题展览",
+    "真实阅读路径",
+    "内容安全审查",
+    "V6 交接"
+  ],
+  "productionLive": false,
+  "nextVersion": "V6 私密档案与 AI 世界助手深化"
+}
