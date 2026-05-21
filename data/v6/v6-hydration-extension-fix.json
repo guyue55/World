@@ -1,0 +1,21 @@
+{
+  "version": "6.0.0",
+  "name": "Hydration mismatch fix for browser extension html attributes",
+  "createdAt": "2026-05-20T10:38:17Z",
+  "rootCause": "Browser extension injected data-immersive-translate-page-theme on <html> before React hydration.",
+  "fix": "Add suppressHydrationWarning to <html> in src/app/layout.tsx and keep body suppressHydrationWarning.",
+  "filesChanged": [
+    "src/app/layout.tsx"
+  ],
+  "productionLive": false,
+  "status": "fixed-and-verified",
+  "verification": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "checkV6All": "passed",
+    "checkV6RealImplementation": "passed",
+    "build": "passed",
+    "staticPages": "87/87"
+  },
+  "note": "This suppresses known extension-added attribute mismatches on the root html element. It does not mask app logic errors inside normal component subtrees."
+}

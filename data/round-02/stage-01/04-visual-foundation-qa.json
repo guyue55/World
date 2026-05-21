@@ -1,0 +1,21 @@
+{
+  "round": 2,
+  "stage": 1,
+  "batch": 4,
+  "status": "complete",
+  "completedBatches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "不新增阶段 1 批次；后续阶段必须复用 visual-foundation 并持续检查移动端降级。",
+    "newTasks": [
+      "世界地图复用视觉基底",
+      "主题系统接入视觉 token"
+    ]
+  },
+  "productionLive": false
+}

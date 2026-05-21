@@ -1,0 +1,3 @@
+import Link from 'next/link'
+import { getNextPathHints } from '@/features/content-constellation/recommendations'
+export function NextPathHint({ nodeId }: { nodeId: string }) { const paths=getNextPathHints(nodeId); return <div className="rounded-[2rem] border border-moss/20 bg-moss/10 p-5"><p className="text-xs tracking-[0.3em] text-moss">NEXT PATH</p><h3 className="mt-3 text-2xl font-semibold">下一步路径</h3><div className="mt-4 flex flex-wrap gap-2">{paths.length>0?paths.map(path=><Link key={path.id} href={`/paths/${path.id}`} className="rounded-full bg-ink px-4 py-2 text-sm text-white">{path.title}</Link>):<span className="text-sm text-ink/60">暂无路径建议。</span>}</div></div> }

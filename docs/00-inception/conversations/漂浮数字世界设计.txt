@@ -1,0 +1,83 @@
+已完成 **v1-第五阶段封版完整全量项目包** 打包。
+
+下载：
+
+[古月浮屿_v1-第五阶段封版_完整全量项目包.zip](sandbox:/mnt/data/古月浮屿_v1-第五阶段封版_完整全量项目包.zip)
+
+[打包说明.md](sandbox:/mnt/data/古月浮屿_v1-第五阶段封版_完整全量项目包说明.md)
+
+[manifest.json](sandbox:/mnt/data/古月浮屿_v1-第五阶段封版_完整全量项目包_manifest.json)
+
+打包结果：
+
+```text id="zv6zml"
+文件总数：1443
+大小：79649359 bytes
+JSON 文件数：260
+JSON 错误数：0
+关键文件缺失数：0
+```
+
+归档结构：
+
+```text id="1qy9x7"
+01_v1-第五阶段封版_当前完整项目/
+  最新第五阶段封版项目代码、项目内 docs/data/scripts/src/public/config 等
+
+02_历史设计文档与阶段产物/
+  世界文档、产品设计文档、补充工程文档、调研文档、阶段说明、patch、图片、历史 zip 等
+```
+
+分类统计：
+
+```text id="vkyxbe"
+project_src: 308
+project_data: 254
+project_docs: 304
+project_scripts: 233
+project_public: 10
+project_github: 2
+project_root_or_config: 29
+history_md: 159
+history_zip: 63
+history_patch: 65
+history_media: 11
+history_json: 3
+history_docx: 1
+history_txt: 1
+```
+
+第五阶段封版关键能力已包含：
+
+```text id="j187lp"
+第五阶段范围契约
+私密档案边界策略
+/private-archive 安全入口
+私密档案元数据占位索引
+时间胶囊占位计划
+年度世界册结构
+导出与传承占位计划
+第五阶段最终报告
+第六阶段入口门禁
+```
+
+当前封版状态：
+
+```text id="4mscqm"
+第二阶段：12 / 12 批已完成
+第三阶段规划线：4 / 4 批已完成
+第三阶段实现线：4 / 4 批已完成
+第三阶段体验整合线：4 / 4 批已完成
+第三阶段后发布候选/验收/交接收口：已完成
+第四阶段前最终封版线：4 / 4 批已完成
+第四阶段真实内容生长与运营线：4 / 4 批已完成
+第五阶段私密档案与传承系统线：4 / 4 批已完成
+```
+
+第六阶段入口判定：
+
+```text id="ub1rcy"
+phase-six-planning-allowed-ai-boundary-must-inherit-private-policy
+```
+
+`release-ready` 仍未达成，仍需真实 dry-run、真实 handoff manifest、真实 acceptance scan、人工签收和 blocker review。

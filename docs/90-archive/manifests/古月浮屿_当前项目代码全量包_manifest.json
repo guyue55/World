@@ -1,0 +1,109 @@
+{
+  "packageName": "古月浮屿_当前项目代码全量包",
+  "createdAt": "2026-05-20T09:18:53Z",
+  "sourceWorkspace": "/mnt/data/guyue_current_code_rebuild_workspace/v4-封版_代码完整项目",
+  "packageType": "current-code-full-package",
+  "layout": {
+    "当前项目代码": "当前最新项目代码，不含 docs 文档目录"
+  },
+  "included": [
+    "src",
+    "scripts",
+    "data",
+    "public",
+    ".github",
+    ".env.example",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "postcss.config.mjs",
+    "tailwind.config.ts",
+    "vercel.json",
+    "README.md",
+    "next-env.d.ts"
+  ],
+  "excluded": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "docs",
+      "docs-architecture",
+      "docs-pre-v4",
+      "docs-v3",
+      "docs-v3-concept",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".patch",
+      ".zip"
+    ]
+  },
+  "counts": {
+    "totalFiles": 1435,
+    "jsonFiles": 485,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingCurrentRequired": 0,
+    "docsIncluded": 0,
+    "categoryCounts": {
+      "root_config": 11,
+      "scripts": 422,
+      "data": 482,
+      "public": 10,
+      ".github": 2,
+      "src": 508
+    }
+  },
+  "checks": {
+    "requiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "currentRequiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "jsonCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "docsExcludedCheck": {
+      "passed": true,
+      "docsFiles": []
+    }
+  },
+  "projectStatus": {
+    "v5Status": "local-engineering-ready",
+    "v6PlanningAllowed": true,
+    "v6FormalDevelopmentAllowed": true,
+    "v5ReleaseReadyLocal": true,
+    "v5ProductionLive": false,
+    "v5AllLocalEngineeringGatesPassed": true,
+    "v4Status": "structure-complete"
+  },
+  "notes": [
+    "这是当前项目代码全量包，不包含 docs 文档目录。",
+    "已包含 .github/ 与 .env.example。",
+    "已包含 V5 到 V6 前完整开发和本地工程闭环成果。",
+    "productionLive 仍以真实外部部署和人工签收为准。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_当前项目代码全量包.zip",
+    "sizeBytes": 1116142,
+    "sha256": "77992edff6eb4a014fa31b042f00f3fff3610e104e8a929a1aeee4d272ec30be"
+  }
+}

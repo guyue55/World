@@ -1,0 +1,130 @@
+{
+  "packageName": "古月浮屿_调整代码目录结构_完整全量项目包",
+  "createdAt": "2026-05-20T06:19:15Z",
+  "sourceWorkspace": "/mnt/data/guyue_pre_v4_data_structure_workspace",
+  "packageType": "full-project-package-after-src-and-data-structure-refactor",
+  "layout": {
+    "调整代码目录结构_完整项目": "调整 src/features/platform/shared 分层与 data JSON 分层后的完整项目"
+  },
+  "includedByPolicy": [
+    "src/",
+    "src/features/",
+    "src/platform/",
+    "src/shared/",
+    "src/lib/ compatibility re-exports",
+    "src/server/ compatibility re-exports",
+    "scripts/",
+    "data/",
+    "public/",
+    "docs-architecture/",
+    "docs-v3/",
+    "docs-v3-concept/",
+    "docs-pre-v4/",
+    ".github/",
+    ".env.example",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "README.md"
+  ],
+  "exclusions": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".zip"
+    ]
+  },
+  "counts": {
+    "totalFiles": 1293,
+    "jsonFiles": 428,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingStructureRequired": 0,
+    "rootDataJsonExceptRegistry": 0,
+    "categoryCounts": {
+      "root_config_or_docs": 13,
+      "data": 425,
+      "public": 10,
+      "scripts": 357,
+      "docs-pre-v4": 4,
+      "docs-v3-concept": 6,
+      "docs-architecture": 1,
+      ".github": 2,
+      "src": 455,
+      "docs-v3": 20
+    },
+    "dataGroupCounts": {
+      "root": 1,
+      "v2": 23,
+      "v2-1": 5,
+      "v3": 22,
+      "pre-v4": 12,
+      "v3-concept": 8,
+      "release": 124,
+      "core": 68,
+      "engineering": 35,
+      "operations": 8,
+      "domains/ai": 17,
+      "domains/archive": 7,
+      "domains/experience": 34,
+      "domains/governance": 25,
+      "domains/content": 23,
+      "versions": 12
+    }
+  },
+  "checks": {
+    "requiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "structureCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "jsonCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "dataRootPolicy": {
+      "passed": true,
+      "rootJsonExceptRegistry": []
+    }
+  },
+  "status": {
+    "srcStructureDecision": "features/platform/shared layering with compatibility re-exports",
+    "dataStructureDecision": "root data JSON files are grouped by domain and lifecycle; code references updated to new paths",
+    "v3ConceptStatus": "complete",
+    "preV4FinalDecision": "v4-planning-allowed-formal-development-blocked-until-real-production-evidence",
+    "releaseReady": false,
+    "productionLive": false
+  },
+  "notes": [
+    "本包为调整代码目录结构后的完整全量项目包。",
+    "已明确包含 .github/ 与 .env.example。",
+    "已包含 src/features、src/platform、src/shared 新结构，以及旧 src/lib/src/server 的兼容 re-export。",
+    "已包含 data 分层整理后的目录与引用修复结果。",
+    "本包不代表 production-ready；真实命令仍需在可执行 tsx 环境中复跑。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_调整代码目录结构_完整全量项目包.zip",
+    "sizeBytes": 1074927,
+    "sha256": "84bc860b719aa42b035da0b6eacfa59ddaa5074f2568689224f3a8781c2b3ea2"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "workflows": [
+    {
+      "id": "low-preview",
+      "risk": "low",
+      "result": "preview-only",
+      "autoExecute": false
+    },
+    {
+      "id": "medium-draft",
+      "risk": "medium",
+      "result": "requires-audit",
+      "autoExecute": false
+    },
+    {
+      "id": "high-risk-flag",
+      "risk": "high",
+      "result": "requires-audit",
+      "autoExecute": false
+    },
+    {
+      "id": "private-raw-block",
+      "risk": "high",
+      "result": "rejected",
+      "autoExecute": false
+    }
+  ],
+  "policy": "No workflow auto-executes publish/delete/change-visibility/read-private-raw."
+}

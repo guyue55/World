@@ -1,0 +1,10 @@
+{
+  "createdAt": "2026-05-21T02:50:34Z",
+  "status": "active",
+  "intentionalJsonRouteDirs": [
+    "src/app/world-index.json",
+    "src/app/world-manifest.json"
+  ],
+  "rule": "Parse only .json files. Treat listed .json directories as intentional Next App Router endpoints.",
+  "productionLive": false
+}

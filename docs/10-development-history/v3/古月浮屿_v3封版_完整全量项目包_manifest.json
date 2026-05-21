@@ -1,0 +1,101 @@
+{
+  "packageName": "古月浮屿_v3封版_完整全量项目包",
+  "createdAt": "2026-05-20T05:54:09Z",
+  "sourceWorkspace": "/mnt/data/guyue_v3_concept_completion_workspace",
+  "packageType": "v3-full-project-freeze-package",
+  "layout": {
+    "v3封版_完整项目": "V3 封版完整项目，包含代码、配置、数据、脚本、public、.github、.env.example 和项目内文档"
+  },
+  "includedByPolicy": [
+    "src/",
+    "scripts/",
+    "data/",
+    "public/",
+    "docs/",
+    "docs-v2/",
+    "docs-v3/",
+    "docs-v3-concept/",
+    "docs-pre-v4/",
+    ".github/",
+    ".env.example",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "README.md"
+  ],
+  "exclusions": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "tsconfig.tsbuildinfo"
+    ],
+    "zipFilesInSourceTree": true
+  },
+  "counts": {
+    "totalFiles": 1256,
+    "jsonFiles": 422,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingV3Required": 0,
+    "categoryCounts": {
+      "root_config_or_docs": 13,
+      "data": 418,
+      "public": 10,
+      "scripts": 355,
+      "docs-pre-v4": 4,
+      "docs-v3-concept": 6,
+      ".github": 2,
+      "src": 428,
+      "docs-v3": 20
+    }
+  },
+  "requiredCheck": {
+    "passed": true,
+    "missing": []
+  },
+  "v3CompletenessCheck": {
+    "passed": true,
+    "missing": []
+  },
+  "jsonCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "status": {
+    "v3Status": "structure-complete",
+    "v3CompletedStages": 5,
+    "v3CompletedBatches": 20,
+    "v3ConceptStatus": "complete",
+    "v3ConceptCompletedBatches": 6,
+    "preV4FinalDecision": "v4-planning-allowed-formal-development-blocked-until-real-production-evidence",
+    "v4PlanningAllowed": true,
+    "v4FormalDevelopmentAllowed": false,
+    "releaseReady": false,
+    "productionLive": false
+  },
+  "notes": [
+    "本包为 V3 封版完整项目包，包含 .github/ 与 .env.example。",
+    "本包保留项目内文档目录；仅排除依赖、构建产物、缓存、历史 zip 与系统文件。",
+    "V3 结构、概念深化、V4 前补证已收口；但 releaseReady 与 productionLive 仍为 false。",
+    "真实生产仍需在可执行环境中复跑 lint/typecheck/build/check:v3:all/check:v3-concept:all/check:pre-v4:all。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_v3封版_完整全量项目包.zip",
+    "sizeBytes": 1001465,
+    "sha256": "264a58f74487538c80b651f81c7662400e223cf1d344d50024a740c0c0433e1a"
+  }
+}

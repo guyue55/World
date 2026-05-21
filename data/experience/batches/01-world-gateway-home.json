@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 1,
+  "totalBatches": 8,
+  "slug": "world-gateway-home",
+  "title": "重做首页为世界入口",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 1 / 批次 1/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

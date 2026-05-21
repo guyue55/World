@@ -1,0 +1,111 @@
+{
+  "packageName": "古月浮屿_v4-封版_代码完整全量包",
+  "createdAt": "2026-05-20T07:57:52Z",
+  "sourceWorkspace": "/mnt/data/guyue_v5_before_remaining_completion_workspace",
+  "packageType": "v4-sealed-code-full-package",
+  "layout": {
+    "v4-封版_代码完整项目": "V4 封版代码完整全量项目，不含 docs 文档目录"
+  },
+  "included": [
+    "src",
+    "scripts",
+    "data",
+    "public",
+    ".github",
+    ".env.example",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json",
+    "next.config.ts",
+    "eslint.config.mjs",
+    "postcss.config.mjs",
+    "tailwind.config.ts",
+    "vercel.json",
+    "README.md",
+    "next-env.d.ts"
+  ],
+  "excluded": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "docs",
+      "docs-architecture",
+      "docs-pre-v4",
+      "docs-v3",
+      "docs-v3-concept",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".patch",
+      ".zip"
+    ],
+    "note": "代码包不包含 docs/ 文档体系与历史 patch/zip"
+  },
+  "counts": {
+    "totalFiles": 1348,
+    "jsonFiles": 458,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingV4Required": 0,
+    "docsIncluded": 0,
+    "categoryCounts": {
+      "root_config": 11,
+      "scripts": 390,
+      "data": 455,
+      "public": 10,
+      ".github": 2,
+      "src": 480
+    }
+  },
+  "checks": {
+    "requiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "v4RequiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "jsonCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "docsExcludedCheck": {
+      "passed": true,
+      "docsFiles": []
+    }
+  },
+  "v4Status": {
+    "v4FinalStatus": "structure-complete",
+    "localEngineeringReady": true,
+    "v5PlanningAllowed": true,
+    "v5FormalDevelopmentAllowed": true,
+    "releaseReady": true,
+    "productionLive": false,
+    "preV5CompletionStatus": "completed",
+    "allLocalEngineeringGatesPassed": true
+  },
+  "notes": [
+    "这是 v4 封版代码完整全量包，不包含 docs 文档目录。",
+    "已明确包含 .github/ 与 .env.example。",
+    "已包含 V4 到 V5 前本地工程闭环成果。",
+    "productionLive 仍为 false，因为未包含真实外部部署和人工签收。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_v4-封版_代码完整全量包.zip",
+    "sizeBytes": 1092319,
+    "sha256": "edbca7176b825bca66044a6003d39d72b0bb7eacbd13f4bbc375e92b78d18632"
+  }
+}

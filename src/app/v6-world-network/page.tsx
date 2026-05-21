@@ -1,18 +1,30 @@
+import Link from 'next/link'
 import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
-import { V6StatusCard } from '@/components/v6/V6StatusCard'
+import { worldNetworkNodes } from '@/features/experience-realization'
 
-export default function Page() {
+export default function V6WorldNetworkPage() {
   return (
     <ResponsivePageShell>
-      <section className="rounded-world border border-ink/10 bg-white/50 p-8 shadow-soft">
-        <p className="text-sm tracking-[0.35em] text-moss">V6 WORLD NETWORK</p>
+      <section className="rounded-[3rem] border border-white/50 bg-ink p-8 text-white shadow-soft md:p-12">
+        <p className="text-sm tracking-[0.42em] text-white/60">V6 WORLD NETWORK</p>
         <h1 className="mt-4 text-4xl font-semibold md:text-6xl">多世界网络</h1>
-        <p className="mt-5 max-w-3xl leading-8 text-ink/70">世界发现、路由、订阅、事件流与跨世界权限边界。</p>
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <V6StatusCard title="STATUS" value="V6" description="多世界网络与个人文明 OS" />
-          <V6StatusCard title="BOUNDARY" value="GOVERNED" description="世界、Agent、协议均受权限治理" />
-          <V6StatusCard title="PROD" value="FALSE" description="生产上线需外部部署和人工签收" />
-        </div>
+        <p className="mt-5 max-w-3xl leading-8 text-white/70">
+          多个世界可以连接、发现、订阅，但私密世界只产生脱敏信号，不能复制原文。
+        </p>
+      </section>
+      <section className="mt-8 grid gap-4 md:grid-cols-4">
+        {worldNetworkNodes.map((world) => (
+          <article key={world.kind} className="rounded-[2rem] border border-white/50 bg-white/70 p-5 shadow-soft">
+            <p className="text-xs tracking-[0.3em] text-moss">{world.kind}</p>
+            <h2 className="mt-3 text-2xl font-semibold">{world.name}</h2>
+            <p className="mt-3 text-sm leading-6 text-ink/65">{world.description}</p>
+          </article>
+        ))}
+      </section>
+      <section className="mt-8 rounded-[2rem] border border-moss/20 bg-moss/10 p-6">
+        <h2 className="text-2xl font-semibold">开放协议入口</h2>
+        <p className="mt-3 leading-7 text-ink/65">世界可导出、可迁移、可互操作，但能力描述必须受权限控制。</p>
+        <Link href="/v6-open-protocol" className="mt-4 inline-flex rounded-full bg-ink px-5 py-3 text-sm text-white">查看开放协议 →</Link>
       </section>
     </ResponsivePageShell>
   )

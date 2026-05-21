@@ -1,30 +1,18 @@
-import { FeaturedNodeGrid } from '@/components/home/FeaturedNodeGrid'
-import { HomeHero } from '@/components/home/HomeHero'
-import { HomePathRail } from '@/components/home/HomePathRail'
-import { HomeStatusSummary } from '@/components/home/HomeStatusSummary'
-import { HomeWorldRhythm } from '@/components/home/HomeWorldRhythm'
+import { CelestialPanel } from '@/components/experience/CelestialPanel'
 import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
-import { getAllAreas } from '@/lib/areas'
-import { getFeaturedNodes, getPublicNodes } from '@/lib/nodes'
-import { getAllPaths } from '@/lib/paths'
+import { FloatingLayer } from '@/components/visual/FloatingLayer'
+import { WorldGatewayHero } from '@/components/visual/WorldGatewayHero'
+import { experienceNodes } from '@/features/experience-realization'
 
 export default function HomePage() {
-  const areas = getAllAreas()
-  const featuredNodes = getFeaturedNodes().slice(0, 6)
-  const paths = getAllPaths().slice(0, 3)
-  const publicNodes = getPublicNodes()
-
   return (
-    <ResponsivePageShell className="pt-6 md:pt-10">
-      <HomeHero />
-      <FeaturedNodeGrid nodes={featuredNodes} />
-      <HomePathRail paths={paths} />
-      <HomeWorldRhythm />
-      <HomeStatusSummary
-        publicNodeCount={publicNodes.length}
-        areaCount={areas.length}
-        pathCount={paths.length}
-      />
+    <ResponsivePageShell>
+      <WorldGatewayHero />
+      <FloatingLayer eyebrow="WORLD ENTRY" title="从入口进入一座可生长的个人宇宙" description="首页是世界地图、节点星图、时间河、AI 灯塔和记忆图谱的统一入口。">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {experienceNodes.map((node) => <CelestialPanel key={node.id} node={node} />)}
+        </div>
+      </FloatingLayer>
     </ResponsivePageShell>
   )
 }

@@ -1,0 +1,84 @@
+{
+  "packageName": "古月浮屿_v6-封版_完整全量项目包",
+  "createdAt": "2026-05-20T10:31:17Z",
+  "sourceWorkspace": "/mnt/data/guyue_v6_clean_build_workspace/当前项目代码",
+  "packageType": "v6-sealed-full-project-package",
+  "layout": {
+    "v6-封版_完整项目": "V6 封版完整全量项目，包含代码、docs、data、scripts、public 与配置"
+  },
+  "excluded": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".patch",
+      ".zip"
+    ],
+    "note": "排除依赖、构建产物、缓存、历史 zip/patch。"
+  },
+  "counts": {
+    "totalFiles": 1560,
+    "jsonFiles": 513,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingV6Required": 0,
+    "categoryCounts": {
+      "root_config": 11,
+      "scripts": 454,
+      "data": 510,
+      "public": 10,
+      ".github": 2,
+      "src": 541,
+      "docs": 32
+    }
+  },
+  "checks": {
+    "requiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "v6RequiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "jsonCheck": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  "v6Status": {
+    "v6Status": "local-engineering-ready",
+    "v7PlanningAllowed": true,
+    "v7FormalDevelopmentAllowed": true,
+    "releaseReadyLocal": true,
+    "localEngineeringReady": true,
+    "productionLive": false,
+    "allLocalEngineeringGatesPassed": true,
+    "routeArtifactSmoke": true
+  },
+  "notes": [
+    "这是 V6 封版完整全量项目包，包含 docs。",
+    "已包含 .github/ 与 .env.example。",
+    "已包含 V6 到 V7 前最终收口成果。",
+    "productionLive 仍为 false，因为真实外部部署和人工签收不在本地包内完成。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_v6-封版_完整全量项目包.zip",
+    "sizeBytes": 1200738,
+    "sha256": "9c0fd8aef0395cf44675b4af4023f7efed9a248d44a4106695224089eaedadcb"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "packageName": "古月浮屿_文档全量包",
+  "createdAt": "2026-05-20T06:26:16Z",
+  "sourceWorkspace": "/mnt/data/guyue_pre_v4_docs_structure_workspace",
+  "packageType": "docs-full-package",
+  "layout": {
+    "docs_full": "统一 docs 文档中心 + 旧 docs-* 兼容 README + 文档整理元数据"
+  },
+  "included": [
+    "docs/",
+    "docs-architecture/README.md",
+    "docs-v3/README.md",
+    "docs-v3-concept/README.md",
+    "docs-pre-v4/README.md",
+    "README.md",
+    "_metadata/docs-structure-migration-map.json",
+    "_metadata/docs-structure-refactor-report.json"
+  ],
+  "excluded": [
+    "src/",
+    "scripts/",
+    "data/ 非文档结构元数据",
+    "node_modules/",
+    ".next/",
+    ".git/",
+    "构建产物与缓存"
+  ],
+  "counts": {
+    "totalFiles": 45,
+    "markdownFiles": 43,
+    "jsonFiles": 2,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "categoryCounts": {
+      "README.md": 1,
+      "docs/README.md": 1,
+      "docs-architecture": 1,
+      "docs-v3": 1,
+      "docs-v3-concept": 1,
+      "docs-pre-v4": 1,
+      "_metadata": 2,
+      "docs/10-architecture": 2,
+      "docs/31-v3-concept": 6,
+      "docs/40-pre-v4": 4,
+      "docs/00-index": 1,
+      "docs/20-product": 1,
+      "docs/50-engineering": 1,
+      "docs/60-operations": 1,
+      "docs/90-archive": 1,
+      "docs/30-v3": 20
+    }
+  },
+  "checks": {
+    "requiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "jsonCheck": {
+      "passed": true,
+      "errors": []
+    }
+  },
+  "notes": [
+    "这是文档全量包，不包含项目代码。",
+    "统一文档入口为 docs/。",
+    "旧 docs-* 目录仅保留 README 兼容说明。",
+    "本包不代表 release-ready。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_文档全量包.zip",
+    "sizeBytes": 22541,
+    "sha256": "685c047a7269c43ec71be3bd87ae7a535658d58916720dfa3fb254a591f6ee48"
+  }
+}

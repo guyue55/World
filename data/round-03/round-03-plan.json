@@ -1,0 +1,21 @@
+{
+  "round": 3,
+  "name": "真实内容接入与生产化准备",
+  "status": "complete",
+  "createdAt": "2026-05-21T01:32:05Z",
+  "stages": [
+    "content-ingestion",
+    "asset-library",
+    "service-adapters",
+    "production-readiness",
+    "observability-final-audit"
+  ],
+  "nonGoals": [
+    "real backend database",
+    "real third-party AI key",
+    "productionLive claim",
+    "private raw content reads",
+    "automatic publish/delete/change visibility"
+  ],
+  "productionLive": false
+}

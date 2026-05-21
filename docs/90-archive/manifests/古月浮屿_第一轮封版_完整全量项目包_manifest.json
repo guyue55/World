@@ -1,0 +1,98 @@
+{
+  "packageName": "古月浮屿_第一轮封版_完整全量项目包",
+  "createdAt": "2026-05-20T14:38:42Z",
+  "source": {
+    "basePackage": "/mnt/data/古月浮屿_v6-封版_完整全量项目包.zip",
+    "sourceWorkspace": "/mnt/data/guyue_round1_sealed_source_workspace/v6-封版_完整项目"
+  },
+  "packageType": "round1-sealed-full-project-package",
+  "layout": {
+    "第一轮封版_完整项目": "第一轮封版完整全量项目，包含所有代码、docs、data、scripts、public 与配置"
+  },
+  "excluded": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".orig",
+      ".patch",
+      ".rej",
+      ".zip"
+    ]
+  },
+  "counts": {
+    "totalFiles": 1597,
+    "jsonFiles": 524,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingRound1Required": 0,
+    "pollutionFiles": 0,
+    "categoryCounts": {
+      "root_config": 11,
+      "scripts": 455,
+      "data": 521,
+      "public": 10,
+      ".github": 2,
+      "src": 555,
+      "docs": 43
+    }
+  },
+  "checks": {
+    "requiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "round1RequiredCheck": {
+      "passed": true,
+      "missing": []
+    },
+    "jsonCheck": {
+      "passed": true,
+      "errors": []
+    },
+    "pollutionCheck": {
+      "passed": true,
+      "files": []
+    },
+    "hydrationFixCheck": {
+      "passed": true
+    }
+  },
+  "status": {
+    "v6Status": "local-engineering-ready",
+    "v7PlanningAllowed": true,
+    "v7FormalDevelopmentAllowed": true,
+    "releaseReadyLocal": true,
+    "localEngineeringReady": true,
+    "productionLive": false,
+    "allLocalEngineeringGatesPassed": true,
+    "experienceStatus": "complete",
+    "navigationIntegrated": true,
+    "dataDriven": true
+  },
+  "notes": [
+    "这是第一轮封版完整全量项目包，包含所有代码和文档。",
+    "已包含 V6 封版、Hydration mismatch 修复、体验兑现宇宙化重构、审查问题修复。",
+    "已包含 .github/ 与 .env.example。",
+    "productionLive 仍为 false，因为真实外部部署和人工签收不属于本地包可完成事项。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_第一轮封版_完整全量项目包.zip",
+    "sizeBytes": 1248135,
+    "sha256": "542a69b5d41698f32a792450ac2dfbf684c8fb2abe12262a86f877f47b264d38"
+  }
+}

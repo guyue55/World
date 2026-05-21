@@ -1,0 +1,12 @@
+{
+  "round": 2,
+  "stage": 3,
+  "batch": 10,
+  "status": "complete",
+  "views": [
+    "ContentStarMap",
+    "TopicIslandGrid",
+    "ReadingPathView"
+  ],
+  "productionLive": false
+}
