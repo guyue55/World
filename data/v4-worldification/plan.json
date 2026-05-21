@@ -1,0 +1,49 @@
+{
+  "version": "V4",
+  "name": "世界化重构版",
+  "status": "in-progress",
+  "createdAt": "2026-05-21T09:51:04Z",
+  "stages": [
+    {
+      "id": 1,
+      "name": "世界入口与 Atlas 空间骨架",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "name": "内容节点、路径与时间河空间化",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": 3,
+      "name": "主题展览、AI 灯塔与状态仪表场景化",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": 4,
+      "name": "多端沉浸、审查封版与 V5 交接",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "productionLive": false
+}

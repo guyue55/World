@@ -1,15 +1,2 @@
 import { observabilitySignals } from '@/features/observability'
-
-export function ObservabilityDashboard() {
-  return (
-    <section className="grid gap-4 md:grid-cols-2">
-      {observabilitySignals.map((signal) => (
-        <article key={signal.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft">
-          <p className="text-xs tracking-[0.3em] text-moss">{signal.type.toUpperCase()} · {signal.status}</p>
-          <h3 className="mt-3 text-2xl font-semibold">{signal.title}</h3>
-          <p className="mt-3 text-sm leading-6 text-ink/65">{signal.description}</p>
-        </article>
-      ))}
-    </section>
-  )
-}
+export function ObservabilityDashboard(){return <section className="grid gap-4 md:grid-cols-2">{observabilitySignals.map(signal=><article key={signal.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft"><p className="text-xs tracking-[0.3em] text-moss">{signal.type.toUpperCase()} · {signal.status}</p><h3 className="mt-3 text-2xl font-semibold">{signal.title}</h3><p className="mt-3 text-sm leading-6 text-ink/65">{signal.description}</p></article>)}</section>}

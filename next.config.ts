@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
     // type safety is enforced by npm run typecheck before build.
     ignoreBuildErrors: true,
   },
+  // V4 seal: disable output file tracing in this static-first workspace to avoid trace collection hangs in sandbox builds.
+  outputFileTracing: false,
   outputFileTracingExcludes: {
     '/*': ['.git/**/*', 'docs/**/*', 'reports/**/*', 'coverage/**/*', '.next/**/*'],
     '/api/**/*': ['.git/**/*', 'docs/**/*', 'reports/**/*', 'coverage/**/*', '.next/**/*'],
