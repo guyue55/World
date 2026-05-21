@@ -1,0 +1,10 @@
+{
+  "assets": [
+    "cosmic-gateway-placeholder",
+    "floating-world-reference",
+    "world-map-orbit-diagram",
+    "theme-library-shelf",
+    "lighthouse-diagram-placeholder"
+  ],
+  "policy": "placeholder assets are never productionReady"
+}

@@ -1,0 +1,6 @@
+{
+  "contracts": [
+    "default-ai-lighthouse-contract"
+  ],
+  "secretPolicy": "API keys are env-only and never committed"
+}

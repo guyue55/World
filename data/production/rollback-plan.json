@@ -1,0 +1,10 @@
+{
+  "status": "ready",
+  "strategy": [
+    "保留第二轮封版包作为可回滚基线",
+    "生产部署前记录 Git commit",
+    "部署失败时回滚到最近通过 build/check 的提交",
+    "发布后发现隐私问题立即下线相关页面并回滚"
+  ],
+  "productionLive": false
+}

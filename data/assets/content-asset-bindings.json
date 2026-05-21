@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "seedId": "origin-of-word-life",
+      "assetIds": [
+        "cosmic-gateway-placeholder"
+      ],
+      "required": true
+    },
+    {
+      "seedId": "ai-as-lighthouse",
+      "assetIds": [
+        "lighthouse-diagram-placeholder"
+      ],
+      "required": false
+    },
+    {
+      "seedId": "floating-digital-world",
+      "assetIds": [
+        "floating-world-reference"
+      ],
+      "required": true
+    }
+  ],
+  "policy": "content seed assetIds must resolve through resolver"
+}

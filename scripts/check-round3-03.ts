@@ -1,0 +1,5 @@
+import fs from 'node:fs'; import { contentSeeds } from '../src/features/content-ingestion'; import { contentReviewRules, getUnsafePublicSeeds, publicBuildForbiddenSignals, reviewContentSeed } from '../src/features/content-governance'
+const errors:string[]=[]; for(const item of ['src/features/content-governance/model.ts','src/features/content-governance/rules.ts','src/features/content-governance/review.ts','src/components/content-ingestion/ContentReviewPanel.tsx','data/content/content-review-rules.json','data/round-03/stage-01/03-content-review-privacy.json']) if(!fs.existsSync(item)) errors.push(`missing ${item}`)
+if(contentReviewRules.length<3) errors.push('rules too few'); for(const s of ['私密原文','自动发布','自动删除']) if(!publicBuildForbiddenSignals.includes(s)) errors.push(`missing forbidden ${s}`)
+if(getUnsafePublicSeeds(contentSeeds).length>0) errors.push('rejected public build content'); for(const seed of contentSeeds) if(!reviewContentSeed(seed).seedId) errors.push(`bad review ${seed.id}`)
+if(errors.length) throw new Error(errors.join('\n')); console.log('Round 03 batch 03 checks passed.')

@@ -1,0 +1,17 @@
+{
+  "gaps": [
+    {
+      "assetId": "cosmic-gateway-placeholder",
+      "priority": "high"
+    },
+    {
+      "assetId": "theme-library-shelf",
+      "priority": "medium"
+    },
+    {
+      "assetId": "lighthouse-diagram-placeholder",
+      "priority": "medium"
+    }
+  ],
+  "policy": "placeholder assets are tracked as gaps and cannot be productionReady"
+}

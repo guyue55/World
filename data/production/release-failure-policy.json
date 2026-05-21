@@ -1,0 +1,10 @@
+{
+  "status": "active",
+  "policy": [
+    "preview smoke 失败不得上线",
+    "manual privacy signoff 缺失不得上线",
+    "high/critical audit 漏洞不得上线",
+    "productionLive 只能由真实验收证据驱动"
+  ],
+  "productionLive": false
+}

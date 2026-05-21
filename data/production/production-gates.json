@@ -1,0 +1,11 @@
+{
+  "gates": [
+    "local-build",
+    "preview-deploy",
+    "manual-privacy-signoff",
+    "asset-placeholder-signoff",
+    "secret-policy-check",
+    "rollback-plan"
+  ],
+  "productionLiveAllowed": false
+}

@@ -1,0 +1,5 @@
+import fs from 'node:fs'; import { aiForbiddenActions, aiRiskLog, assertAiWorkflowBoundary, getUnsafeAiWorkflows, scanTextForForbiddenAiActions } from '../src/features/ai-safety'
+const errors:string[]=[]; for(const item of ['src/features/ai-safety/model.ts','src/features/ai-safety/data.ts','src/features/ai-safety/scanner.ts','data/ai-lighthouse/forbidden-actions.json','data/ai-lighthouse/risk-log.json']) if(!fs.existsSync(item)) errors.push(`missing ${item}`)
+for(const action of ['publish','delete','change-visibility','read-private-raw']) if(!(aiForbiddenActions as readonly string[]).includes(action)) errors.push(`missing ${action}`)
+if(!assertAiWorkflowBoundary()) errors.push('boundary'); if(getUnsafeAiWorkflows().length!==0) errors.push('unsafe workflows'); if(scanTextForForbiddenAiActions('please publish and delete').length<2) errors.push('scanner'); if(aiRiskLog.length<2) errors.push('risk log')
+if(errors.length) throw new Error(errors.join('\n')); console.log('Round 03 batch 11 checks passed.')

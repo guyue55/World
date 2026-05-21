@@ -1,0 +1,3 @@
+import fs from 'node:fs'; const errors:string[]=[]; for(const item of ['data/round-03/stage-01/01-content-seeds.json','data/round-03/stage-01/02-content-taxonomy.json','data/round-03/stage-01/03-content-review-privacy.json','data/round-03/stage-01/04-content-stage-closure.json']) if(!fs.existsSync(item)) errors.push(`missing ${item}`)
+const closure=JSON.parse(fs.readFileSync('data/round-03/stage-01/04-content-stage-closure.json','utf8')); if(closure.completedBatches.length!==4) errors.push('bad completed batches'); if(!closure.conceptExpansionDecision?.needExpansion) errors.push('missing expansion'); if(closure.productionLive!==false) errors.push('productionLive')
+if(errors.length) throw new Error(errors.join('\n')); console.log('Round 03 batch 04 checks passed.')

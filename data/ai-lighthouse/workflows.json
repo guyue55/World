@@ -1,0 +1,9 @@
+{
+  "workflows": [
+    "draft-content-path",
+    "flag-privacy-risk",
+    "suggest-asset-gap",
+    "private-raw-request"
+  ],
+  "policy": "AI workflows never auto execute."
+}
