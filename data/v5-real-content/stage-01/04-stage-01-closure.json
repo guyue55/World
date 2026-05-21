@@ -1,0 +1,23 @@
+{
+  "version": "V5",
+  "stage": 1,
+  "batch": 4,
+  "status": "complete",
+  "completedBatches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "阶段 2 必须扩展照片故事、项目记录和生活记录，让真实内容不只停留在文章。",
+    "newTasks": [
+      "photo stories",
+      "project logs",
+      "life notes",
+      "asset binding review"
+    ]
+  },
+  "productionLive": false
+}
