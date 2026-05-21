@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "id": "risk-private-raw",
+      "level": "blocked"
+    },
+    {
+      "id": "risk-high-review",
+      "level": "warning"
+    }
+  ]
+}

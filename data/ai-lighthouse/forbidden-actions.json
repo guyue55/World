@@ -1,0 +1,8 @@
+{
+  "forbiddenActions": [
+    "publish",
+    "delete",
+    "change-visibility",
+    "read-private-raw"
+  ]
+}

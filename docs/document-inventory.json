@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-05-20T15:41:32Z",
-  "count": 289,
+  "createdAt": "2026-05-21T07:15:49Z",
+  "count": 338,
   "documents": [
     {
       "path": "docs/00-inception/conversations/古月浮屿_完整沟通记录_重整版.md",
@@ -219,10 +219,394 @@
       "sha256": "b182f65b4d9e3176231cbd60e35d924901ec2c8562b46075748fcf6fdef02f74"
     },
     {
+      "path": "docs/10-development-history/round-02/final-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 1069,
+      "sha256": "4d854da700630257e571d878c58c404de5732eeeb210b575e379ee5b52726bde"
+    },
+    {
+      "path": "docs/10-development-history/round-02/final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 240,
+      "sha256": "376a96a5e36a8decf0490d6623aa2fe2339a6295b5c080d58736e5ad8aaad7c0"
+    },
+    {
+      "path": "docs/10-development-history/round-02/json-route-directory-policy.md",
+      "category": "10-development-history",
+      "sizeBytes": 646,
+      "sha256": "8e989511ef52fd44a9d1ad5a32f4090067101f2e92401fc78d4d6a336d2cab5c"
+    },
+    {
+      "path": "docs/10-development-history/round-02/revalidation-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 1159,
+      "sha256": "1481481bdbfd49667e24d344f3325347188b38a7e4a92aa64061d4c0146acd05"
+    },
+    {
+      "path": "docs/10-development-history/round-02/round2-seal-report.md",
+      "category": "10-development-history",
+      "sizeBytes": 847,
+      "sha256": "0f1c1a328d7fa29caf60fe62339c962c679d69b429d7e210b62a4d3aaacb861f"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/01-global-visual-language.md",
+      "category": "10-development-history",
+      "sizeBytes": 170,
+      "sha256": "2844ccb6d4aa9724ca49cb4ed9501eb5c23eee32cbc8e1a163863223f551a0ae"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/02-home-hero-deep-universe.md",
+      "category": "10-development-history",
+      "sizeBytes": 196,
+      "sha256": "c09bbeacd51d1a4dc8319a1173deb04d2e2826b00d21d8e513934fde9bdc1a40"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/03-background-light-depth.md",
+      "category": "10-development-history",
+      "sizeBytes": 205,
+      "sha256": "e0b201f815230ed486be4295cd8c32988c0611f9d322e4b12d77212e596287ef"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/04-visual-foundation-qa.md",
+      "category": "10-development-history",
+      "sizeBytes": 228,
+      "sha256": "540d8d2e39f150d50889fa71c4c181511a54e9a17f25f02d371cc73fb9b0a984"
+    },
+    {
       "path": "docs/10-development-history/round-02/stage-01-visual-foundation/README.md",
       "category": "10-development-history",
       "sizeBytes": 706,
       "sha256": "e1c63c6d4e0372d280bba975fe0877780f61c84e1b86828529d021d9b4ee5016"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/05-world-map-data-model.md",
+      "category": "10-development-history",
+      "sizeBytes": 159,
+      "sha256": "6790c8d5e533842b6478c2a1d1a32c8782dd625857320ffb5c9e78f075e52629"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/06-constellation-navigation.md",
+      "category": "10-development-history",
+      "sizeBytes": 160,
+      "sha256": "18dcd95944799763d6f31a88c5ab8509ad8b3ab10c30da58480e976f4c161199"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/07-desktop-mobile-world-map.md",
+      "category": "10-development-history",
+      "sizeBytes": 181,
+      "sha256": "47a3fd5ffe5ad015b6715bf8e2e3130649f69aa8af98be4695a2be69a7b3228d"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/08-navigation-a11y-fallback.md",
+      "category": "10-development-history",
+      "sizeBytes": 198,
+      "sha256": "271e538c1e1ecb4ea249724f22d7f926fee0965d30b510781c952960262393a2"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 114,
+      "sha256": "3d5a1c6d61ef4ab4a1f6bfd4fc1b24c081db17e33a1bd79f4b4ceea91be0bde9"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/09-content-node-relation-model.md",
+      "category": "10-development-history",
+      "sizeBytes": 175,
+      "sha256": "fa5eb1ec2c6912a02f5da1c67c5355d5f1204a65a6d3f920c5a2f70df2277304"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/10-star-island-path-views.md",
+      "category": "10-development-history",
+      "sizeBytes": 174,
+      "sha256": "d49b40d60df27ede66390b75e1f20b39877cf34830ee3ac1775cc9381fa5a723"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/11-node-detail-recommendations.md",
+      "category": "10-development-history",
+      "sizeBytes": 159,
+      "sha256": "68dbfae1c4a33bdeaa6b26695657a374e36f3f557474ee75dc236d724f2a36f8"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/12-content-constellation-qa.md",
+      "category": "10-development-history",
+      "sizeBytes": 201,
+      "sha256": "9572d6342472eff73625cf5e1a62c0e5f508f8b4ce534732cf89dc6503cd753e"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 127,
+      "sha256": "5ef2dedb0e57febca561ff389ce76dd01e78c22d814dd084766a7b0897af5aa4"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/13-time-river-data-unification.md",
+      "category": "10-development-history",
+      "sizeBytes": 147,
+      "sha256": "f4e60bd3e5640978b936bebf8f71be61cf2c9ec24b83943421e44399ba426272"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/14-time-river-visual-interaction.md",
+      "category": "10-development-history",
+      "sizeBytes": 156,
+      "sha256": "2094d39b631e62b1c951095501e645830490e4d33a9b9c864474eaf712641cfa"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/15-memory-graph-data-driven.md",
+      "category": "10-development-history",
+      "sizeBytes": 162,
+      "sha256": "fb10ae783ccfc1972406c1f07cda0e6c4320724cc1a463e177a3c1908b029374"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/16-privacy-redaction-graph-qa.md",
+      "category": "10-development-history",
+      "sizeBytes": 191,
+      "sha256": "87659fe9466849005772553878eb978681c92022b5b108af5ed3b9a7a2ad203a"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 133,
+      "sha256": "f2262e2a94c423c8eafcfb9be6d63cc298c01555fda9a294e1654857a0882668"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/17-ai-suggestion-protocol.md",
+      "category": "10-development-history",
+      "sizeBytes": 162,
+      "sha256": "1b87c4ea5de15fe064f8b685c3698533849fbc477a615fffabae40422692bfda"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/18-suggestion-flow-audit-queue-ui.md",
+      "category": "10-development-history",
+      "sizeBytes": 151,
+      "sha256": "539b968c0b6f70f410d281d37a32d1736e4e7fdf4e74452efadef918ea9242eb"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/19-risk-human-confirm-boundary.md",
+      "category": "10-development-history",
+      "sizeBytes": 189,
+      "sha256": "608bf85f415525d7e953e7638df113a1e0983fca6d9bd58539988e60d27357c0"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/20-lighthouse-qa-simulated-workflow.md",
+      "category": "10-development-history",
+      "sizeBytes": 167,
+      "sha256": "25707a3d7429934f77295c330504cba75904824f845575f7ba45a6935f657865"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 124,
+      "sha256": "eb683ddb042d0ccf182367a72896005182909c01e518c9dbf41211b38c269065"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/21-theme-token-layout-variant.md",
+      "category": "10-development-history",
+      "sizeBytes": 171,
+      "sha256": "1daf1e7224e9b7ea4e592e7fb31bc6d6d11c15d81b280f1ddf425c21672f808b"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/22-theme-modes-implementation.md",
+      "category": "10-development-history",
+      "sizeBytes": 194,
+      "sha256": "f78f0ded7ced1c0aa14cb4fd5acbf2d3866aa7f2479058f5c7fb4e9ba1652999"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/23-theme-persistence-mobile.md",
+      "category": "10-development-history",
+      "sizeBytes": 213,
+      "sha256": "ecf0546471cc39ef530b7934430c2f1d6524d0ac37a16d948f631804f1880697"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/24-round2-final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 237,
+      "sha256": "b60fda7b3504b315500293f02a7ae310b44e7c4e937916b07c19a5dbbb4cb2b6"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 145,
+      "sha256": "426fdebd055779ba606275cdb60ba6b000dab7b26fc502d27ab6d229c2adc9e7"
+    },
+    {
+      "path": "docs/10-development-history/round-03/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 528,
+      "sha256": "2f4c1bab3705f57212db4ad83a629a85742a54ed428f8cfe97433ae2e20c194f"
+    },
+    {
+      "path": "docs/10-development-history/round-03/audit-report.md",
+      "category": "10-development-history",
+      "sizeBytes": 237,
+      "sha256": "c266353c0d10d11ffb8945459beb214b3c755d4f11c12ff2046bff5d441b1629"
+    },
+    {
+      "path": "docs/10-development-history/round-03/final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 146,
+      "sha256": "95ada05cbe2b384884267d7bfc38ee104c058d3f69dacd2233a2dcf866465176"
+    },
+    {
+      "path": "docs/10-development-history/round-03/round3-seal-report.md",
+      "category": "10-development-history",
+      "sizeBytes": 314,
+      "sha256": "19445628fa753aad1e615d44e0ed796002b7c941b007b105f7183efa12c1abae"
+    },
+    {
+      "path": "docs/10-development-history/round-03/rounds-roadmap-after-round3.md",
+      "category": "10-development-history",
+      "sizeBytes": 1854,
+      "sha256": "96d1eae5ea2273e382704263955c786fbd80efcdbbf912f92b171afcdd7cb112"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/01-content-seeds.md",
+      "category": "10-development-history",
+      "sizeBytes": 85,
+      "sha256": "97d8d14bc247c9d24816d766bac27b69f1ac4f612c31beaeb99d5b810edc11d0"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/02-content-taxonomy.md",
+      "category": "10-development-history",
+      "sizeBytes": 88,
+      "sha256": "b28587da8d7a414e82ee10299b57b1edd9644547397c2c9c692122c6c3a18db9"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/03-content-review-privacy.md",
+      "category": "10-development-history",
+      "sizeBytes": 94,
+      "sha256": "f2455e35a8e31ddfcdb54e11b6bca3c4da8adde235bc393b7a57be0f41d1391e"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/04-content-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 102,
+      "sha256": "c63d1c1b0f91484ffa14f63bd4505d1fa133f0ecee49aa4a2639f8f80608601d"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content-ingestion.md",
+      "category": "10-development-history",
+      "sizeBytes": 219,
+      "sha256": "db4b2bdd8f35db51818498f9045a3a4362e97c3caf4b243829f737460b41f564"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-asset-library.md",
+      "category": "10-development-history",
+      "sizeBytes": 236,
+      "sha256": "7e08a239635a43bd2ec1827e619631936393d9d820036d0d08807598f0360b1b"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/05-asset-model.md",
+      "category": "10-development-history",
+      "sizeBytes": 83,
+      "sha256": "9655a358ef192c0bf61019086561a7e39474909e3b47f61756e4e128727bffe6"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/06-asset-gap-and-placeholder-policy.md",
+      "category": "10-development-history",
+      "sizeBytes": 104,
+      "sha256": "4f7cc522eda508e1998ef559b369992d82efe6bd6f3e1677e32cc8ca12637740"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/07-content-asset-binding.md",
+      "category": "10-development-history",
+      "sizeBytes": 93,
+      "sha256": "d2c76a91e9ef04ed545c0ddafa7beb1c53c944f0bf412f5fb129e7845830217a"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/08-asset-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 102,
+      "sha256": "7a93e73e057da9406a70c0b7603d265f0260b1fbd846f1c62f281b8e38f4af94"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/09-ai-service-adapter-contract.md",
+      "category": "10-development-history",
+      "sizeBytes": 99,
+      "sha256": "208fbbbce1f402bd4d874436fbb4a4a6368ba7ba9ecb54f7b95db79c526e4a46"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/10-ai-suggestion-workflow.md",
+      "category": "10-development-history",
+      "sizeBytes": 95,
+      "sha256": "178a99cd98eb742285b71ea46177766dde903a4c565fa3ea618c258d04ec7b20"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/11-ai-safety-boundary.md",
+      "category": "10-development-history",
+      "sizeBytes": 91,
+      "sha256": "c5d2889ad99238f1ce39f90ef20f0d86e13916fca77dc72441eddfa68840ea16"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/12-ai-service-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 103,
+      "sha256": "1d57a9f9589fa4e7914365e4e73e2494ddcd8c5e41cf8eebcede671e011bc55d"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-service-adapters.md",
+      "category": "10-development-history",
+      "sizeBytes": 242,
+      "sha256": "6df232751a81d84fc12c259c5ceddf8c25f7558d4282e2f778440974da1a4e46"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/13-production-gates.md",
+      "category": "10-development-history",
+      "sizeBytes": 89,
+      "sha256": "b7e496350550886bbc716c22594d818bcf6d9db013fd286af4ad38caa2a603bd"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/14-preview-smoke-checklist.md",
+      "category": "10-development-history",
+      "sizeBytes": 96,
+      "sha256": "ebfb1e21d8074b8c1c1874bf14bc151339df7d2d7e8863eb384f13eb701572cf"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/15-privacy-signoff-rollback.md",
+      "category": "10-development-history",
+      "sizeBytes": 97,
+      "sha256": "b0937c19810dc9af010461a63ba4b1de7f694f25a538672e8b4494f584fa0df1"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/16-production-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 103,
+      "sha256": "388d9a7f27deb2da039cf68734b68efd1e987a37f508cb01b188a99bf9b0a874"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production-readiness.md",
+      "category": "10-development-history",
+      "sizeBytes": 247,
+      "sha256": "ec373c98fbff6bcb960f91a6cc16472f4715687af71943929b3ec10499858057"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/17-observability-signals.md",
+      "category": "10-development-history",
+      "sizeBytes": 94,
+      "sha256": "cbd9a0488112838a41b1b2d896066694430ddea6efe94dcd520d9d3dd9f0bdc9"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/18-operation-rhythm.md",
+      "category": "10-development-history",
+      "sizeBytes": 89,
+      "sha256": "c53dd5a67397f0c4240f21d0a73399a4ef2faf259fe60fd05ed96984eaecbd22"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/19-round3-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 91,
+      "sha256": "7a7b9c6a2b25c7daa115f9636bfa850b7fbd4da3af2190fbf47e2626f277e4c9"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/20-round3-final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 88,
+      "sha256": "86f5f7f041ed8c6a7138537823582dcddf72cbeffb264540c3852d5e5518f354"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability-final-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 252,
+      "sha256": "16cd718e4ba41a3ebc30604239a593349478d3004d15c84b1194518a14c6f9ba"
     },
     {
       "path": "docs/10-development-history/v1/05_古月浮屿_V1实施蓝图.md",
@@ -1635,100 +2019,10 @@
       "sha256": "580047bf96575717e7c3c23498a8d36932e5e348305f05cec27614f3e1731bd6"
     },
     {
-      "path": "docs/90-archive/reports/04_古月浮屿_AI守则.md",
-      "category": "90-archive",
-      "sizeBytes": 10048,
-      "sha256": "edf8010dba0a4683e47dc4fe50e4774e5e54cec8a6c534b3436e2058f7416d42"
-    },
-    {
-      "path": "docs/90-archive/reports/06_古月浮屿_术语词典.md",
-      "category": "90-archive",
-      "sizeBytes": 10506,
-      "sha256": "54f3c0135131171a90286c106b97e5697a867d889d6023bc8d28b62d8aff016f"
-    },
-    {
-      "path": "docs/90-archive/reports/08_古月浮屿_路线图与版本计划.md",
-      "category": "90-archive",
-      "sizeBytes": 5047,
-      "sha256": "0eefa59f09da7aa9c5713bc632744cb646c208a24365cd39bfd393fa20d1bce5"
-    },
-    {
-      "path": "docs/90-archive/reports/17_古月浮屿_家庭与孩子内容规范.md",
-      "category": "90-archive",
-      "sizeBytes": 6227,
-      "sha256": "69454dffbf8f20446aa0db820250b70b900c9188d72c509a7662831214ca000f"
-    },
-    {
-      "path": "docs/90-archive/reports/18_古月浮屿_时间胶囊产品设计.md",
-      "category": "90-archive",
-      "sizeBytes": 5070,
-      "sha256": "dc347353e8ae38b06c4262de028b30f48e9f4c74a1f23d9fa16e9cfa18312aa0"
-    },
-    {
-      "path": "docs/90-archive/reports/19_古月浮屿_年度世界册设计.md",
-      "category": "90-archive",
-      "sizeBytes": 5074,
-      "sha256": "5630608e53170b71898abe724e8e0f68c2859ebd09cef51e5c9b577dfd497103"
-    },
-    {
-      "path": "docs/90-archive/reports/22_古月浮屿_高级世界体验设计.md",
-      "category": "90-archive",
-      "sizeBytes": 3116,
-      "sha256": "4ab8146304d3d2ee9832d72363af61dccb269bf01208d3a1842e1264920d6328"
-    },
-    {
       "path": "docs/90-archive/reports/npm-audit-report.json",
       "category": "90-archive",
       "sizeBytes": 2419,
-      "sha256": "eb41072e49a33f137c2967636f9fe0e7e085dc7116ce4f9931e6701dc35c8a42"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_当前项目代码全量包_说明.md",
-      "category": "90-archive",
-      "sizeBytes": 1486,
-      "sha256": "9a6f9ec67e6a0986be9e0908b8884439476bee41d5291c25d4c5bde0082fb0b8"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_文档全量包_说明.md",
-      "category": "90-archive",
-      "sizeBytes": 1477,
-      "sha256": "c2da1503e7ad50e7563aecf027cbc543c7982f1fe6544a0444b4ca0a62f5510f"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_第一轮封版_完整全量项目包_说明.md",
-      "category": "90-archive",
-      "sizeBytes": 2122,
-      "sha256": "3e5d5cea64b85312831b5ded036e858f9feeef47e5c0d30ad7fd3de535535265"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_调整代码目录结构_完整全量项目包_说明.md",
-      "category": "90-archive",
-      "sizeBytes": 2291,
-      "sha256": "df951a129841c95d4eeee3e57e5602b6cbbf410c84485d03ee1788c6da6d50c8"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_近两次变更审查后修复_变更清单.txt",
-      "category": "90-archive",
-      "sizeBytes": 30631,
-      "sha256": "fb7d1d4cd16a516c0cb37f39b482e428b74cb20859966937f0fdaf368abb25e3"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_近两次变更审查报告.json",
-      "category": "90-archive",
-      "sizeBytes": 3783,
-      "sha256": "e45565bf86c029a48852299166ae4246cfcb4bbad1a25e3dc78a2ef437bd2956"
-    },
-    {
-      "path": "docs/90-archive/reports/古月浮屿_近两次变更审查报告.md",
-      "category": "90-archive",
-      "sizeBytes": 2722,
-      "sha256": "7dd7705f3565ceef2291f32c9c95c64399b9d1b2b66c4b06029b2cfc704e31c3"
-    },
-    {
-      "path": "docs/90-archive/reports/调研结果回写完善说明.md",
-      "category": "90-archive",
-      "sizeBytes": 1735,
-      "sha256": "f45fbbf0b3d92cb5ed314bd3b22eabc3f75d078d45ced0c247c17cd1bafa7bf4"
+      "sha256": "01c85bc60f77dec68f4687cbf81107d43d247b994615c089d40cd6369eb6abbc"
     },
     {
       "path": "docs/README.md",
@@ -1736,12 +2030,5 @@
       "sizeBytes": 1255,
       "sha256": "e01fa7f1e7c78ed8bf823efd122e9ddfa4ba668043a6e458eea274f8b906e333"
     }
-  ],
-  "rules": [
-    "pre-development documents are under 00/01/02/03",
-    "development process documents are under 10-development-history",
-    "research documents are under 20-research",
-    "visual assets are under 30-assets",
-    "archive reports are under 90-archive"
   ]
 }

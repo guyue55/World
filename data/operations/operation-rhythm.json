@@ -1,0 +1,10 @@
+{
+  "status": "planned",
+  "principles": [
+    "优先真实内容，不继续空堆 UI",
+    "所有公开内容必须过隐私审查",
+    "AI 建议进入审计队列，不自动发布",
+    "素材 placeholder 必须被追踪"
+  ],
+  "productionLive": false
+}

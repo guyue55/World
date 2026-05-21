@@ -1,0 +1,18 @@
+{
+  "status": "pending",
+  "devices": [
+    {
+      "id": "desktop-chrome",
+      "status": "pending"
+    },
+    {
+      "id": "mobile-safari",
+      "status": "pending"
+    },
+    {
+      "id": "mobile-chrome",
+      "status": "pending"
+    }
+  ],
+  "productionLive": false
+}

@@ -1,0 +1,19 @@
+{
+  "status": "pending",
+  "required": true,
+  "items": [
+    {
+      "id": "public-pages-no-private-raw",
+      "status": "pending"
+    },
+    {
+      "id": "redacted-metadata-only",
+      "status": "pending"
+    },
+    {
+      "id": "ai-no-private-raw",
+      "status": "pending"
+    }
+  ],
+  "productionLive": false
+}

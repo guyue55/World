@@ -1,0 +1,23 @@
+{
+  "channels": [
+    "article",
+    "life",
+    "tech",
+    "photo",
+    "world-rule",
+    "ai-suggestion"
+  ],
+  "placements": [
+    "home",
+    "constellation",
+    "time-river",
+    "memory-graph",
+    "lighthouse"
+  ],
+  "statuses": [
+    "draft",
+    "reviewed",
+    "ready",
+    "published"
+  ]
+}

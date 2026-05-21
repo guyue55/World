@@ -1,0 +1,17 @@
+{
+  "round": 3,
+  "stage": 1,
+  "batch": 4,
+  "status": "complete",
+  "completedBatches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "内容模型扩展到节点、照片、事件、路径、展览、AI 建议；素材库绑定 content seed；AI 只基于公开内容和脱敏信号生成建议。"
+  },
+  "productionLive": false
+}

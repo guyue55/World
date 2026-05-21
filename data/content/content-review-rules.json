@@ -1,0 +1,17 @@
+{
+  "rules": [
+    "private-raw-block",
+    "family-sensitive-review",
+    "ai-action-boundary"
+  ],
+  "publicBuildForbiddenSignals": [
+    "private raw",
+    "vault raw",
+    "sealed raw",
+    "私密原文",
+    "原文：",
+    "自动发布",
+    "自动删除",
+    "自动改可见性"
+  ]
+}

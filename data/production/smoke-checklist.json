@@ -1,0 +1,30 @@
+{
+  "status": "pending",
+  "items": [
+    {
+      "id": "desktop-home",
+      "status": "pending"
+    },
+    {
+      "id": "mobile-world-map",
+      "status": "pending"
+    },
+    {
+      "id": "content-studio",
+      "status": "pending"
+    },
+    {
+      "id": "asset-library",
+      "status": "pending"
+    },
+    {
+      "id": "lighthouse",
+      "status": "pending"
+    },
+    {
+      "id": "production-readiness",
+      "status": "pending"
+    }
+  ],
+  "productionLive": false
+}

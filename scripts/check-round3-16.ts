@@ -1,0 +1,4 @@
+import fs from 'node:fs'; import { getPendingProductionGates, isProductionLiveAllowed } from '../src/features/production-readiness'
+const errors:string[]=[]; for(const item of ['data/round-03/stage-04/13-production-gates.json','data/round-03/stage-04/14-preview-smoke-checklist.json','data/round-03/stage-04/15-privacy-signoff-rollback.json','data/round-03/stage-04/16-production-stage-closure.json']) if(!fs.existsSync(item)) errors.push(`missing ${item}`)
+const c=JSON.parse(fs.readFileSync('data/round-03/stage-04/16-production-stage-closure.json','utf8')); if(getPendingProductionGates().length<2) errors.push('pending gates'); if(isProductionLiveAllowed()) errors.push('live allowed'); if(c.productionDeployAllowed!==false) errors.push('deploy allowed'); if(!c.conceptExpansionDecision?.needExpansion) errors.push('expansion')
+if(errors.length) throw new Error(errors.join('\n')); console.log('Round 03 batch 16 checks passed.')

@@ -1,0 +1,3 @@
+import fs from 'node:fs'; const errors:string[]=[]; for(const item of ['data/production/preview-checklist.json','data/production/smoke-checklist.json','data/production/device-acceptance-checklist.json','data/round-03/stage-04/14-preview-smoke-checklist.json']) if(!fs.existsSync(item)) errors.push(`missing ${item}`)
+for(const item of ['data/production/preview-checklist.json','data/production/smoke-checklist.json','data/production/device-acceptance-checklist.json']){const data=JSON.parse(fs.readFileSync(item,'utf8')); if(data.status!=='pending') errors.push(`${item} must be pending`); if(data.productionLive!==false) errors.push(`${item} live`)}
+if(errors.length) throw new Error(errors.join('\n')); console.log('Round 03 batch 14 checks passed.')

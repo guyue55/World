@@ -1,0 +1,17 @@
+{
+  "round": 3,
+  "stage": 3,
+  "batch": 12,
+  "status": "complete",
+  "completedBatches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "第三轮只做到 adapter contract，不接真实 key；第四轮再接真实 AI 服务。"
+  },
+  "productionLive": false
+}
