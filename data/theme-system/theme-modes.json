@@ -1,0 +1,15 @@
+{
+  "themes": [
+    "nature",
+    "cosmos",
+    "library",
+    "atelier"
+  ],
+  "variants": [
+    "organic-islands",
+    "star-navigation",
+    "archive-shelves",
+    "workbench-panels"
+  ],
+  "policy": "Theme mode changes layout and component expression, not only color."
+}

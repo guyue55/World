@@ -1,0 +1,41 @@
+{
+  "round": 2,
+  "stage": 1,
+  "slug": "visual-foundation",
+  "status": "planned",
+  "createdAt": "2026-05-20T15:37:08Z",
+  "goal": "建立第二轮视觉基底，不直接大改所有页面，而是先抽象统一视觉系统。",
+  "batches": [
+    {
+      "batch": 1,
+      "slug": "global-visual-language-foundation",
+      "title": "全局视觉语言重构",
+      "status": "planned"
+    },
+    {
+      "batch": 2,
+      "slug": "home-hero-deep-universe",
+      "title": "首页 Hero 深度宇宙化",
+      "status": "planned"
+    },
+    {
+      "batch": 3,
+      "slug": "global-background-light-depth",
+      "title": "全局背景、光影、层次、空间感系统",
+      "status": "planned"
+    },
+    {
+      "batch": 4,
+      "slug": "visual-foundation-qa-mobile",
+      "title": "视觉基底 QA 与移动端检查",
+      "status": "planned"
+    }
+  ],
+  "acceptance": [
+    "home first screen target is defined",
+    "visual foundation directories exist",
+    "round2 stage 01 checks exist",
+    "check:local remains green"
+  ],
+  "productionLive": false
+}

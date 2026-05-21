@@ -1,0 +1,71 @@
+{
+  "packageName": "古月浮屿_v1-第十五阶段-代码_完整全量包",
+  "createdAt": "2026-05-20T05:09:46Z",
+  "sourceWorkspace": "/mnt/data/guyue_v1_rc_real_fix_workspace",
+  "packageType": "code-only-full-package",
+  "layout": {
+    "v1-第十五阶段-代码": "项目代码、配置、数据、脚本、public 资源；不含 docs/ 与历史文档"
+  },
+  "exclusions": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "docs",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "CHANGED_FILES.txt",
+      "CHANGELOG.md",
+      "CHECK_REPORT.md",
+      "FULL_PROJECT_PACKAGE_MANIFEST.json",
+      "FULL_PROJECT_PACKAGE_NOTE.md",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".docx",
+      ".patch"
+    ],
+    "markdownPolicy": "保留 README.md / LICENSE.md / CONTRIBUTING.md，其余 md 文档排除"
+  },
+  "counts": {
+    "totalFiles": 1088,
+    "jsonFiles": 357,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "categoryCounts": {
+      "root_config": 13,
+      "data": 353,
+      "public": 10,
+      "scripts": 314,
+      ".github": 2,
+      "src": 396
+    }
+  },
+  "requiredCheck": {
+    "passed": true,
+    "missing": []
+  },
+  "jsonCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "notes": [
+    "本包为代码版全量包，明确排除 docs/、历史说明、patch、历史 zip、node_modules、.next 等。",
+    "本包来源优先采用最新 V1 RC 修复工作区；若不存在则回退第十五阶段收口工作区。",
+    "该包不等同于 release-ready；真实发布状态仍需以 lint/typecheck/build/world-core/release-local-gate 等命令最终结果为准。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_v1-第十五阶段-代码_完整全量包.zip",
+    "sizeBytes": 908634,
+    "sha256": "71111ef73b03c643820f799503361b74a557f5250c71b31fecc1f1ecb52a1b98"
+  }
+}

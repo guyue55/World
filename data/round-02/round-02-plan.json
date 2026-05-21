@@ -1,0 +1,104 @@
+{
+  "round": 2,
+  "name": "深度体验兑现 / 数字宇宙体验成型",
+  "status": "planned",
+  "createdAt": "2026-05-20T15:37:08Z",
+  "baseCommit": "3ff05e4",
+  "totalStages": 6,
+  "totalBatches": 24,
+  "nonGoals": [
+    "real backend integration",
+    "real login/auth system",
+    "private archive raw content reads",
+    "automatic publish/delete/visibility changes",
+    "productionLive claim",
+    "hard dependency on heavy 3D/WebGL engine"
+  ],
+  "principles": [
+    "page assembles",
+    "feature owns model",
+    "component owns rendering",
+    "data is auditable",
+    "docs record decisions",
+    "scripts enforce gates"
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "slug": "visual-foundation",
+      "title": "视觉基底升级",
+      "batches": [
+        "01-global-visual-language",
+        "02-home-hero-deep-universe",
+        "03-global-background-light-depth",
+        "04-visual-foundation-qa-mobile"
+      ]
+    },
+    {
+      "stage": 2,
+      "slug": "world-map",
+      "title": "宇宙导航与世界地图升级",
+      "batches": [
+        "05-world-map-data-model",
+        "06-constellation-navigation-component",
+        "07-desktop-mobile-world-map",
+        "08-navigation-a11y-fallback"
+      ]
+    },
+    {
+      "stage": 3,
+      "slug": "content-constellation",
+      "title": "内容节点星图与路径系统",
+      "batches": [
+        "09-content-node-relation-model",
+        "10-star-island-path-views",
+        "11-node-detail-recommendations",
+        "12-content-constellation-qa"
+      ]
+    },
+    {
+      "stage": 4,
+      "slug": "time-memory",
+      "title": "时间河与记忆图谱升级",
+      "batches": [
+        "13-time-river-data-unification",
+        "14-time-river-visual-interaction",
+        "15-memory-graph-data-driven",
+        "16-privacy-redaction-graph-qa"
+      ]
+    },
+    {
+      "stage": 5,
+      "slug": "ai-lighthouse",
+      "title": "AI 灯塔工作台成型",
+      "batches": [
+        "17-ai-suggestion-protocol",
+        "18-suggestion-flow-audit-queue-ui",
+        "19-risk-human-confirm-boundary",
+        "20-lighthouse-qa-simulated-workflow"
+      ]
+    },
+    {
+      "stage": 6,
+      "slug": "theme-final",
+      "title": "主题系统真实切换与第二轮收口",
+      "batches": [
+        "21-theme-token-layout-variant",
+        "22-theme-modes-implementation",
+        "23-theme-persistence-mobile",
+        "24-round2-final-closure"
+      ]
+    }
+  ],
+  "completionStandard": [
+    "home first screen no longer feels like a normal blog",
+    "world map is navigation hub",
+    "content node/constellation/path exploration exists",
+    "time river and memory graph are data driven",
+    "AI lighthouse has suggestion/audit/risk model",
+    "theme switching affects layout and components",
+    "mobile has no horizontal overflow",
+    "check:round2 and check:local pass"
+  ],
+  "productionLive": false
+}

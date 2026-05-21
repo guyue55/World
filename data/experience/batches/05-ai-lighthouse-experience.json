@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 5,
+  "totalBatches": 8,
+  "slug": "ai-lighthouse-experience",
+  "title": "AI 灯塔工作台体验",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 5 / 批次 5/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

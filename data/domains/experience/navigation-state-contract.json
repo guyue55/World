@@ -1,85 +1,110 @@
 {
-  "version": "0.1.0",
-  "name": "古月浮屿 V1 第二阶段导航状态契约",
-  "principle": "导航选中态必须来自当前路由，而不是组件内部猜测。",
+  "version": "0.2.0",
+  "name": "古月浮屿体验兑现导航状态契约",
+  "principle": "导航选中态必须来自当前路由，并优先指向宇宙化体验入口。",
   "status": "implemented",
   "items": [
     {
       "id": "home",
-      "label": "首页",
+      "label": "入口",
       "href": "/",
       "match": "exact",
       "desktop": true,
       "mobile": false
     },
     {
-      "id": "atlas",
-      "label": "地图",
-      "href": "/atlas",
+      "id": "world-map",
+      "label": "世界图",
+      "href": "/world-map",
       "match": "section",
       "desktop": true,
       "mobile": true
     },
     {
-      "id": "skeleton",
-      "label": "骨架",
-      "href": "/skeleton",
+      "id": "constellation",
+      "label": "星图",
+      "href": "/constellation",
       "match": "section",
       "desktop": true,
-      "mobile": false
+      "mobile": true
     },
     {
-      "id": "timeline",
+      "id": "time-river",
       "label": "时间河",
-      "href": "/timeline",
+      "href": "/time-river",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "lighthouse",
+      "label": "灯塔",
+      "href": "/lighthouse",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "memory-graph",
+      "label": "记忆",
+      "href": "/memory-graph",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "theme-system",
+      "label": "主题",
+      "href": "/theme-system",
       "match": "section",
       "desktop": true,
       "mobile": false
     },
     {
-      "id": "archive",
-      "label": "档案馆",
-      "href": "/archive",
-      "match": "section",
-      "desktop": true,
-      "mobile": true
-    },
-    {
-      "id": "paths",
-      "label": "路径",
-      "href": "/paths",
-      "match": "section",
-      "desktop": true,
-      "mobile": true
-    },
-    {
-      "id": "ask",
-      "label": "灯塔",
-      "href": "/ask",
-      "match": "section",
-      "desktop": true,
-      "mobile": true
-    },
-    {
-      "id": "status",
-      "label": "状态",
-      "href": "/status",
-      "match": "section",
-      "desktop": true,
-      "mobile": true
-    },
-    {
-      "id": "manifesto",
-      "label": "宪章",
-      "href": "/manifesto",
+      "id": "v6-world-network",
+      "label": "多世界",
+      "href": "/v6-world-network",
       "match": "section",
       "desktop": true,
       "mobile": false
     }
   ],
+  "legacyItems": [
+    {
+      "id": "atlas",
+      "label": "旧地图入口",
+      "href": "/atlas",
+      "replacement": "/world-map"
+    },
+    {
+      "id": "timeline",
+      "label": "旧时间线入口",
+      "href": "/timeline",
+      "replacement": "/time-river"
+    },
+    {
+      "id": "ask",
+      "label": "旧灯塔入口",
+      "href": "/ask",
+      "replacement": "/lighthouse"
+    },
+    {
+      "id": "archive",
+      "label": "旧档案馆入口",
+      "href": "/archive",
+      "replacement": "/memory-graph"
+    },
+    {
+      "id": "paths",
+      "label": "旧路径入口",
+      "href": "/paths",
+      "replacement": "/constellation"
+    }
+  ],
   "rules": [
     "根路径只允许 exact 匹配。",
-    "非根路径使用 pathname === href 或 pathname.startsWith(`${href}/`)。",
+    "体验兑现阶段的桌面和移动端主导航必须优先使用新宇宙化入口。",
+    "旧入口保留兼容，但不得作为主体验导航。",
     "桌面和移动端必须共用同一份导航数据。",
     "aria-current 必须随 active 状态出现。",
     "底部导航不得遮挡正文末尾。"

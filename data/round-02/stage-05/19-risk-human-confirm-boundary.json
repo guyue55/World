@@ -1,0 +1,13 @@
+{
+  "round": 2,
+  "stage": 5,
+  "batch": 19,
+  "status": "complete",
+  "forbiddenActions": [
+    "publish",
+    "delete",
+    "change-visibility",
+    "read-private-raw"
+  ],
+  "productionLive": false
+}

@@ -1,0 +1,17 @@
+import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ProductionReadinessBoard } from '@/components/production-readiness/ProductionReadinessBoard'
+
+export default function ProductionReadinessPage() {
+  return (
+    <ResponsivePageShell>
+      <section className="rounded-[3rem] border border-white/50 bg-white/75 p-8 shadow-soft md:p-12">
+        <p className="text-sm tracking-[0.42em] text-moss">ROUND 03 · PRODUCTION</p>
+        <h1 className="mt-4 text-4xl font-semibold md:text-6xl">生产发布前准备</h1>
+        <p className="mt-5 max-w-3xl leading-8 text-ink/70">
+          生产状态必须由真实部署、预览 smoke、人工隐私签收和回滚计划共同决定，不能只因为本地构建通过就标记为上线。
+        </p>
+      </section>
+      <ProductionReadinessBoard />
+    </ResponsivePageShell>
+  )
+}

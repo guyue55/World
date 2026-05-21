@@ -1,0 +1,10 @@
+{
+  "suggestions": 4,
+  "forbiddenActions": [
+    "publish",
+    "delete",
+    "change-visibility",
+    "read-private-raw"
+  ],
+  "policy": "AI may suggest, explain, draft, and flag risk. AI must not publish, delete, change visibility, or read private raw content."
+}

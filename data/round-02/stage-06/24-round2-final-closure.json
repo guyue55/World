@@ -1,0 +1,51 @@
+{
+  "round": 2,
+  "stage": 6,
+  "batch": 24,
+  "status": "complete",
+  "completedStages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "completedBatches": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "第二轮不追加批次；第三轮应聚焦真实内容、真实服务适配、视觉素材资产化和生产部署前准备。",
+    "nextRoundCandidates": [
+      "真实内容接入",
+      "真实 AI 服务适配器",
+      "生产部署与真机验收",
+      "性能预算和可观测性"
+    ]
+  },
+  "productionLive": false
+}

@@ -1,0 +1,9 @@
+{
+  "round": 2,
+  "stage": 6,
+  "batch": 23,
+  "status": "complete",
+  "hydrationPolicy": "client component reads localStorage after mount",
+  "privacyPolicy": "theme state never reads private content",
+  "productionLive": false
+}

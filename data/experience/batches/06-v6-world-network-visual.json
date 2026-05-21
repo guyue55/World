@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 6,
+  "totalBatches": 8,
+  "slug": "v6-world-network-visual",
+  "title": "V6 多世界网络可视化入口",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 6 / 批次 6/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

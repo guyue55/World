@@ -1,0 +1,139 @@
+{
+  "createdAt": "2026-05-20T15:05:08Z",
+  "package": "/mnt/data/古月浮屿_第一轮封版_完整全量项目包.zip",
+  "extractedRoot": "/mnt/data/word_life_audit_workspace/第一轮封版_完整项目",
+  "repoChecks": {
+    "root_is_word_life": false,
+    "has_git_dir": false,
+    "has_github": true,
+    "has_readme": true,
+    "has_gitignore": false,
+    "has_docs": true,
+    "has_src": true,
+    "has_package_json": true,
+    "has_env_example": true
+  },
+  "fileCounts": {
+    ".env.example": 1,
+    "package-lock.json": 1,
+    "tsconfig.json": 1,
+    "eslint.config.mjs": 1,
+    "postcss.config.mjs": 1,
+    "tailwind.config.ts": 1,
+    "vercel.json": 1,
+    "README.md": 1,
+    "next-env.d.ts": 1,
+    "next.config.ts": 1,
+    "package.json": 1,
+    "scripts": 455,
+    "data": 521,
+    "public": 10,
+    "docs": 43,
+    "src": 555,
+    ".github": 2
+  },
+  "docs": {
+    "packagedDocsCount": 43,
+    "docsTopLevel": [
+      "61-v6",
+      "70-experience-realization"
+    ],
+    "availableSourceDocsTopLevelEstimate": 226,
+    "missingSourceDocsByNameEstimate": 226
+  },
+  "commands": {
+    "npm_ci": {
+      "name": "npm_ci",
+      "command": "npm ci",
+      "status": "passed",
+      "exitCode": 0,
+      "tail": "\nadded 497 packages, and audited 498 packages in 19s\n\n245 packages are looking for funding\n  run `npm fund` for details\n\n2 moderate severity vulnerabilities\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n"
+    },
+    "check_experience": {
+      "name": "check_experience",
+      "command": "npm run check:experience",
+      "status": "failed",
+      "exitCode": 1,
+      "tail": "\n> guyue-floating-world@0.1.0 check:experience\n> tsx scripts/check-experience-realization.ts\n\nnode:internal/modules/run_main:123\n    triggerUncaughtException(\n    ^\n\nError: Transform failed with 2 errors:\n/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/scripts/check-experience-realization.ts:112:6: ERROR: The symbol \"required\" has already been declared\n/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/scripts/check-experience-realization.ts:126:6: ERROR: The symbol \"errors\" has already been declared\n    at failureErrorWithLog \u001b[90m(/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/\u001b[39mnode_modules/\u001b[4mesbuild\u001b[24m/lib/main.js:1748:15\u001b[90m)\u001b[39m\n    at \u001b[90m/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/\u001b[39mnode_modules/\u001b[4mesbuild\u001b[24m/lib/main.js:1017:50\n    at responseCallbacks.<computed> \u001b[90m(/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/\u001b[39mnode_modules/\u001b[4mesbuild\u001b[24m/lib/main.js:884:9\u001b[90m)\u001b[39m\n    at handleIncomingPacket \u001b[90m(/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/\u001b[39mnode_modules/\u001b[4mesbuild\u001b[24m/lib/main.js:939:12\u001b[90m)\u001b[39m\n    at Socket.readFromStdout \u001b[90m(/mnt/data/word_life_audit_workspace/第一轮封版_完整项目/\u001b[39mnode_modules/\u001b[4mesbuild\u001b[24m/lib/main.js:862:7\u001b[90m)\u001b[39m\n\u001b[90m    at Socket.emit (node:events:518:28)\u001b[39m\n\u001b[90m    at addChunk (node:internal/streams/readable:561:12)\u001b[39m\n\u001b[90m    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\u001b[39m\n\u001b[90m    at Readable.push (node:internal/streams/readable:392:5)\u001b[39m\n\u001b[90m    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)\u001b[39m {\n  name: \u001b[32m'TransformError'\u001b[39m\n}\n\nNode.js v22.16.0\n"
+    },
+    "lint": {
+      "name": "lint",
+      "command": "npm run lint",
+      "status": "passed",
+      "exitCode": 0,
+      "tail": "\n> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0\n\n"
+    },
+    "typecheck": {
+      "name": "typecheck",
+      "command": "npm run typecheck",
+      "status": "failed",
+      "exitCode": 2,
+      "tail": "ier 'Link'.\nsrc/app/world-map/page.tsx(34,10): error TS2300: Duplicate identifier 'ResponsivePageShell'.\nsrc/app/world-map/page.tsx(35,10): error TS2300: Duplicate identifier 'experienceNodes'.\nsrc/app/world-map/page.tsx(37,25): error TS2323: Cannot redeclare exported variable 'default'.\nsrc/app/world-map/page.tsx(37,25): error TS2393: Duplicate function implementation.\nsrc/components/experience/CelestialPanel.tsx(1,8): error TS2300: Duplicate identifier 'Link'.\nsrc/components/experience/CelestialPanel.tsx(2,15): error TS2300: Duplicate identifier 'ExperienceNode'.\nsrc/components/experience/CelestialPanel.tsx(4,17): error TS2323: Cannot redeclare exported variable 'CelestialPanel'.\nsrc/components/experience/CelestialPanel.tsx(4,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/CelestialPanel.tsx(21,8): error TS2300: Duplicate identifier 'Link'.\nsrc/components/experience/CelestialPanel.tsx(22,15): error TS2300: Duplicate identifier 'ExperienceNode'.\nsrc/components/experience/CelestialPanel.tsx(24,17): error TS2323: Cannot redeclare exported variable 'CelestialPanel'.\nsrc/components/experience/CelestialPanel.tsx(24,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/LighthouseQueue.tsx(3,17): error TS2323: Cannot redeclare exported variable 'LighthouseQueue'.\nsrc/components/experience/LighthouseQueue.tsx(3,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/LighthouseQueue.tsx(24,17): error TS2323: Cannot redeclare exported variable 'LighthouseQueue'.\nsrc/components/experience/LighthouseQueue.tsx(24,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/MemoryGraphView.tsx(3,17): error TS2323: Cannot redeclare exported variable 'MemoryGraphView'.\nsrc/components/experience/MemoryGraphView.tsx(3,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/MemoryGraphView.tsx(29,17): error TS2323: Cannot redeclare exported variable 'MemoryGraphView'.\nsrc/components/experience/MemoryGraphView.tsx(29,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/ThemeModeGallery.tsx(1,10): error TS2300: Duplicate identifier 'experienceThemeModes'.\nsrc/components/experience/ThemeModeGallery.tsx(3,17): error TS2323: Cannot redeclare exported variable 'ThemeModeGallery'.\nsrc/components/experience/ThemeModeGallery.tsx(3,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/ThemeModeGallery.tsx(17,10): error TS2300: Duplicate identifier 'experienceThemeModes'.\nsrc/components/experience/ThemeModeGallery.tsx(19,17): error TS2323: Cannot redeclare exported variable 'ThemeModeGallery'.\nsrc/components/experience/ThemeModeGallery.tsx(19,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/UniverseHero.tsx(1,8): error TS2300: Duplicate identifier 'Link'.\nsrc/components/experience/UniverseHero.tsx(3,17): error TS2323: Cannot redeclare exported variable 'UniverseHero'.\nsrc/components/experience/UniverseHero.tsx(3,17): error TS2393: Duplicate function implementation.\nsrc/components/experience/UniverseHero.tsx(36,8): error TS2300: Duplicate identifier 'Link'.\nsrc/components/experience/UniverseHero.tsx(38,17): error TS2323: Cannot redeclare exported variable 'UniverseHero'.\nsrc/components/experience/UniverseHero.tsx(38,17): error TS2393: Duplicate function implementation.\nsrc/features/experience-realization/data.ts(1,15): error TS2300: Duplicate identifier 'ExperienceNode'.\nsrc/features/experience-realization/data.ts(1,31): error TS2300: Duplicate identifier 'ExperienceThemeMode'.\nsrc/features/experience-realization/data.ts(3,14): error TS2451: Cannot redeclare block-scoped variable 'experienceNodes'.\nsrc/features/experience-realization/data.ts(236,14): error TS2451: Cannot redeclare block-scoped variable 'experienceThemeModes'.\nsrc/features/experience-realization/data.ts(267,15): error TS2300: Duplicate identifier 'ExperienceNode'.\nsrc/features/experience-realization/data.ts(267,31): error TS2300: Duplicate identifier 'ExperienceThemeMode'.\nsrc/features/experience-realization/data.ts(269,14): error TS2451: Cannot redeclare block-scoped variable 'experienceNodes'.\nsrc/features/experience-realization/data.ts(352,14): error TS2451: Cannot redeclare block-scoped variable 'experienceThemeModes'.\nsrc/features/experience-realization/types.ts(1,13): error TS2300: Duplicate identifier 'ExperienceRealmKind'.\nsrc/features/experience-realization/types.ts(11,13): error TS2300: Duplicate identifier 'ExperienceNode'.\nsrc/features/experience-realization/types.ts(22,13): error TS2300: Duplicate identifier 'ExperienceThemeMode'.\nsrc/features/experience-realization/types.ts(23,13): error TS2300: Duplicate identifier 'ExperienceRealmKind'.\nsrc/features/experience-realization/types.ts(33,13): error TS2300: Duplicate identifier 'ExperienceNode'.\nsrc/features/experience-realization/types.ts(44,13): error TS2300: Duplicate identifier 'ExperienceThemeMode'.\n"
+    },
+    "build": {
+      "name": "build",
+      "command": "npm run build",
+      "status": "failed",
+      "exitCode": 1,
+      "tail": "\n> guyue-floating-world@0.1.0 build\n> npm run validate:world && npm run check:public && next build\n\n\n> guyue-floating-world@0.1.0 validate:world\n> tsx scripts/validate-world-data.ts\n\nWorld data validation passed.\n\n> guyue-floating-world@0.1.0 check:public\n> tsx scripts/check-public-build.ts\n\nPublic build check passed.\n\u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache\n\u001b[35m\u001b[1mAttention\u001b[22m\u001b[39m: Next.js now collects completely anonymous telemetry regarding usage.\nThis information is used to shape Next.js' roadmap and prioritize features.\nYou can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:\n\u001b[36mhttps://nextjs.org/telemetry\u001b[39m\n\n   \u001b[1m\u001b[38;2;173;127;168m▲ Next.js 15.5.18\u001b[39m\u001b[22m\n   - Experiments (use with caution):\n     · cpus: 2\n     \u001b[1m✓\u001b[22m mdxRs\n\n \u001b[37m\u001b[1m \u001b[22m\u001b[39m Creating an optimized production build ...\n\u001b[31mFailed to compile.\n\u001b[39m\n./src/app/constellation/page.tsx\nModule parse failed: Identifier 'Link' has already been declared (54:7)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js\n * ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js\nYou may need an additional loader to handle the result of these loaders.\n|     });\n| }\n> import Link from 'next/link';\n| import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell';\n| const nodes = [\n\nImport trace for requested module:\n./src/app/constellation/page.tsx\n\n./src/app/lighthouse/page.tsx\nModule parse failed: Identifier 'LighthouseQueue' has already been declared (31:9)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js\n * ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js\nYou may need an additional loader to handle the result of these loaders.\n|     });\n| }\n> import { LighthouseQueue } from '@/components/experience/LighthouseQueue';\n| import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell';\n| export default function LighthousePage() {\n\nImport trace for requested module:\n./src/app/lighthouse/page.tsx\n\n./src/app/memory-graph/page.tsx\nModule parse failed: Identifier 'MemoryGraphView' has already been declared (31:9)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js\n * ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js\nYou may need an additional loader to handle the result of these loaders.\n|     });\n| }\n> import { MemoryGraphView } from '@/components/experience/MemoryGraphView';\n| import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell';\n| export default function MemoryGraphPage() {\n\nImport trace for requested module:\n./src/app/memory-graph/page.tsx\n\n./src/app/theme-system/page.tsx\nModule parse failed: Identifier 'ThemeModeGallery' has already been declared (31:9)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js\n * ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js\nYou may need an additional loader to handle the result of these loaders.\n|     });\n| }\n> import { ThemeModeGallery } from '@/components/experience/ThemeModeGallery';\n| import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell';\n| export default function ThemeSystemPage() {\n\nImport trace for requested module:\n./src/app/theme-system/page.tsx\n\n./src/app/time-river/page.tsx\nModule parse failed: Identifier 'ResponsivePageShell' has already been declared (51:9)\nFile was processed with these loaders:\n * ./node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js\n * ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js\nYou may need an additional loader to handle the result of these loaders.\n|     });\n| }\n> import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell';\n| const events = [\n|     [\n\nImport trace for requested module:\n./src/app/time-river/page.tsx\n\n\n> Build failed because of webpack errors\n"
+    }
+  },
+  "findings": [
+    {
+      "severity": "BLOCKER",
+      "title": "未建立要求的 word-life 根仓库",
+      "evidence": "压缩包内项目根目录为 `第一轮封版_完整项目`，不是 `word-life`。",
+      "impact": "不满足长期 GitHub 项目命名与路径约定；后续变更无法统一落到 word-life/。",
+      "recommendation": "创建 word-life/ 作为唯一项目根目录，将代码放在根目录，所有文档进入 word-life/docs/。"
+    },
+    {
+      "severity": "BLOCKER",
+      "title": "未初始化 Git 仓库",
+      "evidence": "`word-life/.git` 不存在；当前包也没有 .gitignore。",
+      "impact": "无法满足“以后变更都在这里面，用 git 管理”的要求。",
+      "recommendation": "在 word-life/ 初始化 git，新增 .gitignore，创建初始提交。"
+    },
+    {
+      "severity": "BLOCKER",
+      "title": "可复现构建失败",
+      "evidence": "`npm run typecheck` failed；`npm run build` failed；`npm run check:experience` failed。",
+      "impact": "当前封版包不能作为稳定基线进入 GitHub。",
+      "recommendation": "清理 patch 重复叠加造成的重复声明，重新跑 npm ci/check/lint/typecheck/build。"
+    },
+    {
+      "severity": "BLOCKER",
+      "title": "体验兑现源码存在重复声明",
+      "evidence": "多处文件出现重复 import、重复 function、重复 type/const，如 scripts/check-experience-realization.ts、src/features/experience-realization/data.ts、types.ts、多个页面组件。",
+      "impact": "TypeScript 与 Next build 失败。",
+      "recommendation": "以单一权威版本重写这些文件，不能继续使用叠加 patch 拼接。"
+    },
+    {
+      "severity": "HIGH",
+      "title": "docs 未包含全部历史与设计文档",
+      "evidence": "包内 docs 只有 43 个文件，且只有 docs/61-v6 和 docs/70-experience-realization；/mnt/data 顶层估算有至少 226 个源文档未进入包。",
+      "impact": "不满足“第一轮中许多文档包括最初沟通记录、设计文档、世界规则、文档仓库等全部放到 word-life/docs”的要求。",
+      "recommendation": "建立 docs/00-inception、docs/01-world-design、docs/02-product-design、docs/03-engineering-architecture、docs/10-development-history/v1...v6、docs/90-archive。"
+    },
+    {
+      "severity": "HIGH",
+      "title": "开发前文档与开发过程文档没有分层",
+      "evidence": "当前 docs 只有 V6 与体验兑现线，缺少 pre-development/design/process 分层。",
+      "impact": "未来项目变大后，文档检索和阶段追溯会混乱。",
+      "recommendation": "把代码开发前文档与 v1/v2/v3 等开发过程文档分目录归档，并建立 docs/README.md 索引。"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "CI 配置存在长期维护风险",
+      "evidence": ".github/workflows/ci.yml 存在，但会执行极长的 check:world-core；另有 release-gate 使用 Node 22，ci 使用 Node 20。",
+      "impact": "CI 可能成本高、易超时，且 Node 版本不一致导致环境差异。",
+      "recommendation": "统一 Node LTS/项目版本；拆分 ci:fast、ci:full、release:gate。"
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "npm audit 有 2 个 moderate 漏洞",
+      "evidence": "`npm ci` 输出 2 moderate severity vulnerabilities。",
+      "impact": "不一定阻断本地开发，但发布前需要处理。",
+      "recommendation": "生成 audit 报告，评估是否安全升级；不要盲目 npm audit fix --force。"
+    }
+  ]
+}

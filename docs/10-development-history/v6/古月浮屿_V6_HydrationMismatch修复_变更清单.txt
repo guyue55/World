@@ -1,0 +1,5 @@
+data/v6/v6-hydration-extension-fix.json
+docs/61-v6/hydration-extension-fix.md
+scripts/check-v6-24.ts
+src/app/layout.tsx
+tsconfig.tsbuildinfo

@@ -1,0 +1,54 @@
+{
+  "round": 2,
+  "audit": "round2-revalidation-after-warning",
+  "createdAt": "2026-05-21T02:43:33Z",
+  "progress": {
+    "stages": "6/6",
+    "batches": "24/24",
+    "totalBatches": 24
+  },
+  "repositoryPersistence": {
+    "stageCommitsPresent": true,
+    "gitStatusCleanBeforeReport": true,
+    "latestCommits": [
+      "5a9998f chore(round2): record final audit",
+      "331727b feat(round2): complete stage 06 theme and final closure",
+      "cf7b085 feat(round2): complete stage 05 ai lighthouse",
+      "289cf74 feat(round2): complete stage 04 time memory",
+      "8c28df9 feat(round2): complete stage 03 content constellation",
+      "4f8206e feat(round2): complete stage 02 world map",
+      "11564d0 feat(round2): complete stage 01 visual foundation",
+      "b03faf6 feat: complete round 03 production readiness",
+      "6673d4b chore: prepare round 02 preflight baseline",
+      "3ff05e4 chore: resolve repository audit follow-ups"
+    ]
+  },
+  "checks": {
+    "checkRound2": "passed",
+    "batchChecks": "passed 01-24",
+    "stageChecks": "passed 01-06",
+    "lint": "passed",
+    "typecheck": "passed",
+    "auditReport": "passed with total=2 moderate=2 high=0 critical=0",
+    "jsonParse": {
+      "passed": true,
+      "policy": "Only parse filesystem files ending with .json; .json route directories are intentional Next App Router endpoints.",
+      "intentionalJsonRouteDirs": [
+        "src/app/world-index.json",
+        "src/app/world-manifest.json"
+      ],
+      "errors": []
+    },
+    "build": "timeout during Next static generation in sandbox; compile had succeeded before timeout, not marked passed"
+  },
+  "stageExpansionDecisions": {
+    "stage01": "No new stage-01 batches; downstream must reuse visual-foundation and mobile fallback checks.",
+    "stage02": "No new stage-02 batches; content constellation reuses node/connection edges and theme stage covers world-map variants.",
+    "stage03": "No new stage-03 batches; memory graph inherits private-redacted and lighthouse forbids private raw reads.",
+    "stage04": "No new stage-04 batches; lighthouse reuses redaction boundary and themes cannot leak private raw content.",
+    "stage05": "No new stage-05 batches; theme system keeps risk/audit/human-required semantics readable.",
+    "stage06": "No extra round2 batches; next work belongs to production-readiness / round3."
+  },
+  "productionLive": false,
+  "correctedAt": "2026-05-21T02:50:34Z"
+}

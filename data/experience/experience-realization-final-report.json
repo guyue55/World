@@ -1,0 +1,26 @@
+{
+  "name": "体验兑现 / 宇宙化产品重构线最终修复报告",
+  "status": "complete",
+  "completedBatches": 8,
+  "navigationIntegrated": true,
+  "dataDriven": true,
+  "patchCleanliness": "clean",
+  "productionLive": false,
+  "routes": [
+    "/",
+    "/world-map",
+    "/constellation",
+    "/time-river",
+    "/lighthouse",
+    "/memory-graph",
+    "/theme-system",
+    "/v6-world-network"
+  ],
+  "fixedIssues": [
+    "体验页接入全局导航",
+    "页面静态数组集中到 feature data 模块",
+    "check:experience 增强",
+    "清理 .rej / tsconfig.tsbuildinfo 污染",
+    "保留 hydration 根节点修复"
+  ]
+}

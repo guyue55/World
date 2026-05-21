@@ -1,0 +1,26 @@
+{
+  "name": "体验兑现 / 宇宙化产品重构线",
+  "versionBase": "v6-sealed",
+  "totalBatches": 8,
+  "completedBatches": 8,
+  "status": "complete",
+  "navigationIntegrated": true,
+  "dataDriven": true,
+  "checkCoverage": "strengthened",
+  "routes": [
+    "/",
+    "/world-map",
+    "/constellation",
+    "/time-river",
+    "/lighthouse",
+    "/memory-graph",
+    "/theme-system",
+    "/v6-world-network"
+  ],
+  "principles": [
+    "不继续空堆版本概念，优先把 V1-V6 能力转成真实页面体验",
+    "页面化、组件化、模块化，高内聚低耦合",
+    "保留公开/私密边界与 AI 不越权原则",
+    "任何视觉重构不破坏既有数据协议和构建门禁"
+  ]
+}

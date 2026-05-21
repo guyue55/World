@@ -1,0 +1,3 @@
+import Link from 'next/link'
+import { getRelatedContentNodes } from '@/features/content-constellation/recommendations'
+export function RelatedNodeRail({ nodeId }: { nodeId: string }) { const related=getRelatedContentNodes(nodeId); if(related.length===0) return <p className="rounded-2xl bg-white/70 p-4 text-sm text-ink/60">暂无关联节点。</p>; return <aside className="grid gap-3">{related.map(node=><Link key={node.id} href={node.href} className="rounded-2xl border border-white/50 bg-white/75 p-4 shadow-soft"><p className="text-xs tracking-[0.28em] text-moss">{node.type.toUpperCase()}</p><h3 className="mt-2 font-semibold">{node.title}</h3><p className="mt-2 text-sm leading-6 text-ink/60">{node.description}</p></Link>)}</aside> }

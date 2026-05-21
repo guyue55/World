@@ -1,0 +1,17 @@
+import { serviceAdapterContracts } from '@/features/service-adapters'
+
+export function AdapterBoundaryPanel() {
+  return (
+    <section className="grid gap-4 md:grid-cols-3">
+      {serviceAdapterContracts.map((adapter) => (
+        <article key={adapter.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft">
+          <p className="text-xs tracking-[0.3em] text-moss">{adapter.status.toUpperCase()} · {adapter.risk}</p>
+          <h3 className="mt-3 text-xl font-semibold">{adapter.name}</h3>
+          <p className="mt-3 text-sm leading-6 text-ink/65">{adapter.purpose}</p>
+          <p className="mt-4 rounded-2xl bg-sand/70 p-3 text-xs leading-5 text-ink/55">{adapter.secretPolicy}</p>
+          <p className="mt-4 text-xs text-ink/45">productionReady: {adapter.productionReady ? 'true' : 'false'}</p>
+        </article>
+      ))}
+    </section>
+  )
+}
