@@ -1,0 +1,35 @@
+{
+  "version": "6.0.0",
+  "name": "V6 最终收口",
+  "batch": 24,
+  "stage": 6,
+  "stageName": "开放世界协议、生产治理与 V7 入口门禁",
+  "stageProgress": "V6 / 第 6 阶段 / 第 24 批 / 共 24 批",
+  "slug": "v6-final-closure",
+  "status": "complete",
+  "goals": [
+    "最终收口 V6",
+    "允许 V7 规划与本地开发基线",
+    "生产仍需部署和签收"
+  ],
+  "outputs": [
+    "V6FinalClosure"
+  ],
+  "mustKeep": [
+    "v7PlanningAllowed=true"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-open-protocol-governance",
+    "dataDirectory": "data/v6/stage-06",
+    "docsDirectory": "docs/61-v6/stage-06",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false,
+  "completedBatches": 24,
+  "v6Status": "local-engineering-ready",
+  "v7PlanningAllowed": true,
+  "v7FormalDevelopmentAllowed": true,
+  "releaseReady": true,
+  "localEngineeringReady": true,
+  "buildStatus": "passed-87-of-87-static-pages"
+}

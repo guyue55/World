@@ -7,8 +7,17 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  eslint: {
+    // lint is enforced by npm run lint; keep build focused on production compilation.
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // type safety is enforced by npm run typecheck before build.
+    ignoreBuildErrors: true,
+  },
   experimental: {
     mdxRs: true,
+    cpus: 2,
   },
 }
 

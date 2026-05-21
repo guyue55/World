@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "长期目标与人生项目系统",
+  "batch": 10,
+  "stage": 3,
+  "stageName": "个人文明操作系统内核",
+  "stageProgress": "V6 / 第 3 阶段 / 第 10 批 / 共 24 批",
+  "slug": "life-project-roadmap",
+  "status": "complete",
+  "goals": [
+    "定义人生项目与长期目标",
+    "Milestone/PersonalRoadmap/ProgressSignal",
+    "长期项目可追踪"
+  ],
+  "outputs": [
+    "LifeProject",
+    "LongTermGoal"
+  ],
+  "mustKeep": [
+    "progress traceable"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-civilization-os",
+    "dataDirectory": "data/v6/stage-03",
+    "docsDirectory": "docs/61-v6/stage-03",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

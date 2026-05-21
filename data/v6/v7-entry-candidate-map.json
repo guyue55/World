@@ -1,0 +1,47 @@
+{
+  "version": "7.0.0-candidate",
+  "name": "V7 入口候选图",
+  "status": "planning-and-formal-development-ready-local-baseline",
+  "v7PlanningAllowed": true,
+  "v7FormalDevelopmentAllowed": true,
+  "releaseReady": true,
+  "productionLive": false,
+  "candidateDirections": [
+    {
+      "id": "open-personal-world-network",
+      "name": "开放个人世界网络",
+      "requiredEvidence": [
+        "V6 build passed",
+        "protocol compatibility proof",
+        "privacy review"
+      ]
+    },
+    {
+      "id": "personal-civilization-cloud",
+      "name": "个人文明云",
+      "requiredEvidence": [
+        "deployment proof",
+        "backup recovery proof",
+        "security signoff"
+      ]
+    },
+    {
+      "id": "agent-ecosystem-os",
+      "name": "Agent 生态操作系统",
+      "requiredEvidence": [
+        "agent society proof",
+        "abuse review",
+        "cost governance proof"
+      ]
+    },
+    {
+      "id": "immersive-digital-legacy",
+      "name": "沉浸式数字遗产系统",
+      "requiredEvidence": [
+        "memory graph proof",
+        "shared universe proof",
+        "legacy privacy proof"
+      ]
+    }
+  ]
+}

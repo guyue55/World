@@ -1,0 +1,30 @@
+{
+  "version": "6.0.0",
+  "name": "多世界网络模型",
+  "batch": 5,
+  "stage": 2,
+  "stageName": "多世界联邦网络核心",
+  "stageProgress": "V6 / 第 2 阶段 / 第 5 批 / 共 24 批",
+  "slug": "world-network-model",
+  "status": "complete",
+  "goals": [
+    "定义多世界网络模型",
+    "WorldNetwork/WorldCluster/WorldRelation",
+    "公开/家庭/项目/私密分层"
+  ],
+  "outputs": [
+    "WorldNetwork",
+    "WorldCluster",
+    "WorldRelation"
+  ],
+  "mustKeep": [
+    "world boundary required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-world-network",
+    "dataDirectory": "data/v6/stage-02",
+    "docsDirectory": "docs/61-v6/stage-02",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

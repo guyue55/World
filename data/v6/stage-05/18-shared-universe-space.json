@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "共享宇宙空间模型",
+  "batch": 18,
+  "stage": 5,
+  "stageName": "沉浸式共享宇宙与长期记忆图谱",
+  "stageProgress": "V6 / 第 5 阶段 / 第 18 批 / 共 24 批",
+  "slug": "shared-universe-space",
+  "status": "complete",
+  "goals": [
+    "定义共享宇宙空间",
+    "UniverseRoom/Presence/CollaborativeConstellation",
+    "角色可见性分层"
+  ],
+  "outputs": [
+    "SharedUniverse",
+    "UniverseRoom"
+  ],
+  "mustKeep": [
+    "spatial permission"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-memory-universe",
+    "dataDirectory": "data/v6/stage-05",
+    "docsDirectory": "docs/61-v6/stage-05",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "跨世界订阅与事件流",
+  "batch": 7,
+  "stage": 2,
+  "stageName": "多世界联邦网络核心",
+  "stageProgress": "V6 / 第 2 阶段 / 第 7 批 / 共 24 批",
+  "slug": "world-event-subscription",
+  "status": "complete",
+  "goals": [
+    "定义跨世界事件订阅",
+    "只推送授权摘要",
+    "私密事件只产生脱敏信号"
+  ],
+  "outputs": [
+    "WorldEventStream",
+    "WorldSubscription"
+  ],
+  "mustKeep": [
+    "redacted event only"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-world-network",
+    "dataDirectory": "data/v6/stage-02",
+    "docsDirectory": "docs/61-v6/stage-02",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

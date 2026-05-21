@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "生产级治理与安全复核",
+  "batch": 22,
+  "stage": 6,
+  "stageName": "开放世界协议、生产治理与 V7 入口门禁",
+  "stageProgress": "V6 / 第 6 阶段 / 第 22 批 / 共 24 批",
+  "slug": "production-governance-review",
+  "status": "complete",
+  "goals": [
+    "定义生产治理与安全复核",
+    "权限/隐私/Agent/插件/跨世界泄露/恢复",
+    "生产级门禁"
+  ],
+  "outputs": [
+    "ProductionGovernance",
+    "SecurityReview"
+  ],
+  "mustKeep": [
+    "manual signoff"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-open-protocol-governance",
+    "dataDirectory": "data/v6/stage-06",
+    "docsDirectory": "docs/61-v6/stage-06",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}
