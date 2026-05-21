@@ -1,0 +1,28 @@
+{
+  "version": "6.0.0",
+  "name": "V7 入口候选图",
+  "batch": 23,
+  "stage": 6,
+  "stageName": "开放世界协议、生产治理与 V7 入口门禁",
+  "stageProgress": "V6 / 第 6 阶段 / 第 23 批 / 共 24 批",
+  "slug": "v7-entry-candidate-map",
+  "status": "complete",
+  "goals": [
+    "定义 V7 入口候选",
+    "开放个人世界网络、文明云、Agent 生态 OS",
+    "正式开发依赖 V6 证据"
+  ],
+  "outputs": [
+    "V7EntryCandidateMap"
+  ],
+  "mustKeep": [
+    "V7 formal blocked until evidence"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-open-protocol-governance",
+    "dataDirectory": "data/v6/stage-06",
+    "docsDirectory": "docs/61-v6/stage-06",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

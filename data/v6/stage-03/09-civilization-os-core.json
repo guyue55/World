@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "文明操作系统内核模型",
+  "batch": 9,
+  "stage": 3,
+  "stageName": "个人文明操作系统内核",
+  "stageProgress": "V6 / 第 3 阶段 / 第 9 批 / 共 24 批",
+  "slug": "civilization-os-core",
+  "status": "complete",
+  "goals": [
+    "定义文明 OS 内核",
+    "人生领域/知识/记忆/创作/关系/传承",
+    "从内容系统升级为长期系统"
+  ],
+  "outputs": [
+    "CivilizationOS",
+    "LifeDomain"
+  ],
+  "mustKeep": [
+    "domain boundary"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-civilization-os",
+    "dataDirectory": "data/v6/stage-03",
+    "docsDirectory": "docs/61-v6/stage-03",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

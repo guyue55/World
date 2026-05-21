@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "自治任务与人工审批协议",
+  "batch": 14,
+  "stage": 4,
+  "stageName": "多 Agent 可控自治运行态",
+  "stageProgress": "V6 / 第 4 阶段 / 第 14 批 / 共 24 批",
+  "slug": "autonomous-task-approval",
+  "status": "complete",
+  "goals": [
+    "定义自治任务审批",
+    "低中高风险分级",
+    "高风险必须人工审批"
+  ],
+  "outputs": [
+    "AutonomousTask",
+    "HumanApprovalGate"
+  ],
+  "mustKeep": [
+    "high risk manual approval"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-agent-society",
+    "dataDirectory": "data/v6/stage-04",
+    "docsDirectory": "docs/61-v6/stage-04",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

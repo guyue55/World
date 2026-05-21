@@ -1,0 +1,27 @@
+{
+  "version": "6.0.0",
+  "name": "Agent 自治阶段收口",
+  "batch": 16,
+  "stage": 4,
+  "stageName": "多 Agent 可控自治运行态",
+  "stageProgress": "V6 / 第 4 阶段 / 第 16 批 / 共 24 批",
+  "slug": "agent-society-final",
+  "status": "complete",
+  "goals": [
+    "收束 Agent 自治阶段",
+    "协作但不可越权、输出可拒绝/回滚"
+  ],
+  "outputs": [
+    "AgentSocietyFinal"
+  ],
+  "mustKeep": [
+    "rollback required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-agent-society",
+    "dataDirectory": "data/v6/stage-04",
+    "docsDirectory": "docs/61-v6/stage-04",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

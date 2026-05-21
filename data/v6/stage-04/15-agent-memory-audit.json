@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "Agent 记忆与行为审计",
+  "batch": 15,
+  "stage": 4,
+  "stageName": "多 Agent 可控自治运行态",
+  "stageProgress": "V6 / 第 4 阶段 / 第 15 批 / 共 24 批",
+  "slug": "agent-memory-audit",
+  "status": "complete",
+  "goals": [
+    "定义 Agent 记忆与行为审计",
+    "信任评分、纠错记录、成本效果",
+    "长期形成可信度"
+  ],
+  "outputs": [
+    "AgentMemory",
+    "AgentBehaviorLog"
+  ],
+  "mustKeep": [
+    "audit every action"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-agent-society",
+    "dataDirectory": "data/v6/stage-04",
+    "docsDirectory": "docs/61-v6/stage-04",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

@@ -1,0 +1,28 @@
+{
+  "version": "6.0.0",
+  "name": "第 1 阶段收口",
+  "batch": 4,
+  "stage": 1,
+  "stageName": "V6 范围契约与 V5 证据继承",
+  "stageProgress": "V6 / 第 1 阶段 / 第 4 批 / 共 24 批",
+  "slug": "stage-one-final",
+  "status": "complete",
+  "goals": [
+    "收口 V6 第 1 阶段",
+    "确认 V6 本地实现允许",
+    "V7 仍只可候选规划"
+  ],
+  "outputs": [
+    "V6StageOneFinal"
+  ],
+  "mustKeep": [
+    "v6ImplementationAllowed=true"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-entry",
+    "dataDirectory": "data/v6/stage-01",
+    "docsDirectory": "docs/61-v6/stage-01",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

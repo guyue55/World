@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "开放世界协议标准化",
+  "batch": 21,
+  "stage": 6,
+  "stageName": "开放世界协议、生产治理与 V7 入口门禁",
+  "stageProgress": "V6 / 第 6 阶段 / 第 21 批 / 共 24 批",
+  "slug": "open-world-protocol",
+  "status": "complete",
+  "goals": [
+    "定义开放世界协议",
+    "WorldSchema/Capability/Export/Import/ProtocolVersion",
+    "可迁移可互操作"
+  ],
+  "outputs": [
+    "OpenWorldProtocol",
+    "WorldSchema"
+  ],
+  "mustKeep": [
+    "permission controlled"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-open-protocol-governance",
+    "dataDirectory": "data/v6/stage-06",
+    "docsDirectory": "docs/61-v6/stage-06",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

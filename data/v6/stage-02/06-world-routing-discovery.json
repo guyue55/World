@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "世界间路由与发现协议",
+  "batch": 6,
+  "stage": 2,
+  "stageName": "多世界联邦网络核心",
+  "stageProgress": "V6 / 第 2 阶段 / 第 6 批 / 共 24 批",
+  "slug": "world-routing-discovery",
+  "status": "complete",
+  "goals": [
+    "定义世界发现与路由",
+    "能力查询不读取私密内容",
+    "路由带权限与审计"
+  ],
+  "outputs": [
+    "WorldRouter",
+    "WorldDiscoveryIndex"
+  ],
+  "mustKeep": [
+    "audit required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-world-network",
+    "dataDirectory": "data/v6/stage-02",
+    "docsDirectory": "docs/61-v6/stage-02",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

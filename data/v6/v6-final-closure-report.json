@@ -1,0 +1,53 @@
+{
+  "version": "6.0.0",
+  "name": "古月浮屿 V6 最终封版收口报告",
+  "createdAt": "2026-05-20T10:29:03Z",
+  "completedLine": "v6-full-local-engineering-ready",
+  "completedStages": 6,
+  "completedBatches": 24,
+  "v6Status": "local-engineering-ready",
+  "v7PlanningAllowed": true,
+  "v7FormalDevelopmentAllowed": true,
+  "releaseReady": true,
+  "localEngineeringReady": true,
+  "productionLive": false,
+  "completedCapabilities": [
+    "V6 scope and V5 evidence inheritance",
+    "multi-world network model",
+    "world routing and discovery protocol",
+    "cross-world subscription and event stream",
+    "civilization OS core",
+    "life project and long-term roadmap",
+    "knowledge and creation pipeline",
+    "Agent Society",
+    "autonomous task approval",
+    "agent memory and behavior audit",
+    "long-term memory graph",
+    "shared universe space",
+    "immersive renderer fallback",
+    "open world protocol",
+    "production governance review",
+    "V7 entry candidate map",
+    "V6 real implementation minimum proof",
+    "V6 build 87/87 static pages",
+    "V6 route artifact smoke"
+  ],
+  "commandEvidence": "data/v6/v6-real-command-results.json",
+  "externalStillRequiredForProductionLive": [
+    "real staging/production deployment",
+    "target browser smoke test",
+    "target device/mobile smoke test",
+    "manual security owner signoff",
+    "manual privacy owner signoff",
+    "real external service credentials and integration smoke"
+  ],
+  "rules": [
+    "V6 local engineering gates passed.",
+    "V7 planning is allowed.",
+    "V7 formal development may start from this local engineering baseline.",
+    "productionLive remains false until external deploy and manual signoff.",
+    "World network cannot expose private raw content.",
+    "Agent Society cannot self-escalate or bypass owner approval.",
+    "Open protocol cannot expose private data."
+  ]
+}

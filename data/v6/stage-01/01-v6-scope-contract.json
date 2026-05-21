@@ -1,0 +1,31 @@
+{
+  "version": "6.0.0",
+  "name": "V6 范围契约",
+  "batch": 1,
+  "stage": 1,
+  "stageName": "V6 范围契约与 V5 证据继承",
+  "stageProgress": "V6 / 第 1 阶段 / 第 1 批 / 共 24 批",
+  "slug": "v6-scope-contract",
+  "status": "complete",
+  "goals": [
+    "定义 V6 多世界网络 / 个人文明 OS 边界",
+    "继承 V5 但不进入无边界扩张",
+    "禁止 AI、插件、世界网络越权"
+  ],
+  "outputs": [
+    "V6ScopeContract",
+    "V6NonGoals",
+    "V6RiskBoundary"
+  ],
+  "mustKeep": [
+    "productionLive=false",
+    "private boundary inherited"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-entry",
+    "dataDirectory": "data/v6/stage-01",
+    "docsDirectory": "docs/61-v6/stage-01",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}
