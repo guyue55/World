@@ -1,0 +1,54 @@
+{
+  "areas": [
+    {
+      "id": "origin",
+      "worldName": "创世原点",
+      "realDescription": "世界为什么存在、如何开始、如何继续生长。",
+      "connectsTo": [
+        "time-river",
+        "atlas",
+        "creator-workbench"
+      ]
+    },
+    {
+      "id": "time-river",
+      "worldName": "时间河",
+      "realDescription": "按时间组织世界事件、节点生长、回望和历史。",
+      "connectsTo": [
+        "world-log",
+        "reflection-cycles",
+        "memory-lake"
+      ]
+    },
+    {
+      "id": "memory-lake",
+      "worldName": "记忆湖",
+      "realDescription": "生活照片、日常片刻、旅行和家庭记忆的保存区。",
+      "connectsTo": [
+        "private-archive",
+        "annual-book",
+        "low-light-mode"
+      ]
+    },
+    {
+      "id": "creator-workbench",
+      "worldName": "创世台",
+      "realDescription": "主人记录、整理、设权、关联、审计和导出世界的工作台。",
+      "connectsTo": [
+        "service-bridge",
+        "maintenance-queue",
+        "ai-review"
+      ]
+    },
+    {
+      "id": "ai-lighthouse",
+      "worldName": "AI 灯塔",
+      "realDescription": "公开导览、路径推荐、摘要建议和隐私检查的智能入口。",
+      "connectsTo": [
+        "public-context",
+        "review-queue",
+        "audit-log"
+      ]
+    }
+  ]
+}

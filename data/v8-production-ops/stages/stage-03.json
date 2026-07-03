@@ -1,0 +1,21 @@
+{
+  "version": "V8",
+  "stage": 3,
+  "title": "域名、SEO、性能与外部访问证据",
+  "status": "complete",
+  "completedBatches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "focus": [
+    "域名和 HTTPS 检查",
+    "SEO 提交与公开索引",
+    "Web Vitals 外部证据",
+    "阶段三收口"
+  ],
+  "releaseReady": false,
+  "productionLive": false,
+  "lintRequiredAfterStage": true
+}

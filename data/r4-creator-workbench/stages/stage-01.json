@@ -1,0 +1,15 @@
+{
+  "stage": 1,
+  "title": "创世台信息架构与收集箱",
+  "focus": "把 R3 真实节点接入可维护的主人创作层，建立收集箱、草案区、节点操作语义和低成本记录入口。",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

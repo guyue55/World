@@ -1,0 +1,15 @@
+{
+  "stage": 3,
+  "title": "内容节点仪式与区域沉浸",
+  "description": "让阅读、打开节点、进入区域都有世界化仪式，同时保留现实解释和可访问性。",
+  "batches": [
+    "09-区域抵达仪式",
+    "10-节点展开仪式",
+    "11-现实模式切换",
+    "12-阶段三检查"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

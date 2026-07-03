@@ -1,0 +1,50 @@
+{
+  "period": "first-public-season",
+  "cadence": {
+    "weekly": [
+      "新增或修订 1-3 个公开节点",
+      "整理 1 条精选路径",
+      "检查公开隐私边界"
+    ],
+    "monthly": [
+      "发布世界月报",
+      "复核 SEO 与 sitemap",
+      "导出公开运营证据包"
+    ],
+    "quarterly": [
+      "体验复审",
+      "性能复审",
+      "AI 审计与隐私审查"
+    ]
+  },
+  "items": [
+    {
+      "id": "week-01",
+      "title": "重新介绍古月浮屿",
+      "type": "world-log",
+      "visibility": "public",
+      "status": "planned"
+    },
+    {
+      "id": "week-02",
+      "title": "技术星域精选路径整理",
+      "type": "path",
+      "visibility": "public",
+      "status": "planned"
+    },
+    {
+      "id": "week-03",
+      "title": "世界如何被创造",
+      "type": "essay",
+      "visibility": "public",
+      "status": "planned"
+    },
+    {
+      "id": "week-04",
+      "title": "第一份世界月报",
+      "type": "monthly-report",
+      "visibility": "public",
+      "status": "planned"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "V10",
+  "round": 10,
+  "batch": 9,
+  "stage": 3,
+  "name": "长期陪伴台与回望入口",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "checks": [
+    "json-schema",
+    "typescript-imports",
+    "boundary-rules",
+    "manual-governance"
+  ],
+  "summary": "第十轮第 9 批完成：长期陪伴台与回望入口。"
+}

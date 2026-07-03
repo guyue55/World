@@ -1,0 +1,31 @@
+{
+  "id": "guyue-floating-world-state",
+  "mode": "alive-low-maintenance",
+  "mood": "quiet-growing",
+  "season": "late-spring",
+  "lightLevel": "low-glow",
+  "lastAwakenedAt": "2026-05-24",
+  "productionLive": false,
+  "signals": [
+    {
+      "id": "node-life",
+      "label": "节点生命",
+      "value": "36 个真实节点具备生命阶段，等待继续生长"
+    },
+    {
+      "id": "creator-workbench",
+      "label": "创世台",
+      "value": "星尘港、权限守门、导出备份已经具备工作台入口"
+    },
+    {
+      "id": "ai-lighthouse",
+      "label": "AI 灯塔",
+      "value": "公开导览、路径推荐、审计队列已接入，但不自动改世界"
+    },
+    {
+      "id": "service-bridge",
+      "label": "服务桥",
+      "value": "API 合约、审计、导出任务和 owner-only 边界已形成最小闭环"
+    }
+  ]
+}

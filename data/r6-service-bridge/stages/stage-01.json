@@ -1,0 +1,20 @@
+{
+  "stage": 1,
+  "title": "服务边界、身份与 Owner-only 地基",
+  "status": "complete",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "checks": [
+    "syntax",
+    "logic",
+    "lint-after-stage"
+  ],
+  "goal": "服务化最小闭环必须服务于真实世界成型，而不是引入过度后端复杂度。"
+}

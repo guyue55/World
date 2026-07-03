@@ -1,0 +1,117 @@
+{
+  "version": "V9",
+  "items": [
+    {
+      "id": "multi-tenant-boundary",
+      "name": "多租户边界",
+      "kind": "architecture",
+      "status": "planned",
+      "description": "支持未来客户/家庭/个人空间隔离，但当前只落服务协议。"
+    },
+    {
+      "id": "identity-provider-port",
+      "name": "身份提供者端口",
+      "kind": "port",
+      "status": "designed",
+      "description": "预留 Google/GitHub/Email 登录适配，不在本轮接真实服务。"
+    },
+    {
+      "id": "rbac-policy-matrix",
+      "name": "RBAC 权限矩阵",
+      "kind": "security",
+      "status": "designed",
+      "description": "viewer/editor/operator/owner/admin/service-agent 等角色边界。"
+    },
+    {
+      "id": "api-gateway-contract",
+      "name": "API 网关契约",
+      "kind": "api",
+      "status": "designed",
+      "description": "/api/v9/service-health 与后续节点服务契约。"
+    },
+    {
+      "id": "storage-port",
+      "name": "存储端口",
+      "kind": "data",
+      "status": "designed",
+      "description": "Repository 接口隔离文件、数据库、对象存储。"
+    },
+    {
+      "id": "audit-ledger",
+      "name": "审计台账",
+      "kind": "governance",
+      "status": "designed",
+      "description": "所有敏感操作必须可追踪、可解释、可回滚。"
+    },
+    {
+      "id": "migration-runbook",
+      "name": "迁移运行手册",
+      "kind": "operations",
+      "status": "designed",
+      "description": "静态数据到服务存储的迁移步骤与回滚边界。"
+    },
+    {
+      "id": "platform-console",
+      "name": "平台控制台",
+      "kind": "ui",
+      "status": "implemented",
+      "description": "/v9-platform 提供平台化治理看板。"
+    },
+    {
+      "id": "ops-queue",
+      "name": "操作队列",
+      "kind": "workflow",
+      "status": "designed",
+      "description": "发布、导入、权限变更、AI 建议等操作进入人工队列。"
+    },
+    {
+      "id": "integration-adapters",
+      "name": "集成适配器",
+      "kind": "integration",
+      "status": "designed",
+      "description": "GitHub、Google Drive、对象存储、AI Provider 的适配层。"
+    },
+    {
+      "id": "secret-boundary",
+      "name": "密钥边界",
+      "kind": "security",
+      "status": "designed",
+      "description": "密钥只存在运行环境，不进入 JSON/data/public。"
+    },
+    {
+      "id": "service-quality-budget",
+      "name": "服务质量预算",
+      "kind": "quality",
+      "status": "designed",
+      "description": "延迟、错误率、可用性、备份恢复的目标。"
+    },
+    {
+      "id": "privacy-by-default",
+      "name": "默认私密原则",
+      "kind": "privacy",
+      "status": "enforced",
+      "description": "服务化后不改变 V6/V7/V8 的隐私边界。"
+    },
+    {
+      "id": "ai-service-agent-policy",
+      "name": "AI 服务代理策略",
+      "kind": "ai-governance",
+      "status": "designed",
+      "description": "AI 可建议、可生成草案，但不能越权写入生产数据。"
+    },
+    {
+      "id": "v10-intelligent-world-handoff",
+      "name": "V10 智能世界交接",
+      "kind": "handoff",
+      "status": "ready",
+      "description": "把可治理服务底座交给长期智能世界。"
+    },
+    {
+      "id": "platform-sla-ledger",
+      "name": "平台 SLA 台账",
+      "kind": "operations",
+      "status": "designed",
+      "description": "记录服务目标、当前阻断和人工签收状态。"
+    }
+  ]
+}

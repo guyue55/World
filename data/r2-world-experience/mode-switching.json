@@ -1,0 +1,23 @@
+{
+  "modes": [
+    {
+      "id": "world",
+      "name": "世界模式",
+      "purpose": "漂浮、流动、星图、时间河、世界叙事。"
+    },
+    {
+      "id": "reality",
+      "name": "现实模式",
+      "purpose": "文章列表、项目列表、标签筛选、搜索、归档、时间排序。"
+    },
+    {
+      "id": "reading",
+      "name": "静读模式",
+      "purpose": "降低动效、稳定排版，保护长文阅读。"
+    }
+  ],
+  "rule": "想探索时它是世界；想查找时它是系统。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

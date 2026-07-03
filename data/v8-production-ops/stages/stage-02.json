@@ -1,0 +1,21 @@
+{
+  "version": "V8",
+  "stage": 2,
+  "title": "生产观测、告警与事故响应",
+  "status": "complete",
+  "completedBatches": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "focus": [
+    "生产监控矩阵",
+    "告警分级",
+    "事故响应 playbook",
+    "阶段二收口"
+  ],
+  "releaseReady": false,
+  "productionLive": false,
+  "lintRequiredAfterStage": true
+}

@@ -1,0 +1,292 @@
+{
+  "events": [
+    {
+      "date": "2026-05-19",
+      "nodeId": "world-manifesto",
+      "title": "世界宣言",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-19",
+      "nodeId": "world-charter",
+      "title": "世界宪章",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-20",
+      "nodeId": "design-axioms",
+      "title": "世界设计公理",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-20",
+      "nodeId": "entry-clear-depth-vast",
+      "title": "入口清澈深处浩瀚",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-21",
+      "nodeId": "world-generator-pipeline",
+      "title": "世界生成管线",
+      "area": "product",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-21",
+      "nodeId": "node-passport-system",
+      "title": "节点护照系统",
+      "area": "inspiration",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-21",
+      "nodeId": "four-dimensional-coordinates",
+      "title": "四维坐标系统",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-21",
+      "nodeId": "ai-lighthouse-boundary",
+      "title": "AI 灯塔边界",
+      "area": "lighthouse",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "private-ai-v6",
+      "title": "V6 私密 AI 边界",
+      "area": "lighthouse",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "r2-world-entry",
+      "title": "R2 世界入口",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "world-map-passports",
+      "title": "区域说明卡",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-18",
+      "nodeId": "mcp-adk-feishu",
+      "title": "飞书 MCP 接入 ADK Agent",
+      "area": "tech",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "gemini-cli-skills",
+      "title": "Gemini CLI 与 Skills 机制",
+      "area": "tech",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-14",
+      "nodeId": "codex-cli-cursor",
+      "title": "Codex CLI 与 Cursor CLI 探索",
+      "area": "tech",
+      "eventType": "node-created",
+      "lifeStage": "sprout"
+    },
+    {
+      "date": "2026-05-18",
+      "nodeId": "docker-space-reclaim",
+      "title": "Docker 空间回收排查",
+      "area": "tech",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-18",
+      "nodeId": "mac-dev-maintenance",
+      "title": "Mac 开发环境清理",
+      "area": "tech",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2024-09-19",
+      "nodeId": "kafka-emqx-telegraf",
+      "title": "Kafka / EMQX / Telegraf 旧技术记录",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "archive"
+    },
+    {
+      "date": "2026-05-14",
+      "nodeId": "static-novel-editor",
+      "title": "静态 AI 小说编辑器",
+      "area": "product",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "careeros-inspired-tool",
+      "title": "CareerOS 启发的 AI-native 公司工具",
+      "area": "product",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-09",
+      "nodeId": "moonframe-ai",
+      "title": "月帧阁 MoonFrame AI",
+      "area": "product",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-14",
+      "nodeId": "visual-suite-design",
+      "title": "技术博客视觉套图",
+      "area": "product",
+      "eventType": "node-created",
+      "lifeStage": "sprout"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "paper-cosmos-aesthetic",
+      "title": "纸上宇宙审美纪律",
+      "area": "inspiration",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "content-sovereignty",
+      "title": "内容主权",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "data-portability",
+      "title": "数据主权与可迁移",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "privacy-default-private",
+      "title": "隐私默认保护",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "sovereignty-design",
+      "title": "世界主权设计",
+      "area": "origin",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "life-low-light-mode",
+      "title": "低光运行",
+      "area": "inspiration",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "daily-world",
+      "title": "今日世界",
+      "area": "inspiration",
+      "eventType": "node-created",
+      "lifeStage": "sprout"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "world-health-dashboard",
+      "title": "世界健康度",
+      "area": "product",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "area-density",
+      "title": "区域密度",
+      "area": "inspiration",
+      "eventType": "node-created",
+      "lifeStage": "bloom"
+    },
+    {
+      "date": "2026-05-22",
+      "nodeId": "memory-lake-first-light",
+      "title": "记忆湖第一片光",
+      "area": "memory",
+      "eventType": "node-created",
+      "lifeStage": "seed"
+    },
+    {
+      "date": "2026-05-13",
+      "nodeId": "travel-collage-memory",
+      "title": "旅行拼贴记忆",
+      "area": "memory",
+      "eventType": "node-created",
+      "lifeStage": "sprout"
+    },
+    {
+      "date": "2026-05-19",
+      "nodeId": "desktop-layout-review",
+      "title": "桌面布局优化评测",
+      "area": "memory",
+      "eventType": "node-created",
+      "lifeStage": "growing"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "r1-production-stabilization",
+      "title": "R1 真实生产收口",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "fruit"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "service-platform-v9",
+      "title": "V9 服务化平台骨架",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "archive"
+    },
+    {
+      "date": "2026-05-23",
+      "nodeId": "intelligent-world-v10",
+      "title": "V10 长期智能世界",
+      "area": "archive",
+      "eventType": "node-created",
+      "lifeStage": "archive"
+    }
+  ]
+}

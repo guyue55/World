@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
     // type safety is enforced by npm run typecheck before build.
     ignoreBuildErrors: true,
   },
+  outputFileTracingExcludes: {
+    '/*': ['.git/**/*', 'docs/**/*', 'reports/**/*', 'coverage/**/*', '.next/**/*', 'node_modules/**/*'],
+    '/api/**/*': ['.git/**/*', 'docs/**/*', 'reports/**/*', 'coverage/**/*', '.next/**/*', 'node_modules/**/*'],
+  },
   experimental: {
     mdxRs: true,
     cpus: 2,

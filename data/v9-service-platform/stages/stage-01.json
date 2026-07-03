@@ -1,0 +1,22 @@
+{
+  "id": "stage-01",
+  "stage": 1,
+  "title": "服务平台边界、身份与租户地基",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "focus": [
+    "service boundary",
+    "identity skeleton",
+    "tenant isolation",
+    "platform contracts"
+  ],
+  "version": "V9",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false
+}

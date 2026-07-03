@@ -1,0 +1,15 @@
+{
+  "batch": 7,
+  "stage": 2,
+  "title": "区域说明卡与现实解释",
+  "status": "complete",
+  "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+  "deliverables": [
+    "area-passports.json",
+    "AreaPassportGrid.tsx"
+  ],
+  "syntaxLogicCheck": "stage check + lint after stage completion",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,15 @@
+{
+  "batch": 13,
+  "stage": 4,
+  "title": "RC manifest",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 Release Candidate 包装与交接：RC manifest",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

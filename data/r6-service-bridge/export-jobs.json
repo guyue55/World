@@ -1,0 +1,16 @@
+{
+  "jobs": [
+    {
+      "id": "export-public-world-index",
+      "scope": "public-only",
+      "status": "planned",
+      "containsPrivate": false
+    },
+    {
+      "id": "export-owner-archive-index",
+      "scope": "owner-private-index",
+      "status": "requires-owner-auth",
+      "containsPrivate": "redacted-index-only"
+    }
+  ]
+}

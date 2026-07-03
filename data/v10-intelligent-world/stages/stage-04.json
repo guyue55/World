@@ -1,0 +1,27 @@
+{
+  "id": "v10-stage-04",
+  "stage": 4,
+  "title": "终局治理、可靠性硬化与十轮总封版",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "focus": [
+    "主权治理",
+    "可迁移档案",
+    "可靠性预算",
+    "十轮总交接"
+  ],
+  "version": "V10",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "extensionDecision": {
+    "needExpansion": true,
+    "decision": "保留长期智能世界的扩展槽，但所有自动化必须保持人工签收与可审计。"
+  }
+}

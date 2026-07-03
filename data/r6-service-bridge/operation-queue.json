@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "op-review-ai-path",
+      "kind": "review-ai-suggestion",
+      "status": "pending-owner-review",
+      "risk": "medium"
+    },
+    {
+      "id": "op-create-node-draft",
+      "kind": "create-node-draft",
+      "status": "draft-only",
+      "risk": "low"
+    },
+    {
+      "id": "op-export-public-index",
+      "kind": "export",
+      "status": "ready-for-owner-trigger",
+      "risk": "medium"
+    }
+  ]
+}

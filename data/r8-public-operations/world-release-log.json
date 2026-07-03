@@ -1,0 +1,25 @@
+{
+  "events": [
+    {
+      "id": "r8-log-001",
+      "title": "公开运营规则落库",
+      "kind": "governance",
+      "visibility": "public",
+      "impact": "访客可以理解世界如何持续更新。"
+    },
+    {
+      "id": "r8-log-002",
+      "title": "发布隐私守门加入公开流程",
+      "kind": "privacy",
+      "visibility": "public-summary",
+      "impact": "公开前检查敏感内容、AI 推测和 vault 越界。"
+    },
+    {
+      "id": "r8-log-003",
+      "title": "反馈入口与运营节奏准备完成",
+      "kind": "operations",
+      "visibility": "public",
+      "impact": "世界开始具备复访与持续运营闭环。"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "version": "R1",
+  "localCommands": [
+    {
+      "command": "npm run check:json",
+      "required": true
+    },
+    {
+      "command": "npm run check:repo",
+      "required": true
+    },
+    {
+      "command": "npm run check:r1-production:all",
+      "required": true
+    },
+    {
+      "command": "npm run check:r1-production:boundary",
+      "required": true
+    },
+    {
+      "command": "npm run lint",
+      "required": true
+    },
+    {
+      "command": "npm run typecheck",
+      "required": true
+    },
+    {
+      "command": "npm run build",
+      "required": true
+    },
+    {
+      "command": "npm run audit:report",
+      "required": true
+    }
+  ],
+  "externalEvidence": [
+    {
+      "name": "Preview URL smoke test",
+      "status": "pending-external-environment"
+    },
+    {
+      "name": "Production URL smoke test",
+      "status": "pending-external-environment"
+    },
+    {
+      "name": "Manual release signoff",
+      "status": "pending-owner-signoff"
+    }
+  ],
+  "policy": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "R1 在当前容器内完成本地工程收口；真实外部部署与人工签收未发生前不标记 productionLive。"
+  }
+}

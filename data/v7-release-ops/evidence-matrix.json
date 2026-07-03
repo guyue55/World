@@ -1,0 +1,77 @@
+{
+  "version": "V7",
+  "releaseReady": false,
+  "productionLive": false,
+  "items": [
+    {
+      "id": "dependency-install",
+      "title": "依赖安装",
+      "command": "npm install 或 npm ci",
+      "status": "local-run-required",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "json-check",
+      "title": "JSON 检查",
+      "command": "npm run check:json",
+      "status": "passed-local-in-this-round",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "repo-check",
+      "title": "仓库结构检查",
+      "command": "npm run check:repo",
+      "status": "passed-local-in-this-round",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "v7-check",
+      "title": "V7 聚合门禁",
+      "command": "npm run check:v7-release:all",
+      "status": "passed-local-in-this-round",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "lint",
+      "title": "Lint",
+      "command": "npm run lint",
+      "status": "passed-local-in-this-round",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "typecheck",
+      "title": "TypeScript",
+      "command": "npm run typecheck",
+      "status": "passed-local-in-this-round",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "build",
+      "title": "Next 构建",
+      "command": "npm run build",
+      "status": "pending-or-environment-timeout-until-final-run",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "manual-signoff",
+      "title": "人工签收",
+      "command": "manual",
+      "status": "pending-human",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "preview-smoke",
+      "title": "预览环境冒烟",
+      "command": "manual/preview smoke",
+      "status": "pending-real-environment",
+      "requiredForReleaseReady": true
+    },
+    {
+      "id": "production-deploy",
+      "title": "生产部署",
+      "command": "deploy",
+      "status": "not-started-by-design",
+      "requiredForReleaseReady": true
+    }
+  ]
+}

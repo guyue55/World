@@ -1,0 +1,70 @@
+{
+  "items": [
+    {
+      "id": "inbox-001",
+      "title": "一句新的世界想法",
+      "kind": "idea",
+      "rawInput": "入口清澈，深处浩瀚，也要能每天被轻松维护。",
+      "suggestedArea": "origin",
+      "suggestedVisibility": "private",
+      "suggestedLifeStage": "seed",
+      "nextAction": "补充三句话后安放到世界宪章候选区",
+      "risk": "low"
+    },
+    {
+      "id": "inbox-002",
+      "title": "Docker 排查片段",
+      "kind": "technical-note",
+      "rawInput": "一次开发环境磁盘空间未释放的排查记录。",
+      "suggestedArea": "tech",
+      "suggestedVisibility": "public-draft",
+      "suggestedLifeStage": "sprout",
+      "nextAction": "补环境、命令、结论后转为技术节点",
+      "risk": "medium"
+    },
+    {
+      "id": "inbox-003",
+      "title": "傍晚生活光影",
+      "kind": "memory",
+      "rawInput": "今天傍晚窗边的光很好。",
+      "suggestedArea": "memory",
+      "suggestedVisibility": "private",
+      "suggestedLifeStage": "seed",
+      "nextAction": "补一句说明，确认是否进入记忆湖",
+      "risk": "privacy"
+    },
+    {
+      "id": "inbox-004",
+      "title": "AI 灯塔公开问答草案",
+      "kind": "ai-draft",
+      "rawInput": "公开 AI 只回答公开索引，不读取私密节点。",
+      "suggestedArea": "lighthouse",
+      "suggestedVisibility": "private",
+      "suggestedLifeStage": "growing",
+      "nextAction": "进入 R5 AI 灯塔真实接入队列",
+      "risk": "high"
+    },
+    {
+      "id": "inbox-005",
+      "title": "月帧阁产品片段",
+      "kind": "project",
+      "rawInput": "把 MoonFrame 的产品设想放入产品工坊，补充截图和路线。",
+      "suggestedArea": "workshop",
+      "suggestedVisibility": "semi-public",
+      "suggestedLifeStage": "growing",
+      "nextAction": "关联项目节点并补 README 摘要",
+      "risk": "medium"
+    },
+    {
+      "id": "inbox-006",
+      "title": "世界年表补记",
+      "kind": "timeline-event",
+      "rawInput": "R3 完成后，真实节点开始进入世界。",
+      "suggestedArea": "timeline",
+      "suggestedVisibility": "public",
+      "suggestedLifeStage": "fruit",
+      "nextAction": "写入世界年表和最近发生",
+      "risk": "low"
+    }
+  ]
+}

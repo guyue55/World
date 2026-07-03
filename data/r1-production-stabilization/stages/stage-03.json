@@ -1,0 +1,21 @@
+{
+  "stage": 3,
+  "title": "部署证据与运行手册",
+  "description": "补齐 preview/production smoke 计划、环境变量边界、回滚和人工签收模板。",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "tasks": [
+    "部署清单",
+    "smoke 测试计划",
+    "回滚阶梯",
+    "签收模板"
+  ],
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "batch": 5,
+  "stage": 2,
+  "title": "命令矩阵",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 真实命令门禁与构建稳定：命令矩阵",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

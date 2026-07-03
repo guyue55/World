@@ -1,0 +1,21 @@
+{
+  "stage": 2,
+  "title": "真实命令门禁与构建稳定",
+  "description": "把本地命令门禁固化为可复跑脚本，优先解决 build/trace 退出类阻断。",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "tasks": [
+    "命令矩阵",
+    "构建策略",
+    "质量门禁证据",
+    "依赖安装记录"
+  ],
+  "batches": [
+    5,
+    6,
+    7,
+    8
+  ]
+}

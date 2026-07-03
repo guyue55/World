@@ -1,0 +1,14 @@
+{
+  "accessibility": [
+    "每个公开入口保留现实解释",
+    "交互按钮文案不只用诗意隐喻",
+    "主要信息不依赖动画",
+    "移动端保持入口清澈"
+  ],
+  "performanceBudget": {
+    "initialPublicRoutes": "lightweight",
+    "largeAnimations": "progressive-enhancement-only",
+    "images": "lazy or optimized",
+    "build": "artifact verified in current container"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "version": "R4",
+  "name": "真实世界-R4｜创世台 / 工作台真实化",
+  "goal": "让主人能够低成本记录、整理、设权、关联、导出和维护古月浮屿，而不是继续依赖手工改 JSON。",
+  "principle": "前台浪漫，后台清醒，档案可靠。外面是浮屿，里面是创世台。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "stages": [
+    {
+      "stage": 1,
+      "title": "创世台信息架构与收集箱",
+      "focus": "把 R3 真实节点接入可维护的主人创作层，建立收集箱、草案区、节点操作语义和低成本记录入口。",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "节点管理、权限检查与内容债务",
+      "focus": "建立节点管理视图、权限风险面板、内容债务队列、孤岛节点修复建议和下一步动作系统。",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "维护闭环、审计日志与导出备份",
+      "focus": "把维护任务、轻仪式、审计日志、导出计划、备份策略和危险操作确认串成创世台闭环。",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "质量门禁、隐私边界与 R5 交接",
+      "focus": "完成 R4 聚合检查、创世台边界扫描、文档封版、R5 AI 灯塔真实接入交接。",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "stage": 1,
+      "title": "最终目标重申与创世台范围契约",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 2,
+      "stage": 1,
+      "title": "收集箱 / 星尘港模型",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 3,
+      "stage": 1,
+      "title": "草案区与节点操作语义",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 4,
+      "stage": 1,
+      "title": "主人视角首页与工作台入口",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 5,
+      "stage": 2,
+      "title": "节点管理与筛选协议",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 6,
+      "stage": 2,
+      "title": "权限风险与公开守门",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 7,
+      "stage": 2,
+      "title": "内容债务与孤岛节点修复",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 8,
+      "stage": 2,
+      "title": "低心力维护任务队列",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 9,
+      "stage": 3,
+      "title": "每日世界状态与轻仪式",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 10,
+      "stage": 3,
+      "title": "审计日志与危险操作确认",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 11,
+      "stage": 3,
+      "title": "导出备份与可迁移清单",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 12,
+      "stage": 3,
+      "title": "创世台健康度与维护闭环",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 13,
+      "stage": 4,
+      "title": "R4 聚合门禁",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 14,
+      "stage": 4,
+      "title": "创世台隐私边界扫描",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 15,
+      "stage": 4,
+      "title": "R4 文档与质量报告",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 16,
+      "stage": 4,
+      "title": "R5 AI 灯塔真实接入交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "extensionTasks": [
+    "星尘港收集箱",
+    "节点管理台",
+    "权限风险守门",
+    "内容债务队列",
+    "孤岛节点修复",
+    "世界健康度",
+    "每日轻仪式",
+    "低心力维护",
+    "审计日志",
+    "危险操作确认",
+    "导出备份计划",
+    "R5 AI 灯塔交接"
+  ]
+}

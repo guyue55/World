@@ -1,0 +1,20 @@
+{
+  "id": "stage-04",
+  "stage": 4,
+  "title": "质量硬化、边界审查与 V8 交接",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "focus": [
+    "性能与无障碍预算",
+    "隐私与 AI 边界复核",
+    "V8 生产运维交接",
+    "V7 最终封版"
+  ],
+  "status": "complete",
+  "releaseReady": false,
+  "productionLive": false
+}

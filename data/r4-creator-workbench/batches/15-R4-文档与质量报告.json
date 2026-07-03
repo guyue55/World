@@ -1,0 +1,9 @@
+{
+  "batch": 15,
+  "stage": 4,
+  "title": "R4 文档与质量报告",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

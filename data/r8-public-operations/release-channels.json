@@ -1,0 +1,36 @@
+{
+  "channels": [
+    {
+      "id": "world-home",
+      "name": "世界入口",
+      "audience": "first-time-visitors",
+      "visibility": "public",
+      "cadence": "always-on",
+      "purpose": "让访客第一眼知道这里不是普通博客，而是可探索的个人数字世界。"
+    },
+    {
+      "id": "world-log",
+      "name": "世界更新日志",
+      "audience": "returning-visitors",
+      "visibility": "public",
+      "cadence": "weekly",
+      "purpose": "展示最近点亮、节点成长、路径整理和世界状态变化。"
+    },
+    {
+      "id": "selected-paths",
+      "name": "精选探索路径",
+      "audience": "curious-visitors",
+      "visibility": "public",
+      "cadence": "monthly",
+      "purpose": "降低进入成本，让访客沿着技术、世界创造、个人作品三条路径探索。"
+    },
+    {
+      "id": "public-lighthouse",
+      "name": "公开 AI 灯塔",
+      "audience": "visitors",
+      "visibility": "public",
+      "cadence": "always-on",
+      "purpose": "只基于公开索引提供问答、导航与摘要建议。"
+    }
+  ]
+}

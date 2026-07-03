@@ -1,0 +1,22 @@
+{
+  "id": "batch-09",
+  "batch": 9,
+  "stage": 3,
+  "title": "平台控制台与操作入口",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/09-平台控制台与操作入口.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

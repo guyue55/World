@@ -1,0 +1,15 @@
+{
+  "batch": 7,
+  "stage": 2,
+  "title": "质量门禁证据",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 真实命令门禁与构建稳定：质量门禁证据",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

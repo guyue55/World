@@ -1,0 +1,18 @@
+{
+  "stage": 2,
+  "name": "公开世界安全、SEO 与可访问性收口",
+  "status": "complete",
+  "batches": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "checks": [
+    "check:r8-public-operations:stage-02",
+    "lint"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

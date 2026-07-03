@@ -1,0 +1,44 @@
+{
+  "events": [
+    {
+      "id": "audit-001",
+      "actor": "creator",
+      "action": "capture",
+      "target": "inbox-001",
+      "result": "saved-to-inbox",
+      "requiresReview": false
+    },
+    {
+      "id": "audit-002",
+      "actor": "creator",
+      "action": "place",
+      "target": "inbox-006",
+      "result": "ready-for-timeline",
+      "requiresReview": false
+    },
+    {
+      "id": "audit-003",
+      "actor": "system",
+      "action": "privacy-scan",
+      "target": "risk-002",
+      "result": "blocked-auto-public",
+      "requiresReview": true
+    },
+    {
+      "id": "audit-004",
+      "actor": "system",
+      "action": "debt-scan",
+      "target": "r3-public-nodes",
+      "result": "summary-review-needed",
+      "requiresReview": false
+    },
+    {
+      "id": "audit-005",
+      "actor": "creator",
+      "action": "export-plan",
+      "target": "r3-content-life",
+      "result": "manifest-draft-created",
+      "requiresReview": true
+    }
+  ]
+}

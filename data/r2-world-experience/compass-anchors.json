@@ -1,0 +1,42 @@
+{
+  "anchors": [
+    {
+      "id": "where",
+      "label": "我在哪里",
+      "implementation": "当前位置面包屑与区域标识"
+    },
+    {
+      "id": "what",
+      "label": "这里是什么",
+      "implementation": "区域说明卡"
+    },
+    {
+      "id": "do",
+      "label": "我能做什么",
+      "implementation": "当前页面主要动作"
+    },
+    {
+      "id": "next",
+      "label": "我能去哪",
+      "implementation": "下一步推荐路径"
+    },
+    {
+      "id": "back",
+      "label": "如何回去",
+      "implementation": "返回地图 / 返回入口"
+    },
+    {
+      "id": "find",
+      "label": "如何查找",
+      "implementation": "罗盘搜索 / 档案视图"
+    },
+    {
+      "id": "visibility",
+      "label": "谁能看到",
+      "implementation": "权限提示"
+    }
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

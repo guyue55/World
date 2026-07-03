@@ -1,0 +1,35 @@
+{
+  "version": "V7",
+  "name": "发布质量预算",
+  "performanceBudgets": [
+    {
+      "id": "home-first-load",
+      "target": "首屏保持轻量，避免首页一次性加载全部宇宙。"
+    },
+    {
+      "id": "image-policy",
+      "target": "远景图和配图必须渐进加载。"
+    },
+    {
+      "id": "json-policy",
+      "target": "公开 JSON 只保留必要索引。"
+    },
+    {
+      "id": "route-budget",
+      "target": "新增页面必须复用组件与 feature 层。"
+    }
+  ],
+  "accessibilityBudgets": [
+    "导航可键盘访问",
+    "区域标题语义清晰",
+    "世界名必须有现实解释",
+    "低对比文字不得用于正文",
+    "移动端不依赖 hover"
+  ],
+  "privacyBudgets": [
+    "public build excludes private tiers",
+    "vault is not AI-readable",
+    "AI suggestions require review",
+    "release evidence cannot be fabricated"
+  ]
+}

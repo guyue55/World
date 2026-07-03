@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "id": "audit-r6-001",
+      "actor": "system",
+      "action": "register-service-contracts",
+      "target": "r6-service-bridge",
+      "result": "recorded",
+      "mutatesWorld": false
+    },
+    {
+      "id": "audit-r6-002",
+      "actor": "ai-lighthouse",
+      "action": "suggest-path",
+      "target": "public-index",
+      "result": "queued-for-review",
+      "mutatesWorld": false
+    }
+  ]
+}

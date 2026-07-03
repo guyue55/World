@@ -1,0 +1,15 @@
+{
+  "stage": 2,
+  "title": "Atlas 世界地图与罗盘导航",
+  "description": "建立不迷路的地图、路标和罗盘体系，让访客理解自己在哪里、能去哪、如何返回。",
+  "batches": [
+    "05-地图层级",
+    "06-罗盘锚点",
+    "07-区域说明卡",
+    "08-阶段二检查"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

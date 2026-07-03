@@ -1,0 +1,37 @@
+{
+  "version": "V8",
+  "name": "生产观测矩阵",
+  "productionLive": false,
+  "signals": [
+    {
+      "id": "uptime",
+      "target": "外部可访问性",
+      "source": "external monitor",
+      "severity": "P0/P1"
+    },
+    {
+      "id": "web-vitals",
+      "target": "LCP/CLS/INP/TTFB",
+      "source": "browser or analytics",
+      "severity": "P2"
+    },
+    {
+      "id": "build-health",
+      "target": "构建和部署结果",
+      "source": "CI/deploy logs",
+      "severity": "P1"
+    },
+    {
+      "id": "privacy-leak",
+      "target": "私密内容外泄",
+      "source": "scanner/manual review",
+      "severity": "P0"
+    },
+    {
+      "id": "ai-boundary",
+      "target": "AI 越权行为",
+      "source": "audit log/manual review",
+      "severity": "P0"
+    }
+  ]
+}

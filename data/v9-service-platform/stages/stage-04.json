@@ -1,0 +1,22 @@
+{
+  "id": "stage-04",
+  "stage": 4,
+  "title": "服务化硬化、安全边界与 V10 交接",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "focus": [
+    "security hardening",
+    "quality evidence",
+    "migration strategy",
+    "V10 handoff"
+  ],
+  "version": "V9",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false
+}

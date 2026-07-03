@@ -1,0 +1,18 @@
+{
+  "stage": 3,
+  "name": "访客反馈、运营日历与持续发布闭环",
+  "status": "complete",
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "checks": [
+    "check:r8-public-operations:stage-03",
+    "lint"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,50 @@
+{
+  "version": "V7",
+  "name": "公开发布运营驾驶舱",
+  "releaseReady": false,
+  "productionLive": false,
+  "cards": [
+    {
+      "id": "release-evidence",
+      "title": "发布证据",
+      "state": "local-structure-ready",
+      "description": "本地检查证据与真实生产证据分开记录。"
+    },
+    {
+      "id": "privacy-boundary",
+      "title": "隐私边界",
+      "state": "guarded",
+      "description": "私密、家庭、vault 与 sealed 内容不得进入公开发布包。"
+    },
+    {
+      "id": "seo-analytics",
+      "title": "SEO / Analytics",
+      "state": "planned",
+      "description": "SEO 与访问分析进入周期化运营。"
+    },
+    {
+      "id": "backup-rollback",
+      "title": "备份 / 回滚",
+      "state": "planned",
+      "description": "发布前必须保留可恢复路径。"
+    },
+    {
+      "id": "v8-production",
+      "title": "V8 生产运维",
+      "state": "handoff-ready",
+      "description": "真实 productionLive 留给 V8。"
+    }
+  ],
+  "primaryRoutes": [
+    "/v7-release",
+    "/release",
+    "/v6-v7-gate"
+  ],
+  "mustNotDo": [
+    "claim release-ready without deployment evidence",
+    "ship private content to public build",
+    "let AI publish automatically",
+    "skip manual signoff",
+    "hide known blockers"
+  ]
+}

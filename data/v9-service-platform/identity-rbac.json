@@ -1,0 +1,74 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "roles": [
+    {
+      "id": "traveler",
+      "label": "旅行者",
+      "scope": "public",
+      "can": [
+        "read-public"
+      ]
+    },
+    {
+      "id": "creator",
+      "label": "造物主",
+      "scope": "owner",
+      "can": [
+        "read-private-index",
+        "create-draft",
+        "approve-publication",
+        "export-owned-data"
+      ]
+    },
+    {
+      "id": "operator",
+      "label": "运营者",
+      "scope": "operations",
+      "can": [
+        "run-checks",
+        "prepare-release",
+        "view-audit-summary"
+      ]
+    },
+    {
+      "id": "guardian",
+      "label": "守门人",
+      "scope": "privacy",
+      "can": [
+        "review-sensitive-change",
+        "block-publication"
+      ]
+    },
+    {
+      "id": "service-agent",
+      "label": "服务代理",
+      "scope": "machine",
+      "can": [
+        "propose-change",
+        "write-draft-audit-event"
+      ],
+      "cannot": [
+        "publish",
+        "delete",
+        "read-vault"
+      ]
+    },
+    {
+      "id": "admin",
+      "label": "平台管理员",
+      "scope": "platform",
+      "can": [
+        "manage-tenant-policy",
+        "rotate-adapter-config"
+      ],
+      "manualApprovalRequired": true
+    }
+  ],
+  "tenantIsolation": {
+    "default": "single-owner-space",
+    "future": "multi-space isolated repositories",
+    "crossTenantRead": false
+  },
+  "defaultVisibility": "private"
+}

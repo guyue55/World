@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "id": "r8-evidence-001",
+      "name": "阶段检查",
+      "status": "passed",
+      "source": "scripts/check-r8-public-operations-stage-*"
+    },
+    {
+      "id": "r8-evidence-002",
+      "name": "隐私边界检查",
+      "status": "passed",
+      "source": "scripts/check-r8-public-operations-boundary.ts"
+    },
+    {
+      "id": "r8-evidence-003",
+      "name": "构建产物验证",
+      "status": "passed-via-wrapper",
+      "source": "scripts/run-r8-public-operations-build.mjs"
+    }
+  ]
+}

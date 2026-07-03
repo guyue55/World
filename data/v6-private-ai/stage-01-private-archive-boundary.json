@@ -1,0 +1,22 @@
+{
+  "id": "v6-private-ai-stage-01-private-boundary",
+  "version": "6.0.0",
+  "round": "V6 私密档案版",
+  "stage": "01-private-archive-boundary",
+  "batches": ["01 privacy layers", "02 sensitive rules", "03 redacted index", "04 time capsule and inheritance boundary"],
+  "status": "complete",
+  "productionLive": false,
+  "scope": [
+    "建立公开世界背后的私密档案层",
+    "为家庭、亲密关系、未来传承和 vault 封存提供边界",
+    "确保公开构建只接触脱敏索引和封存信号"
+  ],
+  "acceptance": [
+    "所有私密层 publicBuild 必须 excluded 或 included-redacted",
+    "脱敏索引不得保存 raw private content",
+    "vault/sealed 只暴露 signal 和 metadata",
+    "公开发布必须人工确认"
+  ],
+  "privacyLayers": ["public", "semiPublic", "private", "family", "partner", "vault", "sealed"],
+  "publicBuildRule": "private/family/partner/vault/sealed are excluded from public build unless an owner-approved redacted projection exists"
+}

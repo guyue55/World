@@ -1,0 +1,19 @@
+{
+  "risks": [
+    {
+      "id": "r8-risk-privacy-leak",
+      "level": "critical",
+      "mitigation": "公开发布前执行 privacy-release-guard 与人工审查。"
+    },
+    {
+      "id": "r8-risk-over-operation",
+      "level": "medium",
+      "mitigation": "运营节奏保持轻量，不用更新压力反噬世界。"
+    },
+    {
+      "id": "r8-risk-ai-misleading",
+      "level": "high",
+      "mitigation": "公开 AI 回答必须基于公开索引，推测不得写成事实。"
+    }
+  ]
+}

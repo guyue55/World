@@ -1,0 +1,15 @@
+{
+  "batch": 9,
+  "stage": 3,
+  "title": "部署清单",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 部署证据与运行手册：部署清单",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

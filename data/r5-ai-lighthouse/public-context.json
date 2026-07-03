@@ -1,0 +1,56 @@
+{
+  "version": "R5",
+  "policy": "public-index-only",
+  "items": [
+    {
+      "id": "world-origin",
+      "title": "古月浮屿是什么",
+      "worldTitle": "一张书桌连接星河",
+      "type": "world-principle",
+      "visibility": "public",
+      "summary": "古月浮屿不是普通博客，而是承载技术、生活、灵感、产品、记忆与 AI 协作的个人数字世界。",
+      "source": "R2/R3 world entry",
+      "allowedForPublicAI": true
+    },
+    {
+      "id": "node-life",
+      "title": "节点生命化协议",
+      "worldTitle": "万物皆节点，节点皆可生长",
+      "type": "system-rule",
+      "visibility": "public",
+      "summary": "每个节点拥有现实标题、世界标题、时间、位置、关系、权限、生命阶段、成熟度和下一步动作。",
+      "source": "R3 content life",
+      "allowedForPublicAI": true
+    },
+    {
+      "id": "creator-workbench",
+      "title": "创世台工作台",
+      "worldTitle": "外面是浮屿，里面是创世台",
+      "type": "system-feature",
+      "visibility": "public",
+      "summary": "创世台帮助主人收集、安放、连星、点亮、封存、导出和维护世界。",
+      "source": "R4 creator workbench",
+      "allowedForPublicAI": true
+    },
+    {
+      "id": "ai-sovereignty",
+      "title": "AI 主权原则",
+      "worldTitle": "AI 是灯塔，不是太阳",
+      "type": "boundary-rule",
+      "visibility": "public",
+      "summary": "AI 可以导航、整理、摘要、建议和检查隐私，但不能自动公开、删除、覆盖原文、修改权限或替主人定义意义。",
+      "source": "R5 lighthouse boundary",
+      "allowedForPublicAI": true
+    },
+    {
+      "id": "privacy-door",
+      "title": "隐私与门的概念",
+      "worldTitle": "不是所有星辰都需要被所有旅人看见",
+      "type": "privacy-rule",
+      "visibility": "public",
+      "summary": "公开是经过确认的动作，家庭、孩子、住宅、亲密关系和 vault 内容默认不进入公开 AI 上下文。",
+      "source": "V6/R5 privacy boundary",
+      "allowedForPublicAI": true
+    }
+  ]
+}

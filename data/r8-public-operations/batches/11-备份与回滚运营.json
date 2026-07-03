@@ -1,0 +1,9 @@
+{
+  "batch": 11,
+  "name": "备份与回滚运营",
+  "status": "complete",
+  "notes": "R8 公开发布与持续运营任务已落库，服务于让世界可公开、可持续、可反馈、可复盘。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

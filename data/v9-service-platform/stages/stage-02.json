@@ -1,0 +1,22 @@
+{
+  "id": "stage-02",
+  "stage": 2,
+  "title": "API、存储、审计与适配器骨架",
+  "batches": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "focus": [
+    "api contracts",
+    "storage ports",
+    "audit ledger",
+    "integration adapters"
+  ],
+  "version": "V9",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false
+}

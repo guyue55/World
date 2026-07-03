@@ -1,0 +1,31 @@
+{
+  "mapTypes": [
+    {
+      "id": "traveler-map",
+      "name": "旅行者地图",
+      "description": "只显示主干和公开精选，服务首次访问。"
+    },
+    {
+      "id": "deep-map",
+      "name": "深潜地图",
+      "description": "显示主题星座、关系、路径、节点成长史。"
+    },
+    {
+      "id": "creator-map",
+      "name": "创世地图",
+      "description": "显示草案、私密边界、内容债务和维护任务，后续 R4 接续。"
+    }
+  ],
+  "primaryAreas": [
+    "创世原点",
+    "时间河",
+    "技术星域",
+    "产品工坊",
+    "记忆湖",
+    "档案馆",
+    "AI灯塔"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

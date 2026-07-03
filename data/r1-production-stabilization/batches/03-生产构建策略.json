@@ -1,0 +1,15 @@
+{
+  "batch": 3,
+  "stage": 1,
+  "title": "生产构建策略",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 最终基线统一与仓库清洁：生产构建策略",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

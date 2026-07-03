@@ -1,0 +1,48 @@
+{
+  "rituals": [
+    {
+      "id": "daily-light-touch",
+      "cadence": "daily",
+      "worldName": "每日轻拂",
+      "realDescription": "查看今日世界、处理一个低成本任务、记录一条世界日志。",
+      "actions": [
+        "查看今日待浇水",
+        "处理 1 个权限风险",
+        "补充 1 条节点关系"
+      ]
+    },
+    {
+      "id": "weekly-path-repair",
+      "cadence": "weekly",
+      "worldName": "周度修路",
+      "realDescription": "修复路径、孤岛节点、低成熟度节点和公开说明。",
+      "actions": [
+        "检查孤岛节点",
+        "整理一条路径",
+        "更新最近发生"
+      ]
+    },
+    {
+      "id": "monthly-world-review",
+      "cadence": "monthly",
+      "worldName": "月度观星",
+      "realDescription": "生成世界月报，检查内容密度、隐私边界和备份状态。",
+      "actions": [
+        "输出月度回望",
+        "检查导出备份",
+        "更新世界健康度"
+      ]
+    },
+    {
+      "id": "yearly-world-book",
+      "cadence": "yearly",
+      "worldName": "年度世界册",
+      "realDescription": "把一年中的节点、路径、记忆、项目和规则沉淀为长期档案。",
+      "actions": [
+        "生成年度册候选",
+        "确认公开摘要",
+        "封存私密部分"
+      ]
+    }
+  ]
+}

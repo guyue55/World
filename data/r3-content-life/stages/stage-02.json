@@ -1,0 +1,15 @@
+{
+  "stage": 2,
+  "title": "节点生命化与关系网络",
+  "description": "让内容具有生命阶段、成熟度、关系语义和可继续生长动作。",
+  "batches": [
+    "05",
+    "06",
+    "07",
+    "08"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

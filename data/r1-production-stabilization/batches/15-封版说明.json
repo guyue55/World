@@ -1,0 +1,15 @@
+{
+  "batch": 15,
+  "stage": 4,
+  "title": "封版说明",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 Release Candidate 包装与交接：封版说明",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

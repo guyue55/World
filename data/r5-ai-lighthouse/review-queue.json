@@ -1,0 +1,36 @@
+{
+  "version": "R5",
+  "items": [
+    {
+      "id": "review-summary-world-origin",
+      "kind": "summary",
+      "title": "世界原点公开摘要建议",
+      "sourceId": "world-origin",
+      "status": "pending-review",
+      "risk": "low",
+      "suggestion": "将世界定位摘要加入公开 AI 灯塔回答模板。",
+      "mustReview": true
+    },
+    {
+      "id": "review-relation-node-life-r4",
+      "kind": "relation",
+      "title": "节点生命化与创世台关系建议",
+      "sourceId": "node-life",
+      "targetId": "creator-workbench",
+      "status": "pending-review",
+      "risk": "medium",
+      "suggestion": "建立“实现支撑”关系：创世台让节点生命化可维护。",
+      "mustReview": true
+    },
+    {
+      "id": "review-privacy-answer",
+      "kind": "privacy",
+      "title": "隐私问答边界模板",
+      "sourceId": "privacy-door",
+      "status": "blocked-until-approved",
+      "risk": "high",
+      "suggestion": "公开回答只说明原则，不暴露任何私密节点名称或内容。",
+      "mustReview": true
+    }
+  ]
+}

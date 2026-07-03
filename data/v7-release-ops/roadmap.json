@@ -1,0 +1,455 @@
+{
+  "version": "V7",
+  "name": "第七轮｜公开发布运营版",
+  "status": "complete-structure",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "principle": "V7 只完成公开发布与长期运营的结构闭环；不得在缺少真实部署、人工签收和生产证据时声明 release-ready。",
+  "stages": [
+    {
+      "id": "stage-01",
+      "stage": 1,
+      "title": "发布证据与环境门禁",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "focus": [
+        "发布范围契约",
+        "真实证据矩阵",
+        "环境变量与部署前置",
+        "阶段一收口"
+      ]
+    },
+    {
+      "id": "stage-02",
+      "stage": 2,
+      "title": "公开运营驾驶舱与状态页",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "focus": [
+        "发布驾驶舱",
+        "SEO 与分析计划",
+        "公开状态页",
+        "阶段二 UX 收口"
+      ]
+    },
+    {
+      "id": "stage-03",
+      "stage": 3,
+      "title": "长期内容运营、备份与回滚",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "focus": [
+        "内容运营节奏",
+        "备份恢复",
+        "事故与回滚",
+        "版本治理"
+      ]
+    },
+    {
+      "id": "stage-04",
+      "stage": 4,
+      "title": "质量硬化、边界审查与 V8 交接",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "focus": [
+        "性能与无障碍预算",
+        "隐私与 AI 边界复核",
+        "V8 生产运维交接",
+        "V7 最终封版"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "id": "v7-batch-01",
+      "batch": 1,
+      "stage": 1,
+      "slug": "release-scope-contract",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 release-scope-contract 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:01",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-02",
+      "batch": 2,
+      "stage": 1,
+      "slug": "evidence-matrix",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 evidence-matrix 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:02",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-03",
+      "batch": 3,
+      "stage": 1,
+      "slug": "environment-gate",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 environment-gate 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:03",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-04",
+      "batch": 4,
+      "stage": 1,
+      "slug": "stage-01-closure",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 stage-01-closure 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:04",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-05",
+      "batch": 5,
+      "stage": 2,
+      "slug": "release-cockpit",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 release-cockpit 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:05",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-06",
+      "batch": 6,
+      "stage": 2,
+      "slug": "seo-analytics-rhythm",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 seo-analytics-rhythm 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:06",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-07",
+      "batch": 7,
+      "stage": 2,
+      "slug": "public-status-readiness",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 public-status-readiness 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:07",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-08",
+      "batch": 8,
+      "stage": 2,
+      "slug": "stage-02-closure",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 stage-02-closure 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:08",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-09",
+      "batch": 9,
+      "stage": 3,
+      "slug": "content-operations-cadence",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 content-operations-cadence 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:09",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-10",
+      "batch": 10,
+      "stage": 3,
+      "slug": "backup-recovery-ladder",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 backup-recovery-ladder 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:10",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-11",
+      "batch": 11,
+      "stage": 3,
+      "slug": "incident-rollback-playbook",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 incident-rollback-playbook 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:11",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-12",
+      "batch": 12,
+      "stage": 3,
+      "slug": "version-governance",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 version-governance 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:12",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-13",
+      "batch": 13,
+      "stage": 4,
+      "slug": "performance-accessibility-budget",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 performance-accessibility-budget 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:13",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-14",
+      "batch": 14,
+      "stage": 4,
+      "slug": "privacy-ai-boundary-review",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 privacy-ai-boundary-review 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:14",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-15",
+      "batch": 15,
+      "stage": 4,
+      "slug": "v8-production-handoff",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 v8-production-handoff 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:15",
+        "npm run lint"
+      ]
+    },
+    {
+      "id": "v7-batch-16",
+      "batch": 16,
+      "stage": 4,
+      "slug": "v7-final-closure",
+      "status": "complete",
+      "productionLive": false,
+      "goals": [
+        "完成 v7-final-closure 的数据、页面、组件、文档和检查入口",
+        "保持 releaseReady=false 直到真实生产证据齐备"
+      ],
+      "outputs": [
+        "data/v7-release-ops",
+        "src/features/v7-release-ops",
+        "src/components/v7-release",
+        "src/app/v7-release",
+        "docs/10-development-history/v7-release-ops"
+      ],
+      "checks": [
+        "npm run check:v7-release:16",
+        "npm run lint"
+      ]
+    }
+  ],
+  "qualityPolicy": [
+    "每阶段完成后必须运行对应 stage check 与 lint",
+    "公开发布包不得包含 private/family/partner/vault/sealed 内容",
+    "AI 只能建议，不能自动发布、删除或改权限",
+    "V8 之前 productionLive 必须保持 false"
+  ]
+}

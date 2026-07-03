@@ -1,0 +1,117 @@
+{
+  "version": "V8",
+  "items": [
+    {
+      "id": "production-deploy-contract",
+      "name": "真实生产部署契约",
+      "kind": "deployment",
+      "status": "complete",
+      "description": "定义 preview、production、rollback、signoff 的真实证据边界。"
+    },
+    {
+      "id": "environment-secret-boundary",
+      "name": "环境变量与密钥边界",
+      "kind": "security",
+      "status": "complete",
+      "description": "列出生产环境变量、公开变量、私密变量和禁止入库项。"
+    },
+    {
+      "id": "preview-smoke-test",
+      "name": "预览环境冒烟",
+      "kind": "qa",
+      "status": "complete",
+      "description": "定义预览 URL、关键路由、公开 JSON、隐私边界和回滚前 smoke。"
+    },
+    {
+      "id": "production-observability",
+      "name": "生产观测矩阵",
+      "kind": "observability",
+      "status": "complete",
+      "description": "定义 uptime、web vitals、错误、构建、发布和隐私观测。"
+    },
+    {
+      "id": "alert-severity",
+      "name": "告警分级",
+      "kind": "sre",
+      "status": "complete",
+      "description": "把 P0/P1/P2/P3 事件与响应动作绑定。"
+    },
+    {
+      "id": "incident-playbook",
+      "name": "事故响应手册",
+      "kind": "sre",
+      "status": "complete",
+      "description": "建立发现、止血、回滚、沟通、复盘和归档流程。"
+    },
+    {
+      "id": "domain-https",
+      "name": "域名与 HTTPS 检查",
+      "kind": "infra",
+      "status": "complete",
+      "description": "定义 DNS、HTTPS、canonical、redirect 和 HSTS 检查。"
+    },
+    {
+      "id": "seo-indexing",
+      "name": "SEO 索引提交",
+      "kind": "growth",
+      "status": "complete",
+      "description": "定义 sitemap、robots、Search Console、OG 和结构化数据检查。"
+    },
+    {
+      "id": "web-vitals",
+      "name": "外部性能证据",
+      "kind": "performance",
+      "status": "complete",
+      "description": "定义 LCP、CLS、INP、TTFB 和资源预算。"
+    },
+    {
+      "id": "manual-signoff",
+      "name": "人工签收",
+      "kind": "governance",
+      "status": "complete",
+      "description": "发布、回滚、隐私、AI 与生产状态必须人工确认。"
+    },
+    {
+      "id": "rollback-drill",
+      "name": "回滚演练",
+      "kind": "resilience",
+      "status": "complete",
+      "description": "分层演练配置、静态产物、提交、域名和内容回滚。"
+    },
+    {
+      "id": "evidence-ledger",
+      "name": "生产证据台账",
+      "kind": "evidence",
+      "status": "complete",
+      "description": "只记录真实证据，不允许口头通过替代外部结果。"
+    },
+    {
+      "id": "privacy-production-guard",
+      "name": "生产隐私守门",
+      "kind": "privacy",
+      "status": "complete",
+      "description": "生产前再次扫描 private、family、vault、sealed 外泄风险。"
+    },
+    {
+      "id": "ai-production-guard",
+      "name": "AI 生产守门",
+      "kind": "ai-boundary",
+      "status": "complete",
+      "description": "AI 不得自动发布、删除、提权或读取 vault。"
+    },
+    {
+      "id": "low-light-ops",
+      "name": "低光运行策略",
+      "kind": "operations",
+      "status": "complete",
+      "description": "生产后允许低更新频率，但保留可观测和回滚能力。"
+    },
+    {
+      "id": "v9-platform-handoff",
+      "name": "V9 服务化平台交接",
+      "kind": "handoff",
+      "status": "complete",
+      "description": "把身份、RBAC、真实审计、API、后端存储交给 V9。"
+    }
+  ]
+}

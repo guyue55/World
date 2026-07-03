@@ -1,0 +1,15 @@
+{
+  "stage": 4,
+  "title": "移动端、可访问性与 R3 交接",
+  "description": "收口移动端、减动效、信息层级、质量门禁和真实内容注入交接，避免只做视觉壳。",
+  "batches": [
+    "13-移动端适配",
+    "14-可访问与减动效",
+    "15-R3真实内容交接",
+    "16-封版打包准备"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

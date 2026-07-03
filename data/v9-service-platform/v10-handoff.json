@@ -1,0 +1,23 @@
+{
+  "version": "V9",
+  "to": "V10 长期智能世界版",
+  "serviceLive": false,
+  "ready": true,
+  "handoffItems": [
+    "治理后的服务边界",
+    "RBAC/身份端口",
+    "API 合约样板",
+    "审计台账协议",
+    "适配器注册表",
+    "平台控制台入口",
+    "AI 服务代理边界",
+    "长期智能世界任务清单"
+  ],
+  "blockedItems": [
+    "真实外部服务部署",
+    "真实身份提供者接入",
+    "真实数据库迁移",
+    "真实多用户协作"
+  ],
+  "productionLive": false
+}

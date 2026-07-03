@@ -1,0 +1,21 @@
+{
+  "backup": {
+    "frequency": "monthly",
+    "assets": [
+      "data",
+      "content",
+      "docs",
+      "public indexes",
+      "reports"
+    ],
+    "format": "zip + manifest + sha256"
+  },
+  "rollback": {
+    "levels": [
+      "revert last public log",
+      "restore previous data snapshot",
+      "redeploy previous package"
+    ],
+    "requiresManualSignoff": true
+  }
+}

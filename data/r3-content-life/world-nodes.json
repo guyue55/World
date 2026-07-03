@@ -1,0 +1,976 @@
+{
+  "nodes": [
+    {
+      "id": "world-manifesto",
+      "slug": "world-manifesto",
+      "title": "世界宣言",
+      "worldTitle": "第一束光写下的世界说明",
+      "type": "article",
+      "area": "origin",
+      "createdAt": "2026-05-19",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "manual",
+      "maturity": 92,
+      "relations": [
+        "sovereignty-design",
+        "entry-clear-depth-vast"
+      ],
+      "tags": [
+        "origin",
+        "article",
+        "bloom"
+      ],
+      "summary": "世界宣言：第一束光写下的世界说明。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "整理成公开入口宣言",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "world-charter",
+      "slug": "world-charter",
+      "title": "世界宪章",
+      "worldTitle": "创世台上的九条法则",
+      "type": "doc",
+      "area": "origin",
+      "createdAt": "2026-05-19",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "chat-derived",
+      "maturity": 88,
+      "relations": [
+        "ai-lighthouse-boundary",
+        "sovereignty-design"
+      ],
+      "tags": [
+        "origin",
+        "doc",
+        "bloom"
+      ],
+      "summary": "世界宪章：创世台上的九条法则。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "纳入每个新造物准入检查",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "design-axioms",
+      "slug": "design-axioms",
+      "title": "世界设计公理",
+      "worldTitle": "让世界先于内容的规则石碑",
+      "type": "doc",
+      "area": "origin",
+      "createdAt": "2026-05-20",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "chat-derived",
+      "maturity": 95,
+      "relations": [
+        "world-generator-pipeline",
+        "node-passport-system"
+      ],
+      "tags": [
+        "origin",
+        "doc",
+        "fruit"
+      ],
+      "summary": "世界设计公理：让世界先于内容的规则石碑。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "沉淀为开发检查脚本",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "entry-clear-depth-vast",
+      "slug": "entry-clear-depth-vast",
+      "title": "入口清澈深处浩瀚",
+      "worldTitle": "一条关于渐进揭示的星路",
+      "type": "idea",
+      "area": "origin",
+      "createdAt": "2026-05-20",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "chat-derived",
+      "maturity": 91,
+      "relations": [
+        "r2-world-entry",
+        "world-map-passports"
+      ],
+      "tags": [
+        "origin",
+        "idea",
+        "fruit"
+      ],
+      "summary": "入口清澈深处浩瀚：一条关于渐进揭示的星路。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "继续约束首页信息密度",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "world-generator-pipeline",
+      "slug": "world-generator-pipeline",
+      "title": "世界生成管线",
+      "worldTitle": "内容进入协议，协议生成世界",
+      "type": "project",
+      "area": "product",
+      "createdAt": "2026-05-21",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "chat-derived",
+      "maturity": 79,
+      "relations": [
+        "node-passport-system",
+        "content-sovereignty"
+      ],
+      "tags": [
+        "product",
+        "project",
+        "growing"
+      ],
+      "summary": "世界生成管线：内容进入协议，协议生成世界。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "在 R4 创世台中做最小可用输入流",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "node-passport-system",
+      "slug": "node-passport-system",
+      "title": "节点护照系统",
+      "worldTitle": "每个节点都有身份、位置、关系和下一步",
+      "type": "project",
+      "area": "inspiration",
+      "createdAt": "2026-05-21",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "chat-derived",
+      "maturity": 86,
+      "relations": [
+        "world-generator-pipeline",
+        "four-dimensional-coordinates"
+      ],
+      "tags": [
+        "inspiration",
+        "project",
+        "bloom"
+      ],
+      "summary": "节点护照系统：每个节点都有身份、位置、关系和下一步。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "扩展为节点详情页侧栏",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "four-dimensional-coordinates",
+      "slug": "four-dimensional-coordinates",
+      "title": "四维坐标系统",
+      "worldTitle": "时间、位置、关系、权限的底层秩序",
+      "type": "doc",
+      "area": "origin",
+      "createdAt": "2026-05-21",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "chat-derived",
+      "maturity": 94,
+      "relations": [
+        "content-sovereignty",
+        "privacy-default-private"
+      ],
+      "tags": [
+        "origin",
+        "doc",
+        "fruit"
+      ],
+      "summary": "四维坐标系统：时间、位置、关系、权限的底层秩序。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "成为所有内容导入的必填协议",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "ai-lighthouse-boundary",
+      "slug": "ai-lighthouse-boundary",
+      "title": "AI 灯塔边界",
+      "worldTitle": "AI 是灯塔，不是太阳",
+      "type": "article",
+      "area": "lighthouse",
+      "createdAt": "2026-05-21",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "chat-derived",
+      "maturity": 88,
+      "relations": [
+        "private-ai-v6",
+        "sovereignty-design"
+      ],
+      "tags": [
+        "lighthouse",
+        "article",
+        "bloom"
+      ],
+      "summary": "AI 灯塔边界：AI 是灯塔，不是太阳。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "接入真实公开索引前复审",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "private-ai-v6",
+      "slug": "private-ai-v6",
+      "title": "V6 私密 AI 边界",
+      "worldTitle": "私密档案与 AI 建议审计的工程节点",
+      "type": "doc",
+      "area": "lighthouse",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 74,
+      "relations": [
+        "ai-lighthouse-boundary",
+        "privacy-default-private"
+      ],
+      "tags": [
+        "lighthouse",
+        "doc",
+        "growing"
+      ],
+      "summary": "V6 私密 AI 边界：私密档案与 AI 建议审计的工程节点。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "拆分公开问答与创世助手",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "r2-world-entry",
+      "slug": "r2-world-entry",
+      "title": "R2 世界入口",
+      "worldTitle": "书桌星河与渐进揭示入口",
+      "type": "project",
+      "area": "origin",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "manual",
+      "maturity": 90,
+      "relations": [
+        "entry-clear-depth-vast",
+        "world-map-passports"
+      ],
+      "tags": [
+        "origin",
+        "project",
+        "fruit"
+      ],
+      "summary": "R2 世界入口：书桌星河与渐进揭示入口。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "继续接入真实节点预览",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "world-map-passports",
+      "slug": "world-map-passports",
+      "title": "区域说明卡",
+      "worldTitle": "每个区域都有诗意名与现实解释",
+      "type": "doc",
+      "area": "archive",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "manual",
+      "maturity": 84,
+      "relations": [
+        "r2-world-entry",
+        "node-passport-system"
+      ],
+      "tags": [
+        "archive",
+        "doc",
+        "bloom"
+      ],
+      "summary": "区域说明卡：每个区域都有诗意名与现实解释。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补齐所有节点页位置提示",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "mcp-adk-feishu",
+      "slug": "mcp-adk-feishu",
+      "title": "飞书 MCP 接入 ADK Agent",
+      "worldTitle": "技术星域里的一条真实工程轨迹",
+      "type": "article",
+      "area": "tech",
+      "createdAt": "2026-05-18",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 76,
+      "relations": [
+        "gemini-cli-skills",
+        "ai-lighthouse-boundary"
+      ],
+      "tags": [
+        "tech",
+        "article",
+        "growing"
+      ],
+      "summary": "飞书 MCP 接入 ADK Agent：技术星域里的一条真实工程轨迹。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补环境、命令和踩坑记录",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "gemini-cli-skills",
+      "slug": "gemini-cli-skills",
+      "title": "Gemini CLI 与 Skills 机制",
+      "worldTitle": "插件与技能如何进入 Agent 工作流",
+      "type": "article",
+      "area": "tech",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 72,
+      "relations": [
+        "mcp-adk-feishu",
+        "codex-cli-cursor"
+      ],
+      "tags": [
+        "tech",
+        "article",
+        "growing"
+      ],
+      "summary": "Gemini CLI 与 Skills 机制：插件与技能如何进入 Agent 工作流。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补充安装和安全边界",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "codex-cli-cursor",
+      "slug": "codex-cli-cursor",
+      "title": "Codex CLI 与 Cursor CLI 探索",
+      "worldTitle": "命令行智能体工具的分岔记录",
+      "type": "article",
+      "area": "tech",
+      "createdAt": "2026-05-14",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "source": "manual",
+      "maturity": 58,
+      "relations": [
+        "gemini-cli-skills",
+        "world-generator-pipeline"
+      ],
+      "tags": [
+        "tech",
+        "article",
+        "sprout"
+      ],
+      "summary": "Codex CLI 与 Cursor CLI 探索：命令行智能体工具的分岔记录。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "整理成工具选型对照",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "docker-space-reclaim",
+      "slug": "docker-space-reclaim",
+      "title": "Docker 空间回收排查",
+      "worldTitle": "沉重磁盘下的裂缝修复",
+      "type": "article",
+      "area": "tech",
+      "createdAt": "2026-05-18",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "manual",
+      "maturity": 82,
+      "relations": [
+        "mac-dev-maintenance",
+        "codex-cli-cursor"
+      ],
+      "tags": [
+        "tech",
+        "article",
+        "bloom"
+      ],
+      "summary": "Docker 空间回收排查：沉重磁盘下的裂缝修复。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补充安全清理脚本",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "mac-dev-maintenance",
+      "slug": "mac-dev-maintenance",
+      "title": "Mac 开发环境清理",
+      "worldTitle": "缓存、依赖和本地工具的维护记录",
+      "type": "article",
+      "area": "tech",
+      "createdAt": "2026-05-18",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 70,
+      "relations": [
+        "docker-space-reclaim",
+        "static-novel-editor"
+      ],
+      "tags": [
+        "tech",
+        "article",
+        "growing"
+      ],
+      "summary": "Mac 开发环境清理：缓存、依赖和本地工具的维护记录。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "形成环境维护路径",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "kafka-emqx-telegraf",
+      "slug": "kafka-emqx-telegraf",
+      "title": "Kafka / EMQX / Telegraf 旧技术记录",
+      "worldTitle": "旧工程经验进入档案馆",
+      "type": "doc",
+      "area": "archive",
+      "createdAt": "2024-09-19",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "archive",
+      "source": "manual",
+      "maturity": 67,
+      "relations": [
+        "mcp-adk-feishu",
+        "mac-dev-maintenance"
+      ],
+      "tags": [
+        "archive",
+        "doc",
+        "archive"
+      ],
+      "summary": "Kafka / EMQX / Telegraf 旧技术记录：旧工程经验进入档案馆。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补索引与适用版本",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "static-novel-editor",
+      "slug": "static-novel-editor",
+      "title": "静态 AI 小说编辑器",
+      "worldTitle": "纯静态前端产品实验装置",
+      "type": "project",
+      "area": "product",
+      "createdAt": "2026-05-14",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "manual",
+      "maturity": 85,
+      "relations": [
+        "world-generator-pipeline",
+        "moonframe-ai"
+      ],
+      "tags": [
+        "product",
+        "project",
+        "bloom"
+      ],
+      "summary": "静态 AI 小说编辑器：纯静态前端产品实验装置。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补截图和使用说明",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "careeros-inspired-tool",
+      "slug": "careeros-inspired-tool",
+      "title": "CareerOS 启发的 AI-native 公司工具",
+      "worldTitle": "项目制客户工作台构想",
+      "type": "project",
+      "area": "product",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 78,
+      "relations": [
+        "world-generator-pipeline",
+        "service-platform-v9"
+      ],
+      "tags": [
+        "product",
+        "project",
+        "growing"
+      ],
+      "summary": "CareerOS 启发的 AI-native 公司工具：项目制客户工作台构想。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "整理为产品需求文档",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "moonframe-ai",
+      "slug": "moonframe-ai",
+      "title": "月帧阁 MoonFrame AI",
+      "worldTitle": "AI 创作平台品牌与产品节点",
+      "type": "project",
+      "area": "product",
+      "createdAt": "2026-05-09",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 80,
+      "relations": [
+        "static-novel-editor",
+        "visual-suite-design"
+      ],
+      "tags": [
+        "product",
+        "project",
+        "growing"
+      ],
+      "summary": "月帧阁 MoonFrame AI：AI 创作平台品牌与产品节点。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补品牌资产和路线图",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "visual-suite-design",
+      "slug": "visual-suite-design",
+      "title": "技术博客视觉套图",
+      "worldTitle": "自然轻科技的视觉试验",
+      "type": "design",
+      "area": "product",
+      "createdAt": "2026-05-14",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "source": "manual",
+      "maturity": 62,
+      "relations": [
+        "r2-world-entry",
+        "paper-cosmos-aesthetic"
+      ],
+      "tags": [
+        "product",
+        "design",
+        "sprout"
+      ],
+      "summary": "技术博客视觉套图：自然轻科技的视觉试验。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "沉淀为视觉白名单",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "paper-cosmos-aesthetic",
+      "slug": "paper-cosmos-aesthetic",
+      "title": "纸上宇宙审美纪律",
+      "worldTitle": "书桌星河、自然轻科技与克制动效",
+      "type": "idea",
+      "area": "inspiration",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "chat-derived",
+      "maturity": 87,
+      "relations": [
+        "visual-suite-design",
+        "entry-clear-depth-vast"
+      ],
+      "tags": [
+        "inspiration",
+        "idea",
+        "bloom"
+      ],
+      "summary": "纸上宇宙审美纪律：书桌星河、自然轻科技与克制动效。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "纳入 UI 审查清单",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "content-sovereignty",
+      "slug": "content-sovereignty",
+      "title": "内容主权",
+      "worldTitle": "内容可以先以不完整形态存在",
+      "type": "doc",
+      "area": "origin",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "chat-derived",
+      "maturity": 93,
+      "relations": [
+        "four-dimensional-coordinates",
+        "data-portability"
+      ],
+      "tags": [
+        "origin",
+        "doc",
+        "fruit"
+      ],
+      "summary": "内容主权：内容可以先以不完整形态存在。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "绑定导出协议",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "data-portability",
+      "slug": "data-portability",
+      "title": "数据主权与可迁移",
+      "worldTitle": "Markdown、JSON、原图与关系协议",
+      "type": "doc",
+      "area": "archive",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "chat-derived",
+      "maturity": 81,
+      "relations": [
+        "content-sovereignty",
+        "r1-production-stabilization"
+      ],
+      "tags": [
+        "archive",
+        "doc",
+        "growing"
+      ],
+      "summary": "数据主权与可迁移：Markdown、JSON、原图与关系协议。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "定义导出包结构",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "privacy-default-private",
+      "slug": "privacy-default-private",
+      "title": "隐私默认保护",
+      "worldTitle": "公开是确认动作，不是默认结果",
+      "type": "doc",
+      "area": "archive",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "chat-derived",
+      "maturity": 96,
+      "relations": [
+        "private-ai-v6",
+        "sovereignty-design"
+      ],
+      "tags": [
+        "archive",
+        "doc",
+        "fruit"
+      ],
+      "summary": "隐私默认保护：公开是确认动作，不是默认结果。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "进入所有检查脚本",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "sovereignty-design",
+      "slug": "sovereignty-design",
+      "title": "世界主权设计",
+      "worldTitle": "内容、数据、解释、隐私、AI 与时间主权",
+      "type": "article",
+      "area": "origin",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "chat-derived",
+      "maturity": 89,
+      "relations": [
+        "content-sovereignty",
+        "ai-lighthouse-boundary"
+      ],
+      "tags": [
+        "origin",
+        "article",
+        "bloom"
+      ],
+      "summary": "世界主权设计：内容、数据、解释、隐私、AI 与时间主权。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "写成世界宪章章节",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "life-low-light-mode",
+      "slug": "life-low-light-mode",
+      "title": "低光运行",
+      "worldTitle": "世界安静时也不荒废",
+      "type": "idea",
+      "area": "inspiration",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "chat-derived",
+      "maturity": 75,
+      "relations": [
+        "world-health-dashboard",
+        "daily-world"
+      ],
+      "tags": [
+        "inspiration",
+        "idea",
+        "growing"
+      ],
+      "summary": "低光运行：世界安静时也不荒废。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "在 R7 自演化中实现",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "daily-world",
+      "slug": "daily-world",
+      "title": "今日世界",
+      "worldTitle": "每日轻仪式与最近发生",
+      "type": "project",
+      "area": "inspiration",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "source": "chat-derived",
+      "maturity": 60,
+      "relations": [
+        "life-low-light-mode",
+        "world-health-dashboard"
+      ],
+      "tags": [
+        "inspiration",
+        "project",
+        "sprout"
+      ],
+      "summary": "今日世界：每日轻仪式与最近发生。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "进入创世台待办",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "world-health-dashboard",
+      "slug": "world-health-dashboard",
+      "title": "世界健康度",
+      "worldTitle": "内容密度、成熟度、低光区域与待整理状态",
+      "type": "project",
+      "area": "product",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "chat-derived",
+      "maturity": 77,
+      "relations": [
+        "daily-world",
+        "area-density"
+      ],
+      "tags": [
+        "product",
+        "project",
+        "growing"
+      ],
+      "summary": "世界健康度：内容密度、成熟度、低光区域与待整理状态。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "R4 创世台最小仪表盘",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "area-density",
+      "slug": "area-density",
+      "title": "区域密度",
+      "worldTitle": "节点数量、关系、成熟度和公开比例",
+      "type": "doc",
+      "area": "inspiration",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "source": "chat-derived",
+      "maturity": 83,
+      "relations": [
+        "world-health-dashboard",
+        "node-passport-system"
+      ],
+      "tags": [
+        "inspiration",
+        "doc",
+        "bloom"
+      ],
+      "summary": "区域密度：节点数量、关系、成熟度和公开比例。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "连接真实数据统计",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "memory-lake-first-light",
+      "slug": "memory-lake-first-light",
+      "title": "记忆湖第一片光",
+      "worldTitle": "生活内容进入世界的温柔边缘",
+      "type": "memory",
+      "area": "memory",
+      "createdAt": "2026-05-22",
+      "updatedAt": "2026-05-24",
+      "visibility": "semi-public",
+      "lifeStage": "seed",
+      "source": "manual",
+      "maturity": 35,
+      "relations": [
+        "privacy-default-private",
+        "paper-cosmos-aesthetic"
+      ],
+      "tags": [
+        "memory",
+        "memory",
+        "seed"
+      ],
+      "summary": "记忆湖第一片光：生活内容进入世界的温柔边缘。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "补一句公开说明，默认不暴露细节",
+      "publicIndexAllowed": true,
+      "aiReadable": "summary-only"
+    },
+    {
+      "id": "travel-collage-memory",
+      "slug": "travel-collage-memory",
+      "title": "旅行拼贴记忆",
+      "worldTitle": "一张图如何成为远方坐标",
+      "type": "photo",
+      "area": "memory",
+      "createdAt": "2026-05-13",
+      "updatedAt": "2026-05-24",
+      "visibility": "semi-public",
+      "lifeStage": "sprout",
+      "source": "manual",
+      "maturity": 42,
+      "relations": [
+        "memory-lake-first-light",
+        "visual-suite-design"
+      ],
+      "tags": [
+        "memory",
+        "photo",
+        "sprout"
+      ],
+      "summary": "旅行拼贴记忆：一张图如何成为远方坐标。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "移除敏感元数据后再公开摘要",
+      "publicIndexAllowed": true,
+      "aiReadable": "summary-only"
+    },
+    {
+      "id": "desktop-layout-review",
+      "slug": "desktop-layout-review",
+      "title": "桌面布局优化评测",
+      "worldTitle": "现实工作台与创世书桌的连接",
+      "type": "memory",
+      "area": "memory",
+      "createdAt": "2026-05-19",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "growing",
+      "source": "manual",
+      "maturity": 66,
+      "relations": [
+        "paper-cosmos-aesthetic",
+        "mac-dev-maintenance"
+      ],
+      "tags": [
+        "memory",
+        "memory",
+        "growing"
+      ],
+      "summary": "桌面布局优化评测：现实工作台与创世书桌的连接。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "整理成生活/效率节点",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "r1-production-stabilization",
+      "slug": "r1-production-stabilization",
+      "title": "R1 真实生产收口",
+      "worldTitle": "让世界工程站稳的基线节点",
+      "type": "project",
+      "area": "archive",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "source": "manual",
+      "maturity": 88,
+      "relations": [
+        "data-portability",
+        "r2-world-entry"
+      ],
+      "tags": [
+        "archive",
+        "project",
+        "fruit"
+      ],
+      "summary": "R1 真实生产收口：让世界工程站稳的基线节点。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "真实部署后更新 productionLive 证据",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "service-platform-v9",
+      "slug": "service-platform-v9",
+      "title": "V9 服务化平台骨架",
+      "worldTitle": "身份、RBAC、API、审计和平台控制台",
+      "type": "project",
+      "area": "archive",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "archive",
+      "source": "manual",
+      "maturity": 71,
+      "relations": [
+        "careeros-inspired-tool",
+        "world-generator-pipeline"
+      ],
+      "tags": [
+        "archive",
+        "project",
+        "archive"
+      ],
+      "summary": "V9 服务化平台骨架：身份、RBAC、API、审计和平台控制台。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "只保留平台化最小闭环",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    },
+    {
+      "id": "intelligent-world-v10",
+      "slug": "intelligent-world-v10",
+      "title": "V10 长期智能世界",
+      "worldTitle": "记忆、演化、审计、回望和传承",
+      "type": "doc",
+      "area": "archive",
+      "createdAt": "2026-05-23",
+      "updatedAt": "2026-05-24",
+      "visibility": "public",
+      "lifeStage": "archive",
+      "source": "manual",
+      "maturity": 74,
+      "relations": [
+        "life-low-light-mode",
+        "world-health-dashboard"
+      ],
+      "tags": [
+        "archive",
+        "doc",
+        "archive"
+      ],
+      "summary": "V10 长期智能世界：记忆、演化、审计、回望和传承。这是 R3 首批真实节点之一，用于证明内容可以被时间、位置、关系和权限重新找到。",
+      "nextAction": "作为 R7 交接证据",
+      "publicIndexAllowed": true,
+      "aiReadable": "public-only"
+    }
+  ]
+}

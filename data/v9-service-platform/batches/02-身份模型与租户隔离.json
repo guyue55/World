@@ -1,0 +1,22 @@
+{
+  "id": "batch-02",
+  "batch": 2,
+  "stage": 1,
+  "title": "身份模型与租户隔离",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/02-身份模型与租户隔离.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

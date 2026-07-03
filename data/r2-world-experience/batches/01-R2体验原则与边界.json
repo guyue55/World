@@ -1,0 +1,15 @@
+{
+  "batch": 1,
+  "stage": 1,
+  "title": "R2体验原则与边界",
+  "status": "complete",
+  "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+  "deliverables": [
+    "experience-principles.json",
+    "r2-all-tasks-and-extension-plan.md"
+  ],
+  "syntaxLogicCheck": "stage check + lint after stage completion",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

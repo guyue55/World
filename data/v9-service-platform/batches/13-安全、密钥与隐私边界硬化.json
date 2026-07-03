@@ -1,0 +1,22 @@
+{
+  "id": "batch-13",
+  "batch": 13,
+  "stage": 4,
+  "title": "安全、密钥与隐私边界硬化",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/13-安全、密钥与隐私边界硬化.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

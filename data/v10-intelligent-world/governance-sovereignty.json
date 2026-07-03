@@ -1,0 +1,25 @@
+{
+  "version": "V10",
+  "principles": [
+    "内容主权",
+    "数据主权",
+    "解释主权",
+    "隐私主权",
+    "AI 主权",
+    "时间主权",
+    "审美主权",
+    "维护主权"
+  ],
+  "manualOnlyActions": [
+    "publish-private-source",
+    "unseal-vault",
+    "delete-original",
+    "export-family-archive",
+    "change-child-content-visibility",
+    "mark-production-live"
+  ],
+  "auditPolicy": {
+    "appendOnly": true,
+    "humanSignoffRequired": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "batch": 11,
+  "stage": 3,
+  "title": "回滚阶梯",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 部署证据与运行手册：回滚阶梯",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

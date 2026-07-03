@@ -1,0 +1,34 @@
+{
+  "contracts": [
+    {
+      "id": "service-health",
+      "method": "GET",
+      "path": "/api/r6/service-health",
+      "visibility": "public",
+      "mutates": false
+    },
+    {
+      "id": "node-drafts",
+      "method": "GET",
+      "path": "/api/r6/nodes",
+      "visibility": "owner-only",
+      "mutates": false
+    },
+    {
+      "id": "audit-events",
+      "method": "GET",
+      "path": "/api/r6/audit",
+      "visibility": "owner-only",
+      "mutates": false
+    },
+    {
+      "id": "export-jobs",
+      "method": "GET",
+      "path": "/api/r6/export-jobs",
+      "visibility": "owner-only",
+      "mutates": false
+    }
+  ],
+  "mutationPolicy": "R6 only exposes read-safe route handlers and service contracts. Real write persistence is deferred until explicit owner auth exists.",
+  "privacyPolicy": "No private body, vault, real address, family detail, or child identity may be returned by public APIs."
+}

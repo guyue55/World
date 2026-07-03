@@ -1,0 +1,10 @@
+{
+  "batch": 16,
+  "title": "R6 服务化最小闭环交接",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "服务于古月浮屿成为可进入、可探索、可维护、可审计协作的个人数字世界。",
+  "files": "见 R5 全量包"
+}

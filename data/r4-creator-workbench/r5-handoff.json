@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "r5-001",
+      "title": "公开 AI 只读索引",
+      "description": "R5 只能读取 publicIndexAllowed=true 的公开节点。",
+      "status": "ready"
+    },
+    {
+      "id": "r5-002",
+      "title": "AI 建议进入审批队列",
+      "description": "摘要、标签、关系、公开版建议都进入创世台审计。",
+      "status": "ready"
+    },
+    {
+      "id": "r5-003",
+      "title": "私密与 sealed 禁止进入公开 AI",
+      "description": "私密、封存、生活光影、AI 草案默认不进入公开问答。",
+      "status": "ready"
+    },
+    {
+      "id": "r5-004",
+      "title": "创世台需要真实 API 前置",
+      "description": "R4 仍是静态协议与页面层，R6 才进入服务化写入闭环。",
+      "status": "blocked-until-r6"
+    }
+  ]
+}

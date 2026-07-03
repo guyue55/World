@@ -1,0 +1,27 @@
+{
+  "version": "V10",
+  "budgets": [
+    {
+      "id": "privacy",
+      "target": "0 public leakage from private/vault data"
+    },
+    {
+      "id": "ai-safety",
+      "target": "0 autonomous publish/delete/overwrite"
+    },
+    {
+      "id": "data-portability",
+      "target": "all core data exportable"
+    },
+    {
+      "id": "world-comprehension",
+      "target": "all new areas have real description and parent area"
+    },
+    {
+      "id": "maintenance",
+      "target": "all lifecycle reminders are suggest-only"
+    }
+  ],
+  "productionLive": false,
+  "cleanProductionReady": false
+}

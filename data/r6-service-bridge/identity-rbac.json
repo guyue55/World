@@ -1,0 +1,37 @@
+{
+  "mode": "owner-only-first",
+  "roles": [
+    {
+      "id": "owner",
+      "can": [
+        "read-public",
+        "read-private-index",
+        "create-node-draft",
+        "request-export",
+        "review-ai-suggestion"
+      ]
+    },
+    {
+      "id": "visitor",
+      "can": [
+        "read-public",
+        "ask-public-lighthouse"
+      ]
+    },
+    {
+      "id": "ai-lighthouse",
+      "can": [
+        "read-public-index",
+        "suggest-only"
+      ]
+    }
+  ],
+  "forbidden": [
+    "visitor-read-private",
+    "ai-read-vault",
+    "ai-auto-publish",
+    "ai-auto-delete",
+    "anonymous-write"
+  ],
+  "defaultDecision": "deny"
+}

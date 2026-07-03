@@ -1,0 +1,21 @@
+{
+  "stage": 4,
+  "title": "Release Candidate 包装与交接",
+  "description": "生成 RC 状态、风险台账、封版说明、R2 交接入口。",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "tasks": [
+    "RC manifest",
+    "风险台账",
+    "封版说明",
+    "R2 交接"
+  ],
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "batch": 13,
+  "stage": 4,
+  "title": "移动端沉浸适配",
+  "status": "complete",
+  "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+  "deliverables": [
+    "responsive-experience.json"
+  ],
+  "syntaxLogicCheck": "stage check + lint after stage completion",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

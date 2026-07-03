@@ -1,0 +1,20 @@
+{
+  "version": "V10",
+  "formats": [
+    "Markdown",
+    "JSON",
+    "YAML",
+    "original-media",
+    "manifest",
+    "checksums"
+  ],
+  "migrationPolicy": "core memory and metadata must survive UI/framework/database replacement",
+  "exportLayers": [
+    "public-world",
+    "creator-workbench",
+    "private-archive",
+    "vault-manifest-only",
+    "legacy-package"
+  ],
+  "checksumsRequired": true
+}

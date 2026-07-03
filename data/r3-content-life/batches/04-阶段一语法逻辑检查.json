@@ -1,0 +1,9 @@
+{
+  "batch": 4,
+  "title": "阶段一语法逻辑检查",
+  "status": "complete",
+  "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "r3-ext-01",
+      "name": "节点双标题",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-02",
+      "name": "节点护照",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-03",
+      "name": "成熟度评分",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-04",
+      "name": "区域密度",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-05",
+      "name": "世界年表",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-06",
+      "name": "关系解释",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-07",
+      "name": "下一步动作",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-08",
+      "name": "公开索引守门",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-09",
+      "name": "记忆湖边缘",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-10",
+      "name": "技术星路",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-11",
+      "name": "产品工坊路径",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    },
+    {
+      "id": "r3-ext-12",
+      "name": "R4创世台交接",
+      "status": "complete",
+      "purpose": "增强真实内容生命化闭环"
+    }
+  ]
+}

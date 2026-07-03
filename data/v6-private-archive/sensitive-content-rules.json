@@ -1,0 +1,81 @@
+{
+  "id": "v6-private-archive-sensitive-content-rules",
+  "version": "6.0.0",
+  "name": "V6 私密档案敏感内容规则",
+  "rules": [
+    {
+      "id": "identity",
+      "label": "身份与证件",
+      "risk": "critical",
+      "defaultLayer": "vault",
+      "publicAction": "forbidden",
+      "redaction": "只保留类型、年份、用途，不保留号码和原件。"
+    },
+    {
+      "id": "location",
+      "label": "住址与精确位置",
+      "risk": "critical",
+      "defaultLayer": "vault",
+      "publicAction": "forbidden",
+      "redaction": "只保留城市级或更粗粒度信息。"
+    },
+    {
+      "id": "finance",
+      "label": "财务与账户",
+      "risk": "critical",
+      "defaultLayer": "vault",
+      "publicAction": "forbidden",
+      "redaction": "仅可转为资产类别、阶段目标或非数值摘要。"
+    },
+    {
+      "id": "family",
+      "label": "家庭与孩子",
+      "risk": "high",
+      "defaultLayer": "family",
+      "publicAction": "review-required",
+      "redaction": "默认替换姓名、学校、地点、照片和具体时间。"
+    },
+    {
+      "id": "relationship",
+      "label": "亲密关系",
+      "risk": "high",
+      "defaultLayer": "partner",
+      "publicAction": "review-required",
+      "redaction": "不公开双方身份、争议细节和未经同意的内容。"
+    },
+    {
+      "id": "health",
+      "label": "健康与心理状态",
+      "risk": "high",
+      "defaultLayer": "private",
+      "publicAction": "review-required",
+      "redaction": "仅保留自我照护经验，不暴露诊断、药物和病历。"
+    },
+    {
+      "id": "raw-memory",
+      "label": "原始记忆与日记",
+      "risk": "medium",
+      "defaultLayer": "private",
+      "publicAction": "review-required",
+      "redaction": "转为主题、情绪、时间段和可公开的反思结论。"
+    }
+  ],
+  "forbiddenPublicTokens": [
+    "身份证",
+    "银行卡",
+    "手机号",
+    "家庭住址",
+    "孩子学校",
+    "病历",
+    "密码",
+    "token",
+    "secret",
+    "private raw"
+  ],
+  "requiredChecks": [
+    "privacy layer must be explicit",
+    "vault and sealed records cannot be exported raw",
+    "ai context must be redacted",
+    "public pages cannot import private raw records"
+  ]
+}

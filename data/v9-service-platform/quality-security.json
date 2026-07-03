@@ -1,0 +1,38 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "budgets": [
+    {
+      "id": "api-latency",
+      "target": "p95 < 800ms after real service launch",
+      "current": "not measured"
+    },
+    {
+      "id": "error-rate",
+      "target": "5xx < 1% after launch",
+      "current": "not measured"
+    },
+    {
+      "id": "audit-coverage",
+      "target": "100% sensitive operations audited",
+      "current": "designed"
+    },
+    {
+      "id": "privacy-leak",
+      "target": "0 private/vault leak to public",
+      "current": "enforced by static checks"
+    },
+    {
+      "id": "secret-leak",
+      "target": "0 secret committed",
+      "current": "env-only policy"
+    }
+  ],
+  "securityRules": [
+    "no-secret-in-data",
+    "no-vault-ai-read",
+    "no-auto-publication",
+    "append-only-audit",
+    "manual-approval-for-tenant-policy"
+  ]
+}

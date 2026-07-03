@@ -1,0 +1,44 @@
+{
+  "version": "V9",
+  "name": "服务化平台蓝图",
+  "serviceLive": false,
+  "layers": [
+    {
+      "id": "presentation",
+      "name": "页面与组件层",
+      "description": "/v9-platform、控制台卡片、治理矩阵。"
+    },
+    {
+      "id": "feature",
+      "name": "领域特性层",
+      "description": "src/features/v9-service-platform 暴露只读平台摘要、策略和守门函数。"
+    },
+    {
+      "id": "api",
+      "name": "API 合约层",
+      "description": "src/app/api/v9/service-health/route.ts 作为服务健康与边界样板。"
+    },
+    {
+      "id": "ports",
+      "name": "端口层",
+      "description": "Repository、Audit、Identity、AI Adapter 接口，不绑定具体服务商。"
+    },
+    {
+      "id": "adapters",
+      "name": "适配器层",
+      "description": "GitHub、Drive、Object Storage、AI Provider 等后续按端口接入。"
+    },
+    {
+      "id": "governance",
+      "name": "治理层",
+      "description": "RBAC、审计、密钥、隐私、发布签收。"
+    }
+  ],
+  "principles": [
+    "domain-first",
+    "port-adapter-boundary",
+    "privacy-by-default",
+    "manual-approval-for-sensitive-actions",
+    "ai-is-service-agent-not-owner"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "v6-private-ai-approval-queue",
+  "version": "6.0.0",
+  "name": "V6 AI 建议人工审批队列",
+  "productionLive": false,
+  "items": [
+    {
+      "id": "suggestion-archive-structure-001",
+      "kind": "archive-structure",
+      "title": "为私密档案补充年度世界册索引",
+      "risk": "medium",
+      "status": "review-required",
+      "source": "ai-redacted-context",
+      "allowedExecution": false
+    },
+    {
+      "id": "suggestion-public-summary-001",
+      "kind": "public-summary",
+      "title": "把项目起源胶囊整理为公开摘要",
+      "risk": "high",
+      "status": "owner-review-required",
+      "source": "time-capsules-redacted",
+      "allowedExecution": false
+    },
+    {
+      "id": "suggestion-vault-export-001",
+      "kind": "vault-export",
+      "title": "导出保险箱原文",
+      "risk": "critical",
+      "status": "forbidden",
+      "source": "vault-signal-only",
+      "allowedExecution": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "stage": 1,
+  "title": "世界入口定型与渐进揭示",
+  "description": "把首页从信息面板改造成世界入口：首屏先给气质、再给路径、最后显露地图。",
+  "batches": [
+    "01-体验原则",
+    "02-首页三景深",
+    "03-渐进揭示规则",
+    "04-阶段一检查"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

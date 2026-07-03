@@ -1,0 +1,27 @@
+{
+  "rituals": [
+    {
+      "type": "article",
+      "ritual": "漂浮纸页靠近，背景退远，进入静读模式。"
+    },
+    {
+      "type": "technical-doc",
+      "ritual": "卷宗打开，目录浮现，代码块稳定显示。"
+    },
+    {
+      "type": "project",
+      "ritual": "工坊装置点亮，展示状态、技术栈、日志与复盘。"
+    },
+    {
+      "type": "photo",
+      "ritual": "光片落入记忆湖，照片、时间、地点和故事并置。"
+    },
+    {
+      "type": "idea",
+      "ritual": "种子浮现，可继续生长、关联、归档或转为文章。"
+    }
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

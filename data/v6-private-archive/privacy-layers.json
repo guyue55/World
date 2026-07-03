@@ -1,0 +1,70 @@
+{
+  "id": "v6-private-archive-privacy-layers",
+  "version": "6.0.0",
+  "name": "V6 私密档案隐私分层",
+  "productionLive": false,
+  "defaultVisibility": "private",
+  "principles": [
+    "公开不是默认结果，而是经过确认的发布动作。",
+    "私密档案可以被整理，但不能被公开构建泄露。",
+    "AI 只能读取脱敏上下文，不能接触 vault 原文。"
+  ],
+  "layers": [
+    {
+      "id": "public",
+      "label": "公开",
+      "publicBuild": "included",
+      "aiReadable": true,
+      "requiresHumanReviewBeforePublish": false,
+      "description": "已经明确允许所有访客访问的内容。"
+    },
+    {
+      "id": "semiPublic",
+      "label": "半公开",
+      "publicBuild": "included-redacted",
+      "aiReadable": true,
+      "requiresHumanReviewBeforePublish": true,
+      "description": "可展示摘要、轮廓或公开版本，但不暴露私密细节。"
+    },
+    {
+      "id": "private",
+      "label": "仅自己可见",
+      "publicBuild": "excluded",
+      "aiReadable": false,
+      "requiresHumanReviewBeforePublish": true,
+      "description": "默认私密层，不进入公开站点构建。"
+    },
+    {
+      "id": "family",
+      "label": "家庭可见",
+      "publicBuild": "excluded",
+      "aiReadable": false,
+      "requiresHumanReviewBeforePublish": true,
+      "description": "家庭、孩子、亲密生活记录，默认不公开。"
+    },
+    {
+      "id": "partner",
+      "label": "双方可见",
+      "publicBuild": "excluded",
+      "aiReadable": false,
+      "requiresHumanReviewBeforePublish": true,
+      "description": "亲密关系相关内容，必须尊重双方边界。"
+    },
+    {
+      "id": "vault",
+      "label": "保险箱",
+      "publicBuild": "excluded",
+      "aiReadable": false,
+      "requiresHumanReviewBeforePublish": true,
+      "description": "高度敏感内容，只保留封存信号与脱敏索引。"
+    },
+    {
+      "id": "sealed",
+      "label": "封存",
+      "publicBuild": "excluded",
+      "aiReadable": false,
+      "requiresHumanReviewBeforePublish": true,
+      "description": "主动封存内容，不参与公开索引、AI 建议或自动回流。"
+    }
+  ]
+}

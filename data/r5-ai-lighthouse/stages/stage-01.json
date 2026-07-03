@@ -1,0 +1,21 @@
+{
+  "stage": 1,
+  "title": "公开 AI 灯塔范围契约与可读上下文",
+  "focus": "只读公开索引、无 AI fallback、公开问答边界",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "evidence": [
+    "data落库",
+    "feature落库",
+    "component落库",
+    "page/docs/scripts落库"
+  ]
+}

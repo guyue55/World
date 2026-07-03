@@ -1,0 +1,203 @@
+{
+  "version": "R6",
+  "name": "服务化最小闭环",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "服务边界、身份与 Owner-only 地基",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "API 合约、存储端口与最小数据写入路径",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "审计日志、操作队列与导出任务闭环",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "服务边界硬化、质量门禁与 R7 交接",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "stage": 1,
+      "title": "R6 批次 01｜服务边界、身份与 Owner-only 地基",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 2,
+      "stage": 1,
+      "title": "R6 批次 02｜服务边界、身份与 Owner-only 地基",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 3,
+      "stage": 1,
+      "title": "R6 批次 03｜服务边界、身份与 Owner-only 地基",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 4,
+      "stage": 1,
+      "title": "R6 批次 04｜服务边界、身份与 Owner-only 地基",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 5,
+      "stage": 2,
+      "title": "R6 批次 05｜API 合约、存储端口与最小数据写入路径",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 6,
+      "stage": 2,
+      "title": "R6 批次 06｜API 合约、存储端口与最小数据写入路径",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 7,
+      "stage": 2,
+      "title": "R6 批次 07｜API 合约、存储端口与最小数据写入路径",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 8,
+      "stage": 2,
+      "title": "R6 批次 08｜API 合约、存储端口与最小数据写入路径",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 9,
+      "stage": 3,
+      "title": "R6 批次 09｜审计日志、操作队列与导出任务闭环",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 10,
+      "stage": 3,
+      "title": "R6 批次 10｜审计日志、操作队列与导出任务闭环",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 11,
+      "stage": 3,
+      "title": "R6 批次 11｜审计日志、操作队列与导出任务闭环",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 12,
+      "stage": 3,
+      "title": "R6 批次 12｜审计日志、操作队列与导出任务闭环",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 13,
+      "stage": 4,
+      "title": "R6 批次 13｜服务边界硬化、质量门禁与 R7 交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 14,
+      "stage": 4,
+      "title": "R6 批次 14｜服务边界硬化、质量门禁与 R7 交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 15,
+      "stage": 4,
+      "title": "R6 批次 15｜服务边界硬化、质量门禁与 R7 交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 16,
+      "stage": 4,
+      "title": "R6 批次 16｜服务边界硬化、质量门禁与 R7 交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "target": "让 R4 创世台与 R5 AI 灯塔具备最小服务端契约：身份、RBAC、节点 API、审计、队列、导出、健康检查。",
+  "principles": [
+    "owner-only first",
+    "api-contract before database",
+    "audit before mutation",
+    "privacy boundary before integration",
+    "static-safe fallback"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

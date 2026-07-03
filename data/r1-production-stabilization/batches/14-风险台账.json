@@ -1,0 +1,15 @@
+{
+  "batch": 14,
+  "stage": 4,
+  "title": "风险台账",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 Release Candidate 包装与交接：风险台账",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

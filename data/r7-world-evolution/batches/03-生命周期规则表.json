@@ -1,0 +1,9 @@
+{
+  "batch": 3,
+  "title": "生命周期规则表",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "ownerReviewRequired": false
+}

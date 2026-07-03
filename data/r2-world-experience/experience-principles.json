@@ -1,0 +1,32 @@
+{
+  "principles": [
+    {
+      "id": "world-first",
+      "title": "世界先于信息面板",
+      "rule": "首屏先建立抵达感，再逐步解释结构。"
+    },
+    {
+      "id": "clear-entry-deep-world",
+      "title": "入口清澈，深处浩瀚",
+      "rule": "一级入口保持少而清楚，复杂内容藏在可探索深处。"
+    },
+    {
+      "id": "poetic-plus-real",
+      "title": "诗意命名必须配现实解释",
+      "rule": "每个区域都有世界名和现实名，保证不迷路。"
+    },
+    {
+      "id": "ritual-not-obstacle",
+      "title": "仪式是邀请，不是阻碍",
+      "rule": "动效和世界化表达不能压过阅读、导航和性能。"
+    },
+    {
+      "id": "frontend-romantic-data-clear",
+      "title": "前台浪漫，结构清醒",
+      "rule": "组件、数据和文档保持清晰分层，方便扩展为中大型项目。"
+    }
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

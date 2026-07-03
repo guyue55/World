@@ -1,0 +1,15 @@
+{
+  "stage": 4,
+  "title": "质量门禁、隐私边界与 R8 交接",
+  "focus": "固化自演化边界，保证 AI 与服务化能力只能建议和记录，不能越权改变世界。",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

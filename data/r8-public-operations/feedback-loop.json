@@ -1,0 +1,30 @@
+{
+  "channels": [
+    {
+      "id": "visitor-feedback",
+      "name": "访客反馈",
+      "visibility": "public",
+      "storage": "static-placeholder",
+      "review": "owner-review"
+    },
+    {
+      "id": "content-correction",
+      "name": "内容纠错",
+      "visibility": "public",
+      "storage": "review-queue",
+      "review": "owner-review"
+    },
+    {
+      "id": "privacy-report",
+      "name": "隐私风险反馈",
+      "visibility": "public",
+      "storage": "security-queue",
+      "review": "owner-urgent-review"
+    }
+  ],
+  "principles": [
+    "反馈入口不直接改内容。",
+    "反馈先进入队列，再由主人确认。",
+    "隐私反馈优先级高于运营反馈。"
+  ]
+}

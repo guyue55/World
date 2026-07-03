@@ -1,0 +1,209 @@
+{
+  "version": "V8",
+  "name": "第八轮｜真实生产发布与运维闭环版",
+  "status": "complete-structure",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "principle": "V8 负责把公开发布运营推进到真实生产运维闭环；在缺少外部生产地址、人工签收和真实部署证据时不得声明 productionLive。",
+  "stages": [
+    {
+      "id": "stage-01",
+      "stage": 1,
+      "title": "真实生产部署流水线与环境准备",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "focus": [
+        "生产部署契约",
+        "环境变量与密钥边界",
+        "预览环境 smoke test",
+        "阶段一收口"
+      ]
+    },
+    {
+      "id": "stage-02",
+      "stage": 2,
+      "title": "生产观测、告警与事故响应",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "focus": [
+        "生产监控矩阵",
+        "告警分级",
+        "事故响应 playbook",
+        "阶段二收口"
+      ]
+    },
+    {
+      "id": "stage-03",
+      "stage": 3,
+      "title": "域名、SEO、性能与外部访问证据",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "focus": [
+        "域名和 HTTPS 检查",
+        "SEO 提交与公开索引",
+        "Web Vitals 外部证据",
+        "阶段三收口"
+      ]
+    },
+    {
+      "id": "stage-04",
+      "stage": 4,
+      "title": "人工签收、回滚演练与 V9 交接",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "focus": [
+        "人工发布签收",
+        "回滚演练",
+        "生产证据台账",
+        "V9 服务化平台交接"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "stage": 1,
+      "id": "production-deploy-contract",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 2,
+      "stage": 1,
+      "id": "environment-secret-boundary",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 3,
+      "stage": 1,
+      "id": "preview-smoke-plan",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 4,
+      "stage": 1,
+      "id": "stage-01-closure",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 5,
+      "stage": 2,
+      "id": "observability-matrix",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 6,
+      "stage": 2,
+      "id": "alert-severity-model",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 7,
+      "stage": 2,
+      "id": "incident-response-playbook",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 8,
+      "stage": 2,
+      "id": "stage-02-closure",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 9,
+      "stage": 3,
+      "id": "domain-https-checklist",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 10,
+      "stage": 3,
+      "id": "seo-index-submission",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 11,
+      "stage": 3,
+      "id": "web-vitals-evidence",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 12,
+      "stage": 3,
+      "id": "stage-03-closure",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 13,
+      "stage": 4,
+      "id": "manual-signoff",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 14,
+      "stage": 4,
+      "id": "rollback-drill",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 15,
+      "stage": 4,
+      "id": "production-evidence-ledger",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    },
+    {
+      "batch": 16,
+      "stage": 4,
+      "id": "v9-handoff",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false
+    }
+  ]
+}
