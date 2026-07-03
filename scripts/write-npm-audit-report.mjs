@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process'
 const result = spawnSync('npm', ['audit', '--json'], {
   encoding: 'utf8',
   shell: process.platform === 'win32',
+  timeout: Number(process.env.NPM_AUDIT_TIMEOUT_MS ?? 45000),
 })
 
 let audit

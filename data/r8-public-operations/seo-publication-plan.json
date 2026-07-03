@@ -15,12 +15,16 @@
     "/r2-world",
     "/r3-content-life",
     "/r5-lighthouse",
-    "/r7-evolution",
     "/r8-public"
   ],
   "blockedRoutes": [
     "/private-archive",
     "/r4-creator",
-    "/api/r6/nodes"
+    "/api/r6/nodes",
+    "/private-ai",
+    "/r6-service",
+    "/r7-evolution",
+    "/api/r6/",
+    "/api/r7/maintenance"
   ]
 }

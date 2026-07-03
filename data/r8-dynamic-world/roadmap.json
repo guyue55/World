@@ -1,0 +1,40 @@
+{
+  "version": "R8.1",
+  "name": "真实世界-R8.1｜前端动态世界体验修复线",
+  "positioning": "不等待数据库、登录或真实 AI，先把现有静态说明页推进为可进入、可移动、可反馈、会呼吸的前端世界。",
+  "ultimateGoal": "让访问者不是阅读一组静态面板，而是在古月浮屿中抵达、观测、展开、沿时间河移动、询问灯塔并继续上次旅程。",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "世界运行时与环境动态",
+      "focus": "WorldRuntimeProvider、昼夜/季节/低光、reduce-motion、本地旅程记录、全局动效层。",
+      "batches": ["01", "02", "03", "04"],
+      "status": "complete"
+    },
+    {
+      "stage": 2,
+      "title": "首页抵达仪式与渐进显现",
+      "focus": "把首页从静态信息面板改为创世书桌、星河远景、进入动作、继续旅程与动态反馈。",
+      "batches": ["05", "06", "07", "08"],
+      "status": "complete"
+    },
+    {
+      "stage": 3,
+      "title": "Atlas、时间河与节点展开交互",
+      "focus": "可聚焦 Atlas、时间河筛选/展开、节点展开仪式、世界路径预览。",
+      "batches": ["09", "10", "11", "12"],
+      "status": "complete"
+    },
+    {
+      "stage": 4,
+      "title": "灯塔体验、质量边界与封版",
+      "focus": "无真实模型下的灯塔前端问答、无障碍降级、性能边界、检查脚本与打包。",
+      "batches": ["13", "14", "15", "16"],
+      "status": "complete"
+    }
+  ],
+  "batches": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16"],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

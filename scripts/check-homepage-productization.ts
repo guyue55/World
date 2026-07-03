@@ -8,12 +8,12 @@ function main() {
   const errors: string[] = []
 
   const page = fs.readFileSync(path.join(process.cwd(), 'src/app/page.tsx'), 'utf-8')
-  ;['HomeHero', 'FeaturedNodeGrid', 'HomePathRail', 'HomeWorldRhythm', 'HomeStatusSummary'].forEach((component) => {
+  ;['DynamicWorldHero', 'WorldDepthPrelude', 'WorldGatewayPanel', 'DynamicAtlasExplorer', 'DynamicTimeRiver', 'R3NodeConstellation', 'R3ContentPathways', 'NodeOpeningRitual', 'LighthouseConsole', 'R5PathRecommendations', 'DynamicWorldAcceptance', 'DeepEntranceCards'].forEach((component) => {
     if (!page.includes(component)) errors.push(`homepage missing component: ${component}`)
   })
 
   const sectionIds = new Set(homepageComposition.sections.map((section) => section.id))
-  ;['hero', 'representative', 'paths', 'rhythm', 'status'].forEach((id) => {
+  ;['hero', 'prelude', 'gateway', 'atlas', 'time-river', 'representative', 'paths', 'node-opening', 'lighthouse', 'recommendations', 'dynamic-acceptance', 'deep-gates'].forEach((id) => {
     if (!sectionIds.has(id)) errors.push(`homepage composition missing section: ${id}`)
   })
 
@@ -32,6 +32,10 @@ function main() {
   if (page.includes('WorldFoundationStack')) {
     errors.push('homepage must not import WorldFoundationStack on first screen')
   }
+
+  ;['R4CreatorWorkbench', 'R6ServiceBridge', 'R7WorldEvolution', 'R8PublicOperations'].forEach((component) => {
+    if (page.includes(component)) errors.push(`homepage must not render deep governance panel directly: ${component}`)
+  })
 
   if (errors.length > 0) throw new Error(errors.join('\n'))
   console.log('Homepage productization check passed.')

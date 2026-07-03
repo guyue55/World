@@ -5,7 +5,7 @@
   "description": "古月浮屿｜一个正在生长的个人数字世界",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run validate:world && npm run check:public && npm run build:public-json && node scripts/run-r8-public-operations-build.mjs",
+    "build": "npm run validate:world && npm run check:public && npm run build:public-json && node scripts/run-r8-fresh-build.mjs",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "validate:world": "tsx scripts/validate-world-data.ts",
@@ -718,7 +718,10 @@
     "check:r8-public-operations:stage-03": "tsx scripts/check-r8-public-operations-stage-03.ts",
     "check:r8-public-operations:stage-04": "tsx scripts/check-r8-public-operations-stage-04.ts",
     "check:r8-public-operations:all": "tsx scripts/check-r8-public-operations-all.ts",
-    "check:r8-public-operations:boundary": "tsx scripts/check-r8-public-operations-boundary.ts"
+    "check:r8-public-operations:boundary": "tsx scripts/check-r8-public-operations-boundary.ts",
+    "build:verify-artifacts": "node scripts/run-r8-public-operations-build.mjs",
+    "check:r8-dynamic-world:all": "tsx scripts/check-r8-dynamic-world-all.ts",
+    "check:r8-dynamic-world:boundary": "tsx scripts/check-r8-dynamic-world-boundary.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

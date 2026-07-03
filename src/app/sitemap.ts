@@ -2,20 +2,23 @@ import type { MetadataRoute } from 'next'
 import { getPublicNodes } from '@/lib/nodes'
 import { getAllPaths } from '@/lib/paths'
 import { site } from '@/lib/site'
+import r8SeoPublicationPlan from '../../data/r8-public-operations/seo-publication-plan.json'
+
+const baseStaticRoutes = [
+  '/',
+  '/atlas',
+  '/skeleton',
+  '/timeline',
+  '/archive',
+  '/paths',
+  '/ask',
+  '/about',
+  '/manifesto',
+  '/status',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
-    '/',
-    '/atlas',
-    '/skeleton',
-    '/timeline',
-    '/archive',
-    '/paths',
-    '/ask',
-    '/about',
-    '/manifesto',
-    '/status',
-  ]
+  const staticRoutes = Array.from(new Set([...baseStaticRoutes, ...r8SeoPublicationPlan.publicRoutes]))
 
   const staticItems = staticRoutes.map((route) => ({
     url: new URL(route, site.url).toString(),

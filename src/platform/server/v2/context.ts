@@ -8,9 +8,19 @@ export function getDemoActor(role: V2Actor['role'] = 'owner'): V2Actor {
   }
 }
 
-export function getActorFromRequest(request: Request): V2Actor {
-  const role = request.headers.get('x-guyue-role') as V2Actor['role'] | null
-  const safeRole = role ?? 'viewer'
+function hasValidOwnerToken(request: Request) {
+  const configuredToken = process.env.GUYUE_OWNER_TOKEN ?? process.env.R8_OWNER_TOKEN
+  if (!configuredToken) return false
 
-  return getDemoActor(safeRole)
+  const authorization = request.headers.get('authorization') ?? ''
+  const token = authorization.startsWith('Bearer ')
+    ? authorization.slice('Bearer '.length).trim()
+    : request.headers.get('x-guyue-owner-token')?.trim()
+
+  return token === configuredToken
+}
+
+export function getActorFromRequest(request: Request): V2Actor {
+  if (hasValidOwnerToken(request)) return getDemoActor('owner')
+  return getDemoActor('viewer')
 }

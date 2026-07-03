@@ -1,0 +1,57 @@
+{
+  "runtimeSignals": [
+    "dayPeriod",
+    "season",
+    "lowLight",
+    "reducedMotion",
+    "lastJourney",
+    "visitedNodes"
+  ],
+  "dynamicSurfaces": [
+    {
+      "id": "world-motion-layer",
+      "name": "世界环境动效层",
+      "purpose": "提供星尘、远景光晕、漂浮纸页和低光状态，不绑定具体内容。",
+      "reducedMotionFallback": "关闭连续漂浮，仅保留静态星点和状态文案。"
+    },
+    {
+      "id": "arrival-hero",
+      "name": "首页抵达仪式",
+      "purpose": "通过进入动作、渐进显现和继续旅程让首页从说明页变成世界入口。",
+      "reducedMotionFallback": "无转场，直接显示完整内容和入口。"
+    },
+    {
+      "id": "atlas-explorer",
+      "name": "可探索 Atlas",
+      "purpose": "区域可聚焦、可筛选、可预览路径，避免普通卡片列表。",
+      "reducedMotionFallback": "保留按钮状态和内容切换，禁用位移动效。"
+    },
+    {
+      "id": "time-river",
+      "name": "可交互时间河",
+      "purpose": "按区域筛选、展开事件、显示节点生命阶段。",
+      "reducedMotionFallback": "使用普通列表与 details 语义。"
+    },
+    {
+      "id": "node-ritual",
+      "name": "节点展开仪式",
+      "purpose": "点击节点时展示纸页/卷轴/星体展开反馈。",
+      "reducedMotionFallback": "直接展示节点护照。"
+    },
+    {
+      "id": "lighthouse-console",
+      "name": "灯塔前端问答体验",
+      "purpose": "无真实模型时仍提供可交互推荐问题、路径建议和边界提示。",
+      "reducedMotionFallback": "表单和推荐卡片保持可用。"
+    }
+  ],
+  "acceptance": [
+    "首页必须包含 client-side arrival interaction",
+    "全局 shell 必须挂载 runtime provider 与 motion layer",
+    "Atlas 必须有 active focus state，不再只是静态卡片",
+    "TimeRiver 必须有 filter 或 expansion state",
+    "AI Lighthouse 必须有可交互前端状态",
+    "所有动效必须受 prefers-reduced-motion 或运行时 reducedMotion 约束",
+    "输出包文件名和说明文件名必须使用 ASCII，避免中文文件名乱码"
+  ]
+}
