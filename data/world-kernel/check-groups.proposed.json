@@ -1,0 +1,53 @@
+{
+  "id": "check-groups-proposed",
+  "status": "proposal",
+  "purpose": "把过长的 check:world-core 拆分为可维护、可复跑、可定位问题的检查分组。",
+  "principles": [
+    "check:core 只检查世界事实模型和公开边界。",
+    "check:runtime 只检查世界运行层、路由、动态投影和无 AI 降级。",
+    "check:release 只检查发布证据、构建、审计、回滚和生产边界。",
+    "check:legacy 保留历史阶段检查，但不阻断日常开发。"
+  ],
+  "groups": {
+    "check:core": [
+      "validate:world",
+      "check:public",
+      "check:skeleton",
+      "check:invariants",
+      "check:contracts",
+      "check:kernel",
+      "check-world-kernel-mainline"
+    ],
+    "check:runtime": [
+      "check:routes",
+      "check:projections",
+      "check:ai-boundary",
+      "check:homepage",
+      "check:atlas",
+      "check:timeline",
+      "check:lighthouse",
+      "check:r8-dynamic-world:all",
+      "check:r8-civilization-universe:all"
+    ],
+    "check:release": [
+      "lint",
+      "typecheck",
+      "build",
+      "audit:report",
+      "check:release-gate",
+      "check:preview-smoke-config",
+      "check:release-rollback"
+    ],
+    "check:legacy": [
+      "phase-*",
+      "v*-specific checks",
+      "r*-specific historical checks"
+    ]
+  },
+  "migrationPlan": [
+    "先新增分组脚本，不删除旧 check:world-core。",
+    "CI 先使用 check:core + check:runtime + check:release。",
+    "确认稳定后，把历史阶段检查移入 check:legacy。",
+    "最终让 check:world-core 成为短聚合脚本。"
+  ]
+}
