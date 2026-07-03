@@ -1,6 +1,10 @@
+import { DynamicScenePrelude } from '@/components/r8-full-dynamic-world'
 import { AuditQueue } from '@/components/lighthouse/AuditQueue'
 import { SuggestionFlow } from '@/components/lighthouse/SuggestionFlow'
 import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
 import { FloatingLayer } from '@/components/visual/FloatingLayer'
 import { WorldSectionHeader } from '@/components/visual/WorldSectionHeader'
-export default function LighthousePage(){ return <ResponsivePageShell><section className="rounded-[3rem] border border-white/50 bg-gradient-to-br from-white/80 to-moss/10 p-8 shadow-soft md:p-12"><WorldSectionHeader eyebrow="AI LIGHTHOUSE" title="AI 灯塔工作台" description="AI 可以照亮、解释、建议、起草和提示风险，但不能自动发布、删除、改可见性，也不能读取私密原文。" /></section><FloatingLayer eyebrow="SUGGESTION FLOW" title="建议流" description="所有建议都带有风险等级、动作类型和边界说明。"><SuggestionFlow /></FloatingLayer><AuditQueue /></ResponsivePageShell> }
+import { LivingUniverseSection } from '@/components/r8-living-universe'
+import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+export default function LighthousePage(){ return <ResponsivePageShell><DynamicScenePrelude label="LIGHTHOUSE AWAKENED" title="灯塔从工作台变成可对话的导览场景。" description="这里仍保留建议流与审计队列，但会把访问者引向新的 Ask 互动灯塔。" primaryHref="/ask" primaryLabel="进入新 Ask" secondaryHref="/paths" secondaryLabel="查看推荐路径" objects={['灯塔', '光束', '问答', '守门']} /><section className="rounded-[3rem] border border-white/50 bg-gradient-to-br from-white/80 to-moss/10 p-8 shadow-soft md:p-12"><WorldSectionHeader eyebrow="AI LIGHTHOUSE" title="AI 灯塔工作台" description="AI 可以照亮、解释、建议、起草和提示风险，但不能自动发布、删除、改可见性，也不能读取私密原文。" /></section><FloatingLayer eyebrow="SUGGESTION FLOW" title="建议流" description="所有建议都带有风险等级、动作类型和边界说明。"><SuggestionFlow /></FloatingLayer><AuditQueue /></ResponsivePageShell> }

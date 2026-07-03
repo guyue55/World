@@ -1,8 +1,8 @@
 # 古月浮屿｜数字宇宙、元宇宙与虚拟世界设计调研
 
-> 阶段：V1 开发前研究补充  
-> 性质：数字宇宙 / 元宇宙 / 虚拟世界 / 数字孪生 / 空间体验调研  
-> 目标：系统补足“数字宇宙、宇宙设计、元宇宙、虚拟世界、数字世界”相关资料，提炼可用于古月浮屿的世界设计原则。  
+> 阶段：V1 开发前研究补充
+> 性质：数字宇宙 / 元宇宙 / 虚拟世界 / 数字孪生 / 空间体验调研
+> 目标：系统补足“数字宇宙、宇宙设计、元宇宙、虚拟世界、数字世界”相关资料，提炼可用于古月浮屿的世界设计原则。
 > 结论先行：**古月浮屿不应在 V1 变成 3D 元宇宙项目；它应吸收元宇宙和虚拟世界设计中的“空间结构、持久性、身份、入口、存在感、互操作、治理、可达性”，用于强化个人数字世界的骨架。**
 
 ---
@@ -283,7 +283,7 @@ Area + Node + Relation + Path + WorldEvent + Permission + Rule
 
 ## 4.2 地图比菜单更重要
 
-传统网站用菜单。  
+传统网站用菜单。
 世界用地图。
 
 但地图不能复杂到无法使用。
@@ -550,7 +550,7 @@ V1 时间河要记录：
 
 V1 不做 3D，但可预留轻量坐标。
 
-不建议硬上 x/y/z。  
+不建议硬上 x/y/z。
 建议先使用语义坐标：
 
 ```ts
@@ -609,7 +609,7 @@ aiStatus
 
 ## 7.6 增加“世界法则可视化”
 
-不要只把规则写在文档里。  
+不要只把规则写在文档里。
 未来可以在 Manifesto 页面展示：
 
 - AI 是灯塔，不是太阳
@@ -697,7 +697,7 @@ Governance Layer
 
 ### 9.4 `v1-schema-final.md`
 
-暂不新增坐标字段。  
+暂不新增坐标字段。
 后续可考虑：
 
 ```ts
@@ -855,51 +855,51 @@ Web Audio 氛围层
 
 ### 元宇宙 / 虚拟世界 / 数字孪生
 
-- Interaction Design Foundation｜What is the Metaverse?  
+- Interaction Design Foundation｜What is the Metaverse?
   https://www.interaction-design.org/literature/topics/metaverse
 
-- IBM｜What Is a Digital Twin?  
+- IBM｜What Is a Digital Twin?
   https://www.ibm.com/think/topics/digital-twin
 
-- Asian Development Bank｜Digital Twin Framework: A Practical Guide  
+- Asian Development Bank｜Digital Twin Framework: A Practical Guide
   https://www.adb.org/sites/default/files/publication/1051191/digital-twin-framework-guide.pdf
 
-- Metaverse: A Vision, Architectural Elements, and Future Directions  
+- Metaverse: A Vision, Architectural Elements, and Future Directions
   https://clouds.cis.unimelb.edu.au/papers/Metaverse.pdf
 
-- The Metaverse Is Geospatial: A System Model Architecture  
+- The Metaverse Is Geospatial: A System Model Architecture
   https://www.mdpi.com/2220-9964/14/3/126
 
-- Design Principles for Virtual Worlds  
+- Design Principles for Virtual Worlds
   https://www.jstor.org/stable/23042803
 
 ### 开源元宇宙 / 虚拟世界平台
 
-- OpenSimulator  
+- OpenSimulator
   https://www.opensimulator.org/
 
-- Vircadia  
+- Vircadia
   https://vircadia.com/
 
-- Vircadia GitHub / Open Metaverse references  
+- Vircadia GitHub / Open Metaverse references
   https://github.com/forestbeasts/vircadia
 
-- JanusWeb Guide  
+- JanusWeb Guide
   https://janusvr.github.io/guide/
 
-- Webaverse GitHub  
+- Webaverse GitHub
   https://github.com/webaverse-studios/webaverse
 
-- Babylon.js Metaverse Engine  
+- Babylon.js Metaverse Engine
   https://www.babylonjs.com/metaverse/
 
-- Awesome WebXR  
+- Awesome WebXR
   https://github.com/msub2/awesome-webxr
 
-- Awesome Metaverse  
+- Awesome Metaverse
   https://github.com/m3-org/awesome-metaverse
 
 ### WebXR / 空间 Web
 
-- An Open, Cross-Platform, Web-Based Metaverse Using WebXR and A-Frame  
+- An Open, Cross-Platform, Web-Based Metaverse Using WebXR and A-Frame
   https://arxiv.org/html/2408.13520v1

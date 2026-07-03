@@ -1,0 +1,29 @@
+{
+  "globalSurfaces": [
+    "UniverseStage",
+    "WorldRouteTransition",
+    "DynamicCompassOverlay",
+    "WorldPulseRibbon",
+    "JourneyMemoryBeacon"
+  ],
+  "pages": [
+    {"path": "/", "dynamicLayer": "arrival-universe", "status": "deepened"},
+    {"path": "/atlas", "dynamicLayer": "zoomable-focus-atlas", "status": "deepened"},
+    {"path": "/timeline", "dynamicLayer": "living-time-river", "status": "deepened"},
+    {"path": "/archive", "dynamicLayer": "reality-mode-observatory", "status": "deepened"},
+    {"path": "/paths", "dynamicLayer": "journey-path-planner", "status": "deepened"},
+    {"path": "/ask", "dynamicLayer": "interactive-lighthouse-console", "status": "deepened"},
+    {"path": "/node/[slug]", "dynamicLayer": "immersive-node-reader", "status": "deepened"}
+  ],
+  "acceptance": [
+    "全站必须有宇宙环境动效，而不是仅首页动效",
+    "全站必须有当前位置/旅程记忆/动态罗盘",
+    "Atlas 必须支持聚焦、缩放感、区域轨道、节点预览",
+    "Timeline 必须支持时间流动、过滤、展开和阅读路径",
+    "Archive 必须支持前端搜索、排序、视图切换和区域筛选",
+    "Paths 必须支持路径预览、节点步进和受众切换",
+    "Ask 必须有无后端模型的交互式灯塔问答",
+    "Node 页面必须有阅读进度、关系轨道、节点护照和返回路径",
+    "所有动效必须可降级，支持 reduced motion"
+  ]
+}

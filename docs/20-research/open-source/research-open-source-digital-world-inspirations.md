@@ -1,8 +1,8 @@
 # 古月浮屿｜开源项目与概念调研：数字花园、知识图谱、静态世界与 AI 灯塔
 
-> 阶段：V1 开发前研究补充  
-> 性质：调研与设计提炼文档  
-> 目标：联网调研相关开源项目、概念、设计与工具，提炼可借鉴思路，用于完善古月浮屿的世界/宇宙设计。  
+> 阶段：V1 开发前研究补充
+> 性质：调研与设计提炼文档
+> 目标：联网调研相关开源项目、概念、设计与工具，提炼可借鉴思路，用于完善古月浮屿的世界/宇宙设计。
 > 结论先行：**古月浮屿不应变成另一个 Quartz、Logseq、TiddlyWiki 或 Anytype；它应吸收这些系统的结构优点，继续坚持“个人数字世界”的独立定位。**
 
 ---
@@ -215,7 +215,7 @@ Graph 留到 V2/V6。
 
 ### 4.2.4 Local Markdown Workflow
 
-Quartz 强调从 Markdown 笔记到网站。  
+Quartz 强调从 Markdown 笔记到网站。
 古月浮屿应继续坚持：
 
 ```text
@@ -347,7 +347,7 @@ TiddlyWiki 鼓励沿链接阅读，而不是从头到尾。
 
 ## 6.3 不照搬点
 
-不采用单 HTML 自保存模式。  
+不采用单 HTML 自保存模式。
 古月浮屿需要：
 
 - Git 版本管理
@@ -815,7 +815,7 @@ V1 初期不必复杂化。
 
 ## 14.1 增加 Backlinks 字段与 UI
 
-现有 Relation 是主动关系。  
+现有 Relation 是主动关系。
 建议在 NodePage 增加：
 
 ```text
@@ -832,17 +832,17 @@ getForwardLinks(nodeId)
 
 ## 14.2 强化 Node 生命周期 UI
 
-每个 NodeCard 显示 lifeStage。  
+每个 NodeCard 显示 lifeStage。
 每个 NodePage 的 NodePassport 中解释 lifeStage。
 
 ## 14.3 将时间河从“更新时间”升级为“世界事件”
 
-不要只按文章时间排序。  
+不要只按文章时间排序。
 每个重要动作都生成 WorldEvent。
 
 ## 14.4 将档案馆设计为“现实模式”
 
-Archive 不要过度诗意。  
+Archive 不要过度诗意。
 它是清醒的检索系统。
 
 ## 14.5 将 Atlas 分为两层
@@ -884,7 +884,7 @@ scripts/validate-world-data.ts
 
 ## 14.8 搜索策略升级
 
-当前技术栈中已经有 Fuse.js / Pagefind。  
+当前技术栈中已经有 Fuse.js / Pagefind。
 建议冻结为：
 
 ```text
@@ -1107,91 +1107,91 @@ Zod / Velite 给了我们类型安全内容层启发。
 
 ### 数字花园 / 概念
 
-- Maggie Appleton｜A Brief History & Ethos of the Digital Garden  
+- Maggie Appleton｜A Brief History & Ethos of the Digital Garden
   https://maggieappleton.com/garden-history
 
-- Maggie Appleton｜The Garden of Maggie Appleton  
+- Maggie Appleton｜The Garden of Maggie Appleton
   https://maggieappleton.com/garden/
 
-- Andy Matuschak notes｜About these notes / Work with the garage door up  
+- Andy Matuschak notes｜About these notes / Work with the garage door up
   https://notes.andymatuschak.org/About_these_notes
 
 ### 数字花园 / PKM / 知识库
 
-- Quartz  
+- Quartz
   https://quartz.jzhao.xyz/
 
-- Quartz GitHub  
+- Quartz GitHub
   https://github.com/jackyzha0/quartz
 
-- Logseq GitHub  
+- Logseq GitHub
   https://github.com/logseq/logseq
 
-- TiddlyWiki  
+- TiddlyWiki
   https://tiddlywiki.com/
 
-- Foam GitHub  
+- Foam GitHub
   https://github.com/foambubble/foam
 
-- Foam Docs  
+- Foam Docs
   https://docs.foamnotes.com/
 
-- Anytype  
+- Anytype
   https://anytype.io/
 
-- Anytype Docs  
+- Anytype Docs
   https://doc.anytype.io/anytype-docs
 
 ### 文档站与静态内容框架
 
-- Docusaurus  
+- Docusaurus
   https://docusaurus.io/
 
-- Astro Starlight  
+- Astro Starlight
   https://starlight.astro.build/
 
-- Nextra  
+- Nextra
   https://nextra.site/
 
-- Fumadocs  
+- Fumadocs
   https://www.fumadocs.dev/
 
-- Material for MkDocs  
+- Material for MkDocs
   https://squidfunk.github.io/mkdocs-material/
 
 ### 内容层 / 搜索 / Markdown 工具
 
-- Pagefind  
+- Pagefind
   https://pagefind.app/
 
-- Fuse.js  
+- Fuse.js
   https://www.fusejs.io/
 
-- Zod  
+- Zod
   https://zod.dev/
 
-- Velite  
+- Velite
   https://velite.js.org/
 
-- Contentlayer  
+- Contentlayer
   https://www.contentlayer.dev/
 
-- Shiki  
+- Shiki
   https://shiki.style/
 
-- remark / rehype / unified  
+- remark / rehype / unified
   https://unifiedjs.com/
 
-- Mermaid  
+- Mermaid
   https://mermaid.js.org/
 
 ### 图谱与可视化
 
-- React Flow  
+- React Flow
   https://reactflow.dev/
 
-- xyflow GitHub  
+- xyflow GitHub
   https://github.com/xyflow/xyflow
 
-- react-force-graph  
+- react-force-graph
   https://github.com/vasturiano/react-force-graph

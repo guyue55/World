@@ -1,0 +1,323 @@
+{
+  "version": "R8.6",
+  "name": "sensory-living-universe",
+  "designPrinciple": "纸上宇宙 / 书桌星河 / 真实世界感官层",
+  "requirements": [
+    "sceneDepth",
+    "sensoryWeather",
+    "orbitalTrails",
+    "areaRitual",
+    "visitorMemory",
+    "reducedMotionFallback",
+    "staticSafe"
+  ],
+  "scenes": [
+    {
+      "match": "/",
+      "title": "创世原点",
+      "place": "初始书桌",
+      "weather": "星尘晴",
+      "gravity": "gentle",
+      "near": [
+        "灯",
+        "纸",
+        "笔",
+        "罗盘"
+      ],
+      "middle": [
+        "世界地图",
+        "时间河",
+        "精选路径"
+      ],
+      "far": [
+        "未命名星域",
+        "未来房间",
+        "雾中岛"
+      ],
+      "ritual": "抵达",
+      "soundHint": "低频星尘与纸页摩擦",
+      "next": [
+        {
+          "label": "打开世界地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "沿时间河",
+          "href": "/timeline"
+        }
+      ]
+    },
+    {
+      "match": "/atlas",
+      "title": "Atlas 星图",
+      "place": "观星台",
+      "weather": "薄雾星图",
+      "gravity": "wide",
+      "near": [
+        "星盘",
+        "地图",
+        "观测镜"
+      ],
+      "middle": [
+        "区域群岛",
+        "主干星路",
+        "公开边界"
+      ],
+      "far": [
+        "沉睡岛",
+        "私密门",
+        "远方坐标"
+      ],
+      "ritual": "观测",
+      "soundHint": "远处罗盘轻响",
+      "next": [
+        {
+          "label": "进入档案馆",
+          "href": "/archive"
+        },
+        {
+          "label": "选择路径",
+          "href": "/paths"
+        }
+      ]
+    },
+    {
+      "match": "/timeline",
+      "title": "时间河",
+      "place": "河岸档案",
+      "weather": "月光流动",
+      "gravity": "flow",
+      "near": [
+        "水纹",
+        "旧纸",
+        "年轮"
+      ],
+      "middle": [
+        "节点成长",
+        "最近发生",
+        "世界纪年"
+      ],
+      "far": [
+        "过去的我",
+        "历史剧场",
+        "时间胶囊"
+      ],
+      "ritual": "回声",
+      "soundHint": "缓慢水声与纸页翻动",
+      "next": [
+        {
+          "label": "查看档案",
+          "href": "/archive"
+        },
+        {
+          "label": "询问灯塔",
+          "href": "/ask"
+        }
+      ]
+    },
+    {
+      "match": "/archive",
+      "title": "档案馆",
+      "place": "安静书库",
+      "weather": "纸尘微光",
+      "gravity": "still",
+      "near": [
+        "卷宗",
+        "书架",
+        "索引卡"
+      ],
+      "middle": [
+        "现实模式",
+        "节点护照",
+        "证据链"
+      ],
+      "far": [
+        "遗迹区",
+        "封存柜",
+        "长期备份"
+      ],
+      "ritual": "展开",
+      "soundHint": "安静翻页声",
+      "next": [
+        {
+          "label": "返回地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "进入节点",
+          "href": "/node/world-first-light"
+        }
+      ]
+    },
+    {
+      "match": "/paths",
+      "title": "星路路径",
+      "place": "路径桥",
+      "weather": "星线微亮",
+      "gravity": "route",
+      "near": [
+        "路标",
+        "灯线",
+        "脚印"
+      ],
+      "middle": [
+        "第一次来到这里",
+        "技术与 AI",
+        "世界如何被创造"
+      ],
+      "far": [
+        "支线任务",
+        "未知路径",
+        "回望路径"
+      ],
+      "ritual": "漂流",
+      "soundHint": "轻微风线",
+      "next": [
+        {
+          "label": "去时间河",
+          "href": "/timeline"
+        },
+        {
+          "label": "问灯塔",
+          "href": "/ask"
+        }
+      ]
+    },
+    {
+      "match": "/ask",
+      "title": "AI 灯塔",
+      "place": "低光灯塔",
+      "weather": "金色低光",
+      "gravity": "focus",
+      "near": [
+        "灯芯",
+        "问答台",
+        "边界牌"
+      ],
+      "middle": [
+        "公开导览",
+        "路径建议",
+        "隐私守门"
+      ],
+      "far": [
+        "书记官",
+        "星图师",
+        "园丁"
+      ],
+      "ritual": "点亮",
+      "soundHint": "灯塔低频脉冲",
+      "next": [
+        {
+          "label": "查看公开路径",
+          "href": "/paths"
+        },
+        {
+          "label": "回到世界入口",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "match": "/node",
+      "title": "节点宇宙",
+      "place": "展开卷轴",
+      "weather": "静读微尘",
+      "gravity": "read",
+      "near": [
+        "节点护照",
+        "正文纸页",
+        "关系线"
+      ],
+      "middle": [
+        "来源",
+        "生命周期",
+        "下一步动作"
+      ],
+      "far": [
+        "相关星座",
+        "证据链",
+        "成长轨迹"
+      ],
+      "ritual": "阅读",
+      "soundHint": "纸页贴近的静音",
+      "next": [
+        {
+          "label": "返回档案馆",
+          "href": "/archive"
+        },
+        {
+          "label": "继续路径",
+          "href": "/paths"
+        }
+      ]
+    },
+    {
+      "match": "/r4-creator",
+      "title": "创世台",
+      "place": "造物间",
+      "weather": "工作灯",
+      "gravity": "work",
+      "near": [
+        "收集箱",
+        "草案",
+        "权限牌"
+      ],
+      "middle": [
+        "安放",
+        "连星",
+        "封存"
+      ],
+      "far": [
+        "世界健康度",
+        "审计日志",
+        "导出备份"
+      ],
+      "ritual": "安放",
+      "soundHint": "低噪工作台",
+      "next": [
+        {
+          "label": "查看服务边界",
+          "href": "/r6-service"
+        },
+        {
+          "label": "查看自演化",
+          "href": "/r7-evolution"
+        }
+      ]
+    }
+  ],
+  "fallback": {
+    "match": "*",
+    "title": "漂浮边界",
+    "place": "雾中路径",
+    "weather": "柔雾",
+    "gravity": "gentle",
+    "near": [
+      "路标",
+      "星尘",
+      "纸页"
+    ],
+    "middle": [
+      "当前位置",
+      "下一步",
+      "返回入口"
+    ],
+    "far": [
+      "未知区域",
+      "沉睡岛",
+      "远方光点"
+    ],
+    "ritual": "观测",
+    "soundHint": "安静风声",
+    "next": [
+      {
+        "label": "回到入口",
+        "href": "/"
+      },
+      {
+        "label": "打开地图",
+        "href": "/atlas"
+      }
+    ]
+  }
+}

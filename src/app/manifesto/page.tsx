@@ -1,4 +1,7 @@
+import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+import { DynamicScenePrelude, WorldModeSwitcher } from '@/components/r8-full-dynamic-world'
 import { createPageMetadata } from '@/lib/metadata'
+import { LivingUniverseSection } from '@/components/r8-living-universe'
 
 export const metadata = createPageMetadata({
   title: '世界宣言',
@@ -17,6 +20,8 @@ const rules = [
 export default function ManifestoPage() {
   return (
     <main className="reading-container space-y-10 py-16">
+      <DynamicScenePrelude label="WORLD LAWS" title="世界法则不是静态文本，而是运行中的宇宙约束。" description="这里把宣言、边界、公理与下一步路径放进可观测场景，让访问者明白：浪漫表达之下有清晰秩序。" primaryHref="/atlas" primaryLabel="用星图验证法则" secondaryHref="/archive" secondaryLabel="查看现实索引" objects={['法则', '石碑', '星环', '边界']} />
+      <LivingUniverseSection />
       <header className="space-y-4">
         <p className="text-sm tracking-[0.35em] text-moss">MANIFESTO</p>
         <h1 className="text-5xl font-semibold">世界宣言</h1>
@@ -33,6 +38,8 @@ export default function ManifestoPage() {
           </div>
         ))}
       </section>
+
+      <WorldModeSwitcher />
 
       <section className="prose prose-neutral max-w-none leading-8">
         <p>

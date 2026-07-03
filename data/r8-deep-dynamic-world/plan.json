@@ -1,0 +1,15 @@
+{
+  "version": "R8.2",
+  "name": "真实世界-R8.2｜真实宇宙动态化深化线",
+  "positioning": "在 R8.1 的前端动态基础上，逐个动态化首页、全局宇宙场、罗盘、Atlas、时间河、节点、档案馆、路径与灯塔，让整个站点不再只是局部动效，而是统一的可探索世界运行时。",
+  "ultimateGoal": "访问者从任意页面进入，都能感到自己位于古月浮屿：有宇宙环境、有当前位置、有可反馈导航、有可聚焦地图、有可展开时间、有可追踪节点、有可恢复旅程。",
+  "stages": [
+    {"stage": 1, "title": "全局宇宙运行层", "focus": "UniverseStage、路线转场、动态罗盘、旅程记录与页面锚点。", "batches": ["01", "02", "03", "04"], "status": "complete"},
+    {"stage": 2, "title": "核心页面动态化", "focus": "Atlas、Timeline、Archive、Paths、Ask 的可聚焦、筛选、展开、路径推荐与交互反馈。", "batches": ["05", "06", "07", "08"], "status": "complete"},
+    {"stage": 3, "title": "节点与阅读宇宙化", "focus": "节点详情页加入阅读轨道、节点护照展开、关系星线、阅读进度和继续旅程。", "batches": ["09", "10", "11", "12"], "status": "complete"},
+    {"stage": 4, "title": "质量边界与全量封装", "focus": "检查脚本、文档、首页/全局接入、无障碍和性能边界、ASCII 文件名打包。", "batches": ["13", "14", "15", "16"], "status": "complete"}
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

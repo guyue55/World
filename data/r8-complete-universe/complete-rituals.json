@@ -1,0 +1,54 @@
+{
+  "rituals": [
+    {
+      "id": "observe",
+      "label": "观测",
+      "effect": "罗盘亮起，当前位置被标记。",
+      "kind": "navigation"
+    },
+    {
+      "id": "open",
+      "label": "展开",
+      "effect": "纸页靠近，背景世界退远。",
+      "kind": "reading"
+    },
+    {
+      "id": "drift",
+      "label": "漂流",
+      "effect": "远方浮屿露出一角。",
+      "kind": "explore"
+    },
+    {
+      "id": "echo",
+      "label": "回声",
+      "effect": "时间河带回一颗旧星。",
+      "kind": "memory"
+    },
+    {
+      "id": "light",
+      "label": "点亮",
+      "effect": "节点获得一圈柔光，但不会自动公开。",
+      "kind": "growth"
+    },
+    {
+      "id": "archive",
+      "label": "归档",
+      "effect": "卷宗进入档案馆，保留证据链。",
+      "kind": "archive"
+    },
+    {
+      "id": "return",
+      "label": "归途",
+      "effect": "所有路径回到创世原点。",
+      "kind": "return"
+    }
+  ],
+  "boundaries": [
+    "不自动公开",
+    "不自动删除",
+    "不读取私密保险箱",
+    "不依赖真实 AI",
+    "不依赖数据库",
+    "不使用 WebGL"
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "version": "R8.7",
+  "principles": [
+    "入口清澈，深处浩瀚",
+    "前台浪漫，后台清醒，档案可靠",
+    "每一次关键行为都应该像世界中的一个动作",
+    "世界模式负责沉浸，现实模式负责效率",
+    "动态体验必须支持 reduced-motion 与移动端降级"
+  ],
+  "mainlines": [
+    {
+      "id": "first-arrival",
+      "title": "第一次来到这里",
+      "worldName": "初访星路",
+      "description": "从入口理解古月浮屿是什么，再进入地图、时间河与灯塔。",
+      "steps": [
+        {
+          "label": "世界入口",
+          "href": "/"
+        },
+        {
+          "label": "世界地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "时间河",
+          "href": "/timeline"
+        },
+        {
+          "label": "询问灯塔",
+          "href": "/ask"
+        }
+      ]
+    },
+    {
+      "id": "creator-system",
+      "title": "这个世界如何被创造",
+      "worldName": "创世主线",
+      "description": "观察世界规则、节点生命、创世台和公开运营之间的关系。",
+      "steps": [
+        {
+          "label": "世界宪章",
+          "href": "/manifesto"
+        },
+        {
+          "label": "真实节点",
+          "href": "/r3-content-life"
+        },
+        {
+          "label": "创世台",
+          "href": "/r4-creator"
+        },
+        {
+          "label": "公开运营",
+          "href": "/r8-public"
+        }
+      ]
+    },
+    {
+      "id": "tech-ai",
+      "title": "技术与 AI 的探索",
+      "worldName": "灯塔星路",
+      "description": "沿技术、AI、服务边界和长期智能世界理解工程主线。",
+      "steps": [
+        {
+          "label": "AI 灯塔",
+          "href": "/lighthouse"
+        },
+        {
+          "label": "服务边界",
+          "href": "/r6-service"
+        },
+        {
+          "label": "AI 接入",
+          "href": "/r5-lighthouse"
+        },
+        {
+          "label": "智能世界",
+          "href": "/v10-intelligence"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "match": "/",
+      "worldName": "创世原点",
+      "realName": "首页 / 世界入口",
+      "scene": "书桌星河",
+      "mood": "arrival",
+      "visibility": "public",
+      "actions": [
+        "进入世界",
+        "打开地图",
+        "点亮灯塔",
+        "随机漂流"
+      ],
+      "ritual": "抵达",
+      "next": [
+        {
+          "label": "打开世界地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "沿时间河前行",
+          "href": "/timeline"
+        }
+      ]
+    },
+    {
+      "match": "/atlas",
+      "worldName": "世界地图",
+      "realName": "Atlas 导航",
+      "scene": "星图观测台",
+      "mood": "orientation",
+      "visibility": "public",
+      "actions": [
+        "聚焦区域",
+        "展开主线",
+        "标记当前位置",
+        "继续路径"
+      ],
+      "ritual": "观测",
+      "next": [
+        {
+          "label": "进入时间河",
+          "href": "/timeline"
+        },
+        {
+          "label": "进入档案馆",
+          "href": "/archive"
+        }
+      ]
+    },
+    {
+      "match": "/timeline",
+      "worldName": "时间河",
+      "realName": "时间线",
+      "scene": "流动河床",
+      "mood": "flow",
+      "visibility": "public",
+      "actions": [
+        "筛选时期",
+        "展开事件",
+        "查看成长",
+        "回到今日"
+      ],
+      "ritual": "顺流",
+      "next": [
+        {
+          "label": "查看路径",
+          "href": "/paths"
+        },
+        {
+          "label": "进入节点档案",
+          "href": "/archive"
+        }
+      ]
+    },
+    {
+      "match": "/archive",
+      "worldName": "档案馆",
+      "realName": "内容归档与现实视图",
+      "scene": "低光书库",
+      "mood": "still",
+      "visibility": "public",
+      "actions": [
+        "搜索卷宗",
+        "切换视图",
+        "展开护照",
+        "现实模式"
+      ],
+      "ritual": "翻阅",
+      "next": [
+        {
+          "label": "查看节点",
+          "href": "/node/ai-lighthouse-public-guide"
+        },
+        {
+          "label": "询问灯塔",
+          "href": "/ask"
+        }
+      ]
+    },
+    {
+      "match": "/paths",
+      "worldName": "精选路径",
+      "realName": "探索路径",
+      "scene": "星路中继站",
+      "mood": "route",
+      "visibility": "public",
+      "actions": [
+        "开始路径",
+        "下一步",
+        "回看上一步",
+        "收藏旅程"
+      ],
+      "ritual": "启程",
+      "next": [
+        {
+          "label": "技术与 AI",
+          "href": "/lighthouse"
+        },
+        {
+          "label": "世界如何被创造",
+          "href": "/manifesto"
+        }
+      ]
+    },
+    {
+      "match": "/ask",
+      "worldName": "AI 灯塔",
+      "realName": "公开问答与路径推荐",
+      "scene": "低光灯塔",
+      "mood": "guide",
+      "visibility": "public",
+      "actions": [
+        "选择问题",
+        "模拟问答",
+        "推荐路径",
+        "查看边界"
+      ],
+      "ritual": "询问",
+      "next": [
+        {
+          "label": "AI 接入边界",
+          "href": "/r5-lighthouse"
+        },
+        {
+          "label": "服务边界",
+          "href": "/r6-service"
+        }
+      ]
+    },
+    {
+      "match": "/node",
+      "worldName": "节点卷轴",
+      "realName": "内容详情",
+      "scene": "展开纸页",
+      "mood": "read",
+      "visibility": "public",
+      "actions": [
+        "展开护照",
+        "阅读进度",
+        "查看关系",
+        "继续探索"
+      ],
+      "ritual": "展开",
+      "next": [
+        {
+          "label": "回到档案馆",
+          "href": "/archive"
+        },
+        {
+          "label": "回到地图",
+          "href": "/atlas"
+        }
+      ]
+    },
+    {
+      "match": "/r4-creator",
+      "worldName": "创世台",
+      "realName": "Owner 工作台",
+      "scene": "工作灯与收集箱",
+      "mood": "work",
+      "visibility": "owner-only",
+      "actions": [
+        "收集",
+        "安放",
+        "连星",
+        "设权"
+      ],
+      "ritual": "造物",
+      "next": [
+        {
+          "label": "服务边界",
+          "href": "/r6-service"
+        },
+        {
+          "label": "长期演化",
+          "href": "/r7-evolution"
+        }
+      ]
+    },
+    {
+      "match": "/r7-evolution",
+      "worldName": "长期演化",
+      "realName": "世界自演化",
+      "scene": "四季运行室",
+      "mood": "living",
+      "visibility": "owner-only",
+      "actions": [
+        "今日世界",
+        "低光运行",
+        "苏醒计划",
+        "周期回望"
+      ],
+      "ritual": "苏醒",
+      "next": [
+        {
+          "label": "公开运营",
+          "href": "/r8-public"
+        },
+        {
+          "label": "世界状态",
+          "href": "/status"
+        }
+      ]
+    },
+    {
+      "match": "/status",
+      "worldName": "世界状态",
+      "realName": "状态与健康度",
+      "scene": "状态仪表室",
+      "mood": "monitor",
+      "visibility": "public",
+      "actions": [
+        "查看健康",
+        "查看最近发生",
+        "查看低光",
+        "返回入口"
+      ],
+      "ritual": "校准",
+      "next": [
+        {
+          "label": "回到入口",
+          "href": "/"
+        },
+        {
+          "label": "公开运营",
+          "href": "/r8-public"
+        }
+      ]
+    }
+  ],
+  "fallback": {
+    "match": "*",
+    "worldName": "未命名星域",
+    "realName": "普通页面",
+    "scene": "雾中坐标",
+    "mood": "unknown",
+    "visibility": "mixed",
+    "actions": [
+      "观测",
+      "返回地图",
+      "询问灯塔",
+      "继续漂流"
+    ],
+    "ritual": "漂流",
+    "next": [
+      {
+        "label": "世界地图",
+        "href": "/atlas"
+      },
+      {
+        "label": "世界入口",
+        "href": "/"
+      }
+    ]
+  }
+}
