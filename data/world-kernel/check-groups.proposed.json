@@ -1,0 +1,53 @@
+{
+  "id": "world-kernel-check-groups-proposed",
+  "status": "proposed",
+  "purpose": "为后续拆分超长 check:world-core 提供低风险分组方案。当前文件只记录建议，不改变 package.json。",
+  "groups": [
+    {
+      "name": "check:core",
+      "description": "快速、确定性、适合每次提交运行的核心门禁。",
+      "scripts": [
+        "validate:world",
+        "check:public",
+        "check:integrity",
+        "check:format",
+        "check:routes",
+        "check:kernel",
+        "check:world-kernel-mainline"
+      ]
+    },
+    {
+      "name": "check:runtime",
+      "description": "世界运行和表现投影相关门禁。",
+      "scripts": [
+        "check:homepage",
+        "check:atlas",
+        "check:timeline",
+        "check:lighthouse",
+        "check:r8-dynamic-world:all",
+        "check:r8-interactive-universe:all"
+      ]
+    },
+    {
+      "name": "check:release",
+      "description": "发布、验收、证据、回滚相关门禁，只在发布候选前运行。",
+      "scripts": [
+        "check:release-gate",
+        "check:release-environment",
+        "check:release-candidate-final",
+        "check:release-candidate-acceptance-final",
+        "check:preview-smoke-config"
+      ]
+    },
+    {
+      "name": "check:legacy",
+      "description": "历史 V / R / phase 长链检查，保留但不应阻塞日常开发。",
+      "scripts": [
+        "check:phase-*",
+        "check:v*",
+        "check:r*"
+      ]
+    }
+  ],
+  "rule": "先提出分组，再改 package.json；避免一次性大规模脚本重写导致不可回滚。"
+}
