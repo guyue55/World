@@ -1,0 +1,52 @@
+{
+  "id": "world-kernel-mainline-boundary",
+  "status": "active",
+  "language": "zh-CN-first",
+  "purpose": "在最新 main 基线上收敛世界内核，停止概念继续膨胀，优先恢复长期可维护性与生产发布可信度。",
+  "corePrinciples": [
+    "降低门槛，提高体验，中文优先。",
+    "后端与数据层控制权限，前端只负责体验体现。",
+    "核心事实模型保持高内聚，表现投影保持低耦合。",
+    "没有 AI 时世界仍然可浏览、可搜索、可解释、可维护。",
+    "artifact verification 不是 clean production-ready 证明。"
+  ],
+  "layers": {
+    "coreModel": {
+      "description": "唯一事实内核。",
+      "authoritativeFiles": [
+        "src/lib/types.ts",
+        "src/lib/nodes.ts",
+        "src/lib/paths.ts",
+        "src/lib/visibility.ts",
+        "data/domains/**"
+      ],
+      "owns": ["Node", "Area", "Relation", "Path", "WorldEvent", "WorldState", "Visibility", "LifeStage"]
+    },
+    "runtimeRules": {
+      "description": "确定性运行规则，不能依赖 AI 才成立。",
+      "owns": ["public build gate", "visibility decision", "searchability decision", "path generation", "timeline generation", "release evidence boundary"]
+    },
+    "presentationProjections": {
+      "description": "表现层投影，可浪漫、可动态、可世界化，但不能成为事实来源。",
+      "owns": ["WorldShell", "WorldRuntimeStack", "Atlas projection", "Timeline projection", "Archive projection", "Lighthouse projection", "Universe / Living / Scene / Civilization visuals"]
+    }
+  },
+  "blocked": [
+    "新增 V11 / R9 / R8.10 等概念扩张线。",
+    "在组件层重新定义 Node / Area / Relation / WorldState。",
+    "用前端硬编码隐藏代替权限控制。",
+    "把 artifact verification 记为 production-ready。",
+    "继续向 WorldShell 直接追加新的动态层 import。"
+  ],
+  "allowedNextWork": [
+    "合并重复动态宇宙层。",
+    "拆分 check:world-core 为 core / release / legacy。",
+    "恢复 next build clean exit 与 CI 可信证据。",
+    "建立真实 preview smoke 与 owner signoff evidence。",
+    "将分散事实回归 data/domain 与 src/lib/types.ts。"
+  ],
+  "releaseReadiness": {
+    "artifactVerification": "insufficient",
+    "required": ["clean next build exit", "fresh checkout CI green", "preview URL smoke test", "production URL smoke test", "owner signoff", "rollback rehearsal"]
+  }
+}
