@@ -1,0 +1,92 @@
+{
+  "id": "world-kernel-consolidation-boundary",
+  "status": "active",
+  "purpose": "Stop version-line expansion and make Node / Area / Relation / Path / WorldEvent / WorldState the only long-lived factual core of the project.",
+  "professionalJudgement": {
+    "currentStage": "high-fidelity narrative frontend prototype",
+    "notYet": "clean production-ready long-running software system",
+    "primaryRisk": "abstraction drift and build pipeline non-determinism"
+  },
+  "authoritativeLayers": [
+    {
+      "id": "core-model",
+      "description": "Single source of truth for world facts and permissions.",
+      "sources": [
+        "src/lib/types.ts",
+        "data/domains/experience/*.json"
+      ],
+      "owns": [
+        "Node",
+        "Area",
+        "Relation",
+        "Path",
+        "WorldEvent",
+        "WorldState",
+        "Visibility",
+        "LifeStage"
+      ],
+      "mustNotDependOn": [
+        "src/components",
+        "src/app",
+        "src/features"
+      ]
+    },
+    {
+      "id": "runtime-rules",
+      "description": "Deterministic world behavior that works without AI.",
+      "sources": [
+        "src/lib/visibility.ts",
+        "src/lib/nodes.ts",
+        "src/lib/paths.ts",
+        "scripts/check-*.ts"
+      ],
+      "owns": [
+        "visibility decisions",
+        "public index gates",
+        "route and data checks",
+        "release evidence checks"
+      ]
+    },
+    {
+      "id": "presentation-projections",
+      "description": "World, universe, civilization and scene language are presentation projections, not new factual cores.",
+      "sources": [
+        "src/app",
+        "src/components",
+        "src/features"
+      ],
+      "owns": [
+        "WorldShell",
+        "Atlas projection",
+        "Timeline projection",
+        "Archive projection",
+        "Lighthouse projection",
+        "route-aware visual rituals"
+      ]
+    }
+  ],
+  "blockedWork": [
+    "Do not add V11, R9, or another expansion line before production build and kernel consolidation are stable.",
+    "Do not introduce a second Node / Area / Relation / WorldState factual model in components or feature folders.",
+    "Do not mark artifact verification as clean production-ready proof.",
+    "Do not let AI suggestions publish, delete, overwrite originals, or change visibility without owner review."
+  ],
+  "allowedNextWork": [
+    "Fix deterministic next build / CI exit.",
+    "Split oversized package scripts into core, release, legacy groups.",
+    "Collapse duplicated dynamic universe layers into one route-aware shell.",
+    "Move scattered world facts back into data/domain JSON and src/lib/types.ts.",
+    "Create preview smoke evidence and owner signoff evidence."
+  ],
+  "releaseReadinessRule": {
+    "artifactVerification": "insufficient",
+    "requiredBeforeReleaseReady": [
+      "clean next build exit",
+      "CI green on a fresh checkout",
+      "preview URL smoke test",
+      "production URL smoke test",
+      "owner signoff",
+      "rollback rehearsal"
+    ]
+  }
+}
