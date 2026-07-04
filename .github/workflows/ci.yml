@@ -1,0 +1,24 @@
+name: World Kernel CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: world-kernel-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-boundary:
+    name: static-boundary
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Public runtime boundary
+        run: node scripts/check-public-app-r8-imports.mjs
