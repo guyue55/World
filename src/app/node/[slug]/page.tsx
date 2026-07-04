@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { getNodeBySlug, getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
+import { getNodeBySlug, getPublicNodes } from '@/lib/nodes'
 import { getAreaById } from '@/lib/areas'
 import { readContentFile } from '@/lib/content'
 import {
@@ -22,12 +22,6 @@ import { NodeRelationRail } from '@/components/node/NodeRelationRail'
 import { NodeReadingActions } from '@/components/node/NodeReadingActions'
 import { ReadingComfortBar } from '@/components/reading/ReadingComfortBar'
 import { ReadingToc } from '@/components/reading/ReadingToc'
-import { ImmersiveNodeReader } from '@/components/r8-deep-dynamic-world'
-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
-import { SceneUniverseSection } from '@/components/r8-scene-universe'
-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
 
 type NodePageParams = {
   slug: string
@@ -64,13 +58,6 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
   return (
     <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
       <article className="space-y-8">
-        <SensoryUniverseSection />
-      <SceneUniverseSection />
-      <CivilizationUniverseSection />
-      <NodeLifeConstellation />
-      <InteractiveUniverseSection />
-      <CompleteUniverseSection />
-        <TodayWorldPanel />
         <JsonLd data={nodeArticleJsonLd(node)} />
         <Breadcrumbs
           items={[
@@ -99,7 +86,6 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
         <div className="hidden xl:block">
           <ReadingToc headings={headings} />
         </div>
-        <ImmersiveNodeReader node={node} area={area} relatedNodes={getPublicNodesByArea(node.areaId)} />
         <NodePassport node={node} area={area} />
       </aside>
     </main>
