@@ -1,6 +1,6 @@
 import { CompassNav } from './CompassNav'
 import { MobileNav } from './MobileNav'
-import { WorldRuntimeProvider } from '@/components/r8-dynamic-world'
+import { WorldRuntimeProvider } from './WorldRuntimeProvider'
 import { WorldRuntimeStack, WorldRuntimeUtilityDock } from './WorldRuntimeStack'
 
 export function WorldShell({ children }: { children: React.ReactNode }) {
