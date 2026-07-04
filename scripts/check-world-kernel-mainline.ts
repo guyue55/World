@@ -45,6 +45,17 @@ if (exists('src/components/world/WorldShell.tsx')) {
   }
 }
 
+if (exists('src/components/world/WorldRuntimeStack.tsx')) {
+  const stack = read('src/components/world/WorldRuntimeStack.tsx')
+  for (const runtimeGroup of ['WorldAmbientRuntime', 'WorldSceneRuntime', 'WorldInteractionRuntime']) {
+    if (!stack.includes(`function ${runtimeGroup}`)) errors.push(`WorldRuntimeStack must define ${runtimeGroup}`)
+  }
+
+  for (const projection of ['UniverseStage', 'WorldMotionLayer', 'LivingAreaIdentity', 'WorldTrailBreadcrumb', 'ObservationSearchPanel', 'WorldModeDock']) {
+    if (!stack.includes(projection)) errors.push(`WorldRuntimeStack lost projection component: ${projection}`)
+  }
+}
+
 if (exists('package.json')) {
   const scripts = JSON.parse(read('package.json')).scripts ?? {}
   const worldCore = scripts['check:world-core'] ?? ''
