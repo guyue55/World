@@ -5,10 +5,13 @@ import path from 'node:path'
 const root = process.cwd()
 
 // Staged World Kernel boundary:
-// Keep the public entry page hard-gated first. Other public routes still have
-// known legacy R8 presentation imports and must be migrated by later small PRs.
+// expand this list only after each route is migrated by a small PR.
 const criticalPublicEntries = [
   'src/app/page.tsx',
+  'src/app/world/page.tsx',
+  'src/app/world-map/page.tsx',
+  'src/app/time-river/page.tsx',
+  'src/app/lighthouse/page.tsx',
 ]
 
 const violations = []
@@ -24,9 +27,9 @@ for (const repoPath of criticalPublicEntries) {
 }
 
 if (violations.length > 0) {
-  console.error('Critical public app entry routes must not import R8 runtime components directly:')
+  console.error('Critical public app routes must not import R8 runtime components directly:')
   for (const violation of violations) console.error(`- ${violation}`)
   process.exit(1)
 }
 
-console.log('Critical public app entry R8 import boundary passed')
+console.log('Critical public app R8 import boundary passed')
