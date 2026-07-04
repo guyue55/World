@@ -21,6 +21,10 @@ const criticalPublicEntries = [
   'src/app/atlas/page.tsx',
   'src/app/timeline/page.tsx',
   'src/app/node/[slug]/page.tsx',
+  'src/app/r4-creator/page.tsx',
+  'src/app/r6-service/page.tsx',
+  'src/app/r7-evolution/page.tsx',
+  'src/app/r8-public/page.tsx',
 ]
 
 const violations = []
