@@ -195,8 +195,8 @@
       }
     },
     {
-      "path": "/api/r8/civilization-universe",
-      "file": "src/app/api/r8/civilization-universe/route.ts",
+      "path": "/api/_legacy/r8/civilization-universe",
+      "file": "src/app/api/_legacy/r8/civilization-universe/route.ts",
       "methods": [
         "GET"
       ],
@@ -219,8 +219,8 @@
       }
     },
     {
-      "path": "/api/r8/complete-universe",
-      "file": "src/app/api/r8/complete-universe/route.ts",
+      "path": "/api/_legacy/r8/complete-universe",
+      "file": "src/app/api/_legacy/r8/complete-universe/route.ts",
       "methods": [
         "GET"
       ],
@@ -243,8 +243,8 @@
       }
     },
     {
-      "path": "/api/r8/dynamic-world",
-      "file": "src/app/api/r8/dynamic-world/route.ts",
+      "path": "/api/_legacy/r8/dynamic-world",
+      "file": "src/app/api/_legacy/r8/dynamic-world/route.ts",
       "methods": [
         "GET"
       ],
@@ -267,8 +267,8 @@
       }
     },
     {
-      "path": "/api/r8/feedback",
-      "file": "src/app/api/r8/feedback/route.ts",
+      "path": "/api/_legacy/r8/feedback",
+      "file": "src/app/api/_legacy/r8/feedback/route.ts",
       "methods": [
         "GET"
       ],
@@ -291,8 +291,8 @@
       }
     },
     {
-      "path": "/api/r8/interactive-universe",
-      "file": "src/app/api/r8/interactive-universe/route.ts",
+      "path": "/api/_legacy/r8/interactive-universe",
+      "file": "src/app/api/_legacy/r8/interactive-universe/route.ts",
       "methods": [
         "GET"
       ],
@@ -315,8 +315,8 @@
       }
     },
     {
-      "path": "/api/r8/public-log",
-      "file": "src/app/api/r8/public-log/route.ts",
+      "path": "/api/_legacy/r8/public-log",
+      "file": "src/app/api/_legacy/r8/public-log/route.ts",
       "methods": [
         "GET"
       ],
@@ -339,8 +339,8 @@
       }
     },
     {
-      "path": "/api/r8/public-status",
-      "file": "src/app/api/r8/public-status/route.ts",
+      "path": "/api/_legacy/r8/public-status",
+      "file": "src/app/api/_legacy/r8/public-status/route.ts",
       "methods": [
         "GET"
       ],
@@ -363,8 +363,8 @@
       }
     },
     {
-      "path": "/api/r8/scene-universe",
-      "file": "src/app/api/r8/scene-universe/route.ts",
+      "path": "/api/_legacy/r8/scene-universe",
+      "file": "src/app/api/_legacy/r8/scene-universe/route.ts",
       "methods": [
         "GET"
       ],
@@ -387,8 +387,8 @@
       }
     },
     {
-      "path": "/api/r8/sensory-universe",
-      "file": "src/app/api/r8/sensory-universe/route.ts",
+      "path": "/api/_legacy/r8/sensory-universe",
+      "file": "src/app/api/_legacy/r8/sensory-universe/route.ts",
       "methods": [
         "GET"
       ],
@@ -411,8 +411,8 @@
       }
     },
     {
-      "path": "/api/v10/intelligence-health",
-      "file": "src/app/api/v10/intelligence-health/route.ts",
+      "path": "/api/_legacy/v10/intelligence-health",
+      "file": "src/app/api/_legacy/v10/intelligence-health/route.ts",
       "methods": [
         "GET"
       ],
@@ -555,8 +555,8 @@
       }
     },
     {
-      "path": "/api/v9/service-health",
-      "file": "src/app/api/v9/service-health/route.ts",
+      "path": "/api/_legacy/v9/service-health",
+      "file": "src/app/api/_legacy/v9/service-health/route.ts",
       "methods": [
         "GET"
       ],
