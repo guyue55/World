@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "stage": 5,
+  "batch": 17,
+  "totalBatches": 20,
+  "name": "部署拓扑与环境分层",
+  "stageProgress": "V2 / 第 5 阶段：生产化迁移收口 / 第 17 批 / 共 20 批",
+  "status": "prepared",
+  "environments": [
+    "local",
+    "preview",
+    "staging",
+    "production"
+  ],
+  "deploymentTargets": [
+    "Vercel web",
+    "Cloud Run api",
+    "PostgreSQL managed",
+    "Object Storage",
+    "Secret Manager"
+  ],
+  "releaseRules": [
+    "preview before production",
+    "rollback target required",
+    "manual signoff required"
+  ],
+  "ready": false,
+  "rules": [
+    "V2 结构完成不等于真实服务上线。",
+    "V1 公开路径必须尽量兼容。",
+    "V2.1 才进入真实服务实现与私密档案落地。"
+  ]
+}

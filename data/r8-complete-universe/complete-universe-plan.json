@@ -1,0 +1,73 @@
+{
+  "version": "R8.5",
+  "title": "真实世界 / 宇宙全域完成线",
+  "positioning": "把 R8.4 的三景深与区域身份证继续推进为全域可交互、可复访、可自解释、可收束、可维护的前端真实宇宙。",
+  "designInputs": [
+    "访问者不是打开网站，而是进入世界",
+    "每一次关键行为都像世界中的一个动作",
+    "近景书桌、中景浮岛、远景星河",
+    "世界既像宇宙，又像家，又像工具",
+    "前台浪漫，后台清醒，档案可靠",
+    "世界可以自由生长，但必须能被时间、关系、位置和权限重新找到"
+  ],
+  "stages": [
+    {
+      "id": "stage-01",
+      "name": "全域宇宙运行内核",
+      "batches": [
+        "route scene kernel",
+        "pointer parallax",
+        "seasonal atmosphere",
+        "motion boundary"
+      ],
+      "acceptance": "所有核心路由共享同一个宇宙运行状态，且支持 reduced-motion 降级。"
+    },
+    {
+      "id": "stage-02",
+      "name": "万物层与器物交互",
+      "batches": [
+        "desk objects",
+        "cosmos objects",
+        "civilization objects",
+        "object feedback"
+      ],
+      "acceptance": "纸、灯、罗盘、卷宗、门、星盘等对象不只是装饰，而能提供动作反馈与路径。"
+    },
+    {
+      "id": "stage-03",
+      "name": "复访、成长与自解释闭环",
+      "batches": [
+        "return journey",
+        "today world",
+        "growth loop",
+        "area explanation"
+      ],
+      "acceptance": "访客能继续上次旅程；每个区域能解释自己；世界最近发生与成长状态可见。"
+    },
+    {
+      "id": "stage-04",
+      "name": "完成线门禁与 ASCII 打包",
+      "batches": [
+        "all checks",
+        "boundary checks",
+        "ascii package",
+        "handoff notes"
+      ],
+      "acceptance": "动态层不依赖数据库、真实 AI、WebGL 或远程服务，可全量打包。"
+    }
+  ],
+  "completionCriteria": [
+    "全站不是静态页面集合，而是共享一个 route-aware 宇宙运行层。",
+    "首页、Atlas、时间河、档案馆、路径、灯塔、节点、创世台、自演化页都有独立场景动作。",
+    "每个核心页面至少具备：当前位置、现实解释、世界动作、下一步路径、复访反馈。",
+    "世界模式与现实模式并存：可沉浸漫游，也可快速查找。",
+    "所有动效均可降级，不依赖数据库、真实 AI、WebGL、音频或外部素材。"
+  ],
+  "nonGoals": [
+    "不接真实数据库",
+    "不接真实 AI 模型",
+    "不引入 Three.js / WebGL",
+    "不引入音频自动播放",
+    "不牺牲移动端性能和可访问性"
+  ]
+}

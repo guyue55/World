@@ -1,0 +1,57 @@
+{
+  "plans": [
+    {
+      "id": "export-json",
+      "name": "世界节点 JSON 导出",
+      "format": "json",
+      "includes": [
+        "nodes",
+        "relations",
+        "areas",
+        "paths",
+        "timeline",
+        "visibility"
+      ],
+      "frequency": "monthly",
+      "ready": true
+    },
+    {
+      "id": "export-markdown",
+      "name": "公开内容 Markdown 导出",
+      "format": "markdown",
+      "includes": [
+        "public nodes",
+        "world titles",
+        "real explanations",
+        "relations"
+      ],
+      "frequency": "monthly",
+      "ready": false
+    },
+    {
+      "id": "export-media-manifest",
+      "name": "媒体资产清单",
+      "format": "manifest",
+      "includes": [
+        "images",
+        "documents",
+        "source pointers",
+        "privacy flags"
+      ],
+      "frequency": "quarterly",
+      "ready": false
+    },
+    {
+      "id": "export-handoff",
+      "name": "R5 AI 灯塔交接索引",
+      "format": "json",
+      "includes": [
+        "public-only index",
+        "forbidden ids",
+        "redaction rules"
+      ],
+      "frequency": "before R5",
+      "ready": true
+    }
+  ]
+}

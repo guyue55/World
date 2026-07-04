@@ -1,0 +1,15 @@
+{
+  "stage": 4,
+  "title": "质量门禁、隐私边界与 R4 交接",
+  "description": "验证真实内容不会破坏公开边界，并把创世台真实化交接给 R4。",
+  "batches": [
+    "13",
+    "14",
+    "15",
+    "16"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

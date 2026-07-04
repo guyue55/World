@@ -1,0 +1,14 @@
+{
+  "batch": 4,
+  "stage": 1,
+  "title": "阶段一语法逻辑检查",
+  "status": "complete",
+  "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+  "deliverables": [
+    "check-r2-world-experience-stage-01.ts"
+  ],
+  "syntaxLogicCheck": "stage check + lint after stage completion",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

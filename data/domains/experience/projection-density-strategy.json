@@ -1,0 +1,87 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 页面投影密度策略",
+  "principle": "页面密度要让访问者看见世界，而不是看见数据库。",
+  "routes": [
+    {
+      "route": "/",
+      "density": "curated",
+      "maxItems": 12,
+      "mustBalance": [
+        "identity",
+        "representative nodes",
+        "paths",
+        "recent rhythm"
+      ]
+    },
+    {
+      "route": "/archive",
+      "density": "scannable",
+      "maxInitialItems": 100,
+      "mustBalance": [
+        "search",
+        "filter",
+        "cards",
+        "empty state"
+      ]
+    },
+    {
+      "route": "/atlas",
+      "density": "spatial-summary",
+      "maxInitialItems": 30,
+      "mustBalance": [
+        "areas",
+        "relations summary",
+        "fallback list"
+      ]
+    },
+    {
+      "route": "/node/[slug]",
+      "density": "focused",
+      "maxRelatedItems": 8,
+      "mustBalance": [
+        "body",
+        "metadata",
+        "related nodes",
+        "path entry"
+      ]
+    },
+    {
+      "route": "/paths",
+      "density": "guided",
+      "maxInitialItems": 12,
+      "mustBalance": [
+        "audience",
+        "minutes",
+        "progress"
+      ]
+    },
+    {
+      "route": "/status",
+      "density": "dashboard",
+      "maxInitialPanels": 8,
+      "mustBalance": [
+        "summary",
+        "warnings",
+        "deep panels behind stack"
+      ]
+    },
+    {
+      "route": "/skeleton",
+      "density": "dashboard",
+      "maxInitialPanels": 8,
+      "mustBalance": [
+        "foundation",
+        "contracts",
+        "deep panels behind stack"
+      ]
+    }
+  ],
+  "rules": [
+    "首页密度必须经过策展，不展示全部节点。",
+    "归档页密度以扫描效率为主。",
+    "详情页密度以阅读为主。",
+    "状态/骨架页允许信息多，但必须有摘要优先和栈边界。",
+    "超过密度阈值时优先分页、分组或折叠。"
+  ]
+}

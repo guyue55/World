@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段 Atlas 空间入口产品化契约",
+  "principle": "Atlas 不是分类页，而是让世界结构被看见的二维空间入口。",
+  "status": "implemented-static",
+  "pageParts": [
+    {
+      "id": "atlas-hero",
+      "component": "AtlasHero",
+      "purpose": "解释 Atlas 与 Archive 的分工"
+    },
+    {
+      "id": "atlas-stats",
+      "component": "AtlasStats",
+      "purpose": "提供世界结构摘要"
+    },
+    {
+      "id": "atlas-map",
+      "component": "AtlasMap",
+      "purpose": "显示区域空间布局"
+    },
+    {
+      "id": "atlas-star-lines",
+      "component": "AtlasStarLines",
+      "purpose": "显示区域之间的轻量关系"
+    },
+    {
+      "id": "area-node-cluster",
+      "component": "AreaNodeCluster",
+      "purpose": "按区域展示公开节点"
+    },
+    {
+      "id": "atlas-fallback-list",
+      "component": "AtlasFallbackList",
+      "purpose": "在地图不适合阅读时提供线性入口"
+    }
+  ],
+  "rules": [
+    "Atlas 负责空间理解，Archive 负责现实检索。",
+    "Atlas 不引入完整 3D、WebXR 或重型画布。",
+    "区域必须能统计公开节点数量。",
+    "区域之间必须能展示轻量关系或至少有 fallback 列表。",
+    "移动端必须优先可读，不能依赖复杂空间布局。",
+    "Atlas 不展示 private/family/partner/vault/sealed/silent 节点。"
+  ],
+  "performanceRules": [
+    "Atlas 使用静态数据 projection。",
+    "地图组件不引入大型图形库。",
+    "星线关系使用轻量数据和普通 DOM 呈现。",
+    "区域节点簇按公开节点过滤。"
+  ]
+}

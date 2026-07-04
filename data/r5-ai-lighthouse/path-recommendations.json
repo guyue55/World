@@ -1,0 +1,54 @@
+{
+  "version": "R5",
+  "paths": [
+    {
+      "id": "first-visitor",
+      "title": "第一次来到这里",
+      "intent": "理解世界定位",
+      "steps": [
+        "世界入口",
+        "世界地图",
+        "世界宣言",
+        "精选节点",
+        "AI 灯塔"
+      ],
+      "publicOnly": true
+    },
+    {
+      "id": "tech-ai-route",
+      "title": "技术与 AI 星路",
+      "intent": "了解工程实践与 AI 协作边界",
+      "steps": [
+        "技术星域",
+        "AI Agent 星座",
+        "创世台协议",
+        "AI 灯塔边界"
+      ],
+      "publicOnly": true
+    },
+    {
+      "id": "world-making-route",
+      "title": "这个世界如何被创造",
+      "intent": "查看古月浮屿从博客到世界的演化",
+      "steps": [
+        "创世原点",
+        "节点生命化",
+        "创世台",
+        "R5 AI 灯塔"
+      ],
+      "publicOnly": true
+    },
+    {
+      "id": "quiet-roaming",
+      "title": "安静漫游",
+      "intent": "低压力探索世界氛围",
+      "steps": [
+        "记忆湖边缘",
+        "时间河",
+        "灵感云层",
+        "档案馆"
+      ],
+      "publicOnly": true
+    }
+  ]
+}

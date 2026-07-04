@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "内容分发与版本治理",
+  "batch": 19,
+  "stage": 5,
+  "stageName": "发布网络、世界协议与内容分发",
+  "stageProgress": "V4 / 第 5 阶段 / 第 19 批 / 共 24 批",
+  "slug": "distribution-versioning",
+  "status": "complete",
+  "goals": [
+    "内容分发与版本治理",
+    "版本号/变更日志/内容签名",
+    "公开私密分层"
+  ],
+  "outputs": [
+    "VersionRecord",
+    "ContentSignature",
+    "RollbackPlan"
+  ],
+  "mustKeep": [
+    "private separation",
+    "checksum"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-publishing-network",
+    "dataDirectory": "data/v4/stage-05",
+    "docsDirectory": "docs/41-v4/stage-05",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

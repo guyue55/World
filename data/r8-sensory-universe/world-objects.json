@@ -1,0 +1,65 @@
+{
+  "version": "R8.6",
+  "layers": [
+    {
+      "id": "micro",
+      "title": "微尘层",
+      "realPurpose": "提供空气、时间和生命感，不承载主功能。",
+      "items": [
+        "星尘",
+        "纸尘",
+        "风线",
+        "水纹",
+        "月光粒子",
+        "墨痕"
+      ]
+    },
+    {
+      "id": "object",
+      "title": "器物层",
+      "realPurpose": "把功能入口变成可触碰的世界物件。",
+      "items": [
+        "纸",
+        "笔",
+        "灯",
+        "书",
+        "罗盘",
+        "星盘",
+        "卷宗",
+        "玻璃瓶"
+      ]
+    },
+    {
+      "id": "place",
+      "title": "场景层",
+      "realPurpose": "让页面不只是列表，而是抵达某地。",
+      "items": [
+        "书桌",
+        "观星台",
+        "时间河岸",
+        "档案馆",
+        "灯塔",
+        "创世台"
+      ]
+    },
+    {
+      "id": "cosmos",
+      "title": "宇宙层",
+      "realPurpose": "提供远景、未知、未来和浩瀚感。",
+      "items": [
+        "星云",
+        "远方坐标",
+        "雾门",
+        "未命名星域",
+        "沉睡岛"
+      ]
+    }
+  ],
+  "acceptance": [
+    "notJustCards",
+    "notJustBackground",
+    "eachRouteHasPlace",
+    "eachActionHasRitual",
+    "eachSceneHasFallback"
+  ]
+}

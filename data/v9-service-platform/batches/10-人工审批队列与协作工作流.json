@@ -1,0 +1,22 @@
+{
+  "id": "batch-10",
+  "batch": 10,
+  "stage": 3,
+  "title": "人工审批队列与协作工作流",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/10-人工审批队列与协作工作流.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

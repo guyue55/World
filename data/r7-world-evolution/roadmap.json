@@ -1,0 +1,223 @@
+{
+  "version": "R7",
+  "name": "真实世界-R7｜长期运行与世界自演化",
+  "goal": "让古月浮屿具备世界状态、生命周期、低光/苏醒、今日世界、周期回望与自修复的长期运行能力。",
+  "finalTarget": "访问者进入的是正在生长的世界；主人维护的是低负担的生命系统；未来留下的是可回望、可迁移、可传承的档案。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "stages": [
+    {
+      "stage": 1,
+      "title": "世界状态内核与生命周期规则",
+      "focus": "建立 WorldState、生命周期、低光与苏醒的基础运行模型。",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 2,
+      "title": "今日世界、周期仪式与维护队列",
+      "focus": "让世界具备每日问候、今日世界、轻任务、维护仪式和主人低心力入口。",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 3,
+      "title": "自解释、自修复与长期回望",
+      "focus": "建立世界日志、区域解释、健康度、回流规则、节点成长轨迹和月度/年度回望。",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 4,
+      "title": "质量门禁、隐私边界与 R8 交接",
+      "focus": "固化自演化边界，保证 AI 与服务化能力只能建议和记录，不能越权改变世界。",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "title": "R7 范围契约与长期运行原则",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 2,
+      "title": "WorldState 数据模型",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 3,
+      "title": "生命周期规则表",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 4,
+      "title": "低光与苏醒协议",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 5,
+      "title": "今日世界面板",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 6,
+      "title": "日常轻仪式与问候",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 7,
+      "title": "维护任务队列",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 8,
+      "title": "低心力维护模式",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 9,
+      "title": "世界健康度指标",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 10,
+      "title": "世界日志与最近发生",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 11,
+      "title": "节点成长轨迹与回流",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 12,
+      "title": "周期回望与世界季报",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 13,
+      "title": "自演化隐私边界",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": true
+    },
+    {
+      "batch": 14,
+      "title": "R7 页面与 API 集成",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 15,
+      "title": "聚合门禁与构建包装",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": false
+    },
+    {
+      "batch": 16,
+      "title": "R8 公开运营交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "ownerReviewRequired": true
+    }
+  ],
+  "principles": [
+    "AI 是灯塔，不是太阳；AI 只能建议世界如何整理，不能自动改变世界。",
+    "前台浪漫，后台清醒，档案可靠。",
+    "世界可以静默，但不应显得死亡。",
+    "自演化必须可解释、可审计、可停止、可回滚。"
+  ]
+}

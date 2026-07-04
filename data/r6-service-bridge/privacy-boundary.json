@@ -1,0 +1,15 @@
+{
+  "rules": [
+    "public route handlers must not expose private body",
+    "owner-only contracts remain skeleton until auth exists",
+    "AI suggestions never mutate world",
+    "vault is unavailable to service adapters",
+    "audit required before future mutation endpoints"
+  ],
+  "forbiddenTerms": [
+    "vaultBody",
+    "childRealName",
+    "homeAddress",
+    "rawPrivateLetter"
+  ]
+}

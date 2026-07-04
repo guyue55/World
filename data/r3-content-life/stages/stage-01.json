@@ -1,0 +1,15 @@
+{
+  "stage": 1,
+  "title": "真实节点协议与内容基线",
+  "description": "把世界从漂亮入口推进到可安放真实内容的 Node 协议层。",
+  "batches": [
+    "01",
+    "02",
+    "03",
+    "04"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

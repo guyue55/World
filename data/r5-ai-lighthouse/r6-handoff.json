@@ -1,0 +1,26 @@
+{
+  "version": "R5-to-R6",
+  "target": "R6 服务化最小闭环",
+  "items": [
+    {
+      "id": "api-public-context",
+      "title": "公开 AI 上下文 API",
+      "need": "将 public-context 从静态 JSON 推进到服务化只读 API。"
+    },
+    {
+      "id": "review-api",
+      "title": "AI 建议审批 API",
+      "need": "让 review-queue 从静态数据进入 owner-only 审批流。"
+    },
+    {
+      "id": "audit-api",
+      "title": "审计日志 API",
+      "need": "所有 AI 读取、建议、拒绝、批准都写入不可覆盖日志。"
+    },
+    {
+      "id": "search-port",
+      "title": "公开搜索适配端口",
+      "need": "先接公开索引，不接私密 vault。"
+    }
+  ]
+}

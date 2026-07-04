@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 数据加载策略",
+  "principle": "数据加载以投影为单位，不以完整宇宙为单位。",
+  "strategies": [
+    {
+      "id": "home",
+      "load": "representative public projections only",
+      "avoid": "full archive or full relation graph"
+    },
+    {
+      "id": "atlas",
+      "load": "area summary and public coordinates",
+      "avoid": "deep/vault graph"
+    },
+    {
+      "id": "archive",
+      "load": "public index summary",
+      "avoid": "markdown body for every node"
+    },
+    {
+      "id": "node-detail",
+      "load": "single node projection and markdown body",
+      "avoid": "entire world graph"
+    },
+    {
+      "id": "paths",
+      "load": "path summary and node references",
+      "avoid": "unrelated archive"
+    },
+    {
+      "id": "status",
+      "load": "aggregated reports behind stack",
+      "avoid": "duplicating checks in page"
+    },
+    {
+      "id": "ask",
+      "load": "low-light static guide first",
+      "avoid": "AI provider as first paint dependency"
+    }
+  ],
+  "rules": [
+    "页面只加载自身投影需要的数据。",
+    "列表页不加载所有 markdown 正文。",
+    "详情页不加载整个世界。",
+    "状态页重面板必须集中装配，便于未来分割。",
+    "AI 入口必须先显示无 AI fallback。"
+  ]
+}

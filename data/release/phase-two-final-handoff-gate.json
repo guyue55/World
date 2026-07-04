@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段最终交接门禁",
+  "principle": "体验阶段可以交接，真实执行证据必须继续补齐。",
+  "stageProgress": "phase-two 12 / 12 completed; post-closure hardening batch 3 / 3",
+  "status": "handoff-ready-with-external-evidence-pending",
+  "handoffDecision": "ready-for-next-planning-not-ready-for-final-release",
+  "canProceedTo": [
+    "phase-two-follow-up-polish",
+    "phase-three-planning",
+    "real-environment-validation"
+  ],
+  "cannotClaim": [
+    "stage-one-complete",
+    "lint-passed",
+    "typecheck-passed",
+    "build-passed",
+    "browser-qa-passed",
+    "preview-smoke-passed",
+    "performance-measured"
+  ],
+  "mustRunBeforeRelease": [
+    "npm install",
+    "npm run check:lint-env",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run check:world-core",
+    "npm run build",
+    "manual browser QA matrix",
+    "preview smoke test",
+    "performance measurement"
+  ],
+  "handoffScope": {
+    "completedExperienceLoop": true,
+    "completedCoreRoutes": 10,
+    "completedPhaseTwoBatches": 12,
+    "completedHardeningBatches": 3,
+    "packagingPolicy": "delta/patch only unless explicitly requested"
+  },
+  "rules": [
+    "后续继续开发时，必须从真实执行补证或下一阶段规划二选一开始。",
+    "不得继续把补证工作伪装成第二阶段常规批次。",
+    "所有新模块仍需页面化、组件化、契约化、脚本化。",
+    "每次完成仍需记录语法、逻辑、JSON、TS/TSX 转译、静态 lint 风险、真实 lint 尝试状态。"
+  ]
+}

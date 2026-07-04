@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 生产回滚演练计划",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 3 / 4",
+  "status": "rollback-drill-plan-prepared",
+  "rollbackDrillPassed": false,
+  "steps": [
+    {
+      "id": "identify-bad-release",
+      "title": "识别异常发布版本",
+      "status": "pending-drill"
+    },
+    {
+      "id": "select-target-release",
+      "title": "选择回滚目标版本",
+      "status": "pending-drill"
+    },
+    {
+      "id": "verify-target-manifest",
+      "title": "核验目标 manifest 与 SHA256",
+      "status": "pending-drill"
+    },
+    {
+      "id": "restore-artifact",
+      "title": "恢复目标构建产物",
+      "status": "pending-drill"
+    },
+    {
+      "id": "run-smoke-after-rollback",
+      "title": "回滚后 smoke",
+      "status": "pending-drill"
+    },
+    {
+      "id": "record-rollback-report",
+      "title": "记录回滚报告",
+      "status": "pending-drill"
+    }
+  ],
+  "rules": [
+    "rollbackDrillPassed=false 必须保持，直到真实演练完成。",
+    "回滚目标必须有 manifest。",
+    "回滚后必须执行 smoke。",
+    "回滚报告必须包含原因、版本、证据和结果。"
+  ]
+}

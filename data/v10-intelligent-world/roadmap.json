@@ -1,0 +1,179 @@
+{
+  "version": "V10",
+  "name": "长期智能世界版",
+  "round": 10,
+  "status": "complete-structure",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "mission": "让古月浮屿具备长期记忆、持续演化、AI 协作、世界回望、传承导出和十轮总收束能力。",
+  "stages": [
+    {
+      "id": "v10-stage-01",
+      "stage": 1,
+      "title": "长期智能世界内核与记忆连续性",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "focus": [
+        "智能世界范围契约",
+        "长期记忆生命周期",
+        "连续性档案",
+        "AI 角色边界"
+      ]
+    },
+    {
+      "id": "v10-stage-02",
+      "stage": 2,
+      "title": "自演化规则、智能体协作与世界维护",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "focus": [
+        "演化规则引擎",
+        "AI Agent 角色社会",
+        "世界维护建议",
+        "人工审批闭环"
+      ]
+    },
+    {
+      "id": "v10-stage-03",
+      "stage": 3,
+      "title": "长期陪伴、回望、传承与多视野体验",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "focus": [
+        "长期陪伴台",
+        "过去的我与未来的我",
+        "年度世界册",
+        "访客/深潜者/造物主视野"
+      ]
+    },
+    {
+      "id": "v10-stage-04",
+      "stage": 4,
+      "title": "终局治理、可靠性硬化与十轮总封版",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "focus": [
+        "主权治理",
+        "可迁移档案",
+        "可靠性预算",
+        "十轮总交接"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "stage": 1,
+      "name": "V10-范围契约与长期智能边界",
+      "status": "complete"
+    },
+    {
+      "batch": 2,
+      "stage": 1,
+      "name": "智能世界内核与状态模型",
+      "status": "complete"
+    },
+    {
+      "batch": 3,
+      "stage": 1,
+      "name": "长期记忆生命周期",
+      "status": "complete"
+    },
+    {
+      "batch": 4,
+      "stage": 1,
+      "name": "阶段一收口与扩展判断",
+      "status": "complete"
+    },
+    {
+      "batch": 5,
+      "stage": 2,
+      "name": "自演化规则引擎",
+      "status": "complete"
+    },
+    {
+      "batch": 6,
+      "stage": 2,
+      "name": "AI-Agent-角色社会",
+      "status": "complete"
+    },
+    {
+      "batch": 7,
+      "stage": 2,
+      "name": "世界维护建议队列",
+      "status": "complete"
+    },
+    {
+      "batch": 8,
+      "stage": 2,
+      "name": "阶段二收口与扩展判断",
+      "status": "complete"
+    },
+    {
+      "batch": 9,
+      "stage": 3,
+      "name": "长期陪伴台与回望入口",
+      "status": "complete"
+    },
+    {
+      "batch": 10,
+      "stage": 3,
+      "name": "过去的我与未来的我",
+      "status": "complete"
+    },
+    {
+      "batch": 11,
+      "stage": 3,
+      "name": "年度世界册与传承包",
+      "status": "complete"
+    },
+    {
+      "batch": 12,
+      "stage": 3,
+      "name": "阶段三收口与扩展判断",
+      "status": "complete"
+    },
+    {
+      "batch": 13,
+      "stage": 4,
+      "name": "主权治理与 AI 边界硬化",
+      "status": "complete"
+    },
+    {
+      "batch": 14,
+      "stage": 4,
+      "name": "可迁移档案与长期可靠性",
+      "status": "complete"
+    },
+    {
+      "batch": 15,
+      "stage": 4,
+      "name": "十轮总封版与后续路线",
+      "status": "complete"
+    },
+    {
+      "batch": 16,
+      "stage": 4,
+      "name": "V10-最终封版与全量打包准备",
+      "status": "complete"
+    }
+  ]
+}

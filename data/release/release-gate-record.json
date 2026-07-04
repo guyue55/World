@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布门禁执行记录",
+  "stageProgress": "release-preparation line batch 1 / 4",
+  "status": "pending-real-ci-run",
+  "latestLocalGate": {
+    "attempted": false,
+    "exitCode": null,
+    "status": "pending",
+    "outputExcerpt": null,
+    "updatedAt": null
+  },
+  "latestCiGate": {
+    "attempted": false,
+    "provider": "github-actions",
+    "status": "pending",
+    "runUrl": null,
+    "updatedAt": null
+  },
+  "rules": [
+    "只有真实本地 release:local-gate 退出 0 才能标记 local passed。",
+    "只有真实 CI workflow 成功才可标记 ci passed。",
+    "浏览器 QA / 预览冒烟 / 性能仍需单独证据。"
+  ]
+}

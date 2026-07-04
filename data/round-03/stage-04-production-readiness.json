@@ -1,0 +1,11 @@
+{
+  "round": 3,
+  "stage": 4,
+  "status": "complete",
+  "focus": "生产发布前门禁与不伪装 productionLive",
+  "productionLive": false,
+  "pendingGates": [
+    "preview-deploy",
+    "manual-privacy-signoff"
+  ]
+}

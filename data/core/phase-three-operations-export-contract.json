@@ -1,0 +1,53 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段运营、导出与传承规划契约",
+  "principle": "世界要能生长，也要能维护、导出、迁移和传承。",
+  "stageProgress": "phase-three-planning line batch 4 / 4",
+  "status": "planned",
+  "operationModules": [
+    {
+      "id": "world-health",
+      "title": "世界健康度",
+      "focus": "节点、路径、展览、发布阻断与证据状态"
+    },
+    {
+      "id": "maintenance-ledger",
+      "title": "维护台账",
+      "focus": "过期内容、缺陷、待补证、待归档"
+    },
+    {
+      "id": "export-center",
+      "title": "导出中心",
+      "focus": "Markdown、JSON、年度册、展览包"
+    },
+    {
+      "id": "inheritance-package",
+      "title": "传承包",
+      "focus": "长期保存、迁移说明、公开/私密分包"
+    },
+    {
+      "id": "backup-rhythm",
+      "title": "备份节律",
+      "focus": "月度、季度、年度备份策略"
+    }
+  ],
+  "exportFormats": [
+    "markdown",
+    "json",
+    "static-html",
+    "annual-world-book",
+    "theme-exhibition-package"
+  ],
+  "privacyRules": [
+    "公开导出不得包含 private/family/partner/vault/sealed/silent 内容。",
+    "私密导出必须显式确认范围。",
+    "传承包必须区分 public package 与 private package。",
+    "默认导出不包含 AI 未采纳建议。"
+  ],
+  "rules": [
+    "运营能力必须读取现有 evidence/blocker/defect/QA 记录。",
+    "导出能力必须可静态降级。",
+    "传承规划不得绕过可见性边界。",
+    "第三阶段规划收口不等于 release-ready。"
+  ]
+}

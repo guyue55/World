@@ -1,0 +1,25 @@
+name: Release Gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check:lint-env
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run check:world-core
+      - run: npm run build
+      - run: npm run validation-closure:print

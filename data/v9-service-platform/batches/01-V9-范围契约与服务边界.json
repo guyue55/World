@@ -1,0 +1,22 @@
+{
+  "id": "batch-01",
+  "batch": 1,
+  "stage": 1,
+  "title": "V9 范围契约与服务边界",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/01-V9-范围契约与服务边界.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "version": "0.1.0",
+  "principle": "世界不是一次构建物，而是需要启动、观测、恢复和维护的长期生命体。",
+  "states": [
+    {
+      "id": "drafting",
+      "description": "本地编辑和打磨中。"
+    },
+    {
+      "id": "checking",
+      "description": "执行世界内核检查。"
+    },
+    {
+      "id": "ready",
+      "description": "检查通过，可发布或继续内容建设。"
+    },
+    {
+      "id": "published",
+      "description": "公开构建已发布。"
+    },
+    {
+      "id": "degraded",
+      "description": "部分高级能力降级，但核心仍可运行。"
+    },
+    {
+      "id": "blocked",
+      "description": "存在阻断错误，不得发布。"
+    },
+    {
+      "id": "archived",
+      "description": "当前快照进入归档。"
+    }
+  ],
+  "transitions": [
+    {
+      "from": "drafting",
+      "to": "checking",
+      "requires": [
+        "save changes"
+      ]
+    },
+    {
+      "from": "checking",
+      "to": "ready",
+      "requires": [
+        "check:world-core"
+      ]
+    },
+    {
+      "from": "checking",
+      "to": "blocked",
+      "requires": [
+        "blocking error found"
+      ]
+    },
+    {
+      "from": "ready",
+      "to": "published",
+      "requires": [
+        "build",
+        "deploy"
+      ]
+    },
+    {
+      "from": "published",
+      "to": "degraded",
+      "requires": [
+        "fallback active"
+      ]
+    },
+    {
+      "from": "blocked",
+      "to": "checking",
+      "requires": [
+        "fix blocking errors"
+      ]
+    },
+    {
+      "from": "published",
+      "to": "archived",
+      "requires": [
+        "snapshot plan"
+      ]
+    }
+  ],
+  "rules": [
+    "blocked 状态不得发布。",
+    "degraded 状态必须保留核心导航。",
+    "published 状态不得包含私密内容。",
+    "重大变更前必须进入 archived/snapshot 流程。",
+    "ready 不等于 finished，只表示骨架健康。"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "stage": 4,
+  "title": "服务边界硬化、质量门禁与 R7 交接",
+  "status": "complete",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "checks": [
+    "syntax",
+    "logic",
+    "lint-after-stage"
+  ],
+  "goal": "服务化最小闭环必须服务于真实世界成型，而不是引入过度后端复杂度。"
+}

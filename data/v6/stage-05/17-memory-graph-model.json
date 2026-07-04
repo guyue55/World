@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "长期记忆图谱模型",
+  "batch": 17,
+  "stage": 5,
+  "stageName": "沉浸式共享宇宙与长期记忆图谱",
+  "stageProgress": "V6 / 第 5 阶段 / 第 17 批 / 共 24 批",
+  "slug": "memory-graph-model",
+  "status": "complete",
+  "goals": [
+    "定义长期记忆图谱",
+    "MemoryNode/Edge/Cluster/Timeline/Weight",
+    "内容关系长期沉淀"
+  ],
+  "outputs": [
+    "MemoryGraph",
+    "MemoryNode"
+  ],
+  "mustKeep": [
+    "visibility required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-memory-universe",
+    "dataDirectory": "data/v6/stage-05",
+    "docsDirectory": "docs/61-v6/stage-05",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

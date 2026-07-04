@@ -1,0 +1,48 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实环境补证执行辅助就绪矩阵",
+  "stageProgress": "real-evidence-execution-assist line batch 4 / 4",
+  "status": "assist-ready-real-execution-pending",
+  "items": [
+    {
+      "id": "evidence-dashboard",
+      "status": "ready",
+      "route": "/evidence"
+    },
+    {
+      "id": "dependency-probe",
+      "status": "ready",
+      "command": "npm run dependency-bootstrap:probe"
+    },
+    {
+      "id": "command-capture",
+      "status": "ready",
+      "command": "npm run evidence:capture"
+    },
+    {
+      "id": "non-command-note",
+      "status": "ready",
+      "command": "npm run evidence:note"
+    },
+    {
+      "id": "blocker-closure-request",
+      "status": "ready",
+      "command": "npm run blocker-closure:request"
+    },
+    {
+      "id": "defect-write",
+      "status": "ready",
+      "command": "npm run defect-execution:write"
+    },
+    {
+      "id": "release-ready",
+      "status": "blocked",
+      "command": "requires real evidence"
+    }
+  ],
+  "rules": [
+    "ready 表示工具可用，不表示证据通过。",
+    "blocked 表示仍需真实执行和人工 review。",
+    "本矩阵不得自动关闭 release blockers。"
+  ]
+}

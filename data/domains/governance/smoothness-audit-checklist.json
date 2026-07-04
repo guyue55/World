@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 流畅度审计清单",
+  "principle": "流畅度来自稳定结构、即时反馈和渐进呈现。",
+  "auditItems": [
+    {
+      "id": "stable-header",
+      "target": "layout/header",
+      "check": "navigation remains stable between routes"
+    },
+    {
+      "id": "stable-card-grid",
+      "target": "archive/cards",
+      "check": "cards keep predictable spacing and empty states"
+    },
+    {
+      "id": "focus-visible",
+      "target": "interactive controls",
+      "check": "keyboard focus is visible"
+    },
+    {
+      "id": "tap-target",
+      "target": "mobile nav and buttons",
+      "check": "touch targets are comfortable"
+    },
+    {
+      "id": "motion-reduced",
+      "target": "animated components",
+      "check": "motion is optional and non-essential"
+    },
+    {
+      "id": "loading-empty-state",
+      "target": "search/filter/list",
+      "check": "empty and loading states exist"
+    },
+    {
+      "id": "heavy-panel-progressive",
+      "target": "status/skeleton",
+      "check": "heavy panel stack behind boundary"
+    },
+    {
+      "id": "no-layout-thrash",
+      "target": "interactive enhancement",
+      "check": "interaction does not reflow full page"
+    }
+  ],
+  "rules": [
+    "新增交互必须至少满足 focus、empty/loading、stable layout 三项。",
+    "动效不得承担唯一信息表达。",
+    "移动端优先保证可点、可读、可退回。"
+  ]
+}

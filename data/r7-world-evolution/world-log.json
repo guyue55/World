@@ -1,0 +1,53 @@
+{
+  "events": [
+    {
+      "id": "log-r1",
+      "type": "stabilization",
+      "title": "真实生产收口完成",
+      "summary": "建立可复跑的工程基线与构建产物验证。",
+      "visibility": "public-summary"
+    },
+    {
+      "id": "log-r2",
+      "type": "experience",
+      "title": "世界入口重构完成",
+      "summary": "首页从信息面板转向进入世界的沉浸入口。",
+      "visibility": "public"
+    },
+    {
+      "id": "log-r3",
+      "type": "content-life",
+      "title": "真实节点开始生长",
+      "summary": "首批真实节点、路径和生命阶段进入世界。",
+      "visibility": "public"
+    },
+    {
+      "id": "log-r4",
+      "type": "creator-workbench",
+      "title": "创世台具备维护入口",
+      "summary": "收集箱、权限检查、内容债务和导出备份形成工作台。",
+      "visibility": "owner-summary"
+    },
+    {
+      "id": "log-r5",
+      "type": "ai-lighthouse",
+      "title": "AI 灯塔接入审计边界",
+      "summary": "公开导览、路径推荐、审批队列和审计日志完成。",
+      "visibility": "public-summary"
+    },
+    {
+      "id": "log-r6",
+      "type": "service-bridge",
+      "title": "服务桥形成最小闭环",
+      "summary": "API 合约、存储端口、审计与导出任务可被 R7 演化系统引用。",
+      "visibility": "owner-summary"
+    },
+    {
+      "id": "log-r7",
+      "type": "world-evolution",
+      "title": "长期运行与自演化规则落地",
+      "summary": "世界状态、低光运行、今日世界、维护仪式和周期回望形成闭环。",
+      "visibility": "public-summary"
+    }
+  ]
+}

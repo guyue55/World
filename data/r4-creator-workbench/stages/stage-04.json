@@ -1,0 +1,15 @@
+{
+  "stage": 4,
+  "title": "质量门禁、隐私边界与 R5 交接",
+  "focus": "完成 R4 聚合检查、创世台边界扫描、文档封版、R5 AI 灯塔真实接入交接。",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,31 @@
+{
+  "version": "5.0.0",
+  "name": "V4 证据继承与缺口复核",
+  "batch": 2,
+  "stage": 1,
+  "stageName": "V5 范围契约与 V4 证据继承",
+  "stageProgress": "V5 / 第 1 阶段 / 第 2 批 / 共 24 批",
+  "slug": "v4-evidence-inheritance",
+  "status": "complete",
+  "goals": [
+    "继承 V4 本地工程证据",
+    "复核 hydration、tsx、lint、typecheck、build",
+    "保留外部部署与人工签收缺口"
+  ],
+  "outputs": [
+    "V4EvidenceInheritance",
+    "ExternalGapLedger"
+  ],
+  "mustKeep": [
+    "check:v4:all",
+    "build",
+    "manual signoff required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-entry",
+    "dataDirectory": "data/v5/stage-01",
+    "docsDirectory": "docs/51-v5/stage-01",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

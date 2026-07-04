@@ -1,0 +1,22 @@
+{
+  "id": "batch-03",
+  "batch": 3,
+  "stage": 1,
+  "title": "RBAC 权限矩阵",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/03-RBAC-权限矩阵.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

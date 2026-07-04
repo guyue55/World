@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 3,
+  "totalBatches": 8,
+  "slug": "node-constellation-experience",
+  "title": "文章节点星图化",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 3 / 批次 3/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

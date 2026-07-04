@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段 AI 安全门禁",
+  "stageProgress": "phase-three-planning line batch 3 / 4",
+  "status": "blocking-auto-action",
+  "checks": [
+    {
+      "id": "no-auto-publish",
+      "status": "required"
+    },
+    {
+      "id": "no-auto-delete",
+      "status": "required"
+    },
+    {
+      "id": "no-visibility-change",
+      "status": "required"
+    },
+    {
+      "id": "public-scope-only",
+      "status": "required"
+    },
+    {
+      "id": "source-disclosure",
+      "status": "required"
+    },
+    {
+      "id": "user-confirmation",
+      "status": "required"
+    }
+  ],
+  "rules": [
+    "任何 AI 执行路径必须先通过本门禁。",
+    "门禁失败时只能展示说明，不能执行行动。",
+    "AI 灯塔增强不改变 release-ready 判断。",
+    "AI 是灯塔，不是太阳。"
+  ]
+}

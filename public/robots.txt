@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# 古月浮屿 V1 当前仅发布公开世界层。
+# 私密、家庭、伴侣、封存、静默内容不得进入 public build。
+Sitemap: /sitemap.xml

@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 平台治理控制台计划",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 3 / 4",
+  "status": "governance-dashboard-prepared",
+  "governanceDashboardReady": false,
+  "cards": [
+    {
+      "id": "rbac",
+      "title": "权限角色",
+      "state": "prepared"
+    },
+    {
+      "id": "service-boundary",
+      "title": "服务边界",
+      "state": "prepared"
+    },
+    {
+      "id": "audit",
+      "title": "审计合规",
+      "state": "prepared"
+    },
+    {
+      "id": "secrets",
+      "title": "密钥治理",
+      "state": "prepared"
+    },
+    {
+      "id": "storage",
+      "title": "存储治理",
+      "state": "prepared"
+    },
+    {
+      "id": "team",
+      "title": "团队协作",
+      "state": "prepared"
+    },
+    {
+      "id": "sustainability",
+      "title": "长期可持续",
+      "state": "prepared"
+    }
+  ],
+  "rules": [
+    "governanceDashboardReady=false 必须保持。",
+    "治理控制台只展示状态，不授予真实权限。",
+    "所有真实治理动作未来必须进入审批和审计。",
+    "控制台不得展示 secret 或私密正文。"
+  ]
+}

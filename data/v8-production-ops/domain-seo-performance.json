@@ -1,0 +1,17 @@
+{
+  "version": "V8",
+  "name": "域名 SEO 与性能证据",
+  "domainReady": false,
+  "seoReady": false,
+  "performanceEvidenceReady": false,
+  "checks": [
+    "DNS resolves to production target",
+    "HTTPS certificate valid",
+    "canonical URL configured",
+    "robots and sitemap accessible",
+    "OpenGraph image and metadata valid",
+    "Search Console submission recorded",
+    "external Web Vitals captured",
+    "mobile route smoke passed"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 4,
+  "totalBatches": 8,
+  "slug": "time-river-experience",
+  "title": "时间河动态体验",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 4 / 批次 4/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

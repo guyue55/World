@@ -1,0 +1,20 @@
+{
+  "id": "stage-01",
+  "stage": 1,
+  "title": "发布证据与环境门禁",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "focus": [
+    "发布范围契约",
+    "真实证据矩阵",
+    "环境变量与部署前置",
+    "阶段一收口"
+  ],
+  "status": "complete",
+  "releaseReady": false,
+  "productionLive": false
+}

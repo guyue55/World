@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "principle": "审计不是为了结束创造，而是确保创造不会损坏世界。",
+  "criteria": [
+    {
+      "id": "core-data-present",
+      "category": "structure",
+      "required": true
+    },
+    {
+      "id": "routes-registered",
+      "category": "projection",
+      "required": true
+    },
+    {
+      "id": "dependency-graph-valid",
+      "category": "architecture",
+      "required": true
+    },
+    {
+      "id": "kernel-check-zero-errors",
+      "category": "kernel",
+      "required": true
+    },
+    {
+      "id": "foundation-gate-passed",
+      "category": "governance",
+      "required": true
+    },
+    {
+      "id": "docs-registered",
+      "category": "documentation",
+      "required": true
+    },
+    {
+      "id": "fallbacks-present",
+      "category": "resilience",
+      "required": true
+    },
+    {
+      "id": "future-slots-reserved",
+      "category": "future",
+      "required": true
+    },
+    {
+      "id": "operations-defined",
+      "category": "operations",
+      "required": true
+    },
+    {
+      "id": "recovery-defined",
+      "category": "resilience",
+      "required": true
+    }
+  ],
+  "minimumPassRate": 1.0
+}

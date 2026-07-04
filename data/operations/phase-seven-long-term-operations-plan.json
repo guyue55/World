@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第七阶段长期运营计划",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 3 / 4",
+  "status": "implemented-static-operations-plan",
+  "cadence": [
+    {
+      "id": "weekly-content-review",
+      "title": "每周内容复盘",
+      "frequency": "weekly",
+      "owner": "human"
+    },
+    {
+      "id": "monthly-seo-review",
+      "title": "每月 SEO 复盘",
+      "frequency": "monthly",
+      "owner": "human"
+    },
+    {
+      "id": "quarterly-world-book-review",
+      "title": "季度世界册回顾",
+      "frequency": "quarterly",
+      "owner": "human"
+    },
+    {
+      "id": "release-evidence-refresh",
+      "title": "发布证据刷新",
+      "frequency": "per-release",
+      "owner": "human"
+    },
+    {
+      "id": "ai-boundary-review",
+      "title": "AI 边界复查",
+      "frequency": "monthly",
+      "owner": "human"
+    },
+    {
+      "id": "privacy-boundary-review",
+      "title": "私密边界复查",
+      "frequency": "monthly",
+      "owner": "human"
+    }
+  ],
+  "rules": [
+    "长期运营不能绕过 release evidence。",
+    "AI 只能辅助提醒和整理。",
+    "公开运营不得触碰私密档案。",
+    "每次发布必须保留版本记录。"
+  ]
+}

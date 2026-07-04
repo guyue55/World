@@ -1,0 +1,36 @@
+{
+  "version": "V8",
+  "name": "事故响应与告警分级",
+  "levels": [
+    {
+      "id": "P0",
+      "meaning": "隐私泄露、生产不可访问、错误公开",
+      "response": "立即冻结发布、回滚、保留证据、人工复盘"
+    },
+    {
+      "id": "P1",
+      "meaning": "核心路径不可用或部署失败",
+      "response": "止血、回滚或降级、30 分钟内记录"
+    },
+    {
+      "id": "P2",
+      "meaning": "体验、性能、SEO 或局部功能异常",
+      "response": "进入修复队列并在下一轮处理"
+    },
+    {
+      "id": "P3",
+      "meaning": "文案、视觉或轻微运营问题",
+      "response": "常规维护处理"
+    }
+  ],
+  "playbook": [
+    "detect",
+    "classify",
+    "freeze",
+    "rollback-or-mitigate",
+    "verify",
+    "communicate",
+    "postmortem",
+    "ledger"
+  ]
+}

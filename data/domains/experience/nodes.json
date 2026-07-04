@@ -1,0 +1,345 @@
+[
+  {
+    "id": "node-world-manifesto",
+    "slug": "world-manifesto",
+    "title": "古月浮屿世界宣言",
+    "worldTitle": "创世初光",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "一张书桌连接星河。这里不是传统博客，而是一个正在生长的个人数字世界。",
+    "contentPath": "content/manifesto/world-manifesto.md",
+    "tags": [
+      "world",
+      "manifesto",
+      "origin"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": true,
+      "representative": true,
+      "pathCore": true
+    },
+    "createdAt": "2026-05-19",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-digital-universe",
+    "slug": "personal-digital-universe-definition",
+    "title": "古月浮屿的数字宇宙定义",
+    "worldTitle": "宇宙感不是 3D",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "古月浮屿所说的数字宇宙不是公共多人 3D 元宇宙，而是以内容、区域、关系、时间、权限和规则构成的个人数字世界。",
+    "tags": [
+      "digital-universe",
+      "metaverse",
+      "principle"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": true,
+      "representative": true
+    },
+    "createdAt": "2026-05-19",
+    "contentPath": "content/articles/personal-digital-universe-definition.md",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-ai-lighthouse",
+    "slug": "ai-lighthouse-boundary",
+    "title": "AI 灯塔边界",
+    "worldTitle": "灯塔不是太阳",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "AI 可以照亮路径、整理内容、提出草案，但不能替造物主选择道路，也不能越过权限边界。",
+    "tags": [
+      "ai",
+      "lighthouse",
+      "policy"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "home": true,
+      "pathCore": true
+    },
+    "createdAt": "2026-05-19",
+    "contentPath": "content/articles/ai-lighthouse-boundary.md",
+    "cover": "/covers/cover-natural-tech.svg"
+  },
+  {
+    "id": "node-no-ai",
+    "slug": "no-ai-natural-evolution",
+    "title": "无 AI 自然演化原则",
+    "worldTitle": "灯塔熄灭时，世界仍会呼吸",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "古月浮屿必须在没有 AI 时依然能够浏览、搜索、归档和行走。",
+    "tags": [
+      "no-ai",
+      "rule",
+      "world"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "home": true
+    },
+    "createdAt": "2026-05-19",
+    "contentPath": "content/articles/no-ai-natural-evolution.md",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-world-space",
+    "slug": "world-space-layer",
+    "title": "世界空间层设计",
+    "worldTitle": "地图不是分类页",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "Atlas 负责空间导航，Archive 负责现实检索。世界地图不是分类页，而是入口、位置和路径的表达。",
+    "tags": [
+      "atlas",
+      "space",
+      "ia"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": true
+    },
+    "createdAt": "2026-05-19",
+    "contentPath": "content/articles/world-space-layer.md",
+    "cover": "/covers/cover-abstract-world.svg"
+  },
+  {
+    "id": "node-data-guardian",
+    "slug": "world-data-guardian",
+    "title": "世界数据守门人",
+    "worldTitle": "骨架需要校验",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "Zod、校验脚本和 public build check 共同保证世界数据不散、不泄露、不失控。",
+    "tags": [
+      "zod",
+      "schema",
+      "validation",
+      "engineering"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "home": true
+    },
+    "createdAt": "2026-05-19",
+    "contentPath": "content/articles/world-data-guardian.md",
+    "cover": "/covers/cover-natural-tech.svg"
+  },
+  {
+    "id": "node-backlinks",
+    "slug": "backlinks-and-star-lines",
+    "title": "Backlinks 与星线",
+    "worldTitle": "哪些星彼此照见",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "Relation、Backlinks 和 ForwardLinks 让节点之间形成可追溯的星线。",
+    "tags": [
+      "relation",
+      "backlinks",
+      "graph"
+    ],
+    "visibility": "public",
+    "lifeStage": "sprout",
+    "source": "manual",
+    "layer": "interpretation",
+    "createdAt": "2026-05-19",
+    "contentPath": "content/articles/backlinks-and-star-lines.md",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-feishu-mcp",
+    "slug": "feishu-mcp-adk-agent",
+    "title": "飞书 MCP 接入 ADK Agent",
+    "worldTitle": "远方信使接入灯塔",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "一次关于飞书 MCP、ADK Agent 与工具接入的技术探索。",
+    "tags": [
+      "feishu",
+      "mcp",
+      "adk",
+      "agent",
+      "ai"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "chat",
+    "layer": "fact",
+    "featured": {
+      "representative": true,
+      "pathCore": true
+    },
+    "createdAt": "2026-05-18",
+    "contentPath": "content/articles/feishu-mcp-adk-agent.md",
+    "cover": "/covers/cover-natural-tech.svg"
+  },
+  {
+    "id": "node-cli-agent",
+    "slug": "cli-tools-agent-integration",
+    "title": "CLI 工具接入 Agent",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "围绕 CLI、Agent、Skills 与工具调用方式的探索记录。",
+    "tags": [
+      "cli",
+      "agent",
+      "tools"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "chat",
+    "layer": "fact",
+    "createdAt": "2026-05-18",
+    "cover": "/covers/cover-natural-tech.svg"
+  },
+  {
+    "id": "node-docker-cleanup",
+    "slug": "docker-disk-cleanup",
+    "title": "Docker 空间回收排查",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "Mac 上 Docker 镜像、容器与磁盘空间未释放问题的排查记录。",
+    "tags": [
+      "docker",
+      "macos",
+      "cleanup"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "chat",
+    "layer": "fact",
+    "createdAt": "2026-05-18",
+    "cover": "/covers/cover-natural-tech.svg"
+  },
+  {
+    "id": "node-novel-editor",
+    "slug": "static-ai-novel-editor",
+    "title": "静态 AI 小说编辑器",
+    "worldTitle": "纸上创作室",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "一个纯静态前端的小说精炼、重构和创作编辑器设想。",
+    "tags": [
+      "ai",
+      "novel",
+      "static-app",
+      "editor"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "chat",
+    "layer": "interpretation",
+    "featured": {
+      "representative": true,
+      "pathCore": true
+    },
+    "createdAt": "2026-05-14",
+    "contentPath": "content/projects/static-ai-novel-editor.md",
+    "cover": "/covers/cover-natural-tech.svg"
+  },
+  {
+    "id": "node-moonframe",
+    "slug": "moonframe-loft",
+    "title": "月帧阁 / MoonFrame",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "一个大模型 API 驱动的 AI 创作平台品牌方案，面向视频、剧本和短剧创作。",
+    "tags": [
+      "moonframe",
+      "ai-creation",
+      "product"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "chat",
+    "layer": "interpretation",
+    "createdAt": "2026-05-09",
+    "cover": "/covers/cover-product-artifact.svg"
+  },
+  {
+    "id": "node-everything-node",
+    "slug": "everything-is-node",
+    "title": "万物皆节点",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "文章、项目、片刻、关系、规则、事件都可以成为世界中的节点。",
+    "tags": [
+      "node",
+      "principle",
+      "world"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "pathCore": true
+    },
+    "createdAt": "2026-05-19",
+    "contentPath": "content/fragments/everything-is-node.md",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-clear-deep",
+    "slug": "clear-entrance-deep-world",
+    "title": "入口清澈，深处浩瀚",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "第一眼要清楚，继续走下去才发现深处。",
+    "tags": [
+      "ux",
+      "principle",
+      "world"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "createdAt": "2026-05-19",
+    "contentPath": "content/fragments/clear-entrance-deep-world.md",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-memory-light",
+    "slug": "memory-lake-first-light",
+    "title": "记忆湖第一束光",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "这里会保存一些被允许公开的生活片刻与旅行光影，更深处默认被保护。",
+    "tags": [
+      "memory",
+      "life",
+      "lake"
+    ],
+    "visibility": "semiPublic",
+    "lifeStage": "sprout",
+    "source": "manual",
+    "layer": "interpretation",
+    "createdAt": "2026-05-19",
+    "contentPath": "content/memory/memory-lake-first-light.md",
+    "cover": "/covers/cover-memory-river.svg"
+  }
+]

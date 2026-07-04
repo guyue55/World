@@ -1,0 +1,11 @@
+{
+  "version": "R1-RC1",
+  "title": "真实生产收口候选包",
+  "status": "local-engineering-candidate",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "reason": "本地质量门禁与构建可作为候选证据；外部 preview/production URL 与人工签收仍需要真实环境执行。",
+  "handoffToR2": "世界入口与沉浸体验重构",
+  "ultimateGoal": "把可运行基线交付给 R2，使后续首页、Atlas、罗盘和节点体验重构不再被工程稳定性拖累。"
+}

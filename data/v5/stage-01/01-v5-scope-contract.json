@@ -1,0 +1,31 @@
+{
+  "version": "5.0.0",
+  "name": "V5 范围契约",
+  "batch": 1,
+  "stage": 1,
+  "stageName": "V5 范围契约与 V4 证据继承",
+  "stageProgress": "V5 / 第 1 阶段 / 第 1 批 / 共 24 批",
+  "slug": "v5-scope-contract",
+  "status": "complete",
+  "goals": [
+    "定义 V5 做什么/不做什么",
+    "确定联邦世界、多 Agent、运行态平台主线",
+    "禁止无边界社交化和 AI 自动决策"
+  ],
+  "outputs": [
+    "V5ScopeContract",
+    "NonGoals",
+    "RiskBoundary"
+  ],
+  "mustKeep": [
+    "productionLive=false",
+    "private boundary inherited"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-entry",
+    "dataDirectory": "data/v5/stage-01",
+    "docsDirectory": "docs/51-v5/stage-01",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

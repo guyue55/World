@@ -1,0 +1,110 @@
+{
+  "version": "V7",
+  "items": [
+    {
+      "id": "release-cockpit",
+      "name": "发布运营驾驶舱",
+      "kind": "page-component",
+      "status": "complete",
+      "description": "把发布证据、阻断、SEO、分析、运维节奏集中展示。"
+    },
+    {
+      "id": "public-status-readiness",
+      "name": "公开状态页预案",
+      "kind": "public-ops",
+      "status": "complete",
+      "description": "未来可对外展示运行状态，但当前只提供静态准备与人工开关。"
+    },
+    {
+      "id": "deploy-runbook",
+      "name": "部署运行手册",
+      "kind": "runbook",
+      "status": "complete",
+      "description": "列出预览、生产、回滚与签收的顺序。"
+    },
+    {
+      "id": "rollback-ladder",
+      "name": "回滚阶梯",
+      "kind": "operations",
+      "status": "complete",
+      "description": "按配置回退、静态资源回退、代码回退、域名回退分层。"
+    },
+    {
+      "id": "seo-rhythm",
+      "name": "SEO 节奏",
+      "kind": "growth",
+      "status": "complete",
+      "description": "定义 sitemap、robots、OG、结构化数据和搜索可见性的长期检查。"
+    },
+    {
+      "id": "content-cadence",
+      "name": "内容运营节奏",
+      "kind": "content-ops",
+      "status": "complete",
+      "description": "定义每周、每月、季度、年度的内容整理与公开节奏。"
+    },
+    {
+      "id": "incident-playbook",
+      "name": "事故响应手册",
+      "kind": "sre",
+      "status": "complete",
+      "description": "定义发现、分级、止血、回滚、复盘和记录。"
+    },
+    {
+      "id": "observability-lite",
+      "name": "轻量观测层",
+      "kind": "observability",
+      "status": "complete",
+      "description": "在不引入复杂后端的前提下规划 uptime、web vitals、错误和访问分析。"
+    },
+    {
+      "id": "accessibility-budget",
+      "name": "无障碍预算",
+      "kind": "quality",
+      "status": "complete",
+      "description": "为发布前键盘、对比度、语义结构和移动端体验设定门槛。"
+    },
+    {
+      "id": "performance-budget",
+      "name": "性能预算",
+      "kind": "quality",
+      "status": "complete",
+      "description": "定义首屏、图片、脚本、路由和静态 JSON 的预算。"
+    },
+    {
+      "id": "privacy-release-guard",
+      "name": "发布隐私守门",
+      "kind": "privacy",
+      "status": "complete",
+      "description": "发布前扫描 private/family/partner/vault/sealed 内容外泄风险。"
+    },
+    {
+      "id": "ai-release-guard",
+      "name": "AI 发布守门",
+      "kind": "ai-boundary",
+      "status": "complete",
+      "description": "AI 可生成建议但不可自动公开、删除、改权限或篡改证据。"
+    },
+    {
+      "id": "backup-recovery",
+      "name": "备份恢复协议",
+      "kind": "data-sovereignty",
+      "status": "complete",
+      "description": "公开包、私密档案、配置、媒体和证据包分层备份。"
+    },
+    {
+      "id": "version-governance",
+      "name": "版本治理协议",
+      "kind": "governance",
+      "status": "complete",
+      "description": "每轮必须有任务规划、变更清单、检查报告、封版说明和 V 下一轮交接。"
+    },
+    {
+      "id": "v8-handoff",
+      "name": "V8 生产运维交接",
+      "kind": "handoff",
+      "status": "complete",
+      "description": "把真实部署、监控、外部验收与 productionLive 留给 V8。"
+    }
+  ]
+}

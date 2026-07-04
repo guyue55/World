@@ -1,0 +1,242 @@
+{
+  "version": "R8.9",
+  "title": "真实宇宙文明与节点完成线",
+  "principles": [
+    "前台像世界，后台像创世台，档案层必须可靠",
+    "每个页面都必须回答我在哪里、这里是什么、我能做什么、我能去哪",
+    "每个节点都必须具备生命阶段、现实解释、关系语义和下一步动作",
+    "世界动态必须服务探索、理解、复访、回望和维护，而不是只做背景动效",
+    "所有动态体验必须支持 reduced-motion 与移动端信息降级"
+  ],
+  "completionCriteria": [
+    "核心页面拥有文明层、对象层、行动层、节点生命层和返回路径",
+    "访问者可以在世界模式、现实模式、静读模式之间理解差异",
+    "节点具备护照、成长轨迹、关系说明、证据链和下一步动作",
+    "世界对象不是装饰，而是可触发路径、解释或动作反馈",
+    "没有数据库和真实 AI 时，前端宇宙仍可静态安全运行"
+  ],
+  "civilizationLayers": [
+    {
+      "id": "nature",
+      "name": "自然层",
+      "realName": "宇宙天气、光、雾、水、风与星尘",
+      "purpose": "提供空气感、时间感和低干扰生命感",
+      "objects": ["星尘", "水纹", "雾", "月光", "风线"],
+      "defaultAction": "感受世界呼吸"
+    },
+    {
+      "id": "living",
+      "name": "生活层",
+      "realName": "书桌、照片、灯、家、记忆湖边缘",
+      "purpose": "让宇宙保留人的温度，而不是冰冷的技术展示",
+      "objects": ["书桌", "相片", "灯", "杯子", "窗"],
+      "defaultAction": "回到亲密近景"
+    },
+    {
+      "id": "creation",
+      "name": "创作层",
+      "realName": "纸页、笔、灵感、草稿、设计与未完成想法",
+      "purpose": "承接自由输入，并把碎片安放到有序世界",
+      "objects": ["纸页", "笔", "玻璃瓶", "便签", "种子"],
+      "defaultAction": "种下一颗灵感"
+    },
+    {
+      "id": "engineering",
+      "name": "工程层",
+      "realName": "项目、代码、工具、实验室与产品工坊",
+      "purpose": "让想法被拆解、验证、装配和发布",
+      "objects": ["工坊", "装置", "代码卷轴", "齿轮", "仪表盘"],
+      "defaultAction": "启动一台装置"
+    },
+    {
+      "id": "knowledge",
+      "name": "知识层",
+      "realName": "档案馆、图书馆、节点护照、证据链与星图",
+      "purpose": "保证世界可以被检索、理解、审计和迁移",
+      "objects": ["卷宗", "书架", "星盘", "石碑", "护照"],
+      "defaultAction": "翻阅一份卷宗"
+    },
+    {
+      "id": "spirit",
+      "name": "精神层",
+      "realName": "世界宪章、创世原点、未来房间与时间胶囊",
+      "purpose": "保存世界为何存在、如何边界化、如何长期生长",
+      "objects": ["宪章", "门", "时间胶囊", "远方坐标", "誓言"],
+      "defaultAction": "确认世界法则"
+    }
+  ],
+  "worldObjects": [
+    {
+      "id": "paper",
+      "name": "纸页",
+      "realName": "文章、草稿与节点详情入口",
+      "action": "展开卷轴",
+      "href": "/archive",
+      "risk": "低",
+      "mode": "reader"
+    },
+    {
+      "id": "lamp",
+      "name": "灯",
+      "realName": "AI 灯塔与公开导览入口",
+      "action": "点亮灯塔",
+      "href": "/ask",
+      "risk": "边界提示",
+      "mode": "world"
+    },
+    {
+      "id": "compass",
+      "name": "罗盘",
+      "realName": "地图、搜索和当前位置系统",
+      "action": "观测坐标",
+      "href": "/atlas",
+      "risk": "低",
+      "mode": "reality"
+    },
+    {
+      "id": "river",
+      "name": "时间河",
+      "realName": "时间线、世界年表和成长轨迹",
+      "action": "顺流回望",
+      "href": "/timeline",
+      "risk": "低",
+      "mode": "world"
+    },
+    {
+      "id": "archive",
+      "name": "卷宗",
+      "realName": "档案馆、证据链和现实模式",
+      "action": "归档证据",
+      "href": "/archive",
+      "risk": "低",
+      "mode": "reality"
+    },
+    {
+      "id": "door",
+      "name": "雾门",
+      "realName": "私密、未来、实验或未开放空间的边界提示",
+      "action": "确认边界",
+      "href": "/manifesto",
+      "risk": "权限敏感",
+      "mode": "world"
+    }
+  ],
+  "nodeLives": [
+    {
+      "id": "world-principles",
+      "worldTitle": "创世法则的第一束光",
+      "realTitle": "世界设计公理与边界原则",
+      "area": "创世原点 / 世界宪章",
+      "stage": "fruit",
+      "maturity": 92,
+      "visibility": "public",
+      "trust": "人工确认",
+      "origin": "chat-derived + manual curated",
+      "relations": ["入口清澈深处浩瀚", "AI 是灯塔不是太阳", "前台浪漫后台清醒"],
+      "growth": ["概念", "规则", "文档", "前台解释", "检查门禁"],
+      "nextAction": "固化为页面级验收标准"
+    },
+    {
+      "id": "ai-lighthouse-public-guide",
+      "worldTitle": "低光灯塔",
+      "realTitle": "公开 AI 导览与边界说明",
+      "area": "AI 灯塔",
+      "stage": "bloom",
+      "maturity": 84,
+      "visibility": "public-index-only",
+      "trust": "公开上下文",
+      "origin": "rule-generated",
+      "relations": ["公开索引", "路径推荐", "隐私守门"],
+      "growth": ["占位入口", "公开问题", "路径推荐", "审计边界"],
+      "nextAction": "接入真实模型前继续保持只读公开索引"
+    },
+    {
+      "id": "creator-workbench",
+      "worldTitle": "创世台的内室",
+      "realTitle": "Owner 工作台与内容维护闭环",
+      "area": "创世台 / 星尘港",
+      "stage": "growing",
+      "maturity": 76,
+      "visibility": "owner-only",
+      "trust": "需要真实鉴权",
+      "origin": "manual + protocol",
+      "relations": ["收集箱", "权限检查", "导出备份", "AI 审核队列"],
+      "growth": ["协议", "页面", "接口骨架", "待真实持久化"],
+      "nextAction": "接入真实 owner auth 与数据库前保持 noindex"
+    },
+    {
+      "id": "memory-lake-edge",
+      "worldTitle": "记忆湖的公开湖岸",
+      "realTitle": "生活、旅行、家庭记忆的公开边缘",
+      "area": "记忆湖",
+      "stage": "seed",
+      "maturity": 48,
+      "visibility": "semi-public-boundary",
+      "trust": "需人工筛选",
+      "origin": "future-content-slot",
+      "relations": ["时间河", "私密抽屉", "家庭灯火"],
+      "growth": ["区域占位", "边界说明", "公开摘要", "未来真实内容"],
+      "nextAction": "先建立隐私默认规则，再安放真实生活内容"
+    }
+  ],
+  "routeAnchors": [
+    {
+      "match": "/",
+      "where": "创世原点",
+      "what": "世界入口与第一束光",
+      "do": ["进入世界", "打开地图", "询问灯塔"],
+      "next": ["/atlas", "/timeline", "/ask"],
+      "visibility": "public"
+    },
+    {
+      "match": "/atlas",
+      "where": "星图观测台",
+      "what": "世界结构、区域和路径",
+      "do": ["观测结构", "聚焦区域", "切换现实解释"],
+      "next": ["/paths", "/archive", "/timeline"],
+      "visibility": "public"
+    },
+    {
+      "match": "/timeline",
+      "where": "时间河",
+      "what": "世界生长、节点回望和历史厚度",
+      "do": ["顺流回望", "筛选时期", "查看成长"],
+      "next": ["/archive", "/paths", "/atlas"],
+      "visibility": "public"
+    },
+    {
+      "match": "/archive",
+      "where": "档案馆",
+      "what": "现实检索、卷宗与证据链",
+      "do": ["翻阅卷宗", "搜索节点", "查看护照"],
+      "next": ["/node/ai-lighthouse-public-guide", "/ask", "/atlas"],
+      "visibility": "public"
+    },
+    {
+      "match": "/node",
+      "where": "节点卷轴",
+      "what": "单个内容节点、护照、关系和成长轨迹",
+      "do": ["展开节点", "查看关系", "继续探索"],
+      "next": ["/archive", "/timeline", "/atlas"],
+      "visibility": "public"
+    },
+    {
+      "match": "/r4-creator",
+      "where": "创世台",
+      "what": "主人记录、整理、设权、关联与导出",
+      "do": ["安放内容", "检查权限", "处理内容债务"],
+      "next": ["/r6-service", "/r7-evolution", "/archive"],
+      "visibility": "owner-only"
+    }
+  ],
+  "dailyWorld": {
+    "moods": ["安静", "明亮", "低光", "生长", "沉淀", "苏醒"],
+    "todayPrompts": [
+      "今天先不用打开全部宇宙，只需沿一条路径前进。",
+      "如果世界显得拥挤，先回到创世原点和七个锚点。",
+      "每个新增造物都必须有现实解释、所属区域和默认权限。",
+      "动态层应该帮助理解，而不是遮挡内容。"
+    ],
+    "maintenanceRituals": ["浇水种子", "修复孤岛", "补充护照", "确认权限", "归档证据", "回到地图"]
+  }
+}

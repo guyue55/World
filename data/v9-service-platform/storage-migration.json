@@ -1,0 +1,44 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "ports": [
+    {
+      "id": "WorldNodeRepository",
+      "mode": "read/write abstraction",
+      "current": "json-file-readonly",
+      "future": "database-backed"
+    },
+    {
+      "id": "AuditLedgerRepository",
+      "mode": "append-only",
+      "current": "json-ledger",
+      "future": "database append table"
+    },
+    {
+      "id": "ObjectAssetStore",
+      "mode": "binary assets",
+      "current": "public/static references",
+      "future": "object storage with signed URL"
+    },
+    {
+      "id": "SecretStore",
+      "mode": "runtime secret",
+      "current": "env only",
+      "future": "managed secret vault"
+    }
+  ],
+  "migrationSteps": [
+    "snapshot-current-json",
+    "validate-schema",
+    "dry-run-import",
+    "compare-counts",
+    "manual-signoff",
+    "switch-read-path",
+    "enable-write-path-after-approval"
+  ],
+  "rollback": [
+    "keep-static-json-snapshot",
+    "disable-service-writes",
+    "restore-read-from-json"
+  ]
+}

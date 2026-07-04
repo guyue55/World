@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第八阶段入口门禁",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 4 / 4",
+  "status": "phase-eight-planning-allowed",
+  "entryDecision": "phase-eight-planning-allowed-real-production-release-not-started",
+  "structureReady": [
+    "phase-seven-release-scope-contract",
+    "phase-seven-release-evidence-ledger",
+    "phase-seven-release-dashboard",
+    "phase-seven-seo-analytics-plan",
+    "phase-seven-long-term-operations-plan",
+    "phase-seven-backup-rollback-plan",
+    "phase-seven-version-governance"
+  ],
+  "phaseEightCandidateFocus": [
+    "production deployment",
+    "domain and HTTPS",
+    "CDN and cache policy",
+    "production smoke test",
+    "monitoring and error tracking",
+    "rollback execution",
+    "post-release acceptance"
+  ],
+  "mustNotDo": [
+    "deploy without dry-run",
+    "ship without manual signoff",
+    "skip blocker review",
+    "publish private content",
+    "enable AI autonomous publish",
+    "claim release-ready without evidence"
+  ],
+  "entryRules": [
+    "第八阶段必须以真实生产环境为中心。",
+    "所有发布动作必须绑定 evidence ledger。",
+    "发布前必须完成人工签收与阻断复查。",
+    "上线后必须执行 smoke test、监控与回滚预案验证。"
+  ]
+}

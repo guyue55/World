@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "插件市场模型",
+  "batch": 13,
+  "stage": 4,
+  "stageName": "真实插件市场与外部生态接入",
+  "stageProgress": "V5 / 第 4 阶段 / 第 13 批 / 共 24 批",
+  "slug": "plugin-market-model",
+  "status": "complete",
+  "goals": [
+    "定义插件市场模型",
+    "插件包/版本/发布者/审核状态",
+    "安装记录"
+  ],
+  "outputs": [
+    "PluginCatalog",
+    "PluginPackage"
+  ],
+  "mustKeep": [
+    "review status required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-plugin-market",
+    "dataDirectory": "data/v5/stage-04",
+    "docsDirectory": "docs/51-v5/stage-04",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

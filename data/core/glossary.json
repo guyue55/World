@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "terms": [
+    {
+      "term": "World",
+      "zh": "世界",
+      "definition": "古月浮屿整体，不等于网站页面集合。"
+    },
+    {
+      "term": "Kernel",
+      "zh": "内核",
+      "definition": "保证世界长期成立的协议、规则、检查与边界聚合。"
+    },
+    {
+      "term": "Node",
+      "zh": "节点",
+      "definition": "世界的基本生命单位。"
+    },
+    {
+      "term": "Area",
+      "zh": "区域",
+      "definition": "世界空间中的主要区域。"
+    },
+    {
+      "term": "Relation",
+      "zh": "星线",
+      "definition": "节点之间可解释、可追溯的连接。"
+    },
+    {
+      "term": "Projection",
+      "zh": "投影",
+      "definition": "同一世界对象在页面、索引、路径、地图中的呈现。"
+    },
+    {
+      "term": "Visibility",
+      "zh": "可见性",
+      "definition": "公开、半公开、私密、家庭、伴侣、保险箱、封存、沉默等边界。"
+    },
+    {
+      "term": "Fallback",
+      "zh": "降级",
+      "definition": "高级能力不可用时，世界仍可运行的替代路径。"
+    },
+    {
+      "term": "ADR",
+      "zh": "架构决策记录",
+      "definition": "记录重要架构选择、原因和后果的文档。"
+    },
+    {
+      "term": "Foundation Gate",
+      "zh": "地基门禁",
+      "definition": "进入后续阶段前必须通过的骨架质量门槛。"
+    }
+  ],
+  "rules": [
+    "术语必须优先使用注册表定义。",
+    "新增核心概念必须加入 glossary。",
+    "文档、代码、数据命名应尽量与术语保持一致。"
+  ]
+}

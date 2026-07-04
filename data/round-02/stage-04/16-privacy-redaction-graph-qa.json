@@ -1,0 +1,21 @@
+{
+  "round": 2,
+  "stage": 4,
+  "batch": 16,
+  "status": "complete",
+  "completedBatches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "不新增阶段 4 批次；阶段 5 复用 redaction 边界，阶段 6 主题不得泄露私密原文。",
+    "newTasks": [
+      "AI lighthouse forbidden action 检查",
+      "theme variant 不泄露私密原文"
+    ]
+  },
+  "productionLive": false
+}

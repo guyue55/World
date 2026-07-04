@@ -1,0 +1,22 @@
+{
+  "id": "batch-05",
+  "batch": 5,
+  "stage": 2,
+  "title": "API 合约与路由占位",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/05-API-合约与路由占位.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

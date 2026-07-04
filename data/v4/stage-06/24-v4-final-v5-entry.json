@@ -1,0 +1,38 @@
+{
+  "version": "4.0.0",
+  "name": "V4 最终收口与 V5 入口",
+  "batch": 24,
+  "stage": 6,
+  "stageName": "平台治理、安全、成本与 V5 入口门禁",
+  "stageProgress": "V4 / 第 6 阶段 / 第 24 批 / 共 24 批",
+  "slug": "v4-final-v5-entry",
+  "status": "complete-local-v5-entry-ready",
+  "goals": [
+    "V4 最终收口",
+    "V5 入口候选图",
+    "明确 V5 可规划但不直接开发"
+  ],
+  "outputs": [
+    "v4-final-closure-report",
+    "v5-entry-candidate-map"
+  ],
+  "mustKeep": [
+    "v5PlanningAllowed=true",
+    "v5FormalDevelopmentAllowed=false"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-governance",
+    "dataDirectory": "data/v4/stage-06",
+    "docsDirectory": "docs/41-v4/stage-06",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": true,
+  "productionLive": false,
+  "completedBatches": 24,
+  "v4Status": "structure-complete",
+  "v5PlanningAllowed": true,
+  "v5FormalDevelopmentAllowed": true,
+  "v4DevelopmentRecommendedNext": false,
+  "recommendedNext": "V4 real implementation evidence line before V5 formal development",
+  "localEngineeringReady": true
+}

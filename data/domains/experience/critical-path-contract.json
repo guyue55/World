@@ -1,0 +1,87 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 首屏关键路径契约",
+  "principle": "首屏只承载世界入口，不承载完整宇宙重量。",
+  "routes": [
+    {
+      "route": "/",
+      "critical": [
+        "site identity",
+        "primary navigation",
+        "representative public nodes",
+        "one clear next action"
+      ],
+      "defer": [
+        "full archive",
+        "full relation graph",
+        "heavy status panels",
+        "future visual providers"
+      ]
+    },
+    {
+      "route": "/atlas",
+      "critical": [
+        "area summary",
+        "static spatial entry",
+        "fallback list"
+      ],
+      "defer": [
+        "animated graph",
+        "2.5D map",
+        "force layout"
+      ]
+    },
+    {
+      "route": "/archive",
+      "critical": [
+        "public index summary",
+        "visible first page",
+        "empty state"
+      ],
+      "defer": [
+        "deep markdown body",
+        "full text search enhancement"
+      ]
+    },
+    {
+      "route": "/status",
+      "critical": [
+        "health summary",
+        "key pass/fail state"
+      ],
+      "defer": [
+        "full panel stack",
+        "deep audit matrix"
+      ]
+    },
+    {
+      "route": "/skeleton",
+      "critical": [
+        "foundation summary",
+        "core layers"
+      ],
+      "defer": [
+        "all long-form panels",
+        "deep governance ledger"
+      ]
+    },
+    {
+      "route": "/ask",
+      "critical": [
+        "low-light guide",
+        "AI boundary notice"
+      ],
+      "defer": [
+        "AI provider",
+        "RAG context",
+        "streaming answer UI"
+      ]
+    }
+  ],
+  "rules": [
+    "关键路径必须可静态渲染。",
+    "defer 项必须有 fallback 或独立组件边界。",
+    "首屏不得依赖 AI、3D、WebXR、音频、完整搜索索引。",
+    "未来性能优化优先拆分关键路径与延迟路径。"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段规划线收口报告",
+  "stageProgress": "phase-three-planning line batch 4 / 4",
+  "decision": "phase-three-planning-structure-complete-release-still-blocked",
+  "completedBatches": [
+    "planning-foundation",
+    "content-growth-map",
+    "ai-lighthouse-roadmap",
+    "operations-export-inheritance-plan"
+  ],
+  "summary": {
+    "contentGrowthModules": 5,
+    "aiAllowedCapabilities": 5,
+    "operationModules": 5,
+    "exportFormats": 5,
+    "releaseDecision": "not-ready-for-release"
+  },
+  "nextTracks": [
+    "real evidence execution",
+    "phase three implementation batch planning",
+    "browser QA defect-driven polish",
+    "content exhibition prototype",
+    "export center prototype"
+  ],
+  "mustPreserve": [
+    "release blockers",
+    "AI boundary",
+    "public/private build boundary",
+    "contract/lib/component/script/doc structure",
+    "no zip unless requested"
+  ],
+  "rules": [
+    "第三阶段规划线完成不代表第三阶段实现完成。",
+    "第三阶段实现必须继续以小批次、可检查、可回滚方式推进。",
+    "release-ready 仍需真实执行证据。",
+    "任何新能力都必须可被 docs 和 scripts 检查。"
+  ]
+}

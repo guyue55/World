@@ -1,0 +1,31 @@
+{
+  "version": "6.0.0",
+  "name": "V6 信息架构与页面矩阵",
+  "batch": 3,
+  "stage": 1,
+  "stageName": "V6 范围契约与 V5 证据继承",
+  "stageProgress": "V6 / 第 1 阶段 / 第 3 批 / 共 24 批",
+  "slug": "v6-ia-page-matrix",
+  "status": "complete",
+  "goals": [
+    "建立 V6 页面矩阵",
+    "定义 V6 feature 与 platform 模块",
+    "保证页面化与组件化"
+  ],
+  "outputs": [
+    "V6RouteMatrix",
+    "V6FeatureMatrix"
+  ],
+  "mustKeep": [
+    "/v6",
+    "/v6-world-network",
+    "/v6-civilization-os"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-entry",
+    "dataDirectory": "data/v6/stage-01",
+    "docsDirectory": "docs/61-v6/stage-01",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

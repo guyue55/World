@@ -1,0 +1,77 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿世界宪章运行化协议",
+  "principle": "世界宪章不能只写在文档里，它必须进入检查、治理和未来扩展护栏。",
+  "charterArticles": [
+    {
+      "id": "article-identity",
+      "title": "古月浮屿不是传统博客，而是个人数字世界。",
+      "runtimeMapping": [
+        "world-manifest",
+        "world-protocol-registry",
+        "world-kernel"
+      ]
+    },
+    {
+      "id": "article-ai",
+      "title": "AI 是灯塔，不是太阳。",
+      "runtimeMapping": [
+        "ai-boundary-policy",
+        "check:ai-boundary",
+        "ADR-0003"
+      ]
+    },
+    {
+      "id": "article-privacy",
+      "title": "公开层不是完整世界。",
+      "runtimeMapping": [
+        "permissions",
+        "export-contract",
+        "check:public",
+        "ADR-0004"
+      ]
+    },
+    {
+      "id": "article-fallback",
+      "title": "无 AI 时世界仍能运行。",
+      "runtimeMapping": [
+        "fallback-strategy",
+        "operations",
+        "ask low-light mode"
+      ]
+    },
+    {
+      "id": "article-growth",
+      "title": "世界可以生长，但不能无记录地变形。",
+      "runtimeMapping": [
+        "evolution-policy",
+        "world-events",
+        "snapshot-policy"
+      ]
+    },
+    {
+      "id": "article-life",
+      "title": "世界为生活服务，不让生活服务世界。",
+      "runtimeMapping": [
+        "maintenance-calendar",
+        "future-expansion-guardrails",
+        "risk-register"
+      ]
+    },
+    {
+      "id": "article-future",
+      "title": "未来扩展必须通过注册点进入世界。",
+      "runtimeMapping": [
+        "extension-registry",
+        "capability-slots",
+        "capability-maturity-model"
+      ]
+    }
+  ],
+  "rules": [
+    "核心原则必须有运行时映射。",
+    "宪章变更必须更新 ADR 或治理台账。",
+    "任何未来阶段不得削弱宪章运行映射。",
+    "原则若无法进入检查，至少必须进入文档注册与风险台账。"
+  ]
+}

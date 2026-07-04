@@ -1,0 +1,23 @@
+{
+  "version": "V4",
+  "stage": 3,
+  "batch": 12,
+  "status": "complete",
+  "completedBatches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "阶段 4 必须完成多端沉浸、总审查、封版报告，并给 V5 真实内容版留下清晰入口。",
+    "newTasks": [
+      "mobile world dock",
+      "audit",
+      "seal report",
+      "v5 handoff"
+    ]
+  },
+  "productionLive": false
+}

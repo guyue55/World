@@ -1,0 +1,27 @@
+{
+  "version": "V7",
+  "name": "备份恢复与回滚阶梯",
+  "backupTargets": [
+    "source-code",
+    "public-data",
+    "private-archive-index-redacted",
+    "media-manifest",
+    "release-evidence",
+    "environment-template",
+    "docs-and-runbooks"
+  ],
+  "rollbackSteps": [
+    "freeze writes",
+    "switch to previous static artifact",
+    "restore public JSON manifests",
+    "rollback source commit",
+    "verify privacy boundary",
+    "run smoke checks",
+    "record incident review"
+  ],
+  "rules": [
+    "私密数据不进入公开备份包。",
+    "回滚前必须保留当前事故证据。",
+    "任何回滚不得扩大公开范围。"
+  ]
+}

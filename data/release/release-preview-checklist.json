@@ -1,0 +1,67 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 预览发布检查清单",
+  "principle": "预览发布不是上线，而是让真实环境暴露骨架问题。",
+  "requiredChecks": [
+    {
+      "id": "preview-build",
+      "check": "Preview deployment build succeeds"
+    },
+    {
+      "id": "home-route",
+      "check": "/ renders correctly"
+    },
+    {
+      "id": "atlas-route",
+      "check": "/atlas renders and fallback is visible"
+    },
+    {
+      "id": "archive-route",
+      "check": "/archive search/filter entry is usable"
+    },
+    {
+      "id": "node-route",
+      "check": "representative /node/[slug] renders markdown and metadata"
+    },
+    {
+      "id": "paths-route",
+      "check": "/paths renders guided paths"
+    },
+    {
+      "id": "ask-route",
+      "check": "/ask renders low-light AI fallback"
+    },
+    {
+      "id": "status-route",
+      "check": "/status renders summary and stack"
+    },
+    {
+      "id": "skeleton-route",
+      "check": "/skeleton renders foundation stack"
+    },
+    {
+      "id": "public-index",
+      "check": "/world-index.json contains only public/semiPublic projections"
+    },
+    {
+      "id": "manifest",
+      "check": "/world-manifest.json exists"
+    },
+    {
+      "id": "rss-sitemap",
+      "check": "RSS and sitemap are reachable if enabled"
+    },
+    {
+      "id": "og-preview",
+      "check": "social preview metadata is coherent"
+    }
+  ],
+  "blockingIssues": [
+    "private/family/partner/vault content appears in public build",
+    "core route returns 404",
+    "homepage unreadable on mobile",
+    "desktop layout extremely narrow on wide screen",
+    "AI provider required before /ask is readable",
+    "build requires unregistered secret"
+  ]
+}

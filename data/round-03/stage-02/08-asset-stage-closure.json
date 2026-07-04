@@ -1,0 +1,17 @@
+{
+  "round": 3,
+  "stage": 2,
+  "batch": 8,
+  "status": "complete",
+  "completedBatches": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "先建立素材登记制度；第四轮可专门做真实视觉资产线；后续必须区分真实摄影、AI 生成、SVG 示意和占位图。"
+  },
+  "productionLive": false
+}

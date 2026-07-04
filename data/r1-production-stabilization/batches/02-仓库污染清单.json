@@ -1,0 +1,15 @@
+{
+  "batch": 2,
+  "stage": 1,
+  "title": "仓库污染清单",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 最终基线统一与仓库清洁：仓库污染清单",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

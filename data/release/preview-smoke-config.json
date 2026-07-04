@@ -1,0 +1,78 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 预览冒烟配置",
+  "stageProgress": "real-validation line batch 3 / 4",
+  "status": "pending-preview-url",
+  "previewUrlEnv": "GUYUE_PREVIEW_URL",
+  "routeReplacements": {
+    "/node/[slug]": "/node/world-manifesto",
+    "/paths/[id]": "/paths/first-visit"
+  },
+  "routes": [
+    {
+      "route": "/",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/archive",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/node/world-manifesto",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/paths",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/paths/first-visit",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/atlas",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/timeline",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/ask",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/status",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    },
+    {
+      "route": "/skeleton",
+      "status": "pending",
+      "lastStatusCode": null,
+      "checkedAt": null
+    }
+  ],
+  "rules": [
+    "只有真实请求成功后才能把 route status 改为 passed。",
+    "代表性 slug/id 必须来自公开内容。",
+    "preview smoke 不替代 build 或 browser QA。"
+  ]
+}

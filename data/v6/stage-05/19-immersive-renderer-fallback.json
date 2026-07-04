@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "沉浸式体验与降级策略",
+  "batch": 19,
+  "stage": 5,
+  "stageName": "沉浸式共享宇宙与长期记忆图谱",
+  "stageProgress": "V6 / 第 5 阶段 / 第 19 批 / 共 24 批",
+  "slug": "immersive-renderer-fallback",
+  "status": "complete",
+  "goals": [
+    "定义沉浸式渲染与降级",
+    "WebGL 可选、语义列表永远可用",
+    "低性能设备自动降级"
+  ],
+  "outputs": [
+    "ImmersiveRenderer",
+    "SemanticFallback"
+  ],
+  "mustKeep": [
+    "fallback required"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-memory-universe",
+    "dataDirectory": "data/v6/stage-05",
+    "docsDirectory": "docs/61-v6/stage-05",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

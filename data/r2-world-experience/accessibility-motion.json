@@ -1,0 +1,13 @@
+{
+  "requirements": [
+    "所有主要入口有文本标签",
+    "世界语言必须配现实解释",
+    "动画不可成为理解前提",
+    "支持 prefers-reduced-motion",
+    "颜色与背景保持可读对比",
+    "按钮和链接保留明确点击目标"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布干跑计划契约",
+  "principle": "发布前必须先干跑，不触碰生产发布，不伪造通过结果。",
+  "stageProgress": "release-dry-run-handoff line batch 1 / 4",
+  "status": "implemented-static-dry-run-plan",
+  "dryRunSteps": [
+    {
+      "id": "print-runbook",
+      "command": "npm run real-execution-runbook:print",
+      "required": true
+    },
+    {
+      "id": "dependency-probe",
+      "command": "npm run dependency-bootstrap:probe",
+      "required": true
+    },
+    {
+      "id": "evidence-capture",
+      "command": "npm run evidence:capture",
+      "required": true
+    },
+    {
+      "id": "execution-summary",
+      "command": "npm run real-execution:summarize",
+      "required": true
+    },
+    {
+      "id": "manual-review-print",
+      "command": "npm run manual-release-review:print",
+      "required": true
+    },
+    {
+      "id": "release-gate",
+      "command": "npm run release:local-gate",
+      "required": true
+    }
+  ],
+  "output": "reports/release-dry-run-summary.json",
+  "rules": [
+    "dry-run 不执行生产部署。",
+    "dry-run 失败必须保留失败命令和输出摘要。",
+    "任一 required step 失败时 dry-run status=blocked。",
+    "dry-run 通过也不等于人工核验通过。"
+  ]
+}

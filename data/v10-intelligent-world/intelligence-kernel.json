@@ -1,0 +1,24 @@
+{
+  "version": "V10",
+  "kernel": {
+    "worldState": "append-only-ledger + derived projections",
+    "memoryContinuity": "timeline + relation graph + privacy gate",
+    "aiMode": "assistive-not-authoritative",
+    "offlineMode": "maps, archive, timeline and static JSON remain usable without AI"
+  },
+  "stateAxes": [
+    "time",
+    "space",
+    "relation",
+    "privacy",
+    "lifeStage",
+    "trustLevel"
+  ],
+  "invariants": [
+    "AI 不能自动公开",
+    "AI 不能覆盖原文",
+    "Vault 永不进入默认上下文",
+    "真实记录与 AI 推测必须区分",
+    "所有长期记忆必须可导出"
+  ]
+}

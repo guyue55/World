@@ -1,0 +1,18 @@
+{
+  "stage": 1,
+  "name": "公开发布运营策略与内容节奏",
+  "status": "complete",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "checks": [
+    "check:r8-public-operations:stage-01",
+    "lint"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第五阶段私密档案与传承系统范围契约",
+  "principle": "第五阶段从公开世界背后的私密档案开始，但绝不把私密内容带入公开构建。",
+  "stageProgress": "phase-five-private-archive-inheritance line batch 1 / 4",
+  "status": "implemented-static-scope-contract",
+  "focus": [
+    "private archive boundary",
+    "family and child content boundary",
+    "time capsule planning",
+    "annual world book planning",
+    "inheritance export planning",
+    "privacy tier operations",
+    "sensitive content review"
+  ],
+  "visibilityTiers": [
+    "private",
+    "family",
+    "partner",
+    "vault",
+    "sealed",
+    "silent"
+  ],
+  "nonGoals": [
+    "storing real private content in repository",
+    "public rendering of private records",
+    "AI autonomous access to private archive",
+    "automatic inheritance package creation",
+    "backend secrets or accounts",
+    "medical/legal/financial sensitive advice"
+  ],
+  "entryGuards": [
+    "public build must exclude private tiers",
+    "AI cannot read private archive without explicit future permission flow",
+    "all private schemas must be metadata-first",
+    "sample data must be placeholder-only",
+    "phase-six AI systems must inherit this boundary"
+  ],
+  "rules": [
+    "第五阶段只建立私密档案结构、边界、占位样例和交接协议。",
+    "不得写入真实家庭、孩子、伴侣、健康、财务或身份敏感内容。",
+    "private/family/partner/vault/sealed/silent 不得进入 public routes。",
+    "AI 是灯塔，不是太阳；不能自动读取、发布、删除或改可见性。",
+    "release-ready 缺口继续保留，不因第五阶段开发自动关闭。"
+  ]
+}

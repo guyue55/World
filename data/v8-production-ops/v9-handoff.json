@@ -1,0 +1,29 @@
+{
+  "version": "V8",
+  "name": "V9 服务化平台版交接",
+  "status": "handoff-ready",
+  "productionLive": false,
+  "v9Focus": [
+    "真实身份系统",
+    "RBAC 权限",
+    "后端 API",
+    "真实审计日志",
+    "私密档案服务",
+    "内容编辑后台",
+    "多端同步",
+    "团队协作",
+    "真实备份恢复服务"
+  ],
+  "carryForward": [
+    "production deployment evidence",
+    "observability baseline",
+    "incident ledger",
+    "privacy boundary evidence",
+    "manual signoff process"
+  ],
+  "mustNotDo": [
+    "把 V9 服务化能力塞回 V8",
+    "没有身份系统时开放私密协作",
+    "让 AI 绕过人工审批"
+  ]
+}

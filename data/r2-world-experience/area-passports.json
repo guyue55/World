@@ -1,0 +1,70 @@
+{
+  "areas": [
+    {
+      "id": "origin",
+      "worldName": "创世原点",
+      "realName": "世界入口与项目解释中心",
+      "purpose": "让访客理解古月浮屿为何存在。",
+      "defaultVisibility": "public",
+      "entry": "/",
+      "exit": "/atlas"
+    },
+    {
+      "id": "time-river",
+      "worldName": "时间河",
+      "realName": "时间线与世界生长记录",
+      "purpose": "按时间理解内容、阶段和回望。",
+      "defaultVisibility": "public",
+      "entry": "/timeline",
+      "exit": "/atlas"
+    },
+    {
+      "id": "tech",
+      "worldName": "技术星域",
+      "realName": "技术实践、AI、CLI、架构和排错记录",
+      "purpose": "展示工程能力与技术探索。",
+      "defaultVisibility": "public",
+      "entry": "/archive?area=tech",
+      "exit": "/paths"
+    },
+    {
+      "id": "workshop",
+      "worldName": "产品工坊",
+      "realName": "项目、工具、产品原型与复盘",
+      "purpose": "呈现想法从零件到装置的过程。",
+      "defaultVisibility": "public",
+      "entry": "/paths",
+      "exit": "/atlas"
+    },
+    {
+      "id": "memory",
+      "worldName": "记忆湖",
+      "realName": "生活片刻、照片、旅行与温柔记录",
+      "purpose": "让生活内容被温柔安放，不误公开。",
+      "defaultVisibility": "semi-public",
+      "entry": "/archive?area=memory",
+      "exit": "/atlas"
+    },
+    {
+      "id": "archive",
+      "worldName": "档案馆",
+      "realName": "文档、文章、资料和归档视图",
+      "purpose": "提供现实模式和快速查找。",
+      "defaultVisibility": "public",
+      "entry": "/archive",
+      "exit": "/"
+    },
+    {
+      "id": "lighthouse",
+      "worldName": "AI灯塔",
+      "realName": "搜索、导览、问答与隐私守门入口",
+      "purpose": "帮助访客理解世界，但不替代世界本身。",
+      "defaultVisibility": "public",
+      "entry": "/ask",
+      "exit": "/atlas"
+    }
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

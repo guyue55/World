@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布交接包清单契约",
+  "principle": "交接不是打包文件而已，而是把命令、证据、风险、阻断和人工职责一起交出去。",
+  "stageProgress": "release-dry-run-handoff line batch 2 / 4",
+  "status": "implemented-static-handoff-manifest",
+  "requiredDocuments": [
+    "docs/00-overview/v1-real-execution-landing-final-report.md",
+    "docs/05-engineering/v1-real-execution-runbook.md",
+    "docs/05-engineering/v1-real-execution-aggregator.md",
+    "docs/05-engineering/v1-manual-release-review.md",
+    "docs/05-engineering/v1-release-dry-run.md"
+  ],
+  "requiredReports": [
+    "reports/dependency-bootstrap-probe.json",
+    "reports/real-evidence-capture.json",
+    "reports/real-execution-summary.json",
+    "reports/release-dry-run-summary.json"
+  ],
+  "requiredCommands": [
+    "npm install",
+    "npm run release:dry-run",
+    "npm run real-execution:summarize",
+    "npm run manual-release-review:print",
+    "npm run release:local-gate"
+  ],
+  "handoffRisks": [
+    "release-ready 仍未达成",
+    "真实 reports 可能尚未生成",
+    "人工核验仍 pending",
+    "P0/P1 blocker 仍可能 open",
+    "preview/performance/browser QA 仍需真实执行"
+  ],
+  "rules": [
+    "交接包清单可以生成，但不代表生产发布。",
+    "缺少 requiredReports 时必须标记 handoff-incomplete。",
+    "handoffRisks 不得被隐藏。",
+    "交接人必须确认 release-ready 仍由证据矩阵决定。"
+  ]
+}

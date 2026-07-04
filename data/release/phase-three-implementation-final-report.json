@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段实现线收口报告",
+  "stageProgress": "phase-three-implementation line batch 4 / 4",
+  "decision": "phase-three-implementation-prototypes-complete-release-still-blocked",
+  "releaseDecision": "not-ready-for-release",
+  "implementedRoutes": [
+    "/exhibitions",
+    "/ai-workbench",
+    "/export-center"
+  ],
+  "implementedBatches": [
+    "theme-exhibition-prototype",
+    "ai-workbench-prototype",
+    "export-center-prototype",
+    "implementation-closure"
+  ],
+  "preservedBoundaries": [
+    "release-ready remains blocked",
+    "AI cannot auto publish/delete/change visibility",
+    "private inheritance package requires confirmation",
+    "planning-only exhibition is not public navigation",
+    "all new modules have contract/lib/component/script/doc"
+  ],
+  "mustRunBeforeRelease": [
+    "npm install",
+    "npm run release:local-gate",
+    "npm run check:world-core",
+    "manual browser QA",
+    "preview smoke",
+    "performance measurement"
+  ],
+  "rules": [
+    "实现线完成的是静态原型，不是生产发布。",
+    "新增路由必须进入真实浏览器 QA 矩阵后才能判断体验通过。",
+    "release blockers open 时不得 release-ready。",
+    "后续实现批次必须继续按 contract/lib/component/script/doc 结构推进。"
+  ]
+}

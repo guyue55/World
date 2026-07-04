@@ -1,0 +1,23 @@
+{
+  "version": "V8",
+  "name": "人工签收与回滚演练",
+  "manualSignoff": false,
+  "rollbackDrillPassed": false,
+  "signoffItems": [
+    "full build exit 0",
+    "preview smoke passed",
+    "production URL verified",
+    "privacy boundary verified",
+    "AI boundary verified",
+    "rollback path tested",
+    "known blockers recorded"
+  ],
+  "rollbackLayers": [
+    "feature flag/config rollback",
+    "static artifact rollback",
+    "source commit rollback",
+    "public JSON rollback",
+    "DNS/domain rollback",
+    "content visibility rollback"
+  ]
+}

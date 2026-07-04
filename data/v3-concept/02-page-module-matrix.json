@@ -1,0 +1,121 @@
+{
+  "version": "3.0.0-concept-completion",
+  "name": "V3 信息架构与页面矩阵",
+  "batch": 2,
+  "totalBatches": 6,
+  "stageProgress": "V3 概念深化与实现任务拆解线 / 第 2 批 / 共 6 批",
+  "routes": [
+    {
+      "path": "/v3-universe",
+      "purpose": "宇宙总览与星河入口",
+      "modules": [
+        "UniverseHero",
+        "MemoryOrbitList",
+        "SemanticFallbackList",
+        "AIGuidancePanel"
+      ],
+      "privacyLevel": "public-safe"
+    },
+    {
+      "path": "/v3-memory-graph",
+      "purpose": "世界记忆与语义关系图谱",
+      "modules": [
+        "MemoryGraphCanvas",
+        "MemoryEdgeInspector",
+        "RedactionBanner",
+        "GraphListFallback"
+      ],
+      "privacyLevel": "mixed-redacted"
+    },
+    {
+      "path": "/v3-spaces",
+      "purpose": "多空间入口与空间桥接状态",
+      "modules": [
+        "SpaceGrid",
+        "SpaceBridgePolicyPanel",
+        "BlockedBridgeList"
+      ],
+      "privacyLevel": "public-safe"
+    },
+    {
+      "path": "/v3-ai-companion",
+      "purpose": "AI 世界维护伙伴与建议审计",
+      "modules": [
+        "SuggestionQueue",
+        "RiskReminderPanel",
+        "HumanApprovalPanel"
+      ],
+      "privacyLevel": "owner-reviewed"
+    },
+    {
+      "path": "/v3-life-archive",
+      "purpose": "长期生命档案与年度世界册入口",
+      "modules": [
+        "ArchiveTimeline",
+        "WorldbookStatus",
+        "ExportPlanPanel"
+      ],
+      "privacyLevel": "mixed-redacted"
+    },
+    {
+      "path": "/v3-legacy",
+      "purpose": "传承协议、时间胶囊与访问窗口",
+      "modules": [
+        "LegacyWindowPanel",
+        "CapsuleStatusList",
+        "RecipientVerificationPanel"
+      ],
+      "privacyLevel": "owner-only"
+    },
+    {
+      "path": "/v3-exhibitions",
+      "purpose": "主题展览、记忆路径和星座式内容策展",
+      "modules": [
+        "ExhibitionConstellation",
+        "ThemeGallery",
+        "WorldbookExportCTA"
+      ],
+      "privacyLevel": "public-safe"
+    },
+    {
+      "path": "/v3-worldbook",
+      "purpose": "世界册生成、导出与年度归档",
+      "modules": [
+        "WorldbookBuilder",
+        "ExportFormatChooser",
+        "ReviewChecklist"
+      ],
+      "privacyLevel": "owner-reviewed"
+    },
+    {
+      "path": "/v3-governance",
+      "purpose": "伦理、风险、成本、安全与可访问性治理",
+      "modules": [
+        "RiskRegister",
+        "CostGuardPanel",
+        "AccessibilityGatePanel",
+        "AuditSummary"
+      ],
+      "privacyLevel": "operator"
+    },
+    {
+      "path": "/pre-v4-gate",
+      "purpose": "V4 前入口门禁和证据状态",
+      "modules": [
+        "EvidenceMatrix",
+        "CommandBlockerLedger",
+        "V4EntryDecision"
+      ],
+      "privacyLevel": "operator"
+    }
+  ],
+  "moduleBoundaries": [
+    "v3 universe UI cannot import vault raw data",
+    "memory graph must support redacted nodes",
+    "AI companion only consumes approved context",
+    "legacy pages require owner or verified recipient",
+    "worldbook export requires review checklist",
+    "governance pages aggregate status but do not unlock gates"
+  ],
+  "ready": false
+}

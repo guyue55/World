@@ -1,0 +1,21 @@
+{
+  "id": "v6-private-ai-redacted-memory-graph",
+  "version": "6.0.0",
+  "name": "V6 脱敏记忆图谱",
+  "productionLive": false,
+  "nodes": [
+    { "id": "world-origin", "label": "世界起源", "visibility": "redacted", "kind": "memory" },
+    { "id": "private-archive", "label": "私密档案", "visibility": "redacted", "kind": "system" },
+    { "id": "ai-boundary", "label": "AI 边界", "visibility": "public", "kind": "rule" }
+  ],
+  "edges": [
+    { "from": "world-origin", "to": "private-archive", "relation": "requires-boundary", "visibility": "redacted" },
+    { "from": "private-archive", "to": "ai-boundary", "relation": "constrained-by", "visibility": "public" }
+  ],
+  "guarantees": [
+    "no private raw content",
+    "no vault originals",
+    "no exact identities",
+    "no auto-publication"
+  ]
+}

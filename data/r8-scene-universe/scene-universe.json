@@ -1,0 +1,195 @@
+{
+  "version": "R8.8",
+  "title": "真实宇宙场景与节点完成线",
+  "principles": [
+    "世界不是背景，而是可抵达、可行动、可复访的空间",
+    "每个区域必须同时回答世界隐喻与现实用途",
+    "动态必须服务探索、理解、回望与维护，不能只为炫技",
+    "前台浪漫，后台清醒，档案可靠",
+    "移动端与 reduced-motion 必须保留完整信息结构"
+  ],
+  "completionCriteria": [
+    "核心页面具备场景身份、真实用途、动作反馈和下一步路径",
+    "节点不只是文章，而具备生命阶段、关系、护照、成长轨迹和展开仪式",
+    "世界模式、现实模式、静读模式在前端有可见差异与本地记忆",
+    "主线旅程和支线任务能解释访问者从哪里来、能去哪、为什么继续",
+    "宇宙动态层不能依赖真实数据库或真实 AI，必须静态安全运行"
+  ],
+  "worldScale": {
+    "near": ["书桌", "纸页", "灯", "笔", "罗盘", "卷宗", "玻璃瓶", "抽屉"],
+    "middle": ["世界地图", "时间河", "档案馆", "产品工坊", "技术星域", "记忆湖", "AI 灯塔"],
+    "far": ["未命名星域", "雾门", "未来房间", "沉睡岛", "世界边界", "旧项目遗迹"]
+  },
+  "routes": [
+    {
+      "match": "/",
+      "worldName": "创世原点",
+      "realName": "首页 / 世界入口",
+      "place": "初始书桌连接星河",
+      "story": "访问者从一张安静书桌进入古月浮屿，先感受世界，再理解路径，最后选择进入地图、时间河或灯塔。",
+      "sceneObjects": ["灯", "纸", "罗盘", "星河", "远方岛屿"],
+      "lifeStage": "origin",
+      "scale": "near-to-far",
+      "defaultMode": "world",
+      "primaryAction": "进入世界",
+      "secondaryActions": ["打开地图", "沿时间河", "询问灯塔", "随机漂流"],
+      "quest": "第一次来到这里",
+      "next": [
+        { "label": "打开世界地图", "href": "/atlas" },
+        { "label": "沿时间河前行", "href": "/timeline" },
+        { "label": "询问灯塔", "href": "/ask" }
+      ]
+    },
+    {
+      "match": "/atlas",
+      "worldName": "世界地图",
+      "realName": "Atlas 空间导航",
+      "place": "星图观测台",
+      "story": "地图不一次性倾倒全部宇宙，而是先展示主干，再让区域、节点和支线逐层显现。",
+      "sceneObjects": ["星盘", "地图", "雾门", "坐标", "路径线"],
+      "lifeStage": "orientation",
+      "scale": "middle",
+      "defaultMode": "world",
+      "primaryAction": "观测结构",
+      "secondaryActions": ["聚焦区域", "展开支线", "查看路标", "切换现实解释"],
+      "quest": "理解世界结构",
+      "next": [
+        { "label": "进入时间河", "href": "/timeline" },
+        { "label": "进入档案馆", "href": "/archive" },
+        { "label": "查看路径", "href": "/paths" }
+      ]
+    },
+    {
+      "match": "/timeline",
+      "worldName": "时间河",
+      "realName": "时间线与成长轨迹",
+      "place": "流动河床与年轮岸",
+      "story": "时间河让内容拥有起源、生长、回望和复活，而不是只按发布时间排序。",
+      "sceneObjects": ["水纹", "年轮", "旧星", "回声", "河岸"],
+      "lifeStage": "flowing",
+      "scale": "middle",
+      "defaultMode": "world",
+      "primaryAction": "顺流回望",
+      "secondaryActions": ["筛选时期", "展开事件", "查看成长", "回到今日"],
+      "quest": "看见世界如何生长",
+      "next": [
+        { "label": "进入节点档案", "href": "/archive" },
+        { "label": "查看精选路径", "href": "/paths" },
+        { "label": "回到地图", "href": "/atlas" }
+      ]
+    },
+    {
+      "match": "/archive",
+      "worldName": "档案馆",
+      "realName": "内容归档与现实视图",
+      "place": "低光书库与卷宗架",
+      "story": "档案馆负责把浪漫世界翻译成可查找、可回望、可维护的现实系统。",
+      "sceneObjects": ["卷宗", "书架", "目录", "护照", "低光灯"],
+      "lifeStage": "archive",
+      "scale": "middle",
+      "defaultMode": "reality",
+      "primaryAction": "翻阅卷宗",
+      "secondaryActions": ["搜索节点", "切换视图", "展开护照", "查看证据链"],
+      "quest": "让世界可以被长期理解",
+      "next": [
+        { "label": "打开节点", "href": "/node/ai-lighthouse-public-guide" },
+        { "label": "询问灯塔", "href": "/ask" },
+        { "label": "回到地图", "href": "/atlas" }
+      ]
+    },
+    {
+      "match": "/node",
+      "worldName": "节点卷轴",
+      "realName": "内容详情与节点生命",
+      "place": "展开纸页与关系星线",
+      "story": "节点不是孤立文章，而是拥有来源、生命阶段、关系、下一步动作和返回路径的世界存在物。",
+      "sceneObjects": ["纸页", "石碑", "关系星线", "护照", "阅读灯"],
+      "lifeStage": "reading",
+      "scale": "near",
+      "defaultMode": "reader",
+      "primaryAction": "展开节点",
+      "secondaryActions": ["阅读进度", "查看关系", "查看护照", "继续探索"],
+      "quest": "理解一颗星如何成为内容",
+      "next": [
+        { "label": "回到档案馆", "href": "/archive" },
+        { "label": "查看地图", "href": "/atlas" },
+        { "label": "沿时间河回望", "href": "/timeline" }
+      ]
+    },
+    {
+      "match": "/ask",
+      "worldName": "AI 灯塔",
+      "realName": "公开问答与路径推荐",
+      "place": "低光灯塔与公开索引",
+      "story": "灯塔只照亮公开世界，负责导览、路径建议和边界说明，不替造物主决定世界意义。",
+      "sceneObjects": ["灯", "光束", "公开索引", "问题卡", "边界门"],
+      "lifeStage": "guiding",
+      "scale": "middle",
+      "defaultMode": "world",
+      "primaryAction": "询问灯塔",
+      "secondaryActions": ["选择问题", "推荐路径", "查看边界", "回到地图"],
+      "quest": "让 AI 成为灯塔而不是太阳",
+      "next": [
+        { "label": "AI 接入边界", "href": "/r5-lighthouse" },
+        { "label": "服务边界", "href": "/r6-service" },
+        { "label": "世界宪章", "href": "/manifesto" }
+      ]
+    },
+    {
+      "match": "/r4-creator",
+      "worldName": "创世台",
+      "realName": "Owner 工作台",
+      "place": "工作灯、收集箱与设权台",
+      "story": "前台可以浪漫，创世台必须清醒：收集、安放、连星、设权、导出和审计都要低成本可维护。",
+      "sceneObjects": ["工作灯", "收集箱", "权限门", "审计卷", "导出箱"],
+      "lifeStage": "operating",
+      "scale": "near",
+      "defaultMode": "reality",
+      "primaryAction": "安放新物",
+      "secondaryActions": ["收集", "连星", "设权", "导出"],
+      "quest": "让主人能长期维护世界",
+      "next": [
+        { "label": "服务边界", "href": "/r6-service" },
+        { "label": "长期演化", "href": "/r7-evolution" },
+        { "label": "公开运营", "href": "/r8-public" }
+      ]
+    },
+    {
+      "match": "/r7-evolution",
+      "worldName": "长期演化",
+      "realName": "世界自演化与低光运行",
+      "place": "四季运行室",
+      "story": "世界可以安静，但不应该死亡；它需要今日世界、低光运行、苏醒计划和周期回望。",
+      "sceneObjects": ["四季盘", "低光灯", "今日卷轴", "苏醒钟", "世界日志"],
+      "lifeStage": "evolving",
+      "scale": "far",
+      "defaultMode": "world",
+      "primaryAction": "查看今日世界",
+      "secondaryActions": ["低光运行", "苏醒计划", "周期回望", "世界日志"],
+      "quest": "让世界能够长期活着",
+      "next": [
+        { "label": "世界状态", "href": "/status" },
+        { "label": "公开运营", "href": "/r8-public" },
+        { "label": "时间河", "href": "/timeline" }
+      ]
+    }
+  ],
+  "fallback": {
+    "match": "*",
+    "worldName": "未命名星域",
+    "realName": "普通页面 / 深层区域",
+    "place": "雾中坐标",
+    "story": "这里属于更深的世界边缘，仍保持罗盘、返回地图、询问灯塔和继续漂流的基本秩序。",
+    "sceneObjects": ["雾", "坐标", "门", "远星"],
+    "lifeStage": "unknown",
+    "scale": "far",
+    "defaultMode": "world",
+    "primaryAction": "观测坐标",
+    "secondaryActions": ["返回地图", "询问灯塔", "继续漂流", "回到入口"],
+    "quest": "探索未知边界",
+    "next": [
+      { "label": "世界地图", "href": "/atlas" },
+      { "label": "世界入口", "href": "/" }
+    ]
+  }
+}

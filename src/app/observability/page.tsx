@@ -1,0 +1,3 @@
+import { ObservabilityDashboard } from '@/components/observability/ObservabilityDashboard'
+import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+export default function ObservabilityPage(){return <ResponsivePageShell><section className="rounded-[3rem] border border-white/50 bg-white/75 p-8 shadow-soft md:p-12"><p className="text-sm tracking-[0.42em] text-moss">ROUND 03 · OBSERVABILITY</p><h1 className="mt-4 text-4xl font-semibold md:text-6xl">可观测性与发布证据</h1><p className="mt-5 max-w-3xl leading-8 text-ink/70">第三轮把构建健康度、隐私边界、内容新鲜度、素材缺口、AI 风险日志和性能预算纳入长期观测对象。</p></section><ObservabilityDashboard /></ResponsivePageShell>}

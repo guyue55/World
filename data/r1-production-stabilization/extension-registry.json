@@ -1,0 +1,77 @@
+{
+  "version": "R1",
+  "items": [
+    {
+      "id": "baseline-contract",
+      "title": "最终基线契约",
+      "description": "明确 V10 后唯一可继续开发基线，避免继续基于历史补丁包扩散。",
+      "status": "complete"
+    },
+    {
+      "id": "artifact-quarantine",
+      "title": "历史产物隔离",
+      "description": "把 zip、patch、日志、历史报告从源码质量视野中隔离。",
+      "status": "complete"
+    },
+    {
+      "id": "build-trace-policy",
+      "title": "构建 trace 策略",
+      "description": "固化 Turbopack 与 telemetry 关闭策略，减少当前容器后段 trace 超时。",
+      "status": "complete"
+    },
+    {
+      "id": "ci-replay",
+      "title": "CI 可复跑",
+      "description": "用 CI 执行 JSON、repo、R1、lint、typecheck、build 的最小稳定集。",
+      "status": "complete"
+    },
+    {
+      "id": "smoke-preview-plan",
+      "title": "Preview smoke 计划",
+      "description": "定义预览地址检查、核心路由、公开 JSON、首页渲染。",
+      "status": "complete"
+    },
+    {
+      "id": "production-signoff",
+      "title": "人工签收模板",
+      "description": "保留 productionLive=false，直到外部 URL 与人工签收真实完成。",
+      "status": "complete"
+    },
+    {
+      "id": "rollback-ladder",
+      "title": "回滚阶梯",
+      "description": "定义代码回滚、配置回滚、静态资源回滚、DNS/部署回滚。",
+      "status": "complete"
+    },
+    {
+      "id": "release-evidence",
+      "title": "发布证据台账",
+      "description": "记录命令、时间、结果、日志位置和人工结论。",
+      "status": "complete"
+    },
+    {
+      "id": "public-json-static",
+      "title": "公开 JSON 静态化",
+      "description": "保证 /world-index.json 与 /world-manifest.json 来自 public 静态产物。",
+      "status": "complete"
+    },
+    {
+      "id": "audit-risk-ledger",
+      "title": "风险台账",
+      "description": "保留 npm audit moderate 记录，不伪装为零风险。",
+      "status": "complete"
+    },
+    {
+      "id": "r2-handoff",
+      "title": "R2 体验重构交接",
+      "description": "把工程收口结果交给世界入口和沉浸体验重构。",
+      "status": "complete"
+    },
+    {
+      "id": "no-new-concept-drift",
+      "title": "不新增概念漂移",
+      "description": "R1 只做工程稳定，不继续堆世界观概念。",
+      "status": "complete"
+    }
+  ]
+}

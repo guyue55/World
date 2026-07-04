@@ -1,0 +1,15 @@
+{
+  "stage": 3,
+  "title": "自解释、自修复与长期回望",
+  "focus": "建立世界日志、区域解释、健康度、回流规则、节点成长轨迹和月度/年度回望。",
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

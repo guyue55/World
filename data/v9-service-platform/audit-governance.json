@@ -1,0 +1,45 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "auditPolicy": {
+    "appendOnly": true,
+    "manualSignoffRequiredFor": [
+      "publish",
+      "delete",
+      "visibility-change",
+      "vault-unseal",
+      "export-private",
+      "ai-generated-public-content"
+    ]
+  },
+  "events": [
+    {
+      "id": "audit-001",
+      "type": "scope-defined",
+      "actor": "creator",
+      "status": "recorded",
+      "summary": "V9 服务化平台边界定义完成。"
+    },
+    {
+      "id": "audit-002",
+      "type": "rbac-defined",
+      "actor": "creator",
+      "status": "recorded",
+      "summary": "角色与权限矩阵落库。"
+    },
+    {
+      "id": "audit-003",
+      "type": "api-contract-defined",
+      "actor": "operator",
+      "status": "recorded",
+      "summary": "API 合约只开放安全健康样板。"
+    },
+    {
+      "id": "audit-004",
+      "type": "v10-handoff-prepared",
+      "actor": "operator",
+      "status": "recorded",
+      "summary": "长期智能世界交接条件已定义。"
+    }
+  ]
+}

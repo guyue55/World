@@ -1,0 +1,222 @@
+{
+  "version": "R3",
+  "name": "真实世界-R3｜真实内容注入与节点生命化",
+  "positioning": "让 R2 的沉浸入口长出真实节点、生命阶段、关系、路径、时间河和可维护内容秩序。",
+  "ultimateGoal": "让访问者不是浏览页面，而是在时间、关系、位置和权限中探索一个真实生长的个人数字世界。",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "真实节点协议与内容基线",
+      "description": "把世界从漂亮入口推进到可安放真实内容的 Node 协议层。",
+      "batches": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 2,
+      "title": "节点生命化与关系网络",
+      "description": "让内容具有生命阶段、成熟度、关系语义和可继续生长动作。",
+      "batches": [
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 3,
+      "title": "真实路径、时间河与区域密度",
+      "description": "让真实节点进入精选路径、时间河、区域密度和可回望视图。",
+      "batches": [
+        "09",
+        "10",
+        "11",
+        "12"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 4,
+      "title": "质量门禁、隐私边界与 R4 交接",
+      "description": "验证真实内容不会破坏公开边界，并把创世台真实化交接给 R4。",
+      "batches": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "title": "R3范围契约与真实内容原则",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 2,
+      "title": "统一Node模型与四维坐标",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 3,
+      "title": "首批真实节点清单",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 4,
+      "title": "阶段一语法逻辑检查",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 5,
+      "title": "节点护照与生命阶段",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 6,
+      "title": "关系语义与证据链",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 7,
+      "title": "下一步动作与成熟度",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 8,
+      "title": "阶段二语法逻辑检查",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 9,
+      "title": "精选路径与真实探索闭环",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 10,
+      "title": "时间河事件与世界年表",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 11,
+      "title": "区域密度与内容健康度",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 12,
+      "title": "阶段三语法逻辑检查",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 13,
+      "title": "公开索引与隐私边界扫描",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 14,
+      "title": "页面组件与现实模式桥接",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 15,
+      "title": "R4创世台交接",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 16,
+      "title": "R3封版与全量打包准备",
+      "status": "complete",
+      "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "completion": {
+    "stages": 4,
+    "batches": 16,
+    "status": "complete-structure"
+  },
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

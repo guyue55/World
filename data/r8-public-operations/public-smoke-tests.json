@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "id": "home-load",
+      "route": "/",
+      "expectation": "首页显示世界入口、公开路径、今日世界或运营入口。"
+    },
+    {
+      "id": "r8-page-load",
+      "route": "/r8-public",
+      "expectation": "公开运营页显示发布频道、内容日历、反馈和发布守门。"
+    },
+    {
+      "id": "seo-json",
+      "route": "/world-index.json",
+      "expectation": "公开 JSON 可静态访问。"
+    },
+    {
+      "id": "private-boundary",
+      "route": "/private-archive",
+      "expectation": "不应被公开运营路径主动推广为公开内容。"
+    }
+  ]
+}

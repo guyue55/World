@@ -1,0 +1,26 @@
+{
+  "version": "V8",
+  "name": "生产证据台账",
+  "productionLive": false,
+  "releaseReady": false,
+  "records": [
+    {
+      "id": "v8-local-structure",
+      "type": "local-gate",
+      "status": "passed-structure",
+      "note": "本轮完成代码、数据、文档和检查脚本结构闭环。"
+    },
+    {
+      "id": "external-production-url",
+      "type": "production-evidence",
+      "status": "pending-real-environment",
+      "note": "需要真实部署后记录 URL 与访问证据。"
+    },
+    {
+      "id": "manual-signoff",
+      "type": "human-evidence",
+      "status": "pending-human",
+      "note": "需要人工确认后才能进入 release-ready。"
+    }
+  ]
+}

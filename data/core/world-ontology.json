@@ -1,0 +1,92 @@
+{
+  "version": "0.1.0",
+  "principle": "世界本体定义内容是什么、为何存在、如何互相照见。",
+  "entities": [
+    {
+      "id": "World",
+      "description": "古月浮屿整体。"
+    },
+    {
+      "id": "Area",
+      "description": "世界空间区域。"
+    },
+    {
+      "id": "Node",
+      "description": "世界基本生命单位。"
+    },
+    {
+      "id": "Relation",
+      "description": "节点之间的星线。"
+    },
+    {
+      "id": "Path",
+      "description": "旅人的行走路线。"
+    },
+    {
+      "id": "WorldEvent",
+      "description": "时间河事件。"
+    },
+    {
+      "id": "Rule",
+      "description": "世界运行法则。"
+    },
+    {
+      "id": "Projection",
+      "description": "同一对象在不同页面和体验中的表现。"
+    },
+    {
+      "id": "Snapshot",
+      "description": "世界在某一刻的可回望状态。"
+    },
+    {
+      "id": "CapabilitySlot",
+      "description": "未来能力预留接口。"
+    }
+  ],
+  "semanticLayers": [
+    {
+      "id": "fact",
+      "description": "事实层，记录真实发生或明确可验证内容。"
+    },
+    {
+      "id": "interpretation",
+      "description": "解释层，记录观点、复盘、理解与设计判断。"
+    },
+    {
+      "id": "imagination",
+      "description": "想象层，记录设想、未来、隐喻和世界化表达。"
+    }
+  ],
+  "semanticRules": [
+    "fact 不得伪装成 imagination。",
+    "imagination 公开时应显式标记。",
+    "AI 不得把 imagination 当作 fact。",
+    "同一节点可以有 layer，但必须保持 source 可追踪。"
+  ],
+  "canonicalRelations": [
+    {
+      "type": "derived",
+      "meaning": "从某节点派生。"
+    },
+    {
+      "type": "inspired",
+      "meaning": "受到某节点启发。"
+    },
+    {
+      "type": "implemented",
+      "meaning": "某想法被实现。"
+    },
+    {
+      "type": "summarized",
+      "meaning": "对某内容进行总结。"
+    },
+    {
+      "type": "publicVersionOf",
+      "meaning": "某私密内容的公开版本。"
+    },
+    {
+      "type": "revivedFrom",
+      "meaning": "从旧节点复活。"
+    }
+  ]
+}

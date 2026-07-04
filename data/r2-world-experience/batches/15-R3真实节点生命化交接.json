@@ -1,0 +1,15 @@
+{
+  "batch": 15,
+  "stage": 4,
+  "title": "R3真实节点生命化交接",
+  "status": "complete",
+  "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+  "deliverables": [
+    "handoff-to-r3.json",
+    "handoff-to-r3.md"
+  ],
+  "syntaxLogicCheck": "stage check + lint after stage completion",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

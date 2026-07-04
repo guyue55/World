@@ -1,0 +1,29 @@
+{
+  "version": "3.0.0",
+  "stage": 5,
+  "batch": 19,
+  "totalBatches": 20,
+  "name": "V4 入口候选范围",
+  "stageProgress": "V3 / 第 5 阶段：V4 前硬化与入口门禁 / 第 19 批 / 共 20 批",
+  "status": "prepared",
+  "v4CandidateFocus": [
+    "real-time collaboration",
+    "3D/WebGL optional universe",
+    "multi-user world governance",
+    "plugin marketplace",
+    "federated publishing"
+  ],
+  "entryConditions": [
+    "V3 production evidence",
+    "real infra proof",
+    "security review",
+    "cost guard",
+    "accessibility proof"
+  ],
+  "ready": false,
+  "rules": [
+    "V3 结构完成不等于真实生产上线。",
+    "V4 只能规划，不建议正式开发，直到 V3 生产证据完成。",
+    "成本、安全、可访问性必须进入 V4 前置门禁。"
+  ]
+}

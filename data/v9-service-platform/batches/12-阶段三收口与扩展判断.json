@@ -1,0 +1,22 @@
+{
+  "id": "batch-12",
+  "batch": 12,
+  "stage": 3,
+  "title": "阶段三收口与扩展判断",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/12-阶段三收口与扩展判断.json"
+  ],
+  "extensionDecision": {
+    "required": true,
+    "summary": "阶段收口时补充服务化平台治理与 V10 交接任务。"
+  }
+}

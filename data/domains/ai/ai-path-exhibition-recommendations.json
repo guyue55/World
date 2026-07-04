@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 路径与展览建议集",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 3 / 4",
+  "status": "metadata-only-recommendations",
+  "recommendations": [
+    {
+      "id": "route-world-entry-to-phase-four",
+      "kind": "reading-path",
+      "title": "从世界入口到第四阶段内容运营",
+      "sourceTier": "public",
+      "execution": "not-executed",
+      "requiresReview": true
+    },
+    {
+      "id": "exhibition-ai-lighthouse-boundary",
+      "kind": "exhibition",
+      "title": "AI 灯塔与不越权边界展览",
+      "sourceTier": "public",
+      "execution": "not-executed",
+      "requiresReview": true
+    },
+    {
+      "id": "maintenance-private-boundary-audit",
+      "kind": "maintenance",
+      "title": "私密层级与 AI 权限边界复查",
+      "sourceTier": "public",
+      "execution": "not-executed",
+      "requiresReview": true
+    },
+    {
+      "id": "risk-release-ready-reminder",
+      "kind": "risk",
+      "title": "release-ready 真实证据缺口提醒",
+      "sourceTier": "public",
+      "execution": "not-executed",
+      "requiresReview": true
+    }
+  ],
+  "rules": [
+    "recommendations 不得执行。",
+    "sourceTier 只能为 public 或 semiPublic。",
+    "requiresReview 必须为 true。",
+    "建议必须能被拒绝、延后或改写。"
+  ]
+}

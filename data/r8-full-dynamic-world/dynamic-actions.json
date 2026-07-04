@@ -1,0 +1,9 @@
+{
+  "actions": [
+    { "id": "observe", "label": "观测", "worldEffect": "星图短暂点亮，当前位置被标记为已观测。" },
+    { "id": "drift", "label": "漂流", "worldEffect": "罗盘生成一条随机旅程，带你从当前页面流向相关区域。" },
+    { "id": "echo", "label": "回声", "worldEffect": "时间河返回一个旧节点或世界事件。" },
+    { "id": "light", "label": "点亮", "worldEffect": "当前节点或区域进入高亮状态，记录到本地旅程。" },
+    { "id": "quiet", "label": "低光", "worldEffect": "降低动效与视觉强度，保留可阅读与可导航能力。" }
+  ]
+}

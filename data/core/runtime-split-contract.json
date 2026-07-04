@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 运行时拆分契约",
+  "principle": "重能力必须被边界包住，不能散落在页面和组件里。",
+  "splitTargets": [
+    {
+      "id": "foundation-panel-stack",
+      "status": "implemented-boundary",
+      "component": "WorldFoundationStack",
+      "reason": "status/skeleton 面板较多，需要集中装配边界。"
+    },
+    {
+      "id": "future-search",
+      "status": "reserved",
+      "component": "SearchProvider",
+      "reason": "节点增长后搜索索引需要可拆分。"
+    },
+    {
+      "id": "future-visual-map",
+      "status": "reserved",
+      "component": "VisualExperienceProvider",
+      "reason": "2.5D/星图不进入首屏。"
+    },
+    {
+      "id": "future-ai-guide",
+      "status": "guarded",
+      "component": "AIGuideProvider",
+      "reason": "AI 不得成为 Ask 首屏依赖。"
+    },
+    {
+      "id": "future-private-archive",
+      "status": "guarded",
+      "component": "PrivateArchiveProvider",
+      "reason": "私密层必须隔离。"
+    }
+  ],
+  "rules": [
+    "重能力必须先有 split target。",
+    "split target 必须说明 status、component、reason。",
+    "guarded 目标必须遵守权限或 AI 边界。",
+    "reserved 目标不得被核心页面当作必需依赖。"
+  ]
+}

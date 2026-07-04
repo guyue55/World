@@ -1,0 +1,47 @@
+{
+  "risks": [
+    {
+      "id": "risk-001",
+      "title": "生活光影默认私密",
+      "severity": "high",
+      "rule": "memory/photo content defaults to private unless manually illuminated",
+      "status": "guarded"
+    },
+    {
+      "id": "risk-002",
+      "title": "AI 草案不得自动公开",
+      "severity": "critical",
+      "rule": "ai-draft content requires manual approval before public index",
+      "status": "guarded"
+    },
+    {
+      "id": "risk-003",
+      "title": "sealed 内容不得进入 public manifest",
+      "severity": "critical",
+      "rule": "sealed/private visibility blocks publicIndexAllowed",
+      "status": "guarded"
+    },
+    {
+      "id": "risk-004",
+      "title": "公开技术节点需去除敏感环境信息",
+      "severity": "medium",
+      "rule": "technical public nodes require secret and environment scan",
+      "status": "open"
+    },
+    {
+      "id": "risk-005",
+      "title": "半公开节点只允许摘要级展示",
+      "severity": "medium",
+      "rule": "semi-public content can appear as summary-only projection",
+      "status": "guarded"
+    }
+  ],
+  "forbiddenActions": [
+    "autoPublish",
+    "autoDelete",
+    "overwriteOriginal",
+    "modifyPermissionWithoutReview",
+    "sendPrivateToPublicAI",
+    "exportSealedWithoutBackupNotice"
+  ]
+}

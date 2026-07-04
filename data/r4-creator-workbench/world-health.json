@@ -1,0 +1,13 @@
+{
+  "worldHealth": {
+    "score": 76,
+    "state": "growing",
+    "inboxCount": 6,
+    "riskCount": 5,
+    "openRiskCount": 1,
+    "debtCount": 6,
+    "backupReadiness": 52,
+    "publicIndexReadyForR5": true,
+    "productionLive": false
+  }
+}

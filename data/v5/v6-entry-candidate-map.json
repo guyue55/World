@@ -1,0 +1,47 @@
+{
+  "version": "6.0.0-candidate",
+  "name": "V6 入口候选图",
+  "status": "planning-and-formal-development-ready-local-baseline",
+  "v6PlanningAllowed": true,
+  "v6FormalDevelopmentAllowed": true,
+  "releaseReady": true,
+  "productionLive": false,
+  "candidateDirections": [
+    {
+      "id": "multi-world-federation-network",
+      "name": "多世界联邦网络",
+      "requiredEvidence": [
+        "V5 federation proof",
+        "cross-world privacy proof",
+        "sync conflict proof"
+      ]
+    },
+    {
+      "id": "personal-civilization-operating-system",
+      "name": "个人文明操作系统",
+      "requiredEvidence": [
+        "world migration proof",
+        "long-term archive policy",
+        "governance proof"
+      ]
+    },
+    {
+      "id": "multi-agent-autonomous-but-governed-ops",
+      "name": "多 Agent 可控自治运行态",
+      "requiredEvidence": [
+        "agent orchestration proof",
+        "cost guard proof",
+        "manual approval proof"
+      ]
+    },
+    {
+      "id": "immersive-shared-universe",
+      "name": "沉浸式共享宇宙",
+      "requiredEvidence": [
+        "V4 universe workbench baseline",
+        "V5 federation baseline",
+        "fallback proof"
+      ]
+    }
+  ]
+}

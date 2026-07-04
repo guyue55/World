@@ -1,0 +1,28 @@
+{
+  "version": "V7",
+  "name": "V8 真实生产运维交接",
+  "status": "handoff-ready",
+  "productionLive": false,
+  "v8Focus": [
+    "真实部署流水线",
+    "预览环境 smoke test",
+    "生产监控与告警",
+    "外部访问性能证据",
+    "域名与 SEO 提交",
+    "人工签收",
+    "回滚演练"
+  ],
+  "carryForward": [
+    "next full build / deployment evidence",
+    "manual signoff",
+    "preview smoke",
+    "production observability",
+    "private boundary evidence"
+  ],
+  "mustNotDo": [
+    "claim productionLive before deployment",
+    "mark releaseReady true without evidence",
+    "expose private archive",
+    "allow AI autonomous publishing"
+  ]
+}

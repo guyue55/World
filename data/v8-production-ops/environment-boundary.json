@@ -1,0 +1,21 @@
+{
+  "version": "V8",
+  "name": "环境变量与密钥边界",
+  "publicVariables": [
+    "NEXT_PUBLIC_SITE_URL",
+    "NEXT_PUBLIC_WORLD_NAME",
+    "NEXT_PUBLIC_RELEASE_CHANNEL"
+  ],
+  "privateVariables": [
+    "DEPLOY_TOKEN",
+    "ANALYTICS_WRITE_KEY",
+    "AI_PROVIDER_API_KEY",
+    "BACKUP_STORAGE_SECRET"
+  ],
+  "rules": [
+    "NEXT_PUBLIC_* 只能放可公开信息。",
+    "私密变量不得写入 data/public/docs。",
+    "生产密钥不进入 zip 包和 Git 历史。",
+    "缺失真实生产变量时 productionLive 保持 false。"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 权限与角色治理模型",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 1 / 4",
+  "status": "rbac-model-prepared",
+  "rbacReady": false,
+  "roles": [
+    {
+      "id": "owner",
+      "title": "所有者",
+      "canApproveCritical": true,
+      "canAccessPrivate": true
+    },
+    {
+      "id": "operator",
+      "title": "运营者",
+      "canApproveCritical": false,
+      "canAccessPrivate": false
+    },
+    {
+      "id": "editor",
+      "title": "编辑者",
+      "canApproveCritical": false,
+      "canAccessPrivate": false
+    },
+    {
+      "id": "reviewer",
+      "title": "审核者",
+      "canApproveCritical": false,
+      "canAccessPrivate": false
+    },
+    {
+      "id": "viewer",
+      "title": "查看者",
+      "canApproveCritical": false,
+      "canAccessPrivate": false
+    }
+  ],
+  "permissions": [
+    {
+      "id": "read-public",
+      "risk": "low",
+      "approvalRequired": false
+    },
+    {
+      "id": "edit-draft",
+      "risk": "medium",
+      "approvalRequired": true
+    },
+    {
+      "id": "approve-publish",
+      "risk": "high",
+      "approvalRequired": true
+    },
+    {
+      "id": "run-automation",
+      "risk": "high",
+      "approvalRequired": true
+    },
+    {
+      "id": "manage-secrets",
+      "risk": "critical",
+      "approvalRequired": true
+    },
+    {
+      "id": "access-private",
+      "risk": "critical",
+      "approvalRequired": true
+    }
+  ],
+  "rules": [
+    "rbacReady=false 必须保持，直到真实身份与权限系统实现。",
+    "除 owner 外默认不得访问私密内容。",
+    "critical 权限必须审批并记录 evidence。",
+    "角色模型不得把 canAccessPrivate 默认开放给协作者。"
+  ]
+}

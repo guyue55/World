@@ -1,0 +1,40 @@
+{
+  "stages": [
+    "seed",
+    "sprout",
+    "growing",
+    "bloom",
+    "fruit",
+    "archive",
+    "relic",
+    "dormant",
+    "silent"
+  ],
+  "rules": [
+    {
+      "from": "seed",
+      "trigger": "补充摘要、位置、权限和至少一个关系",
+      "to": "sprout"
+    },
+    {
+      "from": "sprout",
+      "trigger": "形成正文或素材证据",
+      "to": "growing"
+    },
+    {
+      "from": "growing",
+      "trigger": "进入精选路径或被多个节点引用",
+      "to": "bloom"
+    },
+    {
+      "from": "bloom",
+      "trigger": "形成公开成果、专题或导出资产",
+      "to": "fruit"
+    },
+    {
+      "from": "archive",
+      "trigger": "旧内容重新被路径引用",
+      "to": "relic"
+    }
+  ]
+}

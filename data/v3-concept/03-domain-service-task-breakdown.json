@@ -1,0 +1,202 @@
+{
+  "version": "3.0.0-concept-completion",
+  "name": "V3 数据模型与服务实现任务拆解",
+  "batch": 3,
+  "totalBatches": 6,
+  "stageProgress": "V3 概念深化与实现任务拆解线 / 第 3 批 / 共 6 批",
+  "domainModels": [
+    {
+      "name": "WorldMemory",
+      "fields": [
+        "id",
+        "title",
+        "summary",
+        "visibility",
+        "spaceId",
+        "createdAt",
+        "updatedAt"
+      ],
+      "service": "memoryService"
+    },
+    {
+      "name": "MemoryEdge",
+      "fields": [
+        "id",
+        "fromMemoryId",
+        "toMemoryId",
+        "edgeType",
+        "confidence",
+        "requiresReview"
+      ],
+      "service": "graphService"
+    },
+    {
+      "name": "Space",
+      "fields": [
+        "id",
+        "name",
+        "visibility",
+        "ownerId",
+        "bridgePolicyId"
+      ],
+      "service": "spaceService"
+    },
+    {
+      "name": "SpaceBridge",
+      "fields": [
+        "id",
+        "fromSpaceId",
+        "toSpaceId",
+        "policy",
+        "blocked",
+        "reason"
+      ],
+      "service": "spaceService"
+    },
+    {
+      "name": "AiCompanionSession",
+      "fields": [
+        "id",
+        "actorId",
+        "scope",
+        "approvedContextIds",
+        "state",
+        "auditEventId"
+      ],
+      "service": "aiCompanionService"
+    },
+    {
+      "name": "LifeArchiveEntry",
+      "fields": [
+        "id",
+        "archiveType",
+        "title",
+        "retentionMode",
+        "redactionState",
+        "ownerId"
+      ],
+      "service": "legacyService"
+    },
+    {
+      "name": "LegacyRule",
+      "fields": [
+        "id",
+        "window",
+        "recipientPolicy",
+        "releasePolicy",
+        "requiresReview"
+      ],
+      "service": "legacyService"
+    },
+    {
+      "name": "ExhibitionNode",
+      "fields": [
+        "id",
+        "themeId",
+        "memoryIds",
+        "layout",
+        "exportable"
+      ],
+      "service": "exhibitionService"
+    },
+    {
+      "name": "WorldBookExport",
+      "fields": [
+        "id",
+        "format",
+        "scope",
+        "reviewState",
+        "checksum",
+        "createdAt"
+      ],
+      "service": "worldbookService"
+    },
+    {
+      "name": "GovernanceEvent",
+      "fields": [
+        "id",
+        "riskClass",
+        "control",
+        "decision",
+        "actorId",
+        "createdAt"
+      ],
+      "service": "governanceService"
+    }
+  ],
+  "services": [
+    {
+      "name": "memoryService",
+      "tasks": [
+        "create memory",
+        "update redacted summary",
+        "list memories by space",
+        "archive memory"
+      ]
+    },
+    {
+      "name": "graphService",
+      "tasks": [
+        "create edge",
+        "review edge",
+        "list graph neighborhood",
+        "detect orphan nodes"
+      ]
+    },
+    {
+      "name": "spaceService",
+      "tasks": [
+        "create space",
+        "evaluate bridge",
+        "block unsafe bridge",
+        "list actor spaces"
+      ]
+    },
+    {
+      "name": "aiCompanionService",
+      "tasks": [
+        "open session",
+        "load approved context",
+        "create suggestion",
+        "record audit event"
+      ]
+    },
+    {
+      "name": "legacyService",
+      "tasks": [
+        "create archive entry",
+        "evaluate legacy window",
+        "redact before handover",
+        "verify recipient"
+      ]
+    },
+    {
+      "name": "worldbookService",
+      "tasks": [
+        "prepare export",
+        "run review checklist",
+        "generate checksum",
+        "create export artifact"
+      ]
+    },
+    {
+      "name": "governanceService",
+      "tasks": [
+        "register risk",
+        "attach control",
+        "record decision",
+        "surface blocker"
+      ]
+    }
+  ],
+  "implementationOrder": [
+    "domain types",
+    "repository interfaces",
+    "service layer",
+    "API handlers",
+    "UI adapters",
+    "audit integration",
+    "integration tests"
+  ],
+  "ready": false
+}

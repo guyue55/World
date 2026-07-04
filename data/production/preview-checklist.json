@@ -1,0 +1,22 @@
+{
+  "status": "pending",
+  "items": [
+    {
+      "id": "preview-url",
+      "status": "pending"
+    },
+    {
+      "id": "env-check",
+      "status": "pending"
+    },
+    {
+      "id": "route-check",
+      "status": "pending"
+    },
+    {
+      "id": "json-api-check",
+      "status": "pending"
+    }
+  ],
+  "productionLive": false
+}

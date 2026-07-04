@@ -1,0 +1,4 @@
+import fs from 'node:fs'; import { aiSuggestionWorkflows, getExecutableWorkflows, getHumanRequiredWorkflows } from '../src/features/ai-workflow'
+const errors:string[]=[]; for(const item of ['src/features/ai-workflow/model.ts','src/features/ai-workflow/data.ts','src/components/lighthouse/AiWorkflowBoard.tsx','data/ai-lighthouse/workflows.json']) if(!fs.existsSync(item)) errors.push(`missing ${item}`)
+if(aiSuggestionWorkflows.length<4) errors.push('workflows too few'); if(getExecutableWorkflows().length!==0) errors.push('auto execute'); if(getHumanRequiredWorkflows().length<2) errors.push('human required too few'); if(!aiSuggestionWorkflows.some(w=>w.status==='rejected')) errors.push('rejected missing')
+if(errors.length) throw new Error(errors.join('\n')); console.log('Round 03 batch 10 checks passed.')

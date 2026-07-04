@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第九阶段真实内容生态与个人品牌范围契约",
+  "principle": "第九阶段以真实内容生态和个人品牌为中心，让古月浮屿从系统走向可持续表达。",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 1 / 4",
+  "status": "implemented-static-brand-scope",
+  "focus": [
+    "real content ecosystem",
+    "personal brand system",
+    "topic pillars",
+    "content calendar",
+    "public communication channels",
+    "world book publishing",
+    "community feedback loop"
+  ],
+  "nonGoals": [
+    "claim production live without evidence",
+    "publish private content",
+    "AI autonomous publishing",
+    "mass marketing without quality review",
+    "brand assets without visual QA",
+    "ignore release evidence"
+  ],
+  "entryGuards": [
+    "phase eight completed",
+    "production not live remains explicit",
+    "private tiers remain excluded",
+    "AI remains suggestion-only",
+    "content publication requires human review"
+  ],
+  "rules": [
+    "第九阶段必须以真实内容生态和个人品牌为中心。",
+    "内容发布仍必须遵守公开/私密边界。",
+    "AI 可辅助选题、复盘、整理，但不能自动发布。",
+    "品牌表达必须统一视觉、语气和主题支柱。",
+    "生产发布证据缺口必须继续显式保留。"
+  ]
+}

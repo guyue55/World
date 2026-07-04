@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "snapshotStrategy": "manual-first",
+  "snapshotRoot": "snapshots/",
+  "include": [
+    "data/",
+    "content/",
+    "docs/00-overview/",
+    "docs/01-world/",
+    "docs/05-engineering/"
+  ],
+  "exclude": [
+    ".next/",
+    "node_modules/",
+    "public/world-index.json"
+  ],
+  "requiredBefore": [
+    "schema breaking change",
+    "bulk node migration",
+    "visibility policy change",
+    "AI indexing policy change",
+    "private/archive restructuring"
+  ],
+  "naming": "YYYY-MM-DD-vX.Y.Z-reason"
+}

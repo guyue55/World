@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "Agent Society 模型",
+  "batch": 13,
+  "stage": 4,
+  "stageName": "多 Agent 可控自治运行态",
+  "stageProgress": "V6 / 第 4 阶段 / 第 13 批 / 共 24 批",
+  "slug": "agent-society-model",
+  "status": "complete",
+  "goals": [
+    "定义 Agent Society",
+    "多 Agent 团队与角色",
+    "Agent 不互相授权、不越权"
+  ],
+  "outputs": [
+    "AgentSociety",
+    "AgentTeam"
+  ],
+  "mustKeep": [
+    "no self escalation"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-agent-society",
+    "dataDirectory": "data/v6/stage-04",
+    "docsDirectory": "docs/61-v6/stage-04",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

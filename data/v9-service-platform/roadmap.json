@@ -1,0 +1,435 @@
+{
+  "version": "V9",
+  "name": "服务化平台版",
+  "status": "complete-structure",
+  "createdAt": "2026-05-23T13:00:00Z",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "target": "把古月浮屿从静态优先世界推进到可服务化、可治理、可审计、可协作的平台骨架。",
+  "stages": [
+    {
+      "id": "stage-01",
+      "stage": 1,
+      "title": "服务平台边界、身份与租户地基",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "focus": [
+        "service boundary",
+        "identity skeleton",
+        "tenant isolation",
+        "platform contracts"
+      ]
+    },
+    {
+      "id": "stage-02",
+      "stage": 2,
+      "title": "API、存储、审计与适配器骨架",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "focus": [
+        "api contracts",
+        "storage ports",
+        "audit ledger",
+        "integration adapters"
+      ]
+    },
+    {
+      "id": "stage-03",
+      "stage": 3,
+      "title": "平台控制台、队列、治理与协作",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "focus": [
+        "platform console",
+        "operation queue",
+        "governance workflow",
+        "collaboration model"
+      ]
+    },
+    {
+      "id": "stage-04",
+      "stage": 4,
+      "title": "服务化硬化、安全边界与 V10 交接",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "focus": [
+        "security hardening",
+        "quality evidence",
+        "migration strategy",
+        "V10 handoff"
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "id": "batch-01",
+      "batch": 1,
+      "stage": 1,
+      "title": "V9 范围契约与服务边界",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/01-V9-范围契约与服务边界.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-02",
+      "batch": 2,
+      "stage": 1,
+      "title": "身份模型与租户隔离",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/02-身份模型与租户隔离.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-03",
+      "batch": 3,
+      "stage": 1,
+      "title": "RBAC 权限矩阵",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/03-RBAC-权限矩阵.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-04",
+      "batch": 4,
+      "stage": 1,
+      "title": "阶段一收口与扩展判断",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/04-阶段一收口与扩展判断.json"
+      ],
+      "extensionDecision": {
+        "required": true,
+        "summary": "阶段收口时补充服务化平台治理与 V10 交接任务。"
+      }
+    },
+    {
+      "id": "batch-05",
+      "batch": 5,
+      "stage": 2,
+      "title": "API 合约与路由占位",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/05-API-合约与路由占位.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-06",
+      "batch": 6,
+      "stage": 2,
+      "title": "存储端口与数据迁移策略",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/06-存储端口与数据迁移策略.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-07",
+      "batch": 7,
+      "stage": 2,
+      "title": "审计日志与证据链",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/07-审计日志与证据链.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-08",
+      "batch": 8,
+      "stage": 2,
+      "title": "阶段二收口与扩展判断",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/08-阶段二收口与扩展判断.json"
+      ],
+      "extensionDecision": {
+        "required": true,
+        "summary": "阶段收口时补充服务化平台治理与 V10 交接任务。"
+      }
+    },
+    {
+      "id": "batch-09",
+      "batch": 9,
+      "stage": 3,
+      "title": "平台控制台与操作入口",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/09-平台控制台与操作入口.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-10",
+      "batch": 10,
+      "stage": 3,
+      "title": "人工审批队列与协作工作流",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/10-人工审批队列与协作工作流.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-11",
+      "batch": 11,
+      "stage": 3,
+      "title": "集成适配器与数据接入计划",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/11-集成适配器与数据接入计划.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-12",
+      "batch": 12,
+      "stage": 3,
+      "title": "阶段三收口与扩展判断",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/12-阶段三收口与扩展判断.json"
+      ],
+      "extensionDecision": {
+        "required": true,
+        "summary": "阶段收口时补充服务化平台治理与 V10 交接任务。"
+      }
+    },
+    {
+      "id": "batch-13",
+      "batch": 13,
+      "stage": 4,
+      "title": "安全、密钥与隐私边界硬化",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/13-安全、密钥与隐私边界硬化.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-14",
+      "batch": 14,
+      "stage": 4,
+      "title": "平台观测与服务质量预算",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/14-平台观测与服务质量预算.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-15",
+      "batch": 15,
+      "stage": 4,
+      "title": "V10 长期智能世界交接",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/15-V10-长期智能世界交接.json"
+      ],
+      "extensionDecision": {
+        "required": false,
+        "summary": "按主线执行。"
+      }
+    },
+    {
+      "id": "batch-16",
+      "batch": 16,
+      "stage": 4,
+      "title": "V9 最终封版与全量打包准备",
+      "status": "complete",
+      "productionLive": false,
+      "serviceLive": false,
+      "releaseReady": false,
+      "checks": [
+        "structure",
+        "json",
+        "lint"
+      ],
+      "deliverables": [
+        "data/v9-service-platform/batches/16-V9-最终封版与全量打包准备.json"
+      ],
+      "extensionDecision": {
+        "required": true,
+        "summary": "阶段收口时补充服务化平台治理与 V10 交接任务。"
+      }
+    }
+  ],
+  "nextVersion": "V10 长期智能世界版"
+}

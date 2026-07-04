@@ -1,0 +1,15 @@
+{
+  "batch": 4,
+  "stage": 1,
+  "title": "R1 任务规划落库",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 最终基线统一与仓库清洁：R1 任务规划落库",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

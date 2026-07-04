@@ -1,0 +1,81 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段真实内容种子目录",
+  "stageProgress": "phase-four-content-growth-operations line batch 2 / 4",
+  "status": "implemented-public-seed-catalog",
+  "items": [
+    {
+      "id": "desk-connects-galaxy",
+      "title": "一张书桌连接星河",
+      "type": "essay",
+      "visibility": "public",
+      "column": "世界札记",
+      "summary": "从一张书桌出发，解释古月浮屿为什么不是博客模板，而是个人世界入口。",
+      "targetSurface": [
+        "home",
+        "node",
+        "exhibition"
+      ],
+      "nextAction": "expand-to-1200-words"
+    },
+    {
+      "id": "ai-is-lighthouse",
+      "title": "AI 是灯塔，不是太阳",
+      "type": "manifesto-note",
+      "visibility": "public",
+      "column": "AI 灯塔",
+      "summary": "说明 AI 在古月浮屿中的边界：照亮、建议、整理，但不替人决定。",
+      "targetSurface": [
+        "ai-workbench",
+        "manifesto",
+        "path"
+      ],
+      "nextAction": "link-ai-workbench-boundary"
+    },
+    {
+      "id": "time-river-first-stones",
+      "title": "时间河里的第一批石子",
+      "type": "timeline-digest",
+      "visibility": "public",
+      "column": "时间河",
+      "summary": "把项目从世界骨架到第三阶段封版的关键节点整理为可阅读时间线。",
+      "targetSurface": [
+        "timeline",
+        "archive"
+      ],
+      "nextAction": "create-6-events"
+    },
+    {
+      "id": "floating-island-reading-path",
+      "title": "从浮岛入口到档案馆的阅读路径",
+      "type": "reading-path",
+      "visibility": "public",
+      "column": "路径导览",
+      "summary": "为第一次访问者设计一条从首页、Atlas、节点、展览到导出中心的路径。",
+      "targetSurface": [
+        "paths",
+        "home"
+      ],
+      "nextAction": "connect-existing-routes"
+    },
+    {
+      "id": "public-world-weekly-review",
+      "title": "公开世界周记",
+      "type": "operation-review",
+      "visibility": "public",
+      "column": "运营复盘",
+      "summary": "每周记录内容增长、页面状态、待补证风险和下周运营重点。",
+      "targetSurface": [
+        "phase-four",
+        "archive"
+      ],
+      "nextAction": "start-weekly-rhythm"
+    }
+  ],
+  "rules": [
+    "所有内容种子必须 public visibility。",
+    "每个种子必须有 targetSurface 和 nextAction。",
+    "内容种子不包含私密档案内容。",
+    "内容种子允许后续扩写为真实文章。"
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "version": "0.1.0",
+  "principle": "未来可以无限扩充，但扩展必须通过注册点进入世界，不能穿透骨架。",
+  "namespaces": [
+    {
+      "id": "core",
+      "reserved": true,
+      "description": "V1 核心世界协议，不允许插件覆盖。"
+    },
+    {
+      "id": "world",
+      "reserved": true,
+      "description": "世界对象、状态、事件、规则。"
+    },
+    {
+      "id": "content",
+      "reserved": true,
+      "description": "内容类型、节点类型、正文处理。"
+    },
+    {
+      "id": "projection",
+      "reserved": true,
+      "description": "页面投影、索引投影、路径投影。"
+    },
+    {
+      "id": "ai",
+      "reserved": true,
+      "description": "AI 灯塔、草案、索引、建议。"
+    },
+    {
+      "id": "private",
+      "reserved": true,
+      "description": "私密、家庭、伴侣、保险箱、封存。"
+    },
+    {
+      "id": "future",
+      "reserved": false,
+      "description": "未来扩展的默认命名空间。"
+    },
+    {
+      "id": "plugin",
+      "reserved": false,
+      "description": "第三方或自定义扩展命名空间。"
+    }
+  ],
+  "extensionPoints": [
+    {
+      "id": "node.type",
+      "owner": "content",
+      "stability": "stable",
+      "requires": [
+        "schema update",
+        "rendering projection",
+        "validation rule"
+      ]
+    },
+    {
+      "id": "node.lifecycle",
+      "owner": "world",
+      "stability": "stable",
+      "requires": [
+        "lifecycle policy update",
+        "contract test update"
+      ]
+    },
+    {
+      "id": "relation.type",
+      "owner": "world",
+      "stability": "stable",
+      "requires": [
+        "schema update",
+        "star-line mapping"
+      ]
+    },
+    {
+      "id": "world.event.type",
+      "owner": "world",
+      "stability": "stable",
+      "requires": [
+        "event contract update"
+      ]
+    },
+    {
+      "id": "projection.target",
+      "owner": "projection",
+      "stability": "experimental",
+      "requires": [
+        "projection contract",
+        "permission review"
+      ]
+    },
+    {
+      "id": "area.module",
+      "owner": "world",
+      "stability": "stable",
+      "requires": [
+        "area registry",
+        "navigation entry"
+      ]
+    },
+    {
+      "id": "ai.skill",
+      "owner": "ai",
+      "stability": "guarded",
+      "requires": [
+        "ai boundary policy",
+        "human review"
+      ]
+    },
+    {
+      "id": "private.space",
+      "owner": "private",
+      "stability": "guarded",
+      "requires": [
+        "privacy gate",
+        "no public index",
+        "no ai index"
+      ]
+    },
+    {
+      "id": "export.format",
+      "owner": "world",
+      "stability": "experimental",
+      "requires": [
+        "manifest update",
+        "snapshot policy"
+      ]
+    },
+    {
+      "id": "visual.experience",
+      "owner": "future",
+      "stability": "experimental",
+      "requires": [
+        "fallback mode",
+        "accessibility review"
+      ]
+    }
+  ],
+  "futurePhases": {
+    "v2": {
+      "name": "创世台与规则引擎",
+      "allowedExtensionPoints": [
+        "area.module",
+        "relation.type",
+        "world.event.type",
+        "projection.target"
+      ]
+    },
+    "v3": {
+      "name": "AI 灯塔增强版",
+      "allowedExtensionPoints": [
+        "ai.skill",
+        "projection.target",
+        "export.format"
+      ]
+    },
+    "v4": {
+      "name": "私密深层与记忆系统",
+      "allowedExtensionPoints": [
+        "private.space",
+        "node.type",
+        "world.event.type"
+      ]
+    },
+    "v5": {
+      "name": "回望、展览与传承系统",
+      "allowedExtensionPoints": [
+        "export.format",
+        "projection.target",
+        "world.event.type"
+      ]
+    },
+    "v6": {
+      "name": "高级世界体验候选",
+      "allowedExtensionPoints": [
+        "visual.experience",
+        "projection.target"
+      ]
+    }
+  },
+  "rules": [
+    "扩展不得覆盖 core namespace。",
+    "扩展不得绕过 visibility。",
+    "扩展不得让 AI 读取 vault/sealed/silent。",
+    "扩展必须能在无 AI 时降级。",
+    "实验扩展不得成为 V1 骨架前置条件。",
+    "任何新 projection.target 必须登记权限契约。",
+    "任何新 node.type 必须有渲染与校验策略。"
+  ]
+}

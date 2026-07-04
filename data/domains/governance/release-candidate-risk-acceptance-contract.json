@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选风险接受契约",
+  "principle": "可接受风险必须有记录、范围、责任人和后续观察点，不能只是口头放行。",
+  "stageProgress": "release-candidate-acceptance-evidence line batch 3 / 4",
+  "status": "implemented-static-risk-acceptance",
+  "riskTypes": [
+    "performance",
+    "minor-accessibility",
+    "non-critical-copywriting",
+    "preview-latency",
+    "known-browser-variance"
+  ],
+  "nonAcceptableRisks": [
+    "P0/P1 defect",
+    "privacy boundary leak",
+    "AI autonomous publish/delete/visibility change",
+    "missing required evidence",
+    "manual signoff pending",
+    "release blocker open without review"
+  ],
+  "recordSchema": {
+    "id": "string",
+    "riskType": "string",
+    "scope": "string",
+    "reason": "string",
+    "owner": "string",
+    "followUp": "string",
+    "expiresAt": "date",
+    "status": "draft|accepted|rejected"
+  },
+  "rules": [
+    "risk acceptance 默认 draft。",
+    "nonAcceptableRisks 不能通过风险接受绕过。",
+    "accepted 风险必须有 owner 和 followUp。",
+    "风险接受不能自动改 release-ready。"
+  ]
+}

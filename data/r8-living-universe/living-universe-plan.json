@@ -1,0 +1,55 @@
+{
+  "version": "R8.4",
+  "title": "真实世界 / 宇宙动态化完成线",
+  "positioning": "把动态体验从全站 route-aware 运行层继续推进为有近景、中景、远景、文明痕迹、区域身份证、连续旅程、日常轻仪式和可解释动作的真实个人宇宙。",
+  "designInputs": [
+    "先创造世界，再让内容降临其中",
+    "访问者不是打开网站，而是进入世界",
+    "近景书桌、中景浮岛、远景星河",
+    "每个关键行为都应该像世界中的动作",
+    "诗意命名负责氛围，现实说明负责理解",
+    "世界可以自由生长，但必须能被时间、关系、位置和权限重新找到"
+  ],
+  "stages": [
+    {
+      "id": "stage-01",
+      "name": "宇宙三景深与文明痕迹",
+      "batches": ["near-field objects", "mid-field islands", "far-field cosmos", "civilization traces"],
+      "acceptance": "每个核心路由都有近景器物、中景区域、远景未知与文明痕迹。"
+    },
+    {
+      "id": "stage-02",
+      "name": "区域身份证与不迷路系统",
+      "batches": ["area identity", "real explanation", "next gates", "privacy hint"],
+      "acceptance": "每个页面都回答：我在哪里、这里是什么、能做什么、能去哪、谁能看到。"
+    },
+    {
+      "id": "stage-03",
+      "name": "世界动作与连续旅程",
+      "batches": ["observe", "open", "drift", "echo", "light", "archive", "return"],
+      "acceptance": "访客操作后有本地反馈，旅程、回声和路径可继续。"
+    },
+    {
+      "id": "stage-04",
+      "name": "完成线门禁与打包",
+      "batches": ["lint", "typecheck", "dynamic boundary", "ascii package"],
+      "acceptance": "动态层不依赖数据库或真实 AI，支持 reduced-motion，可全量打包。"
+    }
+  ],
+  "completionCriteria": [
+    "首页不是信息面板，而是创世原点。",
+    "Atlas 不是卡片列表，而是可观测星图。",
+    "时间河不是普通 timeline，而是带回声、涟漪和成长轨迹。",
+    "档案馆不是死列表，而是现实模式下的文明书库。",
+    "节点不是普通文章页，而是带护照、关系和生命阶段的存在物。",
+    "灯塔不是链接入口，而是有边界、有建议、有问答反馈的世界角色。",
+    "创世台不是展示页，而是主人工作层的低负担入口。",
+    "世界任何页面都能回到入口、地图、时间河或灯塔。"
+  ],
+  "nonGoals": [
+    "不接真实数据库",
+    "不接真实 AI 模型",
+    "不引入 Three.js 或重型 3D 引擎",
+    "不牺牲可访问性、可读性和移动端性能"
+  ]
+}

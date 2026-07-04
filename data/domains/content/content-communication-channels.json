@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 公开传播渠道计划",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 2 / 4",
+  "status": "communication-channels-prepared",
+  "channels": [
+    {
+      "id": "site-home",
+      "title": "站点首页",
+      "role": "primary-home",
+      "status": "owned"
+    },
+    {
+      "id": "rss",
+      "title": "RSS",
+      "role": "syndication",
+      "status": "owned"
+    },
+    {
+      "id": "search",
+      "title": "搜索引擎",
+      "role": "discovery",
+      "status": "needs-real-indexing"
+    },
+    {
+      "id": "social-note",
+      "title": "社交平台短札",
+      "role": "distribution",
+      "status": "optional"
+    },
+    {
+      "id": "newsletter",
+      "title": "邮件通讯",
+      "role": "long-term-community",
+      "status": "future-optional"
+    }
+  ],
+  "rules": [
+    "公开传播只分发 public 内容。",
+    "搜索引擎收录不能替代 release-ready。",
+    "社交平台内容必须回链到主站。",
+    "传播节奏必须服务世界长期一致性。"
+  ]
+}

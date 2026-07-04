@@ -1,0 +1,32 @@
+{
+  "id": "v6-private-ai-audit-ledger",
+  "version": "6.0.0",
+  "name": "V6 AI 审计日志样例",
+  "productionLive": false,
+  "events": [
+    {
+      "id": "audit-001",
+      "actor": "ai-world-companion",
+      "action": "read.redacted-context",
+      "target": "data/v6-private-archive/ai-redacted-context.json",
+      "result": "allowed",
+      "rawPrivateContentAccessed": false
+    },
+    {
+      "id": "audit-002",
+      "actor": "ai-world-companion",
+      "action": "suggest.public-summary",
+      "target": "capsule-project-origin",
+      "result": "queued-for-owner-review",
+      "rawPrivateContentAccessed": false
+    },
+    {
+      "id": "audit-003",
+      "actor": "ai-world-companion",
+      "action": "export.vault-raw",
+      "target": "pa-life-project-vault",
+      "result": "blocked",
+      "rawPrivateContentAccessed": false
+    }
+  ]
+}

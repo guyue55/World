@@ -1,0 +1,46 @@
+{
+  "name": "古月浮屿 V1 完整项目包 真实环境补证准备线收口版",
+  "createdAt": "2026-05-19T15:23:34.772344",
+  "sourceWorkspace": "/mnt/data/guyue_real_evidence_prep_4_closure_workspace",
+  "package": "/mnt/data/古月浮屿_V1完整项目包_真实环境补证准备线收口版.zip",
+  "sha256": "f22f979683f1ca3e949947970cbcad37f6d688461f42529ba9ee7d26315bc4c9",
+  "sizeBytes": 651274,
+  "includedFileCount": 919,
+  "skippedFileCount": 0,
+  "jsonFileCount": 208,
+  "jsonErrors": [],
+  "categories": {
+    "src": 280,
+    "data": 204,
+    "docs": 232,
+    "scripts": 162,
+    "public": 10,
+    "github": 2,
+    "root": 17
+  },
+  "excluded": [
+    ".DS_Store",
+    ".cache",
+    ".git",
+    ".next",
+    ".turbo",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules",
+    "reports"
+  ],
+  "missingKeyFiles": [],
+  "stageProgress": {
+    "phaseTwo": "12 / 12 completed",
+    "phaseTwoHardening": "3 / 3 completed",
+    "realValidationLine": "4 / 4 completed",
+    "releasePreparationLine": "4 / 4 completed",
+    "phaseThreePlanningLine": "4 / 4 completed",
+    "phaseThreeImplementationLine": "4 / 4 completed",
+    "phaseThreeIntegrationLine": "4 / 4 completed",
+    "realEvidencePreparationLine": "4 / 4 completed"
+  },
+  "releaseState": "not-ready-for-release; real evidence still required",
+  "lintState": "missing-local-dependencies in current workspace; not counted as lint passed"
+}

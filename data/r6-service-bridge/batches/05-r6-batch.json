@@ -1,0 +1,9 @@
+{
+  "batch": 5,
+  "stage": 2,
+  "title": "R6 批次 05｜API 合约、存储端口与最小数据写入路径",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "Agent Orchestration 协议",
+  "batch": 10,
+  "stage": 3,
+  "stageName": "多 Agent 编排与世界维护运行态",
+  "stageProgress": "V5 / 第 3 阶段 / 第 10 批 / 共 24 批",
+  "slug": "agent-orchestration-protocol",
+  "status": "complete",
+  "goals": [
+    "定义 Agent 编排协议",
+    "Agent 可协作但不能互相授权",
+    "高风险动作必须人工确认"
+  ],
+  "outputs": [
+    "AgentPlan",
+    "AgentReview"
+  ],
+  "mustKeep": [
+    "no auto publish"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-agent-orchestration",
+    "dataDirectory": "data/v5/stage-03",
+    "docsDirectory": "docs/51-v5/stage-03",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

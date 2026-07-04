@@ -1,0 +1,11 @@
+{
+  "signals": [
+    "build-health",
+    "privacy-boundary",
+    "content-freshness",
+    "asset-gap-count",
+    "ai-risk-log",
+    "performance-budget"
+  ],
+  "productionLive": false
+}

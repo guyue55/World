@@ -1,0 +1,10 @@
+{
+  "round": 2,
+  "stage": 2,
+  "batch": 5,
+  "status": "complete",
+  "nodes": 8,
+  "connections": 8,
+  "legacyRoutes": 5,
+  "productionLive": false
+}

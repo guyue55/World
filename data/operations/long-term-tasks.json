@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {
+      "id": "real-content-library",
+      "status": "planned"
+    },
+    {
+      "id": "visual-asset-line",
+      "status": "planned"
+    },
+    {
+      "id": "preview-deploy",
+      "status": "pending"
+    },
+    {
+      "id": "privacy-signoff",
+      "status": "pending"
+    },
+    {
+      "id": "performance-budget",
+      "status": "pending"
+    }
+  ],
+  "productionLive": false
+}

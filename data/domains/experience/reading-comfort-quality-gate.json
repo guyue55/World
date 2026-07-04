@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 阅读舒适度质量门槛",
+  "principle": "阅读体验不是装饰，而是内容世界的基础可用性。",
+  "minimums": {
+    "requiredComponents": 5,
+    "readingWidthChMin": 68,
+    "readingWidthChMax": 76,
+    "tocHeadingLevels": 2,
+    "collapsibleRelationGroups": 1,
+    "mobilePriorityRules": 3
+  },
+  "requiredComponents": [
+    "ReadingToc",
+    "ReadingComfortBar",
+    "NodeReadingBody",
+    "NodeRelationRail",
+    "MarkdownContent"
+  ],
+  "rules": [
+    "节点页必须有 reading comfort bar。",
+    "节点页必须避免正文和相关内容争夺首屏。",
+    "MarkdownContent 必须提供统一的标题、段落、列表、代码块样式。",
+    "相关内容必须可折叠或分组收纳。",
+    "移动端阅读时正文优先。"
+  ]
+}

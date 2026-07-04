@@ -1,0 +1,21 @@
+{
+  "round": 2,
+  "stage": 2,
+  "batch": 8,
+  "status": "complete",
+  "completedBatches": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "不新增阶段 2 批次；阶段 3 复用 node/connection edge，阶段 6 覆盖 world-map variant。",
+    "newTasks": [
+      "内容星图复用 connection edge",
+      "主题系统覆盖世界地图桌面/移动模式"
+    ]
+  },
+  "productionLive": false
+}

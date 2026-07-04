@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run check:strict
+      - run: npm run check:r8-public-operations:all
+      - run: npm run check:r8-public-operations:boundary
+      - run: npm run check:routes
+      - run: npm run build
+      - run: npm run build:verify-artifacts
+      - run: npm run audit:report

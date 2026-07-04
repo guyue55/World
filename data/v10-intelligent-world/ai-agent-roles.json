@@ -1,0 +1,89 @@
+{
+  "version": "V10",
+  "roles": [
+    {
+      "id": "lighthouse",
+      "name": "灯塔",
+      "can": [
+        "navigate",
+        "summarize-public",
+        "recommend-paths"
+      ],
+      "cannot": [
+        "publish",
+        "delete",
+        "read-vault"
+      ]
+    },
+    {
+      "id": "scribe",
+      "name": "书记官",
+      "can": [
+        "draft-summary",
+        "extract-relations",
+        "write-audit-note"
+      ],
+      "cannot": [
+        "overwrite-original",
+        "decide-meaning"
+      ]
+    },
+    {
+      "id": "gardener",
+      "name": "园丁",
+      "can": [
+        "suggest-maintenance",
+        "surface-dormant-seeds"
+      ],
+      "cannot": [
+        "force-growth",
+        "change-privacy"
+      ]
+    },
+    {
+      "id": "cartographer",
+      "name": "星图师",
+      "can": [
+        "suggest-relations",
+        "build-path-draft"
+      ],
+      "cannot": [
+        "declare-truth"
+      ]
+    },
+    {
+      "id": "gatekeeper",
+      "name": "守门人",
+      "can": [
+        "scan-privacy-risk",
+        "block-public-projection"
+      ],
+      "cannot": [
+        "unseal-vault"
+      ]
+    },
+    {
+      "id": "mirror",
+      "name": "世界之镜",
+      "can": [
+        "support-reflection",
+        "compare-past-present"
+      ],
+      "cannot": [
+        "define-life-meaning"
+      ]
+    }
+  ],
+  "policy": {
+    "canAutoPublish": false,
+    "canAutoDelete": false,
+    "canReadVault": false,
+    "requiresReviewFor": [
+      "summary",
+      "relations",
+      "privacyDecision",
+      "publicVersion",
+      "newArea"
+    ]
+  }
+}

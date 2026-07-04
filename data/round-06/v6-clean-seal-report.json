@@ -1,0 +1,62 @@
+{
+  "id": "v6-private-ai-clean-seal-report",
+  "project": "古月浮屿 / 漂浮数字世界 / 我的博客",
+  "round": "round-06",
+  "version": "V6 私密档案与 AI 世界助手深化",
+  "status": "clean-seal-evidence-recorded",
+  "productionLive": false,
+  "sourceContext": {
+    "latestKnownBuildFix": "NEXT_TELEMETRY_DISABLED=1 timeout 300s ./node_modules/.bin/next build --turbopack exited with code 0",
+    "publicJsonStrategy": "public/world-index.json and public/world-manifest.json are the intended public static JSON outputs",
+    "appRouterJsonRoutePolicy": "Do not keep .json App Router route directories for world-index.json or world-manifest.json."
+  },
+  "requiredCommands": [
+    {
+      "command": "npm run check:json",
+      "expected": "passed",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    },
+    {
+      "command": "npm run check:repo",
+      "expected": "passed",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    },
+    {
+      "command": "npm run check:v6-private-ai:all",
+      "expected": "passed",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    },
+    {
+      "command": "npm run lint",
+      "expected": "passed",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    },
+    {
+      "command": "npm run typecheck",
+      "expected": "passed",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    },
+    {
+      "command": "npm run build",
+      "expected": "passed via turbopack build path",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    },
+    {
+      "command": "npm run audit:report",
+      "expected": "passed",
+      "currentSessionRerun": "blocked-by-container-github-dns"
+    }
+  ],
+  "sealScope": [
+    "V6 private archive boundary",
+    "AI world assistant protocol",
+    "human approval, audit and memory graph",
+    "V6 closure and V7 handoff",
+    "build closure evidence for Turbopack-based production build"
+  ],
+  "nextRequiredAction": "Run the requiredCommands in a full local checkout or CI runner, then regenerate the complete full package from the clean worktree.",
+  "notes": [
+    "This file records the clean-seal evidence state and remaining reproducibility action.",
+    "productionLive remains false until real external deployment and manual signoff are completed."
+  ]
+}

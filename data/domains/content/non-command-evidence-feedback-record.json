@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 非命令类证据回写记录",
+  "stageProgress": "real-evidence-preparation line batch 3 / 4",
+  "status": "pending-real-feedback",
+  "items": [
+    {
+      "id": "browser-qa-feedback",
+      "status": "pending",
+      "target": "data/domains/experience/browser-qa-records.json"
+    },
+    {
+      "id": "preview-smoke-feedback",
+      "status": "pending",
+      "target": "data/release/preview-smoke-config.json"
+    },
+    {
+      "id": "performance-feedback",
+      "status": "pending",
+      "target": "data/engineering/performance-measurement-records.json"
+    },
+    {
+      "id": "defect-feedback",
+      "status": "pending",
+      "target": "data/release/real-validation-defect-register.json"
+    }
+  ],
+  "rules": [
+    "pending-real-feedback 不等于通过。",
+    "所有回写必须来自真实观察或真实测量。",
+    "不允许用静态计划代替真实结果。"
+  ]
+}

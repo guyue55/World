@@ -1,0 +1,18 @@
+{
+  "stage": 4,
+  "name": "公开运营封版、证据台账与长期交接",
+  "status": "complete",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "checks": [
+    "check:r8-public-operations:stage-04",
+    "lint"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

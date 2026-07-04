@@ -1,0 +1,21 @@
+{
+  "version": "V8",
+  "stage": 1,
+  "title": "真实生产部署流水线与环境准备",
+  "status": "complete",
+  "completedBatches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "focus": [
+    "生产部署契约",
+    "环境变量与密钥边界",
+    "预览环境 smoke test",
+    "阶段一收口"
+  ],
+  "releaseReady": false,
+  "productionLive": false,
+  "lintRequiredAfterStage": true
+}

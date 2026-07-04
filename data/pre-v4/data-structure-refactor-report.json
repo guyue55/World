@@ -1,0 +1,51 @@
+{
+  "version": "pre-v4-data-structure",
+  "name": "V4 前 data JSON 目录结构整理报告",
+  "createdAt": "2026-05-20T06:08:55Z",
+  "workspace": "/mnt/data/guyue_pre_v4_data_structure_workspace",
+  "movedRootJson": 353,
+  "remainingRootJson": [
+    "_data-structure-registry.json"
+  ],
+  "groups": {
+    "release": 124,
+    "core": 68,
+    "domains/ai": 17,
+    "domains/archive": 7,
+    "domains/experience": 34,
+    "domains/governance": 25,
+    "engineering": 35,
+    "domains/content": 23,
+    "operations": 8,
+    "versions/archive": 12
+  },
+  "updatedReferenceFiles": 419,
+  "jsonImportsResolved": 1167,
+  "unresolvedJsonImports": 0,
+  "decision": "root data JSON files are grouped by domain and lifecycle; code references updated to new paths",
+  "rules": [
+    "do not add new data/*.json root files",
+    "active domain data belongs to data/domains/<domain>",
+    "release/evidence data belongs to data/release",
+    "engineering/tooling data belongs to data/engineering",
+    "core contracts/protocols belong to data/core",
+    "historical phase data belongs to data/versions/archive",
+    "V4 planning data should use data/v4 or domain directories"
+  ],
+  "checks": {
+    "static": [
+      "JSON parse check passed.",
+      "Static data structure logic check passed.",
+      "JSON import resolution check passed.",
+      "Stale root data JSON reference scan passed.",
+      "Basic format check on changed files passed."
+    ],
+    "realCommand": {
+      "command": "npm run check:pre-v4:data-structure",
+      "status": "blocked-or-failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 check:pre-v4:data-structure\n> tsx scripts/check-pre-v4-data-structure.ts\n\n\nsh: 1: tsx: Permission denied"
+    }
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

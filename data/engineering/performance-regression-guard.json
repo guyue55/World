@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 性能回归守门",
+  "principle": "性能回归往往来自结构失控，而不是单个慢函数。",
+  "guards": [
+    {
+      "id": "route-profile-exists",
+      "target": "all core routes have route performance profile"
+    },
+    {
+      "id": "metrics-model-exists",
+      "target": "performance metrics are registered"
+    },
+    {
+      "id": "smoothness-audit-exists",
+      "target": "interaction smoothness audit is registered"
+    },
+    {
+      "id": "large-content-strategy-exists",
+      "target": "large content growth strategy is registered"
+    },
+    {
+      "id": "world-foundation-stack-boundary",
+      "target": "heavy status/skeleton panels behind WorldFoundationStack"
+    },
+    {
+      "id": "performance-docs-registered",
+      "target": "performance docs in documentation registry"
+    }
+  ],
+  "futureCiSlots": [
+    "lighthouse-ci",
+    "bundle-analyzer",
+    "route-size-snapshot",
+    "public-index-size-check",
+    "visual-stability-audit"
+  ]
+}

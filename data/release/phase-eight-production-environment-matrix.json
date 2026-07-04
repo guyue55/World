@@ -1,0 +1,58 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 生产环境矩阵",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 1 / 4",
+  "status": "production-environment-matrix-prepared",
+  "environments": [
+    {
+      "id": "local",
+      "purpose": "本地开发与验证",
+      "deployment": "not-production",
+      "requiresSignoff": false
+    },
+    {
+      "id": "preview",
+      "purpose": "预览部署与 smoke",
+      "deployment": "preview",
+      "requiresSignoff": true
+    },
+    {
+      "id": "production",
+      "purpose": "正式公开访问",
+      "deployment": "production",
+      "requiresSignoff": true
+    }
+  ],
+  "productionRequirements": [
+    "domain configured",
+    "HTTPS active",
+    "CDN/cache policy documented",
+    "environment variables audited",
+    "build artifact traceable",
+    "rollback target prepared",
+    "monitoring channel prepared"
+  ],
+  "requiredSecrets": [
+    {
+      "name": "PUBLIC_SITE_URL",
+      "required": true,
+      "visibility": "public-runtime"
+    },
+    {
+      "name": "ANALYTICS_PROVIDER",
+      "required": false,
+      "visibility": "public-runtime"
+    },
+    {
+      "name": "ERROR_TRACKING_DSN",
+      "required": false,
+      "visibility": "secret-runtime"
+    }
+  ],
+  "rules": [
+    "secret-runtime 不得写入仓库。",
+    "PUBLIC_SITE_URL 必须与真实域名一致。",
+    "production requiresSignoff 必须为 true。",
+    "本矩阵只定义环境契约，不声明生产已经上线。"
+  ]
+}

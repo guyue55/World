@@ -1,0 +1,31 @@
+{
+  "rules": [
+    {
+      "id": "no-vault-public",
+      "severity": "critical",
+      "rule": "vault 内容不得进入公开页面、公开 AI 上下文、公开 manifest 或 SEO 摘要。"
+    },
+    {
+      "id": "no-private-family",
+      "severity": "critical",
+      "rule": "家庭、孩子、亲密关系、住宅地址和未签收的生活记录默认不公开。"
+    },
+    {
+      "id": "ai-draft-not-public",
+      "severity": "high",
+      "rule": "AI 生成摘要、标签、公开稿必须经过人工审查才能点亮。"
+    },
+    {
+      "id": "owner-review-before-publish",
+      "severity": "high",
+      "rule": "任何内容从 private/semi-public 变为 public 前必须进入 owner review。"
+    }
+  ],
+  "forbiddenTokens": [
+    "vaultRaw",
+    "privateRaw",
+    "familyAddress",
+    "childIdentity",
+    "autoPublish:true"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "stage": 5,
+  "batch": 19,
+  "totalBatches": 20,
+  "name": "V1 到 V2 迁移与兼容策略",
+  "stageProgress": "V2 / 第 5 阶段：生产化迁移收口 / 第 19 批 / 共 20 批",
+  "status": "prepared",
+  "migrationTracks": [
+    "content-json-to-db",
+    "public-routes-compatible",
+    "static-export-compatible",
+    "private-vault-not-migrated-without-owner",
+    "ai-protocol-compatible"
+  ],
+  "compatibilityRules": [
+    "V1 public routes preserved",
+    "V1 data read-only import",
+    "no private auto-migration"
+  ],
+  "ready": false,
+  "rules": [
+    "V2 结构完成不等于真实服务上线。",
+    "V1 公开路径必须尽量兼容。",
+    "V2.1 才进入真实服务实现与私密档案落地。"
+  ]
+}

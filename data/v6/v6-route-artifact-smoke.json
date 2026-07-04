@@ -1,0 +1,63 @@
+{
+  "version": "6.0.0",
+  "name": "V6 本地构建产物路由 smoke",
+  "createdAt": "2026-05-20T10:29:03Z",
+  "routes": {
+    "v6": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6/page.js"
+      ]
+    },
+    "v6-world-network": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-world-network/page.js"
+      ]
+    },
+    "v6-civilization-os": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-civilization-os/page.js"
+      ]
+    },
+    "v6-agent-society": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-agent-society/page.js"
+      ]
+    },
+    "v6-memory-graph": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-memory-graph/page.js"
+      ]
+    },
+    "v6-shared-universe": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-shared-universe/page.js"
+      ]
+    },
+    "v6-open-protocol": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-open-protocol/page.js"
+      ]
+    },
+    "v6-governance": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-governance/page.js"
+      ]
+    },
+    "v6-v7-gate": {
+      "exists": true,
+      "files": [
+        ".next/server/app/v6-v7-gate/page.js"
+      ]
+    }
+  },
+  "allV6RouteArtifactsExist": true,
+  "note": "该检查验证 Next build 产物中 V6 页面路由存在；不等同于真实浏览器/真机 smoke。"
+}

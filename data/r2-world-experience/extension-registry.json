@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "id": "world-entry-hero",
+      "name": "世界入口首屏",
+      "status": "complete"
+    },
+    {
+      "id": "three-depth-space",
+      "name": "近景 / 中景 / 远景三景深",
+      "status": "complete"
+    },
+    {
+      "id": "progressive-disclosure",
+      "name": "渐进揭示",
+      "status": "complete"
+    },
+    {
+      "id": "atlas-gateway",
+      "name": "Atlas 旅行者地图",
+      "status": "complete"
+    },
+    {
+      "id": "compass-anchors",
+      "name": "七锚点罗盘",
+      "status": "complete"
+    },
+    {
+      "id": "area-passports",
+      "name": "区域身份证",
+      "status": "complete"
+    },
+    {
+      "id": "arrival-rituals",
+      "name": "区域抵达仪式",
+      "status": "complete"
+    },
+    {
+      "id": "node-opening-rituals",
+      "name": "节点展开仪式",
+      "status": "complete"
+    },
+    {
+      "id": "reality-mode-bridge",
+      "name": "世界模式 / 现实模式桥接",
+      "status": "complete"
+    },
+    {
+      "id": "mobile-immersion",
+      "name": "移动端沉浸适配",
+      "status": "complete"
+    },
+    {
+      "id": "motion-accessibility",
+      "name": "减动效与可访问性",
+      "status": "complete"
+    },
+    {
+      "id": "r3-content-handoff",
+      "name": "R3 真实内容交接",
+      "status": "complete"
+    }
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

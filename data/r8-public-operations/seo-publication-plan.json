@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "titleTemplate": "%s｜古月浮屿",
+    "description": "古月浮屿是一个可探索、可沉淀、可持续运营的个人数字世界。"
+  },
+  "checks": [
+    "metadata title present",
+    "description present",
+    "sitemap plan present",
+    "robots plan present",
+    "canonical path reviewed"
+  ],
+  "publicRoutes": [
+    "/",
+    "/r2-world",
+    "/r3-content-life",
+    "/r5-lighthouse",
+    "/r8-public"
+  ],
+  "blockedRoutes": [
+    "/private-archive",
+    "/r4-creator",
+    "/api/r6/nodes",
+    "/private-ai",
+    "/r6-service",
+    "/r7-evolution",
+    "/api/r6/",
+    "/api/r7/maintenance"
+  ]
+}

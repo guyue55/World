@@ -1,0 +1,43 @@
+{
+  "version": "3.1.0-pre-v4",
+  "name": "古月浮屿 V4 前所有任务最终收口报告",
+  "createdAt": "2026-05-20T05:43:29Z",
+  "workspace": "/mnt/data/guyue_pre_v4_final_completion_workspace",
+  "source": "/mnt/data/guyue_v3_to_v4_full_workspace",
+  "completedLine": "pre-v4-final-evidence-and-gate-completion",
+  "completedBatches": 4,
+  "v4PlanningAllowed": true,
+  "v4FormalDevelopmentAllowed": false,
+  "v4DevelopmentRecommended": false,
+  "releaseReady": false,
+  "productionLive": false,
+  "finalDecision": "v4-planning-allowed-formal-development-blocked-until-real-production-evidence",
+  "checks": {
+    "static": [
+      "JSON parse check passed.",
+      "Static logic check passed.",
+      "Changed TS/TSX lightweight syntax scan passed for 8 files.",
+      "Static lint risk scan passed.",
+      "Basic format check on changed files passed."
+    ],
+    "realCommand": {
+      "command": "npm run check:pre-v4:all",
+      "status": "blocked-or-failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 check:pre-v4:all\n> tsx scripts/check-pre-v4-all.ts\n\n\nsh: 1: tsx: Permission denied"
+    }
+  },
+  "remainingExternalWork": [
+    "fix tsx Permission denied in executable environment",
+    "npm install in clean local/CI environment",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run build",
+    "npm run check:v3:all",
+    "npm run check:pre-v4:all",
+    "real database and graph persistence",
+    "real auth provider",
+    "real vault encryption",
+    "staging deployment smoke",
+    "manual safety review"
+  ]
+}

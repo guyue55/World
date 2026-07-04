@@ -1,0 +1,47 @@
+{
+  "id": "v6-private-archive-redacted-index",
+  "version": "6.0.0",
+  "name": "V6 脱敏私密档案索引",
+  "records": [
+    {
+      "id": "pa-2026-origin-memory",
+      "title": "世界起源记忆",
+      "layer": "private",
+      "status": "indexed-redacted",
+      "tags": ["origin", "worldview", "self"],
+      "period": "before-v6",
+      "summary": "记录个人数字宇宙形成原因、长期愿景与边界意识，只公开脱敏后的世界观摘要。",
+      "containsRawPrivateContent": false,
+      "aiReadableSummary": "用户希望把博客建设成可探索、可沉淀、可与 AI 协作但边界清晰的个人数字宇宙。"
+    },
+    {
+      "id": "pa-family-memory-capsule",
+      "title": "家庭记忆胶囊",
+      "layer": "family",
+      "status": "sealed-signal-only",
+      "tags": ["family", "capsule", "legacy"],
+      "period": "long-term",
+      "summary": "家庭生活与传承记录只保留封存信号，不进入公开构建。",
+      "containsRawPrivateContent": false,
+      "aiReadableSummary": "存在家庭记忆胶囊能力需求，但 AI 只能看到脱敏类型和规划状态。"
+    },
+    {
+      "id": "pa-life-project-vault",
+      "title": "人生项目保险箱",
+      "layer": "vault",
+      "status": "vault-signal-only",
+      "tags": ["life-project", "vault", "planning"],
+      "period": "v6-plus",
+      "summary": "长期人生项目中的高敏目标、财务与身份相关内容不公开，只暴露项目存在性与脱敏状态。",
+      "containsRawPrivateContent": false,
+      "aiReadableSummary": "长期人生项目需要私密保险箱，公开世界只能展示非敏感进度结构。"
+    }
+  ],
+  "publicGuarantees": [
+    "records do not contain raw private text",
+    "records do not contain identity numbers",
+    "records do not contain exact home address",
+    "records do not contain credentials or secrets",
+    "aiReadableSummary is safe for assistant planning"
+  ]
+}

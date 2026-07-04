@@ -1,0 +1,325 @@
+{
+  "version": "R1",
+  "name": "真实生产收口",
+  "theme": "把 V10 结构包推进为可复跑、可部署、可验收的工程基线",
+  "ultimateGoal": "让古月浮屿从结构完整走向真实可运行、可进入、可长期生长的个人数字世界。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "stages": [
+    {
+      "stage": 1,
+      "title": "最终基线统一与仓库清洁",
+      "description": "统一 V10 后的真实生产收口基线，清理可复现性风险，建立 R1 范围契约。",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "真实命令门禁与构建稳定",
+      "description": "把本地命令门禁固化为可复跑脚本，优先解决 build/trace 退出类阻断。",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "部署证据与运行手册",
+      "description": "补齐 preview/production smoke 计划、环境变量边界、回滚和人工签收模板。",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "Release Candidate 包装与交接",
+      "description": "生成 RC 状态、风险台账、封版说明、R2 交接入口。",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "stage": 1,
+      "title": "统一最终基线",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 最终基线统一与仓库清洁：统一最终基线",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 2,
+      "stage": 1,
+      "title": "仓库污染清单",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 最终基线统一与仓库清洁：仓库污染清单",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 3,
+      "stage": 1,
+      "title": "生产构建策略",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 最终基线统一与仓库清洁：生产构建策略",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 4,
+      "stage": 1,
+      "title": "R1 任务规划落库",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 最终基线统一与仓库清洁：R1 任务规划落库",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 5,
+      "stage": 2,
+      "title": "命令矩阵",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 真实命令门禁与构建稳定：命令矩阵",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 6,
+      "stage": 2,
+      "title": "构建策略",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 真实命令门禁与构建稳定：构建策略",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 7,
+      "stage": 2,
+      "title": "质量门禁证据",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 真实命令门禁与构建稳定：质量门禁证据",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 8,
+      "stage": 2,
+      "title": "依赖安装记录",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 真实命令门禁与构建稳定：依赖安装记录",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 9,
+      "stage": 3,
+      "title": "部署清单",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 部署证据与运行手册：部署清单",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 10,
+      "stage": 3,
+      "title": "smoke 测试计划",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 部署证据与运行手册：smoke 测试计划",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 11,
+      "stage": 3,
+      "title": "回滚阶梯",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 部署证据与运行手册：回滚阶梯",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 12,
+      "stage": 3,
+      "title": "签收模板",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 部署证据与运行手册：签收模板",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 13,
+      "stage": 4,
+      "title": "RC manifest",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 Release Candidate 包装与交接：RC manifest",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 14,
+      "stage": 4,
+      "title": "风险台账",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 Release Candidate 包装与交接：风险台账",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 15,
+      "stage": 4,
+      "title": "封版说明",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 Release Candidate 包装与交接：封版说明",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    },
+    {
+      "batch": 16,
+      "stage": 4,
+      "title": "R2 交接",
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "goal": "R1 Release Candidate 包装与交接：R2 交接",
+      "checks": [
+        "json-valid",
+        "lint-after-stage",
+        "typed-contracts"
+      ]
+    }
+  ],
+  "qualityGates": [
+    "check:r1-production:stage-01",
+    "check:r1-production:stage-02",
+    "check:r1-production:stage-03",
+    "check:r1-production:stage-04",
+    "check:r1-production:all",
+    "check:r1-production:boundary",
+    "lint",
+    "typecheck",
+    "build",
+    "audit:report"
+  ]
+}

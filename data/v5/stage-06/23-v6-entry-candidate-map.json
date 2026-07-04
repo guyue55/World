@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "V6 入口候选图",
+  "batch": 23,
+  "stage": 6,
+  "stageName": "V5 收口、世界迁移能力与 V6 入口门禁",
+  "stageProgress": "V5 / 第 6 阶段 / 第 23 批 / 共 24 批",
+  "slug": "v6-entry-candidate-map",
+  "status": "complete",
+  "goals": [
+    "定义 V6 入口候选",
+    "多世界网络/个人文明 OS/共享宇宙",
+    "正式开发依赖 V5 证据"
+  ],
+  "outputs": [
+    "V6EntryCandidateMap"
+  ],
+  "mustKeep": [
+    "V6 formal blocked until evidence"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-migration-v6-gate",
+    "dataDirectory": "data/v5/stage-06",
+    "docsDirectory": "docs/51-v5/stage-06",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

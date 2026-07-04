@@ -1,0 +1,15 @@
+{
+  "batch": 8,
+  "stage": 2,
+  "title": "依赖安装记录",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 真实命令门禁与构建稳定：依赖安装记录",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

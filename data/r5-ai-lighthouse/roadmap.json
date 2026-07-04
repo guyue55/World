@@ -1,0 +1,144 @@
+{
+  "version": "R5",
+  "name": "AI 灯塔真实接入",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "mission": "让 AI 灯塔从占位协议进入真实可用的公开导览、公开问答、路径推荐、摘要建议、隐私守门与审计审批闭环，但不让 AI 成为世界主人。",
+  "principles": [
+    "AI 是增强层，不是生命层",
+    "公开 AI 只读公开索引",
+    "私密 AI 不进入访客层",
+    "创世 AI 只能建议，不能自动修改",
+    "所有建议必须可审计、可撤销、可拒绝"
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "title": "公开 AI 灯塔范围契约与可读上下文",
+      "focus": "只读公开索引、无 AI fallback、公开问答边界",
+      "batches": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "路径推荐、节点摘要与关系建议",
+      "focus": "让 AI 能解释世界、推荐路径、生成建议但不直接修改",
+      "batches": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "审批队列、审计日志与隐私守门",
+      "focus": "所有建议进入人工审核，禁止越权读取与自动公开",
+      "batches": [
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "质量门禁、页面集成与 R6 服务化交接",
+      "focus": "聚合检查、边界扫描、文档报告、交接服务化最小闭环",
+      "batches": [
+        13,
+        14,
+        15,
+        16
+      ]
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "title": "R5-最终目标重申与 AI 灯塔范围契约",
+      "status": "complete"
+    },
+    {
+      "batch": 2,
+      "title": "公开内容可读索引与上下文包",
+      "status": "complete"
+    },
+    {
+      "batch": 3,
+      "title": "无 AI fallback 与预设导览问题",
+      "status": "complete"
+    },
+    {
+      "batch": 4,
+      "title": "AI 灯塔入口页面与首页接入",
+      "status": "complete"
+    },
+    {
+      "batch": 5,
+      "title": "公开问答输出协议与可信信息层",
+      "status": "complete"
+    },
+    {
+      "batch": 6,
+      "title": "路径推荐与探索路线生成协议",
+      "status": "complete"
+    },
+    {
+      "batch": 7,
+      "title": "节点摘要与关系建议协议",
+      "status": "complete"
+    },
+    {
+      "batch": 8,
+      "title": "灯塔能力矩阵与不可自动化边界",
+      "status": "complete"
+    },
+    {
+      "batch": 9,
+      "title": "人工审批队列与建议状态机",
+      "status": "complete"
+    },
+    {
+      "batch": 10,
+      "title": "AI 审计日志与来源追踪",
+      "status": "complete"
+    },
+    {
+      "batch": 11,
+      "title": "隐私守门与禁止动作扫描",
+      "status": "complete"
+    },
+    {
+      "batch": 12,
+      "title": "公开 / 私密 / 创世三层 AI 分离",
+      "status": "complete"
+    },
+    {
+      "batch": 13,
+      "title": "R5 聚合门禁",
+      "status": "complete"
+    },
+    {
+      "batch": 14,
+      "title": "R5 隐私边界扫描",
+      "status": "complete"
+    },
+    {
+      "batch": 15,
+      "title": "R5 文档与质量报告",
+      "status": "complete"
+    },
+    {
+      "batch": 16,
+      "title": "R6 服务化最小闭环交接",
+      "status": "complete"
+    }
+  ]
+}

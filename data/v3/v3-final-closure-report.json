@@ -1,0 +1,77 @@
+{
+  "version": "3.0.0",
+  "name": "古月浮屿 V3 到 V4 前完整收口报告",
+  "createdAt": "2026-05-20T05:36:11Z",
+  "completedStages": 5,
+  "completedBatches": 20,
+  "v3Status": "structure-complete",
+  "v4PlanningAllowed": true,
+  "v4DevelopmentRecommended": false,
+  "releaseReady": false,
+  "productionLive": false,
+  "stages": [
+    {
+      "stage": 1,
+      "name": "智能世界内核",
+      "batches": "1-4",
+      "status": "complete"
+    },
+    {
+      "stage": 2,
+      "name": "多空间与协作身份",
+      "batches": "5-8",
+      "status": "complete"
+    },
+    {
+      "stage": 3,
+      "name": "可视化宇宙与沉浸式导航",
+      "batches": "9-12",
+      "status": "complete"
+    },
+    {
+      "stage": 4,
+      "name": "长期生命档案与传承治理",
+      "batches": "13-16",
+      "status": "complete"
+    },
+    {
+      "stage": 5,
+      "name": "V4 前硬化与入口门禁",
+      "batches": "17-20",
+      "status": "complete"
+    }
+  ],
+  "completedCapabilities": [
+    "intelligent world scope",
+    "world memory semantic graph",
+    "long-term growth loop",
+    "multi-space model",
+    "collaborative identity",
+    "space bridge policy",
+    "visual universe map",
+    "immersive accessibility gate",
+    "exhibition worldbook linkage",
+    "life archive model",
+    "legacy protocol",
+    "ethics risk governance",
+    "sustainability and cost boundary",
+    "security hardening gap ledger",
+    "V4 entry scope candidate",
+    "V4 entry gate"
+  ],
+  "externalRealWorkStillRequired": [
+    "V3 real database and graph persistence",
+    "real AI memory storage",
+    "real auth and collaboration invite flow",
+    "real private vault encryption proof",
+    "real visual universe performance proof",
+    "real backup and legacy handover drill",
+    "staging deployment smoke evidence",
+    "manual safety review"
+  ],
+  "rules": [
+    "V3 完成的是结构、协议、页面入口和门禁，不是真实生产上线。",
+    "V4 可以开始规划，但不建议正式开发。",
+    "V4 正式开发前必须补齐 V3 生产证据。"
+  ]
+}

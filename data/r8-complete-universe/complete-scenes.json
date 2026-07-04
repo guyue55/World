@@ -1,0 +1,397 @@
+{
+  "scenes": [
+    {
+      "match": "/",
+      "title": "创世原点",
+      "realName": "首页 / 世界入口",
+      "tone": "origin",
+      "seasonalMood": "一张书桌连接星河，世界从纸、灯、罗盘和远方浮屿开始。",
+      "objects": [
+        "纸页",
+        "灯",
+        "罗盘",
+        "未完成地图",
+        "星尘",
+        "窗外远岛"
+      ],
+      "rituals": [
+        "抵达",
+        "观测",
+        "漂流",
+        "点亮"
+      ],
+      "worldState": "入口清澈，深处浩瀚。",
+      "next": [
+        {
+          "label": "打开地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "沿时间河",
+          "href": "/timeline"
+        },
+        {
+          "label": "问灯塔",
+          "href": "/ask"
+        }
+      ]
+    },
+    {
+      "match": "/atlas",
+      "title": "星图穹顶",
+      "realName": "Atlas / 世界地图",
+      "tone": "map",
+      "seasonalMood": "地图先显示主干，再让雾区、支线和远方坐标逐层显现。",
+      "objects": [
+        "星盘",
+        "区域铭牌",
+        "路线针",
+        "雾门",
+        "浮岛",
+        "主干星线"
+      ],
+      "rituals": [
+        "观测",
+        "聚焦",
+        "连星",
+        "归途"
+      ],
+      "worldState": "地图不是全量节点图，而是不迷路的世界路标。",
+      "next": [
+        {
+          "label": "看时间流",
+          "href": "/timeline"
+        },
+        {
+          "label": "走精选路径",
+          "href": "/paths"
+        },
+        {
+          "label": "进档案馆",
+          "href": "/archive"
+        }
+      ]
+    },
+    {
+      "match": "/timeline",
+      "title": "时间河",
+      "realName": "Timeline / 时间流",
+      "tone": "river",
+      "seasonalMood": "现实时间、世界纪年、节点生命阶段和访问回声在河面上叠加。",
+      "objects": [
+        "水纹",
+        "旧星",
+        "回声瓶",
+        "年轮",
+        "漂浮纸片",
+        "时间胶囊"
+      ],
+      "rituals": [
+        "回声",
+        "筛选",
+        "展开",
+        "复活"
+      ],
+      "worldState": "世界不是只存在现在，而是拥有起源、生长、沉淀和未来。",
+      "next": [
+        {
+          "label": "打开档案",
+          "href": "/archive"
+        },
+        {
+          "label": "阅读宪章",
+          "href": "/manifesto"
+        },
+        {
+          "label": "问灯塔",
+          "href": "/ask"
+        }
+      ]
+    },
+    {
+      "match": "/archive",
+      "title": "文明档案馆",
+      "realName": "Archive / 现实检索视图",
+      "tone": "archive",
+      "seasonalMood": "当访客不想漫游，档案馆提供清晰、可检索、可回到节点的现实模式。",
+      "objects": [
+        "卷宗",
+        "索引卡",
+        "书架",
+        "检索灯",
+        "证据链",
+        "迁移舱"
+      ],
+      "rituals": [
+        "检索",
+        "归档",
+        "验证",
+        "打开卷宗"
+      ],
+      "worldState": "前台浪漫，档案必须可靠。",
+      "next": [
+        {
+          "label": "走路径",
+          "href": "/paths"
+        },
+        {
+          "label": "回星图",
+          "href": "/atlas"
+        },
+        {
+          "label": "读节点",
+          "href": "/node/world-as-living-system"
+        }
+      ]
+    },
+    {
+      "match": "/paths",
+      "title": "星路",
+      "realName": "精选路径",
+      "tone": "path",
+      "seasonalMood": "路径把抵达、理解、进入、阅读、继续探索串成完整旅程。",
+      "objects": [
+        "脚印",
+        "路线绳",
+        "星路牌",
+        "旅程卡",
+        "回访标记",
+        "下一扇门"
+      ],
+      "rituals": [
+        "开始旅程",
+        "继续上次",
+        "切换路线",
+        "抵达"
+      ],
+      "worldState": "世界不靠菜单堆叠，而靠路径引导。",
+      "next": [
+        {
+          "label": "问灯塔",
+          "href": "/ask"
+        },
+        {
+          "label": "打开地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "进档案馆",
+          "href": "/archive"
+        }
+      ]
+    },
+    {
+      "match": "/ask",
+      "title": "AI 灯塔",
+      "realName": "公开导览与问答",
+      "tone": "lighthouse",
+      "seasonalMood": "灯塔照亮公开星线，但不成为世界的太阳。",
+      "objects": [
+        "灯塔",
+        "光束",
+        "问答面板",
+        "边界印章",
+        "建议卡",
+        "审计线"
+      ],
+      "rituals": [
+        "询问",
+        "照亮",
+        "建议",
+        "守门"
+      ],
+      "worldState": "AI 可以导航、整理和建议，但不能自动公开、删除或越权。",
+      "next": [
+        {
+          "label": "看公开路径",
+          "href": "/paths"
+        },
+        {
+          "label": "回地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "读宪章",
+          "href": "/manifesto"
+        }
+      ]
+    },
+    {
+      "match": "/node",
+      "title": "节点静读室",
+      "realName": "Node / 内容详情",
+      "tone": "node",
+      "seasonalMood": "内容不是文章孤岛，而是带护照、来源、关系和生命阶段的存在物。",
+      "objects": [
+        "纸页",
+        "节点护照",
+        "关系星线",
+        "阅读灯",
+        "证据链",
+        "下一步动作"
+      ],
+      "rituals": [
+        "展开",
+        "静读",
+        "连星",
+        "继续生长"
+      ],
+      "worldState": "每个节点都可以从微光长成星体、卷轴、装置或遗迹。",
+      "next": [
+        {
+          "label": "回档案馆",
+          "href": "/archive"
+        },
+        {
+          "label": "看地图",
+          "href": "/atlas"
+        },
+        {
+          "label": "沿时间河",
+          "href": "/timeline"
+        }
+      ]
+    },
+    {
+      "match": "/r4-creator",
+      "title": "创世台",
+      "realName": "主人工作台",
+      "tone": "creator",
+      "seasonalMood": "外面是浮屿，里面是清醒、低负担、可批量维护的创世台。",
+      "objects": [
+        "收集箱",
+        "权限灯",
+        "安放器",
+        "连星器",
+        "导出箱",
+        "审计册"
+      ],
+      "rituals": [
+        "安放",
+        "设权",
+        "连星",
+        "封存"
+      ],
+      "worldState": "创世台可以有世界语言，但危险操作必须清楚。",
+      "next": [
+        {
+          "label": "看服务边界",
+          "href": "/r6-service"
+        },
+        {
+          "label": "看自演化",
+          "href": "/r7-evolution"
+        },
+        {
+          "label": "回首页",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "match": "/r7-evolution",
+      "title": "自演化温室",
+      "realName": "长期运行与世界自演化",
+      "tone": "evolution",
+      "seasonalMood": "低光、苏醒、今日世界、周期回望和维护仪式让世界不轻易死亡。",
+      "objects": [
+        "生命树",
+        "低光灯",
+        "苏醒钟",
+        "维护队列",
+        "世界日志",
+        "周期环"
+      ],
+      "rituals": [
+        "浇水",
+        "唤醒",
+        "回望",
+        "自修复"
+      ],
+      "worldState": "世界可以静默，但不应显得死亡。",
+      "next": [
+        {
+          "label": "看公开运营",
+          "href": "/r8-public"
+        },
+        {
+          "label": "回时间河",
+          "href": "/timeline"
+        },
+        {
+          "label": "回首页",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "match": "/r8-public",
+      "title": "公开广场",
+      "realName": "公开发布与持续运营",
+      "tone": "public",
+      "seasonalMood": "访客看到的是精选世界，不是完整私密宇宙。",
+      "objects": [
+        "公开门",
+        "发布钟",
+        "反馈瓶",
+        "回滚梯",
+        "证据台",
+        "运营月历"
+      ],
+      "rituals": [
+        "发布",
+        "反馈",
+        "复盘",
+        "回滚"
+      ],
+      "worldState": "公开是经过审查的动作，不是默认结果。",
+      "next": [
+        {
+          "label": "回首页",
+          "href": "/"
+        },
+        {
+          "label": "看灯塔",
+          "href": "/ask"
+        },
+        {
+          "label": "看档案",
+          "href": "/archive"
+        }
+      ]
+    }
+  ],
+  "fallback": {
+    "match": "*",
+    "title": "未命名星域",
+    "realName": "未知页面 / 深层区域",
+    "tone": "unknown",
+    "seasonalMood": "这里还在雾中，但仍然属于同一个世界运行层。",
+    "objects": [
+      "雾门",
+      "远星",
+      "空白卷轴",
+      "路标"
+    ],
+    "rituals": [
+      "观测",
+      "返回",
+      "记录"
+    ],
+    "worldState": "未知不等于混乱，未知也需要边界和归途。",
+    "next": [
+      {
+        "label": "回首页",
+        "href": "/"
+      },
+      {
+        "label": "打开地图",
+        "href": "/atlas"
+      },
+      {
+        "label": "问灯塔",
+        "href": "/ask"
+      }
+    ]
+  }
+}

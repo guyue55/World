@@ -1,0 +1,22 @@
+{
+  "id": "batch-11",
+  "batch": 11,
+  "stage": 3,
+  "title": "集成适配器与数据接入计划",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/11-集成适配器与数据接入计划.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

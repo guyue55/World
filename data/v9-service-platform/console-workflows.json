@@ -1,0 +1,61 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "workflows": [
+    {
+      "id": "ingest-review",
+      "title": "导入审查",
+      "steps": [
+        "collect",
+        "classify",
+        "assign-owner",
+        "set-visibility",
+        "approve-import"
+      ]
+    },
+    {
+      "id": "publish-review",
+      "title": "公开发布审查",
+      "steps": [
+        "draft",
+        "privacy-scan",
+        "owner-review",
+        "release-note",
+        "publish"
+      ]
+    },
+    {
+      "id": "ai-draft-review",
+      "title": "AI 草案审查",
+      "steps": [
+        "generate-draft",
+        "mark-ai-origin",
+        "human-edit",
+        "approve-or-reject",
+        "audit"
+      ]
+    },
+    {
+      "id": "export-backup",
+      "title": "导出备份",
+      "steps": [
+        "select-scope",
+        "privacy-confirm",
+        "build-package",
+        "verify-manifest",
+        "store-offline"
+      ]
+    },
+    {
+      "id": "incident-governance",
+      "title": "事故治理",
+      "steps": [
+        "detect",
+        "contain",
+        "rollback",
+        "notify",
+        "postmortem"
+      ]
+    }
+  ]
+}

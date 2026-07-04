@@ -1,0 +1,20 @@
+{
+  "stage": 3,
+  "title": "审计日志、操作队列与导出任务闭环",
+  "status": "complete",
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "checks": [
+    "syntax",
+    "logic",
+    "lint-after-stage"
+  ],
+  "goal": "服务化最小闭环必须服务于真实世界成型，而不是引入过度后端复杂度。"
+}

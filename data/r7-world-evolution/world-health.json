@@ -1,0 +1,37 @@
+{
+  "score": 78,
+  "status": "healthy-low-glow",
+  "metrics": [
+    {
+      "id": "activeNodes",
+      "label": "活跃节点",
+      "value": 36,
+      "target": "持续补充真实节点，不追求一次性爆发"
+    },
+    {
+      "id": "publicPaths",
+      "label": "公开路径",
+      "value": 6,
+      "target": "每月至少维护 1 条路径"
+    },
+    {
+      "id": "maintenanceQueue",
+      "label": "维护任务",
+      "value": 8,
+      "target": "保持为可执行的小动作"
+    },
+    {
+      "id": "auditPending",
+      "label": "待审 AI 建议",
+      "value": 4,
+      "target": "全部进入人工审批，不自动发布"
+    },
+    {
+      "id": "lowLightAreas",
+      "label": "低光区域",
+      "value": 2,
+      "target": "低光不是失败，只需保持可解释"
+    }
+  ],
+  "interpretation": "世界已具备入口、内容、创世台、AI 灯塔与服务桥；R7 的重点是把它变成可长期照看、可低心力维护的生命系统。"
+}

@@ -1,0 +1,37 @@
+{
+  "version": "V10",
+  "modules": [
+    {
+      "id": "today-world",
+      "title": "今日世界",
+      "state": "designed"
+    },
+    {
+      "id": "time-echo",
+      "title": "时光回声",
+      "state": "designed"
+    },
+    {
+      "id": "future-self",
+      "title": "未来的我",
+      "state": "planned"
+    },
+    {
+      "id": "annual-book",
+      "title": "年度世界册",
+      "state": "ready"
+    },
+    {
+      "id": "legacy-package",
+      "title": "传承包",
+      "state": "planned"
+    }
+  ],
+  "views": [
+    "traveler",
+    "deep-diver",
+    "creator",
+    "guardian"
+  ],
+  "productionLive": false
+}

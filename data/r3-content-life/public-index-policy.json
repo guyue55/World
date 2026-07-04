@@ -1,0 +1,17 @@
+{
+  "default": "private-first",
+  "rules": [
+    "public 节点可进入公开索引",
+    "semi-public 节点只允许摘要进入索引",
+    "private/vault/sealed 不进入公开索引",
+    "AI 只能读取 public 或脱敏摘要",
+    "公开不是默认结果，必须由节点字段确认"
+  ],
+  "forbidden": [
+    "raw private memory",
+    "address",
+    "family detail",
+    "vault content",
+    "unreviewed ai summary"
+  ]
+}

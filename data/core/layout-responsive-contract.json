@@ -1,0 +1,79 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 布局宽度与响应式契约",
+  "principle": "页面要有留白，但不能让世界缩成一条窄栏。",
+  "layoutZones": [
+    {
+      "id": "reading",
+      "maxWidth": "72ch",
+      "useFor": [
+        "long markdown",
+        "manifesto",
+        "article body"
+      ]
+    },
+    {
+      "id": "content",
+      "maxWidth": "1120px",
+      "useFor": [
+        "cards",
+        "path lists",
+        "archive lists"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "maxWidth": "1280px",
+      "useFor": [
+        "status",
+        "skeleton",
+        "multi-panel reports"
+      ]
+    },
+    {
+      "id": "immersive",
+      "maxWidth": "none with safe padding",
+      "useFor": [
+        "atlas",
+        "future visual map"
+      ]
+    },
+    {
+      "id": "full-bleed-soft",
+      "maxWidth": "1440px",
+      "useFor": [
+        "home hero",
+        "world entrance"
+      ]
+    }
+  ],
+  "breakpoints": [
+    {
+      "id": "sm",
+      "min": "640px"
+    },
+    {
+      "id": "md",
+      "min": "768px"
+    },
+    {
+      "id": "lg",
+      "min": "1024px"
+    },
+    {
+      "id": "xl",
+      "min": "1280px"
+    },
+    {
+      "id": "2xl",
+      "min": "1536px"
+    }
+  ],
+  "rules": [
+    "长文使用 reading 宽度，避免行长过长。",
+    "卡片列表和面板页使用 content/dashboard 宽度，避免桌面过窄。",
+    "首页和地图允许更宽，但要保留安全边距。",
+    "移动端优先单列，桌面端优先用网格扩展空间。",
+    "任何页面不得出现非预期横向滚动。"
+  ]
+}

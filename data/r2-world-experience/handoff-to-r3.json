@@ -1,0 +1,13 @@
+{
+  "next": "R3｜真实内容注入与节点生命化",
+  "handoffItems": [
+    "保留 R2 首页与地图骨架",
+    "注入 30-50 个真实节点",
+    "为每个节点补现实标题、世界标题、区域、关系、生命阶段",
+    "让节点同时投影到首页、地图、时间河和档案馆",
+    "避免只填充占位内容"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

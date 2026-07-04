@@ -1,0 +1,31 @@
+{
+  "version": "4.0.0",
+  "name": "世界协议标准化",
+  "batch": 17,
+  "stage": 5,
+  "stageName": "发布网络、世界协议与内容分发",
+  "stageProgress": "V4 / 第 5 阶段 / 第 17 批 / 共 24 批",
+  "slug": "world-protocol-standard",
+  "status": "complete",
+  "goals": [
+    "标准化世界协议",
+    "WorldManifest/WorldNode/MemoryGraph",
+    "长期可读"
+  ],
+  "outputs": [
+    "WorldProtocolManifest",
+    "ExportBundle"
+  ],
+  "mustKeep": [
+    "AI readable but not privileged",
+    "checksum"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-publishing-network",
+    "dataDirectory": "data/v4/stage-05",
+    "docsDirectory": "docs/41-v4/stage-05",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

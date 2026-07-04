@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 Atlas 空间入口质量门槛",
+  "principle": "能看见结构，才能相信这是一个世界，而不是一组页面。",
+  "minimums": {
+    "areas": 8,
+    "publicAreas": 7,
+    "areasWithNodeStats": 8,
+    "areaLinks": 8,
+    "publicNodesInAtlas": 12,
+    "requiredComponents": 6
+  },
+  "requiredComponents": [
+    "AtlasHero",
+    "AtlasStats",
+    "AtlasMap",
+    "AtlasStarLines",
+    "AreaNodeCluster",
+    "AtlasFallbackList"
+  ],
+  "rules": [
+    "Atlas 必须有空间说明、统计摘要、地图、星线和线性 fallback。",
+    "Atlas 页面不得直接读取私密层节点。",
+    "Atlas 的组件必须独立拆分，避免页面文件膨胀。",
+    "地图能力必须可在未来升级为轻量 SVG 或 3D，但当前不得前置重型依赖。"
+  ]
+}

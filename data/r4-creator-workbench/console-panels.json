@@ -1,0 +1,46 @@
+{
+  "panels": [
+    {
+      "id": "world-status",
+      "title": "今日世界状态",
+      "purpose": "快速理解世界是否活跃、低光、拥挤或需要整理。",
+      "primaryAction": "查看轻维护任务",
+      "metric": "worldHealth"
+    },
+    {
+      "id": "inbox",
+      "title": "星尘港收集箱",
+      "purpose": "接住一句话、图片、链接、代码片段和 AI 对话。",
+      "primaryAction": "安放下一颗种子",
+      "metric": "inboxCount"
+    },
+    {
+      "id": "node-manager",
+      "title": "节点管理台",
+      "purpose": "按区域、生命阶段、成熟度、权限和下一步动作管理节点。",
+      "primaryAction": "筛选待生长节点",
+      "metric": "nodeCount"
+    },
+    {
+      "id": "privacy-gate",
+      "title": "权限守门",
+      "purpose": "检查公开、半公开、私密、封存与 AI 可读边界。",
+      "primaryAction": "处理风险项",
+      "metric": "riskCount"
+    },
+    {
+      "id": "content-debt",
+      "title": "内容债务",
+      "purpose": "暴露缺摘要、缺关系、缺下一步、成熟度不足的节点。",
+      "primaryAction": "领取一个小任务",
+      "metric": "debtCount"
+    },
+    {
+      "id": "export-backup",
+      "title": "导出与备份",
+      "purpose": "维护可迁移、可回望、可传承的档案层。",
+      "primaryAction": "生成导出清单",
+      "metric": "backupReadiness"
+    }
+  ]
+}

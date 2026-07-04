@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行证据台账",
+  "principle": "真实执行结果必须被记录，不能停留在口头通过。",
+  "status": "awaiting-real-execution",
+  "records": [
+    {
+      "id": "exec-install",
+      "command": "npm install",
+      "status": "pending",
+      "requiredEvidence": [
+        "terminal output",
+        "package-lock.json if generated",
+        "dependency error list"
+      ]
+    },
+    {
+      "id": "exec-lint",
+      "command": "npm run lint",
+      "status": "blocked-missing-local-dependencies",
+      "requiredEvidence": [
+        "pass/fail",
+        "eslint warnings/errors"
+      ],
+      "latestObservation": {
+        "stageProgress": "phase-two post-closure hardening batch 1 / 3",
+        "nodeModules": "absent",
+        "localEslint": "missing",
+        "requiredNextStep": "npm install && npm run lint in real project environment"
+      }
+    },
+    {
+      "id": "exec-typecheck",
+      "command": "npm run typecheck",
+      "status": "pending",
+      "requiredEvidence": [
+        "pass/fail",
+        "typescript diagnostics"
+      ]
+    },
+    {
+      "id": "exec-world-core",
+      "command": "npm run check:world-core",
+      "status": "pending",
+      "requiredEvidence": [
+        "pass/fail",
+        "failed check id"
+      ]
+    },
+    {
+      "id": "exec-build",
+      "command": "npm run build",
+      "status": "pending",
+      "requiredEvidence": [
+        "pass/fail",
+        "Next.js build output",
+        "route errors"
+      ]
+    },
+    {
+      "id": "exec-preview",
+      "command": "preview deploy",
+      "status": "pending",
+      "requiredEvidence": [
+        "preview URL",
+        "deployment log",
+        "route smoke result"
+      ]
+    },
+    {
+      "id": "exec-lighthouse",
+      "command": "Lighthouse / equivalent",
+      "status": "pending",
+      "requiredEvidence": [
+        "scores",
+        "LCP",
+        "INP/TBT",
+        "CLS",
+        "main warnings"
+      ]
+    },
+    {
+      "id": "exec-browser-qa",
+      "command": "manual browser QA",
+      "status": "pending",
+      "requiredEvidence": [
+        "viewport matrix",
+        "route matrix",
+        "defect updates"
+      ]
+    }
+  ],
+  "rules": [
+    "任何失败必须转化为缺陷、任务或明确延期。",
+    "真实执行台账更新后，才能考虑修改 stage-completion-gate。",
+    "不得用静态解析结果替代真实 npm build 结果。",
+    "不得用单一桌面视口替代多端视觉 QA。"
+  ]
+}

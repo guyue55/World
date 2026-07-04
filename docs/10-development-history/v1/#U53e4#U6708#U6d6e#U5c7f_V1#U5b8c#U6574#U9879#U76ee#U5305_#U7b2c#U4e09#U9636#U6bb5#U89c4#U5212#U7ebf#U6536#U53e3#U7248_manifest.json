@@ -1,0 +1,41 @@
+{
+  "name": "古月浮屿 V1 完整项目包 第三阶段规划线收口版",
+  "createdAt": "2026-05-19T14:36:30.376909",
+  "sourceWorkspace": "/mnt/data/guyue_phase3_planning_4_ops_workspace",
+  "package": "/mnt/data/古月浮屿_V1完整项目包_第三阶段规划线收口版.zip",
+  "sha256": "30917c229961a78fdc2f32f3e3590b5e435fc932f12daea96750bafb79343b77",
+  "sizeBytes": 591384,
+  "includedFileCount": 821,
+  "skippedFileCount": 0,
+  "jsonFileCount": 189,
+  "jsonErrors": [],
+  "categories": {
+    "src": 255,
+    "data": 185,
+    "docs": 205,
+    "scripts": 135,
+    "public": 10,
+    "github": 2,
+    "root": 17
+  },
+  "excluded": [
+    ".cache",
+    ".git",
+    ".next",
+    ".turbo",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
+  "missingKeyFiles": [],
+  "stageProgress": {
+    "phaseTwo": "12 / 12 completed",
+    "phaseTwoHardening": "3 / 3 completed",
+    "realValidationLine": "4 / 4 completed",
+    "releasePreparationLine": "4 / 4 completed",
+    "phaseThreePlanningLine": "4 / 4 completed"
+  },
+  "releaseState": "not-ready-for-release; real evidence still required",
+  "lintState": "missing-local-dependencies in current workspace; not counted as lint passed"
+}

@@ -1,0 +1,44 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选冻结契约",
+  "principle": "进入发布候选后，不再无边界加功能，只允许补证、修复、文档和发布阻断处置。",
+  "stageProgress": "release-candidate-freeze line batch 1 / 4",
+  "status": "implemented-static-freeze-contract",
+  "freezeScope": [
+    "public routes",
+    "world data contracts",
+    "release gate scripts",
+    "real evidence scripts",
+    "public/private boundary",
+    "AI boundary",
+    "export and handoff contracts"
+  ],
+  "allowedChanges": [
+    "P0/P1 defect fixes",
+    "real evidence updates under reports/",
+    "manual review records",
+    "release blocker closure requests",
+    "documentation corrections",
+    "minor accessibility fixes"
+  ],
+  "forbiddenChanges": [
+    "new product feature routes",
+    "new AI autonomous action",
+    "visibility boundary relaxation",
+    "private vault public exposure",
+    "automatic release-ready flip",
+    "deleting evidence history"
+  ],
+  "unfreezeConditions": [
+    "critical architecture issue discovered",
+    "security/privacy boundary defect discovered",
+    "release owner explicitly approves scope change",
+    "rollback from release candidate required"
+  ],
+  "rules": [
+    "冻结不等于 release-ready。",
+    "冻结后新增功能必须进入下一阶段，不进入当前候选。",
+    "所有 allowedChanges 仍需检查和记录。",
+    "forbiddenChanges 发现即阻断候选。"
+  ]
+}

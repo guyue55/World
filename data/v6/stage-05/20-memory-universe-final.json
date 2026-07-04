@@ -1,0 +1,27 @@
+{
+  "version": "6.0.0",
+  "name": "记忆图谱与共享宇宙阶段收口",
+  "batch": 20,
+  "stage": 5,
+  "stageName": "沉浸式共享宇宙与长期记忆图谱",
+  "stageProgress": "V6 / 第 5 阶段 / 第 20 批 / 共 24 批",
+  "slug": "memory-universe-final",
+  "status": "complete",
+  "goals": [
+    "收束记忆图谱与共享宇宙",
+    "图谱可查、空间可控、体验可降级"
+  ],
+  "outputs": [
+    "MemoryUniverseFinal"
+  ],
+  "mustKeep": [
+    "semantic fallback"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-memory-universe",
+    "dataDirectory": "data/v6/stage-05",
+    "docsDirectory": "docs/61-v6/stage-05",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

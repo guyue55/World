@@ -1,0 +1,64 @@
+{
+  "version": "R8.3",
+  "title": "全域真实宇宙动态化封闭线",
+  "positioning": "把 R8.2 的局部深度动态扩展为全站可感知、可操作、可反馈、可降级的动态宇宙系统。",
+  "principles": [
+    "每个页面都应该有当前世界位置、动态反馈和可继续探索的路径。",
+    "动态不是装饰，而是表达世界状态、时间、关系、路径和节点生命。",
+    "核心动态必须无后端可运行，真实数据库和 AI 接入只作为后续增强。",
+    "首页、地图、时间河、档案、节点、灯塔、创世台、运营页都必须处于同一个宇宙运行层。",
+    "必须支持 reduced-motion、移动端降级和静态可读 fallback。"
+  ],
+  "stages": [
+    {
+      "id": "stage-01",
+      "name": "全站宇宙运行层",
+      "batches": ["route-aware scene", "living cosmos layer", "world mode switch", "journey continuity"],
+      "acceptance": "所有路由都能感知当前位置并生成对应宇宙场景。"
+    },
+    {
+      "id": "stage-02",
+      "name": "核心页面逐个动态化",
+      "batches": ["about", "manifesto", "world", "world-map", "time-river", "lighthouse", "creator", "ops"],
+      "acceptance": "核心页面不再只是静态文本或卡片，而具有抵达、聚焦、展开、返回路径。"
+    },
+    {
+      "id": "stage-03",
+      "name": "交互闭环与世界反馈",
+      "batches": ["visitor journey", "mode switch", "scene memory", "ritual actions"],
+      "acceptance": "用户操作后能看到世界反馈：点亮、回声、路径、低光、观测状态。"
+    },
+    {
+      "id": "stage-04",
+      "name": "质量边界与全量封包",
+      "batches": ["reduced motion", "mobile fallback", "lint/typecheck", "ascii packaging"],
+      "acceptance": "动态体验可运行、可降级、可维护，并全量打包。"
+    }
+  ],
+  "mustDynamicRoutes": [
+    "/",
+    "/atlas",
+    "/timeline",
+    "/archive",
+    "/paths",
+    "/ask",
+    "/node/[slug]",
+    "/about",
+    "/manifesto",
+    "/world",
+    "/world-map",
+    "/time-river",
+    "/lighthouse",
+    "/r4-creator",
+    "/r6-service",
+    "/r7-evolution",
+    "/r8-public",
+    "/status"
+  ],
+  "nonGoals": [
+    "不接真实数据库",
+    "不接真实 AI 模型",
+    "不把动态体验建立在不可用的后端之上",
+    "不牺牲可访问性和性能"
+  ]
+}

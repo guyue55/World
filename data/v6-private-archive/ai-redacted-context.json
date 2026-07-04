@@ -1,0 +1,40 @@
+{
+  "id": "v6-private-archive-ai-redacted-context",
+  "version": "6.0.0",
+  "name": "V6 AI 只读脱敏上下文",
+  "assistantRole": "world-lighthouse-not-owner",
+  "readableSources": [
+    "privacy-layers.json",
+    "sensitive-content-rules.json",
+    "redacted-archive-index.json",
+    "time-capsules.json"
+  ],
+  "forbiddenSources": [
+    "raw private diary",
+    "identity documents",
+    "exact addresses",
+    "credentials",
+    "vault originals",
+    "sealed originals"
+  ],
+  "allowedActions": [
+    "summarize redacted metadata",
+    "suggest archive structure",
+    "detect missing review gates",
+    "prepare public draft from approved summaries",
+    "explain privacy boundaries"
+  ],
+  "forbiddenActions": [
+    "publish private archive",
+    "infer hidden identity details",
+    "reconstruct raw private content",
+    "change visibility without owner approval",
+    "export vault content",
+    "merge private records into public build"
+  ],
+  "responsePolicy": {
+    "whenPrivateContentRequested": "refuse-and-offer-redacted-structure",
+    "whenPublicDraftRequested": "use-approved-summary-only",
+    "whenBoundaryUnclear": "ask-for-owner-review-before-publication"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "rules": [
+    "R7 自演化只能生成建议、状态、日志和轻任务，不能自动发布内容。",
+    "AI 不能读取 vault、家庭深层、孩子完整记录、亲密关系全文或住宅细节。",
+    "生命周期变化必须保留审计说明，不能覆盖原始内容。",
+    "低光模式不能伪造活跃，也不能用 AI 虚构最近发生。",
+    "公开索引只允许 public 或 public-summary 内容。",
+    "所有导出、删除、公开、权限修改仍需 owner 显式确认。"
+  ],
+  "forbiddenTerms": [
+    "autoPublish",
+    "autoDelete",
+    "readVault",
+    "overwriteOriginal",
+    "fakeRecentActivity",
+    "publicizePrivateMemory"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,42 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 本地验收运行器契约",
+  "principle": "第一阶段的收口必须能被后来者重复执行。",
+  "status": "runner-prepared",
+  "runner": "scripts/run-first-stage-acceptance.mjs",
+  "output": "reports/first-stage-acceptance-report.json",
+  "steps": [
+    {
+      "id": "install-check",
+      "command": "npm install",
+      "mode": "manual-before-run",
+      "required": true
+    },
+    {
+      "id": "lint",
+      "command": "npm run lint",
+      "required": true
+    },
+    {
+      "id": "typecheck",
+      "command": "npm run typecheck",
+      "required": true
+    },
+    {
+      "id": "world-core",
+      "command": "npm run check:world-core",
+      "required": true
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "required": true
+    }
+  ],
+  "rules": [
+    "运行器不自动修改完成状态，只生成证据报告。",
+    "所有 required 步骤通过后，仍需人工补浏览器 QA 和性能实测。",
+    "失败步骤必须进入构建失败处置手册。",
+    "报告文件应随最终验收记录一起归档。"
+  ]
+}

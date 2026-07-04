@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "stage": 3,
+  "batch": 12,
+  "totalBatches": 20,
+  "name": "第 3 阶段收口与第 4 阶段入口",
+  "stageProgress": "V2 / 第 3 阶段：后台档案导出 / 第 12 批 / 共 20 批",
+  "status": "prepared",
+  "decision": "v2-admin-vault-export-structure-complete-stage-four-allowed",
+  "next": "ai-service-orchestration-and-automation",
+  "ready": false,
+  "rules": [
+    "后台操作必须进入 RBAC 与 AuditEvent。",
+    "私密档案默认拒绝访问且不进入公开构建。",
+    "导出任务必须可追踪、可取消、可审计。"
+  ]
+}

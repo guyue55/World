@@ -1,0 +1,22 @@
+{
+  "id": "batch-06",
+  "batch": 6,
+  "stage": 2,
+  "title": "存储端口与数据迁移策略",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/06-存储端口与数据迁移策略.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

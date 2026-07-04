@@ -1,0 +1,60 @@
+{
+  "operations": [
+    {
+      "id": "capture",
+      "worldName": "收集",
+      "realName": "保存到星尘港",
+      "dangerLevel": "safe",
+      "requiresConfirmation": false,
+      "description": "先接住内容，不要求立即完整分类。"
+    },
+    {
+      "id": "place",
+      "worldName": "安放",
+      "realName": "保存到指定区域",
+      "dangerLevel": "safe",
+      "requiresConfirmation": false,
+      "description": "确认区域、类型、生命阶段和下一步动作。"
+    },
+    {
+      "id": "connect",
+      "worldName": "连星",
+      "realName": "建立节点关系",
+      "dangerLevel": "safe",
+      "requiresConfirmation": false,
+      "description": "为关系补充语义说明，避免只有线没有解释。"
+    },
+    {
+      "id": "illuminate",
+      "worldName": "点亮",
+      "realName": "公开发布",
+      "dangerLevel": "danger",
+      "requiresConfirmation": true,
+      "description": "发布后所有访客可访问，必须先通过权限检查。"
+    },
+    {
+      "id": "seal",
+      "worldName": "封存",
+      "realName": "隐藏并保留",
+      "dangerLevel": "guarded",
+      "requiresConfirmation": true,
+      "description": "保留内容但移出公开索引和 AI 公开上下文。"
+    },
+    {
+      "id": "delete",
+      "worldName": "抹除",
+      "realName": "删除内容",
+      "dangerLevel": "critical",
+      "requiresConfirmation": true,
+      "description": "R4 不允许物理删除，只允许生成删除申请和备份提醒。"
+    },
+    {
+      "id": "export",
+      "worldName": "装箱",
+      "realName": "导出备份",
+      "dangerLevel": "guarded",
+      "requiresConfirmation": true,
+      "description": "生成 JSON / Markdown / media manifest 导出计划。"
+    }
+  ]
+}

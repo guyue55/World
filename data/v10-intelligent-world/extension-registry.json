@@ -1,0 +1,125 @@
+{
+  "version": "V10",
+  "items": [
+    {
+      "id": "v10-ext-01",
+      "title": "世界状态内核",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-02",
+      "title": "长期记忆生命周期",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-03",
+      "title": "节点生命阶段",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-04",
+      "title": "自演化规则引擎",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-05",
+      "title": "AI 角色社会",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-06",
+      "title": "AI 守门人",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-07",
+      "title": "世界园丁",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-08",
+      "title": "星图师",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-09",
+      "title": "书记官",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-10",
+      "title": "过去的我回声",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-11",
+      "title": "未来的我信标",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-12",
+      "title": "年度世界册",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-13",
+      "title": "传承包",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-14",
+      "title": "主权治理",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-15",
+      "title": "可迁移档案",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-16",
+      "title": "长期可靠性预算",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-17",
+      "title": "低光运行模式",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-18",
+      "title": "世界苏醒仪式",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-19",
+      "title": "十轮总封版",
+      "status": "registered",
+      "requiresManualApproval": true
+    },
+    {
+      "id": "v10-ext-20",
+      "title": "V10 后路线图",
+      "status": "registered",
+      "requiresManualApproval": true
+    }
+  ]
+}

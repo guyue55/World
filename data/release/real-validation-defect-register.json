@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实验证缺陷台账",
+  "stageProgress": "real-validation line batch 1 / 4",
+  "status": "empty-ready",
+  "defects": [],
+  "rules": [
+    "新增缺陷必须符合 real-validation-defect-protocol。",
+    "P0/P1 未关闭前不得宣称发布级完成。",
+    "缺陷关闭必须提供复验记录。"
+  ]
+}

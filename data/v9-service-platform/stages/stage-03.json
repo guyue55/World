@@ -1,0 +1,22 @@
+{
+  "id": "stage-03",
+  "stage": 3,
+  "title": "平台控制台、队列、治理与协作",
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "focus": [
+    "platform console",
+    "operation queue",
+    "governance workflow",
+    "collaboration model"
+  ],
+  "version": "V9",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false
+}

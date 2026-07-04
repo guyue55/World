@@ -1,0 +1,15 @@
+{
+  "stage": 3,
+  "title": "真实路径、时间河与区域密度",
+  "description": "让真实节点进入精选路径、时间河、区域密度和可回望视图。",
+  "batches": [
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

@@ -1,0 +1,2034 @@
+{
+  "createdAt": "2026-05-21T07:15:49Z",
+  "count": 338,
+  "documents": [
+    {
+      "path": "docs/00-inception/conversations/古月浮屿_完整沟通记录_重整版.md",
+      "category": "00-inception",
+      "sizeBytes": 55560,
+      "sha256": "883d6d69f8a9fc62f3b0e9afd4a4a29fefec48e87d963073c2171b40f861037b"
+    },
+    {
+      "path": "docs/00-inception/conversations/古月浮屿_沟通记录整理.docx",
+      "category": "00-inception",
+      "sizeBytes": 2517364,
+      "sha256": "45926d06312d72adf7d5ac2b76c0567e6f4f728bfdd8794fafc72c218392c012"
+    },
+    {
+      "path": "docs/00-inception/conversations/古月浮屿_沟通记录整理.md",
+      "category": "00-inception",
+      "sizeBytes": 40441,
+      "sha256": "6c60b9c4cdc1f947136ba8e00ff59958d6c8e8f1d16192ce15c80c6bd029e81b"
+    },
+    {
+      "path": "docs/00-inception/conversations/漂浮数字世界设计.txt",
+      "category": "00-inception",
+      "sizeBytes": 2245,
+      "sha256": "c6618a59a911aca04453e7ba1077c21a32c18f45cd5ad3a1a699a0c1e8f1fef2"
+    },
+    {
+      "path": "docs/00-inception/original-briefs/00_产品设计文档集_README.md",
+      "category": "00-inception",
+      "sizeBytes": 2607,
+      "sha256": "557a0156b65a4029864060df721fb0ef537a68661107eccecdceb8b8461e8e6e"
+    },
+    {
+      "path": "docs/00-inception/original-briefs/00_总目录_README.md",
+      "category": "00-inception",
+      "sizeBytes": 2058,
+      "sha256": "f08f980067bd1fa36b5937b1677b10d086e4b6bb52d001c584bad43ef0c48899"
+    },
+    {
+      "path": "docs/00-inception/original-briefs/00_补充工程文档_README.md",
+      "category": "00-inception",
+      "sizeBytes": 2843,
+      "sha256": "d39eb36e7ab64b4a952a7f5b9710c67947c7663f1b18e05da46a76a42a327123"
+    },
+    {
+      "path": "docs/01-world-design/charter/01_古月浮屿_世界宪章.md",
+      "category": "01-world-design",
+      "sizeBytes": 9542,
+      "sha256": "e273f5ab38e45c3a13d77e1358dd19d93c9f5ad9cf9590b9c5e8c7721b1330a5"
+    },
+    {
+      "path": "docs/01-world-design/charter/02_古月浮屿_世界手册.md",
+      "category": "01-world-design",
+      "sizeBytes": 11373,
+      "sha256": "656a50758e37137907df922c48a82de46bee0f44cb765ad385f4ed0c685e220a"
+    },
+    {
+      "path": "docs/01-world-design/rules/03_古月浮屿_世界规则.md",
+      "category": "01-world-design",
+      "sizeBytes": 12141,
+      "sha256": "6ef1eccc1ae8055e63df7f0c9f26272e5d97093abbf271aeabde21c59b59f933"
+    },
+    {
+      "path": "docs/02-product-design/content-system/06_古月浮屿_内容系统与编辑规范.md",
+      "category": "02-product-design",
+      "sizeBytes": 7250,
+      "sha256": "4b0ffbaecc2d4533c77ac644e419f79414ab83eb1fa87e6dd4e1904601a8514a"
+    },
+    {
+      "path": "docs/02-product-design/ia-navigation/03_古月浮屿_信息架构与导航设计.md",
+      "category": "02-product-design",
+      "sizeBytes": 6006,
+      "sha256": "07afc79402c99ad8ed7d1521408e8d949841eb7ebbb0efed38e6b8d2aa8872cb"
+    },
+    {
+      "path": "docs/02-product-design/interaction/04_古月浮屿_交互体验设计文档.md",
+      "category": "02-product-design",
+      "sizeBytes": 7511,
+      "sha256": "e2fc477d71435529203e57ece57af4543eea00b2bbbafc758bd9160471dcba08"
+    },
+    {
+      "path": "docs/02-product-design/prd/01_古月浮屿_产品总览.md",
+      "category": "02-product-design",
+      "sizeBytes": 8721,
+      "sha256": "ec5d5411fb0cb2fb6167e34bfe3964c667a67e2e10fa3e9d45b96be03292fbb5"
+    },
+    {
+      "path": "docs/02-product-design/prd/02_古月浮屿_PRD产品需求文档.md",
+      "category": "02-product-design",
+      "sizeBytes": 9556,
+      "sha256": "be4d94bf02b9e20cb6b1cebc5748d99cdaec1e6f2f10e69a9bf075688f9dce7f"
+    },
+    {
+      "path": "docs/02-product-design/visual-system/05_古月浮屿_视觉设计系统.md",
+      "category": "02-product-design",
+      "sizeBytes": 5952,
+      "sha256": "774593796d2a060da10f482cbec11fb5c36d86b038676d61d09b67de3aa64c30"
+    },
+    {
+      "path": "docs/03-engineering-architecture/api-integration/11_古月浮屿_接口与集成设计.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 5798,
+      "sha256": "a41f98f04424e512b1309715f943ff596908c420bcb5eb5f9b9e31cdd095e2fd"
+    },
+    {
+      "path": "docs/03-engineering-architecture/data-model/10_古月浮屿_数据模型与内容协议.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 8486,
+      "sha256": "f987ba6694ce98bcce50b478ab1fd79d585fb07724462d2bffcfa6bbc4a2f034"
+    },
+    {
+      "path": "docs/03-engineering-architecture/qa-release/13_古月浮屿_测试验收与质量保障.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 5269,
+      "sha256": "e1507887fdbf9506ad14ef0b43297f6f977374271765d92331da5857512612b9"
+    },
+    {
+      "path": "docs/03-engineering-architecture/roadmap/00_未来阶段补充文档_README.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 2497,
+      "sha256": "685285d612d9bec74c644712389bcb5a1ef41a834227259129a5544c28886112"
+    },
+    {
+      "path": "docs/03-engineering-architecture/security-privacy/12_古月浮屿_安全隐私与发布守门.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 5382,
+      "sha256": "b2649dac8e5d105955918a8594de40917b41498d0b9675b8a08da4bff56212a2"
+    },
+    {
+      "path": "docs/03-engineering-architecture/system-design/07_古月浮屿_技术架构设计.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 8119,
+      "sha256": "b58d1135de534e3cbfe1d58ebe046d0f59eb9766212e78d518b52bc3e471f89c"
+    },
+    {
+      "path": "docs/03-engineering-architecture/system-design/09_古月浮屿_系统设计文档.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 7609,
+      "sha256": "c4e02bf46c28be89dc9c3f9d1c22f09b127df9ea7718b4fb884b8fa5aa1ed614"
+    },
+    {
+      "path": "docs/03-engineering-architecture/system-design/16_古月浮屿_私密档案系统设计.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 7080,
+      "sha256": "bfe432e9f877d6637610a547528c2f7e8ff8e70a57bbfc94419c95d93b88eab0"
+    },
+    {
+      "path": "docs/03-engineering-architecture/system-design/20_古月浮屿_主题展览系统设计.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 4499,
+      "sha256": "b80561db6900cd3bf8852de6efdd60d9d4b61a32797b0e70dd26567be9b318b7"
+    },
+    {
+      "path": "docs/03-engineering-architecture/system-design/21_古月浮屿_导出与传承系统设计.md",
+      "category": "03-engineering-architecture",
+      "sizeBytes": 4083,
+      "sha256": "325919764049f3d581d7220a58412bbf9e3e488f23654c68032329d78db90087"
+    },
+    {
+      "path": "docs/10-development-history/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 216,
+      "sha256": "f02825eec88640fc7b075d68e22d2b6e695ba0e47366c079d47117cd225977d5"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/word-life_第一轮封版详细审查报告.md",
+      "category": "10-development-history",
+      "sizeBytes": 7179,
+      "sha256": "c8d8e1d251cb0def8306cef29730da73a81f1205aa1250bda455ed7cbffce20e"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/word-life_第一轮封版详细审查结果.json",
+      "category": "10-development-history",
+      "sizeBytes": 17247,
+      "sha256": "e5e1abac28bab060fd402e3bb1012afc40edec2f83b1c032df02738c4c832e1b"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/古月浮屿_体验兑现代码审查报告.md",
+      "category": "10-development-history",
+      "sizeBytes": 5634,
+      "sha256": "1b16a5df7272011820eacf67027f64c9c6ae9c2d6d444b14c494254f1eb7d017"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/古月浮屿_体验兑现宇宙化重构_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 1788,
+      "sha256": "28d0626a82029f4a01ae8d180e77f6e4d623c31712cea07c25496aab02454fe4"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/古月浮屿_体验兑现宇宙化重构收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1796,
+      "sha256": "98e6e9007e23413c3b6000cdcdceab5b7c7bcea15c6583b5eb0cec75a806e756"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/古月浮屿_体验兑现审查问题修复_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 1940,
+      "sha256": "80966203da7b56550bc8b66e002ca522fcf194c260a6ea1f47fa2ea6e7dcb46d"
+    },
+    {
+      "path": "docs/10-development-history/experience-realization/古月浮屿_体验兑现审查问题修复说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2620,
+      "sha256": "6d42cf528829bb826676d4386caf40e8663868e05b09a79a4a473b87c1608be1"
+    },
+    {
+      "path": "docs/10-development-history/round-01/final-baseline.md",
+      "category": "10-development-history",
+      "sizeBytes": 914,
+      "sha256": "b174d995a97ddfce738b3b605d4100bc0105e703bffa8f4e6df8eecf720ec944"
+    },
+    {
+      "path": "docs/10-development-history/round-02/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 1768,
+      "sha256": "b182f65b4d9e3176231cbd60e35d924901ec2c8562b46075748fcf6fdef02f74"
+    },
+    {
+      "path": "docs/10-development-history/round-02/final-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 1069,
+      "sha256": "4d854da700630257e571d878c58c404de5732eeeb210b575e379ee5b52726bde"
+    },
+    {
+      "path": "docs/10-development-history/round-02/final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 240,
+      "sha256": "376a96a5e36a8decf0490d6623aa2fe2339a6295b5c080d58736e5ad8aaad7c0"
+    },
+    {
+      "path": "docs/10-development-history/round-02/json-route-directory-policy.md",
+      "category": "10-development-history",
+      "sizeBytes": 646,
+      "sha256": "8e989511ef52fd44a9d1ad5a32f4090067101f2e92401fc78d4d6a336d2cab5c"
+    },
+    {
+      "path": "docs/10-development-history/round-02/revalidation-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 1159,
+      "sha256": "1481481bdbfd49667e24d344f3325347188b38a7e4a92aa64061d4c0146acd05"
+    },
+    {
+      "path": "docs/10-development-history/round-02/round2-seal-report.md",
+      "category": "10-development-history",
+      "sizeBytes": 847,
+      "sha256": "0f1c1a328d7fa29caf60fe62339c962c679d69b429d7e210b62a4d3aaacb861f"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/01-global-visual-language.md",
+      "category": "10-development-history",
+      "sizeBytes": 170,
+      "sha256": "2844ccb6d4aa9724ca49cb4ed9501eb5c23eee32cbc8e1a163863223f551a0ae"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/02-home-hero-deep-universe.md",
+      "category": "10-development-history",
+      "sizeBytes": 196,
+      "sha256": "c09bbeacd51d1a4dc8319a1173deb04d2e2826b00d21d8e513934fde9bdc1a40"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/03-background-light-depth.md",
+      "category": "10-development-history",
+      "sizeBytes": 205,
+      "sha256": "e0b201f815230ed486be4295cd8c32988c0611f9d322e4b12d77212e596287ef"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/04-visual-foundation-qa.md",
+      "category": "10-development-history",
+      "sizeBytes": 228,
+      "sha256": "540d8d2e39f150d50889fa71c4c181511a54e9a17f25f02d371cc73fb9b0a984"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-01-visual-foundation/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 706,
+      "sha256": "e1c63c6d4e0372d280bba975fe0877780f61c84e1b86828529d021d9b4ee5016"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/05-world-map-data-model.md",
+      "category": "10-development-history",
+      "sizeBytes": 159,
+      "sha256": "6790c8d5e533842b6478c2a1d1a32c8782dd625857320ffb5c9e78f075e52629"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/06-constellation-navigation.md",
+      "category": "10-development-history",
+      "sizeBytes": 160,
+      "sha256": "18dcd95944799763d6f31a88c5ab8509ad8b3ab10c30da58480e976f4c161199"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/07-desktop-mobile-world-map.md",
+      "category": "10-development-history",
+      "sizeBytes": 181,
+      "sha256": "47a3fd5ffe5ad015b6715bf8e2e3130649f69aa8af98be4695a2be69a7b3228d"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/08-navigation-a11y-fallback.md",
+      "category": "10-development-history",
+      "sizeBytes": 198,
+      "sha256": "271e538c1e1ecb4ea249724f22d7f926fee0965d30b510781c952960262393a2"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-02-world-map/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 114,
+      "sha256": "3d5a1c6d61ef4ab4a1f6bfd4fc1b24c081db17e33a1bd79f4b4ceea91be0bde9"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/09-content-node-relation-model.md",
+      "category": "10-development-history",
+      "sizeBytes": 175,
+      "sha256": "fa5eb1ec2c6912a02f5da1c67c5355d5f1204a65a6d3f920c5a2f70df2277304"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/10-star-island-path-views.md",
+      "category": "10-development-history",
+      "sizeBytes": 174,
+      "sha256": "d49b40d60df27ede66390b75e1f20b39877cf34830ee3ac1775cc9381fa5a723"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/11-node-detail-recommendations.md",
+      "category": "10-development-history",
+      "sizeBytes": 159,
+      "sha256": "68dbfae1c4a33bdeaa6b26695657a374e36f3f557474ee75dc236d724f2a36f8"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/12-content-constellation-qa.md",
+      "category": "10-development-history",
+      "sizeBytes": 201,
+      "sha256": "9572d6342472eff73625cf5e1a62c0e5f508f8b4ce534732cf89dc6503cd753e"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-03-content-constellation/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 127,
+      "sha256": "5ef2dedb0e57febca561ff389ce76dd01e78c22d814dd084766a7b0897af5aa4"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/13-time-river-data-unification.md",
+      "category": "10-development-history",
+      "sizeBytes": 147,
+      "sha256": "f4e60bd3e5640978b936bebf8f71be61cf2c9ec24b83943421e44399ba426272"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/14-time-river-visual-interaction.md",
+      "category": "10-development-history",
+      "sizeBytes": 156,
+      "sha256": "2094d39b631e62b1c951095501e645830490e4d33a9b9c864474eaf712641cfa"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/15-memory-graph-data-driven.md",
+      "category": "10-development-history",
+      "sizeBytes": 162,
+      "sha256": "fb10ae783ccfc1972406c1f07cda0e6c4320724cc1a463e177a3c1908b029374"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/16-privacy-redaction-graph-qa.md",
+      "category": "10-development-history",
+      "sizeBytes": 191,
+      "sha256": "87659fe9466849005772553878eb978681c92022b5b108af5ed3b9a7a2ad203a"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-04-time-memory/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 133,
+      "sha256": "f2262e2a94c423c8eafcfb9be6d63cc298c01555fda9a294e1654857a0882668"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/17-ai-suggestion-protocol.md",
+      "category": "10-development-history",
+      "sizeBytes": 162,
+      "sha256": "1b87c4ea5de15fe064f8b685c3698533849fbc477a615fffabae40422692bfda"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/18-suggestion-flow-audit-queue-ui.md",
+      "category": "10-development-history",
+      "sizeBytes": 151,
+      "sha256": "539b968c0b6f70f410d281d37a32d1736e4e7fdf4e74452efadef918ea9242eb"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/19-risk-human-confirm-boundary.md",
+      "category": "10-development-history",
+      "sizeBytes": 189,
+      "sha256": "608bf85f415525d7e953e7638df113a1e0983fca6d9bd58539988e60d27357c0"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/20-lighthouse-qa-simulated-workflow.md",
+      "category": "10-development-history",
+      "sizeBytes": 167,
+      "sha256": "25707a3d7429934f77295c330504cba75904824f845575f7ba45a6935f657865"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-05-ai-lighthouse/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 124,
+      "sha256": "eb683ddb042d0ccf182367a72896005182909c01e518c9dbf41211b38c269065"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/21-theme-token-layout-variant.md",
+      "category": "10-development-history",
+      "sizeBytes": 171,
+      "sha256": "1daf1e7224e9b7ea4e592e7fb31bc6d6d11c15d81b280f1ddf425c21672f808b"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/22-theme-modes-implementation.md",
+      "category": "10-development-history",
+      "sizeBytes": 194,
+      "sha256": "f78f0ded7ced1c0aa14cb4fd5acbf2d3866aa7f2479058f5c7fb4e9ba1652999"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/23-theme-persistence-mobile.md",
+      "category": "10-development-history",
+      "sizeBytes": 213,
+      "sha256": "ecf0546471cc39ef530b7934430c2f1d6524d0ac37a16d948f631804f1880697"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/24-round2-final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 237,
+      "sha256": "b60fda7b3504b315500293f02a7ae310b44e7c4e937916b07c19a5dbbb4cb2b6"
+    },
+    {
+      "path": "docs/10-development-history/round-02/stage-06-theme-final/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 145,
+      "sha256": "426fdebd055779ba606275cdb60ba6b000dab7b26fc502d27ab6d229c2adc9e7"
+    },
+    {
+      "path": "docs/10-development-history/round-03/README.md",
+      "category": "10-development-history",
+      "sizeBytes": 528,
+      "sha256": "2f4c1bab3705f57212db4ad83a629a85742a54ed428f8cfe97433ae2e20c194f"
+    },
+    {
+      "path": "docs/10-development-history/round-03/audit-report.md",
+      "category": "10-development-history",
+      "sizeBytes": 237,
+      "sha256": "c266353c0d10d11ffb8945459beb214b3c755d4f11c12ff2046bff5d441b1629"
+    },
+    {
+      "path": "docs/10-development-history/round-03/final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 146,
+      "sha256": "95ada05cbe2b384884267d7bfc38ee104c058d3f69dacd2233a2dcf866465176"
+    },
+    {
+      "path": "docs/10-development-history/round-03/round3-seal-report.md",
+      "category": "10-development-history",
+      "sizeBytes": 314,
+      "sha256": "19445628fa753aad1e615d44e0ed796002b7c941b007b105f7183efa12c1abae"
+    },
+    {
+      "path": "docs/10-development-history/round-03/rounds-roadmap-after-round3.md",
+      "category": "10-development-history",
+      "sizeBytes": 1854,
+      "sha256": "96d1eae5ea2273e382704263955c786fbd80efcdbbf912f92b171afcdd7cb112"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/01-content-seeds.md",
+      "category": "10-development-history",
+      "sizeBytes": 85,
+      "sha256": "97d8d14bc247c9d24816d766bac27b69f1ac4f612c31beaeb99d5b810edc11d0"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/02-content-taxonomy.md",
+      "category": "10-development-history",
+      "sizeBytes": 88,
+      "sha256": "b28587da8d7a414e82ee10299b57b1edd9644547397c2c9c692122c6c3a18db9"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/03-content-review-privacy.md",
+      "category": "10-development-history",
+      "sizeBytes": 94,
+      "sha256": "f2455e35a8e31ddfcdb54e11b6bca3c4da8adde235bc393b7a57be0f41d1391e"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content/04-content-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 102,
+      "sha256": "c63d1c1b0f91484ffa14f63bd4505d1fa133f0ecee49aa4a2639f8f80608601d"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-01-content-ingestion.md",
+      "category": "10-development-history",
+      "sizeBytes": 219,
+      "sha256": "db4b2bdd8f35db51818498f9045a3a4362e97c3caf4b243829f737460b41f564"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-asset-library.md",
+      "category": "10-development-history",
+      "sizeBytes": 236,
+      "sha256": "7e08a239635a43bd2ec1827e619631936393d9d820036d0d08807598f0360b1b"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/05-asset-model.md",
+      "category": "10-development-history",
+      "sizeBytes": 83,
+      "sha256": "9655a358ef192c0bf61019086561a7e39474909e3b47f61756e4e128727bffe6"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/06-asset-gap-and-placeholder-policy.md",
+      "category": "10-development-history",
+      "sizeBytes": 104,
+      "sha256": "4f7cc522eda508e1998ef559b369992d82efe6bd6f3e1677e32cc8ca12637740"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/07-content-asset-binding.md",
+      "category": "10-development-history",
+      "sizeBytes": 93,
+      "sha256": "d2c76a91e9ef04ed545c0ddafa7beb1c53c944f0bf412f5fb129e7845830217a"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-02-assets/08-asset-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 102,
+      "sha256": "7a93e73e057da9406a70c0b7603d265f0260b1fbd846f1c62f281b8e38f4af94"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/09-ai-service-adapter-contract.md",
+      "category": "10-development-history",
+      "sizeBytes": 99,
+      "sha256": "208fbbbce1f402bd4d874436fbb4a4a6368ba7ba9ecb54f7b95db79c526e4a46"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/10-ai-suggestion-workflow.md",
+      "category": "10-development-history",
+      "sizeBytes": 95,
+      "sha256": "178a99cd98eb742285b71ea46177766dde903a4c565fa3ea618c258d04ec7b20"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/11-ai-safety-boundary.md",
+      "category": "10-development-history",
+      "sizeBytes": 91,
+      "sha256": "c5d2889ad99238f1ce39f90ef20f0d86e13916fca77dc72441eddfa68840ea16"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-ai-service/12-ai-service-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 103,
+      "sha256": "1d57a9f9589fa4e7914365e4e73e2494ddcd8c5e41cf8eebcede671e011bc55d"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-03-service-adapters.md",
+      "category": "10-development-history",
+      "sizeBytes": 242,
+      "sha256": "6df232751a81d84fc12c259c5ceddf8c25f7558d4282e2f778440974da1a4e46"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/13-production-gates.md",
+      "category": "10-development-history",
+      "sizeBytes": 89,
+      "sha256": "b7e496350550886bbc716c22594d818bcf6d9db013fd286af4ad38caa2a603bd"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/14-preview-smoke-checklist.md",
+      "category": "10-development-history",
+      "sizeBytes": 96,
+      "sha256": "ebfb1e21d8074b8c1c1874bf14bc151339df7d2d7e8863eb384f13eb701572cf"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/15-privacy-signoff-rollback.md",
+      "category": "10-development-history",
+      "sizeBytes": 97,
+      "sha256": "b0937c19810dc9af010461a63ba4b1de7f694f25a538672e8b4494f584fa0df1"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production/16-production-stage-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 103,
+      "sha256": "388d9a7f27deb2da039cf68734b68efd1e987a37f508cb01b188a99bf9b0a874"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-04-production-readiness.md",
+      "category": "10-development-history",
+      "sizeBytes": 247,
+      "sha256": "ec373c98fbff6bcb960f91a6cc16472f4715687af71943929b3ec10499858057"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/17-observability-signals.md",
+      "category": "10-development-history",
+      "sizeBytes": 94,
+      "sha256": "cbd9a0488112838a41b1b2d896066694430ddea6efe94dcd520d9d3dd9f0bdc9"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/18-operation-rhythm.md",
+      "category": "10-development-history",
+      "sizeBytes": 89,
+      "sha256": "c53dd5a67397f0c4240f21d0a73399a4ef2faf259fe60fd05ed96984eaecbd22"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/19-round3-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 91,
+      "sha256": "7a7b9c6a2b25c7daa115f9636bfa850b7fbd4da3af2190fbf47e2626f277e4c9"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability/20-round3-final-closure.md",
+      "category": "10-development-history",
+      "sizeBytes": 88,
+      "sha256": "86f5f7f041ed8c6a7138537823582dcddf72cbeffb264540c3852d5e5518f354"
+    },
+    {
+      "path": "docs/10-development-history/round-03/stage-05-observability-final-audit.md",
+      "category": "10-development-history",
+      "sizeBytes": 252,
+      "sha256": "16cd718e4ba41a3ebc30604239a593349478d3004d15c84b1194518a14c6f9ba"
+    },
+    {
+      "path": "docs/10-development-history/v1/05_古月浮屿_V1实施蓝图.md",
+      "category": "10-development-history",
+      "sizeBytes": 12137,
+      "sha256": "ce4117446bcb6ef0b3ac367d8ec75da380815db5a0a6002ce2d9ed295ad3d728"
+    },
+    {
+      "path": "docs/10-development-history/v1/14_古月浮屿_V1开发任务拆解.md",
+      "category": "10-development-history",
+      "sizeBytes": 5326,
+      "sha256": "d0c2dc3678d9a5ac96feba6aff5641521c801adfa0ea82f83a34c99661af7189"
+    },
+    {
+      "path": "docs/10-development-history/v1/15_古月浮屿_阶段划分与文档映射.md",
+      "category": "10-development-history",
+      "sizeBytes": 12195,
+      "sha256": "6463decd85650487aaf08e64c40de1da8c4b3925b8a967b39307dfa0b37ca65b"
+    },
+    {
+      "path": "docs/10-development-history/v1/23_古月浮屿_V1项目初始化清单.md",
+      "category": "10-development-history",
+      "sizeBytes": 10493,
+      "sha256": "ab2bfa6f49a297e24732301f1e52e6eac302c9aebf6754c63ce8685723285995"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1世界骨架第六批打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2100,
+      "sha256": "ca79821d034b258ac30ef1064db3aaee6a80a43a729e6b423288c089dc625079"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第七批地基打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2073,
+      "sha256": "46dcc401c9c3cafbc169ada1eba5efdf42181523efb0a2e70f06157f7d9c73e4"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十一批真实执行证据交接说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2757,
+      "sha256": "d26be32bd75369eef1db2ddf1ed79cbab06f573e8804327d16be3cedeffb716d"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十三批预览部署冒烟检查说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1980,
+      "sha256": "ca2f7fbf187106d763c057f406de4f0ac89bc04eb747f59c843f83aa6223786d"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十二批本地验收运行器说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2260,
+      "sha256": "4dd206d479b1a7a3fd010931b5ba7e68455b9d394e5f1f7f01793b20108f2409"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十五批阶段完成状态转换守卫说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2031,
+      "sha256": "830bfa497cd0ac472c74826e9d41b24a6cedb79b997a0218c8614d8ff0aa9bfa"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十六批第二阶段交接契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1967,
+      "sha256": "858f58f011f4d06cb3d282bdd62eeb3645fb90932c35ed913c5a4912ff2a5d71"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十四批最终关闭报告说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2005,
+      "sha256": "7f421fc897cee6208a15159b2b91ff1c8f6eb8ab68d7993a3752709325f50735"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第三十批阶段验收门禁与预览发布准备说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2645,
+      "sha256": "772d14c6e1b78c366f802aec1330f8d27e3d3ea8e2d789659a5f4e7e26f9d784"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第九批边界地基打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2154,
+      "sha256": "dd451ed51bf2cefa805ab70ca6bfbb6a5aa94c682723aa1d46fb88447339c7ed"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十一批模块化工程骨架打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2172,
+      "sha256": "75bd0ea390eda13cf46442248bf6a60b75f381b4e13a68f492d1abe5899b412d"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十七批真实构建与工具链修复说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1947,
+      "sha256": "cf034f99bfbedb0e1b5bc00b9c612549fdf025df0de24e23867d25f3bcad20ab"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十三批性能与流畅度骨架打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1945,
+      "sha256": "440fc9198f3e7c8deb170ffe5c61d7d6dc194a4d375d7dd87bc7eb283e567807"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十九批内容投影与首页产品化打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2474,
+      "sha256": "3f0e4850697933a97e9b663a42841734deb4fcbd82e71eac4cda10070496f02d"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十二批页面化与特性模块骨架打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2235,
+      "sha256": "091e4838f7d69a06037265619b2c7b0e9b68114421f856892612396bf6075a22"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十五批性能回归骨架打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2236,
+      "sha256": "e7ad7614e112c54a59717f2613c5aa4cb5cc1e522255c72295940a2a6f1fa052"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十八批多端视觉与交互QA收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2524,
+      "sha256": "b456be0449a7677277b4488da5c71d0887e1fe85c0ecd542bbe3ff7927b70d48"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十六批第一阶段收口评估说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2858,
+      "sha256": "1698bb6560bf4d04fdc9cb42d6ff1e5b64a9529c52b3e6ab486d81610cee873e"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十四批性能实现边界打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2153,
+      "sha256": "4595dfd1cbcc110edfa8fcafed466eb5f60254b99cabd634b9b74f13db2a0409"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第二十批骨架压舱石打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2079,
+      "sha256": "b3008a6628eab895c5fa2f22c047967c0933429810f877d9657e2ed5db7ddc46"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第八批地基打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2243,
+      "sha256": "e626a6c7a917dde460e8611e80acd37ce2cda9cc7b8c755013fdcaf075c7fedf"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十一批空间与语义骨架打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2199,
+      "sha256": "9135ae94574e9746e493c5545493384376db8d46d1f5b9abc6ce38246f8ead73"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十七批地基封装与阶段交接说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2058,
+      "sha256": "6e99f0d8c97023816dc9ed8542e7110467bb4db3d97ea7459bdb6e22ef4acea5"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十三批地基门禁打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2182,
+      "sha256": "2962fa986854a66af036115d145bc659d25b755a7387aa149d8103cc78aa2ee7"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十九批治理台账打磨补全说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1177,
+      "sha256": "01184d27979c6ad0c5e52fba932d3c55b8bfbe7d4c988c306c419c3b2ca7eb3c"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十二批世界内核打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2112,
+      "sha256": "29763bab6e910253e0e5d0cd8868839c6ae263d24c5418b47417bc15eb3f19b7"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十五批运行态骨架打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2195,
+      "sha256": "56a1c07170465e13954d4edd3433626931d53349a409cd2797f42345bc65b14d"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十八批可复现地基打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1895,
+      "sha256": "6f72c421ae4c0a4d375c9dae82d24d576c407ed7111911a4c3f78a85f0d7d70d"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十六批骨架审计打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2036,
+      "sha256": "2f7bd53f8bd54e5799ff930d46ea2964ad82a3b739e18cd1c68146a0dba34aa2"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十四批文档内核打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3015,
+      "sha256": "6deff9e760135c712179032a1854028073fd3c35da476c6ae1b5b9a3fafda18c"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1第十批扩展地基打磨说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2067,
+      "sha256": "2d1b72f021871ab326b59ae256fbfc94d83aa4d05f9a7ae49f53fc6d4b6a1b18"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1项目骨架第三批产品化增强说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1197,
+      "sha256": "a7f8e8594dcd9dc107ffedfaf3b2255c46d1d4786c10c49461797c1aaf529c17"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1项目骨架第二批增强说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1566,
+      "sha256": "ecc357fdc617aa2ea1b06e093d07a45541c0cc00959adfc61458dc3ab07ee76f"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1项目骨架第五批发布准备增强说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2012,
+      "sha256": "b6d202881816c583f2bae17f5d5d59b020175c5135355b60322089cd0ecee849"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1项目骨架第四批检查与SEO增强说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1497,
+      "sha256": "d5c4a1beeab455ec7a697dddd37dd974c1e15412fcab68509e36841aeb7fefc7"
+    },
+    {
+      "path": "docs/10-development-history/v1/V1项目骨架首批代码说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2387,
+      "sha256": "030bce342e8a58497d218dc463111f20f460ca13b833484682318ee27a026180"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-build-board.md",
+      "category": "10-development-history",
+      "sizeBytes": 5356,
+      "sha256": "181670d7ca1a63ee7f4c22b1cf8ffb1f30d8adb4339a79c1ea5a9ae005ab3a62"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-copywriting-freeze.md",
+      "category": "10-development-history",
+      "sizeBytes": 6928,
+      "sha256": "1395ad2d4e11fabeaca2337b22f0ca2466d30c5edc7dcbe83d9592020932de39"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-schema-final.md",
+      "category": "10-development-history",
+      "sizeBytes": 7517,
+      "sha256": "d20e503341d0e2bea056e4a7810711d3d71f45aa4ab8b38d4af4d118418297a5"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-seed-content-plan.md",
+      "category": "10-development-history",
+      "sizeBytes": 8491,
+      "sha256": "e7238891850792927dcb73d18241b89a39c704f0e63e3a2a7c97460b77b15181"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-skeleton-freeze.md",
+      "category": "10-development-history",
+      "sizeBytes": 6337,
+      "sha256": "e5be8fac98e7a9522dbd9b65b23631170c9d6621bb3af38e65e2d196f5b7278d"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-tech-stack-decision.md",
+      "category": "10-development-history",
+      "sizeBytes": 11434,
+      "sha256": "d7caa6b6dddb8b904b653c80c67f1b79cecaec417a902eeee3fe45bba66dbcd0"
+    },
+    {
+      "path": "docs/10-development-history/v1/v1-world-skeleton-architecture.md",
+      "category": "10-development-history",
+      "sizeBytes": 7125,
+      "sha256": "275cccd95897ef72e34d3d8631963d74958b3497bb55b0bd5ad2255da409dca4"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选冻结线第1批冻结契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2221,
+      "sha256": "8732ed595f9ec8de3f4f877ab8155fd5d85afaa586c05b12d53d7cc98a045ef0"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选冻结线第2批变更边界说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2141,
+      "sha256": "eb8a5b8b7e3769a3965a6fe860e36cd888b6d12cd66ead13f896b645563cdd4d"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选冻结线第3批签收检查说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2237,
+      "sha256": "99c87d1b29f86b1ce882978541707890384ba165dcb9ec908d6bc00dd99eb813"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选冻结线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2293,
+      "sha256": "ff52b60f361d9944e2bffc09635cb0a5397491966a8fed333029799f120cabb2"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选验收证据线第1批证据清单说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2200,
+      "sha256": "daa2cd9229a1bba7dc4f3b8d1ebff8a7ea9e6b512a1e3d47078f7d388aa15b82"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选验收证据线第2批证据读取器说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2316,
+      "sha256": "7d7e4a06f3413f841b2c16405627ab4d4e3a55e5c889832d3659f08582617604"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选验收证据线第3批风险接受说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2332,
+      "sha256": "e1371452eefa77682b6e8a72d7ed0a8d9fafa13e407e29c4eeb6fbf5c0fe0f76"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布候选验收证据线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2406,
+      "sha256": "cdd2d7779baf8c6dcc05b50ac0db3d119bffd64ef9fe3c4860c0f3472217a25c"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布准备线第1批CI本地门禁说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3126,
+      "sha256": "af8ed622bee6fe25799bf39a2f0659ae3a6dd65c92a6f0834ac143b0910bb01b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布准备线第2批部署配置说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2815,
+      "sha256": "10d60c0f962436c7e7d0b2f2a32c0507cdabe8cf0a5e6a2b18dc9236c61e80d7"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布准备线第3批公开SEO门禁说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2299,
+      "sha256": "62b430d07e8c930fcc78f00fc4b76aa58534b42d913f2937da1071eb8fb85f3c"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布准备线第4批最终收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2369,
+      "sha256": "13b1d4d849d00edc63c4c5f61dc2e5da92f8c1f1ab664e1f9c2231e0d869f41b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布干跑与交接线第1批干跑计划说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2043,
+      "sha256": "9df65bc0b9af06b6075d8fd6ddbdd57ec8d31149f7de1f56e4554a6af4001999"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布干跑与交接线第2批交接清单说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2161,
+      "sha256": "d94d45afe1b05df730de38967c9808d44145e45e96597d73bcaf4fd7577a02b6"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布干跑与交接线第3批失败回滚说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2017,
+      "sha256": "9fcacf1f718cf843832e11d41f82d96893d4ebbe0b1ebc0eecb4cbc128bb5ccf"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1发布干跑与交接线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2271,
+      "sha256": "c2583bbcc160449fc0a714e16a57628a9bd3f4e25df0b0c00c3ec65a08278721"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整全量归档包_含全部文档与代码_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 317729,
+      "sha256": "9a995fdc92ae146859a6f7766ea9a0f90ca2467bba69466df995850c771e7f68"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整全量归档包_含全部文档与代码说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2783,
+      "sha256": "8a5bdbfec870b6bdcd5a16271a2bb7dc5d15c4588b41c5576b8a320c55dd6628"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整项目包_打包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1649,
+      "sha256": "6a3f2a072998a5c9041f250a55d536ab51f1afbf42312d22e53764cf11d3e152"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整项目包_真实环境补证准备线收口版_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 1418,
+      "sha256": "1f8e201ad9cb8687dd5155dc5abecdb49f6e5c8b75f3badda475788e9910c555"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整项目包_真实环境补证准备线收口版说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1661,
+      "sha256": "fe5e57580c05c2683b36c0bf877a7b4d0788e09a6744d0903d055d3f4823cd4d"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整项目包_第三阶段规划线收口版_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 1206,
+      "sha256": "11184bd9a478de3dff02858771531649a833f51ac10fa1f36c3501a705128861"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整项目包_第三阶段规划线收口版说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1465,
+      "sha256": "3f58bd81adceebff60877568e2b2e081d97dfa869ddb2f7954cea1842a1c1d49"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1完整项目包_补全版说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 892,
+      "sha256": "8b50bae272577ef6c675468c45b3fa2d9a3f82eb01b6fe6beee2bcb1028d0821"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实执行落地线第1批本地运行手册说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2064,
+      "sha256": "9edde5447db6210aaf8358d7d3cbd3750638ac9d0faf2949a07d6ffbe79d0bb1"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实执行落地线第2批结果汇总器说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2174,
+      "sha256": "0386efd6aadc18c4048f6a572d69cfaf86eb7307a99c7fab515996349063a48b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实执行落地线第3批人工核验说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2196,
+      "sha256": "392dbf177d24d2c65055152360d01b92fa8bc2b5a9e6b565d33f7e3111f6b601"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实执行落地线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2272,
+      "sha256": "31928da2b071a46e14b6eab3b186813ac157b7f4566fe9de35b44d69d7478352"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证准备线第1批依赖环境说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2211,
+      "sha256": "2c84863f66146439bf57cfc958c491e6934f59e2698ba16321271edbfa113c30"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证准备线第2批证据采集说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2190,
+      "sha256": "7bf1762fef911289fb642621f68b89772e0d2483189b4b4eb503c5aa7d849f99"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证准备线第3批非命令证据说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2423,
+      "sha256": "6a24c8f0904273c0d38788dc0ce079559a8d8beb568ac2c4a057bbd157d6e985"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证准备线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2353,
+      "sha256": "2d36bde94f75547c06b0f4d7460eeaf01dd1b7e1f685a62fb53e20f7cf44bb3e"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证执行辅助线第1批证据面板说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2385,
+      "sha256": "b0421e1bc5f72e4dfdc24ff0af5385f6dd7e8f630f78030e5b1f3ff68cfa56a2"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证执行辅助线第2批阻断关闭说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2397,
+      "sha256": "f840da002b8de0812fd4cabd59cc24ec548d560ffe80450899a4cd80fd775115"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证执行辅助线第3批缺陷流转说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2357,
+      "sha256": "a690a0c6d2f6bc28a30b24a7afb04e7b11c77df7f68364c1ec019c3e633b712d"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实环境补证执行辅助线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2427,
+      "sha256": "4d5ab174be60ce35f85d66fcac4c95de3a4d48887b2e1518faf3685a6e900564"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实验证线第1批验证运行器说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3498,
+      "sha256": "2ed75866f0b09680199ff13adb22be1cf218aac20e9273f5ea925bfef9c28146"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实验证线第2批浏览器QA矩阵说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3544,
+      "sha256": "0d993872579314151ec432de00fb94c29164dfa9b60209c0222db68feed8c8e1"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实验证线第3批预览性能说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3637,
+      "sha256": "b3db535c95f2b07e54591eaae198a0ed4b0950ef48e901cc7bdf97e22527a7cd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1真实验证线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3319,
+      "sha256": "dffc2ce4170ea3926697e407fd71c3a388f9d81a4a939431fae23bbf2fae4387"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第一阶段施行情况与lint审查报告.md",
+      "category": "10-development-history",
+      "sizeBytes": 2917,
+      "sha256": "8c2353a6ad5464ac64e28ff2074abbf41d21a112cefcae79a98e04250ebd33d2"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第一阶段施行情况与lint审查数据.json",
+      "category": "10-development-history",
+      "sizeBytes": 11186,
+      "sha256": "f1992094b3ba40d6a19a84deac4d558e12fd28bb7e274445cd96caf95606474b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第七阶段发布运营线第1批发布范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2281,
+      "sha256": "2884cb98beb38fd2ca3c95e8f5500be97510a661f0d1e309fc3e6b8bdd6b8ff4"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第七阶段发布运营线第2批发布看板说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2611,
+      "sha256": "8aded5135963de790a3ce77abdd478f1c9f94e74992d74c8f9a45e5c662f6a41"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第七阶段发布运营线第3批长期运营说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2638,
+      "sha256": "e7574aa1e1f793e1f8ffa6a42a769233c9895967df72f231fda6811b5f47d271"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第七阶段发布运营线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2442,
+      "sha256": "1d495f2661d0cc56699c1c0e3974e2a78dbf61fdbd5e894d7c1482cd014ddcf5"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段体验整合线第1批路由整合说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2430,
+      "sha256": "f442fe051e9d5cb2314b8b1f96cf57fa596e0a3dfb57a423790b4d17fda9ebc3"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段体验整合线第2批QA扩展说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2393,
+      "sha256": "a885298486770b128dc89514272885a368e2ae81950d54aa04c317d3414b94c0"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段体验整合线第3批入口聚合说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2504,
+      "sha256": "38295c609c6a13635f0b3cb94e7052a04bfdfd6bccc4ecc40767ca74a300f8bd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段体验整合线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2466,
+      "sha256": "2da2affc028bfc0fa47473430c9f8e5f73313060eb4025bad508a5bcd951836d"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段实现线第1批主题展览说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2321,
+      "sha256": "fd444ba766275a29957aa856bedbe68ea31b00f203ab729b75166619bb3b59ee"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段实现线第2批AI建议工作台说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2307,
+      "sha256": "ec767d03728ae88b17cf04ad6de410fe60a8e52aa02f7005f35b1a3478b7a1eb"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段实现线第3批导出中心说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2279,
+      "sha256": "be09a7a747094e7a74a27a88aedd18e951befdee678b0d5cea649d6666b31eb8"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段实现线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2468,
+      "sha256": "ddaa737d0d3fdc064c3e5c50e53e29a24804b91c460acf198a09a351680422bf"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段规划线第1批规划地基说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3114,
+      "sha256": "e9861142b2b23efe2517fd501f46faefa6422025b8a13a1e8961fe2a84a6d1d9"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段规划线第2批内容生长说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2469,
+      "sha256": "b4066e9f8bdb0c6392a7c88ffe894df0d4dad6ceaea011f6aad0aa9c1b425cd0"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段规划线第3批AI灯塔说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2453,
+      "sha256": "985e17a5a220fe3bf7e2ce4d09c136c338caacd5c1260cbd49979b1a3adc4907"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第三阶段规划线第4批运营导出收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2676,
+      "sha256": "1d451f01d20988129096e29971e05e351019aad516f517b09714e98df20e42e9"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第九阶段内容品牌线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2310,
+      "sha256": "be7385a9a7db0ab80a04f0afedeb8d4ce4870a64549bf8f765c033806b0b9d7f"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第九阶段内容品牌线第2批内容日历说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2748,
+      "sha256": "1f0abfdb5e39731e703e5a954c8fc6f78f4b859f9e62bab3203664cd3a10ef6b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第九阶段内容品牌线第3批世界册反馈说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2664,
+      "sha256": "e9499d920a17e940f7f2b20989082379cd754491bc4e97f51d6234abf5c5070a"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第九阶段内容品牌线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2589,
+      "sha256": "e155abd28bef2e4eead939eb1a5a9ddbb84042a2314a742e919dfbb40c522d9f"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段开工说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2296,
+      "sha256": "66b509e49a1642e573b9ce0841cacc671aaa5b98e498d99b8b3cf4657697aebb"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段收口补强第1批Lint环境诊断说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2808,
+      "sha256": "4d157ae5c1afe40af8da816898d5840365e9756cf21a12fbf2db4d65ee071f29"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段收口补强第2批真实执行复跑说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3126,
+      "sha256": "37c361486c6b7daeed1b786eac0305fc018770861acaf6df3c0f7375fc285657"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段收口补强第3批最终交接说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3210,
+      "sha256": "cc68afb15e16192aad9160250876bff603be2a2fc4ed5c17bc6c0905ab8dc4ec"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第一批首页产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2456,
+      "sha256": "ad0bd2b0b511a2fada261e5820b2c9df705f0662894b070caa9dfe780f1c4cdd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第七批时间河产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2685,
+      "sha256": "f10fae123b38903363a198c2f3cf0f2b1fd9b909238c7f3ba24ee77e8c45e0ed"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第三批内容与档案馆产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2367,
+      "sha256": "c0bb213316bf1c881a5e82f7ea8dc5d2ef4f97e7e221867138774cc281a46473"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第九批状态骨架产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3089,
+      "sha256": "2f08241e6eb572cd843da48ad35fbb7afcb8122a062f4042cfe7d3a36691be31"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第二批导航与交互修复说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2420,
+      "sha256": "a44b6263daa2d6a00c971639193d58137787f329edc60cde00fb7ec9a38eb6a0"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第五批路径导览产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2456,
+      "sha256": "a8f759a4053519beafdae032c481110098d45c5b096ec0eae742266c221d70dd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第八批AI灯塔产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2898,
+      "sha256": "8e9c107893678e5789d357b9ed42a9719129b7bbd0df81780d275ff20f3699a9"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第六批Atlas空间入口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2334,
+      "sha256": "721a74fffd5c7a44e345585f0fc0e82dbc78538e1d4a194afd28aa26f1f5da94"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第十一批验收Lint收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3356,
+      "sha256": "e39ad90963a7fcae81771d271fe2e0ea9ef147bbd283d15ab823684878cbbf29"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第十二批收口Lint修复说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3101,
+      "sha256": "7c441a7035e6cbb8f5d5226dff50834217a6c8fb716af66a5729b97a7acfa362"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第十批阅读舒适度产品化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2707,
+      "sha256": "c64f114128c11daa5a64fdbaf5cc33de50b66775b474ff3bd9813d3bd56b5b20"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第二阶段第四批节点阅读体验说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2351,
+      "sha256": "e75b82f86ba9c5189b497eaedcc96b103b963991850a4623e616b4bb4efbcfc5"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第五阶段私密档案线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2191,
+      "sha256": "aed0fb765c0226fa4afabcc16e836003dbcfc2ae22d6899c297aeeeab657425a"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第五阶段私密档案线第2批私密档案入口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2440,
+      "sha256": "02c09e8fcfab3fe73d3441556d2e7c357dc6765d767e3ce7a13db4f7ab13f1dd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第五阶段私密档案线第3批时间胶囊传承说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2559,
+      "sha256": "aaaeab0f60cbdd2df058af7596f6a1023827f7fb956aacc9edc900f0e1a8e165"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第五阶段私密档案线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2444,
+      "sha256": "5abffe6c84a0fe3ed95de23a28184153e879eca2d385de2b322b2fad521d3f1e"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第八阶段生产发布线第1批生产范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2360,
+      "sha256": "235189e551d1f557c3b29c423f45fdb781aa6b11bee543465be1b1a405f5574e"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第八阶段生产发布线第2批生产发布看板说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2838,
+      "sha256": "5eabd00aa8329457646b06709b8346f749d4df2cb5056b3b85d4ae57d62f1322"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第八阶段生产发布线第3批生产运维说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2677,
+      "sha256": "b63ac6c6332a6b145ef5c8c233b878c2486c4dc2bf030bf381ed47735c9a59bd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第八阶段生产发布线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2494,
+      "sha256": "6ccb7bb7a912ef926448ad6f054e404aaf3e81f2d09854fe3e3af8b4a4d2c87b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第六阶段AI协作线第1批可读协议说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2214,
+      "sha256": "9b9317bf36eb2da134ade55d0a3fea6cf94ec610ce517ce8d270f12a7579f43f"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第六阶段AI协作线第2批建议审计说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2504,
+      "sha256": "73eb900ed15e960b6f46cb9fd4b6e0932a10275a39c2607889e54d13244690f6"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第六阶段AI协作线第3批世界维护伙伴说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2492,
+      "sha256": "70daddfdcb6e522274196876866ebfa93050a9c8ddb5e26fa96c06cdfd5dd7b8"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第六阶段AI协作线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2422,
+      "sha256": "ed49e2943bf4941d30accd11b30c4187a15237c77f1c46813acb459fb83e5758"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十一阶段运行态自动化线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2474,
+      "sha256": "8be12d637abd04821d7805c6a1dd03d971e9584deacf6b33585dda75ca572e79"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十一阶段运行态自动化线第2批运营控制台说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2823,
+      "sha256": "e0b4984d37e0ba23c4bfa130c0152fffa7e9de3493195736f6a25dd6a8b3c0d3"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十一阶段运行态自动化线第3批真实接入门禁说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2725,
+      "sha256": "318efccb5c4f1504795cf5b26efd4d25ab1989d9c797c96d889c925e1c490bbe"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十一阶段运行态自动化线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2640,
+      "sha256": "961af3f5771e12fca9907438859ceda91e66bd7df6b4cb81cdaa3180af973c1f"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十三阶段实现加固线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2555,
+      "sha256": "272bd6c53e9d1807bd2638b823df3f32ccad7b4a185dd7dabd7d06fe5ceb1cd0"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十三阶段实现加固线第2批服务适配器说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2720,
+      "sha256": "46479ef966d64af7ab332cfbe7d61bdcdd00c57f25f603589da4942f8bf7076c"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十三阶段实现加固线第3批发布硬化说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2854,
+      "sha256": "46069ccc9955826737f7a45b5b76296e1a2304cb9187cee9533a69ad40975eb8"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十三阶段实现加固线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2669,
+      "sha256": "199ab2fa75dc486e3e13d25abdfb02e1a5d2af602ebfd79ccda3769d6077aa40"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十二阶段平台治理线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2458,
+      "sha256": "72a1fc62b9f0f2136293170598075cab356589dddc283c78b9ec5d855ed3a0b4"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十二阶段平台治理线第2批审计安全治理说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2770,
+      "sha256": "c967c197e33af45e5dbcb0cd6fde9ff2fd7af5c8add89aebf80697ad982e2bfb"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十二阶段平台治理线第3批团队协作说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2736,
+      "sha256": "981e68d8ffc158867bb1adb824e52641a0111a49f82cc85d79af8f51491b4416"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十二阶段平台治理线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2638,
+      "sha256": "34998931b2f0b38fbec7606b101b430c51d83b4507248d4bfe7f160e98bdf70b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十五阶段RC线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2397,
+      "sha256": "57cfb6aa726e69069ced0741fce6f9ec7c6ee94717a00b0b4719dd2a89dcdfe3"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十五阶段RC线第2批命令尝试说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2419,
+      "sha256": "31d1cacaad35615ce5b2dad033936209a4756069669cd6ee167f5507bedca3f4"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十五阶段RC线第3批证据包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2435,
+      "sha256": "685e4463dee0a0f33ca0b8426a5742fb814e65123298e51acecc64da55b74e5d"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十五阶段RC线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2464,
+      "sha256": "ecbe51a0c08df074f01925afdf83b65bf97015363367b70fc3900d8d09f17a2d"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十四阶段真实执行证据线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2432,
+      "sha256": "e34b30749e2c3ce3961b9df461dd4eee09c11e6b18cd05f26c8ef269a8d84f73"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十四阶段真实执行证据线第2批证据面板说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2835,
+      "sha256": "4841543772bbf000d3259ce764d8656966e1b41ad801f813ad284ec11c1ee1e4"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十四阶段真实执行证据线第3批执行辅助器说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2339,
+      "sha256": "ba27af012c0c1ec58751a0db04a2ad168bf610eb2c4fb4e5f586502f7cfa805a"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十四阶段真实执行证据线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2703,
+      "sha256": "2f7d7394a26a123a2d6949c40a60aaa2dcff5072d8b54807bbdd2627b0fba3d8"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十阶段智能运营线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2348,
+      "sha256": "d3fe0b525cc3781b5278ca30dc5029453d237c1783b2f4fca16a28bba2eda98b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十阶段智能运营线第2批多端体验说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2749,
+      "sha256": "826ece5fcda52b91c21aa64f55b39cdb9abfa157cf979dbe4da6b9f21eada6e4"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十阶段智能运营线第3批质量巡检说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2632,
+      "sha256": "335656a3ef5d3ee9264af308a6be56c7b37b1c9ada43430f40c7018778ca502a"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第十阶段智能运营线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2588,
+      "sha256": "3ac0ae84eaf3144f45e0453da226f0926b015d45327e3d0cce72180f38b31379"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段内容运营线第1批范围契约说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2175,
+      "sha256": "199efcab47e4daee95f4b9291d009ccf974e07a1d378b27adc06ef54effec2eb"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段内容运营线第2批内容种子说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2393,
+      "sha256": "45b472148a1688804caf0875fdc27ef35d58694f9ffe284da58a13d943443d31"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段内容运营线第3批运营节奏说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2417,
+      "sha256": "d0df8cd7336ba167845678bad1810f774396931efeedf75819498d128596ca2c"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段内容运营线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2419,
+      "sha256": "26a31d2ea530f603468f65b8c4911083c25596b97188388f32bf9cca099eb7b5"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段前最终封版线第1批前置任务清单说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2190,
+      "sha256": "6288ec7f970c2f73df048875842bfcfea0475c06e98091176dc4f9f2a857128f"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段前最终封版线第2批入口门禁说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2180,
+      "sha256": "648013a095be5eb6df10c965a56e8fc09f0169ae6839a7ad99bf90bd5c972481"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段前最终封版线第3批交接索引说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2172,
+      "sha256": "2e4c05578afaf3d593dc70c37d983526c2f7b783d522041357d7aed299b76b69"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_V1第四阶段前最终封版线第4批收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2420,
+      "sha256": "704cf67a619f292f10b7d4fd76c79a9074d8f2aa84c2151e478c04d77d8a0181"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第三阶段封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 345002,
+      "sha256": "776e8513975d6f8965299ef482e6a9e09e87994b4664ce5aca09a0445c9c1462"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第三阶段封版_完整全量项目包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2348,
+      "sha256": "5cbf1bd3a735f628e09a43524fb2b3dc00e20a35d686e945958a367133e20490"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第五阶段封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 361601,
+      "sha256": "5b8d3545237c4fac7b8feb04fa2272274ba1a09f37cbf3d1a46cd277af3e39a6"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第五阶段封版_完整全量项目包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2837,
+      "sha256": "b21707ea835c5447d28705bdfc9a3879af11f1a07a453764d758d20f9115ca23"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第六阶段封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 366202,
+      "sha256": "dea4297e6b5aece6bf9746f9f59c7a845aa484ce8a8300962e6de2e5a5c054ae"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第六阶段封版_完整全量项目包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2927,
+      "sha256": "2d3ac34ee2aea91d7b3a2de569cf1485c92273750346621347bd7a9f4dff2adb"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第十五阶段-代码_完整全量包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 2001,
+      "sha256": "e3bb131d836a9afc67a6b2b520a585fbf4694590d1da0af409ac168d678411dd"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第十五阶段-代码_完整全量包_说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1313,
+      "sha256": "4aa6a40ef0cfe0f7f78ce0ca99ff02c18a1254c7aae5405ecf2796a9778e3d1f"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第十五阶段封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 2342,
+      "sha256": "5032314bdc3b21036c1e8a666d31a41c9ed205385865e505e8742d481e67aa64"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第十五阶段封版_完整全量项目包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2388,
+      "sha256": "421ac37f59a01bf097fc9dd4389906c8d782147e89976c27364bbcb1cdb9dc86"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第四阶段封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 347752,
+      "sha256": "a23bdc96c978e2d12ec266a1fef5980b76d43a91c4d62a7fbc3a79ffa54ab80b"
+    },
+    {
+      "path": "docs/10-development-history/v1/古月浮屿_v1-第四阶段封版_完整全量项目包说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2795,
+      "sha256": "06d826f5cc20c487628ca6a0415ddc1c9459fb99441b8e42017a60a1793509d1"
+    },
+    {
+      "path": "docs/10-development-history/v2/古月浮屿_V2到V3前全部补全_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 760,
+      "sha256": "02d267d6eae1a1280253fc1cb3462a1979c894c672937481ccbe01380f4ed15e"
+    },
+    {
+      "path": "docs/10-development-history/v2/古月浮屿_V2到V3前全部补全收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1682,
+      "sha256": "c2f9311e0be9ec9031a9b213c7b675cf33eb2bdf361d6a813871793da3b79892"
+    },
+    {
+      "path": "docs/10-development-history/v2/古月浮屿_V2完整开发变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 2453,
+      "sha256": "120a37732cb0f9584c6081d86032b1fade8cdd1446cde1ad4c41ebfe8ab522dc"
+    },
+    {
+      "path": "docs/10-development-history/v2/古月浮屿_V2完整开发收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1572,
+      "sha256": "cc791e6fad1ac8fc4091bf764a17b95c6af6dd86f944f30b797df72346b34ee1"
+    },
+    {
+      "path": "docs/10-development-history/v2/古月浮屿_v2-版本封版_代码完整全量包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 2460,
+      "sha256": "7b5bf934a605825cbc2a46bea5c3638a014f53c54f92c85dcd967d8c9fb9ab49"
+    },
+    {
+      "path": "docs/10-development-history/v2/古月浮屿_v2-版本封版_代码完整全量包_说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1828,
+      "sha256": "99bdebcae0198fe67858e8bb51f9cd3cddabe80fde7a4939fd929be3433ea625"
+    },
+    {
+      "path": "docs/10-development-history/v3/古月浮屿_V3到V4前完整开发_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 2418,
+      "sha256": "438dd5a735fe43ee495c6b62252f230482a36b4f3b3bf3604fdbe0edf8330c7a"
+    },
+    {
+      "path": "docs/10-development-history/v3/古月浮屿_V3到V4前完整开发收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1933,
+      "sha256": "b83c4a99d309b8dfb1ce1673e3142d694e7c9e24d2b710035b5bc6693169fe16"
+    },
+    {
+      "path": "docs/10-development-history/v3/古月浮屿_V3概念深化与任务拆解_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 1214,
+      "sha256": "06c95c195489902e9a5d91d081861723a4360594de5cc4e18f35761750379442"
+    },
+    {
+      "path": "docs/10-development-history/v3/古月浮屿_V3概念深化与任务拆解收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1759,
+      "sha256": "c6dd9ae93239fa46c2f475ac32e67976971c3e8cb8b6dd6b0944caad239b5e9f"
+    },
+    {
+      "path": "docs/10-development-history/v3/古月浮屿_v3封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 2712,
+      "sha256": "dd8fc4496271b8ad44f6b29e5f3a10de5af34abd805dc73154a3942eedf260bd"
+    },
+    {
+      "path": "docs/10-development-history/v3/古月浮屿_v3封版_完整全量项目包_说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1895,
+      "sha256": "063b50e03046b767fdf892e32a0d6bd51676cd4a9c4a5d2dd219a9ebe2135a56"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4到V5前完整开发_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 4047,
+      "sha256": "006e8dd034cb89a4063118649b4b4c971b0764132c931109cbb9ba6da5af87a6"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4到V5前完整开发收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2873,
+      "sha256": "70bd4003d7d939f0a460507b68ee30b640fc094d5caecd32c884e841dff360bd"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前data目录整理_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 30631,
+      "sha256": "fb7d1d4cd16a516c0cb37f39b482e428b74cb20859966937f0fdaf368abb25e3"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前data目录整理说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2481,
+      "sha256": "d326b17f5ebe5662548d81d1c42b51d307abab46c81e6424972f9782143b3c93"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前docs文档结构整理_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 2218,
+      "sha256": "bd44b564f17d21b0fe6a9c8689c074e15795a1c428ac6ca9ede68bdbe3903552"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前docs文档结构整理说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2262,
+      "sha256": "1f3dc8fa0015d01dfde124c182128128a3ad60479c78b918aa82d8ade5770f55"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前src代码结构整理_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 1932,
+      "sha256": "aebb96524739ec2c8cb2a531be58879fbf02d26d1e5167b54ddac370dde53eba"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前src代码结构整理说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2231,
+      "sha256": "59293588972ff35c49284187109815b9f7547b5279120579de906fb3b5b08b8f"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前所有任务最终补证_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 735,
+      "sha256": "6e726ad937e0587aab80a4946abc87917ebb970f294a114c27c8681cd8c37c7b"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_V4前所有任务最终补证收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1786,
+      "sha256": "55300945cf1a3ebab6848e98eecb93d087193bbe238b0dd73c2228c78e1af98a"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_v4-封版_代码完整全量包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 2647,
+      "sha256": "8dab7572f06bf1135081451e40d5048734cc8e54c03638d610adaaddede4d492"
+    },
+    {
+      "path": "docs/10-development-history/v4/古月浮屿_v4-封版_代码完整全量包_说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1872,
+      "sha256": "bcaf81313680b688c1d030b5f3100207a84c2776e7b94b86d79f2aacf8d631bb"
+    },
+    {
+      "path": "docs/10-development-history/v5/古月浮屿_V5到V6前完整开发_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 4390,
+      "sha256": "480238fde713f3694c08fd7167d7bc98aa39e8ca9060749ad6bc2b5347c7ad87"
+    },
+    {
+      "path": "docs/10-development-history/v5/古月浮屿_V5到V6前完整开发收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2912,
+      "sha256": "a1e1d99bc33382f5a5ebcbeceb037d0b30676f9955d4328e043b11dca65ce8bc"
+    },
+    {
+      "path": "docs/10-development-history/v5/古月浮屿_V5前剩余工作一次性完成_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 4552,
+      "sha256": "47eab0a170a40a3e9862d36899c42964771e3b1e81a6a317ccb714e94cecb9c3"
+    },
+    {
+      "path": "docs/10-development-history/v5/古月浮屿_V5前剩余工作一次性完成说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 2442,
+      "sha256": "797f0845e07495eaf421cfa9215f8ac0a819072369b7100ec589e3bba9110237"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_V6_HydrationMismatch修复_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 141,
+      "sha256": "363be634048ad1a03efd707896020e9ef7c31347d8ee3b9eb60a53ea1e994e80"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_V6_HydrationMismatch修复说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1829,
+      "sha256": "18d72c24ab0af003dfcecc477f45da5c4d740504e7c957b40790edc70b5e23f3"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_V6到V7前最终收口_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 4726,
+      "sha256": "5057568304989664c0cb46113d76c91d89a66a4678000b103f6a10926423141c"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_V6到V7前最终收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1740,
+      "sha256": "5296dca74adea2f88d0c8ecfdb81c4a7face07b6377ac2f02e2fb67ce1d9fd1f"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_V6完整开发_变更清单.txt",
+      "category": "10-development-history",
+      "sizeBytes": 4656,
+      "sha256": "f4cfd253ad278ddc27d6b30e750e76ca1ac4813670b1934daad6b15a0b003ba1"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_V6完整开发收口说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 3217,
+      "sha256": "66452337c785ddc196c5b7267f2956f5cf691b65dcf19682d60d7dfe2f708779"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_v6-封版_完整全量项目包_manifest.json",
+      "category": "10-development-history",
+      "sizeBytes": 2140,
+      "sha256": "2f6316f3e5b8e06228fb552861834d588934435391c3f79ab82f4bdf33dedb48"
+    },
+    {
+      "path": "docs/10-development-history/v6/古月浮屿_v6-封版_完整全量项目包_说明.md",
+      "category": "10-development-history",
+      "sizeBytes": 1822,
+      "sha256": "2bc3b22776a70cf8304e92525be2f5e1d6fd2ce63c2695b5bd2dd668af135df9"
+    },
+    {
+      "path": "docs/20-research/adoption-matrix/research-adoption-matrix-and-v1-actions.md",
+      "category": "20-research",
+      "sizeBytes": 14520,
+      "sha256": "5628202fc49b92f1fcfd0a6bd7ab5acce326d9496d2488ff7d07e3a20058a604"
+    },
+    {
+      "path": "docs/20-research/digital-universe/research-digital-universe-metaverse-world-design.md",
+      "category": "20-research",
+      "sizeBytes": 15977,
+      "sha256": "cc909ab221667beb415a1acf237d5b1ce922f1f08d6f2a64d3ee8f3cb1213137"
+    },
+    {
+      "path": "docs/20-research/open-source/research-open-source-digital-world-inspirations.md",
+      "category": "20-research",
+      "sizeBytes": 20406,
+      "sha256": "f8af0bd1f6fb821e7cd8e340579186921f238b159f457346d922893eb88889ea"
+    },
+    {
+      "path": "docs/30-assets/visuals/arcane_atelier_in_the_sky.png",
+      "category": "30-assets",
+      "sizeBytes": 2952097,
+      "sha256": "77087c313a44094e9f9a586b2362a4ee970a5b900e3fb18b38209a30526fbb37"
+    },
+    {
+      "path": "docs/30-assets/visuals/celestial_data_flow_and_projection_system.png",
+      "category": "30-assets",
+      "sizeBytes": 2474010,
+      "sha256": "36880ae0dd7b8c7fd7067c157b80f38c7be081b06b7689627b6c2ea74d8fd1c7"
+    },
+    {
+      "path": "docs/30-assets/visuals/celestial_navigation_beacon_in_the_sky.png",
+      "category": "30-assets",
+      "sizeBytes": 2759868,
+      "sha256": "f3202c37b93f85dbdd768095afb87f93015d75d62de20726c1a23fb8361b6920"
+    },
+    {
+      "path": "docs/30-assets/visuals/celestial_realm_map_and_architect_hubs.png",
+      "category": "30-assets",
+      "sizeBytes": 2840647,
+      "sha256": "f64a7f96bb5b3c7a15144e62d234cf9b5832902696649535e72c5cc85244e9da"
+    },
+    {
+      "path": "docs/30-assets/visuals/cosmic_city_of_time_and_memory.png",
+      "category": "30-assets",
+      "sizeBytes": 2924209,
+      "sha256": "462f322a15cd2e91ff2192e2c02cecf52986455ceca4f5bc24bd5104298adce8"
+    },
+    {
+      "path": "docs/30-assets/visuals/enchanted_sky_garden_sanctuary_at_dusk.png",
+      "category": "30-assets",
+      "sizeBytes": 2957659,
+      "sha256": "38d0be1f14abcd4b24a551c7ca80fe33e22d836c8e89503dc3bbb64fce538431"
+    },
+    {
+      "path": "docs/30-assets/visuals/floating_islands_of_the_four_seasons.png",
+      "category": "30-assets",
+      "sizeBytes": 2957372,
+      "sha256": "8d08ad3ec2d35e22daec5f07312a1ee730ec6d054533e1cb8ac3d8a9b99c5cc6"
+    },
+    {
+      "path": "docs/30-assets/visuals/floating_library_of_magical_knowledge.png",
+      "category": "30-assets",
+      "sizeBytes": 3133678,
+      "sha256": "6e3a87afacfb8d1659fe873e1393b5930997739fcdc322940240547fa8f126c7"
+    },
+    {
+      "path": "docs/30-assets/visuals/gateway_to_a_floating_world.png",
+      "category": "30-assets",
+      "sizeBytes": 2806677,
+      "sha256": "c62f9cbb8c2b66b12e8adb8989bf7646021d59f06a7cb41e5e62f459b1c2e45c"
+    },
+    {
+      "path": "docs/30-assets/visuals/golden_hour_on_a_floating_terrace.png",
+      "category": "30-assets",
+      "sizeBytes": 2932126,
+      "sha256": "fc4ce34e930bd5f65d70f816fa18dcaf8d91b1d91b701d3524728720543db8b7"
+    },
+    {
+      "path": "docs/30-assets/visuals/imagegen.png",
+      "category": "30-assets",
+      "sizeBytes": 2952097,
+      "sha256": "77087c313a44094e9f9a586b2362a4ee970a5b900e3fb18b38209a30526fbb37"
+    },
+    {
+      "path": "docs/90-archive/manifests/古月浮屿_当前项目代码全量包_manifest.json",
+      "category": "90-archive",
+      "sizeBytes": 2539,
+      "sha256": "5de9b3f50720c8114377e1b6c45de55b9b691ff86df2eececfbf33324b19f2a7"
+    },
+    {
+      "path": "docs/90-archive/manifests/古月浮屿_文档全量包_manifest.json",
+      "category": "90-archive",
+      "sizeBytes": 1893,
+      "sha256": "b11cfaa5ac45b31b26b9ccdb818539513222fc35267c7413e1ae23f36a912ebc"
+    },
+    {
+      "path": "docs/90-archive/manifests/古月浮屿_第一轮封版_完整全量项目包_manifest.json",
+      "category": "90-archive",
+      "sizeBytes": 2546,
+      "sha256": "973653ff85b7df390edf260642d460017315365348d88e7439563587b12ce188"
+    },
+    {
+      "path": "docs/90-archive/manifests/古月浮屿_调整代码目录结构_完整全量项目包_manifest.json",
+      "category": "90-archive",
+      "sizeBytes": 3490,
+      "sha256": "580047bf96575717e7c3c23498a8d36932e5e348305f05cec27614f3e1731bd6"
+    },
+    {
+      "path": "docs/90-archive/reports/npm-audit-report.json",
+      "category": "90-archive",
+      "sizeBytes": 2419,
+      "sha256": "01c85bc60f77dec68f4687cbf81107d43d247b994615c089d40cd6369eb6abbc"
+    },
+    {
+      "path": "docs/README.md",
+      "category": "README.md",
+      "sizeBytes": 1255,
+      "sha256": "e01fa7f1e7c78ed8bf823efd122e9ddfa4ba668043a6e458eea274f8b906e333"
+    }
+  ]
+}

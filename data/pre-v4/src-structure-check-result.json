@@ -1,0 +1,6 @@
+{
+  "command": "npm run check:pre-v4:src-structure",
+  "status": "blocked-or-failed",
+  "outputExcerpt": "> guyue-floating-world@0.1.0 check:pre-v4:src-structure\n> tsx scripts/check-pre-v4-src-structure.ts\n\n\nsh: 1: tsx: Permission denied",
+  "note": "真实命令只有 exitCode=0 才能记为 passed；若 tsx Permission denied，则保持 blocked-or-failed。"
+}

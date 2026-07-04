@@ -1,0 +1,3 @@
+import { getOrderedTimeRiverEvents } from '@/features/time-river'
+import { TimeEventCard } from './TimeEventCard'
+export function TimeRiverFlow(){ const events=getOrderedTimeRiverEvents(); return <section className="relative space-y-4"><div className="pointer-events-none absolute bottom-0 left-6 top-0 hidden w-px bg-gradient-to-b from-moss/0 via-moss/40 to-moss/0 md:block" />{events.map(event=><div key={event.id} className="relative md:pl-14"><span className="absolute left-[17px] top-8 hidden h-3 w-3 rounded-full bg-moss ring-4 ring-moss/15 md:block" /><TimeEventCard event={event} /></div>)}</section> }

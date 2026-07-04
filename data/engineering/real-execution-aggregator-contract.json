@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行结果汇总契约",
+  "principle": "真实执行产物必须能被统一读取、汇总和判定缺口。",
+  "stageProgress": "real-execution-landing line batch 2 / 4",
+  "status": "implemented-static-aggregator",
+  "inputs": [
+    "reports/dependency-bootstrap-probe.json",
+    "reports/real-evidence-capture.json",
+    "reports/non-command-evidence-notes.json",
+    "reports/release-blocker-closure-requests.json",
+    "reports/defect-execution-queue.json"
+  ],
+  "output": "reports/real-execution-summary.json",
+  "rules": [
+    "缺少输入文件时记为 missing，不记为 passed。",
+    "required 命令失败时 summary 为 blocked。",
+    "存在 P0/P1 defect 时 summary 为 blocked。",
+    "没有真实 reports 时不得 release-ready。"
+  ]
+}

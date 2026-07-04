@@ -1,0 +1,105 @@
+{
+  "version": "0.3.0",
+  "name": "古月浮屿 R8.1 前端动态世界首页契约",
+  "principle": "首页必须像世界入口，而不是治理面板；第一眼清澈，深处浩瀚。",
+  "status": "implemented-dynamic",
+  "sections": [
+    {
+      "id": "hero",
+      "component": "DynamicWorldHero",
+      "priority": "critical",
+      "purpose": "用创世书桌、星河远景、进入动作与继续旅程建立抵达仪式",
+      "maxInitialData": 0
+    },
+    {
+      "id": "prelude",
+      "component": "WorldDepthPrelude",
+      "priority": "critical",
+      "purpose": "用渐进揭示解释世界深度，不一次性展开全部宇宙",
+      "maxInitialData": 4
+    },
+    {
+      "id": "gateway",
+      "component": "WorldGatewayPanel",
+      "priority": "critical",
+      "purpose": "提供清晰主入口，让访客知道从哪里开始",
+      "maxInitialData": 6
+    },
+    {
+      "id": "atlas",
+      "component": "DynamicAtlasExplorer",
+      "priority": "important",
+      "purpose": "通过可聚焦地图进入主区域与深层入口",
+      "maxInitialData": 7
+    },
+    {
+      "id": "time-river",
+      "component": "DynamicTimeRiver",
+      "priority": "important",
+      "purpose": "支持区域筛选、事件展开和生命阶段回望",
+      "maxInitialData": 12
+    },
+    {
+      "id": "representative",
+      "component": "R3NodeConstellation",
+      "priority": "important",
+      "purpose": "展示真实节点星群，证明世界已经有内容生命",
+      "maxInitialData": 8
+    },
+    {
+      "id": "paths",
+      "component": "R3ContentPathways",
+      "priority": "important",
+      "purpose": "给第一次访问者可走路径",
+      "maxInitialData": 6
+    },
+    {
+      "id": "node-opening",
+      "component": "NodeOpeningRitual",
+      "priority": "important",
+      "purpose": "演示节点护照与展开仪式，避免节点只是普通链接",
+      "maxInitialData": 6
+    },
+    {
+      "id": "lighthouse",
+      "component": "LighthouseConsole",
+      "priority": "important",
+      "purpose": "提供可交互公开灯塔问答体验，不接真实模型也能给出路径反馈",
+      "maxInitialData": 4
+    },
+    {
+      "id": "recommendations",
+      "component": "R5PathRecommendations",
+      "priority": "supporting",
+      "purpose": "用公开路径推荐继续探索",
+      "maxInitialData": 6
+    },
+    {
+      "id": "dynamic-acceptance",
+      "component": "DynamicWorldAcceptance",
+      "priority": "supporting",
+      "purpose": "展示动态化边界、降级策略和验收标准",
+      "maxInitialData": 8
+    },
+    {
+      "id": "deep-gates",
+      "component": "DeepEntranceCards",
+      "priority": "supporting",
+      "purpose": "把创世台、服务边界、长期演化、公开运营放入深层入口，避免首页过载",
+      "maxInitialData": 4
+    }
+  ],
+  "layoutRules": [
+    "首页使用 wide world-container，不把内容挤成窄栏。",
+    "首屏必须包含抵达仪式、运行时反馈、主要行动和继续旅程。",
+    "首页展示核心入口、可交互 Atlas、时间河、真实节点、节点展开与灯塔体验。",
+    "创世台、服务边界、长期演化和公开运营必须进入深层入口。",
+    "所有前端动态必须支持 reduced-motion 降级。"
+  ],
+  "performanceRules": [
+    "首页首屏不加载完整 WorldFoundationStack。",
+    "首页不直接渲染 R4/R6/R7/R8 的完整治理面板。",
+    "封面使用本地轻量 SVG，不依赖远程图片。",
+    "大块工程状态页延后到对应深层页面。"
+  ]
+}

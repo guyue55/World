@@ -1,0 +1,43 @@
+{
+  "version": "3.1.0-pre-v4",
+  "name": "V4 前最终补证第 2 批：真实命令与环境阻断收敛",
+  "stageProgress": "V4 前最终补证线 / 第 2 批 / 共 4 批",
+  "status": "command-environment-closure-prepared",
+  "knownBlockers": [
+    {
+      "id": "tsx-permission-denied",
+      "status": "open-in-current-sandbox",
+      "symptom": "sh: 1: tsx: Permission denied",
+      "requiredFix": "run npm install or chmod executable node_modules/.bin/tsx in local environment"
+    },
+    {
+      "id": "no-real-database",
+      "status": "open",
+      "symptom": "in-memory repository only",
+      "requiredFix": "connect managed PostgreSQL or equivalent database"
+    },
+    {
+      "id": "no-real-auth-provider",
+      "status": "open",
+      "symptom": "demo actor headers only",
+      "requiredFix": "connect Auth.js/Clerk/Supabase Auth and session middleware"
+    }
+  ],
+  "requiredCommandsBeforeV4Development": [
+    "npm install",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run build",
+    "npm run check:v2-before-v3",
+    "npm run check:v3:all",
+    "npm run check:pre-v4:all",
+    "npm run release:local-gate"
+  ],
+  "releaseReady": false,
+  "productionLive": false,
+  "rules": [
+    "blocked 命令不得记为 passed。",
+    "只有 exitCode=0 的真实命令才能作为通过证据。",
+    "V4 正式开发前必须至少关闭 tsx-permission-denied。"
+  ]
+}

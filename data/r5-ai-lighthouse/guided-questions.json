@@ -1,0 +1,29 @@
+{
+  "version": "R5",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "第一次来到这里，应该从哪里开始？",
+      "answerMode": "path-recommendation",
+      "fallback": "从世界入口开始，打开地图，沿时间河或技术星域进入；也可以查看精选路径“第一次来到这里”。"
+    },
+    {
+      "id": "q2",
+      "question": "古月浮屿和普通博客有什么不同？",
+      "answerMode": "public-qa",
+      "fallback": "普通博客以文章列表为中心；古月浮屿以世界、节点、路径、时间河、创世台和 AI 灯塔为中心。"
+    },
+    {
+      "id": "q3",
+      "question": "AI 灯塔能做什么，不能做什么？",
+      "answerMode": "public-qa",
+      "fallback": "它能导览、搜索、推荐路径、摘要公开节点；不能读取 vault、私密原文、自动公开、删除或修改权限。"
+    },
+    {
+      "id": "q4",
+      "question": "我想看技术和 AI 相关内容。",
+      "answerMode": "path-recommendation",
+      "fallback": "建议从技术星域进入，再沿 AI Agent、CLI 工具、世界工程化三条路径探索。"
+    }
+  ]
+}

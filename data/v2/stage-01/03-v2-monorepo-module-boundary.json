@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "stage": 1,
+  "batch": 3,
+  "totalBatches": 20,
+  "name": "Monorepo 与模块边界",
+  "stageProgress": "V2 / 第 1 阶段：平台服务架构 / 第 3 批 / 共 20 批",
+  "status": "prepared",
+  "packages": [
+    "apps/web",
+    "apps/api",
+    "packages/domain",
+    "packages/auth",
+    "packages/db",
+    "packages/ai",
+    "packages/audit",
+    "packages/config"
+  ],
+  "rules": [
+    "V2 不继承 V1 的 release-ready 状态。",
+    "所有服务化能力必须保留审计与人工治理边界。",
+    "私密档案服务必须独立隔离。"
+  ],
+  "ready": false
+}

@@ -1,0 +1,88 @@
+{
+  "areas": [
+    {
+      "id": "origin",
+      "worldName": "创世原点",
+      "realName": "世界宣言、宪章、设计公理与项目自身历史",
+      "entry": "/manifesto",
+      "nodeCount": 8,
+      "averageMaturity": 92,
+      "publicCount": 8,
+      "semiPublicCount": 0,
+      "density": "high",
+      "nextMaintenance": "补充关系说明"
+    },
+    {
+      "id": "tech",
+      "worldName": "技术星域",
+      "realName": "工程实践、AI Agent、CLI、排错记录和架构笔记",
+      "entry": "/archive",
+      "nodeCount": 5,
+      "averageMaturity": 72,
+      "publicCount": 5,
+      "semiPublicCount": 0,
+      "density": "medium",
+      "nextMaintenance": "补充关系说明"
+    },
+    {
+      "id": "product",
+      "worldName": "产品工坊",
+      "realName": "产品构想、工具、实验 Demo、品牌与平台设想",
+      "entry": "/paths",
+      "nodeCount": 6,
+      "averageMaturity": 77,
+      "publicCount": 6,
+      "semiPublicCount": 0,
+      "density": "high",
+      "nextMaintenance": "补充关系说明"
+    },
+    {
+      "id": "inspiration",
+      "worldName": "灵感云层",
+      "realName": "未完成想法、世界原则、设计片段与未来可能性",
+      "entry": "/r3-content-life",
+      "nodeCount": 5,
+      "averageMaturity": 78,
+      "publicCount": 5,
+      "semiPublicCount": 0,
+      "density": "medium",
+      "nextMaintenance": "补充关系说明"
+    },
+    {
+      "id": "memory",
+      "worldName": "记忆湖",
+      "realName": "生活片刻、旅行、照片、家庭和柔性的公开边缘",
+      "entry": "/timeline",
+      "nodeCount": 3,
+      "averageMaturity": 48,
+      "publicCount": 1,
+      "semiPublicCount": 2,
+      "density": "medium",
+      "nextMaintenance": "补充关系说明"
+    },
+    {
+      "id": "archive",
+      "worldName": "档案馆",
+      "realName": "长文、文档、归档资料、证据链和旧项目遗迹",
+      "entry": "/archive",
+      "nodeCount": 7,
+      "averageMaturity": 80,
+      "publicCount": 7,
+      "semiPublicCount": 0,
+      "density": "high",
+      "nextMaintenance": "补充关系说明"
+    },
+    {
+      "id": "lighthouse",
+      "worldName": "AI 灯塔",
+      "realName": "公开导览、路径推荐、隐私守门和创世协作边界",
+      "entry": "/ask",
+      "nodeCount": 2,
+      "averageMaturity": 81,
+      "publicCount": 2,
+      "semiPublicCount": 0,
+      "density": "seed",
+      "nextMaintenance": "继续点亮真实节点"
+    }
+  ]
+}

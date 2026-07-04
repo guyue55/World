@@ -1,0 +1,37 @@
+{
+  "id": "v6-private-archive-time-capsules",
+  "version": "6.0.0",
+  "name": "V6 时间胶囊元数据",
+  "capsules": [
+    {
+      "id": "capsule-future-note",
+      "title": "未来节点备忘",
+      "visibility": "private",
+      "openRule": "manual-owner-open",
+      "scheduledHint": "future milestone",
+      "publicSignal": "存在一个未来节点备忘胶囊。",
+      "aiRole": "remind-structure-only",
+      "rawContentStoredHere": false
+    },
+    {
+      "id": "capsule-heritage-note",
+      "title": "传承节点备忘",
+      "visibility": "family",
+      "openRule": "owner-approved-open",
+      "scheduledHint": "heritage milestone",
+      "publicSignal": "传承能力已预留，但不暴露原文。",
+      "aiRole": "summarize-redacted-metadata-only",
+      "rawContentStoredHere": false
+    },
+    {
+      "id": "capsule-project-origin",
+      "title": "项目起源备忘",
+      "visibility": "semiPublic",
+      "openRule": "publish-redacted-version-only",
+      "scheduledHint": "v8-public-operation",
+      "publicSignal": "古月浮屿从博客演进为个人数字宇宙。",
+      "aiRole": "help-create-public-retrospective",
+      "rawContentStoredHere": false
+    }
+  ]
+}

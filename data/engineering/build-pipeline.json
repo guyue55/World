@@ -1,0 +1,46 @@
+{
+  "version": "0.1.0",
+  "stages": [
+    {
+      "id": "schema",
+      "command": "npm run validate:world",
+      "blocksBuild": true
+    },
+    {
+      "id": "public-boundary",
+      "command": "npm run check:public",
+      "blocksBuild": true
+    },
+    {
+      "id": "skeleton",
+      "command": "npm run check:skeleton",
+      "blocksBuild": true
+    },
+    {
+      "id": "invariants",
+      "command": "npm run check:invariants",
+      "blocksBuild": true
+    },
+    {
+      "id": "contracts",
+      "command": "npm run check:contracts",
+      "blocksBuild": true
+    },
+    {
+      "id": "projection",
+      "command": "npm run check:projections",
+      "blocksBuild": true
+    },
+    {
+      "id": "ai-boundary",
+      "command": "npm run check:ai-boundary",
+      "blocksBuild": true
+    },
+    {
+      "id": "public-index",
+      "command": "npm run build:world-index",
+      "blocksBuild": false
+    }
+  ],
+  "principle": "前台可以浪漫，后台必须清醒。"
+}

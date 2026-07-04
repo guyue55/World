@@ -1,0 +1,40 @@
+{
+  "version": "3.1.0-pre-v4",
+  "name": "V4 前最终补证第 1 批：V3 生产证据矩阵",
+  "stageProgress": "V4 前最终补证线 / 第 1 批 / 共 4 批",
+  "status": "evidence-matrix-prepared",
+  "requiredEvidence": [
+    "real database and graph persistence",
+    "real AI memory storage",
+    "real auth and collaboration invite flow",
+    "real private vault encryption proof",
+    "real visual universe performance proof",
+    "real backup and legacy handover drill",
+    "staging deployment smoke evidence",
+    "manual safety review"
+  ],
+  "currentlySatisfiedByThisWorkspace": [
+    "structure definitions",
+    "local service skeleton",
+    "API route skeleton",
+    "V3 universe page",
+    "V4 entry gate data"
+  ],
+  "notSatisfied": [
+    "real production database",
+    "real auth provider",
+    "real secret manager",
+    "real encrypted vault storage",
+    "real deployment proof",
+    "real browser QA proof"
+  ],
+  "v4PlanningAllowed": true,
+  "v4DevelopmentAllowed": false,
+  "releaseReady": false,
+  "productionLive": false,
+  "rules": [
+    "补证矩阵不能把结构性文件当作生产证据。",
+    "V4 可以规划，但正式开发前必须关闭 notSatisfied 项。",
+    "任何 releaseReady=true 都必须来自真实命令和真实部署证据。"
+  ]
+}

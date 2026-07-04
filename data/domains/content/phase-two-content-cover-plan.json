@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段内容与封面落地计划",
+  "principle": "真实内容是世界的星体，封面只是帮助星体被看见。",
+  "contentTargets": [
+    {
+      "id": "tech-articles",
+      "count": 4,
+      "role": "展示技术思考与工程经验"
+    },
+    {
+      "id": "project-nodes",
+      "count": 2,
+      "role": "展示作品、系统和产品化能力"
+    },
+    {
+      "id": "life-fragments",
+      "count": 4,
+      "role": "让世界不是只有技术"
+    },
+    {
+      "id": "path-guides",
+      "count": 3,
+      "role": "为不同访问者提供进入方式"
+    },
+    {
+      "id": "world-rules",
+      "count": 3,
+      "role": "解释世界如何生长"
+    }
+  ],
+  "coverTargets": [
+    {
+      "kind": "natural-tech",
+      "minimum": 4
+    },
+    {
+      "kind": "memory-photo-or-illustration",
+      "minimum": 4
+    },
+    {
+      "kind": "abstract-world",
+      "minimum": 3
+    },
+    {
+      "kind": "project-artifact",
+      "minimum": 2
+    },
+    {
+      "kind": "fallback-gradient",
+      "maximum": 6
+    }
+  ],
+  "qualityRules": [
+    "每个首页代表节点必须有摘要。",
+    "每个首页代表节点必须有封面或明确 fallback。",
+    "每个内容节点必须有标签、区域和可访问路径。",
+    "AI 生成内容必须标记 generated/reviewed。",
+    "私密内容不得为填充首页而进入公开层。"
+  ]
+}

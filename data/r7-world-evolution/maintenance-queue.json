@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "id": "mq-001",
+      "kind": "metadata",
+      "title": "为低成熟度节点补充现实解释",
+      "effort": "low",
+      "risk": "low",
+      "nextAction": "补充这是什么、属于哪里、谁能看"
+    },
+    {
+      "id": "mq-002",
+      "kind": "relation",
+      "title": "修复孤岛节点",
+      "effort": "medium",
+      "risk": "low",
+      "nextAction": "每个节点至少连接一个区域或路径"
+    },
+    {
+      "id": "mq-003",
+      "kind": "privacy",
+      "title": "检查生活与家庭内容默认权限",
+      "effort": "medium",
+      "risk": "high",
+      "nextAction": "确认不进入公开索引或 AI 公开上下文"
+    },
+    {
+      "id": "mq-004",
+      "kind": "archive",
+      "title": "生成月度世界日志",
+      "effort": "low",
+      "risk": "low",
+      "nextAction": "记录本月新增、修订、归档、低光事件"
+    },
+    {
+      "id": "mq-005",
+      "kind": "ai-review",
+      "title": "审核 AI 路径建议",
+      "effort": "low",
+      "risk": "medium",
+      "nextAction": "接受、修改或拒绝，不自动写入世界"
+    },
+    {
+      "id": "mq-006",
+      "kind": "backup",
+      "title": "确认导出包格式稳定",
+      "effort": "medium",
+      "risk": "medium",
+      "nextAction": "保留 Markdown/JSON/媒体原件导出说明"
+    },
+    {
+      "id": "mq-007",
+      "kind": "experience",
+      "title": "给区域说明卡补充进入/退出路径",
+      "effort": "low",
+      "risk": "low",
+      "nextAction": "避免访客迷路"
+    },
+    {
+      "id": "mq-008",
+      "kind": "low-light",
+      "title": "配置低光模式文案",
+      "effort": "low",
+      "risk": "low",
+      "nextAction": "长期未更新时不显示为荒废"
+    }
+  ]
+}

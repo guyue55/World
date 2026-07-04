@@ -1,0 +1,33 @@
+{
+  "version": "4.0.0",
+  "name": "实时编辑协议",
+  "batch": 6,
+  "stage": 2,
+  "stageName": "多人协作与实时世界编辑",
+  "stageProgress": "V4 / 第 2 阶段 / 第 6 批 / 共 24 批",
+  "slug": "realtime-editing",
+  "status": "complete",
+  "goals": [
+    "定义实时编辑协议",
+    "草稿锁、版本快照、冲突解决",
+    "回滚与审计"
+  ],
+  "outputs": [
+    "RealtimeSession",
+    "DraftLock",
+    "ConflictResolution"
+  ],
+  "mustKeep": [
+    "CRDT optional",
+    "snapshot",
+    "rollback"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-collaboration",
+    "dataDirectory": "data/v4/stage-02",
+    "docsDirectory": "docs/41-v4/stage-02",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

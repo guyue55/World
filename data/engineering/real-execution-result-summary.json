@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行结果汇总",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 2 / 4",
+  "status": "real-execution-summary-prepared",
+  "realExecutionPassed": false,
+  "totalRequired": 8,
+  "passed": 0,
+  "blocked": 4,
+  "pending": 4,
+  "summaryCards": [
+    {
+      "id": "required",
+      "title": "必需执行项",
+      "value": 8
+    },
+    {
+      "id": "passed",
+      "title": "已通过",
+      "value": 0
+    },
+    {
+      "id": "blocked",
+      "title": "阻断",
+      "value": 4
+    },
+    {
+      "id": "pending",
+      "title": "待真实执行",
+      "value": 4
+    }
+  ],
+  "rules": [
+    "realExecutionPassed=false 必须保持，直到 required 全部真实通过。",
+    "blocked 与 pending 不得记为 passed。",
+    "汇总器只汇总证据，不替代真实命令执行。",
+    "release-ready 条件必须依赖真实执行结果。"
+  ]
+}

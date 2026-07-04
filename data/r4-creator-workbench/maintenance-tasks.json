@@ -1,0 +1,52 @@
+{
+  "tasks": [
+    {
+      "id": "task-001",
+      "title": "整理 3 颗灵感种子",
+      "energy": "low",
+      "area": "fragments",
+      "reason": "灵感云层有多颗 seed 可进入 sprout。",
+      "expectedResult": "补充说明并建立至少 1 条关系。"
+    },
+    {
+      "id": "task-002",
+      "title": "修复公开节点的缺失摘要",
+      "energy": "medium",
+      "area": "archive",
+      "reason": "公开节点必须可被访客理解。",
+      "expectedResult": "补全现实解释与世界标题。"
+    },
+    {
+      "id": "task-003",
+      "title": "检查半公开节点是否进入公开索引",
+      "energy": "medium",
+      "area": "privacy",
+      "reason": "半公开只能进入摘要或脱敏索引。",
+      "expectedResult": "风险项归零。"
+    },
+    {
+      "id": "task-004",
+      "title": "为孤岛节点建立关系说明",
+      "energy": "low",
+      "area": "graph",
+      "reason": "节点不能只存在于列表中，要能回到星图。",
+      "expectedResult": "至少新增 2 条有解释的关系。"
+    },
+    {
+      "id": "task-005",
+      "title": "生成一次 R3 节点导出清单",
+      "energy": "medium",
+      "area": "backup",
+      "reason": "真实内容进入后需要可迁移资产清单。",
+      "expectedResult": "得到 JSON / Markdown / media manifest 草案。"
+    },
+    {
+      "id": "task-006",
+      "title": "准备 R5 公开 AI 灯塔索引",
+      "energy": "high",
+      "area": "lighthouse",
+      "reason": "AI 灯塔真实接入前必须确认只读公开索引。",
+      "expectedResult": "形成公开问答候选集和禁止读取清单。"
+    }
+  ]
+}

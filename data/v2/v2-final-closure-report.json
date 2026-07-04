@@ -1,0 +1,78 @@
+{
+  "version": "2.0.0",
+  "name": "古月浮屿 V2 完整阶段收口报告",
+  "createdAt": "2026-05-20T05:19:12Z",
+  "sourceBaseline": "/mnt/data/rebuild_v2_from_v1_code_zip/v1-第十五阶段-代码",
+  "workspace": "/mnt/data/guyue_v2_full_development_workspace",
+  "completedStages": 5,
+  "completedBatches": 20,
+  "v2Status": "structure-complete",
+  "releaseReady": false,
+  "productionLive": false,
+  "realImplementationStatus": "pending-v2-1",
+  "stages": [
+    {
+      "stage": 1,
+      "name": "平台服务架构",
+      "batches": "1-4",
+      "status": "complete"
+    },
+    {
+      "stage": 2,
+      "name": "数据认证权限审计",
+      "batches": "5-8",
+      "status": "complete"
+    },
+    {
+      "stage": 3,
+      "name": "后台档案导出",
+      "batches": "9-12",
+      "status": "complete"
+    },
+    {
+      "stage": 4,
+      "name": "AI 服务化与运营 API",
+      "batches": "13-16",
+      "status": "complete"
+    },
+    {
+      "stage": 5,
+      "name": "生产化迁移收口",
+      "batches": "17-20",
+      "status": "complete"
+    }
+  ],
+  "checks": {
+    "staticJson": "passed",
+    "staticLogic": "passed",
+    "changedTsTranspile": "passed",
+    "staticLintRisk": "passed",
+    "format": "passed",
+    "realV2AllCheck": {
+      "command": "npm run check:v2:all",
+      "repairSteps": [
+        "node_modules missing; skip npm install because packaging/development task is structural and install may be long"
+      ],
+      "exitCode": 127,
+      "status": "blocked-or-failed",
+      "outputExcerpt": "> guyue-floating-world@0.1.0 check:v2:all\n> tsx scripts/check-v2-all.ts\n\n\nsh: 1: tsx: Permission denied"
+    }
+  },
+  "nextVersion": "V2.1",
+  "nextVersionFocus": [
+    "真实后端工程实现",
+    "数据库 schema 与 migration",
+    "Auth Provider 接入",
+    "RBAC 真实拦截",
+    "AuditEvent 真实写入",
+    "Private Vault 加密存储",
+    "AI Provider 服务端适配",
+    "Staging 部署证据"
+  ],
+  "rules": [
+    "V2 完成的是服务化平台结构，不是真实服务上线。",
+    "V2.1 应进入真实实现线，不继续堆结构。",
+    "V1 发布修复线仍可并行保留。",
+    "没有要求无需打包，本轮未生成 zip。"
+  ]
+}

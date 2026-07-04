@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 审计日志与合规台账",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 2 / 4",
+  "status": "audit-compliance-ledger-prepared",
+  "auditReady": false,
+  "events": [
+    {
+      "id": "approval-requested",
+      "risk": "medium",
+      "required": true
+    },
+    {
+      "id": "approval-approved",
+      "risk": "high",
+      "required": true
+    },
+    {
+      "id": "runtime-action-executed",
+      "risk": "high",
+      "required": true
+    },
+    {
+      "id": "content-published",
+      "risk": "high",
+      "required": true
+    },
+    {
+      "id": "export-created",
+      "risk": "high",
+      "required": true
+    },
+    {
+      "id": "secret-rotated",
+      "risk": "critical",
+      "required": true
+    },
+    {
+      "id": "permission-changed",
+      "risk": "critical",
+      "required": true
+    },
+    {
+      "id": "private-boundary-alert",
+      "risk": "critical",
+      "required": true
+    }
+  ],
+  "rules": [
+    "auditReady=false 必须保持，直到真实审计存储实现。",
+    "critical 事件必须记录操作者、时间、来源和结果。",
+    "审计日志不得保存私密正文。",
+    "审计记录必须可导出给人工复核。"
+  ]
+}

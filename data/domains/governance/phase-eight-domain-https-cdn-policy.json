@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 域名 HTTPS CDN 策略",
+  "stageProgress": "phase-eight-production-release-operations-loop line batch 2 / 4",
+  "status": "network-policy-prepared",
+  "domain": {
+    "required": true,
+    "currentValueStored": false,
+    "recordType": "CNAME-or-A",
+    "verification": "operator-required"
+  },
+  "https": {
+    "required": true,
+    "enforceHttps": true,
+    "hsts": "future-optional",
+    "verification": "operator-required"
+  },
+  "cdn": {
+    "required": false,
+    "cachePolicy": "static-assets-long-cache-html-short-cache",
+    "purgeRequiredAfterRelease": true
+  },
+  "rules": [
+    "域名真实值不写入本仓库。",
+    "HTTPS 验证需要真实访问证据。",
+    "CDN 缓存策略必须避免 HTML 长时间 stale。",
+    "发布后如出现错误必须可 purge 或 rollback。"
+  ]
+}

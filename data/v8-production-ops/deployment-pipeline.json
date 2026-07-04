@@ -1,0 +1,49 @@
+{
+  "version": "V8",
+  "name": "真实生产部署流水线",
+  "productionLive": false,
+  "releaseReady": false,
+  "steps": [
+    {
+      "id": "install",
+      "name": "安装依赖",
+      "command": "npm ci",
+      "evidence": "lockfile and install log"
+    },
+    {
+      "id": "local-gates",
+      "name": "本地门禁",
+      "command": "npm run check:json && npm run check:repo && npm run check:v8-production:all && npm run lint && npm run typecheck",
+      "evidence": "terminal exit 0"
+    },
+    {
+      "id": "build",
+      "name": "生产构建",
+      "command": "npm run build",
+      "evidence": "full build exit 0"
+    },
+    {
+      "id": "preview",
+      "name": "预览部署",
+      "command": "deploy preview",
+      "evidence": "preview URL and smoke result"
+    },
+    {
+      "id": "production",
+      "name": "生产部署",
+      "command": "promote production",
+      "evidence": "production URL and external access result"
+    },
+    {
+      "id": "signoff",
+      "name": "人工签收",
+      "command": "manual",
+      "evidence": "signed release record"
+    }
+  ],
+  "mustNotClaim": [
+    "productionLive=true without external production URL",
+    "releaseReady=true without full build exit 0",
+    "clean seal without manual signoff"
+  ]
+}

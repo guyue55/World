@@ -1,0 +1,18 @@
+{
+  "round": 3,
+  "stage": 4,
+  "batch": 16,
+  "status": "complete",
+  "completedBatches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "productionDeployAllowed": false,
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "第三轮仍不标记 productionLive。没有真实预览 URL、smoke 结果、真机验收和人工隐私签收，不得声称上线。"
+  },
+  "productionLive": false
+}

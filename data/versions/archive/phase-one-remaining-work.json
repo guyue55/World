@@ -1,0 +1,83 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段剩余工作登记册",
+  "principle": "剩余工作必须按风险和阶段价值排序，而不是继续无限打磨。",
+  "items": [
+    {
+      "id": "P1-build-real-project",
+      "priority": "P0",
+      "type": "engineering",
+      "title": "在真实依赖环境执行 npm install / typecheck / build / check:world-core",
+      "exitCriteria": "真实构建通过，失败项全部登记并修复。"
+    },
+    {
+      "id": "P1-tooling-hardening",
+      "priority": "P0",
+      "type": "engineering",
+      "title": "补齐或修正 eslint、autoprefixer、Next lint/build 相关工具链",
+      "exitCriteria": "check:strict 和 build 在本地/CI 环境可运行。"
+    },
+    {
+      "id": "P1-responsive-visual-qa",
+      "priority": "P0",
+      "type": "experience",
+      "title": "逐页检查 Web、平板、移动端响应式与布局占满问题",
+      "exitCriteria": "核心页面无明显缩窄、错位、导航状态错误。"
+    },
+    {
+      "id": "P1-performance-measurement",
+      "priority": "P0",
+      "type": "performance",
+      "title": "用 Lighthouse 或等价工具实测首页、归档、节点、状态页",
+      "exitCriteria": "核心页面达到 V1 性能预算或有明确豁免。"
+    },
+    {
+      "id": "P1-content-seed-polish",
+      "priority": "P1",
+      "type": "content",
+      "title": "填充真实高价值种子内容、路径、首页代表节点和配图策略",
+      "exitCriteria": "首页、归档、路径、节点详情有真实可读价值。"
+    },
+    {
+      "id": "P1-accessibility-pass",
+      "priority": "P1",
+      "type": "experience",
+      "title": "完成基础可访问性检查",
+      "exitCriteria": "键盘导航、焦点、语义、对比度、触控区域达 V1 标准。"
+    },
+    {
+      "id": "P1-seo-preview-final",
+      "priority": "P1",
+      "type": "release",
+      "title": "完成真实站点 SEO、OG、sitemap、RSS、manifest 预览复核",
+      "exitCriteria": "预览部署后搜索和社交分享基础信息正确。"
+    },
+    {
+      "id": "P1-deploy-preview",
+      "priority": "P1",
+      "type": "release",
+      "title": "生成预览部署并验证静态路由、JSON 端点、RSS、sitemap",
+      "exitCriteria": "预览站点可访问，核心路由无 404 和数据泄露。"
+    },
+    {
+      "id": "P1-browser-interaction-qa",
+      "priority": "P1",
+      "type": "experience",
+      "title": "逐页验证导航高亮、标签切换、折叠面板、搜索过滤交互",
+      "exitCriteria": "核心交互稳定，移动端可用。"
+    },
+    {
+      "id": "P1-code-split-refactor",
+      "priority": "P2",
+      "type": "architecture",
+      "title": "继续拆分过重面板、列表和页面装配，保持中大型项目结构边界",
+      "exitCriteria": "页面与组件复杂度不超过契约软限制。"
+    }
+  ],
+  "rules": [
+    "P0 是第一阶段真正收口前必须做。",
+    "P1 是进入正式 V1 产品化前应做。",
+    "P2 可以进入第二阶段持续优化。",
+    "不得继续无限增加协议而不做真实构建和视觉验证。"
+  ]
+}

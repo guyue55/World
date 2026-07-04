@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实执行落地线最终报告",
+  "stageProgress": "real-execution-landing line batch 4 / 4",
+  "decision": "real-execution-landing-complete-real-run-required",
+  "releaseDecision": "not-ready-for-release",
+  "completedBatches": [
+    "local-runbook",
+    "result-aggregator",
+    "manual-release-review",
+    "landing-closure"
+  ],
+  "preparedCapabilities": [
+    "ordered local runbook",
+    "real execution summary aggregator",
+    "manual release review checklist",
+    "release-ready evidence matrix remains visible"
+  ],
+  "mustRunForReal": [
+    "npm install",
+    "npm run dependency-bootstrap:probe",
+    "npm run evidence:capture",
+    "npm run real-execution:summarize",
+    "npm run manual-release-review:print",
+    "manual browser QA",
+    "preview smoke",
+    "performance measurement",
+    "manual blocker review"
+  ],
+  "rules": [
+    "真实执行落地线完成的是落地执行结构，不是真实通过结论。",
+    "缺少 reports/real-execution-summary.json 时不得 release-ready。",
+    "人工核验 pending 时不得 release-ready。",
+    "下一步必须进入真实项目环境运行，而不是继续堆静态流程。"
+  ]
+}

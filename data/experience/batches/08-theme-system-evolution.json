@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 8,
+  "totalBatches": 8,
+  "slug": "theme-system-evolution",
+  "title": "主题系统从换色升级为布局/组件/动效整体切换",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 8 / 批次 8/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

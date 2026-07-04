@@ -1,0 +1,31 @@
+{
+  "id": "v6-private-ai-stage-04-closure-handoff",
+  "version": "6.0.0",
+  "round": "V6 私密档案与 AI 世界助手深化",
+  "stage": "04-closure-handoff",
+  "batches": ["13 privacy leak review", "14 final gate", "15 V7 handoff", "16 seal package notes"],
+  "status": "complete",
+  "productionLive": false,
+  "closure": {
+    "privateArchiveReady": true,
+    "aiBoundaryReady": true,
+    "approvalAuditReady": true,
+    "v7HandoffReady": true,
+    "cleanProductionReady": false
+  },
+  "handoffToV7": {
+    "version": "V7 AI 世界助手版",
+    "mustKeep": [
+      "AI 只能读取公开内容和脱敏索引",
+      "所有私密建议必须进入人工审批",
+      "vault/sealed 内容不可被 AI 读取、推断、公开或导出",
+      "公开发布必须由主人确认"
+    ],
+    "nextTasks": [
+      "实现正式 AI 建议工作台",
+      "扩展路径推荐和维护提醒",
+      "接入真实审计日志存储",
+      "建立公开 AI 与私密 AI 的运行边界"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "version": "V4",
+  "stage": 1,
+  "batch": 4,
+  "status": "complete",
+  "completedBatches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "conceptExpansionDecision": {
+    "needExpansion": true,
+    "decision": "阶段 2 必须继续把内容节点、路径和时间河从普通页面转为空间对象。",
+    "newTasks": [
+      "content node field",
+      "journey pathway",
+      "memory river"
+    ]
+  },
+  "productionLive": false
+}

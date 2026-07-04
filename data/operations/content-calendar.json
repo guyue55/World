@@ -1,0 +1,22 @@
+{
+  "status": "planned",
+  "rhythm": [
+    {
+      "cadence": "weekly",
+      "task": "更新 1 篇公开文章或项目记录"
+    },
+    {
+      "cadence": "biweekly",
+      "task": "整理 1 个主题展览或路径"
+    },
+    {
+      "cadence": "monthly",
+      "task": "回顾时间河与内容健康度"
+    },
+    {
+      "cadence": "quarterly",
+      "task": "检查素材缺口和隐私边界"
+    }
+  ],
+  "productionLive": false
+}

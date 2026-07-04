@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "principle": "后来者必须先理解世界骨架，再修改世界表面。",
+  "steps": [
+    {
+      "id": "install",
+      "command": "npm install"
+    },
+    {
+      "id": "print-docs",
+      "command": "npm run docs:print"
+    },
+    {
+      "id": "print-kernel",
+      "command": "npm run kernel:report"
+    },
+    {
+      "id": "print-foundation",
+      "command": "npm run foundation:print"
+    },
+    {
+      "id": "print-audit",
+      "command": "npm run audit:print"
+    },
+    {
+      "id": "run-core-check",
+      "command": "npm run check:world-core"
+    },
+    {
+      "id": "start-dev",
+      "command": "npm run dev"
+    }
+  ],
+  "mustRead": [
+    "docs/00-overview/v1-world-kernel-doc-index.md",
+    "docs/05-engineering/v1-world-kernel.md",
+    "docs/05-engineering/v1-foundation-gate.md",
+    "docs/05-engineering/v1-change-admission-policy.md",
+    "docs/05-engineering/v1-world-kernel-runbook.md",
+    "docs/09-adr/ADR-0001-static-first-protocol-first.md",
+    "docs/09-adr/ADR-0003-ai-as-lighthouse.md",
+    "docs/09-adr/ADR-0004-public-private-build-separation.md"
+  ],
+  "firstChangeRecommendation": "从 copy/content/projection 低风险层开始，不要第一步修改 schema、visibility 或 kernel。"
+}

@@ -1,0 +1,29 @@
+{
+  "version": "6.0.0",
+  "name": "个人知识与创作生产线",
+  "batch": 11,
+  "stage": 3,
+  "stageName": "个人文明操作系统内核",
+  "stageProgress": "V6 / 第 3 阶段 / 第 11 批 / 共 24 批",
+  "slug": "knowledge-creation-pipeline",
+  "status": "complete",
+  "goals": [
+    "定义知识与创作生产线",
+    "IdeaInbox/DraftFactory/ReviewLoop",
+    "AI 辅助但人工确认"
+  ],
+  "outputs": [
+    "KnowledgePipeline",
+    "CreationPipeline"
+  ],
+  "mustKeep": [
+    "human review"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-civilization-os",
+    "dataDirectory": "data/v6/stage-03",
+    "docsDirectory": "docs/61-v6/stage-03",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

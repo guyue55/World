@@ -1,0 +1,508 @@
+{
+  "relations": [
+    {
+      "from": "world-manifesto",
+      "to": "sovereignty-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界宣言 与 sovereignty-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-manifesto",
+      "to": "entry-clear-depth-vast",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界宣言 与 entry-clear-depth-vast 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-charter",
+      "to": "ai-lighthouse-boundary",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界宪章 与 ai-lighthouse-boundary 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-charter",
+      "to": "sovereignty-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界宪章 与 sovereignty-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "design-axioms",
+      "to": "world-generator-pipeline",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "世界设计公理 与 world-generator-pipeline 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "design-axioms",
+      "to": "node-passport-system",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界设计公理 与 node-passport-system 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "entry-clear-depth-vast",
+      "to": "r2-world-entry",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "入口清澈深处浩瀚 与 r2-world-entry 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "entry-clear-depth-vast",
+      "to": "world-map-passports",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "入口清澈深处浩瀚 与 world-map-passports 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-generator-pipeline",
+      "to": "node-passport-system",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界生成管线 与 node-passport-system 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-generator-pipeline",
+      "to": "content-sovereignty",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界生成管线 与 content-sovereignty 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "node-passport-system",
+      "to": "world-generator-pipeline",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "节点护照系统 与 world-generator-pipeline 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "node-passport-system",
+      "to": "four-dimensional-coordinates",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "节点护照系统 与 four-dimensional-coordinates 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "four-dimensional-coordinates",
+      "to": "content-sovereignty",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "四维坐标系统 与 content-sovereignty 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "four-dimensional-coordinates",
+      "to": "privacy-default-private",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "四维坐标系统 与 privacy-default-private 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "ai-lighthouse-boundary",
+      "to": "private-ai-v6",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "AI 灯塔边界 与 private-ai-v6 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "ai-lighthouse-boundary",
+      "to": "sovereignty-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "AI 灯塔边界 与 sovereignty-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "private-ai-v6",
+      "to": "ai-lighthouse-boundary",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "V6 私密 AI 边界 与 ai-lighthouse-boundary 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "private-ai-v6",
+      "to": "privacy-default-private",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "V6 私密 AI 边界 与 privacy-default-private 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "r2-world-entry",
+      "to": "entry-clear-depth-vast",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "R2 世界入口 与 entry-clear-depth-vast 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "r2-world-entry",
+      "to": "world-map-passports",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "R2 世界入口 与 world-map-passports 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-map-passports",
+      "to": "r2-world-entry",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "区域说明卡 与 r2-world-entry 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-map-passports",
+      "to": "node-passport-system",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "区域说明卡 与 node-passport-system 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "mcp-adk-feishu",
+      "to": "gemini-cli-skills",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "飞书 MCP 接入 ADK Agent 与 gemini-cli-skills 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "mcp-adk-feishu",
+      "to": "ai-lighthouse-boundary",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "飞书 MCP 接入 ADK Agent 与 ai-lighthouse-boundary 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "gemini-cli-skills",
+      "to": "mcp-adk-feishu",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Gemini CLI 与 Skills 机制 与 mcp-adk-feishu 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "gemini-cli-skills",
+      "to": "codex-cli-cursor",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Gemini CLI 与 Skills 机制 与 codex-cli-cursor 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "codex-cli-cursor",
+      "to": "gemini-cli-skills",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Codex CLI 与 Cursor CLI 探索 与 gemini-cli-skills 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "codex-cli-cursor",
+      "to": "world-generator-pipeline",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "Codex CLI 与 Cursor CLI 探索 与 world-generator-pipeline 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "docker-space-reclaim",
+      "to": "mac-dev-maintenance",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Docker 空间回收排查 与 mac-dev-maintenance 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "docker-space-reclaim",
+      "to": "codex-cli-cursor",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Docker 空间回收排查 与 codex-cli-cursor 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "mac-dev-maintenance",
+      "to": "docker-space-reclaim",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Mac 开发环境清理 与 docker-space-reclaim 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "mac-dev-maintenance",
+      "to": "static-novel-editor",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Mac 开发环境清理 与 static-novel-editor 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "kafka-emqx-telegraf",
+      "to": "mcp-adk-feishu",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Kafka / EMQX / Telegraf 旧技术记录 与 mcp-adk-feishu 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "kafka-emqx-telegraf",
+      "to": "mac-dev-maintenance",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "Kafka / EMQX / Telegraf 旧技术记录 与 mac-dev-maintenance 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "static-novel-editor",
+      "to": "world-generator-pipeline",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "静态 AI 小说编辑器 与 world-generator-pipeline 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "static-novel-editor",
+      "to": "moonframe-ai",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "静态 AI 小说编辑器 与 moonframe-ai 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "careeros-inspired-tool",
+      "to": "world-generator-pipeline",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "CareerOS 启发的 AI-native 公司工具 与 world-generator-pipeline 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "careeros-inspired-tool",
+      "to": "service-platform-v9",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "CareerOS 启发的 AI-native 公司工具 与 service-platform-v9 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "moonframe-ai",
+      "to": "static-novel-editor",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "月帧阁 MoonFrame AI 与 static-novel-editor 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "moonframe-ai",
+      "to": "visual-suite-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "月帧阁 MoonFrame AI 与 visual-suite-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "visual-suite-design",
+      "to": "r2-world-entry",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "技术博客视觉套图 与 r2-world-entry 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "visual-suite-design",
+      "to": "paper-cosmos-aesthetic",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "技术博客视觉套图 与 paper-cosmos-aesthetic 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "paper-cosmos-aesthetic",
+      "to": "visual-suite-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "纸上宇宙审美纪律 与 visual-suite-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "paper-cosmos-aesthetic",
+      "to": "entry-clear-depth-vast",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "纸上宇宙审美纪律 与 entry-clear-depth-vast 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "content-sovereignty",
+      "to": "four-dimensional-coordinates",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "内容主权 与 four-dimensional-coordinates 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "content-sovereignty",
+      "to": "data-portability",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "内容主权 与 data-portability 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "data-portability",
+      "to": "content-sovereignty",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "数据主权与可迁移 与 content-sovereignty 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "data-portability",
+      "to": "r1-production-stabilization",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "数据主权与可迁移 与 r1-production-stabilization 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "privacy-default-private",
+      "to": "private-ai-v6",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "隐私默认保护 与 private-ai-v6 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "privacy-default-private",
+      "to": "sovereignty-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "隐私默认保护 与 sovereignty-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "sovereignty-design",
+      "to": "content-sovereignty",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界主权设计 与 content-sovereignty 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "sovereignty-design",
+      "to": "ai-lighthouse-boundary",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界主权设计 与 ai-lighthouse-boundary 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "life-low-light-mode",
+      "to": "world-health-dashboard",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "低光运行 与 world-health-dashboard 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "life-low-light-mode",
+      "to": "daily-world",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "低光运行 与 daily-world 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "daily-world",
+      "to": "life-low-light-mode",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "今日世界 与 life-low-light-mode 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "daily-world",
+      "to": "world-health-dashboard",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "今日世界 与 world-health-dashboard 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-health-dashboard",
+      "to": "daily-world",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界健康度 与 daily-world 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "world-health-dashboard",
+      "to": "area-density",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "世界健康度 与 area-density 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "area-density",
+      "to": "world-health-dashboard",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "区域密度 与 world-health-dashboard 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "area-density",
+      "to": "node-passport-system",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "区域密度 与 node-passport-system 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "memory-lake-first-light",
+      "to": "privacy-default-private",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "记忆湖第一片光 与 privacy-default-private 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "memory-lake-first-light",
+      "to": "paper-cosmos-aesthetic",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "记忆湖第一片光 与 paper-cosmos-aesthetic 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "travel-collage-memory",
+      "to": "memory-lake-first-light",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "旅行拼贴记忆 与 memory-lake-first-light 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "travel-collage-memory",
+      "to": "visual-suite-design",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "旅行拼贴记忆 与 visual-suite-design 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "desktop-layout-review",
+      "to": "paper-cosmos-aesthetic",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "桌面布局优化评测 与 paper-cosmos-aesthetic 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "desktop-layout-review",
+      "to": "mac-dev-maintenance",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "桌面布局优化评测 与 mac-dev-maintenance 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "r1-production-stabilization",
+      "to": "data-portability",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "R1 真实生产收口 与 data-portability 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "r1-production-stabilization",
+      "to": "r2-world-entry",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "R1 真实生产收口 与 r2-world-entry 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "service-platform-v9",
+      "to": "careeros-inspired-tool",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "V9 服务化平台骨架 与 careeros-inspired-tool 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "service-platform-v9",
+      "to": "world-generator-pipeline",
+      "type": "derived",
+      "strength": 0.72,
+      "explanation": "V9 服务化平台骨架 与 world-generator-pipeline 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "intelligent-world-v10",
+      "to": "life-low-light-mode",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "V10 长期智能世界 与 life-low-light-mode 在 R3 内容生命化中形成可解释关系。"
+    },
+    {
+      "from": "intelligent-world-v10",
+      "to": "world-health-dashboard",
+      "type": "related",
+      "strength": 0.72,
+      "explanation": "V10 长期智能世界 与 world-health-dashboard 在 R3 内容生命化中形成可解释关系。"
+    }
+  ]
+}

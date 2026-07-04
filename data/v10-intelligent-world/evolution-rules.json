@@ -1,0 +1,37 @@
+{
+  "version": "V10",
+  "engine": "rule-first-ai-enhanced",
+  "automationLevel": "suggest-only",
+  "rules": [
+    {
+      "id": "seed-watering",
+      "trigger": "seed older than 30 days",
+      "action": "suggest-light-task",
+      "autoExecute": false
+    },
+    {
+      "id": "project-low-light",
+      "trigger": "project inactive for 90 days",
+      "action": "suggest archive or revive",
+      "autoExecute": false
+    },
+    {
+      "id": "memory-return",
+      "trigger": "anniversary or year-end",
+      "action": "private-only recall suggestion",
+      "autoExecute": false
+    },
+    {
+      "id": "privacy-guard",
+      "trigger": "public projection requested",
+      "action": "require privacy review",
+      "autoExecute": false
+    },
+    {
+      "id": "world-health",
+      "trigger": "weekly",
+      "action": "generate maintenance checklist",
+      "autoExecute": false
+    }
+  ]
+}

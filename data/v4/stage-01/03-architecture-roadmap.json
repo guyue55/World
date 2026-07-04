@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "V4 架构路线图",
+  "batch": 3,
+  "stage": 1,
+  "stageName": "范围契约与真实前置门禁",
+  "stageProgress": "V4 / 第 1 阶段 / 第 3 批 / 共 24 批",
+  "slug": "architecture-roadmap",
+  "status": "complete",
+  "goals": [
+    "定义 V4 系统边界",
+    "形成协作/插件/发布/治理路线图",
+    "约束 V4 目录结构"
+  ],
+  "outputs": [
+    "architecture-roadmap",
+    "system-boundary"
+  ],
+  "mustKeep": [
+    "features/v4-*",
+    "platform/server",
+    "shared"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-scope",
+    "dataDirectory": "data/v4/stage-01",
+    "docsDirectory": "docs/41-v4/stage-01",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

@@ -1,0 +1,71 @@
+import { getAllAreas } from '@/lib/areas'
+import { getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
+import { getAtlasStats, getVisibleAreaLinks } from '@/lib/atlas'
+import { AtlasMap } from '@/components/world/AtlasMap'
+import { AreaNodeCluster } from '@/components/world/AreaNodeCluster'
+import { createPageMetadata } from '@/lib/metadata'
+import { AtlasHero } from '@/components/atlas/AtlasHero'
+import { AtlasStats } from '@/components/atlas/AtlasStats'
+import { AtlasStarLines } from '@/components/atlas/AtlasStarLines'
+import { AtlasFallbackList } from '@/components/atlas/AtlasFallbackList'
+import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
+
+export const metadata = createPageMetadata({
+  title: '世界地图',
+  description: '古月浮屿的空间导航：区域、路径、节点与世界结构。',
+  path: '/atlas',
+})
+
+export default function AtlasPage() {
+  const areas = getAllAreas()
+  const publicNodes = getPublicNodes()
+  const stats = getAtlasStats(areas, publicNodes)
+  const areaLinks = getVisibleAreaLinks(areas)
+  const primaryAreas = areas.filter((area) => area.level === 1)
+
+  return (
+    <main className="world-container space-y-12 py-16">
+      <ProductRouteGuide
+        current="世界地图"
+        description="你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。"
+        primaryHref="/timeline"
+        primaryLabel="沿时间流继续"
+      />
+      <AtlasHero />
+      <AtlasStats
+        areaCount={stats.areaCount}
+        publicAreaCount={stats.publicAreaCount}
+        publicNodeCount={stats.publicNodeCount}
+        areaLinkCount={stats.areaLinkCount}
+      />
+
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {primaryAreas.slice(0, 8).map((area) => (
+          <a
+            id={area.id}
+            key={area.id}
+            href={`#cluster-${area.id}`}
+            className="rounded-[1.6rem] border border-white/65 bg-white/74 p-5 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white"
+          >
+            <p className="text-sm text-moss">{area.icon} {area.realName}</p>
+            <h2 className="mt-3 text-2xl font-semibold text-ink">{area.worldName}</h2>
+            <p className="mt-3 text-sm leading-7 text-ink/62">{area.description}</p>
+            <p className="mt-4 text-xs text-ink/42">公开节点：{getPublicNodesByArea(area.id).length}</p>
+          </a>
+        ))}
+      </section>
+
+      <AtlasMap areas={areas} nodes={publicNodes} />
+      <AtlasStarLines areas={areas} links={areaLinks} />
+      <AtlasFallbackList areas={areas} nodes={publicNodes} />
+
+      <section className="space-y-12">
+        {primaryAreas.map((area) => (
+          <div key={area.id} id={`cluster-${area.id}`}>
+            <AreaNodeCluster area={area} nodes={getPublicNodesByArea(area.id)} />
+          </div>
+        ))}
+      </section>
+    </main>
+  )
+}

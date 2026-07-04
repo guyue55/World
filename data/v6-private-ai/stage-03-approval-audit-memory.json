@@ -1,0 +1,26 @@
+{
+  "id": "v6-private-ai-stage-03-approval-audit-memory",
+  "version": "6.0.0",
+  "round": "V6 私密档案与 AI 世界助手深化",
+  "stage": "03-approval-audit-memory",
+  "batches": ["09 approval queue", "10 audit ledger", "11 redacted memory graph", "12 stage closure"],
+  "status": "complete",
+  "productionLive": false,
+  "approvalPolicy": {
+    "allPrivateSuggestionsRequireOwnerReview": true,
+    "autoPublishAllowed": false,
+    "autoDeleteAllowed": false,
+    "autoVisibilityChangeAllowed": false
+  },
+  "auditEvents": [
+    { "id": "audit-v6-ai-001", "action": "ai.suggest.archive-structure", "result": "queued", "visibility": "redacted" },
+    { "id": "audit-v6-ai-002", "action": "ai.check.privacy-risk", "result": "review-required", "visibility": "redacted" },
+    { "id": "audit-v6-ai-003", "action": "owner.approve.public-summary", "result": "approved-summary-only", "visibility": "redacted" }
+  ],
+  "memoryGraphPolicy": {
+    "exportMode": "redacted-only",
+    "privateNodesExcluded": true,
+    "vaultEdgesExcluded": true,
+    "publicGraphCanReferencePrivateSignals": false
+  }
+}

@@ -1,0 +1,3 @@
+import { AdapterBoundaryPanel } from '@/components/service-adapters/AdapterBoundaryPanel'
+import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+export default function ServiceAdaptersPage(){return <ResponsivePageShell><section className="rounded-[3rem] border border-white/50 bg-white/75 p-8 shadow-soft md:p-12"><p className="text-sm tracking-[0.42em] text-moss">ROUND 03 · ADAPTERS</p><h1 className="mt-4 text-4xl font-semibold md:text-6xl">真实服务适配器边界</h1><p className="mt-5 max-w-3xl leading-8 text-ink/70">第三轮只建立服务适配器契约，不接真实密钥、不伪装生产可用。</p></section><AdapterBoundaryPanel /></ResponsivePageShell>}

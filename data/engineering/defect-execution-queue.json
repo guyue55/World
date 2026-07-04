@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实缺陷流转队列",
+  "stageProgress": "real-evidence-execution-assist line batch 3 / 4",
+  "status": "ready-for-real-defects",
+  "items": [],
+  "rules": [
+    "新缺陷默认 new。",
+    "P0/P1 必须同步 release blocker 或 blocker closure review。",
+    "真实复测后才能进入 verified。"
+  ]
+}

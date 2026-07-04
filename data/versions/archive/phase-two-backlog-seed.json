@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段种子待办",
+  "principle": "第二阶段从真实体验开始，不再继续堆地基协议。",
+  "items": [
+    {
+      "id": "P2-001",
+      "priority": "P0",
+      "title": "应用全部 delta 到真实项目并执行 acceptance:local",
+      "type": "evidence"
+    },
+    {
+      "id": "P2-002",
+      "priority": "P0",
+      "title": "修复真实构建、lint、typecheck、build 失败项",
+      "type": "engineering"
+    },
+    {
+      "id": "P2-003",
+      "priority": "P0",
+      "title": "完成多端浏览器 QA 并关闭高优先级视觉交互缺陷",
+      "type": "experience"
+    },
+    {
+      "id": "P2-004",
+      "priority": "P0",
+      "title": "完成预览部署冒烟检查并修复公开端点问题",
+      "type": "release"
+    },
+    {
+      "id": "P2-005",
+      "priority": "P0",
+      "title": "完成首页、归档、节点详情、路径页的性能实测",
+      "type": "performance"
+    },
+    {
+      "id": "P2-006",
+      "priority": "P1",
+      "title": "补真实种子内容与首页代表节点封面",
+      "type": "content"
+    },
+    {
+      "id": "P2-007",
+      "priority": "P1",
+      "title": "优化首页宽屏布局与移动端信息密度",
+      "type": "design"
+    },
+    {
+      "id": "P2-008",
+      "priority": "P1",
+      "title": "把搜索、标签、路径导览做成真实可用体验",
+      "type": "product"
+    },
+    {
+      "id": "P2-009",
+      "priority": "P2",
+      "title": "在实测基础上再考虑 Pagefind / React Flow 等增强",
+      "type": "future"
+    }
+  ],
+  "rules": [
+    "P0 未完成前不进入大型新能力。",
+    "新增能力必须有体验价值和性能证据。",
+    "内容与视觉问题优先于抽象结构新增。"
+  ]
+}

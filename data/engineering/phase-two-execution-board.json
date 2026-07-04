@@ -1,0 +1,79 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段执行看板",
+  "status": "active",
+  "lanes": [
+    {
+      "id": "evidence-closure",
+      "title": "第一阶段真实证据补齐",
+      "priority": "P0",
+      "items": [
+        "在真实项目中执行 npm install / lint / typecheck / check:world-core / build。",
+        "生成 first-stage-acceptance-report。",
+        "执行预览部署和 preview:smoke。",
+        "补浏览器 QA 与性能实测记录。",
+        "若全部通过，再执行 closure:final 与 stage:complete。"
+      ]
+    },
+    {
+      "id": "home-productization",
+      "title": "首页产品化",
+      "priority": "P0",
+      "items": [
+        "重做首页信息层级：一句话定义、代表节点、路径入口、世界节奏。",
+        "解决宽屏内容过窄、移动端拥挤和空白过多问题。",
+        "首页首屏必须轻、快、清楚。",
+        "首页配图必须服务内容理解。"
+      ]
+    },
+    {
+      "id": "content-seed",
+      "title": "真实种子内容",
+      "priority": "P0",
+      "items": [
+        "补 4 篇技术/创作文章。",
+        "补 2 个项目节点。",
+        "补 4 个生活/灵感片段。",
+        "为代表节点补摘要、标签、路径和封面。"
+      ]
+    },
+    {
+      "id": "visual-interaction-fix",
+      "title": "视觉与交互修复",
+      "priority": "P0",
+      "items": [
+        "修复导航选中态与当前路由不同步。",
+        "修复折叠面板不可点或反馈不足。",
+        "检查所有核心页面的宽屏/移动端适配。",
+        "统一卡片密度、间距和版心策略。"
+      ]
+    },
+    {
+      "id": "performance-optimization",
+      "title": "性能与加载速度",
+      "priority": "P0",
+      "items": [
+        "基于 Lighthouse/真实构建结果优化。",
+        "避免状态页和骨架页影响首页首屏。",
+        "图片策略、懒加载、关键路径和组件拆分优先。",
+        "性能回归结果必须回写记录。"
+      ]
+    },
+    {
+      "id": "release-feedback-loop",
+      "title": "预览部署反馈闭环",
+      "priority": "P1",
+      "items": [
+        "建立 preview URL 记录。",
+        "把预览冒烟结果回写缺陷台账。",
+        "把线上视觉问题拆成可修复任务。",
+        "把第二阶段每批变更继续做 delta。"
+      ]
+    }
+  ],
+  "rules": [
+    "P0 未关闭前，不启动大型沉浸式新能力。",
+    "每条任务必须能映射到页面、内容、性能或证据。",
+    "第二阶段不是继续写设定，而是让世界真的好用。"
+  ]
+}

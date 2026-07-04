@@ -1,0 +1,89 @@
+[
+  {
+    "id": "first-visit",
+    "title": "第一次来到古月浮屿",
+    "description": "从世界宣言开始，理解这里为什么不是普通博客。",
+    "audience": "first-time",
+    "estimatedMinutes": 12,
+    "nodeSlugs": [
+      "world-manifesto",
+      "personal-digital-universe-definition",
+      "world-space-layer",
+      "ai-lighthouse-boundary",
+      "memory-lake-first-light"
+    ],
+    "nextPathIds": [
+      "tech-ai"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "tech-ai",
+    "title": "技术与 AI 探索路径",
+    "description": "沿着 AI、Agent、CLI 和工程守门机制进入技术星域。",
+    "audience": "tech",
+    "estimatedMinutes": 15,
+    "nodeSlugs": [
+      "feishu-mcp-adk-agent",
+      "cli-tools-agent-integration",
+      "world-data-guardian",
+      "ai-lighthouse-boundary",
+      "no-ai-natural-evolution"
+    ],
+    "nextPathIds": [
+      "how-world-created"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "how-world-created",
+    "title": "这个世界如何被创造",
+    "description": "理解节点、星线、空间层、时间河和世界法则如何构成古月浮屿。",
+    "audience": "creator",
+    "estimatedMinutes": 18,
+    "nodeSlugs": [
+      "everything-is-node",
+      "backlinks-and-star-lines",
+      "world-space-layer",
+      "personal-digital-universe-definition",
+      "clear-entrance-deep-world"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "life-memory",
+    "title": "生活与记忆的柔光路径",
+    "description": "从记忆湖、生活片段和自然演化进入古月浮屿柔软的一面。",
+    "audience": "life",
+    "estimatedMinutes": 10,
+    "nodeSlugs": [
+      "memory-lake-first-light",
+      "clear-entrance-deep-world",
+      "no-ai-natural-evolution",
+      "world-manifesto"
+    ],
+    "nextPathIds": [
+      "first-visit"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "deep-world",
+    "title": "深潜世界骨架路径",
+    "description": "面向想理解系统结构的读者，沿着节点、星线、空间层和守门机制深入。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 20,
+    "nodeSlugs": [
+      "everything-is-node",
+      "backlinks-and-star-lines",
+      "world-space-layer",
+      "world-data-guardian",
+      "personal-digital-universe-definition"
+    ],
+    "nextPathIds": [
+      "how-world-created",
+      "tech-ai"
+    ],
+    "visibility": "public"
+  }
+]

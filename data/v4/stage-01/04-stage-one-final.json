@@ -1,0 +1,29 @@
+{
+  "version": "4.0.0",
+  "name": "第 1 阶段收口",
+  "batch": 4,
+  "stage": 1,
+  "stageName": "范围契约与真实前置门禁",
+  "stageProgress": "V4 / 第 1 阶段 / 第 4 批 / 共 24 批",
+  "slug": "stage-one-final",
+  "status": "complete",
+  "goals": [
+    "收束第 1 阶段",
+    "确定 V4 可以结构化开发但仍非 release-ready"
+  ],
+  "outputs": [
+    "stage-one-final-report"
+  ],
+  "mustKeep": [
+    "planning allowed",
+    "formal release blocked"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-scope",
+    "dataDirectory": "data/v4/stage-01",
+    "docsDirectory": "docs/41-v4/stage-01",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

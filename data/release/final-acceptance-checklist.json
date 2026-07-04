@@ -1,0 +1,83 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第一阶段最终验收清单",
+  "principle": "第一阶段验收的目标是证明未来可以继续建设。",
+  "acceptanceAreas": [
+    {
+      "id": "foundation",
+      "mustPass": [
+        "world-core",
+        "kernel",
+        "baseline",
+        "reproducibility"
+      ]
+    },
+    {
+      "id": "architecture",
+      "mustPass": [
+        "module architecture",
+        "feature architecture",
+        "dependency direction",
+        "coupling guard"
+      ]
+    },
+    {
+      "id": "privacy-ai",
+      "mustPass": [
+        "public safety",
+        "AI boundary",
+        "projection contracts"
+      ]
+    },
+    {
+      "id": "performance",
+      "mustPass": [
+        "performance budget",
+        "critical path",
+        "regression guard",
+        "real measurement"
+      ]
+    },
+    {
+      "id": "experience",
+      "mustPass": [
+        "visual QA",
+        "interaction QA",
+        "layout responsive contract"
+      ]
+    },
+    {
+      "id": "content",
+      "mustPass": [
+        "seed quality",
+        "cover strategy",
+        "home productization"
+      ]
+    },
+    {
+      "id": "operations",
+      "mustPass": [
+        "runtime protocol",
+        "maintenance",
+        "recovery",
+        "risk register"
+      ]
+    },
+    {
+      "id": "release",
+      "mustPass": [
+        "CI",
+        "preview deploy",
+        "SEO/social preview",
+        "route checks"
+      ]
+    }
+  ],
+  "manualSignoff": [
+    "desktop wide layout reviewed",
+    "mobile route flow reviewed",
+    "homepage content value reviewed",
+    "public/private boundary reviewed",
+    "first-stage handoff reviewed"
+  ]
+}

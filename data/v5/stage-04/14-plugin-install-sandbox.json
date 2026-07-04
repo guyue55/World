@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "插件安装与沙箱运行",
+  "batch": 14,
+  "stage": 4,
+  "stageName": "真实插件市场与外部生态接入",
+  "stageProgress": "V5 / 第 4 阶段 / 第 14 批 / 共 24 批",
+  "slug": "plugin-install-sandbox",
+  "status": "complete",
+  "goals": [
+    "定义插件安装与沙箱",
+    "权限确认、超时、成本、schema 校验",
+    "默认高风险禁用"
+  ],
+  "outputs": [
+    "PluginInstallPolicy",
+    "SandboxRuntime"
+  ],
+  "mustKeep": [
+    "owner approval"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-plugin-market",
+    "dataDirectory": "data/v5/stage-04",
+    "docsDirectory": "docs/51-v5/stage-04",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

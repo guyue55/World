@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 节点阅读质量门槛",
+  "principle": "节点不是数据行，而是一颗可以被阅读、定位和继续探索的星。",
+  "minimums": {
+    "publicNodes": 12,
+    "nodesWithSummary": 12,
+    "nodesWithCover": 12,
+    "nodesWithContentPath": 10,
+    "nodesWithAtLeastTwoTags": 12,
+    "nodesWithRelationsOrAreaFallback": 12
+  },
+  "requiredPageParts": [
+    "NodeReadingHeader",
+    "NodeReadingBody",
+    "NodeRelationRail",
+    "NodePassport",
+    "NodeCover"
+  ],
+  "rules": [
+    "公开节点必须有 title、summary、areaId、lifeStage、tags。",
+    "首页或代表节点必须优先有 contentPath 和 cover。",
+    "无关系节点必须使用同区域推荐作为探索 fallback。",
+    "节点页改动必须同步更新文档和检查脚本。"
+  ]
+}

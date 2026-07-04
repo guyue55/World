@@ -1,0 +1,12 @@
+{
+  "mobileRules": [
+    "首屏保留世界宣言与主按钮",
+    "罗盘改为底部锚点",
+    "地图先显示主干，再进入区域",
+    "所有漂浮元素不得遮挡正文",
+    "阅读页默认静读"
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

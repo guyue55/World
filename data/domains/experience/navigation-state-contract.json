@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0-product",
+  "name": "古月浮屿生产导航契约",
+  "principle": "主导航只暴露产品级公开入口，阶段页、治理页和实验页不得进入默认导航。",
+  "status": "implemented",
+  "items": [
+    {
+      "id": "home",
+      "label": "入口",
+      "href": "/",
+      "match": "exact",
+      "desktop": true,
+      "mobile": false
+    },
+    {
+      "id": "atlas",
+      "label": "地图",
+      "href": "/atlas",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "timeline",
+      "label": "时间",
+      "href": "/timeline",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "archive",
+      "label": "档案",
+      "href": "/archive",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "lighthouse",
+      "label": "灯塔",
+      "href": "/ask",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
+      "id": "manifesto",
+      "label": "宪章",
+      "href": "/manifesto",
+      "match": "section",
+      "desktop": true,
+      "mobile": false
+    }
+  ],
+  "legacyItems": [
+    {
+      "id": "world-map",
+      "label": "旧世界图入口",
+      "href": "/world-map",
+      "replacement": "/atlas"
+    },
+    {
+      "id": "time-river",
+      "label": "旧时间河入口",
+      "href": "/time-river",
+      "replacement": "/timeline"
+    },
+    {
+      "id": "lighthouse-workbench",
+      "label": "旧灯塔工作台",
+      "href": "/lighthouse",
+      "replacement": "/ask"
+    },
+    {
+      "id": "r-series",
+      "label": "阶段线入口",
+      "href": "/r8-public",
+      "replacement": "/archive"
+    }
+  ],
+  "rules": [
+    "主导航只展示 Home / Atlas / Timeline / Archive / Lighthouse / Manifesto。",
+    "阶段页、治理页、调试页、AI 审计页不得进入公开主导航。",
+    "私密、vault、sealed、silent 内容不得进入公开构建索引。",
+    "桌面和移动端必须共用同一份导航数据。",
+    "aria-current 必须随 active 状态出现。",
+    "旧入口保留兼容，但只能作为深层文档或重定向目标。"
+  ]
+}

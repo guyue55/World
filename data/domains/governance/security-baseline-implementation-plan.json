@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 安全基线实现计划",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 1 / 4",
+  "status": "security-baseline-plan-prepared",
+  "securityBaselineReady": false,
+  "baseline": [
+    {
+      "id": "secret-scan",
+      "title": "密钥扫描",
+      "implementation": "planned-real-check",
+      "required": true
+    },
+    {
+      "id": "private-boundary-scan",
+      "title": "私密边界扫描",
+      "implementation": "planned-real-check",
+      "required": true
+    },
+    {
+      "id": "rbac-proof",
+      "title": "RBAC 证明",
+      "implementation": "planned-real-check",
+      "required": true
+    },
+    {
+      "id": "audit-log-proof",
+      "title": "审计日志证明",
+      "implementation": "planned-real-check",
+      "required": true
+    },
+    {
+      "id": "storage-boundary-proof",
+      "title": "存储边界证明",
+      "implementation": "planned-real-check",
+      "required": true
+    },
+    {
+      "id": "dependency-risk-scan",
+      "title": "依赖风险扫描",
+      "implementation": "planned-real-check",
+      "required": true
+    }
+  ],
+  "rules": [
+    "securityBaselineReady=false 必须保持，直到真实安全检查通过。",
+    "secret-scan 必须证明仓库中无真实密钥。",
+    "private-boundary-scan 必须证明公开构建不含私密正文。",
+    "RBAC/audit/storage proof 必须由真实实现提供。"
+  ]
+}

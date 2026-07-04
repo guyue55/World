@@ -1,0 +1,37 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 lint 执行准备台账",
+  "principle": "lint 必须真实执行；无法执行时必须明确原因和替代检查范围。",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 4 / 4",
+  "environmentProbe": {
+    "node": "available",
+    "npm": "available",
+    "eslintConfig": "present",
+    "packageJson": "present",
+    "nodeModules": "absent-in-current-workspace",
+    "localEslintBinary": "missing",
+    "interpretation": "missing-local-dependencies; lint cannot be judged as code pass/fail here"
+  },
+  "requiredCommand": "npm run lint",
+  "currentStatus": "not-passed",
+  "latestAttempt": {
+    "attempted": true,
+    "command": "npm run lint",
+    "result": "not-passed",
+    "outputExcerpt": "sh: 1: eslint: Permission denied\n\n\n> guyue-floating-world@0.1.0 lint\n> eslint . --max-warnings=0"
+  },
+  "fallbackChecks": [
+    "JSON parse check",
+    "changed TS/TSX transpile parse",
+    "static lint risk scan for eslint-disable",
+    "static lint risk scan for explicit any",
+    "basic format check"
+  ],
+  "rules": [
+    "如果 npm run lint 因 node_modules 缺失失败，结果记为 not-executed，不记为 passed。",
+    "如果 npm run lint 成功退出 0，才可记为 passed。",
+    "如果 npm run lint 退出非 0，必须记录 stderr/stdout 摘要。",
+    "每批完成必须在说明文件中标注 lint 状态。",
+    "缺少本地 eslint 时，应先运行 npm install，而不是把 lint 结果归因于业务代码。"
+  ]
+}

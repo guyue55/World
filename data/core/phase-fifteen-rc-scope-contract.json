@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十五阶段真实命令执行与 Release Candidate 范围契约",
+  "principle": "第十五阶段必须优先修复本地依赖与 eslint 阻断，真实执行核心命令，并为 RC 候选准备证据。",
+  "stageProgress": "phase-fifteen-real-command-execution-release-candidate line batch 1 / 4",
+  "status": "implemented-static-rc-scope",
+  "focus": [
+    "fix local dependency and eslint blocker",
+    "execute npm install",
+    "execute lint typecheck build",
+    "execute world-core and release-local-gate",
+    "capture evidence outputs",
+    "close blockers",
+    "prepare release candidate package",
+    "manual release signoff"
+  ],
+  "nonGoals": [
+    "claim release-ready before commands pass",
+    "ignore eslint permission blocker",
+    "skip npm install",
+    "skip build",
+    "skip world-core",
+    "skip manual signoff",
+    "mark blocked as passed"
+  ],
+  "entryGuards": [
+    "phase fourteen completed",
+    "realExecutionPassed remains false until commands pass",
+    "releaseReady remains false until RC evidence and signoff",
+    "production remains not live",
+    "all outputs must be traceable"
+  ],
+  "rules": [
+    "第十五阶段必须以真实命令执行和 release candidate 为中心。",
+    "必须优先修复 eslint 权限或依赖阻断。",
+    "必须真实执行 lint/typecheck/build/world-core/release-local-gate。",
+    "所有输出必须归档到证据包。",
+    "只有真实通过且人工签收后，才允许考虑 release-ready 转换。"
+  ]
+}

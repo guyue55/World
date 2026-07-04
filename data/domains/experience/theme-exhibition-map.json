@@ -1,0 +1,70 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 主题展览规划图",
+  "stageProgress": "phase-three-planning line batch 2 / 4",
+  "status": "planned-not-built",
+  "exhibitions": [
+    {
+      "id": "desk-to-galaxy",
+      "title": "一张书桌连接星河",
+      "theme": "世界入口与个人数字宇宙",
+      "sourceRoutes": [
+        "/",
+        "/atlas",
+        "/timeline"
+      ],
+      "visibility": "public",
+      "output": [
+        "exhibition page",
+        "exportable markdown"
+      ]
+    },
+    {
+      "id": "ai-is-lighthouse",
+      "title": "AI 是灯塔，不是太阳",
+      "theme": "AI 边界与低光导览",
+      "sourceRoutes": [
+        "/ask",
+        "/status"
+      ],
+      "visibility": "public",
+      "output": [
+        "exhibition page",
+        "AI boundary guide"
+      ]
+    },
+    {
+      "id": "memory-river",
+      "title": "时间河与记忆岛",
+      "theme": "时间、节点与世界生长",
+      "sourceRoutes": [
+        "/timeline",
+        "/archive",
+        "/node/[slug]"
+      ],
+      "visibility": "public",
+      "output": [
+        "timeline exhibition",
+        "annual world book seed"
+      ]
+    },
+    {
+      "id": "private-future",
+      "title": "不可公开的未来",
+      "theme": "私密、家庭、封存与传承边界",
+      "sourceRoutes": [
+        "/status",
+        "/skeleton"
+      ],
+      "visibility": "planning-only",
+      "output": [
+        "private design note only"
+      ]
+    }
+  ],
+  "rules": [
+    "planning-only 展览不得进入 public navigation。",
+    "public 展览不得引用 private/family/partner/vault/sealed/silent 内容。",
+    "展览必须提供可导出 Markdown 版本。"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "version": "0.1.0",
+  "modules": [
+    {
+      "id": "world-core",
+      "owns": [
+        "world layers",
+        "world state summary"
+      ],
+      "mustNotOwn": [
+        "UI styling",
+        "AI inference"
+      ]
+    },
+    {
+      "id": "content",
+      "owns": [
+        "nodes",
+        "content paths",
+        "markdown reading"
+      ],
+      "mustNotOwn": [
+        "permission bypass"
+      ]
+    },
+    {
+      "id": "relations",
+      "owns": [
+        "relations",
+        "backlinks",
+        "star lines"
+      ],
+      "mustNotOwn": [
+        "3D rendering"
+      ]
+    },
+    {
+      "id": "timeline",
+      "owns": [
+        "world events",
+        "event contracts"
+      ],
+      "mustNotOwn": [
+        "article date fallback as source of truth"
+      ]
+    },
+    {
+      "id": "projection",
+      "owns": [
+        "node projections",
+        "projection contracts"
+      ],
+      "mustNotOwn": [
+        "private data access"
+      ]
+    },
+    {
+      "id": "governance",
+      "owns": [
+        "rules",
+        "invariants",
+        "build blockers"
+      ],
+      "mustNotOwn": [
+        "visual decoration"
+      ]
+    },
+    {
+      "id": "ai-boundary",
+      "owns": [
+        "AI permissions",
+        "AI review rules"
+      ],
+      "mustNotOwn": [
+        "content publishing"
+      ]
+    },
+    {
+      "id": "interoperability",
+      "owns": [
+        "manifest",
+        "public index",
+        "snapshot plan"
+      ],
+      "mustNotOwn": [
+        "runtime secrets"
+      ]
+    }
+  ]
+}

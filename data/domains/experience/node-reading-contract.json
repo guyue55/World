@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第二阶段节点阅读体验契约",
+  "principle": "节点详情页要让人读完一颗星，也能自然走向下一颗星。",
+  "status": "implemented-static",
+  "layout": [
+    {
+      "id": "breadcrumb",
+      "purpose": "说明当前位置"
+    },
+    {
+      "id": "cover",
+      "purpose": "建立节点氛围和内容识别"
+    },
+    {
+      "id": "header",
+      "purpose": "标题、世界名、摘要和状态"
+    },
+    {
+      "id": "reading-body",
+      "purpose": "稳定可读的正文版心"
+    },
+    {
+      "id": "relation-rail",
+      "purpose": "展示前向星线、反向星线、同区域节点"
+    },
+    {
+      "id": "passport",
+      "purpose": "展示元信息、权限、来源和标签"
+    }
+  ],
+  "readingRules": [
+    "正文区域使用 reading width，不拉满宽屏。",
+    "封面必须使用可缓存本地资产或 fallback。",
+    "关系导航不能只展示空文案，至少提供同区域 fallback。",
+    "节点 passport 不能抢正文优先级。",
+    "缺正文节点必须有清晰空状态和返回路径。"
+  ],
+  "performanceRules": [
+    "节点页只读取当前节点、局部关系和同区域推荐。",
+    "关系卡片最多展示少量精选节点。",
+    "封面使用 next/image 或本地可优化资产。",
+    "不在节点页加载全量世界骨架栈。"
+  ]
+}

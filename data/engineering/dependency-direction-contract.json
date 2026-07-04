@@ -1,0 +1,71 @@
+{
+  "version": "0.1.0",
+  "principle": "依赖方向必须从外向内，而不是让内核依赖页面。",
+  "allowedImports": [
+    {
+      "from": "src/app",
+      "to": [
+        "src/components",
+        "src/lib",
+        "data"
+      ]
+    },
+    {
+      "from": "src/components",
+      "to": [
+        "src/lib",
+        "data"
+      ]
+    },
+    {
+      "from": "src/lib",
+      "to": [
+        "data"
+      ]
+    },
+    {
+      "from": "scripts",
+      "to": [
+        "src/lib",
+        "data"
+      ]
+    },
+    {
+      "from": "docs",
+      "to": []
+    }
+  ],
+  "forbiddenImports": [
+    {
+      "from": "src/lib",
+      "to": "src/app",
+      "reason": "domain logic must not depend on pages"
+    },
+    {
+      "from": "src/lib",
+      "to": "src/components",
+      "reason": "domain logic must not depend on UI"
+    },
+    {
+      "from": "data",
+      "to": "src",
+      "reason": "data must remain serializable protocol"
+    },
+    {
+      "from": "src/components",
+      "to": "src/app",
+      "reason": "components must not depend on routes"
+    },
+    {
+      "from": "scripts",
+      "to": "src/app",
+      "reason": "checks should not depend on page rendering"
+    }
+  ],
+  "rules": [
+    "跨层依赖必须遵守 allowedImports。",
+    "内核层不得 import app 或 components。",
+    "组件可以调用 lib，但不能复制 lib 的领域规则。",
+    "脚本可以调用 lib，但不能反向成为 app runtime 依赖。"
+  ]
+}

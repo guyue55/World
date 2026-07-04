@@ -1,0 +1,309 @@
+{
+  "version": "R2",
+  "name": "真实世界-R2｜世界入口与沉浸体验重构",
+  "mission": "让首页、Atlas、路径、区域、节点打开方式形成真正的进入感：第一眼像世界，第一步不迷路，深入后足够浩瀚。",
+  "finalGoal": "对外可进入、可探索、可停留；对内仍保持模块化、页面化、组件化、高内聚低耦合。",
+  "stages": [
+    {
+      "stage": 1,
+      "title": "世界入口定型与渐进揭示",
+      "description": "把首页从信息面板改造成世界入口：首屏先给气质、再给路径、最后显露地图。",
+      "batches": [
+        "01-体验原则",
+        "02-首页三景深",
+        "03-渐进揭示规则",
+        "04-阶段一检查"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 2,
+      "title": "Atlas 世界地图与罗盘导航",
+      "description": "建立不迷路的地图、路标和罗盘体系，让访客理解自己在哪里、能去哪、如何返回。",
+      "batches": [
+        "05-地图层级",
+        "06-罗盘锚点",
+        "07-区域说明卡",
+        "08-阶段二检查"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 3,
+      "title": "内容节点仪式与区域沉浸",
+      "description": "让阅读、打开节点、进入区域都有世界化仪式，同时保留现实解释和可访问性。",
+      "batches": [
+        "09-区域抵达仪式",
+        "10-节点展开仪式",
+        "11-现实模式切换",
+        "12-阶段三检查"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "stage": 4,
+      "title": "移动端、可访问性与 R3 交接",
+      "description": "收口移动端、减动效、信息层级、质量门禁和真实内容注入交接，避免只做视觉壳。",
+      "batches": [
+        "13-移动端适配",
+        "14-可访问与减动效",
+        "15-R3真实内容交接",
+        "16-封版打包准备"
+      ],
+      "status": "complete",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "stage": 1,
+      "title": "R2体验原则与边界",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "experience-principles.json",
+        "r2-all-tasks-and-extension-plan.md"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 2,
+      "stage": 1,
+      "title": "首页近中远三景深",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "home-composition.json",
+        "WorldEntryHero.tsx",
+        "WorldDepthPrelude.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 3,
+      "stage": 1,
+      "title": "渐进揭示与入口克制",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "progressive-disclosure.json",
+        "WorldGatewayPanel.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 4,
+      "stage": 1,
+      "title": "阶段一语法逻辑检查",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "check-r2-world-experience-stage-01.ts"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 5,
+      "stage": 2,
+      "title": "Atlas地图层级重构",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "atlas-structure.json",
+        "WorldAtlasGateway.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 6,
+      "stage": 2,
+      "title": "全局罗盘七锚点",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "compass-anchors.json",
+        "WorldCompassGuide.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 7,
+      "stage": 2,
+      "title": "区域说明卡与现实解释",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "area-passports.json",
+        "AreaPassportGrid.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 8,
+      "stage": 2,
+      "title": "阶段二语法逻辑检查",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "check-r2-world-experience-stage-02.ts"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 9,
+      "stage": 3,
+      "title": "区域抵达仪式矩阵",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "arrival-rituals.json",
+        "RitualPathPanel.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 10,
+      "stage": 3,
+      "title": "节点展开与静读仪式",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "node-opening-rituals.json",
+        "NodeOpeningRitualPanel.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 11,
+      "stage": 3,
+      "title": "世界模式与现实模式",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "mode-switching.json",
+        "RealityModeBridge.tsx"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 12,
+      "stage": 3,
+      "title": "阶段三语法逻辑检查",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "check-r2-world-experience-stage-03.ts"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 13,
+      "stage": 4,
+      "title": "移动端沉浸适配",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "responsive-experience.json"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 14,
+      "stage": 4,
+      "title": "可访问性与减动效策略",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "accessibility-motion.json"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 15,
+      "stage": 4,
+      "title": "R3真实节点生命化交接",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "handoff-to-r3.json",
+        "handoff-to-r3.md"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    },
+    {
+      "batch": 16,
+      "stage": 4,
+      "title": "R2封版与全量打包准备",
+      "status": "complete",
+      "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+      "deliverables": [
+        "check-r2-world-experience-all.ts",
+        "r2-execution-report.md"
+      ],
+      "syntaxLogicCheck": "stage check + lint after stage completion",
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  ],
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

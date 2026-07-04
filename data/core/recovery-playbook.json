@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0",
+  "principle": "世界必须有恢复路径；能回退，才敢生长。",
+  "recoveryPaths": [
+    {
+      "id": "data-rollback",
+      "when": "JSON data broken",
+      "steps": [
+        "restore last snapshot",
+        "run check:world-core"
+      ]
+    },
+    {
+      "id": "content-rollback",
+      "when": "content markdown broken",
+      "steps": [
+        "restore content file",
+        "run contentPath check"
+      ]
+    },
+    {
+      "id": "visibility-leak",
+      "when": "private content enters public index",
+      "steps": [
+        "stop publish",
+        "fix visibility",
+        "rebuild public index",
+        "create incident note"
+      ]
+    },
+    {
+      "id": "ai-boundary-violation",
+      "when": "AI reads or summarizes forbidden content",
+      "steps": [
+        "disable AI path",
+        "remove index artifact",
+        "review policy",
+        "create incident note"
+      ]
+    },
+    {
+      "id": "schema-migration-fail",
+      "when": "migration breaks data",
+      "steps": [
+        "restore snapshot",
+        "write migration note",
+        "rerun contract tests"
+      ]
+    },
+    {
+      "id": "build-fail",
+      "when": "Next build fails",
+      "steps": [
+        "run check:world-core",
+        "run typecheck",
+        "inspect changed files"
+      ]
+    }
+  ],
+  "rules": [
+    "恢复优先于继续开发。",
+    "visibility leak 和 AI boundary violation 视为 critical。",
+    "恢复后必须留下记录。",
+    "恢复流程不得依赖未来高级能力。"
+  ]
+}

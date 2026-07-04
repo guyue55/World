@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "principle": "Atlas 是空间导航，不是分类列表。",
+  "modes": [
+    {
+      "id": "surface",
+      "description": "公开世界地图，默认模式。"
+    },
+    {
+      "id": "focus",
+      "description": "区域聚焦模式。"
+    },
+    {
+      "id": "path",
+      "description": "路径漫游模式。"
+    },
+    {
+      "id": "deep",
+      "description": "私密深层候选，V1 不公开实现。"
+    },
+    {
+      "id": "future-2.5d",
+      "description": "未来高级体验，不得替代 V1 基础导航。"
+    }
+  ],
+  "requiredFallbacks": [
+    "list view",
+    "archive search",
+    "path cards",
+    "breadcrumb"
+  ],
+  "rules": [
+    "任何 Atlas 视觉增强都必须有列表降级。",
+    "任何 2.5D/3D 模式都不得成为核心导航前置条件。",
+    "公开 Atlas 只能读取 public / semiPublic。",
+    "deep/vault 不在公开 Atlas 展开。",
+    "Atlas 坐标来自 spatial-protocol，而不是组件内硬编码。"
+  ]
+}

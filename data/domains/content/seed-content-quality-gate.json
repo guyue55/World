@@ -1,0 +1,63 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 种子内容质量门槛",
+  "principle": "V1 不需要内容很多，但需要第一批内容能代表世界。",
+  "qualityGates": [
+    {
+      "id": "representative",
+      "description": "能代表技术、生活、记忆、未来至少一个维度。"
+    },
+    {
+      "id": "specific",
+      "description": "有具体经验、项目、场景或观点，不是空泛宣言。"
+    },
+    {
+      "id": "navigable",
+      "description": "有标签、区域、路径或关联节点。"
+    },
+    {
+      "id": "public-safe",
+      "description": "符合公开层边界，不暴露私密内容。"
+    },
+    {
+      "id": "summarized",
+      "description": "有适合卡片投影的摘要。"
+    },
+    {
+      "id": "visual-ready",
+      "description": "有封面、配图或 fallback 封面策略。"
+    },
+    {
+      "id": "ai-reviewable",
+      "description": "若含 AI 辅助，必须可审查、可标记。"
+    }
+  ],
+  "minimumTargets": [
+    {
+      "type": "article",
+      "count": 4
+    },
+    {
+      "type": "project",
+      "count": 2
+    },
+    {
+      "type": "fragment",
+      "count": 4
+    },
+    {
+      "type": "path",
+      "count": 3
+    },
+    {
+      "type": "area",
+      "count": 4
+    }
+  ],
+  "rules": [
+    "第一批内容宁可少，但必须能解释世界为何存在。",
+    "首页代表内容必须通过 representative、specific、summarized。",
+    "公开层内容必须通过 public-safe。",
+    "内容不足时，应优先补内容，不继续增加复杂 UI。"
+  ]
+}

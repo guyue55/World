@@ -1,0 +1,27 @@
+{
+  "version": "6.0.0",
+  "name": "多世界网络阶段收口",
+  "batch": 8,
+  "stage": 2,
+  "stageName": "多世界联邦网络核心",
+  "stageProgress": "V6 / 第 2 阶段 / 第 8 批 / 共 24 批",
+  "slug": "world-network-final",
+  "status": "complete",
+  "goals": [
+    "收束多世界网络阶段",
+    "检查私密隔离、发现约束、事件脱敏"
+  ],
+  "outputs": [
+    "WorldNetworkFinal"
+  ],
+  "mustKeep": [
+    "no private raw leak"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v6-world-network",
+    "dataDirectory": "data/v6/stage-02",
+    "docsDirectory": "docs/61-v6/stage-02",
+    "rule": "new V6 code must be feature/platform/shared oriented, not src/lib/v6"
+  },
+  "productionLive": false
+}

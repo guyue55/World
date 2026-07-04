@@ -1,0 +1,75 @@
+{
+  "version": "0.1.0",
+  "principle": "任何变更都必须知道自己正在改变什么层。",
+  "levels": [
+    {
+      "id": "copy",
+      "risk": "low",
+      "requires": [
+        "format check"
+      ]
+    },
+    {
+      "id": "content",
+      "risk": "low",
+      "requires": [
+        "contentPath check",
+        "public boundary check"
+      ]
+    },
+    {
+      "id": "projection",
+      "risk": "medium",
+      "requires": [
+        "projection contract check",
+        "permission review"
+      ]
+    },
+    {
+      "id": "relation",
+      "risk": "medium",
+      "requires": [
+        "relation policy check",
+        "world event if core"
+      ]
+    },
+    {
+      "id": "schema",
+      "risk": "high",
+      "requires": [
+        "schema version bump",
+        "snapshot plan",
+        "migration note",
+        "contract test"
+      ]
+    },
+    {
+      "id": "visibility",
+      "risk": "high",
+      "requires": [
+        "snapshot plan",
+        "AI boundary check",
+        "public index check"
+      ]
+    },
+    {
+      "id": "kernel",
+      "risk": "critical",
+      "requires": [
+        "snapshot plan",
+        "world event",
+        "all checks",
+        "manual review"
+      ]
+    }
+  ],
+  "blockedIf": [
+    "breaks visibility boundary",
+    "puts private content into public index",
+    "allows AI to read vault/sealed/silent",
+    "removes no-AI fallback",
+    "removes export path",
+    "removes schema version",
+    "breaks check:world-core"
+  ]
+}

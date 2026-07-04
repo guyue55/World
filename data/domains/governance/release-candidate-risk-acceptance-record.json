@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布候选风险接受记录",
+  "stageProgress": "release-candidate-acceptance-evidence line batch 3 / 4",
+  "status": "no-accepted-risks",
+  "items": [],
+  "releaseDecision": "not-ready-for-release",
+  "rules": [
+    "无 accepted 风险并不代表无风险。",
+    "accepted 风险不能覆盖 nonAcceptableRisks。",
+    "releaseDecision 不由本记录自动修改。"
+  ]
+}

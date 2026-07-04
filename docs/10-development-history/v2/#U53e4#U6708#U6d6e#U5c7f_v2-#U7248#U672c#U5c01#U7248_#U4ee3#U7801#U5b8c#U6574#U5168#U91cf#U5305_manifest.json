@@ -1,0 +1,89 @@
+{
+  "packageName": "古月浮屿_v2-版本封版_代码完整全量包",
+  "createdAt": "2026-05-20T05:29:36Z",
+  "sourceWorkspace": "/mnt/data/guyue_v2_to_v3_completion_workspace",
+  "packageType": "v2-code-only-full-freeze-package",
+  "layout": {
+    "v2-版本封版-代码": "V2 封版代码、配置、数据、脚本、public 资源；不含 docs/ 与 docs-v2/"
+  },
+  "exclusions": {
+    "directories": [
+      ".cache",
+      ".git",
+      ".next",
+      ".pytest_cache",
+      ".turbo",
+      "__pycache__",
+      "build",
+      "coverage",
+      "dist",
+      "docs",
+      "docs-v2",
+      "node_modules",
+      "reports"
+    ],
+    "files": [
+      ".DS_Store",
+      "CHANGED_FILES.txt",
+      "CHANGELOG.md",
+      "CHECK_REPORT.md",
+      "FULL_PROJECT_PACKAGE_MANIFEST.json",
+      "FULL_PROJECT_PACKAGE_NOTE.md",
+      "tsconfig.tsbuildinfo"
+    ],
+    "suffixes": [
+      ".docx",
+      ".patch"
+    ],
+    "markdownPolicy": "仅保留 README.md / LICENSE.md / CONTRIBUTING.md，其余 md 文档排除"
+  },
+  "counts": {
+    "totalFiles": 1150,
+    "jsonFiles": 385,
+    "jsonErrors": 0,
+    "missingRequired": 0,
+    "missingV2Required": 0,
+    "categoryCounts": {
+      "root_config": 13,
+      "data": 381,
+      "public": 10,
+      "scripts": 330,
+      ".github": 2,
+      "src": 414
+    }
+  },
+  "requiredCheck": {
+    "passed": true,
+    "missing": []
+  },
+  "v2CompletenessCheck": {
+    "passed": true,
+    "missing": []
+  },
+  "jsonCheck": {
+    "passed": true,
+    "errors": []
+  },
+  "status": {
+    "v2Status": "structure-complete",
+    "v2ReleaseReady": false,
+    "v2ProductionLive": false,
+    "v21Status": "structure-and-local-service-skeleton-complete",
+    "v3PlanningAllowed": true,
+    "v3DevelopmentRecommended": false,
+    "v3GateStatus": "v2-to-v3-structural-completion",
+    "releaseReady": false,
+    "productionLive": false
+  },
+  "notes": [
+    "本包为 V2 版本封版代码全量包，明确排除 docs/ 与 docs-v2/。",
+    "本包包含 V2 结构完成内容以及 V2 到 V3 前补全的本地服务骨架/API/控制台/入口门禁。",
+    "本包不等同于 production-ready；真实生产状态仍为 false。",
+    "真实命令检查仍需在可执行 node_modules/tsx 的环境中复跑。"
+  ],
+  "zip": {
+    "path": "/mnt/data/古月浮屿_v2-版本封版_代码完整全量包.zip",
+    "sizeBytes": 940522,
+    "sha256": "5cd5d625436aee3e276f0f5a557aad6e4142c508993be29cd0d5321a9f8173ae"
+  }
+}

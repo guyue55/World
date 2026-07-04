@@ -1,0 +1,35 @@
+{
+  "version": "4.0.0",
+  "name": "V3 前置证据复核",
+  "batch": 2,
+  "stage": 1,
+  "stageName": "范围契约与真实前置门禁",
+  "stageProgress": "V4 / 第 1 阶段 / 第 2 批 / 共 24 批",
+  "slug": "v3-evidence-review",
+  "status": "complete",
+  "goals": [
+    "复核 V3 真实证据缺口",
+    "记录 tsx Permission denied",
+    "列出 V4 正式开发前置命令"
+  ],
+  "outputs": [
+    "v3-production-evidence-review",
+    "blocker-ledger"
+  ],
+  "mustKeep": [
+    "npm install",
+    "lint",
+    "typecheck",
+    "build",
+    "check:v3:all",
+    "manual safety review"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-scope",
+    "dataDirectory": "data/v4/stage-01",
+    "docsDirectory": "docs/41-v4/stage-01",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

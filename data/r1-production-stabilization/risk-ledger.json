@@ -1,0 +1,33 @@
+{
+  "version": "R1",
+  "risks": [
+    {
+      "id": "external-deploy-missing",
+      "level": "high",
+      "status": "open",
+      "description": "当前容器无法代表真实生产 URL 和真实人工签收。",
+      "mitigation": "部署到 Preview/Production 后复跑 smoke 与签收。"
+    },
+    {
+      "id": "audit-moderate",
+      "level": "medium",
+      "status": "accepted-with-record",
+      "description": "npm audit 可能仍存在 moderate 项。",
+      "mitigation": "记录并在安全轮次集中处理。"
+    },
+    {
+      "id": "concept-overgrowth",
+      "level": "medium",
+      "status": "controlled",
+      "description": "V0-V10 概念较多，R1 明确不新增大概念。",
+      "mitigation": "只做工程收口与证据化。"
+    },
+    {
+      "id": "large-repository-history",
+      "level": "low",
+      "status": "monitor",
+      "description": "历史文档与数据较多，打包时必须排除 node_modules/.next 等运行产物。",
+      "mitigation": "manifest 与 package 脚本记录排除策略。"
+    }
+  ]
+}

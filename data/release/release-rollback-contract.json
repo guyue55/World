@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布失败处置与回滚契约",
+  "principle": "发布前必须预设失败处置路径；失败不可被沉默，也不可强行推进。",
+  "stageProgress": "release-dry-run-handoff line batch 3 / 4",
+  "status": "implemented-static-rollback-plan",
+  "failureScenarios": [
+    {
+      "id": "dependency-install-failed",
+      "action": "停止干跑，记录 npm/install 输出，禁止进入 release gate"
+    },
+    {
+      "id": "lint-typecheck-build-failed",
+      "action": "停止发布，写入 defect queue，保留 evidence capture"
+    },
+    {
+      "id": "browser-qa-failed",
+      "action": "写入 defect queue，P0/P1 阻断 release-ready"
+    },
+    {
+      "id": "preview-smoke-failed",
+      "action": "禁止生产发布，检查路由、环境变量和部署配置"
+    },
+    {
+      "id": "performance-risk",
+      "action": "要求风险接受或修复后复测"
+    },
+    {
+      "id": "blocker-open",
+      "action": "不得 release-ready，补充 closure request 或继续修复"
+    },
+    {
+      "id": "manual-review-pending",
+      "action": "不得 release-ready，等待人工核验完成"
+    }
+  ],
+  "rollbackRules": [
+    "未生产发布时只做 dry-run abort，不执行 rollback。",
+    "预览失败时回到上一可用 preview 或保持不推广。",
+    "若已生产发布，必须先记录版本、时间、操作者和回滚原因。",
+    "回滚完成后仍需补 evidence 和 defect 记录。"
+  ],
+  "rules": [
+    "失败场景必须可追溯。",
+    "任何 P0/P1 未验证不得继续发布。",
+    "回滚不是删除历史。",
+    "失败处置不自动关闭阻断项。"
+  ]
+}

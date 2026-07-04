@@ -1,0 +1,64 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 下一阶段准备度",
+  "principle": "下一阶段应从真实运行、真实视觉、真实内容开始，而不是继续抽象堆叠。",
+  "recommendedNextBatches": [
+    {
+      "id": "batch-27",
+      "title": "真实构建与工具链修复",
+      "focus": [
+        "npm install/build",
+        "typecheck",
+        "lint",
+        "autoprefixer",
+        "Next script compatibility"
+      ]
+    },
+    {
+      "id": "batch-28",
+      "title": "多端视觉与交互 QA 修复",
+      "focus": [
+        "layout width",
+        "responsive",
+        "navigation active state",
+        "tabs/collapse behavior",
+        "mobile usability"
+      ]
+    },
+    {
+      "id": "batch-29",
+      "title": "首页与内容体验产品化",
+      "focus": [
+        "real seed content",
+        "cover image strategy",
+        "homepage density",
+        "archive readability"
+      ]
+    },
+    {
+      "id": "batch-30",
+      "title": "性能实测与首屏优化",
+      "focus": [
+        "Lighthouse",
+        "bundle analysis",
+        "critical route weight",
+        "image loading"
+      ]
+    },
+    {
+      "id": "batch-31",
+      "title": "发布预览与收口验收",
+      "focus": [
+        "preview deploy",
+        "SEO/social",
+        "sitemap/RSS",
+        "final QA checklist"
+      ]
+    }
+  ],
+  "rules": [
+    "下一批优先做真实构建与工具链修复。",
+    "再下一批优先做真实浏览器视觉 QA。",
+    "文档协议已经足够厚，后续必须更多转向运行验证和产品化体验。"
+  ]
+}

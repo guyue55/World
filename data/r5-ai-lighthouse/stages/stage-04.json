@@ -1,0 +1,21 @@
+{
+  "stage": 4,
+  "title": "质量门禁、页面集成与 R6 服务化交接",
+  "focus": "聚合检查、边界扫描、文档报告、交接服务化最小闭环",
+  "batches": [
+    13,
+    14,
+    15,
+    16
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "evidence": [
+    "data落库",
+    "feature落库",
+    "component落库",
+    "page/docs/scripts落库"
+  ]
+}

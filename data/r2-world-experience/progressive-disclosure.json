@@ -1,0 +1,55 @@
+{
+  "levels": [
+    {
+      "level": "L1",
+      "name": "核心入口",
+      "visibility": "always-visible",
+      "areas": [
+        "创世原点",
+        "世界地图",
+        "时间河",
+        "AI灯塔",
+        "档案馆"
+      ]
+    },
+    {
+      "level": "L2",
+      "name": "主要区域",
+      "visibility": "home-and-atlas",
+      "areas": [
+        "技术星域",
+        "产品工坊",
+        "灵感云层",
+        "记忆湖"
+      ]
+    },
+    {
+      "level": "L3",
+      "name": "深层区域",
+      "visibility": "inside-parent-area",
+      "areas": [
+        "爱的小屋",
+        "年轮树",
+        "旅行远方",
+        "失败博物馆",
+        "过去的我",
+        "历史剧场",
+        "未来房间"
+      ]
+    },
+    {
+      "level": "L4",
+      "name": "隐藏或私密区域",
+      "visibility": "outline-or-permission-only",
+      "areas": [
+        "私密抽屉",
+        "封存信盒",
+        "未命名之地"
+      ]
+    }
+  ],
+  "rule": "首页不展示全部宇宙；先给方向，再给深度。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

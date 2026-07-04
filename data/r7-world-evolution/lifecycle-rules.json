@@ -1,0 +1,120 @@
+{
+  "states": [
+    {
+      "id": "seed",
+      "worldName": "微光种子",
+      "realDescription": "只有标题、片段或一个想法，允许不完整存在。",
+      "next": [
+        "sprout",
+        "dormant"
+      ]
+    },
+    {
+      "id": "sprout",
+      "worldName": "新芽",
+      "realDescription": "已有说明、区域与权限，可以被继续整理。",
+      "next": [
+        "growing",
+        "archive"
+      ]
+    },
+    {
+      "id": "growing",
+      "worldName": "生长中",
+      "realDescription": "已有内容、关系和下一步动作，是主要维护对象。",
+      "next": [
+        "bloom",
+        "fruit",
+        "dormant"
+      ]
+    },
+    {
+      "id": "bloom",
+      "worldName": "盛放",
+      "realDescription": "可公开阅读或可被路径引用的成熟节点。",
+      "next": [
+        "fruit",
+        "archive"
+      ]
+    },
+    {
+      "id": "fruit",
+      "worldName": "结果",
+      "realDescription": "可形成路径、专题、导出或年度册资产。",
+      "next": [
+        "archive",
+        "relic"
+      ]
+    },
+    {
+      "id": "archive",
+      "worldName": "归档",
+      "realDescription": "稳定保存，低频更新。",
+      "next": [
+        "relic",
+        "revived"
+      ]
+    },
+    {
+      "id": "relic",
+      "worldName": "遗迹",
+      "realDescription": "旧项目、旧想法或过期内容，保留证据和复盘价值。",
+      "next": [
+        "revived",
+        "silent"
+      ]
+    },
+    {
+      "id": "dormant",
+      "worldName": "沉睡",
+      "realDescription": "长期未维护但仍有潜力，不以停更失败处理。",
+      "next": [
+        "revived",
+        "silent"
+      ]
+    },
+    {
+      "id": "silent",
+      "worldName": "静默",
+      "realDescription": "暂不推动，只保留，不产生更新压力。",
+      "next": [
+        "revived"
+      ]
+    },
+    {
+      "id": "revived",
+      "worldName": "复苏",
+      "realDescription": "从遗迹、归档或沉睡状态重新被点亮。",
+      "next": [
+        "growing",
+        "bloom"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "seed-30-days",
+      "when": "seed 超过 30 天未更新",
+      "suggestion": "进入今日世界的待浇水队列",
+      "autoMutate": false
+    },
+    {
+      "id": "project-90-days",
+      "when": "project 90 天未更新",
+      "suggestion": "建议归档为遗迹或创建复活任务",
+      "autoMutate": false
+    },
+    {
+      "id": "memory-180-days",
+      "when": "memory 180 天未回看",
+      "suggestion": "低光提醒，不默认公开或 AI 总结",
+      "autoMutate": false
+    },
+    {
+      "id": "public-first-check",
+      "when": "任何内容准备公开",
+      "suggestion": "必须经过权限和敏感信息守门",
+      "autoMutate": false
+    }
+  ]
+}

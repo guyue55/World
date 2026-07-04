@@ -1,0 +1,22 @@
+{
+  "id": "batch-15",
+  "batch": 15,
+  "stage": 4,
+  "title": "V10 长期智能世界交接",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "checks": [
+    "structure",
+    "json",
+    "lint"
+  ],
+  "deliverables": [
+    "data/v9-service-platform/batches/15-V10-长期智能世界交接.json"
+  ],
+  "extensionDecision": {
+    "required": false,
+    "summary": "按主线执行。"
+  }
+}

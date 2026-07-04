@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="生活浮岛">
+  <defs>
+    <radialGradient id="g" cx="28%" cy="18%" r="78%">
+      <stop offset="0%" stop-color="#f7f1e6" stop-opacity="0.45"/>
+      <stop offset="48%" stop-color="#2f3324" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0f1512"/>
+    </radialGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#f7f1e6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#f7f1e6" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#f7f1e6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="42" fill="url(#g)"/>
+  <g opacity="0.32">
+    <path d="M120 360 C240 220, 360 460, 520 250 S760 180, 850 300" fill="none" stroke="url(#line)" stroke-width="3"/>
+    <path d="M80 180 C240 120, 360 220, 480 140 S710 90, 890 160" fill="none" stroke="#f7f1e6" stroke-opacity=".25" stroke-width="2"/>
+    <circle cx="205" cy="178" r="7" fill="#f7f1e6"/>
+    <circle cx="438" cy="142" r="5" fill="#f7f1e6"/>
+    <circle cx="676" cy="210" r="8" fill="#f7f1e6"/>
+    <circle cx="790" cy="322" r="5" fill="#f7f1e6"/>
+  </g>
+  <g transform="translate(92 96)">
+    <rect width="148" height="148" rx="42" fill="white" opacity=".08"/>
+    <circle cx="74" cy="74" r="42" fill="none" stroke="#f7f1e6" stroke-width="3" opacity=".8"/>
+    <path d="M74 27 L88 72 L74 121 L60 72 Z" fill="#f7f1e6" opacity=".82"/>
+  </g>
+  <g transform="translate(92 330)">
+    <text x="0" y="0" fill="#fff6df" font-size="44" font-family="serif" font-weight="700">生活浮岛</text>
+    <text x="0" y="44" fill="#fff6df" fill-opacity=".68" font-size="16" font-family="Arial, sans-serif" letter-spacing="5">LIFE ISLAND</text>
+  </g>
+  <g opacity=".16">
+    <circle cx="790" cy="110" r="96" fill="none" stroke="white" stroke-width="1.5"/>
+    <circle cx="790" cy="110" r="54" fill="none" stroke="#f7f1e6" stroke-width="1.5"/>
+    <path d="M700 110 H880 M790 20 V200" stroke="white" stroke-width="1"/>
+  </g>
+</svg>

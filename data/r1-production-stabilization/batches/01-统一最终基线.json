@@ -1,0 +1,15 @@
+{
+  "batch": 1,
+  "stage": 1,
+  "title": "统一最终基线",
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "goal": "R1 最终基线统一与仓库清洁：统一最终基线",
+  "checks": [
+    "json-valid",
+    "lint-after-stage",
+    "typed-contracts"
+  ]
+}

@@ -1,0 +1,1 @@
+import { spawnSync } from 'node:child_process'; for(const n of ['17','18','19','20']){const r=spawnSync('npm',['run',`check:round3:${n}`],{stdio:'inherit',shell:process.platform==='win32'}); if(r.status!==0) process.exit(r.status??1)} console.log('Round 03 stage 05 checks passed.')

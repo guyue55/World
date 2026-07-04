@@ -1,0 +1,27 @@
+{
+  "id": "v10-stage-03",
+  "stage": 3,
+  "title": "长期陪伴、回望、传承与多视野体验",
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "focus": [
+    "长期陪伴台",
+    "过去的我与未来的我",
+    "年度世界册",
+    "访客/深潜者/造物主视野"
+  ],
+  "version": "V10",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "extensionDecision": {
+    "needExpansion": true,
+    "decision": "保留长期智能世界的扩展槽，但所有自动化必须保持人工签收与可审计。"
+  }
+}

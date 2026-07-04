@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 性能实测执行契约",
+  "principle": "性能实测必须绑定 route、device、metric 和优化行动，不接受只有总分。",
+  "stageProgress": "real-validation line batch 3 / 4",
+  "status": "implemented-static-plan",
+  "requiredMetrics": [
+    "lcp",
+    "inp",
+    "cls",
+    "score"
+  ],
+  "requiredDevices": [
+    "mobile",
+    "desktop"
+  ],
+  "minimumRoutes": 6,
+  "rules": [
+    "移动端首页和节点页优先级最高。",
+    "低分必须写入缺陷或优化任务。",
+    "状态页/骨架页允许较重，但不能破坏核心浏览路径。",
+    "无法采集指标时必须记录环境原因。"
+  ]
+}

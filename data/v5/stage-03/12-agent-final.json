@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "name": "多 Agent 阶段收口",
+  "batch": 12,
+  "stage": 3,
+  "stageName": "多 Agent 编排与世界维护运行态",
+  "stageProgress": "V5 / 第 3 阶段 / 第 12 批 / 共 24 批",
+  "slug": "agent-final",
+  "status": "complete",
+  "goals": [
+    "收束多 Agent 阶段",
+    "成本可算、建议可拒绝",
+    "执行可回滚"
+  ],
+  "outputs": [
+    "AgentFinal"
+  ],
+  "mustKeep": [
+    "all suggestions rejectable"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-agent-orchestration",
+    "dataDirectory": "data/v5/stage-03",
+    "docsDirectory": "docs/51-v5/stage-03",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

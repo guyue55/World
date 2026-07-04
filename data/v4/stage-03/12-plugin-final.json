@@ -1,0 +1,30 @@
+{
+  "version": "4.0.0",
+  "name": "插件生态收口",
+  "batch": 12,
+  "stage": 3,
+  "stageName": "插件系统与外部集成生态",
+  "stageProgress": "V4 / 第 3 阶段 / 第 12 批 / 共 24 批",
+  "slug": "plugin-final",
+  "status": "complete",
+  "goals": [
+    "收束插件生态",
+    "插件 registry 与安全门禁",
+    "V4 plugin readiness"
+  ],
+  "outputs": [
+    "plugin-ecosystem-final-report"
+  ],
+  "mustKeep": [
+    "sandbox required",
+    "manual enable"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-plugin-ecosystem",
+    "dataDirectory": "data/v4/stage-03",
+    "docsDirectory": "docs/41-v4/stage-03",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

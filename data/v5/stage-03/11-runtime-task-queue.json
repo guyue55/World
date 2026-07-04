@@ -1,0 +1,29 @@
+{
+  "version": "5.0.0",
+  "name": "运行态任务队列",
+  "batch": 11,
+  "stage": 3,
+  "stageName": "多 Agent 编排与世界维护运行态",
+  "stageProgress": "V5 / 第 3 阶段 / 第 11 批 / 共 24 批",
+  "slug": "runtime-task-queue",
+  "status": "complete",
+  "goals": [
+    "定义运行态任务队列",
+    "建议/审查/执行结果",
+    "所有任务可回滚"
+  ],
+  "outputs": [
+    "RuntimeTask",
+    "RuntimeQueue"
+  ],
+  "mustKeep": [
+    "audit every task"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v5-agent-orchestration",
+    "dataDirectory": "data/v5/stage-03",
+    "docsDirectory": "docs/51-v5/stage-03",
+    "rule": "new V5 code must be feature/platform/shared oriented, not src/lib/v5"
+  },
+  "productionLive": false
+}

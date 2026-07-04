@@ -1,0 +1,8 @@
+{
+  "round": 2,
+  "stage": 4,
+  "batch": 15,
+  "status": "complete",
+  "privatePolicy": "private-redacted nodes do not expose raw private content",
+  "productionLive": false
+}

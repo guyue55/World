@@ -1,0 +1,2 @@
+import type { SuggestionRisk } from '@/features/ai-lighthouse-workbench'
+export function RiskBadge({ risk }: { risk: SuggestionRisk }) { const label = risk==='high'?'高风险':risk==='medium'?'中风险':'低风险'; const className = risk==='high'?'bg-red-500/15 text-red-700 border-red-500/20':risk==='medium'?'bg-clay/15 text-ink border-clay/20':'bg-moss/15 text-moss border-moss/20'; return <span className={`rounded-full border px-3 py-1 text-xs font-medium ${className}`}>{label}</span> }

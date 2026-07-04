@@ -1,0 +1,23 @@
+{
+  "id": "v7-batch-05",
+  "batch": 5,
+  "stage": 2,
+  "slug": "release-cockpit",
+  "status": "complete",
+  "productionLive": false,
+  "goals": [
+    "完成 release-cockpit 的数据、页面、组件、文档和检查入口",
+    "保持 releaseReady=false 直到真实生产证据齐备"
+  ],
+  "outputs": [
+    "data/v7-release-ops",
+    "src/features/v7-release-ops",
+    "src/components/v7-release",
+    "src/app/v7-release",
+    "docs/10-development-history/v7-release-ops"
+  ],
+  "checks": [
+    "npm run check:v7-release:05",
+    "npm run lint"
+  ]
+}

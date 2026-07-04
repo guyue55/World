@@ -1,0 +1,4 @@
+import type { ReactNode } from 'react'
+import type { ThemeMode } from '@/features/theme-system'
+import { getThemeVariant } from '@/features/theme-system'
+export function ThemeAwareSurface({ theme, children }: { theme: ThemeMode; children?: ReactNode }) { const variant=getThemeVariant(theme.layout); return <article className={`rounded-[2rem] border border-white/50 p-5 shadow-soft ${theme.surfaceClass}`}><p className={`text-xs tracking-[0.3em] ${theme.accentClass}`}>{theme.id.toUpperCase()}</p><h3 className="mt-3 text-2xl font-semibold">{theme.title}</h3><p className="mt-3 min-h-20 text-sm leading-6 opacity-70">{theme.description}</p><div className="mt-4 rounded-2xl border border-white/40 bg-white/30 p-3 text-xs leading-5"><p>layout: {variant.label}</p><p>motion: {variant.motion}</p></div>{children ? <div className="mt-4">{children}</div> : null}</article> }

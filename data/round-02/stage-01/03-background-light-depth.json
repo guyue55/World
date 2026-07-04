@@ -1,0 +1,9 @@
+{
+  "round": 2,
+  "stage": 1,
+  "batch": 3,
+  "status": "complete",
+  "focus": "背景、光线、空间卡片系统",
+  "dependencyPolicy": "不引入 WebGL 或重型 3D 依赖",
+  "productionLive": false
+}

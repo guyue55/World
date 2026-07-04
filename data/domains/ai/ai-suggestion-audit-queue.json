@@ -1,0 +1,41 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 建议审计队列占位",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 2 / 4",
+  "status": "metadata-only-demo-queue",
+  "items": [
+    {
+      "id": "suggest-path-atlas-to-archive",
+      "type": "reading-path",
+      "title": "建议补强从 Atlas 到档案馆的阅读路径",
+      "sourceTier": "public",
+      "requiredHumanAction": true,
+      "execution": "not-executed",
+      "risk": "low"
+    },
+    {
+      "id": "suggest-exhibition-ai-lighthouse",
+      "type": "exhibition-curation",
+      "title": "建议策划 AI 灯塔主题展览",
+      "sourceTier": "public",
+      "requiredHumanAction": true,
+      "execution": "not-executed",
+      "risk": "medium"
+    },
+    {
+      "id": "suggest-maintenance-release-evidence",
+      "type": "risk-reminder",
+      "title": "提醒 release-ready 仍缺真实执行证据",
+      "sourceTier": "public",
+      "requiredHumanAction": true,
+      "execution": "not-executed",
+      "risk": "high"
+    }
+  ],
+  "rules": [
+    "队列中的建议均为 not-executed。",
+    "不得包含 private/family/partner/vault/sealed/silent 来源。",
+    "建议不改变项目状态。",
+    "建议需要人工确认后才可能进入未来操作流。"
+  ]
+}

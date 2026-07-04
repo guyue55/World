@@ -1,0 +1,32 @@
+{
+  "version": "4.0.0",
+  "name": "成本性能与运营门禁",
+  "batch": 23,
+  "stage": 6,
+  "stageName": "平台治理、安全、成本与 V5 入口门禁",
+  "stageProgress": "V4 / 第 6 阶段 / 第 23 批 / 共 24 批",
+  "slug": "cost-performance-ops-gate",
+  "status": "complete",
+  "goals": [
+    "成本性能运营门禁",
+    "AI 成本/存储增长/API 延迟/错误率",
+    "运营预算"
+  ],
+  "outputs": [
+    "CostLedger",
+    "OpsGate",
+    "PerformanceGate"
+  ],
+  "mustKeep": [
+    "budget alert",
+    "manual high-cost AI"
+  ],
+  "moduleBoundary": {
+    "featureDirectory": "src/features/v4-governance",
+    "dataDirectory": "data/v4/stage-06",
+    "docsDirectory": "docs/41-v4/stage-06",
+    "rule": "new V4 code must be feature/platform/shared oriented, not src/lib/v4"
+  },
+  "releaseReady": false,
+  "productionLive": false
+}

@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 公开世界册出版计划",
+  "stageProgress": "phase-nine-real-content-ecosystem-personal-brand line batch 3 / 4",
+  "status": "world-book-publishing-plan-prepared",
+  "worldBookReady": false,
+  "sections": [
+    {
+      "id": "preface",
+      "title": "年度序言",
+      "source": "human-written",
+      "visibility": "public"
+    },
+    {
+      "id": "best-essays",
+      "title": "年度精选文章",
+      "source": "public-content",
+      "visibility": "public"
+    },
+    {
+      "id": "world-timeline",
+      "title": "世界时间线",
+      "source": "public-events",
+      "visibility": "public"
+    },
+    {
+      "id": "exhibitions",
+      "title": "主题展览摘要",
+      "source": "public-exhibitions",
+      "visibility": "public"
+    },
+    {
+      "id": "ops-review",
+      "title": "运营复盘",
+      "source": "public-review",
+      "visibility": "public"
+    },
+    {
+      "id": "next-year",
+      "title": "下一年计划",
+      "source": "human-written",
+      "visibility": "public"
+    }
+  ],
+  "rules": [
+    "worldBookReady=false 必须保持，直到真实内容完成人工复核。",
+    "公开世界册不得包含私密档案正文。",
+    "AI 可辅助整理目录，但不能自动出版。",
+    "年度世界册必须保留人工序言与复盘。"
+  ]
+}

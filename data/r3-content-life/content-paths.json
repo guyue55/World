@@ -1,0 +1,82 @@
+{
+  "paths": [
+    {
+      "id": "first-visit",
+      "title": "第一次来到这里",
+      "description": "从世界入口理解古月浮屿的起点、边界和探索方式。",
+      "nodes": [
+        "world-manifesto",
+        "entry-clear-depth-vast",
+        "r2-world-entry",
+        "world-map-passports",
+        "ai-lighthouse-boundary"
+      ],
+      "audience": "traveler"
+    },
+    {
+      "id": "tech-ai",
+      "title": "技术与 AI 星路",
+      "description": "沿真实技术节点理解工程经验、Agent 工具和 AI 边界。",
+      "nodes": [
+        "mcp-adk-feishu",
+        "gemini-cli-skills",
+        "codex-cli-cursor",
+        "private-ai-v6",
+        "ai-lighthouse-boundary"
+      ],
+      "audience": "engineer"
+    },
+    {
+      "id": "world-creation",
+      "title": "这个世界如何被创造",
+      "description": "从设计公理、生成管线到节点护照，理解世界不是页面集合。",
+      "nodes": [
+        "design-axioms",
+        "world-generator-pipeline",
+        "node-passport-system",
+        "four-dimensional-coordinates",
+        "content-sovereignty"
+      ],
+      "audience": "builder"
+    },
+    {
+      "id": "product-lab",
+      "title": "产品工坊路径",
+      "description": "查看 AI-native 工具、静态编辑器和品牌产品如何变成世界装置。",
+      "nodes": [
+        "static-novel-editor",
+        "careeros-inspired-tool",
+        "moonframe-ai",
+        "visual-suite-design",
+        "service-platform-v9"
+      ],
+      "audience": "product"
+    },
+    {
+      "id": "memory-soft-edge",
+      "title": "记忆湖边缘",
+      "description": "展示生活内容如何被温柔安放，同时保持隐私边界。",
+      "nodes": [
+        "memory-lake-first-light",
+        "travel-collage-memory",
+        "desktop-layout-review",
+        "privacy-default-private",
+        "life-low-light-mode"
+      ],
+      "audience": "traveler"
+    },
+    {
+      "id": "operations-continuity",
+      "title": "长期运行与回望",
+      "description": "把 R1、V9、V10 的工程骨架转成未来持续运营证据。",
+      "nodes": [
+        "r1-production-stabilization",
+        "service-platform-v9",
+        "intelligent-world-v10",
+        "world-health-dashboard",
+        "daily-world"
+      ],
+      "audience": "owner"
+    }
+  ]
+}

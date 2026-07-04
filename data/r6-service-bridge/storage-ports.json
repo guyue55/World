@@ -1,0 +1,20 @@
+{
+  "ports": [
+    {
+      "id": "nodeRepository",
+      "purpose": "store node drafts and public projections",
+      "implementation": "json-file-adapter-placeholder"
+    },
+    {
+      "id": "auditRepository",
+      "purpose": "append immutable audit events",
+      "implementation": "json-file-adapter-placeholder"
+    },
+    {
+      "id": "exportRepository",
+      "purpose": "track export jobs without exposing private payloads",
+      "implementation": "json-file-adapter-placeholder"
+    }
+  ],
+  "adapterPolicy": "Feature code depends on ports and contracts, not on a concrete database SDK."
+}

@@ -1,0 +1,35 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段入口聚合契约",
+  "principle": "第三阶段原型入口应被清晰组织，而不是散落在世界边缘。",
+  "stageProgress": "phase-three-integration line batch 3 / 4",
+  "status": "implemented-static-entry-hub",
+  "route": "/phase-three",
+  "entries": [
+    {
+      "route": "/exhibitions",
+      "title": "主题展览",
+      "description": "把节点、路径和时间河组织成策展入口"
+    },
+    {
+      "route": "/ai-workbench",
+      "title": "AI 建议工作台",
+      "description": "展示建议、风险和用户确认入口"
+    },
+    {
+      "route": "/export-center",
+      "title": "导出中心",
+      "description": "展示导出包、格式和传承边界"
+    }
+  ],
+  "warnings": [
+    "第三阶段实现线完成的是静态原型。",
+    "新增入口仍需真实浏览器 QA。",
+    "release-ready 仍被真实执行证据阻断。"
+  ],
+  "rules": [
+    "入口聚合页必须展示 release-ready 未达成。",
+    "入口聚合页不得隐藏静态原型状态。",
+    "入口聚合页不读取私密内容。"
+  ]
+}

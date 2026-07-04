@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 内容生长看板",
+  "stageProgress": "phase-three-planning line batch 2 / 4",
+  "status": "planning-board-ready",
+  "lanes": [
+    {
+      "id": "seed",
+      "title": "种子",
+      "description": "尚未展开但值得保留的世界想法"
+    },
+    {
+      "id": "draft",
+      "title": "草稿",
+      "description": "已有结构但需要补内容"
+    },
+    {
+      "id": "curate",
+      "title": "策展",
+      "description": "可进入主题展览或路径的内容"
+    },
+    {
+      "id": "publish-candidate",
+      "title": "候选发布",
+      "description": "公开边界已确认但仍需 QA"
+    },
+    {
+      "id": "archive",
+      "title": "归档",
+      "description": "暂不继续推进但保留历史"
+    }
+  ],
+  "policies": [
+    "publish-candidate 必须通过公开边界检查。",
+    "curate 不等于 publish。",
+    "archive 不等于 delete。",
+    "私密草稿只能在 private planning 中出现。"
+  ]
+}

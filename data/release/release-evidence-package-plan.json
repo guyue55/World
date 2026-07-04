@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 证据包整合计划",
+  "stageProgress": "phase-thirteen-real-implementation-hardening-evidence line batch 3 / 4",
+  "status": "evidence-package-plan-prepared",
+  "evidencePackageReady": false,
+  "sections": [
+    {
+      "id": "dependency-build",
+      "title": "依赖与构建证据",
+      "required": true
+    },
+    {
+      "id": "security-baseline",
+      "title": "安全基线证据",
+      "required": true
+    },
+    {
+      "id": "service-adapters",
+      "title": "服务适配器证明",
+      "required": true
+    },
+    {
+      "id": "identity-rbac-audit",
+      "title": "身份权限审计证明",
+      "required": true
+    },
+    {
+      "id": "deployment-hardening",
+      "title": "部署硬化证明",
+      "required": true
+    },
+    {
+      "id": "manual-signoff",
+      "title": "人工签收",
+      "required": true
+    },
+    {
+      "id": "blocker-review",
+      "title": "阻断复查",
+      "required": true
+    }
+  ],
+  "rules": [
+    "evidencePackageReady=false 必须保持，直到所有 section 真实完成。",
+    "证据包不能包含密钥或私密正文。",
+    "人工签收和阻断复查不能被自动化替代。",
+    "证据包必须能支持 release-ready 转换决策。"
+  ]
+}

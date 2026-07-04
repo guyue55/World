@@ -1,0 +1,34 @@
+{
+  "id": "v6-private-ai-stage-02-ai-companion",
+  "version": "6.0.0",
+  "round": "V6 私密档案版",
+  "stage": "02-ai-world-companion",
+  "batches": ["05 assistant capability protocol", "06 redacted suggestion context", "07 forbidden action policy", "08 V7 assistant handoff seed"],
+  "status": "complete",
+  "productionLive": false,
+  "assistantRole": "AI 是灯塔，不是太阳；AI 是世界助手，不是世界主人。",
+  "allowedCapabilities": [
+    "读取公开内容与脱敏私密索引",
+    "生成结构建议、路径建议、归档建议",
+    "检查公开草案中的隐私风险",
+    "为 V7 AI 世界助手版提供边界化上下文"
+  ],
+  "forbiddenCapabilities": [
+    "读取 vault 原文",
+    "自动公开私密内容",
+    "自动删除或覆盖原始记忆",
+    "绕过人工审批改变权限",
+    "把推测当作事实写入档案"
+  ],
+  "suggestionContext": {
+    "readMode": "redacted-only",
+    "canPropose": true,
+    "canExecute": false,
+    "requiresOwnerReview": true
+  },
+  "handoffToV7": {
+    "nextVersion": "V7 AI 世界助手版",
+    "allowed": true,
+    "mustInherit": ["privacy layers", "approval queue", "audit log", "redacted memory graph"]
+  }
+}

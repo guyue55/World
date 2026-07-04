@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 7,
+  "totalBatches": 8,
+  "slug": "memory-graph-experience",
+  "title": "长期记忆图谱可浏览体验",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 7 / 批次 7/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

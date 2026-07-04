@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "principle": "关系不是装饰线，而是可追溯、可解释、可治理的星线。",
+  "strengths": [
+    {
+      "value": 0.2,
+      "label": "weak",
+      "description": "轻微相关，可作为探索提示。"
+    },
+    {
+      "value": 0.5,
+      "label": "medium",
+      "description": "明确相关，适合出现在相关内容。"
+    },
+    {
+      "value": 0.8,
+      "label": "strong",
+      "description": "强相关，适合路径或星线图。"
+    },
+    {
+      "value": 1.0,
+      "label": "core",
+      "description": "核心关系，代表结构性连接。"
+    }
+  ],
+  "rules": [
+    "source=ai 的关系必须 reviewed=true 才能作为正式星线。",
+    "strength=1.0 必须有 note 或人工来源。",
+    "publicVersionOf / privateSourceOf 不得把私密节点暴露到 public index。",
+    "revivedFrom 应产生 node-revived 或相关 WorldEvent。",
+    "relation 不得形成无法解释的核心路径。"
+  ]
+}

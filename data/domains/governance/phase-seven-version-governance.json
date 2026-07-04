@@ -1,0 +1,48 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 版本治理计划",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 3 / 4",
+  "status": "implemented-static-version-governance",
+  "versionRules": [
+    {
+      "id": "stage-seal",
+      "title": "阶段封版",
+      "rule": "major stage package"
+    },
+    {
+      "id": "release-candidate",
+      "title": "发布候选",
+      "rule": "rc with evidence ledger"
+    },
+    {
+      "id": "hotfix",
+      "title": "紧急修复",
+      "rule": "minimal patch with blocker record"
+    },
+    {
+      "id": "content-update",
+      "title": "内容更新",
+      "rule": "minor content manifest"
+    },
+    {
+      "id": "ops-review",
+      "title": "运营复盘",
+      "rule": "monthly review note"
+    }
+  ],
+  "requiredRecords": [
+    "version",
+    "createdAt",
+    "sourcePackage",
+    "sha256",
+    "changedFiles",
+    "evidenceLedger",
+    "humanSignoff"
+  ],
+  "rules": [
+    "任何封版必须有 manifest。",
+    "任何发布候选必须有 evidence ledger。",
+    "hotfix 必须保持最小变更。",
+    "内容更新不得改变私密边界和 AI 边界。"
+  ]
+}

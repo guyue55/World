@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布阻断关闭辅助契约",
+  "principle": "阻断项只能被证据推动进入关闭流程，不能被脚本或面板自动关闭。",
+  "stageProgress": "real-evidence-execution-assist line batch 2 / 4",
+  "status": "implemented-static-closure-assist",
+  "closureRequestSchema": {
+    "id": "string",
+    "blockerId": "string",
+    "evidenceType": "command|manual|network|measurement|governance",
+    "evidencePath": "string",
+    "summary": "string",
+    "requestedBy": "string",
+    "status": "draft|review-ready|approved|rejected"
+  },
+  "allowedStatuses": [
+    "draft",
+    "review-ready",
+    "approved",
+    "rejected"
+  ],
+  "rules": [
+    "关闭请求默认 draft。",
+    "approved 也不自动修改 release-blocker-register。",
+    "P0 阻断必须有命令证据或人工 QA 证据。",
+    "证据路径必须指向 reports/ 或 data/ 中的记录。",
+    "缺少证据时不得进入 review-ready。"
+  ]
+}

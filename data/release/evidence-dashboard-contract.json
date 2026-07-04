@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 真实证据执行面板契约",
+  "principle": "真实补证必须有一个能看见顺序、状态、阻断和下一步命令的入口。",
+  "stageProgress": "real-evidence-execution-assist line batch 1 / 4",
+  "status": "implemented-static-dashboard",
+  "route": "/evidence",
+  "sections": [
+    "release-ready-evidence-matrix",
+    "dependency-bootstrap",
+    "real-command-capture",
+    "non-command-feedback",
+    "release-blockers"
+  ],
+  "rules": [
+    "面板只展示状态和命令，不伪造执行结果。",
+    "pending-real-run 不得显示为 passed。",
+    "release blockers 必须保持可见。",
+    "真实补证入口不得读取私密内容。"
+  ]
+}

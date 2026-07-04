@@ -1,0 +1,193 @@
+{
+  "scenes": [
+    {
+      "match": "/",
+      "name": "创世原点",
+      "realName": "首页世界入口",
+      "tone": "arrival",
+      "primaryAction": "进入世界地图",
+      "href": "/atlas",
+      "objects": ["书桌", "灯", "纸页", "星河", "罗盘"],
+      "motion": "arrival-light"
+    },
+    {
+      "match": "/atlas",
+      "name": "星图穹顶",
+      "realName": "世界地图",
+      "tone": "map",
+      "primaryAction": "沿时间河前进",
+      "href": "/timeline",
+      "objects": ["星图", "浮屿", "路径", "雾区"],
+      "motion": "orbit-map"
+    },
+    {
+      "match": "/timeline",
+      "name": "时间河",
+      "realName": "时间线与事件流",
+      "tone": "river",
+      "primaryAction": "查看档案馆",
+      "href": "/archive",
+      "objects": ["河流", "涟漪", "回声", "旧星"],
+      "motion": "river-flow"
+    },
+    {
+      "match": "/archive",
+      "name": "档案馆",
+      "realName": "现实检索与归档",
+      "tone": "archive",
+      "primaryAction": "打开精选路径",
+      "href": "/paths",
+      "objects": ["卷宗", "书页", "书架", "索引"],
+      "motion": "paper-drift"
+    },
+    {
+      "match": "/paths",
+      "name": "星路",
+      "realName": "精选探索路径",
+      "tone": "path",
+      "primaryAction": "询问灯塔",
+      "href": "/ask",
+      "objects": ["路径", "脚印", "节点", "星线"],
+      "motion": "path-pulse"
+    },
+    {
+      "match": "/ask",
+      "name": "AI 灯塔",
+      "realName": "公开导览与问答入口",
+      "tone": "lighthouse",
+      "primaryAction": "返回世界入口",
+      "href": "/",
+      "objects": ["灯塔", "光束", "问答", "边界"],
+      "motion": "lighthouse-sweep"
+    },
+    {
+      "match": "/node",
+      "name": "节点展开室",
+      "realName": "内容节点详情",
+      "tone": "node",
+      "primaryAction": "回到档案馆",
+      "href": "/archive",
+      "objects": ["护照", "卷轴", "星线", "生命阶段"],
+      "motion": "node-open"
+    },
+    {
+      "match": "/about",
+      "name": "造物主侧影",
+      "realName": "关于古月",
+      "tone": "identity",
+      "primaryAction": "阅读世界宪章",
+      "href": "/manifesto",
+      "objects": ["书桌", "侧影", "手稿", "灯"],
+      "motion": "soft-breath"
+    },
+    {
+      "match": "/manifesto",
+      "name": "世界宪章厅",
+      "realName": "世界法则与第一原则",
+      "tone": "law",
+      "primaryAction": "打开世界地图",
+      "href": "/atlas",
+      "objects": ["法则", "石碑", "纸页", "星环"],
+      "motion": "law-glow"
+    },
+    {
+      "match": "/world",
+      "name": "浮屿总览",
+      "realName": "世界化页面集合",
+      "tone": "overview",
+      "primaryAction": "打开星图穹顶",
+      "href": "/atlas",
+      "objects": ["浮屿", "展览", "河流", "灯塔"],
+      "motion": "island-drift"
+    },
+    {
+      "match": "/world-map",
+      "name": "旧图重绘",
+      "realName": "世界地图兼容入口",
+      "tone": "map",
+      "primaryAction": "进入新 Atlas",
+      "href": "/atlas",
+      "objects": ["旧图", "新星图", "坐标"],
+      "motion": "map-rewrite"
+    },
+    {
+      "match": "/time-river",
+      "name": "时间支流",
+      "realName": "时间河兼容入口",
+      "tone": "river",
+      "primaryAction": "进入新 Timeline",
+      "href": "/timeline",
+      "objects": ["支流", "涟漪", "回望"],
+      "motion": "river-flow"
+    },
+    {
+      "match": "/lighthouse",
+      "name": "灯塔旧塔",
+      "realName": "AI 灯塔兼容入口",
+      "tone": "lighthouse",
+      "primaryAction": "进入新 Ask",
+      "href": "/ask",
+      "objects": ["旧塔", "新光束", "边界"],
+      "motion": "lighthouse-sweep"
+    },
+    {
+      "match": "/r4-creator",
+      "name": "创世台",
+      "realName": "主人工作台",
+      "tone": "creator",
+      "primaryAction": "查看服务边界",
+      "href": "/r6-service",
+      "objects": ["收集箱", "节点台", "权限门", "导出箱"],
+      "motion": "workbench-hum"
+    },
+    {
+      "match": "/r6-service",
+      "name": "服务桥",
+      "realName": "最小服务化闭环",
+      "tone": "service",
+      "primaryAction": "查看长期演化",
+      "href": "/r7-evolution",
+      "objects": ["API", "审计", "队列", "导出任务"],
+      "motion": "circuit-orbit"
+    },
+    {
+      "match": "/r7-evolution",
+      "name": "演化花园",
+      "realName": "长期运行与自演化",
+      "tone": "evolution",
+      "primaryAction": "查看公开运营",
+      "href": "/r8-public",
+      "objects": ["四季", "低光", "苏醒", "世界日志"],
+      "motion": "season-cycle"
+    },
+    {
+      "match": "/r8-public",
+      "name": "公开广场",
+      "realName": "发布与持续运营",
+      "tone": "public",
+      "primaryAction": "查看状态",
+      "href": "/status",
+      "objects": ["公告", "反馈", "SEO", "回滚"],
+      "motion": "public-broadcast"
+    },
+    {
+      "match": "/status",
+      "name": "世界状态台",
+      "realName": "公开状态与运行证据",
+      "tone": "status",
+      "primaryAction": "返回入口",
+      "href": "/",
+      "objects": ["心跳", "状态", "证据", "低光"],
+      "motion": "heartbeat"
+    }
+  ],
+  "fallback": {
+    "name": "未命名星域",
+    "realName": "通用世界页面",
+    "tone": "unknown",
+    "primaryAction": "回到入口",
+    "href": "/",
+    "objects": ["雾区", "星尘", "路标"],
+    "motion": "soft-breath"
+  }
+}

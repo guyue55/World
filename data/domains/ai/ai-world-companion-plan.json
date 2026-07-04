@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 AI 世界维护伙伴计划",
+  "stageProgress": "phase-six-ai-collaboration-world-intelligence line batch 3 / 4",
+  "status": "implemented-static-companion-plan",
+  "capabilities": [
+    {
+      "id": "route-recommendation",
+      "title": "路径推荐助手",
+      "sourceTier": [
+        "public",
+        "semiPublic"
+      ],
+      "output": "suggestion-only",
+      "humanRequired": true
+    },
+    {
+      "id": "exhibition-curation",
+      "title": "主题展览策划助手",
+      "sourceTier": [
+        "public",
+        "semiPublic"
+      ],
+      "output": "suggestion-only",
+      "humanRequired": true
+    },
+    {
+      "id": "maintenance-companion",
+      "title": "世界维护提醒助手",
+      "sourceTier": [
+        "public",
+        "semiPublic"
+      ],
+      "output": "reminder-only",
+      "humanRequired": true
+    },
+    {
+      "id": "risk-boundary-watch",
+      "title": "边界风险观察助手",
+      "sourceTier": [
+        "public",
+        "semiPublic"
+      ],
+      "output": "warning-only",
+      "humanRequired": true
+    }
+  ],
+  "maintenanceChecks": [
+    "stale public content",
+    "missing route summaries",
+    "unlinked exhibitions",
+    "release-ready evidence gaps",
+    "privacy boundary reminders",
+    "AI permission drift"
+  ],
+  "rules": [
+    "维护伙伴只给建议、提醒和警告。",
+    "维护伙伴不得直接修改内容。",
+    "维护伙伴不得读取私密档案。",
+    "所有建议必须进入审计队列。"
+  ]
+}

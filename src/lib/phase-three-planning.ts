@@ -1,0 +1,30 @@
+import phaseThreePlanningCharter from '../../data/versions/archive/phase-three-planning-charter.json'
+import phaseThreeArchitectureContract from '../../data/core/phase-three-architecture-contract.json'
+import phaseThreeRoadmap from '../../data/versions/archive/phase-three-roadmap.json'
+import releasePreparationFinalReport from '../../data/release/release-preparation-final-report.json'
+import releaseBlockerRegister from '../../data/release/release-blocker-register.json'
+
+export function getPhaseThreePlanningCharter() {
+  return phaseThreePlanningCharter
+}
+
+export function getPhaseThreeArchitectureContract() {
+  return phaseThreeArchitectureContract
+}
+
+export function getPhaseThreeRoadmap() {
+  return phaseThreeRoadmap
+}
+
+export function getPhaseThreePlanningSummary() {
+  return {
+    stageProgress: phaseThreePlanningCharter.stageProgress,
+    tracks: phaseThreePlanningCharter.tracks.length,
+    goals: phaseThreePlanningCharter.goals.length,
+    nonGoals: phaseThreePlanningCharter.nonGoals.length,
+    architectureLayers: phaseThreeArchitectureContract.layers.length,
+    roadmapBatches: phaseThreeRoadmap.batches.length,
+    releaseDecision: releasePreparationFinalReport.releaseDecision,
+    openBlockers: releaseBlockerRegister.blockers.filter((blocker) => blocker.status !== 'closed').length,
+  }
+}

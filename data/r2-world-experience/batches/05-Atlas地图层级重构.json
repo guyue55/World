@@ -1,0 +1,15 @@
+{
+  "batch": 5,
+  "stage": 2,
+  "title": "Atlas地图层级重构",
+  "status": "complete",
+  "goal": "服务于访问者不是打开网站，而是进入古月浮屿世界。",
+  "deliverables": [
+    "atlas-structure.json",
+    "WorldAtlasGateway.tsx"
+  ],
+  "syntaxLogicCheck": "stage check + lint after stage completion",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

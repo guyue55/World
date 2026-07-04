@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 路径导览质量门槛",
+  "principle": "好的路径要能带人进入世界，而不是只把节点排成列表。",
+  "minimums": {
+    "publicPaths": 5,
+    "audienceKinds": 5,
+    "pathsWithAtLeastFourNodes": 5,
+    "pathsWithEstimatedMinutes": 5,
+    "pathsWithNextOrExit": 5
+  },
+  "requiredComponents": [
+    "PathHero",
+    "PathCard",
+    "PathTabs",
+    "PathDetailHero",
+    "PathNodeSequence",
+    "PathNextSteps",
+    "PathProgress"
+  ],
+  "rules": [
+    "路径必须服务真实访问者类型。",
+    "路径必须有明确起点、过程和出口。",
+    "路径节点必须全部可公开访问。",
+    "路径详情页必须兼容 Next 15 async params。"
+  ]
+}

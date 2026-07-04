@@ -1,0 +1,9 @@
+{
+  "batch": 14,
+  "title": "页面组件与现实模式桥接",
+  "status": "complete",
+  "goal": "服务于真实内容注入、节点生命化和长期可维护的个人数字世界。",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

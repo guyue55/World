@@ -1,0 +1,37 @@
+{
+  "version": "R5",
+  "events": [
+    {
+      "id": "r5-audit-001",
+      "actor": "ai-lighthouse",
+      "action": "read-public-context",
+      "target": "public-context.json",
+      "result": "allowed",
+      "requiresReview": false
+    },
+    {
+      "id": "r5-audit-002",
+      "actor": "ai-lighthouse",
+      "action": "suggest-path",
+      "target": "first-visitor",
+      "result": "allowed-public-only",
+      "requiresReview": false
+    },
+    {
+      "id": "r5-audit-003",
+      "actor": "ai-lighthouse",
+      "action": "suggest-relation",
+      "target": "node-life -> creator-workbench",
+      "result": "queued-for-review",
+      "requiresReview": true
+    },
+    {
+      "id": "r5-audit-004",
+      "actor": "privacy-guard",
+      "action": "scan-output",
+      "target": "public-answer-template",
+      "result": "passed-no-private-leak",
+      "requiresReview": true
+    }
+  ]
+}

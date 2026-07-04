@@ -1,0 +1,54 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段入口门禁",
+  "principle": "第四阶段可以规划，但不能把第三阶段后真实执行缺口误判为已发布完成。",
+  "stageProgress": "pre-phase-four-finalization line batch 2 / 4",
+  "status": "implemented-static-entry-gate",
+  "structureEntryConditions": [
+    {
+      "id": "phase-three-structure-complete",
+      "status": "passed-static"
+    },
+    {
+      "id": "release-candidate-freeze-structure-complete",
+      "status": "passed-static"
+    },
+    {
+      "id": "acceptance-evidence-structure-complete",
+      "status": "passed-static"
+    },
+    {
+      "id": "pre-phase-four-taskboard-exists",
+      "status": "passed-static"
+    }
+  ],
+  "realEvidenceBlockers": [
+    {
+      "id": "real-dry-run",
+      "status": "pending-real-run"
+    },
+    {
+      "id": "real-handoff-manifest",
+      "status": "pending-real-run"
+    },
+    {
+      "id": "real-acceptance-scan",
+      "status": "pending-real-run"
+    },
+    {
+      "id": "manual-signoff",
+      "status": "pending-signoff"
+    },
+    {
+      "id": "blocker-review",
+      "status": "pending-review"
+    }
+  ],
+  "entryDecision": "phase-four-planning-allowed-release-ready-blocked",
+  "rules": [
+    "第四阶段规划允许，但生产发布仍被真实证据阻断。",
+    "第四阶段不得自动继承 release-ready。",
+    "第四阶段 scope 必须单独立项，不得继续混入第三阶段收口任务。",
+    "真实证据阻断项必须在阶段交接中保持可见。"
+  ]
+}

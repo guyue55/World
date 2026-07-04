@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段 AI 灯塔增强路线图",
+  "principle": "AI 只能照亮、解释、建议，不得替代用户决定世界。",
+  "stageProgress": "phase-three-planning line batch 3 / 4",
+  "status": "planned-not-built",
+  "allowedCapabilities": [
+    {
+      "id": "route-recommendation",
+      "title": "导览推荐",
+      "boundary": "只推荐 public 可见路径和节点"
+    },
+    {
+      "id": "node-summary",
+      "title": "节点摘要",
+      "boundary": "只对用户提供或 public 内容生成摘要"
+    },
+    {
+      "id": "exhibition-suggestion",
+      "title": "展览建议",
+      "boundary": "只提出候选，不自动发布"
+    },
+    {
+      "id": "reading-companion",
+      "title": "阅读陪伴",
+      "boundary": "解释结构，不改变正文"
+    },
+    {
+      "id": "maintenance-hint",
+      "title": "维护提示",
+      "boundary": "提示缺陷或过期，不自动修改"
+    }
+  ],
+  "forbiddenCapabilities": [
+    "自动发布内容",
+    "自动删除内容",
+    "自动改变可见性",
+    "读取 private/family/partner/vault/sealed/silent 内容",
+    "绕过 release blockers",
+    "替用户决定世界结构"
+  ],
+  "requiredUserActions": [
+    "确认发布",
+    "确认删除",
+    "确认可见性变化",
+    "确认导出范围",
+    "确认 AI 建议采纳"
+  ],
+  "rules": [
+    "AI 输出必须有来源范围说明。",
+    "AI 建议必须保持可拒绝、可忽略、可回退。",
+    "AI 不得写入 public build，除非用户明确采纳并进入正常内容流程。",
+    "所有 AI 增强先以静态协议模拟，不直接接入私密数据。"
+  ]
+}

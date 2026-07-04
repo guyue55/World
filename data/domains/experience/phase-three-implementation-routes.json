@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第三阶段实现路由登记",
+  "stageProgress": "phase-three-integration line batch 1 / 4",
+  "routes": [
+    {
+      "route": "/exhibitions",
+      "feature": "theme-exhibitions",
+      "status": "static-prototype",
+      "qaStatus": "pending-browser-qa",
+      "navigation": "visible-in-phase-three-panel",
+      "releaseStatus": "static-prototype"
+    },
+    {
+      "route": "/ai-workbench",
+      "feature": "ai-workbench",
+      "status": "static-prototype",
+      "qaStatus": "pending-browser-qa",
+      "navigation": "visible-in-phase-three-panel",
+      "releaseStatus": "static-prototype"
+    },
+    {
+      "route": "/export-center",
+      "feature": "export-center",
+      "status": "static-prototype",
+      "qaStatus": "pending-browser-qa",
+      "navigation": "visible-in-phase-three-panel",
+      "releaseStatus": "static-prototype"
+    }
+  ],
+  "rules": [
+    "qaStatus 只能由真实浏览器 QA 更新。",
+    "static-prototype 不等于 production-ready。",
+    "新增路由不得读取私密内容。"
+  ]
+}

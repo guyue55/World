@@ -1,0 +1,15 @@
+{
+  "stage": "experience-realization",
+  "batch": 2,
+  "totalBatches": 8,
+  "slug": "cosmic-navigation-map",
+  "title": "宇宙导航 / 世界地图",
+  "status": "complete",
+  "progress": "体验兑现线 / 任务 2 / 批次 2/8",
+  "qualityGate": {
+    "jsonValid": true,
+    "typescriptRequired": true,
+    "buildRequired": true,
+    "privacyBoundaryInherited": true
+  }
+}

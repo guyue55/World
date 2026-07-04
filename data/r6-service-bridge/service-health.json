@@ -1,0 +1,13 @@
+{
+  "status": "r6-service-skeleton-ready",
+  "checks": [
+    "api-contracts",
+    "rbac",
+    "storage-ports",
+    "audit-log",
+    "operation-queue",
+    "export-jobs"
+  ],
+  "productionLive": false,
+  "serviceLive": false
+}

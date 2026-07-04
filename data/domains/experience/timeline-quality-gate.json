@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 时间河质量门槛",
+  "principle": "时间河必须证明世界在生长，而不是只显示一串日志。",
+  "minimums": {
+    "publicEvents": 10,
+    "eventTypes": 4,
+    "eventsWithNodeOrAreaLinks": 8,
+    "actors": 2,
+    "requiredComponents": 5
+  },
+  "requiredComponents": [
+    "TimelineHero",
+    "TimelineStats",
+    "TimelineFilters",
+    "TimelineEventStream",
+    "WorldEventCard"
+  ],
+  "rules": [
+    "公开事件不得引用私密节点内容。",
+    "事件必须按日期倒序展示。",
+    "事件过滤状态必须和显示内容同源。",
+    "时间河页面必须有线性、移动端可读体验。"
+  ]
+}

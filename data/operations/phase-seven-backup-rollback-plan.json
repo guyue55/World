@@ -1,0 +1,52 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 备份恢复与回滚预案",
+  "stageProgress": "phase-seven-public-release-long-term-operations line batch 3 / 4",
+  "status": "implemented-static-backup-rollback-plan",
+  "backupTargets": [
+    {
+      "id": "source-code",
+      "title": "源码",
+      "method": "git/private-archive",
+      "frequency": "per-release"
+    },
+    {
+      "id": "content-data",
+      "title": "内容数据",
+      "method": "json-md-export",
+      "frequency": "weekly"
+    },
+    {
+      "id": "docs",
+      "title": "文档",
+      "method": "full-archive",
+      "frequency": "per-stage"
+    },
+    {
+      "id": "release-manifest",
+      "title": "发布清单",
+      "method": "manifest-json",
+      "frequency": "per-release"
+    },
+    {
+      "id": "public-assets",
+      "title": "公开素材",
+      "method": "asset-archive",
+      "frequency": "per-release"
+    }
+  ],
+  "rollbackSteps": [
+    "确认当前线上版本和目标回滚版本。",
+    "读取目标版本 manifest 和 SHA256。",
+    "恢复源码、data、docs、public assets。",
+    "重新执行 lint/typecheck/build/world-core。",
+    "执行 preview smoke 与人工签收。",
+    "记录回滚原因和结果。"
+  ],
+  "rules": [
+    "回滚不能绕过质量门禁。",
+    "回滚后必须记录版本原因。",
+    "私密数据不进入公开备份包。",
+    "release manifest 必须可追溯。"
+  ]
+}

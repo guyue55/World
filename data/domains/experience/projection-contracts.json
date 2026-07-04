@@ -1,0 +1,58 @@
+{
+  "version": "0.1.0",
+  "targets": {
+    "home": {
+      "allowedVisibility": [
+        "public",
+        "semiPublic"
+      ],
+      "requiresSummary": true,
+      "requiresFeatured": true
+    },
+    "atlas": {
+      "allowedVisibility": [
+        "public",
+        "semiPublic"
+      ],
+      "requiresArea": true
+    },
+    "archive": {
+      "allowedVisibility": [
+        "public",
+        "semiPublic"
+      ],
+      "requiresSummary": true
+    },
+    "timeline": {
+      "source": "world-events",
+      "requiresEventDate": true
+    },
+    "path": {
+      "allowedVisibility": [
+        "public",
+        "semiPublic"
+      ],
+      "requiresPathReference": true
+    },
+    "detail": {
+      "allowedVisibility": [
+        "public"
+      ],
+      "requiresSlug": true
+    },
+    "ask": {
+      "allowedVisibility": [
+        "public",
+        "semiPublic"
+      ],
+      "lowLightFallback": true
+    }
+  },
+  "principles": [
+    "投影不能绕过权限。",
+    "首页投影必须来自精选节点。",
+    "时间河投影必须来自 WorldEvent。",
+    "路径投影不得引用不存在的节点。",
+    "Ask 低光投影不得依赖私密内容。"
+  ]
+}

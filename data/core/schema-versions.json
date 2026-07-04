@@ -1,0 +1,52 @@
+{
+  "current": "0.1.0",
+  "compatibleFrom": "0.1.0",
+  "objects": {
+    "worldState": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "area": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "node": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "relation": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "path": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "worldEvent": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "permission": {
+      "version": "0.1.0",
+      "breaking": false
+    },
+    "rule": {
+      "version": "0.1.0",
+      "breaking": false
+    }
+  },
+  "migrationPolicy": {
+    "breakingChangeRequires": [
+      "migration script",
+      "CHANGELOG entry",
+      "snapshot before migration",
+      "schema version bump",
+      "contract test update"
+    ],
+    "nonBreakingChangeAllows": [
+      "optional fields",
+      "new relation types after schema update",
+      "new visibility only after permission rule update"
+    ]
+  }
+}

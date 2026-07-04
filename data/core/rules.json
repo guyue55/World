@@ -1,0 +1,22 @@
+[
+  {
+    "id": "rule-public-summary",
+    "title": "Public 节点必须有摘要",
+    "description": "所有 public 节点必须填写 summary。"
+  },
+  {
+    "id": "rule-ai-review",
+    "title": "AI 未审核不可公开",
+    "description": "ai.generated=true 且 ai.reviewed=false 的节点不可 public。"
+  },
+  {
+    "id": "rule-private-build",
+    "title": "私密内容不进入公开构建",
+    "description": "private / family / partner / vault / sealed / silent 不进入 public build。"
+  },
+  {
+    "id": "rule-search-visibility",
+    "title": "搜索必须受权限限制",
+    "description": "Archive 和 Ask Low Light 只能读取 public / semiPublic 摘要。"
+  }
+]

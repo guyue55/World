@@ -1,0 +1,36 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "adapters": [
+    {
+      "id": "github-adapter",
+      "status": "planned",
+      "purpose": "仓库内容、issues、release evidence",
+      "boundary": "read/write only after explicit approval"
+    },
+    {
+      "id": "google-drive-adapter",
+      "status": "planned",
+      "purpose": "授权资料读取、知识库导入",
+      "boundary": "owner authorized only"
+    },
+    {
+      "id": "object-storage-adapter",
+      "status": "planned",
+      "purpose": "图片、音频、导出包",
+      "boundary": "signed URL, no public-private leak"
+    },
+    {
+      "id": "ai-provider-adapter",
+      "status": "planned",
+      "purpose": "摘要、检索、建议、审计辅助",
+      "boundary": "no vault, no auto publish"
+    },
+    {
+      "id": "search-index-adapter",
+      "status": "planned",
+      "purpose": "公开搜索与私密检索分离",
+      "boundary": "separate public/private indexes"
+    }
+  ]
+}

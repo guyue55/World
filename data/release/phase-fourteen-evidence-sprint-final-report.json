@@ -1,0 +1,56 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十四阶段真实执行证据冲刺线最终报告",
+  "stageProgress": "phase-fourteen-real-execution-evidence-sprint line batch 4 / 4",
+  "decision": "phase-fourteen-evidence-sprint-structure-complete-phase-fifteen-planning-allowed",
+  "releaseDecision": "not-ready-for-release",
+  "productionDecision": "production-not-live",
+  "evidenceDecision": "real-execution-evidence-sprint-structure-ready-real-command-pass-not-complete",
+  "completedBatches": [
+    "execution-sprint-scope-and-blocker-ledger",
+    "evidence-dashboard-and-signoff-preparation",
+    "execution-runner-and-evidence-collector",
+    "phase-fourteen-closure"
+  ],
+  "completedCapabilities": [
+    "phase fourteen execution sprint scope contract",
+    "real execution queue",
+    "real execution blocker ledger",
+    "real execution result summary",
+    "manual signoff preparation checklist",
+    "evidence sprint route",
+    "real execution runner plan",
+    "evidence collector plan",
+    "evidence sprint print script"
+  ],
+  "notCompletedByDesign": [
+    "real npm install success proof",
+    "real lint pass proof",
+    "real typecheck pass proof",
+    "real build pass proof",
+    "real world-core pass proof",
+    "real release-local-gate pass proof",
+    "real evidence-capture pass proof",
+    "manual signoff completion",
+    "release-ready transition"
+  ],
+  "phaseFifteenEntryDecision": "phase-fifteen-planning-allowed-real-command-execution-and-release-candidate-not-started",
+  "mustCarryForward": [
+    "executionQueueReady false",
+    "blockerLedgerReady false",
+    "realExecutionPassed false",
+    "manualSignoffReady false",
+    "runnerReady false",
+    "collectorReady false",
+    "transitionAllowed false",
+    "releaseReady false",
+    "production not live"
+  ],
+  "rules": [
+    "第十四阶段完成的是真实执行证据冲刺结构，不是真实命令全部通过。",
+    "第十五阶段必须进入真实命令执行和 release candidate 准备。",
+    "blocked 与 pending 不能被计为 passed。",
+    "lint/typecheck/build/world-core/release-local-gate 未通过前不得 release-ready。",
+    "人工签收和 blocker review 必须继续保留。"
+  ]
+}

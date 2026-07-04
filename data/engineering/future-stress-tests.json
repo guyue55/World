@@ -1,0 +1,57 @@
+{
+  "version": "0.1.0",
+  "principle": "未来无限发展前，先用压力场景验证骨架不会被冲垮。",
+  "scenarios": [
+    {
+      "id": "add-1000-nodes",
+      "risk": "archive/search load",
+      "expectedGuard": "public index + archive projection"
+    },
+    {
+      "id": "enable-ai-rag",
+      "risk": "AI overreach",
+      "expectedGuard": "ai-boundary + public-only index"
+    },
+    {
+      "id": "add-private-archive",
+      "risk": "privacy leak",
+      "expectedGuard": "visibility boundary + export contract"
+    },
+    {
+      "id": "enable-2.5d-map",
+      "risk": "visual lock-in",
+      "expectedGuard": "spatial protocol + fallback strategy"
+    },
+    {
+      "id": "add-family-memory",
+      "risk": "sensitive content exposure",
+      "expectedGuard": "private visibility + no public build"
+    },
+    {
+      "id": "schema-v2-migration",
+      "risk": "data drift",
+      "expectedGuard": "schema version + snapshot plan"
+    },
+    {
+      "id": "activate-extension-plugin",
+      "risk": "core namespace pollution",
+      "expectedGuard": "extension registry + guardrails"
+    },
+    {
+      "id": "handoff-to-new-developer",
+      "risk": "context loss",
+      "expectedGuard": "developer onboarding + doc registry"
+    },
+    {
+      "id": "long-maintenance-gap",
+      "risk": "stale docs and outdated checks",
+      "expectedGuard": "maintenance calendar + governance ledger"
+    },
+    {
+      "id": "public-site-redesign",
+      "risk": "projection bypass",
+      "expectedGuard": "route manifest + projection contracts"
+    }
+  ],
+  "minimumScenarioCount": 10
+}

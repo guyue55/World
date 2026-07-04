@@ -1,0 +1,27 @@
+{
+  "id": "v10-stage-01",
+  "stage": 1,
+  "title": "长期智能世界内核与记忆连续性",
+  "batches": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "focus": [
+    "智能世界范围契约",
+    "长期记忆生命周期",
+    "连续性档案",
+    "AI 角色边界"
+  ],
+  "version": "V10",
+  "status": "complete",
+  "productionLive": false,
+  "serviceLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "extensionDecision": {
+    "needExpansion": true,
+    "decision": "保留长期智能世界的扩展槽，但所有自动化必须保持人工签收与可审计。"
+  }
+}

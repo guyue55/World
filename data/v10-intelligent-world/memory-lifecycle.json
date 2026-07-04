@@ -1,0 +1,42 @@
+{
+  "version": "V10",
+  "lifeStages": [
+    "seed",
+    "sprout",
+    "growing",
+    "bloom",
+    "fruit",
+    "archive",
+    "relic",
+    "dormant",
+    "silent"
+  ],
+  "rules": [
+    {
+      "from": "seed",
+      "to": "sprout",
+      "condition": "补充摘要或关联至少一个主题"
+    },
+    {
+      "from": "growing",
+      "to": "bloom",
+      "condition": "形成公开版、路径或年度册候选"
+    },
+    {
+      "from": "archive",
+      "to": "relic",
+      "condition": "长期不活跃但保留历史价值"
+    },
+    {
+      "from": "dormant",
+      "to": "growing",
+      "condition": "人工唤醒或世界回望日重新确认"
+    }
+  ],
+  "defaultPrivacy": {
+    "photo": "private",
+    "family": "vault",
+    "technical": "semi-public",
+    "ai-generated": "draft"
+  }
+}

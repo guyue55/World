@@ -1,0 +1,15 @@
+{
+  "stage": 3,
+  "title": "维护闭环、审计日志与导出备份",
+  "focus": "把维护任务、轻仪式、审计日志、导出计划、备份策略和危险操作确认串成创世台闭环。",
+  "batches": [
+    9,
+    10,
+    11,
+    12
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false
+}

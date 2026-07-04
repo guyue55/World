@@ -1,0 +1,21 @@
+{
+  "stage": 2,
+  "title": "路径推荐、节点摘要与关系建议",
+  "focus": "让 AI 能解释世界、推荐路径、生成建议但不直接修改",
+  "batches": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "status": "complete",
+  "productionLive": false,
+  "releaseReady": false,
+  "cleanProductionReady": false,
+  "evidence": [
+    "data落库",
+    "feature落库",
+    "component落库",
+    "page/docs/scripts落库"
+  ]
+}

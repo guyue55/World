@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第十二阶段平台化治理与真实服务边界范围契约",
+  "principle": "第十二阶段把古月浮屿从个人项目结构推进到可治理的平台边界，但不伪造真实服务上线。",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 1 / 4",
+  "status": "implemented-static-platform-scope",
+  "focus": [
+    "real platformization",
+    "permission and role governance",
+    "service boundary design",
+    "team collaboration workflow",
+    "audit log and compliance",
+    "real storage and secret management",
+    "governance dashboard",
+    "long-term sustainability"
+  ],
+  "nonGoals": [
+    "bypass human approval",
+    "skip evidence record",
+    "store secrets in repository",
+    "expose private content",
+    "claim runtimeReady without real execution",
+    "claim production live without deployment evidence"
+  ],
+  "entryGuards": [
+    "phase eleven completed",
+    "runtimeReady remains false until real execution",
+    "production remains not live",
+    "private tiers remain excluded",
+    "all service boundaries must be auditable"
+  ],
+  "rules": [
+    "第十二阶段必须以平台化治理和真实服务边界为中心。",
+    "权限、角色、审计、密钥和存储必须先设计边界。",
+    "团队协作不得绕过私密边界和人工审批。",
+    "所有真实服务化能力必须具备审计记录和回滚策略。",
+    "本阶段不声明真实服务已上线。"
+  ]
+}

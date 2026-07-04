@@ -1,0 +1,60 @@
+{
+  "version": "0.1.0",
+  "principle": "世界可以生长，但每次生长都必须留下理由、事件和可回退路径。",
+  "changeTypes": [
+    {
+      "id": "minor-content",
+      "requiresSnapshot": false,
+      "requiresWorldEvent": false,
+      "requiresReview": false
+    },
+    {
+      "id": "node-publication",
+      "requiresSnapshot": false,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    },
+    {
+      "id": "relation-core-change",
+      "requiresSnapshot": false,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    },
+    {
+      "id": "visibility-policy-change",
+      "requiresSnapshot": true,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    },
+    {
+      "id": "schema-breaking-change",
+      "requiresSnapshot": true,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    },
+    {
+      "id": "private-structure-change",
+      "requiresSnapshot": true,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    },
+    {
+      "id": "ai-boundary-change",
+      "requiresSnapshot": true,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    },
+    {
+      "id": "future-extension-activation",
+      "requiresSnapshot": true,
+      "requiresWorldEvent": true,
+      "requiresReview": true
+    }
+  ],
+  "rules": [
+    "重大变化前必须生成 snapshot plan。",
+    "影响可见性、AI、私密层、schema 的变化必须进入 WorldEvent。",
+    "future extension 从 reserved 到 active 必须通过扩展检查。",
+    "任何变化都不应破坏 check:world-core。"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "version": "2.1.0",
+  "name": "V2 到 V3 前最终入口门禁",
+  "stageProgress": "V2.1 / 第 4 批 / 共 4 批",
+  "status": "v2-to-v3-structural-completion",
+  "completedBatches": 4,
+  "completedCapabilities": [
+    "typed V2 service domain",
+    "RBAC permission guard",
+    "audit recorder",
+    "in-memory repository adapter",
+    "safe API response helpers",
+    "content API",
+    "vault API",
+    "audit API",
+    "AI suggestion API",
+    "export job API",
+    "V2.1 service console",
+    "V3 entry gate"
+  ],
+  "v2BeforeV3Status": "structure-and-local-service-skeleton-complete",
+  "v3PlanningAllowed": true,
+  "v3DevelopmentRecommended": false,
+  "productionLive": false,
+  "releaseReady": false,
+  "externalRealWorkStillRequired": [
+    "replace in-memory repository with real database",
+    "connect real auth provider",
+    "persist audit events",
+    "encrypt private vault payloads",
+    "connect real AI provider server side",
+    "deploy staging environment",
+    "run full lint typecheck build",
+    "run API integration tests",
+    "complete manual security review"
+  ],
+  "rules": [
+    "V3 可以开始规划，但正式开发前仍建议完成 V2.1 真实数据库/认证/部署。",
+    "V2.1 本轮完成的是本地服务骨架与入口门禁。",
+    "不能把内存仓储声明为真实生产数据库。",
+    "不能把 productionLive 标为 true。"
+  ]
+}

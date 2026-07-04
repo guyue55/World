@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 发布干跑与交接就绪矩阵",
+  "stageProgress": "release-dry-run-handoff line batch 4 / 4",
+  "status": "handoff-structure-ready-real-dry-run-pending",
+  "items": [
+    {
+      "id": "dry-run-contract",
+      "status": "ready",
+      "evidence": "data/release/release-dry-run-contract.json"
+    },
+    {
+      "id": "handoff-manifest",
+      "status": "ready",
+      "evidence": "data/release/release-handoff-package-contract.json"
+    },
+    {
+      "id": "rollback-plan",
+      "status": "ready",
+      "evidence": "data/release/release-rollback-contract.json"
+    },
+    {
+      "id": "real-dry-run",
+      "status": "pending-real-run",
+      "evidence": "reports/release-dry-run-summary.json"
+    },
+    {
+      "id": "handoff-generated",
+      "status": "pending-real-run",
+      "evidence": "reports/release-handoff-manifest.json"
+    },
+    {
+      "id": "release-ready",
+      "status": "blocked",
+      "evidence": "data/release/release-ready-evidence-matrix.json"
+    }
+  ],
+  "rules": [
+    "ready 表示结构存在，不表示真实通过。",
+    "pending-real-run 必须由真实 reports 更新。",
+    "blocked 不得被收口自动关闭。"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 团队协作治理工作流",
+  "stageProgress": "phase-twelve-platform-governance-service-boundary line batch 3 / 4",
+  "status": "team-collaboration-workflow-prepared",
+  "teamReady": false,
+  "workflows": [
+    {
+      "id": "content-review",
+      "title": "内容评审",
+      "requiresApproval": true,
+      "privateSafe": true
+    },
+    {
+      "id": "design-review",
+      "title": "视觉评审",
+      "requiresApproval": true,
+      "privateSafe": true
+    },
+    {
+      "id": "engineering-change",
+      "title": "工程变更",
+      "requiresApproval": true,
+      "privateSafe": true
+    },
+    {
+      "id": "release-review",
+      "title": "发布评审",
+      "requiresApproval": true,
+      "privateSafe": true
+    },
+    {
+      "id": "incident-review",
+      "title": "事件复盘",
+      "requiresApproval": true,
+      "privateSafe": true
+    },
+    {
+      "id": "governance-review",
+      "title": "治理复盘",
+      "requiresApproval": true,
+      "privateSafe": true
+    }
+  ],
+  "rules": [
+    "teamReady=false 必须保持，直到真实团队协作系统实现。",
+    "团队协作不得绕过 owner 审批。",
+    "团队成员不得默认访问私密档案。",
+    "所有协作流必须 privateSafe=true。"
+  ]
+}

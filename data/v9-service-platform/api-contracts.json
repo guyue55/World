@@ -1,0 +1,58 @@
+{
+  "version": "V9",
+  "serviceLive": false,
+  "contracts": [
+    {
+      "id": "service-health",
+      "method": "GET",
+      "path": "/api/v9/service-health",
+      "visibility": "public-safe",
+      "returns": [
+        "version",
+        "serviceLive",
+        "releaseReady",
+        "checks"
+      ]
+    },
+    {
+      "id": "node-service",
+      "method": "future",
+      "path": "/api/v9/nodes",
+      "visibility": "owner-gated",
+      "returns": [
+        "redacted node list"
+      ],
+      "writePolicy": "manual-reviewed"
+    },
+    {
+      "id": "audit-service",
+      "method": "future",
+      "path": "/api/v9/audit-events",
+      "visibility": "operator-gated",
+      "returns": [
+        "audit event summary"
+      ],
+      "writePolicy": "append-only"
+    },
+    {
+      "id": "export-service",
+      "method": "future",
+      "path": "/api/v9/exports",
+      "visibility": "owner-gated",
+      "returns": [
+        "export job status"
+      ],
+      "writePolicy": "manual-reviewed"
+    },
+    {
+      "id": "ai-draft-service",
+      "method": "future",
+      "path": "/api/v9/ai-drafts",
+      "visibility": "owner-gated",
+      "returns": [
+        "draft suggestions"
+      ],
+      "writePolicy": "never-auto-publish"
+    }
+  ]
+}

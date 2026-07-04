@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 状态中心与骨架页质量门槛",
+  "principle": "状态中心要降低复杂度，而不是把复杂度原样交给访问者。",
+  "minimums": {
+    "statusGroups": 4,
+    "summaryCards": 4,
+    "skeletonLayers": 7,
+    "requiredComponents": 6,
+    "stageStatusNotComplete": 1
+  },
+  "requiredComponents": [
+    "StatusHero",
+    "StatusSummaryGrid",
+    "StatusPanelGroup",
+    "StatusSectionNav",
+    "SkeletonHero",
+    "SkeletonLayerSummary"
+  ],
+  "rules": [
+    "状态页和骨架页必须保留低噪音入口。",
+    "重型面板必须默认收起或分组收起。",
+    "第一阶段完成状态不得在第二阶段体验开发中被改写。",
+    "组件必须拆分到 features/status-skeleton 或等价模块。"
+  ]
+}

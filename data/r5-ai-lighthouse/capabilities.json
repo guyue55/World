@@ -1,0 +1,70 @@
+{
+  "version": "R5",
+  "capabilities": [
+    {
+      "id": "public-qa",
+      "name": "公开问答",
+      "description": "基于 public-context 与公开节点回答访客问题。",
+      "canRead": [
+        "public-context",
+        "public-nodes"
+      ],
+      "requiresReview": false,
+      "canMutateWorld": false
+    },
+    {
+      "id": "path-recommendation",
+      "name": "路径推荐",
+      "description": "根据访客意图推荐公开探索路径。",
+      "canRead": [
+        "public-paths",
+        "public-nodes"
+      ],
+      "requiresReview": false,
+      "canMutateWorld": false
+    },
+    {
+      "id": "node-summary",
+      "name": "节点摘要建议",
+      "description": "为公开节点生成摘要草案，进入人工审批。",
+      "canRead": [
+        "public-nodes"
+      ],
+      "requiresReview": true,
+      "canMutateWorld": false
+    },
+    {
+      "id": "relation-suggestion",
+      "name": "关系建议",
+      "description": "建议节点之间的关系和关系说明，进入人工审批。",
+      "canRead": [
+        "public-nodes",
+        "redacted-index"
+      ],
+      "requiresReview": true,
+      "canMutateWorld": false
+    },
+    {
+      "id": "privacy-guard",
+      "name": "隐私守门",
+      "description": "扫描输出是否包含私密、vault、家庭、孩子、住宅或未授权内容。",
+      "canRead": [
+        "policy",
+        "redacted-index"
+      ],
+      "requiresReview": true,
+      "canMutateWorld": false
+    }
+  ],
+  "forbiddenActions": [
+    "read-vault-content",
+    "read-private-raw-content",
+    "auto-publish",
+    "auto-delete",
+    "overwrite-original",
+    "change-visibility",
+    "bypass-review",
+    "invent-private-facts",
+    "treat-inference-as-fact"
+  ]
+}

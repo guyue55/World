@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "principle": "重大架构判断必须留下决策记录，而不是散落在聊天和代码里。",
+  "records": [
+    {
+      "id": "ADR-0001",
+      "title": "采用静态优先与协议先行",
+      "status": "accepted",
+      "path": "docs/09-adr/ADR-0001-static-first-protocol-first.md"
+    },
+    {
+      "id": "ADR-0002",
+      "title": "V1 不采用 3D 元宇宙作为核心入口",
+      "status": "accepted",
+      "path": "docs/09-adr/ADR-0002-no-3d-core-in-v1.md"
+    },
+    {
+      "id": "ADR-0003",
+      "title": "AI 是灯塔而不是太阳",
+      "status": "accepted",
+      "path": "docs/09-adr/ADR-0003-ai-as-lighthouse.md"
+    },
+    {
+      "id": "ADR-0004",
+      "title": "公开层与私密层构建隔离",
+      "status": "accepted",
+      "path": "docs/09-adr/ADR-0004-public-private-build-separation.md"
+    },
+    {
+      "id": "ADR-0005",
+      "title": "世界对象采用 Markdown + JSON 协议",
+      "status": "accepted",
+      "path": "docs/09-adr/ADR-0005-markdown-json-world-protocol.md"
+    },
+    {
+      "id": "ADR-0006",
+      "title": "未来扩展通过注册点进入世界",
+      "status": "accepted",
+      "path": "docs/09-adr/ADR-0006-extension-registry.md"
+    }
+  ],
+  "requiredFor": [
+    "schema breaking change",
+    "visibility policy change",
+    "AI boundary change",
+    "extension point activation",
+    "public/private build behavior change",
+    "kernel check weakening"
+  ]
+}

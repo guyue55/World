@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 第四阶段真实内容生长与运营范围契约",
+  "principle": "第四阶段从真实内容开始，不再以继续堆门禁结构代替世界生长。",
+  "stageProgress": "phase-four-content-growth-operations line batch 1 / 4",
+  "status": "implemented-static-scope-contract",
+  "focus": [
+    "real articles",
+    "real columns",
+    "real exhibitions",
+    "real timeline events",
+    "real reading paths",
+    "content operations rhythm",
+    "public world freshness"
+  ],
+  "nonGoals": [
+    "private vault implementation",
+    "family archive implementation",
+    "AI autonomous publishing",
+    "backend CMS",
+    "automatic release-ready flip",
+    "phase-five inheritance systems"
+  ],
+  "entryGuards": [
+    "release-ready remains not-ready",
+    "private/public boundary remains enforced",
+    "AI remains lighthouse, not autonomous operator",
+    "new content must have visibility",
+    "phase-five features only prepare handoff, not implement"
+  ],
+  "deliverables": [
+    "phase-four content program",
+    "real content seed catalog",
+    "operations rhythm board",
+    "phase-five handoff preparation",
+    "phase-four closure report"
+  ],
+  "rules": [
+    "第四阶段可以新增真实内容和运营页面。",
+    "第四阶段不得实现私密档案系统。",
+    "所有真实内容必须保留 visibility。",
+    "AI 建议仍需人工确认。",
+    "release-ready 缺口必须继续显式保留。"
+  ]
+}

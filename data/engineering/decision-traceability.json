@@ -1,0 +1,62 @@
+{
+  "version": "0.1.0",
+  "name": "古月浮屿 V1 决策可追溯性",
+  "principle": "关键决策必须能追溯到原因、证据和影响范围。",
+  "decisions": [
+    {
+      "id": "ADR-001",
+      "decision": "V1 坚持静态优先和协议先行",
+      "reason": "降低复杂度，保证个人世界可长期迁移",
+      "impact": [
+        "architecture",
+        "deployment",
+        "content"
+      ]
+    },
+    {
+      "id": "ADR-002",
+      "decision": "V1 不引入完整 3D/WebXR/RAG",
+      "reason": "先让世界站起来，再扩展沉浸体验",
+      "impact": [
+        "performance",
+        "scope",
+        "roadmap"
+      ]
+    },
+    {
+      "id": "ADR-003",
+      "decision": "公开层不是完整世界",
+      "reason": "保护私密、家庭、伴侣、vault 等内容边界",
+      "impact": [
+        "privacy",
+        "projection",
+        "AI"
+      ]
+    },
+    {
+      "id": "ADR-004",
+      "decision": "AI 是灯塔，不是太阳",
+      "reason": "AI 只能解释和辅助，不能替代作者选择",
+      "impact": [
+        "AI",
+        "content",
+        "governance"
+      ]
+    },
+    {
+      "id": "ADR-005",
+      "decision": "阶段完成必须由真实证据推动",
+      "reason": "避免静态构造误判为真实完成",
+      "impact": [
+        "release",
+        "QA",
+        "governance"
+      ]
+    }
+  ],
+  "rules": [
+    "影响协议、边界、性能、发布的变更必须补决策记录。",
+    "决策记录必须说明 reason 和 impact。",
+    "废弃决策必须保留历史，不直接删除。"
+  ]
+}
