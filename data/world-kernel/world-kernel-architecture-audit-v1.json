@@ -1,0 +1,365 @@
+{
+  "auditVersion": "1.0.0",
+  "generatedAt": "2026-07-04T00:41:59.347Z",
+  "baseline": {
+    "sourcePackage": "word-life_productization_journey_paths_v1_full-package.zip",
+    "workspace": "/mnt/data/worldos_kernel_work",
+    "baselineCommitMessage": "chore(base): 导入产品化旅程基线",
+    "reason": "产品化主入口、旅程路径、路由守门和发布门禁已经完成，本轮起不再继续扩展 R8.x/V/R 阶段线。"
+  },
+  "freezeStatus": "active",
+  "statistics": {
+    "files": {
+      "app": 114,
+      "components": 439,
+      "features": 197,
+      "lib": 157,
+      "data": 1048,
+      "scripts": 745,
+      "docs": 855
+    },
+    "appRouteFiles": 81,
+    "stageRouteFiles": 49,
+    "scripts": 737,
+    "checkScripts": 545,
+    "stageCheckScripts": 454,
+    "r8Components": 64,
+    "r8DataFiles": 51,
+    "r8Scripts": 27,
+    "publicRouteTokenCount": 33
+  },
+  "topDirectories": {
+    "components": {
+      "acceptance": 13,
+      "ai-workbench": 7,
+      "archive": 4,
+      "ask": 1,
+      "asset-library": 3,
+      "atlas": 4,
+      "common": 6,
+      "constellation": 6,
+      "content-ecosystem": 7,
+      "content-ingestion": 3,
+      "evidence": 6,
+      "evidence-sprint": 5,
+      "exhibitions": 2,
+      "experience": 5,
+      "export-center": 2,
+      "governance": 7,
+      "hardening": 8,
+      "home": 5,
+      "intelligent-ops": 7,
+      "interaction": 2,
+      "layout": 2,
+      "lighthouse": 11,
+      "memory-graph": 2,
+      "navigation": 2,
+      "node": 8,
+      "observability": 1,
+      "operator": 8,
+      "paths": 7,
+      "phase-four": 5,
+      "phase-three": 8,
+      "phase-three-entry": 3,
+      "private-ai-v6": 5,
+      "private-archive": 6,
+      "product": 4,
+      "production": 8,
+      "production-readiness": 1,
+      "r1-production": 5,
+      "r2-world-entry": 10,
+      "r3-content-life": 8,
+      "r4-creator-workbench": 7,
+      "r5-ai-lighthouse": 7,
+      "r6-service-bridge": 4,
+      "r7-world-evolution": 5,
+      "r8-civilization-universe": 7,
+      "r8-complete-universe": 5,
+      "r8-deep-dynamic-world": 11,
+      "r8-dynamic-world": 10,
+      "r8-full-dynamic-world": 6,
+      "r8-interactive-universe": 6,
+      "r8-living-universe": 5,
+      "r8-public-operations": 5,
+      "r8-scene-universe": 4,
+      "r8-sensory-universe": 5,
+      "reading": 2,
+      "real-content": 11,
+      "release": 7,
+      "service-adapters": 1,
+      "status-skeleton": 7,
+      "theme": 4,
+      "time-river": 4,
+      "timeline": 5,
+      "v10-intelligence": 6,
+      "v4": 1,
+      "v5": 1,
+      "v6": 1,
+      "v7-release": 7,
+      "v8-production": 6,
+      "v9-platform": 6,
+      "visual": 9,
+      "world": 50,
+      "world-map": 7,
+      "worldification": 10
+    },
+    "features": {
+      "ai-lighthouse-workbench": 5,
+      "ai-safety": 4,
+      "ai-service-contract": 3,
+      "ai-workflow": 3,
+      "asset-library": 5,
+      "content-constellation": 6,
+      "content-governance": 4,
+      "content-ingestion": 3,
+      "content-taxonomy": 3,
+      "experience-realization": 3,
+      "intelligent-world-v3": 5,
+      "memory-graph": 5,
+      "observability": 3,
+      "platform-v2": 5,
+      "platform-v2-1": 1,
+      "pre-v4-gate": 1,
+      "private-ai-v6": 2,
+      "private-archive-v6": 2,
+      "production-readiness": 3,
+      "r1-production-stabilization": 4,
+      "r2-world-experience": 4,
+      "r3-content-life": 4,
+      "r4-creator-workbench": 4,
+      "r5-ai-lighthouse": 4,
+      "r6-service-bridge": 4,
+      "r7-world-evolution": 5,
+      "r8-deep-dynamic-world": 3,
+      "r8-dynamic-world": 3,
+      "r8-public-operations": 5,
+      "README.md": 1,
+      "real-content-v5": 6,
+      "service-adapters": 3,
+      "theme-system": 6,
+      "time-river": 4,
+      "v10-intelligent-world": 4,
+      "v3-concept": 6,
+      "v4-collaboration": 2,
+      "v4-entry": 1,
+      "v4-governance": 2,
+      "v4-plugin-ecosystem": 2,
+      "v4-publishing-network": 2,
+      "v4-universe-workbench": 2,
+      "v5-agent-orchestration": 2,
+      "v5-entry": 1,
+      "v5-federation": 2,
+      "v5-observability": 2,
+      "v5-plugin-market": 2,
+      "v5-world-migration": 2,
+      "v6-agent-society": 2,
+      "v6-civilization-os": 2,
+      "v6-entry": 1,
+      "v6-governance": 1,
+      "v6-memory-graph": 2,
+      "v6-open-protocol": 2,
+      "v6-shared-universe": 2,
+      "v6-world-network": 2,
+      "v7-release-ops": 4,
+      "v8-production-ops": 4,
+      "v9-service-platform": 4,
+      "visual-foundation": 5,
+      "world-map-experience": 5,
+      "worldification-v4": 3
+    },
+    "data": {
+      "_data-structure-registry.json": 1,
+      "ai-lighthouse": 5,
+      "assets": 3,
+      "content": 2,
+      "content-graph": 1,
+      "core": 68,
+      "domains": 106,
+      "engineering": 35,
+      "experience": 10,
+      "memory-graph": 1,
+      "observability": 1,
+      "operations": 11,
+      "pre-v4": 12,
+      "production": 7,
+      "r1-production-stabilization": 26,
+      "r2-world-experience": 34,
+      "r3-content-life": 30,
+      "r4-creator-workbench": 30,
+      "r5-ai-lighthouse": 28,
+      "r6-service-bridge": 30,
+      "r7-world-evolution": 34,
+      "r8-civilization-universe": 1,
+      "r8-complete-universe": 3,
+      "r8-deep-dynamic-world": 2,
+      "r8-dynamic-world": 2,
+      "r8-full-dynamic-world": 3,
+      "r8-interactive-universe": 1,
+      "r8-living-universe": 2,
+      "r8-public-operations": 34,
+      "r8-scene-universe": 1,
+      "r8-sensory-universe": 2,
+      "README.md": 1,
+      "release": 124,
+      "round-01": 1,
+      "round-02": 31,
+      "round-03": 30,
+      "round-06": 1,
+      "service-adapters": 1,
+      "theme-system": 1,
+      "time-river": 1,
+      "v10-intelligent-world": 31,
+      "v2": 23,
+      "v2-1": 5,
+      "v3": 22,
+      "v3-concept": 8,
+      "v4": 30,
+      "v4-worldification": 19,
+      "v5": 27,
+      "v5-real-content": 19,
+      "v6": 29,
+      "v6-private-ai": 7,
+      "v6-private-archive": 5,
+      "v7-release-ops": 29,
+      "v8-production-ops": 31,
+      "v9-service-platform": 32,
+      "versions": 12,
+      "world-kernel": 2
+    }
+  },
+  "findings": [
+    {
+      "id": "kernel-001",
+      "severity": "critical",
+      "area": "Baseline",
+      "title": "必须停止继续扩展 R/V 阶段线",
+      "evidence": "src/app 中发现 49 个阶段/治理/生产类路由文件；scripts 中发现 454 个阶段类 check 脚本。",
+      "decision": "冻结功能扩张，后续只允许审计、收束、修复和真实发布证据工作。",
+      "action": "Keep product routes; archive stage routes behind middleware; do not add R8.10/V11."
+    },
+    {
+      "id": "kernel-002",
+      "severity": "high",
+      "area": "Runtime",
+      "title": "R8 动态宇宙运行层存在多代重复实现",
+      "evidence": "发现 64 个 r8 组件文件、51 个 r8 数据文件、27 个 r8 运行/检查脚本。",
+      "decision": "保留产品化 WorldShell + Product* 为公开入口；R8 动态系列降级为 legacy/reference。",
+      "action": "Merge only validated runtime ideas into a future single World Runtime; do not expose R8 components in product routes."
+    },
+    {
+      "id": "kernel-003",
+      "severity": "high",
+      "area": "Routes",
+      "title": "公开路由应由单一 World Kernel Route Decision 控制",
+      "evidence": "middleware 已改为读取 getWorldKernelRouteDecision；product-routes 继续作为 route registry。",
+      "decision": "服务端路由边界优先于前端显隐，私密和内部路由统一 redirect/guard。",
+      "action": "Keep src/lib/world-kernel-boundary.ts as route boundary facade."
+    },
+    {
+      "id": "kernel-004",
+      "severity": "medium",
+      "area": "Scripts",
+      "title": "检查脚本数量已经进入治理期",
+      "evidence": "package.json 当前声明 737 个 scripts，其中 check:* 545 个。",
+      "decision": "短期保留历史 checks，新增 check:world-kernel-audit 作为收束门禁；中期合并为 check:core/check:runtime/check:release/check:legacy。",
+      "action": "Add audit gate first; avoid breaking historical checks in this round."
+    },
+    {
+      "id": "kernel-005",
+      "severity": "medium",
+      "area": "Production",
+      "title": "productionLive 仍不能声明为 true",
+      "evidence": "当前包只能验证本地 product gates 与 build artifacts，缺真实 Preview/Production URL、线上 smoke、人工签收和回滚演练。",
+      "decision": "所有交付继续标记 productionLive=false，直到真实环境证据补齐。",
+      "action": "Next phase should perform preview deployment evidence, not more feature work."
+    }
+  ],
+  "decisionMatrix": [
+    {
+      "category": "Core Model",
+      "keep": [
+        "src/lib/types.ts",
+        "src/lib/world-core.ts",
+        "data/domains/experience/*.json"
+      ],
+      "merge": [
+        "分散在 v/r 阶段的 Node/Area/Relation 衍生字段"
+      ],
+      "archive": [
+        "只服务阶段页的 v*/r* data definitions"
+      ],
+      "deleteLater": [
+        "重复且无公开入口引用的旧实验模型"
+      ]
+    },
+    {
+      "category": "Runtime",
+      "keep": [
+        "ProductBackdrop",
+        "ProductJourneyDock",
+        "ProductRouteGuide",
+        "WorldShell"
+      ],
+      "merge": [
+        "R8 Dynamic/Living/Complete/Interactive/Civilization 中被验证有效的交互思路"
+      ],
+      "archive": [
+        "src/components/r8-*",
+        "data/r8-*",
+        "scripts/check-r8-*"
+      ],
+      "deleteLater": [
+        "未被页面引用的重复 runtime widgets"
+      ]
+    },
+    {
+      "category": "Routes",
+      "keep": [
+        "/",
+        "/atlas",
+        "/timeline",
+        "/archive",
+        "/paths",
+        "/ask",
+        "/manifesto",
+        "/status",
+        "/node/:slug",
+        "/paths/:id"
+      ],
+      "merge": [
+        "world/world-map/time-river/lighthouse legacy redirects"
+      ],
+      "archive": [
+        "v*/r*/phase*/evidence/governance/production/release routes"
+      ],
+      "deleteLater": [
+        "无文档、无导航、无测试覆盖的阶段页"
+      ]
+    },
+    {
+      "category": "Scripts",
+      "keep": [
+        "check:product-release",
+        "check:world-kernel-audit",
+        "lint",
+        "typecheck",
+        "build:verify-artifacts"
+      ],
+      "merge": [
+        "stage/round/r/v checks into check:legacy"
+      ],
+      "archive": [
+        "历史阶段批次检查脚本"
+      ],
+      "deleteLater": [
+        "重复验证同一文件存在性的阶段脚本"
+      ]
+    }
+  ],
+  "nextActions": [
+    "不要继续新增 R8.10/V11。",
+    "先把 product route、world core、public index、route guard、checks 合并为更少的核心门禁。",
+    "为真实 Preview/Production 准备部署证据，而不是继续增加概念组件。",
+    "所有私密/内部路由继续由 middleware 和 route policy 服务端守门。"
+  ]
+}

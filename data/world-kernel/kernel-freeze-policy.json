@@ -1,0 +1,60 @@
+{
+  "policyVersion": "1.0.0",
+  "name": "World Kernel 功能冻结与唯一基线策略",
+  "status": "active",
+  "baseline": {
+    "sourcePackage": "word-life_productization_journey_paths_v1_full-package.zip",
+    "workspace": "/mnt/data/worldos_kernel_work",
+    "baselineCommitMessage": "chore(base): 导入产品化旅程基线",
+    "reason": "产品化主入口、旅程路径、路由守门和发布门禁已经完成，本轮起不再继续扩展 R8.x/V/R 阶段线。"
+  },
+  "corePrinciples": [
+    "冻结功能扩张，优先收束内核。",
+    "公开世界只暴露可理解、可返回、可审计的产品路径。",
+    "私密、家庭、vault、内部治理和阶段页由服务端路由守门，前端只做显隐体现。",
+    "AI 是灯塔，不是太阳；AI 建议必须可审计、可拒绝、可撤销。",
+    "世界语言必须有现实解释，不能牺牲可用性。"
+  ],
+  "allowedWorkClasses": [
+    "architecture-audit",
+    "kernel-consolidation",
+    "route-boundary-hardening",
+    "script-consolidation",
+    "production-evidence",
+    "bug-fix",
+    "accessibility-fix",
+    "security-fix",
+    "documentation-of-current-state"
+  ],
+  "blockedWorkClasses": [
+    "new-r8-line",
+    "new-v-line",
+    "new-major-world-concept",
+    "new-dynamic-universe-runtime",
+    "new-public-stage-page",
+    "new-build-wrapper-without-root-cause",
+    "frontend-only-permission-enforcement"
+  ],
+  "canonicalPublicRoutes": [
+    "/",
+    "/atlas",
+    "/timeline",
+    "/archive",
+    "/paths",
+    "/ask",
+    "/manifesto",
+    "/status",
+    "/node/:slug",
+    "/paths/:id"
+  ],
+  "guardedRouteClasses": {
+    "legacyRedirect": "旧世界入口、旧灯塔、旧时间河等只重定向到产品路径。",
+    "private": "私密档案、创世台、服务桥、自演化控制台、AI 工作台只允许受控入口。",
+    "internal": "V/R/phase/evidence/governance/production/release 等阶段页不直接作为公开产品路由。"
+  },
+  "nextStep": {
+    "name": "World Kernel Architecture Audit v1",
+    "goal": "识别 Core Model、Runtime、Presentation、Routes、Scripts、Production Pipeline 的重复抽象与收束动作。",
+    "completionStandard": "输出审计报告、决策矩阵、门禁脚本，并在轻量内核边界层中统一路由决策。"
+  }
+}

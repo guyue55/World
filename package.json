@@ -738,7 +738,9 @@
     "check:r8-scene-universe:boundary": "tsx scripts/check-r8-scene-universe-boundary.ts",
     "check:r8-civilization-universe:all": "tsx scripts/check-r8-civilization-universe-all.ts",
     "check:r8-civilization-universe:boundary": "tsx scripts/check-r8-civilization-universe-boundary.ts",
-    "check:product-release": "tsx scripts/check-product-release.ts"
+    "check:product-release": "tsx scripts/check-product-release.ts && node scripts/check-world-kernel-audit.mjs",
+    "audit:world-kernel": "node scripts/audit-world-kernel.mjs",
+    "check:world-kernel-audit": "node scripts/check-world-kernel-audit.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

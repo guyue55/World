@@ -5,6 +5,7 @@ import {
   PRODUCT_PRIVATE_ROUTES,
   PRODUCT_PUBLIC_ROUTES,
 } from '../src/lib/product-routes'
+import { WORLD_KERNEL_ROUTE_POLICY } from '../src/lib/world-kernel-boundary'
 
 const root = process.cwd()
 const read = (file: string) => fs.readFileSync(path.join(root, file), 'utf-8')
@@ -24,6 +25,7 @@ const productFiles = [
   'src/app/sitemap.ts',
   'src/app/robots.ts',
   'middleware.ts',
+  'src/lib/world-kernel-boundary.ts',
   'src/components/product/ProductJourneyDock.tsx',
 ]
 
@@ -108,12 +110,14 @@ for (const route of PRODUCT_PRIVATE_ROUTES) {
 
 const middleware = read('middleware.ts')
 for (const [legacy, target] of Object.entries(PRODUCT_LEGACY_REDIRECTS)) {
-  if (!middleware.includes('getLegacyRedirect')) {
-    failures.push(`middleware does not use legacy redirect registry for ${legacy} -> ${target}`)
+  if (!middleware.includes('getWorldKernelRouteDecision')) {
+    failures.push(`middleware does not use World Kernel route decision for ${legacy} -> ${target}`)
   }
 }
-if (!middleware.includes('isPrivateProductRoute')) failures.push('middleware must enforce private route boundary')
-if (!middleware.includes('isInternalProductRoute')) failures.push('middleware must enforce internal route boundary')
+const boundary = read('src/lib/world-kernel-boundary.ts')
+if (!boundary.includes('private-guarded')) failures.push('World Kernel boundary must classify private routes')
+if (!boundary.includes('internal-guarded')) failures.push('World Kernel boundary must classify internal routes')
+if (!JSON.stringify(WORLD_KERNEL_ROUTE_POLICY.publicRoutes).includes('/paths')) failures.push('World Kernel route policy must include /paths')
 
 const pathsPage = read('src/app/paths/page.tsx')
 if (pathsPage.includes('@/components/r8-')) failures.push('paths page must not expose r8 dynamic universe components')

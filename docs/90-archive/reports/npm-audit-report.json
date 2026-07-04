@@ -1,0 +1,161 @@
+{
+  "generatedAt": "2026-07-04T00:43:21.533Z",
+  "command": "npm audit --json",
+  "exitCode": 1,
+  "vulnerabilities": {
+    "info": 0,
+    "low": 1,
+    "moderate": 3,
+    "high": 0,
+    "critical": 0,
+    "total": 4
+  },
+  "summary": {
+    "total": 4,
+    "info": 0,
+    "low": 1,
+    "moderate": 3,
+    "high": 0,
+    "critical": 0
+  },
+  "policy": [
+    "Do not run npm audit fix --force automatically.",
+    "Moderate vulnerabilities do not block local-engineering-ready status.",
+    "High or critical vulnerabilities must be triaged before production release."
+  ],
+  "productionLive": false,
+  "rawAudit": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {
+      "esbuild": {
+        "name": "esbuild",
+        "severity": "low",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1120680,
+            "name": "esbuild",
+            "dependency": "esbuild",
+            "title": "esbuild allows arbitrary file read when running the development server on Windows",
+            "url": "https://github.com/advisories/GHSA-g7r4-m6w7-qqqr",
+            "severity": "low",
+            "cwe": [
+              "CWE-22"
+            ],
+            "cvss": {
+              "score": 2.5,
+              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N"
+            },
+            "range": ">=0.27.3 <0.28.1"
+          }
+        ],
+        "effects": [],
+        "range": "0.27.3 - 0.28.0",
+        "nodes": [
+          "node_modules/esbuild"
+        ],
+        "fixAvailable": true
+      },
+      "js-yaml": {
+        "name": "js-yaml",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1121860,
+            "name": "js-yaml",
+            "dependency": "js-yaml",
+            "title": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
+            "url": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-407"
+            ],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            },
+            "range": ">=4.0.0 <=4.1.1"
+          }
+        ],
+        "effects": [],
+        "range": "4.0.0 - 4.1.1",
+        "nodes": [
+          "node_modules/js-yaml"
+        ],
+        "fixAvailable": true
+      },
+      "next": {
+        "name": "next",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "postcss"
+        ],
+        "effects": [],
+        "range": "9.3.4-canary.0 - 16.3.0-canary.5",
+        "nodes": [
+          "node_modules/next"
+        ],
+        "fixAvailable": {
+          "name": "next",
+          "version": "9.3.3",
+          "isSemVerMajor": true
+        }
+      },
+      "postcss": {
+        "name": "postcss",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1117015,
+            "name": "postcss",
+            "dependency": "postcss",
+            "title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+            "url": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-79"
+            ],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+            },
+            "range": "<8.5.10"
+          }
+        ],
+        "effects": [
+          "next"
+        ],
+        "range": "<8.5.10",
+        "nodes": [
+          "node_modules/next/node_modules/postcss"
+        ],
+        "fixAvailable": {
+          "name": "next",
+          "version": "9.3.3",
+          "isSemVerMajor": true
+        }
+      }
+    },
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 1,
+        "moderate": 3,
+        "high": 0,
+        "critical": 0,
+        "total": 4
+      },
+      "dependencies": {
+        "prod": 156,
+        "dev": 382,
+        "optional": 89,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 573
+      }
+    }
+  }
+}

@@ -1,18 +1,34 @@
-# word-life
+# word-life｜古月浮屿 / WorldOS
 
-`word-life` 是古月浮屿 / 我的博客的长期 GitHub 项目仓库。
+`word-life` 是古月浮屿 / 我的博客 / WorldOS 的长期项目仓库。
 
-它不是一次性封版包，而是后续所有代码、文档、版本记录、世界规则、产品设计、工程设计与体验兑现工作的统一根目录。
-
-## 项目定位
+它不是传统博客，而是一个正在收束为产品形态的个人数字世界：
 
 ```text
-对外是宇宙
-对内是工作台
-对未来是档案
-对 AI 是可读协议
-AI 是灯塔，不是太阳
-公开世界 ≠ 全部世界
+对外：可进入、可探索、可停留的公开世界
+对内：可维护、可记录、可整理的创世台
+对未来：可导出、可回望、可传承的生命档案
+对 AI：可读、可审计、可边界化协作的世界协议
+```
+
+## 当前工程状态
+
+```text
+当前基线：WorldOS v1 产品化旅程基线
+功能策略：feature freeze / World Kernel 收束期
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
+
+当前阶段不再继续扩展 `R8.x / V / R` 新功能线，优先进行：
+
+```text
+架构审计
+内核收束
+路由守门
+脚本合并
+真实生产证据
 ```
 
 ## 快速开始
@@ -22,86 +38,47 @@ npm ci
 npm run dev
 ```
 
-## 本地门禁
+## 推荐门禁
 
 ```bash
-npm run check:repo
-npm run check:experience
+npm run audit:world-kernel
+npm run check:world-kernel-audit
+npm run check:product-release
 npm run lint
 npm run typecheck
-npm run build
+npm run check
+npm run check:routes
+npm run build:verify-artifacts
 ```
 
-或一次性执行：
+## World Kernel 约束
 
-```bash
-npm run check:local
+本仓库以 `data/world-kernel/kernel-freeze-policy.json` 作为功能冻结策略，以 `docs/10-development-history/world-kernel/world-kernel-architecture-audit-v1.md` 作为当前内核审计基线。
+
+核心原则：
+
+```text
+不新增 R8.10 / V11 类扩展线
+不新增重复动态宇宙 Runtime
+不把私密权限交给前端硬编码
+不把 build wrapper 当作真实生产证据
+不让世界语言牺牲现实可理解性
 ```
+
+公开产品路由由 `src/lib/world-kernel-boundary.ts` 与 `src/lib/product-routes.ts` 统一守门；私密、内部、阶段页必须经过 middleware 服务端边界。
 
 ## 目录
 
 ```text
-src/       Next.js 应用源码
-data/      世界数据、契约、阶段状态
-scripts/   检查、报告、门禁脚本
-public/    静态资源
-docs/      长期文档中心
-.github/   GitHub Actions
+src/        Next.js 应用源码
+data/       世界数据、契约、阶段状态、World Kernel 审计
+scripts/    检查、审计、报告、门禁脚本
+public/     静态资源
+content/    内容源
+docs/       长期文档中心
+.github/    GitHub Actions
 ```
 
-## 文档治理
+## 生产说明
 
-文档统一放在 `docs/`，按阶段与属性拆分：
-
-```text
-docs/00-inception/               最初沟通、原始需求、原始素材
-docs/01-world-design/            世界观、规则、AI 边界、术语
-docs/02-product-design/          PRD、IA、交互、视觉、内容系统
-docs/03-engineering-architecture/ 技术架构、系统设计、接口、安全、QA
-docs/10-development-history/     V1-V6 与体验兑现开发过程
-docs/20-research/                调研资料
-docs/30-assets/                  视觉素材
-docs/90-archive/                 历史报告和归档
-```
-
-## 当前状态
-
-```text
-V6 local-engineering-ready
-体验兑现第一轮完成
-word-life 长期仓库化完成
-productionLive: false
-```
-
-生产上线仍需要真实部署、目标浏览器/真机 smoke、人工安全隐私签收。
-
-
-## Round 02
-
-Round 02 is the deep experience realization phase.
-
-```bash
-npm run check:round2
-npm run check:local
-```
-
-Round 02 begins with batch 00: baseline freeze, planning contract, directory boundaries, and check skeleton.
-
-
-## Round 03
-
-Round 03 completes real content ingestion and production-readiness preparation.
-
-```bash
-npm run check:round3
-```
-
-Round 03 adds:
-
-```text
-/content-studio
-/asset-library
-/service-adapters
-/production-readiness
-/observability
-```
+当前本地产品化门禁可以验证公开入口、路由守门、类型检查和构建产物存在性；但仍不能声明 `productionLive: true`。真实上线还需要外部 Preview / Production URL、线上 smoke test、域名 HTTPS、人工签收与真实回滚演练。
