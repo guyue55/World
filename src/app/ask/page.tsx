@@ -13,14 +13,7 @@ import { LighthousePromptGuide } from '@/components/lighthouse/LighthousePromptG
 import { LighthouseRecommendationGrid } from '@/components/lighthouse/LighthouseRecommendationGrid'
 import { LighthouseBoundarySummary } from '@/components/lighthouse/LighthouseBoundarySummary'
 import { LighthouseFallbackActions } from '@/components/lighthouse/LighthouseFallbackActions'
-import { DeepLighthouseSimulator } from '@/components/r8-deep-dynamic-world'
 import { createPageMetadata } from '@/lib/metadata'
-import { LivingUniverseSection } from '@/components/r8-living-universe'
-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
-import { SceneUniverseSection } from '@/components/r8-scene-universe'
-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
 
 export const metadata = createPageMetadata({
   title: 'AI 灯塔',
@@ -39,18 +32,9 @@ export default function AskPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
-      <LivingUniverseSection />
-      <SensoryUniverseSection />
-      <SceneUniverseSection />
-      <CivilizationUniverseSection />
-      <NodeLifeConstellation />
-      <InteractiveUniverseSection />
-      <CompleteUniverseSection />
-      <TodayWorldPanel />
       <LighthouseHero />
       <LighthouseStatus {...stats} />
       <LighthousePromptGuide prompts={prompts} />
-      <DeepLighthouseSimulator nodes={nodes} paths={paths} />
       <LighthouseRecommendationGrid nodes={recommendedNodes} paths={recommendedPaths} />
       <LighthouseBoundarySummary allowed={policy.allowed} forbidden={policy.forbidden} />
       <LighthouseFallbackActions />
