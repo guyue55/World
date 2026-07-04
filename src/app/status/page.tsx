@@ -49,8 +49,8 @@ export default function StatusPage() {
 
       <section className="rounded-[2.2rem] border border-white/65 bg-night p-8 text-paper shadow-soft md:p-10">
         <p className="text-xs font-semibold tracking-[0.35em] text-gold">运行态</p>
-        <h1 className="mt-3 text-4xl font-semibold md:text-5xl">世界可以被进入，但上线证据仍需真实环境补齐。</h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-paper/70">
+        <h1 className="mt-3 break-words text-4xl font-semibold md:text-5xl">世界可以被进入，但上线证据仍需真实环境补齐。</h1>
+        <p className="mt-5 max-w-3xl break-words text-base leading-8 text-paper/70">
           当前代码已经完成产品入口收束、公开索引守门和本地构建产物验证。这里不会伪装为 productionLive，真实外部 URL、线上 smoke test、域名 HTTPS 与人工签收仍需要在部署平台完成。
         </p>
       </section>
@@ -58,28 +58,28 @@ export default function StatusPage() {
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {statusCards.map((card) => (
           <article key={card.title} className="rounded-[1.6rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur">
-            <p className="text-sm text-ink/50">{card.title}</p>
-            <h2 className="mt-3 text-2xl font-semibold text-ink">{card.value}</h2>
-            <p className="mt-3 text-sm leading-7 text-ink/62">{card.description}</p>
+            <p className="truncate text-sm text-ink/50">{card.title}</p>
+            <h2 className="mt-3 break-words text-2xl font-semibold text-ink">{card.value}</h2>
+            <p className="mt-3 break-words text-sm leading-7 text-ink/62">{card.description}</p>
           </article>
         ))}
       </section>
 
       <section className="grid gap-5 lg:grid-cols-3">
-        <div className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
-          <p className="text-xs font-semibold tracking-[0.35em] text-moss">节点</p>
-          <h2 className="mt-3 text-4xl font-semibold text-ink">{publicNodes.length}</h2>
-          <p className="mt-3 text-sm leading-7 text-ink/62">公开节点可被地图、档案馆和灯塔低光导览读取。</p>
+        <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
+          <p className="truncate text-xs font-semibold tracking-[0.35em] text-moss">节点</p>
+          <h2 className="mt-3 truncate text-4xl font-semibold text-ink">{publicNodes.length}</h2>
+          <p className="mt-3 break-words text-sm leading-7 text-ink/62">公开节点可被地图、档案馆和灯塔低光导览读取。</p>
         </div>
-        <div className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
-          <p className="text-xs font-semibold tracking-[0.35em] text-moss">主区域</p>
-          <h2 className="mt-3 text-4xl font-semibold text-ink">{areas.length}</h2>
-          <p className="mt-3 text-sm leading-7 text-ink/62">一级世界区域保持少而清晰，深层内容通过节点和路径进入。</p>
+        <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
+          <p className="truncate text-xs font-semibold tracking-[0.35em] text-moss">主区域</p>
+          <h2 className="mt-3 truncate text-4xl font-semibold text-ink">{areas.length}</h2>
+          <p className="mt-3 break-words text-sm leading-7 text-ink/62">一级世界区域保持少而清晰，深层内容通过节点和路径进入。</p>
         </div>
-        <div className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
-          <p className="text-xs font-semibold tracking-[0.35em] text-moss">路径</p>
-          <h2 className="mt-3 text-4xl font-semibold text-ink">{paths.length}</h2>
-          <p className="mt-3 text-sm leading-7 text-ink/62">路径用于降低探索门槛，让第一次进入的人不迷路。</p>
+        <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
+          <p className="truncate text-xs font-semibold tracking-[0.35em] text-moss">路径</p>
+          <h2 className="mt-3 truncate text-4xl font-semibold text-ink">{paths.length}</h2>
+          <p className="mt-3 break-words text-sm leading-7 text-ink/62">路径用于降低探索门槛，让第一次进入的人不迷路。</p>
         </div>
       </section>
     </main>

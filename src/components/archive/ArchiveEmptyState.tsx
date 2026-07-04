@@ -11,8 +11,8 @@ export function ArchiveEmptyState({ filters, onReset }: { filters: ArchiveFilter
 
   return (
     <div className="rounded-world border border-ink/10 bg-white/45 p-8 text-ink/70 shadow-soft">
-      <h2 className="text-2xl font-semibold">罗盘没有找到对应的星</h2>
-      <p className="mt-3 leading-8">
+      <h2 className="break-words text-2xl font-semibold">罗盘没有找到对应的星</h2>
+      <p className="mt-3 break-words leading-8">
         {active.length > 0
           ? `当前筛选：${active.join('、')}。可以放宽条件，或者让这颗星在未来被命名。`
           : '也许它还没有被命名，或者它仍在私密层静静发光。'}

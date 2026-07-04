@@ -14,7 +14,7 @@ export function PathNodeSequence({ nodes }: { nodes: Node[] }) {
       <div className="space-y-5">
         {nodes.map((node, index) => (
           <div key={node.id} className="grid gap-4 md:grid-cols-[88px_minmax(0,1fr)]">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ink text-xl font-semibold text-paper shadow-soft">
+            <div className="shrink-0 flex h-16 w-16 items-center justify-center rounded-full bg-ink text-xl font-semibold text-paper shadow-soft">
               {index + 1}
             </div>
             <NodeCard node={node} />

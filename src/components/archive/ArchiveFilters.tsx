@@ -27,21 +27,21 @@ export function ArchiveFilters({
           value={filters.query}
           onChange={(event) => update({ query: event.target.value })}
           placeholder="搜索标题、摘要、标签或世界名"
-          className="rounded-full border border-ink/10 bg-white/75 px-5 py-3 outline-none focus-visible:ring-2 focus-visible:ring-gold/70"
+          className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-5 py-3 outline-none focus-visible:ring-2 focus-visible:ring-gold/70"
         />
-        <select value={filters.areaId} onChange={(event) => update({ areaId: event.target.value })} className="rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.areaId} onChange={(event) => update({ areaId: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="all">全部区域</option>
           {areas.map((area) => <option key={area.id} value={area.id}>{area.worldName}</option>)}
         </select>
-        <select value={filters.type} onChange={(event) => update({ type: event.target.value })} className="rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.type} onChange={(event) => update({ type: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="all">全部类型</option>
           {nodeTypes.map((type) => <option key={type} value={type}>{type}</option>)}
         </select>
-        <select value={filters.lifeStage} onChange={(event) => update({ lifeStage: event.target.value })} className="rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.lifeStage} onChange={(event) => update({ lifeStage: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="all">全部阶段</option>
           {lifeStages.map((stage) => <option key={stage} value={stage}>{stage}</option>)}
         </select>
-        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value as ArchiveSort })} className="rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value as ArchiveSort })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="newest">最近优先</option>
           <option value="oldest">最早优先</option>
           <option value="title">标题排序</option>

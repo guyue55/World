@@ -19,9 +19,9 @@ export function NodeReadingHeader({
         {readingMinutes && <span className="rounded-full bg-ink/5 px-3 py-1 text-sm text-ink/60">约 {readingMinutes} 分钟</span>}
       </div>
       <div className="space-y-4">
-        <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-tight md:text-6xl">{node.title}</h1>
-        {node.worldTitle && <p className="text-2xl text-moss">{node.worldTitle}</p>}
-        {node.summary && <p className="max-w-3xl text-lg leading-9 text-ink/75">{node.summary}</p>}
+        <h1 className="max-w-4xl break-words text-5xl font-semibold leading-tight tracking-tight md:text-6xl">{node.title}</h1>
+        {node.worldTitle && <p className="break-words text-2xl text-moss">{node.worldTitle}</p>}
+        {node.summary && <p className="max-w-3xl break-words text-lg leading-9 text-ink/75">{node.summary}</p>}
       </div>
       <div className="flex flex-wrap gap-2">
         {node.tags.map((tag) => <span key={tag} className="rounded-full bg-white/50 px-3 py-1 text-sm text-ink/55">#{tag}</span>)}

@@ -45,8 +45,8 @@ export default function ManifestoPage() {
         <div className="absolute -right-16 top-0 h-72 w-72 rounded-full bg-gold/18 blur-3xl" />
         <div className="relative max-w-4xl space-y-5">
           <p className="text-xs font-semibold tracking-[0.35em] text-gold">MANIFESTO</p>
-          <h1 className="text-5xl font-semibold leading-tight md:text-6xl">世界宣言</h1>
-          <p className="text-lg leading-9 text-paper/72">
+          <h1 className="break-words text-5xl font-semibold leading-tight md:text-6xl">世界宣言</h1>
+          <p className="break-words text-lg leading-9 text-paper/72">
             古月浮屿不是公共多人 3D 元宇宙，也不是虚拟经济空间。它是一个以内容为节点、以时间为河流、以权限为边界、以 AI 为灯塔的个人数字世界。
           </p>
         </div>
@@ -55,15 +55,15 @@ export default function ManifestoPage() {
       <section className="grid gap-4 md:grid-cols-2">
         {rules.map((rule) => (
           <article key={rule.title} className="rounded-[1.6rem] border border-white/65 bg-white/76 p-6 shadow-soft backdrop-blur">
-            <h2 className="text-2xl font-semibold text-ink">{rule.title}</h2>
-            <p className="mt-3 text-sm leading-7 text-ink/64">{rule.description}</p>
+            <h2 className="break-words text-2xl font-semibold text-ink">{rule.title}</h2>
+            <p className="mt-3 break-words text-sm leading-7 text-ink/64">{rule.description}</p>
           </article>
         ))}
       </section>
 
       <section className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
         <p className="text-xs font-semibold tracking-[0.35em] text-moss">一句话</p>
-        <p className="mt-3 text-2xl font-semibold leading-relaxed text-ink">
+        <p className="mt-3 break-words text-2xl font-semibold leading-relaxed text-ink">
           以内容为星体，以区域为空间，以关系为星线，以时间为河流，以权限为边界，以规则为自然法则。
         </p>
         <div className="mt-6 flex flex-wrap gap-3">

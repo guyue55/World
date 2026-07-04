@@ -45,8 +45,8 @@ export default function AskPage() {
         <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-gold/18 blur-3xl" />
         <div className="relative max-w-4xl">
           <p className="text-sm tracking-[0.35em] text-gold">LIGHTHOUSE</p>
-          <h1 className="mt-4 text-5xl font-semibold leading-tight md:text-6xl">灯塔不是太阳</h1>
-          <p className="mt-5 text-lg leading-9 text-paper/75">
+          <h1 className="mt-4 break-words text-5xl font-semibold leading-tight md:text-6xl">灯塔不是太阳</h1>
+          <p className="mt-5 break-words text-lg leading-9 text-paper/75">
             它只负责照亮路径：解释当前位置、推荐下一步、把访问者带回世界地图。
           </p>
         </div>
@@ -55,8 +55,8 @@ export default function AskPage() {
       <section className="grid gap-4 md:grid-cols-3">
         {guideQuestions.map((question) => (
           <article key={question.title} className="rounded-[1.6rem] border border-white/65 bg-white/76 p-6 shadow-soft backdrop-blur">
-            <h2 className="text-2xl font-semibold text-ink">{question.title}</h2>
-            <p className="mt-3 text-sm leading-7 text-ink/64">{question.answer}</p>
+            <h2 className="break-words text-2xl font-semibold text-ink">{question.title}</h2>
+            <p className="mt-3 break-words text-sm leading-7 text-ink/64">{question.answer}</p>
           </article>
         ))}
       </section>
@@ -67,9 +67,9 @@ export default function AskPage() {
           <h2 className="mt-3 text-3xl font-semibold text-ink">推荐路径</h2>
           <div className="mt-6 space-y-3">
             {recommendedPaths.map((path) => (
-              <Link key={path.id} href={`/paths/${path.id}`} className="block rounded-2xl bg-paper/65 p-4 transition hover:bg-white">
-                <span className="font-semibold text-ink">{path.title}</span>
-                <span className="mt-1 block text-sm leading-6 text-ink/60">{path.description}</span>
+              <Link key={path.id} href={`/paths/${path.id}`} className="min-w-0 block rounded-2xl bg-paper/65 p-4 transition hover:bg-white">
+                <span className="truncate font-semibold text-ink block">{path.title}</span>
+                <span className="mt-1 block line-clamp-2 text-sm leading-6 text-ink/60">{path.description}</span>
               </Link>
             ))}
           </div>
@@ -80,9 +80,9 @@ export default function AskPage() {
           <h2 className="mt-3 text-3xl font-semibold text-ink">可以先看的节点</h2>
           <div className="mt-6 space-y-3">
             {recommendedNodes.map((node) => (
-              <Link key={node.id} href={`/node/${node.slug}`} className="block rounded-2xl bg-paper/65 p-4 transition hover:bg-white">
-                <span className="font-semibold text-ink">{node.worldTitle ?? node.title}</span>
-                <span className="mt-1 block text-sm leading-6 text-ink/60">{node.summary}</span>
+              <Link key={node.id} href={`/node/${node.slug}`} className="min-w-0 block rounded-2xl bg-paper/65 p-4 transition hover:bg-white">
+                <span className="truncate font-semibold text-ink block">{node.worldTitle ?? node.title}</span>
+                <span className="mt-1 block line-clamp-2 text-sm leading-6 text-ink/60">{node.summary}</span>
               </Link>
             ))}
           </div>
