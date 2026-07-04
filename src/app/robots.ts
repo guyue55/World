@@ -11,9 +11,6 @@ const blockedRoutes = [
   '/api/v2/vault',
   '/api/v2/audit',
   '/api/v2/export',
-  '/r4-creator',
-  '/r6-service',
-  '/r7-evolution',
 ]
 
 export default function robots(): MetadataRoute.Robots {

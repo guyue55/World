@@ -27,15 +27,7 @@ export const PRODUCT_LEGACY_REDIRECTS: Record<string, string> = {
   '/r8-public': '/status',
 }
 
-export const PRODUCT_PRIVATE_ROUTES = [
-  '/private-archive',
-  '/private-ai',
-  '/r4-creator',
-  '/r6-service',
-  '/r7-evolution',
-  '/ai-workbench',
-  '/ai-workbench-v2',
-] as const
+export const PRODUCT_PRIVATE_ROUTES = [] as const
 
 export const PRODUCT_INTERNAL_EXACT_ROUTES = [
   '/asset-library',

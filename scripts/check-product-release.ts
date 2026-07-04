@@ -60,11 +60,6 @@ const disallowedSitemapRouteTokens = [
   '/r3-content-life',
   '/r5-lighthouse',
   '/r8-public',
-  '/private-archive',
-  '/private-ai',
-  '/r4-creator',
-  '/r6-service',
-  '/r7-evolution',
 ]
 const requiredKernelConsolidationFiles = [
   'data/world-kernel/world-kernel-consolidation-v1.json',
