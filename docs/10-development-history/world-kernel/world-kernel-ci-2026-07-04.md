@@ -4,16 +4,14 @@
 
 Add a small, repeatable CI gate for the current World Kernel consolidation line.
 
-The CI intentionally avoids the historical long `check:world-core` chain. It focuses on checks that should remain stable for daily development:
+The CI intentionally avoids the historical long `check:world-core` chain. It is split into two jobs:
 
 ```text
-1. dependency install
-2. critical public entry runtime boundary
-3. repository checks
-4. route checks
-5. typecheck
-6. lint
+1. static-boundary：无依赖静态边界检查，优先验证公开入口不再直连 R8 runtime。
+2. quality：依赖安装后运行 repository checks、routes、typecheck、lint。
 ```
+
+This split prevents dependency installation latency from hiding the fast boundary signal.
 
 ## Workflow
 
@@ -23,9 +21,16 @@ The CI intentionally avoids the historical long `check:world-core` chain. It foc
 
 ## Commands
 
+Static boundary:
+
 ```bash
-npm ci --ignore-scripts --no-audit --no-fund --prefer-offline --progress=false
 node scripts/check-public-app-r8-imports.mjs
+```
+
+Quality:
+
+```bash
+npm ci --ignore-scripts --no-audit --no-fund --progress=false --loglevel=error
 npm run check
 npm run check:routes
 npm run typecheck
