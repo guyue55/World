@@ -19,6 +19,16 @@ import { WorldMotionLayer, WorldRuntimeDock } from '@/components/r8-dynamic-worl
 export function WorldRuntimeStack() {
   return (
     <>
+      <WorldAmbientRuntime />
+      <WorldSceneRuntime />
+      <WorldInteractionRuntime />
+    </>
+  )
+}
+
+function WorldAmbientRuntime() {
+  return (
+    <>
       <UniverseStage />
       <WorldMotionLayer />
       <LivingWorldViewport />
@@ -26,23 +36,37 @@ export function WorldRuntimeStack() {
       <LivingUniverseField />
       <WorldRouteTransition />
       <WorldPulseRibbon />
-      <DynamicCompassOverlay />
       <FullUniverseOrchestrator />
-      <LivingAreaIdentity />
-      <UniverseRitualDock />
       <UniverseObjectConstellation />
-      <SpatialJourneyMap />
       <CompleteUniverseEngine />
       <SensoryUniverseEngine />
       <SceneDepthField />
-      <InteractiveUniverseEngine />
       <SceneUniverseEngine />
       <CivilizationUniverseEngine />
+    </>
+  )
+}
+
+function WorldSceneRuntime() {
+  return (
+    <>
+      <LivingAreaIdentity />
+      <UniverseRitualDock />
+      <SpatialJourneyMap />
       <WorldTrailBreadcrumb />
+      <UniverseObjectWorkbench />
+    </>
+  )
+}
+
+function WorldInteractionRuntime() {
+  return (
+    <>
+      <DynamicCompassOverlay />
+      <InteractiveUniverseEngine />
       <ObservationSearchPanel />
       <LivingQuestRail />
       <WorldModeDock />
-      <UniverseObjectWorkbench />
     </>
   )
 }
