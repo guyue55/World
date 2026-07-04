@@ -1,7 +1,7 @@
 {
   "name": "WorldOS 长期脚本分类 v1",
   "updatedAt": "2026-07-04",
-  "principle": "默认入口短、清晰、可复跑；历史阶段脚本保留为 reference，不再作为新开发默认路径。",
+  "principle": "默认入口短、清晰、可复跑；API 边界与脚本遗留治理进入主线门禁；历史阶段脚本保留为 reference，不再作为新开发默认路径。",
   "categories": [
     {
       "id": "mainline",
@@ -27,22 +27,42 @@
       "id": "legacy",
       "script": "check:legacy-boundary",
       "description": "检查历史阶段线和 legacy runtime 没有重新进入公开入口。"
+    },
+    {
+      "id": "api-boundary",
+      "script": "check:api-boundary",
+      "description": "检查 /api 路由注册、服务端权限守门、公开只读边界和生产写入状态。"
+    },
+    {
+      "id": "script-governance",
+      "script": "check:scripts",
+      "description": "检查长期脚本分类、legacy 阶段脚本注册和默认入口收束。"
+    },
+    {
+      "id": "maintenance-command-spine",
+      "script": "check:maintenance-command-spine",
+      "description": "检查长期维护命令脊柱、短入口别名、文档口径和 production 状态诚实性。"
+    },
+    {
+      "id": "runtime-local-smoke",
+      "script": "smoke:runtime-local",
+      "description": "本地 production server HTTP smoke，验证核心公开路由、静态文件、redirect 与 guard。",
+      "recommendedUse": "仅在 .next 关键构建产物已生成后执行；不替代外部 Preview / Production smoke。"
     }
   ],
   "recommendedDailyCommands": [
-    "npm run check:mainline",
-    "npm run lint",
-    "npm run typecheck"
+    "npm run check:daily",
+    "npm run check:boundary"
   ],
   "releaseCandidateCommands": [
-    "npm run check:release:rc",
-    "npm run build:kernel-release",
-    "npm run build:verify-artifacts",
-    "npm run audit:report"
+    "npm run check:rc:fast",
+    "npm run check:rc:full",
+    "npm run smoke:runtime-local"
   ],
   "legacyPolicy": {
     "allowExistingStageScripts": true,
     "newStageScriptDefault": "deny",
-    "reason": "历史阶段脚本数量过多，新增能力应优先接入长期门禁而不是继续扩展阶段聚合。"
+    "reason": "历史阶段脚本数量过多，新增能力应优先接入长期门禁而不是继续扩展阶段聚合。",
+    "legacyRegistry": "data/world-kernel/worldos-script-legacy-registry-v1.json"
   }
 }

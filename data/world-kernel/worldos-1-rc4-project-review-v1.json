@@ -1,0 +1,730 @@
+{
+  "auditName": "WorldOS 1.0 RC4 全项目审查",
+  "auditedAt": "2026-07-04",
+  "sourcePackage": "worldos_1_rc3_mainline_governance_full-package.zip",
+  "superpowersWorkflow": {
+    "skillsApplied": [
+      "using-superpowers",
+      "writing-plans",
+      "verification-before-completion",
+      "finishing-a-development-branch"
+    ],
+    "mode": "project-wide-review-no-feature-expansion"
+  },
+  "metrics": {
+    "fileCounts": {
+      "src/app": 114,
+      "src/components": 441,
+      "src/features": 197,
+      "src/lib": 161,
+      "src/platform": 31,
+      "src/server": 6,
+      "src/shared": 1,
+      "data": 1059,
+      "content": 52,
+      "docs": 863,
+      "scripts": 762,
+      "public": 12
+    },
+    "appPages": 81,
+    "apiRoutes": 23,
+    "npmScripts": 762,
+    "checkScripts": 564,
+    "stageLikeCheckScripts": 439,
+    "publicNodes": 52,
+    "contentBackedPublicNodes": 52,
+    "publicPaths": 13,
+    "areas": 8,
+    "representedAreas": 8,
+    "relations": 82,
+    "worldEvents": 21,
+    "permissions": 8
+  },
+  "progress": {
+    "audit": "completed-in-this-run-after-verification",
+    "architectureAudit": "completed-v1-previously",
+    "kernelConsolidation": "completed-k1-k4-and-k5-local-previously",
+    "releaseCandidate": "rc3-local-governance-completed-previously",
+    "externalEvidence": "blocked-preview-production-smoke-signoff-required",
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  },
+  "checks": [
+    {
+      "id": "content-density",
+      "status": "pass",
+      "summary": "公开节点 52，有正文公开节点 52，关系 82，公开路径 13",
+      "details": {
+        "publicNodes": 52,
+        "contentBackedPublicNodes": 52,
+        "relations": 82,
+        "publicPaths": 13,
+        "representedAreas": 8,
+        "featuredNodes": 33,
+        "orphanPublicNodes": []
+      }
+    },
+    {
+      "id": "content-files",
+      "status": "pass",
+      "summary": "所有公开正文 contentPath 均存在",
+      "details": {
+        "missingContentFiles": []
+      }
+    },
+    {
+      "id": "mainline-import-boundary",
+      "status": "pass",
+      "summary": "公开主线页面未直接导入 forbidden legacy/private 前缀",
+      "details": {
+        "mainlineImportViolations": []
+      }
+    },
+    {
+      "id": "route-boundary",
+      "status": "pass",
+      "summary": "产品路由策略与 middleware 统一走 World Kernel decision",
+      "details": {
+        "missingRouteTokens": [],
+        "middlewareUsesKernelDecision": true,
+        "middlewareExcludesApi": true
+      }
+    },
+    {
+      "id": "api-write-boundary",
+      "status": "pass",
+      "summary": "写入型 API 均有 owner/permission 守门，受保护 API 9 个",
+      "details": {
+        "apiRoutes": [
+          {
+            "file": "src/app/api/r6/audit/route.ts",
+            "path": "/api/r6/audit",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/export-jobs/route.ts",
+            "path": "/api/r6/export-jobs",
+            "methods": [
+              "GET",
+              "POST"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/nodes/route.ts",
+            "path": "/api/r6/nodes",
+            "methods": [
+              "GET",
+              "POST",
+              "PATCH"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": true,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/service-health/route.ts",
+            "path": "/api/r6/service-health",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r7/maintenance/route.ts",
+            "path": "/api/r7/maintenance",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r7/world-log/route.ts",
+            "path": "/api/r7/world-log",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r7/world-state/route.ts",
+            "path": "/api/r7/world-state",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/civilization-universe/route.ts",
+            "path": "/api/r8/civilization-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/complete-universe/route.ts",
+            "path": "/api/r8/complete-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/dynamic-world/route.ts",
+            "path": "/api/r8/dynamic-world",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/feedback/route.ts",
+            "path": "/api/r8/feedback",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/interactive-universe/route.ts",
+            "path": "/api/r8/interactive-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/public-log/route.ts",
+            "path": "/api/r8/public-log",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/public-status/route.ts",
+            "path": "/api/r8/public-status",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/scene-universe/route.ts",
+            "path": "/api/r8/scene-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/sensory-universe/route.ts",
+            "path": "/api/r8/sensory-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v10/intelligence-health/route.ts",
+            "path": "/api/v10/intelligence-health",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/ai/suggestions/route.ts",
+            "path": "/api/v2/ai/suggestions",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/audit/route.ts",
+            "path": "/api/v2/audit",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/content/route.ts",
+            "path": "/api/v2/content",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/export/jobs/route.ts",
+            "path": "/api/v2/export/jobs",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/vault/route.ts",
+            "path": "/api/v2/vault",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v9/service-health/route.ts",
+            "path": "/api/v9/service-health",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          }
+        ],
+        "writeApiRoutes": [
+          {
+            "file": "src/app/api/r6/export-jobs/route.ts",
+            "path": "/api/r6/export-jobs",
+            "methods": [
+              "GET",
+              "POST"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/nodes/route.ts",
+            "path": "/api/r6/nodes",
+            "methods": [
+              "GET",
+              "POST",
+              "PATCH"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": true,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          }
+        ],
+        "unguardedWriteApiRoutes": []
+      }
+    },
+    {
+      "id": "public-json-boundary",
+      "status": "pass",
+      "summary": "公开 JSON 未发现非 public 节点/路径/事件；private/vault 等仅作为边界说明词出现",
+      "details": {
+        "publicJsonFiles": [
+          "public/world-index.json",
+          "public/world-manifest.json"
+        ],
+        "publicJsonBoundaryTerms": [
+          {
+            "file": "public/world-index.json",
+            "token": "private"
+          },
+          {
+            "file": "public/world-index.json",
+            "token": "vault"
+          },
+          {
+            "file": "public/world-manifest.json",
+            "token": "private"
+          },
+          {
+            "file": "public/world-manifest.json",
+            "token": "vault"
+          },
+          {
+            "file": "public/world-manifest.json",
+            "token": "family"
+          }
+        ],
+        "publicJsonPrivatePayloadIssues": []
+      }
+    },
+    {
+      "id": "release-honesty",
+      "status": "pass",
+      "summary": "生产状态保持 false，未伪造真实外部证据",
+      "details": {
+        "releaseStates": {
+          "productionLive": false,
+          "releaseReady": false,
+          "cleanProductionReady": false
+        }
+      }
+    },
+    {
+      "id": "script-taxonomy",
+      "status": "pass",
+      "summary": "npm scripts 762 个，其中 check 脚本 564 个，阶段型 check 脚本 439 个",
+      "details": {
+        "totalScripts": 762,
+        "checkScripts": 564,
+        "stageLikeScripts": 439,
+        "longScripts": [
+          {
+            "name": "check:world-core",
+            "length": 5311
+          }
+        ],
+        "taxonomyCategories": [
+          "mainline",
+          "content",
+          "experience",
+          "release",
+          "legacy"
+        ]
+      }
+    },
+    {
+      "id": "legacy-footprint",
+      "status": "pass",
+      "summary": "legacy imports 未进入公开主线；全 src legacy/private import 足迹 169 处",
+      "details": {
+        "totalLegacyImportHits": 169,
+        "publicLegacyHits": [],
+        "sampleLegacyImportHits": [
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 1,
+            "text": "import { AiPermissionMatrixPanel } from '@/components/ai-workbench/AiPermissionMatrixPanel'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 2,
+            "text": "import { AiSuggestionQueuePanel } from '@/components/ai-workbench/AiSuggestionQueuePanel'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 3,
+            "text": "import { AiWorkbenchV2Hero } from '@/components/ai-workbench/AiWorkbenchV2Hero'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 5,
+            "text": "import { AiRecommendationPanel } from '@/components/ai-workbench/AiRecommendationPanel'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 6,
+            "text": "import { AiWorldCompanionPanel } from '@/components/ai-workbench/AiWorldCompanionPanel'"
+          },
+          {
+            "file": "src/app/ai-workbench/page.tsx",
+            "line": 1,
+            "text": "import { AiSuggestionList } from '@/components/ai-workbench/AiSuggestionList'"
+          },
+          {
+            "file": "src/app/ai-workbench/page.tsx",
+            "line": 2,
+            "text": "import { AiWorkbenchHero } from '@/components/ai-workbench/AiWorkbenchHero'"
+          },
+          {
+            "file": "src/app/api/r6/audit/route.ts",
+            "line": 2,
+            "text": "import { r6AuditEvents } from '@/features/r6-service-bridge'"
+          },
+          {
+            "file": "src/app/api/r6/export-jobs/route.ts",
+            "line": 2,
+            "text": "import { r6ExportJobs } from '@/features/r6-service-bridge'"
+          },
+          {
+            "file": "src/app/api/r6/service-health/route.ts",
+            "line": 2,
+            "text": "import { r6ServiceHealth } from '@/features/r6-service-bridge'"
+          },
+          {
+            "file": "src/app/api/r7/maintenance/route.ts",
+            "line": 2,
+            "text": "import { r7MaintenanceQueue } from '@/features/r7-world-evolution'"
+          },
+          {
+            "file": "src/app/api/r7/world-log/route.ts",
+            "line": 2,
+            "text": "import { getR7PublicWorldLog } from '@/features/r7-world-evolution'"
+          },
+          {
+            "file": "src/app/api/r7/world-state/route.ts",
+            "line": 2,
+            "text": "import { r7WorldHealth, r7WorldState } from '@/features/r7-world-evolution'"
+          },
+          {
+            "file": "src/app/api/r8/feedback/route.ts",
+            "line": 2,
+            "text": "import { r8FeedbackLoop } from '@/features/r8-public-operations'"
+          },
+          {
+            "file": "src/app/api/r8/public-log/route.ts",
+            "line": 2,
+            "text": "import { r8WorldReleaseLog } from '@/features/r8-public-operations'"
+          },
+          {
+            "file": "src/app/api/r8/public-status/route.ts",
+            "line": 2,
+            "text": "import { getR8Summary, r8Roadmap } from '@/features/r8-public-operations'"
+          },
+          {
+            "file": "src/app/api/v10/intelligence-health/route.ts",
+            "line": 1,
+            "text": "import { v10FinalManifest, v10Roadmap, v10QualityResilience } from '@/features/v10-intelligent-world'"
+          },
+          {
+            "file": "src/app/api/v9/service-health/route.ts",
+            "line": 1,
+            "text": "import { v9Roadmap, v9ServiceEvidenceLedger } from '@/features/v9-service-platform'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 3,
+            "text": "import { PrivateAiApprovalPanel } from '@/components/private-ai-v6/PrivateAiApprovalPanel'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 4,
+            "text": "import { PrivateAiAuditPanel } from '@/components/private-ai-v6/PrivateAiAuditPanel'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 5,
+            "text": "import { PrivateAiHero } from '@/components/private-ai-v6/PrivateAiHero'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 6,
+            "text": "import { PrivateAiMemoryGraphPanel } from '@/components/private-ai-v6/PrivateAiMemoryGraphPanel'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 7,
+            "text": "import { PrivateAiStagePanel } from '@/components/private-ai-v6/PrivateAiStagePanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 2,
+            "text": "import { PrivateArchiveBoundaryPanel } from '@/components/private-archive/PrivateArchiveBoundaryPanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 3,
+            "text": "import { PrivateArchiveHero } from '@/components/private-archive/PrivateArchiveHero'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 4,
+            "text": "import { PrivateArchivePlaceholderGrid } from '@/components/private-archive/PrivateArchivePlaceholderGrid'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 6,
+            "text": "import { AnnualWorldBookPanel } from '@/components/private-archive/AnnualWorldBookPanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 7,
+            "text": "import { InheritanceExportPanel } from '@/components/private-archive/InheritanceExportPanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 8,
+            "text": "import { TimeCapsulePanel } from '@/components/private-archive/TimeCapsulePanel'"
+          },
+          {
+            "file": "src/app/r1-production/page.tsx",
+            "line": 2,
+            "text": "import { R1ProductionDashboard, R1ProductionHero, R1ReleaseEvidencePanel, R1StageBoard } from '@/components/r1-production'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chinese-first-ui",
+      "status": "pass",
+      "summary": "公开主线未发现大面积英文 UI 文案",
+      "details": {
+        "englishLikeMainlineHits": [
+          {
+            "file": "src/app/ask/page.tsx",
+            "matches": [
+              ">LIGHTHOUSE<"
+            ]
+          },
+          {
+            "file": "src/app/manifesto/page.tsx",
+            "matches": [
+              ">MANIFESTO<"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "accessibility-basics",
+      "status": "pass",
+      "summary": "WorldShell 保留 main-content 与旅程浮层基础",
+      "details": {
+        "hasMainContent": true,
+        "hasProductJourneyDock": true
+      }
+    },
+    {
+      "id": "git-working-tree-policy",
+      "status": "pass",
+      "summary": "Git 工作区洁净性作为收尾门禁单独验证，不写入审查 JSON，避免报告随提交状态漂移",
+      "details": {}
+    }
+  ],
+  "findings": [
+    {
+      "severity": "important",
+      "area": "permission-boundary",
+      "title": "middleware 明确排除了 /api，需要 API 独立守门清单",
+      "evidence": "middleware matcher 排除 api/；当前敏感 API 多数有 requireOwner 或 requirePermission，但路由边界策略不统一覆盖 API。",
+      "recommendation": "保留页面 middleware 策略，同时新增 API boundary registry/check，要求所有非公开 API 标注 public-read / owner-only / internal / forbidden。"
+    },
+    {
+      "severity": "important",
+      "area": "script-governance",
+      "title": "历史阶段脚本仍然占比很高，默认入口虽收束但仓库维护成本偏大",
+      "evidence": "当前 npm scripts 762 个，check 脚本 564 个，阶段型 check 脚本 439 个，最长脚本长度 5311。",
+      "recommendation": "继续保留 check:mainline/check:release:rc 为默认入口；下一轮可把阶段脚本迁入 legacy script registry，不再让 check:world-core 作为日常入口。"
+    }
+  ],
+  "recommendations": [
+    "保持当前 RC 主线，不再新增 R/V/R8 运行层。",
+    "新增 API boundary registry/check，补齐 middleware 排除 /api 后的服务端接口边界证据。",
+    "继续把 check:mainline、check:content、check:experience:public、check:release:rc 作为默认入口，逐步降低 check:world-core 维护负担。",
+    "继续物理归档 legacy 文档/阶段产物，但不要在未完成导入边界门禁前大删历史代码。",
+    "下一轮优先做 API 边界审查、package 漂移修复和公开体验真机前置清单。"
+  ],
+  "status": "review-completed-with-important-followups",
+  "failures": [],
+  "warnings": []
+}

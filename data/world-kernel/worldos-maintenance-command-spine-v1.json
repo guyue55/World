@@ -1,0 +1,169 @@
+{
+  "name": "WorldOS 长期维护命令脊柱 v1",
+  "updatedAt": "2026-07-04",
+  "source": "WorldOS 1.0 RC7 local runtime smoke follow-up",
+  "principle": "默认入口必须短、稳定、可复跑；历史阶段脚本保留为 reference，不再作为日常开发路径。",
+  "superpowersWorkflow": {
+    "skillsApplied": [
+      "using-superpowers",
+      "writing-plans",
+      "executing-plans",
+      "systematic-debugging",
+      "verification-before-completion",
+      "finishing-a-development-branch"
+    ],
+    "mode": "execute-plan-with-verification-no-feature-expansion"
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "缺少真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。"
+  },
+  "commandSpine": [
+    {
+      "id": "daily",
+      "script": "check:daily",
+      "command": "npm run check:mainline && npm run lint && npm run typecheck",
+      "purpose": "日常开发最短主线门禁：主线治理、lint、typecheck。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "boundary",
+      "script": "check:boundary",
+      "command": "npm run check:api-boundary && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:runtime-local",
+      "purpose": "边界治理门禁：API、脚本、维护命令脊柱。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "rc",
+      "script": "check:rc",
+      "command": "npm run check:release:rc",
+      "purpose": "候选发布本地快检别名，保持与 check:release:rc 一致。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "rc-fast",
+      "script": "check:rc:fast",
+      "command": "npm run check:release:rc",
+      "purpose": "候选发布本地快检，兼容旧 README 口径。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "rc-full",
+      "script": "check:rc:full",
+      "command": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run audit:report",
+      "purpose": "本地完整 RC 门禁：RC 快检、构建产物验证、本地 production HTTP smoke、审计报告。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "maintenance",
+      "script": "check:maintenance-command-spine",
+      "command": "node scripts/check-worldos-maintenance-command-spine.mjs",
+      "purpose": "验证命令脊柱、文档口径和生产状态诚实性。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "runtime-local-check",
+      "script": "check:runtime-local",
+      "command": "node scripts/check-worldos-local-runtime-smoke.mjs",
+      "purpose": "验证本地运行时 HTTP Smoke 注册表、脚本、文档与生产状态诚实性。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "runtime-local-smoke",
+      "script": "smoke:runtime-local",
+      "command": "node scripts/run-worldos-local-runtime-smoke.mjs",
+      "purpose": "启动本地 Next production server 并执行真实 HTTP smoke。",
+      "stageLikeAllowed": false
+    }
+  ],
+  "operatorLanes": [
+    {
+      "id": "daily-development",
+      "commands": [
+        "npm run check:daily"
+      ],
+      "when": "普通代码 / 内容 / 文档改动后的日常验证。"
+    },
+    {
+      "id": "boundary-change",
+      "commands": [
+        "npm run check:boundary"
+      ],
+      "when": "新增或修改 API、npm scripts、默认入口、治理注册表时。"
+    },
+    {
+      "id": "rc-local-fast",
+      "commands": [
+        "npm run check:rc:fast"
+      ],
+      "when": "暂不部署时的本地候选发布快检。"
+    },
+    {
+      "id": "rc-local-full",
+      "commands": [
+        "npm run check:rc:full"
+      ],
+      "when": "打包、交付、提交前的本地完整候选发布验证；包含本地 production HTTP smoke。"
+    },
+    {
+      "id": "local-runtime-smoke",
+      "commands": [
+        "npm run smoke:runtime-local"
+      ],
+      "when": "已经生成 .next 关键构建产物后，验证本地 production server 的真实 HTTP 行为。"
+    },
+    {
+      "id": "external-release",
+      "commands": [
+        "npm run smoke:preview",
+        "npm run smoke:production"
+      ],
+      "when": "拥有真实 Preview / Production URL 后执行；当前仍为外部阻断。"
+    }
+  ],
+  "policies": {
+    "noPublicFeatureExpansion": true,
+    "newStageScriptDefault": "deny",
+    "dailyEntrypointsMustStayShort": true,
+    "stageLikeCommandsRemainLegacyReference": true,
+    "frontendVisibilityIsNotPermission": true,
+    "productionFlagsRequireExternalEvidence": true,
+    "aliasesMustBeDocumented": true,
+    "runtimeSmokeDoesNotReplaceExternalSmoke": true
+  },
+  "documentationTargets": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/10-development-history/world-kernel/worldos-1-rc6-maintenance-command-spine.md",
+    "data/world-kernel/worldos-local-runtime-smoke-v1.json",
+    "docs/10-development-history/world-kernel/worldos-1-rc7-local-runtime-smoke.md"
+  ],
+  "stableEntrypoints": [
+    "check:daily",
+    "check:boundary",
+    "check:mainline",
+    "check:content",
+    "check:experience:public",
+    "check:api-boundary",
+    "check:scripts",
+    "check:maintenance-command-spine",
+    "check:rc",
+    "check:rc:fast",
+    "check:rc:full",
+    "audit:project",
+    "check:runtime-local",
+    "smoke:runtime-local"
+  ],
+  "externalEvidenceBlockers": [
+    "Preview URL",
+    "Production URL",
+    "online smoke test",
+    "HTTPS/domain verification",
+    "Web Vitals evidence",
+    "accessibility snapshot",
+    "manual signoff",
+    "rollback drill"
+  ]
+}

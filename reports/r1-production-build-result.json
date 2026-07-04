@@ -1,0 +1,8 @@
+{
+  "command": "artifact verification after direct NEXT_TELEMETRY_DISABLED=1 next build --turbopack attempt",
+  "status": "artifact-verified-after-next-timeout",
+  "artifactsReady": true,
+  "missing": [],
+  "generatedAt": "2026-05-23T15:54:07.729Z",
+  "note": "A direct Next build attempt in this container produced required production artifacts but did not exit cleanly before timeout. This wrapper verifies artifacts for R1 local engineering evidence only."
+}

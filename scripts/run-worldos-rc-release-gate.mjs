@@ -12,6 +12,7 @@ const commands = [
   ['npm', ['run', 'check:routes']],
   ['npm', ['run', 'build:kernel-release']],
   ['npm', ['run', 'build:verify-artifacts']],
+  ['npm', ['run', 'smoke:runtime-local']],
   ['npm', ['run', 'audit:report']],
   ['npm', ['run', 'check:worldos-rc']],
   ['npm', ['run', 'check:mainline']],

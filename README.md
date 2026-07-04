@@ -198,3 +198,122 @@ cleanProductionReady: false
 ```
 
 原因不变：真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals、可访问性快照、人工签收和真实回滚演练仍未执行。
+
+
+## WorldOS 1.0 RC5 / API 与脚本边界治理
+
+RC5 关闭了 RC4 审查中的两个重要后续项：
+
+```bash
+npm run check:api-boundary
+npm run check:scripts
+npm run audit:project
+```
+
+新增治理能力：
+
+```text
+API 边界注册表：data/world-kernel/worldos-api-boundary-registry-v1.json
+脚本 legacy 注册表：data/world-kernel/worldos-script-legacy-registry-v1.json
+RC5 审查结果：data/world-kernel/worldos-1-rc5-boundary-hardening-v1.json
+```
+
+当前 `/api` 不由 middleware 统一拦截，因此必须由 API route 自身使用 `requireOwner` / `requirePermission` 或注册为 `public-read` / `static-safe-public`。新增 API 时必须同步更新注册表并通过 `check:api-boundary`。
+
+脚本治理方面，历史阶段脚本保留为 legacy/reference；默认开发入口继续收束为：
+
+```bash
+npm run check:mainline
+npm run check:content
+npm run check:experience:public
+npm run check:api-boundary
+npm run check:scripts
+npm run check:release:rc
+```
+
+RC5 不改变生产状态，仍必须保持：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
+
+## WorldOS 1.0 RC6 / 长期维护命令脊柱
+
+RC6 继续遵守 Superpowers 工作流，没有新增公开功能，也没有改变生产状态；本轮目标是把维护入口从大量历史脚本中收束成少量稳定命令。
+
+新增稳定入口：
+
+```bash
+npm run check:daily
+npm run check:boundary
+npm run check:rc
+npm run check:rc:fast
+npm run check:rc:full
+npm run check:maintenance-command-spine
+```
+
+推荐使用方式：
+
+```text
+日常开发：npm run check:daily
+API / scripts / 治理注册表改动：npm run check:boundary
+候选发布本地快检：npm run check:rc:fast
+提交 / 打包前本地完整验证：npm run check:rc:full
+```
+
+治理文件：
+
+```text
+data/world-kernel/worldos-maintenance-command-spine-v1.json
+data/world-kernel/worldos-1-rc6-maintenance-command-spine-v1.json
+scripts/check-worldos-maintenance-command-spine.mjs
+docs/10-development-history/world-kernel/worldos-1-rc6-maintenance-command-spine.md
+```
+
+RC6 仍不改变生产状态：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
+
+这些状态只能在真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练完成后改变。
+
+## WorldOS 1.0 RC7 / 本地运行时 HTTP Smoke
+
+RC7 继续承接 RC6 的长期维护命令脊柱，不新增公开功能，不改变外部生产状态。本轮新增 **本地 production server HTTP smoke**：在没有真实 Preview / Production URL 的情况下，先用本地 `next start` 验证核心公开路由、静态 JSON、SEO 文件、legacy redirect、private guard 和 404 的真实 HTTP 行为。
+
+新增命令：
+
+```bash
+npm run check:runtime-local
+npm run smoke:runtime-local
+```
+
+更新后的完整本地候选发布验证：
+
+```bash
+npm run check:rc:full
+```
+
+`check:rc:full` 现在包含：
+
+```text
+RC 快检
+构建产物验证
+本地运行时 HTTP Smoke
+审计报告
+```
+
+RC7 仍必须保持：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
+
+原因：本地 HTTP smoke 只能证明本地 production server 行为，不能替代真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。

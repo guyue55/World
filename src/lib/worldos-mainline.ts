@@ -41,6 +41,8 @@ export const WORLDOS_SCRIPT_ENTRYPOINTS = {
   publicExperience: 'check:experience:public',
   releaseCandidate: 'check:release:rc',
   legacyBoundary: 'check:legacy-boundary',
+  apiBoundary: 'check:api-boundary',
+  scriptsGovernance: 'check:scripts',
 } as const
 
 export const WORLDOS_RC3_QUALITY_TARGETS = {

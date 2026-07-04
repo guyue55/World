@@ -1,0 +1,590 @@
+{
+  "name": "WorldOS API 边界注册表 v1",
+  "updatedAt": "2026-07-04",
+  "source": "WorldOS 1.0 RC4 project review follow-up",
+  "principle": "middleware 不覆盖 /api；所有 API 必须在服务端路由自身完成权限守门，并进入可复跑注册表。",
+  "allowedClassifications": [
+    "public-read",
+    "static-safe-public",
+    "permission-guarded",
+    "owner-only",
+    "internal-reference",
+    "forbidden"
+  ],
+  "policies": {
+    "mutatingApiMustBeGuarded": true,
+    "publicApiMustBeGetOnly": true,
+    "ownerOnlyRequires": "requireOwner",
+    "permissionGuardedRequires": "requirePermission",
+    "productionWriteDefault": false,
+    "realAiDefault": false,
+    "databaseDefault": false,
+    "frontendVisibilityIsNotPermission": true,
+    "middlewareApiExclusionRequiresRegistry": true
+  },
+  "routes": [
+    {
+      "path": "/api/r6/audit",
+      "file": "src/app/api/r6/audit/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "owner-only",
+      "guard": "requireOwner",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R6 owner-only audit event index. Exposes audit evidence only to owner workspace.",
+      "expectedSignals": {
+        "ownerGuard": true,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r6/export-jobs",
+      "file": "src/app/api/r6/export-jobs/route.ts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "classification": "owner-only",
+      "guard": "requireOwner",
+      "mutability": "runtime-or-placeholder-write",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R6 owner-only export jobs index and create placeholder.",
+      "expectedSignals": {
+        "ownerGuard": true,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r6/nodes",
+      "file": "src/app/api/r6/nodes/route.ts",
+      "methods": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "classification": "owner-only",
+      "guard": "requireOwner",
+      "mutability": "runtime-or-placeholder-write",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R6 owner-only draft node runtime adapter. Mutates in-memory draft nodes only.",
+      "expectedSignals": {
+        "ownerGuard": true,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": true
+      }
+    },
+    {
+      "path": "/api/r6/service-health",
+      "file": "src/app/api/r6/service-health/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R6 public service readiness summary. Static status only.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r7/maintenance",
+      "file": "src/app/api/r7/maintenance/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "owner-only",
+      "guard": "requireOwner",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R7 owner-only maintenance suggestions. No public exposure.",
+      "expectedSignals": {
+        "ownerGuard": true,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r7/world-log",
+      "file": "src/app/api/r7/world-log/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R7 public world log summary. Public events only.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r7/world-state",
+      "file": "src/app/api/r7/world-state/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R7 public world state and health summary.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/civilization-universe",
+      "file": "src/app/api/r8/civilization-universe/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 static civilization universe status. Read-only, no production write.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/complete-universe",
+      "file": "src/app/api/r8/complete-universe/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 static complete universe status. Read-only, no production write.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/dynamic-world",
+      "file": "src/app/api/r8/dynamic-world/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 static dynamic world runtime status. Read-only, no production write.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/feedback",
+      "file": "src/app/api/r8/feedback/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 public feedback channel description. Write mode is placeholder and owner review required.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/interactive-universe",
+      "file": "src/app/api/r8/interactive-universe/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 static interactive universe status. Read-only, no production write.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/public-log",
+      "file": "src/app/api/r8/public-log/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 public release log summary.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/public-status",
+      "file": "src/app/api/r8/public-status/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 public operations status summary.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/scene-universe",
+      "file": "src/app/api/r8/scene-universe/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 static scene universe data. Read-only, no production write.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/r8/sensory-universe",
+      "file": "src/app/api/r8/sensory-universe/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "R8 static sensory universe data. Read-only, no production write.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v10/intelligence-health",
+      "file": "src/app/api/v10/intelligence-health/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V10 public intelligent world health summary. No private payload.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v2/ai/suggestions",
+      "file": "src/app/api/v2/ai/suggestions/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "permission-guarded",
+      "guard": "requirePermission",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V2 permission-guarded AI suggestions. Viewer denied by RBAC.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": true,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v2/audit",
+      "file": "src/app/api/v2/audit/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "permission-guarded",
+      "guard": "requirePermission",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V2 permission-guarded audit listing. Viewer denied by RBAC.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": true,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v2/content",
+      "file": "src/app/api/v2/content/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "permission-guarded",
+      "guard": "requirePermission",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V2 permission-guarded public content listing. Viewer can read public content only.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": true,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v2/export/jobs",
+      "file": "src/app/api/v2/export/jobs/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "permission-guarded",
+      "guard": "requirePermission",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V2 permission-guarded export job listing. Viewer denied by RBAC.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": true,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v2/vault",
+      "file": "src/app/api/v2/vault/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "permission-guarded",
+      "guard": "requirePermission",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V2 permission-guarded vault listing. Viewer denied by RBAC.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": true,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/v9/service-health",
+      "file": "src/app/api/v9/service-health/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "default-static-or-framework",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "V9 public service platform health summary. No private payload.",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    }
+  ],
+  "summary": {
+    "totalRoutes": 23,
+    "ownerOnly": 4,
+    "permissionGuarded": 5,
+    "publicRead": 9,
+    "staticSafePublic": 5,
+    "mutatingRoutes": 2
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "name": "WorldOS 本地运行时 HTTP Smoke v1",
+  "updatedAt": "2026-07-04",
+  "source": "WorldOS 1.0 RC6 maintenance command spine follow-up",
+  "principle": "在不能执行真实外部部署时，至少用本地 Next production server 验证核心公开路由、静态 JSON、SEO 文件、legacy redirect 与 private guard 的真实 HTTP 行为。",
+  "superpowersWorkflow": {
+    "skillsApplied": [
+      "using-superpowers",
+      "writing-plans",
+      "executing-plans",
+      "systematic-debugging",
+      "verification-before-completion",
+      "finishing-a-development-branch"
+    ],
+    "mode": "local-runtime-smoke-without-external-deploy"
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地 runtime smoke 只能证明本地 production server 行为，不能替代真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。"
+  },
+  "requiredBuildArtifacts": [
+    ".next/BUILD_ID",
+    ".next/build-manifest.json",
+    ".next/server/app-paths-manifest.json",
+    ".next/routes-manifest.json",
+    ".next/required-server-files.json"
+  ],
+  "server": {
+    "command": "next start",
+    "host": "127.0.0.1",
+    "defaultPort": 4317,
+    "readinessPath": "/",
+    "startupTimeoutMs": 30000,
+    "requestTimeoutMs": 10000
+  },
+  "publicHtmlRoutes": [
+    "/",
+    "/about",
+    "/atlas",
+    "/timeline",
+    "/archive",
+    "/paths",
+    "/ask",
+    "/manifesto",
+    "/status",
+    "/node/world-manifesto"
+  ],
+  "staticAssetRoutes": [
+    {
+      "route": "/world-index.json",
+      "contentTypeIncludes": "application/json"
+    },
+    {
+      "route": "/world-manifest.json",
+      "contentTypeIncludes": "application/json"
+    },
+    {
+      "route": "/robots.txt",
+      "contentTypeIncludes": "text/plain"
+    },
+    {
+      "route": "/sitemap.xml",
+      "contentTypeIncludes": "xml"
+    }
+  ],
+  "legacyRedirectRoutes": [
+    {
+      "route": "/world",
+      "status": 308,
+      "location": "/atlas"
+    },
+    {
+      "route": "/world-map",
+      "status": 308,
+      "location": "/atlas"
+    },
+    {
+      "route": "/time-river",
+      "status": 308,
+      "location": "/timeline"
+    },
+    {
+      "route": "/lighthouse",
+      "status": 308,
+      "location": "/ask"
+    }
+  ],
+  "guardedRoutes": [
+    {
+      "route": "/r4-creator",
+      "status": 307,
+      "location": "/forbidden",
+      "reason": "创世台入口在没有真实 owner auth 前不得公开。"
+    },
+    {
+      "route": "/r6-service",
+      "status": 307,
+      "location": "/forbidden",
+      "reason": "服务化入口在没有真实后端权限前不得公开。"
+    },
+    {
+      "route": "/private-archive",
+      "status": 307,
+      "location": "/forbidden",
+      "reason": "私密档案不允许依赖前端显隐。"
+    }
+  ],
+  "negativeRoutes": [
+    {
+      "route": "/unknown-worldos-smoke-route",
+      "status": 404
+    }
+  ],
+  "evidenceOutput": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+  "policies": {
+    "mustUseRealHttp": true,
+    "mustStartProductionServer": true,
+    "mustNotRequireExternalNetwork": true,
+    "mustNotMarkProductionLive": true,
+    "frontendVisibilityIsNotPermission": true,
+    "runtimeSmokeDoesNotReplaceExternalSmoke": true
+  },
+  "documentationTargets": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/10-development-history/world-kernel/worldos-1-rc7-local-runtime-smoke.md"
+  ]
+}

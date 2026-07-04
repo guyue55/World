@@ -19,6 +19,8 @@ const requiredFiles = [
   'src/lib/worldos-mainline.ts',
   'scripts/check-worldos-mainline-governance.mjs',
   'scripts/check-worldos-script-taxonomy.mjs',
+  'data/world-kernel/worldos-maintenance-command-spine-v1.json',
+  'scripts/check-worldos-maintenance-command-spine.mjs',
 ]
 
 for (const file of requiredFiles) requireFile(file)
@@ -77,8 +79,12 @@ if (!failures.length) {
   }
   if (!productRoutes.includes('PRODUCT_INTERNAL_ROUTE_PATTERNS')) failures.push('product route policy 必须保留 internal route patterns')
 
-  for (const script of ['check:mainline', 'check:content', 'check:experience:public', 'check:worldos-mainline-governance', 'check:worldos-script-taxonomy', 'check:release:rc']) {
+  for (const script of ['check:mainline', 'check:content', 'check:experience:public', 'check:worldos-mainline-governance', 'check:worldos-script-taxonomy', 'check:maintenance-command-spine', 'check:daily', 'check:boundary', 'check:rc', 'check:rc:fast', 'check:rc:full', 'check:release:rc']) {
     if (!pkg.scripts?.[script]) failures.push(`package scripts 缺少 ${script}`)
+  }
+
+  if (!pkg.scripts?.['check:mainline']?.includes('check:maintenance-command-spine')) {
+    failures.push('check:mainline 必须包含 check:maintenance-command-spine')
   }
 }
 

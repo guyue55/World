@@ -29,8 +29,8 @@ for (const command of taxonomy.releaseCandidateCommands ?? []) {
 if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:worldos-mainline-governance')) {
   failures.push('check:mainline 必须包含 check:worldos-mainline-governance')
 }
-if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:worldos-script-taxonomy')) {
-  failures.push('check:mainline 必须包含 check:worldos-script-taxonomy')
+if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:worldos-script-taxonomy') && !pkg.scripts['check:mainline'].includes('check:scripts')) {
+  failures.push('check:mainline 必须通过 check:scripts 或直接包含 check:worldos-script-taxonomy')
 }
 const rcGateSource = fs.existsSync(path.join(root, 'scripts/run-worldos-rc-release-gate.mjs'))
   ? fs.readFileSync(path.join(root, 'scripts/run-worldos-rc-release-gate.mjs'), 'utf-8')
@@ -40,6 +40,18 @@ if (pkg.scripts?.['check:release:rc'] && !pkg.scripts['check:release:rc'].includ
 }
 
 if (taxonomy.legacyPolicy?.newStageScriptDefault !== 'deny') failures.push('新阶段脚本默认策略必须是 deny')
+
+if (taxonomy.legacyPolicy?.legacyRegistry !== 'data/world-kernel/worldos-script-legacy-registry-v1.json') {
+  failures.push('legacyPolicy 必须指向 data/world-kernel/worldos-script-legacy-registry-v1.json')
+}
+if (!pkg.scripts?.['check:api-boundary']) failures.push('package scripts 缺少 check:api-boundary')
+if (!pkg.scripts?.['check:scripts']) failures.push('package scripts 缺少 check:scripts')
+if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:api-boundary')) {
+  failures.push('check:mainline 必须包含 check:api-boundary')
+}
+if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:scripts')) {
+  failures.push('check:mainline 必须包含 check:scripts')
+}
 
 if (failures.length) {
   console.error('WorldOS script taxonomy check failed:')

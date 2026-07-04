@@ -1,0 +1,39 @@
+{
+  "auditName": "WorldOS 1.0 RC7 本地运行时 HTTP Smoke 复核",
+  "updatedAt": "2026-07-04",
+  "status": "rc7-local-runtime-smoke-completed-external-deploy-still-blocked",
+  "scope": "不新增公开功能；补齐本地 production server HTTP 行为验证、证据台账和门禁接入。",
+  "superpowersWorkflow": {
+    "skillsApplied": [
+      "using-superpowers",
+      "writing-plans",
+      "executing-plans",
+      "systematic-debugging",
+      "verification-before-completion",
+      "finishing-a-development-branch"
+    ],
+    "executionMode": "execute-without-confirmation-because-user-authorized-autonomous-work"
+  },
+  "completed": [
+    "新增本地运行时 smoke 注册表",
+    "新增本地 production server HTTP smoke 脚本",
+    "新增本地运行时 smoke 静态门禁",
+    "check:rc:full 接入 smoke:runtime-local",
+    "audit:project 接入 RC7 runtime smoke 复核",
+    "README / CONTRIBUTING / Superpowers plan / RC7 报告同步更新"
+  ],
+  "runtimeSmokeCoverage": {
+    "publicHtmlRoutes": 10,
+    "staticAssetRoutes": 4,
+    "legacyRedirectRoutes": 4,
+    "guardedRoutes": 3,
+    "negativeRoutes": 1
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地 runtime smoke 不等于真实外部部署；仍缺真实 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。"
+  },
+  "nextRecommendedStep": "有真实 Preview / Production URL 后执行 smoke:preview / smoke:production；没有外部 URL 时继续只做本地治理和体验修复，不伪造上线。"
+}

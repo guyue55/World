@@ -1,0 +1,805 @@
+{
+  "auditName": "WorldOS 1.0 RC7 本地运行时 HTTP Smoke 与维护治理复核",
+  "auditedAt": "2026-07-04",
+  "sourcePackage": "worldos_1_rc6_maintenance_command_spine_full-package.zip",
+  "superpowersWorkflow": {
+    "skillsApplied": [
+      "using-superpowers",
+      "writing-plans",
+      "verification-before-completion",
+      "finishing-a-development-branch"
+    ],
+    "mode": "local-runtime-smoke-no-feature-expansion"
+  },
+  "metrics": {
+    "fileCounts": {
+      "src/app": 114,
+      "src/components": 441,
+      "src/features": 197,
+      "src/lib": 161,
+      "src/platform": 31,
+      "src/server": 6,
+      "src/shared": 1,
+      "data": 1067,
+      "content": 52,
+      "docs": 869,
+      "scripts": 767,
+      "public": 12
+    },
+    "appPages": 81,
+    "apiRoutes": 23,
+    "npmScripts": 773,
+    "checkScripts": 574,
+    "stageLikeCheckScripts": 439,
+    "stableEntrypoints": 14,
+    "localRuntimeSmokeRoutes": 22,
+    "publicNodes": 52,
+    "contentBackedPublicNodes": 52,
+    "publicPaths": 13,
+    "areas": 8,
+    "representedAreas": 8,
+    "relations": 82,
+    "worldEvents": 21,
+    "permissions": 8
+  },
+  "progress": {
+    "audit": "completed-in-this-run-after-verification",
+    "architectureAudit": "completed-v1-previously",
+    "kernelConsolidation": "completed-k1-k4-and-k5-local-previously",
+    "releaseCandidate": "rc7-local-runtime-smoke-completed-locally",
+    "externalEvidence": "blocked-preview-production-smoke-signoff-required",
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  },
+  "checks": [
+    {
+      "id": "content-density",
+      "status": "pass",
+      "summary": "公开节点 52，有正文公开节点 52，关系 82，公开路径 13",
+      "details": {
+        "publicNodes": 52,
+        "contentBackedPublicNodes": 52,
+        "relations": 82,
+        "publicPaths": 13,
+        "representedAreas": 8,
+        "featuredNodes": 33,
+        "orphanPublicNodes": []
+      }
+    },
+    {
+      "id": "content-files",
+      "status": "pass",
+      "summary": "所有公开正文 contentPath 均存在",
+      "details": {
+        "missingContentFiles": []
+      }
+    },
+    {
+      "id": "mainline-import-boundary",
+      "status": "pass",
+      "summary": "公开主线页面未直接导入 forbidden legacy/private 前缀",
+      "details": {
+        "mainlineImportViolations": []
+      }
+    },
+    {
+      "id": "route-boundary",
+      "status": "pass",
+      "summary": "产品路由策略与 middleware 统一走 World Kernel decision",
+      "details": {
+        "missingRouteTokens": [],
+        "middlewareUsesKernelDecision": true,
+        "middlewareExcludesApi": true
+      }
+    },
+    {
+      "id": "api-boundary-registry",
+      "status": "pass",
+      "summary": "API 边界注册表已覆盖 23 个 API 路由",
+      "details": {
+        "middlewareExcludesApi": true,
+        "registeredApiRoutes": 23,
+        "apiRegistryMissingFiles": [],
+        "apiRegistryStaleFiles": [],
+        "registrySummary": {
+          "totalRoutes": 23,
+          "ownerOnly": 4,
+          "permissionGuarded": 5,
+          "publicRead": 9,
+          "staticSafePublic": 5,
+          "mutatingRoutes": 2
+        }
+      }
+    },
+    {
+      "id": "api-write-boundary",
+      "status": "pass",
+      "summary": "写入型 API 均有 owner/permission 守门，受保护 API 9 个",
+      "details": {
+        "apiRoutes": [
+          {
+            "file": "src/app/api/r6/audit/route.ts",
+            "path": "/api/r6/audit",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/export-jobs/route.ts",
+            "path": "/api/r6/export-jobs",
+            "methods": [
+              "GET",
+              "POST"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/nodes/route.ts",
+            "path": "/api/r6/nodes",
+            "methods": [
+              "GET",
+              "POST",
+              "PATCH"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": true,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/service-health/route.ts",
+            "path": "/api/r6/service-health",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r7/maintenance/route.ts",
+            "path": "/api/r7/maintenance",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r7/world-log/route.ts",
+            "path": "/api/r7/world-log",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r7/world-state/route.ts",
+            "path": "/api/r7/world-state",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/civilization-universe/route.ts",
+            "path": "/api/r8/civilization-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/complete-universe/route.ts",
+            "path": "/api/r8/complete-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/dynamic-world/route.ts",
+            "path": "/api/r8/dynamic-world",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/feedback/route.ts",
+            "path": "/api/r8/feedback",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/interactive-universe/route.ts",
+            "path": "/api/r8/interactive-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/public-log/route.ts",
+            "path": "/api/r8/public-log",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/public-status/route.ts",
+            "path": "/api/r8/public-status",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/scene-universe/route.ts",
+            "path": "/api/r8/scene-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/r8/sensory-universe/route.ts",
+            "path": "/api/r8/sensory-universe",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v10/intelligence-health/route.ts",
+            "path": "/api/v10/intelligence-health",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/ai/suggestions/route.ts",
+            "path": "/api/v2/ai/suggestions",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/audit/route.ts",
+            "path": "/api/v2/audit",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/content/route.ts",
+            "path": "/api/v2/content",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/export/jobs/route.ts",
+            "path": "/api/v2/export/jobs",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v2/vault/route.ts",
+            "path": "/api/v2/vault",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": true,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          },
+          {
+            "file": "src/app/api/v9/service-health/route.ts",
+            "path": "/api/v9/service-health",
+            "methods": [
+              "GET"
+            ],
+            "ownerGuarded": false,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": false
+          }
+        ],
+        "writeApiRoutes": [
+          {
+            "file": "src/app/api/r6/export-jobs/route.ts",
+            "path": "/api/r6/export-jobs",
+            "methods": [
+              "GET",
+              "POST"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": false,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          },
+          {
+            "file": "src/app/api/r6/nodes/route.ts",
+            "path": "/api/r6/nodes",
+            "methods": [
+              "GET",
+              "POST",
+              "PATCH"
+            ],
+            "ownerGuarded": true,
+            "permissionGuarded": false,
+            "writesMemory": true,
+            "writesFile": false,
+            "usesEnv": false,
+            "cacheNoStore": true
+          }
+        ],
+        "unguardedWriteApiRoutes": []
+      }
+    },
+    {
+      "id": "public-json-boundary",
+      "status": "pass",
+      "summary": "公开 JSON 未发现非 public 节点/路径/事件；private/vault 等仅作为边界说明词出现",
+      "details": {
+        "publicJsonFiles": [
+          "public/world-index.json",
+          "public/world-manifest.json"
+        ],
+        "publicJsonBoundaryTerms": [
+          {
+            "file": "public/world-index.json",
+            "token": "private"
+          },
+          {
+            "file": "public/world-index.json",
+            "token": "vault"
+          },
+          {
+            "file": "public/world-manifest.json",
+            "token": "private"
+          },
+          {
+            "file": "public/world-manifest.json",
+            "token": "vault"
+          },
+          {
+            "file": "public/world-manifest.json",
+            "token": "family"
+          }
+        ],
+        "publicJsonPrivatePayloadIssues": []
+      }
+    },
+    {
+      "id": "release-honesty",
+      "status": "pass",
+      "summary": "生产状态保持 false，未伪造真实外部证据",
+      "details": {
+        "releaseStates": {
+          "productionLive": false,
+          "releaseReady": false,
+          "cleanProductionReady": false
+        }
+      }
+    },
+    {
+      "id": "script-taxonomy",
+      "status": "pass",
+      "summary": "npm scripts 773 个，其中 check 脚本 574 个，阶段型 check 脚本 439 个；legacy registry 已跟踪 439 个阶段型脚本",
+      "details": {
+        "totalScripts": 773,
+        "checkScripts": 574,
+        "stageLikeCheckScripts": 439,
+        "longScripts": [
+          {
+            "name": "check:world-core",
+            "length": 5311
+          }
+        ],
+        "taxonomyCategories": [
+          "mainline",
+          "content",
+          "experience",
+          "release",
+          "legacy",
+          "api-boundary",
+          "script-governance",
+          "maintenance-command-spine",
+          "runtime-local-smoke"
+        ],
+        "scriptLegacyRegistryTracked": true,
+        "activeEntrypoints": [
+          "check:daily",
+          "check:boundary",
+          "check:mainline",
+          "check:content",
+          "check:experience:public",
+          "check:api-boundary",
+          "check:scripts",
+          "check:maintenance-command-spine",
+          "check:rc",
+          "check:rc:fast",
+          "check:rc:full",
+          "audit:project",
+          "check:runtime-local",
+          "smoke:runtime-local"
+        ]
+      }
+    },
+    {
+      "id": "maintenance-command-spine",
+      "status": "pass",
+      "summary": "长期维护命令脊柱已落库并与 package/docs/release 状态对齐",
+      "details": {
+        "commandSpine": [
+          "check:daily",
+          "check:boundary",
+          "check:rc",
+          "check:rc:fast",
+          "check:rc:full",
+          "check:maintenance-command-spine",
+          "check:runtime-local",
+          "smoke:runtime-local"
+        ],
+        "maintenanceMissingScripts": [],
+        "maintenanceMismatches": [],
+        "maintenanceDocMissing": [],
+        "maintenanceReleaseStates": {
+          "productionLive": false,
+          "releaseReady": false,
+          "cleanProductionReady": false,
+          "reason": "缺少真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。"
+        }
+      }
+    },
+    {
+      "id": "local-runtime-smoke",
+      "status": "pass",
+      "summary": "本地 production HTTP smoke 已注册并接入完整 RC 门禁",
+      "details": {
+        "localRuntimeScriptsOk": true,
+        "localRuntimeRoutes": {
+          "publicHtmlRoutes": 10,
+          "staticAssetRoutes": 4,
+          "legacyRedirectRoutes": 4,
+          "guardedRoutes": 3
+        },
+        "localRuntimeReleaseStates": {
+          "productionLive": false,
+          "releaseReady": false,
+          "cleanProductionReady": false,
+          "reason": "本地 runtime smoke 只能证明本地 production server 行为，不能替代真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。"
+        },
+        "rc7RuntimeSmokeStatus": "rc7-local-runtime-smoke-completed-external-deploy-still-blocked"
+      }
+    },
+    {
+      "id": "legacy-footprint",
+      "status": "pass",
+      "summary": "legacy imports 未进入公开主线；全 src legacy/private import 足迹 169 处",
+      "details": {
+        "totalLegacyImportHits": 169,
+        "publicLegacyHits": [],
+        "sampleLegacyImportHits": [
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 1,
+            "text": "import { AiPermissionMatrixPanel } from '@/components/ai-workbench/AiPermissionMatrixPanel'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 2,
+            "text": "import { AiSuggestionQueuePanel } from '@/components/ai-workbench/AiSuggestionQueuePanel'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 3,
+            "text": "import { AiWorkbenchV2Hero } from '@/components/ai-workbench/AiWorkbenchV2Hero'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 5,
+            "text": "import { AiRecommendationPanel } from '@/components/ai-workbench/AiRecommendationPanel'"
+          },
+          {
+            "file": "src/app/ai-workbench-v2/page.tsx",
+            "line": 6,
+            "text": "import { AiWorldCompanionPanel } from '@/components/ai-workbench/AiWorldCompanionPanel'"
+          },
+          {
+            "file": "src/app/ai-workbench/page.tsx",
+            "line": 1,
+            "text": "import { AiSuggestionList } from '@/components/ai-workbench/AiSuggestionList'"
+          },
+          {
+            "file": "src/app/ai-workbench/page.tsx",
+            "line": 2,
+            "text": "import { AiWorkbenchHero } from '@/components/ai-workbench/AiWorkbenchHero'"
+          },
+          {
+            "file": "src/app/api/r6/audit/route.ts",
+            "line": 2,
+            "text": "import { r6AuditEvents } from '@/features/r6-service-bridge'"
+          },
+          {
+            "file": "src/app/api/r6/export-jobs/route.ts",
+            "line": 2,
+            "text": "import { r6ExportJobs } from '@/features/r6-service-bridge'"
+          },
+          {
+            "file": "src/app/api/r6/service-health/route.ts",
+            "line": 2,
+            "text": "import { r6ServiceHealth } from '@/features/r6-service-bridge'"
+          },
+          {
+            "file": "src/app/api/r7/maintenance/route.ts",
+            "line": 2,
+            "text": "import { r7MaintenanceQueue } from '@/features/r7-world-evolution'"
+          },
+          {
+            "file": "src/app/api/r7/world-log/route.ts",
+            "line": 2,
+            "text": "import { getR7PublicWorldLog } from '@/features/r7-world-evolution'"
+          },
+          {
+            "file": "src/app/api/r7/world-state/route.ts",
+            "line": 2,
+            "text": "import { r7WorldHealth, r7WorldState } from '@/features/r7-world-evolution'"
+          },
+          {
+            "file": "src/app/api/r8/feedback/route.ts",
+            "line": 2,
+            "text": "import { r8FeedbackLoop } from '@/features/r8-public-operations'"
+          },
+          {
+            "file": "src/app/api/r8/public-log/route.ts",
+            "line": 2,
+            "text": "import { r8WorldReleaseLog } from '@/features/r8-public-operations'"
+          },
+          {
+            "file": "src/app/api/r8/public-status/route.ts",
+            "line": 2,
+            "text": "import { getR8Summary, r8Roadmap } from '@/features/r8-public-operations'"
+          },
+          {
+            "file": "src/app/api/v10/intelligence-health/route.ts",
+            "line": 1,
+            "text": "import { v10FinalManifest, v10Roadmap, v10QualityResilience } from '@/features/v10-intelligent-world'"
+          },
+          {
+            "file": "src/app/api/v9/service-health/route.ts",
+            "line": 1,
+            "text": "import { v9Roadmap, v9ServiceEvidenceLedger } from '@/features/v9-service-platform'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 3,
+            "text": "import { PrivateAiApprovalPanel } from '@/components/private-ai-v6/PrivateAiApprovalPanel'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 4,
+            "text": "import { PrivateAiAuditPanel } from '@/components/private-ai-v6/PrivateAiAuditPanel'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 5,
+            "text": "import { PrivateAiHero } from '@/components/private-ai-v6/PrivateAiHero'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 6,
+            "text": "import { PrivateAiMemoryGraphPanel } from '@/components/private-ai-v6/PrivateAiMemoryGraphPanel'"
+          },
+          {
+            "file": "src/app/private-ai/page.tsx",
+            "line": 7,
+            "text": "import { PrivateAiStagePanel } from '@/components/private-ai-v6/PrivateAiStagePanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 2,
+            "text": "import { PrivateArchiveBoundaryPanel } from '@/components/private-archive/PrivateArchiveBoundaryPanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 3,
+            "text": "import { PrivateArchiveHero } from '@/components/private-archive/PrivateArchiveHero'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 4,
+            "text": "import { PrivateArchivePlaceholderGrid } from '@/components/private-archive/PrivateArchivePlaceholderGrid'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 6,
+            "text": "import { AnnualWorldBookPanel } from '@/components/private-archive/AnnualWorldBookPanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 7,
+            "text": "import { InheritanceExportPanel } from '@/components/private-archive/InheritanceExportPanel'"
+          },
+          {
+            "file": "src/app/private-archive/page.tsx",
+            "line": 8,
+            "text": "import { TimeCapsulePanel } from '@/components/private-archive/TimeCapsulePanel'"
+          },
+          {
+            "file": "src/app/r1-production/page.tsx",
+            "line": 2,
+            "text": "import { R1ProductionDashboard, R1ProductionHero, R1ReleaseEvidencePanel, R1StageBoard } from '@/components/r1-production'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "chinese-first-ui",
+      "status": "pass",
+      "summary": "公开主线未发现大面积英文 UI 文案",
+      "details": {
+        "englishLikeMainlineHits": [
+          {
+            "file": "src/app/ask/page.tsx",
+            "matches": [
+              ">LIGHTHOUSE<"
+            ]
+          },
+          {
+            "file": "src/app/manifesto/page.tsx",
+            "matches": [
+              ">MANIFESTO<"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "accessibility-basics",
+      "status": "pass",
+      "summary": "WorldShell 保留 main-content 与旅程浮层基础",
+      "details": {
+        "hasMainContent": true,
+        "hasProductJourneyDock": true
+      }
+    },
+    {
+      "id": "git-working-tree-policy",
+      "status": "pass",
+      "summary": "Git 工作区洁净性作为收尾门禁单独验证，不写入审查 JSON，避免报告随提交状态漂移",
+      "details": {}
+    }
+  ],
+  "findings": [],
+  "recommendations": [
+    "保持当前 RC 主线，不再新增 R/V/R8 运行层。",
+    "API boundary registry/check 已落库；后续新增 API 必须同步注册并通过 check:api-boundary。",
+    "长期维护命令脊柱已落库；优先使用 check:daily、check:boundary、check:rc:fast、check:rc:full，历史阶段脚本仅作为 legacy/reference。",
+    "本地运行时 HTTP smoke 已接入 check:rc:full；它验证本地 production server 行为，但不替代真实外部 smoke。",
+    "继续物理归档 legacy 文档/阶段产物，但不要在未完成导入边界门禁前大删历史代码。",
+    "下一轮优先做 legacy 物理归档前置清单、公开体验真机检查清单和外部部署证据对接。"
+  ],
+  "status": "pass",
+  "failures": [],
+  "warnings": []
+}

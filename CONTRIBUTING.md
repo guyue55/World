@@ -138,3 +138,75 @@ npm run check:release:rc:fast
 4. 强关系必须写 `note`，避免星图只有连线没有语义。
 5. 新路径不得引用非公开节点。
 6. production 状态只能由真实外部证据改变。
+
+
+## RC5 API 与脚本边界规则
+
+新增或修改 API route 时必须遵守：
+
+1. 所有 `src/app/api/**/route.ts` 必须登记到 `data/world-kernel/worldos-api-boundary-registry-v1.json`。
+2. 公开 API 只能使用 `GET`，且只能暴露 public / static-safe 数据。
+3. 任何写入、占位写入、运行态内存写入或未来持久化写入，必须由服务端 `requireOwner` 或 `requirePermission` 守门。
+4. 前端显隐、按钮隐藏、世界语言提示都不能作为权限控制依据。
+5. 修改 API 后必须运行：
+
+```bash
+npm run check:api-boundary
+```
+
+脚本治理规则：
+
+1. 不再新增 `check:r*`、`check:v*`、`check:stage*`、`check:round*` 作为默认开发入口。
+2. 历史阶段脚本保留为 legacy/reference，统一由 `data/world-kernel/worldos-script-legacy-registry-v1.json` 跟踪。
+3. 新检查能力优先接入短入口：`check:mainline`、`check:content`、`check:experience:public`、`check:api-boundary`、`check:scripts`。
+4. 修改脚本后必须运行：
+
+```bash
+npm run check:scripts
+```
+
+## WorldOS 1.0 RC6 长期维护命令脊柱规则
+
+RC6 后，默认开发不要从 700+ 历史脚本里挑命令，优先使用稳定入口：
+
+```bash
+npm run check:daily
+npm run check:boundary
+npm run check:rc:fast
+npm run check:rc:full
+```
+
+使用约定：
+
+1. 普通代码、内容、文档改动后运行 `npm run check:daily`。
+2. 修改 API、脚本、治理注册表、默认入口时运行 `npm run check:boundary`。
+3. 本地候选发布快检运行 `npm run check:rc:fast`。
+4. 提交、打包、交付前运行 `npm run check:rc:full`。
+5. 新增短入口必须同步更新 `data/world-kernel/worldos-maintenance-command-spine-v1.json`。
+6. 新增阶段型脚本默认不允许作为开发入口；历史阶段脚本只保留为 legacy/reference。
+7. 没有真实外部证据时，不得把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
+
+RC6 的专用门禁：
+
+```bash
+npm run check:maintenance-command-spine
+```
+
+## WorldOS 1.0 RC7 本地运行时 HTTP Smoke 规则
+
+RC7 后，打包或交付前的完整本地验证必须覆盖真实 HTTP 行为：
+
+```bash
+npm run check:runtime-local
+npm run smoke:runtime-local
+npm run check:rc:full
+```
+
+使用约定：
+
+1. `check:runtime-local` 只检查本地运行时 smoke 的注册表、脚本、文档和生产状态诚实性。
+2. `smoke:runtime-local` 会启动本地 `next start`，检查公开 HTML 路由、静态 JSON、robots、sitemap、legacy redirect、private guard 和 404。
+3. `check:rc:full` 已接入 `smoke:runtime-local`，适合提交、打包、交付前执行。
+4. 本地 HTTP smoke 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
+5. 修改公开路由、legacy redirect、private/internal guard、public JSON、robots、sitemap 时，必须同步更新 `data/world-kernel/worldos-local-runtime-smoke-v1.json`。
+6. 前端显隐仍不是权限控制；private/internal 路由必须由服务端 route policy / middleware / API guard 约束。
