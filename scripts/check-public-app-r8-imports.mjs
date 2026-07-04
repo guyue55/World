@@ -14,6 +14,7 @@ const criticalPublicEntries = [
   'src/app/lighthouse/page.tsx',
   'src/app/about/page.tsx',
   'src/app/status/page.tsx',
+  'src/app/manifesto/page.tsx',
 ]
 
 const violations = []
