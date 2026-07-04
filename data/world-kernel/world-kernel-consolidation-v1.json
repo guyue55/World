@@ -1,0 +1,93 @@
+{
+  "version": "1.0.0",
+  "name": "World Kernel Consolidation v1",
+  "status": "in-progress-local-complete",
+  "generatedAt": "2026-07-04",
+  "scope": "K1-K4 local consolidation; K5 production evidence remains external.",
+  "progress": {
+    "K1_coreModelSource": "completed",
+    "K2_runtimeBoundary": "completed",
+    "K3_presentationRoutes": "completed",
+    "K4_scriptGates": "completed",
+    "K5_productionEvidence": "blocked-external-preview-production-required"
+  },
+  "canonicalSources": {
+    "areas": "data/domains/experience/areas.json",
+    "nodes": "data/domains/experience/nodes.json",
+    "relations": "data/core/relations.json",
+    "paths": "data/domains/experience/paths.json",
+    "worldEvents": "data/core/world-events.json",
+    "worldState": "data/core/world-state.json",
+    "permissions": "data/domains/governance/permissions.json",
+    "routePolicy": "src/lib/product-routes.ts",
+    "routeDecision": "src/lib/world-kernel-boundary.ts"
+  },
+  "legacyAdapters": {
+    "principle": "历史 V/R/R8 数据和组件可保留为 reference，但正式公开页面不得直接依赖它们。",
+    "legacyDataPrefixes": [
+      "data/r",
+      "data/v"
+    ],
+    "legacyComponentPrefixes": [
+      "src/components/r",
+      "src/features/r"
+    ],
+    "formalAccess": "通过 World Kernel canonical sources 和 adapter/report 读取，不新增直接公开挂载。"
+  },
+  "formalRuntime": {
+    "shell": "src/components/world/WorldShell.tsx",
+    "backdrop": "src/components/product/ProductBackdrop.tsx",
+    "journeyDock": "src/components/product/ProductJourneyDock.tsx",
+    "routePolicy": "src/lib/product-routes.ts",
+    "routeDecision": "src/lib/world-kernel-boundary.ts",
+    "forbiddenPublicRuntimeImports": [
+      "@/components/r8-",
+      "@/features/r8-",
+      "CivilizationUniverse",
+      "InteractiveUniverse",
+      "LivingUniverse",
+      "CompleteUniverse",
+      "DynamicUniverse"
+    ]
+  },
+  "formalPublicRoutes": [
+    "/",
+    "/about",
+    "/atlas",
+    "/timeline",
+    "/archive",
+    "/paths",
+    "/ask",
+    "/manifesto",
+    "/status",
+    "/node/:slug",
+    "/paths/:id"
+  ],
+  "longTermChecks": [
+    "check:world-kernel-consolidation",
+    "check:world-kernel-core",
+    "check:world-kernel-runtime",
+    "check:legacy-boundary",
+    "check:product-release",
+    "check:routes",
+    "check:release",
+    "build:kernel-release"
+  ],
+  "completionCriteria": [
+    "核心模型事实源唯一且由 World Kernel 注册表说明。",
+    "正式公开路径不再直接挂载 R8 动态 runtime。",
+    "未知 top-level app 页面必须归入 public/private/legacy/internal 任一类。",
+    "middleware、sitemap、robots 与 route policy 保持一致。",
+    "长期检查脚本可阻断新增混乱。",
+    "真实上线仍需外部 Preview/Production 和 smoke test 证据。"
+  ],
+  "scriptConsolidation": {
+    "currentReleaseGate": "check:release",
+    "legacyReleaseGate": "check:release:legacy",
+    "reason": "旧 check:release 仍引用阶段体验门禁 check:experience，要求 legacy 路由进入主导航；当前产品化策略已将这些路由重定向或内部化。",
+    "buildKernelRelease": "使用 scripts/run-world-kernel-release-build.mjs：Next/Webpack compile mode 生成关键 artifacts 后停止 trace/finalization，随后 build:verify-artifacts 复核。"
+  },
+  "newFiles": [
+    "scripts/run-world-kernel-release-build.mjs"
+  ]
+}

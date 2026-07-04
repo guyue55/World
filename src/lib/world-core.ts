@@ -4,6 +4,7 @@ import { getAllNodes, getPublicNodes } from './nodes'
 import { getAllPaths } from './paths'
 import { getAllRelations } from './relations'
 import { getAllWorldEvents, getWorldState } from './world-events'
+import { WORLD_KERNEL_CANONICAL_SOURCES, getWorldKernelConsolidationStatus } from './world-kernel-registry'
 
 export type WorldDepth = 'surface' | 'middle' | 'deep' | 'vault'
 
@@ -125,4 +126,13 @@ export function summarizeWorldCore(core = getWorldCore()) {
     aiStatus: core.state.aiStatus,
     mode: core.state.mode,
   }
+}
+
+
+export function getWorldCoreSources() {
+  return WORLD_KERNEL_CANONICAL_SOURCES
+}
+
+export function getWorldCoreConsolidationStatus() {
+  return getWorldKernelConsolidationStatus()
 }

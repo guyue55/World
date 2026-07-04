@@ -1,5 +1,7 @@
 export const PRODUCT_PUBLIC_ROUTES = [
   '/',
+  '/about',
+  '/forbidden',
   '/atlas',
   '/timeline',
   '/archive',
@@ -35,6 +37,32 @@ export const PRODUCT_PRIVATE_ROUTES = [
   '/ai-workbench-v2',
 ] as const
 
+export const PRODUCT_INTERNAL_EXACT_ROUTES = [
+  '/asset-library',
+  '/constellation',
+  '/content-ecosystem',
+  '/content-studio',
+  '/evidence',
+  '/evidence-sprint',
+  '/exhibitions',
+  '/export-center',
+  '/governance',
+  '/hardening',
+  '/intelligent-ops',
+  '/memory-graph',
+  '/observability',
+  '/operator',
+  '/pre-v4-gate',
+  '/production',
+  '/production-readiness',
+  '/real-content',
+  '/release',
+  '/service-adapters',
+  '/skeleton',
+  '/theme-system',
+  '/v2-console',
+] as const
+
 export const PRODUCT_INTERNAL_ROUTE_PATTERNS = [
   /^\/v\d+(?:-|\/|$)/,
   /^\/r\d+(?:-|\/|$)/,
@@ -63,5 +91,6 @@ export function isPrivateProductRoute(pathname: string) {
 }
 
 export function isInternalProductRoute(pathname: string) {
-  return PRODUCT_INTERNAL_ROUTE_PATTERNS.some((pattern) => pattern.test(pathname))
+  return PRODUCT_INTERNAL_EXACT_ROUTES.includes(pathname as typeof PRODUCT_INTERNAL_EXACT_ROUTES[number])
+    || PRODUCT_INTERNAL_ROUTE_PATTERNS.some((pattern) => pattern.test(pathname))
 }

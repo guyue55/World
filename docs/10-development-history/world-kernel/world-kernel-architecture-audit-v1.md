@@ -17,20 +17,20 @@
     "app": 114,
     "components": 439,
     "features": 197,
-    "lib": 157,
-    "data": 1048,
-    "scripts": 745,
-    "docs": 855
+    "lib": 160,
+    "data": 1050,
+    "scripts": 750,
+    "docs": 857
   },
   "appRouteFiles": 81,
   "stageRouteFiles": 49,
-  "scripts": 737,
-  "checkScripts": 545,
+  "scripts": 743,
+  "checkScripts": 550,
   "stageCheckScripts": 454,
   "r8Components": 64,
   "r8DataFiles": 51,
   "r8Scripts": 27,
-  "publicRouteTokenCount": 33
+  "publicRouteTokenCount": 58
 }
 ```
 

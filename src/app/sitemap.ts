@@ -4,7 +4,7 @@ import { getAllPaths } from '@/lib/paths'
 import { PRODUCT_PUBLIC_ROUTES } from '@/lib/product-routes'
 import { site } from '@/lib/site'
 
-const sitemapStaticRoutes = PRODUCT_PUBLIC_ROUTES.filter((route) => route !== '/status')
+const sitemapStaticRoutes = PRODUCT_PUBLIC_ROUTES.filter((route) => !['/status', '/forbidden'].includes(route))
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticItems = sitemapStaticRoutes.map((route) => ({

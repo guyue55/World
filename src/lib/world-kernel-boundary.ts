@@ -4,6 +4,7 @@ import {
   isPrivateProductRoute,
   isProductPublicRoute,
   PRODUCT_DEEP_PUBLIC_PREFIXES,
+  PRODUCT_INTERNAL_EXACT_ROUTES,
   PRODUCT_INTERNAL_ROUTE_PATTERNS,
   PRODUCT_LEGACY_REDIRECTS,
   PRODUCT_PRIVATE_ROUTES,
@@ -29,6 +30,7 @@ export const WORLD_KERNEL_BASELINE = {
   sourcePackage: 'word-life_productization_journey_paths_v1_full-package.zip',
   freezePolicy: 'data/world-kernel/kernel-freeze-policy.json',
   auditReport: 'docs/10-development-history/world-kernel/world-kernel-architecture-audit-v1.md',
+  consolidationReport: 'docs/10-development-history/world-kernel/world-kernel-consolidation-v1.md',
 } as const
 
 export const WORLD_KERNEL_ROUTE_POLICY = {
@@ -36,6 +38,7 @@ export const WORLD_KERNEL_ROUTE_POLICY = {
   deepPublicPrefixes: PRODUCT_DEEP_PUBLIC_PREFIXES,
   legacyRedirects: PRODUCT_LEGACY_REDIRECTS,
   privateRoutes: PRODUCT_PRIVATE_ROUTES,
+  internalExactRoutes: PRODUCT_INTERNAL_EXACT_ROUTES,
   internalPatterns: PRODUCT_INTERNAL_ROUTE_PATTERNS.map((pattern) => pattern.source),
 } as const
 

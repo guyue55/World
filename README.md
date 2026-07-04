@@ -82,3 +82,14 @@ docs/       长期文档中心
 ## 生产说明
 
 当前本地产品化门禁可以验证公开入口、路由守门、类型检查和构建产物存在性；但仍不能声明 `productionLive: true`。真实上线还需要外部 Preview / Production URL、线上 smoke test、域名 HTTPS、人工签收与真实回滚演练。
+
+## World Kernel Consolidation v1
+
+当前开发方式已经从“继续扩展新阶段”切换为“内核收束”。本轮完成 K1-K4 本地收束：
+
+- K1：Node / Area / Relation / Path / WorldState / Permission 的唯一事实源登记。
+- K2：正式公开 runtime 固定为 Product WorldShell，R8 动态宇宙系列降级为 legacy/reference。
+- K3：公开、私密、legacy、internal 路由统一由 World Kernel route decision 守门。
+- K4：新增长期门禁 `check:world-kernel-consolidation`，并接入 `check:product-release`。
+
+仍未完成的是 K5：真实外部 Preview / Production、线上 smoke test、域名 HTTPS、人工签收和回滚演练。因此 `productionLive`、`releaseReady`、`cleanProductionReady` 仍必须保持 `false`。

@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "name": "World Kernel 长期门禁映射",
+  "status": "active",
+  "principle": "历史阶段脚本可保留为 legacy evidence，但日常开发和发布入口应优先使用长期门禁。",
+  "longTermGates": {
+    "check:world-kernel-consolidation": "聚合 K1-K4 本地内核收束检查。",
+    "check:world-kernel-core": "检查 Node/Area/Relation/WorldState 等唯一事实源。",
+    "check:world-kernel-runtime": "检查正式公开 runtime 不直接挂载 R8 动态层。",
+    "check:legacy-boundary": "检查所有 top-level app 路由被 public/private/legacy/internal 明确归类。",
+    "check:product-release": "产品公开入口与路由守门总门禁。",
+    "check:release": "World Kernel 后的本地发布门禁：内核收束、产品发布、lint、typecheck、基础检查、路由、构建产物和 audit。",
+    "build:kernel-release": "使用 World Kernel 专用 build wrapper：Next/Webpack compile mode 生成关键 artifacts 后停止 trace/finalization。"
+  },
+  "legacyScriptPolicy": {
+    "keep": "保留阶段历史脚本，避免丢失审计证据。",
+    "doNotUseAsDailyGate": [
+      "check:r8-*",
+      "check:v10-*",
+      "check:phase-*",
+      "check:stage-*"
+    ],
+    "nextReduction": "生产部署前可另起 PR 迁移或归档阶段脚本，但不在本轮冒险批量删除。",
+    "legacyReleaseGate": "check:release:legacy 保留旧链路，仅用于历史审计；它仍包含旧 check:experience，不作为当前产品发布门禁。"
+  }
+}

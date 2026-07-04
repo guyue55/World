@@ -471,7 +471,7 @@
     "check:repo": "tsx scripts/check-repo-structure.ts",
     "check:local": "npm run check:json && npm run check:repo && npm run check:experience && npm run check:round2 && npm run lint && npm run typecheck && npm run build",
     "audit:report": "node scripts/write-npm-audit-report.mjs",
-    "check:release": "npm run check:local && npm run audit:report",
+    "check:release": "npm run check:world-kernel-consolidation && npm run check:product-release && npm run lint && npm run typecheck && npm run check && npm run check:routes && npm run build:kernel-release && npm run build:verify-artifacts && npm run audit:report",
     "check:round2:00": "tsx scripts/check-round2-00.ts",
     "check:round2:stage-01": "tsx scripts/check-round2-stage-01.ts",
     "check:round2": "tsx scripts/check-round2-all.ts",
@@ -738,9 +738,15 @@
     "check:r8-scene-universe:boundary": "tsx scripts/check-r8-scene-universe-boundary.ts",
     "check:r8-civilization-universe:all": "tsx scripts/check-r8-civilization-universe-all.ts",
     "check:r8-civilization-universe:boundary": "tsx scripts/check-r8-civilization-universe-boundary.ts",
-    "check:product-release": "tsx scripts/check-product-release.ts && node scripts/check-world-kernel-audit.mjs",
+    "check:product-release": "npm run check:world-kernel-consolidation && tsx scripts/check-product-release.ts",
     "audit:world-kernel": "node scripts/audit-world-kernel.mjs",
-    "check:world-kernel-audit": "node scripts/check-world-kernel-audit.mjs"
+    "check:world-kernel-audit": "node scripts/check-world-kernel-audit.mjs",
+    "check:world-kernel-core": "node scripts/check-world-kernel-core.mjs",
+    "check:world-kernel-runtime": "node scripts/check-world-kernel-runtime.mjs",
+    "check:legacy-boundary": "node scripts/check-legacy-boundary.mjs",
+    "check:world-kernel-consolidation": "node scripts/check-world-kernel-consolidation.mjs",
+    "check:product-release:raw": "tsx scripts/check-product-release.ts",
+    "build:kernel-release": "npm run validate:world && npm run check:public && npm run build:public-json && node scripts/run-world-kernel-release-build.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

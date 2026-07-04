@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import {
+  PRODUCT_INTERNAL_EXACT_ROUTES,
   PRODUCT_LEGACY_REDIRECTS,
   PRODUCT_PRIVATE_ROUTES,
   PRODUCT_PUBLIC_ROUTES,
@@ -14,6 +15,7 @@ const json = <T>(file: string): T => JSON.parse(read(file)) as T
 const productFiles = [
   'src/app/page.tsx',
   'src/components/world/WorldShell.tsx',
+  'src/app/about/page.tsx',
   'src/app/atlas/page.tsx',
   'src/app/timeline/page.tsx',
   'src/app/archive/page.tsx',
@@ -52,6 +54,7 @@ const forbiddenTokens = [
 
 const allowedNavHrefs = new Set(['/', '/atlas', '/timeline', '/archive', '/ask', '/manifesto'])
 const disallowedSitemapRouteTokens = [
+  ...PRODUCT_INTERNAL_EXACT_ROUTES,
   '/skeleton',
   '/r2-world',
   '/r3-content-life',
@@ -63,7 +66,22 @@ const disallowedSitemapRouteTokens = [
   '/r6-service',
   '/r7-evolution',
 ]
+const requiredKernelConsolidationFiles = [
+  'data/world-kernel/world-kernel-consolidation-v1.json',
+  'data/world-kernel/script-consolidation-map.json',
+  'src/lib/world-kernel-registry.ts',
+  'src/lib/world-kernel-runtime.ts',
+  'src/lib/world-kernel-legacy.ts',
+  'scripts/check-world-kernel-core.mjs',
+  'scripts/check-world-kernel-runtime.mjs',
+  'scripts/check-legacy-boundary.mjs',
+]
+
 const failures: string[] = []
+
+for (const file of requiredKernelConsolidationFiles) {
+  if (!fs.existsSync(path.join(root, file))) failures.push(`missing kernel consolidation file: ${file}`)
+}
 
 for (const file of productFiles) {
   const content = read(file)

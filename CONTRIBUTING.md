@@ -63,3 +63,12 @@ npm run audit:report
 ## 权限原则
 
 后端 / middleware / 数据层控制权限，前端只做体验呈现和显隐提示。不得把私密、vault、family、partner、internal、stage route 的安全边界只写在前端组件里。
+
+## 内核收束开发规则
+
+1. 不新增 R8.x / V11 / 新动态宇宙 runtime。
+2. 新公开页面必须先进入 `src/lib/product-routes.ts` 路由策略，并通过 `check:legacy-boundary`。
+3. 正式公开页面不得直接 import `@/components/r8-*` 或 `@/features/r8-*`。
+4. 私密、家庭、vault、AI 审计和创世台能力必须由服务端路由边界守门，前端只能做显隐体现。
+5. 日常提交前优先运行：`npm run check:world-kernel-consolidation && npm run check:product-release`。
+6. 任何真实上线声明必须有 Preview / Production URL、线上 smoke test、人工签收和回滚演练证据。
