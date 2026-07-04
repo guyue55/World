@@ -35,7 +35,7 @@ export function getR2Summary(): R2Summary {
 }
 
 export function getR2GatewayCards(): R2GatewayCard[] {
-  return r2AreaPassports.map((area) => ({
+  return r2AreaPassports.map((area: any) => ({
     id: area.id,
     title: area.worldName,
     worldName: area.worldName,

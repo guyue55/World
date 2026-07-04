@@ -1,0 +1,1493 @@
+commit cf8dfb66f36cea273170bfb8930a6613be39b5a8
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 21:12:22 2026 +0800
+
+    test(kernel): 全量扫描 App 运行边界
+    
+    将公开运行边界门禁升级为递归扫描 src/app，防止 App Router 页面再次直接引入 R8 runtime。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 6090867..e3264cb 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -3,46 +3,38 @@ import fs from 'node:fs'
+ import path from 'node:path'
+ 
+ const root = process.cwd()
++const appRoot = path.join(root, 'src', 'app')
++const violations = []
+ 
+-// Staged World Kernel boundary:
+-// expand this list only after each route is migrated by a small PR.
+-const criticalPublicEntries = [
+-  'src/app/page.tsx',
+-  'src/app/world/page.tsx',
+-  'src/app/world-map/page.tsx',
+-  'src/app/time-river/page.tsx',
+-  'src/app/lighthouse/page.tsx',
+-  'src/app/about/page.tsx',
+-  'src/app/status/page.tsx',
+-  'src/app/manifesto/page.tsx',
+-  `src/app/${'ask'}/page.tsx`,
+-  'src/app/paths/page.tsx',
+-  'src/app/archive/page.tsx',
+-  'src/app/atlas/page.tsx',
+-  'src/app/timeline/page.tsx',
+-  'src/app/node/[slug]/page.tsx',
+-  'src/app/r4-creator/page.tsx',
+-  'src/app/r6-service/page.tsx',
+-  'src/app/r7-evolution/page.tsx',
+-  'src/app/r8-public/page.tsx',
+-]
++function walk(dir) {
++  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
++    const fullPath = path.join(dir, entry.name)
++    if (entry.isDirectory()) {
++      walk(fullPath)
++      continue
++    }
+ 
+-const violations = []
+-for (const repoPath of criticalPublicEntries) {
+-  const fullPath = path.join(root, ...repoPath.split('/'))
+-  if (!fs.existsSync(fullPath)) {
+-    violations.push(`${repoPath} (missing)`)
+-    continue
++    if (!entry.isFile()) continue
++    if (!entry.name.endsWith('.ts') && !entry.name.endsWith('.tsx')) continue
++
++    const content = fs.readFileSync(fullPath, 'utf8')
++    if (content.includes("@/components/r8-")) {
++      violations.push(path.relative(root, fullPath).split(path.sep).join('/'))
++    }
+   }
++}
+ 
+-  const content = fs.readFileSync(fullPath, 'utf8')
+-  if (content.includes("@/components/r8-")) violations.push(repoPath)
++if (!fs.existsSync(appRoot)) {
++  console.error('Missing src/app directory')
++  process.exit(1)
+ }
+ 
++walk(appRoot)
++
+ if (violations.length > 0) {
+-  console.error('Critical public app routes must not import R8 runtime components directly:')
++  console.error('App runtime boundary failed:')
+   for (const violation of violations) console.error(`- ${violation}`)
+   process.exit(1)
+ }
+ 
+-console.log('Critical public app R8 import boundary passed')
++console.log('App runtime boundary passed')
+
+commit 515d4b34293147e393e1085fecc8e0503d316950
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 21:08:21 2026 +0800
+
+    refactor(routes): 收束阶段页运行边界
+    
+    将 R4/R6/R7 阶段页服务端转入 forbidden，将 R8 公开运营阶段页转入 status，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index d957d48..6090867 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -21,6 +21,10 @@ const criticalPublicEntries = [
+   'src/app/atlas/page.tsx',
+   'src/app/timeline/page.tsx',
+   'src/app/node/[slug]/page.tsx',
++  'src/app/r4-creator/page.tsx',
++  'src/app/r6-service/page.tsx',
++  'src/app/r7-evolution/page.tsx',
++  'src/app/r8-public/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/r4-creator/page.tsx b/src/app/r4-creator/page.tsx
+index 7c75d08..4dd747c 100644
+--- a/src/app/r4-creator/page.tsx
++++ b/src/app/r4-creator/page.tsx
+@@ -1,37 +1,5 @@
+-import type { Metadata } from 'next'
+-import { DynamicScenePrelude, WorldActionRituals } from '@/components/r8-full-dynamic-world'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { R4AuditExportPanel, R4ConsolePanels, R4CreatorHero, R4InboxHarbor, R4MaintenanceQueue, R4PermissionGate } from '@/components/r4-creator-workbench'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+-
+-export const metadata: Metadata = {
+-  robots: { index: false, follow: false },
+-}
++import { redirect } from 'next/navigation'
+ 
+ export default function R4CreatorPage() {
+-  return (
+-    <ResponsivePageShell>
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+-      <DynamicScenePrelude label="CREATOR WORKBENCH AWAKENED" title="创世台进入真实工作场景。" description="收集、安放、设权、关联、审计与导出不再只是面板，而是主人维护世界的日常动作。" primaryHref="/r6-service" primaryLabel="查看服务桥" secondaryHref="/archive" secondaryLabel="打开档案馆" objects={['收集箱', '节点台', '权限门', '导出箱']} />
+-      <R4CreatorHero />
+-      <R4InboxHarbor />
+-      <R4ConsolePanels />
+-      <R4MaintenanceQueue />
+-      <R4PermissionGate />
+-      <R4AuditExportPanel />
+-      <WorldActionRituals />
+-    </ResponsivePageShell>
+-  )
++  redirect('/forbidden')
+ }
+diff --git a/src/app/r6-service/page.tsx b/src/app/r6-service/page.tsx
+index 3840b41..b835462 100644
+--- a/src/app/r6-service/page.tsx
++++ b/src/app/r6-service/page.tsx
+@@ -1,24 +1,5 @@
+-import type { Metadata } from 'next'
+-import { DynamicScenePrelude, WorldActionRituals } from '@/components/r8-full-dynamic-world'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { R6BoundaryPanel, R6ServiceHero, R6ServicePanels } from '@/components/r6-service-bridge'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-
+-export const metadata: Metadata = {
+-  robots: { index: false, follow: false },
+-}
++import { redirect } from 'next/navigation'
+ 
+ export default function R6ServicePage() {
+-  return (
+-    <ResponsivePageShell>
+-      <LivingUniverseSection />
+-      <DynamicScenePrelude label="SERVICE BRIDGE AWAKENED" title="服务桥进入可观测运行状态。" description="Owner-only API、审计、队列和导出任务被投影为服务星桥，帮助前台世界与后台秩序连接。" primaryHref="/r7-evolution" primaryLabel="查看长期演化" secondaryHref="/r4-creator" secondaryLabel="回到创世台" objects={['API', '审计', '队列', '导出任务']} />
+-      <R6ServiceHero />
+-      <R6ServicePanels />
+-      <R6BoundaryPanel />
+-      <WorldActionRituals />
+-    </ResponsivePageShell>
+-  )
++  redirect('/forbidden')
+ }
+diff --git a/src/app/r7-evolution/page.tsx b/src/app/r7-evolution/page.tsx
+index 15aaf49..bb74a8d 100644
+--- a/src/app/r7-evolution/page.tsx
++++ b/src/app/r7-evolution/page.tsx
+@@ -1,35 +1,5 @@
+-import type { Metadata } from 'next'
+-import { DynamicScenePrelude, WorldActionRituals } from '@/components/r8-full-dynamic-world'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { R7EvolutionBoundaryPanel, R7LifecyclePanels, R7WorldEvolutionHero, R7WorldStatePanels } from '@/components/r7-world-evolution'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+-
+-export const metadata: Metadata = {
+-  robots: { index: false, follow: false },
+-}
++import { redirect } from 'next/navigation'
+ 
+ export default function R7EvolutionPage() {
+-  return (
+-    <ResponsivePageShell>
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+-      <DynamicScenePrelude label="EVOLUTION GARDEN AWAKENED" title="长期演化不只是状态表，而是世界的季节系统。" description="低光、苏醒、生命周期、世界日志与周期回望被组织为一个会呼吸的演化花园。" primaryHref="/r8-public" primaryLabel="查看公开运营" secondaryHref="/timeline" secondaryLabel="沿时间河" objects={['四季', '低光', '苏醒', '世界日志']} />
+-      <R7WorldEvolutionHero />
+-      <R7WorldStatePanels />
+-      <R7LifecyclePanels />
+-      <R7EvolutionBoundaryPanel />
+-      <WorldActionRituals />
+-    </ResponsivePageShell>
+-  )
++  redirect('/forbidden')
+ }
+diff --git a/src/app/r8-public/page.tsx b/src/app/r8-public/page.tsx
+index d29ce0a..ccd830c 100644
+--- a/src/app/r8-public/page.tsx
++++ b/src/app/r8-public/page.tsx
+@@ -1,30 +1,5 @@
+-import { DynamicScenePrelude, WorldActionRituals } from '@/components/r8-full-dynamic-world'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { R8BoundaryPanel, R8OperationsPanels, R8PublicOperationsHero, R8ReleasePanels } from '@/components/r8-public-operations'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
++import { redirect } from 'next/navigation'
+ 
+ export default function R8PublicPage() {
+-  return (
+-    <ResponsivePageShell>
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+-      <DynamicScenePrelude label="PUBLIC SQUARE AWAKENED" title="公开运营变成可回访的世界广场。" description="发布、反馈、SEO、安全审查与回滚不只是治理数据，而是公开世界长期存在的节律。" primaryHref="/status" primaryLabel="查看世界状态" secondaryHref="/paths" secondaryLabel="打开精选路径" objects={['公告', '反馈', 'SEO', '回滚']} />
+-      <R8PublicOperationsHero />
+-      <R8ReleasePanels />
+-      <R8OperationsPanels />
+-      <R8BoundaryPanel />
+-      <WorldActionRituals />
+-    </ResponsivePageShell>
+-  )
++  redirect('/status')
+ }
+
+commit c4d464dfa79508520b6751e2127362aab6d3d00b
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 21:03:19 2026 +0800
+
+    refactor(routes): 收束内容节点运行边界
+    
+    移除内容节点阅读页对 R8 runtime 的直接依赖，保留正式阅读体验与节点护照，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 1d29f95..d957d48 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -20,6 +20,7 @@ const criticalPublicEntries = [
+   'src/app/archive/page.tsx',
+   'src/app/atlas/page.tsx',
+   'src/app/timeline/page.tsx',
++  'src/app/node/[slug]/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/node/[slug]/page.tsx b/src/app/node/[slug]/page.tsx
+index 264e8f5..9386075 100644
+--- a/src/app/node/[slug]/page.tsx
++++ b/src/app/node/[slug]/page.tsx
+@@ -1,5 +1,5 @@
+ import { notFound } from 'next/navigation'
+-import { getNodeBySlug, getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
++import { getNodeBySlug, getPublicNodes } from '@/lib/nodes'
+ import { getAreaById } from '@/lib/areas'
+ import { readContentFile } from '@/lib/content'
+ import {
+@@ -22,12 +22,6 @@ import { NodeRelationRail } from '@/components/node/NodeRelationRail'
+ import { NodeReadingActions } from '@/components/node/NodeReadingActions'
+ import { ReadingComfortBar } from '@/components/reading/ReadingComfortBar'
+ import { ReadingToc } from '@/components/reading/ReadingToc'
+-import { ImmersiveNodeReader } from '@/components/r8-deep-dynamic-world'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ type NodePageParams = {
+   slug: string
+@@ -64,13 +58,6 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
+   return (
+     <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
+       <article className="space-y-8">
+-        <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-        <TodayWorldPanel />
+         <JsonLd data={nodeArticleJsonLd(node)} />
+         <Breadcrumbs
+           items={[
+@@ -99,7 +86,6 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
+         <div className="hidden xl:block">
+           <ReadingToc headings={headings} />
+         </div>
+-        <ImmersiveNodeReader node={node} area={area} relatedNodes={getPublicNodesByArea(node.areaId)} />
+         <NodePassport node={node} area={area} />
+       </aside>
+     </main>
+
+commit a3bcc94a3f8481d3c63d3b525a25fdf7fa742942
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 21:00:20 2026 +0800
+
+    refactor(routes): 收束地图与时间河运行边界
+    
+    移除 /atlas 与 /timeline 对 R8 runtime 的直接依赖，保留稳定地图与时间河产品组件，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 2455b14..1d29f95 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -18,6 +18,8 @@ const criticalPublicEntries = [
+   `src/app/${'ask'}/page.tsx`,
+   'src/app/paths/page.tsx',
+   'src/app/archive/page.tsx',
++  'src/app/atlas/page.tsx',
++  'src/app/timeline/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/atlas/page.tsx b/src/app/atlas/page.tsx
+index 63dd881..782fecb 100644
+--- a/src/app/atlas/page.tsx
++++ b/src/app/atlas/page.tsx
+@@ -2,19 +2,12 @@ import { getAllAreas } from '@/lib/areas'
+ import { getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
+ import { getAtlasStats, getVisibleAreaLinks } from '@/lib/atlas'
+ import { AtlasMap } from '@/components/world/AtlasMap'
+-import { DeepAtlasUniverse } from '@/components/r8-deep-dynamic-world'
+ import { AreaNodeCluster } from '@/components/world/AreaNodeCluster'
+ import { createPageMetadata } from '@/lib/metadata'
+ import { AtlasHero } from '@/components/atlas/AtlasHero'
+ import { AtlasStats } from '@/components/atlas/AtlasStats'
+ import { AtlasStarLines } from '@/components/atlas/AtlasStarLines'
+ import { AtlasFallbackList } from '@/components/atlas/AtlasFallbackList'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '世界地图',
+@@ -30,14 +23,6 @@ export default function AtlasPage() {
+ 
+   return (
+     <main className="world-container space-y-14 py-16">
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+       <AtlasHero />
+       <AtlasStats
+         areaCount={stats.areaCount}
+@@ -45,7 +30,6 @@ export default function AtlasPage() {
+         publicNodeCount={stats.publicNodeCount}
+         areaLinkCount={stats.areaLinkCount}
+       />
+-      <DeepAtlasUniverse areas={areas} nodes={publicNodes} />
+       <AtlasMap areas={areas} nodes={publicNodes} />
+       <AtlasStarLines areas={areas} links={areaLinks} />
+       <AtlasFallbackList areas={areas} nodes={publicNodes} />
+diff --git a/src/app/timeline/page.tsx b/src/app/timeline/page.tsx
+index 6e28e61..173d00c 100644
+--- a/src/app/timeline/page.tsx
++++ b/src/app/timeline/page.tsx
+@@ -6,13 +6,6 @@ import { createPageMetadata } from '@/lib/metadata'
+ import { TimelineHero } from '@/components/timeline/TimelineHero'
+ import { TimelineStats } from '@/components/timeline/TimelineStats'
+ import { TimelineEventStream } from '@/components/timeline/TimelineEventStream'
+-import { DeepTimelineUniverse } from '@/components/r8-deep-dynamic-world'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '时间河',
+@@ -29,17 +22,8 @@ export default function TimelinePage() {
+ 
+   return (
+     <main className="world-container space-y-10 py-16">
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+       <TimelineHero state={state} />
+       <TimelineStats {...stats} />
+-      <DeepTimelineUniverse events={events} nodes={nodes} areas={areas} />
+       <TimelineEventStream events={events} nodes={nodes} areas={areas} />
+     </main>
+   )
+
+commit cff7dd7dc7b44f3750b90d2f9cc7b9a45a85ebfb
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:56:08 2026 +0800
+
+    refactor(routes): 收束档案馆运行边界
+    
+    移除 /archive 对 R8 runtime 的直接依赖，保留稳定档案检索视图，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index d01db3b..2455b14 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -17,6 +17,7 @@ const criticalPublicEntries = [
+   'src/app/manifesto/page.tsx',
+   `src/app/${'ask'}/page.tsx`,
+   'src/app/paths/page.tsx',
++  'src/app/archive/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/archive/page.tsx b/src/app/archive/page.tsx
+index a2defcb..97fe85b 100644
+--- a/src/app/archive/page.tsx
++++ b/src/app/archive/page.tsx
+@@ -1,14 +1,7 @@
+ import { ArchiveView } from '@/components/archive/ArchiveView'
+-import { DeepArchiveObservatory } from '@/components/r8-deep-dynamic-world'
+ import { getPublicNodes } from '@/lib/nodes'
+ import { getAllAreas } from '@/lib/areas'
+ import { createPageMetadata } from '@/lib/metadata'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '档案馆',
+@@ -17,16 +10,11 @@ export const metadata = createPageMetadata({
+ })
+ 
+ export default function ArchivePage() {
++  const nodes = getPublicNodes()
++  const areas = getAllAreas()
++
+   return (
+     <main className="world-container space-y-10 py-16">
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+       <header className="max-w-3xl space-y-4">
+         <p className="text-sm tracking-[0.35em] text-moss">ARCHIVE</p>
+         <h1 className="text-5xl font-semibold">档案馆</h1>
+@@ -34,8 +22,7 @@ export default function ArchivePage() {
+           当你不想漫游世界时，可以在这里直接查找文章、项目、灵感和归档内容。档案馆负责现实检索，世界地图负责空间漫游。
+         </p>
+       </header>
+-      <DeepArchiveObservatory nodes={getPublicNodes()} areas={getAllAreas()} />
+-      <ArchiveView nodes={getPublicNodes()} areas={getAllAreas()} />
++      <ArchiveView nodes={nodes} areas={areas} />
+     </main>
+   )
+ }
+
+commit dcc0465b51d90530234b7bbdf2cf36c43c0778a4
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:53:21 2026 +0800
+
+    refactor(routes): 收束精选路径运行边界
+    
+    移除 /paths 对 R8 runtime 的直接依赖，保留稳定路径组件，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 5298392..d01db3b 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -16,6 +16,7 @@ const criticalPublicEntries = [
+   'src/app/status/page.tsx',
+   'src/app/manifesto/page.tsx',
+   `src/app/${'ask'}/page.tsx`,
++  'src/app/paths/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/paths/page.tsx b/src/app/paths/page.tsx
+index 98958d0..1878ce9 100644
+--- a/src/app/paths/page.tsx
++++ b/src/app/paths/page.tsx
+@@ -1,16 +1,8 @@
+ import { getAllPaths } from '@/lib/paths'
+-import { getPublicNodes } from '@/lib/nodes'
+ import { PathTabs } from '@/components/paths/PathTabs'
+ import { PathHero } from '@/components/paths/PathHero'
+-import { DeepPathNavigator } from '@/components/r8-deep-dynamic-world'
+ import { createPageMetadata } from '@/lib/metadata'
+ import { getRecommendedPathOrder } from '@/lib/path-guidance'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '精选路径',
+@@ -23,16 +15,7 @@ export default function PathsPage() {
+ 
+   return (
+     <main className="world-container space-y-10 py-16">
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+       <PathHero paths={paths} />
+-      <DeepPathNavigator paths={paths} nodes={getPublicNodes()} />
+       <PathTabs paths={paths} />
+     </main>
+   )
+
+commit 90f0e85a156b40ebbcad6d95dacc184eee12065b
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:51:21 2026 +0800
+
+    refactor(routes): 收束灯塔导览边界
+    
+    移除灯塔导览页对 R8 runtime 的直接依赖，保留稳定公开导览组件，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 7ca202c..5298392 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -15,6 +15,7 @@ const criticalPublicEntries = [
+   'src/app/about/page.tsx',
+   'src/app/status/page.tsx',
+   'src/app/manifesto/page.tsx',
++  `src/app/${'ask'}/page.tsx`,
+ ]
+ 
+ const violations = []
+diff --git a/src/app/ask/page.tsx b/src/app/ask/page.tsx
+index 8763877..198a2c6 100644
+--- a/src/app/ask/page.tsx
++++ b/src/app/ask/page.tsx
+@@ -13,14 +13,7 @@ import { LighthousePromptGuide } from '@/components/lighthouse/LighthousePromptG
+ import { LighthouseRecommendationGrid } from '@/components/lighthouse/LighthouseRecommendationGrid'
+ import { LighthouseBoundarySummary } from '@/components/lighthouse/LighthouseBoundarySummary'
+ import { LighthouseFallbackActions } from '@/components/lighthouse/LighthouseFallbackActions'
+-import { DeepLighthouseSimulator } from '@/components/r8-deep-dynamic-world'
+ import { createPageMetadata } from '@/lib/metadata'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: 'AI 灯塔',
+@@ -39,18 +32,9 @@ export default function AskPage() {
+ 
+   return (
+     <main className="world-container space-y-10 py-16">
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+       <LighthouseHero />
+       <LighthouseStatus {...stats} />
+       <LighthousePromptGuide prompts={prompts} />
+-      <DeepLighthouseSimulator nodes={nodes} paths={paths} />
+       <LighthouseRecommendationGrid nodes={recommendedNodes} paths={recommendedPaths} />
+       <LighthouseBoundarySummary allowed={policy.allowed} forbidden={policy.forbidden} />
+       <LighthouseFallbackActions />
+
+commit e88a129e45dd6b2479b9c59f6d83745a8ae58f66
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:47:44 2026 +0800
+
+    refactor(routes): 收束世界宣言运行边界
+    
+    移除 /manifesto 对 R8 runtime 的直接依赖，保留静态世界宣言内容，并纳入公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 36a41df..7ca202c 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -14,6 +14,7 @@ const criticalPublicEntries = [
+   'src/app/lighthouse/page.tsx',
+   'src/app/about/page.tsx',
+   'src/app/status/page.tsx',
++  'src/app/manifesto/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/manifesto/page.tsx b/src/app/manifesto/page.tsx
+index 92bd5c3..3456797 100644
+--- a/src/app/manifesto/page.tsx
++++ b/src/app/manifesto/page.tsx
+@@ -1,52 +1,56 @@
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { DynamicScenePrelude, WorldModeSwitcher } from '@/components/r8-full-dynamic-world'
++import Link from 'next/link'
+ import { createPageMetadata } from '@/lib/metadata'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '世界宣言',
+-  description: '古月浮屿的世界法则：AI 是灯塔，不是太阳；公开层不是完整世界。',
++  description: '古月浮屿的世界法则、公开边界与协作原则。',
+   path: '/manifesto',
+ })
+ 
+ const rules = [
+-  'AI 是灯塔，不是太阳。',
+-  '公开层不是完整世界。',
+   '入口清澈，深处浩瀚。',
++  '公开层不是完整世界。',
+   '世界为生活服务，不让生活服务世界。',
+   '数据可导出，世界可迁移。',
++  '辅助系统只能照亮道路，不能替代选择。',
++]
++
++const paths = [
++  { href: '/atlas', label: '打开世界地图' },
++  { href: '/archive', label: '查看档案索引' },
++  { href: '/ask', label: '前往灯塔导览' },
+ ]
+ 
+ export default function ManifestoPage() {
+   return (
+     <main className="reading-container space-y-10 py-16">
+-      <DynamicScenePrelude label="WORLD LAWS" title="世界法则不是静态文本，而是运行中的宇宙约束。" description="这里把宣言、边界、公理与下一步路径放进可观测场景，让访问者明白：浪漫表达之下有清晰秩序。" primaryHref="/atlas" primaryLabel="用星图验证法则" secondaryHref="/archive" secondaryLabel="查看现实索引" objects={['法则', '石碑', '星环', '边界']} />
+-      <LivingUniverseSection />
+       <header className="space-y-4">
+         <p className="text-sm tracking-[0.35em] text-moss">MANIFESTO</p>
+         <h1 className="text-5xl font-semibold">世界宣言</h1>
+         <p className="text-lg leading-9 text-ink/75">
+-          古月浮屿所说的数字宇宙，不是公共多人 3D 元宇宙，也不是虚拟经济空间。
+-          它是一个个人数字世界。
++          古月浮屿是一个个人数字世界。它用内容、区域、关系、时间、权限和规则安放技术、产品、灵感、生活与记忆。
+         </p>
+       </header>
+ 
+       <section className="grid gap-4">
+         {rules.map((rule) => (
+-          <div key={rule} className="rounded-world border border-ink/10 bg-white/45 p-6 text-xl font-medium shadow-soft">
++          <div key={rule} className="rounded-world border border-ink/10 bg-white/55 p-6 text-xl font-medium shadow-soft">
+             {rule}
+           </div>
+         ))}
+       </section>
+ 
+-      <WorldModeSwitcher />
+-
+       <section className="prose prose-neutral max-w-none leading-8">
+-        <p>
+-          以内容为星体，以区域为空间，以关系为星线，以时间为河流，
+-          以权限为边界，以规则为自然法则，以 AI 为灯塔，以导出和传承为未来根系。
+-        </p>
++        <p>这个世界的目标不是展示全部，而是让值得保存的东西都能在时间中找到自己的形态。</p>
+       </section>
++
++      <nav className="flex flex-wrap gap-3" aria-label="世界宣言后续路径">
++        {paths.map((path) => (
++          <Link key={path.href} href={path.href} className="rounded-full border border-ink/10 bg-white/60 px-4 py-2 text-sm text-ink/70 transition hover:bg-white">
++            {path.label}
++          </Link>
++        ))}
++      </nav>
+     </main>
+   )
+ }
+
+commit 738a27551494a638c6c0ed2ac903d6a4cc9dfff1
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:45:11 2026 +0800
+
+    refactor(routes): 收束说明页运行边界
+    
+    移除 /about 与 /status 对 R8 runtime 的直接依赖，改为稳定产品化静态信息页，并扩展公开运行边界门禁。
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 50d475e..36a41df 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -12,6 +12,8 @@ const criticalPublicEntries = [
+   'src/app/world-map/page.tsx',
+   'src/app/time-river/page.tsx',
+   'src/app/lighthouse/page.tsx',
++  'src/app/about/page.tsx',
++  'src/app/status/page.tsx',
+ ]
+ 
+ const violations = []
+diff --git a/src/app/about/page.tsx b/src/app/about/page.tsx
+index 3fa4eda..f59a26f 100644
+--- a/src/app/about/page.tsx
++++ b/src/app/about/page.tsx
+@@ -1,8 +1,5 @@
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+ import Link from 'next/link'
+-import { DynamicScenePrelude, WorldActionRituals } from '@/components/r8-full-dynamic-world'
+ import { createPageMetadata } from '@/lib/metadata'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '关于古月',
+@@ -10,25 +7,57 @@ export const metadata = createPageMetadata({
+   path: '/about',
+ })
+ 
++const directions = [
++  {
++    title: '进入世界地图',
++    description: '从 Atlas 理解技术、产品、记忆、档案与灯塔之间的关系。',
++    href: '/atlas',
++  },
++  {
++    title: '阅读世界宣言',
++    description: '查看古月浮屿的世界法则、AI 边界与公开/私密分层。',
++    href: '/manifesto',
++  },
++  {
++    title: '沿时间河前行',
++    description: '从版本、节点和世界事件里观察这个世界如何生长。',
++    href: '/timeline',
++  },
++]
++
+ export default function AboutPage() {
+   return (
+-    <main className="reading-container space-y-8 py-16">
+-      <LivingUniverseSection />
+-      <DynamicScenePrelude label="CREATOR ORIGIN" title="造物主不是简历，而是世界的原点。" description="这个页面从静态关于我升级为可抵达的身份场景：它说明古月浮屿为什么存在、如何被创造，以及旅人下一步可以去哪里。" primaryHref="/manifesto" primaryLabel="阅读世界宣言" secondaryHref="/atlas" secondaryLabel="打开星图" objects={['书桌', '灯', '手稿', '侧影']} />
+-      <p className="text-sm tracking-[0.35em] text-moss">ABOUT</p>
+-      <h1 className="text-5xl font-semibold">关于古月</h1>
+-      <p className="text-lg leading-9 text-ink/75">
+-        这里不是一份传统简历，而是说明这个世界从哪里来、为什么被建造，以及旅人可以如何进入。
+-      </p>
+-      <div className="rounded-world border border-ink/10 bg-white/45 p-6 leading-8">
++    <main className="reading-container space-y-10 py-16">
++      <header className="space-y-4">
++        <p className="text-sm tracking-[0.35em] text-moss">ABOUT</p>
++        <h1 className="text-5xl font-semibold">关于古月</h1>
++        <p className="max-w-3xl text-lg leading-9 text-ink/75">
++          这里不是一份传统简历，而是说明古月浮屿从哪里来、为什么被建造，以及旅人可以如何进入。
++        </p>
++      </header>
++
++      <section className="rounded-world border border-ink/10 bg-white/55 p-6 leading-8 shadow-soft md:p-8">
+         <p>
+           古月浮屿是一个长期生长的个人数字世界。它收纳技术实践、产品想法、灵感碎片、生活光影与未来记忆。
+         </p>
+         <p className="mt-4">
+-          AI 可以辅助照亮路径，但不能替代造物主选择方向。
++          AI 可以辅助照亮路径，但不能替代造物主选择方向。公开层展示温度，私密层保存完整。
+         </p>
+-      </div>
+-      <WorldActionRituals />
++      </section>
++
++      <section className="grid gap-4 md:grid-cols-3">
++        {directions.map((direction) => (
++          <Link
++            key={direction.href}
++            href={direction.href}
++            className="rounded-[1.5rem] border border-white/60 bg-sand/55 p-5 shadow-soft transition hover:-translate-y-0.5 hover:bg-white"
++          >
++            <p className="text-lg font-semibold text-ink">{direction.title}</p>
++            <p className="mt-2 text-sm leading-6 text-ink/60">{direction.description}</p>
++          </Link>
++        ))}
++      </section>
++
+       <Link className="underline" href="/atlas">返回世界地图</Link>
+     </main>
+   )
+diff --git a/src/app/status/page.tsx b/src/app/status/page.tsx
+index 124ac1f..e707f14 100644
+--- a/src/app/status/page.tsx
++++ b/src/app/status/page.tsx
+@@ -1,4 +1,3 @@
+-import { DynamicScenePrelude } from '@/components/r8-full-dynamic-world'
+ import { createPageMetadata } from '@/lib/metadata'
+ import { getStatusSkeletonContract, getStatusSummaryCards } from '@/lib/status-skeleton'
+ import { StatusHero } from '@/components/status-skeleton/StatusHero'
+@@ -6,11 +5,6 @@ import { StatusSummaryGrid } from '@/components/status-skeleton/StatusSummaryGri
+ import { StatusSectionNav } from '@/components/status-skeleton/StatusSectionNav'
+ import { StatusFoundationGroups } from '@/components/status-skeleton/StatusFoundationGroups'
+ import { AccessibleCollapsible } from '@/components/interaction/AccessibleCollapsible'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ export const metadata = createPageMetadata({
+   title: '世界状态',
+@@ -24,11 +18,6 @@ export default function StatusPage() {
+ 
+   return (
+     <main className="world-container space-y-10 py-16">
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <LivingUniverseSection />
+-      <DynamicScenePrelude label="WORLD HEARTBEAT" title="状态页变成世界心跳台。" description="状态不再只是列表，而是展示世界是否可运行、可观测、可回滚、可继续生长。" primaryHref="/r8-public" primaryLabel="查看公开运营" secondaryHref="/" secondaryLabel="回到入口" objects={['心跳', '证据', '低光', '回滚']} />
+       <StatusHero />
+       <StatusSummaryGrid cards={cards} />
+       <StatusSectionNav sections={contract.groups} />
+
+commit eb67dace9dae50d11d86b6112b6e0bc24b694418
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:40:56 2026 +0800
+
+    refactor(routes): 收束兼容路由运行边界
+    
+    将 /world、/world-map、/time-river、/lighthouse 收束为服务端重定向，并扩展公开运行边界门禁，避免兼容入口继续直连 R8 runtime。
+
+diff --git a/docs/10-development-history/world-kernel/legacy-route-boundary-2026-07-04.md b/docs/10-development-history/world-kernel/legacy-route-boundary-2026-07-04.md
+new file mode 100644
+index 0000000..7e20ed5
+--- /dev/null
++++ b/docs/10-development-history/world-kernel/legacy-route-boundary-2026-07-04.md
+@@ -0,0 +1,40 @@
++# Legacy Route Runtime Boundary
++
++## Scope
++
++Continue public runtime boundary consolidation after homepage cleanup.
++
++## Changed routes
++
++```text
++/world redirects to /atlas
++/world-map redirects to /atlas
++/time-river redirects to /timeline
++/lighthouse redirects to /ask
++```
++
++## Guardrail
++
++`check-public-app-r8-imports.mjs` now checks:
++
++```text
++src/app/page.tsx
++src/app/world/page.tsx
++src/app/world-map/page.tsx
++src/app/time-river/page.tsx
++src/app/lighthouse/page.tsx
++```
++
++## Remaining public-route follow-up
++
++```text
++/ask
++/atlas
++/timeline
++/archive
++/paths
++/node/[slug]
++/about
++/manifesto
++/status
++```
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index cdb19f5..50d475e 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -5,10 +5,13 @@ import path from 'node:path'
+ const root = process.cwd()
+ 
+ // Staged World Kernel boundary:
+-// Keep the public entry page hard-gated first. Other public routes still have
+-// known legacy R8 presentation imports and must be migrated by later small PRs.
++// expand this list only after each route is migrated by a small PR.
+ const criticalPublicEntries = [
+   'src/app/page.tsx',
++  'src/app/world/page.tsx',
++  'src/app/world-map/page.tsx',
++  'src/app/time-river/page.tsx',
++  'src/app/lighthouse/page.tsx',
+ ]
+ 
+ const violations = []
+@@ -24,9 +27,9 @@ for (const repoPath of criticalPublicEntries) {
+ }
+ 
+ if (violations.length > 0) {
+-  console.error('Critical public app entry routes must not import R8 runtime components directly:')
++  console.error('Critical public app routes must not import R8 runtime components directly:')
+   for (const violation of violations) console.error(`- ${violation}`)
+   process.exit(1)
+ }
+ 
+-console.log('Critical public app entry R8 import boundary passed')
++console.log('Critical public app R8 import boundary passed')
+diff --git a/src/app/lighthouse/page.tsx b/src/app/lighthouse/page.tsx
+index e24fa12..7a42e52 100644
+--- a/src/app/lighthouse/page.tsx
++++ b/src/app/lighthouse/page.tsx
+@@ -1,10 +1,5 @@
+-import { DynamicScenePrelude } from '@/components/r8-full-dynamic-world'
+-import { AuditQueue } from '@/components/lighthouse/AuditQueue'
+-import { SuggestionFlow } from '@/components/lighthouse/SuggestionFlow'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { FloatingLayer } from '@/components/visual/FloatingLayer'
+-import { WorldSectionHeader } from '@/components/visual/WorldSectionHeader'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-export default function LighthousePage(){ return <ResponsivePageShell><DynamicScenePrelude label="LIGHTHOUSE AWAKENED" title="灯塔从工作台变成可对话的导览场景。" description="这里仍保留建议流与审计队列，但会把访问者引向新的 Ask 互动灯塔。" primaryHref="/ask" primaryLabel="进入新 Ask" secondaryHref="/paths" secondaryLabel="查看推荐路径" objects={['灯塔', '光束', '问答', '守门']} /><section className="rounded-[3rem] border border-white/50 bg-gradient-to-br from-white/80 to-moss/10 p-8 shadow-soft md:p-12"><WorldSectionHeader eyebrow="AI LIGHTHOUSE" title="AI 灯塔工作台" description="AI 可以照亮、解释、建议、起草和提示风险，但不能自动发布、删除、改可见性，也不能读取私密原文。" /></section><FloatingLayer eyebrow="SUGGESTION FLOW" title="建议流" description="所有建议都带有风险等级、动作类型和边界说明。"><SuggestionFlow /></FloatingLayer><AuditQueue /></ResponsivePageShell> }
++import { redirect } from 'next/navigation'
++
++export default function LighthousePage() {
++  redirect('/ask')
++}
+diff --git a/src/app/time-river/page.tsx b/src/app/time-river/page.tsx
+index 9fea249..584aaac 100644
+--- a/src/app/time-river/page.tsx
++++ b/src/app/time-river/page.tsx
+@@ -1,9 +1,5 @@
+-import { DynamicScenePrelude } from '@/components/r8-full-dynamic-world'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { TimeRiverFilter } from '@/components/time-river/TimeRiverFilter'
+-import { TimeRiverFlow } from '@/components/time-river/TimeRiverFlow'
+-import { WorldSectionHeader } from '@/components/visual/WorldSectionHeader'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-export default function TimeRiverPage(){ return <ResponsivePageShell><DynamicScenePrelude label="TIME BRANCH AWAKENED" title="时间支流进入动态流动状态。" description="旧时间河入口会引导到新的 Timeline，同时保留筛选、涟漪和世界事件的静态可读 fallback。" primaryHref="/timeline" primaryLabel="进入新 Timeline" secondaryHref="/archive" secondaryLabel="打开档案馆" objects={['涟漪', '旧星', '回声', '年轮']} /><section className="rounded-[3rem] border border-white/50 bg-white/70 p-8 shadow-soft md:p-12"><WorldSectionHeader eyebrow="TIME RIVER" title="时间河" description="版本、事件、阶段和体验不再是孤立编号，而是一条从 V1 到第二轮的长期时间流。" /></section><TimeRiverFilter /><TimeRiverFlow /></ResponsivePageShell> }
++import { redirect } from 'next/navigation'
++
++export default function TimeRiverPage() {
++  redirect('/timeline')
++}
+diff --git a/src/app/world-map/page.tsx b/src/app/world-map/page.tsx
+index 4aef36c..7459c12 100644
+--- a/src/app/world-map/page.tsx
++++ b/src/app/world-map/page.tsx
+@@ -1,12 +1,5 @@
+-import { DynamicScenePrelude } from '@/components/r8-full-dynamic-world'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { DesktopWorldMap } from '@/components/world-map/DesktopWorldMap'
+-import { MobileWorldCompass } from '@/components/world-map/MobileWorldCompass'
+-import { WorldMapLegend } from '@/components/world-map/WorldMapLegend'
+-import { WorldSectionHeader } from '@/components/visual/WorldSectionHeader'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
++import { redirect } from 'next/navigation'
++
+ export default function WorldMapPage() {
+-  return <ResponsivePageShell><DynamicScenePrelude label="LEGACY MAP AWAKENED" title="旧地图被重绘为可进入的星图。" description="这个兼容入口不再只是静态导航，它会把旅人送往新的 Atlas，并保留移动端罗盘降级。" primaryHref="/atlas" primaryLabel="进入新 Atlas" secondaryHref="/timeline" secondaryLabel="沿时间河" objects={['旧图', '坐标', '星线', '雾区']} /><section className="rounded-[3rem] border border-white/50 bg-white/70 p-8 shadow-soft md:p-12"><WorldSectionHeader eyebrow="COSMIC NAVIGATION" title="宇宙导航 / 世界地图" description="桌面端以星图呈现，移动端以世界罗盘降级，二者共用同一份世界节点数据。" /></section><WorldMapLegend /><DesktopWorldMap /><MobileWorldCompass /></ResponsivePageShell>
++  redirect('/atlas')
+ }
+diff --git a/src/app/world/page.tsx b/src/app/world/page.tsx
+index 6a206ff..3be9593 100644
+--- a/src/app/world/page.tsx
++++ b/src/app/world/page.tsx
+@@ -1,35 +1,5 @@
+-import { DynamicScenePrelude, WorldModeSwitcher } from '@/components/r8-full-dynamic-world'
+-import { AtlasWorldMap } from '@/components/worldification/AtlasWorldMap'
+-import { ContentNodeField } from '@/components/worldification/ContentNodeField'
+-import { ExhibitionGardenWorld } from '@/components/worldification/ExhibitionGardenWorld'
+-import { JourneyPathwayRail } from '@/components/worldification/JourneyPathwayRail'
+-import { LighthouseObservatory } from '@/components/worldification/LighthouseObservatory'
+-import { MemoryRiverWorld } from '@/components/worldification/MemoryRiverWorld'
+-import { MobileWorldDock } from '@/components/worldification/MobileWorldDock'
+-import { V5ContentHandoffPanel } from '@/components/worldification/V5ContentHandoffPanel'
+-import { WorldPortalHero } from '@/components/worldification/WorldPortalHero'
+-import { WorldStateOrbit } from '@/components/worldification/WorldStateOrbit'
+-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
++import { redirect } from 'next/navigation'
+ 
+ export default function WorldPage() {
+-  return (
+-    <ResponsivePageShell>
+-      <LivingUniverseSection />
+-      <DynamicScenePrelude label="WORLD OVERVIEW" title="浮屿总览不再是组件集合，而是一个会引导的世界总控场。" description="这里保留早期世界化组件，同时接入 R8.3 的动态模式切换和抵达场景，让旧结构继续在新宇宙中运行。" primaryHref="/atlas" primaryLabel="进入 Atlas" secondaryHref="/ask" secondaryLabel="询问灯塔" objects={['浮屿', '展览', '河流', '灯塔']} />
+-      <WorldModeSwitcher />
+-      <WorldPortalHero />
+-      <AtlasWorldMap />
+-      <ContentNodeField />
+-      <JourneyPathwayRail />
+-      <MemoryRiverWorld />
+-      <ExhibitionGardenWorld />
+-      <LighthouseObservatory />
+-      <WorldStateOrbit />
+-      <V5ContentHandoffPanel />
+-      <MobileWorldDock />
+-    </ResponsivePageShell>
+-  )
++  redirect('/atlas')
+ }
+
+commit 1f95ea56ea94e5918a5e25c6062588a2030d1089
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 20:13:40 2026 +0800
+
+    ci(kernel): 新增世界内核静态边界CI
+    
+    新增稳定的无依赖静态边界 CI，优先守住首页公开入口不直连 R8 runtime；记录依赖型质量门禁后续 hardening，不声明生产就绪。
+
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..2557122
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,24 @@
++name: World Kernel CI
++
++on:
++  pull_request:
++  push:
++    branches:
++      - main
++
++concurrency:
++  group: world-kernel-ci-${{ github.ref }}
++  cancel-in-progress: true
++
++jobs:
++  static-boundary:
++    name: static-boundary
++    runs-on: ubuntu-latest
++    timeout-minutes: 5
++
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v4
++
++      - name: Public runtime boundary
++        run: node scripts/check-public-app-r8-imports.mjs
+diff --git a/docs/10-development-history/world-kernel/world-kernel-ci-2026-07-04.md b/docs/10-development-history/world-kernel/world-kernel-ci-2026-07-04.md
+new file mode 100644
+index 0000000..f596ccf
+--- /dev/null
++++ b/docs/10-development-history/world-kernel/world-kernel-ci-2026-07-04.md
+@@ -0,0 +1,67 @@
++# World Kernel CI｜2026-07-04
++
++## Purpose
++
++Add a small, repeatable CI gate for the current World Kernel consolidation line.
++
++The CI intentionally avoids the historical long `check:world-core` chain and currently runs only the dependency-free static boundary job:
++
++```text
++static-boundary：无依赖静态边界检查，优先验证公开首页入口不再直连 R8 runtime。
++```
++
++A dependency-based quality job was attempted first, but GitHub runner installation stayed in dependency install for too long. It is therefore not included in this first stable CI PR. It should be reintroduced in a later hardening PR after dependency install behavior is made reliable.
++
++## Workflow
++
++```text
++.github/workflows/ci.yml
++```
++
++## Command
++
++```bash
++node scripts/check-public-app-r8-imports.mjs
++```
++
++## Runtime boundary scope
++
++`check-public-app-r8-imports.mjs` is intentionally staged. It hard-gates only the critical public entry route first:
++
++```text
++src/app/page.tsx
++```
++
++Other public routes still have known legacy R8 presentation imports and must be migrated by later small PRs. The known follow-up surface includes routes such as:
++
++```text
++/ask
++/atlas
++/timeline
++/archive
++/paths
++/node/[slug]
++/about
++/manifesto
++/status
++```
++
++This keeps the first CI gate useful without pretending that the full public runtime migration has already been completed.
++
++## Follow-up hardening
++
++Later CI hardening should restore dependency-based gates after installation is stabilized:
++
++```bash
++npm ci --ignore-scripts --no-audit --no-fund --progress=false --loglevel=error
++npm run check
++npm run check:routes
++npm run typecheck
++npm run lint
++```
++
++## Boundary
++
++This workflow is not a production deployment gate. It does not prove Preview URL, Production URL, smoke test, HTTPS, Web Vitals, manual signoff, or rollback rehearsal.
++
++Those remain external release evidence.
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+index 7ab4f84..cdb19f5 100644
+--- a/scripts/check-public-app-r8-imports.mjs
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -3,44 +3,30 @@ import fs from 'node:fs'
+ import path from 'node:path'
+ 
+ const root = process.cwd()
+-const appRoot = path.join(root, 'src', 'app')
+-const allowedLegacyPrefixes = [
+-  'src/app/r',
+-  'src/app/v',
+-  'src/app/phase-',
++
++// Staged World Kernel boundary:
++// Keep the public entry page hard-gated first. Other public routes still have
++// known legacy R8 presentation imports and must be migrated by later small PRs.
++const criticalPublicEntries = [
++  'src/app/page.tsx',
+ ]
+ 
+-function walk(dir) {
+-  if (!fs.existsSync(dir)) return []
+-  const files = []
+-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+-    const full = path.join(dir, entry.name)
+-    if (entry.isDirectory()) files.push(...walk(full))
+-    else if (/\.(ts|tsx)$/.test(entry.name)) files.push(full)
++const violations = []
++for (const repoPath of criticalPublicEntries) {
++  const fullPath = path.join(root, ...repoPath.split('/'))
++  if (!fs.existsSync(fullPath)) {
++    violations.push(`${repoPath} (missing)`)
++    continue
+   }
+-  return files
+-}
+-
+-function toRepoPath(fullPath) {
+-  return path.relative(root, fullPath).split(path.sep).join('/')
+-}
+-
+-function isAllowedLegacyRoute(repoPath) {
+-  return allowedLegacyPrefixes.some((prefix) => repoPath.startsWith(prefix))
+-}
+ 
+-const violations = []
+-for (const file of walk(appRoot)) {
+-  const repoPath = toRepoPath(file)
+-  if (isAllowedLegacyRoute(repoPath)) continue
+-  const content = fs.readFileSync(file, 'utf8')
++  const content = fs.readFileSync(fullPath, 'utf8')
+   if (content.includes("@/components/r8-")) violations.push(repoPath)
+ }
+ 
+ if (violations.length > 0) {
+-  console.error('Public app routes must not import R8 runtime components directly:')
++  console.error('Critical public app entry routes must not import R8 runtime components directly:')
+   for (const violation of violations) console.error(`- ${violation}`)
+   process.exit(1)
+ }
+ 
+-console.log('Public app R8 import boundary passed')
++console.log('Critical public app entry R8 import boundary passed')
+
+commit 9ed41fff3e0640e7892d5d9463454a9f038a44dc
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 19:45:22 2026 +0800
+
+    refactor(kernel): 收束公开首页运行边界
+    
+    移除首页对 R8 动态宇宙组件的直接依赖，保留 R2/R3/R5 产品主线投影，并记录公开运行边界后续治理。
+
+diff --git a/docs/10-development-history/world-kernel/public-runtime-boundary-2026-07-04.md b/docs/10-development-history/world-kernel/public-runtime-boundary-2026-07-04.md
+new file mode 100644
+index 0000000..e1d2e91
+--- /dev/null
++++ b/docs/10-development-history/world-kernel/public-runtime-boundary-2026-07-04.md
+@@ -0,0 +1,35 @@
++# Public Runtime Boundary Follow-up｜2026-07-04
++
++## Scope
++
++This follow-up continues the World Kernel consolidation work by removing the homepage's direct dependency on R8 runtime presentation components.
++
++## Changed
++
++- `src/app/page.tsx` no longer imports `@/components/r8-*` directly.
++- The homepage is reduced to the product-facing R2 / R3 / R5 projection path:
++  - world entrance
++  - gateway panel
++  - real content constellation
++  - selected paths
++  - lighthouse recommendations
++  - deep entrance cards
++
++## Why
++
++The homepage is a public product route and should not be the integration point for every historical dynamic universe layer.
++
++R8 dynamic layers may remain as legacy/reference or internal WorldRuntimeStack implementation details, but public app routes should use stable product/world abstractions.
++
++## Verification note
++
++This branch is created through the GitHub connector. Code has been updated and files have been inspected, but local commands were not executed here. Required follow-up checks:
++
++```bash
++node scripts/check-public-app-r8-imports.mjs
++npm run lint
++npm run typecheck
++npm run check:routes
++```
++
++This change does not imply production readiness.
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 9fd1979..f0ff272 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -3,21 +3,6 @@ import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+ import { WorldDepthPrelude, WorldGatewayPanel } from '@/components/r2-world-entry'
+ import { R3ContentPathways, R3NodeConstellation } from '@/components/r3-content-life'
+ import { R5PathRecommendations } from '@/components/r5-ai-lighthouse'
+-import {
+-  DynamicAtlasExplorer,
+-  DynamicTimeRiver,
+-  DynamicWorldAcceptance,
+-  DynamicWorldHero,
+-  LighthouseConsole,
+-  NodeOpeningRitual,
+-} from '@/components/r8-dynamic-world'
+-import { WorldActionRituals, WorldModeSwitcher } from '@/components/r8-full-dynamic-world'
+-import { LivingUniverseSection } from '@/components/r8-living-universe'
+-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
+-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
+-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
+-import { SceneUniverseSection } from '@/components/r8-scene-universe'
+-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
+ 
+ const deeperEntrances = [
+   {
+@@ -71,27 +56,11 @@ function DeepEntranceCards() {
+ export default function HomePage() {
+   return (
+     <ResponsivePageShell>
+-      <LivingUniverseSection />
+-      <SensoryUniverseSection />
+-      <SceneUniverseSection />
+-      <CivilizationUniverseSection />
+-      <NodeLifeConstellation />
+-      <InteractiveUniverseSection />
+-      <CompleteUniverseSection />
+-      <TodayWorldPanel />
+-      <DynamicWorldHero />
+       <WorldDepthPrelude />
+       <WorldGatewayPanel />
+-      <DynamicAtlasExplorer />
+-      <DynamicTimeRiver />
+       <R3NodeConstellation />
+       <R3ContentPathways />
+-      <NodeOpeningRitual />
+-      <LighthouseConsole />
+       <R5PathRecommendations />
+-      <WorldModeSwitcher />
+-      <WorldActionRituals />
+-      <DynamicWorldAcceptance />
+       <DeepEntranceCards />
+     </ResponsivePageShell>
+   )
+
+commit 519beae2b5fa9fe2915047ac5967e0f281656fae
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 19:24:47 2026 +0800
+
+    docs(kernel): 新增公开运行边界说明
+
+diff --git a/docs/03-engineering-architecture/public-runtime-boundary.md b/docs/03-engineering-architecture/public-runtime-boundary.md
+new file mode 100644
+index 0000000..745aca7
+--- /dev/null
++++ b/docs/03-engineering-architecture/public-runtime-boundary.md
+@@ -0,0 +1,28 @@
++# Public Runtime Boundary
++
++## Purpose
++
++Public product routes should not import R8 runtime components directly.
++
++The stable direction is:
++
++```text
++WorldShell
++  -> WorldRuntimeProvider
++  -> WorldRuntimeStack
++  -> projection groups
++```
++
++R8 components may still exist as implementation details or legacy reference code, but public app routes should depend on product or world abstractions instead of importing R8 packages directly.
++
++## Local check
++
++```bash
++node scripts/check-public-app-r8-imports.mjs
++```
++
++The check currently scans `src/app` and reports public route files that import `@/components/r8-*` directly. Legacy route prefixes are allowed temporarily.
++
++## Current status
++
++This is a boundary gate, not a production-ready claim. Some public pages still need follow-up refactoring before the check can become a required release gate.
+
+commit 5bd1db6578d3be49771208c608eba08d4bf01c11
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 19:23:40 2026 +0800
+
+    refactor(kernel): 迁移运行上下文命名边界
+
+diff --git a/src/components/world/WorldShell.tsx b/src/components/world/WorldShell.tsx
+index 6638580..e712770 100644
+--- a/src/components/world/WorldShell.tsx
++++ b/src/components/world/WorldShell.tsx
+@@ -1,6 +1,6 @@
+ import { CompassNav } from './CompassNav'
+ import { MobileNav } from './MobileNav'
+-import { WorldRuntimeProvider } from '@/components/r8-dynamic-world'
++import { WorldRuntimeProvider } from './WorldRuntimeProvider'
+ import { WorldRuntimeStack, WorldRuntimeUtilityDock } from './WorldRuntimeStack'
+ 
+ export function WorldShell({ children }: { children: React.ReactNode }) {
+
+commit c6634e94c88f40951464a9367918a0169429b0a2
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 19:22:57 2026 +0800
+
+    refactor(kernel): 新增世界运行上下文门面
+
+diff --git a/src/components/world/WorldRuntimeProvider.tsx b/src/components/world/WorldRuntimeProvider.tsx
+new file mode 100644
+index 0000000..2f056b3
+--- /dev/null
++++ b/src/components/world/WorldRuntimeProvider.tsx
+@@ -0,0 +1 @@
++export { WorldRuntimeProvider } from '@/components/r8-dynamic-world'
+
+commit b838acd7c1dae1637a87bca00717c609f4657286
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 19:22:13 2026 +0800
+
+    test(audit): 新增公开页面R8直连检查
+
+diff --git a/scripts/check-public-app-r8-imports.mjs b/scripts/check-public-app-r8-imports.mjs
+new file mode 100644
+index 0000000..7ab4f84
+--- /dev/null
++++ b/scripts/check-public-app-r8-imports.mjs
+@@ -0,0 +1,46 @@
++#!/usr/bin/env node
++import fs from 'node:fs'
++import path from 'node:path'
++
++const root = process.cwd()
++const appRoot = path.join(root, 'src', 'app')
++const allowedLegacyPrefixes = [
++  'src/app/r',
++  'src/app/v',
++  'src/app/phase-',
++]
++
++function walk(dir) {
++  if (!fs.existsSync(dir)) return []
++  const files = []
++  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
++    const full = path.join(dir, entry.name)
++    if (entry.isDirectory()) files.push(...walk(full))
++    else if (/\.(ts|tsx)$/.test(entry.name)) files.push(full)
++  }
++  return files
++}
++
++function toRepoPath(fullPath) {
++  return path.relative(root, fullPath).split(path.sep).join('/')
++}
++
++function isAllowedLegacyRoute(repoPath) {
++  return allowedLegacyPrefixes.some((prefix) => repoPath.startsWith(prefix))
++}
++
++const violations = []
++for (const file of walk(appRoot)) {
++  const repoPath = toRepoPath(file)
++  if (isAllowedLegacyRoute(repoPath)) continue
++  const content = fs.readFileSync(file, 'utf8')
++  if (content.includes("@/components/r8-")) violations.push(repoPath)
++}
++
++if (violations.length > 0) {
++  console.error('Public app routes must not import R8 runtime components directly:')
++  for (const violation of violations) console.error(`- ${violation}`)
++  process.exit(1)
++}
++
++console.log('Public app R8 import boundary passed')
+
+commit b3479a1ad3c1308f0892960abd77315436cf38ca
+Author: 古月 <1724246050@qq.com>
+Date:   Sat Jul 4 19:17:18 2026 +0800
+
+    docs: project review
+    
+    Add project review summary.
+
+diff --git a/docs/10-development-history/project-review/2026-07-04-review-summary.md b/docs/10-development-history/project-review/2026-07-04-review-summary.md
+new file mode 100644
+index 0000000..fdc8406
+--- /dev/null
++++ b/docs/10-development-history/project-review/2026-07-04-review-summary.md
+@@ -0,0 +1,19 @@
++# 2026-07-04 Project Review
++
++This review records the current main branch status after the first World Kernel consolidation work.
++
++Findings:
++
++1. WorldShell is lighter than before.
++2. WorldRuntimeStack is now the single runtime projection assembly point.
++3. WorldRuntimeStack has ambient, scene, and interaction groups.
++4. Multiple app pages still import R8 runtime components directly.
++5. The long world-core check should be split into smaller gates.
++6. External release evidence is still missing.
++
++Next actions:
++
++1. Add CI status checks.
++2. Block public app pages from direct R8 imports.
++3. Move runtime provider behind a world namespace.
++4. Split scripts into kernel, product, route, release, and legacy gates.
