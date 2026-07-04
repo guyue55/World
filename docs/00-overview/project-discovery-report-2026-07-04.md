@@ -1,8 +1,8 @@
 # WorldOS / 古月浮屿项目摸底报告
 
 > [!NOTE]
-> 摸底日期：2026-07-04  
-> 摸底范围：`README.md`、`docs/`、`data/`、`src/app`、`src/components`、`src/lib`、`src/platform`、`src/server`、`scripts`、`package.json`。  
+> 摸底日期：2026-07-04
+> 摸底范围：`README.md`、`docs/`、`data/`、`src/app`、`src/components`、`src/lib`、`src/platform`、`src/server`、`scripts`、`package.json`。
 > 结论基于当前工作区代码与文档，不包含外部线上环境验证。
 
 ## 1. 核心结论
