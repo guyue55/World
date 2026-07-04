@@ -24,7 +24,7 @@ for (const repoPath of criticalPublicEntries) {
     continue
   }
 
-  const content = fs.readFileSync(file, 'utf8')
+  const content = fs.readFileSync(fullPath, 'utf8')
   if (content.includes("@/components/r8-")) violations.push(repoPath)
 }
 
