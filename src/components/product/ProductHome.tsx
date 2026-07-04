@@ -26,6 +26,25 @@ const primaryEntrances = [
   },
 ]
 
+
+const governanceEntrances = [
+  {
+    href: '/paths/code-architecture-cleanup',
+    title: '主线治理',
+    description: '看清正式主线、legacy 足迹、导入边界和脚本分类。',
+  },
+  {
+    href: '/node/worldos-mainline-code-map',
+    title: '主线代码地图',
+    description: '把道路、遗迹、内部实验和发布门禁分开，降低维护成本。',
+  },
+  {
+    href: '/node/script-taxonomy-gate',
+    title: '脚本分类',
+    description: '保留历史脚本，但把日常入口收束到长期门禁。',
+  },
+]
+
 const productPrinciples = [
   '公开入口只展示已审查内容',
   '私密、家庭、保险箱内容不进入前台索引',
@@ -109,6 +128,28 @@ export function ProductHome({
       <ProductWorldCompass areas={areas} nodes={publicNodes} paths={paths} />
 
       <ProductWorldBoundaries />
+
+
+      <section className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.35em] text-moss">CODE & PROJECT GOVERNANCE</p>
+            <h2 className="mt-3 text-3xl font-semibold text-ink">代码主线与项目治理</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-ink/64">
+              RC3 不继续堆新宇宙层，而是把正式主线、legacy 足迹、脚本分类和发布候选口径讲清楚。历史可以保留，但不能重新污染公开入口。
+            </p>
+          </div>
+          <Link href="/paths/code-architecture-cleanup" className="text-sm font-semibold text-moss underline underline-offset-4">进入治理路径</Link>
+        </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {governanceEntrances.map((entry) => (
+            <Link key={entry.href} href={entry.href} className="rounded-[1.4rem] bg-paper/70 p-5 transition hover:-translate-y-1 hover:bg-white">
+              <h3 className="text-lg font-semibold text-ink">{entry.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-ink/62">{entry.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="grid gap-4 md:grid-cols-3">
         {visibleAreas.slice(0, 3).map((area) => (

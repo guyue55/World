@@ -181,5 +181,61 @@
       "first-visit"
     ],
     "visibility": "public"
+  },
+  {
+    "id": "code-architecture-cleanup",
+    "title": "代码主线治理路径",
+    "description": "从主线地图、legacy 足迹、导入边界到脚本门禁，理解 RC3 如何解决代码角度问题。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 18,
+    "nodeSlugs": [
+      "worldos-mainline-code-map",
+      "legacy-footprint-audit",
+      "mainline-import-boundary",
+      "script-taxonomy-gate",
+      "route-ownership-map",
+      "worldos-project-operating-principles"
+    ],
+    "nextPathIds": [
+      "creator-maintenance"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "public-safety-accessibility",
+    "title": "公开体验安全路径",
+    "description": "从权限边界、公开 AI、可访问性、性能预算和移动端验收理解公开世界如何降低门槛。",
+    "audience": "first-time",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "server-side-permission-boundary",
+      "public-ai-context-contract",
+      "accessibility-public-baseline",
+      "performance-budget-discipline",
+      "mobile-world-acceptance",
+      "real-mode-safety-exit"
+    ],
+    "nextPathIds": [
+      "eight-minute-world"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "rc-governance-trace",
+    "title": "RC 治理复盘路径",
+    "description": "沿 RC1、RC2、RC3 的经验看清 WorldOS 如何从候选发布继续收束为长期主线。",
+    "audience": "creator",
+    "estimatedMinutes": 20,
+    "nodeSlugs": [
+      "worldos-rc1-lessons",
+      "worldos-rc2-nondeploy-lessons",
+      "worldos-rc3-governance",
+      "worldos-project-operating-principles",
+      "weekly-world-repair-day"
+    ],
+    "nextPathIds": [
+      "code-architecture-cleanup"
+    ],
+    "visibility": "public"
   }
 ]

@@ -152,3 +152,49 @@ productionLive: false
 releaseReady: false
 cleanProductionReady: false
 ```
+
+## WorldOS 1.0 RC3 / Mainline Governance
+
+RC3 继续处理暂不方便部署时仍可本地解决的问题：主线代码可理解性、legacy 回流风险、脚本入口治理、内容厚度和项目口径诚实。
+
+新增门禁：
+
+```bash
+npm run check:mainline
+npm run check:content
+npm run check:experience:public
+npm run check:worldos-mainline-governance
+npm run check:worldos-script-taxonomy
+npm run check:release:rc:fast
+```
+
+RC3 的长期目标不是继续扩展阶段线，而是把项目压回可维护主线：
+
+```text
+正式主线：公开产品页 + World Kernel + product/world/node/common 组件
+内容地基：experience nodes / paths / areas + core relations / events
+治理门禁：worldos / world-kernel / product-release 检查
+历史参考：V/R/R8 阶段线、旧 runtime 和阶段脚本，仅作为 legacy/reference
+```
+
+RC3 内容门禁提高到：
+
+```text
+公开节点 >= 50
+有正文公开节点 >= 50
+公开路径 >= 12
+关系 >= 80
+世界事件 >= 20
+一级区域覆盖 >= 8
+精选 / 代表节点 >= 14
+```
+
+仍需保持：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
+
+原因不变：真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals、可访问性快照、人工签收和真实回滚演练仍未执行。

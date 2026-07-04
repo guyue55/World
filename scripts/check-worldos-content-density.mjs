@@ -20,13 +20,13 @@ const nodeSlugs = new Set(publicNodes.map((node) => node.slug))
 const nodeIds = new Set(nodes.map((node) => node.id))
 
 const minimums = {
-  publicNodes: 30,
-  nodesWithContent: 28,
-  publicPaths: 8,
-  relations: 30,
-  events: 15,
-  representedAreas: 7,
-  featuredNodes: 10,
+  publicNodes: 50,
+  nodesWithContent: 50,
+  publicPaths: 12,
+  relations: 80,
+  events: 20,
+  representedAreas: 8,
+  featuredNodes: 14,
 }
 
 if (publicNodes.length < minimums.publicNodes) failures.push(`公开节点不足：${publicNodes.length}/${minimums.publicNodes}`)
@@ -62,12 +62,12 @@ for (const event of events) {
   }
 }
 
-const requiredPathIds = ['eight-minute-world', 'creator-maintenance', 'product-workshop', 'public-life-memory']
+const requiredPathIds = ['eight-minute-world', 'creator-maintenance', 'product-workshop', 'public-life-memory', 'code-architecture-cleanup', 'public-safety-accessibility', 'rc-governance-trace']
 for (const id of requiredPathIds) {
   if (!paths.some((item) => item.id === id)) failures.push(`缺少 RC2 必备路径：${id}`)
 }
 
-const requiredSlugs = ['world-design-axioms', 'front-romantic-back-clear-archive-reliable', 'world-language-glossary', 'node-passport-standard', 'eight-minute-world-path']
+const requiredSlugs = ['world-design-axioms', 'front-romantic-back-clear-archive-reliable', 'world-language-glossary', 'node-passport-standard', 'eight-minute-world-path', 'worldos-mainline-code-map', 'legacy-footprint-audit', 'mainline-import-boundary', 'script-taxonomy-gate', 'route-ownership-map', 'public-ai-context-contract', 'worldos-rc3-governance']
 for (const slug of requiredSlugs) {
   if (!nodeSlugs.has(slug)) failures.push(`缺少 RC2 必备节点：${slug}`)
 }

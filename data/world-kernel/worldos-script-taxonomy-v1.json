@@ -1,0 +1,48 @@
+{
+  "name": "WorldOS 长期脚本分类 v1",
+  "updatedAt": "2026-07-04",
+  "principle": "默认入口短、清晰、可复跑；历史阶段脚本保留为 reference，不再作为新开发默认路径。",
+  "categories": [
+    {
+      "id": "mainline",
+      "script": "check:mainline",
+      "description": "检查 World Kernel、产品发布、内容密度、公开体验、主线导入和脚本分类。"
+    },
+    {
+      "id": "content",
+      "script": "check:content",
+      "description": "检查公开节点、正文、路径、关系、事件和必备节点。"
+    },
+    {
+      "id": "experience",
+      "script": "check:experience:public",
+      "description": "检查首页、反迷路罗盘、区域身份证和公开边界体验。"
+    },
+    {
+      "id": "release",
+      "script": "check:release:rc",
+      "description": "本地 RC 发布候选门禁，不替代真实外部部署证据。"
+    },
+    {
+      "id": "legacy",
+      "script": "check:legacy-boundary",
+      "description": "检查历史阶段线和 legacy runtime 没有重新进入公开入口。"
+    }
+  ],
+  "recommendedDailyCommands": [
+    "npm run check:mainline",
+    "npm run lint",
+    "npm run typecheck"
+  ],
+  "releaseCandidateCommands": [
+    "npm run check:release:rc",
+    "npm run build:kernel-release",
+    "npm run build:verify-artifacts",
+    "npm run audit:report"
+  ],
+  "legacyPolicy": {
+    "allowExistingStageScripts": true,
+    "newStageScriptDefault": "deny",
+    "reason": "历史阶段脚本数量过多，新增能力应优先接入长期门禁而不是继续扩展阶段聚合。"
+  }
+}

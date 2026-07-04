@@ -1,0 +1,45 @@
+{
+  "name": "WorldOS 主线代码注册表 v1",
+  "updatedAt": "2026-07-04",
+  "principle": "正式主线清晰可理解，legacy 可以保留但不能回流到公开产品入口。",
+  "mainline": {
+    "routes": ["/", "/atlas", "/timeline", "/archive", "/paths", "/ask", "/about", "/manifesto", "/status", "/node/[slug]", "/paths/[id]"],
+    "appFiles": [
+      "src/app/page.tsx",
+      "src/app/atlas/page.tsx",
+      "src/app/timeline/page.tsx",
+      "src/app/archive/page.tsx",
+      "src/app/paths/page.tsx",
+      "src/app/paths/[id]/page.tsx",
+      "src/app/ask/page.tsx",
+      "src/app/about/page.tsx",
+      "src/app/manifesto/page.tsx",
+      "src/app/status/page.tsx",
+      "src/app/node/[slug]/page.tsx"
+    ],
+    "componentRoots": ["src/components/product", "src/components/world", "src/components/node", "src/components/common"],
+    "libRoots": ["src/lib/product-routes.ts", "src/lib/world-kernel-boundary.ts", "src/lib/nodes.ts", "src/lib/areas.ts", "src/lib/paths.ts", "src/lib/world-events.ts"],
+    "dataRoots": ["data/domains/experience", "data/core/relations.json", "data/core/world-events.json", "data/core/world-state.json", "data/domains/governance/permissions.json"]
+  },
+  "legacy": {
+    "routePatterns": ["/v*", "/r*", "/phase-*", "/production*", "/release*", "/governance*", "/observability*", "/hardening*"],
+    "componentPrefixes": ["src/components/r8-", "src/features/r8-"],
+    "policy": "只能作为历史参考、兼容重定向、内部阻断或归档材料，不得被公开主线页面直接导入。"
+  },
+  "allowedPublicImports": [
+    "@/components/product",
+    "@/components/world",
+    "@/components/node",
+    "@/components/common",
+    "@/lib/",
+    "@/content/"
+  ],
+  "forbiddenPublicImports": [
+    "@/components/r8-",
+    "@/features/r8-",
+    "@/components/private",
+    "@/features/private",
+    "@/components/v",
+    "@/features/v"
+  ]
+}

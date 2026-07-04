@@ -372,5 +372,435 @@
     "strength": 0.5,
     "source": "manual",
     "reviewed": true
+  },
+  {
+    "id": "rel-040",
+    "from": "node-worldos-mainline-code-map",
+    "to": "node-legacy-footprint-audit",
+    "type": "topic",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主线代码地图必须解释旧星群足迹，否则未来维护者无法区分主线和遗迹。"
+  },
+  {
+    "id": "rel-041",
+    "from": "node-legacy-footprint-audit",
+    "to": "node-mainline-import-boundary",
+    "type": "derived",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "历史足迹审计直接推导出正式主线导入边界。"
+  },
+  {
+    "id": "rel-042",
+    "from": "node-mainline-import-boundary",
+    "to": "node-route-ownership-map",
+    "type": "implemented",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "导入边界需要和公开路由归属一起守住产品主线。"
+  },
+  {
+    "id": "rel-043",
+    "from": "node-route-ownership-map",
+    "to": "node-server-side-permission-boundary",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "路由归属地图和服务端权限边界共同决定哪些门能打开。"
+  },
+  {
+    "id": "rel-044",
+    "from": "node-script-taxonomy-gate",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本分类是主线代码地图的运行门禁部分。"
+  },
+  {
+    "id": "rel-045",
+    "from": "node-script-taxonomy-gate",
+    "to": "node-worldos-project-operating-principles",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本收束体现了项目运转原则中的可复跑和小步门禁。"
+  },
+  {
+    "id": "rel-046",
+    "from": "node-worldos-rc2-nondeploy-lessons",
+    "to": "node-worldos-rc3-governance",
+    "type": "derived",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC2 的非部署经验转化为 RC3 的主线治理计划。"
+  },
+  {
+    "id": "rel-047",
+    "from": "node-worldos-rc3-governance",
+    "to": "node-worldos-mainline-code-map",
+    "type": "implemented",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC3 治理计划通过主线代码地图落到工程层。"
+  },
+  {
+    "id": "rel-048",
+    "from": "node-server-side-permission-boundary",
+    "to": "node-public-ai-context-contract",
+    "type": "topic",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开 AI 上下文契约继承服务端权限边界，不能读取私密层。"
+  },
+  {
+    "id": "rel-049",
+    "from": "node-public-ai-context-contract",
+    "to": "node-ai-lighthouse",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开 AI 契约是 AI 灯塔边界的可执行上下文约束。"
+  },
+  {
+    "id": "rel-050",
+    "from": "node-accessibility-public-baseline",
+    "to": "node-mobile-world-acceptance",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "无障碍与移动端验收共同保证世界入口降低门槛。"
+  },
+  {
+    "id": "rel-051",
+    "from": "node-performance-budget-discipline",
+    "to": "node-mobile-world-acceptance",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "移动端体验依赖动效纪律和性能预算。"
+  },
+  {
+    "id": "rel-052",
+    "from": "node-accessibility-public-baseline",
+    "to": "node-real-mode-safety-exit",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "现实模式是可访问性和效率的安全出口。"
+  },
+  {
+    "id": "rel-053",
+    "from": "node-creator-low-energy-maintenance",
+    "to": "node-world-repair-day",
+    "type": "implemented",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低心力维护流程把世界修复日拆成可执行小任务。"
+  },
+  {
+    "id": "rel-054",
+    "from": "node-creator-low-energy-maintenance",
+    "to": "node-front-romantic-back-clear",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "创世台维护必须遵守前台浪漫、后台清醒、档案可靠。"
+  },
+  {
+    "id": "rel-055",
+    "from": "node-worldos-project-operating-principles",
+    "to": "node-mainline-import-boundary",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "项目运转原则要求先做边界，再做表现。"
+  },
+  {
+    "id": "rel-056",
+    "from": "node-worldos-project-operating-principles",
+    "to": "node-server-side-permission-boundary",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "权限准则是项目运转原则的核心安全边界。"
+  },
+  {
+    "id": "rel-057",
+    "from": "node-route-ownership-map",
+    "to": "node-data-guardian",
+    "type": "implemented",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "路由归属地图把世界数据守门原则扩展到 URL 层。"
+  },
+  {
+    "id": "rel-058",
+    "from": "node-legacy-footprint-audit",
+    "to": "node-worldos-rc-lessons",
+    "type": "revivedFrom",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC1 暴露的旧 runtime 问题推动了 legacy 足迹审计。"
+  },
+  {
+    "id": "rel-059",
+    "from": "node-worldos-rc2-nondeploy-lessons",
+    "to": "node-content-source-birth-cert",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "非部署修复经验强调内容出生证明和可追溯性。"
+  },
+  {
+    "id": "rel-060",
+    "from": "node-accessibility-public-baseline",
+    "to": "node-progressive-disclosure",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "渐进揭示让复杂世界对新访客更可理解。"
+  },
+  {
+    "id": "rel-061",
+    "from": "node-performance-budget-discipline",
+    "to": "node-progressive-disclosure",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "入口清澈也意味着不要一次性加载过重表现层。"
+  },
+  {
+    "id": "rel-062",
+    "from": "node-public-ai-context-contract",
+    "to": "node-no-ai",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开 AI 只是一层增强，无 AI 时世界仍能运转。"
+  },
+  {
+    "id": "rel-063",
+    "from": "node-mainline-import-boundary",
+    "to": "node-worldos-rc3-governance",
+    "type": "implemented",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC3 的核心落点之一就是用导入边界阻止旧 runtime 回流。"
+  },
+  {
+    "id": "rel-064",
+    "from": "node-script-taxonomy-gate",
+    "to": "node-worldos-rc3-governance",
+    "type": "implemented",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC3 通过脚本分类减少超长阶段脚本带来的维护成本。"
+  },
+  {
+    "id": "rel-065",
+    "from": "node-worldos-mainline-code-map",
+    "to": "node-route-ownership-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "代码主线和路由归属必须指向同一条公开产品路径。"
+  },
+  {
+    "id": "rel-066",
+    "from": "node-worldos-mainline-code-map",
+    "to": "node-worldos-project-operating-principles",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主线代码地图是项目运转原则的结构化表达。"
+  },
+  {
+    "id": "rel-067",
+    "from": "node-legacy-footprint-audit",
+    "to": "node-script-taxonomy-gate",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "legacy 足迹不只在组件里，也大量存在于脚本入口。"
+  },
+  {
+    "id": "rel-068",
+    "from": "node-server-side-permission-boundary",
+    "to": "node-public-private-boundary",
+    "type": "derived",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "服务端权限边界把公开层与私密层边界落实到工程执行。"
+  },
+  {
+    "id": "rel-069",
+    "from": "node-public-ai-context-contract",
+    "to": "node-public-private-boundary",
+    "type": "topic",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开 AI 上下文只能取公开层，是公开/私密边界的 AI 版本。"
+  },
+  {
+    "id": "rel-070",
+    "from": "node-mobile-world-acceptance",
+    "to": "node-eight-minute-path",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "移动端必须能顺畅走完 8 分钟抵达路径。"
+  },
+  {
+    "id": "rel-071",
+    "from": "node-accessibility-public-baseline",
+    "to": "node-eight-minute-path",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "8 分钟路径也必须对键盘和低动效用户友好。"
+  },
+  {
+    "id": "rel-072",
+    "from": "node-worldos-rc3-governance",
+    "to": "node-world-design-axioms",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC3 治理继续遵循世界先于内容、入口清澈等设计公理。"
+  },
+  {
+    "id": "rel-073",
+    "from": "node-worldos-project-operating-principles",
+    "to": "node-world-design-axioms",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "工程运转原则是世界设计公理在开发流程里的投影。"
+  },
+  {
+    "id": "rel-074",
+    "from": "node-route-ownership-map",
+    "to": "node-real-mode-safety-exit",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "现实检索是公开路由中的安全出口，必须长期保留。"
+  },
+  {
+    "id": "rel-075",
+    "from": "node-worldos-mainline-code-map",
+    "to": "node-node-passport-standard",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "节点护照标准是主线数据结构在页面上的体现。"
+  },
+  {
+    "id": "rel-076",
+    "from": "node-public-ai-context-contract",
+    "to": "node-node-passport-standard",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开 AI 的回答必须尽量指向节点护照和来源说明。"
+  },
+  {
+    "id": "rel-077",
+    "from": "node-script-taxonomy-gate",
+    "to": "node-world-repair-day",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界修复日应运行短门禁，而不是被超长 legacy 检查拖住。"
+  },
+  {
+    "id": "rel-078",
+    "from": "node-creator-low-energy-maintenance",
+    "to": "node-worldos-project-operating-principles",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低心力维护让世界为生活服务，不让生活服务世界。"
+  },
+  {
+    "id": "rel-079",
+    "from": "node-worldos-rc2-nondeploy-lessons",
+    "to": "node-worldos-mainline-code-map",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC2 暴露的本地可修问题推动了 RC3 主线地图。"
+  },
+  {
+    "id": "rel-080",
+    "from": "node-worldos-rc3-governance",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC3 是 RC2 之后的继续收束，保留非部署状态诚实。"
+  },
+  {
+    "id": "rel-081",
+    "from": "node-performance-budget-discipline",
+    "to": "node-accessibility-public-baseline",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "性能预算和无障碍共同约束世界表现层。"
+  },
+  {
+    "id": "rel-082",
+    "from": "node-mobile-world-acceptance",
+    "to": "node-worldos-engine",
+    "type": "implemented",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 世界生成引擎的公开投影必须在移动端保持轻量。"
   }
 ]

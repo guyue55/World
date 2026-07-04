@@ -162,7 +162,13 @@
     "npm ci",
     "npm run check:release",
     "npm run check:worldos-rc",
-    "npm run evidence:worldos-external-template"
+    "npm run evidence:worldos-external-template",
+    "npm run check:mainline",
+    "npm run check:worldos-content-density",
+    "npm run check:worldos-public-experience",
+    "npm run check:worldos-mainline-governance",
+    "npm run check:worldos-script-taxonomy",
+    "npm run check:release:rc"
   ],
   "buildFindings": {
     "trueNextBuildAttempt": {
@@ -188,6 +194,15 @@
       "src/app/r6-service/page.tsx -> redirect(/forbidden)",
       "src/app/r7-evolution/page.tsx -> redirect(/forbidden)",
       "src/app/r8-public/page.tsx -> redirect(/status)"
-    ]
+    ],
+    "rc3": {
+      "status": "mainline-governance-added-nondeploy-fixes-completed",
+      "notes": [
+        "公开内容密度提升到 52 个有正文公开节点。",
+        "脚本入口增加 check:mainline / check:content / check:experience:public。",
+        "主线导入边界和 legacy 回流风险新增自动检查。",
+        "productionLive/releaseReady/cleanProductionReady 保持 false。"
+      ]
+    }
   }
 }

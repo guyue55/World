@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T09:16:18.511Z",
+  "generatedAt": "2026-07-04T10:26:10.620Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -775,6 +775,244 @@
       "visibility": "public",
       "lifeStage": "bloom",
       "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-worldos-mainline-code-map",
+      "slug": "worldos-mainline-code-map",
+      "title": "WorldOS 主线代码地图",
+      "worldTitle": "主干星图",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "把正式主线、内部实验、历史阶段线和发布门禁分清楚，降低未来维护时误入旧宇宙层的风险。",
+      "tags": [
+        "mainline",
+        "architecture",
+        "governance"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-legacy-footprint-audit",
+      "slug": "legacy-footprint-audit",
+      "title": "历史代码足迹审计",
+      "worldTitle": "旧星群边界",
+      "type": "article",
+      "areaId": "archive",
+      "summary": "记录 V/R/R8 历史阶段线、旧 runtime 和阶段脚本的归属，避免它们重新污染公开产品主路径。",
+      "tags": [
+        "legacy",
+        "audit",
+        "runtime"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-mainline-import-boundary",
+      "slug": "mainline-import-boundary",
+      "title": "正式主线导入边界",
+      "worldTitle": "主线守门法则",
+      "type": "rule",
+      "areaId": "origin",
+      "summary": "公开产品页面不得直接导入 R/V/R8 legacy runtime；新页面必须通过 World Kernel、产品组件和公开数据协议进入。",
+      "tags": [
+        "boundary",
+        "imports",
+        "world-kernel"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-script-taxonomy-gate",
+      "slug": "script-taxonomy-gate",
+      "title": "长期脚本分类与门禁收束",
+      "worldTitle": "门禁星盘",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "把脚本分成主线、发布、内容、体验、legacy 五类，给未来 CI 和本地检查一个可理解的入口。",
+      "tags": [
+        "scripts",
+        "ci",
+        "quality-gate"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-route-ownership-map",
+      "slug": "route-ownership-map",
+      "title": "公开路由归属地图",
+      "worldTitle": "路标户籍",
+      "type": "document",
+      "areaId": "origin",
+      "summary": "为公开、私密、内部、legacy 路由建立归属说明，让 sitemap、robots、middleware 和导航保持一致。",
+      "tags": [
+        "routes",
+        "middleware",
+        "sitemap"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-server-side-permission-boundary",
+      "slug": "server-side-permission-boundary",
+      "title": "服务端权限边界说明",
+      "worldTitle": "门在服务端",
+      "type": "rule",
+      "areaId": "lighthouse",
+      "summary": "权限必须由服务端路由、构建产物和索引策略控制；前端显隐只做体验表达，不能当安全边界。",
+      "tags": [
+        "permission",
+        "server-side",
+        "privacy"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-accessibility-public-baseline",
+      "slug": "accessibility-public-baseline",
+      "title": "公开世界无障碍基线",
+      "worldTitle": "每个旅人都能抵达",
+      "type": "article",
+      "areaId": "archive",
+      "summary": "为键盘、焦点、语义、低动效和颜色对比建立公开验收要求，让世界感不牺牲可访问性。",
+      "tags": [
+        "accessibility",
+        "public-experience",
+        "rc"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-performance-budget-discipline",
+      "slug": "performance-budget-discipline",
+      "title": "性能预算与动效纪律",
+      "worldTitle": "慢光不拖慢道路",
+      "type": "article",
+      "areaId": "archive",
+      "summary": "沉浸感应服务阅读和探索，动效必须可降级、可暂停、可被 reduced-motion 接管。",
+      "tags": [
+        "performance",
+        "motion",
+        "budget"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-mobile-world-acceptance",
+      "slug": "mobile-world-acceptance",
+      "title": "移动端世界验收标准",
+      "worldTitle": "掌心里的浮屿",
+      "type": "article",
+      "areaId": "archive",
+      "summary": "移动端要保留世界入口、反迷路罗盘、静读模式和现实检索，不把桌面动效硬塞进小屏。",
+      "tags": [
+        "mobile",
+        "experience",
+        "acceptance"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-public-ai-context-contract",
+      "slug": "public-ai-context-contract",
+      "title": "公开 AI 上下文契约",
+      "worldTitle": "灯塔只照公开海面",
+      "type": "rule",
+      "areaId": "lighthouse",
+      "summary": "公开 AI 只能读取公开节点、公开路径、公开世界事件和公开边界说明；私密、vault、草案不进入上下文。",
+      "tags": [
+        "ai",
+        "public-context",
+        "privacy"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-creator-low-energy-maintenance",
+      "slug": "creator-low-energy-maintenance",
+      "title": "创世台低心力维护流程",
+      "worldTitle": "五分钟清尘",
+      "type": "document",
+      "areaId": "timeline",
+      "summary": "把维护动作拆成 1 分钟记录、5 分钟整理、15 分钟连星、30 分钟修复，避免世界成为负担。",
+      "tags": [
+        "creator",
+        "maintenance",
+        "operations"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-worldos-rc2-nondeploy-lessons",
+      "slug": "worldos-rc2-nondeploy-lessons",
+      "title": "WorldOS RC2 非部署修复经验",
+      "worldTitle": "不能部署时如何继续生长",
+      "type": "article",
+      "areaId": "timeline",
+      "summary": "记录在暂不方便运行和部署时，如何继续解决本地可修问题：内容、体验、门禁和项目口径。",
+      "tags": [
+        "rc2",
+        "nondeploy",
+        "lessons"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-worldos-rc3-governance",
+      "slug": "worldos-rc3-governance",
+      "title": "WorldOS RC3 主线治理计划",
+      "worldTitle": "收束不是停下",
+      "type": "document",
+      "areaId": "origin",
+      "summary": "RC3 聚焦主线治理、脚本分类、legacy 足迹和内容质量继续补厚，避免继续靠阶段线堆叠。",
+      "tags": [
+        "rc3",
+        "governance",
+        "mainline"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-worldos-project-operating-principles",
+      "slug": "worldos-project-operating-principles",
+      "title": "WorldOS 项目运转原则",
+      "worldTitle": "工程里的世界法则",
+      "type": "rule",
+      "areaId": "origin",
+      "summary": "把项目运转固定为小步提交、中文注释、边界先行、门禁可复跑、生产状态诚实，不因概念热度破坏工程秩序。",
+      "tags": [
+        "project",
+        "operating-principles",
+        "quality"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
     }
   ],
   "paths": [
@@ -960,6 +1198,62 @@
         "first-visit"
       ],
       "visibility": "public"
+    },
+    {
+      "id": "code-architecture-cleanup",
+      "title": "代码主线治理路径",
+      "description": "从主线地图、legacy 足迹、导入边界到脚本门禁，理解 RC3 如何解决代码角度问题。",
+      "audience": "deep-dive",
+      "estimatedMinutes": 18,
+      "nodeSlugs": [
+        "worldos-mainline-code-map",
+        "legacy-footprint-audit",
+        "mainline-import-boundary",
+        "script-taxonomy-gate",
+        "route-ownership-map",
+        "worldos-project-operating-principles"
+      ],
+      "nextPathIds": [
+        "creator-maintenance"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "public-safety-accessibility",
+      "title": "公开体验安全路径",
+      "description": "从权限边界、公开 AI、可访问性、性能预算和移动端验收理解公开世界如何降低门槛。",
+      "audience": "first-time",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "server-side-permission-boundary",
+        "public-ai-context-contract",
+        "accessibility-public-baseline",
+        "performance-budget-discipline",
+        "mobile-world-acceptance",
+        "real-mode-safety-exit"
+      ],
+      "nextPathIds": [
+        "eight-minute-world"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "rc-governance-trace",
+      "title": "RC 治理复盘路径",
+      "description": "沿 RC1、RC2、RC3 的经验看清 WorldOS 如何从候选发布继续收束为长期主线。",
+      "audience": "creator",
+      "estimatedMinutes": 20,
+      "nodeSlugs": [
+        "worldos-rc1-lessons",
+        "worldos-rc2-nondeploy-lessons",
+        "worldos-rc3-governance",
+        "worldos-project-operating-principles",
+        "weekly-world-repair-day"
+      ],
+      "nextPathIds": [
+        "code-architecture-cleanup"
+      ],
+      "visibility": "public"
     }
   ],
   "events": [
@@ -1026,6 +1320,96 @@
       ],
       "visibility": "public",
       "actor": "system"
+    },
+    {
+      "id": "evt-016",
+      "type": "snapshot-created",
+      "title": "RC2 非部署修复线完成",
+      "date": "2026-07-04",
+      "description": "公开内容密度、路径、关系和公开体验门禁完成补强。",
+      "nodeIds": [
+        "node-worldos-rc2-nondeploy-lessons"
+      ],
+      "areaIds": [
+        "timeline"
+      ],
+      "visibility": "public",
+      "actor": "creator"
+    },
+    {
+      "id": "evt-017",
+      "type": "principle-created",
+      "title": "主线代码地图被确认为长期治理对象",
+      "date": "2026-07-04",
+      "description": "正式主线、legacy、内部实验和发布门禁开始分层说明。",
+      "nodeIds": [
+        "node-worldos-mainline-code-map"
+      ],
+      "areaIds": [
+        "archive"
+      ],
+      "visibility": "public",
+      "actor": "creator"
+    },
+    {
+      "id": "evt-018",
+      "type": "rule-triggered",
+      "title": "公开 AI 上下文边界被补入公开规则",
+      "date": "2026-07-04",
+      "description": "公开 AI 只能读取公开索引，继续保持低光导览定位。",
+      "nodeIds": [
+        "node-public-ai-context-contract"
+      ],
+      "areaIds": [
+        "lighthouse"
+      ],
+      "visibility": "public",
+      "actor": "creator"
+    },
+    {
+      "id": "evt-019",
+      "type": "node-created",
+      "title": "RC3 主线治理计划生成",
+      "date": "2026-07-04",
+      "description": "RC3 不新增宇宙大概念，而是继续解决代码、功能和项目角度的本地可修问题。",
+      "nodeIds": [
+        "node-worldos-rc3-governance"
+      ],
+      "areaIds": [
+        "origin"
+      ],
+      "visibility": "public",
+      "actor": "creator"
+    },
+    {
+      "id": "evt-020",
+      "type": "rule-triggered",
+      "title": "脚本分类门禁进入候选发布链路",
+      "date": "2026-07-04",
+      "description": "长期脚本入口被划分为 mainline、content、experience、release、legacy。",
+      "nodeIds": [
+        "node-script-taxonomy-gate"
+      ],
+      "areaIds": [
+        "archive"
+      ],
+      "visibility": "public",
+      "actor": "system"
+    },
+    {
+      "id": "evt-021",
+      "type": "principle-created",
+      "title": "服务端权限边界再次加固",
+      "date": "2026-07-04",
+      "description": "公开世界继续强调权限由服务端和构建策略控制，前端仅负责体验表达。",
+      "nodeIds": [
+        "node-server-side-permission-boundary"
+      ],
+      "areaIds": [
+        "lighthouse"
+      ],
+      "visibility": "public",
+      "actor": "creator"
     },
     {
       "id": "evt-001",
@@ -1285,6 +1669,51 @@
         "weight": 53
       },
       {
+        "nodeId": "node-worldos-mainline-code-map",
+        "slug": "worldos-mainline-code-map",
+        "title": "主干星图",
+        "summary": "把正式主线、内部实验、历史阶段线和发布门禁分清楚，降低未来维护时误入旧宇宙层的风险。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-mainline-import-boundary",
+        "slug": "mainline-import-boundary",
+        "title": "主线守门法则",
+        "summary": "公开产品页面不得直接导入 R/V/R8 legacy runtime；新页面必须通过 World Kernel、产品组件和公开数据协议进入。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-server-side-permission-boundary",
+        "slug": "server-side-permission-boundary",
+        "title": "门在服务端",
+        "summary": "权限必须由服务端路由、构建产物和索引策略控制；前端显隐只做体验表达，不能当安全边界。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-public-ai-context-contract",
+        "slug": "public-ai-context-contract",
+        "title": "灯塔只照公开海面",
+        "summary": "公开 AI 只能读取公开节点、公开路径、公开世界事件和公开边界说明；私密、vault、草案不进入上下文。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-worldos-project-operating-principles",
+        "slug": "worldos-project-operating-principles",
+        "title": "工程里的世界法则",
+        "summary": "把项目运转固定为小步提交、中文注释、边界先行、门禁可复跑、生产状态诚实，不因概念热度破坏工程秩序。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
         "nodeId": "node-feishu-mcp",
         "slug": "feishu-mcp-adk-agent",
         "title": "远方信使接入灯塔",
@@ -1328,9 +1757,27 @@
         "target": "home",
         "displayType": "star",
         "weight": 33
+      },
+      {
+        "nodeId": "node-worldos-rc3-governance",
+        "slug": "worldos-rc3-governance",
+        "title": "收束不是停下",
+        "summary": "RC3 聚焦主线治理、脚本分类、legacy 足迹和内容质量继续补厚，避免继续靠阶段线堆叠。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 33
       }
     ],
     "archive": [
+      {
+        "nodeId": "node-worldos-rc2-nondeploy-lessons",
+        "slug": "worldos-rc2-nondeploy-lessons",
+        "title": "不能部署时如何继续生长",
+        "summary": "记录在暂不方便运行和部署时，如何继续解决本地可修问题：内容、体验、门禁和项目口径。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
       {
         "nodeId": "node-world-manifesto",
         "slug": "world-manifesto",
@@ -1404,6 +1851,15 @@
         "weight": 53
       },
       {
+        "nodeId": "node-public-ai-context-contract",
+        "slug": "public-ai-context-contract",
+        "title": "灯塔只照公开海面",
+        "summary": "公开 AI 只能读取公开节点、公开路径、公开世界事件和公开边界说明；私密、vault、草案不进入上下文。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
+      },
+      {
         "nodeId": "node-everything-node",
         "slug": "everything-is-node",
         "title": "第一枚种子",
@@ -1429,6 +1885,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-worldos-project-operating-principles",
+        "slug": "worldos-project-operating-principles",
+        "title": "工程里的世界法则",
+        "summary": "把项目运转固定为小步提交、中文注释、边界先行、门禁可复跑、生产状态诚实，不因概念热度破坏工程秩序。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
       },
       {
         "nodeId": "node-data-guardian",
@@ -1503,6 +1968,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-legacy-footprint-audit",
+        "slug": "legacy-footprint-audit",
+        "title": "旧星群边界",
+        "summary": "记录 V/R/R8 历史阶段线、旧 runtime 和阶段脚本的归属，避免它们重新污染公开产品主路径。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
         "nodeId": "node-kavita-reader-pipeline",
         "slug": "kavita-reader-txt-epub-pipeline",
         "title": "卷宗转生",
@@ -1512,6 +1986,33 @@
         "weight": 4
       },
       {
+        "nodeId": "node-route-ownership-map",
+        "slug": "route-ownership-map",
+        "title": "路标户籍",
+        "summary": "为公开、私密、内部、legacy 路由建立归属说明，让 sitemap、robots、middleware 和导航保持一致。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-performance-budget-discipline",
+        "slug": "performance-budget-discipline",
+        "title": "慢光不拖慢道路",
+        "summary": "沉浸感应服务阅读和探索，动效必须可降级、可暂停、可被 reduced-motion 接管。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-accessibility-public-baseline",
+        "slug": "accessibility-public-baseline",
+        "title": "每个旅人都能抵达",
+        "summary": "为键盘、焦点、语义、低动效和颜色对比建立公开验收要求，让世界感不牺牲可访问性。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-content-source-birth-cert",
         "slug": "content-source-birth-certificate",
         "title": "每颗星的来处",
@@ -1519,6 +2020,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-script-taxonomy-gate",
+        "slug": "script-taxonomy-gate",
+        "title": "门禁星盘",
+        "summary": "把脚本分成主线、发布、内容、体验、legacy 五类，给未来 CI 和本地检查一个可理解的入口。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-server-side-permission-boundary",
+        "slug": "server-side-permission-boundary",
+        "title": "门在服务端",
+        "summary": "权限必须由服务端路由、构建产物和索引策略控制；前端显隐只做体验表达，不能当安全边界。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
       },
       {
         "nodeId": "node-cli-agent",
@@ -1575,10 +2094,28 @@
         "weight": 34
       },
       {
+        "nodeId": "node-worldos-rc3-governance",
+        "slug": "worldos-rc3-governance",
+        "title": "收束不是停下",
+        "summary": "RC3 聚焦主线治理、脚本分类、legacy 足迹和内容质量继续补厚，避免继续靠阶段线堆叠。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 33
+      },
+      {
         "nodeId": "node-node-passport-standard",
         "slug": "node-passport-standard",
         "title": "万物的身份证",
         "summary": "定义节点必须解释“它是什么、属于哪里、谁能看、从哪里来、下一步做什么”。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-creator-low-energy-maintenance",
+        "slug": "creator-low-energy-maintenance",
+        "title": "五分钟清尘",
+        "summary": "把维护动作拆成 1 分钟记录、5 分钟整理、15 分钟连星、30 分钟修复，避免世界成为负担。",
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
@@ -1665,6 +2202,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-mobile-world-acceptance",
+        "slug": "mobile-world-acceptance",
+        "title": "掌心里的浮屿",
+        "summary": "移动端要保留世界入口、反迷路罗盘、静读模式和现实检索，不把桌面动效硬塞进小屏。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-novel-editor",
         "slug": "static-ai-novel-editor",
         "title": "纸上创作室",
@@ -1672,6 +2218,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 34
+      },
+      {
+        "nodeId": "node-worldos-mainline-code-map",
+        "slug": "worldos-mainline-code-map",
+        "title": "主干星图",
+        "summary": "把正式主线、内部实验、历史阶段线和发布门禁分清楚，降低未来维护时误入旧宇宙层的风险。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-mainline-import-boundary",
+        "slug": "mainline-import-boundary",
+        "title": "主线守门法则",
+        "summary": "公开产品页面不得直接导入 R/V/R8 legacy runtime；新页面必须通过 World Kernel、产品组件和公开数据协议进入。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
       }
     ]
   },
@@ -1941,6 +2505,104 @@
         "slug": "worldos-rc1-lessons",
         "title": "候选发布前的清尘",
         "areaId": "timeline",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-worldos-mainline-code-map",
+        "slug": "worldos-mainline-code-map",
+        "title": "主干星图",
+        "areaId": "archive",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-legacy-footprint-audit",
+        "slug": "legacy-footprint-audit",
+        "title": "旧星群边界",
+        "areaId": "archive",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-mainline-import-boundary",
+        "slug": "mainline-import-boundary",
+        "title": "主线守门法则",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-script-taxonomy-gate",
+        "slug": "script-taxonomy-gate",
+        "title": "门禁星盘",
+        "areaId": "archive",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-route-ownership-map",
+        "slug": "route-ownership-map",
+        "title": "路标户籍",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-server-side-permission-boundary",
+        "slug": "server-side-permission-boundary",
+        "title": "门在服务端",
+        "areaId": "lighthouse",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-accessibility-public-baseline",
+        "slug": "accessibility-public-baseline",
+        "title": "每个旅人都能抵达",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-performance-budget-discipline",
+        "slug": "performance-budget-discipline",
+        "title": "慢光不拖慢道路",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-mobile-world-acceptance",
+        "slug": "mobile-world-acceptance",
+        "title": "掌心里的浮屿",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-public-ai-context-contract",
+        "slug": "public-ai-context-contract",
+        "title": "灯塔只照公开海面",
+        "areaId": "lighthouse",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-creator-low-energy-maintenance",
+        "slug": "creator-low-energy-maintenance",
+        "title": "五分钟清尘",
+        "areaId": "timeline",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-worldos-rc2-nondeploy-lessons",
+        "slug": "worldos-rc2-nondeploy-lessons",
+        "title": "不能部署时如何继续生长",
+        "areaId": "timeline",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-worldos-rc3-governance",
+        "slug": "worldos-rc3-governance",
+        "title": "收束不是停下",
+        "areaId": "origin",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-worldos-project-operating-principles",
+        "slug": "worldos-project-operating-principles",
+        "title": "工程里的世界法则",
+        "areaId": "origin",
         "lifeStage": "bloom"
       }
     ],
@@ -2216,6 +2878,307 @@
         "from": "node-codex-routing",
         "to": "node-data-guardian",
         "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-040",
+        "from": "node-worldos-mainline-code-map",
+        "to": "node-legacy-footprint-audit",
+        "type": "topic",
+        "strength": 1
+      },
+      {
+        "id": "rel-041",
+        "from": "node-legacy-footprint-audit",
+        "to": "node-mainline-import-boundary",
+        "type": "derived",
+        "strength": 1
+      },
+      {
+        "id": "rel-042",
+        "from": "node-mainline-import-boundary",
+        "to": "node-route-ownership-map",
+        "type": "implemented",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-043",
+        "from": "node-route-ownership-map",
+        "to": "node-server-side-permission-boundary",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-044",
+        "from": "node-script-taxonomy-gate",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-045",
+        "from": "node-script-taxonomy-gate",
+        "to": "node-worldos-project-operating-principles",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-046",
+        "from": "node-worldos-rc2-nondeploy-lessons",
+        "to": "node-worldos-rc3-governance",
+        "type": "derived",
+        "strength": 1
+      },
+      {
+        "id": "rel-047",
+        "from": "node-worldos-rc3-governance",
+        "to": "node-worldos-mainline-code-map",
+        "type": "implemented",
+        "strength": 1
+      },
+      {
+        "id": "rel-048",
+        "from": "node-server-side-permission-boundary",
+        "to": "node-public-ai-context-contract",
+        "type": "topic",
+        "strength": 1
+      },
+      {
+        "id": "rel-049",
+        "from": "node-public-ai-context-contract",
+        "to": "node-ai-lighthouse",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-050",
+        "from": "node-accessibility-public-baseline",
+        "to": "node-mobile-world-acceptance",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-051",
+        "from": "node-performance-budget-discipline",
+        "to": "node-mobile-world-acceptance",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-052",
+        "from": "node-accessibility-public-baseline",
+        "to": "node-real-mode-safety-exit",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-053",
+        "from": "node-creator-low-energy-maintenance",
+        "to": "node-world-repair-day",
+        "type": "implemented",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-054",
+        "from": "node-creator-low-energy-maintenance",
+        "to": "node-front-romantic-back-clear",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-055",
+        "from": "node-worldos-project-operating-principles",
+        "to": "node-mainline-import-boundary",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-056",
+        "from": "node-worldos-project-operating-principles",
+        "to": "node-server-side-permission-boundary",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-057",
+        "from": "node-route-ownership-map",
+        "to": "node-data-guardian",
+        "type": "implemented",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-058",
+        "from": "node-legacy-footprint-audit",
+        "to": "node-worldos-rc-lessons",
+        "type": "revivedFrom",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-059",
+        "from": "node-worldos-rc2-nondeploy-lessons",
+        "to": "node-content-source-birth-cert",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-060",
+        "from": "node-accessibility-public-baseline",
+        "to": "node-progressive-disclosure",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-061",
+        "from": "node-performance-budget-discipline",
+        "to": "node-progressive-disclosure",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-062",
+        "from": "node-public-ai-context-contract",
+        "to": "node-no-ai",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-063",
+        "from": "node-mainline-import-boundary",
+        "to": "node-worldos-rc3-governance",
+        "type": "implemented",
+        "strength": 1
+      },
+      {
+        "id": "rel-064",
+        "from": "node-script-taxonomy-gate",
+        "to": "node-worldos-rc3-governance",
+        "type": "implemented",
+        "strength": 1
+      },
+      {
+        "id": "rel-065",
+        "from": "node-worldos-mainline-code-map",
+        "to": "node-route-ownership-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-066",
+        "from": "node-worldos-mainline-code-map",
+        "to": "node-worldos-project-operating-principles",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-067",
+        "from": "node-legacy-footprint-audit",
+        "to": "node-script-taxonomy-gate",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-068",
+        "from": "node-server-side-permission-boundary",
+        "to": "node-public-private-boundary",
+        "type": "derived",
+        "strength": 1
+      },
+      {
+        "id": "rel-069",
+        "from": "node-public-ai-context-contract",
+        "to": "node-public-private-boundary",
+        "type": "topic",
+        "strength": 1
+      },
+      {
+        "id": "rel-070",
+        "from": "node-mobile-world-acceptance",
+        "to": "node-eight-minute-path",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-071",
+        "from": "node-accessibility-public-baseline",
+        "to": "node-eight-minute-path",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-072",
+        "from": "node-worldos-rc3-governance",
+        "to": "node-world-design-axioms",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-073",
+        "from": "node-worldos-project-operating-principles",
+        "to": "node-world-design-axioms",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-074",
+        "from": "node-route-ownership-map",
+        "to": "node-real-mode-safety-exit",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-075",
+        "from": "node-worldos-mainline-code-map",
+        "to": "node-node-passport-standard",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-076",
+        "from": "node-public-ai-context-contract",
+        "to": "node-node-passport-standard",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-077",
+        "from": "node-script-taxonomy-gate",
+        "to": "node-world-repair-day",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-078",
+        "from": "node-creator-low-energy-maintenance",
+        "to": "node-worldos-project-operating-principles",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-079",
+        "from": "node-worldos-rc2-nondeploy-lessons",
+        "to": "node-worldos-mainline-code-map",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-080",
+        "from": "node-worldos-rc3-governance",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 1
+      },
+      {
+        "id": "rel-081",
+        "from": "node-performance-budget-discipline",
+        "to": "node-accessibility-public-baseline",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-082",
+        "from": "node-mobile-world-acceptance",
+        "to": "node-worldos-engine",
+        "type": "implemented",
         "strength": 0.5
       }
     ]

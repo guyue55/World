@@ -894,5 +894,346 @@
     },
     "createdAt": "2026-07-04",
     "cover": "/covers/cover-memory-river.svg"
+  },
+  {
+    "id": "node-worldos-mainline-code-map",
+    "slug": "worldos-mainline-code-map",
+    "title": "WorldOS 主线代码地图",
+    "worldTitle": "主干星图",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "把正式主线、内部实验、历史阶段线和发布门禁分清楚，降低未来维护时误入旧宇宙层的风险。",
+    "contentPath": "content/documents/worldos-mainline-code-map.md",
+    "tags": [
+      "mainline",
+      "architecture",
+      "governance"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "representative": true,
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-archive.svg"
+  },
+  {
+    "id": "node-legacy-footprint-audit",
+    "slug": "legacy-footprint-audit",
+    "title": "历史代码足迹审计",
+    "worldTitle": "旧星群边界",
+    "type": "article",
+    "areaId": "archive",
+    "summary": "记录 V/R/R8 历史阶段线、旧 runtime 和阶段脚本的归属，避免它们重新污染公开产品主路径。",
+    "contentPath": "content/articles/legacy-footprint-audit.md",
+    "tags": [
+      "legacy",
+      "audit",
+      "runtime"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-archive.svg"
+  },
+  {
+    "id": "node-mainline-import-boundary",
+    "slug": "mainline-import-boundary",
+    "title": "正式主线导入边界",
+    "worldTitle": "主线守门法则",
+    "type": "rule",
+    "areaId": "origin",
+    "summary": "公开产品页面不得直接导入 R/V/R8 legacy runtime；新页面必须通过 World Kernel、产品组件和公开数据协议进入。",
+    "contentPath": "content/rules/mainline-import-boundary.md",
+    "tags": [
+      "boundary",
+      "imports",
+      "world-kernel"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "representative": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-script-taxonomy-gate",
+    "slug": "script-taxonomy-gate",
+    "title": "长期脚本分类与门禁收束",
+    "worldTitle": "门禁星盘",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "把脚本分成主线、发布、内容、体验、legacy 五类，给未来 CI 和本地检查一个可理解的入口。",
+    "contentPath": "content/documents/script-taxonomy-gate.md",
+    "tags": [
+      "scripts",
+      "ci",
+      "quality-gate"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-archive.svg"
+  },
+  {
+    "id": "node-route-ownership-map",
+    "slug": "route-ownership-map",
+    "title": "公开路由归属地图",
+    "worldTitle": "路标户籍",
+    "type": "document",
+    "areaId": "origin",
+    "summary": "为公开、私密、内部、legacy 路由建立归属说明，让 sitemap、robots、middleware 和导航保持一致。",
+    "contentPath": "content/documents/route-ownership-map.md",
+    "tags": [
+      "routes",
+      "middleware",
+      "sitemap"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-server-side-permission-boundary",
+    "slug": "server-side-permission-boundary",
+    "title": "服务端权限边界说明",
+    "worldTitle": "门在服务端",
+    "type": "rule",
+    "areaId": "lighthouse",
+    "summary": "权限必须由服务端路由、构建产物和索引策略控制；前端显隐只做体验表达，不能当安全边界。",
+    "contentPath": "content/rules/server-side-permission-boundary.md",
+    "tags": [
+      "permission",
+      "server-side",
+      "privacy"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "representative": true,
+      "pathCore": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-lighthouse.svg"
+  },
+  {
+    "id": "node-accessibility-public-baseline",
+    "slug": "accessibility-public-baseline",
+    "title": "公开世界无障碍基线",
+    "worldTitle": "每个旅人都能抵达",
+    "type": "article",
+    "areaId": "archive",
+    "summary": "为键盘、焦点、语义、低动效和颜色对比建立公开验收要求，让世界感不牺牲可访问性。",
+    "contentPath": "content/articles/accessibility-public-baseline.md",
+    "tags": [
+      "accessibility",
+      "public-experience",
+      "rc"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-archive.svg"
+  },
+  {
+    "id": "node-performance-budget-discipline",
+    "slug": "performance-budget-discipline",
+    "title": "性能预算与动效纪律",
+    "worldTitle": "慢光不拖慢道路",
+    "type": "article",
+    "areaId": "archive",
+    "summary": "沉浸感应服务阅读和探索，动效必须可降级、可暂停、可被 reduced-motion 接管。",
+    "contentPath": "content/articles/performance-budget-discipline.md",
+    "tags": [
+      "performance",
+      "motion",
+      "budget"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-archive.svg"
+  },
+  {
+    "id": "node-mobile-world-acceptance",
+    "slug": "mobile-world-acceptance",
+    "title": "移动端世界验收标准",
+    "worldTitle": "掌心里的浮屿",
+    "type": "article",
+    "areaId": "archive",
+    "summary": "移动端要保留世界入口、反迷路罗盘、静读模式和现实检索，不把桌面动效硬塞进小屏。",
+    "contentPath": "content/articles/mobile-world-acceptance.md",
+    "tags": [
+      "mobile",
+      "experience",
+      "acceptance"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-archive.svg"
+  },
+  {
+    "id": "node-public-ai-context-contract",
+    "slug": "public-ai-context-contract",
+    "title": "公开 AI 上下文契约",
+    "worldTitle": "灯塔只照公开海面",
+    "type": "rule",
+    "areaId": "lighthouse",
+    "summary": "公开 AI 只能读取公开节点、公开路径、公开世界事件和公开边界说明；私密、vault、草案不进入上下文。",
+    "contentPath": "content/rules/public-ai-context-contract.md",
+    "tags": [
+      "ai",
+      "public-context",
+      "privacy"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "representative": true,
+      "pathCore": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-lighthouse.svg"
+  },
+  {
+    "id": "node-creator-low-energy-maintenance",
+    "slug": "creator-low-energy-maintenance",
+    "title": "创世台低心力维护流程",
+    "worldTitle": "五分钟清尘",
+    "type": "document",
+    "areaId": "timeline",
+    "summary": "把维护动作拆成 1 分钟记录、5 分钟整理、15 分钟连星、30 分钟修复，避免世界成为负担。",
+    "contentPath": "content/documents/creator-low-energy-maintenance.md",
+    "tags": [
+      "creator",
+      "maintenance",
+      "operations"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-timeline.svg"
+  },
+  {
+    "id": "node-worldos-rc2-nondeploy-lessons",
+    "slug": "worldos-rc2-nondeploy-lessons",
+    "title": "WorldOS RC2 非部署修复经验",
+    "worldTitle": "不能部署时如何继续生长",
+    "type": "article",
+    "areaId": "timeline",
+    "summary": "记录在暂不方便运行和部署时，如何继续解决本地可修问题：内容、体验、门禁和项目口径。",
+    "contentPath": "content/articles/worldos-rc2-nondeploy-lessons.md",
+    "tags": [
+      "rc2",
+      "nondeploy",
+      "lessons"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "timelineKey": true,
+      "recommended": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-timeline.svg"
+  },
+  {
+    "id": "node-worldos-rc3-governance",
+    "slug": "worldos-rc3-governance",
+    "title": "WorldOS RC3 主线治理计划",
+    "worldTitle": "收束不是停下",
+    "type": "document",
+    "areaId": "origin",
+    "summary": "RC3 聚焦主线治理、脚本分类、legacy 足迹和内容质量继续补厚，避免继续靠阶段线堆叠。",
+    "contentPath": "content/documents/worldos-rc3-governance.md",
+    "tags": [
+      "rc3",
+      "governance",
+      "mainline"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "home": true,
+      "representative": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-world-gateway.svg"
+  },
+  {
+    "id": "node-worldos-project-operating-principles",
+    "slug": "worldos-project-operating-principles",
+    "title": "WorldOS 项目运转原则",
+    "worldTitle": "工程里的世界法则",
+    "type": "rule",
+    "areaId": "origin",
+    "summary": "把项目运转固定为小步提交、中文注释、边界先行、门禁可复跑、生产状态诚实，不因概念热度破坏工程秩序。",
+    "contentPath": "content/rules/worldos-project-operating-principles.md",
+    "tags": [
+      "project",
+      "operating-principles",
+      "quality"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "fact",
+    "featured": {
+      "representative": true
+    },
+    "createdAt": "2026-07-04",
+    "cover": "/covers/cover-world-gateway.svg"
   }
 ]

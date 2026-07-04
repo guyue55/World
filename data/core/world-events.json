@@ -244,5 +244,95 @@
     ],
     "visibility": "public",
     "actor": "system"
+  },
+  {
+    "id": "evt-016",
+    "type": "snapshot-created",
+    "title": "RC2 非部署修复线完成",
+    "date": "2026-07-04",
+    "description": "公开内容密度、路径、关系和公开体验门禁完成补强。",
+    "nodeIds": [
+      "node-worldos-rc2-nondeploy-lessons"
+    ],
+    "areaIds": [
+      "timeline"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-017",
+    "type": "principle-created",
+    "title": "主线代码地图被确认为长期治理对象",
+    "date": "2026-07-04",
+    "description": "正式主线、legacy、内部实验和发布门禁开始分层说明。",
+    "nodeIds": [
+      "node-worldos-mainline-code-map"
+    ],
+    "areaIds": [
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-018",
+    "type": "rule-triggered",
+    "title": "公开 AI 上下文边界被补入公开规则",
+    "date": "2026-07-04",
+    "description": "公开 AI 只能读取公开索引，继续保持低光导览定位。",
+    "nodeIds": [
+      "node-public-ai-context-contract"
+    ],
+    "areaIds": [
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-019",
+    "type": "node-created",
+    "title": "RC3 主线治理计划生成",
+    "date": "2026-07-04",
+    "description": "RC3 不新增宇宙大概念，而是继续解决代码、功能和项目角度的本地可修问题。",
+    "nodeIds": [
+      "node-worldos-rc3-governance"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-020",
+    "type": "rule-triggered",
+    "title": "脚本分类门禁进入候选发布链路",
+    "date": "2026-07-04",
+    "description": "长期脚本入口被划分为 mainline、content、experience、release、legacy。",
+    "nodeIds": [
+      "node-script-taxonomy-gate"
+    ],
+    "areaIds": [
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-021",
+    "type": "principle-created",
+    "title": "服务端权限边界再次加固",
+    "date": "2026-07-04",
+    "description": "公开世界继续强调权限由服务端和构建策略控制，前端仅负责体验表达。",
+    "nodeIds": [
+      "node-server-side-permission-boundary"
+    ],
+    "areaIds": [
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "creator"
   }
 ]

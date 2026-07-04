@@ -106,3 +106,35 @@ npm run check:worldos-public-experience
 ```
 
 公开路径不得引用 private / family / partner / vault / sealed / silent 节点。强关系需要 `note` 解释为什么相连，避免星图只有连线没有语义。
+
+## RC3 主线治理规则
+
+RC3 后，日常开发优先使用短门禁：
+
+```bash
+npm run check:mainline
+npm run lint
+npm run typecheck
+```
+
+内容或体验变更分别运行：
+
+```bash
+npm run check:content
+npm run check:experience:public
+```
+
+候选发布本地快检：
+
+```bash
+npm run check:release:rc:fast
+```
+
+新增页面、组件或脚本时遵守：
+
+1. 正式公开页面不得直接导入 `@/components/r8-*`、`@/features/r8-*`、私密层或旧阶段 runtime。
+2. 新检查能力优先接入 `check:mainline` / `check:content` / `check:experience:public`，不要继续扩展新的阶段聚合链。
+3. 新公开节点必须有 `contentPath`、`worldTitle`、summary、权限、生命阶段和来源。
+4. 强关系必须写 `note`，避免星图只有连线没有语义。
+5. 新路径不得引用非公开节点。
+6. production 状态只能由真实外部证据改变。

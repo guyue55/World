@@ -1,0 +1,54 @@
+{
+  "name": "WorldOS 1.0 RC3 主线治理与非部署问题收束",
+  "status": "rc3-mainline-governance-completed-external-deploy-still-blocked",
+  "createdAt": "2026-07-04",
+  "goal": "在暂不方便部署的条件下，继续解决代码、功能与项目角度暴露的本地可修问题：主线可理解性、legacy 回流风险、脚本入口治理、公开内容厚度与项目口径诚实。",
+  "scope": {
+    "allowed": [
+      "mainline-code-map",
+      "legacy-footprint-audit",
+      "script-taxonomy",
+      "content-density-increase",
+      "public-experience-hardening",
+      "release-candidate-documentation"
+    ],
+    "blocked": [
+      "new-r8-runtime",
+      "new-v-line",
+      "external-production-claim",
+      "frontend-only-permission",
+      "unreviewed-private-index"
+    ]
+  },
+  "progress": {
+    "codeAngle": "completed-mainline-governance-added",
+    "functionAngle": "completed-public-content-and-paths-expanded",
+    "projectAngle": "completed-rc3-operating-principles-added",
+    "externalEvidence": "blocked-preview-production-required"
+  },
+  "qualityTargets": {
+    "publicNodesMin": 50,
+    "contentBackedPublicNodesMin": 50,
+    "publicPathsMin": 12,
+    "relationsMin": 80,
+    "worldEventsMin": 20,
+    "representedAreasMin": 8,
+    "featuredNodesMin": 14
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  },
+  "evidence": {
+    "mainlineRegistry": "data/world-kernel/worldos-mainline-registry-v1.json",
+    "scriptTaxonomy": "data/world-kernel/worldos-script-taxonomy-v1.json",
+    "report": "docs/10-development-history/world-kernel/worldos-1-rc3-mainline-governance.md",
+    "checks": [
+      "npm run check:worldos-mainline-governance",
+      "npm run check:worldos-script-taxonomy",
+      "npm run check:worldos-content-density",
+      "npm run check:worldos-public-experience"
+    ]
+  }
+}
