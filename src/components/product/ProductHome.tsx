@@ -1,7 +1,14 @@
 import Link from 'next/link'
 import type { Area, Node, Path, WorldEvent } from '@/lib/types'
+import { ProductWorldCompass } from '@/components/product/ProductWorldCompass'
+import { ProductWorldBoundaries } from '@/components/product/ProductWorldBoundaries'
 
 const primaryEntrances = [
+  {
+    href: '/paths/eight-minute-world',
+    title: '8 分钟路径',
+    description: '第一次来不用理解全部宇宙，先走完一条短路径。',
+  },
   {
     href: '/atlas',
     title: '世界地图',
@@ -28,11 +35,13 @@ const productPrinciples = [
 export function ProductHome({
   areas,
   featuredNodes,
+  publicNodes,
   paths,
   events,
 }: {
   areas: Area[]
   featuredNodes: Node[]
+  publicNodes: Node[]
   paths: Path[]
   events: WorldEvent[]
 }) {
@@ -65,6 +74,9 @@ export function ProductHome({
               <Link href="/timeline" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
                 沿时间流
               </Link>
+              <Link href="/paths/eight-minute-world" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
+                8 分钟路径
+              </Link>
               <Link href="/archive" className="rounded-full border border-ink/10 bg-white/55 px-6 py-3 text-sm font-semibold text-ink/70 transition hover:-translate-y-0.5 hover:bg-white">
                 现实检索
               </Link>
@@ -93,6 +105,10 @@ export function ProductHome({
           </div>
         </div>
       </section>
+
+      <ProductWorldCompass areas={areas} nodes={publicNodes} paths={paths} />
+
+      <ProductWorldBoundaries />
 
       <section className="grid gap-4 md:grid-cols-3">
         {visibleAreas.slice(0, 3).map((area) => (

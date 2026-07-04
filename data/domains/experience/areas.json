@@ -8,7 +8,9 @@
     "status": "active",
     "defaultVisibility": "public",
     "icon": "✦",
-    "order": 1
+    "order": 1,
+    "noAIFallback": "通过世界宣言、宪章、路径和地图解释世界，不依赖 AI。",
+    "aiEnhancement": "AI 可辅助生成导览解释，但不能替代世界宪章。"
   },
   {
     "id": "tech",
@@ -19,7 +21,9 @@
     "status": "active",
     "defaultVisibility": "public",
     "icon": "✧",
-    "order": 2
+    "order": 2,
+    "noAIFallback": "按标签、路径、时间和关系展示工程实践。",
+    "aiEnhancement": "AI 可生成摘要、相关路径和排查清单，必须标注来源。"
   },
   {
     "id": "workshop",
@@ -30,7 +34,9 @@
     "status": "active",
     "defaultVisibility": "public",
     "icon": "◈",
-    "order": 3
+    "order": 3,
+    "noAIFallback": "按项目状态、成熟度和路径展示产品种子。",
+    "aiEnhancement": "AI 可提出 README、Demo、复盘草案，但不自动发布。"
   },
   {
     "id": "fragments",
@@ -41,7 +47,9 @@
     "status": "active",
     "defaultVisibility": "public",
     "icon": "☁",
-    "order": 4
+    "order": 4,
+    "noAIFallback": "按时间、标签和生命阶段整理灵感种子。",
+    "aiEnhancement": "AI 可建议合并、命名和转化，但进入草案区。"
   },
   {
     "id": "memory",
@@ -52,7 +60,9 @@
     "status": "quiet",
     "defaultVisibility": "private",
     "icon": "≈",
-    "order": 5
+    "order": 5,
+    "noAIFallback": "只展示公开摘要和脱敏片刻，完整记忆不进入公开构建。",
+    "aiEnhancement": "AI 只能处理授权内容，不能读取 vault 或 silent 记忆。"
   },
   {
     "id": "timeline",
@@ -63,7 +73,9 @@
     "status": "active",
     "defaultVisibility": "public",
     "icon": "⌁",
-    "order": 6
+    "order": 6,
+    "noAIFallback": "按世界事件和节点变化展示时间流。",
+    "aiEnhancement": "AI 可生成月报草案和回望摘要，需人工确认。"
   },
   {
     "id": "archive",
@@ -74,7 +86,9 @@
     "status": "active",
     "defaultVisibility": "public",
     "icon": "▣",
-    "order": 7
+    "order": 7,
+    "noAIFallback": "提供类型、区域、生命阶段、标签和文本搜索。",
+    "aiEnhancement": "AI 可辅助解释检索结果，但必须引用公开节点。"
   },
   {
     "id": "lighthouse",
@@ -85,6 +99,8 @@
     "status": "experimental",
     "defaultVisibility": "public",
     "icon": "◉",
-    "order": 8
+    "order": 8,
+    "noAIFallback": "使用预设问题、精选路径和本地搜索低光运行。",
+    "aiEnhancement": "AI 可做公开问答和路径推荐，只读公开索引。"
   }
 ]

@@ -84,3 +84,25 @@ npm run evidence:kernel-local
 2. 不允许在没有真实外部 Preview / Production URL 的情况下把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 `true`。
 3. `check:release` 是当前 World Kernel 本地发布门禁；旧阶段发布链路只能作为 `check:release:legacy` 参考。
 4. 任何线上签收必须包含：Preview URL、Production URL、线上 smoke test、域名 HTTPS、sitemap/robots 在线验证、人工签收和回滚演练。
+
+## RC2 内容与体验门禁规则
+
+当暂时无法部署时，允许继续处理本地可验证的问题，但必须优先解决：
+
+```text
+内容密度
+公开路径
+关系解释
+区域自解释
+反迷路体验
+legacy runtime 防回流
+```
+
+新增或修改公开内容时，需要运行：
+
+```bash
+npm run check:worldos-content-density
+npm run check:worldos-public-experience
+```
+
+公开路径不得引用 private / family / partner / vault / sealed / silent 节点。强关系需要 `note` 解释为什么相连，避免星图只有连线没有语义。

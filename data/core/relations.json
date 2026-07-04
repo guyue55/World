@@ -6,7 +6,8 @@
     "type": "derived",
     "strength": 1.0,
     "source": "manual",
-    "reviewed": true
+    "reviewed": true,
+    "note": "古月浮屿世界宣言 与 古月浮屿的数字宇宙定义 构成核心世界线索，需要在公开路径中保持可解释。"
   },
   {
     "id": "rel-002",
@@ -15,7 +16,8 @@
     "type": "derived",
     "strength": 0.8,
     "source": "manual",
-    "reviewed": true
+    "reviewed": true,
+    "note": "古月浮屿的数字宇宙定义 与 世界空间层设计 构成核心世界线索，需要在公开路径中保持可解释。"
   },
   {
     "id": "rel-003",
@@ -24,7 +26,8 @@
     "type": "topic",
     "strength": 0.8,
     "source": "manual",
-    "reviewed": true
+    "reviewed": true,
+    "note": "AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。"
   },
   {
     "id": "rel-004",
@@ -42,7 +45,8 @@
     "type": "derived",
     "strength": 0.8,
     "source": "manual",
-    "reviewed": true
+    "reviewed": true,
+    "note": "Backlinks 与星线 与 万物皆节点 构成核心世界线索，需要在公开路径中保持可解释。"
   },
   {
     "id": "rel-006",
@@ -66,6 +70,304 @@
     "id": "rel-008",
     "from": "node-novel-editor",
     "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-009",
+    "from": "node-world-design-axioms",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界设计公理 与 古月浮屿世界宣言 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-010",
+    "from": "node-world-design-axioms",
+    "to": "node-no-ai",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界设计公理 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-011",
+    "from": "node-world-design-axioms",
+    "to": "node-progressive-disclosure",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界设计公理 与 渐进揭示：入口清澈，深处浩瀚 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-012",
+    "from": "node-front-romantic-back-clear",
+    "to": "node-public-private-boundary",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "前台浪漫、后台清醒、档案可靠 与 公开层与私密层边界 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-013",
+    "from": "node-progressive-disclosure",
+    "to": "node-clear-deep",
+    "type": "derived",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "渐进揭示：入口清澈，深处浩瀚 与 入口清澈，深处浩瀚 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-014",
+    "from": "node-world-glossary",
+    "to": "node-node-passport-standard",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-015",
+    "from": "node-content-source-birth-cert",
+    "to": "node-node-passport-standard",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容出生证明 与 节点护照标准 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-016",
+    "from": "node-worldos-engine",
+    "to": "node-everything-node",
+    "type": "implemented",
+    "strength": 1.0,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 世界生成引擎 与 万物皆节点 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-017",
+    "from": "node-worldos-engine",
+    "to": "node-world-space",
+    "type": "implemented",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 世界生成引擎 与 世界空间层设计 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-018",
+    "from": "node-worldos-engine",
+    "to": "node-backlinks",
+    "type": "implemented",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 世界生成引擎 与 Backlinks 与星线 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-019",
+    "from": "node-ai-report-demo",
+    "to": "node-worldos-engine",
+    "type": "project",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-020",
+    "from": "node-ai-report-demo",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 网站检测报告 Demo 与 AI 灯塔边界 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-021",
+    "from": "node-ai-novel-workbench",
+    "to": "node-novel-editor",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 小说创作工作台 与 静态 AI 小说编辑器 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-022",
+    "from": "node-right-click-assistant",
+    "to": "node-design-cover-set",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-023",
+    "from": "node-gemini-cli-skills",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Gemini CLI、Skills 与 Agent 工作流 与 飞书 MCP 接入 ADK Agent 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-024",
+    "from": "node-gemini-cli-skills",
+    "to": "node-cli-agent",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Gemini CLI、Skills 与 Agent 工作流 与 CLI 工具接入 Agent 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-025",
+    "from": "node-codex-routing",
+    "to": "node-cli-agent",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Codex CLI 自定义 Provider 与路由排查 与 CLI 工具接入 Agent 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-026",
+    "from": "node-rustdesk-relay",
+    "to": "node-docker-cleanup",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-027",
+    "from": "node-kavita-reader-pipeline",
+    "to": "node-docker-cleanup",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-028",
+    "from": "node-public-private-boundary",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开层与私密层边界 与 记忆湖第一束光 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-029",
+    "from": "node-public-private-boundary",
+    "to": "node-window-light-memory",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开层与私密层边界 与 窗边的光：生活片刻种子 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-030",
+    "from": "node-window-light-memory",
+    "to": "node-travel-far-coordinates",
+    "type": "memory",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-031",
+    "from": "node-world-repair-day",
+    "to": "node-world-monthly-report",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界修复日 与 世界月报与季报仪式 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-032",
+    "from": "node-worldos-rc-lessons",
+    "to": "node-front-romantic-back-clear",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 1.0 RC1 收束经验 与 前台浪漫、后台清醒、档案可靠 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-033",
+    "from": "node-worldos-rc-lessons",
+    "to": "node-progressive-disclosure",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-034",
+    "from": "node-real-mode-safety-exit",
+    "to": "node-world-glossary",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-035",
+    "from": "node-eight-minute-path",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "8 分钟抵达古月浮屿 与 古月浮屿世界宣言 构成核心世界线索，需要在公开路径中保持可解释。"
+  },
+  {
+    "id": "rel-036",
+    "from": "node-eight-minute-path",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-037",
+    "from": "node-design-cover-set",
+    "to": "node-world-space",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-038",
+    "from": "node-moonframe",
+    "to": "node-ai-novel-workbench",
+    "type": "topic",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true
+  },
+  {
+    "id": "rel-039",
+    "from": "node-codex-routing",
+    "to": "node-data-guardian",
     "type": "topic",
     "strength": 0.5,
     "source": "manual",

@@ -4,8 +4,11 @@ const defaultActions = [
   { href: '/atlas', label: '地图' },
   { href: '/timeline', label: '时间' },
   { href: '/archive', label: '档案' },
+  { href: '/paths', label: '路径' },
   { href: '/ask', label: '灯塔' },
 ]
+
+const safetyQuestions = ['我在哪里', '这里是什么', '能去哪', '如何回去']
 
 export function ProductRouteGuide({
   current,
@@ -25,6 +28,13 @@ export function ProductRouteGuide({
         <div>
           <h1 className="text-3xl font-semibold text-ink md:text-4xl">{current}</h1>
           <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/64">{description}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {safetyQuestions.map((question) => (
+              <span key={question} className="rounded-full bg-paper/75 px-3 py-1.5 text-xs font-semibold text-ink/55">
+                {question}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="flex shrink-0 flex-wrap gap-2">
           <Link href={primaryHref} className="inline-flex rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper transition hover:bg-night">
@@ -32,7 +42,7 @@ export function ProductRouteGuide({
           </Link>
           {defaultActions
             .filter((action) => action.href !== primaryHref)
-            .slice(0, 3)
+            .slice(0, 4)
             .map((action) => (
               <Link
                 key={action.href}

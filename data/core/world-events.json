@@ -180,5 +180,69 @@
     ],
     "visibility": "public",
     "actor": "system"
+  },
+  {
+    "id": "evt-012",
+    "type": "node-created",
+    "title": "RC2 内容密度修复启动",
+    "date": "2026-07-04",
+    "description": "新增一批技术、产品、规则、生活与维护节点，解决公开世界内容密度不足的问题。",
+    "nodeIds": [
+      "node-gemini-cli-skills",
+      "node-worldos-engine",
+      "node-world-design-axioms",
+      "node-window-light-memory"
+    ],
+    "areaIds": [
+      "tech",
+      "workshop",
+      "origin",
+      "memory"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-013",
+    "type": "principle-created",
+    "title": "前台浪漫、后台清醒、档案可靠被固化",
+    "date": "2026-07-04",
+    "description": "把三层体验原则写入公开节点，明确世界感、维护性和长期档案不能互相牺牲。",
+    "nodeIds": [
+      "node-front-romantic-back-clear"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "evt-014",
+    "type": "rule-triggered",
+    "title": "内容质量门禁进入 RC 链路",
+    "date": "2026-07-04",
+    "description": "新增内容密度、路径数量、关系数量和反迷路说明检查，避免公开世界回到空壳状态。",
+    "areaIds": [
+      "archive",
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "system"
+  },
+  {
+    "id": "evt-015",
+    "type": "node-created",
+    "title": "8 分钟路径被安放",
+    "date": "2026-07-04",
+    "description": "为首次访客新增短路径节点和路径条目，降低进入门槛。",
+    "nodeIds": [
+      "node-eight-minute-path"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "system"
   }
 ]

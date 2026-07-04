@@ -25,7 +25,9 @@
     "estimatedMinutes": 15,
     "nodeSlugs": [
       "feishu-mcp-adk-agent",
+      "gemini-cli-skills-agent-workflow",
       "cli-tools-agent-integration",
+      "codex-cli-custom-provider-routing",
       "world-data-guardian",
       "ai-lighthouse-boundary",
       "no-ai-natural-evolution"
@@ -74,15 +76,109 @@
     "audience": "deep-dive",
     "estimatedMinutes": 20,
     "nodeSlugs": [
+      "world-design-axioms",
       "everything-is-node",
       "backlinks-and-star-lines",
       "world-space-layer",
-      "world-data-guardian",
-      "personal-digital-universe-definition"
+      "node-passport-standard",
+      "world-language-glossary",
+      "public-private-boundary"
     ],
     "nextPathIds": [
       "how-world-created",
       "tech-ai"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "eight-minute-world",
+    "title": "8 分钟抵达古月浮屿",
+    "description": "给第一次来访者的短路径：世界宣言、地图、技术、项目、生活片刻和灯塔。",
+    "audience": "first-time",
+    "estimatedMinutes": 8,
+    "nodeSlugs": [
+      "world-manifesto",
+      "personal-digital-universe-definition",
+      "eight-minute-world-path",
+      "ai-website-audit-report-demo",
+      "window-light-memory-seed",
+      "ai-lighthouse-boundary"
+    ],
+    "nextPathIds": [
+      "tech-ai",
+      "how-world-created"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "worldos-rc-lessons",
+    "title": "WorldOS 1.0 RC 经验路径",
+    "description": "理解候选发布、legacy 隔离、内容密度和外部证据之间的关系。",
+    "audience": "creator",
+    "estimatedMinutes": 14,
+    "nodeSlugs": [
+      "worldos-rc1-lessons",
+      "front-romantic-back-clear-archive-reliable",
+      "public-private-boundary",
+      "content-source-birth-certificate",
+      "real-mode-safety-exit"
+    ],
+    "nextPathIds": [
+      "how-world-created"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "creator-maintenance",
+    "title": "创世台维护路径",
+    "description": "从世界修复日、内容出生证明、节点护照和语言词典理解如何长期维护世界。",
+    "audience": "creator",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "weekly-world-repair-day",
+      "content-source-birth-certificate",
+      "node-passport-standard",
+      "world-language-glossary",
+      "world-monthly-report-ritual"
+    ],
+    "nextPathIds": [
+      "deep-world"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "product-workshop",
+    "title": "产品工坊代表路径",
+    "description": "从 WorldOS 引擎、AI 网站检测、小说工作台和月帧阁看产品种子如何生长。",
+    "audience": "tech",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "worldos-engine",
+      "ai-website-audit-report-demo",
+      "static-ai-novel-editor",
+      "ai-novel-workbench",
+      "moonframe-loft"
+    ],
+    "nextPathIds": [
+      "tech-ai"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "public-life-memory",
+    "title": "公开生活记忆边界路径",
+    "description": "理解记忆湖如何展示温度，同时保护完整生活和私密细节。",
+    "audience": "life",
+    "estimatedMinutes": 12,
+    "nodeSlugs": [
+      "memory-lake-first-light",
+      "window-light-memory-seed",
+      "travel-far-coordinates",
+      "public-private-boundary",
+      "real-mode-safety-exit"
+    ],
+    "nextPathIds": [
+      "first-visit"
     ],
     "visibility": "public"
   }

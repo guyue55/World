@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T02:59:01.456Z",
+  "generatedAt": "2026-07-04T09:16:18.511Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -17,7 +17,9 @@
       "status": "active",
       "defaultVisibility": "public",
       "icon": "✦",
-      "order": 1
+      "order": 1,
+      "noAIFallback": "通过世界宣言、宪章、路径和地图解释世界，不依赖 AI。",
+      "aiEnhancement": "AI 可辅助生成导览解释，但不能替代世界宪章。"
     },
     {
       "id": "tech",
@@ -28,7 +30,9 @@
       "status": "active",
       "defaultVisibility": "public",
       "icon": "✧",
-      "order": 2
+      "order": 2,
+      "noAIFallback": "按标签、路径、时间和关系展示工程实践。",
+      "aiEnhancement": "AI 可生成摘要、相关路径和排查清单，必须标注来源。"
     },
     {
       "id": "workshop",
@@ -39,7 +43,9 @@
       "status": "active",
       "defaultVisibility": "public",
       "icon": "◈",
-      "order": 3
+      "order": 3,
+      "noAIFallback": "按项目状态、成熟度和路径展示产品种子。",
+      "aiEnhancement": "AI 可提出 README、Demo、复盘草案，但不自动发布。"
     },
     {
       "id": "fragments",
@@ -50,7 +56,9 @@
       "status": "active",
       "defaultVisibility": "public",
       "icon": "☁",
-      "order": 4
+      "order": 4,
+      "noAIFallback": "按时间、标签和生命阶段整理灵感种子。",
+      "aiEnhancement": "AI 可建议合并、命名和转化，但进入草案区。"
     },
     {
       "id": "memory",
@@ -61,7 +69,9 @@
       "status": "quiet",
       "defaultVisibility": "private",
       "icon": "≈",
-      "order": 5
+      "order": 5,
+      "noAIFallback": "只展示公开摘要和脱敏片刻，完整记忆不进入公开构建。",
+      "aiEnhancement": "AI 只能处理授权内容，不能读取 vault 或 silent 记忆。"
     },
     {
       "id": "timeline",
@@ -72,7 +82,9 @@
       "status": "active",
       "defaultVisibility": "public",
       "icon": "⌁",
-      "order": 6
+      "order": 6,
+      "noAIFallback": "按世界事件和节点变化展示时间流。",
+      "aiEnhancement": "AI 可生成月报草案和回望摘要，需人工确认。"
     },
     {
       "id": "archive",
@@ -83,7 +95,9 @@
       "status": "active",
       "defaultVisibility": "public",
       "icon": "▣",
-      "order": 7
+      "order": 7,
+      "noAIFallback": "提供类型、区域、生命阶段、标签和文本搜索。",
+      "aiEnhancement": "AI 可辅助解释检索结果，但必须引用公开节点。"
     },
     {
       "id": "lighthouse",
@@ -94,7 +108,9 @@
       "status": "experimental",
       "defaultVisibility": "public",
       "icon": "◉",
-      "order": 8
+      "order": 8,
+      "noAIFallback": "使用预设问题、精选路径和本地搜索低光运行。",
+      "aiEnhancement": "AI 可做公开问答和路径推荐，只读公开索引。"
     }
   ],
   "nodes": [
@@ -241,9 +257,10 @@
       "id": "node-cli-agent",
       "slug": "cli-tools-agent-integration",
       "title": "CLI 工具接入 Agent",
+      "worldTitle": "命令行星桥",
       "type": "article",
       "areaId": "tech",
-      "summary": "围绕 CLI、Agent、Skills 与工具调用方式的探索记录。",
+      "summary": "把 Codex、Claude Code、Gemini CLI、MCP、Skills 与自定义模型接入经验沉淀为可复用的工程工作流。",
       "tags": [
         "cli",
         "agent",
@@ -251,15 +268,17 @@
       ],
       "visibility": "public",
       "lifeStage": "growing",
-      "createdAt": "2026-05-18"
+      "createdAt": "2026-05-18",
+      "updatedAt": "2026-07-04"
     },
     {
       "id": "node-docker-cleanup",
       "slug": "docker-disk-cleanup",
       "title": "Docker 空间回收排查",
+      "worldTitle": "磁盘裂缝修复",
       "type": "article",
       "areaId": "tech",
-      "summary": "Mac 上 Docker 镜像、容器与磁盘空间未释放问题的排查记录。",
+      "summary": "记录 Docker Desktop、阅读器、Kavita、epub 转换等本地环境排查经验，强调把踩坑转成可复用节点。",
       "tags": [
         "docker",
         "macos",
@@ -267,7 +286,8 @@
       ],
       "visibility": "public",
       "lifeStage": "archive",
-      "createdAt": "2026-05-18"
+      "createdAt": "2026-05-18",
+      "updatedAt": "2026-07-04"
     },
     {
       "id": "node-novel-editor",
@@ -291,9 +311,10 @@
       "id": "node-moonframe",
       "slug": "moonframe-loft",
       "title": "月帧阁 / MoonFrame",
+      "worldTitle": "月下造物间",
       "type": "project",
       "areaId": "workshop",
-      "summary": "一个大模型 API 驱动的 AI 创作平台品牌方案，面向视频、剧本和短剧创作。",
+      "summary": "月帧阁 / MoonFrame 是把视觉、故事、AI 工具和个人表达连接起来的产品工坊种子。",
       "tags": [
         "moonframe",
         "ai-creation",
@@ -301,12 +322,14 @@
       ],
       "visibility": "public",
       "lifeStage": "growing",
-      "createdAt": "2026-05-09"
+      "createdAt": "2026-05-09",
+      "updatedAt": "2026-07-04"
     },
     {
       "id": "node-everything-node",
       "slug": "everything-is-node",
       "title": "万物皆节点",
+      "worldTitle": "第一枚种子",
       "type": "fragment",
       "areaId": "fragments",
       "summary": "文章、项目、片刻、关系、规则、事件都可以成为世界中的节点。",
@@ -323,6 +346,7 @@
       "id": "node-clear-deep",
       "slug": "clear-entrance-deep-world",
       "title": "入口清澈，深处浩瀚",
+      "worldTitle": "清澈入口",
       "type": "fragment",
       "areaId": "fragments",
       "summary": "第一眼要清楚，继续走下去才发现深处。",
@@ -339,6 +363,7 @@
       "id": "node-memory-light",
       "slug": "memory-lake-first-light",
       "title": "记忆湖第一束光",
+      "worldTitle": "记忆湖初光",
       "type": "memory",
       "areaId": "memory",
       "summary": "这里会保存一些被允许公开的生活片刻与旅行光影，更深处默认被保护。",
@@ -347,9 +372,409 @@
         "life",
         "lake"
       ],
-      "visibility": "semiPublic",
+      "visibility": "public",
       "lifeStage": "sprout",
       "createdAt": "2026-05-19"
+    },
+    {
+      "id": "node-gemini-cli-skills",
+      "slug": "gemini-cli-skills-agent-workflow",
+      "title": "Gemini CLI、Skills 与 Agent 工作流",
+      "worldTitle": "技能星桥",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "把 Gemini CLI、Skills、飞书/Workspace/GitHub 等工具接入经验整理成可复用的 Agent 工作流节点。",
+      "tags": [
+        "gemini",
+        "skills",
+        "agent",
+        "workflow"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-codex-routing",
+      "slug": "codex-cli-custom-provider-routing",
+      "title": "Codex CLI 自定义 Provider 与路由排查",
+      "worldTitle": "错路的信使",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "记录自定义 Base URL、responses/chat 端点、模型路由、API Key 误指向等问题，沉淀为命令行 AI 工具排查范式。",
+      "tags": [
+        "codex",
+        "cli",
+        "provider",
+        "routing"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-rustdesk-relay",
+      "slug": "rustdesk-relay-network-notes",
+      "title": "RustDesk 中继与网络排查记录",
+      "worldTitle": "远控之桥",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "把 RustDesk hbbs/hbbr、端口、UDP、firewalld、Docker 网络等排查过程归入技术星域。",
+      "tags": [
+        "rustdesk",
+        "network",
+        "docker",
+        "firewall"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-kavita-reader-pipeline",
+      "slug": "kavita-reader-txt-epub-pipeline",
+      "title": "小说书库与 TXT 转 EPUB 流水线",
+      "worldTitle": "卷宗转生",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "记录 TXT 小说、多层目录、编码、去重、系列拆分和阅读器服务的工程化整理方案。",
+      "tags": [
+        "reader",
+        "epub",
+        "kavita",
+        "archive"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-ai-report-demo",
+      "slug": "ai-website-audit-report-demo",
+      "title": "AI 网站检测报告 Demo",
+      "worldTitle": "审计星盘",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "面向出海站点检测的 AI 报告 Demo，包含真实抓取、竞品、白皮书、评分、解决建议和演练交互。",
+      "tags": [
+        "ai-report",
+        "audit",
+        "b2b",
+        "demo"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-worldos-engine",
+      "slug": "worldos-engine",
+      "title": "WorldOS 世界生成引擎",
+      "worldTitle": "创世引擎",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "把 Node、Area、Relation、Path、Timeline、Permission 组合为可生成首页、地图、路径和档案的世界引擎。",
+      "tags": [
+        "worldos",
+        "engine",
+        "node",
+        "projection"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-ai-novel-workbench",
+      "slug": "ai-novel-workbench",
+      "title": "AI 小说创作工作台",
+      "worldTitle": "故事工坊",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "把小说灵感、世界观、角色、剧情线和 AI 辅助创作整理成可持续写作的工作台设想。",
+      "tags": [
+        "novel",
+        "writing",
+        "ai",
+        "workbench"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-right-click-assistant",
+      "slug": "mac-right-click-assistant",
+      "title": "Mac 右键助手图标与产品种子",
+      "worldTitle": "一枚右字印",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "一个从水墨软件图标开始的 Mac 右键助手产品种子，记录视觉、工具和发布感。",
+      "tags": [
+        "mac",
+        "tool",
+        "icon",
+        "product"
+      ],
+      "visibility": "public",
+      "lifeStage": "seed",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-world-design-axioms",
+      "slug": "world-design-axioms",
+      "title": "世界设计公理",
+      "worldTitle": "九条法则",
+      "type": "rule",
+      "areaId": "origin",
+      "summary": "把“世界先于内容、入口清澈、AI 是增强层、公开层不是完整世界”等原则固化为长期设计公理。",
+      "tags": [
+        "principle",
+        "rule",
+        "world-kernel"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-front-romantic-back-clear",
+      "slug": "front-romantic-back-clear-archive-reliable",
+      "title": "前台浪漫、后台清醒、档案可靠",
+      "worldTitle": "三层真相",
+      "type": "rule",
+      "areaId": "origin",
+      "summary": "明确公开体验、主人工作台、长期档案三层分离，避免世界感牺牲维护性和可信度。",
+      "tags": [
+        "architecture",
+        "product",
+        "archive"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-progressive-disclosure",
+      "slug": "progressive-disclosure-world",
+      "title": "渐进揭示：入口清澈，深处浩瀚",
+      "worldTitle": "先看见一束光",
+      "type": "rule",
+      "areaId": "origin",
+      "summary": "世界可以很大，但不能一次性扑向来访者；首页、地图、节点和深潜层必须分层显现。",
+      "tags": [
+        "ux",
+        "navigation",
+        "world"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-content-source-birth-cert",
+      "slug": "content-source-birth-certificate",
+      "title": "内容出生证明",
+      "worldTitle": "每颗星的来处",
+      "type": "rule",
+      "areaId": "archive",
+      "summary": "每个节点都应记录来源、原始输入、生成者、AI 参与和人工审核状态，保证多年后仍可追溯。",
+      "tags": [
+        "provenance",
+        "archive",
+        "trust"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-world-glossary",
+      "slug": "world-language-glossary",
+      "title": "世界语言词典",
+      "worldTitle": "给诗意配翻译",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "统一创世原点、时间河、技术星域、产品工坊、记忆湖、AI 灯塔等世界词和现实名。",
+      "tags": [
+        "glossary",
+        "language",
+        "archive"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-node-passport-standard",
+      "slug": "node-passport-standard",
+      "title": "节点护照标准",
+      "worldTitle": "万物的身份证",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "定义节点必须解释“它是什么、属于哪里、谁能看、从哪里来、下一步做什么”。",
+      "tags": [
+        "node",
+        "passport",
+        "archive"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-public-private-boundary",
+      "slug": "public-private-boundary",
+      "title": "公开层与私密层边界",
+      "worldTitle": "有些门只显示灯光",
+      "type": "rule",
+      "areaId": "lighthouse",
+      "summary": "公开层展示温度，私密层保存完整；访客看到精选世界，而不是完整私密宇宙。",
+      "tags": [
+        "privacy",
+        "permission",
+        "boundary"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-world-repair-day",
+      "slug": "weekly-world-repair-day",
+      "title": "世界修复日",
+      "worldTitle": "清尘与连星",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "每周或每月不新增功能，只整理灵感、修复关系、检查隐私、补摘要、归档旧项目。",
+      "tags": [
+        "maintenance",
+        "ritual",
+        "timeline"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-world-monthly-report",
+      "slug": "world-monthly-report-ritual",
+      "title": "世界月报与季报仪式",
+      "worldTitle": "月光账册",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "按月/季总结新增节点、活跃主题、沉睡灵感、项目推进、记忆湖光影和下一步修复任务。",
+      "tags": [
+        "review",
+        "yearbook",
+        "timeline"
+      ],
+      "visibility": "public",
+      "lifeStage": "seed",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-design-cover-set",
+      "slug": "world-cover-visual-set",
+      "title": "世界视觉套图与封面系统",
+      "worldTitle": "九张光影",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "把技术博客套图、世界封面和自然轻科技视觉资产归档为可复用的视觉资产节点。",
+      "tags": [
+        "visual",
+        "cover",
+        "design"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-window-light-memory",
+      "slug": "window-light-memory-seed",
+      "title": "窗边的光：生活片刻种子",
+      "worldTitle": "湖面第一片光",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "一个克制公开的生活片刻样例：只展示氛围、时间与感受，不暴露人物、地址和私密细节。",
+      "tags": [
+        "memory",
+        "life",
+        "public-layer"
+      ],
+      "visibility": "public",
+      "lifeStage": "seed",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-travel-far-coordinates",
+      "slug": "travel-far-coordinates",
+      "title": "旅行远方坐标",
+      "worldTitle": "远方的一点光",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "旅行内容在公开层只展示城市印象、风景感受和路线概述，完整细节留在私密层。",
+      "tags": [
+        "travel",
+        "memory",
+        "privacy"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-eight-minute-path",
+      "slug": "eight-minute-world-path",
+      "title": "8 分钟抵达古月浮屿",
+      "worldTitle": "短途星路",
+      "type": "path",
+      "areaId": "origin",
+      "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
+      "tags": [
+        "path",
+        "first-time",
+        "guide"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-real-mode-safety-exit",
+      "slug": "real-mode-safety-exit",
+      "title": "现实模式安全出口",
+      "worldTitle": "档案馆的清醒门",
+      "type": "rule",
+      "areaId": "archive",
+      "summary": "世界模式负责体验，现实模式负责效率；当访客想查找资料时，档案馆提供清晰列表、筛选和搜索。",
+      "tags": [
+        "archive",
+        "accessibility",
+        "ux"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-04"
+    },
+    {
+      "id": "node-worldos-rc-lessons",
+      "slug": "worldos-rc1-lessons",
+      "title": "WorldOS 1.0 RC1 收束经验",
+      "worldTitle": "候选发布前的清尘",
+      "type": "article",
+      "areaId": "timeline",
+      "summary": "记录 RC1 阶段暴露的 legacy runtime、外部证据缺失、内容密度不足和构建后段风险，并说明本轮如何处理。",
+      "tags": [
+        "release",
+        "rc",
+        "kernel",
+        "legacy"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-04"
     }
   ],
   "paths": [
@@ -379,7 +804,9 @@
       "estimatedMinutes": 15,
       "nodeSlugs": [
         "feishu-mcp-adk-agent",
+        "gemini-cli-skills-agent-workflow",
         "cli-tools-agent-integration",
+        "codex-cli-custom-provider-routing",
         "world-data-guardian",
         "ai-lighthouse-boundary",
         "no-ai-natural-evolution"
@@ -428,20 +855,178 @@
       "audience": "deep-dive",
       "estimatedMinutes": 20,
       "nodeSlugs": [
+        "world-design-axioms",
         "everything-is-node",
         "backlinks-and-star-lines",
         "world-space-layer",
-        "world-data-guardian",
-        "personal-digital-universe-definition"
+        "node-passport-standard",
+        "world-language-glossary",
+        "public-private-boundary"
       ],
       "nextPathIds": [
         "how-world-created",
         "tech-ai"
       ],
       "visibility": "public"
+    },
+    {
+      "id": "eight-minute-world",
+      "title": "8 分钟抵达古月浮屿",
+      "description": "给第一次来访者的短路径：世界宣言、地图、技术、项目、生活片刻和灯塔。",
+      "audience": "first-time",
+      "estimatedMinutes": 8,
+      "nodeSlugs": [
+        "world-manifesto",
+        "personal-digital-universe-definition",
+        "eight-minute-world-path",
+        "ai-website-audit-report-demo",
+        "window-light-memory-seed",
+        "ai-lighthouse-boundary"
+      ],
+      "nextPathIds": [
+        "tech-ai",
+        "how-world-created"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "worldos-rc-lessons",
+      "title": "WorldOS 1.0 RC 经验路径",
+      "description": "理解候选发布、legacy 隔离、内容密度和外部证据之间的关系。",
+      "audience": "creator",
+      "estimatedMinutes": 14,
+      "nodeSlugs": [
+        "worldos-rc1-lessons",
+        "front-romantic-back-clear-archive-reliable",
+        "public-private-boundary",
+        "content-source-birth-certificate",
+        "real-mode-safety-exit"
+      ],
+      "nextPathIds": [
+        "how-world-created"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "creator-maintenance",
+      "title": "创世台维护路径",
+      "description": "从世界修复日、内容出生证明、节点护照和语言词典理解如何长期维护世界。",
+      "audience": "creator",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "weekly-world-repair-day",
+        "content-source-birth-certificate",
+        "node-passport-standard",
+        "world-language-glossary",
+        "world-monthly-report-ritual"
+      ],
+      "nextPathIds": [
+        "deep-world"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "product-workshop",
+      "title": "产品工坊代表路径",
+      "description": "从 WorldOS 引擎、AI 网站检测、小说工作台和月帧阁看产品种子如何生长。",
+      "audience": "tech",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "worldos-engine",
+        "ai-website-audit-report-demo",
+        "static-ai-novel-editor",
+        "ai-novel-workbench",
+        "moonframe-loft"
+      ],
+      "nextPathIds": [
+        "tech-ai"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "public-life-memory",
+      "title": "公开生活记忆边界路径",
+      "description": "理解记忆湖如何展示温度，同时保护完整生活和私密细节。",
+      "audience": "life",
+      "estimatedMinutes": 12,
+      "nodeSlugs": [
+        "memory-lake-first-light",
+        "window-light-memory-seed",
+        "travel-far-coordinates",
+        "public-private-boundary",
+        "real-mode-safety-exit"
+      ],
+      "nextPathIds": [
+        "first-visit"
+      ],
+      "visibility": "public"
     }
   ],
   "events": [
+    {
+      "id": "evt-012",
+      "type": "node-created",
+      "title": "RC2 内容密度修复启动",
+      "date": "2026-07-04",
+      "description": "新增一批技术、产品、规则、生活与维护节点，解决公开世界内容密度不足的问题。",
+      "nodeIds": [
+        "node-gemini-cli-skills",
+        "node-worldos-engine",
+        "node-world-design-axioms",
+        "node-window-light-memory"
+      ],
+      "areaIds": [
+        "tech",
+        "workshop",
+        "origin",
+        "memory"
+      ],
+      "visibility": "public",
+      "actor": "creator"
+    },
+    {
+      "id": "evt-013",
+      "type": "principle-created",
+      "title": "前台浪漫、后台清醒、档案可靠被固化",
+      "date": "2026-07-04",
+      "description": "把三层体验原则写入公开节点，明确世界感、维护性和长期档案不能互相牺牲。",
+      "nodeIds": [
+        "node-front-romantic-back-clear"
+      ],
+      "areaIds": [
+        "origin"
+      ],
+      "visibility": "public",
+      "actor": "creator"
+    },
+    {
+      "id": "evt-014",
+      "type": "rule-triggered",
+      "title": "内容质量门禁进入 RC 链路",
+      "date": "2026-07-04",
+      "description": "新增内容密度、路径数量、关系数量和反迷路说明检查，避免公开世界回到空壳状态。",
+      "areaIds": [
+        "archive",
+        "origin"
+      ],
+      "visibility": "public",
+      "actor": "system"
+    },
+    {
+      "id": "evt-015",
+      "type": "node-created",
+      "title": "8 分钟路径被安放",
+      "date": "2026-07-04",
+      "description": "为首次访客新增短路径节点和路径条目，降低进入门槛。",
+      "nodeIds": [
+        "node-eight-minute-path"
+      ],
+      "areaIds": [
+        "origin"
+      ],
+      "visibility": "public",
+      "actor": "system"
+    },
     {
       "id": "evt-001",
       "type": "world-concept-formed",
@@ -628,6 +1213,15 @@
   "projections": {
     "home": [
       {
+        "nodeId": "node-worldos-engine",
+        "slug": "worldos-engine",
+        "title": "创世引擎",
+        "summary": "把 Node、Area、Relation、Path、Timeline、Permission 组合为可生成首页、地图、路径和档案的世界引擎。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 54
+      },
+      {
         "nodeId": "node-world-manifesto",
         "slug": "world-manifesto",
         "title": "创世初光",
@@ -664,6 +1258,33 @@
         "weight": 53
       },
       {
+        "nodeId": "node-world-design-axioms",
+        "slug": "world-design-axioms",
+        "title": "九条法则",
+        "summary": "把“世界先于内容、入口清澈、AI 是增强层、公开层不是完整世界”等原则固化为长期设计公理。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-progressive-disclosure",
+        "slug": "progressive-disclosure-world",
+        "title": "先看见一束光",
+        "summary": "世界可以很大，但不能一次性扑向来访者；首页、地图、节点和深潜层必须分层显现。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-eight-minute-path",
+        "slug": "eight-minute-world-path",
+        "title": "短途星路",
+        "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 53
+      },
+      {
         "nodeId": "node-feishu-mcp",
         "slug": "feishu-mcp-adk-agent",
         "title": "远方信使接入灯塔",
@@ -686,6 +1307,15 @@
         "slug": "static-ai-novel-editor",
         "title": "纸上创作室",
         "summary": "一个纯静态前端的小说精炼、重构和创作编辑器设想。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 34
+      },
+      {
+        "nodeId": "node-ai-report-demo",
+        "slug": "ai-website-audit-report-demo",
+        "title": "审计星盘",
+        "summary": "面向出海站点检测的 AI 报告 Demo，包含真实抓取、竞品、白皮书、评分、解决建议和演练交互。",
         "target": "home",
         "displayType": "star",
         "weight": 34
@@ -711,6 +1341,42 @@
         "weight": 53
       },
       {
+        "nodeId": "node-worldos-engine",
+        "slug": "worldos-engine",
+        "title": "创世引擎",
+        "summary": "把 Node、Area、Relation、Path、Timeline、Permission 组合为可生成首页、地图、路径和档案的世界引擎。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 54
+      },
+      {
+        "nodeId": "node-docker-cleanup",
+        "slug": "docker-disk-cleanup",
+        "title": "磁盘裂缝修复",
+        "summary": "记录 Docker Desktop、阅读器、Kavita、epub 转换等本地环境排查经验，强调把踩坑转成可复用节点。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-codex-routing",
+        "slug": "codex-cli-custom-provider-routing",
+        "title": "错路的信使",
+        "summary": "记录自定义 Base URL、responses/chat 端点、模型路由、API Key 误指向等问题，沉淀为命令行 AI 工具排查范式。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 4
+      },
+      {
+        "nodeId": "node-real-mode-safety-exit",
+        "slug": "real-mode-safety-exit",
+        "title": "档案馆的清醒门",
+        "summary": "世界模式负责体验，现实模式负责效率；当访客想查找资料时，档案馆提供清晰列表、筛选和搜索。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-world-space",
         "slug": "world-space-layer",
         "title": "地图不是分类页",
@@ -738,6 +1404,33 @@
         "weight": 53
       },
       {
+        "nodeId": "node-everything-node",
+        "slug": "everything-is-node",
+        "title": "第一枚种子",
+        "summary": "文章、项目、片刻、关系、规则、事件都可以成为世界中的节点。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-eight-minute-path",
+        "slug": "eight-minute-world-path",
+        "title": "短途星路",
+        "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-world-glossary",
+        "slug": "world-language-glossary",
+        "title": "给诗意配翻译",
+        "summary": "统一创世原点、时间河、技术星域、产品工坊、记忆湖、AI 灯塔等世界词和现实名。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-data-guardian",
         "slug": "world-data-guardian",
         "title": "骨架需要校验",
@@ -747,10 +1440,91 @@
         "weight": 34
       },
       {
+        "nodeId": "node-ai-novel-workbench",
+        "slug": "ai-novel-workbench",
+        "title": "故事工坊",
+        "summary": "把小说灵感、世界观、角色、剧情线和 AI 辅助创作整理成可持续写作的工作台设想。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 4
+      },
+      {
+        "nodeId": "node-worldos-rc-lessons",
+        "slug": "worldos-rc1-lessons",
+        "title": "候选发布前的清尘",
+        "summary": "记录 RC1 阶段暴露的 legacy runtime、外部证据缺失、内容密度不足和构建后段风险，并说明本轮如何处理。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 24
+      },
+      {
+        "nodeId": "node-window-light-memory",
+        "slug": "window-light-memory-seed",
+        "title": "湖面第一片光",
+        "summary": "一个克制公开的生活片刻样例：只展示氛围、时间与感受，不暴露人物、地址和私密细节。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-memory-light",
         "slug": "memory-lake-first-light",
-        "title": "记忆湖第一束光",
+        "title": "记忆湖初光",
         "summary": "这里会保存一些被允许公开的生活片刻与旅行光影，更深处默认被保护。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-gemini-cli-skills",
+        "slug": "gemini-cli-skills-agent-workflow",
+        "title": "技能星桥",
+        "summary": "把 Gemini CLI、Skills、飞书/Workspace/GitHub 等工具接入经验整理成可复用的 Agent 工作流节点。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 4
+      },
+      {
+        "nodeId": "node-world-design-axioms",
+        "slug": "world-design-axioms",
+        "title": "九条法则",
+        "summary": "把“世界先于内容、入口清澈、AI 是增强层、公开层不是完整世界”等原则固化为长期设计公理。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-design-cover-set",
+        "slug": "world-cover-visual-set",
+        "title": "九张光影",
+        "summary": "把技术博客套图、世界封面和自然轻科技视觉资产归档为可复用的视觉资产节点。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-kavita-reader-pipeline",
+        "slug": "kavita-reader-txt-epub-pipeline",
+        "title": "卷宗转生",
+        "summary": "记录 TXT 小说、多层目录、编码、去重、系列拆分和阅读器服务的工程化整理方案。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 4
+      },
+      {
+        "nodeId": "node-content-source-birth-cert",
+        "slug": "content-source-birth-certificate",
+        "title": "每颗星的来处",
+        "summary": "每个节点都应记录来源、原始输入、生成者、AI 参与和人工审核状态，保证多年后仍可追溯。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-cli-agent",
+        "slug": "cli-tools-agent-integration",
+        "title": "命令行星桥",
+        "summary": "把 Codex、Claude Code、Gemini CLI、MCP、Skills 与自定义模型接入经验沉淀为可复用的工程工作流。",
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
@@ -767,17 +1541,71 @@
       {
         "nodeId": "node-clear-deep",
         "slug": "clear-entrance-deep-world",
-        "title": "入口清澈，深处浩瀚",
+        "title": "清澈入口",
         "summary": "第一眼要清楚，继续走下去才发现深处。",
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
       },
       {
-        "nodeId": "node-everything-node",
-        "slug": "everything-is-node",
-        "title": "万物皆节点",
-        "summary": "文章、项目、片刻、关系、规则、事件都可以成为世界中的节点。",
+        "nodeId": "node-world-repair-day",
+        "slug": "weekly-world-repair-day",
+        "title": "清尘与连星",
+        "summary": "每周或每月不新增功能，只整理灵感、修复关系、检查隐私、补摘要、归档旧项目。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-front-romantic-back-clear",
+        "slug": "front-romantic-back-clear-archive-reliable",
+        "title": "三层真相",
+        "summary": "明确公开体验、主人工作台、长期档案三层分离，避免世界感牺牲维护性和可信度。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-ai-report-demo",
+        "slug": "ai-website-audit-report-demo",
+        "title": "审计星盘",
+        "summary": "面向出海站点检测的 AI 报告 Demo，包含真实抓取、竞品、白皮书、评分、解决建议和演练交互。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 34
+      },
+      {
+        "nodeId": "node-node-passport-standard",
+        "slug": "node-passport-standard",
+        "title": "万物的身份证",
+        "summary": "定义节点必须解释“它是什么、属于哪里、谁能看、从哪里来、下一步做什么”。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-progressive-disclosure",
+        "slug": "progressive-disclosure-world",
+        "title": "先看见一束光",
+        "summary": "世界可以很大，但不能一次性扑向来访者；首页、地图、节点和深潜层必须分层显现。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 53
+      },
+      {
+        "nodeId": "node-right-click-assistant",
+        "slug": "mac-right-click-assistant",
+        "title": "一枚右字印",
+        "summary": "一个从水墨软件图标开始的 Mac 右键助手产品种子，记录视觉、工具和发布感。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 4
+      },
+      {
+        "nodeId": "node-public-private-boundary",
+        "slug": "public-private-boundary",
+        "title": "有些门只显示灯光",
+        "summary": "公开层展示温度，私密层保存完整；访客看到精选世界，而不是完整私密宇宙。",
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
@@ -792,6 +1620,15 @@
         "weight": 53
       },
       {
+        "nodeId": "node-travel-far-coordinates",
+        "slug": "travel-far-coordinates",
+        "title": "远方的一点光",
+        "summary": "旅行内容在公开层只展示城市印象、风景感受和路线概述，完整细节留在私密层。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-feishu-mcp",
         "slug": "feishu-mcp-adk-agent",
         "title": "远方信使接入灯塔",
@@ -801,10 +1638,28 @@
         "weight": 35
       },
       {
+        "nodeId": "node-rustdesk-relay",
+        "slug": "rustdesk-relay-network-notes",
+        "title": "远控之桥",
+        "summary": "把 RustDesk hbbs/hbbr、端口、UDP、firewalld、Docker 网络等排查过程归入技术星域。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 4
+      },
+      {
+        "nodeId": "node-world-monthly-report",
+        "slug": "world-monthly-report-ritual",
+        "title": "月光账册",
+        "summary": "按月/季总结新增节点、活跃主题、沉睡灵感、项目推进、记忆湖光影和下一步修复任务。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-moonframe",
         "slug": "moonframe-loft",
-        "title": "月帧阁 / MoonFrame",
-        "summary": "一个大模型 API 驱动的 AI 创作平台品牌方案，面向视频、剧本和短剧创作。",
+        "title": "月下造物间",
+        "summary": "月帧阁 / MoonFrame 是把视觉、故事、AI 工具和个人表达连接起来的产品工坊种子。",
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
@@ -817,24 +1672,6 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 34
-      },
-      {
-        "nodeId": "node-cli-agent",
-        "slug": "cli-tools-agent-integration",
-        "title": "CLI 工具接入 Agent",
-        "summary": "围绕 CLI、Agent、Skills 与工具调用方式的探索记录。",
-        "target": "archive",
-        "displayType": "archive-record",
-        "weight": 3
-      },
-      {
-        "nodeId": "node-docker-cleanup",
-        "slug": "docker-disk-cleanup",
-        "title": "Docker 空间回收排查",
-        "summary": "Mac 上 Docker 镜像、容器与磁盘空间未释放问题的排查记录。",
-        "target": "archive",
-        "displayType": "archive-record",
-        "weight": 3
       }
     ]
   },
@@ -899,14 +1736,14 @@
       {
         "id": "node-cli-agent",
         "slug": "cli-tools-agent-integration",
-        "title": "CLI 工具接入 Agent",
+        "title": "命令行星桥",
         "areaId": "tech",
         "lifeStage": "growing"
       },
       {
         "id": "node-docker-cleanup",
         "slug": "docker-disk-cleanup",
-        "title": "Docker 空间回收排查",
+        "title": "磁盘裂缝修复",
         "areaId": "tech",
         "lifeStage": "archive"
       },
@@ -920,30 +1757,191 @@
       {
         "id": "node-moonframe",
         "slug": "moonframe-loft",
-        "title": "月帧阁 / MoonFrame",
+        "title": "月下造物间",
         "areaId": "workshop",
         "lifeStage": "growing"
       },
       {
         "id": "node-everything-node",
         "slug": "everything-is-node",
-        "title": "万物皆节点",
+        "title": "第一枚种子",
         "areaId": "fragments",
         "lifeStage": "bloom"
       },
       {
         "id": "node-clear-deep",
         "slug": "clear-entrance-deep-world",
-        "title": "入口清澈，深处浩瀚",
+        "title": "清澈入口",
         "areaId": "fragments",
         "lifeStage": "bloom"
       },
       {
         "id": "node-memory-light",
         "slug": "memory-lake-first-light",
-        "title": "记忆湖第一束光",
+        "title": "记忆湖初光",
         "areaId": "memory",
         "lifeStage": "sprout"
+      },
+      {
+        "id": "node-gemini-cli-skills",
+        "slug": "gemini-cli-skills-agent-workflow",
+        "title": "技能星桥",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-codex-routing",
+        "slug": "codex-cli-custom-provider-routing",
+        "title": "错路的信使",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-rustdesk-relay",
+        "slug": "rustdesk-relay-network-notes",
+        "title": "远控之桥",
+        "areaId": "tech",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-kavita-reader-pipeline",
+        "slug": "kavita-reader-txt-epub-pipeline",
+        "title": "卷宗转生",
+        "areaId": "tech",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-ai-report-demo",
+        "slug": "ai-website-audit-report-demo",
+        "title": "审计星盘",
+        "areaId": "workshop",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-worldos-engine",
+        "slug": "worldos-engine",
+        "title": "创世引擎",
+        "areaId": "workshop",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-ai-novel-workbench",
+        "slug": "ai-novel-workbench",
+        "title": "故事工坊",
+        "areaId": "workshop",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-right-click-assistant",
+        "slug": "mac-right-click-assistant",
+        "title": "一枚右字印",
+        "areaId": "workshop",
+        "lifeStage": "seed"
+      },
+      {
+        "id": "node-world-design-axioms",
+        "slug": "world-design-axioms",
+        "title": "九条法则",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-front-romantic-back-clear",
+        "slug": "front-romantic-back-clear-archive-reliable",
+        "title": "三层真相",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-progressive-disclosure",
+        "slug": "progressive-disclosure-world",
+        "title": "先看见一束光",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-content-source-birth-cert",
+        "slug": "content-source-birth-certificate",
+        "title": "每颗星的来处",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-world-glossary",
+        "slug": "world-language-glossary",
+        "title": "给诗意配翻译",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-node-passport-standard",
+        "slug": "node-passport-standard",
+        "title": "万物的身份证",
+        "areaId": "archive",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-public-private-boundary",
+        "slug": "public-private-boundary",
+        "title": "有些门只显示灯光",
+        "areaId": "lighthouse",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-world-repair-day",
+        "slug": "weekly-world-repair-day",
+        "title": "清尘与连星",
+        "areaId": "timeline",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-world-monthly-report",
+        "slug": "world-monthly-report-ritual",
+        "title": "月光账册",
+        "areaId": "timeline",
+        "lifeStage": "seed"
+      },
+      {
+        "id": "node-design-cover-set",
+        "slug": "world-cover-visual-set",
+        "title": "九张光影",
+        "areaId": "archive",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-window-light-memory",
+        "slug": "window-light-memory-seed",
+        "title": "湖面第一片光",
+        "areaId": "memory",
+        "lifeStage": "seed"
+      },
+      {
+        "id": "node-travel-far-coordinates",
+        "slug": "travel-far-coordinates",
+        "title": "远方的一点光",
+        "areaId": "memory",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-eight-minute-path",
+        "slug": "eight-minute-world-path",
+        "title": "短途星路",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-real-mode-safety-exit",
+        "slug": "real-mode-safety-exit",
+        "title": "档案馆的清醒门",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-worldos-rc-lessons",
+        "slug": "worldos-rc1-lessons",
+        "title": "候选发布前的清尘",
+        "areaId": "timeline",
+        "lifeStage": "bloom"
       }
     ],
     "lines": [
@@ -1000,6 +1998,223 @@
         "id": "rel-008",
         "from": "node-novel-editor",
         "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-009",
+        "from": "node-world-design-axioms",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 1
+      },
+      {
+        "id": "rel-010",
+        "from": "node-world-design-axioms",
+        "to": "node-no-ai",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-011",
+        "from": "node-world-design-axioms",
+        "to": "node-progressive-disclosure",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-012",
+        "from": "node-front-romantic-back-clear",
+        "to": "node-public-private-boundary",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-013",
+        "from": "node-progressive-disclosure",
+        "to": "node-clear-deep",
+        "type": "derived",
+        "strength": 1
+      },
+      {
+        "id": "rel-014",
+        "from": "node-world-glossary",
+        "to": "node-node-passport-standard",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-015",
+        "from": "node-content-source-birth-cert",
+        "to": "node-node-passport-standard",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-016",
+        "from": "node-worldos-engine",
+        "to": "node-everything-node",
+        "type": "implemented",
+        "strength": 1
+      },
+      {
+        "id": "rel-017",
+        "from": "node-worldos-engine",
+        "to": "node-world-space",
+        "type": "implemented",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-018",
+        "from": "node-worldos-engine",
+        "to": "node-backlinks",
+        "type": "implemented",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-019",
+        "from": "node-ai-report-demo",
+        "to": "node-worldos-engine",
+        "type": "project",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-020",
+        "from": "node-ai-report-demo",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-021",
+        "from": "node-ai-novel-workbench",
+        "to": "node-novel-editor",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-022",
+        "from": "node-right-click-assistant",
+        "to": "node-design-cover-set",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-023",
+        "from": "node-gemini-cli-skills",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-024",
+        "from": "node-gemini-cli-skills",
+        "to": "node-cli-agent",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-025",
+        "from": "node-codex-routing",
+        "to": "node-cli-agent",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-026",
+        "from": "node-rustdesk-relay",
+        "to": "node-docker-cleanup",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-027",
+        "from": "node-kavita-reader-pipeline",
+        "to": "node-docker-cleanup",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-028",
+        "from": "node-public-private-boundary",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-029",
+        "from": "node-public-private-boundary",
+        "to": "node-window-light-memory",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-030",
+        "from": "node-window-light-memory",
+        "to": "node-travel-far-coordinates",
+        "type": "memory",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-031",
+        "from": "node-world-repair-day",
+        "to": "node-world-monthly-report",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-032",
+        "from": "node-worldos-rc-lessons",
+        "to": "node-front-romantic-back-clear",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-033",
+        "from": "node-worldos-rc-lessons",
+        "to": "node-progressive-disclosure",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-034",
+        "from": "node-real-mode-safety-exit",
+        "to": "node-world-glossary",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-035",
+        "from": "node-eight-minute-path",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-036",
+        "from": "node-eight-minute-path",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-037",
+        "from": "node-design-cover-set",
+        "to": "node-world-space",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-038",
+        "from": "node-moonframe",
+        "to": "node-ai-novel-workbench",
+        "type": "topic",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-039",
+        "from": "node-codex-routing",
+        "to": "node-data-guardian",
         "type": "topic",
         "strength": 0.5
       }

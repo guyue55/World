@@ -120,3 +120,35 @@ productionLive: false
 releaseReady: false
 cleanProductionReady: false
 ```
+
+## WorldOS 1.0 RC2 / Non-deploy Fixes
+
+当前暂时不方便执行真实外部部署，因此 RC2 只处理本地可解决的问题：公开内容密度、反迷路体验、区域自解释和内容质量门禁。
+
+新增门禁：
+
+```bash
+npm run check:worldos-content-density
+npm run check:worldos-public-experience
+npm run check:release:rc
+```
+
+RC2 的目标不是改变上线状态，而是避免公开世界退回“漂亮空壳”：
+
+```text
+公开节点 >= 30
+有正文公开节点 >= 28
+公开路径 >= 8
+关系 >= 30
+世界事件 >= 15
+一级区域必须有 noAIFallback / aiEnhancement
+首页必须有 8 分钟路径、反迷路罗盘、世界密度和公开边界说明
+```
+
+仍需保持：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
