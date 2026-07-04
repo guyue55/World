@@ -17,11 +17,11 @@ export function AtlasFallbackList({ areas, nodes }: { areas: Area[]; nodes: Node
           <Link
             key={row.area.id}
             href={`#${row.area.id}-nodes`}
-            className="rounded-2xl bg-paper/70 p-4 transition hover:-translate-y-1 hover:bg-white"
+            className="min-w-0 rounded-2xl bg-paper/70 p-4 transition hover:-translate-y-1 hover:bg-white"
           >
-            <p className="text-2xl">{row.area.icon ?? '✦'}</p>
-            <h3 className="mt-3 font-semibold">{row.area.worldName}</h3>
-            <p className="mt-1 text-sm text-ink/50">{row.publicNodeCount} 个公开节点</p>
+            <p className="shrink-0 text-2xl">{row.area.icon ?? '✦'}</p>
+            <h3 className="mt-3 truncate font-semibold">{row.area.worldName}</h3>
+            <p className="mt-1 truncate text-sm text-ink/50">{row.publicNodeCount} 个公开节点</p>
           </Link>
         ))}
       </div>

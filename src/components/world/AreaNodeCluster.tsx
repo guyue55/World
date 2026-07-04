@@ -7,12 +7,12 @@ export function AreaNodeCluster({ area, nodes }: { area: Area; nodes: Node[] }) 
     <section className="space-y-4 scroll-mt-24" id={`${area.id}-nodes`}>
       <div className="rounded-[1.75rem] border border-white/65 bg-white/74 p-5 shadow-soft backdrop-blur md:p-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-sm text-moss">{area.realName}</p>
-            <h2 className="text-3xl font-semibold text-ink">{area.worldName}</h2>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-ink/62">{area.description}</p>
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-sm text-moss">{area.realName}</p>
+            <h2 className="break-words text-3xl font-semibold text-ink">{area.worldName}</h2>
+            <p className="mt-3 max-w-3xl line-clamp-3 text-sm leading-7 text-ink/62">{area.description}</p>
           </div>
-          <span className="rounded-full bg-paper/70 px-4 py-2 text-sm text-ink/55">{nodes.length} 个公开节点</span>
+          <span className="shrink-0 rounded-full bg-paper/70 px-4 py-2 text-sm text-ink/55">{nodes.length} 个公开节点</span>
         </div>
         <div className="mt-5 grid gap-3 md:grid-cols-2">
           <div className="rounded-2xl bg-paper/70 p-4">

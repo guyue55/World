@@ -75,11 +75,11 @@ export function ProductHome({
         <div className="absolute -bottom-32 left-10 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center">
           <div className="space-y-8">
-            <div className="inline-flex rounded-full border border-ink/10 bg-paper/80 px-4 py-2 text-sm text-ink/65">
+            <div className="inline-flex shrink-0 rounded-full border border-ink/10 bg-paper/80 px-4 py-2 text-sm text-ink/65">
               古月浮屿 · 公开世界入口
             </div>
             <div className="space-y-5">
-              <h1 className="max-w-4xl text-5xl font-semibold leading-tight tracking-[-0.04em] text-ink md:text-7xl">
+              <h1 className="max-w-4xl break-words text-5xl font-semibold leading-tight tracking-[-0.04em] text-ink md:text-7xl">
                 一张书桌，连接一片星河。
               </h1>
               <p className="max-w-2xl text-lg leading-9 text-ink/70 md:text-xl">
@@ -115,8 +115,8 @@ export function ProductHome({
               <div className="grid gap-3 text-sm">
                 {primaryEntrances.map((entry) => (
                   <Link key={entry.href} href={entry.href} className="rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14">
-                    <span className="font-semibold text-paper">{entry.title}</span>
-                    <span className="mt-1 block leading-6 text-paper/62">{entry.description}</span>
+                    <span className="truncate font-semibold text-paper block">{entry.title}</span>
+                    <span className="mt-1 block line-clamp-2 leading-6 text-paper/62">{entry.description}</span>
                   </Link>
                 ))}
               </div>
@@ -134,8 +134,8 @@ export function ProductHome({
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-xs font-semibold tracking-[0.35em] text-moss">CODE & PROJECT GOVERNANCE</p>
-            <h2 className="mt-3 text-3xl font-semibold text-ink">代码主线与项目治理</h2>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-ink/64">
+            <h2 className="mt-3 break-words text-3xl font-semibold text-ink">代码主线与项目治理</h2>
+            <p className="mt-3 max-w-3xl line-clamp-3 text-sm leading-7 text-ink/64">
               RC3 不继续堆新宇宙层，而是把正式主线、legacy 足迹、脚本分类和发布候选口径讲清楚。历史可以保留，但不能重新污染公开入口。
             </p>
           </div>
@@ -144,8 +144,8 @@ export function ProductHome({
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {governanceEntrances.map((entry) => (
             <Link key={entry.href} href={entry.href} className="rounded-[1.4rem] bg-paper/70 p-5 transition hover:-translate-y-1 hover:bg-white">
-              <h3 className="text-lg font-semibold text-ink">{entry.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-ink/62">{entry.description}</p>
+              <h3 className="truncate text-lg font-semibold text-ink">{entry.title}</h3>
+              <p className="mt-2 line-clamp-3 text-sm leading-7 text-ink/62">{entry.description}</p>
             </Link>
           ))}
         </div>
@@ -154,9 +154,9 @@ export function ProductHome({
       <section className="grid gap-4 md:grid-cols-3">
         {visibleAreas.slice(0, 3).map((area) => (
           <Link key={area.id} href={`/atlas#${area.id}`} className="rounded-[1.6rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white">
-            <p className="text-sm text-moss">{area.icon} {area.realName}</p>
-            <h2 className="mt-3 text-2xl font-semibold text-ink">{area.worldName}</h2>
-            <p className="mt-3 text-sm leading-7 text-ink/64">{area.description}</p>
+            <p className="truncate text-sm text-moss">{area.icon} {area.realName}</p>
+            <h2 className="mt-3 truncate text-2xl font-semibold text-ink">{area.worldName}</h2>
+            <p className="mt-3 line-clamp-3 text-sm leading-7 text-ink/64">{area.description}</p>
           </Link>
         ))}
       </section>
@@ -177,8 +177,8 @@ export function ProductHome({
         {firstPath && (
           <Link href={`/paths/${firstPath.id}`} className="rounded-[2rem] border border-white/65 bg-night p-7 text-paper shadow-soft transition hover:-translate-y-1 md:p-8">
             <p className="text-xs font-semibold tracking-[0.35em] text-gold">推荐路径</p>
-            <h2 className="mt-3 text-3xl font-semibold">{firstPath.title}</h2>
-            <p className="mt-3 leading-8 text-paper/68">{firstPath.description}</p>
+            <h2 className="mt-3 truncate text-3xl font-semibold">{firstPath.title}</h2>
+            <p className="mt-3 line-clamp-3 leading-8 text-paper/68">{firstPath.description}</p>
             <p className="mt-5 text-sm text-paper/55">约 {firstPath.estimatedMinutes ?? 10} 分钟 · 点击进入路径</p>
           </Link>
         )}
@@ -195,9 +195,9 @@ export function ProductHome({
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {visibleNodes.map((node) => (
             <Link key={node.id} href={`/node/${node.slug}`} className="rounded-[1.5rem] border border-ink/8 bg-paper/65 p-5 transition hover:-translate-y-1 hover:bg-white">
-              <p className="text-xs text-ink/45">{node.type} · {node.lifeStage}</p>
-              <h3 className="mt-3 text-xl font-semibold text-ink">{node.worldTitle ?? node.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-ink/62">{node.summary}</p>
+              <p className="truncate text-xs text-ink/45">{node.type} · {node.lifeStage}</p>
+              <h3 className="mt-3 truncate text-xl font-semibold text-ink">{node.worldTitle ?? node.title}</h3>
+              <p className="mt-2 line-clamp-3 text-sm leading-7 text-ink/62">{node.summary}</p>
             </Link>
           ))}
         </div>
@@ -210,8 +210,8 @@ export function ProductHome({
           {events.slice(0, 4).map((event) => (
             <div key={event.id} className="rounded-2xl bg-paper/65 p-4">
               <p className="text-xs text-ink/45">{event.date}</p>
-              <h3 className="mt-1 font-semibold text-ink">{event.title}</h3>
-              <p className="mt-1 text-sm leading-6 text-ink/62">{event.description}</p>
+              <h3 className="mt-1 truncate font-semibold text-ink">{event.title}</h3>
+              <p className="mt-1 line-clamp-2 text-sm leading-6 text-ink/62">{event.description}</p>
             </div>
           ))}
         </div>

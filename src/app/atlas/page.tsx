@@ -47,10 +47,10 @@ export default function AtlasPage() {
             href={`#cluster-${area.id}`}
             className="rounded-[1.6rem] border border-white/65 bg-white/74 p-5 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white"
           >
-            <p className="text-sm text-moss">{area.icon} {area.realName}</p>
-            <h2 className="mt-3 text-2xl font-semibold text-ink">{area.worldName}</h2>
-            <p className="mt-3 text-sm leading-7 text-ink/62">{area.description}</p>
-            <p className="mt-4 text-xs text-ink/42">公开节点：{getPublicNodesByArea(area.id).length}</p>
+            <p className="truncate text-sm text-moss">{area.icon} {area.realName}</p>
+            <h2 className="mt-3 truncate text-2xl font-semibold text-ink">{area.worldName}</h2>
+            <p className="mt-3 line-clamp-3 text-sm leading-7 text-ink/62">{area.description}</p>
+            <p className="mt-4 truncate text-xs text-ink/42">公开节点：{getPublicNodesByArea(area.id).length}</p>
           </a>
         ))}
       </section>
