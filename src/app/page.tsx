@@ -3,21 +3,6 @@ import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
 import { WorldDepthPrelude, WorldGatewayPanel } from '@/components/r2-world-entry'
 import { R3ContentPathways, R3NodeConstellation } from '@/components/r3-content-life'
 import { R5PathRecommendations } from '@/components/r5-ai-lighthouse'
-import {
-  DynamicAtlasExplorer,
-  DynamicTimeRiver,
-  DynamicWorldAcceptance,
-  DynamicWorldHero,
-  LighthouseConsole,
-  NodeOpeningRitual,
-} from '@/components/r8-dynamic-world'
-import { WorldActionRituals, WorldModeSwitcher } from '@/components/r8-full-dynamic-world'
-import { LivingUniverseSection } from '@/components/r8-living-universe'
-import { CompleteUniverseSection, TodayWorldPanel } from '@/components/r8-complete-universe'
-import { SensoryUniverseSection } from '@/components/r8-sensory-universe'
-import { InteractiveUniverseSection } from '@/components/r8-interactive-universe'
-import { SceneUniverseSection } from '@/components/r8-scene-universe'
-import { CivilizationUniverseSection, NodeLifeConstellation } from '@/components/r8-civilization-universe'
 
 const deeperEntrances = [
   {
@@ -71,27 +56,11 @@ function DeepEntranceCards() {
 export default function HomePage() {
   return (
     <ResponsivePageShell>
-      <LivingUniverseSection />
-      <SensoryUniverseSection />
-      <SceneUniverseSection />
-      <CivilizationUniverseSection />
-      <NodeLifeConstellation />
-      <InteractiveUniverseSection />
-      <CompleteUniverseSection />
-      <TodayWorldPanel />
-      <DynamicWorldHero />
       <WorldDepthPrelude />
       <WorldGatewayPanel />
-      <DynamicAtlasExplorer />
-      <DynamicTimeRiver />
       <R3NodeConstellation />
       <R3ContentPathways />
-      <NodeOpeningRitual />
-      <LighthouseConsole />
       <R5PathRecommendations />
-      <WorldModeSwitcher />
-      <WorldActionRituals />
-      <DynamicWorldAcceptance />
       <DeepEntranceCards />
     </ResponsivePageShell>
   )
