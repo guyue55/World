@@ -30,12 +30,14 @@ node scripts/check-public-app-r8-imports.mjs
 Quality:
 
 ```bash
-npm ci --ignore-scripts --no-audit --no-fund --prefer-offline --progress=false
+npm ci --ignore-scripts --no-audit --no-fund --omit=optional --prefer-offline --progress=false
 npm run check
 npm run check:routes
 npm run typecheck
 npm run lint
 ```
+
+The quality install omits optional dependencies because this gate does not run a production build.
 
 ## Runtime boundary scope
 
@@ -64,5 +66,3 @@ This keeps the first CI gate useful without pretending that the full public runt
 ## Boundary
 
 This workflow is not a production deployment gate. It does not prove Preview URL, Production URL, smoke test, HTTPS, Web Vitals, manual signoff, or rollback rehearsal.
-
-Those remain external release evidence.
