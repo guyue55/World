@@ -25,9 +25,9 @@ export function ProductRouteGuide({
     <section className="rounded-[2rem] border border-white/65 bg-white/72 p-5 shadow-soft backdrop-blur md:p-6">
       <p className="text-xs font-semibold tracking-[0.32em] text-moss">你在这里</p>
       <div className="mt-3 flex flex-col justify-between gap-5 lg:flex-row lg:items-center">
-        <div>
-          <h1 className="text-3xl font-semibold text-ink md:text-4xl">{current}</h1>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/64">{description}</p>
+        <div className="min-w-0">
+          <h1 className="break-words text-3xl font-semibold text-ink md:text-4xl">{current}</h1>
+          <p className="mt-2 max-w-3xl break-words text-sm leading-7 text-ink/64">{description}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {safetyQuestions.map((question) => (
               <span key={question} className="rounded-full bg-paper/75 px-3 py-1.5 text-xs font-semibold text-ink/55">
