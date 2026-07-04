@@ -2,9 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [dev, main]
+    branches: [dev, main, master]
   pull_request:
-    branches: [dev, main]
+    branches: [dev, main, master]
+
+concurrency:
+  group: worldos-ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   worldos-release-candidate:
@@ -29,3 +33,16 @@ jobs:
             docs/90-archive/reports/worldos-external-evidence-template.json
             data/world-kernel/worldos-1-release-candidate-v1.json
             data/world-kernel/worldos-1-external-evidence-template-v1.json
+
+  static-boundary:
+    name: static-boundary
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Public runtime boundary
+        run: node scripts/check-public-app-r8-imports.mjs
+
