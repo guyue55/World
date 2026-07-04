@@ -8,10 +8,10 @@ The CI intentionally avoids the historical long `check:world-core` chain. It cur
 
 ```text
 static-boundary：无依赖静态边界检查，优先验证公开首页入口不再直连 R8 runtime。
-quality：依赖安装后运行 repository checks、routes、typecheck、lint。
+install-probe：依赖安装探针，用于诊断 GitHub runner 上 npm ci 是否能稳定完成。
 ```
 
-The static job is the fast guardrail. The quality job is restored as a separate hardening step so dependency installation can be observed independently.
+The static job is the fast guardrail. The install probe is intentionally diagnostic and does not yet run full repository checks.
 
 ## Workflow
 
@@ -27,17 +27,14 @@ Static boundary:
 node scripts/check-public-app-r8-imports.mjs
 ```
 
-Quality:
+Install probe:
 
 ```bash
-npm ci --ignore-scripts --no-audit --no-fund --omit=optional --prefer-offline --progress=false
-npm run check
-npm run check:routes
-npm run typecheck
-npm run lint
+node --version
+npm --version
+npm config get registry
+timeout 360s npm ci --ignore-scripts --no-audit --no-fund --omit=optional --prefer-offline --progress=false --loglevel=notice
 ```
-
-The quality install omits optional dependencies because this gate does not run a production build.
 
 ## Runtime boundary scope
 
@@ -62,6 +59,17 @@ Other public routes still have known legacy R8 presentation imports and must be 
 ```
 
 This keeps the first CI gate useful without pretending that the full public runtime migration has already been completed.
+
+## Follow-up
+
+After the install probe is stable, re-add the quality commands in a separate step:
+
+```bash
+npm run check
+npm run check:routes
+npm run typecheck
+npm run lint
+```
 
 ## Boundary
 
