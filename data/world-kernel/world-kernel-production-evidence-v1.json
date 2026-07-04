@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "name": "World Kernel Production Evidence v1",
+  "generatedAt": "2026-07-04",
+  "status": "local-evidence-complete-external-evidence-blocked",
+  "scope": "K5-local production readiness evidence for World Kernel public release path.",
+  "baseline": {
+    "source": "worldos_kernel_consolidation_v1_full-package.zip",
+    "architectureAudit": "completed",
+    "kernelConsolidationK1K4": "completed"
+  },
+  "localEvidence": {
+    "status": "completed",
+    "meaning": "本地可复现的工程门禁、路由边界、公开索引、构建产物验证和 release wrapper 已纳入检查。",
+    "commandGates": [
+      "npm ci",
+      "npm run audit:world-kernel",
+      "npm run check:world-kernel-consolidation",
+      "npm run check:world-kernel-production",
+      "npm run smoke:kernel-local",
+      "npm run check:product-release",
+      "npm run lint",
+      "npm run typecheck",
+      "npm run check",
+      "npm run check:routes",
+      "npm run build:kernel-release",
+      "npm run build:verify-artifacts",
+      "npm run audit:report",
+      "npm run check:release"
+    ],
+    "requiredArtifacts": [
+      ".next/BUILD_ID",
+      ".next/build-manifest.json",
+      ".next/server/app-paths-manifest.json",
+      ".next/routes-manifest.json",
+      ".next/required-server-files.json",
+      "public/world-index.json",
+      "public/world-manifest.json"
+    ],
+    "localSmokeRoutes": [
+      "/",
+      "/about",
+      "/atlas",
+      "/timeline",
+      "/archive",
+      "/paths",
+      "/ask",
+      "/manifesto",
+      "/status",
+      "/node/:slug",
+      "/paths/:id"
+    ]
+  },
+  "externalEvidence": {
+    "status": "blocked-until-real-environment",
+    "mustRemainFalseBeforeEvidence": [
+      "productionLive",
+      "releaseReady",
+      "cleanProductionReady"
+    ],
+    "requiredItems": [
+      "Preview URL 可访问",
+      "Production URL 可访问",
+      "线上 smoke test 通过",
+      "域名 HTTPS 验证完成",
+      "sitemap.xml 与 robots.txt 在线验证完成",
+      "人工签收完成",
+      "真实回滚演练完成"
+    ]
+  },
+  "securityBoundary": {
+    "serverSideRouteGuard": "middleware.ts uses getWorldKernelRouteDecision",
+    "publicRoutes": "src/lib/product-routes.ts",
+    "sitemapPolicy": "src/app/sitemap.ts derives from PRODUCT_PUBLIC_ROUTES",
+    "robotsPolicy": "src/app/robots.ts blocks private/internal routes",
+    "publicAiBoundary": "访客 AI 只能读取公开索引，私密与 vault 内容不得进入公开 AI。"
+  },
+  "releaseDecision": {
+    "localReleaseCandidate": true,
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地证据闭环已完成；真实上线必须等待外部 Preview/Production URL、线上 smoke test、人工签收和回滚演练。"
+  }
+}

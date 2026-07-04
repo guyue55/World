@@ -1,6 +1,6 @@
 {
   "auditVersion": "1.0.0",
-  "generatedAt": "2026-07-04T01:10:33.731Z",
+  "generatedAt": "2026-07-04T01:28:08.625Z",
   "baseline": {
     "sourcePackage": "word-life_productization_journey_paths_v1_full-package.zip",
     "workspace": "/mnt/data/worldos_kernel_work",
@@ -14,14 +14,14 @@
       "components": 439,
       "features": 197,
       "lib": 160,
-      "data": 1050,
-      "scripts": 750,
-      "docs": 857
+      "data": 1052,
+      "scripts": 753,
+      "docs": 859
     },
     "appRouteFiles": 81,
     "stageRouteFiles": 49,
-    "scripts": 743,
-    "checkScripts": 550,
+    "scripts": 747,
+    "checkScripts": 552,
     "stageCheckScripts": 454,
     "r8Components": 64,
     "r8DataFiles": 51,
@@ -224,7 +224,7 @@
       "v8-production-ops": 31,
       "v9-service-platform": 32,
       "versions": 12,
-      "world-kernel": 4
+      "world-kernel": 6
     }
   },
   "findings": [
@@ -260,7 +260,7 @@
       "severity": "medium",
       "area": "Scripts",
       "title": "检查脚本数量已经进入治理期",
-      "evidence": "package.json 当前声明 743 个 scripts，其中 check:* 550 个。",
+      "evidence": "package.json 当前声明 747 个 scripts，其中 check:* 552 个。",
       "decision": "短期保留历史 checks，新增 check:world-kernel-audit 作为收束门禁；中期合并为 check:core/check:runtime/check:release/check:legacy。",
       "action": "Add audit gate first; avoid breaking historical checks in this round."
     },

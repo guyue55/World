@@ -42,13 +42,22 @@ npm run dev
 
 ```bash
 npm run audit:world-kernel
-npm run check:world-kernel-audit
+npm run check:world-kernel-consolidation
+npm run check:world-kernel-production
+npm run smoke:kernel-local
 npm run check:product-release
 npm run lint
 npm run typecheck
 npm run check
 npm run check:routes
+npm run build:kernel-release
 npm run build:verify-artifacts
+```
+
+完整本地发布门禁：
+
+```bash
+npm run check:release
 ```
 
 ## World Kernel 约束
@@ -93,3 +102,21 @@ docs/       长期文档中心
 - K4：新增长期门禁 `check:world-kernel-consolidation`，并接入 `check:product-release`。
 
 仍未完成的是 K5：真实外部 Preview / Production、线上 smoke test、域名 HTTPS、人工签收和回滚演练。因此 `productionLive`、`releaseReady`、`cleanProductionReady` 仍必须保持 `false`。
+
+
+## World Kernel Consolidation v2 / K5-local
+
+本轮继续推进 K5，但只完成当前容器内可以真实验证的 **本地生产证据闭环**：
+
+- `data/world-kernel/world-kernel-production-evidence-v1.json`：生产证据台账。
+- `npm run check:world-kernel-production`：验证 K5-local 状态、外部阻断项和生产状态布尔值。
+- `npm run smoke:kernel-local`：验证公开路由、公开 JSON、middleware、sitemap、robots、product route policy。
+- `npm run evidence:kernel-local`：生成 `docs/90-archive/reports/world-kernel-local-evidence.json`。
+
+K5-local 完成不等于真实上线。缺少 Preview / Production URL、线上 smoke test、域名 HTTPS、人工签收和回滚演练时，以下状态必须继续保持：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```

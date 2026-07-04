@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-07-04T01:33:13.100Z",
+  "timezone": "America/Chicago",
+  "source": "scripts/write-world-kernel-local-evidence.mjs",
+  "status": "local-evidence-captured-external-evidence-pending",
+  "baseline": {
+    "source": "worldos_kernel_consolidation_v1_full-package.zip",
+    "architectureAudit": "completed",
+    "kernelConsolidationK1K4": "completed"
+  },
+  "progress": {
+    "K1_coreModelSource": "completed",
+    "K2_runtimeBoundary": "completed",
+    "K3_presentationRoutes": "completed",
+    "K4_scriptGates": "completed",
+    "K5_productionEvidence": "blocked-external-preview-production-required",
+    "K5_localProductionEvidence": "completed",
+    "K5_externalProductionEvidence": "blocked-external-preview-production-required"
+  },
+  "localEvidence": {
+    "commandGates": [
+      "npm ci",
+      "npm run audit:world-kernel",
+      "npm run check:world-kernel-consolidation",
+      "npm run check:world-kernel-production",
+      "npm run smoke:kernel-local",
+      "npm run check:product-release",
+      "npm run lint",
+      "npm run typecheck",
+      "npm run check",
+      "npm run check:routes",
+      "npm run build:kernel-release",
+      "npm run build:verify-artifacts",
+      "npm run audit:report",
+      "npm run check:release"
+    ],
+    "requiredArtifacts": [
+      {
+        "file": ".next/BUILD_ID",
+        "exists": true
+      },
+      {
+        "file": ".next/build-manifest.json",
+        "exists": true
+      },
+      {
+        "file": ".next/server/app-paths-manifest.json",
+        "exists": true
+      },
+      {
+        "file": ".next/routes-manifest.json",
+        "exists": true
+      },
+      {
+        "file": ".next/required-server-files.json",
+        "exists": true
+      },
+      {
+        "file": "public/world-index.json",
+        "exists": true
+      },
+      {
+        "file": "public/world-manifest.json",
+        "exists": true
+      }
+    ],
+    "missingArtifacts": []
+  },
+  "externalEvidence": {
+    "status": "blocked-until-real-environment",
+    "mustRemainFalseBeforeEvidence": [
+      "productionLive",
+      "releaseReady",
+      "cleanProductionReady"
+    ],
+    "requiredItems": [
+      "Preview URL 可访问",
+      "Production URL 可访问",
+      "线上 smoke test 通过",
+      "域名 HTTPS 验证完成",
+      "sitemap.xml 与 robots.txt 在线验证完成",
+      "人工签收完成",
+      "真实回滚演练完成"
+    ]
+  },
+  "releaseDecision": {
+    "localReleaseCandidate": true,
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地证据闭环已完成；真实上线必须等待外部 Preview/Production URL、线上 smoke test、人工签收和回滚演练。"
+  }
+}

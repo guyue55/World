@@ -45,7 +45,9 @@ fix(boundary): 修复私密路由服务端拦截
 至少执行：
 
 ```bash
-npm run check:world-kernel-audit
+npm run check:world-kernel-consolidation
+npm run check:world-kernel-production
+npm run smoke:kernel-local
 npm run check:product-release
 npm run lint
 npm run typecheck
@@ -56,8 +58,10 @@ npm run check:routes
 如涉及生产交付，还需要：
 
 ```bash
+npm run build:kernel-release
 npm run build:verify-artifacts
 npm run audit:report
+npm run evidence:kernel-local
 ```
 
 ## 权限原则
@@ -72,3 +76,11 @@ npm run audit:report
 4. 私密、家庭、vault、AI 审计和创世台能力必须由服务端路由边界守门，前端只能做显隐体现。
 5. 日常提交前优先运行：`npm run check:world-kernel-consolidation && npm run check:product-release`。
 6. 任何真实上线声明必须有 Preview / Production URL、线上 smoke test、人工签收和回滚演练证据。
+
+
+## K5 本地生产证据规则
+
+1. 允许补齐本地 release evidence、local smoke、CI/部署说明和证据台账。
+2. 不允许在没有真实外部 Preview / Production URL 的情况下把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 `true`。
+3. `check:release` 是当前 World Kernel 本地发布门禁；旧阶段发布链路只能作为 `check:release:legacy` 参考。
+4. 任何线上签收必须包含：Preview URL、Production URL、线上 smoke test、域名 HTTPS、sitemap/robots 在线验证、人工签收和回滚演练。

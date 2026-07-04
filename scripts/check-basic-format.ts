@@ -3,7 +3,7 @@ import path from 'node:path'
 
 const root = process.cwd()
 const targetExtensions = new Set(['.ts', '.tsx', '.json', '.md', '.css'])
-const ignored = new Set(['node_modules', '.next', 'dist', 'build'])
+const ignored = new Set(['node_modules', '.next', '.git', '.turbo', 'dist', 'build', 'coverage', 'reports'])
 
 function walk(dir: string, result: string[] = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
