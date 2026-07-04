@@ -12,6 +12,8 @@ const criticalPublicEntries = [
   'src/app/world-map/page.tsx',
   'src/app/time-river/page.tsx',
   'src/app/lighthouse/page.tsx',
+  'src/app/about/page.tsx',
+  'src/app/status/page.tsx',
 ]
 
 const violations = []
@@ -22,7 +24,7 @@ for (const repoPath of criticalPublicEntries) {
     continue
   }
 
-  const content = fs.readFileSync(fullPath, 'utf8')
+  const content = fs.readFileSync(file, 'utf8')
   if (content.includes("@/components/r8-")) violations.push(repoPath)
 }
 
