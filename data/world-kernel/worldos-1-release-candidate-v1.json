@@ -1,0 +1,193 @@
+{
+  "version": "1.0.0-rc.1",
+  "name": "WorldOS 1.0 Release Candidate v1",
+  "generatedAt": "2026-07-04",
+  "status": "rc-baseline-locked-external-deploy-pending",
+  "scope": "Freeze the current World Kernel v2 baseline as a release candidate and prepare real Preview/Production evidence collection.",
+  "baseline": {
+    "sourcePackage": "worldos_kernel_consolidation_v2_full-package.zip",
+    "lastKnownCommit": "44d8b95 chore(kernel): 补齐本地生产证据闭环",
+    "kernelConsolidation": "data/world-kernel/world-kernel-consolidation-v2.json",
+    "localProductionEvidence": "data/world-kernel/world-kernel-production-evidence-v1.json"
+  },
+  "goals": [
+    "把当前 World Kernel v2 冻结为 WorldOS 1.0 RC 基线。",
+    "把发布链路从本地证据推进到可执行的 Preview / Production 外部证据流程。",
+    "继续保持公开产品路径克制、中文优先、低门槛、可访问、可回滚。"
+  ],
+  "nonGoals": [
+    "不新增 R8.10 / V11 / 新动态宇宙 runtime。",
+    "不把 legacy / internal / private 页面重新暴露到公开入口。",
+    "不在缺少外部 URL、线上 smoke、人工签收和回滚演练前宣称 productionLive 或 releaseReady。",
+    "不把前端显隐当作权限边界。"
+  ],
+  "phaseProgress": {
+    "P0_releaseFreeze": "completed",
+    "P1_previewDeploy": "prepared-external-environment-required",
+    "P2_productionDeploy": "blocked-preview-and-signoff-required",
+    "P3_performanceAccessibility": "prepared-real-measurement-required",
+    "P4_productExperienceAcceptance": "prepared-manual-review-required",
+    "P5_operationsLoop": "prepared-after-production-required",
+    "P6_securityPrivacyGovernance": "policy-preserved-service-side-required-for-v2"
+  },
+  "releaseStates": {
+    "localEvidenceComplete": true,
+    "externalPreviewEvidenceComplete": false,
+    "externalProductionEvidenceComplete": false,
+    "manualSignoffComplete": false,
+    "rollbackDrillComplete": false,
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  },
+  "publicRouteSmokeMatrix": [
+    {
+      "route": "/",
+      "expected": "200",
+      "purpose": "世界入口"
+    },
+    {
+      "route": "/about",
+      "expected": "200",
+      "purpose": "关于古月 / 世界主人说明"
+    },
+    {
+      "route": "/atlas",
+      "expected": "200",
+      "purpose": "世界地图"
+    },
+    {
+      "route": "/timeline",
+      "expected": "200",
+      "purpose": "时间河"
+    },
+    {
+      "route": "/archive",
+      "expected": "200",
+      "purpose": "档案馆 / 现实检索"
+    },
+    {
+      "route": "/paths",
+      "expected": "200",
+      "purpose": "精选路径"
+    },
+    {
+      "route": "/ask",
+      "expected": "200",
+      "purpose": "AI 灯塔低光导览"
+    },
+    {
+      "route": "/manifesto",
+      "expected": "200",
+      "purpose": "世界宪章"
+    },
+    {
+      "route": "/status",
+      "expected": "200",
+      "purpose": "世界状态"
+    },
+    {
+      "route": "/world-index.json",
+      "expected": "200-json",
+      "purpose": "公开世界索引"
+    },
+    {
+      "route": "/world-manifest.json",
+      "expected": "200-json",
+      "purpose": "公开世界 manifest"
+    },
+    {
+      "route": "/robots.txt",
+      "expected": "200-text",
+      "purpose": "搜索引擎边界"
+    },
+    {
+      "route": "/sitemap.xml",
+      "expected": "200-xml",
+      "purpose": "公开索引地图"
+    }
+  ],
+  "guardedRouteSmokeMatrix": [
+    {
+      "route": "/private-archive",
+      "expected": "redirect-or-forbidden",
+      "purpose": "私密档案不得公开访问"
+    },
+    {
+      "route": "/r4-creator",
+      "expected": "redirect-or-forbidden",
+      "purpose": "创世台不得作为公开入口"
+    },
+    {
+      "route": "/world-map",
+      "expected": "redirect-to-/atlas",
+      "purpose": "旧入口兼容重定向"
+    },
+    {
+      "route": "/lighthouse",
+      "expected": "redirect-to-/ask",
+      "purpose": "旧灯塔入口兼容重定向"
+    },
+    {
+      "route": "/production",
+      "expected": "redirect-or-internal-guard",
+      "purpose": "生产审计页不得公开暴露"
+    }
+  ],
+  "preferredDeployTargets": [
+    {
+      "target": "Vercel",
+      "reason": "仓库已有 vercel.json，且项目是 Next.js。",
+      "status": "config-present-external-account-required"
+    },
+    {
+      "target": "Netlify",
+      "reason": "可作为备选，但当前包没有 .netlify/siteId，不能擅自创建新站点。",
+      "status": "site-id-required-before-deploy"
+    }
+  ],
+  "requiredExternalEvidence": [
+    "previewUrl",
+    "previewSmokeReport",
+    "productionUrl",
+    "productionSmokeReport",
+    "httpsCheck",
+    "robotsAndSitemapCheck",
+    "webVitalsSnapshot",
+    "accessibilitySnapshot",
+    "manualSignoff",
+    "rollbackDrillReport"
+  ],
+  "rcCommandGates": [
+    "npm ci",
+    "npm run check:release",
+    "npm run check:worldos-rc",
+    "npm run evidence:worldos-external-template"
+  ],
+  "buildFindings": {
+    "trueNextBuildAttempt": {
+      "command": "NEXT_TELEMETRY_DISABLED=1 timeout 300s ./node_modules/.bin/next build --turbopack",
+      "result": "compiled-and-generated-static-pages-artifacts-present-trace-timeout-in-current-container",
+      "finding": "首次真实构建发现 /world-map legacy 页面直接挂载 R8 runtime 并触发 useWorldRuntime provider 错误；已通过服务端重定向收束 legacy 页面修复。",
+      "requiredArtifactsPresent": [
+        ".next/BUILD_ID",
+        ".next/build-manifest.json",
+        ".next/server/app-paths-manifest.json",
+        ".next/routes-manifest.json",
+        ".next/required-server-files.json"
+      ]
+    },
+    "legacyRuntimeFixes": [
+      "src/app/world/page.tsx -> redirect(/atlas)",
+      "src/app/world-map/page.tsx -> redirect(/atlas)",
+      "src/app/time-river/page.tsx -> redirect(/timeline)",
+      "src/app/r2-world/page.tsx -> redirect(/atlas)",
+      "src/app/r3-content-life/page.tsx -> redirect(/archive)",
+      "src/app/r4-creator/page.tsx -> redirect(/forbidden)",
+      "src/app/r5-lighthouse/page.tsx -> redirect(/ask)",
+      "src/app/r6-service/page.tsx -> redirect(/forbidden)",
+      "src/app/r7-evolution/page.tsx -> redirect(/forbidden)",
+      "src/app/r8-public/page.tsx -> redirect(/status)"
+    ]
+  }
+}

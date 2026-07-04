@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0-rc.1",
+  "name": "WorldOS 1.0 External Evidence Template",
+  "generatedAt": "2026-07-04",
+  "status": "template-ready-awaiting-real-preview-production",
+  "instructions": "Fill this record only with real external Preview/Production URLs and measured smoke/performance/accessibility evidence. Do not mark releaseReady=true from local artifacts alone.",
+  "preview": {
+    "url": null,
+    "deployedAt": null,
+    "smokeStatus": "pending",
+    "smokeReport": null
+  },
+  "production": {
+    "url": null,
+    "deployedAt": null,
+    "smokeStatus": "pending",
+    "smokeReport": null,
+    "httpsStatus": "pending",
+    "rollbackDrillStatus": "pending"
+  },
+  "qualityEvidence": {
+    "webVitals": "pending-real-measurement",
+    "accessibility": "pending-real-measurement",
+    "mobileReview": "pending-real-device-review",
+    "privacyReview": "pending-manual-signoff"
+  },
+  "manualSignoff": {
+    "ownerAccepted": false,
+    "acceptedAt": null,
+    "notes": ""
+  },
+  "releaseDecision": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "External evidence is still pending."
+  }
+}

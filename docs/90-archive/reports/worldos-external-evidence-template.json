@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-07-04T02:59:06.665Z",
+  "timezone": "America/Chicago",
+  "source": "scripts/write-worldos-external-evidence-template.mjs",
+  "status": "external-evidence-template-generated-real-environment-required",
+  "rc": {
+    "version": "1.0.0-rc.1",
+    "status": "rc-baseline-locked-external-deploy-pending",
+    "baseline": {
+      "sourcePackage": "worldos_kernel_consolidation_v2_full-package.zip",
+      "lastKnownCommit": "44d8b95 chore(kernel): 补齐本地生产证据闭环",
+      "kernelConsolidation": "data/world-kernel/world-kernel-consolidation-v2.json",
+      "localProductionEvidence": "data/world-kernel/world-kernel-production-evidence-v1.json"
+    },
+    "releaseStates": {
+      "localEvidenceComplete": true,
+      "externalPreviewEvidenceComplete": false,
+      "externalProductionEvidenceComplete": false,
+      "manualSignoffComplete": false,
+      "rollbackDrillComplete": false,
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  },
+  "template": {
+    "version": "1.0.0-rc.1",
+    "name": "WorldOS 1.0 External Evidence Template",
+    "generatedAt": "2026-07-04",
+    "status": "template-ready-awaiting-real-preview-production",
+    "instructions": "Fill this record only with real external Preview/Production URLs and measured smoke/performance/accessibility evidence. Do not mark releaseReady=true from local artifacts alone.",
+    "preview": {
+      "url": null,
+      "deployedAt": null,
+      "smokeStatus": "pending",
+      "smokeReport": null
+    },
+    "production": {
+      "url": null,
+      "deployedAt": null,
+      "smokeStatus": "pending",
+      "smokeReport": null,
+      "httpsStatus": "pending",
+      "rollbackDrillStatus": "pending"
+    },
+    "qualityEvidence": {
+      "webVitals": "pending-real-measurement",
+      "accessibility": "pending-real-measurement",
+      "mobileReview": "pending-real-device-review",
+      "privacyReview": "pending-manual-signoff"
+    },
+    "manualSignoff": {
+      "ownerAccepted": false,
+      "acceptedAt": null,
+      "notes": ""
+    },
+    "releaseDecision": {
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false,
+      "reason": "External evidence is still pending."
+    }
+  },
+  "nextAction": [
+    "部署真实 Preview URL",
+    "设置 PREVIEW_URL 并执行 npm run smoke:preview",
+    "部署真实 Production URL",
+    "设置 PRODUCTION_URL 并执行 npm run smoke:production",
+    "补齐 Web Vitals / Accessibility / HTTPS / rollback / manual signoff 证据"
+  ]
+}

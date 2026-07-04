@@ -750,7 +750,12 @@
     "check:world-kernel-production": "node scripts/check-world-kernel-production-evidence.mjs",
     "smoke:kernel-local": "node scripts/run-world-kernel-local-smoke.mjs",
     "evidence:kernel-local": "node scripts/write-world-kernel-local-evidence.mjs",
-    "check:kernel-release": "npm run check:release"
+    "check:kernel-release": "npm run check:release",
+    "check:worldos-rc": "node scripts/check-worldos-1-rc.mjs",
+    "smoke:preview": "node scripts/run-worldos-preview-smoke.mjs",
+    "smoke:production": "WORLDOS_SMOKE_MODE=production node scripts/run-worldos-preview-smoke.mjs",
+    "evidence:worldos-external-template": "node scripts/write-worldos-external-evidence-template.mjs",
+    "check:release:rc": "npm run check:release && npm run check:worldos-rc && npm run evidence:worldos-external-template"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

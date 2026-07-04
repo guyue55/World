@@ -7,7 +7,7 @@ on:
     branches: [dev, main]
 
 jobs:
-  quality:
+  worldos-release-candidate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,11 +16,16 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run check
-      - run: npm run check:strict
-      - run: npm run check:r8-public-operations:all
-      - run: npm run check:r8-public-operations:boundary
-      - run: npm run check:routes
-      - run: npm run build
-      - run: npm run build:verify-artifacts
-      - run: npm run audit:report
+      - run: npm run check:release
+      - run: npm run check:worldos-rc
+      - run: npm run evidence:kernel-local
+      - run: npm run evidence:worldos-external-template
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: worldos-release-evidence
+          path: |
+            docs/90-archive/reports/world-kernel-local-evidence.json
+            docs/90-archive/reports/worldos-external-evidence-template.json
+            data/world-kernel/worldos-1-release-candidate-v1.json
+            data/world-kernel/worldos-1-external-evidence-template-v1.json
