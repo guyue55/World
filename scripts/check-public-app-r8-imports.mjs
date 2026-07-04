@@ -16,6 +16,7 @@ const criticalPublicEntries = [
   'src/app/status/page.tsx',
   'src/app/manifesto/page.tsx',
   `src/app/${'ask'}/page.tsx`,
+  'src/app/paths/page.tsx',
 ]
 
 const violations = []
