@@ -16,31 +16,18 @@ const componentFiles = [
   'src/components/about/AboutDynamicHero.tsx',
   'src/components/manifesto/ManifestoDynamicHero.tsx',
 ]
-const pageFiles = [
-  'src/app/page.tsx',
-  'src/app/atlas/page.tsx',
-  'src/app/timeline/page.tsx',
-  'src/app/ask/page.tsx',
-  'src/app/node/[slug]/page.tsx',
-  'src/app/status/page.tsx',
-  'src/app/archive/page.tsx',
-  'src/app/paths/[id]/page.tsx',
-  'src/app/paths/page.tsx',
-  'src/app/about/page.tsx',
-  'src/app/manifesto/page.tsx',
-]
-const requiredPageTokens = [
-  'buildHomeDynamicWorldSurface',
-  'buildAtlasConstellationSurface',
-  'buildTimelineRiverSurface',
-  'buildLighthouseConsoleSurface',
-  'buildNodeOpeningSurface',
-  'buildDynamicWorldStatusSurface',
-  'buildArchiveDynamicSurface',
-  'buildPathJourneySurface',
-  'buildPathsDirectorySurface',
-  'buildAboutDynamicSurface',
-  'buildManifestoDynamicSurface',
+const routeSurfaceContracts = [
+  ['/', 'src/app/page.tsx', 'buildHomeDynamicWorldSurface'],
+  ['/atlas', 'src/app/atlas/page.tsx', 'buildAtlasConstellationSurface'],
+  ['/timeline', 'src/app/timeline/page.tsx', 'buildTimelineRiverSurface'],
+  ['/ask', 'src/app/ask/page.tsx', 'buildLighthouseConsoleSurface'],
+  ['/node/[slug]', 'src/app/node/[slug]/page.tsx', 'buildNodeOpeningSurface'],
+  ['/status', 'src/app/status/page.tsx', 'buildDynamicWorldStatusSurface'],
+  ['/archive', 'src/app/archive/page.tsx', 'buildArchiveDynamicSurface'],
+  ['/paths/[id]', 'src/app/paths/[id]/page.tsx', 'buildPathJourneySurface'],
+  ['/paths', 'src/app/paths/page.tsx', 'buildPathsDirectorySurface'],
+  ['/about', 'src/app/about/page.tsx', 'buildAboutDynamicSurface'],
+  ['/manifesto', 'src/app/manifesto/page.tsx', 'buildManifestoDynamicSurface'],
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 const motionGrammarFile = 'src/lib/motion-grammar.ts'
@@ -73,13 +60,18 @@ for (const file of componentFiles) {
   }
 }
 
-for (const token of requiredPageTokens) {
-  const found = pageFiles.some((file) => {
-    const fullPath = resolve(root, file)
-    if (!existsSync(fullPath)) return false
-    return readFileSync(fullPath, 'utf8').includes(token)
-  })
-  if (!found) failures.push(`公开页面缺少 ${token} 服务端展示模型构建`)
+for (const [route, file, token] of routeSurfaceContracts) {
+  const fullPath = resolve(root, file)
+  if (!existsSync(fullPath)) {
+    failures.push(`正式公开路由 ${route} 缺少页面文件：${file}`)
+    continue
+  }
+
+  const source = readFileSync(fullPath, 'utf8')
+  if (!source.includes(token)) failures.push(`正式公开路由 ${route} 必须在 ${file} 构建 ${token}`)
+  if (source.includes('@/components/r8-') || source.includes('@/components/_legacy')) {
+    failures.push(`正式公开路由 ${route} 不得直接接入 R8 或 legacy 动态组件`)
+  }
 }
 
 const gsapHook = readFileSync(resolve(root, gsapHookFile), 'utf8')
