@@ -11,7 +11,7 @@ export function ManifestoDynamicHero({ surface }: { surface: ManifestoDynamicSur
 
   return (
     <div ref={containerRef} className="space-y-10">
-      <section data-gsap-reveal className="invisible relative overflow-hidden rounded-[2.25rem] border border-white/65 bg-night p-8 text-paper shadow-soft md:p-10">
+      <section data-gsap-reveal className="relative overflow-hidden rounded-[2.25rem] border border-white/65 bg-night p-8 text-paper shadow-soft md:p-10">
         <div className="absolute -right-16 top-0 h-72 w-72 rounded-full bg-gold/18 blur-3xl" />
         <div className="relative max-w-4xl space-y-5">
           <p className="text-xs font-semibold tracking-[0.35em] text-gold">{surface.eyebrow}</p>
@@ -22,7 +22,7 @@ export function ManifestoDynamicHero({ surface }: { surface: ManifestoDynamicSur
         </div>
       </section>
 
-      <section data-gsap-reveal className="invisible grid gap-4 md:grid-cols-2">
+      <section data-gsap-reveal className="grid gap-4 md:grid-cols-2">
         {surface.rules.map((rule) => (
           <article key={rule.title} className="rounded-[1.6rem] border border-white/65 bg-white/76 p-6 shadow-soft backdrop-blur">
             <h2 className="break-words text-2xl font-semibold text-ink">{rule.title}</h2>
@@ -31,7 +31,7 @@ export function ManifestoDynamicHero({ surface }: { surface: ManifestoDynamicSur
         ))}
       </section>
 
-      <section data-gsap-reveal className="invisible rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
+      <section data-gsap-reveal className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
         <p className="text-xs font-semibold tracking-[0.35em] text-moss">{surface.summaryLabel}</p>
         <p className="mt-3 break-words text-2xl font-semibold leading-relaxed text-ink">
           {surface.summaryQuote}

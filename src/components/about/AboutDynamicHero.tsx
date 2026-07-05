@@ -11,7 +11,7 @@ export function AboutDynamicHero({ surface }: { surface: AboutDynamicSurface }) 
 
   return (
     <div ref={containerRef} className="space-y-10">
-      <section data-gsap-reveal className="invisible relative overflow-hidden rounded-[2.25rem] border border-white/65 bg-white/76 p-8 shadow-soft backdrop-blur md:p-10">
+      <section data-gsap-reveal className="relative overflow-hidden rounded-[2.25rem] border border-white/65 bg-white/76 p-8 shadow-soft backdrop-blur md:p-10">
         <div className="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-lake/18 blur-3xl" />
         <div className="relative max-w-4xl space-y-5">
           <p className="text-xs font-semibold tracking-[0.35em] text-moss">{surface.eyebrow}</p>
@@ -22,7 +22,7 @@ export function AboutDynamicHero({ surface }: { surface: AboutDynamicSurface }) 
         </div>
       </section>
 
-      <section data-gsap-reveal className="invisible grid gap-4 md:grid-cols-3">
+      <section data-gsap-reveal className="grid gap-4 md:grid-cols-3">
         {surface.identityCards.map((card) => (
           <article key={card.title} className="rounded-[1.6rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur">
             <h2 className="break-words text-2xl font-semibold text-ink">{card.title}</h2>
@@ -31,7 +31,7 @@ export function AboutDynamicHero({ surface }: { surface: AboutDynamicSurface }) 
         ))}
       </section>
 
-      <section data-gsap-reveal className="invisible rounded-[2rem] border border-white/65 bg-night p-7 text-paper shadow-soft md:p-8">
+      <section data-gsap-reveal className="rounded-[2rem] border border-white/65 bg-night p-7 text-paper shadow-soft md:p-8">
         <p className="text-xs font-semibold tracking-[0.35em] text-gold">继续路径</p>
         <h2 className="mt-3 break-words text-3xl font-semibold">第一次来，可以先走一条清晰路径。</h2>
         <p className="mt-3 max-w-3xl break-words leading-8 text-paper/68">

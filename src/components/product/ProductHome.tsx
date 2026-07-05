@@ -41,7 +41,7 @@ export function ProductHome({
 
   return (
     <main ref={containerRef} className="world-container space-y-14 py-10 md:py-16">
-      <section data-gsap-reveal className="invisible relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/78 px-6 py-10 shadow-soft backdrop-blur-xl md:px-10 md:py-16">
+      <section data-gsap-reveal className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/78 px-6 py-10 shadow-soft backdrop-blur-xl md:px-10 md:py-16">
         <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-lake/20 blur-3xl" />
         <div className="absolute -bottom-32 left-10 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center">
@@ -97,7 +97,7 @@ export function ProductHome({
         </div>
       </section>
 
-      <section data-gsap-reveal className="invisible rounded-[2.5rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 xl:p-10">
+      <section data-gsap-reveal className="rounded-[2.5rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 xl:p-10">
         <p className="text-xs font-semibold tracking-[0.35em] text-moss">WHERE TO START TODAY</p>
         <h2 className="mt-3 text-3xl font-semibold text-ink md:text-4xl">今天可以从哪里开始？</h2>
         <p className="mt-4 max-w-2xl text-lg text-ink/70">
@@ -138,7 +138,7 @@ export function ProductHome({
       <ProductWorldBoundaries />
 
 
-      <section data-gsap-reveal className="invisible grid gap-4 md:grid-cols-3">
+      <section data-gsap-reveal className="grid gap-4 md:grid-cols-3">
         {visibleAreas.slice(0, 3).map((area) => (
           <Link key={area.id} href={`/atlas#${area.id}`} className="block rounded-[1.6rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white">
             <p className="truncate text-sm text-moss">{area.icon} {area.realName}</p>
@@ -148,7 +148,7 @@ export function ProductHome({
         ))}
       </section>
 
-      <section data-gsap-reveal className="invisible grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+      <section data-gsap-reveal className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
           <p className="text-xs font-semibold tracking-[0.35em] text-moss">进入规则</p>
           <h2 className="mt-3 text-3xl font-semibold text-ink">先降低门槛，再保留深度</h2>
@@ -171,7 +171,7 @@ export function ProductHome({
         )}
       </section>
 
-      <section data-gsap-reveal className="invisible rounded-[2rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur md:p-8">
+      <section data-gsap-reveal className="rounded-[2rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur md:p-8">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-xs font-semibold tracking-[0.35em] text-moss">精选节点</p>
@@ -190,7 +190,7 @@ export function ProductHome({
         </div>
       </section>
 
-      <section data-gsap-reveal className="invisible rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
+      <section data-gsap-reveal className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
         <p className="text-xs font-semibold tracking-[0.35em] text-moss">最近发生</p>
         <h2 className="mt-3 text-3xl font-semibold text-ink">世界最近发生了什么</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">

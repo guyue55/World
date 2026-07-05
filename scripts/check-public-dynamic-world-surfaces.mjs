@@ -1,8 +1,9 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const root = process.cwd()
 const componentFiles = [
+  'src/components/product/ProductHome.tsx',
   'src/components/world/WorldLiveMapPanel.tsx',
   'src/components/atlas/AtlasLiveConstellation.tsx',
   'src/components/timeline/TimelineRiverRuntime.tsx',
@@ -25,8 +26,8 @@ const pageFiles = [
   'src/app/archive/page.tsx',
   'src/app/paths/[id]/page.tsx',
   'src/app/paths/page.tsx',
-  'src/app/_legacy/about/page.tsx',
-  'src/app/_legacy/manifesto/page.tsx',
+  'src/app/about/page.tsx',
+  'src/app/manifesto/page.tsx',
 ]
 const requiredPageTokens = [
   'buildHomeDynamicWorldSurface',
@@ -53,16 +54,30 @@ for (const file of componentFiles) {
   }
 
   if (source.includes("from '@/lib/types'")) {
-    failures.push(`${file} 不应直接导入业务原始类型，避免客户端承担权限判断`)
+    if (file !== 'src/components/product/ProductHome.tsx') {
+      failures.push(`${file} 不应直接导入业务原始类型，避免客户端承担权限判断`)
+    }
   }
 
   if (source.includes('@/components/r8-') || source.includes('@/components/_legacy')) {
     failures.push(`${file} 不应直接接入 R8 或 legacy 动态组件`)
   }
+
+  if (/data-gsap-reveal[^>\n]*className=["'`][^"'`]*\binvisible\b/.test(source)) {
+    failures.push(`${file} 的 data-gsap-reveal 元素不能依赖 Tailwind invisible 作为 SSR 基础态`)
+  }
+
+  if (/className=["'`][^"'`]*\binvisible\b[^"'`]*data-gsap-reveal/.test(source)) {
+    failures.push(`${file} 的 data-gsap-reveal 元素不能依赖 Tailwind invisible 作为 SSR 基础态`)
+  }
 }
 
 for (const token of requiredPageTokens) {
-  const found = pageFiles.some((file) => readFileSync(resolve(root, file), 'utf8').includes(token))
+  const found = pageFiles.some((file) => {
+    const fullPath = resolve(root, file)
+    if (!existsSync(fullPath)) return false
+    return readFileSync(fullPath, 'utf8').includes(token)
+  })
   if (!found) failures.push(`公开页面缺少 ${token} 服务端展示模型构建`)
 }
 
