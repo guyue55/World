@@ -36,7 +36,6 @@ function killProcessTree(child) {
 }
 
 function finish(child, status, code = 0) {
-  clearInterval(poll)
   clearTimeout(deadline)
   if (!child.killed) killProcessTree(child)
   const missing = missingArtifacts()
@@ -72,14 +71,7 @@ child.on('exit', (status, signal) => {
   finish(child, label, status ?? 1)
 })
 
-const poll = setInterval(() => {
-  if (done) return
-  if (missingArtifacts().length === 0) {
-    done = true
-    fs.closeSync(out)
-    finish(child, 'World Kernel release build generated required artifacts; trace/finalization was stopped after artifact verification.')
-  }
-}, 1000)
+// Removed premature kill polling
 
 const deadline = setTimeout(() => {
   if (done) return
