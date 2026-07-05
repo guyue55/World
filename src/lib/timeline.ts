@@ -74,7 +74,7 @@ export function groupTimelineEventsByDate(events: WorldEvent[]) {
     .sort(([a], [b]) => b.localeCompare(a))
     .map(([date, items]) => ({
       date,
-      events: items.sort((a, b) => a.title.localeCompare(b.title)),
+      events: [...items].sort((a, b) => a.id.localeCompare(b.id)),
     }))
 }
 

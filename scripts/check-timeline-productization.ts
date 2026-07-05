@@ -49,6 +49,12 @@ function main() {
   ;['formatWorldEventType', 'formatWorldEventActor', 'isPublicVisible'].forEach((token) => {
     if (!timelineLib.includes(token)) errors.push(`timeline lib missing public label/boundary helper: ${token}`)
   })
+  if (timelineLib.includes('a.title.localeCompare(b.title)')) {
+    errors.push('timeline grouped events must not rely on default locale title sorting')
+  }
+  if (!timelineLib.includes('a.id.localeCompare(b.id)')) {
+    errors.push('timeline grouped events must use stable id sorting to avoid hydration mismatch')
+  }
 
   const filters = read('src/components/timeline/TimelineFilters.tsx')
   if (!filters.includes('type.label') || !filters.includes('actor.label')) {
