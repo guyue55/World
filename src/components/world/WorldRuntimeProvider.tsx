@@ -19,6 +19,7 @@ type WorldRuntime = {
   dayPeriod: DayPeriod
   season: Season
   reducedMotion: boolean
+  compactMotion: boolean
   lastJourney: LastJourney | null
   visitedCount: number
   setReducedMotion: (value: boolean) => void
@@ -99,7 +100,9 @@ function labelFromPath(pathname: string) {
 
 function RuntimeAtmosphere() {
   const runtime = useWorldRuntime()
-  const shouldMove = !runtime.reducedMotion
+  const shouldMove = !runtime.reducedMotion && !runtime.compactMotion
+  const activeProjectionLines = runtime.compactMotion ? projectionLines.slice(0, 2) : projectionLines
+  const activeRuntimeNodes = runtime.compactMotion ? runtimeNodes.slice(0, 3) : runtimeNodes
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -115,7 +118,7 @@ function RuntimeAtmosphere() {
         transition={{ duration: 64, repeat: Infinity, ease: 'linear' }}
       />
       <div className="absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(37,48,42,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(37,48,42,0.14)_1px,transparent_1px)] [background-size:88px_88px]" />
-      {projectionLines.map((line) => (
+      {activeProjectionLines.map((line) => (
         <motion.span
           key={line.id}
           className="absolute h-px origin-left bg-gradient-to-r from-transparent via-ink/20 to-transparent"
@@ -124,7 +127,7 @@ function RuntimeAtmosphere() {
           transition={{ duration: 8, delay: line.delay, repeat: Infinity, ease: 'easeInOut' }}
         />
       ))}
-      {runtimeNodes.map((node) => (
+      {activeRuntimeNodes.map((node) => (
         <motion.span
           key={node.id}
           className="absolute flex h-12 w-12 items-center justify-center rounded-[1rem] border border-white/65 bg-paper/35 text-[10px] font-semibold text-ink/46 shadow-[0_16px_40px_rgba(37,48,42,0.08)] backdrop-blur-md"
@@ -185,6 +188,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const [dayPeriod, setDayPeriod] = useState<DayPeriod>('day')
   const [season, setSeason] = useState<Season>('spring')
   const [reducedMotion, setReducedMotion] = useState(false)
+  const [compactMotion, setCompactMotion] = useState(false)
   const [lastJourney, setLastJourney] = useState<LastJourney | null>(null)
   const [visitedCount, setVisitedCount] = useState(0)
 
@@ -206,7 +210,16 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     setReducedMotion(mediaQuery.matches)
     const onChange = () => setReducedMotion(mediaQuery.matches)
     mediaQuery.addEventListener('change', onChange)
-    return () => mediaQuery.removeEventListener('change', onChange)
+
+    const compactQuery = window.matchMedia('(max-width: 767px)')
+    setCompactMotion(compactQuery.matches)
+    const onCompactChange = () => setCompactMotion(compactQuery.matches)
+    compactQuery.addEventListener('change', onCompactChange)
+
+    return () => {
+      mediaQuery.removeEventListener('change', onChange)
+      compactQuery.removeEventListener('change', onCompactChange)
+    }
   }, [])
 
   useEffect(() => {
@@ -224,10 +237,11 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     dayPeriod,
     season,
     reducedMotion,
+    compactMotion,
     lastJourney,
     visitedCount,
     setReducedMotion,
-  }), [dayPeriod, lastJourney, reducedMotion, season, visitedCount])
+  }), [compactMotion, dayPeriod, lastJourney, reducedMotion, season, visitedCount])
 
   return (
     <WorldRuntimeContext.Provider value={value}>

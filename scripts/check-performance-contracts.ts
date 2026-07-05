@@ -43,6 +43,14 @@ function main() {
     }
   })
 
+  const runtimeProvider = fs.readFileSync(path.join(process.cwd(), 'src/components/world/WorldRuntimeProvider.tsx'), 'utf-8')
+  ;['compactMotion', '(max-width: 767px)', 'activeProjectionLines', 'activeRuntimeNodes'].forEach((token) => {
+    if (!runtimeProvider.includes(token)) errors.push(`WorldRuntimeProvider missing mobile motion budget guard: ${token}`)
+  })
+  if (!runtimeProvider.includes('!runtime.reducedMotion && !runtime.compactMotion')) {
+    errors.push('RuntimeAtmosphere must disable background animation when compactMotion is active')
+  }
+
   if (errors.length > 0) {
     throw new Error(errors.join('\n'))
   }
