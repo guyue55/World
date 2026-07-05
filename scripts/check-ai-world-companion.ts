@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import aiPathExhibitionRecommendations from '../data/domains/ai/ai-path-exhibition-recommendations.json'
 import aiWorldCompanionPlan from '../data/domains/ai/ai-world-companion-plan.json'
+import { getOwnerReviewFlowSummary } from '../src/lib/ai-world-companion'
 
 function exists(file: string) {
   return fs.existsSync(path.join(process.cwd(), file))
@@ -25,6 +26,14 @@ function main() {
     if (item.requiresReview !== true) errors.push(`recommendation missing review: ${item.id}`)
   }
 
+  const ownerReview = getOwnerReviewFlowSummary()
+  if (ownerReview.queueItems < 3) errors.push('owner review queue summary too small')
+  if (ownerReview.notExecuted !== ownerReview.queueItems) errors.push('owner review queue must remain not executed')
+  if (ownerReview.humanRequired !== ownerReview.queueItems) errors.push('owner review queue must require human action')
+  if (ownerReview.reviewRequiredRecommendations < aiPathExhibitionRecommendations.recommendations.length) {
+    errors.push('all AI recommendations must require review and remain not executed')
+  }
+
   ;[
     'src/lib/ai-world-companion.ts',
     'src/components/_legacy/ai-workbench/AiWorldCompanionPanel.tsx',
@@ -32,6 +41,8 @@ function main() {
   ].forEach((file) => {
     if (!exists(file)) errors.push(`missing companion file: ${file}`)
   })
+  const lib = read('src/lib/ai-world-companion.ts')
+  if (!lib.includes('getOwnerReviewFlowSummary')) errors.push('missing owner review flow summary helper')
 
   const page = read('src/app/_legacy/ai-workbench-v2/page.tsx')
   if (!page.includes('AiWorldCompanionPanel') || !page.includes('AiRecommendationPanel')) {
