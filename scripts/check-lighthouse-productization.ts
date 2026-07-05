@@ -13,7 +13,7 @@ function read(file: string) {
 
 function main() {
   const errors: string[] = []
-  const publicNodes = nodes.filter((node) => node.visibility === 'public')
+  const publicNodes = nodes.filter((node) => node.visibility === 'public' || node.visibility === 'semiPublic')
   const publicPaths = paths.filter((item) => item.visibility === 'public')
   const recommendedNodes = publicNodes.filter((node) => node.tags.some((tag) => ['ai', 'world', 'lighthouse', 'agent', 'no-ai', 'atlas', 'space', 'engineering'].includes(tag)))
   const checks = {
@@ -52,6 +52,17 @@ function main() {
   })
   if (page.includes('chat') || page.includes('fetch(')) errors.push('ask page must not pretend to call real-time AI in low-light mode')
   if (lighthouseProductizationContract.pageParts.length < 6) errors.push('lighthouse contract pageParts too small')
+
+  const lighthouseLib = read('src/lib/lighthouse.ts')
+  if (!lighthouseLib.includes('isPublicVisible(node.visibility)')) errors.push('lighthouse recommendations must use shared visibility helper')
+  const surface = read('src/lib/public-world-surfaces.ts')
+  ;['boundaryNotice', 'fallbackActions'].forEach((token) => {
+    if (!surface.includes(token)) errors.push(`lighthouse surface missing ${token}`)
+  })
+  const consoleComponent = read('src/components/ask/PublicLighthouseConsole.tsx')
+  ;['surface.boundaryNotice', 'surface.fallbackActions.map'].forEach((token) => {
+    if (!consoleComponent.includes(token)) errors.push(`lighthouse console missing ${token}`)
+  })
 
   if (errors.length > 0) throw new Error(errors.join('\n'))
   console.log('Lighthouse productization check passed.')

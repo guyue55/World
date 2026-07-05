@@ -58,12 +58,24 @@ export function PublicLighthouseConsole({ surface }: { surface: LighthouseConsol
               ))}
             </div>
             <p data-gsap-reveal className="rounded-[1rem] border border-paper/12 bg-paper/8 p-4 text-xs leading-6 text-paper/58">
-              运行态：{runtime.season} · {runtime.dayPeriod} · 低光模式。
+              {surface.boundaryNotice}
             </p>
           </div>
         </div>
 
         <div className="grid gap-4 p-6 sm:p-8">
+          <div data-gsap-reveal className="rounded-[1.2rem] border border-gold/24 bg-gold/10 p-4">
+            <p className="text-sm font-semibold text-gold">不想问也可以继续</p>
+            <div className="mt-3 grid gap-2 md:grid-cols-3">
+              {surface.fallbackActions.map((action) => (
+                <Link key={action.href} href={action.href} className="rounded-[0.9rem] bg-paper/8 p-3 transition hover:bg-paper/14">
+                  <span className="block text-sm font-semibold">{action.label}</span>
+                  <span className="mt-1 block text-xs leading-5 text-paper/50">{action.description}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <div className="grid gap-4 md:grid-cols-3">
             {surface.questions.map((question) => (
               <article key={question.title} data-gsap-reveal className="rounded-[1.1rem] border border-paper/12 bg-paper/8 p-4">

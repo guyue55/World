@@ -2,6 +2,7 @@ import lighthouseProductizationContract from '../../data/domains/ai/lighthouse-p
 import lighthouseQualityGate from '../../data/domains/ai/lighthouse-quality-gate.json'
 import lighthousePrompts from '../../data/domains/ai/lighthouse-prompts.json'
 import type { Node, Path } from './types'
+import { isPublicVisible } from './visibility'
 
 export type LighthousePrompt = {
   id: string
@@ -27,7 +28,7 @@ export function getLighthouseRecommendedNodes(nodes: Node[], limit = 6) {
   const preferredTags = new Set(['ai', 'world', 'lighthouse', 'agent', 'no-ai', 'atlas', 'space', 'engineering'])
 
   return nodes
-    .filter((node) => node.visibility === 'public')
+    .filter((node) => isPublicVisible(node.visibility))
     .sort((a, b) => {
       const aScore = a.tags.filter((tag) => preferredTags.has(tag)).length + (a.featured?.representative ? 2 : 0)
       const bScore = b.tags.filter((tag) => preferredTags.has(tag)).length + (b.featured?.representative ? 2 : 0)

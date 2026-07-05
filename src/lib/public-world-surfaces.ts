@@ -74,6 +74,12 @@ export type LighthouseNodeSignal = {
 }
 
 export type LighthouseConsoleSurface = {
+  boundaryNotice: string
+  fallbackActions: Array<{
+    href: string
+    label: string
+    description: string
+  }>
   questions: LighthouseQuestionSignal[]
   paths: LighthousePathSignal[]
   nodes: LighthouseNodeSignal[]
@@ -428,6 +434,24 @@ export function buildLighthouseConsoleSurface({
   nodes: Node[]
 }): LighthouseConsoleSurface {
   return {
+    boundaryNotice: '灯塔当前只读公开索引：不调用实时 AI、不读取私密内容、不写入世界、不替造物主决定公开或删除。',
+    fallbackActions: [
+      {
+        href: '/paths',
+        label: '按路径走',
+        description: '不提问也能用精选路径进入世界。',
+      },
+      {
+        href: '/archive',
+        label: '去档案馆搜',
+        description: '直接检索公开节点、标签和摘要。',
+      },
+      {
+        href: '/atlas',
+        label: '回地图看全貌',
+        description: '从公开区域重新选择方向。',
+      },
+    ],
     questions,
     paths: paths.map((path) => ({
       id: path.id,
