@@ -317,3 +317,33 @@ cleanProductionReady: false
 ```
 
 原因：本地 HTTP smoke 只能证明本地 production server 行为，不能替代真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。
+
+## WorldOS 1.0 RC8 / 本地局域网 RC
+
+RC8 仍不新增公开功能，也不改变外部生产状态。本轮把当前可接受的部署边界收束为 **本地启动 production server，同一局域网内通过局域网 IP 访问**。
+
+新增命令：
+
+```bash
+npm run check:lan-local
+npm run smoke:lan-local
+```
+
+使用方式：
+
+```text
+check:lan-local  只检查本地局域网 RC 的注册表、脚本、命令和文档口径
+smoke:lan-local  启动 next start -H 0.0.0.0，通过局域网 IP 执行 HTTP 与浏览器运行时巡检
+```
+
+`check:rc:full` 已包含 `smoke:runtime-local` 和 `smoke:lan-local`，适合提交、打包、交付前执行。LAN RC 会记录桌面、移动端低动效、正文可读性、console/page error、网络失败、横向溢出和截图证据。
+
+RC8 仍必须保持：
+
+```text
+productionLive: false
+releaseReady: false
+cleanProductionReady: false
+```
+
+原因：本地局域网 RC 只能证明同网访问、本地 production server、浏览器渲染和权限 guard；不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。

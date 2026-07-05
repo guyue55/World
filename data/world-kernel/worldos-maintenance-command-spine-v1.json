@@ -1,7 +1,7 @@
 {
   "name": "WorldOS 长期维护命令脊柱 v1",
   "updatedAt": "2026-07-04",
-  "source": "WorldOS 1.0 RC7 local runtime smoke follow-up",
+  "source": "WorldOS 1.0 RC8 local LAN RC follow-up",
   "principle": "默认入口必须短、稳定、可复跑；历史阶段脚本保留为 reference，不再作为日常开发路径。",
   "superpowersWorkflow": {
     "skillsApplied": [
@@ -52,8 +52,8 @@
     {
       "id": "rc-full",
       "script": "check:rc:full",
-      "command": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run audit:report",
-      "purpose": "本地完整 RC 门禁：RC 快检、构建产物验证、本地 production HTTP smoke、审计报告。",
+      "command": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run smoke:lan-local && npm run audit:report",
+      "purpose": "本地完整 RC 门禁：RC 快检、构建产物验证、本地 production HTTP smoke、局域网浏览器 smoke、审计报告。",
       "stageLikeAllowed": false
     },
     {
@@ -75,6 +75,20 @@
       "script": "smoke:runtime-local",
       "command": "node scripts/run-worldos-local-runtime-smoke.mjs",
       "purpose": "启动本地 Next production server 并执行真实 HTTP smoke。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "lan-local-check",
+      "script": "check:lan-local",
+      "command": "node scripts/check-worldos-local-lan-rc.mjs",
+      "purpose": "验证本地局域网 RC 注册表、脚本、命令、文档和生产状态诚实性。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "lan-local-smoke",
+      "script": "smoke:lan-local",
+      "command": "node scripts/run-worldos-local-lan-rc.mjs",
+      "purpose": "绑定 0.0.0.0 启动本地 production server，并通过局域网 IP 执行 HTTP 与浏览器运行时验收。",
       "stageLikeAllowed": false
     }
   ],
@@ -105,7 +119,7 @@
       "commands": [
         "npm run check:rc:full"
       ],
-      "when": "打包、交付、提交前的本地完整候选发布验证；包含本地 production HTTP smoke。"
+      "when": "打包、交付、提交前的本地完整候选发布验证；包含本地 production HTTP smoke 和局域网浏览器 smoke。"
     },
     {
       "id": "local-runtime-smoke",
@@ -113,6 +127,14 @@
         "npm run smoke:runtime-local"
       ],
       "when": "已经生成 .next 关键构建产物后，验证本地 production server 的真实 HTTP 行为。"
+    },
+    {
+      "id": "local-lan-rc",
+      "commands": [
+        "npm run check:lan-local",
+        "npm run smoke:lan-local"
+      ],
+      "when": "当前只做本地局域网部署时，验证同网 IP 访问、浏览器运行时、移动端低动效和 guard。"
     },
     {
       "id": "external-release",
@@ -138,7 +160,9 @@
     "CONTRIBUTING.md",
     "docs/10-development-history/world-kernel/worldos-1-rc6-maintenance-command-spine.md",
     "data/world-kernel/worldos-local-runtime-smoke-v1.json",
-    "docs/10-development-history/world-kernel/worldos-1-rc7-local-runtime-smoke.md"
+    "docs/10-development-history/world-kernel/worldos-1-rc7-local-runtime-smoke.md",
+    "data/world-kernel/worldos-local-lan-rc-v1.json",
+    "docs/10-development-history/world-kernel/worldos-1-rc8-local-lan-rc.md"
   ],
   "stableEntrypoints": [
     "check:daily",
@@ -154,7 +178,9 @@
     "check:rc:full",
     "audit:project",
     "check:runtime-local",
-    "smoke:runtime-local"
+    "smoke:runtime-local",
+    "check:lan-local",
+    "smoke:lan-local"
   ],
   "externalEvidenceBlockers": [
     "Preview URL",

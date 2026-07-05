@@ -17,9 +17,12 @@ const requiredFiles = [
   'data/world-kernel/worldos-maintenance-command-spine-v1.json',
   'data/world-kernel/worldos-1-rc6-maintenance-command-spine-v1.json',
   'data/world-kernel/worldos-1-rc7-local-runtime-smoke-v1.json',
+  'data/world-kernel/worldos-1-rc8-local-lan-rc-v1.json',
   'data/world-kernel/worldos-local-runtime-smoke-v1.json',
+  'data/world-kernel/worldos-local-lan-rc-v1.json',
   'docs/10-development-history/world-kernel/worldos-1-rc6-maintenance-command-spine.md',
   'docs/10-development-history/world-kernel/worldos-1-rc7-local-runtime-smoke.md',
+  'docs/10-development-history/world-kernel/worldos-1-rc8-local-lan-rc.md',
   'README.md',
   'CONTRIBUTING.md',
   'package.json',
@@ -31,6 +34,7 @@ if (!failures.length) {
   const contract = json('data/world-kernel/worldos-maintenance-command-spine-v1.json')
   const report = json('data/world-kernel/worldos-1-rc6-maintenance-command-spine-v1.json')
   const rc7Report = json('data/world-kernel/worldos-1-rc7-local-runtime-smoke-v1.json')
+  const rc8Report = json('data/world-kernel/worldos-1-rc8-local-lan-rc-v1.json')
   const pkg = json('package.json')
   const readme = read('README.md')
   const contributing = read('CONTRIBUTING.md')
@@ -41,6 +45,8 @@ if (!failures.length) {
   if (!['pass', 'rc6-maintenance-command-spine-completed-external-deploy-still-blocked'].includes(report.status)) failures.push('RC6 报告状态不正确')
   if (rc7Report.auditName !== 'WorldOS 1.0 RC7 本地运行时 HTTP Smoke 复核') failures.push('RC7 报告名称不正确')
   if (!String(rc7Report.status ?? '').includes('rc7-local-runtime-smoke-completed')) failures.push('RC7 报告状态不正确')
+  if (rc8Report.auditName !== 'WorldOS 1.0 RC8 本地局域网 RC 验收') failures.push('RC8 报告名称不正确')
+  if (!String(rc8Report.status ?? '').includes('rc8-local-lan-rc')) failures.push('RC8 报告状态不正确')
 
   for (const [key, value] of Object.entries(contract.releaseStates ?? {})) {
     if (key === 'reason') continue
@@ -70,10 +76,12 @@ if (!failures.length) {
   if (!scripts['check:boundary']?.includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
   if (!scripts['check:rc:full']?.includes('build:kernel-release') || !scripts['check:rc:full']?.includes('build:verify-artifacts')) failures.push('check:rc:full 必须包含构建产物验证链路')
   if (!scripts['check:rc:full']?.includes('smoke:runtime-local')) failures.push('check:rc:full 必须包含本地运行时 HTTP smoke')
+  if (!scripts['check:rc:full']?.includes('smoke:lan-local')) failures.push('check:rc:full 必须包含本地局域网 RC smoke')
+  if (!scripts['check:release:rc']?.includes('check:lan-local')) failures.push('check:release:rc 必须包含本地局域网 RC 静态门禁')
   if (scripts['check:rc'] !== 'npm run check:release:rc') failures.push('check:rc 必须保持为 check:release:rc 别名')
   if (scripts['check:rc:fast'] !== 'npm run check:release:rc') failures.push('check:rc:fast 必须保持为 check:release:rc 别名')
 
-  for (const token of ['WorldOS 1.0 RC6', 'WorldOS 1.0 RC7', 'check:daily', 'check:boundary', 'check:rc:full', 'smoke:runtime-local']) {
+  for (const token of ['WorldOS 1.0 RC6', 'WorldOS 1.0 RC7', 'WorldOS 1.0 RC8', 'check:daily', 'check:boundary', 'check:rc:full', 'smoke:runtime-local', 'smoke:lan-local']) {
     if (!readme.includes(token)) failures.push(`README 缺少 ${token}`)
     if (!contributing.includes(token)) failures.push(`CONTRIBUTING 缺少 ${token}`)
   }

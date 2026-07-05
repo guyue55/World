@@ -1,0 +1,158 @@
+{
+  "name": "WorldOS 本地局域网 RC 验收 v1",
+  "updatedAt": "2026-07-05",
+  "source": "阶段 8：本地局域网发布候选真实验收",
+  "principle": "当前仍以本地部署为准，但必须通过局域网 IP 而不是只通过 localhost 证明公开世界可被同网设备访问；动态体验必须可降级，权限仍由服务端守门。",
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地局域网 RC 只能证明同网访问、本地 production server、浏览器渲染和权限 guard；不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。"
+  },
+  "server": {
+    "command": "next start",
+    "bindHost": "0.0.0.0",
+    "defaultPort": 4320,
+    "readinessPath": "/",
+    "startupTimeoutMs": 30000,
+    "requestTimeoutMs": 10000
+  },
+  "browser": {
+    "chromeDebugPort": 9334,
+    "startupTimeoutMs": 15000,
+    "navigationTimeoutMs": 20000,
+    "screenshotDir": "docs/90-archive/reports/worldos-local-lan-rc",
+    "viewports": [
+      {
+        "id": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "deviceScaleFactor": 1,
+        "mobile": false,
+        "reducedMotion": false
+      },
+      {
+        "id": "mobile-reduced-motion",
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 2,
+        "mobile": true,
+        "reducedMotion": true
+      }
+    ]
+  },
+  "publicHtmlRoutes": [
+    "/",
+    "/atlas",
+    "/timeline",
+    "/archive",
+    "/paths",
+    "/ask",
+    "/status",
+    "/node/world-manifesto"
+  ],
+  "staticAssetRoutes": [
+    {
+      "route": "/world-index.json",
+      "contentTypeIncludes": "application/json"
+    },
+    {
+      "route": "/world-manifest.json",
+      "contentTypeIncludes": "application/json"
+    },
+    {
+      "route": "/robots.txt",
+      "contentTypeIncludes": "text/plain"
+    },
+    {
+      "route": "/sitemap.xml",
+      "contentTypeIncludes": "xml"
+    }
+  ],
+  "legacyRedirectRoutes": [
+    {
+      "route": "/world",
+      "status": 308,
+      "location": "/atlas"
+    },
+    {
+      "route": "/world-map",
+      "status": 308,
+      "location": "/atlas"
+    },
+    {
+      "route": "/time-river",
+      "status": 308,
+      "location": "/timeline"
+    },
+    {
+      "route": "/lighthouse",
+      "status": 308,
+      "location": "/ask"
+    }
+  ],
+  "guardedRoutes": [
+    {
+      "route": "/r4-creator",
+      "status": 308,
+      "location": "/forbidden",
+      "reason": "创世台入口在没有真实 owner auth 前不得公开。"
+    },
+    {
+      "route": "/r6-service",
+      "status": 308,
+      "location": "/forbidden",
+      "reason": "服务化入口在没有真实后端权限前不得公开。"
+    },
+    {
+      "route": "/private-archive",
+      "status": 307,
+      "location": "/forbidden",
+      "reason": "私密档案不允许依赖前端显隐。"
+    }
+  ],
+  "negativeRoutes": [
+    {
+      "route": "/unknown-worldos-lan-rc-route",
+      "status": 404
+    }
+  ],
+  "browserRoutes": [
+    "/",
+    "/atlas",
+    "/timeline",
+    "/archive",
+    "/paths",
+    "/ask",
+    "/status",
+    "/node/world-manifesto"
+  ],
+  "browserExpectations": {
+    "minBodyTextLength": 500,
+    "mustHaveH1": true,
+    "mustNotHideBody": true,
+    "mustHaveNoPageErrors": true,
+    "mustHaveNoConsoleErrors": true,
+    "mustHaveNoUncanceledNetworkFailures": true,
+    "mobileMustNotOverflowX": true
+  },
+  "evidenceOutput": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+  "logOutput": "reports/worldos-local-lan-rc-next-start.log",
+  "chromeLogOutput": "reports/worldos-local-lan-rc-chrome.log",
+  "policies": {
+    "mustUseLanIp": true,
+    "mustBindAllInterfaces": true,
+    "mustStartProductionServer": true,
+    "mustRunBrowserRuntimeCheck": true,
+    "mustCaptureScreenshots": true,
+    "mustNotMarkProductionLive": true,
+    "frontendVisibilityIsNotPermission": true,
+    "lanRcDoesNotReplaceExternalSmoke": true
+  },
+  "documentationTargets": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "docs/10-development-history/world-kernel/worldos-1-rc8-local-lan-rc.md",
+    "docs/superpowers/plans/2026-07-05-worldos-local-lan-rc.md"
+  ]
+}

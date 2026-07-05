@@ -48,6 +48,12 @@
       "script": "smoke:runtime-local",
       "description": "本地 production server HTTP smoke，验证核心公开路由、静态文件、redirect 与 guard。",
       "recommendedUse": "仅在 .next 关键构建产物已生成后执行；不替代外部 Preview / Production smoke。"
+    },
+    {
+      "id": "runtime-lan-smoke",
+      "script": "smoke:lan-local",
+      "description": "本地局域网 RC smoke，通过局域网 IP 验证公开路由、guard、浏览器运行时、移动端低动效和截图证据。",
+      "recommendedUse": "仅在 .next 关键构建产物已生成后执行；适用于当前仍以本地局域网访问为准的 RC 验收。"
     }
   ],
   "recommendedDailyCommands": [
@@ -57,7 +63,8 @@
   "releaseCandidateCommands": [
     "npm run check:rc:fast",
     "npm run check:rc:full",
-    "npm run smoke:runtime-local"
+    "npm run smoke:runtime-local",
+    "npm run smoke:lan-local"
   ],
   "legacyPolicy": {
     "allowExistingStageScripts": true,

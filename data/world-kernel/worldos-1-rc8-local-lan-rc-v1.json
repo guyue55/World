@@ -1,0 +1,39 @@
+{
+  "auditName": "WorldOS 1.0 RC8 本地局域网 RC 验收",
+  "updatedAt": "2026-07-05",
+  "status": "rc8-local-lan-rc-planned-production-still-blocked",
+  "scope": "不新增公开功能；补齐本地局域网 IP 访问、浏览器运行时、移动端低动效和证据报告门禁。",
+  "superpowersWorkflow": {
+    "skillsApplied": [
+      "writing-plans",
+      "executing-plans",
+      "systematic-debugging",
+      "verification-before-completion"
+    ],
+    "executionMode": "inline-execution-with-local-lan-runtime-evidence"
+  },
+  "planned": [
+    "新增本地局域网 RC 注册表",
+    "新增局域网 IP production server smoke 脚本",
+    "新增 Chrome DevTools 浏览器运行时巡检",
+    "新增移动端低动效与横向溢出检查",
+    "新增本地局域网 RC 静态门禁",
+    "将局域网 RC 接入本地完整候选发布链路"
+  ],
+  "runtimeCoverage": {
+    "publicHtmlRoutes": 8,
+    "staticAssetRoutes": 4,
+    "legacyRedirectRoutes": 4,
+    "guardedRoutes": 3,
+    "negativeRoutes": 1,
+    "browserRoutes": 8,
+    "viewports": 2
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地局域网 RC 只能证明同网设备可访问当前本地 production server；真实外部 Preview / Production、HTTPS、Web Vitals、人工签收与回滚演练仍未完成。"
+  },
+  "nextRecommendedStep": "先完成 npm run smoke:lan-local 并归档报告；若仍只在本地局域网运行，则继续保持 productionLive=false。"
+}

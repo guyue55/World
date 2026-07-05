@@ -1,0 +1,681 @@
+{
+  "generatedAt": "2026-07-05T16:12:15.336Z",
+  "status": "passed",
+  "lanIp": "172.30.111.222",
+  "baseUrl": "http://172.30.111.222:4320",
+  "bindHost": "0.0.0.0",
+  "port": 4320,
+  "registry": "data/world-kernel/worldos-local-lan-rc-v1.json",
+  "logPath": "reports/worldos-local-lan-rc-next-start.log",
+  "chromeLogPath": "reports/worldos-local-lan-rc-chrome.log",
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "reason": "本地局域网 RC 只能证明同网访问、本地 production server、浏览器渲染和权限 guard；不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。"
+  },
+  "checks": [
+    {
+      "kind": "public-html",
+      "route": "/",
+      "url": "http://172.30.111.222:4320/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 128,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/atlas",
+      "url": "http://172.30.111.222:4320/atlas",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 172,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/timeline",
+      "url": "http://172.30.111.222:4320/timeline",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 38,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/archive",
+      "url": "http://172.30.111.222:4320/archive",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 110,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/paths",
+      "url": "http://172.30.111.222:4320/paths",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 92,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/ask",
+      "url": "http://172.30.111.222:4320/ask",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 143,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/status",
+      "url": "http://172.30.111.222:4320/status",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 50,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "public-html",
+      "route": "/node/world-manifesto",
+      "url": "http://172.30.111.222:4320/node/world-manifesto",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 57,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentType": "text/html"
+      },
+      "passed": true
+    },
+    {
+      "kind": "static-asset",
+      "route": "/world-index.json",
+      "url": "http://172.30.111.222:4320/world-index.json",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "location": "",
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-05T10:31:08.352Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "durationMs": 16,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentTypeIncludes": "application/json"
+      },
+      "passed": true
+    },
+    {
+      "kind": "static-asset",
+      "route": "/world-manifest.json",
+      "url": "http://172.30.111.222:4320/world-manifest.json",
+      "status": 200,
+      "contentType": "application/json; charset=UTF-8",
+      "location": "",
+      "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"/paths\",\n    \"/ask\",\n    \"/manifesto\"\n  ",
+      "durationMs": 6,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentTypeIncludes": "application/json"
+      },
+      "passed": true
+    },
+    {
+      "kind": "static-asset",
+      "route": "/robots.txt",
+      "url": "http://172.30.111.222:4320/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=UTF-8",
+      "location": "",
+      "bodyPreview": "User-agent: *\nAllow: /\n\n# 古月浮屿 V1 当前仅发布公开世界层。\n# 私密、家庭、伴侣、封存、静默内容不得进入 public build。\nSitemap: /sitemap.xml\n",
+      "durationMs": 3,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentTypeIncludes": "text/plain"
+      },
+      "passed": true
+    },
+    {
+      "kind": "static-asset",
+      "route": "/sitemap.xml",
+      "url": "http://172.30.111.222:4320/sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml",
+      "location": "",
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-05T16:11:30.871Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "durationMs": 36,
+      "ok": true,
+      "expected": {
+        "status": 200,
+        "contentTypeIncludes": "xml"
+      },
+      "passed": true
+    },
+    {
+      "kind": "legacy-redirect",
+      "route": "/world",
+      "url": "http://172.30.111.222:4320/world",
+      "status": 308,
+      "contentType": "",
+      "location": "/atlas",
+      "bodyPreview": "/atlas",
+      "durationMs": 3,
+      "ok": true,
+      "expected": {
+        "status": 308,
+        "location": "/atlas"
+      },
+      "passed": true
+    },
+    {
+      "kind": "legacy-redirect",
+      "route": "/world-map",
+      "url": "http://172.30.111.222:4320/world-map",
+      "status": 308,
+      "contentType": "",
+      "location": "/atlas",
+      "bodyPreview": "/atlas",
+      "durationMs": 1,
+      "ok": true,
+      "expected": {
+        "status": 308,
+        "location": "/atlas"
+      },
+      "passed": true
+    },
+    {
+      "kind": "legacy-redirect",
+      "route": "/time-river",
+      "url": "http://172.30.111.222:4320/time-river",
+      "status": 308,
+      "contentType": "",
+      "location": "/timeline",
+      "bodyPreview": "/timeline",
+      "durationMs": 2,
+      "ok": true,
+      "expected": {
+        "status": 308,
+        "location": "/timeline"
+      },
+      "passed": true
+    },
+    {
+      "kind": "legacy-redirect",
+      "route": "/lighthouse",
+      "url": "http://172.30.111.222:4320/lighthouse",
+      "status": 308,
+      "contentType": "",
+      "location": "/ask",
+      "bodyPreview": "/ask",
+      "durationMs": 2,
+      "ok": true,
+      "expected": {
+        "status": 308,
+        "location": "/ask"
+      },
+      "passed": true
+    },
+    {
+      "kind": "guarded-route",
+      "route": "/r4-creator",
+      "url": "http://172.30.111.222:4320/r4-creator",
+      "status": 308,
+      "contentType": "",
+      "location": "/forbidden",
+      "bodyPreview": "/forbidden",
+      "durationMs": 1,
+      "ok": true,
+      "expected": {
+        "status": 308,
+        "location": "/forbidden"
+      },
+      "passed": true,
+      "reason": "创世台入口在没有真实 owner auth 前不得公开。"
+    },
+    {
+      "kind": "guarded-route",
+      "route": "/r6-service",
+      "url": "http://172.30.111.222:4320/r6-service",
+      "status": 308,
+      "contentType": "",
+      "location": "/forbidden",
+      "bodyPreview": "/forbidden",
+      "durationMs": 4,
+      "ok": true,
+      "expected": {
+        "status": 308,
+        "location": "/forbidden"
+      },
+      "passed": true,
+      "reason": "服务化入口在没有真实后端权限前不得公开。"
+    },
+    {
+      "kind": "guarded-route",
+      "route": "/private-archive",
+      "url": "http://172.30.111.222:4320/private-archive",
+      "status": 307,
+      "contentType": "",
+      "location": "/forbidden",
+      "bodyPreview": "/forbidden",
+      "durationMs": 4,
+      "ok": true,
+      "expected": {
+        "status": 307,
+        "location": "/forbidden"
+      },
+      "passed": true,
+      "reason": "私密档案不允许依赖前端显隐。"
+    },
+    {
+      "kind": "negative-route",
+      "route": "/unknown-worldos-lan-rc-route",
+      "url": "http://172.30.111.222:4320/unknown-worldos-lan-rc-route",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "location": "",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/f82d091b90f22057.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 15,
+      "ok": true,
+      "expected": {
+        "status": 404
+      },
+      "passed": true
+    }
+  ],
+  "browserChecks": [
+    {
+      "viewport": "desktop",
+      "route": "/",
+      "url": "http://172.30.111.222:4320/",
+      "metrics": {
+        "title": "古月浮屿｜一张书桌连接星河",
+        "h1": "一张书桌，连接一片星河。",
+        "textLength": 2539,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 古月浮屿 · 公开世界入口 一张书桌，连接一片星河。 这是一个正在生长的个人数字世界。技术、生活、项目、记忆与 AI，在这里被安放、连接、沉淀与演化。 我第一次来 我想看全貌 我想直接找内容 我不知道看什么 上线状态 入口清澈，深处浩瀚 对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。 入口 地图 时间 路径 灯塔 检索 runtime://public-world live 世界地图 从区域和公开节点看全貌，再进入具体星域。 时间流 看世界最近如何生长，哪些事件推动了节点和区域。 8 分钟抵达古月浮屿 给第一",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 51
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/atlas",
+      "url": "http://172.30.111.222:4320/atlas",
+      "metrics": {
+        "title": "世界地图｜古月浮屿",
+        "h1": "世界地图",
+        "textLength": 9020,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 世界地图 你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。 我在哪里 这里是什么 能去哪 如何回去 沿时间流继续 地图 档案 路径 灯塔 ATLAS 世界地图 这里是古月浮屿的空间入口。先看五个主区域，再进入节点；想快速查找时，可以切换到档案馆。 区域 8 公开区域 7 公开节点 52 区域星线 8 ✦ 创世原点 13 个公开节点 · 公开星域 ✧ 技术星域 8 个公开节点 · 公开星域 ◈ 产品工坊 6 个公开节点 · 公开星域 ☁ 灵感云层 2 个公开节点 · 公开星域 ≈ 记忆湖 3 个公",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 109
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/timeline",
+      "url": "http://172.30.111.222:4320/timeline",
+      "metrics": {
+        "title": "时间流｜古月浮屿",
+        "h1": "时间流",
+        "textLength": 3202,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 时间流 这里不是调试日志，而是公开世界的成长记录。私密事件不会进入这条公开时间流。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 TIME RIVER 时间流 这里记录世界如何生长：一颗种子被点亮、一个项目进入工坊、一条法则被写入宪章，都会在时间流中留下痕迹。 运行中 春 · 萌发 灯塔低光 公开事件 21 事件类型 7 行动者 2 关联节点 19 关联区域 8 LIVE TIME RIVER 时间流开始有水位 最近的公开事件被折成一条可观察的河道：更新、发布、区域苏醒会在这里形成节奏。 7 近期事件入河 3",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 31
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/archive",
+      "url": "http://172.30.111.222:4320/archive",
+      "metrics": {
+        "title": "档案馆｜古月浮屿",
+        "h1": "档案馆",
+        "textLength": 7335,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 档案馆 当你不想漫游时，在这里直接查找公开文章、项目、灵感和归档内容。档案馆只读取公开索引，不展示私密层。 我在哪里 这里是什么 能去哪 如何回去 切回世界地图 时间 档案 路径 灯塔 LIVE ARCHIVE 不想漫游时，直接检索公开世界 档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。 只读公开索引 · 不含私密层 搜索和筛选只作用于服务端已经放行的公开节点。 52 公开节点 可被检索和进入 7 主区域 用于空间筛选 10 热门标签 用于快速缩小范围 12 代表节点 适合第一次阅读 ",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 114
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/paths",
+      "url": "http://172.30.111.222:4320/paths",
+      "metrics": {
+        "title": "精选路径｜古月浮屿",
+        "h1": "精选路径",
+        "textLength": 892,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 精选路径 这里把节点排成可理解的行走路线。路径不是分类，而是降低进入门槛的导游层。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 GUIDED PATHS 精选路径 路径不是分类，而是为不同旅人准备的行走路线。它把星体排成可以理解、可以继续走下去的顺序。 第一次来 3 条路径 不用先理解全部世界，按短路径完成一次抵达。 技术与 AI 2 条路径 从工程、AI、Agent 和工具链进入技术星域。 生活与记忆 2 条路径 从记忆、片段和低光状态进入柔软的一面。 创作者视角 4 条路径 理解世界如何被维护、策展和长",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 30
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/ask",
+      "url": "http://172.30.111.222:4320/ask",
+      "metrics": {
+        "title": "AI 灯塔｜古月浮屿",
+        "h1": "AI 灯塔",
+        "textLength": 1367,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 AI 灯塔 灯塔当前以低光模式运行：只读公开索引，只做导览和路径推荐，不修改节点、不写入数据、不读取私密内容。 我在哪里 这里是什么 能去哪 如何回去 打开世界地图 时间 档案 路径 灯塔 LIGHTHOUSE 灯塔不是太阳 它只负责照亮路径：解释当前位置、推荐下一步、把访问者带回世界地图。 LOW LIGHT CONSOLE 灯塔只照路，不替你决定 当前控制台只读取公开索引，输出导览、路径和节点建议。它不会写入世界，也不会读取私密内容。 3 公开问题 3 推荐路径 4 推荐节点 灯塔当前只读公开索引：不调用实时 AI、不读取私密内容、不写",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 39
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/status",
+      "url": "http://172.30.111.222:4320/status",
+      "metrics": {
+        "title": "世界状态｜古月浮屿",
+        "h1": "世界状态",
+        "textLength": 1169,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 世界状态 这里只展示公开运行态需要知道的状态，不暴露内部阶段页、审计队列或调试面板。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 运行态 世界可以被进入，但上线证据仍需真实环境补齐。 当前代码已经完成产品入口收束、公开索引守门和本地构建产物验证。这里不会伪装为 productionLive，真实外部 URL、线上 smoke test、域名 HTTPS 与人工签收仍需要在部署平台完成。 公开入口 已收束 主导航只保留入口、地图、时间、档案、灯塔与宪章。 权限边界 已守门 私密、家庭、保险箱内容不进入公开索引",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 26
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png",
+      "passed": true
+    },
+    {
+      "viewport": "desktop",
+      "route": "/node/world-manifesto",
+      "url": "http://172.30.111.222:4320/node/world-manifesto",
+      "metrics": {
+        "title": "创世初光｜古月浮屿世界宣言｜古月浮屿",
+        "h1": "古月浮屿世界宣言",
+        "textLength": 1156,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 古月浮屿 / 世界地图 / 创世原点 / 创世初光 NODE OPENING 创世初光 节点已进入公开阅读态。先确认位置、阶段和阅读节奏，再进入正文。 创世原点 所在星域 bloom 生命阶段 约 1 分钟 阅读节奏 生命阶段：开花 article 创世原点 约 1 分钟 古月浮屿世界宣言 创世初光 一张书桌连接星河。这里不是传统博客，而是一个正在生长的个人数字世界。 #world #manifesto #origin 阅读时间：约 1 分钟 目录段落：0 正文宽度：68-76ch 移动端：正文优先 古月浮屿世界宣言 一张书桌连接星河。 这里不是一个",
+        "hiddenBody": false,
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowX": false,
+        "interactiveCount": 36
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/",
+      "url": "http://172.30.111.222:4320/",
+      "metrics": {
+        "title": "古月浮屿｜一张书桌连接星河",
+        "h1": "一张书桌，连接一片星河。",
+        "textLength": 2440,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 古月浮屿 · 公开世界入口 一张书桌，连接一片星河。 这是一个正在生长的个人数字世界。技术、生活、项目、记忆与 AI，在这里被安放、连接、沉淀与演化。 我第一次来 我想看全貌 我想直接找内容 我不知道看什么 上线状态 入口清澈，深处浩瀚 对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。 入口 地图 时间 路径 灯塔 检索 runtime://public-world live 世界地图 从区域和公开节点看全貌，再进入具体星域。 时间流 看世界最近如何生长，哪些事件推动了节点和区域。 8 分钟抵达古月浮屿 给第一次来访者的短路径：世界宣言、地图、技术、项",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 53
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/atlas",
+      "url": "http://172.30.111.222:4320/atlas",
+      "metrics": {
+        "title": "世界地图｜古月浮屿",
+        "h1": "世界地图",
+        "textLength": 8936,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 你在这里 世界地图 你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。 我在哪里 这里是什么 能去哪 如何回去 沿时间流继续 地图 档案 路径 灯塔 ATLAS 世界地图 这里是古月浮屿的空间入口。先看五个主区域，再进入节点；想快速查找时，可以切换到档案馆。 区域 8 公开区域 7 公开节点 52 区域星线 8 ✦ 创世原点 13 个公开节点 · 公开星域 ✧ 技术星域 8 个公开节点 · 公开星域 ◈ 产品工坊 6 个公开节点 · 公开星域 ☁ 灵感云层 2 个公开节点 · 公开星域 ≈ 记忆湖 3 个公开节点 · 有限公开 ⌁ 时间河 5 个公",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 109
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/timeline",
+      "url": "http://172.30.111.222:4320/timeline",
+      "metrics": {
+        "title": "时间流｜古月浮屿",
+        "h1": "时间流",
+        "textLength": 3116,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 你在这里 时间流 这里不是调试日志，而是公开世界的成长记录。私密事件不会进入这条公开时间流。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 TIME RIVER 时间流 这里记录世界如何生长：一颗种子被点亮、一个项目进入工坊、一条法则被写入宪章，都会在时间流中留下痕迹。 运行中 春 · 萌发 灯塔低光 公开事件 21 事件类型 7 行动者 2 关联节点 19 关联区域 8 LIVE TIME RIVER 时间流开始有水位 最近的公开事件被折成一条可观察的河道：更新、发布、区域苏醒会在这里形成节奏。 7 近期事件入河 11 本地访问脉冲 2026.07.04 R",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 31
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/archive",
+      "url": "http://172.30.111.222:4320/archive",
+      "metrics": {
+        "title": "档案馆｜古月浮屿",
+        "h1": "档案馆",
+        "textLength": 7250,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 你在这里 档案馆 当你不想漫游时，在这里直接查找公开文章、项目、灵感和归档内容。档案馆只读取公开索引，不展示私密层。 我在哪里 这里是什么 能去哪 如何回去 切回世界地图 时间 档案 路径 灯塔 LIVE ARCHIVE 不想漫游时，直接检索公开世界 档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。 只读公开索引 · 不含私密层 搜索和筛选只作用于服务端已经放行的公开节点。 52 公开节点 可被检索和进入 7 主区域 用于空间筛选 10 热门标签 用于快速缩小范围 12 代表节点 适合第一次阅读 热门标签 #archive · 6 #ai",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 114
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/paths",
+      "url": "http://172.30.111.222:4320/paths",
+      "metrics": {
+        "title": "精选路径｜古月浮屿",
+        "h1": "精选路径",
+        "textLength": 809,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 你在这里 精选路径 这里把节点排成可理解的行走路线。路径不是分类，而是降低进入门槛的导游层。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 GUIDED PATHS 精选路径 路径不是分类，而是为不同旅人准备的行走路线。它把星体排成可以理解、可以继续走下去的顺序。 第一次来 3 条路径 不用先理解全部世界，按短路径完成一次抵达。 技术与 AI 2 条路径 从工程、AI、Agent 和工具链进入技术星域。 生活与记忆 2 条路径 从记忆、片段和低光状态进入柔软的一面。 创作者视角 4 条路径 理解世界如何被维护、策展和长期演化。 深潜结构 2 条路径 适合想看清",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 30
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/ask",
+      "url": "http://172.30.111.222:4320/ask",
+      "metrics": {
+        "title": "AI 灯塔｜古月浮屿",
+        "h1": "AI 灯塔",
+        "textLength": 1285,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 你在这里 AI 灯塔 灯塔当前以低光模式运行：只读公开索引，只做导览和路径推荐，不修改节点、不写入数据、不读取私密内容。 我在哪里 这里是什么 能去哪 如何回去 打开世界地图 时间 档案 路径 灯塔 LIGHTHOUSE 灯塔不是太阳 它只负责照亮路径：解释当前位置、推荐下一步、把访问者带回世界地图。 LOW LIGHT CONSOLE 灯塔只照路，不替你决定 当前控制台只读取公开索引，输出导览、路径和节点建议。它不会写入世界，也不会读取私密内容。 3 公开问题 3 推荐路径 4 推荐节点 灯塔当前只读公开索引：不调用实时 AI、不读取私密内容、不写入世界、不替造物主决定公开或删除。 不想问",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 39
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/status",
+      "url": "http://172.30.111.222:4320/status",
+      "metrics": {
+        "title": "世界状态｜古月浮屿",
+        "h1": "世界状态",
+        "textLength": 1083,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 你在这里 世界状态 这里只展示公开运行态需要知道的状态，不暴露内部阶段页、审计队列或调试面板。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 运行态 世界可以被进入，但上线证据仍需真实环境补齐。 当前代码已经完成产品入口收束、公开索引守门和本地构建产物验证。这里不会伪装为 productionLive，真实外部 URL、线上 smoke test、域名 HTTPS 与人工签收仍需要在部署平台完成。 公开入口 已收束 主导航只保留入口、地图、时间、档案、灯塔与宪章。 权限边界 已守门 私密、家庭、保险箱内容不进入公开索引；旧阶段入口由 middleware 收束",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 26
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png",
+      "passed": true
+    },
+    {
+      "viewport": "mobile-reduced-motion",
+      "route": "/node/world-manifesto",
+      "url": "http://172.30.111.222:4320/node/world-manifesto",
+      "metrics": {
+        "title": "创世初光｜古月浮屿世界宣言｜古月浮屿",
+        "h1": "古月浮屿世界宣言",
+        "textLength": 1055,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 古月浮屿 / 世界地图 / 创世原点 / 创世初光 NODE OPENING 创世初光 节点已进入公开阅读态。先确认位置、阶段和阅读节奏，再进入正文。 创世原点 所在星域 bloom 生命阶段 约 1 分钟 阅读节奏 生命阶段：开花 article 创世原点 约 1 分钟 古月浮屿世界宣言 创世初光 一张书桌连接星河。这里不是传统博客，而是一个正在生长的个人数字世界。 #world #manifesto #origin 阅读时间：约 1 分钟 目录段落：0 正文宽度：68-76ch 移动端：正文优先 NODE PASSPORT 节点护照 这不是内部字段面板，而是帮助读者理解这个节点的位置、状",
+        "hiddenBody": false,
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false,
+        "interactiveCount": 36
+      },
+      "exceptions": [],
+      "logIssues": [],
+      "failedNetwork": [],
+      "screenshotPath": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "note": "本报告证明本地局域网 IP 可访问当前 production server；不等于真实外部 Preview / Production 上线证据。"
+}

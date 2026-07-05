@@ -210,3 +210,22 @@ npm run check:rc:full
 4. 本地 HTTP smoke 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
 5. 修改公开路由、legacy redirect、private/internal guard、public JSON、robots、sitemap 时，必须同步更新 `data/world-kernel/worldos-local-runtime-smoke-v1.json`。
 6. 前端显隐仍不是权限控制；private/internal 路由必须由服务端 route policy / middleware / API guard 约束。
+
+## WorldOS 1.0 RC8 本地局域网 RC 规则
+
+RC8 后，如果当前仍以本地部署为准，候选发布必须覆盖同一局域网内的真实访问：
+
+```bash
+npm run check:lan-local
+npm run smoke:lan-local
+npm run check:rc:full
+```
+
+使用约定：
+
+1. `check:lan-local` 检查本地局域网 RC 注册表、脚本、命令入口、文档口径和 production 状态诚实性。
+2. `smoke:lan-local` 会启动 `next start -H 0.0.0.0`，自动识别局域网 IP，并通过 `http://<局域网 IP>:<端口>` 检查公开路由、静态资源、legacy redirect、private/internal guard 和 404。
+3. `smoke:lan-local` 会执行真实浏览器运行时巡检，覆盖桌面和移动端低动效，检查正文可读、H1、body 可见性、console/page error、网络失败、横向溢出和截图证据。
+4. 修改公开路由、动态 surface、移动端布局、权限 guard、robots/sitemap/public JSON 后，必须同步更新 `data/world-kernel/worldos-local-lan-rc-v1.json` 并运行 `npm run check:lan-local`。
+5. 本地局域网 RC 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
+6. 前端显隐仍不是权限控制；LAN RC 只能验证服务端 guard 的结果，不能把隐藏按钮当作权限证明。

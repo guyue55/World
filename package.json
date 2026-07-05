@@ -223,7 +223,7 @@
     "smoke:preview": "node scripts/run-worldos-preview-smoke.mjs",
     "smoke:production": "WORLDOS_SMOKE_MODE=production node scripts/run-worldos-preview-smoke.mjs",
     "evidence:worldos-external-template": "node scripts/write-worldos-external-evidence-template.mjs",
-    "check:release:rc": "npm run check:worldos-rc && npm run check:mainline && npm run evidence:worldos-external-template",
+    "check:release:rc": "npm run check:worldos-rc && npm run check:mainline && npm run check:lan-local && npm run evidence:worldos-external-template",
     "check:worldos-content-density": "node scripts/check-worldos-content-density.mjs",
     "check:worldos-public-experience": "node scripts/check-worldos-public-experience.mjs",
     "check:worldos-mainline-governance": "node scripts/check-worldos-mainline-governance.mjs",
@@ -243,10 +243,12 @@
     "check:rc": "npm run check:release:rc",
     "check:rc:fast": "npm run check:release:rc",
     "build:verify-artifacts": "node scripts/verify-artifacts.mjs",
-    "check:rc:full": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run audit:report",
+    "check:rc:full": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run smoke:lan-local && npm run audit:report",
     "check:maintenance-command-spine": "node scripts/check-worldos-maintenance-command-spine.mjs",
     "smoke:runtime-local": "node scripts/run-worldos-local-runtime-smoke.mjs",
-    "check:runtime-local": "node scripts/check-worldos-local-runtime-smoke.mjs"
+    "check:runtime-local": "node scripts/check-worldos-local-runtime-smoke.mjs",
+    "check:lan-local": "node scripts/check-worldos-local-lan-rc.mjs",
+    "smoke:lan-local": "node scripts/run-worldos-local-lan-rc.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
