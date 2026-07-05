@@ -50,6 +50,11 @@ function main() {
   const emptyState = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveEmptyState.tsx'), 'utf-8')
   if (!emptyState.includes('areaName')) errors.push('archive empty state must render readable area names')
 
+  const archiveSurface = fs.readFileSync(path.join(process.cwd(), 'src/lib/public-world-surfaces.ts'), 'utf-8')
+  if (!archiveSurface.includes('rediscoveryActions')) errors.push('archive public surface missing rediscovery actions')
+  const archiveGuide = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveDynamicGuide.tsx'), 'utf-8')
+  if (!archiveGuide.includes('surface.rediscoveryActions.map')) errors.push('archive guide must render rediscovery actions')
+
   const nodeCard = fs.readFileSync(path.join(process.cwd(), 'src/components/node/NodeCard.tsx'), 'utf-8')
   if (!nodeCard.includes('resolveNodeCover')) errors.push('NodeCard must use resolveNodeCover')
   if (!nodeCard.includes('<img')) errors.push('NodeCard must render cover image')

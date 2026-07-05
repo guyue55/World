@@ -171,6 +171,11 @@ export type ArchiveDynamicSurface = {
   description: string
   boundaryLabel: string
   searchPlaceholder: string
+  rediscoveryActions: Array<{
+    href: string
+    label: string
+    description: string
+  }>
   featuredNodes: ArchiveDynamicNodeSignal[]
   recentNodes: ArchiveDynamicNodeSignal[]
   tags: ArchiveDynamicTagSignal[]
@@ -719,6 +724,23 @@ export function buildArchiveDynamicSurface(nodes: Node[], areas: Area[], tagLimi
     description: '档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。',
     boundaryLabel: '只读公开索引 · 不含私密层',
     searchPlaceholder: '搜索标题、摘要、标签或世界名',
+    rediscoveryActions: [
+      {
+        href: '/paths',
+        label: '按路径重新发现',
+        description: '不确定关键词时，用精选路线继续走。',
+      },
+      {
+        href: '/atlas',
+        label: '回地图换区域',
+        description: '从空间结构重新选择一片星域。',
+      },
+      {
+        href: '/ask',
+        label: '让灯塔推荐',
+        description: '只基于公开内容给出下一步建议。',
+      },
+    ],
     featuredNodes: publicNodes
       .filter((node) => node.featured?.representative || node.featured?.home)
       .slice(0, 3)

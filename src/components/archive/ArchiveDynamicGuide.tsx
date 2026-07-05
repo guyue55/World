@@ -97,6 +97,15 @@ export function ArchiveDynamicGuide({ surface }: { surface: ArchiveDynamicSurfac
               ))}
             </div>
           </div>
+
+          <div data-gsap-reveal className="grid gap-2 sm:grid-cols-3">
+            {surface.rediscoveryActions.map((action) => (
+              <Link key={action.href} href={action.href} className="rounded-[1rem] bg-paper/80 p-3 transition hover:-translate-y-0.5 hover:bg-white">
+                <span className="block text-sm font-semibold text-ink">{action.label}</span>
+                <span className="mt-1 block text-xs leading-5 text-ink/52">{action.description}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
