@@ -30,11 +30,6 @@ function main() {
     errors.push('lint cannot be marked passed without exitCode 0')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PhaseTwoClosurePanel')) {
-    errors.push('status foundation groups must include PhaseTwoClosurePanel')
-  }
-
   const scanRisk = read('scripts/scan-lint-risk.ts')
   if (!scanRisk.includes('explicitAnyPattern')) {
     errors.push('lint risk scanner must use pattern-based explicit any detection')

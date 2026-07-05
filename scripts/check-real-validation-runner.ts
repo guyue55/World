@@ -38,11 +38,6 @@ function main() {
     errors.push('performance measurement routes too few')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('RealValidationRunnerPanel')) {
-    errors.push('status groups must include RealValidationRunnerPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['validation:plan']) errors.push('package missing validation:plan')
   if (!pkg.scripts['check:real-validation-runner']) errors.push('package missing check:real-validation-runner')

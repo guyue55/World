@@ -7,8 +7,8 @@ import nodes from '../data/domains/experience/nodes.json'
 function main() {
   const errors: string[] = []
 
-  const page = fs.readFileSync(path.join(process.cwd(), 'src/app/page.tsx'), 'utf-8')
-  ;['DynamicWorldHero', 'WorldDepthPrelude', 'WorldGatewayPanel', 'DynamicAtlasExplorer', 'DynamicTimeRiver', 'R3NodeConstellation', 'R3ContentPathways', 'NodeOpeningRitual', 'LighthouseConsole', 'R5PathRecommendations', 'DynamicWorldAcceptance', 'DeepEntranceCards'].forEach((component) => {
+  const page = fs.readFileSync(path.join(process.cwd(), 'src/components/product/ProductHome.tsx'), 'utf-8')
+  ;['ProductWorldCompass', 'ProductWorldBoundaries'].forEach((component) => {
     if (!page.includes(component)) errors.push(`homepage missing component: ${component}`)
   })
 

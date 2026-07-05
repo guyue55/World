@@ -16,7 +16,7 @@ function main() {
     if (!profiles.has(route)) errors.push(`missing route performance profile: ${route}`)
   })
 
-  const stackFile = path.join(process.cwd(), 'src/components/world/WorldFoundationStack.tsx')
+  const stackFile = path.join(process.cwd(), 'src/components/_legacy/WorldFoundationStack.tsx')
   if (!fs.existsSync(stackFile)) {
     errors.push('missing WorldFoundationStack boundary')
   }

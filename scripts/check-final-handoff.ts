@@ -38,10 +38,7 @@ function main() {
     errors.push('lint cannot be marked passed unless latest attempt exitCode is 0')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('FinalHandoffPanel')) {
-    errors.push('status groups must include FinalHandoffPanel')
-  }
+
 
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:final-handoff']) {

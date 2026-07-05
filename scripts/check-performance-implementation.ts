@@ -22,7 +22,7 @@ function main() {
     errors.push('foundation-panel-stack must be implemented-boundary')
   }
 
-  const stackFile = path.join(process.cwd(), 'src/components/world/WorldFoundationStack.tsx')
+  const stackFile = path.join(process.cwd(), 'src/components/_legacy/WorldFoundationStack.tsx')
   if (fs.existsSync(stackFile)) {
     const text = fs.readFileSync(stackFile, 'utf-8')
     if (!text.includes('PerformanceContractPanel')) {

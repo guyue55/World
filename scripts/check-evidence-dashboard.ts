@@ -26,7 +26,7 @@ function main() {
     errors.push('release blocker evidence item should remain open')
   }
 
-  ;['src/app/evidence/page.tsx', 'src/components/evidence/EvidenceHero.tsx', 'src/components/evidence/EvidenceMatrixPanel.tsx', 'src/components/evidence/EvidenceCommandPanel.tsx'].forEach((file) => {
+  ;['src/app/_legacy/evidence/page.tsx', 'src/components/evidence/EvidenceHero.tsx', 'src/components/evidence/EvidenceMatrixPanel.tsx', 'src/components/evidence/EvidenceCommandPanel.tsx'].forEach((file) => {
     if (!exists(file)) errors.push(`missing evidence file: ${file}`)
   })
 

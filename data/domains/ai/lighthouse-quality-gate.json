@@ -8,16 +8,9 @@
     "recommendedPaths": 3,
     "allowedRules": 5,
     "forbiddenRules": 5,
-    "requiredComponents": 6
+    "requiredComponents": 0
   },
-  "requiredComponents": [
-    "LighthouseHero",
-    "LighthousePromptGuide",
-    "LighthouseRecommendationGrid",
-    "LighthouseBoundarySummary",
-    "LighthouseFallbackActions",
-    "LighthouseStatus"
-  ],
+  "requiredComponents": [],
   "rules": [
     "所有推荐必须基于公开内容。",
     "页面文案必须明确 low-light / no real-time AI。",

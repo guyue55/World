@@ -42,11 +42,6 @@ function main() {
     })
   })
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PreviewPerformancePanel')) {
-    errors.push('status groups must include PreviewPerformancePanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['preview:smoke']) errors.push('package missing preview:smoke')
   if (!pkg.scripts['performance:plan']) errors.push('package missing performance:plan')

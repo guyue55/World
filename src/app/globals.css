@@ -9,6 +9,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,6 +18,8 @@ body {
     radial-gradient(circle at top right, rgba(125, 154, 162, 0.18), transparent 32rem),
     var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 ::selection {
@@ -90,7 +93,7 @@ body {
 }
 
 .prose-guyue code {
-  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 768px) {
@@ -106,4 +109,10 @@ body {
   .prose-guyue p {
     line-height: 1.95;
   }
+}
+
+.prose-guyue img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }

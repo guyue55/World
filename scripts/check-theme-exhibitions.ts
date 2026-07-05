@@ -23,7 +23,7 @@ function main() {
     errors.push('planning-only exhibition boundary missing')
   }
 
-  if (!exists('src/app/exhibitions/page.tsx')) {
+  if (!exists('src/app/_legacy/exhibitions/page.tsx')) {
     errors.push('missing exhibitions page')
   }
 

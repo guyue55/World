@@ -21,11 +21,11 @@ function main() {
     if (item.requiredHumanAction !== true) errors.push(`suggestion missing human action: ${item.id}`)
   }
   ;[
-    'src/app/ai-workbench-v2/page.tsx',
+    'src/app/_legacy/ai-workbench-v2/page.tsx',
     'src/lib/ai-workbench-v2.ts',
-    'src/components/ai-workbench/AiWorkbenchV2Hero.tsx',
-    'src/components/ai-workbench/AiSuggestionQueuePanel.tsx',
-    'src/components/ai-workbench/AiPermissionMatrixPanel.tsx',
+    'src/components/_legacy/ai-workbench/AiWorkbenchV2Hero.tsx',
+    'src/components/_legacy/ai-workbench/AiSuggestionQueuePanel.tsx',
+    'src/components/_legacy/ai-workbench/AiPermissionMatrixPanel.tsx',
   ].forEach((file) => {
     if (!exists(file)) errors.push(`missing AI workbench file: ${file}`)
   })

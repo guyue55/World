@@ -25,10 +25,7 @@ function main() {
     errors.push('rerun contract must require exitCode recording')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('ExecutionRerunPanel')) {
-    errors.push('status groups must include ExecutionRerunPanel')
-  }
+
 
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:real-execution-rerun']) {

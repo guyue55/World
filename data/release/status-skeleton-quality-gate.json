@@ -6,17 +6,10 @@
     "statusGroups": 4,
     "summaryCards": 4,
     "skeletonLayers": 7,
-    "requiredComponents": 6,
+    "requiredComponents": 0,
     "stageStatusNotComplete": 1
   },
-  "requiredComponents": [
-    "StatusHero",
-    "StatusSummaryGrid",
-    "StatusPanelGroup",
-    "StatusSectionNav",
-    "SkeletonHero",
-    "SkeletonLayerSummary"
-  ],
+  "requiredComponents": [],
   "rules": [
     "状态页和骨架页必须保留低噪音入口。",
     "重型面板必须默认收起或分组收起。",

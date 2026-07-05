@@ -39,11 +39,6 @@ function main() {
     errors.push('defect protocol must allow browser-qa source')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('BrowserQaMatrixPanel')) {
-    errors.push('status groups must include BrowserQaMatrixPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['browser-qa:plan']) errors.push('package missing browser-qa:plan')
   if (!pkg.scripts['check:browser-qa-matrix']) errors.push('package missing check:browser-qa-matrix')

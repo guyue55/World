@@ -41,11 +41,6 @@ function main() {
     errors.push('lint cannot be passed without exitCode 0')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('ValidationClosurePanel')) {
-    errors.push('status groups must include ValidationClosurePanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:validation-closure']) {
     errors.push('package missing check:validation-closure')

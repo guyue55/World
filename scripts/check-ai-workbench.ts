@@ -29,9 +29,9 @@ function main() {
     }
   })
 
-  if (!exists('src/app/ai-workbench/page.tsx')) errors.push('missing AI workbench page')
-  if (!exists('src/components/ai-workbench/AiWorkbenchHero.tsx')) errors.push('missing AiWorkbenchHero')
-  if (!exists('src/components/ai-workbench/AiSuggestionList.tsx')) errors.push('missing AiSuggestionList')
+  if (!exists('src/app/_legacy/ai-workbench/page.tsx')) errors.push('missing AI workbench page')
+  if (!exists('src/components/_legacy/ai-workbench/AiWorkbenchHero.tsx')) errors.push('missing AiWorkbenchHero')
+  if (!exists('src/components/_legacy/ai-workbench/AiSuggestionList.tsx')) errors.push('missing AiSuggestionList')
 
   if (errors.length > 0) throw new Error(errors.join('\n'))
   console.log('AI workbench check passed.')

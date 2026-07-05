@@ -20,16 +20,16 @@ function main() {
   }
 
   ;[
-    'src/app/private-archive/page.tsx',
+    'src/app/_legacy/private-archive/page.tsx',
     'src/lib/private-archive.ts',
-    'src/components/private-archive/PrivateArchiveHero.tsx',
-    'src/components/private-archive/PrivateArchiveBoundaryPanel.tsx',
-    'src/components/private-archive/PrivateArchivePlaceholderGrid.tsx',
+    'src/components/_legacy/private-archive/PrivateArchiveHero.tsx',
+    'src/components/_legacy/private-archive/PrivateArchiveBoundaryPanel.tsx',
+    'src/components/_legacy/private-archive/PrivateArchivePlaceholderGrid.tsx',
   ].forEach((file) => {
     if (!exists(file)) errors.push(`missing private archive file: ${file}`)
   })
 
-  const page = read('src/app/private-archive/page.tsx')
+  const page = read('src/app/_legacy/private-archive/page.tsx')
   if (!page.includes('PrivateArchiveHero')) errors.push('private archive page missing hero')
 
   const pkg = JSON.parse(read('package.json'))

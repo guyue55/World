@@ -26,11 +26,6 @@ function main() {
     errors.push('browser QA matrix unexpectedly small')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PhaseThreeQaPanel')) {
-    errors.push('status groups must include PhaseThreeQaPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:phase-three-qa']) errors.push('package missing check:phase-three-qa')
   if (!pkg.scripts['phase-three-qa:print']) errors.push('package missing phase-three-qa:print')

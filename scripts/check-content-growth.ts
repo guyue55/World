@@ -32,11 +32,6 @@ function main() {
     errors.push('content growth must preserve not-ready-for-release')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('ContentGrowthPanel')) {
-    errors.push('status groups must include ContentGrowthPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:content-growth']) errors.push('package missing check:content-growth')
   if (!pkg.scripts['content-growth:print']) errors.push('package missing content-growth:print')

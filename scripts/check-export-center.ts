@@ -22,7 +22,7 @@ function main() {
     errors.push('private inheritance package must require confirmation')
   }
 
-  if (!exists('src/app/export-center/page.tsx')) errors.push('missing export center page')
+  if (!exists('src/app/_legacy/export-center/page.tsx')) errors.push('missing export center page')
   if (!exists('src/components/export-center/ExportCenterHero.tsx')) errors.push('missing ExportCenterHero')
   if (!exists('src/components/export-center/ExportPackageGrid.tsx')) errors.push('missing ExportPackageGrid')
 

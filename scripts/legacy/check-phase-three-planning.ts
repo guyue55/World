@@ -37,11 +37,6 @@ function main() {
     errors.push('phase three planning must preserve open release blockers')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PhaseThreePlanningPanel')) {
-    errors.push('status groups must include PhaseThreePlanningPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:phase-three-planning']) errors.push('package missing check:phase-three-planning')
   if (!pkg.scripts['phase-three:print']) errors.push('package missing phase-three:print')

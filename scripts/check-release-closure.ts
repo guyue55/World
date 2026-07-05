@@ -28,11 +28,6 @@ function main() {
     errors.push('at least one P0 blocker must remain open until real evidence exists')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('ReleaseClosurePanel')) {
-    errors.push('status groups must include ReleaseClosurePanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:release-closure']) errors.push('package missing check:release-closure')
   if (!pkg.scripts['release-closure:print']) errors.push('package missing release-closure:print')

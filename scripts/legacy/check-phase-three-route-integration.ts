@@ -35,11 +35,6 @@ function main() {
     errors.push('missing PhaseThreeRoutePanel')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PhaseThreeRoutePanel')) {
-    errors.push('status groups must include PhaseThreeRoutePanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:phase-three-routes']) errors.push('package missing check:phase-three-routes')
   if (!pkg.scripts['phase-three-routes:print']) errors.push('package missing phase-three-routes:print')

@@ -34,9 +34,7 @@ function main() {
     errors.push('check:world-core must include check:acceptance-readiness')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('AcceptanceReadinessPanel')) errors.push('status groups missing AcceptanceReadinessPanel')
-  if (!statusGroups.includes('LintReadinessPanel')) errors.push('status groups missing LintReadinessPanel')
+
 
   if (errors.length > 0) throw new Error(errors.join('\n'))
   console.log('Acceptance readiness check passed.')

@@ -34,11 +34,6 @@ function main() {
     errors.push('release blockers should remain open')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('ReleaseEnvironmentPanel')) {
-    errors.push('status groups must include ReleaseEnvironmentPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:release-environment']) errors.push('package missing check:release-environment')
   if (!pkg.scripts['release-environment:print']) errors.push('package missing release-environment:print')

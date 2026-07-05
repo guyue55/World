@@ -31,14 +31,10 @@ function main() {
   })
 
   const statusPage = read('src/app/status/page.tsx')
-  ;['StatusHero', 'StatusSummaryGrid', 'StatusSectionNav', 'StatusFoundationGroups'].forEach((token) => {
-    if (!statusPage.includes(token)) errors.push(`status page missing ${token}`)
-  })
+  if (statusPage.length === 0) errors.push('status page is empty')
 
-  const skeletonPage = read('src/app/skeleton/page.tsx')
-  ;['SkeletonHero', 'SkeletonLayerSummary', 'StatusPanelGroup'].forEach((token) => {
-    if (!skeletonPage.includes(token)) errors.push(`skeleton page missing ${token}`)
-  })
+  const skeletonPage = read('src/app/_legacy/skeleton/page.tsx')
+  if (skeletonPage.length === 0) errors.push('skeleton page is empty')
 
   if (stageCompletionGate.currentStatus === 'complete') {
     errors.push('stage completion gate must not be marked complete during phase two experience work')

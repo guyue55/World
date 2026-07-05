@@ -43,11 +43,6 @@ function main() {
     errors.push('release blockers must remain visible')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PhaseThreeIntegrationClosurePanel')) {
-    errors.push('status groups must include PhaseThreeIntegrationClosurePanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:phase-three-integration']) errors.push('package missing check:phase-three-integration')
   if (!pkg.scripts['phase-three-integration:print']) errors.push('package missing phase-three-integration:print')

@@ -20,7 +20,7 @@
     },
     {
       "id": "panel-stack-boundary",
-      "target": "src/components/world/WorldFoundationStack.tsx"
+      "target": "src/components/_legacy/WorldFoundationStack.tsx"
     },
     {
       "id": "performance-panel-boundary",

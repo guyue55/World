@@ -36,7 +36,7 @@ function main() {
     errors.push('release blockers must remain visible')
   }
 
-  const evidencePage = read('src/app/evidence/page.tsx')
+  const evidencePage = read('src/app/_legacy/evidence/page.tsx')
   if (!evidencePage.includes('EvidenceAssistClosurePanel')) {
     errors.push('evidence page must include EvidenceAssistClosurePanel')
   }

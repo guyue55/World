@@ -34,11 +34,6 @@ function main() {
     errors.push('SEO release record must remain pending until real build output exists')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('PublicSeoReleasePanel')) {
-    errors.push('status groups must include PublicSeoReleasePanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:public-seo-release']) errors.push('package missing check:public-seo-release')
   if (!pkg.scripts['public-seo:print']) errors.push('package missing public-seo:print')

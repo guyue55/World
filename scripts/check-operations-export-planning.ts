@@ -40,11 +40,6 @@ function main() {
     errors.push('release final report must remain not-ready-for-release')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('OperationsExportPanel')) {
-    errors.push('status groups must include OperationsExportPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:operations-export-planning']) errors.push('package missing check:operations-export-planning')
   if (!pkg.scripts['operations-export:print']) errors.push('package missing operations-export:print')

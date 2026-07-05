@@ -27,13 +27,13 @@ function main() {
 
   ;[
     'src/lib/ai-world-companion.ts',
-    'src/components/ai-workbench/AiWorldCompanionPanel.tsx',
-    'src/components/ai-workbench/AiRecommendationPanel.tsx',
+    'src/components/_legacy/ai-workbench/AiWorldCompanionPanel.tsx',
+    'src/components/_legacy/ai-workbench/AiRecommendationPanel.tsx',
   ].forEach((file) => {
     if (!exists(file)) errors.push(`missing companion file: ${file}`)
   })
 
-  const page = read('src/app/ai-workbench-v2/page.tsx')
+  const page = read('src/app/_legacy/ai-workbench-v2/page.tsx')
   if (!page.includes('AiWorldCompanionPanel') || !page.includes('AiRecommendationPanel')) {
     errors.push('AI workbench page missing companion panels')
   }

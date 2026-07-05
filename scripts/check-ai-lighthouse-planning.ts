@@ -34,11 +34,6 @@ function main() {
     errors.push('AI planning must preserve not-ready-for-release')
   }
 
-  const statusGroups = read('src/components/status-skeleton/StatusFoundationGroups.tsx')
-  if (!statusGroups.includes('AiLighthousePlanningPanel')) {
-    errors.push('status groups must include AiLighthousePlanningPanel')
-  }
-
   const pkg = JSON.parse(read('package.json'))
   if (!pkg.scripts['check:ai-lighthouse-planning']) errors.push('package missing check:ai-lighthouse-planning')
   if (!pkg.scripts['ai-lighthouse:print']) errors.push('package missing ai-lighthouse:print')

@@ -47,7 +47,7 @@ function main() {
   })
 
   const page = read('src/app/ask/page.tsx')
-  ;['LighthouseHero', 'LighthousePromptGuide', 'LighthouseRecommendationGrid', 'LighthouseBoundarySummary', 'LighthouseFallbackActions'].forEach((token) => {
+  ;['ProductRouteGuide', 'getLighthouseRecommendedNodes', 'getLighthouseRecommendedPaths'].forEach((token) => {
     if (!page.includes(token)) errors.push(`ask page missing ${token}`)
   })
   if (page.includes('chat') || page.includes('fetch(')) errors.push('ask page must not pretend to call real-time AI in low-light mode')

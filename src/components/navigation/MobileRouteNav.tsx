@@ -13,7 +13,7 @@ export function MobileRouteNav() {
       aria-label="移动端主导航"
       className="fixed bottom-3 left-3 right-3 z-50 rounded-full border border-ink/10 bg-paper/92 px-3 py-2 shadow-soft backdrop-blur-xl md:hidden"
     >
-      <div className="grid grid-cols-5 gap-1 text-center text-xs">
+      <div className="flex items-center justify-around gap-1 text-center text-xs">
         {items.map((item) => {
           const active = isNavigationItemActive(pathname, item)
 
@@ -22,7 +22,7 @@ export function MobileRouteNav() {
               key={item.id}
               href={item.href}
               aria-current={active ? 'page' : undefined}
-              className={`rounded-full px-2 py-2 transition ${
+              className={`flex-1 rounded-full px-2 py-2 transition ${
                 active
                   ? 'bg-ink text-paper'
                   : 'text-ink/70 hover:bg-white/60 hover:text-ink'
