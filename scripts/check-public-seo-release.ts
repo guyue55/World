@@ -22,9 +22,14 @@ function main() {
   }
 
   if (!exists('public/robots.txt')) errors.push('missing public/robots.txt')
+  if (!exists('public/world-index.json')) errors.push('missing public/world-index.json')
 
   const robots = read('public/robots.txt')
   if (!robots.includes('Sitemap')) errors.push('robots.txt must mention sitemap')
+  const publicIndex = exists('public/world-index.json') ? JSON.parse(read('public/world-index.json')) : null
+  if (publicIndex?.areas?.some((area: Record<string, unknown>) => 'defaultVisibility' in area)) {
+    errors.push('public world index areas must not expose defaultVisibility')
+  }
 
   if (publicSeoReleaseContract.requiredSeoChecks.length < 6) {
     errors.push('required SEO checks too few')
