@@ -1,18 +1,19 @@
-import type { Node } from './types'
+import type { Area, Node } from './types'
 import { getPublicNodes } from './nodes'
 import { getAllAreas } from './areas'
 import { getAllPaths } from './paths'
 import { getArchiveProjections, getHomeProjections } from './projections'
 import { getPublicStarGraph } from './star-lines'
-import { getAllWorldEvents, getWorldState } from './world-events'
+import { getPublicWorldEvents, getWorldState } from './world-events'
+import { isPublicVisible } from './visibility'
 
 export type PublicWorldIndex = {
   generatedAt: string
   state: ReturnType<typeof getWorldState>
-  areas: ReturnType<typeof getAllAreas>
+  areas: Array<Pick<Area, 'id' | 'worldName' | 'realName' | 'description' | 'level' | 'status' | 'icon' | 'order'> & { accessLabel: '公开区域' | '公开节点投影' }>
   nodes: Array<Pick<Node, 'id' | 'slug' | 'title' | 'worldTitle' | 'type' | 'areaId' | 'summary' | 'tags' | 'visibility' | 'lifeStage' | 'createdAt' | 'updatedAt'>>
   paths: ReturnType<typeof getAllPaths>
-  events: ReturnType<typeof getAllWorldEvents>
+  events: ReturnType<typeof getPublicWorldEvents>
   projections: {
     home: ReturnType<typeof getHomeProjections>
     archive: ReturnType<typeof getArchiveProjections>
@@ -21,7 +22,22 @@ export type PublicWorldIndex = {
 }
 
 export function createPublicWorldIndex(): PublicWorldIndex {
-  const nodes = getPublicNodes().map((node) => ({
+  const publicNodes = getPublicNodes()
+  const publicAreaIds = new Set(publicNodes.map((node) => node.areaId))
+  const areas = getAllAreas()
+    .filter((area) => isPublicVisible(area.defaultVisibility) || publicAreaIds.has(area.id))
+    .map((area) => ({
+      id: area.id,
+      worldName: area.worldName,
+      realName: area.realName,
+      description: area.description,
+      level: area.level,
+      status: area.status,
+      icon: area.icon,
+      order: area.order,
+      accessLabel: isPublicVisible(area.defaultVisibility) ? '公开区域' as const : '公开节点投影' as const,
+    }))
+  const nodes = publicNodes.map((node) => ({
     id: node.id,
     slug: node.slug,
     title: node.title,
@@ -39,10 +55,10 @@ export function createPublicWorldIndex(): PublicWorldIndex {
   return {
     generatedAt: new Date().toISOString(),
     state: getWorldState(),
-    areas: getAllAreas(),
+    areas,
     nodes,
     paths: getAllPaths(),
-    events: getAllWorldEvents(),
+    events: getPublicWorldEvents(),
     projections: {
       home: getHomeProjections(),
       archive: getArchiveProjections(),
