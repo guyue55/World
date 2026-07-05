@@ -24,7 +24,7 @@ if (!failures.length) {
     'src/components/product/ProductWorldCompass.tsx',
     'src/components/product/ProductWorldBoundaries.tsx',
   ].map(read).join('\n')
-  for (const token of ['8 分钟路径', '反迷路罗盘', '世界密度', '公开层不是完整世界', '代码主线与项目治理', 'legacy 足迹', '脚本分类']) {
+  for (const token of ['8 分钟路径', '反迷路罗盘', '世界密度', '公开层不是完整世界']) {
     if (!productSurface.includes(token)) failures.push(`首页缺少公开体验锚点：${token}`)
   }
 

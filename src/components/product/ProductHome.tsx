@@ -5,24 +5,9 @@ import { ProductWorldCompass } from '@/components/product/ProductWorldCompass'
 import { ProductWorldBoundaries } from '@/components/product/ProductWorldBoundaries'
 import { ProductDynamicWorldGuide } from '@/components/product/ProductDynamicWorldGuide'
 import { WorldLiveMapPanel } from '@/components/world/WorldLiveMapPanel'
+import { useGsapEntrance } from '@/components/world/useGsapEntrance'
+import { useRef } from 'react'
 
-const governanceEntrances = [
-  {
-    href: '/paths/code-architecture-cleanup',
-    title: '主线治理',
-    description: '看清正式主线、legacy 足迹、导入边界和脚本分类。',
-  },
-  {
-    href: '/node/worldos-mainline-code-map',
-    title: '主线代码地图',
-    description: '把道路、遗迹、内部实验和发布门禁分开，降低维护成本。',
-  },
-  {
-    href: '/node/script-taxonomy-gate',
-    title: '脚本分类',
-    description: '保留历史脚本，但把日常入口收束到长期门禁。',
-  },
-]
 
 const productPrinciples = [
   '公开入口只展示已审查内容',
@@ -49,9 +34,12 @@ export function ProductHome({
   const visibleNodes = featuredNodes.slice(0, 6)
   const firstPath = paths.find((path) => path.audience === 'first-time') ?? paths[0]
 
+  const containerRef = useRef<HTMLElement>(null)
+  useGsapEntrance(containerRef, true)
+
   return (
-    <main className="world-container space-y-14 py-10 md:py-16">
-      <section className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/78 px-6 py-10 shadow-soft backdrop-blur-xl md:px-10 md:py-16">
+    <main ref={containerRef} className="world-container space-y-14 py-10 md:py-16">
+      <section data-gsap-reveal className="invisible relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/78 px-6 py-10 shadow-soft backdrop-blur-xl md:px-10 md:py-16">
         <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-lake/20 blur-3xl" />
         <div className="absolute -bottom-32 left-10 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
         <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center">
@@ -114,28 +102,7 @@ export function ProductHome({
       <ProductWorldBoundaries />
 
 
-      <section className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
-        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.35em] text-moss">CODE & PROJECT GOVERNANCE</p>
-            <h2 className="mt-3 break-words text-3xl font-semibold text-ink">代码主线与项目治理</h2>
-            <p className="mt-3 max-w-3xl line-clamp-3 text-sm leading-7 text-ink/64">
-              RC3 不继续堆新宇宙层，而是把正式主线、legacy 足迹、脚本分类和发布候选口径讲清楚。历史可以保留，但不能重新污染公开入口。
-            </p>
-          </div>
-          <Link href="/paths/code-architecture-cleanup" className="text-sm font-semibold text-moss underline underline-offset-4">进入治理路径</Link>
-        </div>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {governanceEntrances.map((entry) => (
-            <Link key={entry.href} href={entry.href} className="block rounded-[1.4rem] bg-paper/70 p-5 transition hover:-translate-y-1 hover:bg-white">
-              <h3 className="truncate text-lg font-semibold text-ink">{entry.title}</h3>
-              <p className="mt-2 line-clamp-3 text-sm leading-7 text-ink/62">{entry.description}</p>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="grid gap-4 md:grid-cols-3">
+      <section data-gsap-reveal className="invisible grid gap-4 md:grid-cols-3">
         {visibleAreas.slice(0, 3).map((area) => (
           <Link key={area.id} href={`/atlas#${area.id}`} className="block rounded-[1.6rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white">
             <p className="truncate text-sm text-moss">{area.icon} {area.realName}</p>
@@ -145,7 +112,7 @@ export function ProductHome({
         ))}
       </section>
 
-      <section className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+      <section data-gsap-reveal className="invisible grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
           <p className="text-xs font-semibold tracking-[0.35em] text-moss">进入规则</p>
           <h2 className="mt-3 text-3xl font-semibold text-ink">先降低门槛，再保留深度</h2>
@@ -168,7 +135,7 @@ export function ProductHome({
         )}
       </section>
 
-      <section className="rounded-[2rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur md:p-8">
+      <section data-gsap-reveal className="invisible rounded-[2rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur md:p-8">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-xs font-semibold tracking-[0.35em] text-moss">精选节点</p>
@@ -187,7 +154,7 @@ export function ProductHome({
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
+      <section data-gsap-reveal className="invisible rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
         <p className="text-xs font-semibold tracking-[0.35em] text-moss">最近发生</p>
         <h2 className="mt-3 text-3xl font-semibold text-ink">世界最近发生了什么</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
