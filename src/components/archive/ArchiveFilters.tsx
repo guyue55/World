@@ -1,5 +1,10 @@
 import type { Area, LifeStage, NodeType } from '@/lib/types'
-import type { ArchiveFilters as ArchiveFilterState, ArchiveSort } from '@/lib/archive'
+import {
+  formatArchiveLifeStage,
+  formatArchiveNodeType,
+  type ArchiveFilters as ArchiveFilterState,
+  type ArchiveSort,
+} from '@/lib/archive'
 
 export function ArchiveFilters({
   filters,
@@ -35,11 +40,11 @@ export function ArchiveFilters({
         </select>
         <select value={filters.type} onChange={(event) => update({ type: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="all">全部类型</option>
-          {nodeTypes.map((type) => <option key={type} value={type}>{type}</option>)}
+          {nodeTypes.map((type) => <option key={type} value={type}>{formatArchiveNodeType(type)}</option>)}
         </select>
         <select value={filters.lifeStage} onChange={(event) => update({ lifeStage: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="all">全部阶段</option>
-          {lifeStages.map((stage) => <option key={stage} value={stage}>{stage}</option>)}
+          {lifeStages.map((stage) => <option key={stage} value={stage}>{formatArchiveLifeStage(stage)}</option>)}
         </select>
         <select value={filters.sort} onChange={(event) => update({ sort: event.target.value as ArchiveSort })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
           <option value="newest">最近优先</option>

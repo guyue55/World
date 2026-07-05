@@ -1,11 +1,21 @@
-import type { ArchiveFilters } from '@/lib/archive'
+import type { Area, LifeStage, NodeType } from '@/lib/types'
+import { formatArchiveLifeStage, formatArchiveNodeType, type ArchiveFilters } from '@/lib/archive'
 
-export function ArchiveEmptyState({ filters, onReset }: { filters: ArchiveFilters; onReset: () => void }) {
+export function ArchiveEmptyState({
+  filters,
+  areas,
+  onReset,
+}: {
+  filters: ArchiveFilters
+  areas: Area[]
+  onReset: () => void
+}) {
+  const areaName = areas.find((area) => area.id === filters.areaId)?.worldName ?? filters.areaId
   const active = [
     filters.query && `关键词「${filters.query}」`,
-    filters.areaId !== 'all' && `区域 ${filters.areaId}`,
-    filters.type !== 'all' && `类型 ${filters.type}`,
-    filters.lifeStage !== 'all' && `阶段 ${filters.lifeStage}`,
+    filters.areaId !== 'all' && `区域「${areaName}」`,
+    filters.type !== 'all' && `类型「${formatArchiveNodeType(filters.type as NodeType)}」`,
+    filters.lifeStage !== 'all' && `阶段「${formatArchiveLifeStage(filters.lifeStage as LifeStage)}」`,
     filters.tag !== 'all' && `标签 #${filters.tag}`,
   ].filter(Boolean)
 

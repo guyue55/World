@@ -1,5 +1,10 @@
 import type { TimelineFilters as TimelineFilterState } from '@/lib/timeline'
 
+type TimelineFilterOption = {
+  value: string
+  label: string
+}
+
 export function TimelineFilters({
   filters,
   types,
@@ -7,8 +12,8 @@ export function TimelineFilters({
   onChange,
 }: {
   filters: TimelineFilterState
-  types: string[]
-  actors: string[]
+  types: TimelineFilterOption[]
+  actors: TimelineFilterOption[]
   onChange: (filters: TimelineFilterState) => void
 }) {
   return (
@@ -19,7 +24,7 @@ export function TimelineFilters({
         className="rounded-full border border-ink/10 bg-white/75 px-4 py-3"
       >
         <option value="all">全部事件类型</option>
-        {types.map((type) => <option key={type} value={type}>{type}</option>)}
+        {types.map((type) => <option key={type.value} value={type.value}>{type.label}</option>)}
       </select>
       <select
         value={filters.actor}
@@ -27,7 +32,7 @@ export function TimelineFilters({
         className="rounded-full border border-ink/10 bg-white/75 px-4 py-3"
       >
         <option value="all">全部行动者</option>
-        {actors.map((actor) => <option key={actor} value={actor}>{actor}</option>)}
+        {actors.map((actor) => <option key={actor.value} value={actor.value}>{actor.label}</option>)}
       </select>
       <button
         type="button"

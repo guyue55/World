@@ -1,4 +1,4 @@
-import type { NodeType, RelationType, WorldEventType, Visibility } from './types'
+import type { LifeStage, NodeType, RelationType, WorldEvent, WorldEventType, Visibility } from './types'
 
 export const NODE_TYPE_REGISTRY: Record<NodeType, { label: string; description: string }> = {
   article: { label: '文章', description: '较完整的公开或半公开文本内容。' },
@@ -45,6 +45,25 @@ export const WORLD_EVENT_TYPE_REGISTRY: Record<WorldEventType, string> = {
   'ai-suggestion-approved': 'AI 建议采纳',
   'snapshot-created': '快照创建',
   'season-changed': '季节变化',
+}
+
+export const WORLD_EVENT_ACTOR_REGISTRY: Record<NonNullable<WorldEvent['actor']>, string> = {
+  creator: '创作者',
+  rule: '规则',
+  ai: 'AI 建议',
+  system: '系统',
+}
+
+export const LIFE_STAGE_REGISTRY: Record<LifeStage, string> = {
+  seed: '种子',
+  sprout: '萌芽',
+  growing: '生长中',
+  bloom: '盛放',
+  fruit: '结果',
+  archive: '沉淀',
+  relic: '遗迹',
+  dormant: '休眠',
+  silent: '沉默',
 }
 
 export const VISIBILITY_REGISTRY: Record<Visibility, string> = {

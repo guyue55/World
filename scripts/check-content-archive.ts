@@ -33,9 +33,22 @@ function main() {
   })
 
   const archiveView = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveView.tsx'), 'utf-8')
-  ;['ArchiveStats', 'ArchiveFilters', 'ArchiveEmptyState', 'filterArchiveNodes'].forEach((token) => {
+  ;['ArchiveStats', 'ArchiveFilters', 'ArchiveEmptyState', 'filterArchiveNodes', 'formatArchiveSort'].forEach((token) => {
     if (!archiveView.includes(token)) errors.push(`archive view missing ${token}`)
   })
+
+  const archiveLib = fs.readFileSync(path.join(process.cwd(), 'src/lib/archive.ts'), 'utf-8')
+  ;['formatArchiveNodeType', 'formatArchiveLifeStage', 'formatArchiveSort'].forEach((token) => {
+    if (!archiveLib.includes(token)) errors.push(`archive lib missing Chinese label helper: ${token}`)
+  })
+
+  const archiveFilters = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveFilters.tsx'), 'utf-8')
+  ;['formatArchiveNodeType', 'formatArchiveLifeStage'].forEach((token) => {
+    if (!archiveFilters.includes(token)) errors.push(`archive filters missing Chinese label helper: ${token}`)
+  })
+
+  const emptyState = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveEmptyState.tsx'), 'utf-8')
+  if (!emptyState.includes('areaName')) errors.push('archive empty state must render readable area names')
 
   const nodeCard = fs.readFileSync(path.join(process.cwd(), 'src/components/node/NodeCard.tsx'), 'utf-8')
   if (!nodeCard.includes('resolveNodeCover')) errors.push('NodeCard must use resolveNodeCover')

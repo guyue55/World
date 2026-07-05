@@ -1,5 +1,5 @@
 import type { Area, Node, WorldEvent } from '@/lib/types'
-import { getEventLinkedNames } from '@/lib/timeline'
+import { formatWorldEventActor, formatWorldEventType, getEventLinkedNames } from '@/lib/timeline'
 
 export function WorldEventCard({
   event,
@@ -11,6 +11,7 @@ export function WorldEventCard({
   areas?: Area[]
 }) {
   const linked = getEventLinkedNames(event, nodes ?? [], areas ?? [])
+  const actor = event.actor ?? 'system'
 
   return (
     <article className="rounded-world border border-ink/10 bg-white/45 p-5 shadow-soft">
@@ -20,8 +21,8 @@ export function WorldEventCard({
       </div>
       <p className="mt-3 break-words leading-7 text-ink/65">{event.description}</p>
       <div className="mt-4 flex flex-wrap gap-2 text-xs">
-        <span className="shrink-0 rounded-full bg-ink/5 px-3 py-1 text-moss">{event.type}</span>
-        <span className="shrink-0 rounded-full bg-ink/5 px-3 py-1 text-ink/50">{event.actor ?? 'system'}</span>
+        <span className="shrink-0 rounded-full bg-ink/5 px-3 py-1 text-moss">{formatWorldEventType(event.type)}</span>
+        <span className="shrink-0 rounded-full bg-ink/5 px-3 py-1 text-ink/50">{formatWorldEventActor(actor)}</span>
         {linked.nodes.slice(0, 3).map((name) => <span key={name} className="truncate rounded-full bg-white/65 px-3 py-1 text-ink/50 max-w-full">节点：{name}</span>)}
         {linked.areas.slice(0, 3).map((name) => <span key={name} className="truncate rounded-full bg-white/65 px-3 py-1 text-ink/50 max-w-full">区域：{name}</span>)}
       </div>

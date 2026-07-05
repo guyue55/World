@@ -1,6 +1,8 @@
 import timelineProductizationContract from '../../data/domains/experience/timeline-productization-contract.json'
 import timelineQualityGate from '../../data/domains/experience/timeline-quality-gate.json'
 import type { Area, Node, WorldEvent } from './types'
+import { WORLD_EVENT_ACTOR_REGISTRY, WORLD_EVENT_TYPE_REGISTRY } from './type-registries'
+import { isPublicVisible } from './visibility'
 
 export type TimelineFilters = {
   type: string
@@ -16,7 +18,7 @@ export function getTimelineQualityGate() {
 }
 
 export function getPublicWorldEvents(events: WorldEvent[]) {
-  return events.filter((event) => event.visibility !== 'private')
+  return events.filter((event) => !event.visibility || isPublicVisible(event.visibility))
 }
 
 export function getTimelineStats(events: WorldEvent[]) {
@@ -39,8 +41,14 @@ export function getTimelineFilterOptions(events: WorldEvent[]) {
   const publicEvents = getPublicWorldEvents(events)
 
   return {
-    types: Array.from(new Set(publicEvents.map((event) => event.type))).sort(),
-    actors: Array.from(new Set(publicEvents.map((event) => event.actor ?? 'system'))).sort(),
+    types: Array.from(new Set(publicEvents.map((event) => event.type))).sort().map((type) => ({
+      value: type,
+      label: formatWorldEventType(type),
+    })),
+    actors: Array.from(new Set(publicEvents.map((event) => event.actor ?? 'system'))).sort().map((actor) => ({
+      value: actor,
+      label: formatWorldEventActor(actor),
+    })),
   }
 }
 
@@ -78,4 +86,12 @@ export function getEventLinkedNames(event: WorldEvent, nodes: Node[], areas: Are
     nodes: (event.nodeIds ?? []).map((id) => nodeMap.get(id) ?? id),
     areas: (event.areaIds ?? []).map((id) => areaMap.get(id) ?? id),
   }
+}
+
+export function formatWorldEventType(type: WorldEvent['type']) {
+  return WORLD_EVENT_TYPE_REGISTRY[type] ?? type
+}
+
+export function formatWorldEventActor(actor: NonNullable<WorldEvent['actor']> = 'system') {
+  return WORLD_EVENT_ACTOR_REGISTRY[actor] ?? actor
 }

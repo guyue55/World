@@ -5,6 +5,7 @@ import type { Area, Node } from '@/lib/types'
 import { searchNodes } from '@/lib/search'
 import {
   filterArchiveNodes,
+  formatArchiveSort,
   getArchiveStats,
   getLifeStages,
   getNodeTypes,
@@ -56,11 +57,11 @@ export function ArchiveView({ nodes, areas }: { nodes: Node[]; areas: Area[] }) 
 
       <div className="flex items-center justify-between gap-4 text-sm text-ink/55">
         <p>当前显示 {filtered.length} / {nodes.length} 颗公开星体</p>
-        <p>排序：{filters.sort}</p>
+        <p>排序：{formatArchiveSort(filters.sort)}</p>
       </div>
 
       {filtered.length === 0 ? (
-        <ArchiveEmptyState filters={filters} onReset={reset} />
+        <ArchiveEmptyState filters={filters} areas={areas} onReset={reset} />
       ) : (
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((node) => (

@@ -1,6 +1,7 @@
 import archiveProductizationContract from '../../data/domains/archive/archive-productization-contract.json'
 import contentInventoryRules from '../../data/domains/content/content-inventory-rules.json'
 import type { Area, Node, NodeType, LifeStage } from './types'
+import { LIFE_STAGE_REGISTRY, NODE_TYPE_REGISTRY } from './type-registries'
 
 export type ArchiveSort = 'newest' | 'oldest' | 'title'
 
@@ -72,4 +73,22 @@ export function filterArchiveNodes(nodes: Node[], filters: ArchiveFilters, searc
   if (filters.tag !== 'all') result = result.filter((node) => node.tags.includes(filters.tag))
 
   return sortArchiveNodes(result, filters.sort)
+}
+
+export function formatArchiveNodeType(type: NodeType) {
+  return NODE_TYPE_REGISTRY[type]?.label ?? type
+}
+
+export function formatArchiveLifeStage(stage: LifeStage) {
+  return LIFE_STAGE_REGISTRY[stage] ?? stage
+}
+
+export function formatArchiveSort(sort: ArchiveSort) {
+  const labels: Record<ArchiveSort, string> = {
+    newest: '最近优先',
+    oldest: '最早优先',
+    title: '标题排序',
+  }
+
+  return labels[sort]
 }
