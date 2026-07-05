@@ -1,3 +1,4 @@
+import fs from 'node:fs'
 import {
   getContentProductizationBaseline,
   getProjectionDensityStrategy,
@@ -24,6 +25,16 @@ function main() {
   if (!qualityTargets.some((item) => item.type === 'path')) {
     warnings.push('seed content quality gate missing path target')
   }
+
+  const source = fs.readFileSync('src/lib/content-productization.ts', 'utf-8')
+  ;[
+    'featured-node-incomplete',
+    'path-core-node-incomplete',
+    'public-path-incomplete',
+    'public-event-links-private-node',
+  ].forEach((token) => {
+    if (!source.includes(token)) errors.push(`content productization validator missing lifecycle rule: ${token}`)
+  })
 
   if (errors.length > 0) {
     throw new Error(errors.join('\n'))
