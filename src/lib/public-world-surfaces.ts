@@ -77,6 +77,24 @@ export type NodeOpeningSurface = {
   readingLabel: string
 }
 
+export type DynamicWorldRouteSignal = {
+  id: 'home' | 'path' | 'atlas' | 'timeline' | 'ask' | 'archive'
+  href: string
+  shortLabel: string
+  title: string
+  description: string
+  caption: string
+  intent: string
+}
+
+export type HomeDynamicWorldSurface = {
+  eyebrow: string
+  title: string
+  description: string
+  routes: DynamicWorldRouteSignal[]
+  primaryHref: string
+}
+
 function isPublicArea(area: Area) {
   return isPublicVisible(area.defaultVisibility)
 }
@@ -217,5 +235,87 @@ export function buildNodeOpeningSurface(node: Node, area: Area | undefined, read
     areaLabel: area && isPublicArea(area) ? area.worldName : '公开节点',
     lifeStageLabel: node.lifeStage,
     readingLabel: readingMinutes ? `约 ${readingMinutes} 分钟` : '短读',
+  }
+}
+
+export function buildHomeDynamicWorldSurface({
+  areas,
+  nodes,
+  paths,
+  events,
+}: {
+  areas: Area[]
+  nodes: Node[]
+  paths: Path[]
+  events: WorldEvent[]
+}): HomeDynamicWorldSurface {
+  const publicAreaCount = areas.filter((area) => area.level === 1 && isPublicArea(area)).length
+  const publicNodeCount = nodes.filter((node) => isPublicVisible(node.visibility)).length
+  const firstPath = paths.find((path) => path.id === 'eight-minute-world')
+    ?? paths.find((path) => path.audience === 'first-time')
+    ?? paths[0]
+  const pathHref = firstPath ? `/paths/${firstPath.id}` : '/atlas'
+
+  return {
+    eyebrow: 'DYNAMIC WORLD',
+    title: '先看入口，再进入宇宙',
+    description: '不用一次理解所有层级。先按目的选择入口：看全貌、看变化、走短路径、找导览，或者直接检索公开档案。',
+    primaryHref: pathHref,
+    routes: [
+      {
+        id: 'home',
+        href: '/',
+        shortLabel: '入口',
+        title: '世界入口',
+        description: '回到公开前厅，重新选择方向。',
+        caption: '适合迷路时返回',
+        intent: '回到起点',
+      },
+      {
+        id: 'atlas',
+        href: '/atlas',
+        shortLabel: '地图',
+        title: '世界地图',
+        description: '从区域和公开节点看全貌，再进入具体星域。',
+        caption: `${publicAreaCount} 个公开主区域`,
+        intent: '看空间结构',
+      },
+      {
+        id: 'timeline',
+        href: '/timeline',
+        shortLabel: '时间',
+        title: '时间流',
+        description: '看世界最近如何生长，哪些事件推动了节点和区域。',
+        caption: `${events.filter((event) => isEventPublic(event.visibility)).length} 条近期事件`,
+        intent: '看变化',
+      },
+      {
+        id: 'path',
+        href: pathHref,
+        shortLabel: '路径',
+        title: firstPath?.title ?? '8 分钟路径',
+        description: firstPath?.description ?? '第一次来不用理解全部宇宙，先走一条短路径。',
+        caption: firstPath ? `约 ${firstPath.estimatedMinutes ?? 8} 分钟` : '推荐先走',
+        intent: '降低门槛',
+      },
+      {
+        id: 'ask',
+        href: '/ask',
+        shortLabel: '灯塔',
+        title: 'AI 灯塔',
+        description: '低光只读导览：回答我在哪、能去哪、下一步看什么。',
+        caption: '不读取私密层',
+        intent: '请求指路',
+      },
+      {
+        id: 'archive',
+        href: '/archive',
+        shortLabel: '检索',
+        title: '档案馆',
+        description: '直接查找已公开、可阅读、可返回的节点。',
+        caption: `${publicNodeCount} 个公开节点`,
+        intent: '现实检索',
+      },
+    ],
   }
 }

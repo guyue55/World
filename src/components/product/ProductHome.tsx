@@ -1,32 +1,10 @@
 import Link from 'next/link'
 import type { Area, Node, Path, WorldEvent } from '@/lib/types'
+import type { HomeDynamicWorldSurface } from '@/lib/public-world-surfaces'
 import { ProductWorldCompass } from '@/components/product/ProductWorldCompass'
 import { ProductWorldBoundaries } from '@/components/product/ProductWorldBoundaries'
+import { ProductDynamicWorldGuide } from '@/components/product/ProductDynamicWorldGuide'
 import { WorldLiveMapPanel } from '@/components/world/WorldLiveMapPanel'
-
-const primaryEntrances = [
-  {
-    href: '/paths/eight-minute-world',
-    title: '8 分钟路径',
-    description: '第一次来不用理解全部宇宙，先走完一条短路径。',
-  },
-  {
-    href: '/atlas',
-    title: '世界地图',
-    description: '先看到五个主区域，再进入具体节点。适合第一次来到这里的人。',
-  },
-  {
-    href: '/timeline',
-    title: '时间流',
-    description: '查看这个世界如何生长：节点、路径、区域与规则留下的轨迹。',
-  },
-  {
-    href: '/ask',
-    title: 'AI 灯塔',
-    description: '低光导览：只回答我在哪、能去哪、下一步看什么。',
-  },
-]
-
 
 const governanceEntrances = [
   {
@@ -58,12 +36,14 @@ export function ProductHome({
   publicNodes,
   paths,
   events,
+  dynamicWorld,
 }: {
   areas: Area[]
   featuredNodes: Node[]
   publicNodes: Node[]
   paths: Path[]
   events: WorldEvent[]
+  dynamicWorld: HomeDynamicWorldSurface
 }) {
   const visibleAreas = areas.filter((area) => area.level === 1).slice(0, 6)
   const visibleNodes = featuredNodes.slice(0, 6)
@@ -88,14 +68,14 @@ export function ProductHome({
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link href="/atlas" className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night">
-                进入世界 →
+              <Link href={dynamicWorld.primaryHref} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night">
+                从短路径开始 →
+              </Link>
+              <Link href="/atlas" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
+                看世界地图
               </Link>
               <Link href="/timeline" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
                 沿时间流
-              </Link>
-              <Link href="/paths/eight-minute-world" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
-                8 分钟路径
               </Link>
               <Link href="/archive" className="rounded-full border border-ink/10 bg-white/55 px-6 py-3 text-sm font-semibold text-ink/70 transition hover:-translate-y-0.5 hover:bg-white">
                 现实检索
@@ -113,9 +93,9 @@ export function ProductHome({
                   对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。
                 </p>
               </div>
-              <WorldLiveMapPanel />
+              <WorldLiveMapPanel routes={dynamicWorld.routes} />
               <div className="grid gap-3 text-sm">
-                {primaryEntrances.map((entry) => (
+                {dynamicWorld.routes.filter((entry) => entry.id !== 'home' && entry.id !== 'archive').slice(0, 4).map((entry) => (
                   <Link key={entry.href} href={entry.href} className="block rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14">
                     <span className="truncate font-semibold text-paper block">{entry.title}</span>
                     <span className="mt-1 block line-clamp-2 leading-6 text-paper/62">{entry.description}</span>
@@ -128,6 +108,8 @@ export function ProductHome({
       </section>
 
       <ProductWorldCompass areas={areas} nodes={publicNodes} paths={paths} />
+
+      <ProductDynamicWorldGuide surface={dynamicWorld} />
 
       <ProductWorldBoundaries />
 

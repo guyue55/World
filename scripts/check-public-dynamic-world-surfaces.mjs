@@ -3,23 +3,27 @@ import { resolve } from 'node:path'
 
 const root = process.cwd()
 const componentFiles = [
+  'src/components/world/WorldLiveMapPanel.tsx',
   'src/components/atlas/AtlasLiveConstellation.tsx',
   'src/components/timeline/TimelineRiverRuntime.tsx',
   'src/components/ask/PublicLighthouseConsole.tsx',
   'src/components/node/NodeOpeningRitual.tsx',
 ]
 const pageFiles = [
+  'src/app/page.tsx',
   'src/app/atlas/page.tsx',
   'src/app/timeline/page.tsx',
   'src/app/ask/page.tsx',
   'src/app/node/[slug]/page.tsx',
 ]
 const requiredPageTokens = [
+  'buildHomeDynamicWorldSurface',
   'buildAtlasConstellationSurface',
   'buildTimelineRiverSurface',
   'buildLighthouseConsoleSurface',
   'buildNodeOpeningSurface',
 ]
+const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 
 const failures = []
 
@@ -43,6 +47,15 @@ for (const token of requiredPageTokens) {
   const found = pageFiles.some((file) => readFileSync(resolve(root, file), 'utf8').includes(token))
   if (!found) failures.push(`公开页面缺少 ${token} 服务端展示模型构建`)
 }
+
+const gsapHook = readFileSync(resolve(root, gsapHookFile), 'utf8')
+for (const token of ['gsap.matchMedia', 'autoAlpha', 'prefers-reduced-motion', 'overwrite']) {
+  if (!gsapHook.includes(token)) failures.push(`${gsapHookFile} 缺少 GSAP 最佳实践关键点：${token}`)
+}
+
+const homeSource = readFileSync(resolve(root, 'src/components/product/ProductHome.tsx'), 'utf8')
+if (!homeSource.includes('dynamicWorld.primaryHref')) failures.push('首页主 CTA 必须来自服务端动态世界 surface，避免硬编码首选入口')
+if (!homeSource.includes('ProductDynamicWorldGuide')) failures.push('首页必须渲染动态世界总览导览区')
 
 if (failures.length) {
   console.error('Public dynamic world surface check failed:')
