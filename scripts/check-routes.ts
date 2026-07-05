@@ -15,6 +15,7 @@ const requiredRoutes = [
   'src/app/about/page.tsx',
   'src/app/manifesto/page.tsx',
   'src/app/status/page.tsx',
+  'src/app/forbidden/page.tsx',
   'src/app/not-found.tsx',
   'src/app/error.tsx',
   'src/app/loading.tsx',

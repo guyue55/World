@@ -34,6 +34,9 @@ function main() {
   nodeReadingQualityGate.requiredPageParts.forEach((part) => {
     if (!page.includes(part)) errors.push(`node page missing part: ${part}`)
   })
+  if (!page.includes('isPublicVisible(node.visibility)')) {
+    errors.push('node page must use shared visibility helper for forbidden boundary')
+  }
   ;['buildNodeNextStepSurface', 'NodeNextStepPanel'].forEach((token) => {
     if (!page.includes(token)) errors.push(`node page missing public next-step surface: ${token}`)
   })

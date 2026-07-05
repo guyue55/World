@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation'
 import { getNodeBySlug, getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
 import { getAreaById } from '@/lib/areas'
 import { readContentFile } from '@/lib/content'
+import { isPublicVisible } from '@/lib/visibility'
 import { estimateReadingMinutes, getNodeExplorationGroups } from '@/lib/node-reading'
 import { buildNodeNextStepSurface, buildNodeOpeningSurface } from '@/lib/public-world-surfaces'
 import { extractReadingHeadings, getReadingComfortSummary } from '@/lib/reading-comfort'
@@ -34,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<NodePagePar
   const { slug } = await params
   const node = getNodeBySlug(slug)
   if (!node) return createPageMetadata({ title: '节点不存在', path: '/archive' })
-  if (node.visibility !== 'public') return createPageMetadata({ title: '无权限访问', path: '/forbidden' })
+  if (!isPublicVisible(node.visibility)) return createPageMetadata({ title: '无权限访问', path: '/forbidden' })
 
   return createPageMetadata({
     title: node.worldTitle ? `${node.worldTitle}｜${node.title}` : node.title,
@@ -47,7 +48,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
   const { slug } = await params
   const node = getNodeBySlug(slug)
   if (!node) notFound()
-  if (node.visibility !== 'public') redirect('/forbidden')
+  if (!isPublicVisible(node.visibility)) redirect('/forbidden')
 
   const area = getAreaById(node.areaId)
   const content = readContentFile(node.contentPath)
