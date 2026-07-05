@@ -118,6 +118,35 @@ export type DynamicWorldStatusSurface = {
   }>
 }
 
+export type ArchiveDynamicNodeSignal = {
+  id: string
+  href: string
+  title: string
+  summary?: string
+  caption: string
+}
+
+export type ArchiveDynamicTagSignal = {
+  tag: string
+  count: number
+}
+
+export type ArchiveDynamicSurface = {
+  eyebrow: string
+  title: string
+  description: string
+  boundaryLabel: string
+  searchPlaceholder: string
+  featuredNodes: ArchiveDynamicNodeSignal[]
+  recentNodes: ArchiveDynamicNodeSignal[]
+  tags: ArchiveDynamicTagSignal[]
+  metrics: Array<{
+    label: string
+    value: number
+    note: string
+  }>
+}
+
 function isPublicArea(area: Area) {
   return isPublicVisible(area.defaultVisibility)
 }
@@ -417,6 +446,61 @@ export function buildDynamicWorldStatusSurface({
       { label: '公开节点', value: publicNodes.length, note: '可被地图、档案和灯塔读取' },
       { label: '公开路径', value: paths.length, note: '降低探索门槛' },
       { label: '公开事件', value: publicEvents.length, note: '构成时间河水位' },
+    ],
+  }
+}
+
+function nodeUpdatedAt(node: Node) {
+  return new Date(node.updatedAt ?? node.createdAt).getTime()
+}
+
+function archiveNodeSignal(node: Node, areaById: Map<string, Area>): ArchiveDynamicNodeSignal {
+  const area = areaById.get(node.areaId)
+
+  return {
+    id: node.id,
+    href: `/node/${node.slug}`,
+    title: node.worldTitle ?? node.title,
+    summary: node.summary,
+    caption: `${area && isPublicArea(area) ? area.worldName : '公开节点'} · ${node.type}`,
+  }
+}
+
+export function buildArchiveDynamicSurface(nodes: Node[], areas: Area[], tagLimit = 10): ArchiveDynamicSurface {
+  const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
+  const publicAreas = areas.filter((area) => area.level === 1 && isPublicArea(area))
+  const areaById = new Map(areas.map((area) => [area.id, area]))
+  const tagCounts = new Map<string, number>()
+
+  publicNodes.forEach((node) => {
+    node.tags.forEach((tag) => tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1))
+  })
+
+  const tags = Array.from(tagCounts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, tagLimit)
+    .map(([tag, count]) => ({ tag, count }))
+
+  return {
+    eyebrow: 'LIVE ARCHIVE',
+    title: '不想漫游时，直接检索公开世界',
+    description: '档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。',
+    boundaryLabel: '只读公开索引 · 不含私密层',
+    searchPlaceholder: '搜索标题、摘要、标签或世界名',
+    featuredNodes: publicNodes
+      .filter((node) => node.featured?.representative || node.featured?.home)
+      .slice(0, 3)
+      .map((node) => archiveNodeSignal(node, areaById)),
+    recentNodes: [...publicNodes]
+      .sort((a, b) => nodeUpdatedAt(b) - nodeUpdatedAt(a))
+      .slice(0, 4)
+      .map((node) => archiveNodeSignal(node, areaById)),
+    tags,
+    metrics: [
+      { label: '公开节点', value: publicNodes.length, note: '可被检索和进入' },
+      { label: '主区域', value: publicAreas.length, note: '用于空间筛选' },
+      { label: '热门标签', value: tags.length, note: '用于快速缩小范围' },
+      { label: '代表节点', value: publicNodes.filter((node) => node.featured?.representative).length, note: '适合第一次阅读' },
     ],
   }
 }

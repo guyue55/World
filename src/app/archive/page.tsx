@@ -1,8 +1,10 @@
 import { ArchiveView } from '@/components/archive/ArchiveView'
 import { getPublicNodes } from '@/lib/nodes'
 import { getAllAreas } from '@/lib/areas'
+import { buildArchiveDynamicSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
+import { ArchiveDynamicGuide } from '@/components/archive/ArchiveDynamicGuide'
 
 export const metadata = createPageMetadata({
   title: '档案馆',
@@ -11,6 +13,10 @@ export const metadata = createPageMetadata({
 })
 
 export default function ArchivePage() {
+  const nodes = getPublicNodes()
+  const areas = getAllAreas()
+  const archiveSurface = buildArchiveDynamicSurface(nodes, areas)
+
   return (
     <main className="world-container space-y-10 py-16">
       <ProductRouteGuide
@@ -19,7 +25,8 @@ export default function ArchivePage() {
         primaryHref="/atlas"
         primaryLabel="切回世界地图"
       />
-      <ArchiveView nodes={getPublicNodes()} areas={getAllAreas()} />
+      <ArchiveDynamicGuide surface={archiveSurface} />
+      <ArchiveView nodes={nodes} areas={areas} />
     </main>
   )
 }

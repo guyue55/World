@@ -42,15 +42,17 @@ export function ArchiveView({ nodes, areas }: { nodes: Node[]; areas: Area[] }) 
   return (
     <section className="space-y-6">
       <ArchiveStats {...stats} />
-      <ArchiveFilters
-        filters={filters}
-        areas={areas}
-        nodeTypes={nodeTypes}
-        lifeStages={lifeStages}
-        popularTags={popularTags}
-        onChange={setFilters}
-        onReset={reset}
-      />
+      <div id="archive-search">
+        <ArchiveFilters
+          filters={filters}
+          areas={areas}
+          nodeTypes={nodeTypes}
+          lifeStages={lifeStages}
+          popularTags={popularTags}
+          onChange={setFilters}
+          onReset={reset}
+        />
+      </div>
 
       <div className="flex items-center justify-between gap-4 text-sm text-ink/55">
         <p>当前显示 {filtered.length} / {nodes.length} 颗公开星体</p>

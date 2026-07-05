@@ -9,6 +9,7 @@ const componentFiles = [
   'src/components/ask/PublicLighthouseConsole.tsx',
   'src/components/node/NodeOpeningRitual.tsx',
   'src/components/status/DynamicWorldStatusBoard.tsx',
+  'src/components/archive/ArchiveDynamicGuide.tsx',
 ]
 const pageFiles = [
   'src/app/page.tsx',
@@ -17,6 +18,7 @@ const pageFiles = [
   'src/app/ask/page.tsx',
   'src/app/node/[slug]/page.tsx',
   'src/app/status/page.tsx',
+  'src/app/archive/page.tsx',
 ]
 const requiredPageTokens = [
   'buildHomeDynamicWorldSurface',
@@ -25,6 +27,7 @@ const requiredPageTokens = [
   'buildLighthouseConsoleSurface',
   'buildNodeOpeningSurface',
   'buildDynamicWorldStatusSurface',
+  'buildArchiveDynamicSurface',
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 
@@ -62,6 +65,9 @@ if (!homeSource.includes('ProductDynamicWorldGuide')) failures.push('首页必�
 
 const statusSource = readFileSync(resolve(root, 'src/app/status/page.tsx'), 'utf8')
 if (!statusSource.includes('DynamicWorldStatusBoard')) failures.push('/status 必须渲染动态世界状态面板')
+
+const archiveSource = readFileSync(resolve(root, 'src/app/archive/page.tsx'), 'utf8')
+if (!archiveSource.includes('ArchiveDynamicGuide')) failures.push('/archive 必须渲染动态档案导览区')
 
 if (failures.length) {
   console.error('Public dynamic world surface check failed:')
