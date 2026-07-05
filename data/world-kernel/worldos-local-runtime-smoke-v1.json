@@ -37,13 +37,11 @@
   },
   "publicHtmlRoutes": [
     "/",
-    "/about",
     "/atlas",
     "/timeline",
     "/archive",
     "/paths",
     "/ask",
-    "/manifesto",
     "/status",
     "/node/world-manifesto"
   ],

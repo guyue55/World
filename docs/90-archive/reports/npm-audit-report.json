@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T03:35:42.565Z",
+  "generatedAt": "2026-07-05T10:08:13.195Z",
   "command": "npm audit --json",
   "exitCode": 1,
   "vulnerabilities": {
@@ -91,12 +91,12 @@
         "total": 2
       },
       "dependencies": {
-        "prod": 150,
-        "dev": 384,
-        "optional": 88,
-        "peer": 15,
+        "prod": 157,
+        "dev": 387,
+        "optional": 92,
+        "peer": 2,
         "peerOptional": 0,
-        "total": 574
+        "total": 579
       }
     }
   }

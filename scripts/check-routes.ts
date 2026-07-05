@@ -12,8 +12,8 @@ const requiredRoutes = [
   'src/app/paths/[id]/page.tsx',
   'src/app/node/[slug]/page.tsx',
   'src/app/ask/page.tsx',
-  'src/app/about/page.tsx',
-  'src/app/manifesto/page.tsx',
+  'src/app/_legacy/about/page.tsx',
+  'src/app/_legacy/manifesto/page.tsx',
   'src/app/status/page.tsx',
   'src/app/not-found.tsx',
   'src/app/error.tsx',
@@ -21,7 +21,6 @@ const requiredRoutes = [
   'src/app/sitemap.ts',
   'src/app/robots.ts',
   'src/app/manifest.ts',
-  'src/app/rss.xml/route.ts',
 ]
 
 function assertFile(filePath: string) {

@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import type { Area, Node, Path, WorldEvent } from '@/lib/types'
 import type { HomeDynamicWorldSurface } from '@/lib/public-world-surfaces'
