@@ -90,13 +90,13 @@
   "guardedRoutes": [
     {
       "route": "/r4-creator",
-      "status": 307,
+      "status": 308,
       "location": "/forbidden",
       "reason": "创世台入口在没有真实 owner auth 前不得公开。"
     },
     {
       "route": "/r6-service",
-      "status": 307,
+      "status": 308,
       "location": "/forbidden",
       "reason": "服务化入口在没有真实后端权限前不得公开。"
     },

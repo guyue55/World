@@ -23,6 +23,21 @@ const nextConfig: NextConfig = {
     mdxRs: true,
     cpus: 2,
   },
+  async redirects() {
+    return [
+      { source: '/world-map', destination: '/atlas', permanent: true },
+      { source: '/time-river', destination: '/timeline', permanent: true },
+      { source: '/lighthouse', destination: '/ask', permanent: true },
+      { source: '/r8-public', destination: '/status', permanent: true },
+      { source: '/world', destination: '/atlas', permanent: true },
+      { source: '/r2-world', destination: '/atlas', permanent: true },
+      { source: '/r3-content-life', destination: '/archive', permanent: true },
+      { source: '/r4-creator', destination: '/forbidden', permanent: true },
+      { source: '/r5-lighthouse', destination: '/ask', permanent: true },
+      { source: '/r6-service', destination: '/forbidden', permanent: true },
+      { source: '/r7-evolution', destination: '/forbidden', permanent: true },
+    ]
+  },
 }
 
 export default withMDX(nextConfig)
