@@ -10,13 +10,13 @@ const registry = json('data/world-kernel/world-kernel-consolidation-v1.json')
 
 const formalFiles = [
   'src/app/page.tsx',
-  'src/app/about/page.tsx',
+  'src/app/_legacy/about/page.tsx',
   'src/app/atlas/page.tsx',
   'src/app/timeline/page.tsx',
   'src/app/archive/page.tsx',
   'src/app/paths/page.tsx',
   'src/app/ask/page.tsx',
-  'src/app/manifesto/page.tsx',
+  'src/app/_legacy/manifesto/page.tsx',
   'src/app/status/page.tsx',
   'src/app/node/[slug]/page.tsx',
   'src/components/world/WorldShell.tsx',

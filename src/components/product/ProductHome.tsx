@@ -57,16 +57,16 @@ export function ProductHome({
             </div>
             <div className="flex flex-wrap gap-3">
               <Link href={dynamicWorld.primaryHref} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night">
-                从短路径开始 →
+                走 8 分钟路径 →
               </Link>
               <Link href="/atlas" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
                 看世界地图
               </Link>
-              <Link href="/timeline" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
-                沿时间流
+              <Link href="/archive" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
+                进档案馆
               </Link>
-              <Link href="/archive" className="rounded-full border border-ink/10 bg-white/55 px-6 py-3 text-sm font-semibold text-ink/70 transition hover:-translate-y-0.5 hover:bg-white">
-                现实检索
+              <Link href="/ask" className="rounded-full border border-ink/10 bg-white/55 px-6 py-3 text-sm font-semibold text-ink/70 transition hover:-translate-y-0.5 hover:bg-white">
+                问灯塔
               </Link>
             </div>
           </div>

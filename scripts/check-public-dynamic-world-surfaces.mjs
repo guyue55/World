@@ -25,8 +25,8 @@ const pageFiles = [
   'src/app/archive/page.tsx',
   'src/app/paths/[id]/page.tsx',
   'src/app/paths/page.tsx',
-  'src/app/about/page.tsx',
-  'src/app/manifesto/page.tsx',
+  'src/app/_legacy/about/page.tsx',
+  'src/app/_legacy/manifesto/page.tsx',
 ]
 const requiredPageTokens = [
   'buildHomeDynamicWorldSurface',

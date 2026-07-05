@@ -95,7 +95,15 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
         </div>
         <section className="rounded-[1.75rem] border border-white/65 bg-white/70 p-5 text-sm leading-7 text-ink/62 shadow-soft backdrop-blur">
           <p className="font-semibold text-ink">下一步</p>
-          <p className="mt-2">继续沿这个区域查看 {getPublicNodesByArea(node.areaId).length} 个公开节点，或回到地图重新选择路径。</p>
+          <p className="mt-2 mb-4">继续沿这个区域查看 {getPublicNodesByArea(node.areaId).length} 个公开节点，或回到地图重新选择路径。</p>
+          <div className="flex flex-col gap-2">
+            <a href="/atlas" className="block w-full rounded-full bg-ink px-4 py-2 text-center font-semibold text-paper transition hover:bg-night">
+              返回世界地图
+            </a>
+            <a href="/archive" className="block w-full rounded-full border border-ink/10 bg-white/75 px-4 py-2 text-center font-semibold text-ink transition hover:bg-white">
+              去档案馆检索
+            </a>
+          </div>
         </section>
       </aside>
     </main>

@@ -18,14 +18,13 @@ export function useGsapEntrance<T extends HTMLElement>(
     // Strip Tailwind's 'invisible' class so GSAP has full control and clearProps doesn't revert to hidden
     targets.forEach((t) => t.classList.remove('invisible'))
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    if (!enabled || reduceMotion) {
+    if (!enabled) {
       gsap.set(targets, { autoAlpha: 1, y: 0, clearProps: 'transform' })
       return
     }
 
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia(rootRef)
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
       gsap.fromTo(
         targets,
         { autoAlpha: 0, y: 18 },
@@ -38,8 +37,12 @@ export function useGsapEntrance<T extends HTMLElement>(
           overwrite: 'auto',
         },
       )
-    }, rootRef)
+    })
+    
+    mm.add('(prefers-reduced-motion: reduce)', () => {
+      gsap.set(targets, { autoAlpha: 1, y: 0, clearProps: 'transform' })
+    })
 
-    return () => ctx.revert()
+    return () => mm.revert()
   }, [enabled, rootRef, selector])
 }

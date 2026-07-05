@@ -15,7 +15,7 @@ const json = <T>(file: string): T => JSON.parse(read(file)) as T
 const productFiles = [
   'src/app/page.tsx',
   'src/components/world/WorldShell.tsx',
-  'src/app/about/page.tsx',
+  'src/app/_legacy/about/page.tsx',
   'src/app/atlas/page.tsx',
   'src/app/timeline/page.tsx',
   'src/app/archive/page.tsx',
