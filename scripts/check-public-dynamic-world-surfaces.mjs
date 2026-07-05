@@ -43,6 +43,7 @@ const requiredPageTokens = [
   'buildManifestoDynamicSurface',
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
+const motionGrammarFile = 'src/lib/motion-grammar.ts'
 
 const failures = []
 
@@ -82,8 +83,17 @@ for (const token of requiredPageTokens) {
 }
 
 const gsapHook = readFileSync(resolve(root, gsapHookFile), 'utf8')
-for (const token of ['gsap.matchMedia', 'autoAlpha', 'prefers-reduced-motion', 'overwrite']) {
+for (const token of ['gsap.matchMedia', 'autoAlpha', 'prefers-reduced-motion', 'getMotionGrammarRule']) {
   if (!gsapHook.includes(token)) failures.push(`${gsapHookFile} 缺少 GSAP 最佳实践关键点：${token}`)
+}
+if (gsapHook.includes('switch (type)')) failures.push(`${gsapHookFile} 不应内联分叉动效参数，应消费 motion grammar`)
+
+const motionGrammar = readFileSync(resolve(root, motionGrammarFile), 'utf8')
+for (const token of ['arrival', 'emergence', 'connection', 'flow', 'focus', 'feedback']) {
+  if (!motionGrammar.includes(`${token}:`)) failures.push(`${motionGrammarFile} 缺少动效语法：${token}`)
+}
+for (const token of ['label', 'intent', 'appliesTo', 'reducedMotion', 'overwrite']) {
+  if (!motionGrammar.includes(token)) failures.push(`${motionGrammarFile} 缺少动效语法字段：${token}`)
 }
 
 const homeSource = readFileSync(resolve(root, 'src/components/product/ProductHome.tsx'), 'utf8')
