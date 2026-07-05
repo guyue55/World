@@ -152,7 +152,7 @@ function RuntimeSignalDock() {
   const runtime = useWorldRuntime()
 
   return (
-    <aside className="fixed bottom-24 left-4 z-40 hidden w-[19rem] rounded-[1.25rem] border border-white/70 bg-white/72 p-4 text-sm text-ink/68 shadow-soft backdrop-blur-xl xl:block">
+    <aside className="fixed bottom-6 left-6 z-30 hidden w-[18rem] rounded-[1.25rem] border border-white/70 bg-white/72 p-4 text-sm text-ink/68 shadow-soft backdrop-blur-xl 2xl:block">
       <div className="flex items-start gap-3">
         <span className="rounded-[0.85rem] bg-ink p-2 text-paper"><Activity className="h-4 w-4" /></span>
         <div className="min-w-0">

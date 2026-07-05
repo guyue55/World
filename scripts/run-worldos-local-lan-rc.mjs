@@ -364,6 +364,76 @@ async function runBrowserChecks() {
         expression: `(() => {
           const bodyStyle = getComputedStyle(document.body)
           const text = document.body?.innerText || ''
+          const isVisible = (element) => {
+            const style = getComputedStyle(element)
+            const rect = element.getBoundingClientRect()
+            return style.display !== 'none'
+              && style.visibility !== 'hidden'
+              && style.opacity !== '0'
+              && rect.width > 4
+              && rect.height > 4
+              && rect.bottom > 0
+              && rect.right > 0
+              && rect.top < window.innerHeight
+              && rect.left < window.innerWidth
+          }
+          const rectPayload = (rect) => ({
+            top: Math.round(rect.top),
+            left: Math.round(rect.left),
+            width: Math.round(rect.width),
+            height: Math.round(rect.height),
+          })
+          const labelFor = (element) => {
+            const name = element.getAttribute('aria-label')
+              || element.getAttribute('data-testid')
+              || element.id
+              || element.tagName.toLowerCase()
+            const text = (element.innerText || element.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 60)
+            return text ? \`\${name}: \${text}\` : name
+          }
+          const overlapRatio = (a, b) => {
+            const left = Math.max(a.left, b.left)
+            const right = Math.min(a.right, b.right)
+            const top = Math.max(a.top, b.top)
+            const bottom = Math.min(a.bottom, b.bottom)
+            if (right <= left || bottom <= top) return 0
+            const overlapArea = (right - left) * (bottom - top)
+            const contentArea = Math.max(1, b.width * b.height)
+            return overlapArea / contentArea
+          }
+          const overlayCandidates = Array.from(document.body.querySelectorAll('body *'))
+            .filter((element) => {
+              const style = getComputedStyle(element)
+              const zIndex = Number.parseInt(style.zIndex || '0', 10)
+              const isBackgroundLayer = element.getAttribute('aria-hidden') === 'true'
+                || style.pointerEvents === 'none'
+                || (!Number.isNaN(zIndex) && zIndex < 0)
+              return ['fixed', 'sticky'].includes(style.position) && !isBackgroundLayer && isVisible(element)
+            })
+            .map((element) => ({ element, rect: element.getBoundingClientRect(), label: labelFor(element) }))
+
+          const readableCandidates = Array.from(document.body.querySelectorAll('main h1, main h2, main h3, main p, main a, main button, main li, main label, footer p, footer a'))
+            .filter((element) => isVisible(element) && (element.innerText || element.textContent || '').replace(/\\s+/g, '').length >= 2)
+            .map((element) => ({ element, rect: element.getBoundingClientRect(), label: labelFor(element) }))
+
+          const fixedOverlayIssues = []
+          for (const overlay of overlayCandidates) {
+            for (const content of readableCandidates) {
+              if (overlay.element === content.element || overlay.element.contains(content.element) || content.element.contains(overlay.element)) continue
+              const ratio = overlapRatio(overlay.rect, content.rect)
+              if (ratio > 0.18) {
+                fixedOverlayIssues.push({
+                  overlay: overlay.label,
+                  content: content.label,
+                  overlapRatio: Number(ratio.toFixed(3)),
+                  overlayRect: rectPayload(overlay.rect),
+                  contentRect: rectPayload(content.rect),
+                })
+                if (fixedOverlayIssues.length >= 8) break
+              }
+            }
+            if (fixedOverlayIssues.length >= 8) break
+          }
           return {
             title: document.title,
             h1: document.querySelector('h1')?.innerText?.trim() || '',
@@ -373,7 +443,8 @@ async function runBrowserChecks() {
             scrollWidth: document.documentElement.scrollWidth,
             clientWidth: document.documentElement.clientWidth,
             overflowX: document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
-            interactiveCount: document.querySelectorAll('a[href],button,input,select,textarea').length
+            interactiveCount: document.querySelectorAll('a[href],button,input,select,textarea').length,
+            fixedOverlayIssues
           }
         })()`,
       })
@@ -403,6 +474,7 @@ async function runBrowserChecks() {
         && (!registry.browserExpectations?.mustHaveH1 || Boolean(metrics.h1))
         && (!registry.browserExpectations?.mustNotHideBody || !metrics.hiddenBody)
         && (!registry.browserExpectations?.mobileMustNotOverflowX || !viewport.mobile || !metrics.overflowX)
+        && metrics.fixedOverlayIssues.length === 0
         && exceptions.length === 0
         && logIssues.length === 0
         && failedNetwork.length === 0
@@ -425,6 +497,7 @@ async function runBrowserChecks() {
           h1: metrics.h1,
           hiddenBody: metrics.hiddenBody,
           overflowX: metrics.overflowX,
+          fixedOverlayIssues: metrics.fixedOverlayIssues.length,
           exceptions: exceptions.length,
           logIssues: logIssues.length,
           failedNetwork: failedNetwork.length,

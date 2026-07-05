@@ -92,7 +92,7 @@ export function ProductJourneyDock() {
   return (
     <aside
       aria-label="世界旅程与模式"
-      className="fixed bottom-20 right-4 z-40 hidden max-w-[320px] rounded-[1.5rem] border border-white/70 bg-paper/88 p-4 text-sm shadow-soft backdrop-blur-xl lg:block"
+      className="fixed bottom-6 right-6 z-30 hidden max-w-[300px] rounded-[1.5rem] border border-white/70 bg-paper/88 p-4 text-sm shadow-soft backdrop-blur-xl 2xl:block"
     >
       <div className="flex items-start justify-between gap-3">
         <div>
