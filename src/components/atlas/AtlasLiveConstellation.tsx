@@ -43,7 +43,7 @@ export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellatio
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
   const shouldMove = !runtime.reducedMotion
-  useGsapEntrance(rootRef, shouldMove)
+  useGsapEntrance(rootRef, shouldMove, '[data-gsap-reveal]', 'connection')
 
   const points = surface.areas.slice(0, positions.length).map((area, index) => ({
     area,
@@ -117,6 +117,18 @@ export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellatio
               <p className="mt-1 text-xs text-paper/52">公开星线正在连接</p>
             </div>
           </div>
+          
+          <div data-gsap-reveal className="rounded-[1.1rem] border border-gold/30 bg-gold/10 p-5">
+            <p className="text-xs font-semibold tracking-[0.2em] text-gold">CURRENT EXHIBITION</p>
+            <h3 className="mt-2 font-semibold text-paper">「 记忆的折叠与展开 」</h3>
+            <p className="mt-2 text-sm leading-6 text-paper/70">
+              本期主题展览。将跨越不同星域但主题相连的内容进行策展。通过这种方式，旧内容会获得新的上下文。
+            </p>
+            <button type="button" className="mt-4 rounded-full border border-gold/40 px-4 py-2 text-xs font-semibold text-gold transition hover:bg-gold/20">
+              进入展览空间
+            </button>
+          </div>
+
           <div data-gsap-reveal className="rounded-[1.1rem] border border-paper/12 bg-paper/8 p-4 text-sm leading-7 text-paper/62">
             当前运行态：{runtime.season} · {runtime.dayPeriod}。动效可通过左下角运行坞切换。
           </div>

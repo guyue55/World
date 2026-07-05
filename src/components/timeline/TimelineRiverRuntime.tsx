@@ -12,7 +12,7 @@ export function TimelineRiverRuntime({ surface }: { surface: TimelineRiverSurfac
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
   const shouldMove = !runtime.reducedMotion
-  useGsapEntrance(rootRef, shouldMove)
+  useGsapEntrance(rootRef, shouldMove, '[data-gsap-reveal]', 'flow')
 
   return (
     <section ref={rootRef} className="overflow-hidden rounded-[1.75rem] border border-white/65 bg-white/72 shadow-soft backdrop-blur">

@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { getAllPaths, getPathById } from '@/lib/paths'
 import { Breadcrumbs } from '@/components/common/Breadcrumbs'
 import { PathProgress } from '@/components/paths/PathProgress'
@@ -11,18 +11,21 @@ import { PathJourneyBoard } from '@/components/paths/PathJourneyBoard'
 import { PathNodeSequence } from '@/components/paths/PathNodeSequence'
 import { PathNextSteps } from '@/components/paths/PathNextSteps'
 
+export const dynamicParams = true
+
 type PathPageParams = {
   id: string
 }
 
 export function generateStaticParams() {
-  return getAllPaths().map((path) => ({ id: path.id }))
+  return getAllPaths().filter((p) => p.visibility === 'public').map((path) => ({ id: path.id }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<PathPageParams> }) {
   const { id } = await params
   const path = getPathById(id)
   if (!path) return createPageMetadata({ title: '路径不存在', path: '/paths' })
+  if (path.visibility !== 'public') return createPageMetadata({ title: '无权限访问', path: '/forbidden' })
 
   return createPageMetadata({
     title: path.title,
@@ -35,6 +38,7 @@ export default async function PathDetailPage({ params }: { params: Promise<PathP
   const { id } = await params
   const path = getPathById(id)
   if (!path) notFound()
+  if (path.visibility !== 'public') redirect('/forbidden')
 
   const nodes = getPathNodes(path)
   const nextPaths = getNextPaths(path)

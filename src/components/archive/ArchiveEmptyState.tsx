@@ -17,13 +17,21 @@ export function ArchiveEmptyState({ filters, onReset }: { filters: ArchiveFilter
           ? `当前筛选：${active.join('、')}。可以放宽条件，或者让这颗星在未来被命名。`
           : '也许它还没有被命名，或者它仍在私密层静静发光。'}
       </p>
-      <button
-        type="button"
-        onClick={onReset}
-        className="mt-5 rounded-full bg-ink px-5 py-3 text-paper"
-      >
-        清空筛选
-      </button>
+      <div className="mt-8 flex flex-wrap items-center gap-4">
+        <button
+          type="button"
+          onClick={onReset}
+          className="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-night"
+        >
+          清空筛选，重新启航
+        </button>
+        <a href="/ask" className="rounded-full border border-ink/10 bg-white/75 px-5 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
+          找不准关键词？问问灯塔
+        </a>
+        <a href="/atlas" className="text-sm font-semibold text-moss underline underline-offset-4 hover:text-ink">
+          返回世界地图
+        </a>
+      </div>
     </div>
   )
 }

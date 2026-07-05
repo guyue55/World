@@ -12,9 +12,13 @@ export function LighthousePromptGuide({ prompts }: { prompts: LighthousePrompt[]
     <section className="rounded-world border border-ink/10 bg-white/45 p-6 shadow-soft">
       <p className="text-sm tracking-[0.35em] text-moss">LOW LIGHT PROMPTS</p>
       <h2 className="mt-3 text-3xl font-semibold">先问一个安全的问题</h2>
-      <p className="mt-3 max-w-2xl leading-8 text-ink/70">
-        这些问题不会调用远程模型，只会把你带到公开路径、地图或档案馆。
-      </p>
+      <div className="mt-3 max-w-2xl space-y-2 text-ink/70 leading-8">
+        <p>这些问题不会调用远程模型，只会把你带到公开路径、地图或档案馆。</p>
+        <div className="rounded-xl border border-ink/10 bg-white/30 p-3 text-sm leading-6">
+          <p className="font-semibold text-ink/80">⚠️ 边界声明</p>
+          <p>灯塔基于**仅限公开上下文**为你提供导览与建议。它没有世界修改权限，遇到超出已知事实的询问时，它会记录入库并由岛主（Owner）后续人工确认。</p>
+        </div>
+      </div>
       <div className="mt-6 grid gap-3 lg:grid-cols-[1fr_320px]">
         <div className="flex flex-wrap gap-2">
           {prompts.map((prompt) => (

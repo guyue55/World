@@ -11,7 +11,7 @@ export function NodeOpeningRitual({ surface }: { surface: NodeOpeningSurface }) 
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
   const shouldMove = !runtime.reducedMotion
-  useGsapEntrance(rootRef, shouldMove)
+  useGsapEntrance(rootRef, shouldMove, '[data-gsap-reveal]', 'focus')
 
   const facts = [
     { icon: Orbit, label: surface.areaLabel, caption: '所在星域' },

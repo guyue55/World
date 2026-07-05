@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.62,
   }))
 
-  const pathItems = getAllPaths().map((path) => ({
+  const pathItems = getAllPaths().filter(p => p.visibility === 'public').map((path) => ({
     url: new URL(`/paths/${path.id}`, site.url).toString(),
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

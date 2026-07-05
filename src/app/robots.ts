@@ -6,6 +6,7 @@ const blockedRoutes = [
   ...PRODUCT_PRIVATE_ROUTES,
   ...PRODUCT_INTERNAL_EXACT_ROUTES,
   '/forbidden',
+  '/_legacy/',
   '/api/r6/',
   '/api/r7/maintenance',
   '/api/v2/vault',
