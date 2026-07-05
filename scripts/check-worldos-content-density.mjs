@@ -41,6 +41,11 @@ for (const node of publicNodes) {
   if (!node.summary || node.summary.length < 18) failures.push(`${node.id} 缺少足够清晰的 summary`)
   if (!node.worldTitle) failures.push(`${node.id} 缺少 worldTitle`)
   if (node.contentPath && !fs.existsSync(path.join(root, node.contentPath))) failures.push(`${node.id} contentPath 不存在：${node.contentPath}`)
+  if (node.contentPath && fs.existsSync(path.join(root, node.contentPath))) {
+    const content = fs.readFileSync(path.join(root, node.contentPath), 'utf-8').trim()
+    if (content.length < 30) failures.push(`${node.id} 正文过短，不足以作为真实公开内容`)
+    if (!/[\u4e00-\u9fffA-Za-z0-9]/.test(content)) failures.push(`${node.id} 正文缺少可读文本`)
+  }
 }
 
 for (const pathItem of paths.filter((item) => item.visibility === 'public')) {
