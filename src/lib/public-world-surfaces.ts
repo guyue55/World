@@ -147,6 +147,71 @@ export type ArchiveDynamicSurface = {
   }>
 }
 
+export type PathsDirectoryAudienceSignal = {
+  audience: string
+  count: number
+}
+
+export type PathsDirectoryPathSignal = {
+  id: string
+  href: string
+  title: string
+  description: string
+  audience: string
+  estimatedMinutes: number
+  nodeCount: number
+  entryNodeTitle?: string
+}
+
+export type PathsDirectorySurface = {
+  eyebrow: string
+  title: string
+  description: string
+  metrics: Array<{
+    label: string
+    value: string
+    note: string
+  }>
+  audiences: PathsDirectoryAudienceSignal[]
+  paths: PathsDirectoryPathSignal[]
+}
+
+export type AboutIdentityCardSignal = {
+  title: string
+  body: string
+}
+
+export type AboutDynamicSurface = {
+  eyebrow: string
+  title: string
+  description: string
+  identityCards: AboutIdentityCardSignal[]
+  actions: Array<{
+    href: string
+    label: string
+    style: 'primary' | 'secondary' | 'tertiary'
+  }>
+}
+
+export type ManifestoRuleSignal = {
+  title: string
+  description: string
+}
+
+export type ManifestoDynamicSurface = {
+  eyebrow: string
+  title: string
+  description: string
+  rules: ManifestoRuleSignal[]
+  summaryLabel: string
+  summaryQuote: string
+  actions: Array<{
+    href: string
+    label: string
+    style: 'primary' | 'secondary' | 'tertiary'
+  }>
+}
+
 export type PathJourneyStepSignal = {
   id: string
   href: string
@@ -571,5 +636,105 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
       { label: '适合人群', value: path.audience, note: '用于选择路径' },
       { label: '后续路径', value: nextPaths.length, note: '看完之后继续' },
     ],
+  }
+}
+
+export function buildPathsDirectorySurface(paths: Path[], nodes: Node[]): PathsDirectorySurface {
+  const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
+  const nodeMap = new Map(publicNodes.map((n) => [n.slug, n]))
+
+  const audiences = Array.from(new Set(paths.map((p) => p.audience)))
+  const audienceStats = audiences.map(audience => ({
+    audience,
+    count: paths.filter(p => p.audience === audience).length
+  }))
+
+  return {
+    eyebrow: 'GUIDED PATHS',
+    title: '精选路径',
+    description: '路径不是分类，而是为不同旅人准备的行走路线。它把星体排成可以理解、可以继续走下去的顺序。',
+    metrics: [
+      { label: '入口', value: '先走一条路', note: '第一次进入不需要理解全部宇宙，先沿一条公开路径走完即可。' },
+      { label: '边界', value: '只含公开节点', note: '路径只读取已审查的公开内容，不把私密层、家庭层或保险箱内容带到前台。' },
+      { label: '回路', value: '看完仍能继续', note: '每条路径都能回到地图、进入档案馆，或继续沿相关路径探索。' },
+    ],
+    audiences: audienceStats,
+    paths: paths.map(path => {
+      const entryNode = path.nodeSlugs.length > 0 ? nodeMap.get(path.nodeSlugs[0]) : undefined
+      return {
+        id: path.id,
+        href: `/paths/${path.id}`,
+        title: path.title,
+        description: path.description,
+        audience: path.audience,
+        estimatedMinutes: path.estimatedMinutes ?? 8,
+        nodeCount: path.nodeSlugs.length,
+        entryNodeTitle: entryNode ? (entryNode.worldTitle ?? entryNode.title) : undefined
+      }
+    })
+  }
+}
+
+export function buildAboutDynamicSurface(): AboutDynamicSurface {
+  return {
+    eyebrow: 'ABOUT',
+    title: '造物主不是简历，而是世界的原点。',
+    description: '古月浮屿是一座持续生长的个人数字世界。它对外是可探索的公开前厅，对内是创世台，对未来是档案，对 AI 是可读、可审计、可边界化协作的世界协议。',
+    identityCards: [
+      {
+        title: '这里不是简历页',
+        body: '它解释古月浮屿为什么存在：把技术、产品、灵感、生活与记忆安放到一个可长期维护的个人数字世界。',
+      },
+      {
+        title: 'AI 是灯塔，不是太阳',
+        body: 'AI 可以导览、整理和提出建议，但不替造物主决定公开、删除、权限或意义。',
+      },
+      {
+        title: '公开层不是完整世界',
+        body: '访客看到的是精选世界。私密、家庭、保险箱和沉默内容不会进入公开索引。',
+      },
+    ],
+    actions: [
+      { href: '/atlas', label: '进入地图', style: 'primary' },
+      { href: '/paths', label: '查看路径', style: 'secondary' },
+      { href: '/manifesto', label: '阅读宪章', style: 'tertiary' },
+    ]
+  }
+}
+
+export function buildManifestoDynamicSurface(): ManifestoDynamicSurface {
+  return {
+    eyebrow: 'MANIFESTO',
+    title: '世界宣言',
+    description: '古月浮屿不是公共多人 3D 元宇宙，也不是虚拟经济空间。它是一个以内容为节点、以时间为河流、以权限为边界、以 AI 为灯塔的个人数字世界。',
+    rules: [
+      {
+        title: 'AI 是灯塔，不是太阳',
+        description: 'AI 只照亮路径、整理线索、提出建议；不自动发布、不删除、不越权读取私密内容。',
+      },
+      {
+        title: '公开层不是完整世界',
+        description: '访客看到的是精选前厅。私密、家庭、保险箱和沉默内容不会进入公开索引。',
+      },
+      {
+        title: '入口清澈，深处浩瀚',
+        description: '首页只给少数清晰路径，复杂性放在可探索的深处，而不是压到第一屏。',
+      },
+      {
+        title: '前台浪漫，后台清醒，档案可靠',
+        description: '世界语言负责体验，现实解释负责理解，稳定数据协议负责长期保存和迁移。',
+      },
+      {
+        title: '世界为生活服务',
+        description: '它允许低光、静默、修复和复活，不用更新压力反过来支配生活。',
+      },
+    ],
+    summaryLabel: '一句话',
+    summaryQuote: '以内容为星体，以区域为空间，以关系为星线，以时间为河流，以权限为边界，以规则为自然法则。',
+    actions: [
+      { href: '/about', label: '了解古月', style: 'primary' },
+      { href: '/paths', label: '沿路径进入', style: 'secondary' },
+      { href: '/ask', label: '点亮灯塔', style: 'tertiary' },
+    ]
   }
 }

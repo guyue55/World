@@ -11,6 +11,9 @@ const componentFiles = [
   'src/components/status/DynamicWorldStatusBoard.tsx',
   'src/components/archive/ArchiveDynamicGuide.tsx',
   'src/components/paths/PathJourneyBoard.tsx',
+  'src/components/paths/PathsDynamicDirectory.tsx',
+  'src/components/about/AboutDynamicHero.tsx',
+  'src/components/manifesto/ManifestoDynamicHero.tsx',
 ]
 const pageFiles = [
   'src/app/page.tsx',
@@ -21,6 +24,9 @@ const pageFiles = [
   'src/app/status/page.tsx',
   'src/app/archive/page.tsx',
   'src/app/paths/[id]/page.tsx',
+  'src/app/paths/page.tsx',
+  'src/app/about/page.tsx',
+  'src/app/manifesto/page.tsx',
 ]
 const requiredPageTokens = [
   'buildHomeDynamicWorldSurface',
@@ -31,6 +37,9 @@ const requiredPageTokens = [
   'buildDynamicWorldStatusSurface',
   'buildArchiveDynamicSurface',
   'buildPathJourneySurface',
+  'buildPathsDirectorySurface',
+  'buildAboutDynamicSurface',
+  'buildManifestoDynamicSurface',
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 
