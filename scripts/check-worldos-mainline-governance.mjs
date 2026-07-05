@@ -6,6 +6,7 @@ const rel = (file) => path.join(root, file)
 const read = (file) => fs.readFileSync(rel(file), 'utf-8')
 const json = (file) => JSON.parse(read(file))
 const failures = []
+const isPublicVisible = (visibility) => visibility === 'public' || visibility === 'semiPublic'
 
 function requireFile(file) {
   if (!fs.existsSync(rel(file))) failures.push(`缺少文件：${file}`)
@@ -43,7 +44,7 @@ if (!failures.length) {
   }
 
   const targets = governance.qualityTargets ?? {}
-  const publicNodes = nodes.filter((node) => node.visibility === 'public')
+  const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
   const contentNodes = publicNodes.filter((node) => Boolean(node.contentPath))
   const publicPaths = paths.filter((item) => item.visibility === 'public')
   const representedAreas = new Set(publicNodes.map((node) => node.areaId))
