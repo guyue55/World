@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T12:11:25.648Z",
+  "generatedAt": "2026-07-05T03:35:38.944Z",
   "status": "passed",
   "baseUrl": "http://127.0.0.1:4317",
   "registry": "data/world-kernel/worldos-local-runtime-smoke-v1.json",
@@ -18,8 +18,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 28,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 69,
       "ok": true,
       "expected": {
         "status": 200,
@@ -34,8 +34,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 21,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 29,
       "ok": true,
       "expected": {
         "status": 200,
@@ -50,8 +50,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 65,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 66,
       "ok": true,
       "expected": {
         "status": 200,
@@ -66,8 +66,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 27,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 26,
       "ok": true,
       "expected": {
         "status": 200,
@@ -82,8 +82,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 27,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 26,
       "ok": true,
       "expected": {
         "status": 200,
@@ -98,8 +98,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 21,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 14,
       "ok": true,
       "expected": {
         "status": 200,
@@ -114,8 +114,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 15,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 11,
       "ok": true,
       "expected": {
         "status": 200,
@@ -130,8 +130,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 21,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 24,
       "ok": true,
       "expected": {
         "status": 200,
@@ -146,8 +146,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 18,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 16,
       "ok": true,
       "expected": {
         "status": 200,
@@ -162,7 +162,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
       "durationMs": 26,
       "ok": true,
       "expected": {
@@ -178,7 +178,7 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-04T12:11:22.579Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"a",
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-05T03:35:35.433Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"a",
       "durationMs": 7,
       "ok": true,
       "expected": {
@@ -226,8 +226,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-04T12:11:25.117Z</lastmo",
-      "durationMs": 11,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-05T03:35:38.391Z</lastmo",
+      "durationMs": 12,
       "ok": true,
       "expected": {
         "status": 200,
@@ -259,7 +259,7 @@
       "contentType": "",
       "location": "http://localhost:4317/atlas",
       "bodyPreview": "http://localhost:4317/atlas",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -275,7 +275,7 @@
       "contentType": "",
       "location": "http://localhost:4317/timeline",
       "bodyPreview": "http://localhost:4317/timeline",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -307,7 +307,7 @@
       "contentType": "",
       "location": "http://localhost:4317/forbidden",
       "bodyPreview": "http://localhost:4317/forbidden",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 307,
@@ -324,7 +324,7 @@
       "contentType": "",
       "location": "http://localhost:4317/forbidden",
       "bodyPreview": "http://localhost:4317/forbidden",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 307,
@@ -341,7 +341,7 @@
       "contentType": "",
       "location": "http://localhost:4317/forbidden",
       "bodyPreview": "http://localhost:4317/forbidden",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 307,
@@ -357,8 +357,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/a597f19f3a684c98.c",
-      "durationMs": 13,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/96a397eda3f6c9ce.c",
+      "durationMs": 11,
       "ok": true,
       "expected": {
         "status": 404

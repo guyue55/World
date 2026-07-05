@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-07-04T12:11:28.207Z",
+  "generatedAt": "2026-07-05T03:35:42.565Z",
   "command": "npm audit --json",
   "exitCode": 1,
   "vulnerabilities": {
     "info": 0,
-    "low": 1,
-    "moderate": 3,
+    "low": 0,
+    "moderate": 2,
     "high": 0,
     "critical": 0,
-    "total": 4
+    "total": 2
   },
   "summary": {
-    "total": 4,
+    "total": 2,
     "info": 0,
-    "low": 1,
-    "moderate": 3,
+    "low": 0,
+    "moderate": 2,
     "high": 0,
     "critical": 0
   },
@@ -27,64 +27,6 @@
   "rawAudit": {
     "auditReportVersion": 2,
     "vulnerabilities": {
-      "esbuild": {
-        "name": "esbuild",
-        "severity": "low",
-        "isDirect": false,
-        "via": [
-          {
-            "source": 1120680,
-            "name": "esbuild",
-            "dependency": "esbuild",
-            "title": "esbuild allows arbitrary file read when running the development server on Windows",
-            "url": "https://github.com/advisories/GHSA-g7r4-m6w7-qqqr",
-            "severity": "low",
-            "cwe": [
-              "CWE-22"
-            ],
-            "cvss": {
-              "score": 2.5,
-              "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N"
-            },
-            "range": ">=0.27.3 <0.28.1"
-          }
-        ],
-        "effects": [],
-        "range": "0.27.3 - 0.28.0",
-        "nodes": [
-          "node_modules/esbuild"
-        ],
-        "fixAvailable": true
-      },
-      "js-yaml": {
-        "name": "js-yaml",
-        "severity": "moderate",
-        "isDirect": false,
-        "via": [
-          {
-            "source": 1121860,
-            "name": "js-yaml",
-            "dependency": "js-yaml",
-            "title": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
-            "url": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
-            "severity": "moderate",
-            "cwe": [
-              "CWE-407"
-            ],
-            "cvss": {
-              "score": 5.3,
-              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
-            },
-            "range": ">=4.0.0 <=4.1.1"
-          }
-        ],
-        "effects": [],
-        "range": "4.0.0 - 4.1.1",
-        "nodes": [
-          "node_modules/js-yaml"
-        ],
-        "fixAvailable": true
-      },
       "next": {
         "name": "next",
         "severity": "moderate",
@@ -142,19 +84,19 @@
     "metadata": {
       "vulnerabilities": {
         "info": 0,
-        "low": 1,
-        "moderate": 3,
+        "low": 0,
+        "moderate": 2,
         "high": 0,
         "critical": 0,
-        "total": 4
+        "total": 2
       },
       "dependencies": {
-        "prod": 156,
-        "dev": 382,
-        "optional": 89,
-        "peer": 0,
+        "prod": 150,
+        "dev": 384,
+        "optional": 88,
+        "peer": 15,
         "peerOptional": 0,
-        "total": 573
+        "total": 574
       }
     }
   }

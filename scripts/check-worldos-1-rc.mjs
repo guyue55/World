@@ -59,16 +59,16 @@ if (!failures.length) {
   }
 
   for (const page of [
-    'src/app/world/page.tsx',
-    'src/app/world-map/page.tsx',
-    'src/app/time-river/page.tsx',
-    'src/app/r2-world/page.tsx',
-    'src/app/r3-content-life/page.tsx',
-    'src/app/r4-creator/page.tsx',
-    'src/app/r5-lighthouse/page.tsx',
-    'src/app/r6-service/page.tsx',
-    'src/app/r7-evolution/page.tsx',
-    'src/app/r8-public/page.tsx',
+    'src/app/_legacy/world/page.tsx',
+    'src/app/_legacy/world-map/page.tsx',
+    'src/app/_legacy/time-river/page.tsx',
+    'src/app/_legacy/r2-world/page.tsx',
+    'src/app/_legacy/r3-content-life/page.tsx',
+    'src/app/_legacy/r4-creator/page.tsx',
+    'src/app/_legacy/r5-lighthouse/page.tsx',
+    'src/app/_legacy/r6-service/page.tsx',
+    'src/app/_legacy/r7-evolution/page.tsx',
+    'src/app/_legacy/r8-public/page.tsx',
   ]) {
     const pageSource = read(page)
     if (!pageSource.includes('redirect(')) failures.push(`${page} 必须保持服务端重定向或阻断，不能重新挂载 legacy runtime`)
