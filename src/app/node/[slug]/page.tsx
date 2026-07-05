@@ -3,6 +3,7 @@ import { getNodeBySlug, getPublicNodes, getPublicNodesByArea } from '@/lib/nodes
 import { getAreaById } from '@/lib/areas'
 import { readContentFile } from '@/lib/content'
 import { estimateReadingMinutes, getNodeExplorationGroups } from '@/lib/node-reading'
+import { buildNodeOpeningSurface } from '@/lib/public-world-surfaces'
 import { extractReadingHeadings, getReadingComfortSummary } from '@/lib/reading-comfort'
 import { NodePassport } from '@/components/node/NodePassport'
 import { NodeCover } from '@/components/node/NodeCover'
@@ -14,6 +15,7 @@ import { NodeReadingHeader } from '@/components/node/NodeReadingHeader'
 import { NodeReadingBody } from '@/components/node/NodeReadingBody'
 import { NodeRelationRail } from '@/components/node/NodeRelationRail'
 import { NodeReadingActions } from '@/components/node/NodeReadingActions'
+import { NodeOpeningRitual } from '@/components/node/NodeOpeningRitual'
 import { ReadingComfortBar } from '@/components/reading/ReadingComfortBar'
 import { ReadingToc } from '@/components/reading/ReadingToc'
 
@@ -50,6 +52,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
   const explorationGroups = getNodeExplorationGroups(node)
   const headings = extractReadingHeadings(content)
   const comfort = getReadingComfortSummary(content, readingMinutes)
+  const nodeOpeningSurface = buildNodeOpeningSurface(node, area, readingMinutes)
 
   return (
     <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
@@ -64,6 +67,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
           ]}
         />
 
+        <NodeOpeningRitual surface={nodeOpeningSurface} />
         <NodeCover node={node} />
         <NodeReadingHeader node={node} areaName={area?.worldName} readingMinutes={readingMinutes} />
         <ReadingComfortBar

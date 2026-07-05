@@ -2,9 +2,11 @@ import { getAllAreas } from '@/lib/areas'
 import { getPublicNodes } from '@/lib/nodes'
 import { getPublicWorldEvents, getWorldState } from '@/lib/world-events'
 import { getTimelineStats } from '@/lib/timeline'
+import { buildTimelineRiverSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { TimelineHero } from '@/components/timeline/TimelineHero'
 import { TimelineStats } from '@/components/timeline/TimelineStats'
+import { TimelineRiverRuntime } from '@/components/timeline/TimelineRiverRuntime'
 import { TimelineEventStream } from '@/components/timeline/TimelineEventStream'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 
@@ -20,6 +22,7 @@ export default function TimelinePage() {
   const areas = getAllAreas()
   const state = getWorldState()
   const stats = getTimelineStats(events)
+  const timelineSurface = buildTimelineRiverSurface(events, nodes, areas)
 
   return (
     <main className="world-container space-y-10 py-16">
@@ -31,6 +34,7 @@ export default function TimelinePage() {
       />
       <TimelineHero state={state} />
       <TimelineStats {...stats} />
+      <TimelineRiverRuntime surface={timelineSurface} />
       <TimelineEventStream events={events} nodes={nodes} areas={areas} />
     </main>
   )

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Area, Node, Path, WorldEvent } from '@/lib/types'
 import { ProductWorldCompass } from '@/components/product/ProductWorldCompass'
 import { ProductWorldBoundaries } from '@/components/product/ProductWorldBoundaries'
+import { WorldLiveMapPanel } from '@/components/world/WorldLiveMapPanel'
 
 const primaryEntrances = [
   {
@@ -112,6 +113,7 @@ export function ProductHome({
                   对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。
                 </p>
               </div>
+              <WorldLiveMapPanel />
               <div className="grid gap-3 text-sm">
                 {primaryEntrances.map((entry) => (
                   <Link key={entry.href} href={entry.href} className="block rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14">

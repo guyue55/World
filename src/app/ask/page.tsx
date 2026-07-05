@@ -2,8 +2,10 @@ import Link from 'next/link'
 import { getAllPaths } from '@/lib/paths'
 import { getPublicNodes } from '@/lib/nodes'
 import { getLighthouseRecommendedNodes, getLighthouseRecommendedPaths } from '@/lib/lighthouse'
+import { buildLighthouseConsoleSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
+import { PublicLighthouseConsole } from '@/components/ask/PublicLighthouseConsole'
 
 export const metadata = createPageMetadata({
   title: 'AI 灯塔',
@@ -31,6 +33,11 @@ export default function AskPage() {
   const nodes = getPublicNodes()
   const recommendedNodes = getLighthouseRecommendedNodes(nodes).slice(0, 4)
   const recommendedPaths = getLighthouseRecommendedPaths(paths).slice(0, 3)
+  const lighthouseSurface = buildLighthouseConsoleSurface({
+    questions: guideQuestions,
+    paths: recommendedPaths,
+    nodes: recommendedNodes,
+  })
 
   return (
     <main className="world-container space-y-10 py-16">
@@ -51,6 +58,8 @@ export default function AskPage() {
           </p>
         </div>
       </section>
+
+      <PublicLighthouseConsole surface={lighthouseSurface} />
 
       <section className="grid gap-4 md:grid-cols-3">
         {guideQuestions.map((question) => (

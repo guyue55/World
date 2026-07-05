@@ -1,11 +1,13 @@
 import { getAllAreas } from '@/lib/areas'
 import { getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
 import { getAtlasStats, getVisibleAreaLinks } from '@/lib/atlas'
+import { buildAtlasConstellationSurface } from '@/lib/public-world-surfaces'
 import { AtlasMap } from '@/components/world/AtlasMap'
 import { AreaNodeCluster } from '@/components/world/AreaNodeCluster'
 import { createPageMetadata } from '@/lib/metadata'
 import { AtlasHero } from '@/components/atlas/AtlasHero'
 import { AtlasStats } from '@/components/atlas/AtlasStats'
+import { AtlasLiveConstellation } from '@/components/atlas/AtlasLiveConstellation'
 import { AtlasStarLines } from '@/components/atlas/AtlasStarLines'
 import { AtlasFallbackList } from '@/components/atlas/AtlasFallbackList'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
@@ -22,6 +24,7 @@ export default function AtlasPage() {
   const stats = getAtlasStats(areas, publicNodes)
   const areaLinks = getVisibleAreaLinks(areas)
   const primaryAreas = areas.filter((area) => area.level === 1)
+  const atlasSurface = buildAtlasConstellationSurface(areas, publicNodes, areaLinks)
 
   return (
     <main className="world-container space-y-12 py-16">
@@ -38,6 +41,7 @@ export default function AtlasPage() {
         publicNodeCount={stats.publicNodeCount}
         areaLinkCount={stats.areaLinkCount}
       />
+      <AtlasLiveConstellation surface={atlasSurface} />
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {primaryAreas.slice(0, 8).map((area) => (
