@@ -95,6 +95,29 @@ export type HomeDynamicWorldSurface = {
   primaryHref: string
 }
 
+export type DynamicWorldCapabilitySignal = {
+  id: string
+  title: string
+  status: 'active' | 'low-light' | 'guarded' | 'blocked'
+  statusLabel: string
+  description: string
+  href?: string
+}
+
+export type DynamicWorldStatusSurface = {
+  eyebrow: string
+  title: string
+  description: string
+  runtimeLabel: string
+  boundaryLabel: string
+  capabilities: DynamicWorldCapabilitySignal[]
+  metrics: Array<{
+    label: string
+    value: number
+    note: string
+  }>
+}
+
 function isPublicArea(area: Area) {
   return isPublicVisible(area.defaultVisibility)
 }
@@ -316,6 +339,84 @@ export function buildHomeDynamicWorldSurface({
         caption: `${publicNodeCount} 个公开节点`,
         intent: '现实检索',
       },
+    ],
+  }
+}
+
+export function buildDynamicWorldStatusSurface({
+  areas,
+  nodes,
+  paths,
+  events,
+}: {
+  areas: Area[]
+  nodes: Node[]
+  paths: Path[]
+  events: WorldEvent[]
+}): DynamicWorldStatusSurface {
+  const publicAreas = areas.filter((area) => area.level === 1 && isPublicArea(area))
+  const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
+  const publicEvents = events.filter((event) => isEventPublic(event.visibility))
+
+  return {
+    eyebrow: 'DYNAMIC WORLD STATUS',
+    title: '动态世界已经点亮，但仍只运行在公开层',
+    description: '这里汇总当前可见的动态能力。状态面板只展示公开构建后的结果，不暴露私密节点、内部队列或旧阶段实验页。',
+    runtimeLabel: '公开运行态',
+    boundaryLabel: '服务端守门，前端只体现',
+    capabilities: [
+      {
+        id: 'home-guide',
+        title: '首页动态导览',
+        status: 'active',
+        statusLabel: '已开启',
+        description: '首页小地图、短路径入口和动态世界总览已经接入公开 surface。',
+        href: '/',
+      },
+      {
+        id: 'atlas-live',
+        title: '动态星图',
+        status: 'active',
+        statusLabel: '已开启',
+        description: '世界地图展示公开区域、公开节点数量和可见星线。',
+        href: '/atlas',
+      },
+      {
+        id: 'timeline-river',
+        title: '时间河',
+        status: 'active',
+        statusLabel: '已开启',
+        description: '时间流展示近期公开事件，并只链接到公开节点。',
+        href: '/timeline',
+      },
+      {
+        id: 'lighthouse',
+        title: 'AI 灯塔',
+        status: 'low-light',
+        statusLabel: '低光只读',
+        description: '灯塔只做公开导览和路径建议，不读取私密层，不写入世界。',
+        href: '/ask',
+      },
+      {
+        id: 'node-opening',
+        title: '节点开场仪式',
+        status: 'active',
+        statusLabel: '已开启',
+        description: '公开节点在正文前展示位置、生命阶段和阅读节奏。',
+      },
+      {
+        id: 'external-release',
+        title: '外部生产证据',
+        status: 'blocked',
+        statusLabel: '待补齐',
+        description: '真实 Preview/Production URL、线上 smoke、HTTPS、人工签收仍需外部环境完成。',
+      },
+    ],
+    metrics: [
+      { label: '公开区域', value: publicAreas.length, note: '进入世界的主空间' },
+      { label: '公开节点', value: publicNodes.length, note: '可被地图、档案和灯塔读取' },
+      { label: '公开路径', value: paths.length, note: '降低探索门槛' },
+      { label: '公开事件', value: publicEvents.length, note: '构成时间河水位' },
     ],
   }
 }

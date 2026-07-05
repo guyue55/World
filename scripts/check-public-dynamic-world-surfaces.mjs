@@ -8,6 +8,7 @@ const componentFiles = [
   'src/components/timeline/TimelineRiverRuntime.tsx',
   'src/components/ask/PublicLighthouseConsole.tsx',
   'src/components/node/NodeOpeningRitual.tsx',
+  'src/components/status/DynamicWorldStatusBoard.tsx',
 ]
 const pageFiles = [
   'src/app/page.tsx',
@@ -15,6 +16,7 @@ const pageFiles = [
   'src/app/timeline/page.tsx',
   'src/app/ask/page.tsx',
   'src/app/node/[slug]/page.tsx',
+  'src/app/status/page.tsx',
 ]
 const requiredPageTokens = [
   'buildHomeDynamicWorldSurface',
@@ -22,6 +24,7 @@ const requiredPageTokens = [
   'buildTimelineRiverSurface',
   'buildLighthouseConsoleSurface',
   'buildNodeOpeningSurface',
+  'buildDynamicWorldStatusSurface',
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 
@@ -56,6 +59,9 @@ for (const token of ['gsap.matchMedia', 'autoAlpha', 'prefers-reduced-motion', '
 const homeSource = readFileSync(resolve(root, 'src/components/product/ProductHome.tsx'), 'utf8')
 if (!homeSource.includes('dynamicWorld.primaryHref')) failures.push('首页主 CTA 必须来自服务端动态世界 surface，避免硬编码首选入口')
 if (!homeSource.includes('ProductDynamicWorldGuide')) failures.push('首页必须渲染动态世界总览导览区')
+
+const statusSource = readFileSync(resolve(root, 'src/app/status/page.tsx'), 'utf8')
+if (!statusSource.includes('DynamicWorldStatusBoard')) failures.push('/status 必须渲染动态世界状态面板')
 
 if (failures.length) {
   console.error('Public dynamic world surface check failed:')

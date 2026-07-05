@@ -2,7 +2,10 @@ import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { getAllAreas } from '@/lib/areas'
 import { getPublicNodes } from '@/lib/nodes'
 import { getAllPaths } from '@/lib/paths'
+import { getPublicWorldEvents } from '@/lib/world-events'
+import { buildDynamicWorldStatusSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
+import { DynamicWorldStatusBoard } from '@/components/status/DynamicWorldStatusBoard'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -37,6 +40,12 @@ export default function StatusPage() {
   const publicNodes = getPublicNodes()
   const areas = getAllAreas().filter((area) => area.level === 1)
   const paths = getAllPaths()
+  const dynamicWorldStatus = buildDynamicWorldStatusSurface({
+    areas,
+    nodes: publicNodes,
+    paths,
+    events: getPublicWorldEvents(),
+  })
 
   return (
     <main className="world-container space-y-10 py-16">
@@ -64,6 +73,8 @@ export default function StatusPage() {
           </article>
         ))}
       </section>
+
+      <DynamicWorldStatusBoard surface={dynamicWorldStatus} />
 
       <section className="grid gap-5 lg:grid-cols-3">
         <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
