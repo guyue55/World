@@ -5,10 +5,10 @@ export function AreaCard({ area, publicNodeCount }: { area: Area; publicNodeCoun
   return (
     <Link
       href={`/atlas#${area.id}-nodes`}
-      className="group rounded-world border border-ink/10 bg-white/55 p-5 shadow-soft transition hover:-translate-y-1 hover:bg-white/80"
+      className="group block h-full rounded-world border border-ink/10 bg-white/55 p-5 shadow-soft transition hover:-translate-y-1 hover:bg-white/80"
     >
-      <div className="flex items-start justify-between gap-4">
-        <div>
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div className="min-w-0">
           <p className="text-2xl">{area.icon ?? '✦'}</p>
           <h3 className="mt-4 text-xl font-semibold">{area.worldName}</h3>
           <p className="mt-1 text-sm text-moss">{area.realName}</p>

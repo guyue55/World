@@ -114,7 +114,7 @@ export function ProductHome({
               </div>
               <div className="grid gap-3 text-sm">
                 {primaryEntrances.map((entry) => (
-                  <Link key={entry.href} href={entry.href} className="rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14">
+                  <Link key={entry.href} href={entry.href} className="block rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14">
                     <span className="truncate font-semibold text-paper block">{entry.title}</span>
                     <span className="mt-1 block line-clamp-2 leading-6 text-paper/62">{entry.description}</span>
                   </Link>
@@ -143,7 +143,7 @@ export function ProductHome({
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {governanceEntrances.map((entry) => (
-            <Link key={entry.href} href={entry.href} className="rounded-[1.4rem] bg-paper/70 p-5 transition hover:-translate-y-1 hover:bg-white">
+            <Link key={entry.href} href={entry.href} className="block rounded-[1.4rem] bg-paper/70 p-5 transition hover:-translate-y-1 hover:bg-white">
               <h3 className="truncate text-lg font-semibold text-ink">{entry.title}</h3>
               <p className="mt-2 line-clamp-3 text-sm leading-7 text-ink/62">{entry.description}</p>
             </Link>
@@ -153,7 +153,7 @@ export function ProductHome({
 
       <section className="grid gap-4 md:grid-cols-3">
         {visibleAreas.slice(0, 3).map((area) => (
-          <Link key={area.id} href={`/atlas#${area.id}`} className="rounded-[1.6rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white">
+          <Link key={area.id} href={`/atlas#${area.id}`} className="block rounded-[1.6rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur transition hover:-translate-y-1 hover:bg-white">
             <p className="truncate text-sm text-moss">{area.icon} {area.realName}</p>
             <h2 className="mt-3 truncate text-2xl font-semibold text-ink">{area.worldName}</h2>
             <p className="mt-3 line-clamp-3 text-sm leading-7 text-ink/64">{area.description}</p>
@@ -175,7 +175,7 @@ export function ProductHome({
         </div>
 
         {firstPath && (
-          <Link href={`/paths/${firstPath.id}`} className="rounded-[2rem] border border-white/65 bg-night p-7 text-paper shadow-soft transition hover:-translate-y-1 md:p-8">
+          <Link href={`/paths/${firstPath.id}`} className="block rounded-[2rem] border border-white/65 bg-night p-7 text-paper shadow-soft transition hover:-translate-y-1 md:p-8">
             <p className="text-xs font-semibold tracking-[0.35em] text-gold">推荐路径</p>
             <h2 className="mt-3 truncate text-3xl font-semibold">{firstPath.title}</h2>
             <p className="mt-3 line-clamp-3 leading-8 text-paper/68">{firstPath.description}</p>
@@ -194,7 +194,7 @@ export function ProductHome({
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {visibleNodes.map((node) => (
-            <Link key={node.id} href={`/node/${node.slug}`} className="rounded-[1.5rem] border border-ink/8 bg-paper/65 p-5 transition hover:-translate-y-1 hover:bg-white">
+            <Link key={node.id} href={`/node/${node.slug}`} className="block rounded-[1.5rem] border border-ink/8 bg-paper/65 p-5 transition hover:-translate-y-1 hover:bg-white">
               <p className="truncate text-xs text-ink/45">{node.type} · {node.lifeStage}</p>
               <h3 className="mt-3 truncate text-xl font-semibold text-ink">{node.worldTitle ?? node.title}</h3>
               <p className="mt-2 line-clamp-3 text-sm leading-7 text-ink/62">{node.summary}</p>
