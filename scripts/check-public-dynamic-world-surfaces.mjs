@@ -87,8 +87,11 @@ for (const token of ['gsap.matchMedia', 'autoAlpha', 'prefers-reduced-motion', '
 }
 
 const homeSource = readFileSync(resolve(root, 'src/components/product/ProductHome.tsx'), 'utf8')
-if (!homeSource.includes('dynamicWorld.primaryHref')) failures.push('首页主 CTA 必须来自服务端动态世界 surface，避免硬编码首选入口')
+if (!homeSource.includes('dynamicWorld.entryPoints')) failures.push('首页入口选择必须来自服务端动态世界 surface，避免在前端硬编码入口策略')
 if (!homeSource.includes('ProductDynamicWorldGuide')) failures.push('首页必须渲染动态世界总览导览区')
+
+const homeGuideSource = readFileSync(resolve(root, 'src/components/product/ProductDynamicWorldGuide.tsx'), 'utf8')
+if (!homeGuideSource.includes('surface.primaryHref')) failures.push('首页动态总览主 CTA 必须来自服务端动态世界 surface，避免硬编码首选入口')
 
 const statusSource = readFileSync(resolve(root, 'src/app/status/page.tsx'), 'utf8')
 if (!statusSource.includes('DynamicWorldStatusBoard')) failures.push('/status 必须渲染动态世界状态面板')

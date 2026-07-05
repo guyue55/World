@@ -87,10 +87,23 @@ export type DynamicWorldRouteSignal = {
   intent: string
 }
 
+export type HomeEntrySignal = {
+  id: 'path' | 'atlas' | 'archive' | 'ask'
+  href: string
+  label: string
+  title: string
+  description: string
+  note: string
+  tone: 'primary' | 'quiet'
+}
+
 export type HomeDynamicWorldSurface = {
   eyebrow: string
   title: string
   description: string
+  entryTitle: string
+  entryDescription: string
+  entryPoints: HomeEntrySignal[]
   routes: DynamicWorldRouteSignal[]
   primaryHref: string
 }
@@ -404,10 +417,50 @@ export function buildHomeDynamicWorldSurface({
   const pathHref = firstPath ? `/paths/${firstPath.id}` : '/atlas'
 
   return {
-    eyebrow: 'DYNAMIC WORLD',
-    title: '先看入口，再进入宇宙',
-    description: '不用一次理解所有层级。先按目的选择入口：看全貌、看变化、走短路径、找导览，或者直接检索公开档案。',
+    eyebrow: '公开世界入口',
+    title: '先选一个入口，再慢慢进入宇宙',
+    description: '不用一次理解所有层级。第一次来，先按目的选择入口：走短路径、看全貌、查档案，或者请灯塔指路。',
+    entryTitle: '先选一个入口',
+    entryDescription: '如果你是第一次来，从这里开始就够了。每个入口都能返回地图，不会把你带进私密层或内部阶段页。',
     primaryHref: pathHref,
+    entryPoints: [
+      {
+        id: 'path',
+        href: pathHref,
+        label: '我第一次来',
+        title: firstPath?.title ?? '8 分钟路径',
+        description: firstPath?.description ?? '不需要理解全部宇宙，先走一条短路径。',
+        note: firstPath ? `约 ${firstPath.estimatedMinutes ?? 8} 分钟 · 推荐起点` : '推荐先走',
+        tone: 'primary',
+      },
+      {
+        id: 'atlas',
+        href: '/atlas',
+        label: '我想看全貌',
+        title: '展开世界地图',
+        description: '从区域、节点和连接关系看清这个世界的空间结构。',
+        note: `${publicAreaCount} 个公开主区域`,
+        tone: 'quiet',
+      },
+      {
+        id: 'archive',
+        href: '/archive',
+        label: '我想直接找内容',
+        title: '进入公开档案馆',
+        description: '按标题、标签和摘要检索已经公开的节点。',
+        note: `${publicNodeCount} 个公开节点`,
+        tone: 'quiet',
+      },
+      {
+        id: 'ask',
+        href: '/ask',
+        label: '我不知道看什么',
+        title: '询问世界灯塔',
+        description: '用自然语言说明你的兴趣，让灯塔给你推荐公开路径。',
+        note: '只读公开层 · 不读取私密内容',
+        tone: 'quiet',
+      },
+    ],
     routes: [
       {
         id: 'home',

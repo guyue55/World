@@ -17,6 +17,11 @@ const productPrinciples = [
   'AI 灯塔只做导览和建议，不修改世界',
 ]
 
+const entryCardClass = {
+  primary: 'group relative overflow-hidden rounded-[2rem] bg-night p-6 text-paper transition hover:-translate-y-1',
+  quiet: 'group relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white/80 p-6 text-ink transition hover:-translate-y-1 hover:bg-white',
+} as const
+
 export function ProductHome({
   areas,
   featuredNodes,
@@ -58,18 +63,17 @@ export function ProductHome({
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link href={dynamicWorld.primaryHref} className="rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night">
-                走 8 分钟路径 →
-              </Link>
-              <Link href="/atlas" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
-                看世界地图
-              </Link>
-              <Link href="/archive" className="rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white">
-                进档案馆
-              </Link>
-              <Link href="/ask" className="rounded-full border border-ink/10 bg-white/55 px-6 py-3 text-sm font-semibold text-ink/70 transition hover:-translate-y-0.5 hover:bg-white">
-                问灯塔
-              </Link>
+              {dynamicWorld.entryPoints.map((entry) => (
+                <Link
+                  key={entry.id}
+                  href={entry.href}
+                  className={entry.tone === 'primary'
+                    ? 'rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night'
+                    : 'rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white'}
+                >
+                  {entry.label}
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -98,36 +102,31 @@ export function ProductHome({
       </section>
 
       <section data-gsap-reveal className="rounded-[2.5rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 xl:p-10">
-        <p className="text-xs font-semibold tracking-[0.35em] text-moss">WHERE TO START TODAY</p>
-        <h2 className="mt-3 text-3xl font-semibold text-ink md:text-4xl">今天可以从哪里开始？</h2>
+        <p className="text-xs font-semibold tracking-[0.35em] text-moss">新手入口</p>
+        <h2 className="mt-3 text-3xl font-semibold text-ink md:text-4xl">{dynamicWorld.entryTitle}</h2>
         <p className="mt-4 max-w-2xl text-lg text-ink/70">
-          世界可能有些庞大。如果你是第一次来，这里有几个清晰的入口。
+          {dynamicWorld.entryDescription}
         </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {firstPath && (
-            <Link href={`/paths/${firstPath.id}`} className="group relative overflow-hidden rounded-[2rem] bg-night p-6 transition hover:-translate-y-1">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {dynamicWorld.entryPoints.map((entry) => (
+            <Link key={entry.id} href={entry.href} className={entryCardClass[entry.tone]}>
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,164,109,0.15),transparent_8rem)]" />
               <div className="relative">
-                <p className="text-xs font-semibold tracking-[0.2em] text-gold">推荐游览</p>
-                <h3 className="mt-3 text-xl font-semibold text-paper group-hover:text-gold">{firstPath.title}</h3>
-                <p className="mt-3 line-clamp-2 text-sm leading-6 text-paper/70">{firstPath.description}</p>
+                <p className={entry.tone === 'primary' ? 'text-xs font-semibold tracking-[0.2em] text-gold' : 'text-xs font-semibold tracking-[0.2em] text-moss'}>
+                  {entry.label}
+                </p>
+                <h3 className={entry.tone === 'primary' ? 'mt-3 text-xl font-semibold text-paper group-hover:text-gold' : 'mt-3 text-xl font-semibold text-ink group-hover:text-moss'}>
+                  {entry.title}
+                </h3>
+                <p className={entry.tone === 'primary' ? 'mt-3 line-clamp-3 text-sm leading-6 text-paper/70' : 'mt-3 line-clamp-3 text-sm leading-6 text-ink/70'}>
+                  {entry.description}
+                </p>
+                <p className={entry.tone === 'primary' ? 'mt-4 truncate text-xs font-medium text-paper/55' : 'mt-4 truncate text-xs font-medium text-moss'}>
+                  {entry.note}
+                </p>
               </div>
             </Link>
-          )}
-          <Link href="/atlas" className="group relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white/80 p-6 transition hover:-translate-y-1 hover:bg-white">
-            <div className="relative">
-              <p className="text-xs font-semibold tracking-[0.2em] text-moss">空间漫游</p>
-              <h3 className="mt-3 text-xl font-semibold text-ink group-hover:text-moss">展开世界地图</h3>
-              <p className="mt-3 line-clamp-2 text-sm leading-6 text-ink/70">上帝视角俯瞰整个数字世界，自由选择你想降落的星域。</p>
-            </div>
-          </Link>
-          <Link href="/ask" className="group relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white/80 p-6 transition hover:-translate-y-1 hover:bg-white">
-            <div className="relative">
-              <p className="text-xs font-semibold tracking-[0.2em] text-sky-600">AI 导航</p>
-              <h3 className="mt-3 text-xl font-semibold text-ink group-hover:text-sky-600">询问世界灯塔</h3>
-              <p className="mt-3 line-clamp-2 text-sm leading-6 text-ink/70">不知道看什么？用自然语言告诉 AI 你的偏好，让它为你指路。</p>
-            </div>
-          </Link>
+          ))}
         </div>
       </section>
 

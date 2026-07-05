@@ -8,8 +8,13 @@ function main() {
   const errors: string[] = []
 
   const page = fs.readFileSync(path.join(process.cwd(), 'src/components/product/ProductHome.tsx'), 'utf-8')
-  ;['ProductWorldCompass', 'ProductWorldBoundaries'].forEach((component) => {
+  const publicSurface = fs.readFileSync(path.join(process.cwd(), 'src/lib/public-world-surfaces.ts'), 'utf-8')
+  ;['ProductWorldCompass', 'ProductWorldBoundaries', 'dynamicWorld.entryPoints'].forEach((component) => {
     if (!page.includes(component)) errors.push(`homepage missing component: ${component}`)
+  })
+
+  ;['新手入口', '先选一个入口', '我第一次来'].forEach((token) => {
+    if (!`${page}\n${publicSurface}`.includes(token)) errors.push(`homepage missing low-threshold entry copy: ${token}`)
   })
 
   const sectionIds = new Set(homepageComposition.sections.map((section) => section.id))
