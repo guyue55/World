@@ -44,7 +44,7 @@
   },
   "scriptCounts": {
     "totalScripts": 312,
-    "checkScripts": 191,
+    "checkScripts": 190,
     "stageLikeCheckScripts": 68,
     "longScripts": 1
   },
@@ -121,7 +121,7 @@
   "longScripts": [
     {
       "name": "check:world-core",
-      "length": 5311
+      "length": 2817
     }
   ],
   "notes": [

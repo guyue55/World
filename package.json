@@ -311,7 +311,8 @@
     "check:boundary": "npm run check:api-boundary && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:runtime-local",
     "check:rc": "npm run check:release:rc",
     "check:rc:fast": "npm run check:release:rc",
-    "check:rc:full": "npm run check:release:rc && npm run build:kernel-release && npm run smoke:runtime-local && npm run audit:report",
+    "build:verify-artifacts": "node scripts/verify-artifacts.mjs",
+    "check:rc:full": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run audit:report",
     "check:maintenance-command-spine": "node scripts/check-worldos-maintenance-command-spine.mjs",
     "smoke:runtime-local": "node scripts/run-worldos-local-runtime-smoke.mjs",
     "check:runtime-local": "node scripts/check-worldos-local-runtime-smoke.mjs"
