@@ -147,6 +147,36 @@ export type ArchiveDynamicSurface = {
   }>
 }
 
+export type PathJourneyStepSignal = {
+  id: string
+  href: string
+  title: string
+  summary?: string
+  caption: string
+  orderLabel: string
+}
+
+export type PathJourneySurface = {
+  eyebrow: string
+  title: string
+  description: string
+  boundaryLabel: string
+  estimatedLabel: string
+  audienceLabel: string
+  steps: PathJourneyStepSignal[]
+  nextPaths: Array<{
+    id: string
+    href: string
+    title: string
+    description: string
+  }>
+  metrics: Array<{
+    label: string
+    value: number | string
+    note: string
+  }>
+}
+
 function isPublicArea(area: Area) {
   return isPublicVisible(area.defaultVisibility)
 }
@@ -501,6 +531,45 @@ export function buildArchiveDynamicSurface(nodes: Node[], areas: Area[], tagLimi
       { label: '主区域', value: publicAreas.length, note: '用于空间筛选' },
       { label: '热门标签', value: tags.length, note: '用于快速缩小范围' },
       { label: '代表节点', value: publicNodes.filter((node) => node.featured?.representative).length, note: '适合第一次阅读' },
+    ],
+  }
+}
+
+export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Path[], areas: Area[]): PathJourneySurface {
+  const areaById = new Map(areas.map((area) => [area.id, area]))
+  const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
+  const estimatedMinutes = path.estimatedMinutes ?? Math.max(8, publicNodes.length * 4)
+
+  return {
+    eyebrow: 'LIVE PATH',
+    title: '这条路径是一段可完成的旅程',
+    description: '先按顺序走完公开节点，再决定要不要回到地图、进入档案馆，或继续下一条路径。路径只组织公开内容，不把私密层带进前台。',
+    boundaryLabel: '只含公开节点 · 可随时返回',
+    estimatedLabel: `约 ${estimatedMinutes} 分钟`,
+    audienceLabel: path.audience,
+    steps: publicNodes.map((node, index) => {
+      const area = areaById.get(node.areaId)
+
+      return {
+        id: node.id,
+        href: `/node/${node.slug}`,
+        title: node.worldTitle ?? node.title,
+        summary: node.summary,
+        caption: `${area && isPublicArea(area) ? area.worldName : '公开节点'} · ${node.type}`,
+        orderLabel: `第 ${index + 1} 步`,
+      }
+    }),
+    nextPaths: nextPaths.map((item) => ({
+      id: item.id,
+      href: `/paths/${item.id}`,
+      title: item.title,
+      description: item.description,
+    })),
+    metrics: [
+      { label: '公开节点', value: publicNodes.length, note: '按顺序阅读' },
+      { label: '预计时间', value: estimatedMinutes, note: '分钟左右' },
+      { label: '适合人群', value: path.audience, note: '用于选择路径' },
+      { label: '后续路径', value: nextPaths.length, note: '看完之后继续' },
     ],
   }
 }

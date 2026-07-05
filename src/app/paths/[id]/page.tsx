@@ -4,7 +4,10 @@ import { Breadcrumbs } from '@/components/common/Breadcrumbs'
 import { PathProgress } from '@/components/paths/PathProgress'
 import { createPageMetadata } from '@/lib/metadata'
 import { getNextPaths, getPathNodes } from '@/lib/path-guidance'
+import { getAllAreas } from '@/lib/areas'
+import { buildPathJourneySurface } from '@/lib/public-world-surfaces'
 import { PathDetailHero } from '@/components/paths/PathDetailHero'
+import { PathJourneyBoard } from '@/components/paths/PathJourneyBoard'
 import { PathNodeSequence } from '@/components/paths/PathNodeSequence'
 import { PathNextSteps } from '@/components/paths/PathNextSteps'
 
@@ -35,12 +38,14 @@ export default async function PathDetailPage({ params }: { params: Promise<PathP
 
   const nodes = getPathNodes(path)
   const nextPaths = getNextPaths(path)
+  const journeySurface = buildPathJourneySurface(path, nodes, nextPaths, getAllAreas())
 
   return (
     <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
       <section className="space-y-10">
         <Breadcrumbs items={[{ label: '古月浮屿', href: '/' }, { label: '精选路径', href: '/paths' }, { label: path.title }]} />
         <PathDetailHero path={path} nodeCount={nodes.length} />
+        <PathJourneyBoard surface={journeySurface} />
         <PathNodeSequence nodes={nodes} />
         <PathNextSteps nextPaths={nextPaths} />
       </section>

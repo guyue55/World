@@ -10,6 +10,7 @@ const componentFiles = [
   'src/components/node/NodeOpeningRitual.tsx',
   'src/components/status/DynamicWorldStatusBoard.tsx',
   'src/components/archive/ArchiveDynamicGuide.tsx',
+  'src/components/paths/PathJourneyBoard.tsx',
 ]
 const pageFiles = [
   'src/app/page.tsx',
@@ -19,6 +20,7 @@ const pageFiles = [
   'src/app/node/[slug]/page.tsx',
   'src/app/status/page.tsx',
   'src/app/archive/page.tsx',
+  'src/app/paths/[id]/page.tsx',
 ]
 const requiredPageTokens = [
   'buildHomeDynamicWorldSurface',
@@ -28,6 +30,7 @@ const requiredPageTokens = [
   'buildNodeOpeningSurface',
   'buildDynamicWorldStatusSurface',
   'buildArchiveDynamicSurface',
+  'buildPathJourneySurface',
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 
