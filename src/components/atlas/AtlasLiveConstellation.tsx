@@ -119,14 +119,25 @@ export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellatio
           </div>
           
           <div data-gsap-reveal className="rounded-[1.1rem] border border-gold/30 bg-gold/10 p-5">
-            <p className="text-xs font-semibold tracking-[0.2em] text-gold">CURRENT EXHIBITION</p>
-            <h3 className="mt-2 font-semibold text-paper">「 记忆的折叠与展开 」</h3>
-            <p className="mt-2 text-sm leading-6 text-paper/70">
-              本期主题展览。将跨越不同星域但主题相连的内容进行策展。通过这种方式，旧内容会获得新的上下文。
-            </p>
-            <button type="button" className="mt-4 rounded-full border border-gold/40 px-4 py-2 text-xs font-semibold text-gold transition hover:bg-gold/20">
-              进入展览空间
-            </button>
+            <p className="text-xs font-semibold tracking-[0.2em] text-gold">NEXT STEP</p>
+            <h3 className="mt-2 font-semibold text-paper">{surface.guideTitle}</h3>
+            <p className="mt-2 text-sm leading-6 text-paper/70">{surface.guideDescription}</p>
+            <div className="mt-4 grid gap-2">
+              {surface.actions.map((action) => (
+                <Link
+                  key={action.href}
+                  href={action.href}
+                  className={`rounded-[1rem] px-4 py-3 text-sm font-semibold transition hover:-translate-y-0.5 ${
+                    action.tone === 'primary'
+                      ? 'bg-gold text-night hover:bg-gold/90'
+                      : 'border border-paper/14 bg-paper/8 text-paper/78 hover:bg-paper/14'
+                  }`}
+                >
+                  <span className="block">{action.label}</span>
+                  <span className="mt-1 block text-xs font-normal opacity-70">{action.description}</span>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div data-gsap-reveal className="rounded-[1.1rem] border border-paper/12 bg-paper/8 p-4 text-sm leading-7 text-paper/62">

@@ -34,6 +34,9 @@ function main() {
   nodeReadingQualityGate.requiredPageParts.forEach((part) => {
     if (!page.includes(part)) errors.push(`node page missing part: ${part}`)
   })
+  ;['buildNodeNextStepSurface', 'NodeNextStepPanel'].forEach((token) => {
+    if (!page.includes(token)) errors.push(`node page missing public next-step surface: ${token}`)
+  })
 
   const cover = read('src/components/node/NodeCover.tsx')
   const eslintDisableToken = ['eslint', 'disable'].join('-')
@@ -44,6 +47,11 @@ function main() {
   if (!relationRail.includes('sameArea') && !read('src/lib/node-reading.ts').includes('getSameAreaNodes')) {
     errors.push('relation rail must have same-area fallback')
   }
+
+  const nextStepPanel = read('src/components/node/NodeNextStepPanel.tsx')
+  ;['surface.actions.map', "href={action.href}"].forEach((token) => {
+    if (!nextStepPanel.includes(token)) errors.push(`node next step panel missing action rendering: ${token}`)
+  })
 
   if (nodeReadingContract.layout.length < 6) errors.push('node reading layout contract too small')
 

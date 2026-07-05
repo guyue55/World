@@ -47,9 +47,15 @@ function main() {
   })
 
   const page = read('src/app/atlas/page.tsx')
-  ;['AtlasHero', 'AtlasStats', 'AtlasMap', 'AtlasStarLines', 'AtlasFallbackList'].forEach((token) => {
+  ;['AtlasHero', 'AtlasStats', 'AtlasMap', 'AtlasStarLines', 'AtlasFallbackList', 'buildAtlasConstellationSurface'].forEach((token) => {
     if (!page.includes(token)) errors.push(`atlas page missing ${token}`)
   })
+
+  const liveConstellation = read('src/components/atlas/AtlasLiveConstellation.tsx')
+  ;['surface.guideTitle', 'surface.actions.map'].forEach((token) => {
+    if (!liveConstellation.includes(token)) errors.push(`atlas live constellation missing public surface navigation: ${token}`)
+  })
+  if (liveConstellation.includes('<button')) errors.push('atlas live constellation must not expose dead-end buttons')
 
   if (atlasProductizationContract.pageParts.length < 6) errors.push('atlas productization contract too small')
   if (page.includes('WorldFoundationStack')) errors.push('atlas page must not load WorldFoundationStack')

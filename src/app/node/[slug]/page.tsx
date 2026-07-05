@@ -3,7 +3,7 @@ import { getNodeBySlug, getPublicNodes, getPublicNodesByArea } from '@/lib/nodes
 import { getAreaById } from '@/lib/areas'
 import { readContentFile } from '@/lib/content'
 import { estimateReadingMinutes, getNodeExplorationGroups } from '@/lib/node-reading'
-import { buildNodeOpeningSurface } from '@/lib/public-world-surfaces'
+import { buildNodeNextStepSurface, buildNodeOpeningSurface } from '@/lib/public-world-surfaces'
 import { extractReadingHeadings, getReadingComfortSummary } from '@/lib/reading-comfort'
 import { NodePassport } from '@/components/node/NodePassport'
 import { NodeCover } from '@/components/node/NodeCover'
@@ -16,6 +16,7 @@ import { NodeReadingBody } from '@/components/node/NodeReadingBody'
 import { NodeRelationRail } from '@/components/node/NodeRelationRail'
 import { NodeReadingActions } from '@/components/node/NodeReadingActions'
 import { NodeOpeningRitual } from '@/components/node/NodeOpeningRitual'
+import { NodeNextStepPanel } from '@/components/node/NodeNextStepPanel'
 import { ReadingComfortBar } from '@/components/reading/ReadingComfortBar'
 import { ReadingToc } from '@/components/reading/ReadingToc'
 
@@ -54,7 +55,9 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
   const explorationGroups = getNodeExplorationGroups(node)
   const headings = extractReadingHeadings(content)
   const comfort = getReadingComfortSummary(content, readingMinutes)
+  const sameAreaNodes = getPublicNodesByArea(node.areaId)
   const nodeOpeningSurface = buildNodeOpeningSurface(node, area, readingMinutes)
+  const nodeNextStepSurface = buildNodeNextStepSurface(node, area, sameAreaNodes.length)
 
   return (
     <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
@@ -95,18 +98,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
         <div className="hidden xl:block">
           <ReadingToc headings={headings} />
         </div>
-        <section className="rounded-[1.75rem] border border-white/65 bg-white/70 p-5 text-sm leading-7 text-ink/62 shadow-soft backdrop-blur">
-          <p className="font-semibold text-ink">下一步</p>
-          <p className="mt-2 mb-4">继续沿这个区域查看 {getPublicNodesByArea(node.areaId).length} 个公开节点，或回到地图重新选择路径。</p>
-          <div className="flex flex-col gap-2">
-            <a href="/atlas" className="block w-full rounded-full bg-ink px-4 py-2 text-center font-semibold text-paper transition hover:bg-night">
-              返回世界地图
-            </a>
-            <a href="/archive" className="block w-full rounded-full border border-ink/10 bg-white/75 px-4 py-2 text-center font-semibold text-ink transition hover:bg-white">
-              去档案馆检索
-            </a>
-          </div>
-        </section>
+        <NodeNextStepPanel surface={nodeNextStepSurface} />
       </aside>
     </main>
   )

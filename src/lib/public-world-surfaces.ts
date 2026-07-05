@@ -1,5 +1,6 @@
 import type { AreaLink } from './atlas'
 import type { Area, Node, Path, Visibility, WorldEvent } from './types'
+import { describePathAudience, formatPathAudience } from './path-guidance'
 import { isPublicVisible } from './visibility'
 
 export type AtlasAreaSignal = {
@@ -24,6 +25,15 @@ export type AtlasAreaLineSignal = {
 export type AtlasConstellationSurface = {
   areas: AtlasAreaSignal[]
   links: AtlasAreaLineSignal[]
+  guideTitle: string
+  guideDescription: string
+  actions: Array<{
+    href: string
+    label: string
+    title: string
+    description: string
+    tone: 'primary' | 'quiet'
+  }>
 }
 
 export type TimelineRiverSignal = {
@@ -75,6 +85,17 @@ export type NodeOpeningSurface = {
   areaLabel: string
   lifeStageLabel: string
   readingLabel: string
+}
+
+export type NodeNextStepSurface = {
+  title: string
+  description: string
+  actions: Array<{
+    href: string
+    label: string
+    description: string
+    tone: 'primary' | 'quiet'
+  }>
 }
 
 export type DynamicWorldRouteSignal = {
@@ -162,6 +183,8 @@ export type ArchiveDynamicSurface = {
 
 export type PathsDirectoryAudienceSignal = {
   audience: string
+  label: string
+  description: string
   count: number
 }
 
@@ -171,6 +194,7 @@ export type PathsDirectoryPathSignal = {
   title: string
   description: string
   audience: string
+  audienceLabel: string
   estimatedMinutes: number
   nodeCount: number
   entryNodeTitle?: string
@@ -248,6 +272,12 @@ export type PathJourneySurface = {
     title: string
     description: string
   }>
+  exitActions: Array<{
+    href: string
+    label: string
+    description: string
+    tone: 'primary' | 'quiet'
+  }>
   metrics: Array<{
     label: string
     value: number | string
@@ -321,6 +351,31 @@ export function buildAtlasConstellationSurface(
         label: link.label,
         type: link.type,
       })),
+    guideTitle: '看完地图之后，选择一条真实路线',
+    guideDescription: '地图负责让你看见空间；继续探索时，请从公开路径、档案馆或时间流进入，不需要猜按钮会去哪里。',
+    actions: [
+      {
+        href: '/paths',
+        label: '走精选路径',
+        title: '按路线进入',
+        description: '适合第一次来或不知道从哪里开始的访客。',
+        tone: 'primary',
+      },
+      {
+        href: '/archive',
+        label: '查公开节点',
+        title: '进入档案馆',
+        description: '适合已经知道关键词，想直接检索内容的人。',
+        tone: 'quiet',
+      },
+      {
+        href: '/timeline',
+        label: '看时间流',
+        title: '沿时间继续',
+        description: '适合想知道世界最近如何生长的人。',
+        tone: 'quiet',
+      },
+    ],
   }
 }
 
@@ -395,6 +450,35 @@ export function buildNodeOpeningSurface(node: Node, area: Area | undefined, read
     areaLabel: area && isPublicArea(area) ? area.worldName : '公开节点',
     lifeStageLabel: node.lifeStage,
     readingLabel: readingMinutes ? `约 ${readingMinutes} 分钟` : '短读',
+  }
+}
+
+export function buildNodeNextStepSurface(node: Node, area: Area | undefined, sameAreaCount: number): NodeNextStepSurface {
+  const areaLabel = area && isPublicArea(area) ? area.worldName : '当前星域'
+
+  return {
+    title: '读完之后，继续往哪里走',
+    description: `读完「${node.worldTitle ?? node.title}」之后，你仍在 ${areaLabel}。可以回到这片星域、进入档案馆检索，或改走一条精选路径。所有出口仍然只进入公开层。`,
+    actions: [
+      {
+        href: area ? `/atlas#cluster-${area.id}` : '/atlas',
+        label: `回到${area ? '这片星域' : '世界地图'}`,
+        description: area ? `${sameAreaCount} 个同区域公开节点` : '重新选择公开区域',
+        tone: 'primary',
+      },
+      {
+        href: '/archive',
+        label: '去档案馆检索',
+        description: '按标题、标签或摘要继续找内容',
+        tone: 'quiet',
+      },
+      {
+        href: '/paths',
+        label: '换一条路径',
+        description: '用路线降低继续探索的门槛',
+        tone: 'quiet',
+      },
+    ],
   }
 }
 
@@ -664,7 +748,7 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
     description: '先按顺序走完公开节点，再决定要不要回到地图、进入档案馆，或继续下一条路径。路径只组织公开内容，不把私密层带进前台。',
     boundaryLabel: '只含公开节点 · 可随时返回',
     estimatedLabel: `约 ${estimatedMinutes} 分钟`,
-    audienceLabel: path.audience,
+    audienceLabel: formatPathAudience(path.audience),
     steps: publicNodes.map((node, index) => {
       const area = areaById.get(node.areaId)
 
@@ -683,10 +767,37 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
       title: item.title,
       description: item.description,
     })),
+    exitActions: [
+      {
+        href: '/atlas',
+        label: '回到地图',
+        description: '重新选择公开星域',
+        tone: 'primary',
+      },
+      {
+        href: '/archive',
+        label: '进入档案馆',
+        description: '按关键词继续检索',
+        tone: 'quiet',
+      },
+      nextPaths[0]
+        ? {
+            href: `/paths/${nextPaths[0].id}`,
+            label: '下一条路径',
+            description: nextPaths[0].title,
+            tone: 'quiet',
+          }
+        : {
+            href: '/paths',
+            label: '查看全部路径',
+            description: '重新按兴趣选择路线',
+            tone: 'quiet',
+          },
+    ],
     metrics: [
       { label: '公开节点', value: publicNodes.length, note: '按顺序阅读' },
       { label: '预计时间', value: estimatedMinutes, note: '分钟左右' },
-      { label: '适合人群', value: path.audience, note: '用于选择路径' },
+      { label: '适合人群', value: formatPathAudience(path.audience), note: '用于选择路径' },
       { label: '后续路径', value: nextPaths.length, note: '看完之后继续' },
     ],
   }
@@ -699,6 +810,8 @@ export function buildPathsDirectorySurface(paths: Path[], nodes: Node[]): PathsD
   const audiences = Array.from(new Set(paths.map((p) => p.audience)))
   const audienceStats = audiences.map(audience => ({
     audience,
+    label: formatPathAudience(audience),
+    description: describePathAudience(audience),
     count: paths.filter(p => p.audience === audience).length
   }))
 
@@ -713,15 +826,17 @@ export function buildPathsDirectorySurface(paths: Path[], nodes: Node[]): PathsD
     ],
     audiences: audienceStats,
     paths: paths.map(path => {
-      const entryNode = path.nodeSlugs.length > 0 ? nodeMap.get(path.nodeSlugs[0]) : undefined
+      const pathNodes = path.nodeSlugs.map((slug) => nodeMap.get(slug)).filter((node): node is Node => Boolean(node))
+      const entryNode = pathNodes[0]
       return {
         id: path.id,
         href: `/paths/${path.id}`,
         title: path.title,
         description: path.description,
         audience: path.audience,
+        audienceLabel: formatPathAudience(path.audience),
         estimatedMinutes: path.estimatedMinutes ?? 8,
-        nodeCount: path.nodeSlugs.length,
+        nodeCount: pathNodes.length,
         entryNodeTitle: entryNode ? (entryNode.worldTitle ?? entryNode.title) : undefined
       }
     })

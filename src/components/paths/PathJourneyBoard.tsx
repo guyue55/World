@@ -74,14 +74,17 @@ export function PathJourneyBoard({ surface }: { surface: PathJourneySurface }) {
               走完之后
             </p>
             <div className="mt-4 grid gap-2 sm:grid-cols-3">
-              <Link href="/atlas" className="rounded-[1rem] bg-paper/80 p-3 text-sm font-semibold text-ink transition hover:bg-white">回到地图</Link>
-              <Link href="/archive" className="rounded-[1rem] bg-paper/80 p-3 text-sm font-semibold text-ink transition hover:bg-white">进入档案馆</Link>
-              {(surface.nextPaths[0] ? (
-                <Link href={surface.nextPaths[0].href} className="rounded-[1rem] bg-paper/80 p-3 text-sm font-semibold text-ink transition hover:bg-white">
-                  下一条路径
+              {surface.exitActions.map((action) => (
+                <Link
+                  key={action.href}
+                  href={action.href}
+                  className={`rounded-[1rem] p-3 text-sm font-semibold transition ${
+                    action.tone === 'primary' ? 'bg-ink text-paper hover:bg-night' : 'bg-paper/80 text-ink hover:bg-white'
+                  }`}
+                >
+                  <span className="block">{action.label}</span>
+                  <span className="mt-1 block truncate text-xs font-normal opacity-60">{action.description}</span>
                 </Link>
-              ) : (
-                <Link href="/paths" className="rounded-[1rem] bg-paper/80 p-3 text-sm font-semibold text-ink transition hover:bg-white">查看全部路径</Link>
               ))}
             </div>
           </div>

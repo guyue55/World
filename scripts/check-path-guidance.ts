@@ -48,8 +48,18 @@ function main() {
   })
 
   const page = read('src/app/paths/[id]/page.tsx')
-  ;['Promise<PathPageParams>', 'PathDetailHero', 'PathNodeSequence', 'PathNextSteps'].forEach((token) => {
+  ;['Promise<PathPageParams>', 'PathDetailHero', 'PathNodeSequence', 'PathNextSteps', 'buildPathJourneySurface'].forEach((token) => {
     if (!page.includes(token)) errors.push(`path detail page missing ${token}`)
+  })
+
+  const publicSurface = read('src/lib/public-world-surfaces.ts')
+  ;['formatPathAudience', 'exitActions', 'nodeCount: pathNodes.length'].forEach((token) => {
+    if (!publicSurface.includes(token)) errors.push(`path public surface missing navigation contract: ${token}`)
+  })
+
+  const directory = read('src/components/paths/PathsDynamicDirectory.tsx')
+  ;['item.label', 'path.audienceLabel'].forEach((token) => {
+    if (!directory.includes(token)) errors.push(`paths directory missing Chinese audience surface: ${token}`)
   })
 
   if (pathProductizationContract.pageParts.length < 6) errors.push('path productization contract too small')

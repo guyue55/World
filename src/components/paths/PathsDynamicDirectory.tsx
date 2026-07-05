@@ -12,7 +12,7 @@ function DynamicPathCard({ path }: { path: PathsDirectoryPathSignal }) {
       data-gsap-reveal
       className="block min-w-0 rounded-[1.6rem] border border-ink/10 bg-white/45 p-5 shadow-soft transition hover:-translate-y-1 hover:bg-white/70"
     >
-      <p className="truncate text-xs uppercase tracking-[0.25em] text-moss">{path.audience}</p>
+      <p className="truncate text-xs font-semibold tracking-[0.25em] text-moss">{path.audienceLabel}</p>
       <h3 className="mt-4 truncate text-xl font-semibold">{path.title}</h3>
       <p className="mt-3 line-clamp-3 leading-7 text-ink/65">{path.description}</p>
       <div className="mt-5 grid gap-2 text-sm text-ink/50">
@@ -45,8 +45,9 @@ export function PathsDynamicDirectory({ surface }: { surface: PathsDirectorySurf
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
             {surface.audiences.map((item) => (
               <div key={item.audience} className="min-w-0 rounded-2xl bg-paper/70 p-4">
-                <p className="truncate text-sm text-ink/50">{item.audience}</p>
+                <p className="truncate text-sm text-ink/50">{item.label}</p>
                 <p className="mt-1 truncate text-2xl font-semibold">{item.count} 条路径</p>
+                <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/48">{item.description}</p>
               </div>
             ))}
           </div>
@@ -77,7 +78,7 @@ export function PathsDynamicDirectory({ surface }: { surface: PathsDirectorySurf
                   selected ? 'bg-ink text-paper shadow-soft' : 'border border-ink/10 bg-white/45 text-ink/70 hover:bg-white/70'
                 }`}
               >
-                {item.audience}
+                {item.label}
               </button>
             )
           })}
