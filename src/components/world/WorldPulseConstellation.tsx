@@ -38,7 +38,7 @@ export function WorldPulseConstellation({ surface }: { surface: HomeDynamicWorld
   const entryCount = surface.entryPoints.length
 
   return (
-    <div className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/7 p-4">
+    <div data-testid="dynamic-world-status-card" className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/7 p-4">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
           <div className="flex items-center gap-2 text-xs font-semibold text-gold">

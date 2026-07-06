@@ -98,7 +98,7 @@ if (!failures.length) {
   if (!mainlineCommand.includes('check:runtime-local')) failures.push('check:mainline 必须包含 check:runtime-local')
   if (!boundaryCommand.includes('check:api-boundary') || !boundaryCommand.includes('check:scripts')) failures.push('check:boundary 必须包含 API 与脚本治理')
   if (!boundaryCommand.includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
-  if (!rcFullCommand.includes('build:kernel-release') || !rcFullCommand.includes('build:verify-artifacts')) failures.push('check:rc:full 必须包含构建产物验证链路')
+  if (!rcFullCommand.includes('build:kernel-release') || !rcFullCommand.includes('build:production-ci') || !rcFullCommand.includes('build:verify-artifacts')) failures.push('check:rc:full 必须包含真实生产构建与构建产物验证链路')
   if (!rcFullCommand.includes('smoke:runtime-local')) failures.push('check:rc:full 必须包含本地运行时 HTTP smoke')
   if (!rcFullCommand.includes('smoke:lan-local')) failures.push('check:rc:full 必须包含本地局域网 RC smoke')
   if (!scripts['check:release:rc']?.includes('check:lan-local')) failures.push('check:release:rc 必须包含本地局域网 RC 静态门禁')

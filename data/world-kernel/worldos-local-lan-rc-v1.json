@@ -134,7 +134,10 @@
     "mustHaveNoPageErrors": true,
     "mustHaveNoConsoleErrors": true,
     "mustHaveNoUncanceledNetworkFailures": true,
-    "mobileMustNotOverflowX": true
+    "mobileMustNotOverflowX": true,
+    "mustHaveHomePrimaryCta": true,
+    "mustHaveHomeCoreStatusCard": true,
+    "mustHaveMobileNavigation": true
   },
   "evidenceOutput": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
   "logOutput": "reports/worldos-local-lan-rc-next-start.log",

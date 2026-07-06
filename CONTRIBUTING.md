@@ -208,7 +208,7 @@ npm run check:rc:full
 
 1. `check:runtime-local` 只检查本地运行时 smoke 的注册表、脚本、文档和生产状态诚实性。
 2. `smoke:runtime-local` 会启动本地 `next start`，检查公开 HTML 路由、静态 JSON、robots、sitemap、legacy redirect、private guard 和 404。
-3. `release:local-rc` 已接入 `smoke:runtime-local`，并会生成 `docs/90-archive/reports/worldos-local-rc-summary-report.json`，适合提交、打包、交付前执行；`check:rc:full` 保持兼容。
+3. `release:local-rc` 已接入 `build:production-ci`、`smoke:runtime-local` 和 `smoke:lan-local`，并会生成 `docs/90-archive/reports/worldos-local-rc-summary-report.json`，适合提交、打包、交付前执行；`check:rc:full` 保持兼容。
 4. 本地 HTTP smoke 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
 5. 修改公开路由、legacy redirect、private/internal guard、public JSON、robots、sitemap 时，必须同步更新 `data/world-kernel/worldos-local-runtime-smoke-v1.json`。
 6. 前端显隐仍不是权限控制；private/internal 路由必须由服务端 route policy / middleware / API guard 约束。
@@ -228,7 +228,8 @@ npm run check:rc:full
 
 1. `check:lan-local` 检查本地局域网 RC 注册表、脚本、命令入口、文档口径和 production 状态诚实性。
 2. `smoke:lan-local` 会启动 `next start -H 0.0.0.0`，自动识别局域网 IP，并通过 `http://<局域网 IP>:<端口>` 检查公开路由、静态资源、legacy redirect、private/internal guard 和 404。
-3. `smoke:lan-local` 会执行真实浏览器运行时巡检，覆盖桌面和移动端低动效，检查正文可读、H1、body 可见性、console/page error、网络失败、横向溢出和截图证据。
+3. `smoke:lan-local` 会执行真实浏览器运行时巡检，覆盖桌面和移动端低动效，检查正文可读、H1、body 可见性、首页主 CTA、移动导航、核心状态卡、console/page error、网络失败、横向溢出和截图证据。
 4. 修改公开路由、动态 surface、移动端布局、权限 guard、robots/sitemap/public JSON 后，必须同步更新 `data/world-kernel/worldos-local-lan-rc-v1.json` 并运行 `npm run check:lan-local`。
 5. 本地局域网 RC 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
 6. 前端显隐仍不是权限控制；LAN RC 只能验证服务端 guard 的结果，不能把隐藏按钮当作权限证明。
+7. 验收产物策略以 `data/world-kernel/worldos-local-rc-evidence-policy-v1.json` 为准：提交规范化报告和截图，`reports/` 下的 next/chrome 日志只作为本地排障材料。

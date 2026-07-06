@@ -6,12 +6,14 @@ const commands = [
   ['npm', ['run', 'lint']],
   ['npm', ['run', 'typecheck']],
   ['npm', ['run', 'build:kernel-release'], { WORLD_KERNEL_FORCE_REBUILD: '1' }],
+  ['npm', ['run', 'build:production-ci']],
   ['npm', ['run', 'build:verify-artifacts']],
   ['npm', ['run', 'smoke:runtime-local']],
   ['npm', ['run', 'smoke:lan-local']],
   ['npm', ['run', 'audit:report']],
   ['node', ['scripts/write-worldos-local-rc-summary.mjs']],
   ['node', ['scripts/check-worldos-local-rc-summary.mjs']],
+  ['node', ['scripts/check-worldos-local-rc-evidence-policy.mjs']],
 ]
 
 function run(command, args, env = {}) {

@@ -11,11 +11,13 @@ const lanReportPath = 'docs/90-archive/reports/worldos-local-lan-rc-report.json'
 const auditReportPath = 'docs/90-archive/reports/npm-audit-report.json'
 const externalEvidencePath = 'docs/90-archive/reports/worldos-external-evidence-template.json'
 const summaryReportPath = 'docs/90-archive/reports/worldos-local-rc-summary-report.json'
+const evidencePolicyPath = 'data/world-kernel/worldos-local-rc-evidence-policy-v1.json'
 
 const runtimeReport = readJson(runtimeReportPath)
 const lanReport = readJson(lanReportPath)
 const auditReport = readJson(auditReportPath)
 const externalEvidence = readJson(externalEvidencePath)
+const evidencePolicy = readJson(evidencePolicyPath)
 
 const requiredArtifacts = ['.next/BUILD_ID', '.next/required-server-files.json', 'public/world-index.json']
 const missingArtifacts = requiredArtifacts.filter((file) => !exists(file))
@@ -45,6 +47,7 @@ const report = {
   },
   gates: {
     releaseLocalRc: 'passed-before-summary',
+    productionCiBuild: 'passed-before-summary',
     runtimeSmoke: {
       status: runtimeReport.status,
       report: runtimeReportPath,
@@ -58,6 +61,9 @@ const report = {
       passedHttpChecks: lanReport.checks?.filter((check) => check.passed).length ?? 0,
       browserChecks: lanReport.browserChecks?.length ?? 0,
       passedBrowserChecks: lanReport.browserChecks?.filter((check) => check.passed).length ?? 0,
+      passedHomePrimaryCtaChecks: lanReport.browserChecks?.filter((check) => check.route === '/' && check.metrics?.primaryCtaVisible === true).length ?? 0,
+      passedMobileNavigationChecks: lanReport.browserChecks?.filter((check) => check.viewport?.includes('mobile') && check.metrics?.mobileNavigationVisible === true).length ?? 0,
+      passedHomeCoreStatusCardChecks: lanReport.browserChecks?.filter((check) => check.route === '/' && check.metrics?.coreStatusCardVisible === true).length ?? 0,
       screenshotCount: screenshots.length,
     },
     audit: {
@@ -90,6 +96,8 @@ const report = {
     reason: '本地 LAN RC 可以证明当前局域网访问、构建产物、运行时和浏览器 smoke；仍不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。',
   },
   evidence: {
+    policy: evidencePolicyPath,
+    policySummary: evidencePolicy.summary,
     runtimeReport: runtimeReportPath,
     lanReport: lanReportPath,
     auditReport: auditReportPath,

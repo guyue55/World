@@ -21,7 +21,7 @@ export function HomeHero() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link className="rounded-full bg-paper px-6 py-3 text-ink shadow-soft" href="/atlas">进入世界</Link>
+            <Link data-testid="home-primary-cta" className="rounded-full bg-paper px-6 py-3 text-ink shadow-soft" href="/atlas">进入世界</Link>
             <Link className="rounded-full border border-paper/20 bg-white/10 px-6 py-3" href="/paths">走一条路径</Link>
             <Link className="rounded-full border border-paper/20 bg-white/10 px-6 py-3" href="/archive">打开档案馆</Link>
           </div>

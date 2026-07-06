@@ -20,7 +20,8 @@
     "check:runtime-local",
     "smoke:runtime-local",
     "check:lan-local",
-    "smoke:lan-local"
+    "smoke:lan-local",
+    "check:rc-evidence-policy"
   ],
   "recommendedDailyCommands": [
     "npm run check:daily",
@@ -31,7 +32,8 @@
     "npm run check:rc:full",
     "npm run release:local-rc",
     "npm run smoke:runtime-local",
-    "npm run smoke:lan-local"
+    "npm run smoke:lan-local",
+    "npm run check:rc-evidence-policy"
   ],
   "policies": {
     "allowExistingStageScripts": true,
@@ -48,8 +50,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 246,
-    "checkScripts": 125,
+    "totalScripts": 247,
+    "checkScripts": 126,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },

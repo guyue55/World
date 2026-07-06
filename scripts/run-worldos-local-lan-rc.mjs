@@ -391,6 +391,10 @@ async function runBrowserChecks() {
             const text = (element.innerText || element.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 60)
             return text ? \`\${name}: \${text}\` : name
           }
+          const testIdVisible = (id) => {
+            const element = document.querySelector(\`[data-testid="\${id}"]\`)
+            return Boolean(element && isVisible(element))
+          }
           const overlapRatio = (a, b) => {
             const left = Math.max(a.left, b.left)
             const right = Math.min(a.right, b.right)
@@ -444,6 +448,9 @@ async function runBrowserChecks() {
             clientWidth: document.documentElement.clientWidth,
             overflowX: document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
             interactiveCount: document.querySelectorAll('a[href],button,input,select,textarea').length,
+            primaryCtaVisible: testIdVisible('home-primary-cta'),
+            mobileNavigationVisible: testIdVisible('mobile-primary-navigation'),
+            coreStatusCardVisible: testIdVisible('dynamic-world-status-card'),
             fixedOverlayIssues
           }
         })()`,
@@ -470,10 +477,17 @@ async function runBrowserChecks() {
 
       const metrics = dom.result.value
       const minText = registry.browserExpectations?.minBodyTextLength ?? 500
+      const isHomeRoute = route === '/'
+      const visibilityChecks = {
+        primaryCta: !registry.browserExpectations?.mustHaveHomePrimaryCta || !isHomeRoute || metrics.primaryCtaVisible,
+        mobileNavigation: !registry.browserExpectations?.mustHaveMobileNavigation || !viewport.mobile || metrics.mobileNavigationVisible,
+        coreStatusCard: !registry.browserExpectations?.mustHaveHomeCoreStatusCard || !isHomeRoute || metrics.coreStatusCardVisible,
+      }
       const passed = metrics.textLength >= minText
         && (!registry.browserExpectations?.mustHaveH1 || Boolean(metrics.h1))
         && (!registry.browserExpectations?.mustNotHideBody || !metrics.hiddenBody)
         && (!registry.browserExpectations?.mobileMustNotOverflowX || !viewport.mobile || !metrics.overflowX)
+        && Object.values(visibilityChecks).every(Boolean)
         && metrics.fixedOverlayIssues.length === 0
         && exceptions.length === 0
         && logIssues.length === 0
@@ -484,6 +498,7 @@ async function runBrowserChecks() {
         route,
         url: `${baseUrl}${route}`,
         metrics,
+        visibilityChecks,
         exceptions,
         logIssues,
         failedNetwork,
@@ -497,6 +512,7 @@ async function runBrowserChecks() {
           h1: metrics.h1,
           hiddenBody: metrics.hiddenBody,
           overflowX: metrics.overflowX,
+          visibilityChecks,
           fixedOverlayIssues: metrics.fixedOverlayIssues.length,
           exceptions: exceptions.length,
           logIssues: logIssues.length,

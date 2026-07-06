@@ -60,7 +60,7 @@
       "id": "release-local-rc",
       "script": "release:local-rc",
       "command": "node scripts/run-worldos-local-rc-trust-gate.mjs",
-      "purpose": "可信本地局域网 RC 门禁：RC 快检、lint、typecheck、强制 fresh build、产物时效验证、本地 production HTTP smoke、局域网浏览器 smoke、审计报告。",
+      "purpose": "可信本地局域网 RC 门禁：RC 快检、lint、typecheck、强制 fresh build、build:production-ci、产物时效验证、本地 production HTTP smoke、局域网浏览器 smoke、审计报告。",
       "stageLikeAllowed": false
     },
     {

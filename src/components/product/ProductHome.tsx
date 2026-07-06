@@ -68,6 +68,7 @@ export function ProductHome({
                 <Link
                   key={entry.id}
                   href={entry.href}
+                  data-testid={entry.tone === 'primary' ? 'home-primary-cta' : undefined}
                   className={entry.tone === 'primary'
                     ? 'rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night'
                     : 'rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white'}

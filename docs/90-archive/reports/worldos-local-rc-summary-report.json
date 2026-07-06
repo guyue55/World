@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T02:59:13.882Z",
+  "generatedAt": "2026-07-06T03:33:04.821Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -11,6 +11,7 @@
   },
   "gates": {
     "releaseLocalRc": "passed-before-summary",
+    "productionCiBuild": "passed-before-summary",
     "runtimeSmoke": {
       "status": "passed",
       "report": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
@@ -24,6 +25,9 @@
       "passedHttpChecks": 20,
       "browserChecks": 16,
       "passedBrowserChecks": 16,
+      "passedHomePrimaryCtaChecks": 2,
+      "passedMobileNavigationChecks": 8,
+      "passedHomeCoreStatusCardChecks": 2,
       "screenshotCount": 16
     },
     "audit": {
@@ -45,7 +49,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-06T02:58:54.926Z"
+      "buildIdMtime": "2026-07-06T03:32:22.388Z"
     }
   },
   "dynamicWorldEvidence": {
@@ -64,6 +68,8 @@
     "reason": "本地 LAN RC 可以证明当前局域网访问、构建产物、运行时和浏览器 smoke；仍不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。"
   },
   "evidence": {
+    "policy": "data/world-kernel/worldos-local-rc-evidence-policy-v1.json",
+    "policySummary": "release:local-rc 是唯一推荐的本地可信 RC 入口；提交时只提交有复核价值的规范化证据，临时日志留在 reports/。",
     "runtimeReport": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
     "lanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
     "auditReport": "docs/90-archive/reports/npm-audit-report.json",

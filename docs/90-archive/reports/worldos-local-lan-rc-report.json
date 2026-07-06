@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T02:57:04.620Z",
+  "generatedAt": "2026-07-06T03:33:01.839Z",
   "status": "passed",
   "lanIp": "172.30.111.222",
   "baseUrl": "http://172.30.111.222:4320",
@@ -22,8 +22,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 33,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -38,8 +38,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 100,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 32,
       "ok": true,
       "expected": {
         "status": 200,
@@ -54,8 +54,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 183,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -70,8 +70,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 58,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -86,8 +86,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 32,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 9,
       "ok": true,
       "expected": {
         "status": 200,
@@ -102,8 +102,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 34,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 11,
       "ok": true,
       "expected": {
         "status": 200,
@@ -118,8 +118,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 30,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
+      "durationMs": 9,
       "ok": true,
       "expected": {
         "status": 200,
@@ -134,8 +134,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 43,
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -150,8 +150,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-06T02:56:12.638Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
-      "durationMs": 9,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-06T03:31:55.082Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -167,7 +167,7 @@
       "contentType": "application/json; charset=UTF-8",
       "location": "",
       "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"/paths\",\n    \"/ask\",\n    \"/manifesto\"\n  ",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 200,
@@ -183,7 +183,7 @@
       "contentType": "text/plain; charset=UTF-8",
       "location": "",
       "bodyPreview": "User-agent: *\nAllow: /\n\n# 古月浮屿 V1 当前仅发布公开世界层。\n# 私密、家庭、伴侣、封存、静默内容不得进入 public build。\nSitemap: /sitemap.xml\n",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 200,
@@ -198,8 +198,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-06T02:56:32.674Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
-      "durationMs": 16,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-06T03:32:23.135Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "durationMs": 14,
       "ok": true,
       "expected": {
         "status": 200,
@@ -231,7 +231,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 0,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -263,7 +263,7 @@
       "contentType": "",
       "location": "/ask",
       "bodyPreview": "/ask",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -296,7 +296,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -329,7 +329,7 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "bodyPreview": "<!DOCTYPE html><!--sVhCc148bdZJrpV_g4c_D--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-pre",
       "durationMs": 8,
       "ok": true,
       "expected": {
@@ -353,7 +353,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 58,
+        "primaryCtaVisible": true,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": true,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -375,7 +383,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 109,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -390,14 +406,22 @@
       "metrics": {
         "title": "时间流｜古月浮屿",
         "h1": "时间流",
-        "textLength": 3123,
+        "textLength": 3051,
         "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 时间流 这里不是调试日志，而是公开世界的成长记录。私密事件不会进入这条公开时间流。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 TIME RIVER 时间流 这里记录世界如何生长：一颗种子被点亮、一个项目进入工坊、一条法则被写入宪章，都会在时间流中留下痕迹。 运行中 春 · 萌发 灯塔低光 公开事件 21 事件类型 7 行动者 2 关联节点 19 关联区域 8 LIVE TIME RIVER 时间流开始有水位 最近的公开事件被折成一条可观察的河道：更新、发布、区域苏醒会在这里形成节奏。 7 近期事件入河 3",
         "hiddenBody": false,
         "scrollWidth": 1440,
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 31,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -419,7 +443,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 114,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -441,7 +473,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 30,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -463,7 +503,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 39,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -485,7 +533,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 26,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -507,7 +563,15 @@
         "clientWidth": 1440,
         "overflowX": false,
         "interactiveCount": 36,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": false,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -529,7 +593,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 60,
+        "primaryCtaVisible": true,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": true,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -551,7 +623,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 109,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -573,7 +653,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 31,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -595,7 +683,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 114,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -617,7 +713,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 30,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -639,7 +743,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 39,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -661,7 +773,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 26,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],
@@ -683,7 +803,15 @@
         "clientWidth": 390,
         "overflowX": false,
         "interactiveCount": 36,
+        "primaryCtaVisible": false,
+        "mobileNavigationVisible": true,
+        "coreStatusCardVisible": false,
         "fixedOverlayIssues": []
+      },
+      "visibilityChecks": {
+        "primaryCta": true,
+        "mobileNavigation": true,
+        "coreStatusCard": true
       },
       "exceptions": [],
       "logIssues": [],

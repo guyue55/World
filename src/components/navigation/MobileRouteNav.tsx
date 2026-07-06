@@ -11,6 +11,7 @@ export function MobileRouteNav() {
   return (
     <nav
       aria-label="移动端主导航"
+      data-testid="mobile-primary-navigation"
       className="sticky top-0 z-40 mx-auto w-[calc(100%-1rem)] max-w-[36rem] rounded-b-[1.25rem] border-x border-b border-ink/10 bg-paper/94 px-2 py-2 shadow-soft backdrop-blur-xl md:hidden"
     >
       <div className="grid grid-cols-5 gap-1 text-center text-xs">

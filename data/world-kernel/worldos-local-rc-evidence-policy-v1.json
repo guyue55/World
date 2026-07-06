@@ -1,0 +1,41 @@
+{
+  "name": "WorldOS 本地 RC 验收产物策略 v1",
+  "updatedAt": "2026-07-06",
+  "summary": "release:local-rc 是唯一推荐的本地可信 RC 入口；提交时只提交有复核价值的规范化证据，临时日志留在 reports/。",
+  "recommendedCommand": "npm run release:local-rc",
+  "compatibleCommand": "npm run check:rc:full",
+  "canonicalCommittedEvidence": [
+    "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+    "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+    "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "docs/90-archive/reports/npm-audit-report.json",
+    "docs/90-archive/reports/worldos-external-evidence-template.json",
+    "docs/90-archive/reports/worldos-local-lan-rc/*.png",
+    "public/world-index.json",
+    "public/world-manifest.json"
+  ],
+  "ephemeralEvidence": [
+    "reports/worldos-local-lan-rc-next-start.log",
+    "reports/worldos-local-lan-rc-chrome.log",
+    "reports/worldos-local-runtime-smoke-next-start.log",
+    "reports/*.tmp",
+    ".next/**"
+  ],
+  "diffPolicy": [
+    "summary、runtime、LAN、audit 和截图证据只应在执行 release:local-rc 后提交。",
+    "仅 generatedAt 或运行时日志变化不足以构成有价值提交；提交前优先检查是否存在源码、配置、截图或门禁结论变化。",
+    "截图用于证明 desktop、mobile-reduced-motion 和关键首屏区域；视觉变化应和对应代码或样式变化一起提交。",
+    "reports/ 下的进程日志是排障材料，不作为规范提交产物。"
+  ],
+  "requiredSummaryLinks": [
+    "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+    "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "docs/90-archive/reports/npm-audit-report.json",
+    "docs/90-archive/reports/worldos-external-evidence-template.json"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}
