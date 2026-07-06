@@ -6,7 +6,10 @@ type NodeRelationGroup = {
   id: string
   title: string
   description: string
-  nodes: Node[]
+  items: Array<{
+    node: Node
+    reason: string
+  }>
 }
 
 export function NodeRelationRail({ groups }: { groups: NodeRelationGroup[] }) {
@@ -44,12 +47,19 @@ export function NodeRelationRail({ groups }: { groups: NodeRelationGroup[] }) {
           <AccessibleCollapsible
             key={group.id}
             title={group.title}
-            summary={`${group.description} · ${group.nodes.length} 个节点`}
+            summary={`${group.description} · ${group.items.length} 个节点`}
             defaultOpen={index === 0}
           >
-            {group.nodes.length ? (
+            {group.items.length ? (
               <div className="space-y-4">
-                {group.nodes.map((node) => <NodeCard key={node.id} node={node} />)}
+                {group.items.map((item) => (
+                  <div key={item.node.id} className="space-y-2">
+                    <NodeCard node={item.node} />
+                    <p className="rounded-[1rem] bg-paper/70 px-4 py-3 text-sm leading-7 text-ink/62">
+                      为什么相关：{item.reason}
+                    </p>
+                  </div>
+                ))}
               </div>
             ) : (
               <p className="rounded-[1.25rem] border border-ink/10 bg-white/45 p-5 text-sm leading-7 text-ink/55">
