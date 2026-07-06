@@ -1,7 +1,7 @@
 {
   "name": "WorldOS 历史脚本治理注册表 v1",
-  "updatedAt": "2026-07-04",
-  "source": "WorldOS 1.0 RC8 local LAN RC follow-up",
+  "updatedAt": "2026-07-06",
+  "source": "WorldOS local RC trust gate follow-up",
   "principle": "默认入口必须短且可复跑；历史阶段脚本保留为 reference，但不能继续扩展为新开发默认入口。",
   "activeEntrypoints": [
     "check:daily",
@@ -15,6 +15,7 @@
     "check:rc",
     "check:rc:fast",
     "check:rc:full",
+    "release:local-rc",
     "audit:project",
     "check:runtime-local",
     "smoke:runtime-local",
@@ -28,6 +29,7 @@
   "releaseCandidateCommands": [
     "npm run check:rc:fast",
     "npm run check:rc:full",
+    "npm run release:local-rc",
     "npm run smoke:runtime-local",
     "npm run smoke:lan-local"
   ],
@@ -46,7 +48,7 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 245,
+    "totalScripts": 246,
     "checkScripts": 125,
     "stageLikeCheckScripts": 2,
     "longScripts": 1

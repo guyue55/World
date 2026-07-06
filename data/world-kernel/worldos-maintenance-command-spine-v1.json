@@ -1,7 +1,7 @@
 {
   "name": "WorldOS 长期维护命令脊柱 v1",
-  "updatedAt": "2026-07-04",
-  "source": "WorldOS 1.0 RC8 local LAN RC follow-up",
+  "updatedAt": "2026-07-06",
+  "source": "WorldOS local RC trust gate follow-up",
   "principle": "默认入口必须短、稳定、可复跑；历史阶段脚本保留为 reference，不再作为日常开发路径。",
   "superpowersWorkflow": {
     "skillsApplied": [
@@ -52,8 +52,15 @@
     {
       "id": "rc-full",
       "script": "check:rc:full",
-      "command": "npm run check:release:rc && npm run build:kernel-release && npm run build:verify-artifacts && npm run smoke:runtime-local && npm run smoke:lan-local && npm run audit:report",
-      "purpose": "本地完整 RC 门禁：RC 快检、构建产物验证、本地 production HTTP smoke、局域网浏览器 smoke、审计报告。",
+      "command": "npm run release:local-rc",
+      "purpose": "本地完整 RC 门禁兼容入口：委托 release:local-rc 执行可信本地 RC 验收。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "release-local-rc",
+      "script": "release:local-rc",
+      "command": "node scripts/run-worldos-local-rc-trust-gate.mjs",
+      "purpose": "可信本地局域网 RC 门禁：RC 快检、lint、typecheck、强制 fresh build、产物时效验证、本地 production HTTP smoke、局域网浏览器 smoke、审计报告。",
       "stageLikeAllowed": false
     },
     {
@@ -117,9 +124,10 @@
     {
       "id": "rc-local-full",
       "commands": [
+        "npm run release:local-rc",
         "npm run check:rc:full"
       ],
-      "when": "打包、交付、提交前的本地完整候选发布验证；包含本地 production HTTP smoke 和局域网浏览器 smoke。"
+      "when": "打包、交付、提交前的本地完整候选发布验证；release:local-rc 是推荐入口，check:rc:full 保持兼容。"
     },
     {
       "id": "local-runtime-smoke",
@@ -176,6 +184,7 @@
     "check:rc",
     "check:rc:fast",
     "check:rc:full",
+    "release:local-rc",
     "audit:project",
     "check:runtime-local",
     "smoke:runtime-local",

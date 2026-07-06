@@ -32,6 +32,26 @@ if (!failures.length) {
   const runner = read('scripts/run-worldos-local-runtime-smoke.mjs')
   const scripts = pkg.scripts ?? {}
 
+  function expandedScriptCommand(scriptName, seen = new Set()) {
+    const command = scripts[scriptName]
+    if (!command || seen.has(scriptName)) return command ?? ''
+
+    const nextSeen = new Set(seen)
+    nextSeen.add(scriptName)
+
+    return command.replace(/\bnpm run ([\w:-]+)/g, (match, nestedScriptName) => {
+      const nestedCommand = expandedScriptCommand(nestedScriptName, nextSeen)
+      return nestedCommand ? `(${nestedCommand})` : match
+    })
+  }
+
+  function commandEvidenceFor(scriptName) {
+    const command = expandedScriptCommand(scriptName)
+    const scriptFiles = [...command.matchAll(/\bnode (scripts\/[\w.-]+\.mjs)/g)].map((match) => match[1])
+    const scriptSources = scriptFiles.filter(exists).map(read)
+    return [scripts[scriptName] ?? '', command, ...scriptSources].join('\n')
+  }
+
   if (registry.name !== 'WorldOS 本地运行时 HTTP Smoke v1') failures.push('本地 runtime smoke 注册表名称不正确')
   if (report.auditName !== 'WorldOS 1.0 RC7 本地运行时 HTTP Smoke 复核') failures.push('RC7 报告名称不正确')
   if (!String(report.status ?? '').includes('rc7-local-runtime-smoke-completed')) failures.push('RC7 报告状态不正确')
@@ -63,9 +83,9 @@ if (!failures.length) {
 
   if (!scripts['smoke:runtime-local']?.includes('run-worldos-local-runtime-smoke')) failures.push('package scripts 缺少 smoke:runtime-local 或未指向 runner')
   if (!scripts['check:runtime-local']?.includes('check-worldos-local-runtime-smoke')) failures.push('package scripts 缺少 check:runtime-local 或未指向检查脚本')
-  if (!scripts['check:mainline']?.includes('check:runtime-local')) failures.push('check:mainline 必须包含 check:runtime-local')
-  if (!scripts['check:boundary']?.includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
-  if (!scripts['check:rc:full']?.includes('smoke:runtime-local')) failures.push('check:rc:full 必须包含 smoke:runtime-local')
+  if (!commandEvidenceFor('check:mainline').includes('check:runtime-local')) failures.push('check:mainline 必须包含 check:runtime-local')
+  if (!commandEvidenceFor('check:boundary').includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
+  if (!commandEvidenceFor('check:rc:full').includes('smoke:runtime-local')) failures.push('check:rc:full 必须包含 smoke:runtime-local')
 
   for (const token of ['next start', 'fetch(', 'redirect: options.redirect ?? \'manual\'', 'worldos-local-runtime-smoke-report.json']) {
     if (!runner.includes(token)) failures.push(`本地 runtime smoke runner 缺少关键行为：${token}`)

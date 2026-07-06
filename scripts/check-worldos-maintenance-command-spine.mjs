@@ -40,6 +40,26 @@ if (!failures.length) {
   const contributing = read('CONTRIBUTING.md')
   const scripts = pkg.scripts ?? {}
 
+  function expandedScriptCommand(scriptName, seen = new Set()) {
+    const command = scripts[scriptName]
+    if (!command || seen.has(scriptName)) return command ?? ''
+
+    const nextSeen = new Set(seen)
+    nextSeen.add(scriptName)
+
+    return command.replace(/\bnpm run ([\w:-]+)/g, (match, nestedScriptName) => {
+      const nestedCommand = expandedScriptCommand(nestedScriptName, nextSeen)
+      return nestedCommand ? `(${nestedCommand})` : match
+    })
+  }
+
+  function commandEvidenceFor(scriptName) {
+    const command = expandedScriptCommand(scriptName)
+    const scriptFiles = [...command.matchAll(/\bnode (scripts\/[\w.-]+\.mjs)/g)].map((match) => match[1])
+    const scriptSources = scriptFiles.filter(exists).map(read)
+    return [scripts[scriptName] ?? '', command, ...scriptSources].join('\n')
+  }
+
   if (contract.name !== 'WorldOS 长期维护命令脊柱 v1') failures.push('命令脊柱注册表名称不正确')
   if (report.auditName !== 'WorldOS 1.0 RC6 长期维护命令脊柱复核') failures.push('RC6 报告名称不正确')
   if (!['pass', 'rc6-maintenance-command-spine-completed-external-deploy-still-blocked'].includes(report.status)) failures.push('RC6 报告状态不正确')
@@ -70,18 +90,22 @@ if (!failures.length) {
     if (!scripts[name]) failures.push(`stableEntrypoints 指向不存在脚本：${name}`)
   }
 
-  if (!scripts['check:mainline']?.includes('check:maintenance-command-spine')) failures.push('check:mainline 必须包含 check:maintenance-command-spine')
-  if (!scripts['check:mainline']?.includes('check:runtime-local')) failures.push('check:mainline 必须包含 check:runtime-local')
-  if (!scripts['check:boundary']?.includes('check:api-boundary') || !scripts['check:boundary']?.includes('check:scripts')) failures.push('check:boundary 必须包含 API 与脚本治理')
-  if (!scripts['check:boundary']?.includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
-  if (!scripts['check:rc:full']?.includes('build:kernel-release') || !scripts['check:rc:full']?.includes('build:verify-artifacts')) failures.push('check:rc:full 必须包含构建产物验证链路')
-  if (!scripts['check:rc:full']?.includes('smoke:runtime-local')) failures.push('check:rc:full 必须包含本地运行时 HTTP smoke')
-  if (!scripts['check:rc:full']?.includes('smoke:lan-local')) failures.push('check:rc:full 必须包含本地局域网 RC smoke')
+  const mainlineCommand = commandEvidenceFor('check:mainline')
+  const boundaryCommand = commandEvidenceFor('check:boundary')
+  const rcFullCommand = commandEvidenceFor('check:rc:full')
+
+  if (!mainlineCommand.includes('check:maintenance-command-spine')) failures.push('check:mainline 必须包含 check:maintenance-command-spine')
+  if (!mainlineCommand.includes('check:runtime-local')) failures.push('check:mainline 必须包含 check:runtime-local')
+  if (!boundaryCommand.includes('check:api-boundary') || !boundaryCommand.includes('check:scripts')) failures.push('check:boundary 必须包含 API 与脚本治理')
+  if (!boundaryCommand.includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
+  if (!rcFullCommand.includes('build:kernel-release') || !rcFullCommand.includes('build:verify-artifacts')) failures.push('check:rc:full 必须包含构建产物验证链路')
+  if (!rcFullCommand.includes('smoke:runtime-local')) failures.push('check:rc:full 必须包含本地运行时 HTTP smoke')
+  if (!rcFullCommand.includes('smoke:lan-local')) failures.push('check:rc:full 必须包含本地局域网 RC smoke')
   if (!scripts['check:release:rc']?.includes('check:lan-local')) failures.push('check:release:rc 必须包含本地局域网 RC 静态门禁')
   if (scripts['check:rc'] !== 'npm run check:release:rc') failures.push('check:rc 必须保持为 check:release:rc 别名')
   if (scripts['check:rc:fast'] !== 'npm run check:release:rc') failures.push('check:rc:fast 必须保持为 check:release:rc 别名')
 
-  for (const token of ['WorldOS 1.0 RC6', 'WorldOS 1.0 RC7', 'WorldOS 1.0 RC8', 'check:daily', 'check:boundary', 'check:rc:full', 'smoke:runtime-local', 'smoke:lan-local']) {
+  for (const token of ['WorldOS 1.0 RC6', 'WorldOS 1.0 RC7', 'WorldOS 1.0 RC8', 'check:daily', 'check:boundary', 'check:rc:full', 'release:local-rc', 'smoke:runtime-local', 'smoke:lan-local']) {
     if (!readme.includes(token)) failures.push(`README 缺少 ${token}`)
     if (!contributing.includes(token)) failures.push(`CONTRIBUTING 缺少 ${token}`)
   }

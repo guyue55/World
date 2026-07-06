@@ -37,6 +37,26 @@ if (!failures.length) {
   const history = read('docs/10-development-history/world-kernel/worldos-1-rc8-local-lan-rc.md')
   const scripts = pkg.scripts ?? {}
 
+  function expandedScriptCommand(scriptName, seen = new Set()) {
+    const command = scripts[scriptName]
+    if (!command || seen.has(scriptName)) return command ?? ''
+
+    const nextSeen = new Set(seen)
+    nextSeen.add(scriptName)
+
+    return command.replace(/\bnpm run ([\w:-]+)/g, (match, nestedScriptName) => {
+      const nestedCommand = expandedScriptCommand(nestedScriptName, nextSeen)
+      return nestedCommand ? `(${nestedCommand})` : match
+    })
+  }
+
+  function commandEvidenceFor(scriptName) {
+    const command = expandedScriptCommand(scriptName)
+    const scriptFiles = [...command.matchAll(/\bnode (scripts\/[\w.-]+\.mjs)/g)].map((match) => match[1])
+    const scriptSources = scriptFiles.filter(exists).map(read)
+    return [scripts[scriptName] ?? '', command, ...scriptSources].join('\n')
+  }
+
   if (registry.name !== 'WorldOS 本地局域网 RC 验收 v1') failures.push('LAN RC 注册表名称不正确')
   if (report.auditName !== 'WorldOS 1.0 RC8 本地局域网 RC 验收') failures.push('RC8 报告名称不正确')
   if (!String(report.status ?? '').includes('rc8-local-lan-rc')) failures.push('RC8 报告状态不正确')
@@ -95,7 +115,7 @@ if (!failures.length) {
   if (!scripts['check:lan-local']?.includes('check-worldos-local-lan-rc')) failures.push('package scripts 缺少 check:lan-local')
   if (!scripts['smoke:lan-local']?.includes('run-worldos-local-lan-rc')) failures.push('package scripts 缺少 smoke:lan-local')
   if (!scripts['check:release:rc']?.includes('check:lan-local')) failures.push('check:release:rc 必须包含 check:lan-local')
-  if (!scripts['check:rc:full']?.includes('smoke:lan-local')) failures.push('check:rc:full 必须包含 smoke:lan-local')
+  if (!commandEvidenceFor('check:rc:full').includes('smoke:lan-local')) failures.push('check:rc:full 必须包含 smoke:lan-local')
 
   for (const token of ['WorldOS 1.0 RC8', 'check:lan-local', 'smoke:lan-local', '本地局域网 RC']) {
     if (!readme.includes(token)) failures.push(`README 缺少 ${token}`)
