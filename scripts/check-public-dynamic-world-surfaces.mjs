@@ -33,6 +33,7 @@ const routeSurfaceContracts = [
 ]
 const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 const motionGrammarFile = 'src/lib/motion-grammar.ts'
+const publicWorldObjectsFile = 'src/lib/public-world-objects.ts'
 
 const failures = []
 
@@ -92,6 +93,16 @@ for (const token of ['arrival', 'emergence', 'connection', 'flow', 'focus', 'fee
 }
 for (const token of ['label', 'intent', 'appliesTo', 'reducedMotion', 'overwrite']) {
   if (!motionGrammar.includes(token)) failures.push(`${motionGrammarFile} 缺少动效语法字段：${token}`)
+}
+
+const publicWorldObjects = readFileSync(resolve(root, publicWorldObjectsFile), 'utf8')
+for (const token of ['getPublicWorldObjectIndex', 'getPublicWorldObjectConsistencyIssues', 'nodeRefs', 'pathRefs', 'timelineRefs', 'getPublicNodes', 'getPublicWorldEvents']) {
+  if (!publicWorldObjects.includes(token)) failures.push(`${publicWorldObjectsFile} 缺少公开世界对象索引字段：${token}`)
+}
+
+for (const file of ['src/app/page.tsx', 'src/app/atlas/page.tsx', 'src/app/timeline/page.tsx', 'src/app/archive/page.tsx', 'src/app/paths/page.tsx']) {
+  const source = readFileSync(resolve(root, file), 'utf8')
+  if (!source.includes('getPublicWorldObjectIndex')) failures.push(`${file} 必须从统一公开世界对象索引读取数据`)
 }
 
 if (existsSync(resolve(root, boundaryRegistryFile))) {

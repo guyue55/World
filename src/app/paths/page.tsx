@@ -1,5 +1,4 @@
-import { getAllPaths } from '@/lib/paths'
-import { getAllNodes } from '@/lib/nodes'
+import { getPublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { buildPathsDirectorySurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { getRecommendedPathOrder } from '@/lib/path-guidance'
@@ -13,8 +12,9 @@ export const metadata = createPageMetadata({
 })
 
 export default function PathsPage() {
-  const paths = getRecommendedPathOrder(getAllPaths())
-  const nodes = getAllNodes()
+  const publicWorld = getPublicWorldObjectIndex()
+  const paths = getRecommendedPathOrder(publicWorld.paths)
+  const nodes = publicWorld.nodes
   const surface = buildPathsDirectorySurface(paths, nodes)
 
   return (

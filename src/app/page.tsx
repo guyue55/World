@@ -1,16 +1,14 @@
 import { ProductHome } from '@/components/product/ProductHome'
-import { getAllAreas } from '@/lib/areas'
-import { getFeaturedNodes, getPublicNodes } from '@/lib/nodes'
-import { getAllPaths } from '@/lib/paths'
-import { getRecentWorldEvents } from '@/lib/world-events'
+import { getPublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { buildHomeDynamicWorldSurface } from '@/lib/public-world-surfaces'
 
 export default function HomePage() {
-  const areas = getAllAreas()
-  const featuredNodes = getFeaturedNodes()
-  const publicNodes = getPublicNodes()
-  const paths = getAllPaths()
-  const events = getRecentWorldEvents(4)
+  const publicWorld = getPublicWorldObjectIndex()
+  const areas = publicWorld.areas
+  const publicNodes = publicWorld.nodes
+  const featuredNodes = publicNodes.filter((node) => node.featured?.home || node.featured?.representative)
+  const paths = publicWorld.paths
+  const events = publicWorld.events.slice(0, 4)
   const dynamicWorld = buildHomeDynamicWorldSurface({ areas, nodes: publicNodes, paths, events })
 
   return (

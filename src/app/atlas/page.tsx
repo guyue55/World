@@ -1,6 +1,5 @@
-import { getAllAreas } from '@/lib/areas'
-import { getPublicNodes, getPublicNodesByArea } from '@/lib/nodes'
-import { getAtlasStats, getVisibleAreaLinks } from '@/lib/atlas'
+import { getAtlasStats } from '@/lib/atlas'
+import { getPublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { buildAtlasConstellationSurface } from '@/lib/public-world-surfaces'
 import { AtlasMap } from '@/components/world/AtlasMap'
 import { AreaNodeCluster } from '@/components/world/AreaNodeCluster'
@@ -19,12 +18,14 @@ export const metadata = createPageMetadata({
 })
 
 export default function AtlasPage() {
-  const areas = getAllAreas()
-  const publicNodes = getPublicNodes()
+  const publicWorld = getPublicWorldObjectIndex()
+  const areas = publicWorld.areas
+  const publicNodes = publicWorld.nodes
   const stats = getAtlasStats(areas, publicNodes)
-  const areaLinks = getVisibleAreaLinks(areas)
+  const areaLinks = publicWorld.areaLinks
   const primaryAreas = areas.filter((area) => area.level === 1)
   const atlasSurface = buildAtlasConstellationSurface(areas, publicNodes, areaLinks)
+  const getPublicNodesByArea = (areaId: string) => publicNodes.filter((node) => node.areaId === areaId)
 
   return (
     <main className="world-container space-y-12 py-16">

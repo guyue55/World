@@ -1,6 +1,5 @@
 import { ArchiveView } from '@/components/archive/ArchiveView'
-import { getPublicNodes } from '@/lib/nodes'
-import { getAllAreas } from '@/lib/areas'
+import { getPublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { buildArchiveDynamicSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
@@ -13,8 +12,9 @@ export const metadata = createPageMetadata({
 })
 
 export default function ArchivePage() {
-  const nodes = getPublicNodes()
-  const areas = getAllAreas()
+  const publicWorld = getPublicWorldObjectIndex()
+  const nodes = publicWorld.nodes
+  const areas = publicWorld.areas
   const archiveSurface = buildArchiveDynamicSurface(nodes, areas)
 
   return (

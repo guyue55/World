@@ -1,6 +1,5 @@
-import { getAllAreas } from '@/lib/areas'
-import { getPublicNodes } from '@/lib/nodes'
-import { getPublicWorldEvents, getWorldState } from '@/lib/world-events'
+import { getWorldState } from '@/lib/world-events'
+import { getPublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { getTimelineStats } from '@/lib/timeline'
 import { buildTimelineRiverSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
@@ -17,9 +16,10 @@ export const metadata = createPageMetadata({
 })
 
 export default function TimelinePage() {
-  const events = getPublicWorldEvents()
-  const nodes = getPublicNodes()
-  const areas = getAllAreas()
+  const publicWorld = getPublicWorldObjectIndex()
+  const events = publicWorld.events
+  const nodes = publicWorld.nodes
+  const areas = publicWorld.areas
   const state = getWorldState()
   const stats = getTimelineStats(events)
   const timelineSurface = buildTimelineRiverSurface(events, nodes, areas)
