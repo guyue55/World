@@ -72,8 +72,8 @@ export function WorldLiveMapPanel({ routes }: { routes: DynamicWorldRouteSignal[
         )
       })}
       <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between gap-3 text-[11px] text-paper/55">
-        <span className="truncate">runtime://public-world</span>
-        <span className="shrink-0">live</span>
+        <span className="truncate">公开世界运行中</span>
+        <span className="shrink-0">实时</span>
       </div>
     </div>
   )

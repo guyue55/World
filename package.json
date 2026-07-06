@@ -239,7 +239,7 @@
     "check:worldos-script-legacy-registry": "node scripts/check-worldos-script-legacy-registry.mjs",
     "check:scripts": "npm run check:worldos-script-taxonomy && npm run check:worldos-script-legacy-registry",
     "check:daily": "npm run check:mainline && npm run lint && npm run typecheck",
-    "check:dynamic-world": "node scripts/check-public-dynamic-world-surfaces.mjs && tsx scripts/check-public-world-object-index.ts",
+    "check:dynamic-world": "node scripts/check-public-dynamic-world-surfaces.mjs && tsx scripts/check-public-world-object-index.ts && node scripts/check-public-chinese-copy.mjs",
     "check:boundary": "npm run check:api-boundary && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:dynamic-world && npm run check:runtime-local",
     "check:rc": "npm run check:release:rc",
     "check:rc:fast": "npm run check:release:rc",

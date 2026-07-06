@@ -649,7 +649,7 @@ export function buildDynamicWorldStatusSurface({
   const publicEvents = events.filter((event) => isEventPublic(event.visibility))
 
   return {
-    eyebrow: 'DYNAMIC WORLD STATUS',
+    eyebrow: '动态世界状态',
     title: '动态世界已经点亮，但仍只运行在公开层',
     description: '这里汇总当前可见的动态能力。状态面板只展示公开构建后的结果，不暴露私密节点、内部队列或旧阶段实验页。',
     runtimeLabel: '公开运行态',
@@ -743,7 +743,7 @@ export function buildArchiveDynamicSurface(nodes: Node[], areas: Area[], tagLimi
     .map(([tag, count]) => ({ tag, count }))
 
   return {
-    eyebrow: 'LIVE ARCHIVE',
+    eyebrow: '动态档案馆',
     title: '不想漫游时，直接检索公开世界',
     description: '档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。',
     boundaryLabel: '只读公开索引 · 不含私密层',
@@ -789,7 +789,7 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
   const estimatedMinutes = path.estimatedMinutes ?? Math.max(8, publicNodes.length * 4)
 
   return {
-    eyebrow: 'LIVE PATH',
+    eyebrow: '动态路径',
     title: '这条路径是一段可完成的旅程',
     description: '先按顺序走完公开节点，再决定要不要回到地图、进入档案馆，或继续下一条路径。路径只组织公开内容，不把私密层带进前台。',
     boundaryLabel: '只含公开节点 · 可随时返回',
@@ -862,7 +862,7 @@ export function buildPathsDirectorySurface(paths: Path[], nodes: Node[]): PathsD
   }))
 
   return {
-    eyebrow: 'GUIDED PATHS',
+    eyebrow: '精选路径',
     title: '精选路径',
     description: '路径不是分类，而是为不同旅人准备的行走路线。它把星体排成可以理解、可以继续走下去的顺序。',
     metrics: [
@@ -891,7 +891,7 @@ export function buildPathsDirectorySurface(paths: Path[], nodes: Node[]): PathsD
 
 export function buildAboutDynamicSurface(): AboutDynamicSurface {
   return {
-    eyebrow: 'ABOUT',
+    eyebrow: '关于古月浮屿',
     title: '造物主不是简历，而是世界的原点。',
     description: '古月浮屿是一座持续生长的个人数字世界。它对外是可探索的公开前厅，对内是创世台，对未来是档案，对 AI 是可读、可审计、可边界化协作的世界协议。',
     identityCards: [
@@ -918,7 +918,7 @@ export function buildAboutDynamicSurface(): AboutDynamicSurface {
 
 export function buildManifestoDynamicSurface(): ManifestoDynamicSurface {
   return {
-    eyebrow: 'MANIFESTO',
+    eyebrow: '世界宣言',
     title: '世界宣言',
     description: '古月浮屿不是公共多人 3D 元宇宙，也不是虚拟经济空间。它是一个以内容为节点、以时间为河流、以权限为边界、以 AI 为灯塔的个人数字世界。',
     rules: [
