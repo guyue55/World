@@ -1,0 +1,126 @@
+{
+  "name": "WorldOS 动态世界 surface 边界注册表 v1",
+  "updatedAt": "2026-07-06",
+  "source": "WorldOS dynamic world boundary hardening",
+  "principle": "动态世界的公开体验必须由服务端构建公开 surface；前端只消费结果和体现状态，不在客户端硬编码权限。",
+  "policies": {
+    "serverBuildsPublicSurfaces": true,
+    "frontendVisibilityIsNotPermission": true,
+    "noClientRawPrivateData": true,
+    "publicSurfaceRequiresVisibilityFilter": true,
+    "legacyUniverseComponentsRemainReference": true,
+    "r8ComponentsRemainReference": true
+  },
+  "surfaces": [
+    {
+      "id": "home-dynamic-world",
+      "route": "/",
+      "pageFile": "src/app/page.tsx",
+      "builder": "buildHomeDynamicWorldSurface",
+      "surfaceType": "HomeDynamicWorldSurface",
+      "dataSources": ["areas", "nodes", "paths", "events"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "atlas-constellation",
+      "route": "/atlas",
+      "pageFile": "src/app/atlas/page.tsx",
+      "builder": "buildAtlasConstellationSurface",
+      "surfaceType": "AtlasConstellationSurface",
+      "dataSources": ["areas", "nodes", "links"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "timeline-river",
+      "route": "/timeline",
+      "pageFile": "src/app/timeline/page.tsx",
+      "builder": "buildTimelineRiverSurface",
+      "surfaceType": "TimelineRiverSurface",
+      "dataSources": ["events", "nodes", "areas"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "lighthouse-console",
+      "route": "/ask",
+      "pageFile": "src/app/ask/page.tsx",
+      "builder": "buildLighthouseConsoleSurface",
+      "surfaceType": "LighthouseConsoleSurface",
+      "dataSources": ["nodes", "paths"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "dynamic-world-status",
+      "route": "/status",
+      "pageFile": "src/app/status/page.tsx",
+      "builder": "buildDynamicWorldStatusSurface",
+      "surfaceType": "DynamicWorldStatusSurface",
+      "dataSources": ["areas", "nodes", "paths", "events"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "archive-dynamic",
+      "route": "/archive",
+      "pageFile": "src/app/archive/page.tsx",
+      "builder": "buildArchiveDynamicSurface",
+      "surfaceType": "ArchiveDynamicSurface",
+      "dataSources": ["nodes", "areas"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "path-journey",
+      "route": "/paths/[id]",
+      "pageFile": "src/app/paths/[id]/page.tsx",
+      "builder": "buildPathJourneySurface",
+      "surfaceType": "PathJourneySurface",
+      "dataSources": ["path", "nodes", "nextPaths", "areas"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "paths-directory",
+      "route": "/paths",
+      "pageFile": "src/app/paths/page.tsx",
+      "builder": "buildPathsDirectorySurface",
+      "surfaceType": "PathsDirectorySurface",
+      "dataSources": ["paths", "nodes"],
+      "requiresPublicFilter": true,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "about-dynamic",
+      "route": "/about",
+      "pageFile": "src/app/about/page.tsx",
+      "builder": "buildAboutDynamicSurface",
+      "surfaceType": "AboutDynamicSurface",
+      "dataSources": ["static-public-copy"],
+      "requiresPublicFilter": false,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    },
+    {
+      "id": "manifesto-dynamic",
+      "route": "/manifesto",
+      "pageFile": "src/app/manifesto/page.tsx",
+      "builder": "buildManifestoDynamicSurface",
+      "surfaceType": "ManifestoDynamicSurface",
+      "dataSources": ["static-public-copy"],
+      "requiresPublicFilter": false,
+      "serverBuilt": true,
+      "frontendPermissionControl": false
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const root = process.cwd()
+const boundaryRegistryFile = 'data/world-kernel/worldos-dynamic-surface-boundary-v1.json'
 const componentFiles = [
   'src/components/product/ProductHome.tsx',
   'src/components/world/WorldLiveMapPanel.tsx',
@@ -34,6 +35,10 @@ const gsapHookFile = 'src/components/world/useGsapEntrance.ts'
 const motionGrammarFile = 'src/lib/motion-grammar.ts'
 
 const failures = []
+
+if (!existsSync(resolve(root, boundaryRegistryFile))) {
+  failures.push(`缺少动态世界 surface 边界注册表：${boundaryRegistryFile}`)
+}
 
 for (const file of componentFiles) {
   const source = readFileSync(resolve(root, file), 'utf8')
@@ -87,6 +92,53 @@ for (const token of ['arrival', 'emergence', 'connection', 'flow', 'focus', 'fee
 }
 for (const token of ['label', 'intent', 'appliesTo', 'reducedMotion', 'overwrite']) {
   if (!motionGrammar.includes(token)) failures.push(`${motionGrammarFile} 缺少动效语法字段：${token}`)
+}
+
+if (existsSync(resolve(root, boundaryRegistryFile))) {
+  const boundaryRegistry = JSON.parse(readFileSync(resolve(root, boundaryRegistryFile), 'utf8'))
+  const surfaceSource = readFileSync(resolve(root, 'src/lib/public-world-surfaces.ts'), 'utf8')
+
+  if (boundaryRegistry.name !== 'WorldOS 动态世界 surface 边界注册表 v1') failures.push('动态世界 surface 边界注册表名称不正确')
+  if (boundaryRegistry.policies?.serverBuildsPublicSurfaces !== true) failures.push('动态 surface 必须声明由服务端构建')
+  if (boundaryRegistry.policies?.frontendVisibilityIsNotPermission !== true) failures.push('动态 surface 必须声明前端显隐不是权限控制')
+  if (boundaryRegistry.policies?.noClientRawPrivateData !== true) failures.push('动态 surface 必须声明客户端不接收原始私密数据')
+  if (boundaryRegistry.policies?.legacyUniverseComponentsRemainReference !== true) failures.push('legacy universe 组件必须保持 reference')
+  if (boundaryRegistry.policies?.r8ComponentsRemainReference !== true) failures.push('R8 universe 组件必须保持 reference')
+
+  for (const surface of boundaryRegistry.surfaces ?? []) {
+    if (!surface.id) failures.push('动态 surface 注册项缺少 id')
+    if (!surface.route) failures.push(`${surface.id} 缺少 route`)
+    if (!surface.pageFile || !existsSync(resolve(root, surface.pageFile))) failures.push(`${surface.id} pageFile 不存在：${surface.pageFile}`)
+    if (!surface.builder || !surfaceSource.includes(`export function ${surface.builder}`)) failures.push(`${surface.id} builder 不存在：${surface.builder}`)
+    if (surface.serverBuilt !== true) failures.push(`${surface.id} 必须由服务端构建 surface`)
+    if (surface.frontendPermissionControl !== false) failures.push(`${surface.id} 不得声明前端权限控制`)
+    if (!Array.isArray(surface.dataSources) || surface.dataSources.length === 0) failures.push(`${surface.id} 必须登记 dataSources`)
+
+    if (surface.pageFile && existsSync(resolve(root, surface.pageFile)) && surface.builder) {
+      const pageSource = readFileSync(resolve(root, surface.pageFile), 'utf8')
+      if (!pageSource.includes(surface.builder)) failures.push(`${surface.id} 页面必须调用 ${surface.builder}`)
+      if (pageSource.includes('@/components/r8-') || pageSource.includes('@/components/_legacy')) {
+        failures.push(`${surface.id} 页面不得接入 R8 或 legacy 动态组件`)
+      }
+    }
+  }
+
+  const builderMatches = [...surfaceSource.matchAll(/export function (build\w+Surface)/g)]
+  const filteredBuilders = builderMatches
+    .map((match, index) => {
+      const nextMatch = builderMatches[index + 1]
+      const sourceSlice = surfaceSource.slice(match.index, nextMatch?.index ?? surfaceSource.length)
+      return { name: match[1], source: sourceSlice }
+    })
+    .filter((builder) => builder.source.includes('isPublicVisible') || builder.source.includes('isPublicArea') || builder.source.includes('isEventPublic'))
+    .map((builder) => builder.name)
+  const filteredBuilderSet = new Set(filteredBuilders)
+
+  for (const surface of boundaryRegistry.surfaces ?? []) {
+    if (surface.requiresPublicFilter === true && !filteredBuilderSet.has(surface.builder)) {
+      failures.push(`${surface.id} 要求公开过滤，但 ${surface.builder} 未检测到公开过滤 helper`)
+    }
+  }
 }
 
 const homeSource = readFileSync(resolve(root, 'src/components/product/ProductHome.tsx'), 'utf8')
