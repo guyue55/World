@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-07-06T02:59:13.882Z",
+  "source": "scripts/write-worldos-local-rc-summary.mjs",
+  "status": "local-rc-passed-external-release-blocked",
+  "localAccess": {
+    "mode": "local-lan",
+    "baseUrl": "http://172.30.111.222:4320",
+    "lanIp": "172.30.111.222",
+    "bindHost": "0.0.0.0",
+    "port": 4320
+  },
+  "gates": {
+    "releaseLocalRc": "passed-before-summary",
+    "runtimeSmoke": {
+      "status": "passed",
+      "report": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+      "checks": 20,
+      "passedChecks": 20
+    },
+    "lanSmoke": {
+      "status": "passed",
+      "report": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+      "httpChecks": 20,
+      "passedHttpChecks": 20,
+      "browserChecks": 16,
+      "passedBrowserChecks": 16,
+      "screenshotCount": 16
+    },
+    "audit": {
+      "report": "docs/90-archive/reports/npm-audit-report.json",
+      "total": 2,
+      "moderate": 2,
+      "high": 0,
+      "critical": 0,
+      "policy": [
+        "Do not run npm audit fix --force automatically.",
+        "Moderate vulnerabilities do not block local-engineering-ready status.",
+        "High or critical vulnerabilities must be triaged before production release."
+      ]
+    },
+    "buildArtifacts": {
+      "required": [
+        ".next/BUILD_ID",
+        ".next/required-server-files.json",
+        "public/world-index.json"
+      ],
+      "missing": [],
+      "buildIdMtime": "2026-07-06T02:58:54.926Z"
+    }
+  },
+  "dynamicWorldEvidence": {
+    "objectIndexGate": "covered-by-check:dynamic-world",
+    "surfaceBoundaryGate": "covered-by-check:dynamic-world",
+    "chineseFirstCopyGate": "covered-by-check:dynamic-world"
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "externalPreviewEvidenceComplete": false,
+    "externalProductionEvidenceComplete": false,
+    "manualSignoffComplete": false,
+    "rollbackDrillComplete": false,
+    "reason": "本地 LAN RC 可以证明当前局域网访问、构建产物、运行时和浏览器 smoke；仍不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。"
+  },
+  "evidence": {
+    "runtimeReport": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+    "lanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "auditReport": "docs/90-archive/reports/npm-audit-report.json",
+    "externalEvidenceTemplate": "docs/90-archive/reports/worldos-external-evidence-template.json",
+    "screenshots": [
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
+    ]
+  },
+  "nextActions": [
+    "继续使用 npm run release:local-rc 作为本地局域网验收唯一推荐入口。",
+    "拥有真实 Preview URL 后设置 PREVIEW_URL 并执行 npm run smoke:preview。",
+    "拥有真实 Production URL 后设置 PRODUCTION_URL 并执行 npm run smoke:production。",
+    "补齐 HTTPS、Web Vitals、Accessibility、人工签收和回滚演练后，才允许评估 releaseReady。"
+  ]
+}

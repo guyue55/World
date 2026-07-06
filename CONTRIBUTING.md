@@ -208,7 +208,7 @@ npm run check:rc:full
 
 1. `check:runtime-local` 只检查本地运行时 smoke 的注册表、脚本、文档和生产状态诚实性。
 2. `smoke:runtime-local` 会启动本地 `next start`，检查公开 HTML 路由、静态 JSON、robots、sitemap、legacy redirect、private guard 和 404。
-3. `release:local-rc` 已接入 `smoke:runtime-local`，适合提交、打包、交付前执行；`check:rc:full` 保持兼容。
+3. `release:local-rc` 已接入 `smoke:runtime-local`，并会生成 `docs/90-archive/reports/worldos-local-rc-summary-report.json`，适合提交、打包、交付前执行；`check:rc:full` 保持兼容。
 4. 本地 HTTP smoke 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
 5. 修改公开路由、legacy redirect、private/internal guard、public JSON、robots、sitemap 时，必须同步更新 `data/world-kernel/worldos-local-runtime-smoke-v1.json`。
 6. 前端显隐仍不是权限控制；private/internal 路由必须由服务端 route policy / middleware / API guard 约束。

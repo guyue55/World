@@ -10,6 +10,8 @@ const commands = [
   ['npm', ['run', 'smoke:runtime-local']],
   ['npm', ['run', 'smoke:lan-local']],
   ['npm', ['run', 'audit:report']],
+  ['node', ['scripts/write-worldos-local-rc-summary.mjs']],
+  ['node', ['scripts/check-worldos-local-rc-summary.mjs']],
 ]
 
 function run(command, args, env = {}) {
