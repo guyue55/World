@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T02:08:52.858Z",
+  "generatedAt": "2026-07-06T02:23:56.590Z",
   "status": "passed",
   "lanIp": "172.30.111.222",
   "baseUrl": "http://172.30.111.222:4320",
@@ -22,8 +22,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 32,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 42,
       "ok": true,
       "expected": {
         "status": 200,
@@ -38,8 +38,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 102,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 52,
       "ok": true,
       "expected": {
         "status": 200,
@@ -54,8 +54,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 25,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 19,
       "ok": true,
       "expected": {
         "status": 200,
@@ -70,8 +70,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 34,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 33,
       "ok": true,
       "expected": {
         "status": 200,
@@ -86,8 +86,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 15,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 12,
       "ok": true,
       "expected": {
         "status": 200,
@@ -102,8 +102,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 12,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 16,
       "ok": true,
       "expected": {
         "status": 200,
@@ -118,8 +118,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 16,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -134,8 +134,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 24,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 21,
       "ok": true,
       "expected": {
         "status": 200,
@@ -150,8 +150,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-06T02:07:55.135Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
-      "durationMs": 3,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-06T02:23:09.154Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "durationMs": 6,
       "ok": true,
       "expected": {
         "status": 200,
@@ -167,7 +167,7 @@
       "contentType": "application/json; charset=UTF-8",
       "location": "",
       "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"/paths\",\n    \"/ask\",\n    \"/manifesto\"\n  ",
-      "durationMs": 2,
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -198,8 +198,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-06T02:08:16.661Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
-      "durationMs": 13,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-06T02:23:25.622Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -215,7 +215,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -263,7 +263,7 @@
       "contentType": "",
       "location": "/ask",
       "bodyPreview": "/ask",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -313,7 +313,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 2,
+      "durationMs": 4,
       "ok": true,
       "expected": {
         "status": 307,
@@ -329,8 +329,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/e61bdd647c896277.css\" data-precedence=\"next\"/><link rel=\"p",
-      "durationMs": 15,
+      "bodyPreview": "<!DOCTYPE html><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/974605a4e249918c.css\" data-precedence=\"next\"/><link rel=\"p",
+      "durationMs": 11,
       "ok": true,
       "expected": {
         "status": 404
@@ -346,13 +346,13 @@
       "metrics": {
         "title": "古月浮屿｜一张书桌连接星河",
         "h1": "一张书桌，连接一片星河。",
-        "textLength": 2448,
-        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 古月浮屿 · 公开世界入口 一张书桌，连接一片星河。 这是一个正在生长的个人数字世界。技术、生活、项目、记忆与 AI，在这里被安放、连接、沉淀与演化。 我第一次来 我想看全貌 我想直接找内容 我不知道看什么 上线状态 入口清澈，深处浩瀚 对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。 入口 地图 时间 路径 灯塔 检索 runtime://public-world live 世界地图 从区域和公开节点看全貌，再进入具体星域。 时间流 看世界最近如何生长，哪些事件推动了节点和区域。 8 分钟抵达古月浮屿 给第一",
+        "textLength": 2555,
+        "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 古月浮屿 · 公开世界入口 一张书桌，连接一片星河。 这是一个正在生长的个人数字世界。技术、生活、项目、记忆与 AI，在这里被安放、连接、沉淀与演化。 我第一次来 我想看全貌 我想直接找内容 我不知道看什么 白日运行 公开宇宙正在运行 5 条公开航道、4 个低门槛入口，当前推荐从 路径 开始。 路径 入口 地图 时间 路径 灯塔 检索 运行态 第 1 次进入 推荐路 8 分钟抵达古月浮屿 动效 轻动效 上线状态 入口清澈，深处浩瀚 对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。 入口 地图 时间 路径 灯塔 ",
         "hiddenBody": false,
         "scrollWidth": 1440,
         "clientWidth": 1440,
         "overflowX": false,
-        "interactiveCount": 51,
+        "interactiveCount": 58,
         "fixedOverlayIssues": []
       },
       "exceptions": [],
@@ -522,13 +522,13 @@
       "metrics": {
         "title": "古月浮屿｜一张书桌连接星河",
         "h1": "一张书桌，连接一片星河。",
-        "textLength": 2439,
-        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 古月浮屿 · 公开世界入口 一张书桌，连接一片星河。 这是一个正在生长的个人数字世界。技术、生活、项目、记忆与 AI，在这里被安放、连接、沉淀与演化。 我第一次来 我想看全貌 我想直接找内容 我不知道看什么 上线状态 入口清澈，深处浩瀚 对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。 入口 地图 时间 路径 灯塔 检索 runtime://public-world live 世界地图 从区域和公开节点看全貌，再进入具体星域。 时间流 看世界最近如何生长，哪些事件推动了节点和区域。 8 分钟抵达古月浮屿 给第一次来访者的短路径：",
+        "textLength": 2546,
+        "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 古月浮屿 · 公开世界入口 一张书桌，连接一片星河。 这是一个正在生长的个人数字世界。技术、生活、项目、记忆与 AI，在这里被安放、连接、沉淀与演化。 我第一次来 我想看全貌 我想直接找内容 我不知道看什么 白日运行 公开宇宙正在运行 5 条公开航道、4 个低门槛入口，当前推荐从 路径 开始。 路径 入口 地图 时间 路径 灯塔 检索 运行态 第 9 次进入 推荐路 8 分钟抵达古月浮屿 动效 低动效 上线状态 入口清澈，深处浩瀚 对外只显示可进入、可理解、可返回的主路径；阶段页、治理页和私密层不会干扰第一次进入的人。 入口 地图 时间 路径 灯塔 检索 runtim",
         "hiddenBody": false,
         "scrollWidth": 390,
         "clientWidth": 390,
         "overflowX": false,
-        "interactiveCount": 53,
+        "interactiveCount": 60,
         "fixedOverlayIssues": []
       },
       "exceptions": [],

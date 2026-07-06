@@ -7,6 +7,7 @@ import { ProductWorldCompass } from '@/components/product/ProductWorldCompass'
 import { ProductWorldBoundaries } from '@/components/product/ProductWorldBoundaries'
 import { ProductDynamicWorldGuide } from '@/components/product/ProductDynamicWorldGuide'
 import { WorldLiveMapPanel } from '@/components/world/WorldLiveMapPanel'
+import { WorldPulseConstellation } from '@/components/world/WorldPulseConstellation'
 import { useGsapEntrance } from '@/components/world/useGsapEntrance'
 import { useRef } from 'react'
 
@@ -80,6 +81,7 @@ export function ProductHome({
           <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] border border-white/70 bg-night p-6 text-paper shadow-soft">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(197,164,109,0.28),transparent_10rem),radial-gradient(circle_at_76%_70%,rgba(125,154,162,0.28),transparent_12rem)]" />
             <div className="relative flex h-full flex-col justify-between gap-8">
+              <WorldPulseConstellation surface={dynamicWorld} />
               <div>
                 <p className="text-xs font-semibold tracking-[0.4em] text-gold">上线状态</p>
                 <h2 className="mt-3 text-2xl font-semibold">入口清澈，深处浩瀚</h2>

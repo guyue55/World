@@ -13,6 +13,7 @@ const componentFiles = [
   'src/components/archive/ArchiveDynamicGuide.tsx',
   'src/components/paths/PathJourneyBoard.tsx',
   'src/components/paths/PathsDynamicDirectory.tsx',
+  'src/components/world/WorldPulseConstellation.tsx',
   'src/components/about/AboutDynamicHero.tsx',
   'src/components/manifesto/ManifestoDynamicHero.tsx',
 ]
@@ -91,9 +92,15 @@ for (const token of ['label', 'intent', 'appliesTo', 'reducedMotion', 'overwrite
 const homeSource = readFileSync(resolve(root, 'src/components/product/ProductHome.tsx'), 'utf8')
 if (!homeSource.includes('dynamicWorld.entryPoints')) failures.push('首页入口选择必须来自服务端动态世界 surface，避免在前端硬编码入口策略')
 if (!homeSource.includes('ProductDynamicWorldGuide')) failures.push('首页必须渲染动态世界总览导览区')
+if (!homeSource.includes('WorldPulseConstellation')) failures.push('首页首屏必须渲染动态世界运行态脉冲层')
 
 const homeGuideSource = readFileSync(resolve(root, 'src/components/product/ProductDynamicWorldGuide.tsx'), 'utf8')
 if (!homeGuideSource.includes('surface.primaryHref')) failures.push('首页动态总览主 CTA 必须来自服务端动态世界 surface，避免硬编码首选入口')
+
+const pulseSource = readFileSync(resolve(root, 'src/components/world/WorldPulseConstellation.tsx'), 'utf8')
+for (const token of ['HomeDynamicWorldSurface', 'useWorldRuntime', 'surface.routes', 'surface.entryPoints', 'surface.primaryHref', 'reducedMotion']) {
+  if (!pulseSource.includes(token)) failures.push(`首页动态世界运行态脉冲层缺少 ${token}`)
+}
 
 const statusSource = readFileSync(resolve(root, 'src/app/status/page.tsx'), 'utf8')
 if (!statusSource.includes('DynamicWorldStatusBoard')) failures.push('/status 必须渲染动态世界状态面板')
