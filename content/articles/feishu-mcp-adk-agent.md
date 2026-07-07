@@ -75,3 +75,15 @@ ADK（Agent Development Kit）Agent 是比 MCP 更高一层的抽象。它不只
 飞书 MCP 的权限粒度需要与 WorldOS 的可见性体系对齐。WorldOS 定义了 8 种可见性：public、semiPublic、private、family、partner、vault、sealed、silent。飞书 MCP 连接器在读取数据时，必须遵守这套可见性体系——只返回 `public` 和 `semiPublic` 的内容给 AI Agent，其余可见性的内容由服务端直接过滤，不经过 MCP 协议传输。
 
 这种映射确保了 AI Agent 即使有飞书 token 的读取权限，也无法获取私密内容。权限不是在 prompt 里写的软约束，而是在数据访问层硬编码的过滤条件。飞书 MCP 只是一个具体案例，但权限映射的模式适用于所有外部连接器：连接器的权限不能大于世界协议的权限。
+
+## 接入验证命令
+
+```bash
+# 验证飞书 MCP 连接器是否只返回公开数据
+curl -s http://localhost:3000/api/lighthouse/search?q=飞书 | jq '.results | length'
+
+# 检查 API 边界注册表中飞书相关路由的权限标记
+node -e "const r=require('./data/world-kernel/worldos-api-boundary-registry-v1.json'); console.log(r.routes.filter(x=>x.path.includes('feishu')))"
+```
+
+接入飞书 MCP 后，第一件事不是测试功能，而是测试边界：AI Agent 能不能读取到不该读的数据。如果能，说明权限映射有问题；如果不能，边界生效。这种"先测边界再测功能"的习惯，是门禁驱动开发的延伸。
