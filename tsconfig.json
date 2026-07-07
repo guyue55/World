@@ -17,5 +17,5 @@
     "paths": { "@/*": ["./src/*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "scripts/**/*.ts"],
-  "exclude": ["node_modules", "scripts/legacy", "src/app/_legacy", "src/app/api/_legacy", "src/components/_legacy", "src/lib/_legacy", "data/_legacy", "src/features/_legacy"]
+  "exclude": ["node_modules", "scripts/_legacy", "src/app/_legacy", "src/app/api/_legacy", "src/components/_legacy", "src/lib/_legacy", "data/_legacy", "src/features/_legacy"]
 }
