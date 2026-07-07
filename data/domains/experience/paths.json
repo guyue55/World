@@ -10,7 +10,9 @@
       "personal-digital-universe-definition",
       "world-space-layer",
       "ai-lighthouse-boundary",
-      "memory-lake-first-light"
+      "memory-lake-first-light",
+      "lighthouse-design-document",
+      "lighthouse-prompt-engineering"
     ],
     "nextPathIds": [
       "tech-ai"
@@ -33,7 +35,15 @@
       "kavita-reader-txt-epub-pipeline",
       "world-data-guardian",
       "ai-lighthouse-boundary",
-      "no-ai-natural-evolution"
+      "no-ai-natural-evolution",
+      "codex-skills-workflow",
+      "claude-code-integration",
+      "mcp-protocol-practice",
+      "playwright-browser-automation",
+      "nextjs-deployment-experience",
+      "typescript-strict-mode-guide",
+      "git-workflow-patterns",
+      "tailwind-responsive-design"
     ],
     "nextPathIds": [
       "how-world-created"
@@ -66,7 +76,10 @@
       "memory-lake-first-light",
       "clear-entrance-deep-world",
       "no-ai-natural-evolution",
-      "world-manifesto"
+      "world-manifesto",
+      "seasonal-light-record",
+      "repair-day-ritual-public",
+      "morning-coffee-coordinates"
     ],
     "nextPathIds": [
       "first-visit"
@@ -86,7 +99,15 @@
       "world-space-layer",
       "node-passport-standard",
       "world-language-glossary",
-      "public-private-boundary"
+      "public-private-boundary",
+      "world-protocol-document",
+      "world-audit-method",
+      "world-health-metrics",
+      "world-inheritance-protocol-node",
+      "federation-vision",
+      "world-interop-protocol",
+      "ai-boundary-evolution",
+      "world-language-style-guide"
     ],
     "nextPathIds": [
       "how-world-created",
@@ -164,7 +185,12 @@
       "static-ai-novel-editor",
       "ai-novel-workbench",
       "world-cover-visual-set",
-      "moonframe-loft"
+      "moonframe-loft",
+      "worldos-export-tool",
+      "content-migration-script",
+      "world-index-generator",
+      "owner-workbench-design",
+      "maintenance-command-design"
     ],
     "nextPathIds": [
       "tech-ai"
@@ -201,7 +227,9 @@
       "mainline-import-boundary",
       "script-taxonomy-gate",
       "route-ownership-map",
-      "worldos-project-operating-principles"
+      "worldos-project-operating-principles",
+      "content-migration-history",
+      "script-governance-history"
     ],
     "nextPathIds": [
       "creator-maintenance"
@@ -238,7 +266,10 @@
       "worldos-rc2-nondeploy-lessons",
       "worldos-rc3-governance",
       "worldos-project-operating-principles",
-      "weekly-world-repair-day"
+      "weekly-world-repair-day",
+      "rc9-preparation-record",
+      "monthly-fix-log-2026-07",
+      "quarterly-review-2026-q3"
     ],
     "nextPathIds": [
       "code-architecture-cleanup"

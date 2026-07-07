@@ -4,7 +4,7 @@
     "from": "node-world-manifesto",
     "to": "node-digital-universe",
     "type": "derived",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "古月浮屿世界宣言 与 古月浮屿的数字宇宙定义 构成核心世界线索，需要在公开路径中保持可解释。"
@@ -80,7 +80,7 @@
     "from": "node-world-design-axioms",
     "to": "node-world-manifesto",
     "type": "derived",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "世界设计公理 与 古月浮屿世界宣言 构成核心世界线索，需要在公开路径中保持可解释。"
@@ -120,7 +120,7 @@
     "from": "node-progressive-disclosure",
     "to": "node-clear-deep",
     "type": "derived",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "渐进揭示：入口清澈，深处浩瀚 与 入口清澈，深处浩瀚 构成核心世界线索，需要在公开路径中保持可解释。"
@@ -149,7 +149,7 @@
     "from": "node-worldos-engine",
     "to": "node-everything-node",
     "type": "implemented",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "WorldOS 世界生成引擎 与 万物皆节点 构成核心世界线索，需要在公开路径中保持可解释。"
@@ -378,7 +378,7 @@
     "from": "node-worldos-mainline-code-map",
     "to": "node-legacy-footprint-audit",
     "type": "topic",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "主线代码地图必须解释旧星群足迹，否则未来维护者无法区分主线和遗迹。"
@@ -388,7 +388,7 @@
     "from": "node-legacy-footprint-audit",
     "to": "node-mainline-import-boundary",
     "type": "derived",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "历史足迹审计直接推导出正式主线导入边界。"
@@ -438,7 +438,7 @@
     "from": "node-worldos-rc2-nondeploy-lessons",
     "to": "node-worldos-rc3-governance",
     "type": "derived",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "RC2 的非部署经验转化为 RC3 的主线治理计划。"
@@ -448,7 +448,7 @@
     "from": "node-worldos-rc3-governance",
     "to": "node-worldos-mainline-code-map",
     "type": "implemented",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "RC3 治理计划通过主线代码地图落到工程层。"
@@ -458,7 +458,7 @@
     "from": "node-server-side-permission-boundary",
     "to": "node-public-ai-context-contract",
     "type": "topic",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "公开 AI 上下文契约继承服务端权限边界，不能读取私密层。"
@@ -608,7 +608,7 @@
     "from": "node-mainline-import-boundary",
     "to": "node-worldos-rc3-governance",
     "type": "implemented",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "RC3 的核心落点之一就是用导入边界阻止旧 runtime 回流。"
@@ -618,7 +618,7 @@
     "from": "node-script-taxonomy-gate",
     "to": "node-worldos-rc3-governance",
     "type": "implemented",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "RC3 通过脚本分类减少超长阶段脚本带来的维护成本。"
@@ -658,7 +658,7 @@
     "from": "node-server-side-permission-boundary",
     "to": "node-public-private-boundary",
     "type": "derived",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "服务端权限边界把公开层与私密层边界落实到工程执行。"
@@ -668,7 +668,7 @@
     "from": "node-public-ai-context-contract",
     "to": "node-public-private-boundary",
     "type": "topic",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "公开 AI 上下文只能取公开层，是公开/私密边界的 AI 版本。"
@@ -778,7 +778,7 @@
     "from": "node-worldos-rc3-governance",
     "to": "node-worldos-rc2-nondeploy-lessons",
     "type": "time",
-    "strength": 1.0,
+    "strength": 1,
     "source": "manual",
     "reviewed": true,
     "note": "RC3 是 RC2 之后的继续收束，保留非部署状态诚实。"
@@ -802,5 +802,625 @@
     "source": "manual",
     "reviewed": true,
     "note": "WorldOS 世界生成引擎的公开投影必须在移动端保持轻量。"
+  },
+  {
+    "id": "rel-0083",
+    "from": "node-codex-skills-workflow",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Codex Skills 工作流实践 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0084",
+    "from": "node-codex-skills-workflow",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Codex Skills 工作流实践 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0085",
+    "from": "node-claude-code-integration",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Claude Code 集成经验 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0086",
+    "from": "node-claude-code-integration",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Claude Code 集成经验 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0087",
+    "from": "node-mcp-protocol-practice",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "MCP 协议实践笔记 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0088",
+    "from": "node-mcp-protocol-practice",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "MCP 协议实践笔记 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0089",
+    "from": "node-playwright-browser-automation",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Headless 浏览器自动化 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0090",
+    "from": "node-playwright-browser-automation",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Headless 浏览器自动化 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0091",
+    "from": "node-nextjs-deployment-experience",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Next.js 部署经验 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0092",
+    "from": "node-nextjs-deployment-experience",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Next.js 部署经验 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0093",
+    "from": "node-typescript-strict-mode-guide",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "TypeScript 严格模式指南 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0094",
+    "from": "node-typescript-strict-mode-guide",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "TypeScript 严格模式指南 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0095",
+    "from": "node-git-workflow-patterns",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Git 工作流模式 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0096",
+    "from": "node-git-workflow-patterns",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Git 工作流模式 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0097",
+    "from": "node-tailwind-responsive-design",
+    "to": "node-data-guardian",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Tailwind 响应式设计 与 世界数据守门人 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0098",
+    "from": "node-tailwind-responsive-design",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Tailwind 响应式设计 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0099",
+    "from": "node-worldos-export-tool",
+    "to": "node-novel-editor",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 导出工具设计 与 静态 AI 小说编辑器 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0100",
+    "from": "node-worldos-export-tool",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 导出工具设计 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0101",
+    "from": "node-content-migration-script",
+    "to": "node-novel-editor",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容迁移脚本 与 静态 AI 小说编辑器 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0102",
+    "from": "node-content-migration-script",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容迁移脚本 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0103",
+    "from": "node-world-index-generator",
+    "to": "node-novel-editor",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界索引生成器 与 静态 AI 小说编辑器 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0104",
+    "from": "node-world-index-generator",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界索引生成器 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0105",
+    "from": "node-owner-workbench-design",
+    "to": "node-novel-editor",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Owner 工作台设计 与 静态 AI 小说编辑器 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0106",
+    "from": "node-owner-workbench-design",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Owner 工作台设计 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0107",
+    "from": "node-maintenance-command-design",
+    "to": "node-novel-editor",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "维护命令设计 与 静态 AI 小说编辑器 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0108",
+    "from": "node-maintenance-command-design",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "维护命令设计 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0109",
+    "from": "node-world-protocol-document",
+    "to": "node-world-manifesto",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界协议文档 与 古月浮屿世界宣言 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0110",
+    "from": "node-world-protocol-document",
+    "to": "node-ai-lighthouse",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界协议文档 跨区域引用 AI 灯塔边界。"
+  },
+  {
+    "id": "rel-0111",
+    "from": "node-world-audit-method",
+    "to": "node-world-manifesto",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界审计方法 与 古月浮屿世界宣言 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0112",
+    "from": "node-world-audit-method",
+    "to": "node-ai-lighthouse",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界审计方法 跨区域引用 AI 灯塔边界。"
+  },
+  {
+    "id": "rel-0113",
+    "from": "node-world-health-metrics",
+    "to": "node-world-manifesto",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界健康度指标 与 古月浮屿世界宣言 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0114",
+    "from": "node-world-health-metrics",
+    "to": "node-ai-lighthouse",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界健康度指标 跨区域引用 AI 灯塔边界。"
+  },
+  {
+    "id": "rel-0115",
+    "from": "node-world-inheritance-protocol-node",
+    "to": "node-world-manifesto",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界传承协议 与 古月浮屿世界宣言 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0116",
+    "from": "node-world-inheritance-protocol-node",
+    "to": "node-ai-lighthouse",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界传承协议 跨区域引用 AI 灯塔边界。"
+  },
+  {
+    "id": "rel-0117",
+    "from": "node-rc9-preparation-record",
+    "to": "node-world-repair-day",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC9 上线准备记录 与 世界修复日 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0118",
+    "from": "node-rc9-preparation-record",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "RC9 上线准备记录 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0119",
+    "from": "node-monthly-fix-log-2026-07",
+    "to": "node-world-repair-day",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2026年7月修复日志 与 世界修复日 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0120",
+    "from": "node-monthly-fix-log-2026-07",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2026年7月修复日志 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0121",
+    "from": "node-quarterly-review-2026-q3",
+    "to": "node-world-repair-day",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2026年Q3季度回望 与 世界修复日 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0122",
+    "from": "node-quarterly-review-2026-q3",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2026年Q3季度回望 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0123",
+    "from": "node-federation-vision",
+    "to": "node-everything-node",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "联邦化设想 与 万物皆节点 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0124",
+    "from": "node-federation-vision",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "联邦化设想 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0125",
+    "from": "node-world-interop-protocol",
+    "to": "node-everything-node",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界互操作协议 与 万物皆节点 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0126",
+    "from": "node-world-interop-protocol",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界互操作协议 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0127",
+    "from": "node-ai-boundary-evolution",
+    "to": "node-everything-node",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 边界进化方向 与 万物皆节点 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0128",
+    "from": "node-ai-boundary-evolution",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 边界进化方向 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0129",
+    "from": "node-world-language-style-guide",
+    "to": "node-everything-node",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界语言风格指南 与 万物皆节点 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0130",
+    "from": "node-world-language-style-guide",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界语言风格指南 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0131",
+    "from": "node-seasonal-light-record",
+    "to": "node-memory-light",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "季节光影记录 与 记忆湖第一束光 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0132",
+    "from": "node-seasonal-light-record",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "季节光影记录 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0133",
+    "from": "node-repair-day-ritual-public",
+    "to": "node-memory-light",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "修复日仪式公开记录 与 记忆湖第一束光 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0134",
+    "from": "node-repair-day-ritual-public",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "修复日仪式公开记录 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0135",
+    "from": "node-morning-coffee-coordinates",
+    "to": "node-memory-light",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "晨间咖啡坐标 与 记忆湖第一束光 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0136",
+    "from": "node-morning-coffee-coordinates",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "晨间咖啡坐标 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0137",
+    "from": "node-content-migration-history",
+    "to": "node-content-source-birth-cert",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容迁移历史 与 内容出生证明 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0138",
+    "from": "node-content-migration-history",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容迁移历史 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0139",
+    "from": "node-script-governance-history",
+    "to": "node-content-source-birth-cert",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本治理历史 与 内容出生证明 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0140",
+    "from": "node-script-governance-history",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本治理历史 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0141",
+    "from": "node-lighthouse-design-document",
+    "to": "node-ai-lighthouse",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔设计文档 与 AI 灯塔边界 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0142",
+    "from": "node-lighthouse-design-document",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔设计文档 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0143",
+    "from": "node-lighthouse-prompt-engineering",
+    "to": "node-ai-lighthouse",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔提示词工程 与 AI 灯塔边界 属于同一区域，存在主题关联。"
+  },
+  {
+    "id": "rel-0144",
+    "from": "node-lighthouse-prompt-engineering",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔提示词工程 跨区域引用 古月浮屿世界宣言。"
   }
 ]
