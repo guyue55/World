@@ -17,7 +17,7 @@
     "requireReasonForStrongRelations": true,
     "requireFeaturedNodePath": true,
     "requireFeaturedNodeContent": true,
-    "minPublicNodeContentCharacters": 300
+    "minPublicNodeContentCharacters": 400
   },
   "featuredLifeStages": [
     "growing",
