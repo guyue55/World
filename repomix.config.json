@@ -1,0 +1,50 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "output": {
+    "filePath": "tmp/World-repomix-output.md",
+    "style": "markdown",
+    "removeComments": false,
+    "removeEmptyLines": true,
+    "showLineNumbers": false,
+    "topFilesLength": 20
+  },
+  "include": [
+    "src/**/*",
+    "data/**/*.json",
+    "content/**/*.md",
+    "docs/**/*.md",
+    "scripts/**/*.{js,jsx,ts,tsx,mjs,cjs,py}",
+    "middleware.ts",
+    "next.config.ts",
+    "package.json",
+    "tsconfig.json",
+    "README.md",
+    ".agents/AGENTS.md"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      ".env",
+      ".env.*",
+      "node_modules/**",
+      ".next/**",
+      "dist/**",
+      "build/**",
+      "out/**",
+      "coverage/**",
+      "tmp/**",
+      "scratch/**",
+      "reports/**",
+      "docs/30-assets/**",
+      "docs/90-archive/reports/**",
+      "**/*.{png,jpg,jpeg,gif,webp,avif,ico,svg,pdf,doc,docx,xls,xlsx,zip,tar,tgz,gz,bz2,7z,rar,db,sqlite,sqlite3,log,tsbuildinfo,pem,key,crt,cer,p12,pfx}"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  },
+  "tokenCount": {
+    "encoding": "o200k_base"
+  }
+}

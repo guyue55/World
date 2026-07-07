@@ -29,3 +29,8 @@ The following rules must be strictly followed when developing in this project:
    - 每次有变更必须及时提交 Git。
    - 提交信息必须包含中文注释。
    - Commit 格式：`xxx(xxx): 中文xxx` (例如 `feat(user): 添加用户登录功能`)。
+
+8. **Token-saving 上下文工作流 (Context-first Workflow)**:
+   - 对项目摸底、跨模块审查、排障、权限、GraphQL/API、前端路由或核心业务相关任务，先运行 `python3 scripts/context/repo_map.py` 刷新 `tmp/World-repo-map.md`，再按 repo map 与 `rg` 精读相关文件。
+   - 需要 LLM 全局上下文包时，优先使用项目内 `repomix.config.json` 与 `.repomixignore`，输出保留在 `tmp/`，不要提交生成物。
+   - 不要把 `.env*`、API key、token、私有凭据、证书、数据库备份或二进制产物放入上下文包。

@@ -11,6 +11,9 @@ const paths = readJson('data/domains/experience/paths.json')
 const relations = readJson('data/core/relations.json')
 const events = readJson('data/core/world-events.json')
 
+const contentLifeContract = readJson('data/world-kernel/worldos-content-life-contract-v1.json')
+const minContentChars = contentLifeContract.qualityGates?.minPublicNodeContentCharacters ?? 300
+
 const publicNodes = nodes.filter((node) => node.visibility === 'public')
 const nodesWithContent = publicNodes.filter((node) => Boolean(node.contentPath))
 const representedAreas = new Set(publicNodes.map((node) => node.areaId))
@@ -43,7 +46,7 @@ for (const node of publicNodes) {
   if (node.contentPath && !fs.existsSync(path.join(root, node.contentPath))) failures.push(`${node.id} contentPath 不存在：${node.contentPath}`)
   if (node.contentPath && fs.existsSync(path.join(root, node.contentPath))) {
     const content = fs.readFileSync(path.join(root, node.contentPath), 'utf-8').trim()
-    if (content.length < 30) failures.push(`${node.id} 正文过短，不足以作为真实公开内容`)
+    if (content.length < minContentChars) failures.push(`${node.id} 正文过短：${content.length}/${minContentChars} 字符`)
     if (!/[\u4e00-\u9fffA-Za-z0-9]/.test(content)) failures.push(`${node.id} 正文缺少可读文本`)
   }
 }
