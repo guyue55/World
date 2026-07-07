@@ -81,8 +81,8 @@ export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellatio
                 animate={shouldMove ? { y: [0, -8, 0] } : undefined}
                 transition={{ duration: 6, delay: index * 0.28, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <span className="block whitespace-nowrap text-sm font-semibold">{point.area.icon} {point.area.title}</span>
-                <span className="mt-1 block text-xs text-paper/58">{point.area.publicNodeCount} 个公开节点 · {point.area.accessLabel}</span>
+                <span className="block truncate text-sm font-semibold">{point.area.icon} {point.area.title}</span>
+                <span className="mt-1 block truncate text-xs text-paper/58">{point.area.publicNodeCount} 个公开节点 · {point.area.accessLabel}</span>
               </motion.span>
               <motion.span
                 aria-hidden="true"
