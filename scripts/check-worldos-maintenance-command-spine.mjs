@@ -96,6 +96,7 @@ if (!failures.length) {
 
   if (!mainlineCommand.includes('check:maintenance-command-spine')) failures.push('check:mainline 必须包含 check:maintenance-command-spine')
   if (!mainlineCommand.includes('check:runtime-local')) failures.push('check:mainline 必须包含 check:runtime-local')
+  if (!mainlineCommand.includes('check:local-product-maturity')) failures.push('check:mainline 必须包含 check:local-product-maturity')
   if (!boundaryCommand.includes('check:api-boundary') || !boundaryCommand.includes('check:permission-boundary') || !boundaryCommand.includes('check:scripts')) failures.push('check:boundary 必须包含 API、权限事实源与脚本治理')
   if (!boundaryCommand.includes('check:runtime-local')) failures.push('check:boundary 必须包含 check:runtime-local')
   if (!rcFullCommand.includes('build:kernel-release') || !rcFullCommand.includes('build:production-ci') || !rcFullCommand.includes('build:verify-artifacts')) failures.push('check:rc:full 必须包含真实生产构建与构建产物验证链路')

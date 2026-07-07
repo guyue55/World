@@ -1,8 +1,8 @@
 {
   "name": "WorldOS 长期维护命令脊柱 v1",
-  "updatedAt": "2026-07-06",
-  "source": "WorldOS local RC trust gate follow-up",
-  "principle": "默认入口必须短、稳定、可复跑；历史阶段脚本保留为 reference，不再作为日常开发路径。",
+  "updatedAt": "2026-07-07",
+  "source": "WorldOS local maturity gate follow-up",
+  "principle": "默认入口必须短、稳定、可复跑；当前只推进 localhost / LAN IP 本地成熟度，外部 Preview / Production 暂不作为近期验收入口。",
   "superpowersWorkflow": {
     "skillsApplied": [
       "using-superpowers",
@@ -18,7 +18,7 @@
     "productionLive": false,
     "releaseReady": false,
     "cleanProductionReady": false,
-    "reason": "缺少真实外部 Preview / Production URL、线上 smoke、HTTPS、Web Vitals / 可访问性快照、人工签收和真实回滚演练。"
+    "reason": "当前计划冻结外部 Preview / Production，先用 localhost / LAN IP、本地 RC、浏览器截图、内容与权限门禁打磨成熟。"
   },
   "commandSpine": [
     {
@@ -26,6 +26,13 @@
       "script": "check:daily",
       "command": "npm run check:mainline && npm run lint && npm run typecheck",
       "purpose": "日常开发最短主线门禁：主线治理、lint、typecheck。",
+      "stageLikeAllowed": false
+    },
+    {
+      "id": "local-product-maturity",
+      "script": "check:local-product-maturity",
+      "command": "node scripts/check-worldos-local-product-maturity.mjs",
+      "purpose": "本地产品成熟度门禁：验证真实访客路径闭环、中文低门槛、动态/低动效 LAN 证据和本地 RC 诚实状态。",
       "stageLikeAllowed": false
     },
     {
@@ -115,6 +122,14 @@
       "when": "新增或修改 API、npm scripts、默认入口、治理注册表时。"
     },
     {
+      "id": "local-product-maturity",
+      "commands": [
+        "npm run check:local-product-maturity",
+        "npm run check:mainline"
+      ],
+      "when": "新增或修改公开路径、节点阅读、动态世界、灯塔导览、LAN RC 证据和本地成熟度契约时。"
+    },
+    {
       "id": "rc-local-fast",
       "commands": [
         "npm run check:rc:fast"
@@ -145,12 +160,9 @@
       "when": "当前只做本地局域网部署时，验证同网 IP 访问、浏览器运行时、移动端低动效和 guard。"
     },
     {
-      "id": "external-release",
-      "commands": [
-        "npm run smoke:preview",
-        "npm run smoke:production"
-      ],
-      "when": "拥有真实 Preview / Production URL 后执行；当前仍为外部阻断。"
+      "id": "external-release-frozen",
+      "commands": [],
+      "when": "外部 Preview / Production 暂不考虑；本地成熟度完成前不作为近期目标。"
     }
   ],
   "policies": {
@@ -178,6 +190,7 @@
     "check:mainline",
     "check:content",
     "check:experience:public",
+    "check:local-product-maturity",
     "check:api-boundary",
     "check:scripts",
     "check:maintenance-command-spine",

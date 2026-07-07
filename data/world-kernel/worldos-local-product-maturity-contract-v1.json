@@ -1,0 +1,138 @@
+{
+  "name": "WorldOS 本地产品成熟度契约 v1",
+  "updatedAt": "2026-07-07",
+  "source": "阶段 9：localhost / LAN IP 本地成熟度打磨",
+  "principle": "先在本地把世界打磨成熟；外部 Preview / Production 暂不考虑，所有验收以 localhost / LAN IP、真实路径闭环和本地 RC 证据为准。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "requiredCommands": [
+    "check:local-product-maturity",
+    "check:mainline",
+    "check:boundary",
+    "release:local-rc"
+  ],
+  "requiredReports": [
+    "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "docs/90-archive/reports/worldos-local-rc-summary-report.json"
+  ],
+  "minimums": {
+    "publicNodes": 50,
+    "publicPaths": 12,
+    "relations": 80,
+    "firstVisitPathNodes": 4,
+    "homeEntrypoints": 4,
+    "lanHttpChecks": 20,
+    "lanBrowserChecks": 16,
+    "lanScreenshots": 16
+  },
+  "visitorJourneys": [
+    {
+      "id": "new-visitor",
+      "label": "第一次来",
+      "routes": [
+        "/",
+        "/paths",
+        "/paths/first-visit",
+        "/node/world-manifesto",
+        "/atlas",
+        "/archive",
+        "/ask"
+      ]
+    },
+    {
+      "id": "reading-loop",
+      "label": "阅读后继续探索",
+      "routes": [
+        "/node/world-manifesto",
+        "/atlas",
+        "/archive",
+        "/paths"
+      ]
+    },
+    {
+      "id": "dynamic-world-loop",
+      "label": "动态世界公开巡游",
+      "routes": [
+        "/",
+        "/atlas",
+        "/timeline",
+        "/status",
+        "/ask"
+      ]
+    }
+  ],
+  "routeEvidence": {
+    "coreLanRoutes": [
+      "/",
+      "/atlas",
+      "/timeline",
+      "/archive",
+      "/paths",
+      "/ask",
+      "/status",
+      "/node/world-manifesto"
+    ],
+    "requiredViewportIds": [
+      "desktop",
+      "mobile-reduced-motion"
+    ],
+    "mustHaveNoFailedBrowserChecks": true,
+    "mustHaveScreenshots": true
+  },
+  "requiredSourceTokens": {
+    "src/components/product/ProductHome.tsx": [
+      "home-primary-cta",
+      "ProductDynamicWorldGuide",
+      "ProductWorldCompass",
+      "ProductWorldBoundaries",
+      "新手入口"
+    ],
+    "src/components/product/ProductRouteGuide.tsx": [
+      "我在哪里",
+      "这里是什么",
+      "能去哪",
+      "如何回去"
+    ],
+    "src/components/paths/PathJourneyBoard.tsx": [
+      "走完之后",
+      "surface.exitActions",
+      "useWorldRuntime"
+    ],
+    "src/components/paths/PathNextSteps.tsx": [
+      "回到地图",
+      "打开档案馆",
+      "查看全部路径"
+    ],
+    "src/components/node/NodeRelationRail.tsx": [
+      "为什么相关",
+      "去档案馆看看"
+    ],
+    "src/components/node/NodeReadingActions.tsx": [
+      "返回地图",
+      "打开档案馆",
+      "选择路径"
+    ],
+    "src/app/ask/page.tsx": [
+      "只读公开索引",
+      "不修改节点",
+      "不写入数据",
+      "不读取私密内容"
+    ],
+    "src/lib/public-world-surfaces.ts": [
+      "如果你是第一次来，从这里开始就够了",
+      "每个入口都能返回地图",
+      "动态世界已经点亮",
+      "只读公开索引"
+    ]
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}
