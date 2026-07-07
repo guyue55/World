@@ -275,5 +275,45 @@
       "code-architecture-cleanup"
     ],
     "visibility": "public"
+  },
+  {
+    "id": "tech-to-life",
+    "title": "从技术到生活的跨界路径",
+    "worldTitle": "跨界之旅",
+    "description": "从技术探索出发，穿越创世原点，最终抵达生活记忆的跨界路径。",
+    "visibility": "public",
+    "audience": "deep-dive",
+    "estimatedMinutes": 12,
+    "nodeSlugs": [
+      "gemini-cli-skills-agent-workflow",
+      "codex-skills-workflow",
+      "world-design-axioms",
+      "world-space-layer",
+      "memory-lake-first-light",
+      "seasonal-light-record"
+    ],
+    "featured": {
+      "recommended": true
+    }
+  },
+  {
+    "id": "world-architecture",
+    "title": "世界架构深潜路径",
+    "worldTitle": "架构深潜",
+    "description": "深入世界设计公理、协议文档和审计方法的架构师路径。",
+    "visibility": "public",
+    "audience": "deep-dive",
+    "estimatedMinutes": 15,
+    "nodeSlugs": [
+      "world-manifesto",
+      "world-design-axioms",
+      "world-protocol-document",
+      "world-audit-method",
+      "world-health-metrics",
+      "world-inheritance-protocol-node"
+    ],
+    "featured": {
+      "recommended": true
+    }
   }
 ]
