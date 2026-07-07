@@ -49,7 +49,9 @@
     "/paths",
     "/ask",
     "/status",
-    "/node/world-manifesto"
+    "/paths/first-visit",
+    "/node/world-manifesto",
+    "/node/ai-lighthouse-boundary"
   ],
   "staticAssetRoutes": [
     {
@@ -125,7 +127,9 @@
     "/paths",
     "/ask",
     "/status",
-    "/node/world-manifesto"
+    "/paths/first-visit",
+    "/node/world-manifesto",
+    "/node/ai-lighthouse-boundary"
   ],
   "browserExpectations": {
     "minBodyTextLength": 500,

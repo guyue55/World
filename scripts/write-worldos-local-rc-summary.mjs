@@ -93,7 +93,7 @@ const report = {
     externalProductionEvidenceComplete: externalReleaseStates.externalProductionEvidenceComplete === true,
     manualSignoffComplete: externalReleaseStates.manualSignoffComplete === true,
     rollbackDrillComplete: externalReleaseStates.rollbackDrillComplete === true,
-    reason: '本地 LAN RC 可以证明当前局域网访问、构建产物、运行时和浏览器 smoke；仍不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。',
+    reason: '当前计划只打磨 localhost / LAN IP。本地 LAN RC 可以证明局域网访问、构建产物、运行时和浏览器 smoke；外部 Preview / Production 暂不作为近期验收目标。',
   },
   evidence: {
     policy: evidencePolicyPath,
@@ -106,9 +106,9 @@ const report = {
   },
   nextActions: [
     '继续使用 npm run release:local-rc 作为本地局域网验收唯一推荐入口。',
-    '拥有真实 Preview URL 后设置 PREVIEW_URL 并执行 npm run smoke:preview。',
-    '拥有真实 Production URL 后设置 PRODUCTION_URL 并执行 npm run smoke:production。',
-    '补齐 HTTPS、Web Vitals、Accessibility、人工签收和回滚演练后，才允许评估 releaseReady。',
+    '继续补强公开内容、路径体验、权限边界和截图巡检，让 localhost / LAN IP 体验先稳定成熟。',
+    '保持 productionLive=false、releaseReady=false、cleanProductionReady=false，外部 Preview / Production 暂不纳入近期目标。',
+    '每次阶段性验收前重跑 release:local-rc，确保 fresh build、LAN smoke、browser smoke、audit 和证据策略一致。',
   ],
 }
 

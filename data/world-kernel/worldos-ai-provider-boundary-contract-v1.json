@@ -1,0 +1,87 @@
+{
+  "name": "WorldOS AI Provider 接入边界契约 v1",
+  "updatedAt": "2026-07-07",
+  "source": "阶段 12：AI 灯塔真实 Provider 接入准备",
+  "principle": "真实 AI Provider 只能作为未来后端适配层接入；当前本地阶段默认禁用，灯塔继续低光只读。",
+  "scope": {
+    "localOnly": true,
+    "providerImplementationReady": false,
+    "realTimeAIProviderEnabled": false,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "backendAdapter": {
+    "status": "disabled-dry-run",
+    "serverOnly": true,
+    "readsProviderKeys": false,
+    "performsNetworkRequest": false,
+    "writesWorldSource": false
+  },
+  "requiredBackendFiles": [
+    "src/server/ai/provider.ts",
+    "src/server/ai/context-policy.ts",
+    "src/server/ai/review-queue.ts"
+  ],
+  "forbiddenClientFiles": [
+    "src/app/ask/page.tsx",
+    "src/components/ask/PublicLighthouseConsole.tsx",
+    "src/lib/lighthouse.ts",
+    "src/lib/public-world-surfaces.ts"
+  ],
+  "forbiddenRuntimeTokens": [
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "new OpenAI",
+    "chat.completions",
+    "responses.create",
+    "streamText(",
+    "generateText(",
+    "fetch('https://api.openai.com",
+    "fetch(\"https://api.openai.com"
+  ],
+  "requiredBackendTokens": {
+    "src/server/ai/provider.ts": [
+      "disabled-dry-run",
+      "realTimeAIProviderEnabled: false",
+      "createDisabledProviderReviewItem"
+    ],
+    "src/server/ai/context-policy.ts": [
+      "public",
+      "semiPublic",
+      "private",
+      "vault",
+      "sealed",
+      "silent"
+    ],
+    "src/server/ai/review-queue.ts": [
+      "not-executed",
+      "requiredHumanAction: true",
+      "writesWorldSource: false"
+    ]
+  },
+  "requiredBackendPolicies": {
+    "serverOnlyApiKeys": true,
+    "contextPolicyRequired": true,
+    "publicOrAuthorizedContextOnly": true,
+    "privateVaultSealedSilentExcluded": true,
+    "suggestionsNotExecuted": true,
+    "humanReviewRequired": true,
+    "noAutoPublish": true,
+    "noAutoDelete": true,
+    "noAutoVisibilityChange": true
+  },
+  "requiredCommands": [
+    "check:ai-provider-boundary",
+    "check:lighthouse",
+    "check:lighthouse-readonly",
+    "check:ai-boundary",
+    "check:ai-suggestion-audit"
+  ],
+  "releaseStates": {
+    "realTimeAIProviderEnabled": false,
+    "ownerWriteAutomationEnabled": false,
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

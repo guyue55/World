@@ -60,21 +60,24 @@ Expected: mainline passes and includes `check:local-product-maturity`.
 - Existing: `data/domains/experience/paths.json`
 - Existing: `data/core/relations.json`
 - Existing: `content/**`
+- Created: `data/world-kernel/worldos-local-content-growth-contract-v1.json`
+- Created: `scripts/check-worldos-local-content-growth.mjs`
+- Created: `docs/00-overview/worldos-phase-10-local-content-growth-taskboard.md`
 
 **Interfaces:**
 - Consumes: local maturity gates.
-- Produces: richer real content and fewer thin nodes.
+- Produces: richer real content, fewer thin nodes, and `check:local-content-growth`.
 
-- [ ] **Step 1: Audit thin content nodes**
+- [x] **Step 1: Audit thin content nodes**
 
 Run: `npm run check:content`
 Expected: content density and life gates pass before adding stricter local quality thresholds.
 
-- [ ] **Step 2: Expand representative nodes**
+- [x] **Step 2: Expand representative nodes**
 
 Add real content only after choosing a batch topic. Each added public node must have title, summary, area, relation, lifecycle, content path and at least one path.
 
-- [ ] **Step 3: Verify absorption**
+- [x] **Step 3: Verify absorption**
 
 Run: `npm run check:content && npm run check:local-product-maturity`
 Expected: new content appears through paths, archive, atlas and node relation rail.
@@ -85,21 +88,24 @@ Expected: new content appears through paths, archive, atlas and node relation ra
 - Existing: `src/lib/owner-auth.ts`
 - Existing: `src/app/api/**`
 - Existing: `src/app/_legacy/ai-workbench-v2/page.tsx`
+- Created: `data/world-kernel/worldos-local-owner-workbench-contract-v1.json`
+- Created: `scripts/check-worldos-local-owner-workbench.mjs`
+- Created: `docs/00-overview/worldos-phase-11-local-owner-workbench-taskboard.md`
 
 **Interfaces:**
 - Consumes: permission boundary and AI suggestion audit.
-- Produces: locally usable owner review workflow without public exposure.
+- Produces: locally usable owner review workflow without public exposure, verified by `check:local-owner-workbench`.
 
-- [ ] **Step 1: Re-audit owner-only routes**
+- [x] **Step 1: Re-audit owner-only routes**
 
 Run: `npm run check:api-boundary && npm run check:permission-boundary`
 Expected: owner routes remain guarded by server-side token/session checks.
 
-- [ ] **Step 2: Define local owner workflow**
+- [x] **Step 2: Define local owner workflow**
 
 Add or update a contract describing inbox, review queue, export, maintenance and audit actions. It must state that LAN use does not weaken server guards.
 
-- [ ] **Step 3: Verify owner workflow**
+- [x] **Step 3: Verify owner workflow**
 
 Run: `npm run check:boundary`
 Expected: public pages do not import private/owner modules and guarded routes stay blocked without credentials.
@@ -110,21 +116,24 @@ Expected: public pages do not import private/owner modules and guarded routes st
 - Existing: `data/world-kernel/worldos-lighthouse-readonly-contract-v1.json`
 - Existing: `scripts/check-worldos-lighthouse-readonly.mjs`
 - Existing: `src/app/ask/page.tsx`
+- Created: `data/world-kernel/worldos-ai-provider-boundary-contract-v1.json`
+- Created: `scripts/check-worldos-ai-provider-boundary.mjs`
+- Created: `docs/00-overview/worldos-phase-12-ai-provider-boundary-taskboard.md`
 
 **Interfaces:**
 - Consumes: AI boundary policy and public-only lighthouse surface.
-- Produces: provider-ready backend plan without enabling remote AI by default.
+- Produces: provider-ready backend boundary without enabling remote AI by default, verified by `check:ai-provider-boundary`.
 
-- [ ] **Step 1: Keep low-light mode as default**
+- [x] **Step 1: Keep low-light mode as default**
 
 Run: `npm run check:lighthouse`
 Expected: low-light readonly gates pass.
 
-- [ ] **Step 2: Draft provider adapter boundary**
+- [x] **Step 2: Draft provider adapter boundary**
 
 Create a backend-only provider contract. It must forbid client-side API keys, direct private indexing, automatic publishing, deletion and visibility changes.
 
-- [ ] **Step 3: Verify provider remains disabled**
+- [x] **Step 3: Verify provider remains disabled**
 
 Run: `npm run check:lighthouse-readonly`
 Expected: `realTimeAIProviderEnabled` remains false until backend guard and review flow exist.

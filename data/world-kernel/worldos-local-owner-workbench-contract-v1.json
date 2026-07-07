@@ -1,0 +1,141 @@
+{
+  "name": "WorldOS 本地 Owner 工作台契约 v1",
+  "updatedAt": "2026-07-07",
+  "source": "阶段 11：本地 Owner 工作台",
+  "principle": "Owner 工作台可以在 localhost / LAN IP 下使用，但本地访问不等于免权限；所有 owner 能力必须经过服务端 guard，前端只展示可见结果。",
+  "scope": {
+    "localOnly": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "serverGuard": {
+    "helper": "src/lib/owner-auth.ts",
+    "requiredEnv": [
+      "GUYUE_OWNER_TOKEN",
+      "R8_OWNER_TOKEN"
+    ],
+    "acceptedHeaders": [
+      "authorization",
+      "x-guyue-owner-token"
+    ],
+    "deniedStatus": 403,
+    "cacheControl": "no-store"
+  },
+  "ownerOnlyApiRoutes": [
+    "/api/r6/audit",
+    "/api/r6/export-jobs",
+    "/api/r6/nodes",
+    "/api/r7/maintenance"
+  ],
+  "permissionGuardedApiRoutes": [
+    "/api/v2/ai/suggestions",
+    "/api/v2/audit",
+    "/api/v2/content",
+    "/api/v2/export/jobs",
+    "/api/v2/vault"
+  ],
+  "workflow": [
+    {
+      "id": "inbox",
+      "label": "本地收集箱",
+      "output": "draft-or-metadata",
+      "requiresHumanAction": true
+    },
+    {
+      "id": "review-queue",
+      "label": "AI 建议审核队列",
+      "output": "suggestion-only",
+      "requiresHumanAction": true
+    },
+    {
+      "id": "export",
+      "label": "本地导出与归档",
+      "output": "export-job",
+      "requiresHumanAction": true
+    },
+    {
+      "id": "maintenance",
+      "label": "维护状态复核",
+      "output": "audit-event-or-reminder",
+      "requiresHumanAction": true
+    }
+  ],
+  "uiEvidence": [
+    {
+      "id": "ai-review-queue",
+      "file": "src/components/_legacy/ai-workbench/AiSuggestionQueuePanel.tsx",
+      "requiredTokens": [
+        "AI 建议审计队列",
+        "sourceTier",
+        "execution",
+        "humanRequired"
+      ]
+    },
+    {
+      "id": "ai-world-companion",
+      "file": "src/components/_legacy/ai-workbench/AiWorldCompanionPanel.tsx",
+      "requiredTokens": [
+        "AI 世界维护伙伴",
+        "humanRequired",
+        "executed"
+      ]
+    },
+    {
+      "id": "permission-gate",
+      "file": "src/components/r4-creator-workbench/R4PermissionGate.tsx",
+      "requiredTokens": [
+        "Permission Gate",
+        "公开是确认动作",
+        "禁止动作"
+      ]
+    },
+    {
+      "id": "audit-export",
+      "file": "src/components/r4-creator-workbench/R4AuditExportPanel.tsx",
+      "requiredTokens": [
+        "Audit",
+        "Export & R5",
+        "requiresReview"
+      ]
+    },
+    {
+      "id": "maintenance-queue",
+      "file": "src/components/r4-creator-workbench/R4MaintenanceQueue.tsx",
+      "requiredTokens": [
+        "Low-energy Maintenance",
+        "小动作",
+        "expectedResult"
+      ]
+    }
+  ],
+  "aiSuggestionRules": {
+    "queue": "data/domains/ai/ai-suggestion-audit-queue.json",
+    "allowedSourceTiers": [
+      "public",
+      "semiPublic"
+    ],
+    "requiredExecution": "not-executed",
+    "requiredHumanAction": true
+  },
+  "forbidden": [
+    "frontend-hardcoded-owner",
+    "localStorage-permission-source",
+    "auto-publish",
+    "auto-delete",
+    "auto-change-visibility",
+    "auto-read-private",
+    "client-side-owner-token"
+  ],
+  "requiredCommands": [
+    "check:local-owner-workbench",
+    "check:api-boundary",
+    "check:permission-boundary",
+    "check:ai-suggestion-audit",
+    "check:ai-world-companion"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

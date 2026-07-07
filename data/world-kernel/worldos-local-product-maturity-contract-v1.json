@@ -26,9 +26,9 @@
     "relations": 80,
     "firstVisitPathNodes": 4,
     "homeEntrypoints": 4,
-    "lanHttpChecks": 20,
-    "lanBrowserChecks": 16,
-    "lanScreenshots": 16
+    "lanHttpChecks": 22,
+    "lanBrowserChecks": 20,
+    "lanScreenshots": 20
   },
   "visitorJourneys": [
     {
@@ -73,9 +73,11 @@
       "/timeline",
       "/archive",
       "/paths",
+      "/paths/first-visit",
       "/ask",
       "/status",
-      "/node/world-manifesto"
+      "/node/world-manifesto",
+      "/node/ai-lighthouse-boundary"
     ],
     "requiredViewportIds": [
       "desktop",
@@ -83,6 +85,21 @@
     ],
     "mustHaveNoFailedBrowserChecks": true,
     "mustHaveScreenshots": true
+  },
+  "patrolCadence": {
+    "mode": "local-lan",
+    "manualScreenshotReview": "docs/00-overview/worldos-local-screenshot-review-checklist.md",
+    "mustReviewViewports": [
+      "desktop",
+      "mobile-reduced-motion"
+    ],
+    "focus": [
+      "首页首屏入口是否清楚",
+      "路径详情是否能继续走",
+      "节点阅读后是否有返回出口",
+      "动态世界效果是否服务理解",
+      "移动端低动效是否无横向溢出"
+    ]
   },
   "requiredSourceTokens": {
     "src/components/product/ProductHome.tsx": [

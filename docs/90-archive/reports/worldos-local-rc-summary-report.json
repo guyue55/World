@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T05:35:25.839Z",
+  "generatedAt": "2026-07-07T06:04:03.719Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -21,14 +21,14 @@
     "lanSmoke": {
       "status": "passed",
       "report": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-      "httpChecks": 20,
-      "passedHttpChecks": 20,
-      "browserChecks": 16,
-      "passedBrowserChecks": 16,
+      "httpChecks": 22,
+      "passedHttpChecks": 22,
+      "browserChecks": 20,
+      "passedBrowserChecks": 20,
       "passedHomePrimaryCtaChecks": 2,
-      "passedMobileNavigationChecks": 8,
+      "passedMobileNavigationChecks": 10,
       "passedHomeCoreStatusCardChecks": 2,
-      "screenshotCount": 16
+      "screenshotCount": 20
     },
     "audit": {
       "report": "docs/90-archive/reports/npm-audit-report.json",
@@ -49,7 +49,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-07T05:33:48.989Z"
+      "buildIdMtime": "2026-07-07T06:01:58.809Z"
     }
   },
   "dynamicWorldEvidence": {
@@ -65,7 +65,7 @@
     "externalProductionEvidenceComplete": false,
     "manualSignoffComplete": false,
     "rollbackDrillComplete": false,
-    "reason": "本地 LAN RC 可以证明当前局域网访问、构建产物、运行时和浏览器 smoke；仍不能替代真实外部 Preview / Production、HTTPS、Web Vitals、人工签收和回滚演练。"
+    "reason": "当前计划只打磨 localhost / LAN IP。本地 LAN RC 可以证明局域网访问、构建产物、运行时和浏览器 smoke；外部 Preview / Production 暂不作为近期验收目标。"
   },
   "evidence": {
     "policy": "data/world-kernel/worldos-local-rc-evidence-policy-v1.json",
@@ -79,7 +79,9 @@
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png",
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png",
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-ai-lighthouse-boundary.png",
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png",
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png",
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png",
       "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png",
@@ -87,7 +89,9 @@
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png",
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png",
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-ai-lighthouse-boundary.png",
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png",
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png",
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png",
       "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
@@ -95,8 +99,8 @@
   },
   "nextActions": [
     "继续使用 npm run release:local-rc 作为本地局域网验收唯一推荐入口。",
-    "拥有真实 Preview URL 后设置 PREVIEW_URL 并执行 npm run smoke:preview。",
-    "拥有真实 Production URL 后设置 PRODUCTION_URL 并执行 npm run smoke:production。",
-    "补齐 HTTPS、Web Vitals、Accessibility、人工签收和回滚演练后，才允许评估 releaseReady。"
+    "继续补强公开内容、路径体验、权限边界和截图巡检，让 localhost / LAN IP 体验先稳定成熟。",
+    "保持 productionLive=false、releaseReady=false、cleanProductionReady=false，外部 Preview / Production 暂不纳入近期目标。",
+    "每次阶段性验收前重跑 release:local-rc，确保 fresh build、LAN smoke、browser smoke、audit 和证据策略一致。"
   ]
 }

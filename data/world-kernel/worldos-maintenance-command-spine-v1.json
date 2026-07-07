@@ -38,8 +38,8 @@
     {
       "id": "boundary",
       "script": "check:boundary",
-      "command": "npm run check:api-boundary && npm run check:permission-boundary && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:dynamic-world && npm run check:runtime-local",
-      "purpose": "边界治理门禁：API、权限事实源、脚本、维护命令脊柱、动态世界公开展示模型。",
+      "command": "npm run check:api-boundary && npm run check:permission-boundary && npm run check:local-owner-workbench && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:dynamic-world && npm run check:runtime-local",
+      "purpose": "边界治理门禁：API、权限事实源、本地 Owner 工作台、脚本、维护命令脊柱、动态世界公开展示模型。",
       "stageLikeAllowed": false
     },
     {

@@ -31,9 +31,14 @@ npm run release:local-rc
 ## 批次 9.2：本地体验持续巡检
 
 **目标：**
-- [ ] 把真实访客路径扩展到更多节点和路径组合。
-- [ ] 增加本地截图人工复核清单，记录“能看但不好用”的问题。
-- [ ] 将移动端、低动效和动态世界体验纳入常规本地巡检节奏。
+- [x] 把真实访客路径扩展到更多节点和路径组合。
+- [x] 增加本地截图人工复核清单，记录“能看但不好用”的问题。
+- [x] 将移动端、低动效和动态世界体验纳入常规本地巡检节奏。
+
+**执行留痕：**
+- [x] LAN RC 增加 `/paths/first-visit` 和 `/node/ai-lighthouse-boundary` 浏览器巡检。
+- [x] 本地成熟度契约提高到 22 个 HTTP 检查、20 个浏览器检查和 20 张截图。
+- [x] 新增 `docs/00-overview/worldos-local-screenshot-review-checklist.md`。
 
 **不做：**
 - 不提前规划外部域名、HTTPS、CDN、Web Vitals 线上证据。

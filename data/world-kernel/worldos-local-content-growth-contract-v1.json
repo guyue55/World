@@ -1,0 +1,58 @@
+{
+  "name": "WorldOS 本地内容增长契约 v1",
+  "updatedAt": "2026-07-07",
+  "source": "阶段 10：内容增长系统本地化",
+  "principle": "本地世界成熟不只靠页面能打开；核心公开节点必须拥有可阅读正文、路径吸收、关系星线和中文解释。",
+  "scope": {
+    "localOnly": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "coreReadableSlugs": [
+    "world-manifesto",
+    "personal-digital-universe-definition",
+    "world-space-layer",
+    "ai-lighthouse-boundary",
+    "memory-lake-first-light",
+    "feishu-mcp-adk-agent",
+    "gemini-cli-skills-agent-workflow",
+    "world-data-guardian"
+  ],
+  "areaRepresentativeSlugs": {
+    "origin": "world-manifesto",
+    "tech": "gemini-cli-skills-agent-workflow",
+    "workshop": "ai-website-audit-report-demo",
+    "fragments": "everything-is-node",
+    "memory": "memory-lake-first-light",
+    "timeline": "worldos-rc2-nondeploy-lessons",
+    "archive": "worldos-mainline-code-map",
+    "lighthouse": "ai-lighthouse-boundary"
+  },
+  "minimums": {
+    "coreReadableNodes": 8,
+    "coreContentCharacters": 600,
+    "coreSecondLevelHeadings": 2,
+    "areaRepresentatives": 8,
+    "areaRepresentativeCharacters": 600,
+    "areaRepresentativeSecondLevelHeadings": 2,
+    "publicPaths": 12,
+    "relations": 80
+  },
+  "requiredAbsorption": {
+    "mustBePublic": true,
+    "mustHaveContentPath": true,
+    "mustBeInPublicPath": true,
+    "mustHaveRelation": true,
+    "mustHaveSummary": true
+  },
+  "requiredCommands": [
+    "check:local-content-growth",
+    "check:content",
+    "check:local-product-maturity"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

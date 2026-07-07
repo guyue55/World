@@ -160,6 +160,10 @@ function main() {
     assert(fileExists(item.screenshotPath), `LAN 截图文件不存在：${item.screenshotPath}`)
   }
 
+  const checklist = contract.patrolCadence?.manualScreenshotReview
+  assert(Boolean(checklist), '本地成熟度契约必须声明人工截图复核清单')
+  assert(checklist && fileExists(checklist), `人工截图复核清单不存在：${checklist}`)
+
   assert(rcSummary.status === 'local-rc-passed-external-release-blocked', '本地 RC 摘要必须保持外部发布阻断状态')
   assert(rcSummary.localAccess?.mode === 'local-lan', '本地 RC 摘要必须声明 local-lan')
   assert(rcSummary.releaseStates?.productionLive === false, '本地成熟度不能把 productionLive 标为 true')
