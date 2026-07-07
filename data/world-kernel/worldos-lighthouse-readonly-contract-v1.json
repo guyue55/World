@@ -1,0 +1,74 @@
+{
+  "name": "WorldOS AI 灯塔只读边界契约 v1",
+  "updatedAt": "2026-07-07",
+  "source": "阶段 5A：AI 灯塔公开只读导览",
+  "principle": "AI 是灯塔，不是太阳；灯塔只读公开上下文，只做导览、解释和推荐，不写入世界。",
+  "publicContextSources": [
+    "data/domains/experience/nodes.json",
+    "data/domains/experience/paths.json",
+    "data/domains/ai/ai-boundary-policy.json",
+    "data/domains/ai/lighthouse-prompts.json",
+    "data/domains/ai/lighthouse-productization-contract.json",
+    "data/domains/ai/lighthouse-quality-gate.json"
+  ],
+  "runtimeSourceFiles": [
+    "src/app/ask/page.tsx",
+    "src/lib/lighthouse.ts",
+    "src/lib/nodes.ts",
+    "src/lib/paths.ts",
+    "src/lib/public-world-surfaces.ts",
+    "src/components/ask/PublicLighthouseConsole.tsx"
+  ],
+  "publicFallbackPages": [
+    "/paths",
+    "/archive",
+    "/atlas"
+  ],
+  "allowedPromptIntents": [
+    "path",
+    "archive",
+    "atlas"
+  ],
+  "allowedPromptPages": [
+    "/archive",
+    "/atlas"
+  ],
+  "forbiddenPromptPrefixes": [
+    "http://",
+    "https://",
+    "/api",
+    "/private",
+    "/private-archive",
+    "/vault",
+    "/r4",
+    "/r5",
+    "/r6",
+    "/r7",
+    "/v9",
+    "/v10"
+  ],
+  "requiredAIBoundaryForbiddenRules": [
+    "read vault/sealed/silent content",
+    "publish content automatically",
+    "change visibility automatically",
+    "delete or overwrite original content",
+    "index private/family/partner/vault/sealed/silent content",
+    "create public AI content without review"
+  ],
+  "policies": {
+    "onlyPublicContext": true,
+    "useSharedVisibilityHelper": true,
+    "noRemoteAIInLowLightMode": true,
+    "noRuntimeMutation": true,
+    "noPrivateRawContent": true,
+    "noAutoPublish": true,
+    "noVisibilityChange": true,
+    "ownerReviewRequiredForSuggestions": true,
+    "frontendVisibilityIsNotPermission": true
+  },
+  "releaseStates": {
+    "realTimeAIProviderEnabled": false,
+    "ownerWriteAutomationEnabled": false,
+    "productionLive": false
+  }
+}

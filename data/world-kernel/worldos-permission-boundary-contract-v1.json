@@ -1,0 +1,78 @@
+{
+  "name": "WorldOS 权限与私密边界契约 v1",
+  "updatedAt": "2026-07-07",
+  "source": "阶段 4A：公开/私密事实源边界",
+  "principle": "后端控制权限，前端只体现结果；公开页面只能消费公开数据或公开 surface。",
+  "roles": [
+    {
+      "id": "public",
+      "label": "公开访问者",
+      "canRead": ["public", "semiPublic"],
+      "cannotRead": ["private", "family", "partner", "vault", "sealed", "silent"]
+    },
+    {
+      "id": "owner",
+      "label": "岛主工作区",
+      "requires": "GUYUE_OWNER_TOKEN or R8_OWNER_TOKEN",
+      "canRead": ["owner-only API responses after server guard"],
+      "cannotBypass": ["middleware", "api registry", "permission matrix"]
+    },
+    {
+      "id": "future-private-roles",
+      "label": "未来私密角色",
+      "status": "planned-not-implemented",
+      "rule": "不得在前端硬编码，必须由服务端会话与权限矩阵扩展。"
+    }
+  ],
+  "publicPageFiles": [
+    "src/app/page.tsx",
+    "src/app/about/page.tsx",
+    "src/app/atlas/page.tsx",
+    "src/app/timeline/page.tsx",
+    "src/app/archive/page.tsx",
+    "src/app/paths/page.tsx",
+    "src/app/paths/[id]/page.tsx",
+    "src/app/node/[slug]/page.tsx",
+    "src/app/ask/page.tsx",
+    "src/app/status/page.tsx",
+    "src/app/manifesto/page.tsx",
+    "src/app/forbidden/page.tsx"
+  ],
+  "forbiddenPublicImports": [
+    "@/lib/private-archive",
+    "@/features/private",
+    "@/features/private-ai",
+    "@/components/private-archive",
+    "@/components/private-ai-v6",
+    "@/components/_legacy",
+    "@/features/r4-",
+    "@/features/r5-",
+    "@/features/r6-",
+    "@/features/r7-",
+    "@/features/v9-",
+    "@/features/v10-"
+  ],
+  "publicJsonArtifacts": [
+    "public/world-index.json",
+    "public/world-manifest.json"
+  ],
+  "requiredPrivateRoutes": [
+    "/r4-creator",
+    "/r6-service",
+    "/r7-evolution",
+    "/private-archive"
+  ],
+  "policies": {
+    "frontendVisibilityIsNotPermission": true,
+    "publicPagesUsePublicSourcesOnly": true,
+    "middlewareExcludesApiRoutes": true,
+    "apiRoutesMustUseOwnGuards": true,
+    "ownerTokenMustBeServerConfigured": true,
+    "forbiddenPageMustOfferPublicAlternatives": true
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}
