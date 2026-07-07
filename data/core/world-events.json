@@ -334,5 +334,157 @@
     ],
     "visibility": "public",
     "actor": "creator"
+  },
+  {
+    "id": "evt-022",
+    "type": "milestone",
+    "title": "内容补齐收尾完成",
+    "date": "2026-07-08",
+    "description": "8个核心节点内容补齐至3000+字符，末尾换行修复，门禁全绿。",
+    "nodeIds": [
+      "node-world-manifesto",
+      "node-memory-light"
+    ],
+    "areaIds": [
+      "origin",
+      "memory"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-023",
+    "type": "content",
+    "title": "核心节点扩写至3000+字符",
+    "date": "2026-07-08",
+    "description": "T2.1完成，8个核心可读节点全部达到3000+字符和4+二级标题。",
+    "nodeIds": [
+      "node-world-manifesto",
+      "node-digital-universe",
+      "node-world-space",
+      "node-ai-lighthouse"
+    ],
+    "areaIds": [
+      "origin",
+      "tech",
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-024",
+    "type": "content",
+    "title": "技术星域节点补全",
+    "date": "2026-07-08",
+    "description": "T2.2完成，技术星域所有节点达到600+字符并包含代码块。",
+    "nodeIds": [
+      "node-docker-cleanup",
+      "node-rustdesk-relay",
+      "node-kavita-reader-pipeline",
+      "node-codex-routing"
+    ],
+    "areaIds": [
+      "tech"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-025",
+    "type": "milestone",
+    "title": "公开节点扩展至83个",
+    "date": "2026-07-08",
+    "description": "T2.3完成，新增31个公开节点，覆盖8个一级区域。",
+    "nodeIds": [
+      "node-codex-skills-workflow",
+      "node-world-protocol-document",
+      "node-federation-vision"
+    ],
+    "areaIds": [
+      "tech",
+      "origin",
+      "fragments"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-026",
+    "type": "content",
+    "title": "路径扩展至15条",
+    "date": "2026-07-08",
+    "description": "T2.4完成，新增tech-to-life和world-architecture两条跨区域路径。",
+    "nodeIds": [
+      "node-gemini-cli-skills",
+      "node-world-design-axioms"
+    ],
+    "areaIds": [
+      "tech",
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-027",
+    "type": "content",
+    "title": "关系星线加密至144条",
+    "date": "2026-07-08",
+    "description": "T2.5完成，为所有新节点添加关系，总关系数从82提升至144。",
+    "nodeIds": [
+      "node-codex-skills-workflow",
+      "node-claude-code-integration"
+    ],
+    "areaIds": [
+      "tech"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-028",
+    "type": "milestone",
+    "title": "内容密度门禁提升准备",
+    "date": "2026-07-08",
+    "description": "T2.7准备，所有公开节点正文达到400+字符，准备提升门禁阈值。",
+    "nodeIds": [
+      "node-data-guardian"
+    ],
+    "areaIds": [
+      "tech"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-029",
+    "type": "governance",
+    "title": "执行计划制定完成",
+    "date": "2026-07-08",
+    "description": "42个可执行任务的完整执行计划文档输出，覆盖6个Phase。",
+    "nodeIds": [
+      "node-worldos-mainline-code-map"
+    ],
+    "areaIds": [
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
+  },
+  {
+    "id": "evt-030",
+    "type": "governance",
+    "title": "全局未来规划文档输出",
+    "date": "2026-07-07",
+    "description": "全局未来规划文档完成，定义6个里程碑和6个Phase的演进路线。",
+    "nodeIds": [
+      "node-worldos-project-operating-principles"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel"
   }
 ]
