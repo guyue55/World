@@ -1,3 +1,4 @@
+// 用途：检查路径导览
 import fs from 'node:fs'
 import path from 'node:path'
 import paths from '../data/domains/experience/paths.json'

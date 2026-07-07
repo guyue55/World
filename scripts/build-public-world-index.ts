@@ -1,3 +1,4 @@
+// 用途：构建公开世界索引
 import fs from 'node:fs'
 import path from 'node:path'
 import { createPublicWorldIndex } from '../src/lib/public-index'

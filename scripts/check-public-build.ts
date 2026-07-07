@@ -1,3 +1,4 @@
+// 用途：检查公开构建产物
 import nodes from '../data/domains/experience/nodes.json'
 import type { Node } from '../src/lib/types'
 import { createPublicWorldIndex } from '../src/lib/public-index'

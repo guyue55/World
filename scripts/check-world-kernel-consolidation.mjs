@@ -1,3 +1,4 @@
+// 用途：检查 World Kernel 收束
 import { spawnSync } from 'node:child_process'
 
 const commands = [

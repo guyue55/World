@@ -1,3 +1,4 @@
+// 用途：检查timeline productization
 import fs from 'node:fs'
 import path from 'node:path'
 import events from '../data/core/world-events.json'

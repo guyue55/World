@@ -1,3 +1,4 @@
+// 用途：检查内容增长
 import fs from 'node:fs'
 import path from 'node:path'
 import phaseThreeContentGrowthContract from '../data/domains/content/phase-three-content-growth-contract.json'

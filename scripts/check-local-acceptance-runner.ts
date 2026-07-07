@@ -1,3 +1,4 @@
+// 用途：检查local acceptance runner
 import fs from 'node:fs'
 import path from 'node:path'
 import localAcceptanceRunner from '../data/release/local-acceptance-runner.json'

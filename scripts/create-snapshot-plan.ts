@@ -1,3 +1,4 @@
+// 用途：create snapshot plan
 import fs from 'node:fs'
 import path from 'node:path'
 import { createSnapshotPlan } from '../src/lib/snapshots'

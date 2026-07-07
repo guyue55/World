@@ -1,3 +1,4 @@
+// 用途：检查发布试运行交接
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseDryRunHandoffFinalReport from '../data/release/release-dry-run-handoff-final-report.json'

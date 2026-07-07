@@ -1,3 +1,4 @@
+// 用途：检查阅读舒适度
 import fs from 'node:fs'
 import path from 'node:path'
 import readingComfortContract from '../data/domains/experience/reading-comfort-contract.json'

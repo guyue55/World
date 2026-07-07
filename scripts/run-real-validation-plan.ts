@@ -1,3 +1,4 @@
+// 用途：运行real validation plan
 import realValidationRunnerContract from '../data/release/real-validation-runner-contract.json'
 import realExecutionRerunContract from '../data/engineering/real-execution-rerun-contract.json'
 import browserQaRecords from '../data/domains/experience/browser-qa-records.json'

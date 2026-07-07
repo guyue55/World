@@ -1,3 +1,4 @@
+// 用途：检查 RC 验收最终
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateAcceptanceFinalReport from '../data/release/release-candidate-acceptance-final-report.json'

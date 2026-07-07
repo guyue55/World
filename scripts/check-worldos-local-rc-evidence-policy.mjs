@@ -1,3 +1,4 @@
+// 用途：检查worldos local rc evidence policy
 import fs from 'node:fs'
 import path from 'node:path'
 

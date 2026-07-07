@@ -1,3 +1,4 @@
+// 用途：运行release local gate
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'

@@ -1,3 +1,4 @@
+// 用途：检查 RC 冻结
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateFreezeContract from '../data/release/release-candidate-freeze-contract.json'

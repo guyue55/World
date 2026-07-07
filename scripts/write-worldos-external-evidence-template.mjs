@@ -1,3 +1,4 @@
+// 用途：写入worldos external evidence template
 import fs from 'node:fs'
 import path from 'node:path'
 

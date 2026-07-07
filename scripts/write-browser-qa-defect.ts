@@ -1,3 +1,4 @@
+// 用途：写入browser qa defect
 import fs from 'node:fs'
 import path from 'node:path'
 import realValidationDefectProtocol from '../data/release/real-validation-defect-protocol.json'

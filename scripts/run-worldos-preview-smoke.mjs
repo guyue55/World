@@ -1,3 +1,4 @@
+// 用途：运行worldos preview smoke
 import fs from 'node:fs'
 import path from 'node:path'
 

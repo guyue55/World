@@ -1,3 +1,4 @@
+// 用途：检查基础基线
 import fs from 'node:fs'
 import path from 'node:path'
 import {

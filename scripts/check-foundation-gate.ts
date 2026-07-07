@@ -1,3 +1,4 @@
+// 用途：检查基础门禁
 import { getGateReport } from '../src/lib/development-gates'
 import { evaluateFoundationQuality } from '../src/lib/foundation-quality'
 import { getFoundationFreezeReport } from '../src/lib/foundation-freeze'

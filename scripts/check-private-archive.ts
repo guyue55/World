@@ -1,3 +1,4 @@
+// 用途：检查私密归档
 import fs from 'node:fs'
 import path from 'node:path'
 import privateArchiveIndex from '../data/domains/archive/private-archive-index.json'

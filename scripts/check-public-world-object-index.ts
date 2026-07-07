@@ -1,3 +1,4 @@
+// 用途：检查public world object index
 import { getPublicWorldObjectConsistencyIssues, getPublicWorldObjectIndex } from '../src/lib/public-world-objects'
 
 const index = getPublicWorldObjectIndex()

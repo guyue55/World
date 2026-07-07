@@ -1,3 +1,4 @@
+// 用途：scan lint risk
 import fs from 'node:fs'
 import path from 'node:path'
 

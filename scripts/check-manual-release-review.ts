@@ -1,3 +1,4 @@
+// 用途：检查手动发布审查
 import fs from 'node:fs'
 import path from 'node:path'
 import manualReleaseReviewContract from '../data/release/manual-release-review-contract.json'

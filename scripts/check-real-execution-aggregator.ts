@@ -1,3 +1,4 @@
+// 用途：检查真实执行聚合器
 import fs from 'node:fs'
 import path from 'node:path'
 import realExecutionAggregatorContract from '../data/engineering/real-execution-aggregator-contract.json'

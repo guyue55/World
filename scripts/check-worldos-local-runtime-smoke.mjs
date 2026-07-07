@@ -1,3 +1,4 @@
+// 用途：检查本地运行时冒烟
 import fs from 'node:fs'
 import path from 'node:path'
 

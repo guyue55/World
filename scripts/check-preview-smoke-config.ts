@@ -1,3 +1,4 @@
+// 用途：检查预览冒烟配置
 import fs from 'node:fs'
 import path from 'node:path'
 import previewSmokeChecks from '../data/release/preview-smoke-checks.json'

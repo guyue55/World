@@ -1,3 +1,4 @@
+// 用途：运行first stage acceptance
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
 import { dirname, join } from 'node:path'

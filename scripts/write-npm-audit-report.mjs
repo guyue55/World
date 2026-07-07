@@ -1,3 +1,4 @@
+// 用途：写入npm audit report
 
 import fs from 'node:fs'
 import { spawnSync } from 'node:child_process'

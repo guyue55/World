@@ -1,3 +1,4 @@
+// 用途：检查真实证据辅助
 import fs from 'node:fs'
 import path from 'node:path'
 import realEvidenceExecutionAssistFinalReport from '../data/release/real-evidence-execution-assist-final-report.json'

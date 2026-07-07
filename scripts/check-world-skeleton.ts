@@ -1,3 +1,4 @@
+// 用途：检查世界骨架
 import { evaluateWorldSkeletonHealth } from '../src/lib/world-skeleton-health'
 import { evaluateWorldGovernance } from '../src/lib/governance'
 import { getPublicStarGraph } from '../src/lib/star-lines'

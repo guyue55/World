@@ -1,3 +1,4 @@
+// 用途：检查发布环境
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseEnvironmentContract from '../data/release/release-environment-contract.json'

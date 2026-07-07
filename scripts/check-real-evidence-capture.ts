@@ -1,3 +1,4 @@
+// 用途：检查真实证据采集
 import fs from 'node:fs'
 import path from 'node:path'
 import realEvidenceCaptureContract from '../data/release/real-evidence-capture-contract.json'

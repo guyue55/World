@@ -1,3 +1,4 @@
+// 用途：检查 AI 灯塔规划
 import fs from 'node:fs'
 import path from 'node:path'
 import phaseThreeAiLighthouseRoadmap from '../data/domains/ai/phase-three-ai-lighthouse-roadmap.json'

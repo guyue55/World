@@ -1,3 +1,4 @@
+// 用途：检查本地内容增长门禁
 import fs from 'node:fs'
 import path from 'node:path'
 

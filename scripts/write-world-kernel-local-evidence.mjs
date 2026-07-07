@@ -1,3 +1,4 @@
+// 用途：写入world kernel local evidence
 import fs from 'node:fs'
 import path from 'node:path'
 

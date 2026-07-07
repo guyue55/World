@@ -1,3 +1,4 @@
+// 用途：写入release handoff manifest
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseHandoffPackageContract from '../data/release/release-handoff-package-contract.json'

@@ -1,3 +1,4 @@
+// 用途：运行world kernel release build
 import { spawn } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'

@@ -1,3 +1,4 @@
+// 用途：检查维护命令脊柱
 import fs from 'node:fs'
 import path from 'node:path'
 

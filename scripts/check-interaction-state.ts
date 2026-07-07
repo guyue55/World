@@ -1,3 +1,4 @@
+// 用途：检查交互状态
 import fs from 'node:fs'
 import path from 'node:path'
 import navigationStateContract from '../data/domains/experience/navigation-state-contract.json'

@@ -1,3 +1,4 @@
+// 用途：检查运维导出规划
 import fs from 'node:fs'
 import path from 'node:path'
 import phaseThreeOperationsExportContract from '../data/core/phase-three-operations-export-contract.json'

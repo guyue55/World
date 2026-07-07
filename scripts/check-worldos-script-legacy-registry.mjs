@@ -1,3 +1,4 @@
+// 用途：检查脚本 legacy 注册表
 import fs from 'node:fs'
 import path from 'node:path'
 

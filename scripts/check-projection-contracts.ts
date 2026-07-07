@@ -1,3 +1,4 @@
+// 用途：检查投影契约
 import { validateProjectionContracts } from '../src/lib/projection-contracts'
 
 function main() {

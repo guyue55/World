@@ -1,3 +1,4 @@
+// 用途：运行world kernel local smoke
 import fs from 'node:fs'
 import path from 'node:path'
 

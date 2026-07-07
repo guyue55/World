@@ -1,3 +1,4 @@
+// 用途：检查performance contracts
 import fs from 'node:fs'
 import path from 'node:path'
 import { getLoadingStrategy, validatePerformanceContracts } from '../src/lib/performance-contracts'

@@ -1,3 +1,4 @@
+// 用途：构建公开 JSON 产物
 import fs from 'node:fs'
 import path from 'node:path'
 import manifest from '../data/core/world-manifest.json'

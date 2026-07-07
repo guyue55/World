@@ -1,3 +1,4 @@
+// 用途：检查状态页骨架
 import fs from 'node:fs'
 import path from 'node:path'
 import statusSkeletonContract from '../data/core/status-skeleton-productization-contract.json'

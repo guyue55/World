@@ -1,3 +1,4 @@
+// 用途：检查public chinese copy
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 

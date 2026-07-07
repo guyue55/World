@@ -1,3 +1,4 @@
+// 用途：写入release candidate risk
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateRiskAcceptanceContract from '../data/domains/governance/release-candidate-risk-acceptance-contract.json'

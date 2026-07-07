@@ -1,3 +1,4 @@
+// 用途：检查扩展注册表
 import { validateExtensionRegistry } from '../src/lib/extensions'
 import { assertFutureCompatibility } from '../src/lib/future-compatibility'
 

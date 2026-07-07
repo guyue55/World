@@ -1,3 +1,4 @@
+// 用途：检查 API 边界注册与守卫
 import fs from 'node:fs'
 import path from 'node:path'
 

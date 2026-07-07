@@ -1,3 +1,4 @@
+// 用途：检查基础审计
 import { evaluateFoundationAudit } from '../src/lib/foundation-audit'
 
 function main() {

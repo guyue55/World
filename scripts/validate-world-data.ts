@@ -1,3 +1,4 @@
+// 用途：验证world data
 import areas from '../data/domains/experience/areas.json'
 import nodes from '../data/domains/experience/nodes.json'
 import relations from '../data/core/relations.json'

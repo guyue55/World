@@ -1,3 +1,4 @@
+// 用途：审计 WorldOS 项目
 import fs from 'node:fs'
 import path from 'node:path'
 

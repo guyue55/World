@@ -1,3 +1,4 @@
+// 用途：检查真实执行着陆
 import fs from 'node:fs'
 import path from 'node:path'
 import realExecutionLandingFinalReport from '../data/release/real-execution-landing-final-report.json'

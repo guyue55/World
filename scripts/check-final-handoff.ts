@@ -1,3 +1,4 @@
+// 用途：检查最终交接
 import fs from 'node:fs'
 import path from 'node:path'
 import phaseTwoFinalHandoffGate from '../data/release/phase-two-final-handoff-gate.json'

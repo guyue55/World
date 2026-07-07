@@ -1,3 +1,4 @@
+// 用途：检查公开体验
 import fs from 'node:fs'
 import path from 'node:path'
 

@@ -1,3 +1,4 @@
+// 用途：检查压舱石
 import { validateBallast } from '../src/lib/ballast'
 
 function main() {

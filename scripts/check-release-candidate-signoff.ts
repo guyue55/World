@@ -1,3 +1,4 @@
+// 用途：检查 RC 签收
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateSignoffContract from '../data/release/release-candidate-signoff-contract.json'

@@ -1,3 +1,4 @@
+// 用途：检查运维配置
 import { getRuntimeStates, getRuntimeTransitions } from '../src/lib/runtime-protocol'
 import { getErrorCategories, getErrorLevels } from '../src/lib/error-taxonomy'
 import { createObservabilitySnapshot } from '../src/lib/observability'

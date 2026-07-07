@@ -1,3 +1,4 @@
+// 用途：summarize real execution
 import fs from 'node:fs'
 import path from 'node:path'
 import realExecutionAggregatorContract from '../data/engineering/real-execution-aggregator-contract.json'

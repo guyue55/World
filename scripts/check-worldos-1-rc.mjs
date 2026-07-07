@@ -1,3 +1,4 @@
+// 用途：检查 WorldOS 1.0 RC 状态
 import fs from 'node:fs'
 import path from 'node:path'
 

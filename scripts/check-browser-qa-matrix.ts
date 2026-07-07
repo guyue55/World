@@ -1,3 +1,4 @@
+// 用途：检查浏览器 QA 矩阵
 import fs from 'node:fs'
 import path from 'node:path'
 import browserQaExecutionContract from '../data/domains/experience/browser-qa-execution-contract.json'

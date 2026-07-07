@@ -1,3 +1,4 @@
+// 用途：检查首页产品化
 import fs from 'node:fs'
 import path from 'node:path'
 import homepageComposition from '../data/domains/experience/homepage-composition.json'

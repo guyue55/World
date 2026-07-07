@@ -1,3 +1,4 @@
+// 用途：检查产品发布状态
 import fs from 'node:fs'
 import path from 'node:path'
 import {

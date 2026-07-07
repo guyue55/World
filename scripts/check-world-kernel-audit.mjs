@@ -1,3 +1,4 @@
+// 用途：检查world kernel audit
 import fs from 'node:fs'
 import path from 'node:path'
 

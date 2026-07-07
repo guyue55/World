@@ -1,3 +1,4 @@
+// 用途：检查非命令证据
 import fs from 'node:fs'
 import path from 'node:path'
 import nonCommandEvidenceFeedbackContract from '../data/domains/content/non-command-evidence-feedback-contract.json'

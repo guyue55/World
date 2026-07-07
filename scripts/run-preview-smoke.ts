@@ -1,3 +1,4 @@
+// 用途：运行preview smoke
 import https from 'node:https'
 import http from 'node:http'
 import previewSmokeConfig from '../data/release/preview-smoke-config.json'

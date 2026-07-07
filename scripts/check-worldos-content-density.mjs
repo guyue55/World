@@ -1,3 +1,4 @@
+// 用途：检查公开节点内容密度门禁
 import fs from 'node:fs'
 import path from 'node:path'
 

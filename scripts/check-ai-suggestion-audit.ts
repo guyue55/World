@@ -1,3 +1,4 @@
+// 用途：检查 AI 建议审计
 import fs from 'node:fs'
 import path from 'node:path'
 import aiSuggestionAuditContract from '../data/domains/ai/ai-suggestion-audit-contract.json'

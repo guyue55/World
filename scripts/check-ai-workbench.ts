@@ -1,3 +1,4 @@
+// 用途：检查 AI 工作台
 import fs from 'node:fs'
 import path from 'node:path'
 import aiWorkbenchImplementationContract from '../data/domains/ai/ai-workbench-implementation-contract.json'

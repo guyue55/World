@@ -1,3 +1,4 @@
+// 用途：检查 RC 边界
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateChangeBoundaryContract from '../data/release/release-candidate-change-boundary-contract.json'

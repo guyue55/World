@@ -1,3 +1,4 @@
+// 用途：检查验收就绪度
 import fs from 'node:fs'
 import path from 'node:path'
 import acceptanceReadinessContract from '../data/release/acceptance-readiness-contract.json'

@@ -1,3 +1,4 @@
+// 用途：检查 World Kernel
 import { assertWorldKernelHealthy, evaluateWorldKernel } from '../src/lib/world-kernel'
 
 function main() {

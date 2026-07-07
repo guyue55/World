@@ -1,3 +1,4 @@
+// 用途：检查 AI 世界伴侣
 import fs from 'node:fs'
 import path from 'node:path'
 import aiPathExhibitionRecommendations from '../data/domains/ai/ai-path-exhibition-recommendations.json'

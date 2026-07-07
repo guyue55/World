@@ -1,3 +1,4 @@
+// 用途：检查release candidate freeze final
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateFreezeFinalReport from '../data/release/release-candidate-freeze-final-report.json'

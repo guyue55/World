@@ -1,3 +1,4 @@
+// 用途：检查repo structure
 import fs from 'node:fs'
 import path from 'node:path'
 

@@ -1,3 +1,4 @@
+// 用途：检查 RC 验收清单
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateAcceptanceEvidenceManifest from '../data/release/release-candidate-acceptance-evidence-manifest.json'

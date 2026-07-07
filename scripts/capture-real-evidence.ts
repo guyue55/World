@@ -1,3 +1,4 @@
+// 用途：采集真实证据
 import { spawnSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'

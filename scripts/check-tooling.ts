@@ -1,3 +1,4 @@
+// 用途：检查工具链
 import fs from 'node:fs'
 import path from 'node:path'
 import { getToolingBaseline, validateToolingPackage } from '../src/lib/tooling-baseline'

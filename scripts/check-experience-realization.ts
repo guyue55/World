@@ -1,3 +1,4 @@
+// 用途：检查体验实现
 import fs from 'node:fs'
 import navigationStateContract from '../data/domains/experience/navigation-state-contract.json'
 import stage from '../data/experience/experience-realization-stage.json'

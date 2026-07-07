@@ -1,3 +1,4 @@
+// 用途：检查文档注册表
 import fs from 'node:fs'
 import path from 'node:path'
 import { getAdrIndex, getDocumentationRegistry, validateDocumentationRegistry } from '../src/lib/documentation-registry'

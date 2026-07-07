@@ -1,3 +1,4 @@
+// 用途：检查导出中心
 import fs from 'node:fs'
 import path from 'node:path'
 import exportCenterImplementationContract from '../data/core/export-center-implementation-contract.json'

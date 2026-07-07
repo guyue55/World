@@ -1,3 +1,4 @@
+// 用途：检查节点阅读体验
 import fs from 'node:fs'
 import path from 'node:path'
 import nodes from '../data/domains/experience/nodes.json'

@@ -1,3 +1,4 @@
+// 用途：检查 Atlas 产品化
 import fs from 'node:fs'
 import path from 'node:path'
 import areas from '../data/domains/experience/areas.json'

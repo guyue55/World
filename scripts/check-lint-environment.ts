@@ -1,3 +1,4 @@
+// 用途：检查lint environment
 import fs from 'node:fs'
 import path from 'node:path'
 import lintEnvironmentContract from '../data/engineering/lint-environment-contract.json'

@@ -1,3 +1,4 @@
+// 用途：检查发布门禁
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseGateContract from '../data/release/release-gate-contract.json'

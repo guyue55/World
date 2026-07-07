@@ -1,3 +1,4 @@
+// 用途：检查内容生命周期门禁
 import fs from 'node:fs'
 import path from 'node:path'
 

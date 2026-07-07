@@ -1,3 +1,4 @@
+// 用途：写入non command evidence note
 import fs from 'node:fs'
 import path from 'node:path'
 

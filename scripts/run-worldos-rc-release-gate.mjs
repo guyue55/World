@@ -1,3 +1,4 @@
+// 用途：运行 RC 发布门禁
 import { spawn } from 'node:child_process'
 import { clearInterval, setInterval } from 'node:timers'
 

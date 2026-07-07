@@ -1,3 +1,4 @@
+// 用途：检查发布回滚
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseRollbackContract from '../data/release/release-rollback-contract.json'

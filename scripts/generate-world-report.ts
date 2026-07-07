@@ -1,3 +1,4 @@
+// 用途：生成世界报告
 import fs from 'node:fs'
 import path from 'node:path'
 import { getWorldHealth } from '../src/lib/world-health'

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// 用途：检查公开应用 R8 导入边界
 import fs from 'node:fs'
 import path from 'node:path'
 

@@ -1,3 +1,4 @@
+// 用途：检查特性架构
 import fs from 'node:fs'
 import path from 'node:path'
 import {

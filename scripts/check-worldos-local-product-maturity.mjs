@@ -1,3 +1,4 @@
+// 用途：检查本地产品成熟度门禁
 import fs from 'node:fs'
 import path from 'node:path'
 

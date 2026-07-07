@@ -1,3 +1,4 @@
+// 用途：检查路由完整性
 import fs from 'node:fs'
 import path from 'node:path'
 import { getAllPaths } from '../src/lib/paths'

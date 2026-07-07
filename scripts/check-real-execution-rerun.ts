@@ -1,3 +1,4 @@
+// 用途：检查真实执行重跑
 import fs from 'node:fs'
 import path from 'node:path'
 import realExecutionRerunContract from '../data/engineering/real-execution-rerun-contract.json'

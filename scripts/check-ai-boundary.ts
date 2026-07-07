@@ -1,3 +1,4 @@
+// 用途：检查 AI 边界策略
 import { evaluateAIBoundary } from '../src/lib/ai-boundary'
 import { assertPermissionConsistency } from '../src/lib/permissions'
 

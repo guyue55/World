@@ -1,3 +1,4 @@
+// 用途：写入本地 RC 摘要
 import fs from 'node:fs'
 import path from 'node:path'
 

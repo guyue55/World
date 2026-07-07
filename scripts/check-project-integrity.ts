@@ -1,3 +1,4 @@
+// 用途：检查项目完整性
 import fs from 'node:fs'
 import path from 'node:path'
 

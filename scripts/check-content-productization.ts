@@ -1,3 +1,4 @@
+// 用途：检查内容产品化
 import fs from 'node:fs'
 import {
   getContentProductizationBaseline,

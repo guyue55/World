@@ -1,3 +1,4 @@
+// 用途：检查 RC 验收扫描
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseCandidateAcceptanceScannerContract from '../data/release/release-candidate-acceptance-scanner-contract.json'

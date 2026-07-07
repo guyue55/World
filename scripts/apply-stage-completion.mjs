@@ -1,3 +1,4 @@
+// 用途：应用阶段完成
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import guard from '../data/versions/archive/stage-completion-transition-guard.json' assert { type: 'json' }

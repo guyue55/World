@@ -1,3 +1,4 @@
+// 用途：检查缺陷执行
 import fs from 'node:fs'
 import path from 'node:path'
 import defectExecutionQueue from '../data/engineering/defect-execution-queue.json'

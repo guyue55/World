@@ -1,3 +1,4 @@
+// 用途：检查空间本体
 import { validateAtlasContract } from '../src/lib/atlas-contract'
 import { validateSemanticLayers } from '../src/lib/ontology'
 import { validateRelationPolicy } from '../src/lib/relation-policy'

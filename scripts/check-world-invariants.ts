@@ -1,3 +1,4 @@
+// 用途：检查世界不变量
 import { assertWorldInvariants, evaluateWorldInvariants } from '../src/lib/world-invariants'
 import { createPublicWorldIndex } from '../src/lib/public-index'
 

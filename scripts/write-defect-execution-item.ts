@@ -1,3 +1,4 @@
+// 用途：写入defect execution item
 import fs from 'node:fs'
 import path from 'node:path'
 import defectExecutionQueueContract from '../data/engineering/defect-execution-queue-contract.json'

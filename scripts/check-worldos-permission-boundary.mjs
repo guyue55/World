@@ -1,3 +1,4 @@
+// 用途：检查worldos permission boundary
 import fs from 'node:fs'
 import path from 'node:path'
 

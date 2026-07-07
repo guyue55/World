@@ -1,3 +1,4 @@
+// 用途：检查主线治理门禁
 import fs from 'node:fs'
 import path from 'node:path'
 

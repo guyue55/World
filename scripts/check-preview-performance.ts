@@ -1,3 +1,4 @@
+// 用途：检查预览性能
 import fs from 'node:fs'
 import path from 'node:path'
 import previewSmokeExecutionContract from '../data/release/preview-smoke-execution-contract.json'

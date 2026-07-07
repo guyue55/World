@@ -1,3 +1,4 @@
+// 用途：检查架构契约
 import fs from 'node:fs'
 import path from 'node:path'
 import { getCouplingGuard, validateArchitectureContracts } from '../src/lib/architecture-contracts'

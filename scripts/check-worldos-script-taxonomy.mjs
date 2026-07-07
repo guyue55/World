@@ -1,3 +1,4 @@
+// 用途：检查脚本分类门禁
 import fs from 'node:fs'
 import path from 'node:path'
 

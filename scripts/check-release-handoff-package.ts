@@ -1,3 +1,4 @@
+// 用途：检查release handoff package
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseHandoffPackageContract from '../data/release/release-handoff-package-contract.json'

@@ -1,3 +1,4 @@
+// 用途：运行本地 RC 信任门禁
 import { spawn } from 'node:child_process'
 import { setInterval, clearInterval } from 'node:timers'
 

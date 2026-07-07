@@ -1,3 +1,4 @@
+// 用途：检查世界契约
 import { getAllNodes } from '../src/lib/nodes'
 import { getAllPaths } from '../src/lib/paths'
 import { canTransitionLifeStage, isCorePathStageAllowed, isHomeFeatureStageAllowed } from '../src/lib/lifecycle'

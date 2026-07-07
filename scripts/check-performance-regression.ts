@@ -1,3 +1,4 @@
+// 用途：检查性能回归
 import fs from 'node:fs'
 import path from 'node:path'
 import {

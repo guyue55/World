@@ -1,3 +1,4 @@
+// 用途：检查证据仪表盘
 import fs from 'node:fs'
 import path from 'node:path'
 import evidenceDashboardContract from '../data/release/evidence-dashboard-contract.json'

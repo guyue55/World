@@ -1,3 +1,4 @@
+// 用途：检查真实验证运行器
 import fs from 'node:fs'
 import path from 'node:path'
 import realValidationRunnerContract from '../data/release/real-validation-runner-contract.json'

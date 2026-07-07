@@ -1,3 +1,4 @@
+// 用途：检查发布试运行
 import fs from 'node:fs'
 import path from 'node:path'
 import releaseDryRunContract from '../data/release/release-dry-run-contract.json'

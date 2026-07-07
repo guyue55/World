@@ -1,3 +1,4 @@
+// 用途：检查主题展览
 import fs from 'node:fs'
 import path from 'node:path'
 import themeExhibitionMap from '../data/domains/experience/theme-exhibition-map.json'

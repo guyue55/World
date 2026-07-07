@@ -1,3 +1,4 @@
+// 用途：检查基本格式
 import fs from 'node:fs'
 import path from 'node:path'
 
