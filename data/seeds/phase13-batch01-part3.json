@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "slug": "mac-daily-setup",
+      "title": "Mac 日常开发环境",
+      "worldTitle": "一台干净的 Mac",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "记录 WorldOS 主机的日常开发环境：Homebrew、Node、Python、Codex CLI 与几个小巧但常用的辅助脚本。",
+      "tags": ["tech", "setup", "tool"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "让一台 Mac 常年保持可写作、可开发、可实验的状态并不容易，需要一份最低但完整的配置清单。\n\n## 最小基座\n\nHomebrew 装 node、python@3.12、git、rg、fd、fzf、zoxide、starship。npm 装 pnpm 与 tsx。Python 用 uv 管理虚拟环境。Codex CLI 常驻，作为主要 AI 伙伴。\n\n## 工作面约定\n\niTerm 三个 tab：项目、Codex、通用工作。Alfred 或 Raycast 作为跳转入口。Screen Studio 用于偶尔的录屏。相机与麦克风默认关闭，需要用时才启用。\n\n## 与终端优先的关系\n\n环境干净是终端优先的前置条件。桌面越乱、菜单栏图标越多，越难保持在一个黑底白字里工作。\n\n## 维护频率\n\n每季度 brew cleanup 一次，节点管理器不轻易换。稳定的环境比先进的工具重要。",
+      "relations": [
+        {"to": "terminal-first-life", "type": "theme", "strength": 0.6},
+        {"to": "docker-disk-cleanup", "type": "reference", "strength": 0.4}
+      ]
+    },
+    {
+      "slug": "zsh-plugin-shelf",
+      "title": "Zsh 插件书架",
+      "worldTitle": "shell 的小书架",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "常驻 shell 的几个必要插件：语法高亮、自动建议、fzf、zoxide、starship，让终端像常翻的书。",
+      "tags": ["tech", "shell", "tool"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "Shell 是开发者的书房。书架上的每一本书都要能被反复翻阅，而不是摆着装点。以下是当前书架上必备的五本。\n\n## 五个插件\n\nzsh-syntax-highlighting 让命令在输入时就能看出错。zsh-autosuggestions 给出历史命令的灰色建议。fzf 提供模糊查找与文件跳转。zoxide 取代 cd，用频率排序目录。starship 提供极简且信息量充足的提示符。\n\n## 加载策略\n\n用 zinit 做插件管理，避免 oh-my-zsh 的重装成本。冷启动预算控制在 200ms 以内。\n\n## 何时添加新插件\n\n每次添加新插件前问自己：这一天我会用几次？少于 5 次就先不装，等两周后再决定。书架不是越满越好。",
+      "relations": [
+        {"to": "mac-daily-setup", "type": "theme", "strength": 0.6},
+        {"to": "terminal-first-life", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "family-record-index",
+      "title": "家庭记录索引原则",
+      "worldTitle": "轻手轻脚的家庭档案",
+      "type": "rule",
+      "areaId": "memory",
+      "summary": "家庭相关记录默认走 permission 或 owner-only 层，索引结构清晰但不暴露具体内容，让世界记得住又不越界。",
+      "tags": ["ritual", "family", "boundary"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-life-island.svg",
+      "contentDir": "rules",
+      "createdAt": "2026-07-08",
+      "body": "家庭记录是最需要边界的一类节点：它承载最重要的情感，也最不适合被公开检索。索引原则就是让这些记录\"可被找到但不被围观\"。\n\n## 三条原则\n\n第一条：默认非公开。visibility 缺省为 partner 或 family。第二条：护照可见、正文不可见。索引卡片显示标题、日期、参与人物，正文与照片不进入公开渲染。第三条：AI 不参与摘要。owner-only 与 permission 数据永不进入 AI 提示词。\n\n## 与传承协议的关系\n\n家庭记录是传承协议 (Phase 6) 的重点交付对象。索引原则确保未来某天\"移交\"时，接收人只需要一份索引就能理解结构，而不是海量原文。\n\n## 边界的坚守\n\n家人比世界大。任何时候索引都不能覆盖尊严，宁可少写不多写。",
+      "relations": [
+        {"to": "memory-lake-first-light", "type": "theme", "strength": 0.6},
+        {"to": "seasonal-light-record", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "photo-archive-workflow",
+      "title": "照片归档工作流",
+      "worldTitle": "照片的分层归位",
+      "type": "article",
+      "areaId": "archive",
+      "summary": "照片按季度分层归档：精选进入 memory 节点、日常进入 owner-only 目录、废片直接删除，让相册不成为累赘。",
+      "tags": ["archive", "photo", "workflow"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-memory-river.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "照片是最容易堆积的数据。没有归档工作流，一年后就会累积几万张，逐渐失去被翻看的可能。WorldOS 的做法是每季度做一次分层。\n\n## 四层结构\n\n精选层：进入公开 memory 节点，仅少数几张（3-5 张/季度）。日常层：owner-only 相册，按月份组织，仅索引卡片进入世界。原始层：外部硬盘冷备，不进入 world-index。废片层：季度整理时直接删除。\n\n## 每季度动作\n\n季度末的一个周日下午，把当季所有照片过一遍。精选出候选，写入 memory 节点的护照。日常层用命名规则批量整理。剩下的按体积压缩后写入冷备。\n\n## 与家庭记录索引的关系\n\n照片工作流是家庭记录索引原则的落地：精选进入公开层的照片必须是可展示的，其他都在护照层留下痕迹但不暴露内容。",
+      "relations": [
+        {"to": "family-record-index", "type": "theme", "strength": 0.7},
+        {"to": "seasonal-light-record", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "writing-momentum-loop",
+      "title": "写作动量循环",
+      "worldTitle": "小步的滚雪球",
+      "type": "article",
+      "areaId": "workshop",
+      "summary": "写作动量不来自灵感，而来自节奏：先写摘要、再写关系、最后补正文，让每一次坐下都有可完成的最小单位。",
+      "tags": ["product", "writing", "workflow"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-product-artifact.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "写作动量的对手是空白页。空白页把决策成本前置：写什么、多长、给谁看。WorldOS 的解法是把\"决定\"和\"写\"分离。\n\n## 三段动量\n\n第一段（30 秒）：只写一行摘要。第二段（1 分钟）：填入护照的其他字段（区域、标签、关系）。第三段（10-30 分钟）：写正文，字数少也可以。三段可以在不同时刻进行，动量在中间不断层。\n\n## 为什么有效\n\n每一段都足够短，都可以在 5 分钟内完成，因此不需要专门的写作时段。写完摘要就有了世界里的第一个存在点，之后再决定值不值得铺展。\n\n## 与极简笔记法的关系\n\n极简笔记法说了字段最小集合，写作动量循环说了填字段的时间分布。两者一起，让写作从事件变成呼吸。",
+      "relations": [
+        {"to": "note-taking-minimalism", "type": "theme", "strength": 0.7},
+        {"to": "worldos-engine", "type": "reference", "strength": 0.4}
+      ]
+    }
+  ]
+}

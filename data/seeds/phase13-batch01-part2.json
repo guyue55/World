@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "slug": "terminal-first-life",
+      "title": "终端优先的日常",
+      "worldTitle": "黑底白字的呼吸",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "让终端成为默认工作面：从查文件到起会议、从提交代码到发消息，都可以在一个统一的黑底白字里完成。",
+      "tags": ["tech", "tool", "daily"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "终端优先不是效率崇拜，而是心智稳定。把常用工作面收敛到一个黑底白字，认知就不再被视觉噪声撕碎。\n\n## 一天的样子\n\n打开 iTerm，一个 tab 是当前项目，一个 tab 是 Codex，一个 tab 是常用工作目录。所有内容 grep 而不是双击，所有跳转 zoxide 而不是浏览器书签。会议前用 gcal 看日程，会议后用 lark cli 发送纪要。\n\n## 与命令行伴侣的关系\n\n终端优先的极致是 CLI 伴侣：一个命令看世界、一个命令建节点、一个命令跑门禁。它是极简笔记法的另一半。\n\n## 何时不适用\n\n视觉密集的工作（视频、幻灯片、图像标注）仍然需要 GUI。终端优先只是默认值，不是排他项。",
+      "relations": [
+        {"to": "cli-tools-agent-integration", "type": "theme", "strength": 0.6},
+        {"to": "note-taking-minimalism", "type": "reference", "strength": 0.4}
+      ]
+    },
+    {
+      "slug": "worldos-cli-companion",
+      "title": "WorldOS CLI 伴侣",
+      "worldTitle": "书桌旁的黑镜",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "设想中的命令行伴侣：一条命令看世界指标、一条命令新建节点、一条命令跑门禁，把世界压缩到一次呼吸。",
+      "tags": ["product", "tool", "cli"],
+      "lifeStage": "seed",
+      "cover": "/covers/cover-product-artifact.svg",
+      "contentDir": "projects",
+      "createdAt": "2026-07-08",
+      "body": "WorldOS CLI 伴侣是一个尚未开工的构想：把 World 项目的常用维护动作封装成一个 world 命令，让创作者无须记忆 npm 脚本名。\n\n## 命令草图\n\nworld status 输出当日指标；world new node <slug> 交互式创建节点；world check 跑 check:daily；world release 跑 release:local-rc；world backup 触发备份。\n\n## 为什么不直接用 npm\n\nnpm 脚本已经足够，但命名冗长、上下文切换成本高。CLI 伴侣把最常用的 5 个动作压缩到 5 秒内，进一步降低维护门槛。\n\n## 与终端优先的关系\n\n它是终端优先日常里的高频入口，也是 WorldOS Engine 的最外层封装。开工时机预计在 Phase 14 技术收束之后。",
+      "relations": [
+        {"to": "terminal-first-life", "type": "theme", "strength": 0.7},
+        {"to": "worldos-engine", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "world-graph-explorer",
+      "title": "世界图谱浏览器",
+      "worldTitle": "看得见的星线",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "给关系和节点一张可视化的图：能拖、能筛、能放大，让世界从列表变成可以漫游的星空。",
+      "tags": ["product", "visual", "graph"],
+      "lifeStage": "seed",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "projects",
+      "createdAt": "2026-07-08",
+      "body": "图谱浏览器让关系变得可感。当前 100 节点、163 关系的规模还可以用列表理解，但接近 300 节点后，关系将超出人脑的追踪能力。\n\n## 交互草图\n\n默认视图按 areaId 聚簇，用不同颜色区分公开与非公开。悬停节点显示护照卡片，点击展开详情。可以按标签、生命阶段、时间范围过滤。\n\n## 技术选型\n\n候选：D3.js 力导图、Cytoscape.js、Sigma.js。若接入 WebGPU，可支持 1000+ 节点无卡顿。\n\n## 与已有可视化的关系\n\n首页的星线画布已经承担了艺术性表达，图谱浏览器负责工具性检索。两者不冲突。",
+      "relations": [
+        {"to": "backlinks-and-star-lines", "type": "theme", "strength": 0.7},
+        {"to": "moonframe-loft", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "knowledge-lake-metaphor",
+      "title": "知识湖泊隐喻",
+      "worldTitle": "不再是知识花园",
+      "type": "article",
+      "areaId": "fragments",
+      "summary": "相比数字花园，数字湖泊更贴近 WorldOS：静水下有层次，涟漪彼此相连，光线随时间变化，允许沉淀。",
+      "tags": ["principle", "metaphor", "world"],
+      "lifeStage": "sprout",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "fragments",
+      "createdAt": "2026-07-08",
+      "body": "数字花园的意象强调栽种与浇灌，隐含着劳作的紧张感。数字湖泊则允许静止：水面之下有分层，深处的东西不必被翻上来才算存在。\n\n## 三个特征\n\n分层：湖泊有透光层、跃温层、深水层，对应 WorldOS 的 public、permission、owner-only。涟漪：一个新节点丢进湖里会激起相关关系的涟漪，让相邻的节点也被看见。沉淀：不需要每天维护，允许一些内容沉到底，未来再打捞。\n\n## 为什么不换名字\n\n名字不重要，重要的是隐喻带来的世界观。古月浮屿仍然叫浮屿，但内里的意象是湖泊而非花园。\n\n## 与万物皆节点的关系\n\n万物皆节点说了单元，湖泊说了容器。两者一起，把世界描述得更完整。",
+      "relations": [
+        {"to": "everything-is-node", "type": "theme", "strength": 0.6},
+        {"to": "memory-lake-first-light", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "second-brain-critique",
+      "title": "对第二大脑的反思",
+      "worldTitle": "不做第二大脑",
+      "type": "article",
+      "areaId": "fragments",
+      "summary": "第二大脑强调存，WorldOS 强调活。存过多的碎片只是让第一大脑更疲惫，世界应该像陪伴而不是仓库。",
+      "tags": ["principle", "critique", "world"],
+      "lifeStage": "sprout",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "fragments",
+      "createdAt": "2026-07-08",
+      "body": "第二大脑（Second Brain）的流行让很多人陷入存储焦虑：一切都要记下，一切都要打标签，一切都要能被再次检索。但对个人而言，存越多不等于用越好。\n\n## WorldOS 的选择\n\n不追求全量记录，只记录能进入世界的东西。判断标准是：这条内容能不能形成至少一条关系？能不能进入至少一条路径？如果都不能，说明它还没到进入世界的时机，让它先在片刻区飘一会。\n\n## 世界不是仓库\n\n仓库讲求容量与检索速度。世界讲求叙事与生长。前者优化的是搜到，后者优化的是被理解。WorldOS 更靠近后者。\n\n## 与知识湖泊的关系\n\n湖泊允许沉淀，因此不用把所有石头都往里丢。反思第二大脑，其实是反思填塞式的知识管理。",
+      "relations": [
+        {"to": "knowledge-lake-metaphor", "type": "theme", "strength": 0.7},
+        {"to": "clear-entrance-deep-world", "type": "reference", "strength": 0.5}
+      ]
+    }
+  ]
+}

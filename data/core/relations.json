@@ -1612,5 +1612,305 @@
     "source": "manual",
     "reviewed": true,
     "note": "世界协议入门指南与世界审计方法深化同属治理体系。"
+  },
+  {
+    "id": "rel-0164",
+    "from": "node-daily-review-ritual",
+    "to": "node-world-repair-day",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "每日复盘仪式 与 weekly-world-repair-day 的theme关联。"
+  },
+  {
+    "id": "rel-0165",
+    "from": "node-daily-review-ritual",
+    "to": "node-creator-low-energy-maintenance",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "每日复盘仪式 与 creator-low-energy-maintenance 的reference关联。"
+  },
+  {
+    "id": "rel-0166",
+    "from": "node-weekly-world-heartbeat",
+    "to": "node-world-repair-day",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "每周世界心跳 与 weekly-world-repair-day 的theme关联。"
+  },
+  {
+    "id": "rel-0167",
+    "from": "node-weekly-world-heartbeat",
+    "to": "node-daily-review-ritual",
+    "type": "sequence",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "每周世界心跳 与 daily-review-ritual 的sequence关联。"
+  },
+  {
+    "id": "rel-0168",
+    "from": "node-note-taking-minimalism",
+    "to": "node-everything-node",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "极简笔记法 与 everything-is-node 的theme关联。"
+  },
+  {
+    "id": "rel-0169",
+    "from": "node-note-taking-minimalism",
+    "to": "node-node-passport-standard",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "极简笔记法 与 node-passport-standard 的reference关联。"
+  },
+  {
+    "id": "rel-0170",
+    "from": "node-ai-prompt-hygiene",
+    "to": "node-ai-boundary-evolution",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 提示词卫生 与 ai-boundary-evolution 的theme关联。"
+  },
+  {
+    "id": "rel-0171",
+    "from": "node-ai-prompt-hygiene",
+    "to": "node-ai-lighthouse",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 提示词卫生 与 ai-lighthouse-boundary 的reference关联。"
+  },
+  {
+    "id": "rel-0172",
+    "from": "node-codex-agent-workflow",
+    "to": "node-cli-agent",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Codex Agent 协作工作流 与 cli-tools-agent-integration 的theme关联。"
+  },
+  {
+    "id": "rel-0173",
+    "from": "node-codex-agent-workflow",
+    "to": "node-codex-routing",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Codex Agent 协作工作流 与 codex-cli-custom-provider-routing 的reference关联。"
+  },
+  {
+    "id": "rel-0174",
+    "from": "node-terminal-first-life",
+    "to": "node-cli-agent",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "终端优先的日常 与 cli-tools-agent-integration 的theme关联。"
+  },
+  {
+    "id": "rel-0175",
+    "from": "node-terminal-first-life",
+    "to": "node-note-taking-minimalism",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "终端优先的日常 与 note-taking-minimalism 的reference关联。"
+  },
+  {
+    "id": "rel-0176",
+    "from": "node-worldos-cli-companion",
+    "to": "node-terminal-first-life",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS CLI 伴侣 与 terminal-first-life 的theme关联。"
+  },
+  {
+    "id": "rel-0177",
+    "from": "node-worldos-cli-companion",
+    "to": "node-worldos-engine",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS CLI 伴侣 与 worldos-engine 的reference关联。"
+  },
+  {
+    "id": "rel-0178",
+    "from": "node-world-graph-explorer",
+    "to": "node-backlinks",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界图谱浏览器 与 backlinks-and-star-lines 的theme关联。"
+  },
+  {
+    "id": "rel-0179",
+    "from": "node-world-graph-explorer",
+    "to": "node-moonframe",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界图谱浏览器 与 moonframe-loft 的reference关联。"
+  },
+  {
+    "id": "rel-0180",
+    "from": "node-knowledge-lake-metaphor",
+    "to": "node-everything-node",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "知识湖泊隐喻 与 everything-is-node 的theme关联。"
+  },
+  {
+    "id": "rel-0181",
+    "from": "node-knowledge-lake-metaphor",
+    "to": "node-memory-light",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "知识湖泊隐喻 与 memory-lake-first-light 的reference关联。"
+  },
+  {
+    "id": "rel-0182",
+    "from": "node-second-brain-critique",
+    "to": "node-knowledge-lake-metaphor",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "对第二大脑的反思 与 knowledge-lake-metaphor 的theme关联。"
+  },
+  {
+    "id": "rel-0183",
+    "from": "node-second-brain-critique",
+    "to": "node-clear-deep",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "对第二大脑的反思 与 clear-entrance-deep-world 的reference关联。"
+  },
+  {
+    "id": "rel-0184",
+    "from": "node-mac-daily-setup",
+    "to": "node-terminal-first-life",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Mac 日常开发环境 与 terminal-first-life 的theme关联。"
+  },
+  {
+    "id": "rel-0185",
+    "from": "node-mac-daily-setup",
+    "to": "node-docker-cleanup",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Mac 日常开发环境 与 docker-disk-cleanup 的reference关联。"
+  },
+  {
+    "id": "rel-0186",
+    "from": "node-zsh-plugin-shelf",
+    "to": "node-mac-daily-setup",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Zsh 插件书架 与 mac-daily-setup 的theme关联。"
+  },
+  {
+    "id": "rel-0187",
+    "from": "node-zsh-plugin-shelf",
+    "to": "node-terminal-first-life",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Zsh 插件书架 与 terminal-first-life 的reference关联。"
+  },
+  {
+    "id": "rel-0188",
+    "from": "node-family-record-index",
+    "to": "node-memory-light",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "家庭记录索引原则 与 memory-lake-first-light 的theme关联。"
+  },
+  {
+    "id": "rel-0189",
+    "from": "node-family-record-index",
+    "to": "node-seasonal-light-record",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "家庭记录索引原则 与 seasonal-light-record 的reference关联。"
+  },
+  {
+    "id": "rel-0190",
+    "from": "node-photo-archive-workflow",
+    "to": "node-family-record-index",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "照片归档工作流 与 family-record-index 的theme关联。"
+  },
+  {
+    "id": "rel-0191",
+    "from": "node-photo-archive-workflow",
+    "to": "node-seasonal-light-record",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "照片归档工作流 与 seasonal-light-record 的reference关联。"
+  },
+  {
+    "id": "rel-0192",
+    "from": "node-writing-momentum-loop",
+    "to": "node-note-taking-minimalism",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "写作动量循环 与 note-taking-minimalism 的theme关联。"
+  },
+  {
+    "id": "rel-0193",
+    "from": "node-writing-momentum-loop",
+    "to": "node-worldos-engine",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "写作动量循环 与 worldos-engine 的reference关联。"
   }
 ]

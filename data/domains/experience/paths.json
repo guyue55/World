@@ -332,5 +332,59 @@
     "featured": {
       "recommended": true
     }
+  },
+  {
+    "id": "daily-ritual-tour",
+    "title": "日常仪式漫游路径",
+    "description": "从每日复盘到每周心跳，走一遍古月浮屿维持世界的低能耗仪式。",
+    "audience": "creator",
+    "estimatedMinutes": 15,
+    "nodeSlugs": [
+      "daily-review-ritual",
+      "weekly-world-heartbeat",
+      "writing-momentum-loop",
+      "note-taking-minimalism",
+      "family-record-index",
+      "photo-archive-workflow"
+    ],
+    "nextPathIds": [
+      "creator-maintenance"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "agent-workflow-lane",
+    "title": "AI 协作工作流通道",
+    "description": "看 Codex 与 AI 灯塔如何在世界里协作，从纪律、提示词卫生到边界演化。",
+    "audience": "tech",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "codex-agent-workflow",
+      "ai-prompt-hygiene",
+      "terminal-first-life",
+      "mac-daily-setup",
+      "zsh-plugin-shelf"
+    ],
+    "nextPathIds": [
+      "tech-ai"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "world-vision-lane",
+    "title": "世界观隐喻与工具视野路径",
+    "description": "从知识湖泊到第二大脑反思，再到未来的 CLI 伴侣与图谱浏览器，看古月浮屿的世界观演化。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 18,
+    "nodeSlugs": [
+      "knowledge-lake-metaphor",
+      "second-brain-critique",
+      "worldos-cli-companion",
+      "world-graph-explorer"
+    ],
+    "nextPathIds": [
+      "world-architecture"
+    ],
+    "visibility": "public"
   }
 ]

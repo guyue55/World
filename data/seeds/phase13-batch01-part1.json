@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "slug": "daily-review-ritual",
+      "title": "每日复盘仪式",
+      "worldTitle": "日落时的整理",
+      "type": "rule",
+      "areaId": "archive",
+      "summary": "每天日落后用十分钟整理当天的世界事件、节点变化与心情记录，让世界能自然进入下一个夜晚。",
+      "tags": ["ritual", "daily", "archive"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-memory-river.svg",
+      "contentDir": "rules",
+      "createdAt": "2026-07-08",
+      "body": "每天在日落之后留出十分钟做一次结构化的复盘，是让世界持续生长的最小闭环。这段时间不写作、不上线、不发消息，只做三件事：翻看当天变化、检查未闭合的事件、给明天留一句提示。\n\n## 三件事的执行方式\n\n第一件是翻看当天变化：打开 world-index.json 或首页，看看新加的节点和被更新的关系，感受今天世界的形状是不是变了。第二件是检查未闭合的事件：看看事件时间线上的最新一条是不是需要补一句总结，或者是不是有节点还没被关系接住。第三件是给明天留一句提示：写在片刻区，一句话即可，作为明天进入世界的钩子。\n\n## 为什么坚持每天\n\n世界的健康不来自单次冲刺，而来自可持续的心跳。日复盘让创作者维持在低能耗的维护状态：不需要重启大脑，也不需要腾出一整个小时，只是把当天的世界安顿好。这也是节点护照与门禁体系存在的意义——他们把结构化的成本前置，让每日仪式几乎不产生新决策。\n\n## 与周心跳的关系\n\n日复盘是周心跳的组成部分。每周日的 release:local-rc 会审计整周的门禁与内容，而每日复盘保证到那时不会积压太多。两者一起构成古月浮屿在无 CI 环境下的最小健康检查。",
+      "relations": [
+        {"to": "weekly-world-repair-day", "type": "theme", "strength": 0.6},
+        {"to": "creator-low-energy-maintenance", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "weekly-world-heartbeat",
+      "title": "每周世界心跳",
+      "worldTitle": "周日的心跳仪表盘",
+      "type": "rule",
+      "areaId": "archive",
+      "summary": "每周日通过一次 release:local-rc 与内容审计感受世界心跳，是否规律、是否健康、下一步在哪。",
+      "tags": ["ritual", "weekly", "governance"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "rules",
+      "createdAt": "2026-07-08",
+      "body": "周心跳是世界的整周体检。每周日下午运行一次 npm run release:local-rc，让 22 次 HTTP 检查和 20 次浏览器检查一起跑完，然后在 status 页对照一遍指标：节点、关系、路径、事件、构建大小。\n\n## 检查项\n\n周心跳并不是\"跑完就好\"的仪式，它要求三个动作：读数、比较、决定。读数指的是把关键指标写到当周的 memory 节点；比较指的是与上周对照，判断增速与结构变化；决定指的是给下一周画一条最低执行线，比如\"新增 5 节点或修复 3 个 lint\"。\n\n## 为什么要有\n\n没有周心跳，世界会在不知不觉里进入负债。技术债、内容债、心情债都会累积。有了周心跳，创作者不需要靠\"节奏感\"来维护世界，只需要相信仪表盘。\n\n## 与 Phase 结束节奏的关系\n\n每个 Phase 结束都会跑 release:local-rc，那是 Phase 门禁；而周心跳是 Phase 之内的可视化节拍。两者共同保证世界的呼吸不会中断。",
+      "relations": [
+        {"to": "weekly-world-repair-day", "type": "theme", "strength": 0.7},
+        {"to": "daily-review-ritual", "type": "sequence", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "note-taking-minimalism",
+      "title": "极简笔记法",
+      "worldTitle": "一页纸的世界",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "在 WorldOS 中记录一件事只保留标题、摘要、区域、关系四要素，让笔记从存放变成进入世界。",
+      "tags": ["tech", "writing", "principle"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "极简笔记法的核心是不再追求完整的一篇笔记，而是先让一条内容能进入世界。四要素齐全比篇幅充实更重要：标题让人知道这是什么，摘要让人知道为什么点开，区域让它有归属，关系让它不孤单。\n\n## 为什么不用大纲\n\n大纲式笔记（Logseq、Roam）鼓励把一条内容切成很多块。切块本身没错，但对个人世界而言，块太小反而丢失了叙事。WorldOS 用节点作为最小单元，一个节点承载一段可自洽的想法。\n\n## 极简的边界\n\n极简不等于潦草。极简是把结构化的成本前置：护照字段必须齐全，正文可以短。这种做法把检索友好与写作轻松合到一起——写的时候不需要装饰，检索的时候不需要迷路。\n\n## 与万物皆节点的关系\n\n万物皆节点是世界观，极简笔记法是执行法。前者说任何东西都能被记下，后者说记下时用最小的仪式感。两者合力，让世界不必依赖大段时间就能持续长大。",
+      "relations": [
+        {"to": "everything-is-node", "type": "theme", "strength": 0.7},
+        {"to": "node-passport-standard", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "ai-prompt-hygiene",
+      "title": "AI 提示词卫生",
+      "worldTitle": "给灯塔喂的干净食物",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "提示词是喂给 AI 灯塔的食物：不要留隐私、不要含未审内容、不要带情绪包袱，让灯塔只看到应该看的世界。",
+      "tags": ["tech", "ai", "boundary"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "AI 灯塔看到什么，取决于我们端给它什么。提示词卫生是一套简单的自我约束：只给它公开数据、经过审阅的内容、边界清楚的问题。\n\n## 三条底线\n\n第一条：不喂隐私。owner-only 与 permission 层的数据不进入提示词，即使 AI 提供商声称不训练。第二条：不喂未审内容。lifeStage 处于 seed 且 reviewed 为 false 的节点不进入 AI，避免错误信息被摘要放大。第三条：不喂情绪。带有强烈情绪的表达先自我处理，再交给 AI。\n\n## 如何检查\n\nWorldOS 的做法是把 AI 请求前的上下文构造函数集中在 src/lib/ai/*，并加一个 permission-audit 步骤：任何 AI 调用都必须能列出它读了哪些节点、哪些字段、哪些标签。审计脚本可离线跑，让灯塔的食物清单永远透明。\n\n## 与边界演化的关系\n\n提示词卫生是 ai-boundary-evolution 的战术版本。边界演化定义了什么该开、什么该关，卫生规则定义了开的时候端什么样的食物。",
+      "relations": [
+        {"to": "ai-boundary-evolution", "type": "theme", "strength": 0.7},
+        {"to": "ai-lighthouse-boundary", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "codex-agent-workflow",
+      "title": "Codex Agent 协作工作流",
+      "worldTitle": "与 Codex 的协作纪律",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "让 Codex 成为可靠的世界维护者：任务分批、检查点前置、每步中文提交、门禁不破、Legacy 只读。",
+      "tags": ["tech", "agent", "workflow"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "Codex Agent 是世界的另一位居民。它需要纪律，也需要空间。经过 12 个 Phase 的协作，古月浮屿沉淀了一套让 Codex 稳定输出的协作方式。\n\n## 五条纪律\n\n第一条：任务分批。每个 Phase 拆到 5 个左右的任务，每个任务留一次可 revert 的 commit。第二条：检查点前置。每次改动前先跑 check:daily 建立基线。第三条：中文提交。commit 用 xxx(xxx): 中文xxx 格式，让日后回看有情绪线索。第四条：门禁不破。任何一次改动都不能让门禁变红，即使代价是拆分成两次 commit。第五条：Legacy 只读。_legacy 目录只做参考，不做二次修改。\n\n## 为什么这套纪律有效\n\n它把 Codex 的自主性放在一个稳定的护栏里：Codex 有权决定实现细节，创作者只需要判断方向与验收。每一次提交都是一次可回退的探索。\n\n## 与 AI 边界的关系\n\nCodex 是 AI，但它工作的对象是代码与文档，而不是内容摘要。因此它的边界与 ai-lighthouse 不同——Codex 需要更宽的读权限，但更严的写权限。",
+      "relations": [
+        {"to": "cli-tools-agent-integration", "type": "theme", "strength": 0.7},
+        {"to": "codex-cli-custom-provider-routing", "type": "reference", "strength": 0.6}
+      ]
+    }
+  ]
+}
