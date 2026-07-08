@@ -127,3 +127,15 @@ console.log('跳过节点:', skippedNodes)
 console.log('新增关系:', addedRelations)
 console.log('新增事件:', addedEvents)
 console.log('写入 markdown:', writtenFiles)
+console.log('提示：请运行 `npm run build:world-index` 以重建公开索引，或使用 --rebuild 参数。')
+
+// --rebuild 参数：自动触发 world-index 重建
+if (process.argv.includes('--rebuild')) {
+  const { spawnSync } = await import('node:child_process')
+  console.log('触发 build:world-index ...')
+  const r = spawnSync('npm', ['run', 'build:world-index'], { cwd: ROOT, stdio: 'inherit' })
+  if (r.status !== 0) {
+    console.error('build:world-index 失败')
+    process.exit(r.status || 1)
+  }
+}
