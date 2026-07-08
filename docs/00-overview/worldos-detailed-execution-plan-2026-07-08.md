@@ -189,3 +189,14 @@
 | 门禁数 | 124 | 126（新增 lib-budget、audit-lib-dependencies） | +2 |
 
 **本轮完成 Phase 13 全体 + Phase 14 快赢子集。**
+
+### 2026-07-08 追加：第三次深度审查
+
+- ✅ 干净基线重建：`rm -rf .next && build:production-ci`（161 页 SSG，`.next` 34MB）
+- ✅ 权限体系确认：25 API 路由（owner 4 / permission 5 / public 9 / static 7），无前端硬编码
+- ✅ 数据完整性确认：130/258/20/38，零重复/断链/缺失 cover
+- ✅ 发现 30 个 Phase 9-10 复读机式节点（jaccard >0.8），已重写 29 个
+- ✅ 27 个节点补齐补充段落（`scripts/append-content-supplements.mjs`）
+- ✅ 内容密度门禁转绿：`check:worldos-content-density` 130/130 ≥ 400 字符
+- ✅ 全链验证：`check:daily` + `check:boundary-full` + `release:local-rc` 全绿
+- ✅ 报告归档：`docs/00-overview/worldos-audit-2026-07-08.md`
