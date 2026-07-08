@@ -1245,7 +1245,7 @@
   },
   {
     "id": "rel-0127",
-    "from": "node-ai-boundary-evolution",
+    "from": "node-ai-boundary-evolution-vision",
     "to": "node-everything-node",
     "type": "theme",
     "strength": 0.6,
@@ -1255,7 +1255,7 @@
   },
   {
     "id": "rel-0128",
-    "from": "node-ai-boundary-evolution",
+    "from": "node-ai-boundary-evolution-vision",
     "to": "node-world-manifesto",
     "type": "reference",
     "strength": 0.4,
@@ -1536,7 +1536,7 @@
   {
     "id": "rel-0156",
     "from": "node-federation-draft",
-    "to": "node-ai-boundary-evolution",
+    "to": "node-ai-boundary-evolution-vision",
     "type": "reference",
     "strength": 0.3,
     "source": "manual",
@@ -1602,5 +1602,15 @@
     "source": "manual",
     "reviewed": true,
     "note": "傍晚散步记忆引用6月修复日志作为时间锚点。"
+  },
+  {
+    "id": "rel-0163",
+    "from": "node-world-protocol-guide",
+    "to": "node-world-audit-method-deep",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界协议入门指南与世界审计方法深化同属治理体系。"
   }
 ]

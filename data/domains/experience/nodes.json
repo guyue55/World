@@ -1948,7 +1948,7 @@
       "homelab"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -1975,7 +1975,7 @@
       "dns"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2002,7 +2002,7 @@
       "nginx"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2029,7 +2029,7 @@
       "cli"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2056,7 +2056,7 @@
       "design"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2083,7 +2083,7 @@
       "script"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2110,7 +2110,7 @@
       "extension"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2137,7 +2137,7 @@
       "data"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2164,7 +2164,7 @@
       "federation"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2191,7 +2191,7 @@
       "protocol"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2204,7 +2204,7 @@
     "reviewed": true
   },
   {
-    "id": "node-ai-boundary-evolution",
+    "id": "node-ai-boundary-evolution-vision",
     "slug": "ai-boundary-evolution-vision",
     "title": "AI 边界进化方向",
     "worldTitle": "灯塔进化论",
@@ -2218,7 +2218,7 @@
       "evolution"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2245,34 +2245,7 @@
       "governance"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
-    "source": "manual",
-    "layer": "interpretation",
-    "featured": {
-      "home": false,
-      "representative": false,
-      "pathCore": false
-    },
-    "createdAt": "2026-07-08",
-    "cover": "/covers/cover-world-gateway.svg",
-    "reviewed": true
-  },
-  {
-    "id": "node-world-health-metrics",
-    "slug": "world-health-metrics",
-    "title": "世界健康度指标",
-    "worldTitle": "世界生命体征",
-    "type": "article",
-    "areaId": "origin",
-    "summary": "定义世界的关键健康指标：节点覆盖率、关系密度、事件连续性等。",
-    "contentPath": "content/articles/world-health-metrics.md",
-    "tags": [
-      "world",
-      "metrics",
-      "audit"
-    ],
-    "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2299,7 +2272,7 @@
       "evolution"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2326,7 +2299,7 @@
       "review"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2352,7 +2325,7 @@
       "review"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2378,7 +2351,7 @@
       "life"
     ],
     "visibility": "public",
-    "lifeStage": "seedling",
+    "lifeStage": "seed",
     "source": "manual",
     "layer": "interpretation",
     "featured": {
@@ -2388,6 +2361,33 @@
     },
     "createdAt": "2026-07-08",
     "cover": "/covers/cover-memory-river.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-protocol-guide",
+    "slug": "world-protocol-guide",
+    "title": "世界协议入门指南",
+    "worldTitle": "协议星轨",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "世界协议是古月浮屿的数据结构、权限模型和导出格式的完整规范，让世界可被人类访问、AI 理解和其他工具互操作。",
+    "contentPath": "content/articles/world-protocol-guide.md",
+    "tags": [
+      "world",
+      "protocol",
+      "guide"
+    ],
+    "visibility": "public",
+    "lifeStage": "seed",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
     "reviewed": true
   }
 ]

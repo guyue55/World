@@ -203,7 +203,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "description": "修复日：整理关系星线，补充节点摘要。"
   },
   {
     "id": "event-2026-06-repair-day-w3",
@@ -216,7 +217,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "description": "修复日：检查权限边界，验证内容密度。"
   },
   {
     "id": "event-2026-06-monthly-report",
@@ -230,7 +232,8 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "description": "6月世界月报：内容持续生长，脚本治理收束。"
   },
   {
     "id": "evt-012",

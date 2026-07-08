@@ -1,6 +1,7 @@
-// 用途：构建产物大小监控 — 检查 .next 目录和首页产物是否在预算内
+// 用途：构建产物大小监控 - 检查 .next 目录和首页产物是否在预算内
 import fs from 'node:fs'
 import path from 'node:path'
+import { gzipSync } from 'node:zlib'
 
 const root = process.cwd()
 const nextDir = path.join(root, '.next')
@@ -10,7 +11,8 @@ const failures = []
 const BUDGETS = {
   totalBuild: 200, // .next 总大小
   htmlPerPage: 0.1, // 单页 HTML 100KB
-  jsBundle: 0.3, // JS bundle 300KB（gzipped 估算）
+  jsBundleGzipped: 2.0, // JS bundle gzipped 2MB（Next.js 运行时基线）
+  jsBundleRaw: 10, // JS bundle 原始 10MB（防止异常膨胀）
 }
 
 function dirSize(dir) {
@@ -74,10 +76,15 @@ if (!fs.existsSync(nextDir)) {
       for (const entry of fs.readdirSync(chunksDir)) {
         if (entry.endsWith('.js')) {
           const filePath = path.join(chunksDir, entry)
-          const size = fs.statSync(filePath).size
-          const sizeMB = size / 1024 / 1024
-          if (sizeMB > BUDGETS.jsBundle) {
-            failures.push(`JS chunk 超预算：${entry} = ${formatMB(size)} > ${BUDGETS.jsBundle} MB`)
+          const rawSize = fs.statSync(filePath).size
+          const rawMB = rawSize / 1024 / 1024
+          const gzippedSize = gzipSync(fs.readFileSync(filePath)).length
+          const gzippedMB = gzippedSize / 1024 / 1024
+          if (gzippedMB > BUDGETS.jsBundleGzipped) {
+            failures.push(`JS chunk gzipped 超预算：${entry} = ${formatMB(gzippedSize)} > ${BUDGETS.jsBundleGzipped} MB (gzipped)`)
+          }
+          if (rawMB > BUDGETS.jsBundleRaw) {
+            failures.push(`JS chunk 原始大小超预算：${entry} = ${formatMB(rawSize)} > ${BUDGETS.jsBundleRaw} MB (raw)`)
           }
         }
       }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T04:59:24.305Z",
+  "generatedAt": "2026-07-08T05:22:28.060Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -1502,7 +1502,7 @@
         "homelab"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1519,7 +1519,7 @@
         "dns"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1536,7 +1536,7 @@
         "nginx"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1553,7 +1553,7 @@
         "cli"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1570,7 +1570,7 @@
         "design"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1587,7 +1587,7 @@
         "script"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1604,7 +1604,7 @@
         "extension"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1621,7 +1621,7 @@
         "data"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1638,7 +1638,7 @@
         "federation"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1655,11 +1655,11 @@
         "protocol"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
-      "id": "node-ai-boundary-evolution",
+      "id": "node-ai-boundary-evolution-vision",
       "slug": "ai-boundary-evolution-vision",
       "title": "AI 边界进化方向",
       "worldTitle": "灯塔进化论",
@@ -1672,7 +1672,7 @@
         "evolution"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1689,24 +1689,7 @@
         "governance"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
-      "createdAt": "2026-07-08"
-    },
-    {
-      "id": "node-world-health-metrics",
-      "slug": "world-health-metrics",
-      "title": "世界健康度指标",
-      "worldTitle": "世界生命体征",
-      "type": "article",
-      "areaId": "origin",
-      "summary": "定义世界的关键健康指标：节点覆盖率、关系密度、事件连续性等。",
-      "tags": [
-        "world",
-        "metrics",
-        "audit"
-      ],
-      "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1723,7 +1706,7 @@
         "evolution"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1740,7 +1723,7 @@
         "review"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1756,7 +1739,7 @@
         "review"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     },
     {
@@ -1772,7 +1755,24 @@
         "life"
       ],
       "visibility": "public",
-      "lifeStage": "seedling",
+      "lifeStage": "seed",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-world-protocol-guide",
+      "slug": "world-protocol-guide",
+      "title": "世界协议入门指南",
+      "worldTitle": "协议星轨",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "世界协议是古月浮屿的数据结构、权限模型和导出格式的完整规范，让世界可被人类访问、AI 理解和其他工具互操作。",
+      "tags": [
+        "world",
+        "protocol",
+        "guide"
+      ],
+      "visibility": "public",
+      "lifeStage": "seed",
       "createdAt": "2026-07-08"
     }
   ],
@@ -2104,7 +2104,8 @@
         "world-inheritance-protocol-node",
         "world-index-protocol",
         "federation-draft",
-        "ai-boundary-evolution-vision"
+        "ai-boundary-evolution-vision",
+        "world-protocol-guide"
       ],
       "featured": {
         "recommended": true
@@ -2449,7 +2450,8 @@
         "archive"
       ],
       "visibility": "public",
-      "actor": "creator"
+      "actor": "creator",
+      "description": "6月世界月报：内容持续生长，脚本治理收束。"
     },
     {
       "id": "event-2026-06-repair-day-w3",
@@ -2462,7 +2464,8 @@
         "origin"
       ],
       "visibility": "public",
-      "actor": "creator"
+      "actor": "creator",
+      "description": "修复日：检查权限边界，验证内容密度。"
     },
     {
       "id": "event-2026-06-repair-day-w1",
@@ -2475,7 +2478,8 @@
         "origin"
       ],
       "visibility": "public",
-      "actor": "creator"
+      "actor": "creator",
+      "description": "修复日：整理关系星线，补充节点摘要。"
     },
     {
       "id": "evt-001",
@@ -2982,7 +2986,7 @@
         "weight": 53
       },
       {
-        "nodeId": "node-ai-boundary-evolution",
+        "nodeId": "node-ai-boundary-evolution-vision",
         "slug": "ai-boundary-evolution-vision",
         "title": "灯塔进化论",
         "summary": "AI 从低光到全光的进化路径，以及边界契约的演进方向。",
@@ -3459,15 +3463,6 @@
         "weight": 3
       },
       {
-        "nodeId": "node-world-health-metrics",
-        "slug": "world-health-metrics",
-        "title": "世界生命体征",
-        "summary": "定义世界的关键健康指标：节点覆盖率、关系密度、事件连续性等。",
-        "target": "archive",
-        "displayType": "archive-record",
-        "weight": 3
-      },
-      {
         "nodeId": "node-world-audit-method-deep",
         "slug": "world-audit-method-deep",
         "title": "世界体检手册",
@@ -3547,6 +3542,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 52
+      },
+      {
+        "nodeId": "node-world-protocol-guide",
+        "slug": "world-protocol-guide",
+        "title": "协议星轨",
+        "summary": "世界协议是古月浮屿的数据结构、权限模型和导出格式的完整规范，让世界可被人类访问、AI 理解和其他工具互操作。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
       },
       {
         "nodeId": "node-world-index-protocol",
@@ -4336,119 +4340,119 @@
         "slug": "homelab-network-notes",
         "title": "家庭网络星图",
         "areaId": "tech",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-dns-config-guide",
         "slug": "dns-config-guide",
         "title": "域名解析星轨",
         "areaId": "tech",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-reverse-proxy-setup",
         "slug": "reverse-proxy-setup",
         "title": "流量调度站",
         "areaId": "tech",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-git-advanced-tips",
         "slug": "git-advanced-tips",
         "title": "版本控制深潜",
         "areaId": "tech",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-cli-tool-design",
         "slug": "cli-tool-design-principles",
         "title": "终端工具美学",
         "areaId": "workshop",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-automation-script-patterns",
         "slug": "automation-script-patterns",
         "title": "流程自动星轨",
         "areaId": "workshop",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-chrome-extension-basics",
         "slug": "chrome-extension-basics",
         "title": "浏览器增强器",
         "areaId": "workshop",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-data-backup-strategy",
         "slug": "data-backup-strategy",
         "title": "记忆守护阵",
         "areaId": "workshop",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-world-index-protocol",
         "slug": "world-index-protocol",
         "title": "星际索引草案",
         "areaId": "fragments",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-federation-draft",
         "slug": "federation-draft",
         "title": "世界互联星图",
         "areaId": "fragments",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
-        "id": "node-ai-boundary-evolution",
+        "id": "node-ai-boundary-evolution-vision",
         "slug": "ai-boundary-evolution-vision",
         "title": "灯塔进化论",
         "areaId": "fragments",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-world-audit-method-deep",
         "slug": "world-audit-method-deep",
         "title": "世界体检手册",
         "areaId": "origin",
-        "lifeStage": "seedling"
-      },
-      {
-        "id": "node-world-health-metrics",
-        "slug": "world-health-metrics",
-        "title": "世界生命体征",
-        "areaId": "origin",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-world-evolution-log",
         "slug": "world-evolution-log",
         "title": "世界编年史",
         "areaId": "origin",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-monthly-fix-log-2026-06",
         "slug": "monthly-fix-log-2026-06",
         "title": "六月修复纪",
         "areaId": "timeline",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-quarterly-review-2026-q4",
         "slug": "quarterly-review-2026-q4",
         "title": "秋收冬藏",
         "areaId": "timeline",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
       },
       {
         "id": "node-evening-walk-memory",
         "slug": "evening-walk-memory",
         "title": "黄昏漫步",
         "areaId": "memory",
-        "lifeStage": "seedling"
+        "lifeStage": "seed"
+      },
+      {
+        "id": "node-world-protocol-guide",
+        "slug": "world-protocol-guide",
+        "title": "协议星轨",
+        "areaId": "origin",
+        "lifeStage": "seed"
       }
     ],
     "lines": [
@@ -5336,14 +5340,14 @@
       },
       {
         "id": "rel-0127",
-        "from": "node-ai-boundary-evolution",
+        "from": "node-ai-boundary-evolution-vision",
         "to": "node-everything-node",
         "type": "theme",
         "strength": 0.6
       },
       {
         "id": "rel-0128",
-        "from": "node-ai-boundary-evolution",
+        "from": "node-ai-boundary-evolution-vision",
         "to": "node-world-manifesto",
         "type": "reference",
         "strength": 0.4
@@ -5540,7 +5544,7 @@
       {
         "id": "rel-0156",
         "from": "node-federation-draft",
-        "to": "node-ai-boundary-evolution",
+        "to": "node-ai-boundary-evolution-vision",
         "type": "reference",
         "strength": 0.3
       },
@@ -5585,6 +5589,13 @@
         "to": "node-monthly-fix-log-2026-06",
         "type": "reference",
         "strength": 0.2
+      },
+      {
+        "id": "rel-0163",
+        "from": "node-world-protocol-guide",
+        "to": "node-world-audit-method-deep",
+        "type": "theme",
+        "strength": 0.7
       }
     ]
   }

@@ -63,8 +63,8 @@ export const relationSchema = z.object({
   id: z.string().optional(),
   from: z.string().min(1),
   to: z.string().min(1),
-  type: z.enum(['topic','time','project','place','person','memory','inspired','derived','implemented','summarized','publicVersionOf','privateSourceOf','revivedFrom']),
-  strength: z.union([z.literal(0.2), z.literal(0.5), z.literal(0.8), z.literal(1.0)]),
+  type: z.enum(['topic','time','project','place','person','memory','inspired','derived','implemented','summarized','publicVersionOf','privateSourceOf','revivedFrom','theme','reference','sequence']),
+  strength: z.union([z.literal(0.2), z.literal(0.3), z.literal(0.4), z.literal(0.5), z.literal(0.6), z.literal(0.7), z.literal(0.8), z.literal(1.0)]),
   note: z.string().optional(),
   source: z.enum(['manual','rule','ai','markdown-link']).optional(),
   reviewed: z.boolean().optional(),
@@ -83,14 +83,15 @@ export const pathSchema = z.object({
 
 export const worldEventSchema = z.object({
   id: z.string().min(1),
-  type: z.enum(['world-concept-formed','principle-created','node-created','node-updated','node-published','node-archived','node-revived','area-created','area-awakened','rule-triggered','ai-suggestion-approved','snapshot-created','season-changed']),
+  type: z.enum(['world-concept-formed','principle-created','node-created','node-updated','node-published','node-archived','node-revived','area-created','area-awakened','rule-triggered','ai-suggestion-approved','snapshot-created','season-changed','content','governance','maintenance','milestone']),
   title: z.string().min(1),
   date: z.string().min(1),
   description: z.string().min(1),
   nodeIds: z.array(z.string()).optional(),
   areaIds: z.array(z.string()).optional(),
   visibility: visibilitySchema.optional(),
-  actor: z.enum(['creator','rule','ai','system']).optional(),
+  actor: z.enum(['creator','rule','ai','system','worldos-kernel']).optional(),
+  summary: z.string().optional(),
 })
 
 export const worldStateSchema = z.object({
