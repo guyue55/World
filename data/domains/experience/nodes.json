@@ -10,8 +10,7 @@
     "contentPath": "content/manifesto/world-manifesto.md",
     "tags": [
       "world",
-      "manifesto",
-      "origin"
+      "principle"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -35,8 +34,7 @@
     "areaId": "origin",
     "summary": "古月浮屿所说的数字宇宙不是公共多人 3D 元宇宙，而是以内容、区域、关系、时间、权限和规则构成的个人数字世界。",
     "tags": [
-      "digital-universe",
-      "metaverse",
+      "world",
       "principle"
     ],
     "visibility": "public",
@@ -63,7 +61,7 @@
     "tags": [
       "ai",
       "lighthouse",
-      "policy"
+      "rule"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -87,7 +85,7 @@
     "areaId": "origin",
     "summary": "古月浮屿必须在没有 AI 时依然能够浏览、搜索、归档和行走。",
     "tags": [
-      "no-ai",
+      "boundary",
       "rule",
       "world"
     ],
@@ -113,8 +111,7 @@
     "summary": "Atlas 负责空间导航，Archive 负责现实检索。世界地图不是分类页，而是入口、位置和路径的表达。",
     "tags": [
       "atlas",
-      "space",
-      "ia"
+      "ux"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -137,9 +134,7 @@
     "areaId": "tech",
     "summary": "Zod、校验脚本和 public build check 共同保证世界数据不散、不泄露、不失控。",
     "tags": [
-      "zod",
       "schema",
-      "validation",
       "engineering"
     ],
     "visibility": "public",
@@ -163,9 +158,8 @@
     "areaId": "origin",
     "summary": "Relation、Backlinks 和 ForwardLinks 让节点之间形成可追溯的星线。",
     "tags": [
-      "relation",
-      "backlinks",
-      "graph"
+      "world",
+      "atlas"
     ],
     "visibility": "public",
     "lifeStage": "sprout",
@@ -185,10 +179,7 @@
     "areaId": "tech",
     "summary": "一次关于飞书 MCP、ADK Agent 与工具接入的技术探索。",
     "tags": [
-      "feishu",
-      "mcp",
-      "adk",
-      "agent",
+      "tool",
       "ai"
     ],
     "visibility": "public",
@@ -213,8 +204,8 @@
     "summary": "把 Codex、Claude Code、Gemini CLI、MCP、Skills 与自定义模型接入经验沉淀为可复用的工程工作流。",
     "tags": [
       "cli",
-      "agent",
-      "tools"
+      "ai",
+      "tool"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -239,9 +230,8 @@
     "areaId": "tech",
     "summary": "记录 Docker Desktop、阅读器、Kavita、epub 转换等本地环境排查经验，强调把踩坑转成可复用节点。",
     "tags": [
-      "docker",
-      "macos",
-      "cleanup"
+      "tech",
+      "maintenance"
     ],
     "visibility": "public",
     "lifeStage": "archive",
@@ -268,8 +258,8 @@
     "tags": [
       "ai",
       "novel",
-      "static-app",
-      "editor"
+      "tech",
+      "tool"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -292,8 +282,8 @@
     "areaId": "workshop",
     "summary": "月帧阁 / MoonFrame 是把视觉、故事、AI 工具和个人表达连接起来的产品工坊种子。",
     "tags": [
-      "moonframe",
-      "ai-creation",
+      "novel",
+      "ai",
       "product"
     ],
     "visibility": "public",
@@ -366,8 +356,7 @@
     "summary": "这里会保存一些被允许公开的生活片刻与旅行光影，更深处默认被保护。",
     "tags": [
       "memory",
-      "life",
-      "lake"
+      "life"
     ],
     "visibility": "public",
     "lifeStage": "sprout",
@@ -389,9 +378,8 @@
     "summary": "把 Gemini CLI、Skills、飞书/Workspace/GitHub 等工具接入经验整理成可复用的 Agent 工作流节点。",
     "contentPath": "content/articles/gemini-cli-skills-agent-workflow.md",
     "tags": [
-      "gemini",
+      "ai",
       "skills",
-      "agent",
       "workflow"
     ],
     "visibility": "public",
@@ -416,7 +404,7 @@
     "summary": "记录自定义 Base URL、responses/chat 端点、模型路由、API Key 误指向等问题，沉淀为命令行 AI 工具排查范式。",
     "contentPath": "content/articles/codex-cli-custom-provider-routing.md",
     "tags": [
-      "codex",
+      "ai",
       "cli",
       "provider",
       "routing"
@@ -442,10 +430,9 @@
     "summary": "把 RustDesk hbbs/hbbr、端口、UDP、firewalld、Docker 网络等排查过程归入技术星域。",
     "contentPath": "content/articles/rustdesk-relay-network-notes.md",
     "tags": [
-      "rustdesk",
+      "tool",
       "network",
-      "docker",
-      "firewall"
+      "tech"
     ],
     "visibility": "public",
     "lifeStage": "sprout",
@@ -465,7 +452,7 @@
     "summary": "记录 TXT 小说、多层目录、编码、去重、系列拆分和阅读器服务的工程化整理方案。",
     "contentPath": "content/articles/kavita-reader-txt-epub-pipeline.md",
     "tags": [
-      "reader",
+      "tool",
       "epub",
       "kavita",
       "archive"
@@ -488,10 +475,9 @@
     "summary": "面向出海站点检测的 AI 报告 Demo，包含真实抓取、竞品、白皮书、评分、解决建议和演练交互。",
     "contentPath": "content/projects/ai-website-audit-report-demo.md",
     "tags": [
-      "ai-report",
+      "ai",
       "audit",
-      "b2b",
-      "demo"
+      "product"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -516,8 +502,8 @@
     "summary": "把 Node、Area、Relation、Path、Timeline、Permission 组合为可生成首页、地图、路径和档案的世界引擎。",
     "contentPath": "content/projects/worldos-engine.md",
     "tags": [
-      "worldos",
-      "engine",
+      "world",
+      "tool",
       "node",
       "projection"
     ],
@@ -545,7 +531,6 @@
     "contentPath": "content/projects/ai-novel-workbench.md",
     "tags": [
       "novel",
-      "writing",
       "ai",
       "workbench"
     ],
@@ -567,9 +552,9 @@
     "summary": "一个从水墨软件图标开始的 Mac 右键助手产品种子，记录视觉、工具和发布感。",
     "contentPath": "content/projects/mac-right-click-assistant.md",
     "tags": [
-      "mac",
+      "tech",
       "tool",
-      "icon",
+      "visual",
       "product"
     ],
     "visibility": "public",
@@ -592,7 +577,7 @@
     "tags": [
       "principle",
       "rule",
-      "world-kernel"
+      "world"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -642,7 +627,6 @@
     "contentPath": "content/rules/progressive-disclosure-world.md",
     "tags": [
       "ux",
-      "navigation",
       "world"
     ],
     "visibility": "public",
@@ -667,9 +651,8 @@
     "summary": "每个节点都应记录来源、原始输入、生成者、AI 参与和人工审核状态，保证多年后仍可追溯。",
     "contentPath": "content/rules/content-source-birth-certificate.md",
     "tags": [
-      "provenance",
-      "archive",
-      "trust"
+      "passport",
+      "archive"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -689,7 +672,7 @@
     "summary": "统一创世原点、时间河、技术星域、产品工坊、记忆湖、AI 灯塔等世界词和现实名。",
     "contentPath": "content/documents/world-language-glossary.md",
     "tags": [
-      "glossary",
+      "passport",
       "language",
       "archive"
     ],
@@ -781,7 +764,6 @@
     "contentPath": "content/events/world-monthly-report-ritual.md",
     "tags": [
       "review",
-      "yearbook",
       "timeline"
     ],
     "visibility": "public",
@@ -803,7 +785,6 @@
     "contentPath": "content/documents/world-cover-visual-set.md",
     "tags": [
       "visual",
-      "cover",
       "design"
     ],
     "visibility": "public",
@@ -826,7 +807,7 @@
     "tags": [
       "memory",
       "life",
-      "public-layer"
+      "public"
     ],
     "visibility": "public",
     "lifeStage": "seed",
@@ -895,7 +876,6 @@
     "contentPath": "content/rules/real-mode-safety-exit.md",
     "tags": [
       "archive",
-      "accessibility",
       "ux"
     ],
     "visibility": "public",
@@ -916,9 +896,8 @@
     "summary": "记录 RC1 阶段暴露的 legacy runtime、外部证据缺失、内容密度不足和构建后段风险，并说明本轮如何处理。",
     "contentPath": "content/articles/worldos-rc1-lessons.md",
     "tags": [
-      "release",
       "rc",
-      "kernel",
+      "world",
       "legacy"
     ],
     "visibility": "public",
@@ -943,9 +922,8 @@
     "summary": "把正式主线、内部实验、历史阶段线和发布门禁分清楚，降低未来维护时误入旧宇宙层的风险。",
     "contentPath": "content/documents/worldos-mainline-code-map.md",
     "tags": [
-      "mainline",
-      "architecture",
-      "governance"
+      "governance",
+      "architecture"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -971,7 +949,7 @@
     "tags": [
       "legacy",
       "audit",
-      "runtime"
+      "world"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -995,8 +973,7 @@
     "contentPath": "content/rules/mainline-import-boundary.md",
     "tags": [
       "boundary",
-      "imports",
-      "world-kernel"
+      "world"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -1019,9 +996,9 @@
     "summary": "把脚本分成主线、发布、内容、体验、legacy 五类，给未来 CI 和本地检查一个可理解的入口。",
     "contentPath": "content/documents/script-taxonomy-gate.md",
     "tags": [
-      "scripts",
-      "ci",
-      "quality-gate"
+      "script",
+      "governance",
+      "quality"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -1044,9 +1021,9 @@
     "summary": "为公开、私密、内部、legacy 路由建立归属说明，让 sitemap、robots、middleware 和导航保持一致。",
     "contentPath": "content/documents/route-ownership-map.md",
     "tags": [
-      "routes",
+      "routing",
       "middleware",
-      "sitemap"
+      "atlas"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -1070,7 +1047,7 @@
     "contentPath": "content/rules/server-side-permission-boundary.md",
     "tags": [
       "permission",
-      "server-side",
+      "middleware",
       "privacy"
     ],
     "visibility": "public",
@@ -1095,8 +1072,8 @@
     "summary": "为键盘、焦点、语义、低动效和颜色对比建立公开验收要求，让世界感不牺牲可访问性。",
     "contentPath": "content/articles/accessibility-public-baseline.md",
     "tags": [
-      "accessibility",
-      "public-experience",
+      "ux",
+      "public",
       "rc"
     ],
     "visibility": "public",
@@ -1121,7 +1098,7 @@
     "contentPath": "content/articles/performance-budget-discipline.md",
     "tags": [
       "performance",
-      "motion",
+      "visual",
       "budget"
     ],
     "visibility": "public",
@@ -1145,8 +1122,8 @@
     "summary": "移动端要保留世界入口、反迷路罗盘、静读模式和现实检索，不把桌面动效硬塞进小屏。",
     "contentPath": "content/articles/mobile-world-acceptance.md",
     "tags": [
-      "mobile",
-      "experience",
+      "visual",
+      "world",
       "acceptance"
     ],
     "visibility": "public",
@@ -1171,7 +1148,7 @@
     "contentPath": "content/rules/public-ai-context-contract.md",
     "tags": [
       "ai",
-      "public-context",
+      "public",
       "privacy"
     ],
     "visibility": "public",
@@ -1196,9 +1173,8 @@
     "summary": "把维护动作拆成 1 分钟记录、5 分钟整理、15 分钟连星、30 分钟修复，避免世界成为负担。",
     "contentPath": "content/documents/creator-low-energy-maintenance.md",
     "tags": [
-      "creator",
-      "maintenance",
-      "operations"
+      "world",
+      "maintenance"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -1221,9 +1197,9 @@
     "summary": "记录在暂不方便运行和部署时，如何继续解决本地可修问题：内容、体验、门禁和项目口径。",
     "contentPath": "content/articles/worldos-rc2-nondeploy-lessons.md",
     "tags": [
-      "rc2",
+      "rc",
       "nondeploy",
-      "lessons"
+      "review"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -1247,9 +1223,8 @@
     "summary": "RC3 聚焦主线治理、脚本分类、legacy 足迹和内容质量继续补厚，避免继续靠阶段线堆叠。",
     "contentPath": "content/documents/worldos-rc3-governance.md",
     "tags": [
-      "rc3",
-      "governance",
-      "mainline"
+      "rc",
+      "governance"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1273,8 +1248,8 @@
     "summary": "把项目运转固定为小步提交、中文注释、边界先行、门禁可复跑、生产状态诚实，不因概念热度破坏工程秩序。",
     "contentPath": "content/rules/worldos-project-operating-principles.md",
     "tags": [
-      "project",
-      "operating-principles",
+      "world",
+      "principle",
       "quality"
     ],
     "visibility": "public",
@@ -1298,7 +1273,7 @@
     "summary": "记录 Codex Skills 在实际项目中的编排经验与边界纪律。",
     "contentPath": "content/articles/codex-skills-workflow.md",
     "tags": [
-      "codex",
+      "ai",
       "skills",
       "workflow"
     ],
@@ -1320,8 +1295,8 @@
     "summary": "Claude Code 在长文本分析和代码审查中的集成实践。",
     "contentPath": "content/articles/claude-code-integration.md",
     "tags": [
-      "claude",
-      "integration",
+      "ai",
+      "interop",
       "review"
     ],
     "visibility": "public",
@@ -1342,9 +1317,9 @@
     "summary": "Model Context Protocol 在个人工作流中的实践与踩坑。",
     "contentPath": "content/articles/mcp-protocol-practice.md",
     "tags": [
-      "mcp",
+      "ai",
       "protocol",
-      "tools"
+      "tool"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1364,9 +1339,8 @@
     "summary": "Playwright 在世界验收和截图测试中的自动化实践。",
     "contentPath": "content/articles/playwright-browser-automation.md",
     "tags": [
-      "playwright",
-      "automation",
-      "testing"
+      "testing",
+      "automation"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1386,9 +1360,7 @@
     "summary": "Next.js 15 在 Vercel 和本地 LAN 环境的部署对比与经验。",
     "contentPath": "content/articles/nextjs-deployment-experience.md",
     "tags": [
-      "nextjs",
-      "deployment",
-      "vercel"
+      "tech"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1408,9 +1380,9 @@
     "summary": "TypeScript 严格模式在 WorldOS 项目中的配置与实践。",
     "contentPath": "content/articles/typescript-strict-mode-guide.md",
     "tags": [
-      "typescript",
-      "strict",
-      "safety"
+      "tech",
+      "quality",
+      "boundary"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1432,7 +1404,7 @@
     "tags": [
       "git",
       "workflow",
-      "discipline"
+      "boundary"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1452,9 +1424,7 @@
     "summary": "Tailwind CSS 在世界页面中的响应式适配实践。",
     "contentPath": "content/articles/tailwind-responsive-design.md",
     "tags": [
-      "tailwind",
-      "responsive",
-      "css"
+      "visual"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1496,9 +1466,9 @@
     "summary": "从旧格式迁移到世界节点结构的自动化脚本经验。",
     "contentPath": "content/articles/content-migration-script.md",
     "tags": [
-      "migration",
+      "maintenance",
       "script",
-      "content"
+      "world"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1518,8 +1488,8 @@
     "summary": "自动生成公开世界对象索引的工具设计与实现。",
     "contentPath": "content/articles/world-index-generator.md",
     "tags": [
-      "index",
-      "generator",
+      "export",
+      "tool",
       "public"
     ],
     "visibility": "public",
@@ -1540,7 +1510,7 @@
     "summary": "世界维护者的本地工作台设计原则与交互边界。",
     "contentPath": "content/articles/owner-workbench-design.md",
     "tags": [
-      "owner",
+      "world",
       "workbench",
       "design"
     ],
@@ -1563,7 +1533,6 @@
     "contentPath": "content/articles/maintenance-command-design.md",
     "tags": [
       "command",
-      "spine",
       "maintenance"
     ],
     "visibility": "public",
@@ -1586,7 +1555,7 @@
     "tags": [
       "protocol",
       "world",
-      "rules"
+      "rule"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1607,8 +1576,7 @@
     "contentPath": "content/articles/world-audit-method.md",
     "tags": [
       "audit",
-      "method",
-      "health"
+      "metrics"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1629,8 +1597,7 @@
     "contentPath": "content/articles/world-health-metrics.md",
     "tags": [
       "metrics",
-      "health",
-      "dashboard"
+      "tool"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1650,7 +1617,7 @@
     "summary": "定义世界在创作者不在后如何处理的协议文档。",
     "contentPath": "content/articles/world-inheritance-protocol-node.md",
     "tags": [
-      "inheritance",
+      "export",
       "protocol",
       "legacy"
     ],
@@ -1672,8 +1639,7 @@
     "summary": "从 RC8 到真实上线的准备过程与待办清单。",
     "contentPath": "content/articles/rc9-preparation-record.md",
     "tags": [
-      "rc9",
-      "release",
+      "rc",
       "timeline"
     ],
     "visibility": "public",
@@ -1695,8 +1661,7 @@
     "contentPath": "content/articles/monthly-fix-log-2026-07.md",
     "tags": [
       "fix",
-      "monthly",
-      "log"
+      "timeline"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1716,9 +1681,9 @@
     "summary": "第三季度世界方向审视与下阶段调整记录。",
     "contentPath": "content/articles/quarterly-review-2026-q3.md",
     "tags": [
-      "quarterly",
+      "timeline",
       "review",
-      "direction"
+      "vision"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1805,7 +1770,7 @@
     "contentPath": "content/articles/world-language-style-guide.md",
     "tags": [
       "language",
-      "style",
+      "visual",
       "guide"
     ],
     "visibility": "public",
@@ -1826,8 +1791,8 @@
     "summary": "不同季节窗边光线的脱敏记录与四季感受。",
     "contentPath": "content/articles/seasonal-light-record.md",
     "tags": [
-      "season",
-      "light",
+      "timeline",
+      "lighthouse",
       "memory"
     ],
     "visibility": "public",
@@ -1848,7 +1813,7 @@
     "summary": "世界修复日仪式的公开片段与维护心得。",
     "contentPath": "content/articles/repair-day-ritual-public.md",
     "tags": [
-      "repair",
+      "maintenance",
       "ritual",
       "public"
     ],
@@ -1870,9 +1835,7 @@
     "summary": "一段关于晨间咖啡与工作节奏的脱敏记忆。",
     "contentPath": "content/articles/morning-coffee-coordinates.md",
     "tags": [
-      "morning",
-      "coffee",
-      "routine"
+      "life"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1892,7 +1855,7 @@
     "summary": "从旧博客到世界节点结构的内容迁移历史记录。",
     "contentPath": "content/articles/content-migration-history.md",
     "tags": [
-      "migration",
+      "maintenance",
       "history",
       "archive"
     ],
@@ -1958,7 +1921,7 @@
     "summary": "灯塔 AI 问答的提示词设计与上下文裁剪策略。",
     "contentPath": "content/articles/lighthouse-prompt-engineering.md",
     "tags": [
-      "prompt",
+      "ai",
       "engineering",
       "lighthouse"
     ],
@@ -1968,6 +1931,463 @@
     "layer": "interpretation",
     "featured": {},
     "createdAt": "2026-07-08",
+    "reviewed": true
+  },
+  {
+    "id": "node-homelab-network",
+    "slug": "homelab-network-notes",
+    "title": "Homelab 网络搭建笔记",
+    "worldTitle": "家庭网络星图",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "从光猫到交换机，一份务实的家庭网络搭建与排查指南。",
+    "contentPath": "content/articles/homelab-network-notes.md",
+    "tags": [
+      "tech",
+      "network",
+      "homelab"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-dns-config-guide",
+    "slug": "dns-config-guide",
+    "title": "DNS 配置与排障指南",
+    "worldTitle": "域名解析星轨",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "DNS 是互联网的电话簿，这里记录常用配置和排障方法。",
+    "contentPath": "content/articles/dns-config-guide.md",
+    "tags": [
+      "tech",
+      "network",
+      "dns"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-reverse-proxy-setup",
+    "slug": "reverse-proxy-setup",
+    "title": "反向代理配置实战",
+    "worldTitle": "流量调度站",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "Nginx 和 Caddy 反向代理的配置方法与常见坑点。",
+    "contentPath": "content/articles/reverse-proxy-setup.md",
+    "tags": [
+      "tech",
+      "network",
+      "nginx"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-git-advanced-tips",
+    "slug": "git-advanced-tips",
+    "title": "Git 进阶技巧集",
+    "worldTitle": "版本控制深潜",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "rebase、cherry-pick、bisect 等 Git 进阶操作的实际用法。",
+    "contentPath": "content/articles/git-advanced-tips.md",
+    "tags": [
+      "tech",
+      "git",
+      "cli"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-cli-tool-design",
+    "slug": "cli-tool-design-principles",
+    "title": "命令行工具设计原则",
+    "worldTitle": "终端工具美学",
+    "type": "article",
+    "areaId": "workshop",
+    "summary": "好的 CLI 工具像一把称手的刀，这里记录设计原则和实践经验。",
+    "contentPath": "content/articles/cli-tool-design-principles.md",
+    "tags": [
+      "product",
+      "cli",
+      "design"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-automation-script-patterns",
+    "slug": "automation-script-patterns",
+    "title": "自动化脚本模式",
+    "worldTitle": "流程自动星轨",
+    "type": "article",
+    "areaId": "workshop",
+    "summary": "从 cron 到 systemd timer，自动化脚本的常见模式和最佳实践。",
+    "contentPath": "content/articles/automation-script-patterns.md",
+    "tags": [
+      "product",
+      "automation",
+      "script"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-chrome-extension-basics",
+    "slug": "chrome-extension-basics",
+    "title": "Chrome 扩展开发基础",
+    "worldTitle": "浏览器增强器",
+    "type": "article",
+    "areaId": "workshop",
+    "summary": "Manifest V3 时代的 Chrome 扩展开发入门与实战。",
+    "contentPath": "content/articles/chrome-extension-basics.md",
+    "tags": [
+      "product",
+      "chrome",
+      "extension"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-data-backup-strategy",
+    "slug": "data-backup-strategy",
+    "title": "数据备份策略",
+    "worldTitle": "记忆守护阵",
+    "type": "article",
+    "areaId": "workshop",
+    "summary": "3-2-1 备份原则在个人项目中的实践，从本地到云端的多层防护。",
+    "contentPath": "content/articles/data-backup-strategy.md",
+    "tags": [
+      "product",
+      "backup",
+      "data"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-index-protocol",
+    "slug": "world-index-protocol",
+    "title": "世界索引协议设想",
+    "worldTitle": "星际索引草案",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "让个人世界的索引可被其他世界发现和引用的协议草案。",
+    "contentPath": "content/fragments/world-index-protocol.md",
+    "tags": [
+      "world",
+      "protocol",
+      "federation"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-federation-draft",
+    "slug": "federation-draft",
+    "title": "联邦化草案",
+    "worldTitle": "世界互联星图",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "多个个人世界之间的星线互联：从协议到实践的初步探索。",
+    "contentPath": "content/fragments/federation-draft.md",
+    "tags": [
+      "world",
+      "federation",
+      "protocol"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-ai-boundary-evolution",
+    "slug": "ai-boundary-evolution-vision",
+    "title": "AI 边界进化方向",
+    "worldTitle": "灯塔进化论",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "AI 从低光到全光的进化路径，以及边界契约的演进方向。",
+    "contentPath": "content/fragments/ai-boundary-evolution-vision.md",
+    "tags": [
+      "ai",
+      "lighthouse",
+      "evolution"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-audit-method-deep",
+    "slug": "world-audit-method-deep",
+    "title": "世界审计方法深化",
+    "worldTitle": "世界体检手册",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "从内容密度到权限边界，一套完整的世界健康度审计方法论。",
+    "contentPath": "content/articles/world-audit-method-deep.md",
+    "tags": [
+      "world",
+      "audit",
+      "governance"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-health-metrics",
+    "slug": "world-health-metrics",
+    "title": "世界健康度指标",
+    "worldTitle": "世界生命体征",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "定义世界的关键健康指标：节点覆盖率、关系密度、事件连续性等。",
+    "contentPath": "content/articles/world-health-metrics.md",
+    "tags": [
+      "world",
+      "metrics",
+      "audit"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-evolution-log",
+    "slug": "world-evolution-log",
+    "title": "世界进化日志",
+    "worldTitle": "世界编年史",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "记录世界从诞生到现在的关键进化节点和设计决策。",
+    "contentPath": "content/articles/world-evolution-log.md",
+    "tags": [
+      "world",
+      "history",
+      "evolution"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-monthly-fix-log-2026-06",
+    "slug": "monthly-fix-log-2026-06",
+    "title": "2026年6月修复日志",
+    "worldTitle": "六月修复纪",
+    "type": "article",
+    "areaId": "timeline",
+    "summary": "6月的修复日记录：关系补充、标签整理、性能优化等。",
+    "contentPath": "content/articles/monthly-fix-log-2026-06.md",
+    "tags": [
+      "timeline",
+      "maintenance",
+      "review"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-river.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-quarterly-review-2026-q4",
+    "slug": "quarterly-review-2026-q4",
+    "title": "2026年Q4季度回望",
+    "worldTitle": "秋收冬藏",
+    "type": "article",
+    "areaId": "timeline",
+    "summary": "Q4季度回望：世界从内容深耕到传承就绪的完整旅程。",
+    "contentPath": "content/articles/quarterly-review-2026-q4.md",
+    "tags": [
+      "timeline",
+      "review"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-river.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-evening-walk-memory",
+    "slug": "evening-walk-memory",
+    "title": "傍晚散步坐标",
+    "worldTitle": "黄昏漫步",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "一个普通的傍晚，走在熟悉的路上，世界忽然安静下来。",
+    "contentPath": "content/memory/evening-walk-memory.md",
+    "tags": [
+      "memory",
+      "life"
+    ],
+    "visibility": "public",
+    "lifeStage": "seedling",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-river.svg",
     "reviewed": true
   }
 ]

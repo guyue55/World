@@ -12,7 +12,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "古月浮屿的世界观开始形成事件记录"
   },
   {
     "id": "evt-002",
@@ -27,7 +28,8 @@
       "lighthouse"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "AI 是灯塔，不是太阳事件记录"
   },
   {
     "id": "evt-003",
@@ -42,7 +44,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "宇宙感不是 3D事件记录"
   },
   {
     "id": "evt-004",
@@ -61,7 +64,8 @@
       "lighthouse"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "第一张世界地图被点亮事件记录"
   },
   {
     "id": "evt-005",
@@ -77,7 +81,8 @@
       "node-ai-lighthouse",
       "node-no-ai",
       "node-world-space"
-    ]
+    ],
+    "summary": "第一批节点被安放事件记录"
   },
   {
     "id": "evt-phase2-001",
@@ -94,7 +99,8 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "首页从骨架入口转向真实世界入口事件记录"
   },
   {
     "id": "evt-phase2-002",
@@ -107,7 +113,8 @@
       "timeline"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "导航与交互状态修复事件记录"
   },
   {
     "id": "evt-phase2-003",
@@ -123,7 +130,8 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "档案馆成为现实检索入口事件记录"
   },
   {
     "id": "evt-phase2-004",
@@ -140,7 +148,8 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "节点详情页形成阅读与探索闭环事件记录"
   },
   {
     "id": "evt-phase2-005",
@@ -158,7 +167,8 @@
       "memory"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "路径导览面向不同访问者成形事件记录"
   },
   {
     "id": "evt-phase2-006",
@@ -179,7 +189,48 @@
       "lighthouse"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "Atlas 从区域网格升级为空间入口"
+  },
+  {
+    "id": "event-2026-06-repair-day-w1",
+    "type": "maintenance",
+    "title": "6月第一周修复日",
+    "date": "2026-06-07",
+    "summary": "修复日：整理关系星线，补充节点摘要。",
+    "nodeIds": [],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "event-2026-06-repair-day-w3",
+    "type": "maintenance",
+    "title": "6月第三周修复日",
+    "date": "2026-06-21",
+    "summary": "修复日：检查权限边界，验证内容密度。",
+    "nodeIds": [],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "creator"
+  },
+  {
+    "id": "event-2026-06-monthly-report",
+    "type": "milestone",
+    "title": "世界月报：2026年6月",
+    "date": "2026-06-30",
+    "summary": "6月世界月报：内容持续生长，脚本治理收束。",
+    "nodeIds": [],
+    "areaIds": [
+      "origin",
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "creator"
   },
   {
     "id": "evt-012",
@@ -200,7 +251,8 @@
       "memory"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "RC2 内容密度修复启动事件记录"
   },
   {
     "id": "evt-013",
@@ -215,7 +267,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "前台浪漫、后台清醒、档案可靠被固化事件记录"
   },
   {
     "id": "evt-014",
@@ -228,7 +281,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "内容质量门禁进入 RC 链路事件记录"
   },
   {
     "id": "evt-015",
@@ -243,7 +297,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "8 分钟路径被安放事件记录"
   },
   {
     "id": "evt-016",
@@ -258,7 +313,8 @@
       "timeline"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "RC2 非部署修复线完成事件记录"
   },
   {
     "id": "evt-017",
@@ -273,7 +329,8 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "主线代码地图被确认为长期治理对象事件记录"
   },
   {
     "id": "evt-018",
@@ -288,7 +345,8 @@
       "lighthouse"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "公开 AI 上下文边界被补入公开规则"
   },
   {
     "id": "evt-019",
@@ -303,7 +361,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "RC3 主线治理计划生成事件记录"
   },
   {
     "id": "evt-020",
@@ -318,7 +377,8 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "system"
+    "actor": "system",
+    "summary": "脚本分类门禁进入候选发布链路事件记录"
   },
   {
     "id": "evt-021",
@@ -333,7 +393,24 @@
       "lighthouse"
     ],
     "visibility": "public",
-    "actor": "creator"
+    "actor": "creator",
+    "summary": "服务端权限边界再次加固事件记录"
+  },
+  {
+    "id": "evt-030",
+    "type": "governance",
+    "title": "全局未来规划文档输出",
+    "date": "2026-07-07",
+    "description": "全局未来规划文档完成，定义6个里程碑和6个Phase的演进路线。",
+    "nodeIds": [
+      "node-worldos-project-operating-principles"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "全局未来规划文档输出事件记录"
   },
   {
     "id": "evt-022",
@@ -350,7 +427,8 @@
       "memory"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "内容补齐收尾完成事件记录"
   },
   {
     "id": "evt-023",
@@ -370,7 +448,8 @@
       "lighthouse"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "核心节点扩写至3000+字符事件记录"
   },
   {
     "id": "evt-024",
@@ -388,7 +467,8 @@
       "tech"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "技术星域节点补全事件记录"
   },
   {
     "id": "evt-025",
@@ -407,7 +487,8 @@
       "fragments"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "公开节点扩展至83个事件记录"
   },
   {
     "id": "evt-026",
@@ -424,7 +505,8 @@
       "origin"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "路径扩展至15条事件记录"
   },
   {
     "id": "evt-027",
@@ -440,7 +522,8 @@
       "tech"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "关系星线加密至144条事件记录"
   },
   {
     "id": "evt-028",
@@ -455,7 +538,8 @@
       "tech"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "内容密度门禁提升准备事件记录"
   },
   {
     "id": "evt-029",
@@ -470,21 +554,7 @@
       "archive"
     ],
     "visibility": "public",
-    "actor": "worldos-kernel"
-  },
-  {
-    "id": "evt-030",
-    "type": "governance",
-    "title": "全局未来规划文档输出",
-    "date": "2026-07-07",
-    "description": "全局未来规划文档完成，定义6个里程碑和6个Phase的演进路线。",
-    "nodeIds": [
-      "node-worldos-project-operating-principles"
-    ],
-    "areaIds": [
-      "origin"
-    ],
-    "visibility": "public",
-    "actor": "worldos-kernel"
+    "actor": "worldos-kernel",
+    "summary": "执行计划制定完成事件记录"
   }
 ]

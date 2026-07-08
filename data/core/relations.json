@@ -1422,5 +1422,185 @@
     "source": "manual",
     "reviewed": true,
     "note": "灯塔提示词工程 跨区域引用 古月浮屿世界宣言。"
+  },
+  {
+    "id": "rel-0145",
+    "from": "node-homelab-network",
+    "to": "node-dns-config-guide",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Homelab 网络搭建笔记 与 DNS 配置指南 同属网络主题。"
+  },
+  {
+    "id": "rel-0146",
+    "from": "node-homelab-network",
+    "to": "node-reverse-proxy-setup",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Homelab 网络搭建笔记 与 反向代理配置实战 属于基础设施关联。"
+  },
+  {
+    "id": "rel-0147",
+    "from": "node-reverse-proxy-setup",
+    "to": "node-dns-config-guide",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "反向代理配置与 DNS 配置同属网络服务。"
+  },
+  {
+    "id": "rel-0148",
+    "from": "node-git-advanced-tips",
+    "to": "node-homelab-network",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Git 进阶技巧 跨主题引用 Homelab 网络笔记。"
+  },
+  {
+    "id": "rel-0149",
+    "from": "node-git-advanced-tips",
+    "to": "node-reverse-proxy-setup",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Git 进阶与反向代理同属技术实践。"
+  },
+  {
+    "id": "rel-0150",
+    "from": "node-cli-tool-design",
+    "to": "node-automation-script-patterns",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "命令行工具设计与自动化脚本模式同属工程实践。"
+  },
+  {
+    "id": "rel-0151",
+    "from": "node-cli-tool-design",
+    "to": "node-git-advanced-tips",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "CLI 设计原则引用 Git 进阶技巧作为实践案例。"
+  },
+  {
+    "id": "rel-0152",
+    "from": "node-chrome-extension-basics",
+    "to": "node-cli-tool-design",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Chrome 扩展开发引用 CLI 设计原则。"
+  },
+  {
+    "id": "rel-0153",
+    "from": "node-data-backup-strategy",
+    "to": "node-automation-script-patterns",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "数据备份策略与自动化脚本模式关联。"
+  },
+  {
+    "id": "rel-0154",
+    "from": "node-world-index-protocol",
+    "to": "node-federation-draft",
+    "type": "theme",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界索引协议与联邦化草案同属世界互联主题。"
+  },
+  {
+    "id": "rel-0155",
+    "from": "node-ai-boundary-evolution",
+    "to": "node-world-index-protocol",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 边界进化引用世界索引协议作为上下文来源。"
+  },
+  {
+    "id": "rel-0156",
+    "from": "node-federation-draft",
+    "to": "node-ai-boundary-evolution",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "联邦化草案引用 AI 边界进化方向。"
+  },
+  {
+    "id": "rel-0157",
+    "from": "node-world-audit-method-deep",
+    "to": "node-world-health-metrics",
+    "type": "theme",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界审计方法与世界健康度指标同属治理体系。"
+  },
+  {
+    "id": "rel-0158",
+    "from": "node-world-evolution-log",
+    "to": "node-world-audit-method-deep",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界进化日志引用审计方法。"
+  },
+  {
+    "id": "rel-0159",
+    "from": "node-world-evolution-log",
+    "to": "node-world-health-metrics",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界进化日志引用健康度指标。"
+  },
+  {
+    "id": "rel-0160",
+    "from": "node-monthly-fix-log-2026-06",
+    "to": "node-quarterly-review-2026-q4",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "6月修复日志与Q4季度回望同属时间线记录。"
+  },
+  {
+    "id": "rel-0161",
+    "from": "node-monthly-fix-log-2026-06",
+    "to": "node-world-evolution-log",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "6月修复日志引用世界进化日志。"
+  },
+  {
+    "id": "rel-0162",
+    "from": "node-evening-walk-memory",
+    "to": "node-monthly-fix-log-2026-06",
+    "type": "reference",
+    "strength": 0.2,
+    "source": "manual",
+    "reviewed": true,
+    "note": "傍晚散步记忆引用6月修复日志作为时间锚点。"
   }
 ]

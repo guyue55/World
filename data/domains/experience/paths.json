@@ -43,7 +43,11 @@
       "nextjs-deployment-experience",
       "typescript-strict-mode-guide",
       "git-workflow-patterns",
-      "tailwind-responsive-design"
+      "tailwind-responsive-design",
+      "homelab-network-notes",
+      "dns-config-guide",
+      "reverse-proxy-setup",
+      "git-advanced-tips"
     ],
     "nextPathIds": [
       "how-world-created"
@@ -79,7 +83,8 @@
       "world-manifesto",
       "seasonal-light-record",
       "repair-day-ritual-public",
-      "morning-coffee-coordinates"
+      "morning-coffee-coordinates",
+      "evening-walk-memory"
     ],
     "nextPathIds": [
       "first-visit"
@@ -107,7 +112,9 @@
       "federation-vision",
       "world-interop-protocol",
       "ai-boundary-evolution",
-      "world-language-style-guide"
+      "world-language-style-guide",
+      "world-audit-method-deep",
+      "world-evolution-log"
     ],
     "nextPathIds": [
       "how-world-created",
@@ -190,7 +197,11 @@
       "content-migration-script",
       "world-index-generator",
       "owner-workbench-design",
-      "maintenance-command-design"
+      "maintenance-command-design",
+      "cli-tool-design-principles",
+      "automation-script-patterns",
+      "chrome-extension-basics",
+      "data-backup-strategy"
     ],
     "nextPathIds": [
       "tech-ai"
@@ -269,7 +280,9 @@
       "weekly-world-repair-day",
       "rc9-preparation-record",
       "monthly-fix-log-2026-07",
-      "quarterly-review-2026-q3"
+      "quarterly-review-2026-q3",
+      "monthly-fix-log-2026-06",
+      "quarterly-review-2026-q4"
     ],
     "nextPathIds": [
       "code-architecture-cleanup"
@@ -310,7 +323,10 @@
       "world-protocol-document",
       "world-audit-method",
       "world-health-metrics",
-      "world-inheritance-protocol-node"
+      "world-inheritance-protocol-node",
+      "world-index-protocol",
+      "federation-draft",
+      "ai-boundary-evolution-vision"
     ],
     "featured": {
       "recommended": true
