@@ -375,3 +375,70 @@
 - **文档维度**：附录 A-H 完整记录每一次归档判据、执行内容、真实验证结果与保留结构锚的理由，后续任何一轮 depth audit 可直接按 G.2 与 H.6 的方法论复用。
 
 若下一轮继续深化，方向应当从"归档孤儿"切换为"重构活跃层"：例如围绕主线 15 个组件目录 + 3 个 feature 模块梳理 UI 一致性、GSAP 动效落地、权限与体验分层等，属于新的工作范畴，不再归属"深度审查收敛"任务。
+
+## 附录 I：`check:strict` 隐性 warning 收敛与门面拆分（第 8 轮）
+
+### I.1 收敛目标
+
+前七轮把结构维度收敛到稳态之后，本轮聚焦在"跑门禁不阻塞、但依旧产生 warning 或架构报警"的隐性负债，目标是把 `check:strict` 全链路的 warning 归零，同时不引入任何行为回归。
+
+### I.2 收敛项与真实证据
+
+#### I.2.1 `check:kernel` warning=1 → 0
+
+`data/core/export-contract.json` 中 `source-world` bundle 明面上要求 `world-manifest.json`，但契约未登记为可导出资源。补齐后 `check:kernel` 输出 `score=100, warnings=0`。
+
+#### I.2.2 `check:feature-architecture` warnings=3 → 0
+
+- 移除 `src/app/paths/[id]/page.tsx` 内的 `path.visibility !== 'public'` 前端判断——公开过滤已经在 `getAllPaths()` 的 lib 层完成，页面层再判断属于对权限体系的重复实现，被架构契约标红。
+- 在 `src/app/node/[slug]/page.tsx` 里引入 `src/components/node/index.ts` 与 `src/components/reading/index.ts` 两个桶导出，把页面导入数量从 22 收敛到 14，落回 `page-composition-contract.json` 的 `maxPageImports: 18`。
+- 修正 `scripts/check-feature-architecture.ts` 里的 `path.replace('*', '')` 假 glob，改为真通配匹配，让契约扫描口径真实生效。
+
+#### I.2.3 `check:architecture` warnings=2 → 0（门面拆分）
+
+两个超过 `coupling-guard.json.softLimits` 的活跃文件被拆解：
+
+1. `src/components/world/WorldRuntimeProvider.tsx` 263 行 → 拆出：
+   - `RuntimeAtmosphere.tsx`（70 行，承接首屏氛围层与 `!runtime.reducedMotion && !runtime.compactMotion` 守卫）
+   - `RuntimeSignalDock.tsx`（55 行，承接底部动态信号栈）
+   - 主文件 `WorldRuntimeProvider.tsx` 降到 147 行，只保留 provider 骨架与上下游数据编排
+2. `src/lib/public-world-surfaces.ts` 955 行 → 门面（barrel）+ 子模块的组合：
+   - 门面 `public-world-surfaces.ts`：91 行，纯 `export type * from` + 构建器 re-export，`buildAboutDynamicSurface` / `buildManifestoDynamicSurface` 仍留在此处
+   - 子模块目录 `src/lib/public-surfaces/`：
+     - `types.ts`（196 行）：所有对外公开的 surface 类型定义
+     - `types-exploration.ts`（104 行）：atlas / timeline / lighthouse / node 类型
+     - `exploration.ts`（230 行）：atlas / timeline / lighthouse / node 构建器
+     - `home-and-status.ts`（213 行）：首页 + 状态面板 surface 构建
+     - `archive-and-paths.ts`（192 行）：档案馆 + 路径 surface 构建
+
+#### I.2.4 门面拆分带来的 check 脚本适配
+
+门面拆分不能造成 check 脚本失效，因此本轮同步升级如下扫描器，让它们统一识别"主文件 + `public-surfaces/` 子模块"：
+
+- 新增共享工具 `scripts/lib/read-public-surfaces.mjs`（Node 版）与 `scripts/lib/read-public-surfaces.ts`（TS 版），返回门面聚合源码，避免每个 check 各自拼一份读文件逻辑。
+- 已经消费共享工具的 check：`scripts/check-content-archive.ts`、`scripts/check-path-guidance.ts`、`scripts/check-lighthouse-productization.ts`。
+- 就地扩展扫描路径的 check：
+  - `scripts/check-performance-contracts.ts` 现在同时扫描 `WorldRuntimeProvider.tsx`、`RuntimeAtmosphere.tsx`、`RuntimeSignalDock.tsx`
+  - `scripts/check-worldos-local-product-maturity.mjs` 内建 `facadeGroupMap`
+  - `scripts/check-public-dynamic-world-surfaces.mjs`、`scripts/check-public-chinese-copy.mjs`、`scripts/check-worldos-content-life.mjs`、`scripts/check-worldos-lighthouse-readonly.mjs`、`scripts/check-homepage-productization.ts` 均在读取门面时并入 `src/lib/public-surfaces/**/*.ts`
+
+#### I.2.5 权限下沉原则再次强调
+
+本轮把页面里"再判断一次 visibility"的历史残留清理干净，明确原则：
+
+- 后端 / lib 层做权限过滤（`getPublicNodes()`、`getAllPaths()`、`buildXxxSurface()` 内部的 `isPublicVisible` / `isPublicArea` / `isEventPublic` helper）
+- 前端组件仅按后端返回的 surface 数据渲染显隐，禁止硬编码 `if (item.visibility === 'public')`
+- 契约层通过 `check:public-dynamic-world-surfaces` 里的 `requiresPublicFilter` 反向校验 builder 是否命中权限过滤 helper
+
+### I.3 真实门禁验证
+
+四合一门禁在本轮变更后重跑，全部通过：
+
+- `npm run check:daily`：✅ 全部子门禁通过，`check:lib-budget` 输出 `89/130 库文件`
+- `npm run check:boundary-full`：✅ 动态世界 surface / API boundary / performance budget / reduced motion / cross references 全部通过
+- `npm run check:strict`：✅ `check:kernel score=100 warnings=0`、`check:architecture warnings=0`、`check:feature-architecture warnings=0`、`check:performance-contracts warnings=0`；ESLint `--max-warnings=0` 与 `tsc --noEmit` 全绿
+- `npm run release:local-rc`：✅ `smoke:runtime-local`、`smoke:lan-local`（22 HTTP + 20 browser 检查，Base URL `http://172.30.111.222:4320`）、`audit:report`、`local-rc-summary`、`local-rc-evidence-policy` 全部通过，`WorldOS local RC trust gate passed`
+
+### I.4 结论
+
+第 8 轮把 `check:strict` 隐性 warning（kernel 1 + architecture 2 + feature-architecture 3 共 6 项）全部收敛为零，同时通过门面拆分把两个超软限的活跃文件下沉到清晰的模块边界，并对全部相关 check 脚本做出兼容性升级。没有任何主线数据 / 路由 / 权限模型被改动，四合一门禁 + LAN RC 真实证据同步刷新。

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T10:03:44.321Z",
+  "generatedAt": "2026-07-08T10:51:04.794Z",
   "status": "passed",
   "baseUrl": "http://127.0.0.1:4317",
   "registry": "data/world-kernel/worldos-local-runtime-smoke-v1.json",
@@ -18,8 +18,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 10,
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -34,8 +34,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 18,
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 15,
       "ok": true,
       "expected": {
         "status": 200,
@@ -50,7 +50,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
       "durationMs": 9,
       "ok": true,
       "expected": {
@@ -66,8 +66,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 12,
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 10,
       "ok": true,
       "expected": {
         "status": 200,
@@ -82,8 +82,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 4,
       "ok": true,
       "expected": {
         "status": 200,
@@ -98,7 +98,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
       "durationMs": 5,
       "ok": true,
       "expected": {
@@ -114,7 +114,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
       "durationMs": 4,
       "ok": true,
       "expected": {
@@ -130,8 +130,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/co",
-      "durationMs": 8,
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/co",
+      "durationMs": 7,
       "ok": true,
       "expected": {
         "status": 200,
@@ -146,8 +146,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-08T10:03:21.972Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"a",
-      "durationMs": 6,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-08T10:50:47.241Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"a",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -194,8 +194,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-08T10:03:39.385Z</lastmo",
-      "durationMs": 9,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-08T10:51:00.455Z</lastmo",
+      "durationMs": 7,
       "ok": true,
       "expected": {
         "status": 200,
@@ -211,7 +211,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -227,7 +227,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -243,7 +243,7 @@
       "contentType": "",
       "location": "/timeline",
       "bodyPreview": "/timeline",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -259,7 +259,7 @@
       "contentType": "",
       "location": "/ask",
       "bodyPreview": "/ask",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -292,7 +292,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -325,7 +325,7 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--vL56UakGhkkXd1n0myvHK--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "bodyPreview": "<!DOCTYPE html><!--5P5sxAfixSxQOz3xMhnkw--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
       "durationMs": 4,
       "ok": true,
       "expected": {
