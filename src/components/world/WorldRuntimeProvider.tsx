@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useState, type ReactNode
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { MotionConfig } from 'framer-motion'
 import { Activity, Map, Waves } from 'lucide-react'
 
 type DayPeriod = 'dawn' | 'day' | 'dusk' | 'night'
@@ -245,9 +246,11 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
 
   return (
     <WorldRuntimeContext.Provider value={value}>
-      <RuntimeAtmosphere />
-      {children}
-      <RuntimeSignalDock />
+      <MotionConfig reducedMotion={reducedMotion ? 'always' : 'user'}>
+        <RuntimeAtmosphere />
+        {children}
+        <RuntimeSignalDock />
+      </MotionConfig>
     </WorldRuntimeContext.Provider>
   )
 }
