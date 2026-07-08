@@ -2212,5 +2212,355 @@
     "source": "manual",
     "reviewed": true,
     "note": "世界传承约定 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0224",
+    "from": "node-rustdesk-relay",
+    "to": "node-mac-daily-setup",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "远程网络记录属于 Mac 日常开发环境的辅助补充。"
+  },
+  {
+    "id": "rel-0225",
+    "from": "node-rustdesk-relay",
+    "to": "node-terminal-first-life",
+    "type": "theme",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "远程访问是终端优先日常的延伸。"
+  },
+  {
+    "id": "rel-0226",
+    "from": "node-kavita-reader-pipeline",
+    "to": "node-photo-archive-workflow",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "电子书与照片同属家庭档案的归档管线。"
+  },
+  {
+    "id": "rel-0227",
+    "from": "node-kavita-reader-pipeline",
+    "to": "node-mac-daily-setup",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "管线运行环境依赖 Mac 日常开发工具链。"
+  },
+  {
+    "id": "rel-0228",
+    "from": "node-right-click-assistant",
+    "to": "node-worldos-cli-companion",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "右键助手与 CLI 伴侣共同覆盖\"少击键\"目标。"
+  },
+  {
+    "id": "rel-0229",
+    "from": "node-right-click-assistant",
+    "to": "node-mac-daily-setup",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "右键助手属于 Mac 日常环境的一部分。"
+  },
+  {
+    "id": "rel-0230",
+    "from": "node-world-monthly-report",
+    "to": "node-weekly-world-heartbeat",
+    "type": "sequence",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "月报是心跳的月度汇总。"
+  },
+  {
+    "id": "rel-0231",
+    "from": "node-world-monthly-report",
+    "to": "node-daily-review-ritual",
+    "type": "theme",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "月报是日复盘的时间积分。"
+  },
+  {
+    "id": "rel-0232",
+    "from": "node-travel-far-coordinates",
+    "to": "node-family-record-index",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "远行记忆遵循家庭记录索引原则。"
+  },
+  {
+    "id": "rel-0233",
+    "from": "node-travel-far-coordinates",
+    "to": "node-rainy-shanghai-afternoon",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "两段城市记忆构成生活片段的对照。"
+  },
+  {
+    "id": "rel-0234",
+    "from": "node-chrome-extension-basics",
+    "to": "node-worldos-cli-companion",
+    "type": "theme",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "浏览器扩展与 CLI 伴侣同属日常工具增强的两条路径。"
+  },
+  {
+    "id": "rel-0235",
+    "from": "node-chrome-extension-basics",
+    "to": "node-writing-momentum-loop",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "扩展也能承载写作动量的入口。"
+  },
+  {
+    "id": "rel-0236",
+    "from": "node-data-backup-strategy",
+    "to": "node-worldos-heritage-note",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "备份策略是传承约定的技术基础。"
+  },
+  {
+    "id": "rel-0237",
+    "from": "node-data-backup-strategy",
+    "to": "node-photo-archive-workflow",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "备份策略与照片归档共享目录策略。"
+  },
+  {
+    "id": "rel-0238",
+    "from": "node-quarterly-review-2026-q4",
+    "to": "node-2025-year-review",
+    "type": "sequence",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "季度回望汇入年度回望的时间轴。"
+  },
+  {
+    "id": "rel-0239",
+    "from": "node-quarterly-review-2026-q4",
+    "to": "node-weekly-world-heartbeat",
+    "type": "theme",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "季度回望是周心跳的季度积分。"
+  },
+  {
+    "id": "rel-0240",
+    "from": "node-evening-walk-memory",
+    "to": "node-rainy-shanghai-afternoon",
+    "type": "memory",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "两段生活记忆共同构成城市漫步的意象。"
+  },
+  {
+    "id": "rel-0241",
+    "from": "node-evening-walk-memory",
+    "to": "node-family-record-index",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "散步中的家人身影按索引原则处理可见性。"
+  },
+  {
+    "id": "rel-0242",
+    "from": "node-world-protocol-guide",
+    "to": "node-schema-evolution-log",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "协议指南是 schema 演化日志的公开摘要。"
+  },
+  {
+    "id": "rel-0243",
+    "from": "node-world-protocol-guide",
+    "to": "node-worldos-heritage-note",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "协议指南是传承包最外层的入口文档。"
+  },
+  {
+    "id": "rel-0244",
+    "from": "node-lantern-search-engine",
+    "to": "node-world-graph-explorer",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "搜索引擎与图谱浏览器共同构成检索与浏览的两翼。"
+  },
+  {
+    "id": "rel-0245",
+    "from": "node-lantern-search-engine",
+    "to": "node-tag-taxonomy-charter",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "搜索加权依赖标签体系的整洁。"
+  },
+  {
+    "id": "rel-0246",
+    "from": "node-seven-star-cabinet",
+    "to": "node-tag-taxonomy-charter",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "档案柜按标签聚簇是标签宪章的可视化尝试。"
+  },
+  {
+    "id": "rel-0247",
+    "from": "node-motion-grammar-rulebook",
+    "to": "node-world-graph-explorer",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "图谱浏览器的入场动效遵循动效语法。"
+  },
+  {
+    "id": "rel-0248",
+    "from": "node-permission-gate-story",
+    "to": "node-worldos-heritage-note",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "权限门禁是传承约定的技术前置。"
+  },
+  {
+    "id": "rel-0249",
+    "from": "node-learning-in-public",
+    "to": "node-world-protocol-guide",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开学习依赖协议指南的透明度承诺。"
+  },
+  {
+    "id": "rel-0250",
+    "from": "node-patience-as-strategy",
+    "to": "node-worldos-heritage-note",
+    "type": "theme",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "耐心策略与传承约定共同构成长期主义的两面。"
+  },
+  {
+    "id": "rel-0251",
+    "from": "node-daily-review-ritual",
+    "to": "node-world-monthly-report",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "日复盘、周心跳、月报形成时间层级仪式。"
+  },
+  {
+    "id": "rel-0252",
+    "from": "node-weekly-world-heartbeat",
+    "to": "node-quarterly-review-2026-q4",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "周心跳汇入季度回望。"
+  },
+  {
+    "id": "rel-0253",
+    "from": "node-ai-prompt-hygiene",
+    "to": "node-lantern-search-engine",
+    "type": "theme",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "搜索结果进入 AI 前遵循提示词卫生。"
+  },
+  {
+    "id": "rel-0254",
+    "from": "node-codex-agent-workflow",
+    "to": "node-permission-gate-story",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Codex 协作纪律依赖三层权限门禁保底。"
+  },
+  {
+    "id": "rel-0255",
+    "from": "node-note-taking-minimalism",
+    "to": "node-writing-momentum-loop",
+    "type": "sequence",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "极简笔记法与写作动量循环互为方法论。"
+  },
+  {
+    "id": "rel-0256",
+    "from": "node-worldos-cli-companion",
+    "to": "node-worldos-heritage-note",
+    "type": "reference",
+    "strength": 0.3,
+    "source": "manual",
+    "reviewed": true,
+    "note": "CLI 伴侣未来将承担传承包的调用入口。"
+  },
+  {
+    "id": "rel-0257",
+    "from": "node-worldos-birth-story",
+    "to": "node-2026-spring-milestones",
+    "type": "sequence",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "诞生记与春季里程碑构成起点与首个爆发。"
+  },
+  {
+    "id": "rel-0258",
+    "from": "node-2025-year-review",
+    "to": "node-worldos-birth-story",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "诞生记发生在 2025 酝酿期的末端。"
   }
 ]

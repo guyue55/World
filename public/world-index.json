@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T06:24:17.499Z",
+  "generatedAt": "2026-07-08T06:27:07.536Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -2907,6 +2907,64 @@
       "visibility": "public",
       "actor": "worldos-kernel",
       "summary": "T13.2 第二批 15 节点扩展完成事件记录"
+    },
+    {
+      "id": "evt-033",
+      "type": "content",
+      "title": "T13.3 关系扩展与孤岛消除完成",
+      "date": "2026-07-08",
+      "description": "Phase 13 关系扩展：孤岛节点（度<=1）全部接入网络，交叉关系补齐 35 条，关系总数达到 258。",
+      "nodeIds": [
+        "node-lantern-search-engine",
+        "node-world-monthly-report-ritual"
+      ],
+      "areaIds": [
+        "archive",
+        "tech",
+        "workshop",
+        "fragments"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "T13.3 关系扩展与孤岛消除完成事件记录"
+    },
+    {
+      "id": "evt-034",
+      "type": "content",
+      "title": "3 条 Phase 13 主题路径新增",
+      "date": "2026-07-08",
+      "description": "新增 daily-ritual-tour/agent-workflow-lane/world-vision-lane/memory-lane/world-governance-lane 五条路径，路径总数达到 20。",
+      "nodeIds": [
+        "node-daily-review-ritual",
+        "node-codex-agent-workflow",
+        "node-worldos-birth-story"
+      ],
+      "areaIds": [
+        "archive",
+        "tech",
+        "memory",
+        "fragments"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "Phase 13 主题路径新增事件记录"
+    },
+    {
+      "id": "evt-035",
+      "type": "governance",
+      "title": "世界指标达成 M13 阶段目标",
+      "date": "2026-07-08",
+      "description": "130 节点 / 258 关系 / 20 路径 / 35 事件 / 97 标签，全面达到 M13 内容生态成熟里程碑的下沿。",
+      "nodeIds": [
+        "node-2026-spring-milestones"
+      ],
+      "areaIds": [
+        "timeline",
+        "archive"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "M13 阶段目标达成事件记录"
     },
     {
       "id": "evt-030",
@@ -7144,6 +7202,251 @@
         "id": "rel-0223",
         "from": "node-worldos-heritage-note",
         "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0224",
+        "from": "node-rustdesk-relay",
+        "to": "node-mac-daily-setup",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0225",
+        "from": "node-rustdesk-relay",
+        "to": "node-terminal-first-life",
+        "type": "theme",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0226",
+        "from": "node-kavita-reader-pipeline",
+        "to": "node-photo-archive-workflow",
+        "type": "theme",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0227",
+        "from": "node-kavita-reader-pipeline",
+        "to": "node-mac-daily-setup",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0228",
+        "from": "node-right-click-assistant",
+        "to": "node-worldos-cli-companion",
+        "type": "theme",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0229",
+        "from": "node-right-click-assistant",
+        "to": "node-mac-daily-setup",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0230",
+        "from": "node-world-monthly-report",
+        "to": "node-weekly-world-heartbeat",
+        "type": "sequence",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0231",
+        "from": "node-world-monthly-report",
+        "to": "node-daily-review-ritual",
+        "type": "theme",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0232",
+        "from": "node-travel-far-coordinates",
+        "to": "node-family-record-index",
+        "type": "theme",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0233",
+        "from": "node-travel-far-coordinates",
+        "to": "node-rainy-shanghai-afternoon",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0234",
+        "from": "node-chrome-extension-basics",
+        "to": "node-worldos-cli-companion",
+        "type": "theme",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0235",
+        "from": "node-chrome-extension-basics",
+        "to": "node-writing-momentum-loop",
+        "type": "reference",
+        "strength": 0.3
+      },
+      {
+        "id": "rel-0236",
+        "from": "node-data-backup-strategy",
+        "to": "node-worldos-heritage-note",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0237",
+        "from": "node-data-backup-strategy",
+        "to": "node-photo-archive-workflow",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0238",
+        "from": "node-quarterly-review-2026-q4",
+        "to": "node-2025-year-review",
+        "type": "sequence",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0239",
+        "from": "node-quarterly-review-2026-q4",
+        "to": "node-weekly-world-heartbeat",
+        "type": "theme",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0240",
+        "from": "node-evening-walk-memory",
+        "to": "node-rainy-shanghai-afternoon",
+        "type": "memory",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0241",
+        "from": "node-evening-walk-memory",
+        "to": "node-family-record-index",
+        "type": "reference",
+        "strength": 0.3
+      },
+      {
+        "id": "rel-0242",
+        "from": "node-world-protocol-guide",
+        "to": "node-schema-evolution-log",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0243",
+        "from": "node-world-protocol-guide",
+        "to": "node-worldos-heritage-note",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0244",
+        "from": "node-lantern-search-engine",
+        "to": "node-world-graph-explorer",
+        "type": "theme",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0245",
+        "from": "node-lantern-search-engine",
+        "to": "node-tag-taxonomy-charter",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0246",
+        "from": "node-seven-star-cabinet",
+        "to": "node-tag-taxonomy-charter",
+        "type": "theme",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0247",
+        "from": "node-motion-grammar-rulebook",
+        "to": "node-world-graph-explorer",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0248",
+        "from": "node-permission-gate-story",
+        "to": "node-worldos-heritage-note",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0249",
+        "from": "node-learning-in-public",
+        "to": "node-world-protocol-guide",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0250",
+        "from": "node-patience-as-strategy",
+        "to": "node-worldos-heritage-note",
+        "type": "theme",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0251",
+        "from": "node-daily-review-ritual",
+        "to": "node-world-monthly-report",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0252",
+        "from": "node-weekly-world-heartbeat",
+        "to": "node-quarterly-review-2026-q4",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0253",
+        "from": "node-ai-prompt-hygiene",
+        "to": "node-lantern-search-engine",
+        "type": "theme",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0254",
+        "from": "node-codex-agent-workflow",
+        "to": "node-permission-gate-story",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0255",
+        "from": "node-note-taking-minimalism",
+        "to": "node-writing-momentum-loop",
+        "type": "sequence",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0256",
+        "from": "node-worldos-cli-companion",
+        "to": "node-worldos-heritage-note",
+        "type": "reference",
+        "strength": 0.3
+      },
+      {
+        "id": "rel-0257",
+        "from": "node-worldos-birth-story",
+        "to": "node-2026-spring-milestones",
+        "type": "sequence",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0258",
+        "from": "node-2025-year-review",
+        "to": "node-worldos-birth-story",
         "type": "reference",
         "strength": 0.5
       }

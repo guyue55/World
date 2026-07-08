@@ -604,5 +604,63 @@
     "visibility": "public",
     "actor": "worldos-kernel",
     "summary": "T13.2 第二批 15 节点扩展完成事件记录"
+  },
+  {
+    "id": "evt-033",
+    "type": "content",
+    "title": "T13.3 关系扩展与孤岛消除完成",
+    "date": "2026-07-08",
+    "description": "Phase 13 关系扩展：孤岛节点（度<=1）全部接入网络，交叉关系补齐 35 条，关系总数达到 258。",
+    "nodeIds": [
+      "node-lantern-search-engine",
+      "node-world-monthly-report"
+    ],
+    "areaIds": [
+      "archive",
+      "tech",
+      "workshop",
+      "fragments"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "T13.3 关系扩展与孤岛消除完成事件记录"
+  },
+  {
+    "id": "evt-034",
+    "type": "content",
+    "title": "3 条 Phase 13 主题路径新增",
+    "date": "2026-07-08",
+    "description": "新增 daily-ritual-tour/agent-workflow-lane/world-vision-lane/memory-lane/world-governance-lane 五条路径，路径总数达到 20。",
+    "nodeIds": [
+      "node-daily-review-ritual",
+      "node-codex-agent-workflow",
+      "node-worldos-birth-story"
+    ],
+    "areaIds": [
+      "archive",
+      "tech",
+      "memory",
+      "fragments"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "Phase 13 主题路径新增事件记录"
+  },
+  {
+    "id": "evt-035",
+    "type": "governance",
+    "title": "世界指标达成 M13 阶段目标",
+    "date": "2026-07-08",
+    "description": "130 节点 / 258 关系 / 20 路径 / 35 事件 / 97 标签，全面达到 M13 内容生态成熟里程碑的下沿。",
+    "nodeIds": [
+      "node-2026-spring-milestones"
+    ],
+    "areaIds": [
+      "timeline",
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "M13 阶段目标达成事件记录"
   }
 ]
