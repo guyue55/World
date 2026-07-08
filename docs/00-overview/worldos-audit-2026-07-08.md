@@ -341,3 +341,37 @@
 ### H.4 结论
 
 主线 lib 从 117 一次减到 96（-18%），三合一门禁 + `check:strict` 全绿，未引入任何新故障。至此 `src/lib/*`、`src/components/*`、`src/features/*` 三个层级的"仅被 legacy 消费"孤儿代码均已完整下沉，`_legacy/` 成为真实的历史归档区，主线只承载当前可运行的活跃契约与组件；后续若还需要进一步收敛，判据已在附录 G.2 明确记录，可继续按同一原则跑 `node scripts/audit-lib-dependencies.mjs` 与 `/tmp/lib-mainline-refs.mjs` 复查。
+
+### H.5 同日追加：第二批 lib 归档（96 → 89）
+
+附录 H 前四节完成后 orphan 扫描再复查，发现还有 7 个 lib 满足 "主线零消费、仅 `_legacy` 组件消费" 条件，同批归档：
+
+`ai-workbench` / `browser-qa` / `build-pipeline` / `export-center` /
+`governance-ledger` / `release-gate` / `status-skeleton`
+
+同步用 `/tmp/rewrite-lib-batch2.mjs` 把 10 处 `@/lib/*` alias 重写到 `@/lib/_legacy/*`。
+
+| 层级 | H.1 之后 | H.5 之后 | 累计（相对附录 F）|
+|---|---|---|---|
+| `src/lib/*` 主线 | 96 | 89 | 117 → 89（-24%）|
+| `src/lib/_legacy/*` 归档 | 57 | 64 | +28 |
+
+三合一 + `check:strict` + `npm run lint` / `typecheck` 全部再验证一遍绿，`check:lib-budget` 输出 `89/130 库文件`。
+
+### H.6 orphan 复扫的边界
+
+- `/tmp/lib-mainline-refs.mjs` 剩余 5 个 orphan：`ai-workbench-v2` / `private-archive` / `rss` / `world-kernel-legacy` / `worldos-mainline`。它们分别被 `check-ai-suggestion-audit.ts` / `check-private-archive.ts` / `data/core/feature-module-contract.json` / `check-product-release.ts` / `check-worldos-mainline-governance.mjs` 明确点名钉在主线路径上，属于结构锚，不再下沉。
+- `/tmp/lib-deep-chain.mjs` 报出 12 个 "只被其他 lib 消费" 的候选（如 `rules` / `spatial` / `route-manifest` / `world-kernel-runtime` 等），逐个跟踪发现它们全部处于 `world-kernel` / `foundation-audit` / `atlas-contract` / `world-invariants` 等活跃 kernel 图的中间层，任何一次归档都会拖垮主线，故保留。
+- `/tmp/find-orphan-component-files.mjs` 最后一次扫描：主线组件目录内的孤儿文件为 0（`PathTabs.tsx` 是契约要求的锚点，不算孤儿）。
+- `rg "@/lib/_legacy|@/components/_legacy|@/features/_legacy|@/app/_legacy" src/ --glob '!**/_legacy/**'` 在主线代码中零命中，说明主线到 `_legacy/*` 的反向依赖已彻底切断。
+
+### H.7 结论
+
+经附录 F/G/H 三轮深度归档 + 本节的兜底复扫，主线代码库已进入稳定收敛态：
+
+- **数量维度**：`src/components/*` 目录 32 → 15、`src/features/*` 目录 22 → 3、`src/lib/*` 文件 117 → 89，总体减少 60%+ 的历史结构负担；
+- **边界维度**：`_legacy/` 与主线双向零耦合，`tsconfig.exclude` 与 `check:app-boundary` 双重保障；
+- **验证维度**：`check:daily` + `check:boundary-full` + `check:strict` + `release:local-rc` 四合一门禁全绿，未引入任何新故障；
+- **文档维度**：附录 A-H 完整记录每一次归档判据、执行内容、真实验证结果与保留结构锚的理由，后续任何一轮 depth audit 可直接按 G.2 与 H.6 的方法论复用。
+
+若下一轮继续深化，方向应当从"归档孤儿"切换为"重构活跃层"：例如围绕主线 15 个组件目录 + 3 个 feature 模块梳理 UI 一致性、GSAP 动效落地、权限与体验分层等，属于新的工作范畴，不再归属"深度审查收敛"任务。
