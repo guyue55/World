@@ -6,20 +6,21 @@ import { isPublicVisible } from '@/lib/visibility'
 import { estimateReadingMinutes, getNodeExplorationGroups } from '@/lib/node-reading'
 import { buildNodeNextStepSurface, buildNodeOpeningSurface } from '@/lib/public-world-surfaces'
 import { extractReadingHeadings, getReadingComfortSummary } from '@/lib/reading-comfort'
-import { NodePassport } from '@/components/node/NodePassport'
-import { NodeCover } from '@/components/node/NodeCover'
-import { Breadcrumbs } from '@/components/common/Breadcrumbs'
 import { createPageMetadata } from '@/lib/metadata'
-import { JsonLd } from '@/components/common/JsonLd'
 import { nodeArticleJsonLd } from '@/lib/jsonld'
-import { NodeReadingHeader } from '@/components/node/NodeReadingHeader'
-import { NodeReadingBody } from '@/components/node/NodeReadingBody'
-import { NodeRelationRail } from '@/components/node/NodeRelationRail'
-import { NodeReadingActions } from '@/components/node/NodeReadingActions'
-import { NodeOpeningRitual } from '@/components/node/NodeOpeningRitual'
-import { NodeNextStepPanel } from '@/components/node/NodeNextStepPanel'
-import { ReadingComfortBar } from '@/components/reading/ReadingComfortBar'
-import { ReadingToc } from '@/components/reading/ReadingToc'
+import { Breadcrumbs } from '@/components/common/Breadcrumbs'
+import { JsonLd } from '@/components/common/JsonLd'
+import {
+  NodeCover,
+  NodeNextStepPanel,
+  NodeOpeningRitual,
+  NodePassport,
+  NodeReadingActions,
+  NodeReadingBody,
+  NodeReadingHeader,
+  NodeRelationRail,
+} from '@/components/node'
+import { ReadingComfortBar, ReadingToc } from '@/components/reading'
 
 export const dynamicParams = true
 
