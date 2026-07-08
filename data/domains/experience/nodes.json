@@ -3218,5 +3218,2035 @@
     "createdAt": "2026-07-08",
     "cover": "/covers/cover-abstract-world.svg",
     "reviewed": true
+  },
+  {
+    "id": "node-local-world-entry-ritual",
+    "slug": "local-world-entry-ritual",
+    "title": "本地世界入口仪式",
+    "worldTitle": "入口仪式",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "把 localhost 和 LAN IP 的打开过程整理成低门槛进入仪式",
+    "contentPath": "content/articles/local-world-entry-ritual.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "入口",
+      "地图",
+      "路径"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-model-reading-order",
+    "slug": "world-model-reading-order",
+    "title": "世界模型阅读顺序",
+    "worldTitle": "阅读顺序",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "为节点、区域、关系、路径、事件建立推荐阅读顺序",
+    "contentPath": "content/articles/world-model-reading-order.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "节点",
+      "区域",
+      "关系"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-public-world-hospitality-rule",
+    "slug": "public-world-hospitality-rule",
+    "title": "公开世界待客规则",
+    "worldTitle": "待客规则",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "把降低门槛翻译成页面、文案和路径的待客规则",
+    "contentPath": "content/articles/public-world-hospitality-rule.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "中文优先",
+      "少入口",
+      "清晰出口"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-local-first-principle",
+    "slug": "worldos-local-first-principle",
+    "title": "WorldOS 本地优先原则",
+    "worldTitle": "本地优先",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "说明为什么当前先打磨本地和局域网体验",
+    "contentPath": "content/articles/worldos-local-first-principle.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "fresh build",
+      "LAN smoke",
+      "证据"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-visitor-map-contract",
+    "slug": "visitor-map-contract",
+    "title": "访客地图契约",
+    "worldTitle": "地图契约",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "定义地图应该回答的四个低门槛问题，帮助第一次访问者理解世界入口。",
+    "contentPath": "content/articles/visitor-map-contract.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "我在哪",
+      "能去哪",
+      "如何回来"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-language-onboarding",
+    "slug": "world-language-onboarding",
+    "title": "世界语言入门表",
+    "worldTitle": "语言入门",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "把浪漫词汇翻译成现实可理解的解释，帮助第一次访问者理解世界入口。",
+    "contentPath": "content/articles/world-language-onboarding.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "浪漫名",
+      "现实名",
+      "功能名"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-node-life-story-primer",
+    "slug": "node-life-story-primer",
+    "title": "节点生命故事入门",
+    "worldTitle": "生命周期",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "解释 seed 到 archive 的生命周期如何帮助维护",
+    "contentPath": "content/articles/node-life-story-primer.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "seed",
+      "growing",
+      "bloom"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-operating-promise",
+    "slug": "worldos-operating-promise",
+    "title": "WorldOS 运行承诺",
+    "worldTitle": "运行承诺",
+    "type": "article",
+    "areaId": "origin",
+    "summary": "把不伪造上线、不越权读取、不自动发布写成公开承诺",
+    "contentPath": "content/articles/worldos-operating-promise.md",
+    "tags": [
+      "phase19",
+      "origin",
+      "诚实",
+      "边界",
+      "人工确认"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-local-rc-fresh-build-playbook",
+    "slug": "local-rc-fresh-build-playbook",
+    "title": "本地 RC 新鲜构建手册",
+    "worldTitle": "RC 手册",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "整理 release:local-rc 如何避免旧产物误导",
+    "contentPath": "content/articles/local-rc-fresh-build-playbook.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "next build",
+      "artifact",
+      "mtime"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-playwright-lan-smoke-notes",
+    "slug": "playwright-lan-smoke-notes",
+    "title": "Playwright 局域网巡检笔记",
+    "worldTitle": "局域网巡检",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "记录浏览器 smoke 如何覆盖桌面和移动低动效",
+    "contentPath": "content/articles/playwright-lan-smoke-notes.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "desktop",
+      "mobile",
+      "reduced-motion"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-content-jaccard-quality-gate",
+    "slug": "content-jaccard-quality-gate",
+    "title": "内容相似度门禁实践",
+    "worldTitle": "相似度门禁",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "解释 jaccard 检查如何阻止复读机式节点",
+    "contentPath": "content/articles/content-jaccard-quality-gate.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "jaccard",
+      "阈值",
+      "复写"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-script-registry-discipline",
+    "slug": "script-registry-discipline",
+    "title": "脚本注册表纪律",
+    "worldTitle": "脚本治理",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "说明 npm scripts 增长时如何保持可审计",
+    "contentPath": "content/articles/script-registry-discipline.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "activeEntrypoints",
+      "legacy",
+      "daily"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-public-index-generation-pipeline",
+    "slug": "public-index-generation-pipeline",
+    "title": "公开索引生成管线",
+    "worldTitle": "索引管线",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "描述 public/world-index.json 如何从数据事实源生成",
+    "contentPath": "content/articles/public-index-generation-pipeline.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "nodes",
+      "paths",
+      "events"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-reduced-motion-runtime-contract",
+    "slug": "reduced-motion-runtime-contract",
+    "title": "低动效运行契约",
+    "worldTitle": "低动效",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "把 prefers-reduced-motion 与动态世界体验连接起来",
+    "contentPath": "content/articles/reduced-motion-runtime-contract.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "motion",
+      "accessibility",
+      "fallback"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-theme-css-variable-architecture",
+    "slug": "theme-css-variable-architecture",
+    "title": "主题 CSS 变量架构",
+    "worldTitle": "主题架构",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "记录深色模式如何通过 CSS 变量驱动色板",
+    "contentPath": "content/articles/theme-css-variable-architecture.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "ink",
+      "paper",
+      "night"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-mainline-import-audit-method",
+    "slug": "mainline-import-audit-method",
+    "title": "主线导入审计方法",
+    "worldTitle": "导入审计",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "描述如何发现 legacy 与主线之间的意外耦合",
+    "contentPath": "content/articles/mainline-import-audit-method.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "rg",
+      "alias",
+      "legacy"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-typescript-schema-guard-notes",
+    "slug": "typescript-schema-guard-notes",
+    "title": "TypeScript 与 Schema 守门笔记",
+    "worldTitle": "类型守门",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "说明 zod schema 和 TS 类型如何共同保护世界数据",
+    "contentPath": "content/articles/typescript-schema-guard-notes.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "zod",
+      "strict",
+      "json"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-local-network-start-guide",
+    "slug": "local-network-start-guide",
+    "title": "局域网启动指南",
+    "worldTitle": "LAN 启动",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "记录 npm run start 在 LAN 场景下的启动边界",
+    "contentPath": "content/articles/local-network-start-guide.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "0.0.0.0",
+      "4320",
+      "baseUrl"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-build-size-observation-log",
+    "slug": "build-size-observation-log",
+    "title": "构建体积观察日志",
+    "worldTitle": "体积观察",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "整理构建体积增长与内容扩展之间的关系",
+    "contentPath": "content/articles/build-size-observation-log.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "SSG",
+      "bundle",
+      "budget"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-search-weighting-experiment",
+    "slug": "search-weighting-experiment",
+    "title": "搜索权重实验记录",
+    "worldTitle": "搜索权重",
+    "type": "article",
+    "areaId": "tech",
+    "summary": "为灯塔搜索标题、标签、摘要权重调优做准备",
+    "contentPath": "content/articles/search-weighting-experiment.md",
+    "tags": [
+      "phase19",
+      "tech",
+      "Fuse",
+      "title",
+      "tags"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-owner-review-workbench-story",
+    "slug": "owner-review-workbench-story",
+    "title": "Owner 审核工作台故事",
+    "worldTitle": "工作台故事",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "把审核队列、导出任务和维护提醒串成一个产品故事",
+    "contentPath": "content/projects/owner-review-workbench-story.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "审核",
+      "导出",
+      "维护"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-content-seed-tool",
+    "slug": "worldos-content-seed-tool",
+    "title": "内容种子工具设计",
+    "worldTitle": "种子工具",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "描述 seed 批量应用脚本如何支持节点、路径、事件",
+    "contentPath": "content/projects/worldos-content-seed-tool.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "seed",
+      "idempotent",
+      "path"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-local-screenshot-review-kit",
+    "slug": "local-screenshot-review-kit",
+    "title": "本地截图复核套件",
+    "worldTitle": "截图复核",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "整理桌面与移动截图应该人工看什么，帮助产品工坊沉淀可执行动作。",
+    "contentPath": "content/projects/local-screenshot-review-kit.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "desktop",
+      "mobile",
+      "CTA"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-reading-card-system",
+    "slug": "worldos-reading-card-system",
+    "title": "阅读卡片系统",
+    "worldTitle": "卡片系统",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "描述节点卡片如何在首页、地图、档案馆保持一致",
+    "contentPath": "content/projects/worldos-reading-card-system.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "card",
+      "summary",
+      "next"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-path-progress-widget-idea",
+    "slug": "path-progress-widget-idea",
+    "title": "路径进度组件设想",
+    "worldTitle": "路径进度",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "为后续路径旅程加入当前进度和下一步动作",
+    "contentPath": "content/projects/path-progress-widget-idea.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "progress",
+      "next",
+      "return"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-archive-filter-ergonomics",
+    "slug": "archive-filter-ergonomics",
+    "title": "档案馆筛选体验",
+    "worldTitle": "筛选体验",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "记录类型、区域、标签筛选如何降低查找成本",
+    "contentPath": "content/projects/archive-filter-ergonomics.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "filter",
+      "type",
+      "area"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-mobile-route-entry-polish",
+    "slug": "mobile-route-entry-polish",
+    "title": "移动端入口打磨",
+    "worldTitle": "移动入口",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "说明小屏幕上入口、导航和状态卡如何避免拥挤",
+    "contentPath": "content/projects/mobile-route-entry-polish.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "mobile",
+      "nav",
+      "safe-area"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-theme-toggle-product-note",
+    "slug": "theme-toggle-product-note",
+    "title": "主题切换产品说明",
+    "worldTitle": "主题切换",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "记录深色模式为什么是体验基础设施，帮助产品工坊沉淀可执行动作。",
+    "contentPath": "content/projects/theme-toggle-product-note.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "dark",
+      "light",
+      "system"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-content-maintenance-dashboard-draft",
+    "slug": "content-maintenance-dashboard-draft",
+    "title": "内容维护面板草案",
+    "worldTitle": "维护面板",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "构思内容密度、相似度和孤岛节点的维护视图",
+    "contentPath": "content/projects/content-maintenance-dashboard-draft.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "density",
+      "orphan",
+      "similarity"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lan-demo-checklist-product",
+    "slug": "lan-demo-checklist-product",
+    "title": "局域网 Demo 检查清单",
+    "worldTitle": "Demo 清单",
+    "type": "project",
+    "areaId": "workshop",
+    "summary": "把本地演示前需要确认的事项产品化，帮助产品工坊沉淀可执行动作。",
+    "contentPath": "content/projects/lan-demo-checklist-product.md",
+    "tags": [
+      "phase19",
+      "workshop",
+      "demo",
+      "LAN",
+      "checklist"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-small-node-big-door",
+    "slug": "small-node-big-door",
+    "title": "小节点也能是大门",
+    "worldTitle": "小门",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "思考碎片节点如何成为跨区域入口，帮助灵感云层连接后续阅读。",
+    "contentPath": "content/fragments/small-node-big-door.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "fragment",
+      "door",
+      "relation"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-quiet-interface-thought",
+    "slug": "quiet-interface-thought",
+    "title": "安静界面札记",
+    "worldTitle": "安静界面",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "记录克制界面比堆满组件更适合个人世界",
+    "contentPath": "content/fragments/quiet-interface-thought.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "space",
+      "quiet",
+      "reading"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-relationship-before-graph",
+    "slug": "relationship-before-graph",
+    "title": "先有关系再有图谱",
+    "worldTitle": "关系优先",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "提醒关系解释比视觉图谱更重要，帮助灵感云层连接后续阅读。",
+    "contentPath": "content/fragments/relationship-before-graph.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "why",
+      "note",
+      "graph"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-local-first-emotional-safety",
+    "slug": "local-first-emotional-safety",
+    "title": "本地优先的安全感",
+    "worldTitle": "本地安全",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "思考本地运行为什么能降低创作压力，帮助灵感云层连接后续阅读。",
+    "contentPath": "content/fragments/local-first-emotional-safety.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "local",
+      "safe",
+      "slow"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-romance-needs-ledger",
+    "slug": "romance-needs-ledger",
+    "title": "浪漫需要台账",
+    "worldTitle": "台账",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "记录世界感与工程台账之间的互补关系，帮助灵感云层连接后续阅读。",
+    "contentPath": "content/fragments/romance-needs-ledger.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "ledger",
+      "romance",
+      "audit"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-first-screen-kindness",
+    "slug": "first-screen-kindness",
+    "title": "首屏的善意",
+    "worldTitle": "首屏",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "提醒首页第一屏要帮人而不是炫耀系统复杂度",
+    "contentPath": "content/fragments/first-screen-kindness.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "hero",
+      "entry",
+      "kindness"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-permission-is-a-promise",
+    "slug": "permission-is-a-promise",
+    "title": "权限是一种承诺",
+    "worldTitle": "权限承诺",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "把权限边界理解为对访客和自己的承诺，帮助灵感云层连接后续阅读。",
+    "contentPath": "content/fragments/permission-is-a-promise.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "permission",
+      "trust",
+      "promise"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-screenshots-are-memory",
+    "slug": "screenshots-are-memory",
+    "title": "截图也是记忆",
+    "worldTitle": "截图记忆",
+    "type": "fragment",
+    "areaId": "fragments",
+    "summary": "把验收截图视为世界状态的时间切片，帮助灵感云层连接后续阅读。",
+    "contentPath": "content/fragments/screenshots-are-memory.md",
+    "tags": [
+      "phase19",
+      "fragments",
+      "screenshot",
+      "evidence",
+      "memory"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-window-rain-local-rc",
+    "slug": "window-rain-local-rc",
+    "title": "窗边雨声与本地 RC",
+    "worldTitle": "雨夜 RC",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "把一次雨夜验收记录为公开的低光记忆，帮助记忆湖保留公开低光片刻。",
+    "contentPath": "content/memory/window-rain-local-rc.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "rain",
+      "rc",
+      "quiet"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-desk-lamp-after-build",
+    "slug": "desk-lamp-after-build",
+    "title": "构建完成后的台灯",
+    "worldTitle": "台灯",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录 build 通过后回看页面的安静瞬间",
+    "contentPath": "content/memory/desk-lamp-after-build.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "lamp",
+      "build",
+      "review"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lan-phone-first-visit",
+    "slug": "lan-phone-first-visit",
+    "title": "手机访问局域网的第一次",
+    "worldTitle": "手机访问",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录用手机打开 LAN 地址时的真实体验",
+    "contentPath": "content/memory/lan-phone-first-visit.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "phone",
+      "LAN",
+      "touch"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-coffee-and-script-registry",
+    "slug": "coffee-and-script-registry",
+    "title": "咖啡与脚本注册表",
+    "worldTitle": "咖啡脚本",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "把脚本计数同步这种小事记录成维护记忆",
+    "contentPath": "content/memory/coffee-and-script-registry.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "coffee",
+      "scripts",
+      "count"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-night-mode-reading-memory",
+    "slug": "night-mode-reading-memory",
+    "title": "深色模式阅读记忆",
+    "worldTitle": "夜读",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录夜间切换主题后的阅读感受，帮助记忆湖保留公开低光片刻。",
+    "contentPath": "content/memory/night-mode-reading-memory.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "dark",
+      "reading",
+      "night"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-repair-day-breathing-room",
+    "slug": "repair-day-breathing-room",
+    "title": "修复日的呼吸空间",
+    "worldTitle": "修复日",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录一次没有新增功能、只复核边界的维护日",
+    "contentPath": "content/memory/repair-day-breathing-room.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "repair",
+      "space",
+      "maintenance"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-archive-search-found-again",
+    "slug": "archive-search-found-again",
+    "title": "在档案馆重新找到旧节点",
+    "worldTitle": "重新找到",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录搜索把旧想法重新带回主线的瞬间，帮助记忆湖保留公开低光片刻。",
+    "contentPath": "content/memory/archive-search-found-again.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "archive",
+      "search",
+      "found"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-reduced-motion-kindness-memory",
+    "slug": "reduced-motion-kindness-memory",
+    "title": "低动效的体贴记忆",
+    "worldTitle": "体贴",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录低动效不是少体验而是另一种尊重，帮助记忆湖保留公开低光片刻。",
+    "contentPath": "content/memory/reduced-motion-kindness-memory.md",
+    "tags": [
+      "phase19",
+      "memory",
+      "reduced",
+      "motion",
+      "care"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-lake.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-phase19-content-expansion-start",
+    "slug": "phase19-content-expansion-start",
+    "title": "Phase 19 内容扩展启动",
+    "worldTitle": "扩展启动",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录内容生态从 130 节点迈向 200 节点的起点",
+    "contentPath": "content/articles/phase19-content-expansion-start.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "phase19",
+      "content",
+      "start"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-theme-system-stabilized",
+    "slug": "theme-system-stabilized",
+    "title": "主题系统稳定",
+    "worldTitle": "主题稳定",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录深色模式从半成品风险到完整可用的修复过程",
+    "contentPath": "content/articles/theme-system-stabilized.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "theme",
+      "fix",
+      "stable"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-a11y-focus-pass",
+    "slug": "a11y-focus-pass",
+    "title": "焦点管理通过",
+    "worldTitle": "焦点通过",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录键盘导航和 focus-visible 被纳入体验门禁",
+    "contentPath": "content/articles/a11y-focus-pass.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "a11y",
+      "focus",
+      "keyboard"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-local-lan-rc-refresh",
+    "slug": "local-lan-rc-refresh",
+    "title": "本地 LAN RC 证据刷新",
+    "worldTitle": "证据刷新",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录 LAN smoke、浏览器检查和截图证据刷新",
+    "contentPath": "content/articles/local-lan-rc-refresh.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "LAN",
+      "smoke",
+      "evidence"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lib-warning-zero-milestone",
+    "slug": "lib-warning-zero-milestone",
+    "title": "lib warning 归零里程碑",
+    "worldTitle": "warning 归零",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录主线门面拆分后 warning 清零",
+    "contentPath": "content/articles/lib-warning-zero-milestone.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "warning",
+      "architecture",
+      "zero"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-content-jaccard-guard-added",
+    "slug": "content-jaccard-guard-added",
+    "title": "内容相似度守门建立",
+    "worldTitle": "相似度守门",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录复读机式节点被 jaccard 检查约束",
+    "contentPath": "content/articles/content-jaccard-guard-added.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "jaccard",
+      "content",
+      "guard"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-owner-workbench-boundary-checked",
+    "slug": "owner-workbench-boundary-checked",
+    "title": "Owner 工作台边界复核",
+    "worldTitle": "Owner 边界",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录 owner-only 与 permission-guarded 路由检查",
+    "contentPath": "content/articles/owner-workbench-boundary-checked.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "owner",
+      "permission",
+      "server"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-ai-provider-disabled-adapter-added",
+    "slug": "ai-provider-disabled-adapter-added",
+    "title": "AI Provider 禁用适配层建立",
+    "worldTitle": "AI 禁用适配",
+    "type": "event",
+    "areaId": "timeline",
+    "summary": "记录 provider adapter 只保留后端禁用态骨架",
+    "contentPath": "content/articles/ai-provider-disabled-adapter-added.md",
+    "tags": [
+      "phase19",
+      "timeline",
+      "provider",
+      "disabled",
+      "review"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-timeline.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-phase19-content-ledger",
+    "slug": "phase19-content-ledger",
+    "title": "Phase 19 内容台账",
+    "worldTitle": "内容台账",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "记录本轮新增节点、关系、路径和事件的核对方式",
+    "contentPath": "content/documents/phase19-content-ledger.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "ledger",
+      "phase19",
+      "content"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-local-rc-evidence-map",
+    "slug": "local-rc-evidence-map",
+    "title": "本地 RC 证据地图",
+    "worldTitle": "证据地图",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "说明各类报告和截图分别证明什么，帮助档案馆形成可查证台账。",
+    "contentPath": "content/documents/local-rc-evidence-map.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "report",
+      "screenshot",
+      "audit"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-world-index-field-guide",
+    "slug": "world-index-field-guide",
+    "title": "公开索引字段指南",
+    "worldTitle": "字段指南",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "解释 world-index.json 中状态、区域、节点、路径的含义",
+    "contentPath": "content/documents/world-index-field-guide.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "world-index",
+      "json",
+      "fields"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-content-path-cleaning-rule",
+    "slug": "content-path-cleaning-rule",
+    "title": "正文路径清理规则",
+    "worldTitle": "路径清理",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "记录读取 Markdown 正文时的路径安全边界",
+    "contentPath": "content/documents/content-path-cleaning-rule.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "contentPath",
+      "security",
+      "read"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-relation-note-style-guide",
+    "slug": "relation-note-style-guide",
+    "title": "关系说明写法指南",
+    "worldTitle": "关系说明",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "规定强关系 note 应回答为什么相关",
+    "contentPath": "content/documents/relation-note-style-guide.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "relation",
+      "note",
+      "why"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-public-route-inventory",
+    "slug": "public-route-inventory",
+    "title": "公开路由清单",
+    "worldTitle": "路由清单",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "汇总首页、地图、路径、节点、档案馆、灯塔、状态页职责",
+    "contentPath": "content/documents/public-route-inventory.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "route",
+      "public",
+      "inventory"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-legacy-boundary-register",
+    "slug": "legacy-boundary-register",
+    "title": "Legacy 边界登记",
+    "worldTitle": "Legacy 登记",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "记录哪些历史区域只作为参考保留，帮助档案馆形成可查证台账。",
+    "contentPath": "content/documents/legacy-boundary-register.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "legacy",
+      "boundary",
+      "reference"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-script-count-change-log",
+    "slug": "script-count-change-log",
+    "title": "脚本计数变更记录",
+    "worldTitle": "脚本计数",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "记录新增检查命令时如何同步 registry",
+    "contentPath": "content/documents/script-count-change-log.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "script",
+      "registry",
+      "count"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-visual-qa-review-sheet",
+    "slug": "visual-qa-review-sheet",
+    "title": "视觉 QA 复核表",
+    "worldTitle": "视觉复核",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "整理首屏、移动导航、CTA、状态卡的复核字段",
+    "contentPath": "content/documents/visual-qa-review-sheet.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "visual",
+      "QA",
+      "checklist"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-v2-plan-ledger",
+    "slug": "worldos-v2-plan-ledger",
+    "title": "WorldOS v2 计划台账",
+    "worldTitle": "v2 台账",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "记录 Phase 19-21 的目标、状态和门禁证据",
+    "contentPath": "content/documents/worldos-v2-plan-ledger.md",
+    "tags": [
+      "phase19",
+      "archive",
+      "plan",
+      "phase",
+      "status"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "fact",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-archive.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lighthouse-search-weight-model",
+    "slug": "lighthouse-search-weight-model",
+    "title": "灯塔搜索权重模型",
+    "worldTitle": "搜索权重",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "为标题、世界名、标签、摘要设置更清晰的权重",
+    "contentPath": "content/articles/lighthouse-search-weight-model.md",
+    "tags": [
+      "phase19",
+      "lighthouse",
+      "search",
+      "weight",
+      "Fuse"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lighthouse-reason-builder",
+    "slug": "lighthouse-reason-builder",
+    "title": "灯塔推荐理由生成器",
+    "worldTitle": "理由生成",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "让推荐解释从泛泛相关变成可读理由，帮助灯塔低光模式解释下一步。",
+    "contentPath": "content/articles/lighthouse-reason-builder.md",
+    "tags": [
+      "phase19",
+      "lighthouse",
+      "reason",
+      "recommendation",
+      "why"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-low-light-ai-status-panel",
+    "slug": "low-light-ai-status-panel",
+    "title": "低光 AI 状态面板",
+    "worldTitle": "低光状态",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "把 AI 不可用时仍能做什么说清楚，帮助灯塔低光模式解释下一步。",
+    "contentPath": "content/articles/low-light-ai-status-panel.md",
+    "tags": [
+      "phase19",
+      "lighthouse",
+      "low-light",
+      "status",
+      "fallback"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-public-context-slice-note",
+    "slug": "public-context-slice-note",
+    "title": "公开上下文切片说明",
+    "worldTitle": "上下文切片",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "解释灯塔只能读取 public / semiPublic 或授权上下文",
+    "contentPath": "content/articles/public-context-slice-note.md",
+    "tags": [
+      "phase19",
+      "lighthouse",
+      "context",
+      "public",
+      "authorized"
+    ],
+    "visibility": "public",
+    "lifeStage": "fruit",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-ai-review-queue-promise",
+    "slug": "ai-review-queue-promise",
+    "title": "AI 审核队列承诺",
+    "worldTitle": "审核承诺",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "说明 AI 输出为什么必须进入人工审核",
+    "contentPath": "content/articles/ai-review-queue-promise.md",
+    "tags": [
+      "phase19",
+      "lighthouse",
+      "review",
+      "human",
+      "not-executed"
+    ],
+    "visibility": "public",
+    "lifeStage": "archive",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lighthouse-question-shortcuts",
+    "slug": "lighthouse-question-shortcuts",
+    "title": "灯塔问题快捷入口",
+    "worldTitle": "问题入口",
+    "type": "article",
+    "areaId": "lighthouse",
+    "summary": "整理适合新访客的低门槛问题，帮助灯塔低光模式解释下一步。",
+    "contentPath": "content/articles/lighthouse-question-shortcuts.md",
+    "tags": [
+      "phase19",
+      "lighthouse",
+      "question",
+      "shortcut",
+      "guide"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "ai-assisted",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
   }
 ]

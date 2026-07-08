@@ -662,5 +662,213 @@
     "visibility": "public",
     "actor": "worldos-kernel",
     "summary": "M13 阶段目标达成事件记录"
+  },
+  {
+    "id": "evt-phase19-001",
+    "type": "milestone",
+    "title": "Phase 19 内容扩展契约建立",
+    "date": "2026-07-08",
+    "description": "Phase 19 内容扩展契约建立，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-local-world-entry-ritual",
+      "node-phase19-content-ledger"
+    ],
+    "areaIds": [
+      "origin",
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "Phase 19 内容扩展契约建立事件记录"
+  },
+  {
+    "id": "evt-phase19-002",
+    "type": "content",
+    "title": "创世原点新增入口解释",
+    "date": "2026-07-08",
+    "description": "创世原点新增入口解释，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-world-model-reading-order",
+      "node-public-world-hospitality-rule"
+    ],
+    "areaIds": [
+      "origin"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "创世原点新增入口解释事件记录"
+  },
+  {
+    "id": "evt-phase19-003",
+    "type": "content",
+    "title": "技术星域补齐本地门禁笔记",
+    "date": "2026-07-08",
+    "description": "技术星域补齐本地门禁笔记，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-local-rc-fresh-build-playbook",
+      "node-playwright-lan-smoke-notes"
+    ],
+    "areaIds": [
+      "tech"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "技术星域补齐本地门禁笔记事件记录"
+  },
+  {
+    "id": "evt-phase19-004",
+    "type": "content",
+    "title": "产品工坊形成维护工具线",
+    "date": "2026-07-08",
+    "description": "产品工坊形成维护工具线，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-worldos-content-seed-tool",
+      "node-local-screenshot-review-kit"
+    ],
+    "areaIds": [
+      "workshop"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "产品工坊形成维护工具线事件记录"
+  },
+  {
+    "id": "evt-phase19-005",
+    "type": "content",
+    "title": "灵感云层补齐公开原则碎片",
+    "date": "2026-07-08",
+    "description": "灵感云层补齐公开原则碎片，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-small-node-big-door",
+      "node-permission-is-a-promise"
+    ],
+    "areaIds": [
+      "fragments"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "灵感云层补齐公开原则碎片事件记录"
+  },
+  {
+    "id": "evt-phase19-006",
+    "type": "content",
+    "title": "记忆湖增加本地维护片刻",
+    "date": "2026-07-08",
+    "description": "记忆湖增加本地维护片刻，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-window-rain-local-rc",
+      "node-night-mode-reading-memory"
+    ],
+    "areaIds": [
+      "memory"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "记忆湖增加本地维护片刻事件记录"
+  },
+  {
+    "id": "evt-phase19-007",
+    "type": "content",
+    "title": "时间河记录第十九阶段节点",
+    "date": "2026-07-08",
+    "description": "时间河记录第十九阶段节点，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-phase19-content-expansion-start",
+      "node-theme-system-stabilized"
+    ],
+    "areaIds": [
+      "timeline"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "时间河记录第十九阶段节点事件记录"
+  },
+  {
+    "id": "evt-phase19-008",
+    "type": "content",
+    "title": "档案馆新增证据与台账说明",
+    "date": "2026-07-08",
+    "description": "档案馆新增证据与台账说明，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-local-rc-evidence-map",
+      "node-world-index-field-guide"
+    ],
+    "areaIds": [
+      "archive"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "档案馆新增证据与台账说明事件记录"
+  },
+  {
+    "id": "evt-phase19-009",
+    "type": "content",
+    "title": "灯塔低光推荐线扩展",
+    "date": "2026-07-08",
+    "description": "灯塔低光推荐线扩展，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-lighthouse-search-weight-model",
+      "node-lighthouse-reason-builder"
+    ],
+    "areaIds": [
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "灯塔低光推荐线扩展事件记录"
+  },
+  {
+    "id": "evt-phase19-010",
+    "type": "maintenance",
+    "title": "脚本注册表同步 Phase 19 检查",
+    "date": "2026-07-08",
+    "description": "脚本注册表同步 Phase 19 检查，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-script-count-change-log",
+      "node-script-registry-discipline"
+    ],
+    "areaIds": [
+      "archive",
+      "tech"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "脚本注册表同步 Phase 19 检查事件记录"
+  },
+  {
+    "id": "evt-phase19-011",
+    "type": "milestone",
+    "title": "公开世界达到 200 节点目标",
+    "date": "2026-07-08",
+    "description": "公开世界达到 200 节点目标，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-worldos-v2-plan-ledger",
+      "node-phase19-content-expansion-start"
+    ],
+    "areaIds": [
+      "archive",
+      "timeline"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "公开世界达到 200 节点目标事件记录"
+  },
+  {
+    "id": "evt-phase19-012",
+    "type": "governance",
+    "title": "Phase 19 仍保持本地局域网范围",
+    "date": "2026-07-08",
+    "description": "Phase 19 仍保持本地局域网范围，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+    "nodeIds": [
+      "node-worldos-operating-promise",
+      "node-low-light-ai-status-panel"
+    ],
+    "areaIds": [
+      "origin",
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "Phase 19 仍保持本地局域网范围事件记录"
   }
 ]

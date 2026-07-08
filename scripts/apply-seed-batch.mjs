@@ -2,7 +2,7 @@
 // 通用节点/关系/事件种子应用脚本
 // 用法: node scripts/apply-seed-batch.mjs <seed.json>
 // seed.json 结构:
-//   { nodes: [{slug,title,worldTitle,type,areaId,summary,tags,lifeStage,cover,contentDir,createdAt,body,featured?,layer?,source?,relations?}], events?: [...] }
+//   { nodes: [{slug,title,worldTitle,type,areaId,summary,tags,lifeStage,cover,contentDir,createdAt,body,featured?,layer?,source?,relations?}], paths?: [...], events?: [...] }
 // 幂等: slug 已存在则跳过节点/关系;事件按 id 幂等
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
@@ -14,6 +14,7 @@ const ROOT = resolve(__dirname, '..')
 const NODES_PATH = resolve(ROOT, 'data/domains/experience/nodes.json')
 const RELATIONS_PATH = resolve(ROOT, 'data/core/relations.json')
 const EVENTS_PATH = resolve(ROOT, 'data/core/world-events.json')
+const PATHS_PATH = resolve(ROOT, 'data/domains/experience/paths.json')
 const CONTENT_ROOT = resolve(ROOT, 'content')
 
 const seedPath = process.argv[2]
@@ -25,8 +26,11 @@ const seed = JSON.parse(readFileSync(resolve(ROOT, seedPath), 'utf8'))
 const nodes = JSON.parse(readFileSync(NODES_PATH, 'utf8'))
 const relations = JSON.parse(readFileSync(RELATIONS_PATH, 'utf8'))
 const events = JSON.parse(readFileSync(EVENTS_PATH, 'utf8'))
+const paths = JSON.parse(readFileSync(PATHS_PATH, 'utf8'))
 
 const slugToId = new Map(nodes.map((n) => [n.slug, n.id]))
+const existingSlugs = new Set(nodes.map((n) => n.slug))
+const existingPathIds = new Set(paths.map((p) => p.id))
 const existingRelKeys = new Set(relations.map((r) => `${r.from}|${r.to}|${r.type}`))
 const existingEventIds = new Set(events.map((e) => e.id))
 
@@ -39,6 +43,7 @@ for (const r of relations) {
 let addedNodes = 0
 let addedRelations = 0
 let addedEvents = 0
+let addedPaths = 0
 let writtenFiles = 0
 let skippedNodes = 0
 
@@ -71,6 +76,7 @@ for (const n of seed.nodes || []) {
     reviewed: true,
   }
   nodes.push(nodeRec)
+  existingSlugs.add(n.slug)
   addedNodes += 1
 
   const fullContentPath = resolve(ROOT, contentPath)
@@ -80,6 +86,30 @@ for (const n of seed.nodes || []) {
     writeFileSync(fullContentPath, `# ${n.title}\n\n${n.body}\n`)
     writtenFiles += 1
   }
+}
+
+for (const p of seed.paths || []) {
+  if (existingPathIds.has(p.id)) {
+    console.log(`跳过已存在路径: ${p.id}`)
+    continue
+  }
+  const missingSlugs = (p.nodeSlugs || []).filter((slug) => !existingSlugs.has(slug))
+  if (missingSlugs.length) {
+    console.warn(`路径节点不存在(跳过): ${p.id} -> ${missingSlugs.join(', ')}`)
+    continue
+  }
+  paths.push({
+    id: p.id,
+    title: p.title,
+    description: p.description,
+    audience: p.audience,
+    estimatedMinutes: p.estimatedMinutes,
+    nodeSlugs: p.nodeSlugs,
+    nextPathIds: p.nextPathIds,
+    visibility: p.visibility || 'public',
+  })
+  existingPathIds.add(p.id)
+  addedPaths += 1
 }
 
 for (const n of seed.nodes || []) {
@@ -120,12 +150,14 @@ for (const e of seed.events || []) {
 writeFileSync(NODES_PATH, JSON.stringify(nodes, null, 2) + '\n')
 writeFileSync(RELATIONS_PATH, JSON.stringify(relations, null, 2) + '\n')
 writeFileSync(EVENTS_PATH, JSON.stringify(events, null, 2) + '\n')
+writeFileSync(PATHS_PATH, JSON.stringify(paths, null, 2) + '\n')
 
 console.log('---应用完成---')
 console.log('新增节点:', addedNodes)
 console.log('跳过节点:', skippedNodes)
 console.log('新增关系:', addedRelations)
 console.log('新增事件:', addedEvents)
+console.log('新增路径:', addedPaths)
 console.log('写入 markdown:', writtenFiles)
 console.log('提示：请运行 `npm run build:world-index` 以重建公开索引，或使用 --rebuild 参数。')
 

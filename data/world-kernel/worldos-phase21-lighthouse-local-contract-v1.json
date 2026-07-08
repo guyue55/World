@@ -1,0 +1,36 @@
+{
+  "name": "WorldOS Phase 21 AI 灯塔本地化增强契约 v1",
+  "updatedAt": "2026-07-08",
+  "source": "worldos-execution-plan-v2-2026-07-08.md / Phase 21",
+  "principle": "灯塔增强只改善本地搜索、推荐解释和低光状态展示，不启用真实 Provider，不写世界源文件。",
+  "scope": {
+    "localOnly": true,
+    "realTimeAIProviderEnabled": false,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "requiredFiles": [
+    "src/lib/search.ts",
+    "src/lib/lighthouse-recommend.ts",
+    "src/lib/lighthouse-status.ts",
+    "src/components/status/AiLowLightStatusPanel.tsx",
+    "data/domains/ai/lighthouse-local-status.json"
+  ],
+  "requiredCommands": [
+    "check:phase21-lighthouse",
+    "check:lighthouse",
+    "check:ai-boundary"
+  ],
+  "requiredEvidence": {
+    "weightedSearch": "WORLDOS_SEARCH_WEIGHTS",
+    "recommendationReason": "relationReason",
+    "statusPanel": "AiLowLightStatusPanel",
+    "providerDisabled": "realTimeAIProviderEnabled\": false"
+  },
+  "releaseStates": {
+    "realTimeAIProviderEnabled": false,
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

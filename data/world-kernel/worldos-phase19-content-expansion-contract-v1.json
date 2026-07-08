@@ -1,0 +1,32 @@
+{
+  "name": "WorldOS Phase 19 内容生态收尾契约 v1",
+  "updatedAt": "2026-07-08",
+  "source": "worldos-execution-plan-v2-2026-07-08.md / Phase 19",
+  "principle": "内容扩展必须是真实可读、可进入路径、可被关系网络吸收的本地公开世界增长，而不是只增加空节点。",
+  "scope": {
+    "localOnly": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "targets": {
+    "publicNodes": 200,
+    "contentBackedPublicNodes": 200,
+    "relations": 300,
+    "events": 50,
+    "publicPaths": 20,
+    "relationDensity": 1.5,
+    "maxOrphanRate": 0.05,
+    "minPublicNodeContentCharacters": 400
+  },
+  "requiredSeed": "data/domains/content/phase-nineteen-content-expansion-seed.json",
+  "requiredCommands": [
+    "check:phase19-content",
+    "check:content",
+    "check:daily"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

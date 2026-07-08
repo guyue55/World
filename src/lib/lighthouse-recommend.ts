@@ -10,6 +10,23 @@ export type Recommendation = {
   reason: string
 }
 
+function sharedTags(a: Node, b: Node) {
+  const bTags = new Set(b.tags)
+  return a.tags.filter((tag) => bTags.has(tag)).slice(0, 3)
+}
+
+function relationReason(currentNode: Node, targetNode: Node, relations: Relation[]) {
+  const relation = relations.find((item) =>
+    (item.from === currentNode.id && item.to === targetNode.id)
+    || (item.to === currentNode.id && item.from === targetNode.id),
+  )
+  if (relation?.note) return relation.note
+  const tags = sharedTags(currentNode, targetNode)
+  if (tags.length) return `共享 ${tags.join('、')} 标签，适合作为下一步阅读。`
+  if (currentNode.areaId === targetNode.areaId) return `同属 ${currentNode.areaId} 区域，可以继续理解相邻主题。`
+  return '由公开关系网络推荐，适合作为下一步探索。'
+}
+
 export function getRecommendationsForNode(
   currentNode: Node,
   allNodes: Node[],
@@ -27,7 +44,7 @@ export function getRecommendationsForNode(
     recommendations.push({
       type: 'node',
       node: { slug: n.slug, title: n.title, worldTitle: n.worldTitle ?? undefined, href: `/node/${n.slug}`, summary: n.summary ?? undefined },
-      reason: `同属一个区域，主题相关。`,
+      reason: relationReason(currentNode, n, allRelations),
     })
   }
 
@@ -45,7 +62,19 @@ export function getRecommendationsForNode(
     recommendations.push({
       type: 'node',
       node: { slug: n.slug, title: n.title, worldTitle: n.worldTitle ?? undefined, href: `/node/${n.slug}`, summary: n.summary ?? undefined },
-      reason: `通过关系星线相连。`,
+      reason: relationReason(currentNode, n, allRelations),
+    })
+  }
+
+  const pathMatches = allPaths
+    .filter((path) => path.visibility === 'public' && path.nodeSlugs.includes(currentNode.slug))
+    .slice(0, 1)
+
+  for (const path of pathMatches) {
+    recommendations.push({
+      type: 'path',
+      path: { id: path.id, title: path.title, href: `/paths/${path.id}`, description: path.description },
+      reason: `当前节点位于「${path.title}」路径中，可以沿路径继续阅读。`,
     })
   }
 
@@ -76,7 +105,9 @@ export function getRecommendationsForHome(
     recommendations.push({
       type: 'node',
       node: { slug: n.slug, title: n.title, worldTitle: n.worldTitle ?? undefined, href: `/node/${n.slug}`, summary: n.summary ?? undefined },
-      reason: `精选代表节点，适合快速了解世界全貌。`,
+      reason: n.featured?.pathCore
+        ? '路径核心节点，适合快速进入世界主线。'
+        : `精选代表节点，覆盖 ${n.areaId} 区域，适合快速了解世界全貌。`,
     })
   }
 

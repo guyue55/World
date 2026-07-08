@@ -1,0 +1,41 @@
+{
+  "name": "WorldOS AI 灯塔本地低光状态",
+  "updatedAt": "2026-07-08",
+  "mode": "low-light",
+  "localOnly": true,
+  "realTimeAIProviderEnabled": false,
+  "contextPolicy": "public-or-authorized-only",
+  "summary": "当前灯塔不调用真实 AI Provider，只读取公开索引，提供搜索、路径推荐、边界解释和下一步提示。",
+  "capabilities": [
+    {
+      "id": "public-search",
+      "label": "公开搜索",
+      "description": "基于标题、世界名、标签、摘要和生命周期做本地 Fuse.js 检索。",
+      "status": "available"
+    },
+    {
+      "id": "path-recommendation",
+      "label": "路径推荐",
+      "description": "优先推荐 first-time、tech、deep-dive、creator、life 等公开路径。",
+      "status": "available"
+    },
+    {
+      "id": "reason-explain",
+      "label": "推荐理由",
+      "description": "推荐说明来自同区域、共享标签、路径位置和人工 reviewed 的关系 note。",
+      "status": "available"
+    },
+    {
+      "id": "provider-adapter",
+      "label": "真实 Provider",
+      "description": "后端适配层保持 disabled-dry-run，不读取 API key，不发起网络请求。",
+      "status": "disabled"
+    }
+  ],
+  "forbiddenActions": [
+    "读取 private / family / partner / vault / sealed / silent 内容",
+    "自动发布、删除或改写节点",
+    "自动改变可见性或权限",
+    "绕过人工审核队列写入世界源文件"
+  ]
+}

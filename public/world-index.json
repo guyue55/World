@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T10:56:09.594Z",
+  "generatedAt": "2026-07-08T16:08:52.500Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -2272,6 +2272,1336 @@
       "visibility": "public",
       "lifeStage": "growing",
       "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-world-entry-ritual",
+      "slug": "local-world-entry-ritual",
+      "title": "本地世界入口仪式",
+      "worldTitle": "入口仪式",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "把 localhost 和 LAN IP 的打开过程整理成低门槛进入仪式",
+      "tags": [
+        "phase19",
+        "origin",
+        "入口",
+        "地图",
+        "路径"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-world-model-reading-order",
+      "slug": "world-model-reading-order",
+      "title": "世界模型阅读顺序",
+      "worldTitle": "阅读顺序",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "为节点、区域、关系、路径、事件建立推荐阅读顺序",
+      "tags": [
+        "phase19",
+        "origin",
+        "节点",
+        "区域",
+        "关系"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-public-world-hospitality-rule",
+      "slug": "public-world-hospitality-rule",
+      "title": "公开世界待客规则",
+      "worldTitle": "待客规则",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "把降低门槛翻译成页面、文案和路径的待客规则",
+      "tags": [
+        "phase19",
+        "origin",
+        "中文优先",
+        "少入口",
+        "清晰出口"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-local-first-principle",
+      "slug": "worldos-local-first-principle",
+      "title": "WorldOS 本地优先原则",
+      "worldTitle": "本地优先",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "说明为什么当前先打磨本地和局域网体验",
+      "tags": [
+        "phase19",
+        "origin",
+        "fresh build",
+        "LAN smoke",
+        "证据"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-visitor-map-contract",
+      "slug": "visitor-map-contract",
+      "title": "访客地图契约",
+      "worldTitle": "地图契约",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "定义地图应该回答的四个低门槛问题，帮助第一次访问者理解世界入口。",
+      "tags": [
+        "phase19",
+        "origin",
+        "我在哪",
+        "能去哪",
+        "如何回来"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-world-language-onboarding",
+      "slug": "world-language-onboarding",
+      "title": "世界语言入门表",
+      "worldTitle": "语言入门",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "把浪漫词汇翻译成现实可理解的解释，帮助第一次访问者理解世界入口。",
+      "tags": [
+        "phase19",
+        "origin",
+        "浪漫名",
+        "现实名",
+        "功能名"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-node-life-story-primer",
+      "slug": "node-life-story-primer",
+      "title": "节点生命故事入门",
+      "worldTitle": "生命周期",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "解释 seed 到 archive 的生命周期如何帮助维护",
+      "tags": [
+        "phase19",
+        "origin",
+        "seed",
+        "growing",
+        "bloom"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-operating-promise",
+      "slug": "worldos-operating-promise",
+      "title": "WorldOS 运行承诺",
+      "worldTitle": "运行承诺",
+      "type": "article",
+      "areaId": "origin",
+      "summary": "把不伪造上线、不越权读取、不自动发布写成公开承诺",
+      "tags": [
+        "phase19",
+        "origin",
+        "诚实",
+        "边界",
+        "人工确认"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-rc-fresh-build-playbook",
+      "slug": "local-rc-fresh-build-playbook",
+      "title": "本地 RC 新鲜构建手册",
+      "worldTitle": "RC 手册",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "整理 release:local-rc 如何避免旧产物误导",
+      "tags": [
+        "phase19",
+        "tech",
+        "next build",
+        "artifact",
+        "mtime"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-playwright-lan-smoke-notes",
+      "slug": "playwright-lan-smoke-notes",
+      "title": "Playwright 局域网巡检笔记",
+      "worldTitle": "局域网巡检",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "记录浏览器 smoke 如何覆盖桌面和移动低动效",
+      "tags": [
+        "phase19",
+        "tech",
+        "desktop",
+        "mobile",
+        "reduced-motion"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-content-jaccard-quality-gate",
+      "slug": "content-jaccard-quality-gate",
+      "title": "内容相似度门禁实践",
+      "worldTitle": "相似度门禁",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "解释 jaccard 检查如何阻止复读机式节点",
+      "tags": [
+        "phase19",
+        "tech",
+        "jaccard",
+        "阈值",
+        "复写"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-script-registry-discipline",
+      "slug": "script-registry-discipline",
+      "title": "脚本注册表纪律",
+      "worldTitle": "脚本治理",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "说明 npm scripts 增长时如何保持可审计",
+      "tags": [
+        "phase19",
+        "tech",
+        "activeEntrypoints",
+        "legacy",
+        "daily"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-public-index-generation-pipeline",
+      "slug": "public-index-generation-pipeline",
+      "title": "公开索引生成管线",
+      "worldTitle": "索引管线",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "描述 public/world-index.json 如何从数据事实源生成",
+      "tags": [
+        "phase19",
+        "tech",
+        "nodes",
+        "paths",
+        "events"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-reduced-motion-runtime-contract",
+      "slug": "reduced-motion-runtime-contract",
+      "title": "低动效运行契约",
+      "worldTitle": "低动效",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "把 prefers-reduced-motion 与动态世界体验连接起来",
+      "tags": [
+        "phase19",
+        "tech",
+        "motion",
+        "accessibility",
+        "fallback"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-theme-css-variable-architecture",
+      "slug": "theme-css-variable-architecture",
+      "title": "主题 CSS 变量架构",
+      "worldTitle": "主题架构",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "记录深色模式如何通过 CSS 变量驱动色板",
+      "tags": [
+        "phase19",
+        "tech",
+        "ink",
+        "paper",
+        "night"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-mainline-import-audit-method",
+      "slug": "mainline-import-audit-method",
+      "title": "主线导入审计方法",
+      "worldTitle": "导入审计",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "描述如何发现 legacy 与主线之间的意外耦合",
+      "tags": [
+        "phase19",
+        "tech",
+        "rg",
+        "alias",
+        "legacy"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-typescript-schema-guard-notes",
+      "slug": "typescript-schema-guard-notes",
+      "title": "TypeScript 与 Schema 守门笔记",
+      "worldTitle": "类型守门",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "说明 zod schema 和 TS 类型如何共同保护世界数据",
+      "tags": [
+        "phase19",
+        "tech",
+        "zod",
+        "strict",
+        "json"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-network-start-guide",
+      "slug": "local-network-start-guide",
+      "title": "局域网启动指南",
+      "worldTitle": "LAN 启动",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "记录 npm run start 在 LAN 场景下的启动边界",
+      "tags": [
+        "phase19",
+        "tech",
+        "0.0.0.0",
+        "4320",
+        "baseUrl"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-build-size-observation-log",
+      "slug": "build-size-observation-log",
+      "title": "构建体积观察日志",
+      "worldTitle": "体积观察",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "整理构建体积增长与内容扩展之间的关系",
+      "tags": [
+        "phase19",
+        "tech",
+        "SSG",
+        "bundle",
+        "budget"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-search-weighting-experiment",
+      "slug": "search-weighting-experiment",
+      "title": "搜索权重实验记录",
+      "worldTitle": "搜索权重",
+      "type": "article",
+      "areaId": "tech",
+      "summary": "为灯塔搜索标题、标签、摘要权重调优做准备",
+      "tags": [
+        "phase19",
+        "tech",
+        "Fuse",
+        "title",
+        "tags"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-owner-review-workbench-story",
+      "slug": "owner-review-workbench-story",
+      "title": "Owner 审核工作台故事",
+      "worldTitle": "工作台故事",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "把审核队列、导出任务和维护提醒串成一个产品故事",
+      "tags": [
+        "phase19",
+        "workshop",
+        "审核",
+        "导出",
+        "维护"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-content-seed-tool",
+      "slug": "worldos-content-seed-tool",
+      "title": "内容种子工具设计",
+      "worldTitle": "种子工具",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "描述 seed 批量应用脚本如何支持节点、路径、事件",
+      "tags": [
+        "phase19",
+        "workshop",
+        "seed",
+        "idempotent",
+        "path"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-screenshot-review-kit",
+      "slug": "local-screenshot-review-kit",
+      "title": "本地截图复核套件",
+      "worldTitle": "截图复核",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "整理桌面与移动截图应该人工看什么，帮助产品工坊沉淀可执行动作。",
+      "tags": [
+        "phase19",
+        "workshop",
+        "desktop",
+        "mobile",
+        "CTA"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-reading-card-system",
+      "slug": "worldos-reading-card-system",
+      "title": "阅读卡片系统",
+      "worldTitle": "卡片系统",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "描述节点卡片如何在首页、地图、档案馆保持一致",
+      "tags": [
+        "phase19",
+        "workshop",
+        "card",
+        "summary",
+        "next"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-path-progress-widget-idea",
+      "slug": "path-progress-widget-idea",
+      "title": "路径进度组件设想",
+      "worldTitle": "路径进度",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "为后续路径旅程加入当前进度和下一步动作",
+      "tags": [
+        "phase19",
+        "workshop",
+        "progress",
+        "next",
+        "return"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-archive-filter-ergonomics",
+      "slug": "archive-filter-ergonomics",
+      "title": "档案馆筛选体验",
+      "worldTitle": "筛选体验",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "记录类型、区域、标签筛选如何降低查找成本",
+      "tags": [
+        "phase19",
+        "workshop",
+        "filter",
+        "type",
+        "area"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-mobile-route-entry-polish",
+      "slug": "mobile-route-entry-polish",
+      "title": "移动端入口打磨",
+      "worldTitle": "移动入口",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "说明小屏幕上入口、导航和状态卡如何避免拥挤",
+      "tags": [
+        "phase19",
+        "workshop",
+        "mobile",
+        "nav",
+        "safe-area"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-theme-toggle-product-note",
+      "slug": "theme-toggle-product-note",
+      "title": "主题切换产品说明",
+      "worldTitle": "主题切换",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "记录深色模式为什么是体验基础设施，帮助产品工坊沉淀可执行动作。",
+      "tags": [
+        "phase19",
+        "workshop",
+        "dark",
+        "light",
+        "system"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-content-maintenance-dashboard-draft",
+      "slug": "content-maintenance-dashboard-draft",
+      "title": "内容维护面板草案",
+      "worldTitle": "维护面板",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "构思内容密度、相似度和孤岛节点的维护视图",
+      "tags": [
+        "phase19",
+        "workshop",
+        "density",
+        "orphan",
+        "similarity"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lan-demo-checklist-product",
+      "slug": "lan-demo-checklist-product",
+      "title": "局域网 Demo 检查清单",
+      "worldTitle": "Demo 清单",
+      "type": "project",
+      "areaId": "workshop",
+      "summary": "把本地演示前需要确认的事项产品化，帮助产品工坊沉淀可执行动作。",
+      "tags": [
+        "phase19",
+        "workshop",
+        "demo",
+        "LAN",
+        "checklist"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-small-node-big-door",
+      "slug": "small-node-big-door",
+      "title": "小节点也能是大门",
+      "worldTitle": "小门",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "思考碎片节点如何成为跨区域入口，帮助灵感云层连接后续阅读。",
+      "tags": [
+        "phase19",
+        "fragments",
+        "fragment",
+        "door",
+        "relation"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-quiet-interface-thought",
+      "slug": "quiet-interface-thought",
+      "title": "安静界面札记",
+      "worldTitle": "安静界面",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "记录克制界面比堆满组件更适合个人世界",
+      "tags": [
+        "phase19",
+        "fragments",
+        "space",
+        "quiet",
+        "reading"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-relationship-before-graph",
+      "slug": "relationship-before-graph",
+      "title": "先有关系再有图谱",
+      "worldTitle": "关系优先",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "提醒关系解释比视觉图谱更重要，帮助灵感云层连接后续阅读。",
+      "tags": [
+        "phase19",
+        "fragments",
+        "why",
+        "note",
+        "graph"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-first-emotional-safety",
+      "slug": "local-first-emotional-safety",
+      "title": "本地优先的安全感",
+      "worldTitle": "本地安全",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "思考本地运行为什么能降低创作压力，帮助灵感云层连接后续阅读。",
+      "tags": [
+        "phase19",
+        "fragments",
+        "local",
+        "safe",
+        "slow"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-romance-needs-ledger",
+      "slug": "romance-needs-ledger",
+      "title": "浪漫需要台账",
+      "worldTitle": "台账",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "记录世界感与工程台账之间的互补关系，帮助灵感云层连接后续阅读。",
+      "tags": [
+        "phase19",
+        "fragments",
+        "ledger",
+        "romance",
+        "audit"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-first-screen-kindness",
+      "slug": "first-screen-kindness",
+      "title": "首屏的善意",
+      "worldTitle": "首屏",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "提醒首页第一屏要帮人而不是炫耀系统复杂度",
+      "tags": [
+        "phase19",
+        "fragments",
+        "hero",
+        "entry",
+        "kindness"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-permission-is-a-promise",
+      "slug": "permission-is-a-promise",
+      "title": "权限是一种承诺",
+      "worldTitle": "权限承诺",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "把权限边界理解为对访客和自己的承诺，帮助灵感云层连接后续阅读。",
+      "tags": [
+        "phase19",
+        "fragments",
+        "permission",
+        "trust",
+        "promise"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-screenshots-are-memory",
+      "slug": "screenshots-are-memory",
+      "title": "截图也是记忆",
+      "worldTitle": "截图记忆",
+      "type": "fragment",
+      "areaId": "fragments",
+      "summary": "把验收截图视为世界状态的时间切片，帮助灵感云层连接后续阅读。",
+      "tags": [
+        "phase19",
+        "fragments",
+        "screenshot",
+        "evidence",
+        "memory"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-window-rain-local-rc",
+      "slug": "window-rain-local-rc",
+      "title": "窗边雨声与本地 RC",
+      "worldTitle": "雨夜 RC",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "把一次雨夜验收记录为公开的低光记忆，帮助记忆湖保留公开低光片刻。",
+      "tags": [
+        "phase19",
+        "memory",
+        "rain",
+        "rc",
+        "quiet"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-desk-lamp-after-build",
+      "slug": "desk-lamp-after-build",
+      "title": "构建完成后的台灯",
+      "worldTitle": "台灯",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录 build 通过后回看页面的安静瞬间",
+      "tags": [
+        "phase19",
+        "memory",
+        "lamp",
+        "build",
+        "review"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lan-phone-first-visit",
+      "slug": "lan-phone-first-visit",
+      "title": "手机访问局域网的第一次",
+      "worldTitle": "手机访问",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录用手机打开 LAN 地址时的真实体验",
+      "tags": [
+        "phase19",
+        "memory",
+        "phone",
+        "LAN",
+        "touch"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-coffee-and-script-registry",
+      "slug": "coffee-and-script-registry",
+      "title": "咖啡与脚本注册表",
+      "worldTitle": "咖啡脚本",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "把脚本计数同步这种小事记录成维护记忆",
+      "tags": [
+        "phase19",
+        "memory",
+        "coffee",
+        "scripts",
+        "count"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-night-mode-reading-memory",
+      "slug": "night-mode-reading-memory",
+      "title": "深色模式阅读记忆",
+      "worldTitle": "夜读",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录夜间切换主题后的阅读感受，帮助记忆湖保留公开低光片刻。",
+      "tags": [
+        "phase19",
+        "memory",
+        "dark",
+        "reading",
+        "night"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-repair-day-breathing-room",
+      "slug": "repair-day-breathing-room",
+      "title": "修复日的呼吸空间",
+      "worldTitle": "修复日",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录一次没有新增功能、只复核边界的维护日",
+      "tags": [
+        "phase19",
+        "memory",
+        "repair",
+        "space",
+        "maintenance"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-archive-search-found-again",
+      "slug": "archive-search-found-again",
+      "title": "在档案馆重新找到旧节点",
+      "worldTitle": "重新找到",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录搜索把旧想法重新带回主线的瞬间，帮助记忆湖保留公开低光片刻。",
+      "tags": [
+        "phase19",
+        "memory",
+        "archive",
+        "search",
+        "found"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-reduced-motion-kindness-memory",
+      "slug": "reduced-motion-kindness-memory",
+      "title": "低动效的体贴记忆",
+      "worldTitle": "体贴",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录低动效不是少体验而是另一种尊重，帮助记忆湖保留公开低光片刻。",
+      "tags": [
+        "phase19",
+        "memory",
+        "reduced",
+        "motion",
+        "care"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-phase19-content-expansion-start",
+      "slug": "phase19-content-expansion-start",
+      "title": "Phase 19 内容扩展启动",
+      "worldTitle": "扩展启动",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录内容生态从 130 节点迈向 200 节点的起点",
+      "tags": [
+        "phase19",
+        "timeline",
+        "phase19",
+        "content",
+        "start"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-theme-system-stabilized",
+      "slug": "theme-system-stabilized",
+      "title": "主题系统稳定",
+      "worldTitle": "主题稳定",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录深色模式从半成品风险到完整可用的修复过程",
+      "tags": [
+        "phase19",
+        "timeline",
+        "theme",
+        "fix",
+        "stable"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-a11y-focus-pass",
+      "slug": "a11y-focus-pass",
+      "title": "焦点管理通过",
+      "worldTitle": "焦点通过",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录键盘导航和 focus-visible 被纳入体验门禁",
+      "tags": [
+        "phase19",
+        "timeline",
+        "a11y",
+        "focus",
+        "keyboard"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-lan-rc-refresh",
+      "slug": "local-lan-rc-refresh",
+      "title": "本地 LAN RC 证据刷新",
+      "worldTitle": "证据刷新",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录 LAN smoke、浏览器检查和截图证据刷新",
+      "tags": [
+        "phase19",
+        "timeline",
+        "LAN",
+        "smoke",
+        "evidence"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lib-warning-zero-milestone",
+      "slug": "lib-warning-zero-milestone",
+      "title": "lib warning 归零里程碑",
+      "worldTitle": "warning 归零",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录主线门面拆分后 warning 清零",
+      "tags": [
+        "phase19",
+        "timeline",
+        "warning",
+        "architecture",
+        "zero"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-content-jaccard-guard-added",
+      "slug": "content-jaccard-guard-added",
+      "title": "内容相似度守门建立",
+      "worldTitle": "相似度守门",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录复读机式节点被 jaccard 检查约束",
+      "tags": [
+        "phase19",
+        "timeline",
+        "jaccard",
+        "content",
+        "guard"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-owner-workbench-boundary-checked",
+      "slug": "owner-workbench-boundary-checked",
+      "title": "Owner 工作台边界复核",
+      "worldTitle": "Owner 边界",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录 owner-only 与 permission-guarded 路由检查",
+      "tags": [
+        "phase19",
+        "timeline",
+        "owner",
+        "permission",
+        "server"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-ai-provider-disabled-adapter-added",
+      "slug": "ai-provider-disabled-adapter-added",
+      "title": "AI Provider 禁用适配层建立",
+      "worldTitle": "AI 禁用适配",
+      "type": "event",
+      "areaId": "timeline",
+      "summary": "记录 provider adapter 只保留后端禁用态骨架",
+      "tags": [
+        "phase19",
+        "timeline",
+        "provider",
+        "disabled",
+        "review"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-phase19-content-ledger",
+      "slug": "phase19-content-ledger",
+      "title": "Phase 19 内容台账",
+      "worldTitle": "内容台账",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录本轮新增节点、关系、路径和事件的核对方式",
+      "tags": [
+        "phase19",
+        "archive",
+        "ledger",
+        "phase19",
+        "content"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-local-rc-evidence-map",
+      "slug": "local-rc-evidence-map",
+      "title": "本地 RC 证据地图",
+      "worldTitle": "证据地图",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "说明各类报告和截图分别证明什么，帮助档案馆形成可查证台账。",
+      "tags": [
+        "phase19",
+        "archive",
+        "report",
+        "screenshot",
+        "audit"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-world-index-field-guide",
+      "slug": "world-index-field-guide",
+      "title": "公开索引字段指南",
+      "worldTitle": "字段指南",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "解释 world-index.json 中状态、区域、节点、路径的含义",
+      "tags": [
+        "phase19",
+        "archive",
+        "world-index",
+        "json",
+        "fields"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-content-path-cleaning-rule",
+      "slug": "content-path-cleaning-rule",
+      "title": "正文路径清理规则",
+      "worldTitle": "路径清理",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录读取 Markdown 正文时的路径安全边界",
+      "tags": [
+        "phase19",
+        "archive",
+        "contentPath",
+        "security",
+        "read"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-relation-note-style-guide",
+      "slug": "relation-note-style-guide",
+      "title": "关系说明写法指南",
+      "worldTitle": "关系说明",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "规定强关系 note 应回答为什么相关",
+      "tags": [
+        "phase19",
+        "archive",
+        "relation",
+        "note",
+        "why"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-public-route-inventory",
+      "slug": "public-route-inventory",
+      "title": "公开路由清单",
+      "worldTitle": "路由清单",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "汇总首页、地图、路径、节点、档案馆、灯塔、状态页职责",
+      "tags": [
+        "phase19",
+        "archive",
+        "route",
+        "public",
+        "inventory"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-legacy-boundary-register",
+      "slug": "legacy-boundary-register",
+      "title": "Legacy 边界登记",
+      "worldTitle": "Legacy 登记",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录哪些历史区域只作为参考保留，帮助档案馆形成可查证台账。",
+      "tags": [
+        "phase19",
+        "archive",
+        "legacy",
+        "boundary",
+        "reference"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-script-count-change-log",
+      "slug": "script-count-change-log",
+      "title": "脚本计数变更记录",
+      "worldTitle": "脚本计数",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录新增检查命令时如何同步 registry",
+      "tags": [
+        "phase19",
+        "archive",
+        "script",
+        "registry",
+        "count"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-visual-qa-review-sheet",
+      "slug": "visual-qa-review-sheet",
+      "title": "视觉 QA 复核表",
+      "worldTitle": "视觉复核",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "整理首屏、移动导航、CTA、状态卡的复核字段",
+      "tags": [
+        "phase19",
+        "archive",
+        "visual",
+        "QA",
+        "checklist"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-v2-plan-ledger",
+      "slug": "worldos-v2-plan-ledger",
+      "title": "WorldOS v2 计划台账",
+      "worldTitle": "v2 台账",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录 Phase 19-21 的目标、状态和门禁证据",
+      "tags": [
+        "phase19",
+        "archive",
+        "plan",
+        "phase",
+        "status"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lighthouse-search-weight-model",
+      "slug": "lighthouse-search-weight-model",
+      "title": "灯塔搜索权重模型",
+      "worldTitle": "搜索权重",
+      "type": "article",
+      "areaId": "lighthouse",
+      "summary": "为标题、世界名、标签、摘要设置更清晰的权重",
+      "tags": [
+        "phase19",
+        "lighthouse",
+        "search",
+        "weight",
+        "Fuse"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lighthouse-reason-builder",
+      "slug": "lighthouse-reason-builder",
+      "title": "灯塔推荐理由生成器",
+      "worldTitle": "理由生成",
+      "type": "article",
+      "areaId": "lighthouse",
+      "summary": "让推荐解释从泛泛相关变成可读理由，帮助灯塔低光模式解释下一步。",
+      "tags": [
+        "phase19",
+        "lighthouse",
+        "reason",
+        "recommendation",
+        "why"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-low-light-ai-status-panel",
+      "slug": "low-light-ai-status-panel",
+      "title": "低光 AI 状态面板",
+      "worldTitle": "低光状态",
+      "type": "article",
+      "areaId": "lighthouse",
+      "summary": "把 AI 不可用时仍能做什么说清楚，帮助灯塔低光模式解释下一步。",
+      "tags": [
+        "phase19",
+        "lighthouse",
+        "low-light",
+        "status",
+        "fallback"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-public-context-slice-note",
+      "slug": "public-context-slice-note",
+      "title": "公开上下文切片说明",
+      "worldTitle": "上下文切片",
+      "type": "article",
+      "areaId": "lighthouse",
+      "summary": "解释灯塔只能读取 public / semiPublic 或授权上下文",
+      "tags": [
+        "phase19",
+        "lighthouse",
+        "context",
+        "public",
+        "authorized"
+      ],
+      "visibility": "public",
+      "lifeStage": "fruit",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-ai-review-queue-promise",
+      "slug": "ai-review-queue-promise",
+      "title": "AI 审核队列承诺",
+      "worldTitle": "审核承诺",
+      "type": "article",
+      "areaId": "lighthouse",
+      "summary": "说明 AI 输出为什么必须进入人工审核",
+      "tags": [
+        "phase19",
+        "lighthouse",
+        "review",
+        "human",
+        "not-executed"
+      ],
+      "visibility": "public",
+      "lifeStage": "archive",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lighthouse-question-shortcuts",
+      "slug": "lighthouse-question-shortcuts",
+      "title": "灯塔问题快捷入口",
+      "worldTitle": "问题入口",
+      "type": "article",
+      "areaId": "lighthouse",
+      "summary": "整理适合新访客的低门槛问题，帮助灯塔低光模式解释下一步。",
+      "tags": [
+        "phase19",
+        "lighthouse",
+        "question",
+        "shortcut",
+        "guide"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
     }
   ],
   "paths": [
@@ -2703,6 +4033,207 @@
         "world-architecture"
       ],
       "visibility": "public"
+    },
+    {
+      "id": "phase19-origin-expansion",
+      "title": "Phase 19：创世原点内容扩展路径",
+      "description": "沿着 创世原点 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "creator",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "world-manifesto",
+        "local-world-entry-ritual",
+        "world-model-reading-order",
+        "public-world-hospitality-rule",
+        "worldos-local-first-principle",
+        "visitor-map-contract",
+        "world-language-onboarding",
+        "node-life-story-primer",
+        "worldos-operating-promise"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-tech-expansion",
+      "title": "Phase 19：技术星域内容扩展路径",
+      "description": "沿着 技术星域 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "tech",
+      "estimatedMinutes": 24,
+      "nodeSlugs": [
+        "feishu-mcp-adk-agent",
+        "local-rc-fresh-build-playbook",
+        "playwright-lan-smoke-notes",
+        "content-jaccard-quality-gate",
+        "script-registry-discipline",
+        "public-index-generation-pipeline",
+        "reduced-motion-runtime-contract",
+        "theme-css-variable-architecture",
+        "mainline-import-audit-method",
+        "typescript-schema-guard-notes",
+        "local-network-start-guide",
+        "build-size-observation-log",
+        "search-weighting-experiment"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-workshop-expansion",
+      "title": "Phase 19：产品工坊内容扩展路径",
+      "description": "沿着 产品工坊 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "tech",
+      "estimatedMinutes": 20,
+      "nodeSlugs": [
+        "ai-website-audit-report-demo",
+        "owner-review-workbench-story",
+        "worldos-content-seed-tool",
+        "local-screenshot-review-kit",
+        "worldos-reading-card-system",
+        "path-progress-widget-idea",
+        "archive-filter-ergonomics",
+        "mobile-route-entry-polish",
+        "theme-toggle-product-note",
+        "content-maintenance-dashboard-draft",
+        "lan-demo-checklist-product"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-fragments-expansion",
+      "title": "Phase 19：灵感云层内容扩展路径",
+      "description": "沿着 灵感云层 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "creator",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "everything-is-node",
+        "small-node-big-door",
+        "quiet-interface-thought",
+        "relationship-before-graph",
+        "local-first-emotional-safety",
+        "romance-needs-ledger",
+        "first-screen-kindness",
+        "permission-is-a-promise",
+        "screenshots-are-memory"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-memory-expansion",
+      "title": "Phase 19：记忆湖内容扩展路径",
+      "description": "沿着 记忆湖 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "life",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "memory-lake-first-light",
+        "window-rain-local-rc",
+        "desk-lamp-after-build",
+        "lan-phone-first-visit",
+        "coffee-and-script-registry",
+        "night-mode-reading-memory",
+        "repair-day-breathing-room",
+        "archive-search-found-again",
+        "reduced-motion-kindness-memory"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-timeline-expansion",
+      "title": "Phase 19：时间河内容扩展路径",
+      "description": "沿着 时间河 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "deep-dive",
+      "estimatedMinutes": 16,
+      "nodeSlugs": [
+        "worldos-rc2-nondeploy-lessons",
+        "phase19-content-expansion-start",
+        "theme-system-stabilized",
+        "a11y-focus-pass",
+        "local-lan-rc-refresh",
+        "lib-warning-zero-milestone",
+        "content-jaccard-guard-added",
+        "owner-workbench-boundary-checked",
+        "ai-provider-disabled-adapter-added"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-archive-expansion",
+      "title": "Phase 19：档案馆内容扩展路径",
+      "description": "沿着 档案馆 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "deep-dive",
+      "estimatedMinutes": 20,
+      "nodeSlugs": [
+        "worldos-mainline-code-map",
+        "phase19-content-ledger",
+        "local-rc-evidence-map",
+        "world-index-field-guide",
+        "content-path-cleaning-rule",
+        "relation-note-style-guide",
+        "public-route-inventory",
+        "legacy-boundary-register",
+        "script-count-change-log",
+        "visual-qa-review-sheet",
+        "worldos-v2-plan-ledger"
+      ],
+      "nextPathIds": [
+        "phase19-lighthouse-expansion"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-lighthouse-expansion",
+      "title": "Phase 19：AI 灯塔内容扩展路径",
+      "description": "沿着 AI 灯塔 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+      "audience": "first-time",
+      "estimatedMinutes": 12,
+      "nodeSlugs": [
+        "ai-lighthouse-boundary",
+        "lighthouse-search-weight-model",
+        "lighthouse-reason-builder",
+        "low-light-ai-status-panel",
+        "public-context-slice-note",
+        "ai-review-queue-promise",
+        "lighthouse-question-shortcuts"
+      ],
+      "nextPathIds": [
+        "first-visit"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "phase19-local-maturity-loop",
+      "title": "Phase 19：本地成熟闭环路径",
+      "description": "把本地 RC、内容增长、权限边界、灯塔低光和截图证据串成一条可复核的成熟路径。",
+      "audience": "deep-dive",
+      "estimatedMinutes": 24,
+      "nodeSlugs": [
+        "worldos-local-first-principle",
+        "local-rc-fresh-build-playbook",
+        "phase19-content-ledger",
+        "owner-review-workbench-story",
+        "lighthouse-search-weight-model",
+        "local-rc-evidence-map"
+      ],
+      "nextPathIds": [
+        "phase19-archive-expansion"
+      ],
+      "visibility": "public"
     }
   ],
   "events": [
@@ -2953,6 +4484,214 @@
       "visibility": "public",
       "actor": "worldos-kernel",
       "summary": "M13 阶段目标达成事件记录"
+    },
+    {
+      "id": "evt-phase19-001",
+      "type": "milestone",
+      "title": "Phase 19 内容扩展契约建立",
+      "date": "2026-07-08",
+      "description": "Phase 19 内容扩展契约建立，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-local-world-entry-ritual",
+        "node-phase19-content-ledger"
+      ],
+      "areaIds": [
+        "origin",
+        "archive"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "Phase 19 内容扩展契约建立事件记录"
+    },
+    {
+      "id": "evt-phase19-002",
+      "type": "content",
+      "title": "创世原点新增入口解释",
+      "date": "2026-07-08",
+      "description": "创世原点新增入口解释，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-world-model-reading-order",
+        "node-public-world-hospitality-rule"
+      ],
+      "areaIds": [
+        "origin"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "创世原点新增入口解释事件记录"
+    },
+    {
+      "id": "evt-phase19-003",
+      "type": "content",
+      "title": "技术星域补齐本地门禁笔记",
+      "date": "2026-07-08",
+      "description": "技术星域补齐本地门禁笔记，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-local-rc-fresh-build-playbook",
+        "node-playwright-lan-smoke-notes"
+      ],
+      "areaIds": [
+        "tech"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "技术星域补齐本地门禁笔记事件记录"
+    },
+    {
+      "id": "evt-phase19-004",
+      "type": "content",
+      "title": "产品工坊形成维护工具线",
+      "date": "2026-07-08",
+      "description": "产品工坊形成维护工具线，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-worldos-content-seed-tool",
+        "node-local-screenshot-review-kit"
+      ],
+      "areaIds": [
+        "workshop"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "产品工坊形成维护工具线事件记录"
+    },
+    {
+      "id": "evt-phase19-005",
+      "type": "content",
+      "title": "灵感云层补齐公开原则碎片",
+      "date": "2026-07-08",
+      "description": "灵感云层补齐公开原则碎片，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-small-node-big-door",
+        "node-permission-is-a-promise"
+      ],
+      "areaIds": [
+        "fragments"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "灵感云层补齐公开原则碎片事件记录"
+    },
+    {
+      "id": "evt-phase19-006",
+      "type": "content",
+      "title": "记忆湖增加本地维护片刻",
+      "date": "2026-07-08",
+      "description": "记忆湖增加本地维护片刻，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-window-rain-local-rc",
+        "node-night-mode-reading-memory"
+      ],
+      "areaIds": [
+        "memory"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "记忆湖增加本地维护片刻事件记录"
+    },
+    {
+      "id": "evt-phase19-007",
+      "type": "content",
+      "title": "时间河记录第十九阶段节点",
+      "date": "2026-07-08",
+      "description": "时间河记录第十九阶段节点，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-phase19-content-expansion-start",
+        "node-theme-system-stabilized"
+      ],
+      "areaIds": [
+        "timeline"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "时间河记录第十九阶段节点事件记录"
+    },
+    {
+      "id": "evt-phase19-008",
+      "type": "content",
+      "title": "档案馆新增证据与台账说明",
+      "date": "2026-07-08",
+      "description": "档案馆新增证据与台账说明，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-local-rc-evidence-map",
+        "node-world-index-field-guide"
+      ],
+      "areaIds": [
+        "archive"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "档案馆新增证据与台账说明事件记录"
+    },
+    {
+      "id": "evt-phase19-009",
+      "type": "content",
+      "title": "灯塔低光推荐线扩展",
+      "date": "2026-07-08",
+      "description": "灯塔低光推荐线扩展，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-lighthouse-search-weight-model",
+        "node-lighthouse-reason-builder"
+      ],
+      "areaIds": [
+        "lighthouse"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "灯塔低光推荐线扩展事件记录"
+    },
+    {
+      "id": "evt-phase19-010",
+      "type": "maintenance",
+      "title": "脚本注册表同步 Phase 19 检查",
+      "date": "2026-07-08",
+      "description": "脚本注册表同步 Phase 19 检查，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-script-count-change-log",
+        "node-script-registry-discipline"
+      ],
+      "areaIds": [
+        "archive",
+        "tech"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "脚本注册表同步 Phase 19 检查事件记录"
+    },
+    {
+      "id": "evt-phase19-011",
+      "type": "milestone",
+      "title": "公开世界达到 200 节点目标",
+      "date": "2026-07-08",
+      "description": "公开世界达到 200 节点目标，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-worldos-v2-plan-ledger",
+        "node-phase19-content-expansion-start"
+      ],
+      "areaIds": [
+        "archive",
+        "timeline"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "公开世界达到 200 节点目标事件记录"
+    },
+    {
+      "id": "evt-phase19-012",
+      "type": "governance",
+      "title": "Phase 19 仍保持本地局域网范围",
+      "date": "2026-07-08",
+      "description": "Phase 19 仍保持本地局域网范围，并把相关节点纳入公开时间河，供本地/LAN 阶段复核。",
+      "nodeIds": [
+        "node-worldos-operating-promise",
+        "node-low-light-ai-status-panel"
+      ],
+      "areaIds": [
+        "origin",
+        "lighthouse"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "Phase 19 仍保持本地局域网范围事件记录"
     },
     {
       "id": "evt-030",
@@ -3547,6 +5286,15 @@
     ],
     "archive": [
       {
+        "nodeId": "node-quiet-interface-thought",
+        "slug": "quiet-interface-thought",
+        "title": "安静界面",
+        "summary": "记录克制界面比堆满组件更适合个人世界",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-git-workflow-patterns",
         "slug": "git-workflow-patterns",
         "title": "版本纪律",
@@ -3563,6 +5311,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-local-first-emotional-safety",
+        "slug": "local-first-emotional-safety",
+        "title": "本地安全",
+        "summary": "思考本地运行为什么能降低创作压力，帮助灵感云层连接后续阅读。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-worldos-local-first-principle",
+        "slug": "worldos-local-first-principle",
+        "title": "本地优先",
+        "summary": "说明为什么当前先打磨本地和局域网体验",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-ai-boundary-evolution",
@@ -3673,6 +5439,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-public-world-hospitality-rule",
+        "slug": "public-world-hospitality-rule",
+        "title": "待客规则",
+        "summary": "把降低门槛翻译成页面、文案和路径的待客规则",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-real-mode-safety-exit",
         "slug": "real-mode-safety-exit",
         "title": "档案馆的清醒门",
@@ -3691,6 +5466,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-mainline-import-audit-method",
+        "slug": "mainline-import-audit-method",
+        "title": "导入审计",
+        "summary": "描述如何发现 legacy 与主线之间的意外耦合",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-world-space",
         "slug": "world-space-layer",
         "title": "地图不是分类页",
@@ -3698,6 +5482,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 32
+      },
+      {
+        "nodeId": "node-visitor-map-contract",
+        "slug": "visitor-map-contract",
+        "title": "地图契约",
+        "summary": "定义地图应该回答的四个低门槛问题，帮助第一次访问者理解世界入口。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-ai-lighthouse",
@@ -3761,6 +5554,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 53
+      },
+      {
+        "nodeId": "node-reduced-motion-runtime-contract",
+        "slug": "reduced-motion-runtime-contract",
+        "title": "低动效",
+        "summary": "把 prefers-reduced-motion 与动态世界体验连接起来",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-low-light-ai-status-panel",
+        "slug": "low-light-ai-status-panel",
+        "title": "低光状态",
+        "summary": "把 AI 不可用时仍能做什么说清楚，帮助灯塔低光模式解释下一步。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
       },
       {
         "nodeId": "node-worldos-birth-story",
@@ -3844,6 +5655,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-owner-review-workbench-story",
+        "slug": "owner-review-workbench-story",
+        "title": "工作台故事",
+        "summary": "把审核队列、导出任务和维护提醒串成一个产品故事",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-data-guardian",
         "slug": "world-data-guardian",
         "title": "骨架需要校验",
@@ -3860,6 +5680,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-relation-note-style-guide",
+        "slug": "relation-note-style-guide",
+        "title": "关系说明",
+        "summary": "规定强关系 note 应回答为什么相关",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-relationship-before-graph",
+        "slug": "relationship-before-graph",
+        "title": "关系优先",
+        "summary": "提醒关系解释比视觉图谱更重要，帮助灵感云层连接后续阅读。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
       },
       {
         "nodeId": "node-terminal-first-life",
@@ -3970,6 +5808,51 @@
         "weight": 2
       },
       {
+        "nodeId": "node-a11y-focus-pass",
+        "slug": "a11y-focus-pass",
+        "title": "焦点通过",
+        "summary": "记录键盘导航和 focus-visible 被纳入体验门禁",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-script-count-change-log",
+        "slug": "script-count-change-log",
+        "title": "脚本计数",
+        "summary": "记录新增检查命令时如何同步 registry",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-script-registry-discipline",
+        "slug": "script-registry-discipline",
+        "title": "脚本治理",
+        "summary": "说明 npm scripts 增长时如何保持可审计",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-local-screenshot-review-kit",
+        "slug": "local-screenshot-review-kit",
+        "title": "截图复核",
+        "summary": "整理桌面与移动截图应该人工看什么，帮助产品工坊沉淀可执行动作。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-screenshots-are-memory",
+        "slug": "screenshots-are-memory",
+        "title": "截图记忆",
+        "summary": "把验收截图视为世界状态的时间切片，帮助灵感云层连接后续阅读。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-world-design-axioms",
         "slug": "world-design-axioms",
         "title": "九条法则",
@@ -3997,6 +5880,15 @@
         "weight": 23
       },
       {
+        "nodeId": "node-playwright-lan-smoke-notes",
+        "slug": "playwright-lan-smoke-notes",
+        "title": "局域网巡检",
+        "summary": "记录浏览器 smoke 如何覆盖桌面和移动低动效",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-kavita-reader-pipeline",
         "slug": "kavita-reader-txt-epub-pipeline",
         "title": "卷宗转生",
@@ -4004,6 +5896,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 2
+      },
+      {
+        "nodeId": "node-coffee-and-script-registry",
+        "slug": "coffee-and-script-registry",
+        "title": "咖啡脚本",
+        "summary": "把脚本计数同步这种小事记录成维护记忆",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-worldos-reading-card-system",
+        "slug": "worldos-reading-card-system",
+        "title": "卡片系统",
+        "summary": "描述节点卡片如何在首页、地图、档案馆保持一致",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-world-graph-explorer",
@@ -4015,6 +5925,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-phase19-content-expansion-start",
+        "slug": "phase19-content-expansion-start",
+        "title": "扩展启动",
+        "summary": "记录内容生态从 130 节点迈向 200 节点的起点",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-typescript-strict-mode-guide",
         "slug": "typescript-strict-mode-guide",
         "title": "类型安全",
@@ -4022,6 +5941,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-typescript-schema-guard-notes",
+        "slug": "typescript-schema-guard-notes",
+        "title": "类型守门",
+        "summary": "说明 zod schema 和 TS 类型如何共同保护世界数据",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-lighthouse-reason-builder",
+        "slug": "lighthouse-reason-builder",
+        "title": "理由生成",
+        "summary": "让推荐解释从泛泛相关变成可读理由，帮助灯塔低光模式解释下一步。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-chrome-extension-basics",
@@ -4067,6 +6004,33 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
+      },
+      {
+        "nodeId": "node-path-progress-widget-idea",
+        "slug": "path-progress-widget-idea",
+        "title": "路径进度",
+        "summary": "为后续路径旅程加入当前进度和下一步动作",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-content-path-cleaning-rule",
+        "slug": "content-path-cleaning-rule",
+        "title": "路径清理",
+        "summary": "记录读取 Markdown 正文时的路径安全边界",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-public-route-inventory",
+        "slug": "public-route-inventory",
+        "title": "路由清单",
+        "summary": "汇总首页、地图、路径、节点、档案馆、灯塔、状态页职责",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-performance-budget-discipline",
@@ -4159,6 +6123,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-phase19-content-ledger",
+        "slug": "phase19-content-ledger",
+        "title": "内容台账",
+        "summary": "记录本轮新增节点、关系、路径和事件的核对方式",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-seven-star-cabinet",
         "slug": "seven-star-cabinet",
         "title": "七个抽屉的档案柜",
@@ -4222,6 +6195,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-permission-is-a-promise",
+        "slug": "permission-is-a-promise",
+        "title": "权限承诺",
+        "summary": "把权限边界理解为对访客和自己的承诺，帮助灵感云层连接后续阅读。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-tag-taxonomy-charter",
         "slug": "tag-taxonomy-charter",
         "title": "让标签也有秩序",
@@ -4267,6 +6249,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-local-world-entry-ritual",
+        "slug": "local-world-entry-ritual",
+        "title": "入口仪式",
+        "summary": "把 localhost 和 LAN IP 的打开过程整理成低门槛进入仪式",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-front-romantic-back-clear",
         "slug": "front-romantic-back-clear-archive-reliable",
         "title": "三层真相",
@@ -4285,6 +6276,24 @@
         "weight": 3
       },
       {
+        "nodeId": "node-archive-filter-ergonomics",
+        "slug": "archive-filter-ergonomics",
+        "title": "筛选体验",
+        "summary": "记录类型、区域、标签筛选如何降低查找成本",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-public-context-slice-note",
+        "slug": "public-context-slice-note",
+        "title": "上下文切片",
+        "summary": "解释灯塔只能读取 public / semiPublic 或授权上下文",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-rc9-preparation-record",
         "slug": "rc9-preparation-record",
         "title": "上线前夜",
@@ -4292,6 +6301,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 2
+      },
+      {
+        "nodeId": "node-ai-review-queue-promise",
+        "slug": "ai-review-queue-promise",
+        "title": "审核承诺",
+        "summary": "说明 AI 输出为什么必须进入人工审核",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-world-audit-method",
@@ -4310,6 +6328,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 33
+      },
+      {
+        "nodeId": "node-node-life-story-primer",
+        "slug": "node-life-story-primer",
+        "title": "生命周期",
+        "summary": "解释 seed 到 archive 的生命周期如何帮助维护",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
       },
       {
         "nodeId": "node-world-evolution-log",
@@ -4348,6 +6375,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-visual-qa-review-sheet",
+        "slug": "visual-qa-review-sheet",
+        "title": "视觉复核",
+        "summary": "整理首屏、移动导航、CTA、状态卡的复核字段",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-worldos-rc3-governance",
         "slug": "worldos-rc3-governance",
         "title": "收束不是停下",
@@ -4355,6 +6391,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 32
+      },
+      {
+        "nodeId": "node-lan-phone-first-visit",
+        "slug": "lan-phone-first-visit",
+        "title": "手机访问",
+        "summary": "记录用手机打开 LAN 地址时的真实体验",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-first-screen-kindness",
+        "slug": "first-screen-kindness",
+        "title": "首屏",
+        "summary": "提醒首页第一屏要帮人而不是炫耀系统复杂度",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-worldos-cli-companion",
@@ -4375,6 +6429,33 @@
         "weight": 3
       },
       {
+        "nodeId": "node-search-weighting-experiment",
+        "slug": "search-weighting-experiment",
+        "title": "搜索权重",
+        "summary": "为灯塔搜索标题、标签、摘要权重调优做准备",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-lighthouse-search-weight-model",
+        "slug": "lighthouse-search-weight-model",
+        "title": "搜索权重",
+        "summary": "为标题、世界名、标签、摘要设置更清晰的权重",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-public-index-generation-pipeline",
+        "slug": "public-index-generation-pipeline",
+        "title": "索引管线",
+        "summary": "描述 public/world-index.json 如何从数据事实源生成",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-world-index-generator",
         "slug": "world-index-generator",
         "title": "索引引擎",
@@ -4382,6 +6463,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-desk-lamp-after-build",
+        "slug": "desk-lamp-after-build",
+        "title": "台灯",
+        "summary": "记录 build 通过后回看页面的安静瞬间",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-romance-needs-ledger",
+        "slug": "romance-needs-ledger",
+        "title": "台账",
+        "summary": "记录世界感与工程台账之间的互补关系，帮助灵感云层连接后续阅读。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-lighthouse-prompt-engineering",
@@ -4393,6 +6492,24 @@
         "weight": 3
       },
       {
+        "nodeId": "node-build-size-observation-log",
+        "slug": "build-size-observation-log",
+        "title": "体积观察",
+        "summary": "整理构建体积增长与内容扩展之间的关系",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-reduced-motion-kindness-memory",
+        "slug": "reduced-motion-kindness-memory",
+        "title": "体贴",
+        "summary": "记录低动效不是少体验而是另一种尊重，帮助记忆湖保留公开低光片刻。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-node-passport-standard",
         "slug": "node-passport-standard",
         "title": "万物的身份证",
@@ -4400,6 +6517,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
+      },
+      {
+        "nodeId": "node-content-maintenance-dashboard-draft",
+        "slug": "content-maintenance-dashboard-draft",
+        "title": "维护面板",
+        "summary": "构思内容密度、相似度和孤岛节点的维护视图",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-lighthouse-question-shortcuts",
+        "slug": "lighthouse-question-shortcuts",
+        "title": "问题入口",
+        "summary": "整理适合新访客的低门槛问题，帮助灯塔低光模式解释下一步。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-playwright-browser-automation",
@@ -4438,6 +6573,24 @@
         "weight": 52
       },
       {
+        "nodeId": "node-content-jaccard-quality-gate",
+        "slug": "content-jaccard-quality-gate",
+        "title": "相似度门禁",
+        "summary": "解释 jaccard 检查如何阻止复读机式节点",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-content-jaccard-guard-added",
+        "slug": "content-jaccard-guard-added",
+        "title": "相似度守门",
+        "summary": "记录复读机式节点被 jaccard 检查约束",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-writing-momentum-loop",
         "slug": "writing-momentum-loop",
         "title": "小步的滚雪球",
@@ -4445,6 +6598,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-small-node-big-door",
+        "slug": "small-node-big-door",
+        "title": "小门",
+        "summary": "思考碎片节点如何成为跨区域入口，帮助灵感云层连接后续阅读。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-world-protocol-guide",
@@ -4483,6 +6645,15 @@
         "weight": 2
       },
       {
+        "nodeId": "node-repair-day-breathing-room",
+        "slug": "repair-day-breathing-room",
+        "title": "修复日",
+        "summary": "记录一次没有新增功能、只复核边界的维护日",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-repair-day-ritual-public",
         "slug": "repair-day-ritual-public",
         "title": "修复仪式",
@@ -4499,6 +6670,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 1
+      },
+      {
+        "nodeId": "node-night-mode-reading-memory",
+        "slug": "night-mode-reading-memory",
+        "title": "夜读",
+        "summary": "记录夜间切换主题后的阅读感受，帮助记忆湖保留公开低光片刻。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
       },
       {
         "nodeId": "node-right-click-assistant",
@@ -4528,6 +6708,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-mobile-route-entry-polish",
+        "slug": "mobile-route-entry-polish",
+        "title": "移动入口",
+        "summary": "说明小屏幕上入口、导航和状态卡如何避免拥挤",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-public-private-boundary",
         "slug": "public-private-boundary",
         "title": "有些门只显示灯光",
@@ -4555,6 +6744,15 @@
         "weight": 52
       },
       {
+        "nodeId": "node-window-rain-local-rc",
+        "slug": "window-rain-local-rc",
+        "title": "雨夜 RC",
+        "summary": "把一次雨夜验收记录为公开的低光记忆，帮助记忆湖保留公开低光片刻。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-world-language-style-guide",
         "slug": "world-language-style-guide",
         "title": "语言规范",
@@ -4562,6 +6760,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-world-language-onboarding",
+        "slug": "world-language-onboarding",
+        "title": "语言入门",
+        "summary": "把浪漫词汇翻译成现实可理解的解释，帮助第一次访问者理解世界入口。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-dns-config-guide",
@@ -4618,6 +6825,24 @@
         "weight": 3
       },
       {
+        "nodeId": "node-world-model-reading-order",
+        "slug": "world-model-reading-order",
+        "title": "阅读顺序",
+        "summary": "为节点、区域、关系、路径、事件建立推荐阅读顺序",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-worldos-operating-promise",
+        "slug": "worldos-operating-promise",
+        "title": "运行承诺",
+        "summary": "把不伪造上线、不越权读取、不自动发布写成公开承诺",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
         "nodeId": "node-claude-code-integration",
         "slug": "claude-code-integration",
         "title": "长文本助手",
@@ -4643,6 +6868,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-local-rc-evidence-map",
+        "slug": "local-rc-evidence-map",
+        "title": "证据地图",
+        "summary": "说明各类报告和截图分别证明什么，帮助档案馆形成可查证台账。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-local-lan-rc-refresh",
+        "slug": "local-lan-rc-refresh",
+        "title": "证据刷新",
+        "summary": "记录 LAN smoke、浏览器检查和截图证据刷新",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       },
       {
         "nodeId": "node-novel-editor",
@@ -4672,6 +6915,24 @@
         "weight": 3
       },
       {
+        "nodeId": "node-worldos-content-seed-tool",
+        "slug": "worldos-content-seed-tool",
+        "title": "种子工具",
+        "summary": "描述 seed 批量应用脚本如何支持节点、路径、事件",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-archive-search-found-again",
+        "slug": "archive-search-found-again",
+        "title": "重新找到",
+        "summary": "记录搜索把旧想法重新带回主线的瞬间，帮助记忆湖保留公开低光片刻。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-weekly-world-heartbeat",
         "slug": "weekly-world-heartbeat",
         "title": "周日的心跳仪表盘",
@@ -4688,6 +6949,33 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 52
+      },
+      {
+        "nodeId": "node-theme-css-variable-architecture",
+        "slug": "theme-css-variable-architecture",
+        "title": "主题架构",
+        "summary": "记录深色模式如何通过 CSS 变量驱动色板",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-theme-toggle-product-note",
+        "slug": "theme-toggle-product-note",
+        "title": "主题切换",
+        "summary": "记录深色模式为什么是体验基础设施，帮助产品工坊沉淀可执行动作。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-theme-system-stabilized",
+        "slug": "theme-system-stabilized",
+        "title": "主题稳定",
+        "summary": "记录深色模式从半成品风险到完整可用的修复过程",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
       },
       {
         "nodeId": "node-mainline-import-boundary",
@@ -4708,6 +6996,69 @@
         "weight": 3
       },
       {
+        "nodeId": "node-world-index-field-guide",
+        "slug": "world-index-field-guide",
+        "title": "字段指南",
+        "summary": "解释 world-index.json 中状态、区域、节点、路径的含义",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-ai-provider-disabled-adapter-added",
+        "slug": "ai-provider-disabled-adapter-added",
+        "title": "AI 禁用适配",
+        "summary": "记录 provider adapter 只保留后端禁用态骨架",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-lan-demo-checklist-product",
+        "slug": "lan-demo-checklist-product",
+        "title": "Demo 清单",
+        "summary": "把本地演示前需要确认的事项产品化，帮助产品工坊沉淀可执行动作。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-local-network-start-guide",
+        "slug": "local-network-start-guide",
+        "title": "LAN 启动",
+        "summary": "记录 npm run start 在 LAN 场景下的启动边界",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-legacy-boundary-register",
+        "slug": "legacy-boundary-register",
+        "title": "Legacy 登记",
+        "summary": "记录哪些历史区域只作为参考保留，帮助档案馆形成可查证台账。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-owner-workbench-boundary-checked",
+        "slug": "owner-workbench-boundary-checked",
+        "title": "Owner 边界",
+        "summary": "记录 owner-only 与 permission-guarded 路由检查",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 25
+      },
+      {
+        "nodeId": "node-local-rc-fresh-build-playbook",
+        "slug": "local-rc-fresh-build-playbook",
+        "title": "RC 手册",
+        "summary": "整理 release:local-rc 如何避免旧产物误导",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
         "nodeId": "node-zsh-plugin-shelf",
         "slug": "zsh-plugin-shelf",
         "title": "shell 的小书架",
@@ -4715,6 +7066,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 3
+      },
+      {
+        "nodeId": "node-worldos-v2-plan-ledger",
+        "slug": "worldos-v2-plan-ledger",
+        "title": "v2 台账",
+        "summary": "记录 Phase 19-21 的目标、状态和门禁证据",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
+      },
+      {
+        "nodeId": "node-lib-warning-zero-milestone",
+        "slug": "lib-warning-zero-milestone",
+        "title": "warning 归零",
+        "summary": "记录主线门面拆分后 warning 清零",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 5
       }
     ]
   },
@@ -5628,6 +7997,496 @@
         "slug": "worldos-heritage-note",
         "title": "让世界能被交接",
         "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-local-world-entry-ritual",
+        "slug": "local-world-entry-ritual",
+        "title": "入口仪式",
+        "areaId": "origin",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-world-model-reading-order",
+        "slug": "world-model-reading-order",
+        "title": "阅读顺序",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-public-world-hospitality-rule",
+        "slug": "public-world-hospitality-rule",
+        "title": "待客规则",
+        "areaId": "origin",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-worldos-local-first-principle",
+        "slug": "worldos-local-first-principle",
+        "title": "本地优先",
+        "areaId": "origin",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-visitor-map-contract",
+        "slug": "visitor-map-contract",
+        "title": "地图契约",
+        "areaId": "origin",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-world-language-onboarding",
+        "slug": "world-language-onboarding",
+        "title": "语言入门",
+        "areaId": "origin",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-node-life-story-primer",
+        "slug": "node-life-story-primer",
+        "title": "生命周期",
+        "areaId": "origin",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-worldos-operating-promise",
+        "slug": "worldos-operating-promise",
+        "title": "运行承诺",
+        "areaId": "origin",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-local-rc-fresh-build-playbook",
+        "slug": "local-rc-fresh-build-playbook",
+        "title": "RC 手册",
+        "areaId": "tech",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-playwright-lan-smoke-notes",
+        "slug": "playwright-lan-smoke-notes",
+        "title": "局域网巡检",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-content-jaccard-quality-gate",
+        "slug": "content-jaccard-quality-gate",
+        "title": "相似度门禁",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-script-registry-discipline",
+        "slug": "script-registry-discipline",
+        "title": "脚本治理",
+        "areaId": "tech",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-public-index-generation-pipeline",
+        "slug": "public-index-generation-pipeline",
+        "title": "索引管线",
+        "areaId": "tech",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-reduced-motion-runtime-contract",
+        "slug": "reduced-motion-runtime-contract",
+        "title": "低动效",
+        "areaId": "tech",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-theme-css-variable-architecture",
+        "slug": "theme-css-variable-architecture",
+        "title": "主题架构",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-mainline-import-audit-method",
+        "slug": "mainline-import-audit-method",
+        "title": "导入审计",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-typescript-schema-guard-notes",
+        "slug": "typescript-schema-guard-notes",
+        "title": "类型守门",
+        "areaId": "tech",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-local-network-start-guide",
+        "slug": "local-network-start-guide",
+        "title": "LAN 启动",
+        "areaId": "tech",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-build-size-observation-log",
+        "slug": "build-size-observation-log",
+        "title": "体积观察",
+        "areaId": "tech",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-search-weighting-experiment",
+        "slug": "search-weighting-experiment",
+        "title": "搜索权重",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-owner-review-workbench-story",
+        "slug": "owner-review-workbench-story",
+        "title": "工作台故事",
+        "areaId": "workshop",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-worldos-content-seed-tool",
+        "slug": "worldos-content-seed-tool",
+        "title": "种子工具",
+        "areaId": "workshop",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-local-screenshot-review-kit",
+        "slug": "local-screenshot-review-kit",
+        "title": "截图复核",
+        "areaId": "workshop",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-worldos-reading-card-system",
+        "slug": "worldos-reading-card-system",
+        "title": "卡片系统",
+        "areaId": "workshop",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-path-progress-widget-idea",
+        "slug": "path-progress-widget-idea",
+        "title": "路径进度",
+        "areaId": "workshop",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-archive-filter-ergonomics",
+        "slug": "archive-filter-ergonomics",
+        "title": "筛选体验",
+        "areaId": "workshop",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-mobile-route-entry-polish",
+        "slug": "mobile-route-entry-polish",
+        "title": "移动入口",
+        "areaId": "workshop",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-theme-toggle-product-note",
+        "slug": "theme-toggle-product-note",
+        "title": "主题切换",
+        "areaId": "workshop",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-content-maintenance-dashboard-draft",
+        "slug": "content-maintenance-dashboard-draft",
+        "title": "维护面板",
+        "areaId": "workshop",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-lan-demo-checklist-product",
+        "slug": "lan-demo-checklist-product",
+        "title": "Demo 清单",
+        "areaId": "workshop",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-small-node-big-door",
+        "slug": "small-node-big-door",
+        "title": "小门",
+        "areaId": "fragments",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-quiet-interface-thought",
+        "slug": "quiet-interface-thought",
+        "title": "安静界面",
+        "areaId": "fragments",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-relationship-before-graph",
+        "slug": "relationship-before-graph",
+        "title": "关系优先",
+        "areaId": "fragments",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-local-first-emotional-safety",
+        "slug": "local-first-emotional-safety",
+        "title": "本地安全",
+        "areaId": "fragments",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-romance-needs-ledger",
+        "slug": "romance-needs-ledger",
+        "title": "台账",
+        "areaId": "fragments",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-first-screen-kindness",
+        "slug": "first-screen-kindness",
+        "title": "首屏",
+        "areaId": "fragments",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-permission-is-a-promise",
+        "slug": "permission-is-a-promise",
+        "title": "权限承诺",
+        "areaId": "fragments",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-screenshots-are-memory",
+        "slug": "screenshots-are-memory",
+        "title": "截图记忆",
+        "areaId": "fragments",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-window-rain-local-rc",
+        "slug": "window-rain-local-rc",
+        "title": "雨夜 RC",
+        "areaId": "memory",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-desk-lamp-after-build",
+        "slug": "desk-lamp-after-build",
+        "title": "台灯",
+        "areaId": "memory",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-lan-phone-first-visit",
+        "slug": "lan-phone-first-visit",
+        "title": "手机访问",
+        "areaId": "memory",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-coffee-and-script-registry",
+        "slug": "coffee-and-script-registry",
+        "title": "咖啡脚本",
+        "areaId": "memory",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-night-mode-reading-memory",
+        "slug": "night-mode-reading-memory",
+        "title": "夜读",
+        "areaId": "memory",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-repair-day-breathing-room",
+        "slug": "repair-day-breathing-room",
+        "title": "修复日",
+        "areaId": "memory",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-archive-search-found-again",
+        "slug": "archive-search-found-again",
+        "title": "重新找到",
+        "areaId": "memory",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-reduced-motion-kindness-memory",
+        "slug": "reduced-motion-kindness-memory",
+        "title": "体贴",
+        "areaId": "memory",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-phase19-content-expansion-start",
+        "slug": "phase19-content-expansion-start",
+        "title": "扩展启动",
+        "areaId": "timeline",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-theme-system-stabilized",
+        "slug": "theme-system-stabilized",
+        "title": "主题稳定",
+        "areaId": "timeline",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-a11y-focus-pass",
+        "slug": "a11y-focus-pass",
+        "title": "焦点通过",
+        "areaId": "timeline",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-local-lan-rc-refresh",
+        "slug": "local-lan-rc-refresh",
+        "title": "证据刷新",
+        "areaId": "timeline",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-lib-warning-zero-milestone",
+        "slug": "lib-warning-zero-milestone",
+        "title": "warning 归零",
+        "areaId": "timeline",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-content-jaccard-guard-added",
+        "slug": "content-jaccard-guard-added",
+        "title": "相似度守门",
+        "areaId": "timeline",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-owner-workbench-boundary-checked",
+        "slug": "owner-workbench-boundary-checked",
+        "title": "Owner 边界",
+        "areaId": "timeline",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-ai-provider-disabled-adapter-added",
+        "slug": "ai-provider-disabled-adapter-added",
+        "title": "AI 禁用适配",
+        "areaId": "timeline",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-phase19-content-ledger",
+        "slug": "phase19-content-ledger",
+        "title": "内容台账",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-local-rc-evidence-map",
+        "slug": "local-rc-evidence-map",
+        "title": "证据地图",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-world-index-field-guide",
+        "slug": "world-index-field-guide",
+        "title": "字段指南",
+        "areaId": "archive",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-content-path-cleaning-rule",
+        "slug": "content-path-cleaning-rule",
+        "title": "路径清理",
+        "areaId": "archive",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-relation-note-style-guide",
+        "slug": "relation-note-style-guide",
+        "title": "关系说明",
+        "areaId": "archive",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-public-route-inventory",
+        "slug": "public-route-inventory",
+        "title": "路由清单",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-legacy-boundary-register",
+        "slug": "legacy-boundary-register",
+        "title": "Legacy 登记",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-script-count-change-log",
+        "slug": "script-count-change-log",
+        "title": "脚本计数",
+        "areaId": "archive",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-visual-qa-review-sheet",
+        "slug": "visual-qa-review-sheet",
+        "title": "视觉复核",
+        "areaId": "archive",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-worldos-v2-plan-ledger",
+        "slug": "worldos-v2-plan-ledger",
+        "title": "v2 台账",
+        "areaId": "archive",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-lighthouse-search-weight-model",
+        "slug": "lighthouse-search-weight-model",
+        "title": "搜索权重",
+        "areaId": "lighthouse",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-lighthouse-reason-builder",
+        "slug": "lighthouse-reason-builder",
+        "title": "理由生成",
+        "areaId": "lighthouse",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-low-light-ai-status-panel",
+        "slug": "low-light-ai-status-panel",
+        "title": "低光状态",
+        "areaId": "lighthouse",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-public-context-slice-note",
+        "slug": "public-context-slice-note",
+        "title": "上下文切片",
+        "areaId": "lighthouse",
+        "lifeStage": "fruit"
+      },
+      {
+        "id": "node-ai-review-queue-promise",
+        "slug": "ai-review-queue-promise",
+        "title": "审核承诺",
+        "areaId": "lighthouse",
+        "lifeStage": "archive"
+      },
+      {
+        "id": "node-lighthouse-question-shortcuts",
+        "slug": "lighthouse-question-shortcuts",
+        "title": "问题入口",
+        "areaId": "lighthouse",
         "lifeStage": "growing"
       }
     ],
@@ -7435,6 +10294,986 @@
         "id": "rel-0258",
         "from": "node-2025-year-review",
         "to": "node-worldos-birth-story",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0259",
+        "from": "node-local-world-entry-ritual",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0260",
+        "from": "node-local-world-entry-ritual",
+        "to": "node-digital-universe",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0261",
+        "from": "node-world-model-reading-order",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0262",
+        "from": "node-world-model-reading-order",
+        "to": "node-local-world-entry-ritual",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0263",
+        "from": "node-public-world-hospitality-rule",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0264",
+        "from": "node-public-world-hospitality-rule",
+        "to": "node-world-model-reading-order",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0265",
+        "from": "node-worldos-local-first-principle",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0266",
+        "from": "node-worldos-local-first-principle",
+        "to": "node-public-world-hospitality-rule",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0267",
+        "from": "node-visitor-map-contract",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0268",
+        "from": "node-visitor-map-contract",
+        "to": "node-worldos-local-first-principle",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0269",
+        "from": "node-world-language-onboarding",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0270",
+        "from": "node-world-language-onboarding",
+        "to": "node-visitor-map-contract",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0271",
+        "from": "node-node-life-story-primer",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0272",
+        "from": "node-node-life-story-primer",
+        "to": "node-world-language-onboarding",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0273",
+        "from": "node-worldos-operating-promise",
+        "to": "node-world-manifesto",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0274",
+        "from": "node-worldos-operating-promise",
+        "to": "node-node-life-story-primer",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0275",
+        "from": "node-local-rc-fresh-build-playbook",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0276",
+        "from": "node-local-rc-fresh-build-playbook",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0277",
+        "from": "node-playwright-lan-smoke-notes",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0278",
+        "from": "node-playwright-lan-smoke-notes",
+        "to": "node-local-rc-fresh-build-playbook",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0279",
+        "from": "node-content-jaccard-quality-gate",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0280",
+        "from": "node-content-jaccard-quality-gate",
+        "to": "node-playwright-lan-smoke-notes",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0281",
+        "from": "node-script-registry-discipline",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0282",
+        "from": "node-script-registry-discipline",
+        "to": "node-content-jaccard-quality-gate",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0283",
+        "from": "node-public-index-generation-pipeline",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0284",
+        "from": "node-public-index-generation-pipeline",
+        "to": "node-script-registry-discipline",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0285",
+        "from": "node-reduced-motion-runtime-contract",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0286",
+        "from": "node-reduced-motion-runtime-contract",
+        "to": "node-public-index-generation-pipeline",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0287",
+        "from": "node-theme-css-variable-architecture",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0288",
+        "from": "node-theme-css-variable-architecture",
+        "to": "node-reduced-motion-runtime-contract",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0289",
+        "from": "node-mainline-import-audit-method",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0290",
+        "from": "node-mainline-import-audit-method",
+        "to": "node-theme-css-variable-architecture",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0291",
+        "from": "node-typescript-schema-guard-notes",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0292",
+        "from": "node-typescript-schema-guard-notes",
+        "to": "node-mainline-import-audit-method",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0293",
+        "from": "node-local-network-start-guide",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0294",
+        "from": "node-local-network-start-guide",
+        "to": "node-typescript-schema-guard-notes",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0295",
+        "from": "node-build-size-observation-log",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0296",
+        "from": "node-build-size-observation-log",
+        "to": "node-local-network-start-guide",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0297",
+        "from": "node-search-weighting-experiment",
+        "to": "node-feishu-mcp",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0298",
+        "from": "node-search-weighting-experiment",
+        "to": "node-build-size-observation-log",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0299",
+        "from": "node-owner-review-workbench-story",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0300",
+        "from": "node-owner-review-workbench-story",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0301",
+        "from": "node-worldos-content-seed-tool",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0302",
+        "from": "node-worldos-content-seed-tool",
+        "to": "node-owner-review-workbench-story",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0303",
+        "from": "node-local-screenshot-review-kit",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0304",
+        "from": "node-local-screenshot-review-kit",
+        "to": "node-worldos-content-seed-tool",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0305",
+        "from": "node-worldos-reading-card-system",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0306",
+        "from": "node-worldos-reading-card-system",
+        "to": "node-local-screenshot-review-kit",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0307",
+        "from": "node-path-progress-widget-idea",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0308",
+        "from": "node-path-progress-widget-idea",
+        "to": "node-worldos-reading-card-system",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0309",
+        "from": "node-archive-filter-ergonomics",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0310",
+        "from": "node-archive-filter-ergonomics",
+        "to": "node-path-progress-widget-idea",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0311",
+        "from": "node-mobile-route-entry-polish",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0312",
+        "from": "node-mobile-route-entry-polish",
+        "to": "node-archive-filter-ergonomics",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0313",
+        "from": "node-theme-toggle-product-note",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0314",
+        "from": "node-theme-toggle-product-note",
+        "to": "node-mobile-route-entry-polish",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0315",
+        "from": "node-content-maintenance-dashboard-draft",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0316",
+        "from": "node-content-maintenance-dashboard-draft",
+        "to": "node-theme-toggle-product-note",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0317",
+        "from": "node-lan-demo-checklist-product",
+        "to": "node-ai-report-demo",
+        "type": "project",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0318",
+        "from": "node-lan-demo-checklist-product",
+        "to": "node-content-maintenance-dashboard-draft",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0319",
+        "from": "node-small-node-big-door",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0320",
+        "from": "node-small-node-big-door",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0321",
+        "from": "node-quiet-interface-thought",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0322",
+        "from": "node-quiet-interface-thought",
+        "to": "node-small-node-big-door",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0323",
+        "from": "node-relationship-before-graph",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0324",
+        "from": "node-relationship-before-graph",
+        "to": "node-quiet-interface-thought",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0325",
+        "from": "node-local-first-emotional-safety",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0326",
+        "from": "node-local-first-emotional-safety",
+        "to": "node-relationship-before-graph",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0327",
+        "from": "node-romance-needs-ledger",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0328",
+        "from": "node-romance-needs-ledger",
+        "to": "node-local-first-emotional-safety",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0329",
+        "from": "node-first-screen-kindness",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0330",
+        "from": "node-first-screen-kindness",
+        "to": "node-romance-needs-ledger",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0331",
+        "from": "node-permission-is-a-promise",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0332",
+        "from": "node-permission-is-a-promise",
+        "to": "node-first-screen-kindness",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0333",
+        "from": "node-screenshots-are-memory",
+        "to": "node-everything-node",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0334",
+        "from": "node-screenshots-are-memory",
+        "to": "node-permission-is-a-promise",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0335",
+        "from": "node-window-rain-local-rc",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0336",
+        "from": "node-window-rain-local-rc",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0337",
+        "from": "node-desk-lamp-after-build",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0338",
+        "from": "node-desk-lamp-after-build",
+        "to": "node-window-rain-local-rc",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0339",
+        "from": "node-lan-phone-first-visit",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0340",
+        "from": "node-lan-phone-first-visit",
+        "to": "node-desk-lamp-after-build",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0341",
+        "from": "node-coffee-and-script-registry",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0342",
+        "from": "node-coffee-and-script-registry",
+        "to": "node-lan-phone-first-visit",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0343",
+        "from": "node-night-mode-reading-memory",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0344",
+        "from": "node-night-mode-reading-memory",
+        "to": "node-coffee-and-script-registry",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0345",
+        "from": "node-repair-day-breathing-room",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0346",
+        "from": "node-repair-day-breathing-room",
+        "to": "node-night-mode-reading-memory",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0347",
+        "from": "node-archive-search-found-again",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0348",
+        "from": "node-archive-search-found-again",
+        "to": "node-repair-day-breathing-room",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0349",
+        "from": "node-reduced-motion-kindness-memory",
+        "to": "node-memory-light",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0350",
+        "from": "node-reduced-motion-kindness-memory",
+        "to": "node-archive-search-found-again",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0351",
+        "from": "node-phase19-content-expansion-start",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0352",
+        "from": "node-phase19-content-expansion-start",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0353",
+        "from": "node-theme-system-stabilized",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0354",
+        "from": "node-theme-system-stabilized",
+        "to": "node-phase19-content-expansion-start",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0355",
+        "from": "node-a11y-focus-pass",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0356",
+        "from": "node-a11y-focus-pass",
+        "to": "node-theme-system-stabilized",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0357",
+        "from": "node-local-lan-rc-refresh",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0358",
+        "from": "node-local-lan-rc-refresh",
+        "to": "node-a11y-focus-pass",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0359",
+        "from": "node-lib-warning-zero-milestone",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0360",
+        "from": "node-lib-warning-zero-milestone",
+        "to": "node-local-lan-rc-refresh",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0361",
+        "from": "node-content-jaccard-guard-added",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0362",
+        "from": "node-content-jaccard-guard-added",
+        "to": "node-lib-warning-zero-milestone",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0363",
+        "from": "node-owner-workbench-boundary-checked",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0364",
+        "from": "node-owner-workbench-boundary-checked",
+        "to": "node-content-jaccard-guard-added",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0365",
+        "from": "node-ai-provider-disabled-adapter-added",
+        "to": "node-worldos-rc2-nondeploy-lessons",
+        "type": "time",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0366",
+        "from": "node-ai-provider-disabled-adapter-added",
+        "to": "node-owner-workbench-boundary-checked",
+        "type": "sequence",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0367",
+        "from": "node-phase19-content-ledger",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0368",
+        "from": "node-phase19-content-ledger",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0369",
+        "from": "node-local-rc-evidence-map",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0370",
+        "from": "node-local-rc-evidence-map",
+        "to": "node-phase19-content-ledger",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0371",
+        "from": "node-world-index-field-guide",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0372",
+        "from": "node-world-index-field-guide",
+        "to": "node-local-rc-evidence-map",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0373",
+        "from": "node-content-path-cleaning-rule",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0374",
+        "from": "node-content-path-cleaning-rule",
+        "to": "node-world-index-field-guide",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0375",
+        "from": "node-relation-note-style-guide",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0376",
+        "from": "node-relation-note-style-guide",
+        "to": "node-content-path-cleaning-rule",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0377",
+        "from": "node-public-route-inventory",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0378",
+        "from": "node-public-route-inventory",
+        "to": "node-relation-note-style-guide",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0379",
+        "from": "node-legacy-boundary-register",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0380",
+        "from": "node-legacy-boundary-register",
+        "to": "node-public-route-inventory",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0381",
+        "from": "node-script-count-change-log",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0382",
+        "from": "node-script-count-change-log",
+        "to": "node-legacy-boundary-register",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0383",
+        "from": "node-visual-qa-review-sheet",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0384",
+        "from": "node-visual-qa-review-sheet",
+        "to": "node-script-count-change-log",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0385",
+        "from": "node-worldos-v2-plan-ledger",
+        "to": "node-worldos-mainline-code-map",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0386",
+        "from": "node-worldos-v2-plan-ledger",
+        "to": "node-visual-qa-review-sheet",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0387",
+        "from": "node-lighthouse-search-weight-model",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0388",
+        "from": "node-lighthouse-search-weight-model",
+        "to": "node-world-manifesto",
+        "type": "derived",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0389",
+        "from": "node-lighthouse-reason-builder",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0390",
+        "from": "node-lighthouse-reason-builder",
+        "to": "node-lighthouse-search-weight-model",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0391",
+        "from": "node-low-light-ai-status-panel",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0392",
+        "from": "node-low-light-ai-status-panel",
+        "to": "node-lighthouse-reason-builder",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0393",
+        "from": "node-public-context-slice-note",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0394",
+        "from": "node-public-context-slice-note",
+        "to": "node-low-light-ai-status-panel",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0395",
+        "from": "node-ai-review-queue-promise",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0396",
+        "from": "node-ai-review-queue-promise",
+        "to": "node-public-context-slice-note",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0397",
+        "from": "node-lighthouse-question-shortcuts",
+        "to": "node-ai-lighthouse",
+        "type": "topic",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0398",
+        "from": "node-lighthouse-question-shortcuts",
+        "to": "node-ai-review-queue-promise",
         "type": "reference",
         "strength": 0.5
       }

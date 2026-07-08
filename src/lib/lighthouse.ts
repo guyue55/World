@@ -25,15 +25,21 @@ export function getLighthousePrompts(): LighthousePrompt[] {
 }
 
 export function getLighthouseRecommendedNodes(nodes: Node[], limit = 6) {
-  const preferredTags = new Set(['ai', 'world', 'lighthouse', 'agent', 'no-ai', 'atlas', 'space', 'engineering'])
+  const preferredTags = new Set(['ai', 'world', 'lighthouse', 'agent', 'no-ai', 'atlas', 'space', 'engineering', 'phase19', 'search', 'guide'])
 
   return nodes
     .filter((node) => isPublicVisible(node.visibility))
     .sort((a, b) => {
-      const aScore = a.tags.filter((tag) => preferredTags.has(tag)).length + (a.featured?.representative ? 2 : 0)
-      const bScore = b.tags.filter((tag) => preferredTags.has(tag)).length + (b.featured?.representative ? 2 : 0)
+      const aScore = a.tags.filter((tag) => preferredTags.has(tag)).length
+        + (a.featured?.representative ? 2 : 0)
+        + (a.featured?.pathCore ? 2 : 0)
+        + (a.summary?.includes('灯塔') ? 1 : 0)
+      const bScore = b.tags.filter((tag) => preferredTags.has(tag)).length
+        + (b.featured?.representative ? 2 : 0)
+        + (b.featured?.pathCore ? 2 : 0)
+        + (b.summary?.includes('灯塔') ? 1 : 0)
 
-      return bScore - aScore || a.title.localeCompare(b.title)
+      return bScore - aScore || a.title.localeCompare(b.title, 'zh-CN')
     })
     .slice(0, limit)
 }

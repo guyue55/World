@@ -427,5 +427,206 @@
       "world-architecture"
     ],
     "visibility": "public"
+  },
+  {
+    "id": "phase19-origin-expansion",
+    "title": "Phase 19：创世原点内容扩展路径",
+    "description": "沿着 创世原点 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "creator",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "world-manifesto",
+      "local-world-entry-ritual",
+      "world-model-reading-order",
+      "public-world-hospitality-rule",
+      "worldos-local-first-principle",
+      "visitor-map-contract",
+      "world-language-onboarding",
+      "node-life-story-primer",
+      "worldos-operating-promise"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-tech-expansion",
+    "title": "Phase 19：技术星域内容扩展路径",
+    "description": "沿着 技术星域 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "tech",
+    "estimatedMinutes": 24,
+    "nodeSlugs": [
+      "feishu-mcp-adk-agent",
+      "local-rc-fresh-build-playbook",
+      "playwright-lan-smoke-notes",
+      "content-jaccard-quality-gate",
+      "script-registry-discipline",
+      "public-index-generation-pipeline",
+      "reduced-motion-runtime-contract",
+      "theme-css-variable-architecture",
+      "mainline-import-audit-method",
+      "typescript-schema-guard-notes",
+      "local-network-start-guide",
+      "build-size-observation-log",
+      "search-weighting-experiment"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-workshop-expansion",
+    "title": "Phase 19：产品工坊内容扩展路径",
+    "description": "沿着 产品工坊 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "tech",
+    "estimatedMinutes": 20,
+    "nodeSlugs": [
+      "ai-website-audit-report-demo",
+      "owner-review-workbench-story",
+      "worldos-content-seed-tool",
+      "local-screenshot-review-kit",
+      "worldos-reading-card-system",
+      "path-progress-widget-idea",
+      "archive-filter-ergonomics",
+      "mobile-route-entry-polish",
+      "theme-toggle-product-note",
+      "content-maintenance-dashboard-draft",
+      "lan-demo-checklist-product"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-fragments-expansion",
+    "title": "Phase 19：灵感云层内容扩展路径",
+    "description": "沿着 灵感云层 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "creator",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "everything-is-node",
+      "small-node-big-door",
+      "quiet-interface-thought",
+      "relationship-before-graph",
+      "local-first-emotional-safety",
+      "romance-needs-ledger",
+      "first-screen-kindness",
+      "permission-is-a-promise",
+      "screenshots-are-memory"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-memory-expansion",
+    "title": "Phase 19：记忆湖内容扩展路径",
+    "description": "沿着 记忆湖 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "life",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "memory-lake-first-light",
+      "window-rain-local-rc",
+      "desk-lamp-after-build",
+      "lan-phone-first-visit",
+      "coffee-and-script-registry",
+      "night-mode-reading-memory",
+      "repair-day-breathing-room",
+      "archive-search-found-again",
+      "reduced-motion-kindness-memory"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-timeline-expansion",
+    "title": "Phase 19：时间河内容扩展路径",
+    "description": "沿着 时间河 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 16,
+    "nodeSlugs": [
+      "worldos-rc2-nondeploy-lessons",
+      "phase19-content-expansion-start",
+      "theme-system-stabilized",
+      "a11y-focus-pass",
+      "local-lan-rc-refresh",
+      "lib-warning-zero-milestone",
+      "content-jaccard-guard-added",
+      "owner-workbench-boundary-checked",
+      "ai-provider-disabled-adapter-added"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-archive-expansion",
+    "title": "Phase 19：档案馆内容扩展路径",
+    "description": "沿着 档案馆 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 20,
+    "nodeSlugs": [
+      "worldos-mainline-code-map",
+      "phase19-content-ledger",
+      "local-rc-evidence-map",
+      "world-index-field-guide",
+      "content-path-cleaning-rule",
+      "relation-note-style-guide",
+      "public-route-inventory",
+      "legacy-boundary-register",
+      "script-count-change-log",
+      "visual-qa-review-sheet",
+      "worldos-v2-plan-ledger"
+    ],
+    "nextPathIds": [
+      "phase19-lighthouse-expansion"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-lighthouse-expansion",
+    "title": "Phase 19：AI 灯塔内容扩展路径",
+    "description": "沿着 AI 灯塔 的新增公开节点，理解 Phase 19 如何把内容增长落到可阅读、可维护、可返回的路径中。",
+    "audience": "first-time",
+    "estimatedMinutes": 12,
+    "nodeSlugs": [
+      "ai-lighthouse-boundary",
+      "lighthouse-search-weight-model",
+      "lighthouse-reason-builder",
+      "low-light-ai-status-panel",
+      "public-context-slice-note",
+      "ai-review-queue-promise",
+      "lighthouse-question-shortcuts"
+    ],
+    "nextPathIds": [
+      "first-visit"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "phase19-local-maturity-loop",
+    "title": "Phase 19：本地成熟闭环路径",
+    "description": "把本地 RC、内容增长、权限边界、灯塔低光和截图证据串成一条可复核的成熟路径。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 24,
+    "nodeSlugs": [
+      "worldos-local-first-principle",
+      "local-rc-fresh-build-playbook",
+      "phase19-content-ledger",
+      "owner-review-workbench-story",
+      "lighthouse-search-weight-model",
+      "local-rc-evidence-map"
+    ],
+    "nextPathIds": [
+      "phase19-archive-expansion"
+    ],
+    "visibility": "public"
   }
 ]

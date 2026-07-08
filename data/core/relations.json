@@ -2562,5 +2562,1405 @@
     "source": "manual",
     "reviewed": true,
     "note": "诞生记发生在 2025 酝酿期的末端。"
+  },
+  {
+    "id": "rel-0259",
+    "from": "node-local-world-entry-ritual",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地世界入口仪式 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0260",
+    "from": "node-local-world-entry-ritual",
+    "to": "node-digital-universe",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地世界入口仪式 与数字宇宙定义共同解释世界入口。"
+  },
+  {
+    "id": "rel-0261",
+    "from": "node-world-model-reading-order",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界模型阅读顺序 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0262",
+    "from": "node-world-model-reading-order",
+    "to": "node-local-world-entry-ritual",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界模型阅读顺序 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0263",
+    "from": "node-public-world-hospitality-rule",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开世界待客规则 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0264",
+    "from": "node-public-world-hospitality-rule",
+    "to": "node-world-model-reading-order",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开世界待客规则 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0265",
+    "from": "node-worldos-local-first-principle",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 本地优先原则 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0266",
+    "from": "node-worldos-local-first-principle",
+    "to": "node-public-world-hospitality-rule",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 本地优先原则 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0267",
+    "from": "node-visitor-map-contract",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "访客地图契约 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0268",
+    "from": "node-visitor-map-contract",
+    "to": "node-worldos-local-first-principle",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "访客地图契约 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0269",
+    "from": "node-world-language-onboarding",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界语言入门表 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0270",
+    "from": "node-world-language-onboarding",
+    "to": "node-visitor-map-contract",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界语言入门表 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0271",
+    "from": "node-node-life-story-primer",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "节点生命故事入门 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0272",
+    "from": "node-node-life-story-primer",
+    "to": "node-world-language-onboarding",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "节点生命故事入门 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0273",
+    "from": "node-worldos-operating-promise",
+    "to": "node-world-manifesto",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 运行承诺 回到 创世原点 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0274",
+    "from": "node-worldos-operating-promise",
+    "to": "node-node-life-story-primer",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS 运行承诺 与前一个 创世原点 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0275",
+    "from": "node-local-rc-fresh-build-playbook",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地 RC 新鲜构建手册 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0276",
+    "from": "node-local-rc-fresh-build-playbook",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地 RC 新鲜构建手册 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0277",
+    "from": "node-playwright-lan-smoke-notes",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Playwright 局域网巡检笔记 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0278",
+    "from": "node-playwright-lan-smoke-notes",
+    "to": "node-local-rc-fresh-build-playbook",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Playwright 局域网巡检笔记 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0279",
+    "from": "node-content-jaccard-quality-gate",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容相似度门禁实践 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0280",
+    "from": "node-content-jaccard-quality-gate",
+    "to": "node-playwright-lan-smoke-notes",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容相似度门禁实践 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0281",
+    "from": "node-script-registry-discipline",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本注册表纪律 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0282",
+    "from": "node-script-registry-discipline",
+    "to": "node-content-jaccard-quality-gate",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本注册表纪律 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0283",
+    "from": "node-public-index-generation-pipeline",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开索引生成管线 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0284",
+    "from": "node-public-index-generation-pipeline",
+    "to": "node-script-registry-discipline",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开索引生成管线 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0285",
+    "from": "node-reduced-motion-runtime-contract",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低动效运行契约 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0286",
+    "from": "node-reduced-motion-runtime-contract",
+    "to": "node-public-index-generation-pipeline",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低动效运行契约 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0287",
+    "from": "node-theme-css-variable-architecture",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主题 CSS 变量架构 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0288",
+    "from": "node-theme-css-variable-architecture",
+    "to": "node-reduced-motion-runtime-contract",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主题 CSS 变量架构 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0289",
+    "from": "node-mainline-import-audit-method",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主线导入审计方法 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0290",
+    "from": "node-mainline-import-audit-method",
+    "to": "node-theme-css-variable-architecture",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主线导入审计方法 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0291",
+    "from": "node-typescript-schema-guard-notes",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "TypeScript 与 Schema 守门笔记 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0292",
+    "from": "node-typescript-schema-guard-notes",
+    "to": "node-mainline-import-audit-method",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "TypeScript 与 Schema 守门笔记 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0293",
+    "from": "node-local-network-start-guide",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "局域网启动指南 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0294",
+    "from": "node-local-network-start-guide",
+    "to": "node-typescript-schema-guard-notes",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "局域网启动指南 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0295",
+    "from": "node-build-size-observation-log",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "构建体积观察日志 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0296",
+    "from": "node-build-size-observation-log",
+    "to": "node-local-network-start-guide",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "构建体积观察日志 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0297",
+    "from": "node-search-weighting-experiment",
+    "to": "node-feishu-mcp",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "搜索权重实验记录 回到 技术星域 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0298",
+    "from": "node-search-weighting-experiment",
+    "to": "node-build-size-observation-log",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "搜索权重实验记录 与前一个 技术星域 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0299",
+    "from": "node-owner-review-workbench-story",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Owner 审核工作台故事 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0300",
+    "from": "node-owner-review-workbench-story",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Owner 审核工作台故事 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0301",
+    "from": "node-worldos-content-seed-tool",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容种子工具设计 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0302",
+    "from": "node-worldos-content-seed-tool",
+    "to": "node-owner-review-workbench-story",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容种子工具设计 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0303",
+    "from": "node-local-screenshot-review-kit",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地截图复核套件 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0304",
+    "from": "node-local-screenshot-review-kit",
+    "to": "node-worldos-content-seed-tool",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地截图复核套件 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0305",
+    "from": "node-worldos-reading-card-system",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "阅读卡片系统 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0306",
+    "from": "node-worldos-reading-card-system",
+    "to": "node-local-screenshot-review-kit",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "阅读卡片系统 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0307",
+    "from": "node-path-progress-widget-idea",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "路径进度组件设想 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0308",
+    "from": "node-path-progress-widget-idea",
+    "to": "node-worldos-reading-card-system",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "路径进度组件设想 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0309",
+    "from": "node-archive-filter-ergonomics",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "档案馆筛选体验 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0310",
+    "from": "node-archive-filter-ergonomics",
+    "to": "node-path-progress-widget-idea",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "档案馆筛选体验 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0311",
+    "from": "node-mobile-route-entry-polish",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "移动端入口打磨 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0312",
+    "from": "node-mobile-route-entry-polish",
+    "to": "node-archive-filter-ergonomics",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "移动端入口打磨 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0313",
+    "from": "node-theme-toggle-product-note",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主题切换产品说明 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0314",
+    "from": "node-theme-toggle-product-note",
+    "to": "node-mobile-route-entry-polish",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主题切换产品说明 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0315",
+    "from": "node-content-maintenance-dashboard-draft",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容维护面板草案 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0316",
+    "from": "node-content-maintenance-dashboard-draft",
+    "to": "node-theme-toggle-product-note",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容维护面板草案 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0317",
+    "from": "node-lan-demo-checklist-product",
+    "to": "node-ai-report-demo",
+    "type": "project",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "局域网 Demo 检查清单 回到 产品工坊 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0318",
+    "from": "node-lan-demo-checklist-product",
+    "to": "node-content-maintenance-dashboard-draft",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "局域网 Demo 检查清单 与前一个 产品工坊 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0319",
+    "from": "node-small-node-big-door",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "小节点也能是大门 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0320",
+    "from": "node-small-node-big-door",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "小节点也能是大门 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0321",
+    "from": "node-quiet-interface-thought",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "安静界面札记 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0322",
+    "from": "node-quiet-interface-thought",
+    "to": "node-small-node-big-door",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "安静界面札记 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0323",
+    "from": "node-relationship-before-graph",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "先有关系再有图谱 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0324",
+    "from": "node-relationship-before-graph",
+    "to": "node-quiet-interface-thought",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "先有关系再有图谱 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0325",
+    "from": "node-local-first-emotional-safety",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地优先的安全感 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0326",
+    "from": "node-local-first-emotional-safety",
+    "to": "node-relationship-before-graph",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地优先的安全感 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0327",
+    "from": "node-romance-needs-ledger",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "浪漫需要台账 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0328",
+    "from": "node-romance-needs-ledger",
+    "to": "node-local-first-emotional-safety",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "浪漫需要台账 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0329",
+    "from": "node-first-screen-kindness",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "首屏的善意 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0330",
+    "from": "node-first-screen-kindness",
+    "to": "node-romance-needs-ledger",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "首屏的善意 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0331",
+    "from": "node-permission-is-a-promise",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "权限是一种承诺 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0332",
+    "from": "node-permission-is-a-promise",
+    "to": "node-first-screen-kindness",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "权限是一种承诺 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0333",
+    "from": "node-screenshots-are-memory",
+    "to": "node-everything-node",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "截图也是记忆 回到 灵感云层 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0334",
+    "from": "node-screenshots-are-memory",
+    "to": "node-permission-is-a-promise",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "截图也是记忆 与前一个 灵感云层 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0335",
+    "from": "node-window-rain-local-rc",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "窗边雨声与本地 RC 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0336",
+    "from": "node-window-rain-local-rc",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "窗边雨声与本地 RC 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0337",
+    "from": "node-desk-lamp-after-build",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "构建完成后的台灯 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0338",
+    "from": "node-desk-lamp-after-build",
+    "to": "node-window-rain-local-rc",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "构建完成后的台灯 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0339",
+    "from": "node-lan-phone-first-visit",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "手机访问局域网的第一次 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0340",
+    "from": "node-lan-phone-first-visit",
+    "to": "node-desk-lamp-after-build",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "手机访问局域网的第一次 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0341",
+    "from": "node-coffee-and-script-registry",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "咖啡与脚本注册表 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0342",
+    "from": "node-coffee-and-script-registry",
+    "to": "node-lan-phone-first-visit",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "咖啡与脚本注册表 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0343",
+    "from": "node-night-mode-reading-memory",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "深色模式阅读记忆 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0344",
+    "from": "node-night-mode-reading-memory",
+    "to": "node-coffee-and-script-registry",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "深色模式阅读记忆 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0345",
+    "from": "node-repair-day-breathing-room",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "修复日的呼吸空间 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0346",
+    "from": "node-repair-day-breathing-room",
+    "to": "node-night-mode-reading-memory",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "修复日的呼吸空间 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0347",
+    "from": "node-archive-search-found-again",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "在档案馆重新找到旧节点 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0348",
+    "from": "node-archive-search-found-again",
+    "to": "node-repair-day-breathing-room",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "在档案馆重新找到旧节点 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0349",
+    "from": "node-reduced-motion-kindness-memory",
+    "to": "node-memory-light",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低动效的体贴记忆 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0350",
+    "from": "node-reduced-motion-kindness-memory",
+    "to": "node-archive-search-found-again",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低动效的体贴记忆 与前一个 记忆湖 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0351",
+    "from": "node-phase19-content-expansion-start",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Phase 19 内容扩展启动 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0352",
+    "from": "node-phase19-content-expansion-start",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Phase 19 内容扩展启动 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0353",
+    "from": "node-theme-system-stabilized",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主题系统稳定 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0354",
+    "from": "node-theme-system-stabilized",
+    "to": "node-phase19-content-expansion-start",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "主题系统稳定 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0355",
+    "from": "node-a11y-focus-pass",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "焦点管理通过 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0356",
+    "from": "node-a11y-focus-pass",
+    "to": "node-theme-system-stabilized",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "焦点管理通过 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0357",
+    "from": "node-local-lan-rc-refresh",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地 LAN RC 证据刷新 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0358",
+    "from": "node-local-lan-rc-refresh",
+    "to": "node-a11y-focus-pass",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地 LAN RC 证据刷新 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0359",
+    "from": "node-lib-warning-zero-milestone",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "lib warning 归零里程碑 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0360",
+    "from": "node-lib-warning-zero-milestone",
+    "to": "node-local-lan-rc-refresh",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "lib warning 归零里程碑 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0361",
+    "from": "node-content-jaccard-guard-added",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容相似度守门建立 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0362",
+    "from": "node-content-jaccard-guard-added",
+    "to": "node-lib-warning-zero-milestone",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "内容相似度守门建立 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0363",
+    "from": "node-owner-workbench-boundary-checked",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Owner 工作台边界复核 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0364",
+    "from": "node-owner-workbench-boundary-checked",
+    "to": "node-content-jaccard-guard-added",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Owner 工作台边界复核 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0365",
+    "from": "node-ai-provider-disabled-adapter-added",
+    "to": "node-worldos-rc2-nondeploy-lessons",
+    "type": "time",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI Provider 禁用适配层建立 回到 时间河 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0366",
+    "from": "node-ai-provider-disabled-adapter-added",
+    "to": "node-owner-workbench-boundary-checked",
+    "type": "sequence",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI Provider 禁用适配层建立 与前一个 时间河 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0367",
+    "from": "node-phase19-content-ledger",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Phase 19 内容台账 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0368",
+    "from": "node-phase19-content-ledger",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Phase 19 内容台账 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0369",
+    "from": "node-local-rc-evidence-map",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地 RC 证据地图 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0370",
+    "from": "node-local-rc-evidence-map",
+    "to": "node-phase19-content-ledger",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "本地 RC 证据地图 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0371",
+    "from": "node-world-index-field-guide",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开索引字段指南 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0372",
+    "from": "node-world-index-field-guide",
+    "to": "node-local-rc-evidence-map",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开索引字段指南 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0373",
+    "from": "node-content-path-cleaning-rule",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "正文路径清理规则 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0374",
+    "from": "node-content-path-cleaning-rule",
+    "to": "node-world-index-field-guide",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "正文路径清理规则 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0375",
+    "from": "node-relation-note-style-guide",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "关系说明写法指南 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0376",
+    "from": "node-relation-note-style-guide",
+    "to": "node-content-path-cleaning-rule",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "关系说明写法指南 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0377",
+    "from": "node-public-route-inventory",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开路由清单 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0378",
+    "from": "node-public-route-inventory",
+    "to": "node-relation-note-style-guide",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开路由清单 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0379",
+    "from": "node-legacy-boundary-register",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Legacy 边界登记 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0380",
+    "from": "node-legacy-boundary-register",
+    "to": "node-public-route-inventory",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Legacy 边界登记 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0381",
+    "from": "node-script-count-change-log",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本计数变更记录 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0382",
+    "from": "node-script-count-change-log",
+    "to": "node-legacy-boundary-register",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "脚本计数变更记录 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0383",
+    "from": "node-visual-qa-review-sheet",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "视觉 QA 复核表 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0384",
+    "from": "node-visual-qa-review-sheet",
+    "to": "node-script-count-change-log",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "视觉 QA 复核表 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0385",
+    "from": "node-worldos-v2-plan-ledger",
+    "to": "node-worldos-mainline-code-map",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS v2 计划台账 回到 档案馆 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0386",
+    "from": "node-worldos-v2-plan-ledger",
+    "to": "node-visual-qa-review-sheet",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "WorldOS v2 计划台账 与前一个 档案馆 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0387",
+    "from": "node-lighthouse-search-weight-model",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔搜索权重模型 回到 AI 灯塔 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0388",
+    "from": "node-lighthouse-search-weight-model",
+    "to": "node-world-manifesto",
+    "type": "derived",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔搜索权重模型 从世界宣言延伸出公开内容增长线索。"
+  },
+  {
+    "id": "rel-0389",
+    "from": "node-lighthouse-reason-builder",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔推荐理由生成器 回到 AI 灯塔 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0390",
+    "from": "node-lighthouse-reason-builder",
+    "to": "node-lighthouse-search-weight-model",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔推荐理由生成器 与前一个 AI 灯塔 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0391",
+    "from": "node-low-light-ai-status-panel",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低光 AI 状态面板 回到 AI 灯塔 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0392",
+    "from": "node-low-light-ai-status-panel",
+    "to": "node-lighthouse-reason-builder",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "低光 AI 状态面板 与前一个 AI 灯塔 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0393",
+    "from": "node-public-context-slice-note",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开上下文切片说明 回到 AI 灯塔 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0394",
+    "from": "node-public-context-slice-note",
+    "to": "node-low-light-ai-status-panel",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开上下文切片说明 与前一个 AI 灯塔 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0395",
+    "from": "node-ai-review-queue-promise",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 审核队列承诺 回到 AI 灯塔 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0396",
+    "from": "node-ai-review-queue-promise",
+    "to": "node-public-context-slice-note",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "AI 审核队列承诺 与前一个 AI 灯塔 扩展节点形成连续阅读关系。"
+  },
+  {
+    "id": "rel-0397",
+    "from": "node-lighthouse-question-shortcuts",
+    "to": "node-ai-lighthouse",
+    "type": "topic",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔问题快捷入口 回到 AI 灯塔 的代表节点，帮助读者理解区域主线。"
+  },
+  {
+    "id": "rel-0398",
+    "from": "node-lighthouse-question-shortcuts",
+    "to": "node-ai-review-queue-promise",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔问题快捷入口 与前一个 AI 灯塔 扩展节点形成连续阅读关系。"
   }
 ]

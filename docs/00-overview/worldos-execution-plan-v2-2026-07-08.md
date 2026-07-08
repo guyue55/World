@@ -130,17 +130,30 @@
 
 ## 七、验收清单
 
-- [ ] T20.1 深色模式完成
-- [ ] T20.2 键盘导航完成
-- [ ] T20.3 构建收束完成
-- [ ] T19.1 节点扩展到 200+
-- [ ] T19.2 关系深化到 300+
-- [ ] T19.3 事件补齐到 50+
-- [ ] T19.4 路径维持 20+
-- [ ] T21.1 搜索排序优化
-- [ ] T21.2 推荐算法调优
-- [ ] T21.3 AI 状态面板完善
-- [ ] 四合一门禁最终全绿
+- [x] T20.1 深色模式完成
+- [x] T20.2 键盘导航完成
+- [x] T20.3 构建收束完成
+- [x] T19.1 节点扩展到 200+
+- [x] T19.2 关系深化到 300+
+- [x] T19.3 事件补齐到 50+
+- [x] T19.4 路径维持 20+
+- [x] T21.1 搜索排序优化
+- [x] T21.2 推荐算法调优
+- [x] T21.3 AI 状态面板完善
+- [x] 四合一门禁最终全绿
+
+## 八、执行结果（2026-07-08）
+
+| 项目 | 结果 | 验收证据 |
+|---|---:|---|
+| 公开节点 | 200 | `npm run check:phase19-content` |
+| 关系星线 | 398 | `npm run check:content` |
+| 世界事件 | 50 | `npm run check:phase19-content` |
+| 公开路径 | 29 | `npm run check:content-life` |
+| 内容相似度 | max 0.5565 / threshold 0.65 | `npm run check:content-jaccard` |
+| 构建预算 | 54.41 MB / 200 MB | `npm run check:performance-budget` |
+| 灯塔低光增强 | 搜索权重、推荐理由、状态面板 | `npm run check:phase21-lighthouse` |
+| 外部上线 | 暂不考虑 | `productionLive=false`、`releaseReady=false` |
 
 ---
 
