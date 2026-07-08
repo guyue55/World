@@ -1,19 +1,15 @@
 # 世界索引生成器
 
-自动生成公开世界对象索引的工具设计与实现。
+world-index.json 是世界对外的"面孔"：外部系统、AI、访客都通过它理解世界。生成器把散落在 nodes/relations/paths/events 的原始数据聚合成一份索引。
 
-## 核心内容
+## 生成逻辑
 
-这个节点属于workshop区域，记录与世界索引生成器相关的实践经验。内容会随世界生长逐步补充。当前阶段以本地 LAN 环境为主，所有实践都回到 localhost、内容质量、动态体验和权限边界。
+输入：`data/domains/experience/nodes.json`、`data/domains/experience/paths.json`、`data/core/relations.json`、`data/core/world-events.json`。输出：`public/world-index.json`。中间步骤：过滤 non-public、拼装 areas、生成 graph.lines、projections 派生。
 
-## 与世界的关系
+## 关键约束
 
-这个节点通过关系星线连接到世界中的其他节点。它不是孤立的页面，而是世界拓扑结构的一部分。访客可以通过路径、档案馆或灯塔推荐到达这里，也可以通过关系星线跳转到相关节点。
+索引里绝不出现 permission 或 owner-only 数据。permission-audit 会在生成前后各扫一次，保证边界不被静默突破。
 
-## 边界与诚实
+## 与 protocol-guide 的关系
 
-节点内容遵循世界协议：公开层只展示可公开的信息，私密内容由服务端权限保护。所有内容变更都需要通过内容密度门禁验证，确保正文达到最低可读性标准。
-
-## 补充说明
-
-这个节点是古月浮屿世界的一部分，通过节点护照、关系星线和推荐路径与世界其他内容相连。访客可以通过地图、路径、档案馆或灯塔推荐到达这里。节点内容遵循世界协议：公开层只展示可公开的信息，所有变更通过门禁验证。世界在持续生长，这个节点也会随时间补充更多实践经验和边界思考。
+索引结构在 world-protocol-guide 里被规范化。任何字段新增都要先更新协议，再更新生成器。
