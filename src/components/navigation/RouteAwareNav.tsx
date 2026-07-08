@@ -10,11 +10,11 @@ export function RouteAwareNav() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/80 backdrop-blur-xl">
-      <nav className="world-container flex h-16 items-center justify-between">
+      <nav aria-label="主导航" className="world-container flex h-16 items-center justify-between">
         <Link
           href="/"
           aria-current={pathname === '/' ? 'page' : undefined}
-          className="rounded-full px-3 py-2 font-semibold tracking-wide transition hover:bg-white/60"
+          className="rounded-full px-3 py-2 font-semibold tracking-wide transition hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70"
         >
           古月浮屿
         </Link>
@@ -27,7 +27,7 @@ export function RouteAwareNav() {
                 key={item.id}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={`rounded-full px-4 py-2 text-sm transition ${
+                className={`rounded-full px-4 py-2 text-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70 ${
                   active
                     ? 'bg-ink text-paper shadow-soft'
                     : 'text-ink/70 hover:bg-white/60 hover:text-ink'

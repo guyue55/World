@@ -69,9 +69,9 @@ export function ProductHome({
                   key={entry.id}
                   href={entry.href}
                   data-testid={entry.tone === 'primary' ? 'home-primary-cta' : undefined}
-                  className={entry.tone === 'primary'
-                    ? 'rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night'
-                    : 'rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white'}
+                 className={entry.tone === 'primary'
+                    ? 'rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper shadow-soft transition hover:-translate-y-0.5 hover:bg-night focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70'
+                    : 'rounded-full border border-ink/10 bg-white/75 px-6 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70'}
                 >
                   {entry.label}
                 </Link>
@@ -93,7 +93,7 @@ export function ProductHome({
               <WorldLiveMapPanel routes={dynamicWorld.routes} />
               <div className="grid gap-3 text-sm">
                 {dynamicWorld.routes.filter((entry) => entry.id !== 'home' && entry.id !== 'archive').slice(0, 4).map((entry) => (
-                  <Link key={entry.href} href={entry.href} className="block rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14">
+                  <Link key={entry.href} href={entry.href} className="block rounded-2xl border border-white/10 bg-white/8 p-4 transition hover:bg-white/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70">
                     <span className="truncate font-semibold text-paper block">{entry.title}</span>
                     <span className="mt-1 block line-clamp-2 leading-6 text-paper/62">{entry.description}</span>
                   </Link>
