@@ -1,5 +1,6 @@
 import { CompassNav } from './CompassNav'
 import { MobileNav } from './MobileNav'
+import { ThemeToggle } from './ThemeToggle'
 import { WorldRuntimeProvider } from './WorldRuntimeProvider'
 import { ProductBackdrop } from '@/components/product/ProductBackdrop'
 import { ProductJourneyDock } from '@/components/product/ProductJourneyDock'
@@ -12,6 +13,9 @@ export function WorldShell({ children }: { children: React.ReactNode }) {
         <ProductBackdrop />
         <CompassNav />
         <MobileNav />
+        <div className="fixed right-4 top-4 z-50 md:right-6 md:top-6">
+          <ThemeToggle />
+        </div>
         <div id="main-content" tabIndex={-1}>
           {children}
         </div>

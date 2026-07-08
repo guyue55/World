@@ -3,8 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f1e6;
-  --foreground: #25302a;
+  --color-ink: #25302a;
+  --color-paper: #f7f1e6;
+  --color-mist: #d8e2d0;
+  --color-moss: #71816d;
+  --color-lake: #7d9aa2;
+  --color-night: #17211d;
+  --color-gold: #c5a46d;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+}
+
+.dark {
+  --color-ink: #e8dfca;
+  --color-paper: #1a1510;
+  --color-mist: #2a2520;
+  --color-moss: #8fa68a;
+  --color-lake: #9ab4bb;
+  --color-night: #0a0805;
+  --color-gold: #d4b87e;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+}
+
+.dark .bg-white {
+  background-color: var(--color-mist);
+}
+
+.dark .border-white\/70,
+.dark .border-white\/60,
+.dark .border-white\/50 {
+  border-color: rgba(232, 223, 202, 0.12);
+}
+
+.dark .border-white\/10 {
+  border-color: rgba(232, 223, 202, 0.10);
+}
+
+.dark .border-white\/8 {
+  border-color: rgba(232, 223, 202, 0.08);
+}
+
+.dark .border-white\/14 {
+  border-color: rgba(232, 223, 202, 0.14);
 }
 
 html {
