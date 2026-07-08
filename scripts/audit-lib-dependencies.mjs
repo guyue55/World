@@ -18,6 +18,37 @@ const importedBy = new Map()
 
 const importRegex = /import\s+(?:type\s+)?[^'"\n]+\s+from\s+['"](\.[^'"\n]+)['"]/g
 
+// 扫描 lib 外的引用（app / features / scripts / middleware / tests）
+const EXT_DIRS = ['src/app', 'src/features', 'src/components', 'src/hooks', 'scripts', 'tests']
+const extUsageBy = new Map()
+function walk(dir, cb) {
+  if (!fs.existsSync(dir)) return
+  for (const name of fs.readdirSync(dir)) {
+    const abs = path.join(dir, name)
+    const stat = fs.statSync(abs)
+    if (stat.isDirectory()) walk(abs, cb)
+    else if (/\.(ts|tsx|mjs|js)$/.test(name)) cb(abs)
+  }
+}
+const extImportRegex = /from\s+['"]([^'"\n]+)['"]/g
+for (const dir of EXT_DIRS) {
+  walk(path.join(ROOT, dir), (abs) => {
+    const src = fs.readFileSync(abs, 'utf8')
+    let m
+    while ((m = extImportRegex.exec(src)) !== null) {
+      const target = m[1]
+      let libName = null
+      const aliasMatch = target.match(/^@\/lib\/([\w\-.]+)/)
+      if (aliasMatch) libName = aliasMatch[1].replace(/\.(ts|tsx)$/, '')
+      const relMatch = target.match(/(?:^|\/)lib\/([\w\-.]+)$/)
+      if (!libName && relMatch) libName = relMatch[1].replace(/\.(ts|tsx)$/, '')
+      if (!libName) continue
+      if (!extUsageBy.has(libName)) extUsageBy.set(libName, new Set())
+      extUsageBy.get(libName).add(path.relative(ROOT, abs))
+    }
+  })
+}
+
 for (const file of files) {
   const abs = path.join(LIB_DIR, file)
   const stat = fs.statSync(abs)
@@ -45,9 +76,12 @@ for (const [file, deps] of graph.entries()) {
 
 // 计算未被 lib 内引用的文件
 const notImportedInLib = []
+const trulyOrphan = []
 for (const file of graph.keys()) {
   if (!importedBy.has(file) || importedBy.get(file).size === 0) {
     notImportedInLib.push(file)
+    const extRefs = extUsageBy.get(file)?.size ?? 0
+    if (extRefs === 0) trulyOrphan.push(file)
   }
 }
 
@@ -114,8 +148,15 @@ lines.push('')
 lines.push(`共 ${notImportedInLib.length} 个：`)
 lines.push('')
 for (const f of notImportedInLib.sort()) {
-  lines.push(`- ${f}`)
+  const extCount = extUsageBy.get(f)?.size ?? 0
+  lines.push(`- ${f}（app/features/scripts 引用：${extCount}）`)
 }
+lines.push('')
+lines.push('## 三·B、真孤岛：既不被 lib 内也不被 app/features/scripts 引用')
+lines.push('')
+lines.push(`共 ${trulyOrphan.length} 个：`)
+lines.push('')
+for (const f of trulyOrphan.sort()) lines.push(`- ${f}`)
 lines.push('')
 lines.push('## 四、循环依赖清单')
 lines.push('')
