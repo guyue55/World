@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T07:08:20.057Z",
+  "generatedAt": "2026-07-08T07:22:52.742Z",
   "status": "passed",
   "baseUrl": "http://127.0.0.1:4317",
   "registry": "data/world-kernel/worldos-local-runtime-smoke-v1.json",
@@ -18,8 +18,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 10,
       "ok": true,
       "expected": {
         "status": 200,
@@ -34,8 +34,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 27,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 22,
       "ok": true,
       "expected": {
         "status": 200,
@@ -50,8 +50,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 15,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 16,
       "ok": true,
       "expected": {
         "status": 200,
@@ -66,8 +66,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 16,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 32,
       "ok": true,
       "expected": {
         "status": 200,
@@ -82,7 +82,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
       "durationMs": 7,
       "ok": true,
       "expected": {
@@ -98,8 +98,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 6,
       "ok": true,
       "expected": {
         "status": 200,
@@ -114,8 +114,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -130,8 +130,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/co",
-      "durationMs": 12,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/co",
+      "durationMs": 9,
       "ok": true,
       "expected": {
         "status": 200,
@@ -146,8 +146,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-08T07:07:35.936Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"a",
-      "durationMs": 10,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-08T07:22:31.459Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"a",
+      "durationMs": 6,
       "ok": true,
       "expected": {
         "status": 200,
@@ -163,7 +163,7 @@
       "contentType": "application/json; charset=UTF-8",
       "location": "",
       "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 200,
@@ -194,8 +194,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-08T07:08:10.986Z</lastmo",
-      "durationMs": 11,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-08T07:22:47.621Z</lastmo",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -211,7 +211,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 4,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -227,7 +227,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -243,7 +243,7 @@
       "contentType": "",
       "location": "/timeline",
       "bodyPreview": "/timeline",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -259,7 +259,7 @@
       "contentType": "",
       "location": "/ask",
       "bodyPreview": "/ask",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -275,7 +275,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -309,7 +309,7 @@
       "contentType": "",
       "location": "http://localhost:4317/forbidden",
       "bodyPreview": "http://localhost:4317/forbidden",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 307,
@@ -325,8 +325,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
-      "durationMs": 6,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/stat",
+      "durationMs": 4,
       "ok": true,
       "expected": {
         "status": 404

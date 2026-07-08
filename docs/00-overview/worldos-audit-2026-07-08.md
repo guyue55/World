@@ -97,3 +97,31 @@
 **审查完成。本次未发现任何阻塞项。**
 **下一轮建议动作见"七、后续待办"。**
 
+---
+
+## 附录 A：Phase 14 待办执行结果（同日追加）
+
+| 项 | 目标 | 结果 |
+|---|---|---|
+| 单次标签整理 | 37 → ≤ 20 | 37 → 20（映射 17 项、保留 20 项自然语义） |
+| lib 孤立文件收敛 | 80 → ≤ 40 | 真孤岛 5 → 2（3 个归档到 `src/lib/_legacy/`，2 个为治理契约锚点，属预期） |
+| legacy registry 补录 | 2 条 stage-like 追踪 | 已在 registry 中登记（`check:stage-acceptance` / `check:stage-completion-transition`） |
+| jaccard 复读机检测 | 脚本化并挂入门禁 | `scripts/check-worldos-content-jaccard.mjs` 已挂入 `check:content`，最大相似度 0.5565 / 阈值 0.65 |
+
+### 执行副产物
+
+- 新增 `scripts/apply-tag-consolidation.mjs`（幂等标签合并）
+- 新增 `scripts/check-worldos-content-jaccard.mjs`（jaccard 门禁）
+- 新增 `data/seeds/phase14-tag-consolidation.json`（映射表 + 保留清单）
+- 新增 `src/lib/_legacy/README.md`（归档说明）
+- `scripts/audit-lib-dependencies.mjs` 增强：区分"lib 内孤立"与"真孤岛"（额外扫描 app/features/scripts）
+- `data/world-kernel/worldos-script-legacy-registry-v1.json` 同步脚本计数（263 → 264）
+
+### 验证
+
+- `check:daily` 全绿（含新增 `check:content-jaccard`）
+- `check:boundary-full` 全绿
+- `release:local-rc` 全绿（22 HTTP + 20 browser + npm audit 0/0/0/0）
+- `lint` / `typecheck` 全绿
+- `lib` 数量 120 → 117（<130 预算）
+

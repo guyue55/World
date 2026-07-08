@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T07:08:58.849Z",
+  "generatedAt": "2026-07-08T07:23:25.236Z",
   "status": "passed",
   "lanIp": "172.30.111.222",
   "baseUrl": "http://172.30.111.222:4320",
@@ -22,8 +22,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -38,8 +38,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 21,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 17,
       "ok": true,
       "expected": {
         "status": 200,
@@ -54,8 +54,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 13,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 9,
       "ok": true,
       "expected": {
         "status": 200,
@@ -70,8 +70,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 16,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 11,
       "ok": true,
       "expected": {
         "status": 200,
@@ -86,8 +86,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -102,8 +102,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -118,8 +118,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -134,8 +134,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 6,
       "ok": true,
       "expected": {
         "status": 200,
@@ -150,8 +150,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
+      "durationMs": 7,
       "ok": true,
       "expected": {
         "status": 200,
@@ -166,8 +166,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
-      "durationMs": 9,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 200,
@@ -182,8 +182,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-08T07:07:35.936Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
-      "durationMs": 9,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-08T07:22:31.459Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "durationMs": 6,
       "ok": true,
       "expected": {
         "status": 200,
@@ -199,7 +199,7 @@
       "contentType": "application/json; charset=UTF-8",
       "location": "",
       "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"/paths\",\n    \"/ask\",\n    \"/manifesto\"\n  ",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 200,
@@ -230,8 +230,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-08T07:08:10.986Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
-      "durationMs": 11,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-08T07:22:47.621Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -247,7 +247,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 3,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -263,7 +263,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -311,7 +311,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -328,7 +328,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -345,7 +345,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 2,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 307,
@@ -361,8 +361,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--tjBQz316Db7UlH2Srh9mX--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
-      "durationMs": 6,
+      "bodyPreview": "<!DOCTYPE html><!--w8fDJE21azxJc92KiK4nF--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/0c51a23650ba1dab.css\" data-pre",
+      "durationMs": 4,
       "ok": true,
       "expected": {
         "status": 404
@@ -408,7 +408,7 @@
       "metrics": {
         "title": "世界地图｜古月浮屿",
         "h1": "世界地图",
-        "textLength": 15703,
+        "textLength": 15587,
         "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 世界地图 你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。 我在哪里 这里是什么 能去哪 如何回去 沿时间流继续 地图 档案 路径 灯塔 ATLAS 世界地图 这里是古月浮屿的空间入口。先看五个主区域，再进入节点；想快速查找时，可以切换到档案馆。 区域 8 公开区域 7 公开节点 130 区域星线 8 ✦ 创世原点 22 个公开节点 · 公开星域 ✧ 技术星域 27 个公开节点 · 公开星域 ◈ 产品工坊 18 个公开节点 · 公开星域 ☁ 灵感云层 13 个公开节点 · 公开星域 ≈ 记忆湖 ",
         "hiddenBody": false,
         "scrollWidth": 1440,
@@ -468,7 +468,7 @@
       "metrics": {
         "title": "档案馆｜古月浮屿",
         "h1": "档案馆",
-        "textLength": 14510,
+        "textLength": 14390,
         "textSample": "入口 地图 时间 档案 灯塔 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 你在这里 档案馆 当你不想漫游时，在这里直接查找公开文章、项目、灵感和归档内容。档案馆只读取公开索引，不展示私密层。 我在哪里 这里是什么 能去哪 如何回去 切回世界地图 时间 档案 路径 灯塔 动态档案馆 不想漫游时，直接检索公开世界 档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。 只读公开索引 · 不含私密层 搜索和筛选只作用于服务端已经放行的公开节点。 130 公开节点 可被检索和进入 7 主区域 用于空间筛选 10 热门标签 用于快速缩小范围 12 代表节点 适合第一次阅读 热门标签 #",
         "hiddenBody": false,
         "scrollWidth": 1440,
@@ -708,7 +708,7 @@
       "metrics": {
         "title": "世界地图｜古月浮屿",
         "h1": "世界地图",
-        "textLength": 15694,
+        "textLength": 15578,
         "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 你在这里 世界地图 你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。 我在哪里 这里是什么 能去哪 如何回去 沿时间流继续 地图 档案 路径 灯塔 ATLAS 世界地图 这里是古月浮屿的空间入口。先看五个主区域，再进入节点；想快速查找时，可以切换到档案馆。 区域 8 公开区域 7 公开节点 130 区域星线 8 ✦ 创世原点 22 个公开节点 · 公开星域 ✧ 技术星域 27 个公开节点 · 公开星域 ◈ 产品工坊 18 个公开节点 · 公开星域 ☁ 灵感云层 13 个公开节点 · 公开星域 ≈ 记忆湖 11 个公开节点 ",
         "hiddenBody": false,
         "scrollWidth": 390,
@@ -768,7 +768,7 @@
       "metrics": {
         "title": "档案馆｜古月浮屿",
         "h1": "档案馆",
-        "textLength": 14501,
+        "textLength": 14381,
         "textSample": "入口 地图 时间 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 你在这里 档案馆 当你不想漫游时，在这里直接查找公开文章、项目、灵感和归档内容。档案馆只读取公开索引，不展示私密层。 我在哪里 这里是什么 能去哪 如何回去 切回世界地图 时间 档案 路径 灯塔 动态档案馆 不想漫游时，直接检索公开世界 档案馆把公开节点整理成可搜索、可筛选、可返回的现实入口。这里不展示私密层，也不把内部草稿带进公开索引。 只读公开索引 · 不含私密层 搜索和筛选只作用于服务端已经放行的公开节点。 130 公开节点 可被检索和进入 7 主区域 用于空间筛选 10 热门标签 用于快速缩小范围 12 代表节点 适合第一次阅读 热门标签 #world · 2",
         "hiddenBody": false,
         "scrollWidth": 390,
