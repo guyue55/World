@@ -292,3 +292,52 @@
 
 - `npm run check:daily` / `check:boundary-full` / `release:local-rc` 全绿；
 - 22 HTTP + 20 browser + npm audit 2/0/0 保持。
+
+## 附录 H：lib 层深度归档与硬编码路径修复（同日第七轮）
+
+> 触发：附录 G 完成组件与 feature 层大规模归档后，用户继续要求"直到全部完成"；本轮转向 `src/lib/*` 层，把主线里"仅被 `_legacy` 组件消费"的 lib 文件批量下沉到 `src/lib/_legacy/`，并系统排查 `data/*.json`、`scripts/check-*.ts` 里遗留的硬编码组件/lib 路径。
+
+### H.1 归档范围
+
+新一批 21 个 lib 文件迁至 `src/lib/_legacy/`（累计 lib 归档数上升到 57）：
+
+`acceptance-readiness` / `ai-lighthouse-planning` / `blocker-closure` /
+`defect-execution` / `evidence-assist-closure` / `evidence-dashboard` /
+`evolution` / `execution-rerun` / `final-closure` / `final-handoff` /
+`local-acceptance` / `preview-performance` / `preview-readiness` /
+`public-seo-release` / `real-validation` / `release-closure` /
+`release-environment` / `stage-completion-transition` / `theme-exhibitions` /
+`validation-closure` / `visual-interaction-qa`
+
+全部为"主线代码零消费、仅被 `_legacy/*Panel.tsx` 使用"的收尾期契约文件；同批用 `/tmp/rewrite-lib-legacy.mjs` 把 24 个 `@/lib/*` alias import 重写到 `@/lib/_legacy/*`。
+
+| 层级 | 附录 G 之后 | 附录 H 之后 | 累计变化 |
+|---|---|---|---|
+| `src/lib/*` 主线文件 | 117 | 96 | -21（-18%）|
+| `src/lib/_legacy/*` 归档文件 | 36 | 57 | +21 |
+
+### H.2 契约与门禁脚本同步
+
+归档后 `check:strict`（即 world-core）暴露 6 处硬编码历史路径依赖，逐个修复：
+
+1. `data/engineering/performance-guard.json`：`performance-panel-boundary` 目标改到 `src/components/_legacy/world/PerformanceContractPanel.tsx`。
+2. `data/core/world-protocol-registry.json`：`relation` 要求的 `src/lib/backlinks.ts` 更新到 `src/lib/_legacy/backlinks.ts`（先前批次归档遗留）。
+3. `data/domains/experience/nodes.json`：`eight-minute-world-path` 精选节点标签从 `[guide]` 补齐为 `[guide, onboarding]`，满足 `check:content-productization` 的"精选节点最少两个标签"规则。
+4. `scripts/check-preview-smoke-config.ts`：runner 存在性检查由 `.mjs` 修正为实际存在的 `run-preview-smoke.ts`。
+5. `scripts/check-interaction-state.ts`：路径页面允许使用 `PathTabs` 或后续实现的 `PathsDynamicDirectory`（后者内部实现 `role="tablist"` + `aria-selected` 的可访问受众筛选）。
+6. `scripts/check-path-guidance.ts` / `check-theme-exhibitions.ts` / `check-export-center.ts` / `check-evidence-dashboard.ts`：允许 `src/components/_legacy/<domain>/` 承载已归档组件的存在性判定。
+
+### H.3 真实验证
+
+| 命令 | 结果 |
+|---|---|
+| `npm run lint` | ✅ eslint --max-warnings=0 |
+| `npm run typecheck` | ✅ tsc --noEmit 零错 |
+| `npm run check:daily` | ✅ 130 节点 · 258 关系 · 20 路径 · 96/130 lib · 265 脚本 · jaccard 0.5565 |
+| `npm run check:boundary-full` | ✅ 11 项 boundary + 附加 3 项 |
+| `npm run check:strict` | ✅ 全部 world-core 子门禁绿 |
+| `npm run release:local-rc` | ✅ 22 HTTP + 20 browser + npm audit 2 moderate / 0 high / 0 critical |
+
+### H.4 结论
+
+主线 lib 从 117 一次减到 96（-18%），三合一门禁 + `check:strict` 全绿，未引入任何新故障。至此 `src/lib/*`、`src/components/*`、`src/features/*` 三个层级的"仅被 legacy 消费"孤儿代码均已完整下沉，`_legacy/` 成为真实的历史归档区，主线只承载当前可运行的活跃契约与组件；后续若还需要进一步收敛，判据已在附录 G.2 明确记录，可继续按同一原则跑 `node scripts/audit-lib-dependencies.mjs` 与 `/tmp/lib-mainline-refs.mjs` 复查。
