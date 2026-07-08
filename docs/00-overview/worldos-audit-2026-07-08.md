@@ -173,3 +173,33 @@
 - `check:daily` / `check:boundary-full` 全绿
 - `release:local-rc` 全绿（22 HTTP + 20 browser + npm audit 0/0/0/0）
 - `_legacy` 已在 tsconfig.json 排除，归档不影响构建
+
+## 附录 E：feature 层与脚本层收敛（同日追加）
+
+沿着 lib 层的收敛思路继续向 feature 层与脚本层扫描：
+
+### feature 层归档
+
+`src/features/` 下 3 个模块在主线内零引用，仅被 `_legacy` 消费，归档到 `src/features/_legacy/`：
+
+| 目录 | 归档原因 |
+|---|---|
+| ai-safety | 主线由 `src/lib/ai-boundary` + provider 边界承担 |
+| ai-service-contract | 已被 `ai-workflow` 与 `ai-lighthouse-workbench` 各自契约层取代 |
+| visual-foundation | 主线 Tailwind 主题与设计系统已完全覆盖 |
+
+新增 `src/features/_legacy/README.md` 记录归档清单。
+
+### 脚本层修复
+
+`scripts/check-public-app-r8-imports.mjs` 是有效的公开 App→r8 组件导入边界检查，此前未挂入任何 npm 脚本；本轮：
+
+- 新增 `check:app-boundary` 直接指向该脚本
+- 挂入 `check:boundary`（10 → 11 项）
+- 同步 `worldos-maintenance-command-spine-v1.json` 的 `command` 与 `purpose`
+- 同步 `worldos-script-legacy-registry-v1.json` 脚本计数（264 → 265，check 计数 139 → 140）
+
+### 验证
+
+- `check:daily` / `check:boundary-full` / `release:local-rc` 全绿（22 HTTP + 20 browser + npm audit 0/0/0/0）
+- `check:app-boundary`：App runtime boundary passed
