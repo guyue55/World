@@ -238,7 +238,7 @@
     "check:local-product-maturity": "node scripts/check-worldos-local-product-maturity.mjs",
     "check:worldos-mainline-governance": "node scripts/check-worldos-mainline-governance.mjs",
     "check:worldos-script-taxonomy": "node scripts/check-worldos-script-taxonomy.mjs",
-    "check:content": "npm run check:worldos-content-density && npm run check:content-life && npm run check:local-content-growth",
+    "check:content": "npm run check:worldos-content-density && npm run check:content-life && npm run check:local-content-growth && npm run check:content-jaccard",
     "check:content-life": "node scripts/check-worldos-content-life.mjs",
     "check:local-content-growth": "node scripts/check-worldos-local-content-growth.mjs",
     "check:experience:public": "npm run check:worldos-public-experience",
@@ -266,7 +266,8 @@
     "check:lan-local": "node scripts/check-worldos-local-lan-rc.mjs",
     "smoke:lan-local": "node scripts/run-worldos-local-lan-rc.mjs",
     "check:lib-budget": "node scripts/check-worldos-lib-budget.mjs",
-    "audit:lib-dependencies": "node scripts/audit-lib-dependencies.mjs"
+    "audit:lib-dependencies": "node scripts/audit-lib-dependencies.mjs",
+    "check:content-jaccard": "node scripts/check-worldos-content-jaccard.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
