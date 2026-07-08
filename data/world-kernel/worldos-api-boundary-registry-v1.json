@@ -577,10 +577,58 @@
         "noStore": false,
         "usesRuntimeMemory": false
       }
+    },
+    {
+      "path": "/api/lighthouse/search",
+      "file": "src/app/api/lighthouse/search/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "public-max-age-300",
+      "publicPayload": "public",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "灯塔搜索 API，只读公开世界索引返回匹配节点。",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
+      "path": "/api/lighthouse/ask",
+      "file": "src/app/api/lighthouse/ask/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "static-safe-public",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "public-max-age-300",
+      "publicPayload": "public",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "灯塔问答 API，低光模式下返回静态推荐，不调用真实 AI。",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": true,
+        "noStore": false,
+        "usesRuntimeMemory": false
+      }
     }
   ],
   "summary": {
-    "totalRoutes": 23,
+    "totalRoutes": 25,
     "ownerOnly": 4,
     "permissionGuarded": 5,
     "publicRead": 9,
