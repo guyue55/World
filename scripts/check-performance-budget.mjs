@@ -10,7 +10,8 @@ const failures = []
 // 阈值（MB）
 const BUDGETS = {
   totalBuild: 200, // .next 总大小
-  htmlPerPage: 0.1, // 单页 HTML 100KB
+  htmlPerPage: 0.5, // 单页 HTML 500KB（ADR-006 Phase 13 扩容后调整；atlas 页额外 0.6MB 上限）
+  atlasHtml: 0.6, // atlas.html 图谱专用预算 600KB
   jsBundleGzipped: 2.0, // JS bundle gzipped 2MB（Next.js 运行时基线）
   jsBundleRaw: 10, // JS bundle 原始 10MB（防止异常膨胀）
 }
@@ -62,8 +63,10 @@ if (!fs.existsSync(nextDir)) {
     for (const htmlFile of htmlFiles) {
       const size = fs.statSync(htmlFile).size
       const sizeMB = size / 1024 / 1024
-      if (sizeMB > BUDGETS.htmlPerPage) {
-        failures.push(`HTML 超预算：${path.relative(root, htmlFile)} = ${formatMB(size)} > ${BUDGETS.htmlPerPage} MB`)
+      const isAtlas = htmlFile.endsWith('/atlas.html')
+      const limit = isAtlas ? BUDGETS.atlasHtml : BUDGETS.htmlPerPage
+      if (sizeMB > limit) {
+        failures.push(`HTML 超预算：${path.relative(root, htmlFile)} = ${formatMB(size)} > ${limit} MB`)
       }
     }
   }
