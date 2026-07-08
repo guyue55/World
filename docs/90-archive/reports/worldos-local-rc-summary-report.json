@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T07:43:12.659Z",
+  "generatedAt": "2026-07-08T08:06:25.515Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -32,8 +32,8 @@
     },
     "audit": {
       "report": "docs/90-archive/reports/npm-audit-report.json",
-      "total": 0,
-      "moderate": 0,
+      "total": 2,
+      "moderate": 2,
       "high": 0,
       "critical": 0,
       "policy": [
@@ -49,7 +49,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-08T07:41:49.620Z"
+      "buildIdMtime": "2026-07-08T08:05:41.338Z"
     }
   },
   "dynamicWorldEvidence": {

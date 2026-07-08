@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Node } from '@/lib/types'
 import { resolveNodeCover } from '@/lib/homepage'
-import { SectionHeader } from '@/components/layout/SectionHeader'
+import { SectionHeader } from '@/components/_legacy/layout/SectionHeader'
 import { NodeLifeStageBadge } from '@/components/node/NodeLifeStageBadge'
 
 export function FeaturedNodeGrid({ nodes }: { nodes: Node[] }) {

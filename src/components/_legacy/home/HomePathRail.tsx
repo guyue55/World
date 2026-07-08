@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Path } from '@/lib/types'
-import { SectionHeader } from '@/components/layout/SectionHeader'
+import { SectionHeader } from '@/components/_legacy/layout/SectionHeader'
 
 export function HomePathRail({ paths }: { paths: Path[] }) {
   return (

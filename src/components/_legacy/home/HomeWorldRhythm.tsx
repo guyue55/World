@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getHomepageRhythm } from '@/lib/homepage'
-import { SectionHeader } from '@/components/layout/SectionHeader'
+import { SectionHeader } from '@/components/_legacy/layout/SectionHeader'
 
 export function HomeWorldRhythm() {
   const rhythm = getHomepageRhythm()

@@ -145,3 +145,31 @@
 - `getR2GatewayCards()` 内部 `map((area: any))` 改为强类型推断
 
 验证：`lint` / `typecheck` / `check:daily` / `check:boundary-full` / `release:local-rc` 依然全绿。
+
+## 附录 D：主线死代码清理（同日追加）
+
+扫描发现 `src/components/home/` 目录 5 个组件在全项目内零引用，配套的 `src/components/layout/SectionHeader.tsx` 也仅剩它们与 `_legacy/` 页面消费：
+
+| 归档文件 | 原用途 | 归档路径 |
+|---|---|---|
+| FeaturedNodeGrid.tsx | 主页精选节点网格（英文 eyebrow `REPRESENTATIVE NODES`） | `src/components/_legacy/home/` |
+| HomeHero.tsx | 主页首屏 hero | `src/components/_legacy/home/` |
+| HomePathRail.tsx | 主页路径推荐（英文 eyebrow `GUIDED PATHS`） | `src/components/_legacy/home/` |
+| HomeStatusSummary.tsx | 主页状态摘要 | `src/components/_legacy/home/` |
+| HomeWorldRhythm.tsx | 主页世界节奏（英文 eyebrow `WORLD RHYTHM`） | `src/components/_legacy/home/` |
+| SectionHeader.tsx | 早期通用小节标题 | `src/components/_legacy/layout/` |
+
+主线主页由 `ProductHome` 统一承担；`WorldSectionHeader` 仍是主线主节头组件。归档同步修正 legacy 内部 import 路径（`@/components/layout/SectionHeader` → `@/components/_legacy/layout/SectionHeader`），保证"归档区自洽"。
+
+### 附加动作
+
+- 装饰性英文 eyebrow（`text-moss/gold + tracking-[0.35em]`）保留：属设计语言层的英文小标签，`check:public-chinese-copy` 已对真正用户可读的英文文案做拦截，装饰层 eyebrow 不在拦截范围
+- 依赖升级：仅 minor/patch 候选（`typescript-eslint 8.62.1 → 8.63.0`）；major 升级（Next 15→16、Tailwind 3→4、Zod 3→4、TypeScript 5→6）风险高于收益，暂缓
+- `npm audit`：0/0/0/0 保持
+
+### 验证
+
+- `lint` / `typecheck` 全绿
+- `check:daily` / `check:boundary-full` 全绿
+- `release:local-rc` 全绿（22 HTTP + 20 browser + npm audit 0/0/0/0）
+- `_legacy` 已在 tsconfig.json 排除，归档不影响构建
