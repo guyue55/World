@@ -15,6 +15,14 @@ type JourneyState = {
 }
 
 const STORAGE_KEY = 'guyue-worldos-journey-v1'
+const HISTORY_KEY = 'guyue-worldos-history-v1'
+const MAX_HISTORY = 5
+
+type HistoryEntry = {
+  path: string
+  label: string
+  visitedAt: string
+}
 
 const routeLabels: Array<{ prefix: string, label: string }> = [
   { prefix: '/atlas', label: '世界地图' },
@@ -57,17 +65,47 @@ function writeJourney(state: JourneyState) {
   }
 }
 
+function readHistory(): HistoryEntry[] {
+  try {
+    const raw = window.localStorage.getItem(HISTORY_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as HistoryEntry[]
+    return Array.isArray(parsed) ? parsed.slice(0, MAX_HISTORY) : []
+  } catch {
+    return []
+  }
+}
+
+function writeHistory(entries: HistoryEntry[]) {
+  try {
+    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(entries.slice(0, MAX_HISTORY)))
+  } catch {
+    // 历史记录只是体验增强，写入失败不影响世界浏览。
+  }
+}
+
+function pushHistory(pathname: string, label: string) {
+  const existing = readHistory()
+  const filtered = existing.filter((e) => e.path !== pathname)
+  filtered.unshift({ path: pathname, label, visitedAt: new Date().toISOString() })
+  writeHistory(filtered)
+  return filtered
+}
+
 export function ProductJourneyDock() {
   const pathname = usePathname()
   const [journey, setJourney] = useState<JourneyState | null>(null)
   const [mode, setMode] = useState<WorldMode>('world')
+  const [history, setHistory] = useState<HistoryEntry[]>([])
 
   useEffect(() => {
     const existing = readJourney()
     const nextMode = existing?.mode ?? 'world'
+    const label = getRouteLabel(pathname)
+    setHistory(pushHistory(pathname, label))
     const nextState: JourneyState = {
       lastPath: pathname,
-      lastTitle: getRouteLabel(pathname),
+      lastTitle: label,
       visits: (existing?.visits ?? 0) + 1,
       updatedAt: new Date().toISOString(),
       mode: nextMode,
@@ -106,7 +144,25 @@ export function ProductJourneyDock() {
             继续
           </Link>
         )}
-      </div>
+     </div>
+
+      {history.length > 1 && (
+        <div className="mt-3 border-t border-ink/8 pt-3">
+          <p className="text-xs font-semibold tracking-[0.28em] text-moss/60">最近</p>
+          <ul className="mt-2 space-y-1">
+            {history.slice(1, 4).map((entry) => (
+              <li key={entry.path}>
+                <Link
+                  href={entry.path}
+                  className="block truncate rounded px-2 py-1 text-xs text-ink/56 transition hover:bg-white/60 hover:text-ink"
+                >
+                  {entry.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="mt-4 grid grid-cols-3 gap-2" role="group" aria-label="切换世界模式">
         {(['world', 'archive', 'quiet'] as const).map((item) => (
