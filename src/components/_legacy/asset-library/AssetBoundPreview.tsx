@@ -1,3 +1,3 @@
-import { contentSeeds } from '@/features/content-ingestion'
+import { contentSeeds } from '@/features/_legacy/content-ingestion'
 import { resolveAssetsForSeed } from '@/features/_legacy/asset-library/resolver'
 export function AssetBoundPreview(){return <section className="grid gap-4">{contentSeeds.map(seed=>{const assets=resolveAssetsForSeed(seed.id); return <article key={seed.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft"><p className="text-xs tracking-[0.3em] text-moss">{seed.channel.toUpperCase()} · {seed.type}</p><h3 className="mt-3 text-xl font-semibold">{seed.title}</h3><div className="mt-4 flex flex-wrap gap-2">{assets.length>0?assets.map(asset=><span key={asset.id} className="rounded-full bg-sand/70 px-3 py-1 text-xs text-ink/65">{asset.title} · {asset.status}</span>):<span className="text-sm text-ink/50">暂无绑定素材</span>}</div></article>})}</section>}

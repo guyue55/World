@@ -1,4 +1,4 @@
-import type { ContentSeed } from '@/features/content-ingestion'
+import type { ContentSeed } from '@/features/_legacy/content-ingestion'
 import type { ContentReviewResult, ReviewRiskLevel } from './model'
 import { contentReviewRules } from './rules'
 const riskRank: Record<ReviewRiskLevel, number> = { low:0, medium:1, high:2, blocked:3 }

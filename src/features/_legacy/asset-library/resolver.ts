@@ -1,4 +1,4 @@
-import { contentSeeds } from '@/features/content-ingestion'
+import { contentSeeds } from '@/features/_legacy/content-ingestion'
 import { visualAssets } from './data'
 import type { VisualAsset } from './model'
 export type ContentAssetBinding = { seedId:string; assetIds:string[]; required:boolean }

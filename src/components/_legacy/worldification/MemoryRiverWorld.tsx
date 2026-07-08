@@ -1,4 +1,4 @@
-import { contentSeeds } from '@/features/content-ingestion'
+import { contentSeeds } from '@/features/_legacy/content-ingestion'
 
 export function MemoryRiverWorld() {
   const events = contentSeeds.filter((seed) => seed.channel === 'time-river' || seed.channel === 'memory-graph')

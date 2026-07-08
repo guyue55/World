@@ -1,4 +1,4 @@
-import { contentSeeds } from '@/features/content-ingestion'
+import { contentSeeds } from '@/features/_legacy/content-ingestion'
 import { resolveAssetsForSeed } from '@/features/_legacy/asset-library/resolver'
 
 export function ContentNodeField() {

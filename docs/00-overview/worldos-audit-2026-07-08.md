@@ -283,3 +283,12 @@
 ### G.5 结论
 
 主线目录结构在保持所有门禁与运行时验证全绿的前提下完成了一次显著瘦身：`src/components/*` 与 `src/features/*` 的目录数各自减少约 60% 与 80%，未被消费的历史代码全部落到 `_legacy` 归档区（tsconfig 已排除），主线心智负担明显下降。剩余 `content-ingestion` / `r6-service-bridge` / `r7-world-evolution` 三个 feature 因绑定 `/api/r6/*`、`/api/r7/*` 与 `check:content` 系列门禁保留在主线。
+
+### G.6 追加：content-ingestion feature 归档
+
+提交后再复审发现 `src/features/content-ingestion` 也仅被 `_legacy/content-governance/review.ts` 与 `_legacy/asset-library/resolver.ts` 消费，主线 API/组件均未消费，同批归档到 `_legacy/content-ingestion`。主线 `src/features/*` 最终收敛为 `r6-service-bridge` / `r7-world-evolution` + `_legacy/`，即"只保留仍在服务活跃 API 路由的契约层"。
+
+相关命令再验证：
+
+- `npm run check:daily` / `check:boundary-full` / `release:local-rc` 全绿；
+- 22 HTTP + 20 browser + npm audit 2/0/0 保持。

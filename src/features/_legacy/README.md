@@ -35,4 +35,8 @@
 | time-river | 主线由 `timeline/TimelineRiverRuntime` + `@/lib/public-world-surfaces` 承担 |
 | world-map-experience | 主线由 `atlas/*` 承担 |
 
+### 追加归档：content-ingestion
+
+`src/features/content-ingestion` 在第一轮批量归档后再复审时发现同样只被 `_legacy/content-governance/review.ts` 与 `_legacy/asset-library/resolver.ts` 消费；随即归档到 `_legacy/content-ingestion`。主线 features 目录最终仅保留 `r6-service-bridge` / `r7-world-evolution` 两个绑定 API 路由的契约层。
+
 `scripts/check-experience-realization.ts` 的相对导入已同步调整为 `../src/features/_legacy/experience-realization`，历史 `check:world-core` 门禁仍可通过；主线 `check:daily` / `check:boundary-full` / `release:local-rc` 保持全绿。

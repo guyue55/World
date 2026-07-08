@@ -1,2 +1,2 @@
-import { contentSeeds } from '@/features/content-ingestion'
+import { contentSeeds } from '@/features/_legacy/content-ingestion'
 export function ContentSeedBoard(){return <section className="grid gap-4 md:grid-cols-2">{contentSeeds.map(seed=><article key={seed.id} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft"><p className="text-xs tracking-[0.3em] text-moss">{seed.type.toUpperCase()} · {seed.channel} · {seed.status}</p><h3 className="mt-3 text-2xl font-semibold">{seed.title}</h3><p className="mt-3 text-sm leading-6 text-ink/65">{seed.summary}</p><p className="mt-4 text-xs text-ink/45">visibility: {seed.visibility} · assets: {seed.assetIds.length}</p></article>)}</section>}
