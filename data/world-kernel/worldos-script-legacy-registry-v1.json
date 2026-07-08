@@ -12,6 +12,7 @@
     "check:local-content-growth",
     "check:experience:public",
     "check:local-product-maturity",
+    "check:phase23-local-maturity",
     "check:ai-provider-boundary",
     "check:phase21-lighthouse",
     "check:api-boundary",
@@ -32,7 +33,8 @@
   "recommendedDailyCommands": [
     "npm run check:daily",
     "npm run check:boundary",
-    "npm run check:local-product-maturity"
+    "npm run check:local-product-maturity",
+    "npm run check:phase23-local-maturity"
   ],
   "releaseCandidateCommands": [
     "npm run check:rc:fast",
@@ -57,8 +59,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 267,
-    "checkScripts": 142,
+    "totalScripts": 269,
+    "checkScripts": 143,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
@@ -74,7 +76,7 @@
   ],
   "notes": [
     "本注册表不是鼓励继续保留阶段脚本，而是在未完成物理归档前提供可审计边界。",
-    "日常开发默认入口应使用 check:mainline / check:content / check:local-content-growth / check:experience:public / check:local-product-maturity / check:api-boundary / check:local-owner-workbench / check:scripts。",
+    "日常开发默认入口应使用 check:mainline / check:content / check:local-content-growth / check:experience:public / check:local-product-maturity / check:phase23-local-maturity / check:api-boundary / check:local-owner-workbench / check:scripts。",
     "新增功能或修复不得继续添加 check:r* / check:v* / check:stage* / check:round* 作为默认门禁。"
   ]
 }

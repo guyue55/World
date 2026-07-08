@@ -1,0 +1,49 @@
+{
+  "name": "WorldOS Phase 23 本地成熟度可观测化契约 v1",
+  "updatedAt": "2026-07-09",
+  "scope": {
+    "localOnly": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "externalPreviewEvidenceComplete": false,
+    "externalProductionEvidenceComplete": false
+  },
+  "minimums": {
+    "publicNodes": 200,
+    "publicPaths": 29,
+    "relations": 398,
+    "events": 50,
+    "runtimeChecks": 20,
+    "lanHttpChecks": 22,
+    "lanBrowserChecks": 20,
+    "lanScreenshots": 20,
+    "auditHigh": 0,
+    "auditCritical": 0,
+    "contentJaccardThreshold": 0.65
+  },
+  "requiredFiles": [
+    "data/domains/operations/local-maturity-ledger.json",
+    "src/lib/local-maturity-ledger.ts",
+    "src/components/status/LocalMaturityLedgerPanel.tsx",
+    "scripts/write-worldos-local-maturity-ledger.mjs",
+    "scripts/check-worldos-phase23-local-maturity.mjs"
+  ],
+  "requiredCommands": [
+    "build:local-maturity-ledger",
+    "check:phase23-local-maturity",
+    "check:mainline",
+    "release:local-rc"
+  ],
+  "requiredReports": [
+    "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+    "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+    "docs/90-archive/reports/npm-audit-report.json",
+    "docs/90-archive/reports/worldos-content-jaccard-report.json"
+  ]
+}

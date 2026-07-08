@@ -6,8 +6,10 @@ import { getPublicWorldEvents } from '@/lib/world-events'
 import { buildDynamicWorldStatusSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { getLighthouseLocalStatus } from '@/lib/lighthouse-status'
+import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { DynamicWorldStatusBoard } from '@/components/status/DynamicWorldStatusBoard'
 import { AiLowLightStatusPanel } from '@/components/status/AiLowLightStatusPanel'
+import { LocalMaturityLedgerPanel } from '@/components/status/LocalMaturityLedgerPanel'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -43,6 +45,7 @@ export default function StatusPage() {
   const areas = getAllAreas().filter((area) => area.level === 1)
   const paths = getAllPaths()
   const lighthouseStatus = getLighthouseLocalStatus()
+  const localMaturityLedger = getLocalMaturityLedger()
   const dynamicWorldStatus = buildDynamicWorldStatusSurface({
     areas,
     nodes: publicNodes,
@@ -80,6 +83,8 @@ export default function StatusPage() {
       <DynamicWorldStatusBoard surface={dynamicWorldStatus} />
 
       <AiLowLightStatusPanel status={lighthouseStatus} />
+
+      <LocalMaturityLedgerPanel ledger={localMaturityLedger} />
 
       <section className="grid gap-5 lg:grid-cols-3">
         <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">

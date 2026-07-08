@@ -1,0 +1,94 @@
+{
+  "name": "WorldOS 本地成熟度可观测账本",
+  "updatedAt": "2026-07-08T16:51:27.871Z",
+  "localOnly": true,
+  "externalPreviewConsidered": false,
+  "productionConsidered": false,
+  "summary": "当前只证明 localhost / LAN IP 范围内的成熟度：fresh build、运行时 smoke、LAN 浏览器检查、截图证据、内容质量和审计摘要。",
+  "localAccess": {
+    "mode": "local-lan",
+    "baseUrl": "http://172.30.111.222:4320",
+    "lanIp": "172.30.111.222",
+    "bindHost": "0.0.0.0",
+    "port": 4320
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false,
+    "externalPreviewEvidenceComplete": false,
+    "externalProductionEvidenceComplete": false,
+    "manualSignoffComplete": false,
+    "rollbackDrillComplete": false,
+    "reason": "当前计划只打磨 localhost / LAN IP。本地 LAN RC 可以证明局域网访问、构建产物、运行时和浏览器 smoke；外部 Preview / Production 暂不作为近期验收目标。"
+  },
+  "world": {
+    "publicNodes": 200,
+    "publicPaths": 29,
+    "relations": 398,
+    "events": 50
+  },
+  "gates": [
+    {
+      "id": "rc-summary",
+      "label": "本地 RC 摘要",
+      "status": "passed",
+      "value": "local-rc-passed-external-release-blocked",
+      "note": "外部发布保持阻断，本地/LAN 证据有效。"
+    },
+    {
+      "id": "runtime-smoke",
+      "label": "本机运行时",
+      "status": "passed",
+      "value": "20/20",
+      "note": "生产 server 本机 HTTP smoke。"
+    },
+    {
+      "id": "lan-http",
+      "label": "LAN HTTP",
+      "status": "passed",
+      "value": "22/22",
+      "note": "通过局域网 IP 访问公开页面、API 与守门路由。"
+    },
+    {
+      "id": "lan-browser",
+      "label": "LAN 浏览器",
+      "status": "passed",
+      "value": "20/20",
+      "note": "Playwright 桌面与移动 reduced-motion 验收。"
+    },
+    {
+      "id": "screenshots",
+      "label": "截图证据",
+      "status": "passed",
+      "value": "20",
+      "note": "规范化截图可用于人工复核。"
+    },
+    {
+      "id": "audit",
+      "label": "依赖审计",
+      "status": "passed",
+      "value": "2 total / 0 high / 0 critical",
+      "note": "moderate 不阻断本地成熟度，高危和严重必须阻断外部发布。"
+    },
+    {
+      "id": "content-jaccard",
+      "label": "内容相似度",
+      "status": "passed",
+      "value": "0.5565/0.65",
+      "note": "防止公开节点批量同质化。"
+    }
+  ],
+  "evidence": {
+    "runtimeReport": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
+    "lanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "auditReport": "docs/90-archive/reports/npm-audit-report.json",
+    "jaccardReport": "docs/90-archive/reports/worldos-content-jaccard-report.json",
+    "screenshotCount": 20
+  },
+  "nextActions": [
+    "继续使用 npm run release:local-rc 作为唯一可信本地 RC 入口。",
+    "继续保持 productionLive=false、releaseReady=false、cleanProductionReady=false。",
+    "下一阶段优先打磨路径叙事和内容质量，不盲目扩充节点数量。"
+  ]
+}
