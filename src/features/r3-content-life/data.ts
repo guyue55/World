@@ -8,7 +8,7 @@ import relationGraph from '../../../data/r3-content-life/relation-graph.json'
 import roadmap from '../../../data/r3-content-life/roadmap.json'
 import timelineEvents from '../../../data/r3-content-life/timeline-events.json'
 import worldNodesData from '../../../data/r3-content-life/world-nodes.json'
-import type { R3AreaDensity, R3ContentPath, R3Summary, R3WorldNode } from './types'
+import type { R3AreaDensity, R3ContentPath, R3Summary, R3TimelineEvent, R3WorldNode } from './types'
 
 export const r3Roadmap = roadmap
 export const r3Stages = roadmap.stages
@@ -17,7 +17,7 @@ export const r3WorldNodes = worldNodesData.nodes as R3WorldNode[]
 export const r3ContentPaths = contentPathsData.paths as R3ContentPath[]
 export const r3AreaDensity = areaDensityData.areas as R3AreaDensity[]
 export const r3Relations = relationGraph.relations
-export const r3TimelineEvents = timelineEvents.events
+export const r3TimelineEvents = timelineEvents.events as R3TimelineEvent[]
 export const r3LifecycleRules = lifecycleRules
 export const r3PublicIndexPolicy = publicIndexPolicy
 export const r3Extensions = extensionRegistry.items

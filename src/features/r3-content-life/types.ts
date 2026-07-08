@@ -32,6 +32,15 @@ export type R3ContentPath = {
   audience: string
 }
 
+export type R3TimelineEvent = {
+  date: string
+  nodeId: string
+  title: string
+  area: string
+  eventType: string
+  lifeStage: R3LifeStage
+}
+
 export type R3AreaDensity = {
   id: string
   worldName: string

@@ -28,3 +28,13 @@ export type R2GatewayCard = {
   description: string
   href: string
 }
+
+export type R2AreaPassport = {
+  id: string
+  worldName: string
+  realName: string
+  purpose: string
+  defaultVisibility: string
+  entry: string
+  exit: string
+}

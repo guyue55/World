@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, Key, ReactNode } from 'react'
+import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { r3TimelineEvents } from '@/features/r3-content-life'
 import { useWorldRuntime } from './WorldRuntimeProvider'
@@ -11,8 +11,8 @@ export function DynamicTimeRiver() {
   const { reducedMotion } = useWorldRuntime()
   const [area, setArea] = useState<string>(allArea)
   const [expanded, setExpanded] = useState<string>(r3TimelineEvents[0]?.nodeId ?? '')
-  const areas = useMemo(() => [allArea, ...Array.from(new Set(r3TimelineEvents.map((event: any) => event.area as string)))], [])
-  const events = useMemo(() => r3TimelineEvents.filter((event: any) => area === allArea || event.area === area).slice(0, 12), [area])
+  const areas = useMemo(() => [allArea, ...Array.from(new Set(r3TimelineEvents.map((event) => event.area)))], [])
+  const events = useMemo(() => r3TimelineEvents.filter((event) => area === allArea || event.area === area).slice(0, 12), [area])
 
   return (
     <section className="rounded-[2.5rem] border border-white/70 bg-white/80 p-6 shadow-soft md:p-8">
@@ -23,20 +23,20 @@ export function DynamicTimeRiver() {
           <p className="mt-3 max-w-3xl text-sm leading-7 text-ink/62">它不再只是静态 timeline，而是根据区域过滤事件，并把节点生命阶段作为水面上的光标。</p>
         </div>
         <div className="flex flex-wrap gap-2">
-          {areas.map((item: any) => (
+          {areas.map((item) => (
             <button
-              key={item as Key}
+              key={item}
               type="button"
               className={`rounded-2xl px-4 py-2 text-xs font-semibold transition ${item === area ? 'bg-ink text-white' : 'bg-white/70 text-ink/65 hover:bg-white'}`}
-              onClick={() => setArea(item as string)}
+              onClick={() => setArea(item)}
             >
-              {item === allArea ? '全部区域' : (item as ReactNode)}
+              {item === allArea ? '全部区域' : item}
             </button>
           ))}
         </div>
       </div>
       <div className="relative mt-8 space-y-4 before:absolute before:left-5 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-lake/25">
-        {events.map((event: any, index: number) => {
+        {events.map((event, index) => {
           const isExpanded = expanded === event.nodeId
           return (
             <motion.article

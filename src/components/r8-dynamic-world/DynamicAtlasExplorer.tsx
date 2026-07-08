@@ -21,7 +21,7 @@ const coordinates = [
 export function DynamicAtlasExplorer() {
   const { markJourney, reducedMotion } = useWorldRuntime()
   const [activeId, setActiveId] = useState(cards[0]?.id ?? '')
-  const activeCard = useMemo(() => cards.find((card: any) => card.id === activeId) ?? cards[0], [activeId])
+  const activeCard = useMemo(() => cards.find((card) => card.id === activeId) ?? cards[0], [activeId])
 
   return (
     <section className="rounded-[2.5rem] border border-white/70 bg-white/80 p-6 shadow-soft md:p-8">
@@ -45,7 +45,7 @@ export function DynamicAtlasExplorer() {
       <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-white/60 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.86),rgba(125,154,162,0.16)_48%,rgba(23,33,29,0.06)_100%)]">
           <div className="absolute inset-8 rounded-[2rem] border border-dashed border-ink/10" />
-          {cards.map((card: any, index: number) => {
+          {cards.map((card, index) => {
             const point = coordinates[index % coordinates.length]
             const isActive = card.id === activeId
             return (
@@ -73,7 +73,7 @@ export function DynamicAtlasExplorer() {
               <p className="mt-2 text-sm text-ink/50">{activeCard.realName}</p>
               <p className="mt-5 leading-8 text-ink/66">{activeCard.description}</p>
               <div className="mt-6 grid gap-3">
-                <button type="button" className="rounded-2xl bg-white/70 px-4 py-3 text-left text-sm font-semibold text-ink transition hover:bg-white" onClick={() => setActiveId(cards[(cards.findIndex((card: any) => card.id === activeId) + 1) % cards.length]?.id ?? activeId)}>
+                <button type="button" className="rounded-2xl bg-white/70 px-4 py-3 text-left text-sm font-semibold text-ink transition hover:bg-white" onClick={() => setActiveId(cards[(cards.findIndex((card) => card.id === activeId) + 1) % cards.length]?.id ?? activeId)}>
                   观测下一个区域
                 </button>
                 <Link href="/paths" className="rounded-2xl bg-white/70 px-4 py-3 text-sm font-semibold text-ink transition hover:bg-white">

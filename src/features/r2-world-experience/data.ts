@@ -7,7 +7,7 @@ import roadmap from '../../../data/r2-world-experience/roadmap.json'
 import arrivalRituals from '../../../data/r2-world-experience/arrival-rituals.json'
 import nodeOpeningRituals from '../../../data/r2-world-experience/node-opening-rituals.json'
 import modeSwitching from '../../../data/r2-world-experience/mode-switching.json'
-import type { R2GatewayCard, R2Stage, R2Summary } from './types'
+import type { R2AreaPassport, R2GatewayCard, R2Stage, R2Summary } from './types'
 
 export const r2Roadmap = roadmap
 export const r2Stages = roadmap.stages as R2Stage[]
@@ -15,7 +15,7 @@ export const r2Batches = roadmap.batches
 export const r2Extensions = extensionRegistry.items
 export const r2HomeComposition = homeComposition
 export const r2ProgressiveDisclosure = progressiveDisclosure
-export const r2AreaPassports = areaPassports.areas
+export const r2AreaPassports = areaPassports.areas as R2AreaPassport[]
 export const r2CompassAnchors = compassAnchors.anchors
 export const r2ArrivalRituals = arrivalRituals.rituals
 export const r2NodeOpeningRituals = nodeOpeningRituals.rituals
@@ -35,7 +35,7 @@ export function getR2Summary(): R2Summary {
 }
 
 export function getR2GatewayCards(): R2GatewayCard[] {
-  return r2AreaPassports.map((area: any) => ({
+  return r2AreaPassports.map((area) => ({
     id: area.id,
     title: area.worldName,
     worldName: area.worldName,

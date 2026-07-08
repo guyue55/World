@@ -134,3 +134,14 @@
 - `check:mainline` → `check:daily` 通过嵌套自然获得这两项覆盖
 - `check:boundary-full` 与 `release:local-rc` 依然全绿
 
+## 附录 C：类型安全收敛（同日追加）
+
+主线代码库里最后 7 处 `any` 类型全部消除，用真实类型替换：
+
+- 新增 `R3TimelineEvent`（`src/features/r3-content-life/types.ts`），覆盖 `timeline-events.json` 的记录字段
+- 新增 `R2AreaPassport`（`src/features/r2-world-experience/types.ts`），覆盖 `area-passports.json` 的记录字段
+- `DynamicTimeRiver.tsx`：4 处 `(event: any)` / `(item: any)` 全部移除，删除多余的 `Key`/`ReactNode` 类型导入与 `as` 断言
+- `DynamicAtlasExplorer.tsx`：3 处 `(card: any)` 全部移除
+- `getR2GatewayCards()` 内部 `map((area: any))` 改为强类型推断
+
+验证：`lint` / `typecheck` / `check:daily` / `check:boundary-full` / `release:local-rc` 依然全绿。
