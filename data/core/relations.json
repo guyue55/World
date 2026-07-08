@@ -1912,5 +1912,305 @@
     "source": "manual",
     "reviewed": true,
     "note": "写作动量循环 与 worldos-engine 的reference关联。"
+  },
+  {
+    "id": "rel-0194",
+    "from": "node-2025-year-review",
+    "to": "node-worldos-rc-lessons",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2025 年度回望 与 worldos-rc1-lessons 的theme关联。"
+  },
+  {
+    "id": "rel-0195",
+    "from": "node-2025-year-review",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2025 年度回望 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0196",
+    "from": "node-2026-spring-milestones",
+    "to": "node-2025-year-review",
+    "type": "sequence",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2026 春季里程碑 与 2025-year-review 的sequence关联。"
+  },
+  {
+    "id": "rel-0197",
+    "from": "node-2026-spring-milestones",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "2026 春季里程碑 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0198",
+    "from": "node-worldos-birth-story",
+    "to": "node-world-manifesto",
+    "type": "memory",
+    "strength": 0.8,
+    "source": "manual",
+    "reviewed": true,
+    "note": "古月浮屿诞生记 与 world-manifesto 的memory关联。"
+  },
+  {
+    "id": "rel-0199",
+    "from": "node-worldos-birth-story",
+    "to": "node-2026-spring-milestones",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "古月浮屿诞生记 与 2026-spring-milestones 的reference关联。"
+  },
+  {
+    "id": "rel-0200",
+    "from": "node-first-agent-session",
+    "to": "node-codex-agent-workflow",
+    "type": "memory",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "首次 AI Agent 协作 与 codex-agent-workflow 的memory关联。"
+  },
+  {
+    "id": "rel-0201",
+    "from": "node-first-agent-session",
+    "to": "node-ai-prompt-hygiene",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "首次 AI Agent 协作 与 ai-prompt-hygiene 的reference关联。"
+  },
+  {
+    "id": "rel-0202",
+    "from": "node-rainy-shanghai-afternoon",
+    "to": "node-worldos-birth-story",
+    "type": "sequence",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "上海雨天午后 与 worldos-birth-story 的sequence关联。"
+  },
+  {
+    "id": "rel-0203",
+    "from": "node-rainy-shanghai-afternoon",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "上海雨天午后 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0204",
+    "from": "node-patience-as-strategy",
+    "to": "node-2025-year-review",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "耐心作为策略 与 2025-year-review 的theme关联。"
+  },
+  {
+    "id": "rel-0205",
+    "from": "node-patience-as-strategy",
+    "to": "node-creator-low-energy-maintenance",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "耐心作为策略 与 creator-low-energy-maintenance 的reference关联。"
+  },
+  {
+    "id": "rel-0206",
+    "from": "node-learning-in-public",
+    "to": "node-patience-as-strategy",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开学习的意义 与 patience-as-strategy 的theme关联。"
+  },
+  {
+    "id": "rel-0207",
+    "from": "node-learning-in-public",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "公开学习的意义 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0208",
+    "from": "node-permission-gate-story",
+    "to": "node-family-record-index",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "权限门禁故事 与 family-record-index 的theme关联。"
+  },
+  {
+    "id": "rel-0209",
+    "from": "node-permission-gate-story",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "权限门禁故事 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0210",
+    "from": "node-codex-commit-story",
+    "to": "node-codex-agent-workflow",
+    "type": "memory",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "首次 Codex 提交故事 与 codex-agent-workflow 的memory关联。"
+  },
+  {
+    "id": "rel-0211",
+    "from": "node-codex-commit-story",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "首次 Codex 提交故事 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0212",
+    "from": "node-seven-star-cabinet",
+    "to": "node-world-graph-explorer",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "七星档案柜 与 world-graph-explorer 的theme关联。"
+  },
+  {
+    "id": "rel-0213",
+    "from": "node-seven-star-cabinet",
+    "to": "node-design-cover-set",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "七星档案柜 与 world-cover-visual-set 的reference关联。"
+  },
+  {
+    "id": "rel-0214",
+    "from": "node-lantern-search-engine",
+    "to": "node-ai-lighthouse",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔搜索引擎 与 ai-lighthouse-boundary 的theme关联。"
+  },
+  {
+    "id": "rel-0215",
+    "from": "node-lantern-search-engine",
+    "to": "node-lighthouse-design-document",
+    "type": "reference",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "灯塔搜索引擎 与 lighthouse-design-document 的reference关联。"
+  },
+  {
+    "id": "rel-0216",
+    "from": "node-motion-grammar-rulebook",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "动效语法规则手册 与 world-manifesto 的reference关联。"
+  },
+  {
+    "id": "rel-0217",
+    "from": "node-motion-grammar-rulebook",
+    "to": "node-worldos-rc-lessons",
+    "type": "theme",
+    "strength": 0.4,
+    "source": "manual",
+    "reviewed": true,
+    "note": "动效语法规则手册 与 worldos-rc1-lessons 的theme关联。"
+  },
+  {
+    "id": "rel-0218",
+    "from": "node-tag-taxonomy-charter",
+    "to": "node-world-glossary",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "标签体系宪章 与 world-language-glossary 的theme关联。"
+  },
+  {
+    "id": "rel-0219",
+    "from": "node-tag-taxonomy-charter",
+    "to": "node-node-passport-standard",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "标签体系宪章 与 node-passport-standard 的reference关联。"
+  },
+  {
+    "id": "rel-0220",
+    "from": "node-schema-evolution-log",
+    "to": "node-node-passport-standard",
+    "type": "theme",
+    "strength": 0.6,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Schema 演化日志 与 node-passport-standard 的theme关联。"
+  },
+  {
+    "id": "rel-0221",
+    "from": "node-schema-evolution-log",
+    "to": "node-worldos-heritage-note",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "Schema 演化日志 与 worldos-heritage-note 的reference关联。"
+  },
+  {
+    "id": "rel-0222",
+    "from": "node-worldos-heritage-note",
+    "to": "node-schema-evolution-log",
+    "type": "theme",
+    "strength": 0.7,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界传承约定 与 schema-evolution-log 的theme关联。"
+  },
+  {
+    "id": "rel-0223",
+    "from": "node-worldos-heritage-note",
+    "to": "node-world-manifesto",
+    "type": "reference",
+    "strength": 0.5,
+    "source": "manual",
+    "reviewed": true,
+    "note": "世界传承约定 与 world-manifesto 的reference关联。"
   }
 ]

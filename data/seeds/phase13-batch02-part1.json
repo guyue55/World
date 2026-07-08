@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "slug": "2025-year-review",
+      "title": "2025 年度回望",
+      "worldTitle": "去年那束光",
+      "type": "article",
+      "areaId": "timeline",
+      "summary": "回望 2025：这一年是古月浮屿的酝酿年，从工具积累到心境沉淀，为 2026 的世界建立打好了底色。",
+      "tags": ["timeline", "review", "yearly"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-memory-river.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "2025 年是古月浮屿被想清楚的一年。虽然还没有代码，但世界观的骨架已经在头脑里成型。这一年也是终端优先、AI 协作、家庭记录三个日常习惯定型的一年。\n\n## 三个关键时刻\n\n春季，第一次尝试用 Codex 完成一个真实小项目，验证 AI 协作可以稳定地做工程。夏季，家庭第一次以\"照片工作流\"的方式做归档，感受到边界原则的重要。冬季，写下\"个人数字世界系统\"这个词，古月浮屿从此有名。\n\n## 与 2026 春季的关系\n\n2025 年是准备期，2026 年是建立期。前者积累原料，后者塑形。因此 2026 春季里程碑节点里出现的所有能力，都能在 2025 的日常里找到雏形。\n\n## 复盘的意义\n\n年度回望不是庆祝，是校准：世界的方向没变，节奏可以适度放慢。让下一年在同一根光柱下继续生长。",
+      "relations": [
+        {"to": "worldos-rc1-lessons", "type": "theme", "strength": 0.6},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "2026-spring-milestones",
+      "title": "2026 春季里程碑",
+      "worldTitle": "春季的十二块拼图",
+      "type": "article",
+      "areaId": "timeline",
+      "summary": "2026 春季完成了 Phase 1-12 的所有阶段，把古月浮屿从想法带到可运行的世界，是被记录的第一次爆发。",
+      "tags": ["timeline", "milestone", "yearly"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-memory-river.svg",
+      "contentDir": "articles",
+      "createdAt": "2026-07-08",
+      "body": "2026 春季是古月浮屿的爆发期。从 Phase 1 的地基到 Phase 12 的联邦探索，十二块拼图在三个月内合上。这段密集期不会重演，但它为后续的所有稳态节奏提供了参照。\n\n## 十二块拼图\n\nPhase 1 地基与页面骨架、Phase 2 内容模型、Phase 3 AI 灯塔、Phase 4 内容运营、Phase 5 隐私档案、Phase 6 传承协议、Phase 7 本地上线、Phase 8 搜索加权、Phase 9 内容质量、Phase 10 体验精修、Phase 11 性能预算、Phase 12 世界协议与联邦。\n\n## 为什么这么快\n\n因为准备了整个 2025。基础设施、AI 协作节奏、结构化数据都已经在头脑里成型，只等第一次坐下来敲键盘。速度不来自加班，来自积累的兑现。\n\n## 与年度回望的关系\n\n2025 是酝酿年，2026 春季是爆发季，其后应回到低能耗的稳态维护，把爆发期沉淀成日常。",
+      "relations": [
+        {"to": "2025-year-review", "type": "sequence", "strength": 0.7},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "worldos-birth-story",
+      "title": "古月浮屿诞生记",
+      "worldTitle": "第一颗星被点亮",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录古月浮屿从一个概念被写下、到第一个页面被渲染的那个夜晚，那是世界从想法进入代码的临界点。",
+      "tags": ["memory", "milestone", "world"],
+      "lifeStage": "bloom",
+      "cover": "/covers/cover-life-island.svg",
+      "contentDir": "memory",
+      "createdAt": "2026-07-08",
+      "body": "有些夜晚会记很久。第一次把\"古月浮屿\"这四个字写进 README 是一个雨后微凉的春夜。终端里挂着 Codex，Next.js 的 dev server 转起来的一瞬，脑海里那座浮屿突然有了物理形状。\n\n## 那一夜做了什么\n\n先建 repo、装 Next 15、抄了一版世界宣言草稿。然后画了第一张 area 数据表，八个区域从此有名字。最后把 world-manifesto.md 写完，凌晨两点合上电脑。\n\n## 那种感觉\n\n不像是发布一个网站，更像是打开一间旧居的窗户。窗外的空气不是新的，但屋子里从此有了对流。所有后来节点的存在，都是从那扇窗户的对流里长出来的。\n\n## 与世界宣言的关系\n\n诞生记记录\"事件\"，世界宣言记录\"意义\"。两者互为骨肉。日后如果要向别人介绍古月浮屿的开端，这两个节点一起递过去就足够。",
+      "relations": [
+        {"to": "world-manifesto", "type": "memory", "strength": 0.8},
+        {"to": "2026-spring-milestones", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "first-agent-session",
+      "title": "首次 AI Agent 协作",
+      "worldTitle": "灯塔与人第一次并排",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录 Codex 第一次作为工程搭档而不是问答助手加入 WorldOS 的那次会话，从此协作方式改变。",
+      "tags": ["memory", "ai", "agent"],
+      "lifeStage": "bloom",
+      "cover": "/covers/cover-life-island.svg",
+      "contentDir": "memory",
+      "createdAt": "2026-07-08",
+      "body": "第一次让 Codex 独立完成一次工程动作是一个安静的下午。目标很小：给 nodes.json 添加一个字段并跑通门禁。整个过程二十分钟，其中十五分钟是等待，五分钟是审阅。\n\n## 与以往的不同\n\n以往 AI 更多像顾问：给出建议、写出代码片段，最终由人贴回工程。这一次它自己拉分支、跑 test、写 commit。虽然还需要审阅，但工作面已经交给它了。\n\n## 那种平静\n\n没有预想中的兴奋，反而是一种平静：世界多了一个能干活的居民，日常从此不必一人扛。这种平静后来成为 codex-agent-workflow 的第一条纪律：不把 AI 当作事件，把它当作日常。\n\n## 与提示词卫生的关系\n\n第一次协作也暴露了边界问题：如果没有提示词卫生，可能会给它读到 owner-only 的数据。这次会话催生了 ai-prompt-hygiene 这条规则。",
+      "relations": [
+        {"to": "codex-agent-workflow", "type": "memory", "strength": 0.7},
+        {"to": "ai-prompt-hygiene", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "rainy-shanghai-afternoon",
+      "title": "上海雨天午后",
+      "worldTitle": "梧桐叶上的一滴",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "一个雨落梧桐的下午，坐在窗边把 WorldOS 的最初 sketch 画了出来，世界从随手一笔开始。",
+      "tags": ["memory", "moment", "life"],
+      "lifeStage": "bloom",
+      "cover": "/covers/cover-memory-river.svg",
+      "contentDir": "memory",
+      "createdAt": "2026-07-08",
+      "body": "有些世界不是从代码开始的，是从一支笔开始的。上海一场初春的雨，梧桐叶上挂着水珠。窗边一张纸，画下了古月浮屿最早的 sketch：八个区域、几条星线、一颗灯塔。\n\n## 那张纸\n\n那张纸没有留下来，但记忆里它清晰。左上角是原点，右下角是档案馆，中间一条虚线代表未来的 timeline。八个区域各画了一个符号，后来这些符号变成 icon 字段里的 ✦ ✧ ◈ 等。\n\n## 为什么记住\n\n因为世界的每一个后续决定，都能追溯到那个下午的形状感。数据结构可以变，但\"这里是世界不是博客\"的直觉是那个下午定的。\n\n## 与诞生记的关系\n\n诞生记记录了世界进入代码的那一夜，这个记忆记录了世界进入形状的那个下午。两者之间隔了几个月，但都是世界的起源。",
+      "relations": [
+        {"to": "worldos-birth-story", "type": "sequence", "strength": 0.6},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.4}
+      ]
+    }
+  ]
+}

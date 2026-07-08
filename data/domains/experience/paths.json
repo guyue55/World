@@ -66,7 +66,8 @@
       "world-space-layer",
       "progressive-disclosure-world",
       "personal-digital-universe-definition",
-      "clear-entrance-deep-world"
+      "clear-entrance-deep-world",
+      "codex-commit-story"
     ],
     "visibility": "public"
   },
@@ -201,7 +202,9 @@
       "cli-tool-design-principles",
       "automation-script-patterns",
       "chrome-extension-basics",
-      "data-backup-strategy"
+      "data-backup-strategy",
+      "seven-star-cabinet",
+      "lantern-search-engine"
     ],
     "nextPathIds": [
       "tech-ai"
@@ -380,7 +383,45 @@
       "knowledge-lake-metaphor",
       "second-brain-critique",
       "worldos-cli-companion",
-      "world-graph-explorer"
+      "world-graph-explorer",
+      "patience-as-strategy",
+      "learning-in-public"
+    ],
+    "nextPathIds": [
+      "world-architecture"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "memory-lane",
+    "title": "记忆长廊路径",
+    "description": "从雨天午后到诞生记再到首次 AI 协作，走过古月浮屿的关键记忆节点。",
+    "audience": "life",
+    "estimatedMinutes": 14,
+    "nodeSlugs": [
+      "rainy-shanghai-afternoon",
+      "worldos-birth-story",
+      "first-agent-session",
+      "2025-year-review",
+      "2026-spring-milestones"
+    ],
+    "nextPathIds": [
+      "life-memory"
+    ],
+    "visibility": "public"
+  },
+  {
+    "id": "world-governance-lane",
+    "title": "世界治理与传承路径",
+    "description": "从权限门禁到 schema 演化，再到传承约定，看古月浮屿如何为长期可维护做准备。",
+    "audience": "deep-dive",
+    "estimatedMinutes": 18,
+    "nodeSlugs": [
+      "permission-gate-story",
+      "schema-evolution-log",
+      "tag-taxonomy-charter",
+      "worldos-heritage-note",
+      "motion-grammar-rulebook"
     ],
     "nextPathIds": [
       "world-architecture"

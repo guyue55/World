@@ -559,5 +559,50 @@
     "visibility": "public",
     "actor": "worldos-kernel",
     "summary": "执行计划制定完成事件记录"
+  },
+  {
+    "id": "evt-031",
+    "type": "content",
+    "title": "T13.1 首批 15 节点扩展完成",
+    "date": "2026-07-08",
+    "description": "Phase 13 首批 15 个节点入库，覆盖日常仪式、AI 协作、世界观隐喻三条新路径，节点总数达到 115。",
+    "nodeIds": [
+      "node-daily-review-ritual",
+      "node-codex-agent-workflow",
+      "node-knowledge-lake-metaphor"
+    ],
+    "areaIds": [
+      "archive",
+      "tech",
+      "workshop",
+      "fragments",
+      "memory"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "T13.1 首批 15 节点扩展完成事件记录"
+  },
+  {
+    "id": "evt-032",
+    "type": "content",
+    "title": "T13.2 第二批 15 节点扩展完成",
+    "date": "2026-07-08",
+    "description": "Phase 13 第二批 15 个节点入库，覆盖年度回望、诞生记、传承约定，节点总数达到 130。",
+    "nodeIds": [
+      "node-2026-spring-milestones",
+      "node-worldos-birth-story",
+      "node-worldos-heritage-note"
+    ],
+    "areaIds": [
+      "timeline",
+      "memory",
+      "origin",
+      "archive",
+      "fragments",
+      "lighthouse"
+    ],
+    "visibility": "public",
+    "actor": "worldos-kernel",
+    "summary": "T13.2 第二批 15 节点扩展完成事件记录"
   }
 ]

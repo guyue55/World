@@ -1,0 +1,94 @@
+{
+  "nodes": [
+    {
+      "slug": "patience-as-strategy",
+      "title": "耐心作为策略",
+      "worldTitle": "慢一点，稳一点",
+      "type": "article",
+      "areaId": "fragments",
+      "summary": "耐心不是等待，是让节奏配得上目标。个人世界的持续生长需要以耐心为最底层的策略。",
+      "tags": ["principle", "attitude", "world"],
+      "lifeStage": "sprout",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "fragments",
+      "createdAt": "2026-07-08",
+      "body": "耐心常被理解为一种情绪，其实它是一种策略。策略层面的耐心指的是主动把节奏调慢，用更长的时间换更稳的结构。\n\n## 三种耐心\n\n第一种是内容耐心：允许一个想法在 seed 状态停留数月。第二种是关系耐心：不急着给每个节点找配对，让关系自然产生。第三种是技术耐心：不追热点框架，把稳定优先于新奇。\n\n## 为什么有效\n\n因为个人世界的敌人不是别的世界，而是自己的疲惫。速度过快，创作者迟早退场；节奏合适，世界才有几十年时间跨度。\n\n## 与年度回望的关系\n\n耐心策略是 2025 酝酿年的原因，也是未来数年低能耗维护的保障。每次觉得世界长得慢时，就是耐心在起作用。",
+      "relations": [
+        {"to": "2025-year-review", "type": "theme", "strength": 0.6},
+        {"to": "creator-low-energy-maintenance", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "learning-in-public",
+      "title": "公开学习的意义",
+      "worldTitle": "让灯亮着让人看见",
+      "type": "article",
+      "areaId": "fragments",
+      "summary": "公开学习不是表演，是让世界成为学习的容器：错误可被追溯，进步可被参考，成长有了见证。",
+      "tags": ["principle", "learning", "world"],
+      "lifeStage": "sprout",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "fragments",
+      "createdAt": "2026-07-08",
+      "body": "公开学习（Learning in Public）是让世界替自己记录学习过程。当私人记录被结构化并公开，它就同时成为知识节点和情感锚点。\n\n## 三个作用\n\n第一，让错误可被追溯：过去的判断留在世界里，可以回头看清是什么让自己进步。第二，让进步可被参考：他人或未来的自己都能沿着相同的路径少走弯路。第三，让成长有了见证：世界替自己记住了那些微小但重要的时刻。\n\n## 边界\n\n公开学习不等于全部公开。owner-only 与 permission 的数据仍应留在护照里。公开的应该是可复用的经验，不是私人的情绪。\n\n## 与耐心的关系\n\n公开学习需要耐心：让世界慢慢成为可信的载体，比一次爆炸式发布更重要。这也是古月浮屿不追求 SEO 与流量的原因之一。",
+      "relations": [
+        {"to": "patience-as-strategy", "type": "theme", "strength": 0.6},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "permission-gate-story",
+      "title": "权限门禁故事",
+      "worldTitle": "三道门的哲学",
+      "type": "document",
+      "areaId": "origin",
+      "summary": "记录 WorldOS 三层权限（public/permission/owner-only）的设计初衷、演化过程和当前的守门方式。",
+      "tags": ["origin", "boundary", "permission"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-world-gateway.svg",
+      "contentDir": "documents",
+      "createdAt": "2026-07-08",
+      "body": "权限门禁不是安全需求，是尊严需求。WorldOS 的三层权限设计从一开始就把尊严放在了安全的前面。\n\n## 三层的含义\n\npublic 层是可被任意访客读到的部分，通常是世界的表层：宣言、原理、公开路径。permission 层需要邀请码或口令，用于半公开的内容如家庭故事。owner-only 层只有创作者本人可访问，用于最私密的思考和数据。\n\n## 为什么后端主导\n\n三层判断永远在后端做。中间件根据请求上下文决定返回什么；前端仅根据后端返回的数据做展示。这意味着即使前端代码被绕过，敏感数据也不会泄露。\n\n## 与家庭记录索引的关系\n\n三层权限是家庭记录索引原则的技术底座。索引原则说\"什么可见\"，三层权限说\"如何守\"。两者一起，让世界的边界既清晰又温柔。",
+      "relations": [
+        {"to": "family-record-index", "type": "theme", "strength": 0.7},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "codex-commit-story",
+      "title": "首次 Codex 提交故事",
+      "worldTitle": "第一条中文 commit",
+      "type": "document",
+      "areaId": "origin",
+      "summary": "记录 Codex 独立完成的第一次符合规范的中文 commit，那一刻协作模式被正式建立。",
+      "tags": ["origin", "milestone", "agent"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-world-gateway.svg",
+      "contentDir": "documents",
+      "createdAt": "2026-07-08",
+      "body": "第一条由 Codex 独立完成、格式合规的中文 commit 是一条不起眼的 chore 提交。但那次提交把\"AI 协作\"从口头约定变成了工程事实。\n\n## 那条 commit\n\n提交内容是修正一个 legacy 目录的错别字。commit 信息用 chore(legacy): 修正拼写错误 的格式。整个 diff 只有一行，却是协作的分水岭：从此每一次 Codex 的动作都留下了可回溯的痕迹。\n\n## 为什么记录\n\n因为它证明规范可以被 AI 稳定执行。规范一旦被证明可执行，就会自然扩散到所有 commit。日后翻 git log 时，中文 commit 成为世界呼吸的记录。\n\n## 与协作工作流的关系\n\n这条 commit 是 codex-agent-workflow 规则的起点。规则不是先写出来再执行的，而是在这条 commit 之后逐步凝固的。",
+      "relations": [
+        {"to": "codex-agent-workflow", "type": "memory", "strength": 0.7},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.4}
+      ]
+    },
+    {
+      "slug": "seven-star-cabinet",
+      "title": "七星档案柜",
+      "worldTitle": "七个抽屉的档案柜",
+      "type": "project",
+      "areaId": "archive",
+      "summary": "设想中的档案柜产品：把 archive 区域按七个主题聚簇，让访客能沿着七个方向进入沉淀的世界。",
+      "tags": ["product", "archive", "visual"],
+      "lifeStage": "seed",
+      "cover": "/covers/cover-product-artifact.svg",
+      "contentDir": "projects",
+      "createdAt": "2026-07-08",
+      "body": "档案馆现有 13 个节点，还是列表式呈现。七星档案柜是把它们按主题重排的一个概念：治理、门禁、传承、规则、素材、复盘、总集。\n\n## 七个抽屉\n\n每个抽屉对应一个主题标签，进入抽屉看到该主题下的所有档案节点。抽屉之间用星线连接，形成一个七星图，让 archive 区域比列表更耐看。\n\n## 与图谱浏览器的关系\n\n七星档案柜是图谱浏览器在 archive 单区域上的先行实验。若柜子能跑通交互，图谱浏览器的桌面版就有了参考。\n\n## 立项时机\n\n计划在 archive 节点数量超过 20 之后开工，此时抽屉分类才有必要。",
+      "relations": [
+        {"to": "world-graph-explorer", "type": "theme", "strength": 0.6},
+        {"to": "world-cover-visual-set", "type": "reference", "strength": 0.4}
+      ]
+    }
+  ]
+}

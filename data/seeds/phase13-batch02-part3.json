@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "slug": "lantern-search-engine",
+      "title": "灯塔搜索引擎",
+      "worldTitle": "灯塔照到的星星",
+      "type": "project",
+      "areaId": "lighthouse",
+      "summary": "以 Fuse.js 为核心的世界搜索引擎，理解节点、关系、路径、事件的加权评分，让搜索是一次导览而不是查询。",
+      "tags": ["product", "search", "ai"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-product-artifact.svg",
+      "contentDir": "projects",
+      "createdAt": "2026-07-08",
+      "body": "灯塔搜索引擎是古月浮屿的检索入口，也是 AI 灯塔的搜索能力底座。它不追求全文检索的完备，而追求语义与结构上的匹配感。\n\n## 加权机制\n\n标题匹配权重最高，其次是 summary，再是标签，最后才是正文。lifeStage 处于 bloom 的节点在同等匹配下排名更高。属于任一路径的节点会得到\"路径推荐\"标记。\n\n## 与 AI 灯塔的关系\n\n搜索引擎是灯塔的底座，AI 是灯塔的光。用户先看到搜索结果，然后决定是否请 AI 做进一步解读。两者边界清晰，避免\"每次搜都要花 AI 成本\"。\n\n## 未来演化\n\n未来可能替换为 Pagefind（静态站点友好），但迁移前要保证加权体系不变。搜索的手感一旦变化，用户对世界的信任也会变化。",
+      "relations": [
+        {"to": "ai-lighthouse-boundary", "type": "theme", "strength": 0.7},
+        {"to": "lighthouse-design-document", "type": "reference", "strength": 0.6}
+      ]
+    },
+    {
+      "slug": "motion-grammar-rulebook",
+      "title": "动效语法规则手册",
+      "worldTitle": "动效的世界语法",
+      "type": "document",
+      "areaId": "tech",
+      "summary": "汇总 WorldOS 的动效语法：入场用 GSAP、交互用 Framer Motion、全局用 MotionConfig 尊重用户偏好。",
+      "tags": ["tech", "motion", "rulebook"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-natural-tech.svg",
+      "contentDir": "documents",
+      "createdAt": "2026-07-08",
+      "body": "动效不是装饰，是语言。WorldOS 的动效语法把三种引擎的分工写清楚，避免每个页面各说各话。\n\n## 三种引擎的分工\n\nGSAP 负责入场：页面加载时的星线绘制、卡片浮现、路径展开。Framer Motion 负责交互：hover、tap、layout 过渡。MotionConfig 负责全局尊重：prefers-reduced-motion 用户永远拿到降级版本。\n\n## 语法的边界\n\n入场动效不超过 800ms，交互动效不超过 300ms，全局降级路径必须可测。任何超出这些阈值的动效需要 ADR 记录。\n\n## 与性能预算的关系\n\n动效语法是性能预算 (Phase 11) 的具体表达。预算说\"总耗时不能超\"，语法说\"每种动效怎么写\"。两者一起，让世界既有生命感又不卡顿。",
+      "relations": [
+        {"to": "world-manifesto", "type": "reference", "strength": 0.4},
+        {"to": "worldos-rc1-lessons", "type": "theme", "strength": 0.4}
+      ]
+    },
+    {
+      "slug": "tag-taxonomy-charter",
+      "title": "标签体系宪章",
+      "worldTitle": "让标签也有秩序",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "定义 WorldOS 标签的命名规则、合并策略、上限约束，让 100+ 标签不至于变成一堆同义词。",
+      "tags": ["archive", "taxonomy", "governance"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "documents",
+      "createdAt": "2026-07-08",
+      "body": "标签会自然膨胀。没有宪章，几个月后就会出现 tool/tools/工具 三种表达同一意思。宪章的目的是让标签保持在可管理规模。\n\n## 四条规则\n\n第一条：全小写英文，破折号连接。第二条：单数优先，不接受复数。第三条：中文与英文并存的概念，优先英文，中文写在 worldTitle 或 summary 里。第四条：每季度整理一次，合并同义词。\n\n## 上限约束\n\n总标签数不超过 120。若超过，则要求合并同义词或删除孤立标签。每个节点标签数不超过 6，避免\"标签爆炸\"。\n\n## 与内容质量二审的关系\n\n二审时标签合并是重要动作。宪章为二审提供依据，二审为宪章提供反馈。",
+      "relations": [
+        {"to": "world-language-glossary", "type": "theme", "strength": 0.6},
+        {"to": "node-passport-standard", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "schema-evolution-log",
+      "title": "Schema 演化日志",
+      "worldTitle": "字段的进化史",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录 WorldOS Zod schema 的重要变更：新增字段、扩展枚举、删除废弃项，让 schema 有可追溯的历史。",
+      "tags": ["archive", "schema", "history"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "documents",
+      "createdAt": "2026-07-08",
+      "body": "Schema 是世界的骨架。骨架的每一次变更都会影响所有节点，因此需要日志。\n\n## 关键变更\n\n春季新增 lifeStage 枚举，让节点有生命周期。夏季扩展 relation.type，加入 theme/reference/sequence。夏末新增 event.summary，让事件既有 description 又有短摘要。每一次变更都伴随一次 data:audit。\n\n## 变更纪律\n\n新增字段默认 optional，让老数据无需迁移。扩展枚举时保留旧值，避免删除。删除字段前先跑一遍全数据 grep，确认无引用。\n\n## 与传承协议的关系\n\nSchema 演化日志是传承协议的关键输出：未来接手世界的人可以沿着日志理解字段的历史含义。",
+      "relations": [
+        {"to": "node-passport-standard", "type": "theme", "strength": 0.6},
+        {"to": "worldos-heritage-note", "type": "reference", "strength": 0.5}
+      ]
+    },
+    {
+      "slug": "worldos-heritage-note",
+      "title": "世界传承约定",
+      "worldTitle": "让世界能被交接",
+      "type": "rule",
+      "areaId": "archive",
+      "summary": "总述 WorldOS 传承协议：谁能接手、何时移交、如何打包，让世界即使停维护也能进入下一段生命。",
+      "tags": ["archive", "heritage", "governance"],
+      "lifeStage": "growing",
+      "cover": "/covers/cover-abstract-world.svg",
+      "contentDir": "rules",
+      "createdAt": "2026-07-08",
+      "body": "传承约定的目的不是准备结束，而是让世界始终有下一段生命的可能。有了约定，世界的持续性不再仅取决于创作者的健康与热情。\n\n## 三条约定\n\n第一条：owner-only 数据永不进入 AI 训练与公开索引，但可通过导出管线打包给指定继承人。第二条：world-index.json 与 birth certificate 是最小传承包，可脱离创作者本人被理解。第三条：schema 演化日志与 code map 一起构成\"世界说明书\"，让接手人理解结构。\n\n## 接手人范围\n\n默认为家庭成员；也可指定为特定信任的朋友或组织。传承协议不涉及所有权流转，只涉及\"能否继续读、继续写\"。\n\n## 与 schema 演化日志的关系\n\n演化日志是传承包里最容易被低估的一份文件。有了它，接手人才能理解为什么每个字段都存在。",
+      "relations": [
+        {"to": "schema-evolution-log", "type": "theme", "strength": 0.7},
+        {"to": "world-manifesto", "type": "reference", "strength": 0.5}
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-031",
+      "type": "content",
+      "title": "T13.1 首批 15 节点扩展完成",
+      "date": "2026-07-08",
+      "description": "Phase 13 首批 15 个节点入库，覆盖日常仪式、AI 协作、世界观隐喻三条新路径，节点总数达到 115。",
+      "nodeIds": ["node-daily-review-ritual", "node-codex-agent-workflow", "node-knowledge-lake-metaphor"],
+      "areaIds": ["archive", "tech", "workshop", "fragments", "memory"],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "T13.1 首批 15 节点扩展完成事件记录"
+    },
+    {
+      "id": "evt-032",
+      "type": "content",
+      "title": "T13.2 第二批 15 节点扩展完成",
+      "date": "2026-07-08",
+      "description": "Phase 13 第二批 15 个节点入库，覆盖年度回望、诞生记、传承约定，节点总数达到 130。",
+      "nodeIds": ["node-2026-spring-milestones", "node-worldos-birth-story", "node-worldos-heritage-note"],
+      "areaIds": ["timeline", "memory", "origin", "archive", "fragments", "lighthouse"],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "T13.2 第二批 15 节点扩展完成事件记录"
+    }
+  ]
+}

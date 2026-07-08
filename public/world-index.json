@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T06:19:37.959Z",
+  "generatedAt": "2026-07-08T06:24:17.499Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -2029,6 +2029,261 @@
       "visibility": "public",
       "lifeStage": "growing",
       "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-2025-year-review",
+      "slug": "2025-year-review",
+      "title": "2025 年度回望",
+      "worldTitle": "去年那束光",
+      "type": "article",
+      "areaId": "timeline",
+      "summary": "回望 2025：这一年是古月浮屿的酝酿年，从工具积累到心境沉淀，为 2026 的世界建立打好了底色。",
+      "tags": [
+        "timeline",
+        "review",
+        "yearly"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-2026-spring-milestones",
+      "slug": "2026-spring-milestones",
+      "title": "2026 春季里程碑",
+      "worldTitle": "春季的十二块拼图",
+      "type": "article",
+      "areaId": "timeline",
+      "summary": "2026 春季完成了 Phase 1-12 的所有阶段，把古月浮屿从想法带到可运行的世界，是被记录的第一次爆发。",
+      "tags": [
+        "timeline",
+        "milestone",
+        "yearly"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-birth-story",
+      "slug": "worldos-birth-story",
+      "title": "古月浮屿诞生记",
+      "worldTitle": "第一颗星被点亮",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录古月浮屿从一个概念被写下、到第一个页面被渲染的那个夜晚，那是世界从想法进入代码的临界点。",
+      "tags": [
+        "memory",
+        "milestone",
+        "world"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-first-agent-session",
+      "slug": "first-agent-session",
+      "title": "首次 AI Agent 协作",
+      "worldTitle": "灯塔与人第一次并排",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "记录 Codex 第一次作为工程搭档而不是问答助手加入 WorldOS 的那次会话，从此协作方式改变。",
+      "tags": [
+        "memory",
+        "ai",
+        "agent"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-rainy-shanghai-afternoon",
+      "slug": "rainy-shanghai-afternoon",
+      "title": "上海雨天午后",
+      "worldTitle": "梧桐叶上的一滴",
+      "type": "memory",
+      "areaId": "memory",
+      "summary": "一个雨落梧桐的下午，坐在窗边把 WorldOS 的最初 sketch 画了出来，世界从随手一笔开始。",
+      "tags": [
+        "memory",
+        "moment",
+        "life"
+      ],
+      "visibility": "public",
+      "lifeStage": "bloom",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-patience-as-strategy",
+      "slug": "patience-as-strategy",
+      "title": "耐心作为策略",
+      "worldTitle": "慢一点，稳一点",
+      "type": "article",
+      "areaId": "fragments",
+      "summary": "耐心不是等待，是让节奏配得上目标。个人世界的持续生长需要以耐心为最底层的策略。",
+      "tags": [
+        "principle",
+        "attitude",
+        "world"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-learning-in-public",
+      "slug": "learning-in-public",
+      "title": "公开学习的意义",
+      "worldTitle": "让灯亮着让人看见",
+      "type": "article",
+      "areaId": "fragments",
+      "summary": "公开学习不是表演，是让世界成为学习的容器：错误可被追溯，进步可被参考，成长有了见证。",
+      "tags": [
+        "principle",
+        "learning",
+        "world"
+      ],
+      "visibility": "public",
+      "lifeStage": "sprout",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-permission-gate-story",
+      "slug": "permission-gate-story",
+      "title": "权限门禁故事",
+      "worldTitle": "三道门的哲学",
+      "type": "document",
+      "areaId": "origin",
+      "summary": "记录 WorldOS 三层权限（public/permission/owner-only）的设计初衷、演化过程和当前的守门方式。",
+      "tags": [
+        "origin",
+        "boundary",
+        "permission"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-codex-commit-story",
+      "slug": "codex-commit-story",
+      "title": "首次 Codex 提交故事",
+      "worldTitle": "第一条中文 commit",
+      "type": "document",
+      "areaId": "origin",
+      "summary": "记录 Codex 独立完成的第一次符合规范的中文 commit，那一刻协作模式被正式建立。",
+      "tags": [
+        "origin",
+        "milestone",
+        "agent"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-seven-star-cabinet",
+      "slug": "seven-star-cabinet",
+      "title": "七星档案柜",
+      "worldTitle": "七个抽屉的档案柜",
+      "type": "project",
+      "areaId": "archive",
+      "summary": "设想中的档案柜产品：把 archive 区域按七个主题聚簇，让访客能沿着七个方向进入沉淀的世界。",
+      "tags": [
+        "product",
+        "archive",
+        "visual"
+      ],
+      "visibility": "public",
+      "lifeStage": "seed",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-lantern-search-engine",
+      "slug": "lantern-search-engine",
+      "title": "灯塔搜索引擎",
+      "worldTitle": "灯塔照到的星星",
+      "type": "project",
+      "areaId": "lighthouse",
+      "summary": "以 Fuse.js 为核心的世界搜索引擎，理解节点、关系、路径、事件的加权评分，让搜索是一次导览而不是查询。",
+      "tags": [
+        "product",
+        "search",
+        "ai"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-motion-grammar-rulebook",
+      "slug": "motion-grammar-rulebook",
+      "title": "动效语法规则手册",
+      "worldTitle": "动效的世界语法",
+      "type": "document",
+      "areaId": "tech",
+      "summary": "汇总 WorldOS 的动效语法：入场用 GSAP、交互用 Framer Motion、全局用 MotionConfig 尊重用户偏好。",
+      "tags": [
+        "tech",
+        "motion",
+        "rulebook"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-tag-taxonomy-charter",
+      "slug": "tag-taxonomy-charter",
+      "title": "标签体系宪章",
+      "worldTitle": "让标签也有秩序",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "定义 WorldOS 标签的命名规则、合并策略、上限约束，让 100+ 标签不至于变成一堆同义词。",
+      "tags": [
+        "archive",
+        "taxonomy",
+        "governance"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-schema-evolution-log",
+      "slug": "schema-evolution-log",
+      "title": "Schema 演化日志",
+      "worldTitle": "字段的进化史",
+      "type": "document",
+      "areaId": "archive",
+      "summary": "记录 WorldOS Zod schema 的重要变更：新增字段、扩展枚举、删除废弃项，让 schema 有可追溯的历史。",
+      "tags": [
+        "archive",
+        "schema",
+        "history"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
+    },
+    {
+      "id": "node-worldos-heritage-note",
+      "slug": "worldos-heritage-note",
+      "title": "世界传承约定",
+      "worldTitle": "让世界能被交接",
+      "type": "rule",
+      "areaId": "archive",
+      "summary": "总述 WorldOS 传承协议：谁能接手、何时移交、如何打包，让世界即使停维护也能进入下一段生命。",
+      "tags": [
+        "archive",
+        "heritage",
+        "governance"
+      ],
+      "visibility": "public",
+      "lifeStage": "growing",
+      "createdAt": "2026-07-08"
     }
   ],
   "paths": [
@@ -2099,7 +2354,8 @@
         "world-space-layer",
         "progressive-disclosure-world",
         "personal-digital-universe-definition",
-        "clear-entrance-deep-world"
+        "clear-entrance-deep-world",
+        "codex-commit-story"
       ],
       "visibility": "public"
     },
@@ -2234,7 +2490,9 @@
         "cli-tool-design-principles",
         "automation-script-patterns",
         "chrome-extension-basics",
-        "data-backup-strategy"
+        "data-backup-strategy",
+        "seven-star-cabinet",
+        "lantern-search-engine"
       ],
       "nextPathIds": [
         "tech-ai"
@@ -2413,7 +2671,45 @@
         "knowledge-lake-metaphor",
         "second-brain-critique",
         "worldos-cli-companion",
-        "world-graph-explorer"
+        "world-graph-explorer",
+        "patience-as-strategy",
+        "learning-in-public"
+      ],
+      "nextPathIds": [
+        "world-architecture"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "memory-lane",
+      "title": "记忆长廊路径",
+      "description": "从雨天午后到诞生记再到首次 AI 协作，走过古月浮屿的关键记忆节点。",
+      "audience": "life",
+      "estimatedMinutes": 14,
+      "nodeSlugs": [
+        "rainy-shanghai-afternoon",
+        "worldos-birth-story",
+        "first-agent-session",
+        "2025-year-review",
+        "2026-spring-milestones"
+      ],
+      "nextPathIds": [
+        "life-memory"
+      ],
+      "visibility": "public"
+    },
+    {
+      "id": "world-governance-lane",
+      "title": "世界治理与传承路径",
+      "description": "从权限门禁到 schema 演化，再到传承约定，看古月浮屿如何为长期可维护做准备。",
+      "audience": "deep-dive",
+      "estimatedMinutes": 18,
+      "nodeSlugs": [
+        "permission-gate-story",
+        "schema-evolution-log",
+        "tag-taxonomy-charter",
+        "worldos-heritage-note",
+        "motion-grammar-rulebook"
       ],
       "nextPathIds": [
         "world-architecture"
@@ -2566,6 +2862,51 @@
       "visibility": "public",
       "actor": "worldos-kernel",
       "summary": "执行计划制定完成事件记录"
+    },
+    {
+      "id": "evt-031",
+      "type": "content",
+      "title": "T13.1 首批 15 节点扩展完成",
+      "date": "2026-07-08",
+      "description": "Phase 13 首批 15 个节点入库，覆盖日常仪式、AI 协作、世界观隐喻三条新路径，节点总数达到 115。",
+      "nodeIds": [
+        "node-daily-review-ritual",
+        "node-codex-agent-workflow",
+        "node-knowledge-lake-metaphor"
+      ],
+      "areaIds": [
+        "archive",
+        "tech",
+        "workshop",
+        "fragments",
+        "memory"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "T13.1 首批 15 节点扩展完成事件记录"
+    },
+    {
+      "id": "evt-032",
+      "type": "content",
+      "title": "T13.2 第二批 15 节点扩展完成",
+      "date": "2026-07-08",
+      "description": "Phase 13 第二批 15 个节点入库，覆盖年度回望、诞生记、传承约定，节点总数达到 130。",
+      "nodeIds": [
+        "node-2026-spring-milestones",
+        "node-worldos-birth-story",
+        "node-worldos-heritage-note"
+      ],
+      "areaIds": [
+        "timeline",
+        "memory",
+        "origin",
+        "archive",
+        "fragments",
+        "lighthouse"
+      ],
+      "visibility": "public",
+      "actor": "worldos-kernel",
+      "summary": "T13.2 第二批 15 节点扩展完成事件记录"
     },
     {
       "id": "evt-030",
@@ -3259,6 +3600,15 @@
         "weight": 54
       },
       {
+        "nodeId": "node-2026-spring-milestones",
+        "slug": "2026-spring-milestones",
+        "title": "春季的十二块拼图",
+        "summary": "2026 春季完成了 Phase 1-12 的所有阶段，把古月浮屿从想法带到可运行的世界，是被记录的第一次爆发。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-docker-cleanup",
         "slug": "docker-disk-cleanup",
         "title": "磁盘裂缝修复",
@@ -3340,6 +3690,24 @@
         "weight": 53
       },
       {
+        "nodeId": "node-first-agent-session",
+        "slug": "first-agent-session",
+        "title": "灯塔与人第一次并排",
+        "summary": "记录 Codex 第一次作为工程搭档而不是问答助手加入 WorldOS 的那次会话，从此协作方式改变。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
+        "nodeId": "node-lantern-search-engine",
+        "slug": "lantern-search-engine",
+        "title": "灯塔照到的星星",
+        "summary": "以 Fuse.js 为核心的世界搜索引擎，理解节点、关系、路径、事件的加权评分，让搜索是一次导览而不是查询。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-public-ai-context-contract",
         "slug": "public-ai-context-contract",
         "title": "灯塔只照公开海面",
@@ -3349,6 +3717,15 @@
         "weight": 53
       },
       {
+        "nodeId": "node-worldos-birth-story",
+        "slug": "worldos-birth-story",
+        "title": "第一颗星被点亮",
+        "summary": "记录古月浮屿从一个概念被写下、到第一个页面被渲染的那个夜晚，那是世界从想法进入代码的临界点。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
+      },
+      {
         "nodeId": "node-everything-node",
         "slug": "everything-is-node",
         "title": "第一枚种子",
@@ -3356,6 +3733,24 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
+      },
+      {
+        "nodeId": "node-codex-commit-story",
+        "slug": "codex-commit-story",
+        "title": "第一条中文 commit",
+        "summary": "记录 Codex 独立完成的第一次符合规范的中文 commit，那一刻协作模式被正式建立。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-motion-grammar-rulebook",
+        "slug": "motion-grammar-rulebook",
+        "title": "动效的世界语法",
+        "summary": "汇总 WorldOS 的动效语法：入场用 GSAP、交互用 Framer Motion、全局用 MotionConfig 尊重用户偏好。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
       },
       {
         "nodeId": "node-eight-minute-path",
@@ -3637,6 +4032,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-patience-as-strategy",
+        "slug": "patience-as-strategy",
+        "title": "慢一点，稳一点",
+        "summary": "耐心不是等待，是让节奏配得上目标。个人世界的持续生长需要以耐心为最底层的策略。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-accessibility-public-baseline",
         "slug": "accessibility-public-baseline",
         "title": "每个旅人都能抵达",
@@ -3709,6 +4113,15 @@
         "weight": 3
       },
       {
+        "nodeId": "node-seven-star-cabinet",
+        "slug": "seven-star-cabinet",
+        "title": "七个抽屉的档案柜",
+        "summary": "设想中的档案柜产品：把 archive 区域按七个主题聚簇，让访客能沿着七个方向进入沉淀的世界。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-content-migration-history",
         "slug": "content-migration-history",
         "title": "迁移档案",
@@ -3754,6 +4167,42 @@
         "weight": 2
       },
       {
+        "nodeId": "node-2025-year-review",
+        "slug": "2025-year-review",
+        "title": "去年那束光",
+        "summary": "回望 2025：这一年是古月浮屿的酝酿年，从工具积累到心境沉淀，为 2026 的世界建立打好了底色。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-tag-taxonomy-charter",
+        "slug": "tag-taxonomy-charter",
+        "title": "让标签也有秩序",
+        "summary": "定义 WorldOS 标签的命名规则、合并策略、上限约束，让 100+ 标签不至于变成一堆同义词。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-learning-in-public",
+        "slug": "learning-in-public",
+        "title": "让灯亮着让人看见",
+        "summary": "公开学习不是表演，是让世界成为学习的容器：错误可被追溯，进步可被参考，成长有了见证。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
+        "nodeId": "node-worldos-heritage-note",
+        "slug": "worldos-heritage-note",
+        "title": "让世界能被交接",
+        "summary": "总述 WorldOS 传承协议：谁能接手、何时移交、如何打包，让世界即使停维护也能进入下一段生命。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
+      },
+      {
         "nodeId": "node-morning-coffee-coordinates",
         "slug": "morning-coffee-coordinates",
         "title": "日常锚点",
@@ -3779,6 +4228,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 23
+      },
+      {
+        "nodeId": "node-permission-gate-story",
+        "slug": "permission-gate-story",
+        "title": "三道门的哲学",
+        "summary": "记录 WorldOS 三层权限（public/permission/owner-only）的设计初衷、演化过程和当前的守门方式。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
       },
       {
         "nodeId": "node-rc9-preparation-record",
@@ -3905,6 +4363,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 2
+      },
+      {
+        "nodeId": "node-rainy-shanghai-afternoon",
+        "slug": "rainy-shanghai-afternoon",
+        "title": "梧桐叶上的一滴",
+        "summary": "一个雨落梧桐的下午，坐在窗边把 WorldOS 的最初 sketch 画了出来，世界从随手一笔开始。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 23
       },
       {
         "nodeId": "node-creator-low-energy-maintenance",
@@ -4184,6 +4651,15 @@
         "target": "archive",
         "displayType": "archive-record",
         "weight": 52
+      },
+      {
+        "nodeId": "node-schema-evolution-log",
+        "slug": "schema-evolution-log",
+        "title": "字段的进化史",
+        "summary": "记录 WorldOS Zod schema 的重要变更：新增字段、扩展枚举、删除废弃项，让 schema 有可追溯的历史。",
+        "target": "archive",
+        "displayType": "archive-record",
+        "weight": 3
       },
       {
         "nodeId": "node-zsh-plugin-shelf",
@@ -5001,6 +5477,111 @@
         "slug": "writing-momentum-loop",
         "title": "小步的滚雪球",
         "areaId": "workshop",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-2025-year-review",
+        "slug": "2025-year-review",
+        "title": "去年那束光",
+        "areaId": "timeline",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-2026-spring-milestones",
+        "slug": "2026-spring-milestones",
+        "title": "春季的十二块拼图",
+        "areaId": "timeline",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-worldos-birth-story",
+        "slug": "worldos-birth-story",
+        "title": "第一颗星被点亮",
+        "areaId": "memory",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-first-agent-session",
+        "slug": "first-agent-session",
+        "title": "灯塔与人第一次并排",
+        "areaId": "memory",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-rainy-shanghai-afternoon",
+        "slug": "rainy-shanghai-afternoon",
+        "title": "梧桐叶上的一滴",
+        "areaId": "memory",
+        "lifeStage": "bloom"
+      },
+      {
+        "id": "node-patience-as-strategy",
+        "slug": "patience-as-strategy",
+        "title": "慢一点，稳一点",
+        "areaId": "fragments",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-learning-in-public",
+        "slug": "learning-in-public",
+        "title": "让灯亮着让人看见",
+        "areaId": "fragments",
+        "lifeStage": "sprout"
+      },
+      {
+        "id": "node-permission-gate-story",
+        "slug": "permission-gate-story",
+        "title": "三道门的哲学",
+        "areaId": "origin",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-codex-commit-story",
+        "slug": "codex-commit-story",
+        "title": "第一条中文 commit",
+        "areaId": "origin",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-seven-star-cabinet",
+        "slug": "seven-star-cabinet",
+        "title": "七个抽屉的档案柜",
+        "areaId": "archive",
+        "lifeStage": "seed"
+      },
+      {
+        "id": "node-lantern-search-engine",
+        "slug": "lantern-search-engine",
+        "title": "灯塔照到的星星",
+        "areaId": "lighthouse",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-motion-grammar-rulebook",
+        "slug": "motion-grammar-rulebook",
+        "title": "动效的世界语法",
+        "areaId": "tech",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-tag-taxonomy-charter",
+        "slug": "tag-taxonomy-charter",
+        "title": "让标签也有秩序",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-schema-evolution-log",
+        "slug": "schema-evolution-log",
+        "title": "字段的进化史",
+        "areaId": "archive",
+        "lifeStage": "growing"
+      },
+      {
+        "id": "node-worldos-heritage-note",
+        "slug": "worldos-heritage-note",
+        "title": "让世界能被交接",
+        "areaId": "archive",
         "lifeStage": "growing"
       }
     ],
@@ -6355,6 +6936,216 @@
         "to": "node-worldos-engine",
         "type": "reference",
         "strength": 0.4
+      },
+      {
+        "id": "rel-0194",
+        "from": "node-2025-year-review",
+        "to": "node-worldos-rc-lessons",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0195",
+        "from": "node-2025-year-review",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0196",
+        "from": "node-2026-spring-milestones",
+        "to": "node-2025-year-review",
+        "type": "sequence",
+        "strength": 0.7
+      },
+      {
+        "id": "rel-0197",
+        "from": "node-2026-spring-milestones",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0198",
+        "from": "node-worldos-birth-story",
+        "to": "node-world-manifesto",
+        "type": "memory",
+        "strength": 0.8
+      },
+      {
+        "id": "rel-0199",
+        "from": "node-worldos-birth-story",
+        "to": "node-2026-spring-milestones",
+        "type": "reference",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0200",
+        "from": "node-first-agent-session",
+        "to": "node-codex-agent-workflow",
+        "type": "memory",
+        "strength": 0.7
+      },
+      {
+        "id": "rel-0201",
+        "from": "node-first-agent-session",
+        "to": "node-ai-prompt-hygiene",
+        "type": "reference",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0202",
+        "from": "node-rainy-shanghai-afternoon",
+        "to": "node-worldos-birth-story",
+        "type": "sequence",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0203",
+        "from": "node-rainy-shanghai-afternoon",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0204",
+        "from": "node-patience-as-strategy",
+        "to": "node-2025-year-review",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0205",
+        "from": "node-patience-as-strategy",
+        "to": "node-creator-low-energy-maintenance",
+        "type": "reference",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0206",
+        "from": "node-learning-in-public",
+        "to": "node-patience-as-strategy",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0207",
+        "from": "node-learning-in-public",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0208",
+        "from": "node-permission-gate-story",
+        "to": "node-family-record-index",
+        "type": "theme",
+        "strength": 0.7
+      },
+      {
+        "id": "rel-0209",
+        "from": "node-permission-gate-story",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0210",
+        "from": "node-codex-commit-story",
+        "to": "node-codex-agent-workflow",
+        "type": "memory",
+        "strength": 0.7
+      },
+      {
+        "id": "rel-0211",
+        "from": "node-codex-commit-story",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0212",
+        "from": "node-seven-star-cabinet",
+        "to": "node-world-graph-explorer",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0213",
+        "from": "node-seven-star-cabinet",
+        "to": "node-design-cover-set",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0214",
+        "from": "node-lantern-search-engine",
+        "to": "node-ai-lighthouse",
+        "type": "theme",
+        "strength": 0.7
+      },
+      {
+        "id": "rel-0215",
+        "from": "node-lantern-search-engine",
+        "to": "node-lighthouse-design-document",
+        "type": "reference",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0216",
+        "from": "node-motion-grammar-rulebook",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0217",
+        "from": "node-motion-grammar-rulebook",
+        "to": "node-worldos-rc-lessons",
+        "type": "theme",
+        "strength": 0.4
+      },
+      {
+        "id": "rel-0218",
+        "from": "node-tag-taxonomy-charter",
+        "to": "node-world-glossary",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0219",
+        "from": "node-tag-taxonomy-charter",
+        "to": "node-node-passport-standard",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0220",
+        "from": "node-schema-evolution-log",
+        "to": "node-node-passport-standard",
+        "type": "theme",
+        "strength": 0.6
+      },
+      {
+        "id": "rel-0221",
+        "from": "node-schema-evolution-log",
+        "to": "node-worldos-heritage-note",
+        "type": "reference",
+        "strength": 0.5
+      },
+      {
+        "id": "rel-0222",
+        "from": "node-worldos-heritage-note",
+        "to": "node-schema-evolution-log",
+        "type": "theme",
+        "strength": 0.7
+      },
+      {
+        "id": "rel-0223",
+        "from": "node-worldos-heritage-note",
+        "to": "node-world-manifesto",
+        "type": "reference",
+        "strength": 0.5
       }
     ]
   }

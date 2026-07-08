@@ -2825,5 +2825,410 @@
     "createdAt": "2026-07-08",
     "cover": "/covers/cover-product-artifact.svg",
     "reviewed": true
+  },
+  {
+    "id": "node-2025-year-review",
+    "slug": "2025-year-review",
+    "title": "2025 年度回望",
+    "worldTitle": "去年那束光",
+    "type": "article",
+    "areaId": "timeline",
+    "summary": "回望 2025：这一年是古月浮屿的酝酿年，从工具积累到心境沉淀，为 2026 的世界建立打好了底色。",
+    "contentPath": "content/articles/2025-year-review.md",
+    "tags": [
+      "timeline",
+      "review",
+      "yearly"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-river.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-2026-spring-milestones",
+    "slug": "2026-spring-milestones",
+    "title": "2026 春季里程碑",
+    "worldTitle": "春季的十二块拼图",
+    "type": "article",
+    "areaId": "timeline",
+    "summary": "2026 春季完成了 Phase 1-12 的所有阶段，把古月浮屿从想法带到可运行的世界，是被记录的第一次爆发。",
+    "contentPath": "content/articles/2026-spring-milestones.md",
+    "tags": [
+      "timeline",
+      "milestone",
+      "yearly"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-river.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-birth-story",
+    "slug": "worldos-birth-story",
+    "title": "古月浮屿诞生记",
+    "worldTitle": "第一颗星被点亮",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录古月浮屿从一个概念被写下、到第一个页面被渲染的那个夜晚，那是世界从想法进入代码的临界点。",
+    "contentPath": "content/memory/worldos-birth-story.md",
+    "tags": [
+      "memory",
+      "milestone",
+      "world"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-life-island.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-first-agent-session",
+    "slug": "first-agent-session",
+    "title": "首次 AI Agent 协作",
+    "worldTitle": "灯塔与人第一次并排",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "记录 Codex 第一次作为工程搭档而不是问答助手加入 WorldOS 的那次会话，从此协作方式改变。",
+    "contentPath": "content/memory/first-agent-session.md",
+    "tags": [
+      "memory",
+      "ai",
+      "agent"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-life-island.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-rainy-shanghai-afternoon",
+    "slug": "rainy-shanghai-afternoon",
+    "title": "上海雨天午后",
+    "worldTitle": "梧桐叶上的一滴",
+    "type": "memory",
+    "areaId": "memory",
+    "summary": "一个雨落梧桐的下午，坐在窗边把 WorldOS 的最初 sketch 画了出来，世界从随手一笔开始。",
+    "contentPath": "content/memory/rainy-shanghai-afternoon.md",
+    "tags": [
+      "memory",
+      "moment",
+      "life"
+    ],
+    "visibility": "public",
+    "lifeStage": "bloom",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-memory-river.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-patience-as-strategy",
+    "slug": "patience-as-strategy",
+    "title": "耐心作为策略",
+    "worldTitle": "慢一点，稳一点",
+    "type": "article",
+    "areaId": "fragments",
+    "summary": "耐心不是等待，是让节奏配得上目标。个人世界的持续生长需要以耐心为最底层的策略。",
+    "contentPath": "content/fragments/patience-as-strategy.md",
+    "tags": [
+      "principle",
+      "attitude",
+      "world"
+    ],
+    "visibility": "public",
+    "lifeStage": "sprout",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-learning-in-public",
+    "slug": "learning-in-public",
+    "title": "公开学习的意义",
+    "worldTitle": "让灯亮着让人看见",
+    "type": "article",
+    "areaId": "fragments",
+    "summary": "公开学习不是表演，是让世界成为学习的容器：错误可被追溯，进步可被参考，成长有了见证。",
+    "contentPath": "content/fragments/learning-in-public.md",
+    "tags": [
+      "principle",
+      "learning",
+      "world"
+    ],
+    "visibility": "public",
+    "lifeStage": "sprout",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-permission-gate-story",
+    "slug": "permission-gate-story",
+    "title": "权限门禁故事",
+    "worldTitle": "三道门的哲学",
+    "type": "document",
+    "areaId": "origin",
+    "summary": "记录 WorldOS 三层权限（public/permission/owner-only）的设计初衷、演化过程和当前的守门方式。",
+    "contentPath": "content/documents/permission-gate-story.md",
+    "tags": [
+      "origin",
+      "boundary",
+      "permission"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-codex-commit-story",
+    "slug": "codex-commit-story",
+    "title": "首次 Codex 提交故事",
+    "worldTitle": "第一条中文 commit",
+    "type": "document",
+    "areaId": "origin",
+    "summary": "记录 Codex 独立完成的第一次符合规范的中文 commit，那一刻协作模式被正式建立。",
+    "contentPath": "content/documents/codex-commit-story.md",
+    "tags": [
+      "origin",
+      "milestone",
+      "agent"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-world-gateway.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-seven-star-cabinet",
+    "slug": "seven-star-cabinet",
+    "title": "七星档案柜",
+    "worldTitle": "七个抽屉的档案柜",
+    "type": "project",
+    "areaId": "archive",
+    "summary": "设想中的档案柜产品：把 archive 区域按七个主题聚簇，让访客能沿着七个方向进入沉淀的世界。",
+    "contentPath": "content/projects/seven-star-cabinet.md",
+    "tags": [
+      "product",
+      "archive",
+      "visual"
+    ],
+    "visibility": "public",
+    "lifeStage": "seed",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-lantern-search-engine",
+    "slug": "lantern-search-engine",
+    "title": "灯塔搜索引擎",
+    "worldTitle": "灯塔照到的星星",
+    "type": "project",
+    "areaId": "lighthouse",
+    "summary": "以 Fuse.js 为核心的世界搜索引擎，理解节点、关系、路径、事件的加权评分，让搜索是一次导览而不是查询。",
+    "contentPath": "content/projects/lantern-search-engine.md",
+    "tags": [
+      "product",
+      "search",
+      "ai"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-product-artifact.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-motion-grammar-rulebook",
+    "slug": "motion-grammar-rulebook",
+    "title": "动效语法规则手册",
+    "worldTitle": "动效的世界语法",
+    "type": "document",
+    "areaId": "tech",
+    "summary": "汇总 WorldOS 的动效语法：入场用 GSAP、交互用 Framer Motion、全局用 MotionConfig 尊重用户偏好。",
+    "contentPath": "content/documents/motion-grammar-rulebook.md",
+    "tags": [
+      "tech",
+      "motion",
+      "rulebook"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-natural-tech.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-tag-taxonomy-charter",
+    "slug": "tag-taxonomy-charter",
+    "title": "标签体系宪章",
+    "worldTitle": "让标签也有秩序",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "定义 WorldOS 标签的命名规则、合并策略、上限约束，让 100+ 标签不至于变成一堆同义词。",
+    "contentPath": "content/documents/tag-taxonomy-charter.md",
+    "tags": [
+      "archive",
+      "taxonomy",
+      "governance"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-schema-evolution-log",
+    "slug": "schema-evolution-log",
+    "title": "Schema 演化日志",
+    "worldTitle": "字段的进化史",
+    "type": "document",
+    "areaId": "archive",
+    "summary": "记录 WorldOS Zod schema 的重要变更：新增字段、扩展枚举、删除废弃项，让 schema 有可追溯的历史。",
+    "contentPath": "content/documents/schema-evolution-log.md",
+    "tags": [
+      "archive",
+      "schema",
+      "history"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
+  },
+  {
+    "id": "node-worldos-heritage-note",
+    "slug": "worldos-heritage-note",
+    "title": "世界传承约定",
+    "worldTitle": "让世界能被交接",
+    "type": "rule",
+    "areaId": "archive",
+    "summary": "总述 WorldOS 传承协议：谁能接手、何时移交、如何打包，让世界即使停维护也能进入下一段生命。",
+    "contentPath": "content/rules/worldos-heritage-note.md",
+    "tags": [
+      "archive",
+      "heritage",
+      "governance"
+    ],
+    "visibility": "public",
+    "lifeStage": "growing",
+    "source": "manual",
+    "layer": "interpretation",
+    "featured": {
+      "home": false,
+      "representative": false,
+      "pathCore": false
+    },
+    "createdAt": "2026-07-08",
+    "cover": "/covers/cover-abstract-world.svg",
+    "reviewed": true
   }
 ]
