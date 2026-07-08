@@ -55,8 +55,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 264,
-    "checkScripts": 139,
+    "totalScripts": 265,
+    "checkScripts": 140,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
