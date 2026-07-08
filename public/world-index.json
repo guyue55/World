@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T07:07:35.936Z",
+  "generatedAt": "2026-07-08T07:22:31.459Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -377,7 +377,6 @@
       "tags": [
         "ai",
         "cli",
-        "provider",
         "routing"
       ],
       "visibility": "public",
@@ -411,8 +410,6 @@
       "summary": "记录 TXT 小说、多层目录、编码、去重、系列拆分和阅读器服务的工程化整理方案。",
       "tags": [
         "tool",
-        "epub",
-        "kavita",
         "archive"
       ],
       "visibility": "public",
@@ -448,7 +445,7 @@
         "world",
         "tool",
         "node",
-        "projection"
+        "visual"
       ],
       "visibility": "public",
       "lifeStage": "bloom",
@@ -698,8 +695,6 @@
       "areaId": "origin",
       "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
       "tags": [
-        "path",
-        "first-time",
         "guide"
       ],
       "visibility": "public",
@@ -884,7 +879,7 @@
       "tags": [
         "visual",
         "world",
-        "acceptance"
+        "review"
       ],
       "visibility": "public",
       "lifeStage": "growing",
@@ -1033,7 +1028,6 @@
       "areaId": "tech",
       "summary": "Playwright 在世界验收和截图测试中的自动化实践。",
       "tags": [
-        "testing",
         "automation"
       ],
       "visibility": "public",
@@ -1498,8 +1492,7 @@
       "summary": "从光猫到交换机，一份务实的家庭网络搭建与排查指南。",
       "tags": [
         "tech",
-        "network",
-        "homelab"
+        "network"
       ],
       "visibility": "public",
       "lifeStage": "seed",
@@ -1515,8 +1508,7 @@
       "summary": "DNS 是互联网的电话簿，这里记录常用配置和排障方法。",
       "tags": [
         "tech",
-        "network",
-        "dns"
+        "network"
       ],
       "visibility": "public",
       "lifeStage": "seed",
@@ -1532,8 +1524,7 @@
       "summary": "Nginx 和 Caddy 反向代理的配置方法与常见坑点。",
       "tags": [
         "tech",
-        "network",
-        "nginx"
+        "network"
       ],
       "visibility": "public",
       "lifeStage": "seed",
@@ -1599,9 +1590,7 @@
       "areaId": "workshop",
       "summary": "Manifest V3 时代的 Chrome 扩展开发入门与实战。",
       "tags": [
-        "product",
-        "chrome",
-        "extension"
+        "product"
       ],
       "visibility": "public",
       "lifeStage": "seed",
@@ -1617,8 +1606,7 @@
       "summary": "3-2-1 备份原则在个人项目中的实践，从本地到云端的多层防护。",
       "tags": [
         "product",
-        "backup",
-        "data"
+        "archive"
       ],
       "visibility": "public",
       "lifeStage": "seed",
@@ -1802,7 +1790,6 @@
       "summary": "每周日通过一次 release:local-rc 与内容审计感受世界心跳，是否规律、是否健康、下一步在哪。",
       "tags": [
         "ritual",
-        "weekly",
         "governance"
       ],
       "visibility": "public",
@@ -2228,7 +2215,7 @@
       "tags": [
         "tech",
         "motion",
-        "rulebook"
+        "rule"
       ],
       "visibility": "public",
       "lifeStage": "growing",
@@ -3422,15 +3409,6 @@
         "weight": 53
       },
       {
-        "nodeId": "node-eight-minute-path",
-        "slug": "eight-minute-world-path",
-        "title": "短途星路",
-        "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
-        "target": "home",
-        "displayType": "star",
-        "weight": 53
-      },
-      {
         "nodeId": "node-server-side-permission-boundary",
         "slug": "server-side-permission-boundary",
         "title": "门在服务端",
@@ -3501,6 +3479,15 @@
         "target": "home",
         "displayType": "star",
         "weight": 52
+      },
+      {
+        "nodeId": "node-eight-minute-path",
+        "slug": "eight-minute-world-path",
+        "title": "短途星路",
+        "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 51
       },
       {
         "nodeId": "node-novel-editor",
@@ -3682,7 +3669,7 @@
         "summary": "记录自定义 Base URL、responses/chat 端点、模型路由、API Key 误指向等问题，沉淀为命令行 AI 工具排查范式。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 4
+        "weight": 3
       },
       {
         "nodeId": "node-real-mode-safety-exit",
@@ -3817,7 +3804,7 @@
         "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 53
+        "weight": 51
       },
       {
         "nodeId": "node-ai-prompt-hygiene",
@@ -3934,7 +3921,7 @@
         "summary": "3-2-1 备份原则在个人项目中的实践，从本地到云端的多层防护。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 3
+        "weight": 2
       },
       {
         "nodeId": "node-codex-skills-workflow",
@@ -3970,7 +3957,7 @@
         "summary": "从光猫到交换机，一份务实的家庭网络搭建与排查指南。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 3
+        "weight": 2
       },
       {
         "nodeId": "node-world-health-metrics",
@@ -4015,7 +4002,7 @@
         "summary": "记录 TXT 小说、多层目录、编码、去重、系列拆分和阅读器服务的工程化整理方案。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 4
+        "weight": 2
       },
       {
         "nodeId": "node-world-graph-explorer",
@@ -4042,7 +4029,7 @@
         "summary": "Manifest V3 时代的 Chrome 扩展开发入门与实战。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 3
+        "weight": 1
       },
       {
         "nodeId": "node-automation-script-patterns",
@@ -4060,7 +4047,7 @@
         "summary": "Nginx 和 Caddy 反向代理的配置方法与常见坑点。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 3
+        "weight": 2
       },
       {
         "nodeId": "node-monthly-fix-log-2026-06",
@@ -4420,7 +4407,7 @@
         "summary": "Playwright 在世界验收和截图测试中的自动化实践。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 2
+        "weight": 1
       },
       {
         "nodeId": "node-rainy-shanghai-afternoon",
@@ -4582,7 +4569,7 @@
         "summary": "DNS 是互联网的电话簿，这里记录常用配置和排障方法。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 3
+        "weight": 2
       },
       {
         "nodeId": "node-travel-far-coordinates",
@@ -4690,7 +4677,7 @@
         "summary": "每周日通过一次 release:local-rc 与内容审计感受世界心跳，是否规律、是否健康、下一步在哪。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 3
+        "weight": 2
       },
       {
         "nodeId": "node-worldos-mainline-code-map",

@@ -1,0 +1,28 @@
+{
+  "description": "第一批单次标签整理：把明显可合并的 17 个单次标签映射到既有多次使用标签，保留有真实语义、未来会自然出现的 20 个单次标签。目标：37 → 20。规则：value=已有高频标签名 → 替换；value=null → 与节点其他标签保留，但不再作为标签。",
+  "mapping": {
+    "provider": "routing",
+    "path": "guide",
+    "first-time": "guide",
+    "acceptance": "review",
+    "testing": "automation",
+    "homelab": "network",
+    "dns": "network",
+    "nginx": "network",
+    "chrome": "product",
+    "extension": "product",
+    "epub": "tool",
+    "kavita": "tool",
+    "backup": "archive",
+    "data": "archive",
+    "weekly": "ritual",
+    "projection": "visual",
+    "rulebook": "rule"
+  },
+  "preserved": [
+    "travel", "family", "photo", "moment", "attitude", "learning",
+    "metaphor", "critique", "search", "graph", "performance", "budget",
+    "nondeploy", "command", "fix", "setup", "shell", "motion",
+    "taxonomy", "heritage"
+  ]
+}

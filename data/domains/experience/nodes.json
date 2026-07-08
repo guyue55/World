@@ -406,7 +406,6 @@
     "tags": [
       "ai",
       "cli",
-      "provider",
       "routing"
     ],
     "visibility": "public",
@@ -453,8 +452,6 @@
     "contentPath": "content/articles/kavita-reader-txt-epub-pipeline.md",
     "tags": [
       "tool",
-      "epub",
-      "kavita",
       "archive"
     ],
     "visibility": "public",
@@ -505,7 +502,7 @@
       "world",
       "tool",
       "node",
-      "projection"
+      "visual"
     ],
     "visibility": "public",
     "lifeStage": "bloom",
@@ -849,8 +846,6 @@
     "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
     "contentPath": "content/paths/eight-minute-world-path.md",
     "tags": [
-      "path",
-      "first-time",
       "guide"
     ],
     "visibility": "public",
@@ -1124,7 +1119,7 @@
     "tags": [
       "visual",
       "world",
-      "acceptance"
+      "review"
     ],
     "visibility": "public",
     "lifeStage": "growing",
@@ -1342,7 +1337,6 @@
     "summary": "Playwright 在世界验收和截图测试中的自动化实践。",
     "contentPath": "content/articles/playwright-browser-automation.md",
     "tags": [
-      "testing",
       "automation"
     ],
     "visibility": "public",
@@ -1975,8 +1969,7 @@
     "contentPath": "content/articles/homelab-network-notes.md",
     "tags": [
       "tech",
-      "network",
-      "homelab"
+      "network"
     ],
     "visibility": "public",
     "lifeStage": "seed",
@@ -2002,8 +1995,7 @@
     "contentPath": "content/articles/dns-config-guide.md",
     "tags": [
       "tech",
-      "network",
-      "dns"
+      "network"
     ],
     "visibility": "public",
     "lifeStage": "seed",
@@ -2029,8 +2021,7 @@
     "contentPath": "content/articles/reverse-proxy-setup.md",
     "tags": [
       "tech",
-      "network",
-      "nginx"
+      "network"
     ],
     "visibility": "public",
     "lifeStage": "seed",
@@ -2136,9 +2127,7 @@
     "summary": "Manifest V3 时代的 Chrome 扩展开发入门与实战。",
     "contentPath": "content/articles/chrome-extension-basics.md",
     "tags": [
-      "product",
-      "chrome",
-      "extension"
+      "product"
     ],
     "visibility": "public",
     "lifeStage": "seed",
@@ -2164,8 +2153,7 @@
     "contentPath": "content/articles/data-backup-strategy.md",
     "tags": [
       "product",
-      "backup",
-      "data"
+      "archive"
     ],
     "visibility": "public",
     "lifeStage": "seed",
@@ -2459,7 +2447,6 @@
     "contentPath": "content/rules/weekly-world-heartbeat.md",
     "tags": [
       "ritual",
-      "weekly",
       "governance"
     ],
     "visibility": "public",
@@ -3135,7 +3122,7 @@
     "tags": [
       "tech",
       "motion",
-      "rulebook"
+      "rule"
     ],
     "visibility": "public",
     "lifeStage": "growing",
