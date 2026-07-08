@@ -1,5 +1,5 @@
 import { createPageMetadata } from '@/lib/metadata'
-import { getSkeletonLayers, getStatusSkeletonContract } from '@/lib/status-skeleton'
+import { getSkeletonLayers, getStatusSkeletonContract } from '@/lib/_legacy/status-skeleton'
 import { SkeletonHero } from '@/components/status-skeleton/SkeletonHero'
 import { SkeletonLayerSummary } from '@/components/status-skeleton/SkeletonLayerSummary'
 import { StatusPanelGroup } from '@/components/status-skeleton/StatusPanelGroup'

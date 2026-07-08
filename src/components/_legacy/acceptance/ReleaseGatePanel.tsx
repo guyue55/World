@@ -1,4 +1,4 @@
-import { getReleaseGateContract, getReleaseGateSummary } from '@/lib/release-gate'
+import { getReleaseGateContract, getReleaseGateSummary } from '@/lib/_legacy/release-gate'
 
 export function ReleaseGatePanel() {
   const contract = getReleaseGateContract()

@@ -1,4 +1,4 @@
-import { getBuildPipeline } from '@/lib/build-pipeline'
+import { getBuildPipeline } from '@/lib/_legacy/build-pipeline'
 
 export function BuildPipelinePanel() {
   const pipeline = getBuildPipeline()

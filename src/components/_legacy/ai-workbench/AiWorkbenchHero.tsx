@@ -1,4 +1,4 @@
-import { getAiWorkbenchSummary } from '@/lib/ai-workbench'
+import { getAiWorkbenchSummary } from '@/lib/_legacy/ai-workbench'
 
 export function AiWorkbenchHero() {
   const summary = getAiWorkbenchSummary()

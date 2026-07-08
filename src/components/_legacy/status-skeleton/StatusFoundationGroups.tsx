@@ -63,7 +63,7 @@ import { PhaseThreeQaPanel } from '@/components/phase-three/PhaseThreeQaPanel'
 import { PhaseThreeIntegrationClosurePanel } from '@/components/phase-three/PhaseThreeIntegrationClosurePanel'
 import { PhaseTwoClosurePanel } from '@/components/acceptance/PhaseTwoClosurePanel'
 import { FinalHandoffPanel } from '@/components/acceptance/FinalHandoffPanel'
-import { getStatusSkeletonContract } from '@/lib/status-skeleton'
+import { getStatusSkeletonContract } from '@/lib/_legacy/status-skeleton'
 
 export function StatusFoundationGroups() {
   const groups = getStatusSkeletonContract().groups

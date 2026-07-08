@@ -1,4 +1,4 @@
-import { getBrowserQaRouteCoverage, getBrowserQaSummary } from '@/lib/browser-qa'
+import { getBrowserQaRouteCoverage, getBrowserQaSummary } from '@/lib/_legacy/browser-qa'
 
 export function BrowserQaMatrixPanel() {
   const summary = getBrowserQaSummary()

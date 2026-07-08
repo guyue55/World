@@ -3,7 +3,7 @@ import {
   getDecisionTraceability,
   getGovernanceLedger,
   getRiskRegister,
-} from '@/lib/governance-ledger'
+} from '@/lib/_legacy/governance-ledger'
 
 export function GovernanceLedgerPanel() {
   const ledger = getGovernanceLedger()

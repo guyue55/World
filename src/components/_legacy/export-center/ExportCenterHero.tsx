@@ -1,4 +1,4 @@
-import { getExportCenterSummary } from '@/lib/export-center'
+import { getExportCenterSummary } from '@/lib/_legacy/export-center'
 
 export function ExportCenterHero() {
   const summary = getExportCenterSummary()

@@ -1,4 +1,4 @@
-import { getAiWorkbenchSuggestions } from '@/lib/ai-workbench'
+import { getAiWorkbenchSuggestions } from '@/lib/_legacy/ai-workbench'
 
 export function AiSuggestionList() {
   const suggestions = getAiWorkbenchSuggestions()
