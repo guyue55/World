@@ -1,6 +1,6 @@
 {
   "name": "WorldOS 历史脚本治理注册表 v1",
-  "updatedAt": "2026-07-07",
+  "updatedAt": "2026-07-08",
   "source": "WorldOS local maturity gate follow-up",
   "principle": "默认入口必须短且可复跑；历史阶段脚本保留为 reference，但不能继续扩展为新开发默认入口。",
   "activeEntrypoints": [
@@ -55,7 +55,7 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 254,
+    "totalScripts": 255,
     "checkScripts": 133,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
