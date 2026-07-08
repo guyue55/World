@@ -138,7 +138,7 @@
     "check:ai-workbench": "tsx scripts/check-ai-workbench.ts",
     "ai-workbench:print": "tsx scripts/print-ai-workbench.ts",
     "check:export-center": "tsx scripts/check-export-center.ts",
-   "export-center:print": "tsx scripts/print-export-center.ts",
+    "export-center:print": "tsx scripts/print-export-center.ts",
     "export:world": "node scripts/export-world.mjs",
     "backup:world": "node scripts/backup-world.mjs",
     "check:performance-budget": "node scripts/check-performance-budget.mjs",
@@ -242,7 +242,7 @@
     "check:content-life": "node scripts/check-worldos-content-life.mjs",
     "check:local-content-growth": "node scripts/check-worldos-local-content-growth.mjs",
     "check:experience:public": "npm run check:worldos-public-experience",
-    "check:mainline": "npm run check:world-kernel-consolidation && npm run check:product-release && npm run check:content && npm run check:worldos-public-experience && npm run check:local-product-maturity && npm run check:api-boundary && npm run check:worldos-mainline-governance && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:runtime-local",
+    "check:mainline": "npm run check:world-kernel-consolidation && npm run check:product-release && npm run check:content && npm run check:worldos-public-experience && npm run check:local-product-maturity && npm run check:api-boundary && npm run check:worldos-mainline-governance && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:runtime-local && npm run check:lib-budget",
     "check:release:rc:fast": "npm run check:release:rc",
     "check:release:rc:full": "node scripts/run-worldos-rc-release-gate.mjs",
     "audit:project": "node scripts/audit-worldos-project.mjs",
@@ -264,7 +264,9 @@
     "smoke:runtime-local": "node scripts/run-worldos-local-runtime-smoke.mjs",
     "check:runtime-local": "node scripts/check-worldos-local-runtime-smoke.mjs",
     "check:lan-local": "node scripts/check-worldos-local-lan-rc.mjs",
-    "smoke:lan-local": "node scripts/run-worldos-local-lan-rc.mjs"
+    "smoke:lan-local": "node scripts/run-worldos-local-lan-rc.mjs",
+    "check:lib-budget": "node scripts/check-worldos-lib-budget.mjs",
+    "audit:lib-dependencies": "node scripts/audit-lib-dependencies.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

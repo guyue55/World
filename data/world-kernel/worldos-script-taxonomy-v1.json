@@ -1,6 +1,6 @@
 {
   "name": "WorldOS 长期脚本分类 v1",
-  "updatedAt": "2026-07-04",
+  "updatedAt": "2026-07-08",
   "principle": "默认入口短、清晰、可复跑；API 边界与脚本遗留治理进入主线门禁；历史阶段脚本保留为 reference，不再作为新开发默认路径。",
   "categories": [
     {
@@ -54,6 +54,11 @@
       "script": "smoke:lan-local",
       "description": "本地局域网 RC smoke，通过局域网 IP 验证公开路由、guard、浏览器运行时、移动端低动效和截图证据。",
       "recommendedUse": "仅在 .next 关键构建产物已生成后执行；适用于当前仍以本地局域网访问为准的 RC 验收。"
+    },
+    {
+      "id": "lib-budget",
+      "script": "check:lib-budget",
+      "description": "检查 src/lib 库文件数量预算，避免技术债累积。"
     }
   ],
   "recommendedDailyCommands": [
@@ -73,3 +78,4 @@
     "legacyRegistry": "data/world-kernel/worldos-script-legacy-registry-v1.json"
   }
 }
+
