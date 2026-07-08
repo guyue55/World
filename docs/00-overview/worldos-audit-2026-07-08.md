@@ -203,3 +203,38 @@
 
 - `check:daily` / `check:boundary-full` / `release:local-rc` 全绿（22 HTTP + 20 browser + npm audit 0/0/0/0）
 - `check:app-boundary`：App runtime boundary passed
+
+## 附录 F：第 6 次深度复审（同日追加）
+
+> 触发：用户第 6 次要求「重新且真实、深度、严格的审查和检查，是否全部完成，是否存在问题」，并强调牢记后端权限、前端体现、边界与最佳实践。本次不改代码，只做真实门禁复跑与源码级复核，作为收尾佐证。
+
+### F.1 真实门禁复跑
+
+| 命令 | 结果 | 关键指标 |
+|---|---|---|
+| `npm run check:daily` | ✅ | 130 公开节点 · 258 关系 · 20 路径 · 38 事件 · 117/130 lib · 265 脚本 · jaccard 最大相似度 0.5565（阈值 0.65） |
+| `npm run check:boundary-full` | ✅ | 11 项 boundary 全绿：API/权限/owner/脚本/命令脊柱/动态世界/runtime/AI/AI provider/App/中文首屏 |
+| `npm run release:local-rc` | ✅ | 22 HTTP + 20 browser + npm audit 2 moderate / 0 high / 0 critical / `build:production-ci` 通过 / `.next` 32.95 MB |
+
+### F.2 源码级复核
+
+- **前端权限硬编码**：`rg "user\.role === | isOwner = true"` 在主线全零命中；owner 相关能力仍由 `middleware.ts` + `requireOwner` + `requirePermission` 三段式后端守门，前端仅通过 API 响应表达。
+- **`any` 类型**：`src/components/r8-dynamic-world/` 复检零命中，附录 C 的类型收敛保持有效。
+- **TODO / FIXME**：主线源码零命中，仅 `src/components/_legacy/PhaseTwoHandoffPanel.tsx` 在字面 UI 文案里出现"第二阶段待办"，属正当业务文案而非未完成标记。
+- **_legacy 隔离**：`tsconfig.json` 排除 `_legacy/`，`check:app-boundary` 通过，未发现主线代码回流引用 legacy。
+
+### F.3 证据刷新差异
+
+本次跑完 `release:local-rc` 后，`docs/90-archive/reports/*.json`、`docs/90-archive/reports/worldos-local-lan-rc/*.png` 与 `public/world-index.json` 出现 diff，实质变更仅为：
+
+- `generatedAt` 时间戳位移（±11 分钟内）
+- `BUILD_ID` 变化导致的 HTML 前缀注释哈希更新
+- 截图字节差异（不影响像素级验证结论，20/20 browser checks 通过）
+
+审查报告数据面（节点/关系/路径/事件/脚本/lib 计数）未产生任何变化，附录 A-E 结论保持有效。
+
+### F.4 结论
+
+- **全部完成**：Phase 1-14 的既定工作、内容 jaccard 门禁、类型收敛、死代码归档、边界脚本挂链五项收尾工作均可复现通过，无遗留阻塞项。
+- **无新增故障**：本次复审未触发任何门禁失败或类型报错。
+- **后续建议**：Phase 15+ 的方向已由 `docs/00-overview/worldos-future-master-plan-2026-07-08.md` 与 `docs/00-overview/worldos-complete-execution-plan-2026-07-08.md` 承接；本地/局域网访问链路保持可用，等待用户下一步指令再启动新阶段。
