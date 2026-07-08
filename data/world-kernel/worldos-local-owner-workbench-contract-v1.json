@@ -82,7 +82,7 @@
     },
     {
       "id": "permission-gate",
-      "file": "src/components/r4-creator-workbench/R4PermissionGate.tsx",
+      "file": "src/components/_legacy/r4-creator-workbench/R4PermissionGate.tsx",
       "requiredTokens": [
         "Permission Gate",
         "公开是确认动作",
@@ -91,7 +91,7 @@
     },
     {
       "id": "audit-export",
-      "file": "src/components/r4-creator-workbench/R4AuditExportPanel.tsx",
+      "file": "src/components/_legacy/r4-creator-workbench/R4AuditExportPanel.tsx",
       "requiredTokens": [
         "Audit",
         "Export & R5",
@@ -100,7 +100,7 @@
     },
     {
       "id": "maintenance-queue",
-      "file": "src/components/r4-creator-workbench/R4MaintenanceQueue.tsx",
+      "file": "src/components/_legacy/r4-creator-workbench/R4MaintenanceQueue.tsx",
       "requiredTokens": [
         "Low-energy Maintenance",
         "小动作",

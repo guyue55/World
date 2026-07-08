@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import type { Area, Node } from '@/lib/types'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 const all = 'all'
 type ViewMode = 'constellation' | 'table' | 'cards'

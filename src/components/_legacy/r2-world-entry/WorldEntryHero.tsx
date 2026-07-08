@@ -1,4 +1,4 @@
-import { getR2Summary } from '@/features/r2-world-experience'
+import { getR2Summary } from '@/features/_legacy/r2-world-experience'
 
 export function WorldEntryHero() {
   const summary = getR2Summary()

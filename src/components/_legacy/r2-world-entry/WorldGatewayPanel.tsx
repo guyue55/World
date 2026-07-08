@@ -1,4 +1,4 @@
-import { r2ProgressiveDisclosure } from '@/features/r2-world-experience'
+import { r2ProgressiveDisclosure } from '@/features/_legacy/r2-world-experience'
 
 export function WorldGatewayPanel() {
   return (

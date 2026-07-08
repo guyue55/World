@@ -6,7 +6,7 @@ import { DeploymentHardeningPanel } from '@/components/hardening/DeploymentHarde
 import { EvidencePackagePanel } from '@/components/hardening/EvidencePackagePanel'
 import { ReleaseReadinessGatePanel } from '@/components/hardening/ReleaseReadinessGatePanel'
 import { SecurityBaselinePanel } from '@/components/hardening/SecurityBaselinePanel'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function HardeningPage() {
   return (

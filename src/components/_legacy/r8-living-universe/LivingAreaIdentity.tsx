@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
 import { usePathname } from 'next/navigation'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 import { resolveLivingScene } from './LivingUniverseField'
 
 export function LivingAreaIdentity() {

@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 const routeLabels: Record<string, string> = {
   '/': '创世原点',

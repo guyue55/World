@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 import actionsJson from '../../../data/r8-full-dynamic-world/dynamic-actions.json'
 
 type Action = { id: string; label: string; worldEffect: string }

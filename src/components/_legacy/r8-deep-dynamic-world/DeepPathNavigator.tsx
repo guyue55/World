@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import type { Node, Path } from '@/lib/types'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 export function DeepPathNavigator({ paths, nodes }: { paths: Path[]; nodes: Node[] }) {
   const { markJourney } = useWorldRuntime()

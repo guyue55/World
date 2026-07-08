@@ -1,2 +1,0 @@
-import { timeRiverEventsV2 } from '@/features/time-river'
-export function TimeRiverFilter(){ const types=Array.from(new Set(timeRiverEventsV2.map(e=>e.type))); return <div className="flex flex-wrap gap-2 rounded-[2rem] border border-white/50 bg-white/70 p-4 shadow-soft">{types.map(type=><span key={type} className="rounded-full bg-sand/70 px-4 py-2 text-xs font-medium text-ink/65">{type}: {timeRiverEventsV2.filter(e=>e.type===type).length}</span>)}</div> }

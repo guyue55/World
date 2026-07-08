@@ -1,5 +1,5 @@
 
-import { r3TimelineEvents } from '@/features/r3-content-life'
+import { r3TimelineEvents } from '@/features/_legacy/r3-content-life'
 
 export function R3LifecycleRiver() {
   const events = [...r3TimelineEvents].sort((left, right) => left.date.localeCompare(right.date)).slice(-10)

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 import { resolveInteractiveRoute, interactiveMainlines } from './InteractiveUniverseEngine'
 
 export function InteractiveUniverseSection() {

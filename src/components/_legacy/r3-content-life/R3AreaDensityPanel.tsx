@@ -1,5 +1,5 @@
 
-import { r3AreaDensity } from '@/features/r3-content-life'
+import { r3AreaDensity } from '@/features/_legacy/r3-content-life'
 
 export function R3AreaDensityPanel() {
   return (

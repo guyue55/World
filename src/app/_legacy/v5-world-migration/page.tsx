@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { V5StatusCard } from '@/components/v5/V5StatusCard'
 
 export default function Page() {

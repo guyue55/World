@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import type { Area, Node, WorldEvent } from '@/lib/types'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 const all = 'all'
 

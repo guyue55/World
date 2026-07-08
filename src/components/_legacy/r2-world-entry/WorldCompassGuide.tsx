@@ -1,4 +1,4 @@
-import { r2CompassAnchors } from '@/features/r2-world-experience'
+import { r2CompassAnchors } from '@/features/_legacy/r2-world-experience'
 
 export function WorldCompassGuide() {
   return (

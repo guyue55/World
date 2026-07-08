@@ -1,6 +1,6 @@
-import { ExhibitionGrid } from '@/components/exhibitions/ExhibitionGrid'
-import { ExhibitionHero } from '@/components/exhibitions/ExhibitionHero'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ExhibitionGrid } from '@/components/_legacy/exhibitions/ExhibitionGrid'
+import { ExhibitionHero } from '@/components/_legacy/exhibitions/ExhibitionHero'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function ExhibitionsPage() {
   return (

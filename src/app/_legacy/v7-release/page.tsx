@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import {
   V7EvidenceMatrix,
   V7ExtensionRegistry,

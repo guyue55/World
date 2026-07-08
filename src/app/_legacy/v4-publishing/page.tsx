@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function Page() {
   return (

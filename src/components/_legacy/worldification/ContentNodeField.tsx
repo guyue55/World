@@ -1,5 +1,5 @@
 import { contentSeeds } from '@/features/content-ingestion'
-import { resolveAssetsForSeed } from '@/features/asset-library/resolver'
+import { resolveAssetsForSeed } from '@/features/_legacy/asset-library/resolver'
 
 export function ContentNodeField() {
   return (

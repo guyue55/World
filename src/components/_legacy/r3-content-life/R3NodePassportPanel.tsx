@@ -1,5 +1,5 @@
 
-import { r3WorldNodes } from '@/features/r3-content-life'
+import { r3WorldNodes } from '@/features/_legacy/r3-content-life'
 
 export function R3NodePassportPanel() {
   const node = r3WorldNodes.find((item) => item.id === 'world-generator-pipeline') ?? r3WorldNodes[0]

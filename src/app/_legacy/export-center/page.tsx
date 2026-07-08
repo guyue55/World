@@ -1,6 +1,6 @@
-import { ExportCenterHero } from '@/components/export-center/ExportCenterHero'
-import { ExportPackageGrid } from '@/components/export-center/ExportPackageGrid'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ExportCenterHero } from '@/components/_legacy/export-center/ExportCenterHero'
+import { ExportPackageGrid } from '@/components/_legacy/export-center/ExportPackageGrid'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function ExportCenterPage() {
   return (

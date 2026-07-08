@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { V4StatusCard } from '@/components/v4/V4StatusCard'
 import { getV4EntryStatus } from '@/features/v4-entry'
 

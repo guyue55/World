@@ -5,7 +5,7 @@ import { TopicPillarsPanel } from '@/components/content-ecosystem/TopicPillarsPa
 import { FeedbackLoopPanel } from '@/components/content-ecosystem/FeedbackLoopPanel'
 import { QualityReviewPanel } from '@/components/content-ecosystem/QualityReviewPanel'
 import { WorldBookPanel } from '@/components/content-ecosystem/WorldBookPanel'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function ContentEcosystemPage() {
   return (

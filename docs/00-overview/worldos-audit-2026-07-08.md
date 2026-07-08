@@ -238,3 +238,48 @@
 - **全部完成**：Phase 1-14 的既定工作、内容 jaccard 门禁、类型收敛、死代码归档、边界脚本挂链五项收尾工作均可复现通过，无遗留阻塞项。
 - **无新增故障**：本次复审未触发任何门禁失败或类型报错。
 - **后续建议**：Phase 15+ 的方向已由 `docs/00-overview/worldos-future-master-plan-2026-07-08.md` 与 `docs/00-overview/worldos-complete-execution-plan-2026-07-08.md` 承接；本地/局域网访问链路保持可用，等待用户下一步指令再启动新阶段。
+
+## 附录 G：组件层与 feature 层大规模归档（同日追加）
+
+> 触发：附录 F 复审确认门禁全绿后，用户继续要求"直到全部完成"；本轮沿附录 A/D/E 的收束思路，把主线目录里"仅被 `_legacy` 消费或整目录零引用"的组件与 feature 模块整批归档，让主线目录树真正瘦身到"活跃"状态。
+
+### G.1 归档范围
+
+| 层级 | 归档前 | 归档后 | 变化 |
+|---|---|---|---|
+| `src/components/*` 目录 | 32 | 15 | -17（含 R4/R6/R7/R8 系列） |
+| `src/components/world/*` 文件 | 50 | 10 | -40（43 Panel 迁至 `_legacy/world/`，撤回 3 个被相对导入依赖的） |
+| `src/features/*` 目录 | 22 | 4 | -18（除 `content-ingestion` / `r6-service-bridge` / `r7-world-evolution` + `_legacy` 均归档） |
+
+主线现存活跃目录：
+
+- 组件：`about` / `archive` / `ask` / `atlas` / `common` / `interaction` / `manifesto` / `navigation` / `node` / `paths` / `product` / `reading` / `status` / `timeline` / `world`
+- Features：`content-ingestion` / `r6-service-bridge` / `r7-world-evolution`
+
+### G.2 关键判据
+
+对每一个归档目标同时满足：
+
+1. 主线（非 `_legacy`）里零 `@/components/<name>` 或 `@/features/<name>` 引用；
+2. 相对导入 (`./`/`../`) 也无主线消费者；
+3. 无门禁脚本硬编码路径依赖（若有，同步更新到 `_legacy` 路径）。
+
+### G.3 门禁与契约同步
+
+- `data/world-kernel/worldos-local-owner-workbench-contract-v1.json`：R4 UI 证据路径全部改写为 `src/components/_legacy/r4-creator-workbench/*`，`check:local-owner-workbench` 通过。
+- `scripts/check-experience-realization.ts`：`../src/features/experience-realization` → `../src/features/_legacy/experience-realization`，历史 `check:world-core` 门禁仍可通过。
+- `src/components/_legacy/README.md` 与 `src/features/_legacy/README.md` 追加本轮归档清单。
+
+### G.4 真实验证
+
+| 命令 | 结果 |
+|---|---|
+| `npm run check:daily` | ✅ 门禁全绿 |
+| `npm run check:boundary-full` | ✅ 11 项 boundary + 3 项 full 附加全绿 |
+| `npm run release:local-rc` | ✅ 22 HTTP + 20 browser + npm audit 2/0/0 保持 |
+| `npm run lint` / `tsc --noEmit` | ✅ 零 warning / 零 type error |
+| `node scripts/audit-lib-dependencies.mjs` | ✅ 117 库文件，77 未被 lib 内引用，0 循环依赖 |
+
+### G.5 结论
+
+主线目录结构在保持所有门禁与运行时验证全绿的前提下完成了一次显著瘦身：`src/components/*` 与 `src/features/*` 的目录数各自减少约 60% 与 80%，未被消费的历史代码全部落到 `_legacy` 归档区（tsconfig 已排除），主线心智负担明显下降。剩余 `content-ingestion` / `r6-service-bridge` / `r7-world-evolution` 三个 feature 因绑定 `/api/r6/*`、`/api/r7/*` 与 `check:content` 系列门禁保留在主线。

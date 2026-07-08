@@ -1,4 +1,4 @@
-import { getR2GatewayCards } from '@/features/r2-world-experience'
+import { getR2GatewayCards } from '@/features/_legacy/r2-world-experience'
 
 export function WorldAtlasGateway() {
   const cards = getR2GatewayCards()

@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { getPreV4GateStatus } from '@/lib/pre-v4/gate'
 
 export default function PreV4GatePage() {

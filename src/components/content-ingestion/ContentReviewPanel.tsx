@@ -1,3 +1,0 @@
-import { contentSeeds } from '@/features/content-ingestion'
-import { reviewContentSeed } from '@/features/content-governance'
-export function ContentReviewPanel(){const results=contentSeeds.map(reviewContentSeed); return <section className="grid gap-4">{results.map(result=><article key={result.seedId} className="rounded-[2rem] border border-white/50 bg-white/75 p-5 shadow-soft"><p className="text-xs tracking-[0.3em] text-moss">{result.riskLevel.toUpperCase()} · {result.decision}</p><h3 className="mt-3 text-xl font-semibold">{result.seedId}</h3><p className="mt-3 text-sm leading-6 text-ink/65">{result.reasons.length>0?result.reasons.join(' / '):'通过公开构建内容审查。'}</p></article>)}</section>}

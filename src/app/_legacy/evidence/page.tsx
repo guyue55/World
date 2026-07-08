@@ -1,10 +1,10 @@
-import { EvidenceCommandPanel } from '@/components/evidence/EvidenceCommandPanel'
-import { EvidenceHero } from '@/components/evidence/EvidenceHero'
-import { EvidenceMatrixPanel } from '@/components/evidence/EvidenceMatrixPanel'
-import { BlockerClosurePanel } from '@/components/evidence/BlockerClosurePanel'
-import { DefectExecutionPanel } from '@/components/evidence/DefectExecutionPanel'
-import { EvidenceAssistClosurePanel } from '@/components/evidence/EvidenceAssistClosurePanel'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { EvidenceCommandPanel } from '@/components/_legacy/evidence/EvidenceCommandPanel'
+import { EvidenceHero } from '@/components/_legacy/evidence/EvidenceHero'
+import { EvidenceMatrixPanel } from '@/components/_legacy/evidence/EvidenceMatrixPanel'
+import { BlockerClosurePanel } from '@/components/_legacy/evidence/BlockerClosurePanel'
+import { DefectExecutionPanel } from '@/components/_legacy/evidence/DefectExecutionPanel'
+import { EvidenceAssistClosurePanel } from '@/components/_legacy/evidence/EvidenceAssistClosurePanel'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function EvidencePage() {
   return (

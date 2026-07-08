@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Archive, Bot, Compass, Home, Map, Route, Waves } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 const entries = [
   { href: '/', label: '原点', icon: Home },

@@ -1,4 +1,4 @@
-import { r2NodeOpeningRituals } from '@/features/r2-world-experience'
+import { r2NodeOpeningRituals } from '@/features/_legacy/r2-world-experience'
 
 export function NodeOpeningRitualPanel() {
   return (

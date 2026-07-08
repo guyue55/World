@@ -1,0 +1,3 @@
+import { contentNodes } from '@/features/_legacy/content-constellation'
+import { SpatialCard } from '@/components/visual/SpatialCard'
+export function TopicIslandGrid(){ const groups=Array.from(new Set(contentNodes.flatMap((node)=>node.tags))); return <section className="grid gap-4 md:grid-cols-3">{groups.slice(0,6).map((tag)=>{ const nodes=contentNodes.filter((node)=>node.tags.includes(tag)); return <SpatialCard key={tag} eyebrow="TOPIC ISLAND" title={tag} description={`${nodes.length} 个节点连接到这个主题岛屿。`}><div className="flex flex-wrap gap-2">{nodes.map((node)=><span key={node.id} className="rounded-full bg-sand/70 px-3 py-1 text-xs text-ink/65">{node.title}</span>)}</div></SpatialCard>})}</section> }

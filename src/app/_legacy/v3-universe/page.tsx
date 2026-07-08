@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { getV3VisualUniverse } from '@/lib/v3/visual-universe'
 
 export default function V3UniversePage() {

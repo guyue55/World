@@ -1,4 +1,4 @@
-import { aiSuggestionWorkflows } from '@/features/ai-workflow'
+import { aiSuggestionWorkflows } from '@/features/_legacy/ai-workflow'
 import { aiForbiddenActions } from '@/features/ai-safety'
 
 export function LighthouseObservatory() {

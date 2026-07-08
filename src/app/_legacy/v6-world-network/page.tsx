@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
-import { worldNetworkNodes } from '@/features/experience-realization'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
+import { worldNetworkNodes } from '@/features/_legacy/experience-realization'
 
 export default function V6WorldNetworkPage() {
   return (

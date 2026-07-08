@@ -1,6 +1,6 @@
 'use client'
 
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 const periodText = {
   dawn: '清晨：适合种下一颗新想法',

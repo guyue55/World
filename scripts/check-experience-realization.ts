@@ -10,12 +10,12 @@ import {
   memoryGraphNodes,
   timeRiverEvents,
   worldNetworkNodes,
-} from '../src/features/experience-realization'
+} from '../src/features/_legacy/experience-realization'
 
 const requiredFiles = [
   'data/experience/experience-realization-stage.json',
-  'src/features/experience-realization/index.ts',
-  'src/features/experience-realization/data.ts',
+  'src/features/_legacy/experience-realization/index.ts',
+  'src/features/_legacy/experience-realization/data.ts',
   'src/components/experience/CelestialPanel.tsx',
   'src/components/experience/UniverseHero.tsx',
   'src/components/experience/LighthouseQueue.tsx',

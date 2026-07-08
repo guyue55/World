@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { getV21Status } from '@/lib/v2-1/status'
 
 export default function V2ConsolePage() {

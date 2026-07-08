@@ -1,4 +1,4 @@
-import { themeModes } from '@/features/theme-system'
+import { themeModes } from '@/features/_legacy/theme-system'
 
 export function ExhibitionGardenWorld() {
   return (

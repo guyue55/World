@@ -1,4 +1,4 @@
-import { r2HomeComposition } from '@/features/r2-world-experience'
+import { r2HomeComposition } from '@/features/_legacy/r2-world-experience'
 
 export function WorldDepthPrelude() {
   return (

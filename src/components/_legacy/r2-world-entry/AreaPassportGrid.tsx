@@ -1,4 +1,4 @@
-import { r2AreaPassports } from '@/features/r2-world-experience'
+import { r2AreaPassports } from '@/features/_legacy/r2-world-experience'
 
 export function AreaPassportGrid() {
   return (

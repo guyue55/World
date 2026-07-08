@@ -2,7 +2,7 @@ import { IntelligentOpsHero } from '@/components/intelligent-ops/IntelligentOpsH
 import { MultiDeviceExportPanel } from '@/components/intelligent-ops/MultiDeviceExportPanel'
 import { MultiDevicePanel } from '@/components/intelligent-ops/MultiDevicePanel'
 import { PwaOfflinePanel } from '@/components/intelligent-ops/PwaOfflinePanel'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { DataInsightPanel } from '@/components/intelligent-ops/DataInsightPanel'
 import { OpsFeedbackLoopPanel } from '@/components/intelligent-ops/OpsFeedbackLoopPanel'
 import { QualityPatrolPanel } from '@/components/intelligent-ops/QualityPatrolPanel'

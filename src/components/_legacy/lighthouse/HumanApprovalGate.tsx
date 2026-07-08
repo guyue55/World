@@ -1,0 +1,3 @@
+import { isForbiddenLighthouseAction, suggestionRequiresHuman } from '@/features/_legacy/ai-lighthouse-workbench'
+import type { LighthouseSuggestion } from '@/features/_legacy/ai-lighthouse-workbench'
+export function HumanApprovalGate({ suggestion }: { suggestion: LighthouseSuggestion }) { const forbidden=isForbiddenLighthouseAction(suggestion.action); const requiresHuman=suggestionRequiresHuman(suggestion); return <div className="rounded-2xl border border-white/50 bg-white/70 p-4"><p className="text-xs tracking-[0.3em] text-moss">APPROVAL GATE</p><p className="mt-2 text-sm leading-6 text-ink/65">{forbidden?'该动作属于禁止自动执行范围，只能拒绝或转人工审计。':requiresHuman?'该建议需要人工确认后才能进入下一步。':'该建议可以预览，但仍不会自动发布。'}</p></div> }

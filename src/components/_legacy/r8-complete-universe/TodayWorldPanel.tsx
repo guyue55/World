@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import { resolveCompleteScene } from './CompleteUniverseEngine'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 export function TodayWorldPanel() {
   const pathname = usePathname()

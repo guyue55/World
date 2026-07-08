@@ -3,7 +3,7 @@ import { EvidenceSprintHero } from '@/components/evidence-sprint/EvidenceSprintH
 import { ExecutionQueuePanel } from '@/components/evidence-sprint/ExecutionQueuePanel'
 import { ManualSignoffPanel } from '@/components/evidence-sprint/ManualSignoffPanel'
 import { ReleaseTransitionPanel } from '@/components/evidence-sprint/ReleaseTransitionPanel'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function EvidenceSprintPage() {
   return (

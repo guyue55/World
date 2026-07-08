@@ -9,7 +9,7 @@ import { RealContentSafetyPanel } from '@/components/real-content/RealContentSaf
 import { V6HandoffPanel } from '@/components/real-content/V6HandoffPanel'
 import { RealContentCollectionBoard } from '@/components/real-content/RealContentCollectionBoard'
 import { RealContentGateway } from '@/components/real-content/RealContentGateway'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 
 export default function RealContentPage() {
   return (

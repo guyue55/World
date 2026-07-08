@@ -1,4 +1,4 @@
-import { r2ModeSwitching } from '@/features/r2-world-experience'
+import { r2ModeSwitching } from '@/features/_legacy/r2-world-experience'
 
 export function RealityModeBridge() {
   return (

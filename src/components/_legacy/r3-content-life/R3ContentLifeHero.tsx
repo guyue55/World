@@ -1,5 +1,5 @@
 
-import { getR3Summary } from '@/features/r3-content-life'
+import { getR3Summary } from '@/features/_legacy/r3-content-life'
 
 export function R3ContentLifeHero() {
   const summary = getR3Summary()

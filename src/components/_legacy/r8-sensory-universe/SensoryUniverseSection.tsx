@@ -5,7 +5,7 @@ import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { resolveSensoryScene } from './SensoryUniverseEngine'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 
 export function SensoryUniverseSection() {
   const pathname = usePathname()

@@ -1,5 +1,5 @@
 
-import { r3ContentPaths } from '@/features/r3-content-life'
+import { r3ContentPaths } from '@/features/_legacy/r3-content-life'
 
 export function R3ContentPathways() {
   return (

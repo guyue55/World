@@ -1,5 +1,5 @@
 
-import { getR3FeaturedNodes } from '@/features/r3-content-life'
+import { getR3FeaturedNodes } from '@/features/_legacy/r3-content-life'
 
 export function R3NodeConstellation() {
   const nodes = getR3FeaturedNodes(9)

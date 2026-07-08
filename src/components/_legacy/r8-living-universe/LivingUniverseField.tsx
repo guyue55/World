@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 import { usePathname } from 'next/navigation'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 import scenesData from '../../../data/r8-living-universe/living-scenes.json'
 
 type SceneLink = { label: string; href: string }

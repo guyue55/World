@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
-import { useWorldRuntime } from '@/components/r8-dynamic-world'
+import { useWorldRuntime } from '@/components/_legacy/r8-dynamic-world'
 import sceneData from '../../../data/r8-scene-universe/scene-universe.json'
 
 type SceneLink = {

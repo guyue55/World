@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { PrivateAiApprovalPanel } from '@/components/private-ai-v6/PrivateAiApprovalPanel'
 import { PrivateAiAuditPanel } from '@/components/private-ai-v6/PrivateAiAuditPanel'
 import { PrivateAiHero } from '@/components/private-ai-v6/PrivateAiHero'

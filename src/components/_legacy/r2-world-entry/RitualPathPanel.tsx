@@ -1,4 +1,4 @@
-import { r2ArrivalRituals } from '@/features/r2-world-experience'
+import { r2ArrivalRituals } from '@/features/_legacy/r2-world-experience'
 
 export function RitualPathPanel() {
   return (

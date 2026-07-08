@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { ReleaseDashboardPanel } from '@/components/release/ReleaseDashboardPanel'
 import { ReleaseEvidencePanel } from '@/components/release/ReleaseEvidencePanel'
 import { ReleaseHero } from '@/components/release/ReleaseHero'

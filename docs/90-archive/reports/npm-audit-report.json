@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T08:26:19.662Z",
+  "generatedAt": "2026-07-08T09:03:38.243Z",
   "command": "npm audit --json",
   "exitCode": 1,
   "vulnerabilities": {

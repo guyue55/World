@@ -1,4 +1,4 @@
-import { ResponsivePageShell } from '@/components/layout/ResponsivePageShell'
+import { ResponsivePageShell } from '@/components/_legacy/layout/ResponsivePageShell'
 import { DeploymentChecklistPanel } from '@/components/production/DeploymentChecklistPanel'
 import { DomainHttpsCdnPanel } from '@/components/production/DomainHttpsCdnPanel'
 import { ProductionDashboardPanel } from '@/components/production/ProductionDashboardPanel'
