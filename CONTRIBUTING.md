@@ -233,3 +233,68 @@ npm run check:rc:full
 5. 本地局域网 RC 不等于真实外部部署证据，不得因此把 `productionLive`、`releaseReady`、`cleanProductionReady` 改为 true。
 6. 前端显隐仍不是权限控制；LAN RC 只能验证服务端 guard 的结果，不能把隐藏按钮当作权限证明。
 7. 验收产物策略以 `data/world-kernel/worldos-local-rc-evidence-policy-v1.json` 为准：提交规范化报告和截图，`reports/` 下的 next/chrome 日志只作为本地排障材料。
+
+## 新维护者快速上手
+
+### 环境准备
+
+1. 安装 Node.js 20+ 和 npm
+2. 克隆仓库后运行 `npm install`
+3. 运行 `npm run check:daily` 确认门禁全绿
+4. 运行 `npm run dev` 启动本地开发服务器（http://localhost:3000）
+
+### 世界模型概览
+
+古月浮屿的世界由五层数据组成：
+
+- **节点（Node）**：最小知识单元，定义在 `data/domains/experience/nodes.json`
+- **区域（Area）**：节点的容器，定义在 `data/domains/experience/areas.json`
+- **关系（Relation）**：节点间的星线，定义在 `data/core/relations.json`
+- **路径（Path）**：主题浏览序列，定义在 `data/domains/experience/paths.json`
+- **事件（Event）**：世界时间线，定义在 `data/core/world-events.json`
+
+每个节点的正文是独立的 Markdown 文件，路径在节点的 `contentPath` 字段中指定。
+
+### 新增一个节点
+
+1. 在 `nodes.json` 中添加节点定义（包含 id、slug、title、worldTitle、summary、areaId、tags、visibility、contentPath 等字段）
+2. 在 `contentPath` 指定的路径创建 Markdown 文件（正文不少于 400 字符）
+3. 在 `relations.json` 中为节点添加至少 1 条关系
+4. 将节点 slug 加入至少 1 条公开路径的 `nodeSlugs`
+5. 运行 `npm run check:daily` 验证
+
+### 门禁体系
+
+| 命令 | 用途 | 频率 |
+|---|---|---|
+| `npm run check:daily` | 日常门禁（类型 + lint + 内容 + 脚本） | 每次提交 |
+| `npm run check:boundary` | 边界门禁（API + 权限 + 导入 + 交叉引用） | 涉及边界时 |
+| `npm run release:local-rc` | 发布候选（日常 + 边界 + smoke + 构建） | 每 Phase |
+| `npm run check:cross-references` | 交叉引用验证（断链 + 悬空引用） | 内容变更时 |
+| `npm run audit:content-freshness` | 内容新鲜度审计（沉睡节点） | 每月 |
+
+### 关键约束
+
+1. 后端控制权限，前端只控制体现
+2. 公开 API 只能用 GET，写入必须服务端守门
+3. 新增脚本需注册到 legacy 注册表
+4. 不动 `_legacy/` 目录中的代码
+5. 提交格式：`xxx(xxx): 中文xxx`
+
+### 架构决策记录
+
+关键设计决策记录在 `docs/05-engineering/adr/` 目录下，包含 5 个 ADR：
+
+- ADR-001: App Router 选型
+- ADR-002: 世界模型设计
+- ADR-003: 权限守门策略
+- ADR-004: AI 边界策略
+- ADR-005: 内容门禁体系
+
+### API 文档
+
+完整的 25 条 API 路由文档见 `docs/05-engineering/api-reference.md`。
+
+### 局域网访问
+
+局域网访问配置指南见 `docs/05-engineering/lan-access-guide.md`。
