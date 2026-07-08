@@ -2,7 +2,7 @@ import {
   getFirstStageAcceptanceReportSchema,
   getLocalAcceptanceRunner,
   getStageClosureUpdateProtocol,
-} from '@/lib/local-acceptance'
+} from '@/lib/_legacy/local-acceptance'
 
 export function LocalAcceptancePanel() {
   const runner = getLocalAcceptanceRunner()

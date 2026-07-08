@@ -1,4 +1,4 @@
-import { getLintExecutionReadiness } from '@/lib/acceptance-readiness'
+import { getLintExecutionReadiness } from '@/lib/_legacy/acceptance-readiness'
 
 export function LintReadinessPanel() {
   const readiness = getLintExecutionReadiness()

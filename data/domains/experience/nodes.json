@@ -846,7 +846,8 @@
     "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
     "contentPath": "content/paths/eight-minute-world-path.md",
     "tags": [
-      "guide"
+      "guide",
+      "onboarding"
     ],
     "visibility": "public",
     "lifeStage": "bloom",

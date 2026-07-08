@@ -1,4 +1,4 @@
-import { getReleaseBlockerRegister, getValidationClosureSummary } from '@/lib/validation-closure'
+import { getReleaseBlockerRegister, getValidationClosureSummary } from '@/lib/_legacy/validation-closure'
 
 export function ValidationClosurePanel() {
   const summary = getValidationClosureSummary()

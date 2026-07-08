@@ -30,7 +30,7 @@ function main() {
     errors.push('performance runbook must include home route')
   }
 
-  if (!fs.existsSync(path.join(process.cwd(), 'scripts/run-preview-smoke.mjs'))) {
+  if (!fs.existsSync(path.join(process.cwd(), 'scripts/run-preview-smoke.ts'))) {
     errors.push('missing preview smoke runner')
   }
 

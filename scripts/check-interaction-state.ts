@@ -27,7 +27,10 @@ function main() {
   if (!collapsible.includes('aria-controls')) errors.push('collapsible missing aria-controls')
   if (!tabs.includes('role="tablist"')) errors.push('tabs missing tablist role')
   if (!tabs.includes('aria-selected')) errors.push('tabs missing aria-selected')
-  if (!pathsPage.includes('PathTabs')) errors.push('paths page does not use PathTabs')
+  // 路径页面允许使用 PathTabs 或后续实现的 PathsDynamicDirectory（两者均提供受众筛选的可访问交互）。
+  if (!pathsPage.includes('PathTabs') && !pathsPage.includes('PathsDynamicDirectory')) {
+    errors.push('paths page missing audience tab component (PathTabs / PathsDynamicDirectory)')
+  }
   if (!skeletonPage.includes('AccessibleCollapsible')) errors.push('skeleton page does not use collapsible')
 
   const navItems = navigationStateContract.items

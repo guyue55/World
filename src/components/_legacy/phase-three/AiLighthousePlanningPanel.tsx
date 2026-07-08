@@ -1,4 +1,4 @@
-import { getAiLighthousePlanningSummary, getPhaseThreeAiLighthouseRoadmap } from '@/lib/ai-lighthouse-planning'
+import { getAiLighthousePlanningSummary, getPhaseThreeAiLighthouseRoadmap } from '@/lib/_legacy/ai-lighthouse-planning'
 
 export function AiLighthousePlanningPanel() {
   const summary = getAiLighthousePlanningSummary()

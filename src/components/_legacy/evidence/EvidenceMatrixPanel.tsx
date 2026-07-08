@@ -1,4 +1,4 @@
-import { getEvidenceDashboardMatrix } from '@/lib/evidence-dashboard'
+import { getEvidenceDashboardMatrix } from '@/lib/_legacy/evidence-dashboard'
 
 export function EvidenceMatrixPanel() {
   const matrix = getEvidenceDashboardMatrix()

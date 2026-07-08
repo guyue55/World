@@ -1,4 +1,4 @@
-import { getEvidenceDashboardSummary } from '@/lib/evidence-dashboard'
+import { getEvidenceDashboardSummary } from '@/lib/_legacy/evidence-dashboard'
 
 export function EvidenceHero() {
   const summary = getEvidenceDashboardSummary()

@@ -24,7 +24,7 @@
     },
     {
       "id": "performance-panel-boundary",
-      "target": "src/components/world/PerformanceContractPanel.tsx"
+      "target": "src/components/_legacy/world/PerformanceContractPanel.tsx"
     }
   ],
   "rules": [

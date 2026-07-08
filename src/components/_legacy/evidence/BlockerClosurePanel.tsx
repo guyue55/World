@@ -1,4 +1,4 @@
-import { getOpenReleaseBlockersForClosure, getReleaseBlockerClosureSummary } from '@/lib/blocker-closure'
+import { getOpenReleaseBlockersForClosure, getReleaseBlockerClosureSummary } from '@/lib/_legacy/blocker-closure'
 
 export function BlockerClosurePanel() {
   const summary = getReleaseBlockerClosureSummary()

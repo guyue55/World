@@ -1,4 +1,4 @@
-import { getPreviewPerformanceSummary } from '@/lib/preview-performance'
+import { getPreviewPerformanceSummary } from '@/lib/_legacy/preview-performance'
 
 export function PreviewPerformancePanel() {
   const summary = getPreviewPerformanceSummary()

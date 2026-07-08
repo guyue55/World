@@ -39,6 +39,7 @@ function main() {
   pathQualityGate.requiredComponents.forEach((component) => {
     const possibleFiles = [
       `src/components/paths/${component}.tsx`,
+      `src/components/_legacy/paths/${component}.tsx`,
       component === 'PathTabs' ? 'src/components/paths/PathTabs.tsx' : '',
       component === 'PathCard' ? 'src/components/paths/PathCard.tsx' : '',
     ].filter(Boolean)

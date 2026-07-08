@@ -24,8 +24,12 @@ function main() {
   }
 
   if (!exists('src/app/_legacy/export-center/page.tsx')) errors.push('missing export center page')
-  if (!exists('src/components/export-center/ExportCenterHero.tsx')) errors.push('missing ExportCenterHero')
-  if (!exists('src/components/export-center/ExportPackageGrid.tsx')) errors.push('missing ExportPackageGrid')
+  if (!exists('src/components/export-center/ExportCenterHero.tsx') && !exists('src/components/_legacy/export-center/ExportCenterHero.tsx')) {
+    errors.push('missing ExportCenterHero')
+  }
+  if (!exists('src/components/export-center/ExportPackageGrid.tsx') && !exists('src/components/_legacy/export-center/ExportPackageGrid.tsx')) {
+    errors.push('missing ExportPackageGrid')
+  }
 
   if (errors.length > 0) throw new Error(errors.join('\n'))
   console.log('Export center check passed.')

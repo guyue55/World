@@ -27,8 +27,16 @@ function main() {
     errors.push('release blocker evidence item should remain open')
   }
 
-  ;['src/app/_legacy/evidence/page.tsx', 'src/components/evidence/EvidenceHero.tsx', 'src/components/evidence/EvidenceMatrixPanel.tsx', 'src/components/evidence/EvidenceCommandPanel.tsx'].forEach((file) => {
-    if (!exists(file)) errors.push(`missing evidence file: ${file}`)
+  const legacyEvidenceComponents: Array<{ id: string; primary: string; legacy?: string }> = [
+    { id: 'evidence-page', primary: 'src/app/_legacy/evidence/page.tsx' },
+    { id: 'EvidenceHero', primary: 'src/components/evidence/EvidenceHero.tsx', legacy: 'src/components/_legacy/evidence/EvidenceHero.tsx' },
+    { id: 'EvidenceMatrixPanel', primary: 'src/components/evidence/EvidenceMatrixPanel.tsx', legacy: 'src/components/_legacy/evidence/EvidenceMatrixPanel.tsx' },
+    { id: 'EvidenceCommandPanel', primary: 'src/components/evidence/EvidenceCommandPanel.tsx', legacy: 'src/components/_legacy/evidence/EvidenceCommandPanel.tsx' },
+  ]
+  legacyEvidenceComponents.forEach((entry) => {
+    if (!exists(entry.primary) && !(entry.legacy && exists(entry.legacy))) {
+      errors.push(`missing evidence file: ${entry.primary}`)
+    }
   })
 
   if (errors.length > 0) throw new Error(errors.join('\n'))

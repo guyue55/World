@@ -79,7 +79,7 @@
         "relation"
       ],
       "requiredLibs": [
-        "src/lib/backlinks.ts",
+        "src/lib/_legacy/backlinks.ts",
         "src/lib/star-lines.ts"
       ]
     },

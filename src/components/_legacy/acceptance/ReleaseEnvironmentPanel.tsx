@@ -1,4 +1,4 @@
-import { getReleaseConfig, getReleaseEnvironmentSummary } from '@/lib/release-environment'
+import { getReleaseConfig, getReleaseEnvironmentSummary } from '@/lib/_legacy/release-environment'
 
 export function ReleaseEnvironmentPanel() {
   const config = getReleaseConfig()

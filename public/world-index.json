@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T09:12:38.467Z",
+  "generatedAt": "2026-07-08T09:48:02.462Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -695,7 +695,8 @@
       "areaId": "origin",
       "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
       "tags": [
-        "guide"
+        "guide",
+        "onboarding"
       ],
       "visibility": "public",
       "lifeStage": "bloom",
@@ -3463,6 +3464,15 @@
         "weight": 52
       },
       {
+        "nodeId": "node-eight-minute-path",
+        "slug": "eight-minute-world-path",
+        "title": "短途星路",
+        "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
+        "target": "home",
+        "displayType": "star",
+        "weight": 52
+      },
+      {
         "nodeId": "node-worldos-mainline-code-map",
         "slug": "worldos-mainline-code-map",
         "title": "主干星图",
@@ -3479,15 +3489,6 @@
         "target": "home",
         "displayType": "star",
         "weight": 52
-      },
-      {
-        "nodeId": "node-eight-minute-path",
-        "slug": "eight-minute-world-path",
-        "title": "短途星路",
-        "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
-        "target": "home",
-        "displayType": "star",
-        "weight": 51
       },
       {
         "nodeId": "node-novel-editor",
@@ -3804,7 +3805,7 @@
         "summary": "为第一次来的访客准备的最短路径：先理解世界，再看技术、项目、生活和灯塔。",
         "target": "archive",
         "displayType": "archive-record",
-        "weight": 51
+        "weight": 52
       },
       {
         "nodeId": "node-ai-prompt-hygiene",

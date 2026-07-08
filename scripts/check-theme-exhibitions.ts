@@ -28,11 +28,17 @@ function main() {
     errors.push('missing exhibitions page')
   }
 
-  if (!exists('src/components/exhibitions/ExhibitionHero.tsx')) {
+  if (
+    !exists('src/components/exhibitions/ExhibitionHero.tsx') &&
+    !exists('src/components/_legacy/exhibitions/ExhibitionHero.tsx')
+  ) {
     errors.push('missing ExhibitionHero')
   }
 
-  if (!exists('src/components/exhibitions/ExhibitionGrid.tsx')) {
+  if (
+    !exists('src/components/exhibitions/ExhibitionGrid.tsx') &&
+    !exists('src/components/_legacy/exhibitions/ExhibitionGrid.tsx')
+  ) {
     errors.push('missing ExhibitionGrid')
   }
 

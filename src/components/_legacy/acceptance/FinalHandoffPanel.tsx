@@ -1,4 +1,4 @@
-import { getFinalHandoffSummary, getNextStageReadiness, getPhaseTwoFinalCheckMatrix } from '@/lib/final-handoff'
+import { getFinalHandoffSummary, getNextStageReadiness, getPhaseTwoFinalCheckMatrix } from '@/lib/_legacy/final-handoff'
 
 export function FinalHandoffPanel() {
   const summary = getFinalHandoffSummary()

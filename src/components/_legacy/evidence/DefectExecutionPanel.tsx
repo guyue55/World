@@ -1,4 +1,4 @@
-import { getDefectExecutionQueueItems, getDefectExecutionSummary } from '@/lib/defect-execution'
+import { getDefectExecutionQueueItems, getDefectExecutionSummary } from '@/lib/_legacy/defect-execution'
 
 export function DefectExecutionPanel() {
   const summary = getDefectExecutionSummary()

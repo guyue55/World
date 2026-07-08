@@ -1,4 +1,4 @@
-import { getRealExecutionRerunContract, getRealExecutionRerunSummary } from '@/lib/execution-rerun'
+import { getRealExecutionRerunContract, getRealExecutionRerunSummary } from '@/lib/_legacy/execution-rerun'
 
 export function ExecutionRerunPanel() {
   const contract = getRealExecutionRerunContract()

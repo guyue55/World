@@ -1,4 +1,4 @@
-import { getRealValidationRunnerContract, getRealValidationSummary } from '@/lib/real-validation'
+import { getRealValidationRunnerContract, getRealValidationSummary } from '@/lib/_legacy/real-validation'
 
 export function RealValidationRunnerPanel() {
   const contract = getRealValidationRunnerContract()

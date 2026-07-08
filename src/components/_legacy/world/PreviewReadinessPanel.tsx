@@ -2,7 +2,7 @@ import {
   getPerformanceRunbook,
   getPreviewDeploymentRecord,
   getPreviewSmokeChecks,
-} from '@/lib/preview-readiness'
+} from '@/lib/_legacy/preview-readiness'
 
 export function PreviewReadinessPanel() {
   const smoke = getPreviewSmokeChecks()

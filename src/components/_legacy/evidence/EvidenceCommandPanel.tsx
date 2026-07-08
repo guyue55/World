@@ -1,4 +1,4 @@
-import { getEvidenceDashboardCommands } from '@/lib/evidence-dashboard'
+import { getEvidenceDashboardCommands } from '@/lib/_legacy/evidence-dashboard'
 
 export function EvidenceCommandPanel() {
   const commands = getEvidenceDashboardCommands()

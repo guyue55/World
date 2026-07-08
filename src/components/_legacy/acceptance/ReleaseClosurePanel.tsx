@@ -1,4 +1,4 @@
-import { getReleaseClosureSummary, getReleaseReadyMatrix } from '@/lib/release-closure'
+import { getReleaseClosureSummary, getReleaseReadyMatrix } from '@/lib/_legacy/release-closure'
 
 export function ReleaseClosurePanel() {
   const summary = getReleaseClosureSummary()

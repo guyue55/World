@@ -1,4 +1,4 @@
-import { getPublicSeoReleaseSummary } from '@/lib/public-seo-release'
+import { getPublicSeoReleaseSummary } from '@/lib/_legacy/public-seo-release'
 
 export function PublicSeoReleasePanel() {
   const summary = getPublicSeoReleaseSummary()

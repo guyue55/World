@@ -1,7 +1,7 @@
 import {
   getFinalClosureReportContract,
   getPhaseOneFinalDecisionTemplate,
-} from '@/lib/final-closure'
+} from '@/lib/_legacy/final-closure'
 
 export function FinalClosurePanel() {
   const contract = getFinalClosureReportContract()

@@ -1,4 +1,4 @@
-import { getThemeExhibitions } from '@/lib/theme-exhibitions'
+import { getThemeExhibitions } from '@/lib/_legacy/theme-exhibitions'
 
 export function ExhibitionGrid() {
   const exhibitions = getThemeExhibitions()

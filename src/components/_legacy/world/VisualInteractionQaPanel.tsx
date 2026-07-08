@@ -3,7 +3,7 @@ import {
   getLayoutResponsiveContract,
   getVisualInteractionDefectRegister,
   getVisualQaChecklist,
-} from '@/lib/visual-interaction-qa'
+} from '@/lib/_legacy/visual-interaction-qa'
 
 export function VisualInteractionQaPanel() {
   const visual = getVisualQaChecklist()

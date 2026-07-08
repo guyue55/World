@@ -1,4 +1,4 @@
-import { getEvidenceAssistClosureSummary, getEvidenceAssistReadiness } from '@/lib/evidence-assist-closure'
+import { getEvidenceAssistClosureSummary, getEvidenceAssistReadiness } from '@/lib/_legacy/evidence-assist-closure'
 
 export function EvidenceAssistClosurePanel() {
   const summary = getEvidenceAssistClosureSummary()

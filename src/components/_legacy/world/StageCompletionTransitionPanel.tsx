@@ -1,7 +1,7 @@
 import {
   getStageCompletionCertificateTemplate,
   getStageCompletionTransitionGuard,
-} from '@/lib/stage-completion-transition'
+} from '@/lib/_legacy/stage-completion-transition'
 
 export function StageCompletionTransitionPanel() {
   const guard = getStageCompletionTransitionGuard()

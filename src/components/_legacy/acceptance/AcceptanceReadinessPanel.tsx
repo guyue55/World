@@ -1,4 +1,4 @@
-import { getAcceptanceReadinessSummary } from '@/lib/acceptance-readiness'
+import { getAcceptanceReadinessSummary } from '@/lib/_legacy/acceptance-readiness'
 
 export function AcceptanceReadinessPanel() {
   const summary = getAcceptanceReadinessSummary()

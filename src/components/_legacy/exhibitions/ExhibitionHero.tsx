@@ -1,4 +1,4 @@
-import { getThemeExhibitionSummary } from '@/lib/theme-exhibitions'
+import { getThemeExhibitionSummary } from '@/lib/_legacy/theme-exhibitions'
 
 export function ExhibitionHero() {
   const summary = getThemeExhibitionSummary()
