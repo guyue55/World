@@ -6,6 +6,11 @@ import { websiteJsonLd } from '@/lib/jsonld'
 
 export const metadata = createPageMetadata()
 
+export const viewport = {
+  themeColor: '#0a0a0a',
+  manifest: '/manifest.json',
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
