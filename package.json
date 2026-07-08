@@ -251,7 +251,7 @@
     "check:scripts": "npm run check:worldos-script-taxonomy && npm run check:worldos-script-legacy-registry",
     "check:daily": "npm run check:mainline && npm run lint && npm run typecheck",
     "check:dynamic-world": "node scripts/check-public-dynamic-world-surfaces.mjs && tsx scripts/check-public-world-object-index.ts && node scripts/check-public-chinese-copy.mjs",
-    "check:boundary": "npm run check:api-boundary && npm run check:permission-boundary && npm run check:local-owner-workbench && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:dynamic-world && npm run check:runtime-local",
+    "check:boundary": "npm run check:api-boundary && npm run check:permission-boundary && npm run check:local-owner-workbench && npm run check:scripts && npm run check:maintenance-command-spine && npm run check:dynamic-world && npm run check:runtime-local && npm run check:ai-boundary && npm run check:ai-provider-boundary",
     "check:boundary-full": "npm run check:boundary && npm run check:performance-budget && npm run check:reduced-motion && npm run check:cross-references",
     "check:permission-boundary": "node scripts/check-worldos-permission-boundary.mjs",
     "check:local-owner-workbench": "node scripts/check-worldos-local-owner-workbench.mjs",

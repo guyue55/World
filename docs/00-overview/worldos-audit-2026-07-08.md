@@ -125,3 +125,12 @@
 - `lint` / `typecheck` 全绿
 - `lib` 数量 120 → 117（<130 预算）
 
+## 附录 B：check:boundary 加强（同日追加）
+
+把 `check:ai-boundary`（tsx）与 `check:ai-provider-boundary`（node）并入 `check:boundary`，作为主链边界扫描的一部分：
+
+- `check:boundary` 由 7 项扩展为 9 项，覆盖 API / 权限 / owner 工作台 / 脚本治理 / 命令脊柱 / 动态世界 / 运行时 smoke / AI 边界 / AI provider 边界
+- 同步 `data/world-kernel/worldos-maintenance-command-spine-v1.json` 的 `command` 与 `purpose`
+- `check:mainline` → `check:daily` 通过嵌套自然获得这两项覆盖
+- `check:boundary-full` 与 `release:local-rc` 依然全绿
+
