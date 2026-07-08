@@ -9,7 +9,18 @@ function main() {
   const errors: string[] = []
 
   const page = fs.readFileSync(path.join(process.cwd(), 'src/components/product/ProductHome.tsx'), 'utf-8')
-  const publicSurface = fs.readFileSync(path.join(process.cwd(), 'src/lib/public-world-surfaces.ts'), 'utf-8')
+  // 门面拆分后，首页表层文案分布在 public-world-surfaces.ts 主文件与 public-surfaces/ 子模块，扫描时需要合并读取
+  const publicSurfaceRoot = path.join(process.cwd(), 'src/lib/public-world-surfaces.ts')
+  const publicSurfaceDir = path.join(process.cwd(), 'src/lib/public-surfaces')
+  const publicSurfaceParts: string[] = [fs.readFileSync(publicSurfaceRoot, 'utf-8')]
+  if (fs.existsSync(publicSurfaceDir)) {
+    for (const entry of fs.readdirSync(publicSurfaceDir)) {
+      if (entry.endsWith('.ts')) {
+        publicSurfaceParts.push(fs.readFileSync(path.join(publicSurfaceDir, entry), 'utf-8'))
+      }
+    }
+  }
+  const publicSurface = publicSurfaceParts.join('\n')
   ;['ProductWorldCompass', 'ProductWorldBoundaries', 'dynamicWorld.entryPoints'].forEach((component) => {
     if (!page.includes(component)) errors.push(`homepage missing component: ${component}`)
   })

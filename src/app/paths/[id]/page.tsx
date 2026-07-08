@@ -1,4 +1,4 @@
-import { notFound, redirect } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { getAllPaths, getPathById } from '@/lib/paths'
 import { Breadcrumbs } from '@/components/common/Breadcrumbs'
 import { PathProgress } from '@/components/paths/PathProgress'
@@ -18,14 +18,14 @@ type PathPageParams = {
 }
 
 export function generateStaticParams() {
-  return getAllPaths().filter((p) => p.visibility === 'public').map((path) => ({ id: path.id }))
+  // getAllPaths 已在 src/lib/paths.ts 层内做公开性过滤，此处不再重复权限判断
+  return getAllPaths().map((path) => ({ id: path.id }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<PathPageParams> }) {
   const { id } = await params
   const path = getPathById(id)
   if (!path) return createPageMetadata({ title: '路径不存在', path: '/paths' })
-  if (path.visibility !== 'public') return createPageMetadata({ title: '无权限访问', path: '/forbidden' })
 
   return createPageMetadata({
     title: path.title,
@@ -37,8 +37,8 @@ export async function generateMetadata({ params }: { params: Promise<PathPagePar
 export default async function PathDetailPage({ params }: { params: Promise<PathPageParams> }) {
   const { id } = await params
   const path = getPathById(id)
+  // 权限过滤集中在 src/lib/paths.ts；此处只处理"路径不存在"的公开侧兜底
   if (!path) notFound()
-  if (path.visibility !== 'public') redirect('/forbidden')
 
   const nodes = getPathNodes(path)
   const nextPaths = getNextPaths(path)

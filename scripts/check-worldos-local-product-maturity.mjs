@@ -29,10 +29,30 @@ function isPublicVisible(visibility) {
   return visibility === 'public' || visibility === 'semiPublic'
 }
 
+// 门面拆分后需要把主文件与子模块一起视作同一份"公开表层"证据
+const facadeGroupMap = {
+  'src/lib/public-world-surfaces.ts': [
+    'src/lib/public-world-surfaces.ts',
+    'src/lib/public-surfaces/types.ts',
+    'src/lib/public-surfaces/types-exploration.ts',
+    'src/lib/public-surfaces/exploration.ts',
+    'src/lib/public-surfaces/home-and-status.ts',
+    'src/lib/public-surfaces/archive-and-paths.ts',
+  ],
+}
+
+function readFacadeSource(file) {
+  const files = facadeGroupMap[file] ?? [file]
+  return files
+    .filter((item) => fileExists(item))
+    .map((item) => read(item))
+    .join('\n')
+}
+
 function requireSourceTokens(file, tokens) {
   assert(fileExists(file), `缺少成熟度源文件：${file}`)
   if (!fileExists(file)) return
-  const source = read(file)
+  const source = readFacadeSource(file)
   for (const token of tokens) {
     assert(source.includes(token), `${file} 缺少成熟度证据：${token}`)
   }
@@ -129,7 +149,7 @@ function main() {
     requireSourceTokens(file, tokens)
   }
 
-  const surfaceSource = read('src/lib/public-world-surfaces.ts')
+  const surfaceSource = readFacadeSource('src/lib/public-world-surfaces.ts')
   for (const token of ["id: 'path'", "id: 'atlas'", "id: 'archive'", "id: 'ask'"]) {
     assert(surfaceSource.includes(token), `首页入口缺少 ${token}`)
   }

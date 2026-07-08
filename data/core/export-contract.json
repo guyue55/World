@@ -25,6 +25,7 @@
       "description": "造物主源码与内容包。",
       "include": [
         "data/",
+        "data/core/world-manifest.json",
         "content/",
         "docs/",
         "src/",

@@ -1,5 +1,5 @@
 // 用途：检查public chinese copy
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const root = process.cwd()
@@ -11,6 +11,16 @@ const files = [
   'src/app/not-found.tsx',
   'src/app/loading.tsx',
 ]
+
+// 门面拆分：把 src/lib/public-surfaces/ 下的所有 ts 文件加入扫描
+const surfaceDir = resolve(root, 'src/lib/public-surfaces')
+if (existsSync(surfaceDir)) {
+  for (const entry of readdirSync(surfaceDir)) {
+    if (entry.endsWith('.ts')) {
+      files.push(`src/lib/public-surfaces/${entry}`)
+    }
+  }
+}
 
 const blockedVisibleCopy = [
   'DYNAMIC WORLD STATUS',

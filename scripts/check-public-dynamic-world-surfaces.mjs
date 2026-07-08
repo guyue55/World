@@ -1,5 +1,5 @@
 // 用途：检查public dynamic world surfaces
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const root = process.cwd()
@@ -108,7 +108,17 @@ for (const file of ['src/app/page.tsx', 'src/app/atlas/page.tsx', 'src/app/timel
 
 if (existsSync(resolve(root, boundaryRegistryFile))) {
   const boundaryRegistry = JSON.parse(readFileSync(resolve(root, boundaryRegistryFile), 'utf8'))
-  const surfaceSource = readFileSync(resolve(root, 'src/lib/public-world-surfaces.ts'), 'utf8')
+  // 门面拆分后，surface builder 实际定义在 src/lib/public-surfaces/*.ts，扫描时需要合并主文件与子模块
+  const facadeDir = resolve(root, 'src/lib/public-surfaces')
+  const facadeParts = [readFileSync(resolve(root, 'src/lib/public-world-surfaces.ts'), 'utf8')]
+  if (existsSync(facadeDir)) {
+    for (const entry of readdirSync(facadeDir)) {
+      if (entry.endsWith('.ts')) {
+        facadeParts.push(readFileSync(resolve(facadeDir, entry), 'utf8'))
+      }
+    }
+  }
+  const surfaceSource = facadeParts.join('\n')
 
   if (boundaryRegistry.name !== 'WorldOS 动态世界 surface 边界注册表 v1') failures.push('动态世界 surface 边界注册表名称不正确')
   if (boundaryRegistry.policies?.serverBuildsPublicSurfaces !== true) failures.push('动态 surface 必须声明由服务端构建')

@@ -5,6 +5,7 @@ import paths from '../data/domains/experience/paths.json'
 import nodes from '../data/domains/experience/nodes.json'
 import pathProductizationContract from '../data/domains/experience/path-productization-contract.json'
 import pathQualityGate from '../data/domains/experience/path-quality-gate.json'
+import { readPublicSurfacesText } from './lib/read-public-surfaces'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')
@@ -54,7 +55,7 @@ function main() {
     if (!page.includes(token)) errors.push(`path detail page missing ${token}`)
   })
 
-  const publicSurface = read('src/lib/public-world-surfaces.ts')
+  const publicSurface = readPublicSurfacesText()
   ;['formatPathAudience', 'exitActions', 'nodeCount: pathNodes.length'].forEach((token) => {
     if (!publicSurface.includes(token)) errors.push(`path public surface missing navigation contract: ${token}`)
   })

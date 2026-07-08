@@ -46,8 +46,7 @@ function main() {
   const modules = getFeatureModuleContract().featureModules
   modules.forEach((module) => {
     const hasExistingPath = module.paths.some((item) => {
-      const normalized = item.replace('*', '')
-      return fs.existsSync(path.join(process.cwd(), normalized))
+      return featurePathMatchesFiles(item)
     })
 
     if (!hasExistingPath) warnings.push(`feature module has no concrete path yet: ${module.id}`)
@@ -61,3 +60,23 @@ function main() {
 }
 
 main()
+
+// 通配符 (*) 路径若命中任何真实文件即视为已落地
+function featurePathMatchesFiles(pattern: string): boolean {
+  const cwd = process.cwd()
+  const abs = path.join(cwd, pattern)
+  if (!pattern.includes('*')) return fs.existsSync(abs)
+
+  const dir = path.dirname(abs)
+  if (!fs.existsSync(dir)) return false
+
+  const filenamePattern = path.basename(pattern)
+  const regex = new RegExp('^' + filenamePattern.split('*').map(escapeRegex).join('.*') + '$')
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+  return entries.some((entry) => regex.test(entry.name))
+}
+
+function escapeRegex(input: string): string {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, (m) => (m === '*' ? m : `\\${m}`))
+}

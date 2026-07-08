@@ -13,6 +13,19 @@ function read(file) {
   return fs.readFileSync(resolve(file), 'utf-8')
 }
 
+// 门面拆分后，public-world-surfaces 主文件已成为桶文件；
+// 该 helper 会同时读取主文件与 public-surfaces/ 子模块，返回拼接后的源码
+function readPublicSurfaces() {
+  const parts = [read('src/lib/public-world-surfaces.ts')]
+  const dir = resolve('src/lib/public-surfaces')
+  if (fs.existsSync(dir)) {
+    for (const entry of fs.readdirSync(dir)) {
+      if (entry.endsWith('.ts')) parts.push(read(`src/lib/public-surfaces/${entry}`))
+    }
+  }
+  return parts.join('\n')
+}
+
 function readJson(file) {
   return JSON.parse(read(file))
 }
@@ -134,7 +147,7 @@ function main() {
   const pathsLib = read('src/lib/paths.ts')
   includesEvery(pathsLib, ['getAllPaths', "path.visibility === 'public'"], 'paths lib')
 
-  const surfaceLib = read('src/lib/public-world-surfaces.ts')
+  const surfaceLib = readPublicSurfaces()
   includesEvery(
     surfaceLib,
     ['boundaryNotice', 'fallbackActions', '不调用实时 AI', '不读取私密内容', '不写入世界', '不替造物主决定公开或删除'],

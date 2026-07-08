@@ -7,6 +7,7 @@ import aiBoundaryPolicy from '../data/domains/ai/ai-boundary-policy.json'
 import lighthousePrompts from '../data/domains/ai/lighthouse-prompts.json'
 import lighthouseQualityGate from '../data/domains/ai/lighthouse-quality-gate.json'
 import lighthouseProductizationContract from '../data/domains/ai/lighthouse-productization-contract.json'
+import { readPublicSurfacesText } from './lib/read-public-surfaces'
 
 function read(file: string) {
   return fs.readFileSync(path.join(process.cwd(), file), 'utf-8')
@@ -56,7 +57,7 @@ function main() {
 
   const lighthouseLib = read('src/lib/lighthouse.ts')
   if (!lighthouseLib.includes('isPublicVisible(node.visibility)')) errors.push('lighthouse recommendations must use shared visibility helper')
-  const surface = read('src/lib/public-world-surfaces.ts')
+  const surface = readPublicSurfacesText()
   ;['boundaryNotice', 'fallbackActions'].forEach((token) => {
     if (!surface.includes(token)) errors.push(`lighthouse surface missing ${token}`)
   })

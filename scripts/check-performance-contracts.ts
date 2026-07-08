@@ -44,12 +44,20 @@ function main() {
     }
   })
 
-  const runtimeProvider = fs.readFileSync(path.join(process.cwd(), 'src/components/world/WorldRuntimeProvider.tsx'), 'utf-8')
+  // 运行时门面被拆分为 Provider + Atmosphere + SignalDock 三个协作文件，契约扫描需覆盖整个门面组
+  const runtimeProviderFiles = [
+    'src/components/world/WorldRuntimeProvider.tsx',
+    'src/components/world/RuntimeAtmosphere.tsx',
+    'src/components/world/RuntimeSignalDock.tsx',
+  ]
+  const runtimeProvider = runtimeProviderFiles
+    .map((rel) => fs.readFileSync(path.join(process.cwd(), rel), 'utf-8'))
+    .join('\n')
   ;['compactMotion', '(max-width: 767px)', 'activeProjectionLines', 'activeRuntimeNodes'].forEach((token) => {
-    if (!runtimeProvider.includes(token)) errors.push(`WorldRuntimeProvider missing mobile motion budget guard: ${token}`)
+    if (!runtimeProvider.includes(token)) errors.push(`WorldRuntime 门面缺少移动端 motion budget 守卫: ${token}`)
   })
   if (!runtimeProvider.includes('!runtime.reducedMotion && !runtime.compactMotion')) {
-    errors.push('RuntimeAtmosphere must disable background animation when compactMotion is active')
+    errors.push('RuntimeAtmosphere 必须在 compactMotion 激活时关闭背景动画')
   }
 
   if (errors.length > 0) {

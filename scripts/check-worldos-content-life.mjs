@@ -84,12 +84,23 @@ for (const event of events.filter((event) => event.visibility === 'public' || !e
 
 for (const target of contract.publicAbsorptionTargets ?? []) {
   const token = target === 'node' ? 'NodeRelationRail' : target
+  // 门面拆分后，需要同时扫描 public-world-surfaces 主文件与 public-surfaces/ 子模块
+  const surfaceDir = 'src/lib/public-surfaces'
+  const surfaceDirPart = fs.existsSync(rel(surfaceDir))
+    ? fs
+        .readdirSync(rel(surfaceDir))
+        .filter((entry) => entry.endsWith('.ts'))
+        .map((entry) => fs.readFileSync(rel(`${surfaceDir}/${entry}`), 'utf-8'))
+    : []
   const sources = [
     'src/lib/public-world-objects.ts',
     'src/lib/public-world-surfaces.ts',
     'src/app/node/[slug]/page.tsx',
     'src/app/paths/[id]/page.tsx',
-  ].map((file) => fs.existsSync(rel(file)) ? fs.readFileSync(rel(file), 'utf-8') : '').join('\n')
+  ]
+    .map((file) => (fs.existsSync(rel(file)) ? fs.readFileSync(rel(file), 'utf-8') : ''))
+    .concat(surfaceDirPart)
+    .join('\n')
   if (!sources.includes(token)) failures.push(`公开吸收目标缺少代码证据：${target}`)
 }
 

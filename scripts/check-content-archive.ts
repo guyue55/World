@@ -6,6 +6,7 @@ import areas from '../data/domains/experience/areas.json'
 import paths from '../data/domains/experience/paths.json'
 import archiveProductizationContract from '../data/domains/archive/archive-productization-contract.json'
 import contentInventoryRules from '../data/domains/content/content-inventory-rules.json'
+import { readPublicSurfacesText } from './lib/read-public-surfaces'
 
 function main() {
   const errors: string[] = []
@@ -51,7 +52,7 @@ function main() {
   const emptyState = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveEmptyState.tsx'), 'utf-8')
   if (!emptyState.includes('areaName')) errors.push('archive empty state must render readable area names')
 
-  const archiveSurface = fs.readFileSync(path.join(process.cwd(), 'src/lib/public-world-surfaces.ts'), 'utf-8')
+  const archiveSurface = readPublicSurfacesText()
   if (!archiveSurface.includes('rediscoveryActions')) errors.push('archive public surface missing rediscovery actions')
   const archiveGuide = fs.readFileSync(path.join(process.cwd(), 'src/components/archive/ArchiveDynamicGuide.tsx'), 'utf-8')
   if (!archiveGuide.includes('surface.rediscoveryActions.map')) errors.push('archive guide must render rediscovery actions')
