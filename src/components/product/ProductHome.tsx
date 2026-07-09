@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import { Archive, ArrowRight, Compass, Route, Sparkles, Waves } from 'lucide-react'
 import type { Area, Node, Path, WorldEvent } from '@/lib/types'
-import type { HomeDynamicWorldSurface } from '@/lib/public-world-surfaces'
+import type { HomeDynamicWorldSurface, HomeEntrySignal } from '@/lib/public-world-surfaces'
 import { ProductWorldCompass } from '@/components/product/ProductWorldCompass'
 import { ProductWorldBoundaries } from '@/components/product/ProductWorldBoundaries'
 import { ProductDynamicWorldGuide } from '@/components/product/ProductDynamicWorldGuide'
@@ -19,10 +20,30 @@ const productPrinciples = [
   'AI 灯塔只做导览和建议，不修改世界',
 ]
 
-const entryCardClass = {
-  primary: 'group relative overflow-hidden rounded-[2rem] bg-night p-6 text-paper transition hover:-translate-y-1',
-  quiet: 'group relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white/80 p-6 text-ink transition hover:-translate-y-1 hover:bg-white',
-} as const
+const entryIcons: Record<HomeEntrySignal['id'], typeof Route> = {
+  path: Route,
+  atlas: Compass,
+  archive: Archive,
+  ask: Sparkles,
+}
+
+const gatewayLayers = [
+  {
+    label: '前景入口',
+    title: '先选择方向',
+    body: '第一次来不需要理解全部结构，先从一条短路径、地图、档案或灯塔进入。',
+  },
+  {
+    label: '中景航道',
+    title: '沿公开路径移动',
+    body: '每个入口都能返回地图，路径、时间河和档案馆共享同一份公开事实源。',
+  },
+  {
+    label: '远景状态',
+    title: '世界正在低光运行',
+    body: '动效、AI 和感官层都只服务导览；私密层不会进入公开索引。',
+  },
+]
 
 export function ProductHome({
   areas,
@@ -52,9 +73,9 @@ export function ProductHome({
       <SceneWorldPortal
         scene="gateway"
         eyebrow="古月浮屿 · 公开世界入口"
-        title="先抵达原点，再进入这片星河。"
-        description="这里不是文章列表的封面，而是一座公开世界的入口。你可以从星图、时间河、档案馆或第一条路径进入，逐步理解技术、生活、项目、记忆与 AI 如何相互连接。"
-        objects={['书桌', '罗盘', '星图', '灯塔', '路径', '档案']}
+        title="古月浮屿，正在打开的个人世界。"
+        description="你抵达的是一座公开前厅：前方有星图、路径、时间河、档案馆和低光灯塔。先选择一个方向，世界会把技术、生活、项目、记忆与 AI 的线索慢慢展开。"
+        objects={['入口', '地图', '路径', '时间河', '档案馆', '灯塔']}
         primaryAction={{
           href: dynamicWorld.primaryHref,
           label: primaryEntry?.label ?? '进入世界地图',
@@ -70,40 +91,77 @@ export function ProductHome({
           { label: '推荐起点', value: primaryEntry?.label ?? '地图', note: '先看地图，再进入深处' },
         ]}
       >
-        <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
-          <FirstVisitRitual />
-          <WorldPulseConstellation surface={dynamicWorld} />
-        </div>
-      </SceneWorldPortal>
+        <div className="grid gap-4 xl:grid-cols-[0.92fr_1.08fr]">
+          <div className="grid gap-4">
+            <FirstVisitRitual />
 
-      <section data-gsap-reveal className="rounded-[2.5rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 xl:p-10">
-        <p className="text-xs font-semibold tracking-[0.35em] text-moss">新手入口</p>
-        <h2 className="mt-3 text-3xl font-semibold text-ink md:text-4xl">{dynamicWorld.entryTitle}</h2>
-        <p className="mt-4 max-w-2xl text-lg text-ink/70">
-          {dynamicWorld.entryDescription}
-        </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {dynamicWorld.entryPoints.map((entry) => (
-            <Link key={entry.id} href={entry.href} className={entryCardClass[entry.tone]}>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,164,109,0.15),transparent_8rem)]" />
-              <div className="relative">
-                <p className={entry.tone === 'primary' ? 'text-xs font-semibold tracking-[0.2em] text-gold' : 'text-xs font-semibold tracking-[0.2em] text-moss'}>
-                  {entry.label}
-                </p>
-                <h3 className={entry.tone === 'primary' ? 'mt-3 text-xl font-semibold text-paper group-hover:text-gold' : 'mt-3 text-xl font-semibold text-ink group-hover:text-moss'}>
-                  {entry.title}
-                </h3>
-                <p className={entry.tone === 'primary' ? 'mt-3 line-clamp-3 text-sm leading-6 text-paper/70' : 'mt-3 line-clamp-3 text-sm leading-6 text-ink/70'}>
-                  {entry.description}
-                </p>
-                <p className={entry.tone === 'primary' ? 'mt-4 truncate text-xs font-medium text-paper/55' : 'mt-4 truncate text-xs font-medium text-moss'}>
-                  {entry.note}
+            <div className="overflow-hidden rounded-[1.35rem] border border-paper/12 bg-paper/10 p-4 backdrop-blur-xl">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold tracking-[0.3em] text-gold">新手入口</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-paper">{dynamicWorld.entryTitle}</h2>
+                  <p className="mt-2 max-w-xl text-sm leading-6 text-paper/64">{dynamicWorld.entryDescription}</p>
+                </div>
+                <p className="rounded-full border border-paper/12 bg-paper/10 px-4 py-2 text-xs font-semibold text-paper/58">
+                  入口可返回地图
                 </p>
               </div>
-            </Link>
-          ))}
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {dynamicWorld.entryPoints.map((entry) => {
+                  const Icon = entryIcons[entry.id]
+                  const isPrimary = entry.href === dynamicWorld.primaryHref
+
+                  return (
+                    <Link
+                      key={entry.id}
+                      href={entry.href}
+                      className={isPrimary
+                        ? 'group relative overflow-hidden rounded-[1.15rem] border border-gold/40 bg-gold/18 p-4 text-paper transition motion-safe:hover:-translate-y-0.5 hover:bg-gold/24 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/80'
+                        : 'group relative overflow-hidden rounded-[1.15rem] border border-paper/12 bg-paper/8 p-4 text-paper transition motion-safe:hover:-translate-y-0.5 hover:bg-paper/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper/70'}
+                    >
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(247,241,230,0.13),transparent_7rem)]" />
+                      <div className="relative flex min-w-0 gap-3">
+                        <span className={isPrimary
+                          ? 'grid h-10 w-10 shrink-0 place-items-center rounded-[0.95rem] bg-gold text-night'
+                          : 'grid h-10 w-10 shrink-0 place-items-center rounded-[0.95rem] bg-paper/12 text-gold'}
+                        >
+                          <Icon className="h-4 w-4" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block truncate text-xs font-semibold tracking-[0.18em] text-gold">{entry.label}</span>
+                          <span className="mt-2 block truncate text-base font-semibold">{entry.title}</span>
+                          <span className="mt-2 block line-clamp-2 text-sm leading-6 text-paper/62">{entry.description}</span>
+                          <span className="mt-3 inline-flex max-w-full items-center gap-2 text-xs font-semibold text-paper/52">
+                            <span className="truncate">{entry.note}</span>
+                            <ArrowRight className="h-3.5 w-3.5 shrink-0 opacity-70 transition group-hover:translate-x-0.5" />
+                          </span>
+                        </span>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            <WorldPulseConstellation surface={dynamicWorld} />
+            <div className="grid gap-3 md:grid-cols-3">
+              {gatewayLayers.map((layer, index) => (
+                <div key={layer.label} className="rounded-[1.15rem] border border-paper/12 bg-paper/8 p-4 backdrop-blur">
+                  <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.18em] text-gold">
+                    <span className="grid h-6 w-6 place-items-center rounded-full bg-paper/12 text-[11px] text-paper">{index + 1}</span>
+                    {layer.label}
+                  </p>
+                  <h3 className="mt-3 text-base font-semibold text-paper">{layer.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-paper/58">{layer.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      </section>
+      </SceneWorldPortal>
 
       <ProductWorldCompass areas={areas} nodes={publicNodes} paths={paths} />
 
