@@ -4,6 +4,9 @@
 > 本文档用于解决一个问题：只设置一次 Goal，让 Codex 持续完成 M8-M18 的所有阶段、任务、检查、修复和验收，直到 WorldOS 达到本地 / LAN 可运行的真格世界目标。它不是新的产品目标，而是 Goal 模式的总控提示词与执行协议。
 
 > [!IMPORTANT]
+> 2026-07-10 更新：本文档已被终局版 Goal 提示词取代。新的唯一推荐入口是 `docs/00-overview/worldos-ultimate-one-shot-goal-prompt-2026-07-10.md`。旧 M8-M18 Objective 只能作为历史参考，不应再用于新的 Goal。
+
+> [!IMPORTANT]
 > 2026-07-10 追加：后续 Goal 必须先读取真实视觉审查后的纠偏文档。不得再用“脚本通过”“统一壳存在”“页面无白屏”宣称世界体验完成。
 
 > [!IMPORTANT]

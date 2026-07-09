@@ -36,6 +36,7 @@
 
 | 文档 | 何时使用 |
 | --- | --- |
+| `docs/00-overview/worldos-ultimate-one-shot-goal-prompt-2026-07-10.md` | 终局版一次性 Goal 提示词，覆盖 M8-M30 |
 | `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md` | 记录真实视觉审查、首轮修复和仍未达标事实 |
 | `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md` | 区分舞台壳与真格世界主体 |
 | `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md` | 2026-07-10 后的世界体验上位规范 |

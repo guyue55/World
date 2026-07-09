@@ -209,6 +209,7 @@
 
 | 文档 | 产物路径 | 作用 |
 | --- | --- | --- |
+| 终局版一次性 Goal 提示词 | `docs/00-overview/worldos-ultimate-one-shot-goal-prompt-2026-07-10.md` | 用于 Goal 模式的一次性输入，覆盖 M8-M30 |
 | 终局体验宪章 | `docs/00-overview/worldos-ultimate-experience-charter-2026-07-10.md` | 定义独立空间、真实穿梭、内容生命体、陪伴型灯塔、统一世界观、长期回访、作者共生、真实可信八个体验支柱 |
 | 终局世界高目标路线图 | `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md` | 定义 7.5/10、8/10、8.5/10、9/10、10/10 的真实分层和 M19-M30 阶段 |
 | 终局目标所需文档集 | `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` | 列出 M19-M30 的 13 份高目标细文档、1 份全面执行总计划和进入条件 |
@@ -224,17 +225,18 @@
 2. `worldos-true-world-realization-gap-analysis-2026-07-10.md`
 3. `worldos-true-world-global-standard-2026-07-10.md`
 4. `worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`
-5. `worldos-ultimate-experience-charter-2026-07-10.md`
-6. `worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
-7. `worldos-ultimate-required-documentation-set-2026-07-10.md`
-8. `worldos-ultimate-execution-plan-2026-07-10.md`
-9. `worldos-ultimate-documentation-sufficiency-audit-2026-07-10.md`
-10. `worldos-m19-m30-comprehensive-execution-master-plan-2026-07-10.md`
-11. `worldos-high-goal-readiness-audit-2026-07-09.md`
-12. `worldos-experience-governance-master-control-2026-07-09.md`
-13. `worldos-development-documentation-master-list-2026-07-09.md`
-14. `worldos-quality-control-system-2026-07-09.md`
-15. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
+5. `worldos-ultimate-one-shot-goal-prompt-2026-07-10.md`
+6. `worldos-ultimate-experience-charter-2026-07-10.md`
+7. `worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
+8. `worldos-ultimate-required-documentation-set-2026-07-10.md`
+9. `worldos-ultimate-execution-plan-2026-07-10.md`
+10. `worldos-ultimate-documentation-sufficiency-audit-2026-07-10.md`
+11. `worldos-m19-m30-comprehensive-execution-master-plan-2026-07-10.md`
+12. `worldos-high-goal-readiness-audit-2026-07-09.md`
+13. `worldos-experience-governance-master-control-2026-07-09.md`
+14. `worldos-development-documentation-master-list-2026-07-09.md`
+15. `worldos-quality-control-system-2026-07-09.md`
+16. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ### 7.2 做任意场景前
 
