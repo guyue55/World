@@ -14,6 +14,7 @@ import { getJourneyMemorySummary } from '@/lib/journey-memory'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
 import { getScenePersonalitySummary } from '@/lib/scene-personality'
 import { getSceneTransitionSummary } from '@/lib/scene-transition'
+import { getWorldRuntimeStateSummary } from '@/lib/world-runtime-state'
 import {
   AiLowLightStatusPanel,
   DynamicWorldStatusBoard,
@@ -66,6 +67,7 @@ export default function StatusPage() {
   const sceneRuntimeSummary = getPublicSceneSummary()
   const scenePersonalitySummary = getScenePersonalitySummary()
   const sceneTransitionSummary = getSceneTransitionSummary()
+  const runtimeStateSummary = getWorldRuntimeStateSummary()
   const dynamicWorldStatus = buildDynamicWorldStatusSurface({
     areas,
     nodes: publicNodes,
@@ -126,6 +128,7 @@ export default function StatusPage() {
         journeyMemorySummary={journeyMemorySummary}
         personalitySummary={scenePersonalitySummary}
         transitionSummary={sceneTransitionSummary}
+        runtimeStateSummary={runtimeStateSummary}
       />
 
       <section className="grid gap-5 lg:grid-cols-3">

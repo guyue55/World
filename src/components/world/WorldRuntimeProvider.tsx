@@ -12,6 +12,14 @@ import {
   mergeJourneyHistory,
   type JourneyMemoryEntry,
 } from '@/lib/journey-memory'
+import {
+  buildWorldRuntimeState,
+  type WorldMotionMode,
+  type WorldRuntimeState,
+  type WorldSceneState,
+  type WorldSensoryMode,
+  type WorldTransitionState,
+} from '@/lib/world-runtime-state'
 
 export type DayPeriod = 'dawn' | 'day' | 'dusk' | 'night'
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
@@ -22,6 +30,11 @@ type WorldRuntime = {
   season: Season
   aiStatus: AiRuntimeStatus
   currentScene: string
+  sceneState: WorldSceneState
+  transitionState: WorldTransitionState
+  motionMode: WorldMotionMode
+  sensoryMode: WorldSensoryMode
+  sceneRuntime: WorldRuntimeState
   reducedMotion: boolean
   compactMotion: boolean
   currentJourney: JourneyMemoryEntry | null
@@ -104,12 +117,14 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const [aiStatus] = useState<AiRuntimeStatus>('low-light')
   const [reducedMotion, setReducedMotion] = useState(false)
   const [compactMotion, setCompactMotion] = useState(false)
+  const [hydrated, setHydrated] = useState(false)
   const [currentJourney, setCurrentJourney] = useState<JourneyMemoryEntry | null>(null)
   const [lastJourney, setLastJourney] = useState<JourneyMemoryEntry | null>(null)
   const [journeyHistory, setJourneyHistory] = useState<JourneyMemoryEntry[]>([])
   const [visitedCount, setVisitedCount] = useState(0)
 
   useEffect(() => {
+    setHydrated(true)
     const now = new Date()
     setDayPeriod(getDayPeriod(now.getHours()))
     setSeason(getSeason(now.getMonth()))
@@ -156,11 +171,30 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     setJourneyHistory(nextHistory)
   }, [pathname])
 
+  const sceneRuntime = useMemo(
+    () => buildWorldRuntimeState({
+      pathname: pathname ?? '/',
+      previousPathname: lastJourney?.path ?? null,
+      visitedCount,
+      hydrated,
+      reducedMotion,
+      compactMotion,
+      aiStatus,
+      networkMode: 'local',
+    }),
+    [aiStatus, compactMotion, hydrated, lastJourney?.path, pathname, reducedMotion, visitedCount]
+  )
+
   const value = useMemo<WorldRuntime>(() => ({
     dayPeriod,
     season,
     aiStatus,
-    currentScene: currentJourney?.sceneId ?? 'gateway',
+    currentScene: sceneRuntime.scene.id,
+    sceneState: sceneRuntime.sceneState,
+    transitionState: sceneRuntime.transitionState,
+    motionMode: sceneRuntime.motionMode,
+    sensoryMode: sceneRuntime.sensoryMode,
+    sceneRuntime,
     reducedMotion,
     compactMotion,
     currentJourney,
@@ -168,7 +202,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     journeyHistory,
     visitedCount,
     setReducedMotion,
-  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, reducedMotion, season, visitedCount])
+  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, reducedMotion, sceneRuntime, season, visitedCount])
 
   return (
     <WorldRuntimeContext.Provider value={value}>

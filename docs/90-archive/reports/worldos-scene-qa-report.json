@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-09T10:02:57.321Z",
+  "generatedAt": "2026-07-09T12:26:21.564Z",
   "source": "scripts/write-worldos-scene-qa-report.mjs",
   "checklist": "data/domains/experience/scene-qa-checklist.json",
   "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-  "lanGeneratedAt": "2026-07-09T10:02:52.137Z",
+  "lanGeneratedAt": "2026-07-09T12:26:16.494Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -44,7 +44,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 927478,
+        "size": 927660,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
       },
       "sceneQa": {
@@ -108,7 +108,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 802350,
+        "size": 802409,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
       },
       "sceneQa": {
@@ -140,7 +140,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 848619,
+        "size": 848623,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png"
       },
       "sceneQa": {
@@ -172,7 +172,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 863943,
+        "size": 863985,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
       },
       "sceneQa": {
@@ -204,7 +204,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 908287,
+        "size": 908288,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
       },
       "sceneQa": {
@@ -236,7 +236,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 842434,
+        "size": 842371,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
       },
       "sceneQa": {
@@ -268,7 +268,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 896944,
+        "size": 896943,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png"
       },
       "sceneQa": {
@@ -300,7 +300,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 848102,
+        "size": 848133,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
       },
       "sceneQa": {
@@ -332,7 +332,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 906759,
+        "size": 906764,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png"
       },
       "sceneQa": {
@@ -364,7 +364,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 721455,
+        "size": 721352,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
       },
       "sceneQa": {
@@ -396,7 +396,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 612756,
+        "size": 612622,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png"
       },
       "sceneQa": {
@@ -428,7 +428,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 770289,
+        "size": 769596,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -460,7 +460,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 683774,
+        "size": 683740,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -492,7 +492,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 830195,
+        "size": 830208,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
       },
       "sceneQa": {
@@ -524,7 +524,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 874997,
+        "size": 874984,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
       },
       "sceneQa": {
@@ -547,7 +547,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 6070,
+      "textLength": 6622,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -556,7 +556,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 814600,
+        "size": 815284,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
       },
       "sceneQa": {
@@ -579,7 +579,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 6046,
+      "textLength": 6598,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -588,7 +588,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 910140,
+        "size": 910137,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png"
       },
       "sceneQa": {

@@ -32,7 +32,7 @@ export function RuntimeAtmosphere() {
     }),
     [runtime.aiStatus, runtime.currentScene, runtime.dayPeriod, runtime.season]
   )
-  const shouldMove = !runtime.reducedMotion && !runtime.compactMotion
+  const shouldMove = runtime.motionMode === 'full' && runtime.sensoryMode === 'full'
   const activeProjectionLines = runtime.compactMotion ? projectionLines.slice(0, 2) : projectionLines
   const runtimeNodeLabels = [
     ...environment.objectLabels,
@@ -49,6 +49,8 @@ export function RuntimeAtmosphere() {
       data-season={environment.season}
       data-current-scene={environment.sceneId}
       data-ai-status={environment.aiStatus}
+      data-motion-mode={runtime.motionMode}
+      data-sensory-mode={runtime.sensoryMode}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
       className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
     >

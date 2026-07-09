@@ -4,6 +4,7 @@ import type { JourneyMemorySummary } from '@/lib/journey-memory'
 import type { SceneRuntimeSummary } from '@/lib/scene-runtime'
 import type { ScenePersonalitySummary } from '@/lib/scene-personality'
 import type { SceneTransitionSummary } from '@/lib/scene-transition'
+import type { WorldRuntimeStateSummary } from '@/lib/world-runtime-state'
 
 export function SceneRuntimeStatusPanel({
   summary,
@@ -11,12 +12,14 @@ export function SceneRuntimeStatusPanel({
   journeyMemorySummary,
   personalitySummary,
   transitionSummary,
+  runtimeStateSummary,
 }: {
   summary: SceneRuntimeSummary
   ambientEnvironmentSummary?: AmbientEnvironmentSummary
   journeyMemorySummary?: JourneyMemorySummary
   personalitySummary?: ScenePersonalitySummary
   transitionSummary?: SceneTransitionSummary
+  runtimeStateSummary?: WorldRuntimeStateSummary
 }) {
   return (
     <section className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
@@ -71,6 +74,53 @@ export function SceneRuntimeStatusPanel({
           <p className="mt-1 text-sm text-ink/58">reduced-motion</p>
         </div>
       </div>
+
+      {runtimeStateSummary && (
+        <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">World Runtime State</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">M1 场景运行底座已收束状态契约</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
+                sceneId、scene state、transition state、fallback state、motion、sensory、permission 和 network 由同一套纯运行时函数派生，后续 Home / Atlas / Node / Paths / Timeline / Archive / Lighthouse 直接复用。
+              </p>
+            </div>
+            <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
+              <p className="text-xs font-semibold tracking-[0.22em] text-gold">STATES</p>
+              <p className="mt-2 text-2xl font-semibold">{runtimeStateSummary.stateCount}/{runtimeStateSummary.transitionStateCount}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-5">
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">Motion</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{runtimeStateSummary.motionModes.join(' / ')}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">Sensory</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{runtimeStateSummary.sensoryModes.join(' / ')}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">Permission</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{runtimeStateSummary.permissionModes.join(' / ')}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">Network</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{runtimeStateSummary.networkModes.join(' / ')}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">AI</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{runtimeStateSummary.aiModes.join(' / ')}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-2 md:grid-cols-2">
+            {runtimeStateSummary.contracts.map((contract) => (
+              <p key={contract} className="rounded-[0.9rem] bg-white/65 px-4 py-3 text-sm leading-6 text-ink/62">
+                {contract}
+              </p>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="mt-6 grid gap-4 md:grid-cols-3">
         {summary.scenes.slice(0, 9).map((scene) => (

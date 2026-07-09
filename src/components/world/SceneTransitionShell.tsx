@@ -1,13 +1,18 @@
 'use client'
 
-import { useEffect, useMemo, useRef, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { getSceneTransitionForPathnames, type SceneTransitionMotion } from '@/lib/scene-transition'
+import type { WorldTransitionState } from '@/lib/world-runtime-state'
 import { useWorldRuntime } from './WorldRuntimeProvider'
 
 function varsForMotion(motion: SceneTransitionMotion, compactMotion: boolean) {
   return compactMotion ? motion.compactFrom : motion.from
+}
+
+function shouldReduceSceneMotion(runtime: ReturnType<typeof useWorldRuntime>) {
+  return runtime.motionMode !== 'full'
 }
 
 function showContentStatically(content: HTMLElement) {
@@ -22,6 +27,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
   const contentRef = useRef<HTMLDivElement>(null)
   const hasMountedRef = useRef(false)
   const runtime = useWorldRuntime()
+  const [shellTransitionState, setShellTransitionState] = useState<WorldTransitionState>(runtime.transitionState)
 
   const transitionRuntime = useMemo(
     () => getSceneTransitionForPathnames(previousPathnameRef.current, pathname),
@@ -37,17 +43,20 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
 
     if (!hasMountedRef.current) {
       hasMountedRef.current = true
+      setShellTransitionState(runtime.transitionState)
       showContentStatically(content)
       previousPathnameRef.current = pathname
       return
     }
 
-    if (runtime.reducedMotion) {
+    if (shouldReduceSceneMotion(runtime)) {
+      setShellTransitionState('reduced')
       showContentStatically(content)
       previousPathnameRef.current = pathname
       return
     }
 
+    setShellTransitionState('arriving')
     void import('gsap').then(({ gsap }) => {
       if (cancelled) return
 
@@ -62,8 +71,9 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
           const reduceMotion = Boolean(context.conditions?.reduceMotion)
           const compactMotion = Boolean(context.conditions?.compactMotion) || runtime.compactMotion
 
-          if (reduceMotion) {
+          if (reduceMotion || runtime.motionMode !== 'full') {
             gsap.set(content, { ...transitionRuntime.motion.reducedMotion, clearProps: 'transform,visibility' })
+            setShellTransitionState('reduced')
             return
           }
 
@@ -74,6 +84,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
               ...transitionRuntime.motion.to,
               overwrite: 'auto',
               clearProps: 'transform,visibility',
+              onComplete: () => setShellTransitionState('settled'),
             }
           )
         }
@@ -85,7 +96,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
       cancelled = true
       cleanup?.()
     }
-  }, [pathname, runtime.compactMotion, runtime.reducedMotion, transitionRuntime])
+  }, [pathname, runtime.compactMotion, runtime.motionMode, runtime.reducedMotion, runtime.transitionState, transitionRuntime])
 
   return (
     <div
@@ -94,6 +105,12 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
       data-scene-motion={transitionRuntime.motion.id}
       data-scene-from={transitionRuntime.fromScene.id}
       data-scene-to={transitionRuntime.toScene.id}
+      data-scene-state={runtime.sceneState}
+      data-transition-state={shellTransitionState}
+      data-motion-mode={runtime.motionMode}
+      data-sensory-mode={runtime.sensoryMode}
+      data-permission-mode={runtime.sceneRuntime.permissionMode}
+      data-network-mode={runtime.sceneRuntime.networkMode}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
     >
       {shouldDescribeTransition ? (
@@ -103,7 +120,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
           className="sr-only"
         >
           从{transitionRuntime.fromScene.title}到{transitionRuntime.toScene.title}：
-          {runtime.reducedMotion
+          {runtime.motionMode !== 'full'
             ? transitionRuntime.transition.reducedMotionFallback
             : transitionRuntime.transition.intent}
         </p>
@@ -113,10 +130,12 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
           key={pathname}
           ref={contentRef}
           data-testid="scene-transition-content"
+          data-current-scene={runtime.currentScene}
+          data-scene-fallback={runtime.sceneRuntime.fallbackState.sceneFallback ? 'true' : 'false'}
           initial={false}
           animate={{ opacity: 1 }}
-          exit={runtime.reducedMotion ? { opacity: 1 } : { opacity: 0.98 }}
-          transition={{ duration: runtime.reducedMotion ? 0 : 0.12, ease: 'easeOut' }}
+          exit={runtime.motionMode !== 'full' ? { opacity: 1 } : { opacity: 0.98 }}
+          transition={{ duration: runtime.motionMode !== 'full' ? 0 : 0.12, ease: 'easeOut' }}
         >
           {children}
         </motion.div>
