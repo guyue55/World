@@ -19,6 +19,8 @@
 > 2026-07-09 追加：M0-M7 的完成范围是“运行底座与可信验收”。若目标是摆脱骨架感并落地真格世界体验，后续必须从 `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md` 和 `docs/00-overview/worldos-m8-m12-goal-mode-prompts-2026-07-09.md` 进入。
 >
 > 2026-07-09 再追加：如果目标包含所有场景、切换、特效、氛围、音频 / 音乐、灯塔 AI、内容生命、性能与长期运行，那么还必须读取 `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`、`docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md` 和 `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`。
+>
+> 2026-07-10 追加：真实视觉审查确认，现有页面仍存在“舞台壳强于场景主体”的问题。后续开发前必须读取 `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md`、`docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`、`docs/00-overview/worldos-true-world-global-standard-2026-07-10.md` 和 `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`。
 
 ## 2. 需求逐项分析
 
@@ -188,15 +190,30 @@
 | 一次性 Goal 总提示词 | `docs/00-overview/worldos-one-shot-goal-master-prompt-2026-07-09.md` | 只设置一次 Goal 时使用的唯一总控提示词 |
 | 一次性 Goal 执行账本 | `docs/00-overview/worldos-one-shot-goal-execution-ledger-2026-07-09.md` | 长任务恢复、阶段状态、失败修复和最终验收记录 |
 
+## 6.3 2026-07-10 真实视觉审查后新增文档
+
+这些文档用于修正“脚本通过但页面仍像骨架”的问题。它们不替代 M8-M18，而是作为 M8-M18 的上位纠偏入口。
+
+| 文档 | 产物路径 | 作用 |
+| --- | --- | --- |
+| 真实视觉审查记录 | `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md` | 记录真实截图审查、首轮修复、仍未达标事实和新完成定义 |
+| 真格世界实现差距分析 | `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md` | 说明当前“舞台壳”与目标“场景主体可运行世界”的差距 |
+| 真格世界全局规范 | `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md` | 定义不再像骨架的硬标准、场景主体规范、技术栈和质量门禁 |
+| 真格世界调研、文档与执行计划 | `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md` | 汇总联网调研、文档使用清单、阶段计划和质量计划 |
+
 ## 7. 开发时文档阅读顺序
 
 ### 7.1 每个开发阶段开始前
 
-1. `worldos-high-goal-readiness-audit-2026-07-09.md`
-2. `worldos-experience-governance-master-control-2026-07-09.md`
-3. `worldos-development-documentation-master-list-2026-07-09.md`
-4. `worldos-quality-control-system-2026-07-09.md`
-5. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
+1. `worldos-real-visual-audit-record-2026-07-10.md`
+2. `worldos-true-world-realization-gap-analysis-2026-07-10.md`
+3. `worldos-true-world-global-standard-2026-07-10.md`
+4. `worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`
+5. `worldos-high-goal-readiness-audit-2026-07-09.md`
+6. `worldos-experience-governance-master-control-2026-07-09.md`
+7. `worldos-development-documentation-master-list-2026-07-09.md`
+8. `worldos-quality-control-system-2026-07-09.md`
+9. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ### 7.2 做任意场景前
 

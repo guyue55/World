@@ -3,6 +3,9 @@
 > [!IMPORTANT]
 > 本文档用于解决一个问题：只设置一次 Goal，让 Codex 持续完成 M8-M18 的所有阶段、任务、检查、修复和验收，直到 WorldOS 达到本地 / LAN 可运行的真格世界目标。它不是新的产品目标，而是 Goal 模式的总控提示词与执行协议。
 
+> [!IMPORTANT]
+> 2026-07-10 追加：后续 Goal 必须先读取真实视觉审查后的纠偏文档。不得再用“脚本通过”“统一壳存在”“页面无白屏”宣称世界体验完成。
+
 ## 1. 机制判断
 
 结论：可以只设置一次 Goal，但不能把所有细节塞进 `/goal` 输入框。正确做法是：
@@ -59,15 +62,19 @@
 
 开始前必须阅读：
 
-1. `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`
-2. `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md`
-3. `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
-4. `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
-5. `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
-6. `docs/00-overview/worldos-quality-control-system-2026-07-09.md`
-7. `docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md`
-8. `docs/00-overview/worldos-performance-asset-budget-2026-07-09.md`
-9. `docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md`
+1. `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md`
+2. `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`
+3. `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md`
+4. `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`
+5. `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`
+6. `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md`
+7. `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
+8. `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
+9. `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
+10. `docs/00-overview/worldos-quality-control-system-2026-07-09.md`
+11. `docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md`
+12. `docs/00-overview/worldos-performance-asset-budget-2026-07-09.md`
+13. `docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ## 5. 执行顺序
 
@@ -99,7 +106,7 @@
 6. 运行 `npm run check:mainline`。
 7. 运行 `npm run release:local-rc`。
 8. 使用浏览器进行 localhost / LAN、desktop / mobile、reduced-motion / reduced-sensory 验收。
-9. 按人工体验量表判断是否仍像骨架。
+9. 生成真实截图，必要时录屏，并按人工体验量表判断是否仍像骨架。
 10. 失败则修复并重跑，不得口头跳过。
 11. 通过后中文 commit，格式 `feat(world): 中文说明`。
 12. 更新执行账本，再进入下一阶段。
@@ -162,4 +169,3 @@ Goal 运行期间必须维护：
 - 新依赖、新资产、新 AI 能力都有理由、预算、降级和证据。
 - 所有阶段已中文 commit。
 - 执行账本完整记录最终结果。
-

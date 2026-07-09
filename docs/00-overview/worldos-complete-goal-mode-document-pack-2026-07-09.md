@@ -6,6 +6,9 @@
 > [!NOTE]
 > 如果只想设置一次 Goal，不要分别使用 M8-M12 和 M13-M18 的分批 Prompt。请直接使用 `docs/00-overview/worldos-one-shot-goal-master-prompt-2026-07-09.md` 中的“一次性 Goal Objective”。
 
+> [!IMPORTANT]
+> 2026-07-10 追加：真实视觉审查确认“底座完成”和“真格世界体验完成”不是一回事。进入 M8-M18 前必须先读 `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md`、`docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`、`docs/00-overview/worldos-true-world-global-standard-2026-07-10.md`、`docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`。
+
 ## 1. 当前分层
 
 | 范围 | 状态 | 说明 |
@@ -17,18 +20,23 @@
 ## 2. Goal 模式启动顺序
 
 1. 先读本文档。
-2. 再读 `worldos-full-goal-document-gap-analysis-2026-07-09.md`。
-3. 再读 `worldos-complete-goal-document-readiness-review-2026-07-09.md`。
-4. 若只设置一次 Goal，读 `worldos-one-shot-goal-master-prompt-2026-07-09.md` 并维护 `worldos-one-shot-goal-execution-ledger-2026-07-09.md`。
-5. 若做体验落地，读 M8-M12 总计划和对应阶段计划。
-6. 若做运行闭环，读 M13-M18 总计划和对应阶段计划。
-7. 每个阶段都读质量、性能、技术栈和人工体验量表。
-8. 每个阶段完成后执行定向检查、`check:mainline`、`release:local-rc`。
+2. 再读 2026-07-10 真实视觉审查后的四份纠偏文档。
+3. 再读 `worldos-full-goal-document-gap-analysis-2026-07-09.md`。
+4. 再读 `worldos-complete-goal-document-readiness-review-2026-07-09.md`。
+5. 若只设置一次 Goal，读 `worldos-one-shot-goal-master-prompt-2026-07-09.md` 并维护 `worldos-one-shot-goal-execution-ledger-2026-07-09.md`。
+6. 若做体验落地，读 M8-M12 总计划和对应阶段计划。
+7. 若做运行闭环，读 M13-M18 总计划和对应阶段计划。
+8. 每个阶段都读质量、性能、技术栈和人工体验量表。
+9. 每个阶段完成后执行定向检查、`check:mainline`、`release:local-rc` 和真实截图 / 必要录屏审查。
 
 ## 3. 总控文档
 
 | 文档 | 何时使用 |
 | --- | --- |
+| `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md` | 记录真实视觉审查、首轮修复和仍未达标事实 |
+| `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md` | 区分舞台壳与真格世界主体 |
+| `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md` | 2026-07-10 后的世界体验上位规范 |
+| `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md` | 外部调研、文档清单和执行计划入口 |
 | `docs/00-overview/worldos-high-goal-readiness-audit-2026-07-09.md` | 判断目标高度和方向 |
 | `docs/00-overview/worldos-experience-governance-master-control-2026-07-09.md` | 判断是否仍像博客 |
 | `docs/00-overview/worldos-development-documentation-master-list-2026-07-09.md` | 查所有开发文档入口 |
@@ -105,6 +113,7 @@ Goal 模式不得以“文档存在”或“命令通过”作为最终完成。
 - 对应阶段计划完成。
 - 自动检查通过。
 - 本地 / LAN RC 通过。
+- 生产态截图和必要录屏证明场景主体可见。
 - 人工体验量表通过。
 - 页面不再像骨架。
 - 没有白屏、遮挡、死链、权限泄漏、默认音频、前端 AI key。
