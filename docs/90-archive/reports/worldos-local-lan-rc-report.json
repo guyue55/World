@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T06:53:27.884Z",
+  "generatedAt": "2026-07-09T07:10:43.811Z",
   "status": "passed",
   "lanIp": "172.30.111.222",
   "baseUrl": "http://172.30.111.222:4320",
@@ -22,8 +22,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 9,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 21,
       "ok": true,
       "expected": {
         "status": 200,
@@ -38,8 +38,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 21,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 58,
       "ok": true,
       "expected": {
         "status": 200,
@@ -54,8 +54,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 29,
       "ok": true,
       "expected": {
         "status": 200,
@@ -70,8 +70,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 13,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 38,
       "ok": true,
       "expected": {
         "status": 200,
@@ -86,8 +86,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 6,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 14,
       "ok": true,
       "expected": {
         "status": 200,
@@ -102,8 +102,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 4,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 16,
       "ok": true,
       "expected": {
         "status": 200,
@@ -118,8 +118,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 9,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 23,
       "ok": true,
       "expected": {
         "status": 200,
@@ -134,8 +134,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 20,
       "ok": true,
       "expected": {
         "status": 200,
@@ -150,8 +150,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
+      "durationMs": 19,
       "ok": true,
       "expected": {
         "status": 200,
@@ -166,8 +166,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
-      "durationMs": 6,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
+      "durationMs": 21,
       "ok": true,
       "expected": {
         "status": 200,
@@ -182,8 +182,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-09T06:52:33.199Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
-      "durationMs": 6,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-09T07:08:46.428Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "durationMs": 18,
       "ok": true,
       "expected": {
         "status": 200,
@@ -215,7 +215,7 @@
       "contentType": "text/plain; charset=UTF-8",
       "location": "",
       "bodyPreview": "User-agent: *\nAllow: /\n\n# 古月浮屿 V1 当前仅发布公开世界层。\n# 私密、家庭、伴侣、封存、静默内容不得进入 public build。\nSitemap: /sitemap.xml\n",
-      "durationMs": 1,
+      "durationMs": 3,
       "ok": true,
       "expected": {
         "status": 200,
@@ -230,8 +230,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-09T06:52:49.670Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
-      "durationMs": 7,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-09T07:09:37.669Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "durationMs": 24,
       "ok": true,
       "expected": {
         "status": 200,
@@ -247,7 +247,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 1,
+      "durationMs": 7,
       "ok": true,
       "expected": {
         "status": 308,
@@ -263,7 +263,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 1,
+      "durationMs": 3,
       "ok": true,
       "expected": {
         "status": 308,
@@ -279,7 +279,7 @@
       "contentType": "",
       "location": "/timeline",
       "bodyPreview": "/timeline",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -295,7 +295,7 @@
       "contentType": "",
       "location": "/ask",
       "bodyPreview": "/ask",
-      "durationMs": 1,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -311,7 +311,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 0,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -328,7 +328,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 0,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -345,7 +345,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 2,
+      "durationMs": 4,
       "ok": true,
       "expected": {
         "status": 307,
@@ -361,8 +361,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--2nggA7FWEsL0o264Jo0RZ--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
-      "durationMs": 4,
+      "bodyPreview": "<!DOCTYPE html><!--Oc0a2OgXU_Zbiem6T0ftl--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/d71747266cd5d8c2.css\" data-pre",
+      "durationMs": 15,
       "ok": true,
       "expected": {
         "status": 404
@@ -388,6 +388,15 @@
         "primaryCtaVisible": true,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": true,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": false,
+          "firstVisitRitualPresent": true,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 当前位置已被轻轻记录。 当前：创世原点",
+          "hasReturningVisitorCopy": false
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -418,6 +427,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「世界入口」 当前：星图穹顶 继续 最近 世界入口",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -438,7 +456,7 @@
       "metrics": {
         "title": "时间流｜古月浮屿",
         "h1": "时间流",
-        "textLength": 7056,
+        "textLength": 7122,
         "textSample": "时间 涟漪 事件 生长 灯塔低光 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 时间河 公开事件顺流排列，显示世界如何生长。 从变化进入内容，而不是只看发布时间。 事件 涟漪 季节 查看档案馆 回到星图 你在这里 时间流 这里不是调试日志，而是公开世界的成长记录。私密事件不会进入这条公开时间流。 我在哪里 这里是什么 能去哪 如何回去 回到世界地图 时间 档案 路径 灯塔 TIME RIVER 时间流 这里记录世界如何生长：一颗种子被点亮、一个项目进入工坊、一条法则被写入宪章，都会在时间流中留下痕迹。 运行中 春 · 萌发 灯塔低光 公开事件 50 事件类型 11 行动者 3 关联节点 61 关联区域 8 LIVE TIME",
         "hiddenBody": false,
         "scrollWidth": 1440,
@@ -448,6 +466,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「世界地图」 当前：时间河 继续 最近 世界地图 世界入口",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -478,6 +505,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「时间河」 当前：档案馆 继续 最近 时间河 世界地图",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -508,6 +544,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「档案馆」 当前：星路入口 继续 最近 档案馆 时间河",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -538,6 +583,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「星路入口」 当前：AI 灯塔 继续 最近 星路入口 档案馆",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -568,6 +622,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「低光灯塔」 当前：维护舱 继续 最近 低光灯塔 星路入口",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -598,6 +661,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「维护舱」 当前：旅程路线 继续 最近 维护舱 低光灯塔",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -628,6 +700,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「旅程路线」 当前：节点展开室 继续 最近 旅程路线 维护舱",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -658,6 +739,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「节点展开室」 当前：节点展开室 继续 最近 节点展开室 旅程路线",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -688,6 +778,15 @@
         "primaryCtaVisible": true,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": true,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": false,
+          "firstVisitRitualPresent": true,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「节点展开室」 当前：创世原点 继续 最近 节点展开室 节点展开室",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -718,6 +817,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「世界入口」 当前：星图穹顶 继续 最近 世界入口 节点展开室",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -748,6 +856,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「世界地图」 当前：时间河 继续 最近 世界地图 世界入口",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -778,6 +895,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「时间河」 当前：档案馆 继续 最近 时间河 世界地图",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -808,6 +934,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「档案馆」 当前：星路入口 继续 最近 档案馆 时间河",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -838,6 +973,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「星路入口」 当前：AI 灯塔 继续 最近 星路入口 档案馆",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -868,6 +1012,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「低光灯塔」 当前：维护舱 继续 最近 低光灯塔 星路入口",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -898,6 +1051,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「维护舱」 当前：旅程路线 继续 最近 维护舱 低光灯塔",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -928,6 +1090,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「旅程路线」 当前：节点展开室 继续 最近 旅程路线 维护舱",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {
@@ -958,6 +1129,15 @@
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,
+        "sceneQa": {
+          "ambientEnvironmentPresent": true,
+          "sceneTransitionShellPresent": true,
+          "sceneIdentityBandPresent": true,
+          "firstVisitRitualPresent": false,
+          "journeyMemoryEntryPresent": true,
+          "journeyMemoryText": "旅程 上次停在「节点展开室」 当前：节点展开室 继续 最近 节点展开室 旅程路线",
+          "hasReturningVisitorCopy": true
+        },
         "fixedOverlayIssues": []
       },
       "visibilityChecks": {

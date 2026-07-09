@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS Phase 32 场景宇宙 QA 清单",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-phase32-scene-qa-local-rc-execution-plan-2026-07-09.md",
+  "principle": "Scene QA 必须复用本地 LAN RC 的真实浏览器证据，证明世界入口、场景身份、空气层、转场、旅程记忆和 reduced-motion 均可复核。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "requiredViewports": [
+    "desktop",
+    "mobile-reduced-motion"
+  ],
+  "requiredScenes": [
+    {
+      "sceneId": "gateway",
+      "route": "/",
+      "requiresFirstVisitRitual": true,
+      "requiresSceneIdentityBand": false
+    },
+    {
+      "sceneId": "atlas",
+      "route": "/atlas",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "timeline",
+      "route": "/timeline",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "archive",
+      "route": "/archive",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "paths",
+      "route": "/paths",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "path-detail",
+      "route": "/paths/first-visit",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "node",
+      "route": "/node/world-manifesto",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "lighthouse",
+      "route": "/ask",
+      "requiresSceneIdentityBand": true
+    },
+    {
+      "sceneId": "status",
+      "route": "/status",
+      "requiresSceneIdentityBand": true
+    }
+  ],
+  "requiredSignals": [
+    "ambientEnvironmentPresent",
+    "sceneTransitionShellPresent",
+    "sceneIdentityBandPresent",
+    "firstVisitRitualPresent",
+    "journeyMemoryEntryPresent",
+    "hasReturningVisitorCopy"
+  ],
+  "thresholds": {
+    "minTextLength": 500,
+    "minScreenshots": 18,
+    "maxFixedOverlayIssues": 0,
+    "maxExceptions": 0,
+    "maxLogIssues": 0,
+    "maxFailedNetwork": 0
+  },
+  "reports": {
+    "lanRcReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "sceneQaReport": "docs/90-archive/reports/worldos-scene-qa-report.json",
+    "screenshotDir": "docs/90-archive/reports/worldos-local-lan-rc"
+  },
+  "acceptance": {
+    "requiredFiles": [
+      "data/domains/experience/scene-qa-checklist.json",
+      "scripts/write-worldos-scene-qa-report.mjs",
+      "scripts/check-worldos-scene-qa.mjs",
+      "docs/90-archive/reports/worldos-scene-qa-report.json"
+    ],
+    "forbiddenClientTokens": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "new OpenAI", "responses.create", "chat.completions", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"],
+    "releaseStates": {
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  }
+}

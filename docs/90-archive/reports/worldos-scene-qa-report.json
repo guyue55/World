@@ -1,0 +1,570 @@
+{
+  "generatedAt": "2026-07-09T07:12:13.158Z",
+  "source": "scripts/write-worldos-scene-qa-report.mjs",
+  "checklist": "data/domains/experience/scene-qa-checklist.json",
+  "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+  "lanGeneratedAt": "2026-07-09T07:10:43.811Z",
+  "status": "passed",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  },
+  "requiredViewports": [
+    "desktop",
+    "mobile-reduced-motion"
+  ],
+  "requiredSceneCount": 9,
+  "routeCheckCount": 18,
+  "routeChecks": [
+    {
+      "sceneId": "gateway",
+      "route": "/",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "一张书桌，连接一片星河。",
+      "textLength": 2742,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 382455,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": false,
+        "firstVisitRitualPresent": true,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": false,
+        "journeyMemoryText": "旅程 当前位置已被轻轻记录。 当前：创世原点"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "gateway",
+      "route": "/",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "一张书桌，连接一片星河。",
+      "textLength": 2783,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 437748,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": false,
+        "firstVisitRitualPresent": true,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「节点展开室」 当前：创世原点 继续 最近 节点展开室 节点展开室"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "atlas",
+      "route": "/atlas",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "世界地图",
+      "textLength": 22030,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 439510,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「世界入口」 当前：星图穹顶 继续 最近 世界入口"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "atlas",
+      "route": "/atlas",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "世界地图",
+      "textLength": 22022,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 497927,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「世界入口」 当前：星图穹顶 继续 最近 世界入口 节点展开室"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "timeline",
+      "route": "/timeline",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "时间流",
+      "textLength": 7122,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 438304,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「世界地图」 当前：时间河 继续 最近 世界地图 世界入口"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "timeline",
+      "route": "/timeline",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "时间流",
+      "textLength": 7109,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 498914,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「世界地图」 当前：时间河 继续 最近 世界地图 世界入口"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "archive",
+      "route": "/archive",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "档案馆",
+      "textLength": 21378,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 509889,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「时间河」 当前：档案馆 继续 最近 时间河 世界地图"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "archive",
+      "route": "/archive",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "档案馆",
+      "textLength": 21364,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 507061,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「时间河」 当前：档案馆 继续 最近 时间河 世界地图"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "paths",
+      "route": "/paths",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "精选路径",
+      "textLength": 1033,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 518075,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「档案馆」 当前：星路入口 继续 最近 档案馆 时间河"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "paths",
+      "route": "/paths",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "精选路径",
+      "textLength": 1018,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 506478,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「档案馆」 当前：星路入口 继续 最近 档案馆 时间河"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "path-detail",
+      "route": "/paths/first-visit",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "第一次来到古月浮屿",
+      "textLength": 2019,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 729751,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「维护舱」 当前：旅程路线 继续 最近 维护舱 低光灯塔"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "path-detail",
+      "route": "/paths/first-visit",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "第一次来到古月浮屿",
+      "textLength": 2005,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 617092,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「维护舱」 当前：旅程路线 继续 最近 维护舱 低光灯塔"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "node",
+      "route": "/node/world-manifesto",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "古月浮屿世界宣言",
+      "textLength": 4445,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 760911,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「旅程路线」 当前：节点展开室 继续 最近 旅程路线 维护舱"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "node",
+      "route": "/node/world-manifesto",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "古月浮屿世界宣言",
+      "textLength": 4431,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 671969,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「旅程路线」 当前：节点展开室 继续 最近 旅程路线 维护舱"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "lighthouse",
+      "route": "/ask",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "AI 灯塔",
+      "textLength": 1469,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 441659,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「星路入口」 当前：AI 灯塔 继续 最近 星路入口 档案馆"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "lighthouse",
+      "route": "/ask",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "AI 灯塔",
+      "textLength": 1455,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 466473,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「星路入口」 当前：AI 灯塔 继续 最近 星路入口 档案馆"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "status",
+      "route": "/status",
+      "viewport": "desktop",
+      "passed": true,
+      "h1": "世界状态",
+      "textLength": 5628,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 459955,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「低光灯塔」 当前：维护舱 继续 最近 低光灯塔 星路入口"
+      },
+      "failures": []
+    },
+    {
+      "sceneId": "status",
+      "route": "/status",
+      "viewport": "mobile-reduced-motion",
+      "passed": true,
+      "h1": "世界状态",
+      "textLength": 5614,
+      "hiddenBody": false,
+      "overflowX": false,
+      "fixedOverlayIssueCount": 0,
+      "exceptionCount": 0,
+      "logIssueCount": 0,
+      "failedNetworkCount": 0,
+      "screenshot": {
+        "exists": true,
+        "size": 512894,
+        "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png"
+      },
+      "sceneQa": {
+        "ambientEnvironmentPresent": true,
+        "sceneTransitionShellPresent": true,
+        "sceneIdentityBandPresent": true,
+        "firstVisitRitualPresent": false,
+        "journeyMemoryEntryPresent": true,
+        "hasReturningVisitorCopy": true,
+        "journeyMemoryText": "旅程 上次停在「低光灯塔」 当前：维护舱 继续 最近 低光灯塔 星路入口"
+      },
+      "failures": []
+    }
+  ],
+  "evidence": {
+    "screenshotCount": 18,
+    "firstVisitRitual": true,
+    "returningVisitor": true,
+    "ambientEnvironment": true,
+    "sceneTransitionShell": true,
+    "sceneIdentityBand": true,
+    "journeyMemoryEntry": true,
+    "reducedMotionChecks": 9,
+    "domNonEmptyChecks": 18,
+    "noOverflowChecks": 18,
+    "noOverlayChecks": 18
+  },
+  "failures": [],
+  "note": "Scene QA 只复用本地 LAN RC 的真实浏览器证据；当前阶段不作为外部 Preview / Production 证据。"
+}

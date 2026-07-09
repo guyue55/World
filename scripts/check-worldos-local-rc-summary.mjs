@@ -21,12 +21,21 @@ if (failures.length === 0) {
   if (report.gates?.runtimeSmoke?.status !== 'passed') failures.push('runtime smoke 未通过')
   if (report.gates?.productionCiBuild !== 'passed-before-summary') failures.push('production CI build 未纳入 RC 汇总')
   if (report.gates?.lanSmoke?.status !== 'passed') failures.push('LAN smoke 未通过')
+  if (report.gates?.sceneQa?.status !== 'passed') failures.push('Scene QA 未通过')
   if ((report.gates?.lanSmoke?.passedHttpChecks ?? 0) < 20) failures.push('LAN HTTP 检查数量不足')
   if ((report.gates?.lanSmoke?.passedBrowserChecks ?? 0) < 16) failures.push('LAN 浏览器检查数量不足')
   if ((report.gates?.lanSmoke?.passedHomePrimaryCtaChecks ?? 0) < 2) failures.push('首页主 CTA 可见性证据不足')
   if ((report.gates?.lanSmoke?.passedMobileNavigationChecks ?? 0) < 8) failures.push('移动导航可见性证据不足')
   if ((report.gates?.lanSmoke?.passedHomeCoreStatusCardChecks ?? 0) < 2) failures.push('核心状态卡可见性证据不足')
   if ((report.gates?.lanSmoke?.screenshotCount ?? 0) < 10) failures.push('LAN 截图证据不足')
+  if ((report.gates?.sceneQa?.routeChecks ?? 0) < 18) failures.push('Scene QA 场景视口证据不足')
+  if ((report.gates?.sceneQa?.screenshotCount ?? 0) < 18) failures.push('Scene QA 截图证据不足')
+  if (report.gates?.sceneQa?.firstVisitRitual !== true) failures.push('Scene QA 缺少首次进入仪式证据')
+  if (report.gates?.sceneQa?.returningVisitor !== true) failures.push('Scene QA 缺少返回访客证据')
+  if (report.gates?.sceneQa?.ambientEnvironment !== true) failures.push('Scene QA 缺少空气层证据')
+  if (report.gates?.sceneQa?.sceneTransitionShell !== true) failures.push('Scene QA 缺少转场壳证据')
+  if (report.gates?.sceneQa?.sceneIdentityBand !== true) failures.push('Scene QA 缺少场景身份带证据')
+  if ((report.gates?.sceneQa?.reducedMotionChecks ?? 0) < 9) failures.push('Scene QA reduced-motion 证据不足')
   if ((report.gates?.audit?.high ?? 0) > 0 || (report.gates?.audit?.critical ?? 0) > 0) failures.push('npm audit 存在 high/critical 风险')
   if ((report.gates?.buildArtifacts?.missing ?? []).length > 0) failures.push(`构建产物缺失：${report.gates.buildArtifacts.missing.join(', ')}`)
 
@@ -37,6 +46,7 @@ if (failures.length === 0) {
   for (const file of [
     report.evidence?.runtimeReport,
     report.evidence?.lanReport,
+    report.evidence?.sceneQaReport,
     report.evidence?.auditReport,
     report.evidence?.externalEvidenceTemplate,
     report.evidence?.policy,

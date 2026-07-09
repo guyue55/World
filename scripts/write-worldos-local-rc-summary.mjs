@@ -9,6 +9,7 @@ const exists = (file) => fs.existsSync(rel(file))
 
 const runtimeReportPath = 'docs/90-archive/reports/worldos-local-runtime-smoke-report.json'
 const lanReportPath = 'docs/90-archive/reports/worldos-local-lan-rc-report.json'
+const sceneQaReportPath = 'docs/90-archive/reports/worldos-scene-qa-report.json'
 const auditReportPath = 'docs/90-archive/reports/npm-audit-report.json'
 const externalEvidencePath = 'docs/90-archive/reports/worldos-external-evidence-template.json'
 const summaryReportPath = 'docs/90-archive/reports/worldos-local-rc-summary-report.json'
@@ -16,6 +17,7 @@ const evidencePolicyPath = 'data/world-kernel/worldos-local-rc-evidence-policy-v
 
 const runtimeReport = readJson(runtimeReportPath)
 const lanReport = readJson(lanReportPath)
+const sceneQaReport = readJson(sceneQaReportPath)
 const auditReport = readJson(auditReportPath)
 const externalEvidence = readJson(externalEvidencePath)
 const evidencePolicy = readJson(evidencePolicyPath)
@@ -29,6 +31,7 @@ const screenshots = exists(screenshotDir)
 
 const runtimePassed = runtimeReport.status === 'passed'
 const lanPassed = lanReport.status === 'passed'
+const sceneQaPassed = sceneQaReport.status === 'passed'
 const auditSummary = auditReport.summary ?? {}
 const highOrCritical = Number(auditSummary.high ?? 0) + Number(auditSummary.critical ?? 0)
 const externalReleaseStates = externalEvidence.rc?.releaseStates ?? {}
@@ -36,7 +39,7 @@ const externalReleaseStates = externalEvidence.rc?.releaseStates ?? {}
 const report = {
   generatedAt: new Date().toISOString(),
   source: 'scripts/write-worldos-local-rc-summary.mjs',
-  status: runtimePassed && lanPassed && missingArtifacts.length === 0 && highOrCritical === 0
+  status: runtimePassed && lanPassed && sceneQaPassed && missingArtifacts.length === 0 && highOrCritical === 0
     ? 'local-rc-passed-external-release-blocked'
     : 'local-rc-needs-attention',
   localAccess: {
@@ -66,6 +69,18 @@ const report = {
       passedMobileNavigationChecks: lanReport.browserChecks?.filter((check) => check.viewport?.includes('mobile') && check.metrics?.mobileNavigationVisible === true).length ?? 0,
       passedHomeCoreStatusCardChecks: lanReport.browserChecks?.filter((check) => check.route === '/' && check.metrics?.coreStatusCardVisible === true).length ?? 0,
       screenshotCount: screenshots.length,
+    },
+    sceneQa: {
+      status: sceneQaReport.status,
+      report: sceneQaReportPath,
+      routeChecks: sceneQaReport.routeCheckCount ?? 0,
+      screenshotCount: sceneQaReport.evidence?.screenshotCount ?? 0,
+      firstVisitRitual: sceneQaReport.evidence?.firstVisitRitual === true,
+      returningVisitor: sceneQaReport.evidence?.returningVisitor === true,
+      ambientEnvironment: sceneQaReport.evidence?.ambientEnvironment === true,
+      sceneTransitionShell: sceneQaReport.evidence?.sceneTransitionShell === true,
+      sceneIdentityBand: sceneQaReport.evidence?.sceneIdentityBand === true,
+      reducedMotionChecks: sceneQaReport.evidence?.reducedMotionChecks ?? 0,
     },
     audit: {
       report: auditReportPath,
@@ -101,6 +116,7 @@ const report = {
     policySummary: evidencePolicy.summary,
     runtimeReport: runtimeReportPath,
     lanReport: lanReportPath,
+    sceneQaReport: sceneQaReportPath,
     auditReport: auditReportPath,
     externalEvidenceTemplate: externalEvidencePath,
     screenshots: screenshots.map((file) => `${screenshotDir}/${file}`),

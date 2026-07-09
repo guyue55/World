@@ -396,6 +396,11 @@ async function runBrowserChecks() {
             const element = document.querySelector(\`[data-testid="\${id}"]\`)
             return Boolean(element && isVisible(element))
           }
+          const testIdExists = (id) => Boolean(document.querySelector(\`[data-testid="\${id}"]\`))
+          const textForTestId = (id) => {
+            const element = document.querySelector(\`[data-testid="\${id}"]\`)
+            return (element?.innerText || element?.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 160)
+          }
           const overlapRatio = (a, b) => {
             const left = Math.max(a.left, b.left)
             const right = Math.min(a.right, b.right)
@@ -452,6 +457,15 @@ async function runBrowserChecks() {
             primaryCtaVisible: testIdVisible('home-primary-cta'),
             mobileNavigationVisible: testIdVisible('mobile-primary-navigation'),
             coreStatusCardVisible: testIdVisible('dynamic-world-status-card'),
+            sceneQa: {
+              ambientEnvironmentPresent: testIdExists('ambient-environment-v2'),
+              sceneTransitionShellPresent: testIdExists('scene-transition-shell'),
+              sceneIdentityBandPresent: testIdExists('scene-identity-band'),
+              firstVisitRitualPresent: testIdExists('first-visit-ritual') || testIdExists('first-visit-ritual-collapsed'),
+              journeyMemoryEntryPresent: testIdExists('journey-memory-entry'),
+              journeyMemoryText: textForTestId('journey-memory-entry'),
+              hasReturningVisitorCopy: textForTestId('journey-memory-entry').includes('上次停在'),
+            },
             fixedOverlayIssues
           }
         })()`,

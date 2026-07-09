@@ -20,7 +20,7 @@ function JourneyCard({ compact = false }: { compact?: boolean }) {
   )
 
   return (
-    <div className="rounded-[1.35rem] border border-white/70 bg-paper/88 p-4 text-sm shadow-soft backdrop-blur-xl">
+    <div data-testid="journey-memory-entry" className="rounded-[1.35rem] border border-white/70 bg-paper/88 p-4 text-sm shadow-soft backdrop-blur-xl">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs font-semibold tracking-[0.28em] text-moss">旅程</p>

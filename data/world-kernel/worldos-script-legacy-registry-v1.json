@@ -21,6 +21,7 @@
     "check:scene-personality",
     "check:journey-memory",
     "check:ambient-environment",
+    "check:scene-qa",
     "check:ai-provider-boundary",
     "check:phase21-lighthouse",
     "check:api-boundary",
@@ -50,7 +51,8 @@
     "npm run check:scene-transition",
     "npm run check:scene-personality",
     "npm run check:journey-memory",
-    "npm run check:ambient-environment"
+    "npm run check:ambient-environment",
+    "npm run check:scene-qa"
   ],
   "releaseCandidateCommands": [
     "npm run check:rc:fast",
@@ -58,6 +60,7 @@
     "npm run release:local-rc",
     "npm run smoke:runtime-local",
     "npm run smoke:lan-local",
+    "npm run check:scene-qa",
     "npm run check:rc-evidence-policy"
   ],
   "policies": {
@@ -75,8 +78,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 279,
-    "checkScripts": 151,
+    "totalScripts": 280,
+    "checkScripts": 152,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
@@ -92,7 +95,7 @@
   ],
   "notes": [
     "本注册表不是鼓励继续保留阶段脚本，而是在未完成物理归档前提供可审计边界。",
-    "日常开发默认入口应使用 check:mainline / check:content / check:local-content-growth / check:experience:public / check:local-product-maturity / check:phase23-local-maturity / check:phase24-path-quality / check:phase25-owner-console / check:scene-runtime / check:first-visit-ritual / check:scene-transition / check:scene-personality / check:journey-memory / check:ambient-environment / check:api-boundary / check:local-owner-workbench / check:scripts。",
+    "日常开发默认入口应使用 check:mainline / check:content / check:local-content-growth / check:experience:public / check:local-product-maturity / check:phase23-local-maturity / check:phase24-path-quality / check:phase25-owner-console / check:scene-runtime / check:first-visit-ritual / check:scene-transition / check:scene-personality / check:journey-memory / check:ambient-environment / check:scene-qa / check:api-boundary / check:local-owner-workbench / check:scripts。",
     "新增功能或修复不得继续添加 check:r* / check:v* / check:stage* / check:round* 作为默认门禁。"
   ]
 }

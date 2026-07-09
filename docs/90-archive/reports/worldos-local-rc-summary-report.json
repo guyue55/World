@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T06:53:30.890Z",
+  "generatedAt": "2026-07-09T07:10:47.731Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -30,6 +30,18 @@
       "passedHomeCoreStatusCardChecks": 2,
       "screenshotCount": 20
     },
+    "sceneQa": {
+      "status": "passed",
+      "report": "docs/90-archive/reports/worldos-scene-qa-report.json",
+      "routeChecks": 18,
+      "screenshotCount": 18,
+      "firstVisitRitual": true,
+      "returningVisitor": true,
+      "ambientEnvironment": true,
+      "sceneTransitionShell": true,
+      "sceneIdentityBand": true,
+      "reducedMotionChecks": 9
+    },
     "audit": {
       "report": "docs/90-archive/reports/npm-audit-report.json",
       "total": 2,
@@ -49,7 +61,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-09T06:52:49.267Z"
+      "buildIdMtime": "2026-07-09T07:09:36.144Z"
     }
   },
   "dynamicWorldEvidence": {
@@ -72,6 +84,7 @@
     "policySummary": "release:local-rc 是唯一推荐的本地可信 RC 入口；提交时只提交有复核价值的规范化证据，临时日志留在 reports/。",
     "runtimeReport": "docs/90-archive/reports/worldos-local-runtime-smoke-report.json",
     "lanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "sceneQaReport": "docs/90-archive/reports/worldos-scene-qa-report.json",
     "auditReport": "docs/90-archive/reports/npm-audit-report.json",
     "externalEvidenceTemplate": "docs/90-archive/reports/worldos-external-evidence-template.json",
     "screenshots": [
