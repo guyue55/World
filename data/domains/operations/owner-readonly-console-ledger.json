@@ -1,6 +1,6 @@
 {
   "name": "WorldOS Phase 25 本地 Owner 只读指挥台账本",
-  "generatedAt": "2026-07-09T04:02:58.061Z",
+  "generatedAt": "2026-07-09T05:26:38.799Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
