@@ -37,7 +37,8 @@
     "smoke:runtime-local",
     "check:lan-local",
     "smoke:lan-local",
-    "check:rc-evidence-policy"
+    "check:rc-evidence-policy",
+    "check:dependency-hardening"
   ],
   "recommendedDailyCommands": [
     "npm run check:daily",
@@ -52,7 +53,8 @@
     "npm run check:scene-personality",
     "npm run check:journey-memory",
     "npm run check:ambient-environment",
-    "npm run check:scene-qa"
+    "npm run check:scene-qa",
+    "npm run check:dependency-hardening"
   ],
   "releaseCandidateCommands": [
     "npm run check:rc:fast",
@@ -78,8 +80,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 280,
-    "checkScripts": 152,
+    "totalScripts": 281,
+    "checkScripts": 153,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },

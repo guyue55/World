@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS M16 依赖与性能硬化策略",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-m16-performance-dependency-hardening-execution-plan-2026-07-09.md",
+  "principle": "世界体验优先由现有 Next.js、React、Tailwind、GSAP、Motion、SVG、CSS 与原生 Web API 承担；新依赖必须绑定明确场景收益。",
+  "allowedRuntimeDependencies": [
+    "@mdx-js/loader",
+    "@mdx-js/react",
+    "@next/mdx",
+    "clsx",
+    "framer-motion",
+    "fuse.js",
+    "gsap",
+    "lucide-react",
+    "next",
+    "react",
+    "react-dom",
+    "shiki",
+    "tailwind-merge",
+    "zod"
+  ],
+  "heavyCandidatesRequireAdr": [
+    "three",
+    "@react-three/fiber",
+    "pixi.js",
+    "howler",
+    "tone",
+    "xstate",
+    "d3",
+    "d3-force",
+    "sigma",
+    "cytoscape"
+  ],
+  "runtimeBudgets": {
+    "maxRuntimeDependencies": 14,
+    "maxLibFiles": 130,
+    "maxNextBuildMb": 200,
+    "maxRawJsChunkMb": 10,
+    "maxGzipJsChunkMb": 2,
+    "audioDefaultMuted": true,
+    "providerDefaultDisabled": true,
+    "compactMotionStopsAtmosphere": true
+  },
+  "animationOwnership": {
+    "sceneChoreography": "gsap",
+    "presenceAndLocalUi": "framer-motion",
+    "noDuplicateRouteChoreography": true
+  },
+  "forbiddenMainlineTokens": [
+    "from 'three'",
+    "from \"three\"",
+    "from 'pixi.js'",
+    "from \"pixi.js\"",
+    "from 'howler'",
+    "from \"howler\"",
+    "from 'tone'",
+    "from \"tone\"",
+    "from 'xstate'",
+    "from \"xstate\"",
+    "audio.play(",
+    "autoplay",
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "new OpenAI"
+  ],
+  "requiredEvidence": [
+    "RuntimeAtmosphere compactMotion explicit stop",
+    "Sensory Audio default muted",
+    "AI Provider disabled dry run",
+    "No heavy candidate runtime dependency"
+  ]
+}
