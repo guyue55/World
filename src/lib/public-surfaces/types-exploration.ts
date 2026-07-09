@@ -86,9 +86,17 @@ export type LighthouseConsoleSurface = {
 export type NodeOpeningSurface = {
   title: string
   description: string
+  placeLabel: string
+  boundaryLabel: string
   areaLabel: string
   lifeStageLabel: string
+  lifeStatusLabel: string
   readingLabel: string
+  signals: Array<{
+    label: string
+    value: string
+    note: string
+  }>
 }
 
 export type NodeNextStepSurface = {
@@ -101,4 +109,3 @@ export type NodeNextStepSurface = {
     tone: 'primary' | 'quiet'
   }>
 }
-

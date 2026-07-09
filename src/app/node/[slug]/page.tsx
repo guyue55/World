@@ -4,6 +4,10 @@ import { getAreaById } from '@/lib/areas'
 import { readContentFile } from '@/lib/content'
 import { isPublicVisible } from '@/lib/visibility'
 import { estimateReadingMinutes, getNodeExplorationGroups } from '@/lib/node-reading'
+import { buildContentLifeNodeFact } from '@/lib/content-life'
+import { getAllPaths } from '@/lib/paths'
+import { getAllRelations } from '@/lib/relations'
+import { getAllWorldEvents } from '@/lib/world-events'
 import { buildNodeNextStepSurface, buildNodeOpeningSurface } from '@/lib/public-world-surfaces'
 import { extractReadingHeadings, getReadingComfortSummary } from '@/lib/reading-comfort'
 import { createPageMetadata } from '@/lib/metadata'
@@ -61,6 +65,19 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
   const sameAreaNodes = getPublicNodesByArea(node.areaId)
   const nodeOpeningSurface = buildNodeOpeningSurface(node, area, readingMinutes)
   const nodeNextStepSurface = buildNodeNextStepSurface(node, area, sameAreaNodes.length)
+  const contentLifeFact = buildContentLifeNodeFact({
+    node,
+    paths: getAllPaths(),
+    relations: getAllRelations(),
+    events: getAllWorldEvents(),
+  })
+  const nodePlaceLifeSignal = {
+    status: contentLifeFact.status,
+    relationCount: contentLifeFact.relationReasons.length,
+    pathCount: contentLifeFact.pathIds.length,
+    timelineEventCount: contentLifeFact.timelineEventIds.length,
+    recommendedPathCount: contentLifeFact.recommendedPathIds.length,
+  }
 
   return (
     <main className="world-container grid gap-10 py-16 xl:grid-cols-[minmax(0,1fr)_340px]">
@@ -99,7 +116,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
           readingWidth={comfort.readingWidth}
         />
         <div className="xl:hidden">
-          <NodePassport node={node} area={area} />
+          <NodePassport node={node} area={area} lifeSignal={nodePlaceLifeSignal} />
         </div>
         <div className="xl:hidden">
           <ReadingToc headings={headings} />
@@ -111,7 +128,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
 
       <aside className="space-y-6 xl:sticky xl:top-24 xl:self-start">
         <div className="hidden xl:block">
-          <NodePassport node={node} area={area} />
+          <NodePassport node={node} area={area} lifeSignal={nodePlaceLifeSignal} />
         </div>
         <div className="hidden xl:block">
           <ReadingToc headings={headings} />

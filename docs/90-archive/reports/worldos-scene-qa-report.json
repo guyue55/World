@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-09T14:45:30.596Z",
+  "generatedAt": "2026-07-09T15:02:01.844Z",
   "source": "scripts/write-worldos-scene-qa-report.mjs",
   "checklist": "data/domains/experience/scene-qa-checklist.json",
   "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-  "lanGeneratedAt": "2026-07-09T14:45:25.641Z",
+  "lanGeneratedAt": "2026-07-09T15:01:56.477Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -44,7 +44,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 875145,
+        "size": 875199,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
       },
       "sceneQa": {
@@ -87,7 +87,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 811336,
+        "size": 811337,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png"
       },
       "sceneQa": {
@@ -130,7 +130,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 783218,
+        "size": 783284,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
       },
       "sceneQa": {
@@ -173,7 +173,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 840325,
+        "size": 840326,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png"
       },
       "sceneQa": {
@@ -216,7 +216,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 834248,
+        "size": 834038,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
       },
       "sceneQa": {
@@ -259,7 +259,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 899851,
+        "size": 899800,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
       },
       "sceneQa": {
@@ -302,7 +302,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 819355,
+        "size": 819412,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
       },
       "sceneQa": {
@@ -345,7 +345,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 882230,
+        "size": 882232,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png"
       },
       "sceneQa": {
@@ -388,7 +388,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 823589,
+        "size": 823600,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
       },
       "sceneQa": {
@@ -431,7 +431,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 896636,
+        "size": 896969,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png"
       },
       "sceneQa": {
@@ -474,7 +474,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 650608,
+        "size": 650774,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
       },
       "sceneQa": {
@@ -516,7 +516,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 621423,
+        "size": 621192,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png"
       },
       "sceneQa": {
@@ -549,7 +549,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "创世初光",
-      "textLength": 4790,
+      "textLength": 4980,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -558,7 +558,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 498616,
+        "size": 488567,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -591,7 +591,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "创世初光",
-      "textLength": 4760,
+      "textLength": 4950,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -600,7 +600,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 597869,
+        "size": 597868,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -642,7 +642,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 808157,
+        "size": 808263,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
       },
       "sceneQa": {
@@ -685,7 +685,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 856357,
+        "size": 856392,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
       },
       "sceneQa": {
@@ -728,7 +728,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 797772,
+        "size": 798753,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
       },
       "sceneQa": {

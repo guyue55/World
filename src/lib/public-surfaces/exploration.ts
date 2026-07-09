@@ -3,6 +3,7 @@
 import type { AreaLink } from '../atlas'
 import type { Area, Node, Path, Visibility, WorldEvent } from '../types'
 import { isPublicVisible } from '../visibility'
+import { LIFE_STAGE_REGISTRY, NODE_TYPE_REGISTRY, VISIBILITY_REGISTRY } from '../type-registries'
 import type {
   AtlasConstellationSurface,
   LighthouseConsoleSurface,
@@ -191,12 +192,25 @@ export function buildLighthouseConsoleSurface({
 }
 
 export function buildNodeOpeningSurface(node: Node, area: Area | undefined, readingMinutes: number | null): NodeOpeningSurface {
+  const areaLabel = area && isPublicArea(area) ? area.worldName : '公开节点'
+  const typeLabel = NODE_TYPE_REGISTRY[node.type]?.label ?? node.type
+  const lifeStageLabel = LIFE_STAGE_REGISTRY[node.lifeStage] ?? node.lifeStage
+  const boundaryLabel = VISIBILITY_REGISTRY[node.visibility] ?? node.visibility
+
   return {
     title: node.worldTitle ?? node.title,
-    description: '节点已进入公开阅读态。先确认位置、阶段和阅读节奏，再进入正文。',
-    areaLabel: area && isPublicArea(area) ? area.worldName : '公开节点',
-    lifeStageLabel: node.lifeStage,
+    description: `你抵达的是 ${areaLabel} 中的一处${typeLabel}地点。先确认坐标、生命阶段和阅读节奏，再进入正文。`,
+    placeLabel: `${areaLabel} / ${typeLabel}`,
+    boundaryLabel: `${boundaryLabel}阅读边界`,
+    areaLabel,
+    lifeStageLabel,
+    lifeStatusLabel: node.featured?.representative || node.featured?.pathCore ? '关键地点' : '公开地点',
     readingLabel: readingMinutes ? `约 ${readingMinutes} 分钟` : '短读',
+    signals: [
+      { label: '坐标', value: areaLabel, note: '从地图可返回这一片星域' },
+      { label: '形态', value: typeLabel, note: '决定正文和关系的阅读方式' },
+      { label: '边界', value: boundaryLabel, note: '公开层只展示已放行内容' },
+    ],
   }
 }
 

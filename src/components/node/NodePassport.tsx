@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import type { Area, LifeStage, Node, NodeType, Visibility } from '@/lib/types'
 
+export type NodePlaceLifeSignal = {
+  status: 'emerging' | 'growing' | 'ready' | 'archived' | 'quiet'
+  relationCount: number
+  pathCount: number
+  timelineEventCount: number
+  recommendedPathCount: number
+}
+
 const visibilityLabel: Record<Visibility, string> = {
   public: '公开',
   semiPublic: '半公开',
@@ -39,10 +47,18 @@ const typeLabel: Record<NodeType, string> = {
   event: '事件',
 }
 
-export function NodePassport({ node, area }: { node: Node; area?: Area }) {
+const lifeStatusLabel: Record<NodePlaceLifeSignal['status'], string> = {
+  emerging: '正在显影',
+  growing: '持续生长',
+  ready: '适合阅读',
+  archived: '已经沉淀',
+  quiet: '低光静置',
+}
+
+export function NodePassport({ node, area, lifeSignal }: { node: Node; area?: Area; lifeSignal?: NodePlaceLifeSignal }) {
   return (
     <section className="rounded-[1.75rem] border border-white/65 bg-white/76 p-6 shadow-soft backdrop-blur">
-      <p className="text-xs font-semibold tracking-[0.32em] text-moss">NODE PASSPORT</p>
+      <p className="text-xs font-semibold tracking-[0.32em] text-moss">NODE PASSPORT · 地点护照</p>
       <h2 className="mt-3 text-2xl font-semibold text-ink">节点护照</h2>
       <p className="mt-2 text-sm leading-7 text-ink/60">
         这不是内部字段面板，而是帮助读者理解这个节点的位置、状态与下一步的公开说明。
@@ -64,6 +80,29 @@ export function NodePassport({ node, area }: { node: Node; area?: Area }) {
           <dt className="text-ink/50">可见边界</dt>
           <dd className="mt-1 font-medium text-ink">{visibilityLabel[node.visibility]}</dd>
         </div>
+        {lifeSignal && (
+          <div>
+            <dt className="text-ink/50">内容生命</dt>
+            <dd className="mt-3 grid grid-cols-2 gap-2">
+              <span className="rounded-[0.9rem] bg-paper/70 px-3 py-2">
+                <span className="block text-xs text-ink/46">状态</span>
+                <span className="mt-1 block truncate font-medium text-ink">{lifeStatusLabel[lifeSignal.status]}</span>
+              </span>
+              <span className="rounded-[0.9rem] bg-paper/70 px-3 py-2">
+                <span className="block text-xs text-ink/46">关系</span>
+                <span className="mt-1 block font-medium text-ink">{lifeSignal.relationCount} 条</span>
+              </span>
+              <span className="rounded-[0.9rem] bg-paper/70 px-3 py-2">
+                <span className="block text-xs text-ink/46">路径</span>
+                <span className="mt-1 block font-medium text-ink">{lifeSignal.pathCount} 条</span>
+              </span>
+              <span className="rounded-[0.9rem] bg-paper/70 px-3 py-2">
+                <span className="block text-xs text-ink/46">时间锚点</span>
+                <span className="mt-1 block font-medium text-ink">{lifeSignal.timelineEventCount} 个</span>
+              </span>
+            </dd>
+          </div>
+        )}
         <div>
           <dt className="text-ink/50">为什么存在</dt>
           <dd className="mt-1 leading-7 text-ink/68">{node.summary ?? '它被安放在世界中，等待继续生长。'}</dd>
