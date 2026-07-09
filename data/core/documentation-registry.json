@@ -1591,6 +1591,26 @@
       "id": "phase-fifteen-rc-batch-04-closure",
       "path": "docs/00-overview/v1-phase-fifteen-rc-batch-04-closure.md",
       "layer": "overview"
+    },
+    {
+      "id": "worldos-experience-governance-master-control",
+      "path": "docs/00-overview/worldos-experience-governance-master-control-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-quality-control-system",
+      "path": "docs/00-overview/worldos-quality-control-system-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-tech-stack-and-open-source-research",
+      "path": "docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "worldos-world-realization-document-set",
+      "path": "docs/00-overview/worldos-world-realization-document-set-2026-07-09.md",
+      "layer": "overview"
     }
   ],
   "docTypes": [
