@@ -21,6 +21,10 @@ function showContentStatically(content: HTMLElement) {
   content.style.transform = ''
 }
 
+function migrationPreviewObjects(objects: string[]) {
+  return objects.slice(0, 3).join(' / ')
+}
+
 const migrationSteps = [
   { id: 'source', label: '来源' },
   { id: 'leaving', label: '离开' },
@@ -48,6 +52,12 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
     if (!content) return
     let cancelled = false
     let cleanup: (() => void) | undefined
+    const timers: number[] = []
+    const setLater = (state: WorldTransitionState, delay: number) => {
+      timers.push(window.setTimeout(() => {
+        if (!cancelled) setShellTransitionState(state)
+      }, delay))
+    }
 
     if (!hasMountedRef.current) {
       hasMountedRef.current = true
@@ -64,7 +74,12 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
       return
     }
 
-    setShellTransitionState('arriving')
+    setShellTransitionState(shouldDescribeTransition ? 'leaving' : 'arriving')
+    if (shouldDescribeTransition) {
+      setLater('preview', 90)
+      setLater('arriving', 180)
+    }
+
     void import('gsap').then(({ gsap }) => {
       if (cancelled) return
 
@@ -102,6 +117,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
     previousPathnameRef.current = pathname
     return () => {
       cancelled = true
+      timers.forEach((timer) => window.clearTimeout(timer))
       cleanup?.()
     }
   }, [pathname, runtime.compactMotion, runtime.motionMode, runtime.reducedMotion, runtime.transitionState, transitionRuntime])
@@ -136,23 +152,46 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
           data-scene-migration-state={shellTransitionState}
           data-scene-migration-from={transitionRuntime.fromScene.id}
           data-scene-migration-to={transitionRuntime.toScene.id}
+          data-scene-source-ghost={transitionRuntime.fromScene.title}
+          data-scene-target-preview={transitionRuntime.toScene.title}
           aria-live="polite"
           className="rounded-[1rem] border border-ink/8 bg-white/72 px-4 py-3 text-sm text-ink/62 shadow-soft backdrop-blur"
         >
-          <span className="font-semibold text-ink">{shouldDescribeTransition ? '场景迁移' : '场景定位'}</span>
-          <span className="mx-2 text-ink/35">/</span>
-          <span>
-            {shouldDescribeTransition
-              ? `从 ${transitionRuntime.fromScene.title} 抵达 ${transitionRuntime.toScene.title}`
-              : `当前抵达 ${transitionRuntime.toScene.title}`}
+          <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="font-semibold text-ink">{shouldDescribeTransition ? '场景迁移' : '场景定位'}</span>
+            <span className="text-ink/35">/</span>
+            <span>
+              {shouldDescribeTransition
+                ? `从 ${transitionRuntime.fromScene.title} 抵达 ${transitionRuntime.toScene.title}`
+                : `当前抵达 ${transitionRuntime.toScene.title}`}
+            </span>
+            <span className="text-ink/35">/</span>
+            <span>
+              {runtime.motionMode !== 'full'
+                ? transitionRuntime.transition.reducedMotionFallback
+                : transitionRuntime.transition.intent}
+            </span>
           </span>
-          <span className="mx-2 text-ink/35">/</span>
-          <span>
-            {runtime.motionMode !== 'full'
-              ? transitionRuntime.transition.reducedMotionFallback
-              : transitionRuntime.transition.intent}
+          <span className="mt-3 hidden gap-2 md:grid md:grid-cols-3">
+            <span className="rounded-[0.9rem] border border-ink/8 bg-paper/72 px-3 py-2">
+              <span className="block text-xs font-semibold tracking-[0.22em] text-moss">来源残影</span>
+              <span className="mt-1 block truncate text-sm font-semibold text-ink">{transitionRuntime.fromScene.title}</span>
+              <span className="mt-0.5 block truncate text-xs text-ink/48">{transitionRuntime.fromScene.realName}</span>
+            </span>
+            <span className="rounded-[0.9rem] border border-ink/8 bg-paper/72 px-3 py-2">
+              <span className="block text-xs font-semibold tracking-[0.22em] text-moss">目标预告</span>
+              <span className="mt-1 block truncate text-sm font-semibold text-ink">{transitionRuntime.toScene.title}</span>
+              <span className="mt-0.5 block truncate text-xs text-ink/48">
+                {migrationPreviewObjects(transitionRuntime.toScene.objects)}
+              </span>
+            </span>
+            <span className="rounded-[0.9rem] border border-ink/8 bg-paper/72 px-3 py-2">
+              <span className="block text-xs font-semibold tracking-[0.22em] text-moss">抵达方式</span>
+              <span className="mt-1 block truncate text-sm font-semibold text-ink">{transitionRuntime.motion.label}</span>
+              <span className="mt-0.5 block truncate text-xs text-ink/48">{transitionRuntime.toScene.motionGrammar}</span>
+            </span>
           </span>
-          <span className="mt-2 flex flex-wrap gap-1.5">
+          <span className="mt-3 flex flex-wrap gap-1.5">
             {migrationSteps.map((step) => (
               <span
                 key={step.id}

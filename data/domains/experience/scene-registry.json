@@ -221,6 +221,30 @@
       "reducedMotionFallback": "直接进入节点页，并显示路径返回入口。"
     },
     {
+      "id": "node-to-paths",
+      "from": "node",
+      "to": "paths",
+      "motion": "path-arrive",
+      "intent": "从节点地点退回旅程入口，把当前节点理解为可继续行走的一站。",
+      "reducedMotionFallback": "直接进入路径页，并显示路径选择入口。"
+    },
+    {
+      "id": "paths-to-timeline",
+      "from": "paths",
+      "to": "timeline",
+      "motion": "river-shift",
+      "intent": "从路径列表回看时间河，把旅程进度转化为世界发生顺序。",
+      "reducedMotionFallback": "直接进入时间河，并保留事件列表。"
+    },
+    {
+      "id": "timeline-to-archive",
+      "from": "timeline",
+      "to": "archive",
+      "motion": "archive-drawer",
+      "intent": "从时间河沉入档案馆，把事件线索收束为可检索卷宗。",
+      "reducedMotionFallback": "直接进入档案馆，并显示检索与筛选。"
+    },
+    {
       "id": "default-scene-shift",
       "from": "*",
       "to": "*",
@@ -249,7 +273,7 @@
   },
   "acceptance": {
     "requiredSceneMatches": ["/", "/atlas", "/timeline", "/archive", "/paths", "/paths/[id]", "/node/[slug]", "/ask", "/status"],
-    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "path-to-node", "default-scene-shift"],
+    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "path-to-node", "node-to-paths", "paths-to-timeline", "timeline-to-archive", "default-scene-shift"],
     "forbiddenRoutePrefixes": ["/_legacy", "/api", "/forbidden"],
     "forbiddenClientTokens": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "new OpenAI", "responses.create", "chat.completions", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"],
     "releaseStates": {

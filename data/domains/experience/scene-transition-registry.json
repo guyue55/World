@@ -103,17 +103,45 @@
       "to": "/node/world-manifesto",
       "transitionId": "path-to-node",
       "motion": "path-arrive"
+    },
+    {
+      "from": "/node/world-manifesto",
+      "to": "/paths",
+      "transitionId": "node-to-paths",
+      "motion": "path-arrive"
+    },
+    {
+      "from": "/paths",
+      "to": "/timeline",
+      "transitionId": "paths-to-timeline",
+      "motion": "river-shift"
+    },
+    {
+      "from": "/timeline",
+      "to": "/archive",
+      "transitionId": "timeline-to-archive",
+      "motion": "archive-drawer"
+    },
+    {
+      "from": "/archive",
+      "to": "/",
+      "transitionId": "default-scene-shift",
+      "motion": "fade-rise"
     }
   ],
   "acceptance": {
     "requiredMotions": ["fade-rise", "zoom-star", "river-shift", "archive-drawer", "path-arrive"],
-    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "path-to-node", "default-scene-shift"],
+    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "path-to-node", "node-to-paths", "paths-to-timeline", "timeline-to-archive", "default-scene-shift"],
     "requiredSemanticRoutes": [
       "gateway-to-atlas",
       "atlas-to-node",
       "timeline-to-node",
       "archive-to-node",
-      "path-to-node"
+      "path-to-node",
+      "node-to-paths",
+      "paths-to-timeline",
+      "timeline-to-archive",
+      "default-scene-shift"
     ],
     "requiredFiles": [
       "src/lib/scene-transition.ts",

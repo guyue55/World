@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-09T15:02:01.844Z",
+  "generatedAt": "2026-07-09T15:15:12.664Z",
   "source": "scripts/write-worldos-scene-qa-report.mjs",
   "checklist": "data/domains/experience/scene-qa-checklist.json",
   "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-  "lanGeneratedAt": "2026-07-09T15:01:56.477Z",
+  "lanGeneratedAt": "2026-07-09T15:15:07.796Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -35,7 +35,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "古月浮屿，正在打开的个人世界。",
-      "textLength": 2995,
+      "textLength": 3056,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -44,7 +44,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 875199,
+        "size": 776392,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
       },
       "sceneQa": {
@@ -78,7 +78,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "古月浮屿，正在打开的个人世界。",
-      "textLength": 3020,
+      "textLength": 3024,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -87,7 +87,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 811337,
+        "size": 810861,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png"
       },
       "sceneQa": {
@@ -121,7 +121,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "从这里看见整片公开世界。",
-      "textLength": 8797,
+      "textLength": 8860,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -130,7 +130,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 783284,
+        "size": 712196,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
       },
       "sceneQa": {
@@ -164,7 +164,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "从这里看见整片公开世界。",
-      "textLength": 8760,
+      "textLength": 8764,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -173,7 +173,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 840326,
+        "size": 837436,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png"
       },
       "sceneQa": {
@@ -207,7 +207,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 7503,
+      "textLength": 7561,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -216,7 +216,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 834038,
+        "size": 754032,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
       },
       "sceneQa": {
@@ -250,7 +250,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 7529,
+      "textLength": 7533,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -259,7 +259,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 899800,
+        "size": 896186,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
       },
       "sceneQa": {
@@ -293,7 +293,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "当你不想漫游，就在馆内检索。",
-      "textLength": 21803,
+      "textLength": 21866,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -302,7 +302,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 819412,
+        "size": 742534,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
       },
       "sceneQa": {
@@ -336,7 +336,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "当你不想漫游，就在馆内检索。",
-      "textLength": 21761,
+      "textLength": 21765,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -345,7 +345,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 882232,
+        "size": 880101,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png"
       },
       "sceneQa": {
@@ -379,7 +379,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "路径不是分类，是一段可行走的旅程。",
-      "textLength": 1564,
+      "textLength": 1623,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -388,7 +388,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 823600,
+        "size": 746060,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
       },
       "sceneQa": {
@@ -422,7 +422,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "路径不是分类，是一段可行走的旅程。",
-      "textLength": 1520,
+      "textLength": 1524,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -431,7 +431,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 896969,
+        "size": 889018,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png"
       },
       "sceneQa": {
@@ -465,7 +465,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "第一次来到古月浮屿",
-      "textLength": 2369,
+      "textLength": 2429,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -474,7 +474,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 650774,
+        "size": 612880,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
       },
       "sceneQa": {
@@ -507,7 +507,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "第一次来到古月浮屿",
-      "textLength": 2339,
+      "textLength": 2343,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -516,7 +516,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 621192,
+        "size": 611645,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png"
       },
       "sceneQa": {
@@ -549,7 +549,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "创世初光",
-      "textLength": 4980,
+      "textLength": 5042,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -558,7 +558,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 488567,
+        "size": 482264,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -591,7 +591,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "创世初光",
-      "textLength": 4950,
+      "textLength": 4954,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -600,7 +600,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 597868,
+        "size": 591501,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -633,7 +633,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "灯塔只照路，不替你改写世界。",
-      "textLength": 1822,
+      "textLength": 1890,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -642,7 +642,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 808263,
+        "size": 733399,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
       },
       "sceneQa": {
@@ -676,7 +676,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "灯塔只照路，不替你改写世界。",
-      "textLength": 1778,
+      "textLength": 1782,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -685,7 +685,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 856392,
+        "size": 851589,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
       },
       "sceneQa": {
@@ -719,7 +719,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 6823,
+      "textLength": 7104,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -728,7 +728,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 798753,
+        "size": 726163,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
       },
       "sceneQa": {
@@ -762,7 +762,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 6783,
+      "textLength": 7004,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -771,7 +771,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 880371,
+        "size": 872677,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png"
       },
       "sceneQa": {
