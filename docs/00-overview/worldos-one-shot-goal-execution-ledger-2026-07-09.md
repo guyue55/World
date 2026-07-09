@@ -8,9 +8,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M18 |
-| 当前阶段 | M14 |
+| 当前阶段 | M15 |
 | 最后更新时间 | 2026-07-09 |
-| 当前结论 | M13 感官、音频与资产治理已通过本地 / LAN RC；下一阶段进入 M14 灯塔 AI 运行化 |
+| 当前结论 | M14 灯塔 AI 运行化已通过本地 / LAN RC；下一阶段进入 M15 内容世界生产 |
 
 ## 2. 阶段进度
 
@@ -22,7 +22,7 @@
 | M11 | 已完成 | `14ebffcb` | `check:scene-transition`、`check:scene-qa`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：桌面迁移 cue 已展示来源残影、目标预告、抵达方式；移动 reduced-motion 收敛为轻量文本与阶段胶囊，首页 CTA 与核心状态卡恢复可见 | 补齐 Node->Paths、Paths->Timeline、Timeline->Archive、Archive->Home 等迁移路线示例；修复一次移动首屏被 cue 挤压的 RC 失败 |
 | M12 | 已完成 | `9a5f2c43` | `check:lighthouse`、`check:ai-provider-boundary`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：灯塔控制台展示服务端低光运行器结果，包括观测回声、intent、公开 sources、limits 与 auditSummary；人工裁图确认控制台主体可见 | `/ask` 不再只是静态推荐页；未接入真实 Provider，未读取私密层，未写入世界源文件 |
 | M13 | 已完成 | `5d6883ed` | `check:ambient-environment`、`check:performance-budget`、`check:reduced-motion`、`typecheck`、`lint`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 通过：声景控制默认静音、用户点击后才初始化 Web Audio；`/status` 展示 Sensory Audio M13 摘要；RC 首轮发现 fixed overlay 后已修复并重跑通过 | 未引入 Howler/Tone/外部音频文件；资产清单记录项目内运行时合成短音；性能预算和静态资源策略已纳入音频规则 |
-| M14 | 未开始 | - | - | - | AI 灯塔运行化 |
+| M14 | 已完成 | `28a5349f` | `check:lighthouse`、`check:ai-boundary`、`check:ai-provider-boundary`、`check:api-boundary`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：`/ask` 展示运行推荐、cache、timeout、requestId、questionDigest 与输出摘要；接口直调确认 headers、recommendations、auditSummary 存在且 `writesWorldSource=false` | Provider 仍为 disabled-dry-run；无前端 key、无私密读取、无 Provider 网络请求、无世界源写入 |
 | M15 | 未开始 | - | - | - | 内容世界生产 |
 | M16 | 未开始 | - | - | - | 性能与依赖硬化 |
 | M17 | 未开始 | - | - | - | 本地 QA 与证据 |
@@ -44,6 +44,7 @@
 | 2026-07-09 | M11 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks；首次 RC 因 mobile 首页 CTA 被迁移 cue 挤出首屏失败，修复后重跑通过 | 通过：`desktop-atlas.png`、`desktop-node-world-manifesto.png` 可见来源残影、目标预告与抵达方式 | 通过：`mobile-reduced-motion-home.png` 主 CTA、移动导航和核心状态卡可见 | 通过：移动端隐藏桌面叙事卡，仅保留轻量状态文本和阶段胶囊 | M11 体验达标，进入 M12 |
 | 2026-07-09 | M12 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-ask.png`；另以本地临时 full-page 截图人工确认控制台主体区 | 通过：`mobile-reduced-motion-ask.png` 无白屏、无遮挡 | 通过：低光运行器结果静态可读，不依赖真实 Provider 或强动效 | M12 体验达标，进入 M13 |
 | 2026-07-09 | M13 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks；首轮 fixed overlay 失败修复后重跑通过 | 通过：`desktop-status.png` 可复核 Sensory Audio M13 治理摘要，`desktop-home.png` 声景入口默认静音 | 通过：`mobile-reduced-motion-home.png`、`mobile-reduced-motion-status.png` 无白屏、无遮挡 | 通过：`check:reduced-motion`；声音默认关闭，用户 opt-in 后才初始化 Web Audio，无外部音频下载 | M13 体验达标，进入 M14 |
+| 2026-07-09 | M14 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-ask.png`，`/ask` 文本长度 2746 且 fixed overlay 为 0 | 通过：`mobile-reduced-motion-ask.png` 无白屏、无遮挡 | 通过：接口直调返回 `cache-control`、`x-worldos-lighthouse-mode`、`x-worldos-provider-status`，recommendations=4，`writesWorldSource=false` | M14 体验达标，进入 M15 |
 
 ## 5. 最终验收
 
