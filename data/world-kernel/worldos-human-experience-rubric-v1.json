@@ -1,0 +1,39 @@
+{
+  "name": "WorldOS M17 人工体验量表自动化代理 v1",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md",
+  "principle": "自动化不能替代人工审美，但必须先排除白屏、遮挡、同质化、无出口和骨架式空场景。",
+  "localOnly": true,
+  "externalPreviewConsidered": false,
+  "productionConsidered": false,
+  "reports": {
+    "sceneQa": "docs/90-archive/reports/worldos-scene-qa-report.json",
+    "lanRc": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "summary": "docs/90-archive/reports/worldos-local-rc-summary-report.json"
+  },
+  "dimensions": [
+    "worldEntrance",
+    "scenePersonality",
+    "migrationContinuity",
+    "contentLife",
+    "explorability",
+    "atmosphere",
+    "fallbackQuality"
+  ],
+  "thresholds": {
+    "minAverageScore": 1.5,
+    "requiredTwoPointScenes": ["gateway", "atlas", "paths"],
+    "minSceneWorldPortalVariants": 7,
+    "minSceneProductionParts": 6,
+    "maxFixedOverlayIssues": 0,
+    "maxFailedChecks": 0,
+    "minScreenshots": 18,
+    "minLanBrowserChecks": 20
+  },
+  "manualJudgementPrompt": "是否仍像博客骨架？如果是，不得完成 M17。",
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

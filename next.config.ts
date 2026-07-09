@@ -36,6 +36,8 @@ const nextConfig: NextConfig = {
       { source: '/r5-lighthouse', destination: '/ask', permanent: true },
       { source: '/r6-service', destination: '/forbidden', permanent: true },
       { source: '/r7-evolution', destination: '/forbidden', permanent: true },
+      { source: '/private-archive', destination: '/forbidden', permanent: false },
+      { source: '/private-archive/:path*', destination: '/forbidden', permanent: false },
     ]
   },
 }

@@ -35,7 +35,9 @@
   "runtimeBudgets": {
     "maxRuntimeDependencies": 14,
     "maxLibFiles": 130,
-    "maxNextBuildMb": 200,
+    "maxNextBuildMb": 240,
+    "maxNextRuntimeArtifactMb": 80,
+    "maxNextCacheMb": 180,
     "maxRawJsChunkMb": 10,
     "maxGzipJsChunkMb": 2,
     "audioDefaultMuted": true,

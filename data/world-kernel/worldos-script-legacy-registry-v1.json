@@ -1,6 +1,6 @@
 {
   "name": "WorldOS 历史脚本治理注册表 v1",
-  "updatedAt": "2026-07-08",
+  "updatedAt": "2026-07-09",
   "source": "WorldOS local maturity gate follow-up",
   "principle": "默认入口必须短且可复跑；历史阶段脚本保留为 reference，但不能继续扩展为新开发默认入口。",
   "activeEntrypoints": [
@@ -22,6 +22,7 @@
     "check:journey-memory",
     "check:ambient-environment",
     "check:scene-qa",
+    "check:human-experience",
     "check:ai-provider-boundary",
     "check:phase21-lighthouse",
     "check:api-boundary",
@@ -54,6 +55,7 @@
     "npm run check:journey-memory",
     "npm run check:ambient-environment",
     "npm run check:scene-qa",
+    "npm run check:human-experience",
     "npm run check:dependency-hardening"
   ],
   "releaseCandidateCommands": [
@@ -63,6 +65,7 @@
     "npm run smoke:runtime-local",
     "npm run smoke:lan-local",
     "npm run check:scene-qa",
+    "npm run check:human-experience",
     "npm run check:rc-evidence-policy"
   ],
   "policies": {
@@ -80,8 +83,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 281,
-    "checkScripts": 153,
+    "totalScripts": 282,
+    "checkScripts": 154,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },

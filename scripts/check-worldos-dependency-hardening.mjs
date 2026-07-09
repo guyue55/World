@@ -33,6 +33,17 @@ function dirSize(dir) {
   return size
 }
 
+function dirSizeExcept(dir, excludedNames) {
+  let size = 0
+  if (!fs.existsSync(dir)) return 0
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (excludedNames.has(entry.name)) continue
+    const abs = path.join(dir, entry.name)
+    size += entry.isDirectory() ? dirSizeExcept(abs, excludedNames) : fs.statSync(abs).size
+  }
+  return size
+}
+
 const policy = readJson('data/engineering/dependency-hardening-policy.json')
 const pkg = readJson('package.json')
 const runtimeDeps = Object.keys(pkg.dependencies ?? {}).sort()
@@ -71,7 +82,11 @@ for (const dir of scanRoots) {
 const nextDir = rel('.next')
 if (fs.existsSync(nextDir)) {
   const buildMb = dirSize(nextDir) / 1024 / 1024
+  const cacheMb = dirSize(rel('.next/cache')) / 1024 / 1024
+  const runtimeArtifactMb = dirSizeExcept(nextDir, new Set(['cache'])) / 1024 / 1024
   assert(buildMb <= policy.runtimeBudgets.maxNextBuildMb, `.next 超预算：${buildMb.toFixed(2)}MB`)
+  assert(cacheMb <= policy.runtimeBudgets.maxNextCacheMb, `.next/cache 超预算：${cacheMb.toFixed(2)}MB`)
+  assert(runtimeArtifactMb <= policy.runtimeBudgets.maxNextRuntimeArtifactMb, `.next runtime artifact 超预算：${runtimeArtifactMb.toFixed(2)}MB`)
   const chunksDir = rel('.next/static/chunks')
   if (fs.existsSync(chunksDir)) {
     for (const entry of fs.readdirSync(chunksDir)) {
