@@ -5,30 +5,33 @@ import { usePathname } from 'next/navigation'
 import { MotionConfig } from 'framer-motion'
 import { RuntimeAtmosphere } from './RuntimeAtmosphere'
 import { RuntimeSignalDock } from './RuntimeSignalDock'
+import {
+  buildJourneyMemoryEntry,
+  getJourneyStorageKeys,
+  isJourneyMemoryEntry,
+  mergeJourneyHistory,
+  type JourneyMemoryEntry,
+} from '@/lib/journey-memory'
 
 export type DayPeriod = 'dawn' | 'day' | 'dusk' | 'night'
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
-
-type LastJourney = {
-  path: string
-  label: string
-  visitedAt: string
-}
 
 type WorldRuntime = {
   dayPeriod: DayPeriod
   season: Season
   reducedMotion: boolean
   compactMotion: boolean
-  lastJourney: LastJourney | null
+  currentJourney: JourneyMemoryEntry | null
+  lastJourney: JourneyMemoryEntry | null
+  journeyHistory: JourneyMemoryEntry[]
   visitedCount: number
   setReducedMotion: (value: boolean) => void
 }
 
 const WorldRuntimeContext = createContext<WorldRuntime | null>(null)
 
-const lastJourneyKey = 'guyue-world:last-journey'
 const visitedKey = 'guyue-world:visited-count'
+const journeyStorageKeys = getJourneyStorageKeys()
 
 function getDayPeriod(hour: number): DayPeriod {
   if (hour >= 5 && hour < 9) return 'dawn'
@@ -44,15 +47,42 @@ function getSeason(month: number): Season {
   return 'winter'
 }
 
-function readLastJourney(): LastJourney | null {
+function readJourneyMemory(): JourneyMemoryEntry | null {
   try {
-    const raw = window.localStorage.getItem(lastJourneyKey)
+    const raw = window.localStorage.getItem(journeyStorageKeys.primaryKey)
     if (!raw) return null
-    const parsed = JSON.parse(raw) as LastJourney
-    if (!parsed.path || !parsed.label || !parsed.visitedAt) return null
-    return parsed
+    const parsed = JSON.parse(raw) as unknown
+    return isJourneyMemoryEntry(parsed) ? parsed : null
   } catch {
     return null
+  }
+}
+
+function writeJourneyMemory(entry: JourneyMemoryEntry) {
+  try {
+    window.localStorage.setItem(journeyStorageKeys.primaryKey, JSON.stringify(entry))
+  } catch {
+    // Journey Memory is an experience enhancement; browsing must keep working without storage.
+  }
+}
+
+function readJourneyHistory(): JourneyMemoryEntry[] {
+  try {
+    const raw = window.localStorage.getItem(journeyStorageKeys.historyKey)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as unknown
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(isJourneyMemoryEntry)
+  } catch {
+    return []
+  }
+}
+
+function writeJourneyHistory(history: JourneyMemoryEntry[]) {
+  try {
+    window.localStorage.setItem(journeyStorageKeys.historyKey, JSON.stringify(history))
+  } catch {
+    // Journey Memory is an experience enhancement; browsing must keep working without storage.
   }
 }
 
@@ -64,25 +94,23 @@ function readVisitedCount() {
   }
 }
 
-function labelFromPath(pathname: string) {
-  if (pathname === '/') return '世界入口'
-  return pathname.split('/').filter(Boolean).join(' / ') || '世界入口'
-}
-
 export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const [dayPeriod, setDayPeriod] = useState<DayPeriod>('day')
   const [season, setSeason] = useState<Season>('spring')
   const [reducedMotion, setReducedMotion] = useState(false)
   const [compactMotion, setCompactMotion] = useState(false)
-  const [lastJourney, setLastJourney] = useState<LastJourney | null>(null)
+  const [currentJourney, setCurrentJourney] = useState<JourneyMemoryEntry | null>(null)
+  const [lastJourney, setLastJourney] = useState<JourneyMemoryEntry | null>(null)
+  const [journeyHistory, setJourneyHistory] = useState<JourneyMemoryEntry[]>([])
   const [visitedCount, setVisitedCount] = useState(0)
 
   useEffect(() => {
     const now = new Date()
     setDayPeriod(getDayPeriod(now.getHours()))
     setSeason(getSeason(now.getMonth()))
-    setLastJourney(readLastJourney())
+    setLastJourney(readJourneyMemory())
+    setJourneyHistory(readJourneyHistory())
 
     const nextVisitedCount = readVisitedCount() + 1
     setVisitedCount(nextVisitedCount)
@@ -109,14 +137,19 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
-    if (!pathname || pathname === '/') return
-    const nextJourney = { path: pathname, label: labelFromPath(pathname), visitedAt: new Date().toISOString() }
-    setLastJourney(nextJourney)
-    try {
-      window.localStorage.setItem(lastJourneyKey, JSON.stringify(nextJourney))
-    } catch {
-      // localStorage can be unavailable in strict privacy modes.
-    }
+    if (!pathname) return
+    const nextJourney = buildJourneyMemoryEntry(pathname, new Date().toISOString())
+    const previousJourney = readJourneyMemory()
+    const nextHistory = mergeJourneyHistory(readJourneyHistory(), nextJourney)
+    const previousDifferentJourney = previousJourney?.path !== nextJourney.path
+      ? previousJourney
+      : nextHistory.find((entry) => entry.path !== nextJourney.path) ?? null
+
+    writeJourneyMemory(nextJourney)
+    writeJourneyHistory(nextHistory)
+    setCurrentJourney(nextJourney)
+    setLastJourney(previousDifferentJourney)
+    setJourneyHistory(nextHistory)
   }, [pathname])
 
   const value = useMemo<WorldRuntime>(() => ({
@@ -124,10 +157,12 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     season,
     reducedMotion,
     compactMotion,
+    currentJourney,
     lastJourney,
+    journeyHistory,
     visitedCount,
     setReducedMotion,
-  }), [compactMotion, dayPeriod, lastJourney, reducedMotion, season, visitedCount])
+  }), [compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, reducedMotion, season, visitedCount])
 
   return (
     <WorldRuntimeContext.Provider value={value}>

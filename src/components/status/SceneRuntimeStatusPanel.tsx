@@ -1,14 +1,17 @@
 import { Compass, GitBranch, Map, ShieldCheck } from 'lucide-react'
+import type { JourneyMemorySummary } from '@/lib/journey-memory'
 import type { SceneRuntimeSummary } from '@/lib/scene-runtime'
 import type { ScenePersonalitySummary } from '@/lib/scene-personality'
 import type { SceneTransitionSummary } from '@/lib/scene-transition'
 
 export function SceneRuntimeStatusPanel({
   summary,
+  journeyMemorySummary,
   personalitySummary,
   transitionSummary,
 }: {
   summary: SceneRuntimeSummary
+  journeyMemorySummary?: JourneyMemorySummary
   personalitySummary?: ScenePersonalitySummary
   transitionSummary?: SceneTransitionSummary
 }) {
@@ -127,6 +130,38 @@ export function SceneRuntimeStatusPanel({
                 <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{personality.landmark}</p>
               </article>
             ))}
+          </div>
+        </div>
+      )}
+
+      {journeyMemorySummary && (
+        <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Journey Memory</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">公开旅程可以被轻量恢复</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
+                旅程记忆只保存公开场景、公开节点、公开路径和访问时间；清空本地存储后，世界仍能完整浏览。
+              </p>
+            </div>
+            <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
+              <p className="text-xs font-semibold tracking-[0.22em] text-gold">HISTORY</p>
+              <p className="mt-2 text-2xl font-semibold">{journeyMemorySummary.maxHistory}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">主键</p>
+              <p className="mt-2 truncate text-sm font-semibold text-ink">{journeyMemorySummary.primaryKey}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">历史</p>
+              <p className="mt-2 truncate text-sm font-semibold text-ink">{journeyMemorySummary.historyKey}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">边界</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{journeyMemorySummary.allowedFieldCount} 可存 / {journeyMemorySummary.forbiddenFieldCount} 禁止</p>
+            </div>
           </div>
         </div>
       )}

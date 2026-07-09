@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS Phase 30 公开旅程记忆策略",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-phase30-journey-memory-execution-plan-2026-07-09.md",
+  "principle": "Journey Memory 只保存公开体验恢复所需的轻量状态，不承担权限判断，不保存私密内容，不参与后端 guard。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "storage": {
+    "primaryKey": "guyue-world:journey-memory-v1",
+    "historyKey": "guyue-world:journey-history-v1",
+    "maxHistory": 5,
+    "allowedFields": [
+      "path",
+      "label",
+      "sceneId",
+      "sceneTitle",
+      "recentNodeSlug",
+      "recentPathId",
+      "visitedAt"
+    ],
+    "forbiddenFields": [
+      "owner",
+      "auth",
+      "permission",
+      "role",
+      "token",
+      "secret",
+      "visibility",
+      "private",
+      "vault"
+    ]
+  },
+  "routeRules": [
+    {
+      "prefix": "/atlas",
+      "label": "世界地图",
+      "kind": "scene"
+    },
+    {
+      "prefix": "/timeline",
+      "label": "时间河",
+      "kind": "scene"
+    },
+    {
+      "prefix": "/archive",
+      "label": "档案馆",
+      "kind": "scene"
+    },
+    {
+      "prefix": "/ask",
+      "label": "低光灯塔",
+      "kind": "scene"
+    },
+    {
+      "prefix": "/paths/",
+      "label": "旅程路线",
+      "kind": "path"
+    },
+    {
+      "prefix": "/paths",
+      "label": "星路入口",
+      "kind": "scene"
+    },
+    {
+      "prefix": "/node/",
+      "label": "节点展开室",
+      "kind": "node"
+    }
+  ],
+  "fallback": {
+    "label": "世界入口",
+    "sceneId": "gateway",
+    "sceneTitle": "创世原点",
+    "path": "/"
+  },
+  "acceptance": {
+    "requiredFiles": [
+      "data/domains/experience/journey-memory-policy.json",
+      "src/lib/journey-memory.ts",
+      "src/components/world/WorldRuntimeProvider.tsx",
+      "src/components/product/ProductJourneyDock.tsx"
+    ],
+    "requiredStorageKeys": [
+      "guyue-world:journey-memory-v1",
+      "guyue-world:journey-history-v1"
+    ],
+    "forbiddenClientTokens": [
+      "OPENAI_API_KEY",
+      "ANTHROPIC_API_KEY",
+      "new OpenAI",
+      "responses.create",
+      "chat.completions",
+      "GUYUE_OWNER_TOKEN",
+      "R8_OWNER_TOKEN"
+    ],
+    "releaseStates": {
+      "productionLive": false,
+      "releaseReady": false,
+      "cleanProductionReady": false
+    }
+  },
+  "nextActions": [
+    "阶段 31：Ambient Environment v2 读取 currentScene，但不读取权限状态。",
+    "阶段 32：Scene QA 增加 returning visitor 与 cleared storage 两种截图证据。"
+  ]
+}

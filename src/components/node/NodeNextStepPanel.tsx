@@ -1,11 +1,25 @@
+'use client'
+
 import Link from 'next/link'
 import type { NodeNextStepSurface } from '@/lib/public-world-surfaces'
+import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
 
 export function NodeNextStepPanel({ surface }: { surface: NodeNextStepSurface }) {
+  const runtime = useWorldRuntime()
+  const returnJourney = runtime.lastJourney?.path?.startsWith('/node/')
+    ? null
+    : runtime.lastJourney
+
   return (
     <section className="rounded-[1.75rem] border border-white/65 bg-white/70 p-5 text-sm leading-7 text-ink/62 shadow-soft backdrop-blur">
       <p className="font-semibold text-ink">{surface.title}</p>
       <p className="mt-2">{surface.description}</p>
+      {returnJourney && (
+        <Link href={returnJourney.path} className="mt-4 block rounded-[1rem] border border-moss/15 bg-moss/8 px-4 py-3 font-semibold text-ink transition hover:bg-moss/12">
+          <span className="block">返回来源：{returnJourney.label}</span>
+          <span className="block truncate text-xs font-normal text-ink/52">{returnJourney.sceneTitle}</span>
+        </Link>
+      )}
       <div className="mt-4 flex flex-col gap-2">
         {surface.actions.map((action) => (
           <Link

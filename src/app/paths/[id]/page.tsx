@@ -55,7 +55,7 @@ export default async function PathDetailPage({ params }: { params: Promise<PathP
       </section>
 
       <aside className="xl:sticky xl:top-24 xl:self-start">
-        <PathProgress nodes={nodes} />
+        <PathProgress nodes={nodes} pathId={path.id} />
       </aside>
     </main>
   )
