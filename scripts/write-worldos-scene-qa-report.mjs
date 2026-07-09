@@ -117,6 +117,7 @@ for (const scene of checklist.requiredScenes) {
         ambientEnvironmentPresent: bool(result.sceneQa.ambientEnvironmentPresent),
         sceneTransitionShellPresent: bool(result.sceneQa.sceneTransitionShellPresent),
         sceneIdentityBandPresent: bool(result.sceneQa.sceneIdentityBandPresent),
+        sceneIdentityBandCompact: bool(result.sceneQa.sceneIdentityBandCompact),
         sceneWorldPortalPresent: bool(result.sceneQa.sceneWorldPortalPresent),
         sceneWorldPortalVariant: result.sceneQa.sceneWorldPortalVariant ?? '',
         firstVisitRitualPresent: bool(result.sceneQa.firstVisitRitualPresent),
@@ -144,6 +145,10 @@ const requiredPortalChecks = routeChecks.filter((check) => {
   const scene = checklist.requiredScenes.find((item) => item.sceneId === check.sceneId)
   return scene?.requiresSceneWorldPortal === true
 })
+const requiredPortalIdentityChecks = routeChecks.filter((check) => {
+  const scene = checklist.requiredScenes.find((item) => item.sceneId === check.sceneId)
+  return scene?.requiresSceneWorldPortal === true && scene?.requiresSceneIdentityBand === true
+})
 const returningVisitorChecks = routeChecks.filter((check) => check.sceneQa.hasReturningVisitorCopy)
 
 if (returningVisitorChecks.length === 0) fail('缺少返回访客文案证据：Journey Memory 没有出现“上次停在”')
@@ -168,6 +173,7 @@ const report = {
     ambientEnvironment: routeChecks.every((check) => check.sceneQa.ambientEnvironmentPresent),
     sceneTransitionShell: routeChecks.every((check) => check.sceneQa.sceneTransitionShellPresent),
     sceneIdentityBand: requiredIdentityChecks.every((check) => check.sceneQa.sceneIdentityBandPresent),
+    compactSceneIdentityBand: requiredPortalIdentityChecks.every((check) => check.sceneQa.sceneIdentityBandCompact),
     sceneWorldPortal: requiredPortalChecks.every((check) => check.sceneQa.sceneWorldPortalPresent),
     sceneWorldPortalVariants: [...new Set(requiredPortalChecks.map((check) => check.sceneQa.sceneWorldPortalVariant).filter(Boolean))],
     journeyMemoryEntry: routeChecks.every((check) => check.sceneQa.journeyMemoryEntryPresent),

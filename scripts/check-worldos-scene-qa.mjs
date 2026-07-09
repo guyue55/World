@@ -53,6 +53,7 @@ if (failures.length === 0) {
     if (report.evidence?.ambientEnvironment !== true) fail('Scene QA 缺少空气层全量证据')
     if (report.evidence?.sceneTransitionShell !== true) fail('Scene QA 缺少转场壳全量证据')
     if (report.evidence?.sceneIdentityBand !== true) fail('Scene QA 缺少场景身份带证据')
+    if (report.evidence?.compactSceneIdentityBand !== true) fail('Scene QA 缺少紧凑场景身份带证据')
     if (report.evidence?.sceneWorldPortal !== true) fail('Scene QA 缺少世界化场景门户证据')
     for (const expected of checklist.requiredScenes.map((scene) => scene.expectedSceneWorldPortal).filter(Boolean)) {
       if (!report.evidence?.sceneWorldPortalVariants?.includes(expected)) fail(`Scene QA 缺少 ${expected} 场景门户类型证据`)

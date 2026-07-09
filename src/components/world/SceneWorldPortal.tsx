@@ -254,7 +254,7 @@ export function SceneWorldPortal({
       data-testid="scene-world-portal"
       data-scene-world-portal={scene}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
-      className={`relative min-h-[min(760px,calc(100vh-6rem))] overflow-hidden rounded-[2rem] border border-white/18 px-5 py-8 text-paper shadow-soft md:px-8 md:py-10 ${meta.variantClass}`}
+      className={`relative min-h-[min(660px,calc(100vh-5rem))] overflow-hidden rounded-[1.6rem] border border-white/18 px-5 py-7 text-paper shadow-soft md:min-h-[min(760px,calc(100vh-6rem))] md:rounded-[2rem] md:px-8 md:py-10 ${meta.variantClass}`}
     >
       <SceneIllustration scene={scene} objects={objects} />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,22,23,0.84),rgba(16,22,23,0.48)_48%,rgba(16,22,23,0.22))]" />
@@ -265,13 +265,13 @@ export function SceneWorldPortal({
             <p data-scene-reveal className={`text-xs font-semibold tracking-[0.32em] ${meta.accent}`}>
               {eyebrow}
             </p>
-            <h1 data-scene-reveal className="mt-5 max-w-4xl break-words text-5xl font-semibold leading-tight md:text-6xl">
+            <h1 data-scene-reveal className="mt-4 max-w-4xl break-words text-4xl font-semibold leading-tight sm:text-5xl md:mt-5 md:text-6xl">
               {title}
             </h1>
-            <p data-scene-reveal className="mt-5 max-w-2xl text-base leading-8 text-paper/74 md:text-lg">
+            <p data-scene-reveal className="mt-4 max-w-2xl text-base leading-8 text-paper/74 md:mt-5 md:text-lg">
               {description}
             </p>
-            <div data-scene-reveal className="mt-7 flex flex-wrap gap-3">
+            <div data-scene-reveal className="mt-6 flex flex-wrap gap-3 md:mt-7">
               <Link
                 href={primaryAction.href}
                 data-testid={primaryAction.testId}
@@ -293,12 +293,12 @@ export function SceneWorldPortal({
           </div>
 
           <aside data-scene-reveal className="space-y-4">
-            <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="rounded-[1.35rem] border border-paper/14 bg-paper/10 p-5 backdrop-blur-xl">
+            <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="rounded-[1.2rem] border border-paper/14 bg-paper/10 p-4 backdrop-blur-xl md:rounded-[1.35rem] md:p-5">
               <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.26em] text-paper/62">
                 <Radio className="h-4 w-4 text-gold" />
                 {meta.visualLabel}
               </p>
-              <h2 className="mt-3 text-2xl font-semibold">{meta.runtimeLabel}</h2>
+              <h2 className="mt-3 text-xl font-semibold md:text-2xl">{meta.runtimeLabel}</h2>
               <div className="mt-4 grid gap-3">
                 <p className="flex items-start gap-2 text-sm leading-6 text-paper/66">
                   <Compass className="mt-1 h-4 w-4 shrink-0 text-lake" />
@@ -314,8 +314,8 @@ export function SceneWorldPortal({
             {statusStats.length > 0 ? (
               <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
                 {statusStats.map((stat) => (
-                  <div key={stat.label} className="rounded-[1.15rem] border border-paper/12 bg-paper/8 p-4 backdrop-blur">
-                    <p className="truncate text-2xl font-semibold">{stat.value}</p>
+                  <div key={stat.label} className="rounded-[1rem] border border-paper/12 bg-paper/8 p-3 backdrop-blur md:rounded-[1.15rem] md:p-4">
+                    <p className="truncate text-xl font-semibold md:text-2xl">{stat.value}</p>
                     <p className="mt-1 text-sm font-semibold text-paper/78">{stat.label}</p>
                     <p className="mt-1 line-clamp-2 text-xs leading-5 text-paper/52">{stat.note}</p>
                   </div>

@@ -461,6 +461,7 @@ async function runBrowserChecks() {
               ambientEnvironmentPresent: testIdExists('ambient-environment-v2'),
               sceneTransitionShellPresent: testIdExists('scene-transition-shell'),
               sceneIdentityBandPresent: testIdExists('scene-identity-band'),
+              sceneIdentityBandCompact: document.querySelector('[data-testid="scene-identity-band"]')?.getAttribute('data-compact-scene-band') === 'true',
               sceneWorldPortalPresent: testIdExists('scene-world-portal'),
               sceneWorldPortalVariant: document.querySelector('[data-testid="scene-world-portal"]')?.getAttribute('data-scene-world-portal') || '',
               firstVisitRitualPresent: testIdExists('first-visit-ritual') || testIdExists('first-visit-ritual-collapsed'),

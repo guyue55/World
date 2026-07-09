@@ -35,6 +35,7 @@ if (failures.length === 0) {
   if (report.gates?.sceneQa?.ambientEnvironment !== true) failures.push('Scene QA 缺少空气层证据')
   if (report.gates?.sceneQa?.sceneTransitionShell !== true) failures.push('Scene QA 缺少转场壳证据')
   if (report.gates?.sceneQa?.sceneIdentityBand !== true) failures.push('Scene QA 缺少场景身份带证据')
+  if (report.gates?.sceneQa?.compactSceneIdentityBand !== true) failures.push('Scene QA 缺少紧凑场景身份带证据')
   if (report.gates?.sceneQa?.sceneWorldPortal !== true) failures.push('Scene QA 缺少世界化场景门户证据')
   for (const scene of ['gateway', 'atlas', 'timeline', 'archive', 'paths']) {
     if (!report.gates?.sceneQa?.sceneWorldPortalVariants?.includes(scene)) failures.push(`Scene QA 缺少 ${scene} 门户证据`)
