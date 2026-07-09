@@ -8,9 +8,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M18 |
-| 当前阶段 | M17 |
+| 当前阶段 | M18 |
 | 最后更新时间 | 2026-07-09 |
-| 当前结论 | M16 性能与依赖硬化已通过本地 / LAN RC；下一阶段进入 M17 本地 QA 与证据自动化 |
+| 当前结论 | M17 本地 QA 与证据自动化已通过本地 / LAN RC；下一阶段进入 M18 作者治理与运维 |
 
 ## 2. 阶段进度
 
@@ -25,7 +25,7 @@
 | M14 | 已完成 | `28a5349f` | `check:lighthouse`、`check:ai-boundary`、`check:ai-provider-boundary`、`check:api-boundary`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：`/ask` 展示运行推荐、cache、timeout、requestId、questionDigest 与输出摘要；接口直调确认 headers、recommendations、auditSummary 存在且 `writesWorldSource=false` | Provider 仍为 disabled-dry-run；无前端 key、无私密读取、无 Provider 网络请求、无世界源写入 |
 | M15 | 已完成 | `c966950b` | `check:content-life`、`check:content`、`check:worldos-content-density`、`check:content-jaccard`、`check:node-reading`、`check:atlas`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：深度审计确认 200 公开节点、29 公开路径、398 关系、51 事件；短摘要、低关系、缺路径、缺时间锚点、缺 AI 摘要均为 0 | 补齐 51 条偏短公开节点摘要，并将内容生命契约 `minSummaryLength` 从 18 提升至 24；无私密内容进入公开事实源 |
 | M16 | 已完成 | `101513f1` | `check:lib-budget`、`check:performance-budget`、`check:performance`、`check:performance-implementation`、`check:performance-regression`、`check:dependency-hardening`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：运行时依赖固定为 14 个，无 Three/Pixi/Howler/Tone/XState 等重型候选；compact/reduced 下空气层显式停止背景动画；RC shared First Load JS 约 194 kB | 新增 M16 依赖硬化策略与 `check:dependency-hardening`，已纳入 mainline；脚本注册表同步为 281 scripts / 153 check scripts |
-| M17 | 未开始 | - | - | - | 本地 QA 与证据 |
+| M17 | 已完成 | `0168685c` | `check:human-experience`、`check:scene-qa`、`check:dependency-hardening`、`check:mainline`、`release:local-rc` 通过 | 通过：9 个场景进入人类体验 Rubric，平均分 2.00；LAN 22 HTTP / 20 browser checks 通过；runtime smoke 20 HTTP checks 通过 | 新增人类体验门禁并纳入 mainline；生产构建改为可被 `next start` 验证的 fresh build；`/private-archive` 增加服务端 redirect 兜底；性能预算拆分 total/cache/runtime artifact |
 | M18 | 未开始 | - | - | - | 作者治理与运维 |
 
 ## 3. 失败与修复记录
@@ -33,6 +33,9 @@
 | 时间 | 阶段 | 失败项 | 修复 | 重跑结果 |
 | --- | --- | --- | --- | --- |
 | 2026-07-09 | M13 | `release:local-rc` 首轮失败：新增声景控制作为独立 fixed 面板导致 desktop/mobile 多路由 `fixedOverlayIssues` > 0 | 将外层 fixed 容器改为 `pointer-events-none`，只让内部控件 `pointer-events-auto`，避免新增可遮挡层 | `release:local-rc` 重跑通过：22 HTTP checks、20 browser checks，overlay issue 为 0 |
+| 2026-07-09 | M17 | `release:local-rc` 首轮失败：Turbopack production build 生成的 `.next/server/vendor-chunks/framer-motion.js` 缺失，`next start` 无法稳定就绪 | 新增 `scripts/run-worldos-production-ci-build.mjs`，`build:production-ci` 每次清理 `.next` 后运行标准 `next build`，确保最终产物可被 `next start` 验证 | `build:production-ci` + `smoke:runtime-local` 重跑通过，shared First Load JS 降至约 102 kB |
+| 2026-07-09 | M17 | `smoke:runtime-local` 暴露 `/private-archive` 在标准构建下返回 404，而非服务端受保护跳转 | 在 `next.config.ts` 增加 `/private-archive` 与子路径到 `/forbidden` 的服务端 redirect 兜底，保持 route policy 与 middleware 源码治理不变 | `smoke:runtime-local` 重跑通过：20 HTTP checks |
+| 2026-07-09 | M17 | `check:dependency-hardening` 因 `.next` 总体积 206.36MB 超过 200MB；拆解后 158MB 为 `.next/cache`，运行产物约 51MB | 将依赖硬化预算拆分为 total/cache/runtime artifact 三层，继续约束 runtime artifact 与 JS chunk，避免把构建 cache 误判为运行包体积 | `check:dependency-hardening`、`check:mainline`、`release:local-rc` 全部重跑通过 |
 
 ## 4. 浏览器与 RC 证据摘要
 
@@ -47,6 +50,7 @@
 | 2026-07-09 | M14 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-ask.png`，`/ask` 文本长度 2746 且 fixed overlay 为 0 | 通过：`mobile-reduced-motion-ask.png` 无白屏、无遮挡 | 通过：接口直调返回 `cache-control`、`x-worldos-lighthouse-mode`、`x-worldos-provider-status`，recommendations=4，`writesWorldSource=false` | M14 体验达标，进入 M15 |
 | 2026-07-09 | M15 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-archive.png` 文本长度 23777、fixed overlay 为 0；内容摘要补齐后 Archive/Atlas/Ask 仍可读 | 通过：`mobile-reduced-motion-ask.png`、`mobile-reduced-motion-status.png` 无白屏、无遮挡 | 通过：Jaccard 最大相似度 0.5565，未因批量摘要补齐造成过度重复 | M15 体验达标，进入 M16 |
 | 2026-07-09 | M16 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-home.png`、`desktop-status.png` 无 fixed overlay；构建输出 shared First Load JS 约 194 kB | 通过：mobile reduced-motion 多路由无白屏、无遮挡 | 通过：`check:dependency-hardening` 确认默认无重型 3D/音频库、声音默认静音、Provider 默认 disabled | M16 体验达标，进入 M17 |
+| 2026-07-09 | M17 | 通过：runtime smoke 20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-home.png`、`desktop-atlas.png`、`desktop-timeline.png`、`desktop-archive.png`、`desktop-paths.png`、`desktop-ask.png`、`desktop-status.png`、节点与路径详情截图全部刷新 | 通过：mobile reduced-motion 9 条核心浏览器检查无白屏、无遮挡 | 通过：`check:human-experience` 9 scenes avg=2.00；`/private-archive` 在 runtime smoke 中受保护；生产构建 shared First Load JS 约 102 kB | M17 体验与证据门禁达标，进入 M18 |
 
 ## 5. 最终验收
 
