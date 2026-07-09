@@ -39,6 +39,7 @@ export default function ArchivePage() {
           { label: '区域', value: areas.filter((area) => area.level === 1).length, note: '馆藏按空间归类' },
           { label: '边界', value: '公开', note: '私密层不进入前台' },
         ]}
+        interactionModel={interactionModel}
       />
       <ProductRouteGuide
         current="档案馆"
@@ -46,8 +47,8 @@ export default function ArchivePage() {
         primaryHref="/atlas"
         primaryLabel="切回世界地图"
       />
-      <ArchiveDynamicGuide surface={archiveSurface} />
       <SceneDeepInteractionPanel model={interactionModel} />
+      <ArchiveDynamicGuide surface={archiveSurface} />
       <ArchiveView nodes={nodes} areas={areas} />
     </main>
   )

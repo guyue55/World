@@ -1,6 +1,7 @@
 import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
+import type { SceneDeepInteractionModel } from '@/lib/scene-deep-interaction'
 
-export function AtlasHero() {
+export function AtlasHero({ interactionModel }: { interactionModel?: SceneDeepInteractionModel }) {
   return (
     <SceneWorldPortal
       scene="atlas"
@@ -18,6 +19,7 @@ export function AtlasHero() {
         { label: '星线', value: '实时', note: '关系正在连接' },
         { label: '下一幕', value: '时间河', note: '从空间转入事件' },
       ]}
+      interactionModel={interactionModel}
     />
   )
 }

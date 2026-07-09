@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, type ReactNode } from 'react'
 import { ArrowRight, Compass, Radio, ShieldCheck } from 'lucide-react'
 import { gsap } from 'gsap'
 import { useWorldRuntime } from './WorldRuntimeProvider'
+import type { SceneDeepInteractionModel } from '@/lib/scene-deep-interaction'
 
 export type SceneWorldPortalId = 'gateway' | 'atlas' | 'timeline' | 'archive' | 'paths' | 'lighthouse' | 'status'
 
@@ -33,6 +34,7 @@ export type SceneWorldPortalProps = {
   stats?: SceneWorldPortalStat[]
   fallbackLabel?: string
   evidenceLabel?: string
+  interactionModel?: SceneDeepInteractionModel
   children?: ReactNode
 }
 
@@ -268,6 +270,36 @@ function SceneStagePanel({
   )
 }
 
+function ScenePortalInteractionDock({ model }: { model: SceneDeepInteractionModel }) {
+  const featured = model.steps.slice(0, 3)
+
+  if (featured.length === 0) return null
+
+  return (
+    <div data-m19-scene-interaction-dock={model.kind} className="rounded-[1.15rem] border border-gold/24 bg-gold/10 p-4 backdrop-blur-xl">
+      <p className="text-xs font-semibold tracking-[0.24em] text-gold">{model.stateLabels.join(' / ')}</p>
+      <h2 className="mt-2 text-xl font-semibold leading-tight text-paper">{model.activeLabel}</h2>
+      <div className="mt-4 grid gap-2">
+        {featured.map((step, index) => (
+          <Link
+            key={step.id}
+            href={step.href ?? '#'}
+            className="group grid grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-[0.95rem] border border-paper/12 bg-paper/8 p-3 text-left transition hover:border-paper/24 hover:bg-paper/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70"
+          >
+            <span className="grid h-7 w-7 place-items-center rounded-full bg-paper/12 text-xs font-semibold text-gold">
+              {index + 1}
+            </span>
+            <span className="min-w-0">
+              <span className="block truncate text-sm font-semibold text-paper">{step.title}</span>
+              <span className="mt-1 block truncate text-xs text-paper/52">{step.meta}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export function SceneWorldPortal({
   scene,
   eyebrow,
@@ -279,6 +311,7 @@ export function SceneWorldPortal({
   stats = [],
   fallbackLabel,
   evidenceLabel,
+  interactionModel,
   children,
 }: SceneWorldPortalProps) {
   const rootRef = useRef<HTMLElement | null>(null)
@@ -388,6 +421,7 @@ export function SceneWorldPortal({
                 公开场景，只展示已放行内容。
               </p>
             </div>
+            {interactionModel && <ScenePortalInteractionDock model={interactionModel} />}
             <SceneStagePanel
               scene={scene}
               objects={objects}

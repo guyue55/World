@@ -33,6 +33,7 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 进行中 | 新增 `build*DeepInteractionModel()` 公开事实源适配器；新增 `SceneDeepInteractionPanel`；Atlas / Timeline / Archive / Paths 均接入可点击状态面板，覆盖区域聚焦、事件回看、卷宗展开和路线进度 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 这是 M19 第一批主体交互落地，证明四场景已有可操作状态层；但默认 LAN 首屏截图仍主要展示 Portal 舞台，尚不能宣称四场景“终局独立空间”完成 | 继续 M19：让交互主体进入首屏/第一交互证据，补录屏或专用 M19 体验检查，避免只在页面下方出现交互面板 |
+| 2026-07-10 | 进行中 | `SceneWorldPortal` 接入 `interactionModel`，在 Atlas / Timeline / Archive / Paths 首屏右侧展示 M19 紧凑交互坞；Atlas / Timeline 完整交互面板前移到动态展示前 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 真实截图已看到 `desktop-atlas.png` 和 `mobile-reduced-motion-atlas.png` 首屏出现“区域聚焦 / 节点预览 / 关系解释”交互坞；这使 M19 从“页面下方有面板”推进到“第一屏可感知可操作主体”。仍不能宣称 M19 终局完成，因为还缺专用 M19 录屏/检查来证明四场景交互状态变化。 | 继续 M19：补专用 `check:m19-scene-interaction` 或等价证据，覆盖四场景交互坞、完整面板、键盘/点击状态、reduced-motion 与移动端；再进入 M20 |
 
 ## 2. 阶段进度
 

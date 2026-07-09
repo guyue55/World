@@ -1,5 +1,6 @@
 import type { WorldState } from '@/lib/types'
 import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
+import type { SceneDeepInteractionModel } from '@/lib/scene-deep-interaction'
 
 const stateLabels = {
   mode: {
@@ -22,7 +23,13 @@ const stateLabels = {
   },
 }
 
-export function TimelineHero({ state }: { state: WorldState }) {
+export function TimelineHero({
+  state,
+  interactionModel,
+}: {
+  state: WorldState
+  interactionModel?: SceneDeepInteractionModel
+}) {
   return (
     <SceneWorldPortal
       scene="timeline"
@@ -40,6 +47,7 @@ export function TimelineHero({ state }: { state: WorldState }) {
         { label: '季节', value: stateLabels.season[state.season], note: '用于解释节奏' },
         { label: '灯塔', value: stateLabels.aiStatus[state.aiStatus], note: '只读导览边界' },
       ]}
+      interactionModel={interactionModel}
     />
   )
 }

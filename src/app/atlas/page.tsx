@@ -32,7 +32,7 @@ export default function AtlasPage() {
 
   return (
     <main className="world-container space-y-12 py-16">
-      <AtlasHero />
+      <AtlasHero interactionModel={interactionModel} />
       <ProductRouteGuide
         current="世界地图"
         description="你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。"
@@ -45,8 +45,8 @@ export default function AtlasPage() {
         publicNodeCount={stats.publicNodeCount}
         areaLinkCount={stats.areaLinkCount}
       />
-      <AtlasLiveConstellation surface={atlasSurface} />
       <SceneDeepInteractionPanel model={interactionModel} />
+      <AtlasLiveConstellation surface={atlasSurface} />
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {primaryAreas.slice(0, 8).map((area) => (

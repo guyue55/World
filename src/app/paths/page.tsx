@@ -39,6 +39,7 @@ export default function PathsPage() {
           value: `${item.count} 条`,
           note: item.description,
         }))}
+        interactionModel={interactionModel}
       />
       <ProductRouteGuide
         current="精选路径"
