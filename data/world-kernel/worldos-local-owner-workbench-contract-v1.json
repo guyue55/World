@@ -25,7 +25,8 @@
     "/api/r6/audit",
     "/api/r6/export-jobs",
     "/api/r6/nodes",
-    "/api/r7/maintenance"
+    "/api/r7/maintenance",
+    "/api/owner/summary"
   ],
   "permissionGuardedApiRoutes": [
     "/api/v2/ai/suggestions",

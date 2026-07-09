@@ -1,0 +1,124 @@
+{
+  "name": "WorldOS Phase 25 本地 Owner 只读指挥台账本",
+  "generatedAt": "2026-07-09T03:39:36.167Z",
+  "status": "passed",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "readonlyOnly": true,
+    "serverGuardRequired": true,
+    "frontendPermissionControl": false,
+    "forbidWrites": true,
+    "forbidRealAi": true
+  },
+  "summary": "Owner 只读指挥台聚合本地 RC、路径质量、API 边界、AI 低光和发布阻断状态；它只用于观察，不执行写入。",
+  "localAccess": {
+    "mode": "local-lan",
+    "baseUrl": "http://172.30.111.222:4320",
+    "runtimeChecks": "20/20",
+    "lanHttpChecks": "22/22",
+    "lanBrowserChecks": "20/20",
+    "screenshots": 20
+  },
+  "pathQuality": {
+    "status": "passed",
+    "publicPaths": 29,
+    "averageNodesPerPath": 8.69,
+    "multiAreaPaths": 20,
+    "pathsNeedingReview": 0
+  },
+  "sourceGates": {
+    "localMaturity": 7,
+    "pathQuality": 9
+  },
+  "apiBoundary": {
+    "totalRoutes": 26,
+    "ownerOnlyRoutes": 5,
+    "permissionGuardedRoutes": 5,
+    "mutatingRoutes": 2,
+    "summary": {
+      "totalRoutes": 26,
+      "ownerOnly": 5,
+      "permissionGuarded": 5,
+      "publicRead": 9,
+      "staticSafePublic": 7,
+      "mutatingRoutes": 2
+    }
+  },
+  "aiBoundary": {
+    "mode": "low-light",
+    "realTimeAIProviderEnabled": false,
+    "contextPolicy": "public-or-authorized-only",
+    "readonly": true
+  },
+  "audit": {
+    "total": 2,
+    "moderate": 2,
+    "high": 0,
+    "critical": 0
+  },
+  "gates": [
+    {
+      "id": "local-rc",
+      "label": "本地 RC",
+      "status": "passed",
+      "value": "7 gates",
+      "note": "Owner 先看本地/LAN 是否可信。"
+    },
+    {
+      "id": "path-quality",
+      "label": "路径质量",
+      "status": "passed",
+      "value": "29 paths",
+      "note": "路径旅程质量必须先稳定。"
+    },
+    {
+      "id": "owner-routes",
+      "label": "Owner API",
+      "status": "passed",
+      "value": 5,
+      "note": "owner-only 能力必须进入注册表。"
+    },
+    {
+      "id": "permission-routes",
+      "label": "权限 API",
+      "status": "passed",
+      "value": 5,
+      "note": "permission-guarded API 继续由服务端控制。"
+    },
+    {
+      "id": "readonly-boundary",
+      "label": "只读边界",
+      "status": "passed",
+      "value": "readonly",
+      "note": "Phase 25 不做写入动作。"
+    },
+    {
+      "id": "ai-boundary",
+      "label": "AI 边界",
+      "status": "passed",
+      "value": "low-light",
+      "note": "真实 AI Provider 继续 disabled。"
+    },
+    {
+      "id": "audit-risk",
+      "label": "依赖审计",
+      "status": "passed",
+      "value": "0 high / 0 critical",
+      "note": "高危和严重风险必须阻断外部发布。"
+    }
+  ],
+  "nextActions": [
+    "Owner 只读观察通过后，再规划 AI 导览适配层。",
+    "任何写入能力都必须另建合同、审核队列和回滚策略。",
+    "继续保持 external Preview / Production 阻断。"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

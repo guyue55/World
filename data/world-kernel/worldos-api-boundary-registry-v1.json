@@ -147,6 +147,30 @@
       }
     },
     {
+      "path": "/api/owner/summary",
+      "file": "src/app/api/owner/summary/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "owner-only",
+      "guard": "requireOwner",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "guarded",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "Phase 25 owner-only readonly console summary. Aggregates local maturity, path quality, API boundary and AI low-light status.",
+      "expectedSignals": {
+        "ownerGuard": true,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
       "path": "/api/r7/world-log",
       "file": "src/app/api/r7/world-log/route.ts",
       "methods": [
@@ -628,11 +652,11 @@
     }
   ],
   "summary": {
-    "totalRoutes": 25,
-    "ownerOnly": 4,
+    "totalRoutes": 26,
+    "ownerOnly": 5,
     "permissionGuarded": 5,
     "publicRead": 9,
-    "staticSafePublic": 5,
+    "staticSafePublic": 7,
     "mutatingRoutes": 2
   }
 }

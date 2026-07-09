@@ -1,0 +1,78 @@
+{
+  "name": "WorldOS Phase 25 本地 Owner 只读指挥台合同 v1",
+  "updatedAt": "2026-07-09",
+  "source": "Phase 25: local owner readonly console",
+  "principle": "Owner 指挥台先做只读观测，不做写入；本地访问不等于免权限，owner-only 能力必须由服务端 guard 控制。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "readonlyOnly": true,
+    "serverGuardRequired": true,
+    "frontendPermissionControl": false,
+    "forbidWrites": true,
+    "forbidRealAi": true
+  },
+  "api": {
+    "route": "/api/owner/summary",
+    "file": "src/app/api/owner/summary/route.ts",
+    "classification": "owner-only",
+    "guard": "requireOwner",
+    "scope": "owner-only-summary",
+    "method": "GET",
+    "deniedStatus": 403,
+    "cacheControl": "no-store"
+  },
+  "minimums": {
+    "ownerOnlyRoutes": 5,
+    "permissionGuardedRoutes": 5,
+    "localMaturityGates": 7,
+    "pathQualityGates": 9,
+    "highAuditMax": 0,
+    "criticalAuditMax": 0
+  },
+  "requiredCommands": [
+    "build:owner-readonly-console",
+    "check:phase25-owner-console",
+    "check:mainline",
+    "check:api-boundary",
+    "check:local-owner-workbench"
+  ],
+  "requiredFiles": [
+    "data/domains/operations/owner-readonly-console-ledger.json",
+    "src/lib/owner-readonly-console.ts",
+    "src/components/status/OwnerReadonlyConsolePanel.tsx",
+    "src/app/api/owner/summary/route.ts"
+  ],
+  "requiredStatusTokens": [
+    "Owner 只读指挥台",
+    "服务端守门",
+    "只读 / no-store",
+    "不写入、不发布、不调用真实 AI",
+    "local/LAN"
+  ],
+  "forbiddenClientTokens": [
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "new OpenAI",
+    "responses.create",
+    "chat.completions",
+    "GUYUE_OWNER_TOKEN",
+    "R8_OWNER_TOKEN"
+  ],
+  "forbiddenActions": [
+    "auto-publish",
+    "auto-delete",
+    "auto-change-visibility",
+    "auto-read-private",
+    "client-side-owner-token",
+    "localStorage-permission-source"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}

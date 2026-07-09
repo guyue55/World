@@ -8,10 +8,12 @@ import { createPageMetadata } from '@/lib/metadata'
 import { getLighthouseLocalStatus } from '@/lib/lighthouse-status'
 import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { getPathQualityLedger } from '@/lib/path-quality-ledger'
+import { getOwnerReadonlyConsoleLedger } from '@/lib/owner-readonly-console'
 import { DynamicWorldStatusBoard } from '@/components/status/DynamicWorldStatusBoard'
 import { AiLowLightStatusPanel } from '@/components/status/AiLowLightStatusPanel'
 import { LocalMaturityLedgerPanel } from '@/components/status/LocalMaturityLedgerPanel'
 import { PathQualityLedgerPanel } from '@/components/status/PathQualityLedgerPanel'
+import { OwnerReadonlyConsolePanel } from '@/components/status/OwnerReadonlyConsolePanel'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -49,6 +51,7 @@ export default function StatusPage() {
   const lighthouseStatus = getLighthouseLocalStatus()
   const localMaturityLedger = getLocalMaturityLedger()
   const pathQualityLedger = getPathQualityLedger()
+  const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const dynamicWorldStatus = buildDynamicWorldStatusSurface({
     areas,
     nodes: publicNodes,
@@ -90,6 +93,8 @@ export default function StatusPage() {
       <LocalMaturityLedgerPanel ledger={localMaturityLedger} />
 
       <PathQualityLedgerPanel ledger={pathQualityLedger} />
+
+      <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
 
       <section className="grid gap-5 lg:grid-cols-3">
         <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">
