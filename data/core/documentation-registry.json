@@ -1611,6 +1611,11 @@
       "id": "worldos-world-realization-document-set",
       "path": "docs/00-overview/worldos-world-realization-document-set-2026-07-09.md",
       "layer": "overview"
+    },
+    {
+      "id": "worldos-high-goal-readiness-audit",
+      "path": "docs/00-overview/worldos-high-goal-readiness-audit-2026-07-09.md",
+      "layer": "governance"
     }
   ],
   "docTypes": [

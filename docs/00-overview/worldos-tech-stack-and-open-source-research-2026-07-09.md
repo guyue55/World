@@ -53,6 +53,10 @@
 | 可访问性 | axe-core | a11y 自动检查 | 质量门禁需要无障碍扫描时 | 需要处理误报和规则解释 |
 | 组件文档 | Storybook | 场景组件单独开发与回归 | 组件库稳定后 | 配置与维护成本 |
 | 性能 CI | Lighthouse CI | 性能预算、Lighthouse 报告 | 需要固定性能报告时 | 本地波动，需要阈值设计 |
+| 音频播放 | Web Audio API / HTMLAudio | 场景环境音、提示音、可选音乐 | 先用原生能力试点 | 浏览器自动播放限制与无障碍 |
+| 音频库 | Howler.js | 多格式音频、循环、音量、sprite | 原生播放管理变复杂时 | 需控制资源体积 |
+| 生成式声景 | Tone.js | 程序化音乐、氛围音、交互声景 | 明确需要生成式音频时 | 学习成本与音频设计成本 |
+| AI Provider | OpenAI Responses API 等服务端适配 | 灯塔问路、解释、推荐、总结 | 服务端权限、上下文裁剪和审计成熟后 | Key、成本、延迟、隐私边界 |
 
 ## 5. 重点工具来源与判断
 
@@ -140,6 +144,20 @@ Storybook 支持组件文档、交互测试和视觉测试工作流。
 
 判断：当场景组件稳定并需要独立演练时引入；当前不应先建重型组件实验室。
 
+### Web Audio / Howler.js / Tone.js
+
+浏览器原生 Web Audio API 适合先做基础声音控制；Howler.js 适合管理多格式音频与循环播放；Tone.js 更适合程序化音乐和生成式声景。
+来源：[MDN Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)、[howler.js](https://github.com/goldfire/howler.js)、[Tone.js](https://tonejs.github.io/)
+
+判断：音频 / 音乐应成为独立规格，不应默认全站自动播放。先做 opt-in、静音、音量、按场景懒加载和 reduced-sensory，再决定是否引入音频库。
+
+### AI Provider
+
+AI 灯塔如果要从 dry-run 进入真实运行，需要服务端 Provider adapter、上下文裁剪、流式输出、结构化输出、缓存、限流和审计。
+来源：[OpenAI Responses API](https://platform.openai.com/docs/guides/responses)、[OpenAI Prompt Caching](https://platform.openai.com/docs/guides/prompt-caching)、[OpenAI Safety Best Practices](https://developers.openai.com/api/docs/guides/safety-best-practices)
+
+判断：AI 能力不应由前端拼接上下文和权限。真实 Provider 必须服务端运行，默认只读公开事实源，并有静态推荐回退。
+
 ## 6. 推荐路线
 
 ### 当前阶段
@@ -160,6 +178,8 @@ Storybook 支持组件文档、交互测试和视觉测试工作流。
 3. 如果持续动态舞台不足，引入 PixiJS。
 4. 如果明确需要真 3D，再评估 Three.js / React Three Fiber。
 5. 如果转场状态复杂，评估 XState。
+6. 如果场景氛围需要声音，先用 Web Audio / HTMLAudio 做 opt-in 试点。
+7. 如果灯塔 AI 要真实运行，先补服务端 Provider adapter 与审计规格。
 
 ## 7. 明确不建议
 
@@ -168,6 +188,8 @@ Storybook 支持组件文档、交互测试和视觉测试工作流。
 - 不建议同时使用多套动画主控系统。
 - 不建议把 React Flow 用作公开世界地图。
 - 不建议引入外部云端视觉回归服务，当前本地 / LAN 阶段用 Playwright 证据更稳。
+- 不建议默认开启背景音乐或自动播放声音。
+- 不建议在前端直接接入真实 AI Provider Key 或拼接权限上下文。
 
 ## 8. 决策结论
 
@@ -175,5 +197,4 @@ WorldOS 现在最缺的不是库，而是“世界生产规格”。
 
 技术栈策略应是：
 
-**现有栈继续承担主干；GSAP 负责场景编舞；Playwright 负责真实证据；D3 / PixiJS / Three.js / XState 只在场景生产矩阵证明必要时逐个引入。**
-
+**现有栈继续承担主干；GSAP 负责场景编舞；Playwright 负责真实证据；Web Audio、D3、PixiJS、Three.js、XState、AI Provider 只在场景生产矩阵和运行规格证明必要时逐个引入。**
