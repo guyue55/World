@@ -58,18 +58,27 @@ for (const token of ['AI 低光状态', 'Provider', '禁止动作', 'status.forb
 }
 
 const runtimeSource = read('src/server/ai/lighthouse-runtime.ts')
-for (const token of ['runLowLightLighthouse', 'intent', 'fallback', 'limits', 'auditSummary', 'publicContextCount']) {
+for (const token of ['runLowLightLighthouse', 'intent', 'fallback', 'limits', 'auditSummary', 'publicContextCount', 'recommendations', 'questionDigest', 'timeout']) {
   assert(runtimeSource.includes(token), `灯塔服务端运行器证据缺失：${token}`)
 }
 
 const askApiSource = read('src/app/api/lighthouse/ask/route.ts')
 assert(askApiSource.includes('runLowLightLighthouse'), '灯塔问答 API 必须调用服务端低光运行器')
+for (const token of ['cache-control', 'x-worldos-lighthouse-mode', 'x-worldos-provider-status', 'normalizeLighthouseQuestion']) {
+  assert(askApiSource.includes(token), `灯塔问答 API 缺少运行化证据：${token}`)
+}
+
+const governanceSource = read('src/server/ai/lighthouse-governance.ts')
+for (const token of ['buildLighthouseRuntimeEnvelope', 'maxQuestionLength', 'timeoutMs', 'cacheTtlSeconds', 'questionDigest']) {
+  assert(governanceSource.includes(token), `灯塔运行治理证据缺失：${token}`)
+}
 
 for (const forbidden of ['OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'new OpenAI', 'responses.create', 'chat.completions', 'fetch(']) {
   assert(!searchSource.includes(forbidden), `搜索增强不得接入真实 Provider：${forbidden}`)
   assert(!recommendSource.includes(forbidden), `推荐增强不得接入真实 Provider：${forbidden}`)
   assert(!statusPanel.includes(forbidden), `状态面板不得接入真实 Provider：${forbidden}`)
   assert(!runtimeSource.includes(forbidden), `服务端低光运行器不得接入真实 Provider：${forbidden}`)
+  assert(!governanceSource.includes(forbidden), `灯塔运行治理不得接入真实 Provider：${forbidden}`)
 }
 
 if (failures.length) {

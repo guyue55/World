@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS M14 灯塔运行治理",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-m14-ai-lighthouse-operationalization-execution-plan-2026-07-09.md",
+  "principle": "灯塔运行层必须先可信，再智能；真实 Provider 只能作为后端受控增强插入。",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "realTimeAIProviderEnabled": false,
+    "providerImplementationReady": false,
+    "serverOnlyProvider": true,
+    "frontendVisibilityIsNotPermission": true
+  },
+  "runtime": {
+    "mode": "low-light",
+    "providerStatus": "disabled-dry-run",
+    "maxQuestionLength": 180,
+    "timeoutMs": 1200,
+    "cacheTtlSeconds": 300,
+    "staleWhileRevalidateSeconds": 300,
+    "cachePolicy": "public, max-age=300, stale-while-revalidate=300",
+    "commonQuestionCache": [
+      "我第一次来到古月浮屿，下一步去哪？",
+      "AI 灯塔能做什么？",
+      "这个世界从哪里开始看？"
+    ],
+    "fallbackActions": [
+      { "href": "/paths", "label": "进入精选路径" },
+      { "href": "/archive", "label": "搜索档案馆" },
+      { "href": "/atlas", "label": "回到世界地图" }
+    ]
+  },
+  "contextPolicy": {
+    "allowed": ["public", "semiPublic"],
+    "excluded": ["private", "family", "partner", "vault", "sealed", "silent"],
+    "publicContextLimit": 12,
+    "sourceLimit": 4,
+    "recommendationLimit": 4
+  },
+  "audit": {
+    "recordsInputDigest": true,
+    "recordsSourceIds": true,
+    "recordsExcludedReasons": true,
+    "recordsOutputSummary": true,
+    "writesWorldSource": false,
+    "storesRawQuestion": false
+  },
+  "forbidden": [
+    "client provider key",
+    "private raw context",
+    "provider network request",
+    "world source write",
+    "auto publish",
+    "auto delete",
+    "auto visibility change"
+  ],
+  "acceptance": {
+    "requiredRuntimeFields": ["answer", "recommendations", "sources", "mode", "intent", "fallback", "limits", "auditSummary"],
+    "requiredAuditFields": ["requestId", "questionDigest", "providerStatus", "writesWorldSource", "publicContextCount", "excludedContextCount", "cache", "timeout", "outputSummary"],
+    "requiredApiHeaders": ["cache-control", "x-worldos-lighthouse-mode", "x-worldos-provider-status"]
+  }
+}

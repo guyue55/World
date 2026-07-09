@@ -3,6 +3,7 @@ import { getRecommendationsForHome } from '@/lib/lighthouse-recommend'
 import { getPublicWorldObjectIndex } from '@/lib/public-world-objects'
 import type { PublicNodeReference } from '@/lib/public-world-objects'
 import { buildAIContextSlice, type AIContextCandidate } from './context-policy'
+import { buildLighthouseRuntimeEnvelope, getLighthouseRuntimeGovernance } from './lighthouse-governance'
 import { getLocalAIProviderStatus } from './provider'
 
 export type LighthouseIntent = 'ask' | 'explain' | 'recommend' | 'route' | 'summarize'
@@ -14,8 +15,16 @@ export type LighthouseSource = {
   reason: string
 }
 
+export type LighthouseRecommendation = {
+  title: string
+  href: string
+  reason: string
+  type: 'node' | 'path' | 'fallback'
+}
+
 export type LighthouseRuntimeResponse = {
   answer: string
+  recommendations: LighthouseRecommendation[]
   sources: LighthouseSource[]
   mode: 'low-light'
   intent: LighthouseIntent
@@ -30,6 +39,23 @@ export type LighthouseRuntimeResponse = {
     writesWorldSource: false
     publicContextCount: number
     excludedContextCount: number
+    requestId: string
+    questionDigest: string
+    sourceIds: string[]
+    excludedReasons: string[]
+    cache: {
+      policy: string
+      ttlSeconds: number
+      staleWhileRevalidateSeconds: number
+      commonQuestion: boolean
+    }
+    timeout: {
+      budgetMs: number
+      cancellable: true
+      elapsedMs: number
+      timedOut: false
+    }
+    outputSummary: string
   }
 }
 
@@ -71,19 +97,22 @@ function contextCandidates(nodes: PublicNodeReference[]): AIContextCandidate[] {
 }
 
 export function runLowLightLighthouse(question: string): LighthouseRuntimeResponse {
+  const startedAt = Date.now()
+  const governance = getLighthouseRuntimeGovernance()
+  const envelope = buildLighthouseRuntimeEnvelope(question, startedAt)
   const publicWorld = getPublicWorldObjectIndex()
   const provider = getLocalAIProviderStatus()
-  const intent = inferIntent(question)
+  const intent = inferIntent(envelope.normalizedQuestion)
   const context = buildAIContextSlice(contextCandidates(publicWorld.nodeRefs))
 
   const matchedSources = publicWorld.nodeRefs
-    .filter((node) => matchesQuestion(node, question))
-    .slice(0, 4)
+    .filter((node) => matchesQuestion(node, envelope.normalizedQuestion))
+    .slice(0, governance.contextPolicy.sourceLimit)
     .map(sourceFromNode)
 
   const sources = matchedSources.length > 0
     ? matchedSources
-    : getRecommendationsForHome(publicWorld.nodes, publicWorld.paths, 4).map((item) => {
+    : getRecommendationsForHome(publicWorld.nodes, publicWorld.paths, governance.contextPolicy.recommendationLimit).map((item) => {
         if (item.type === 'node' && item.node) {
           return { slug: item.node.slug, title: item.node.title, href: item.node.href, reason: item.reason }
         }
@@ -93,23 +122,29 @@ export function runLowLightLighthouse(question: string): LighthouseRuntimeRespon
         return { slug: '', title: '公开入口', href: '/paths', reason: '低光 fallback 推荐公开路径。' }
       })
 
+  const recommendations: LighthouseRecommendation[] = sources
+    .slice(0, governance.contextPolicy.recommendationLimit)
+    .map((source) => ({
+      title: source.title,
+      href: source.href,
+      reason: source.reason,
+      type: source.slug ? 'node' : source.href.startsWith('/paths/') ? 'path' : 'fallback',
+    }))
+
   const answer = matchedSources.length > 0
     ? `灯塔在公开世界索引中找到 ${matchedSources.length} 条相关线索。你可以先打开来源，再沿路径或地图继续探索。`
     : '灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。'
 
   return {
     answer,
+    recommendations,
     sources,
     mode: 'low-light',
     intent,
     fallback: {
       active: provider.realTimeAIProviderEnabled === false,
       reason: '真实 AI Provider 未启用；当前使用公开事实源的本地只读推荐。',
-      actions: [
-        { href: '/paths', label: '进入精选路径' },
-        { href: '/archive', label: '搜索档案馆' },
-        { href: '/atlas', label: '回到世界地图' },
-      ],
+      actions: governance.runtime.fallbackActions,
     },
     limits: [
       '只读取 public / semiPublic 摘要事实源。',
@@ -121,6 +156,16 @@ export function runLowLightLighthouse(question: string): LighthouseRuntimeRespon
       writesWorldSource: provider.writesWorldSource,
       publicContextCount: context.allowed.length,
       excludedContextCount: context.excluded.length,
+      requestId: envelope.requestId,
+      questionDigest: envelope.questionDigest,
+      sourceIds: sources.map((source) => source.slug || source.href),
+      excludedReasons: Array.from(new Set(context.excluded.map((item) => item.reason))).slice(0, 3),
+      cache: envelope.cache,
+      timeout: {
+        ...envelope.timeout,
+        elapsedMs: Math.max(0, Date.now() - startedAt),
+      },
+      outputSummary: `${intent} / sources=${sources.length} / recommendations=${recommendations.length} / fallback=${provider.realTimeAIProviderEnabled === false}`,
     },
   }
 }

@@ -20,7 +20,8 @@
   "requiredBackendFiles": [
     "src/server/ai/provider.ts",
     "src/server/ai/context-policy.ts",
-    "src/server/ai/review-queue.ts"
+    "src/server/ai/review-queue.ts",
+    "src/server/ai/lighthouse-governance.ts"
   ],
   "forbiddenClientFiles": [
     "src/app/ask/page.tsx",
@@ -59,6 +60,12 @@
       "not-executed",
       "requiredHumanAction: true",
       "writesWorldSource: false"
+    ],
+    "src/server/ai/lighthouse-governance.ts": [
+      "maxQuestionLength",
+      "cacheTtlSeconds",
+      "timeoutMs",
+      "questionDigest"
     ]
   },
   "requiredBackendPolicies": {

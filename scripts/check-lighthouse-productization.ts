@@ -62,7 +62,7 @@ function main() {
     if (!surface.includes(token)) errors.push(`lighthouse surface missing ${token}`)
   })
   const consoleComponent = read('src/components/ask/PublicLighthouseConsole.tsx')
-  ;['surface.boundaryNotice', 'surface.fallbackActions.map'].forEach((token) => {
+  ;['surface.boundaryNotice', 'surface.fallbackActions.map', 'runtimeResponse.recommendations', 'runtimeResponse.auditSummary.cache', 'runtimeResponse.auditSummary.timeout'].forEach((token) => {
     if (!consoleComponent.includes(token)) errors.push(`lighthouse console missing ${token}`)
   })
 

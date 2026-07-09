@@ -14,6 +14,7 @@
     "src/lib/lighthouse-recommend.ts",
     "src/lib/lighthouse-status.ts",
     "src/server/ai/lighthouse-runtime.ts",
+    "src/server/ai/lighthouse-governance.ts",
     "src/app/api/lighthouse/ask/route.ts",
     "src/components/status/AiLowLightStatusPanel.tsx",
     "data/domains/ai/lighthouse-local-status.json"

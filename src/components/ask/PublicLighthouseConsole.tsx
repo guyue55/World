@@ -31,6 +31,8 @@ export function PublicLighthouseConsole({
     { label: '意图', value: runtimeResponse.intent },
     { label: '公开上下文', value: runtimeResponse.auditSummary.publicContextCount },
     { label: '排除上下文', value: runtimeResponse.auditSummary.excludedContextCount },
+    { label: '缓存', value: `${runtimeResponse.auditSummary.cache.ttlSeconds}s` },
+    { label: '超时预算', value: `${runtimeResponse.auditSummary.timeout.budgetMs}ms` },
   ]
 
   return (
@@ -83,7 +85,7 @@ export function PublicLighthouseConsole({
               观测回声
             </p>
             <p className="mt-3 text-sm leading-7 text-paper/66">{runtimeResponse.answer}</p>
-            <div className="mt-4 grid gap-2 sm:grid-cols-4">
+            <div className="mt-4 grid gap-2 sm:grid-cols-3 lg:grid-cols-6">
               {auditSignals.map((signal) => (
                 <div key={signal.label} className="rounded-[0.9rem] border border-paper/10 bg-paper/7 p-3">
                   <p className="truncate text-sm font-semibold text-paper">{signal.value}</p>
@@ -174,6 +176,37 @@ export function PublicLighthouseConsole({
               <p className="mt-4 rounded-[0.9rem] border border-leaf/20 bg-leaf/10 p-3 text-xs leading-5 text-paper/58">
                 Provider：{runtimeResponse.auditSummary.providerStatus}；写入世界源：{runtimeResponse.auditSummary.writesWorldSource ? '是' : '否'}。
               </p>
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-[1fr_1fr]">
+            <div data-gsap-reveal className="rounded-[1.2rem] border border-paper/12 bg-paper/8 p-4">
+              <p className="text-sm font-semibold text-paper/72">运行推荐</p>
+              <div className="mt-4 grid gap-2">
+                {runtimeResponse.recommendations.map((item) => (
+                  <Link key={`${item.href}-${item.title}`} href={item.href} className="rounded-[0.9rem] bg-paper/8 p-3 transition hover:bg-paper/14">
+                    <span className="block truncate text-sm font-semibold">{item.title}</span>
+                    <span className="mt-1 block line-clamp-2 text-xs leading-5 text-paper/50">{item.reason}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div data-gsap-reveal className="rounded-[1.2rem] border border-paper/12 bg-paper/8 p-4">
+              <p className="text-sm font-semibold text-paper/72">运行审计</p>
+              <div className="mt-4 grid gap-2">
+                <p className="rounded-[0.9rem] bg-paper/8 p-3 text-xs leading-5 text-paper/54">
+                  请求：{runtimeResponse.auditSummary.requestId}；摘要：{runtimeResponse.auditSummary.questionDigest}
+                </p>
+                <p className="rounded-[0.9rem] bg-paper/8 p-3 text-xs leading-5 text-paper/54">
+                  缓存：{runtimeResponse.auditSummary.cache.policy}
+                </p>
+                <p className="rounded-[0.9rem] bg-paper/8 p-3 text-xs leading-5 text-paper/54">
+                  超时：{runtimeResponse.auditSummary.timeout.elapsedMs}ms / {runtimeResponse.auditSummary.timeout.budgetMs}ms；可取消：{runtimeResponse.auditSummary.timeout.cancellable ? '是' : '否'}
+                </p>
+                <p className="rounded-[0.9rem] bg-paper/8 p-3 text-xs leading-5 text-paper/54">
+                  输出：{runtimeResponse.auditSummary.outputSummary}
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@
     "src/app/ask/page.tsx",
     "src/app/api/lighthouse/ask/route.ts",
     "src/server/ai/lighthouse-runtime.ts",
+    "src/server/ai/lighthouse-governance.ts",
     "src/lib/lighthouse.ts",
     "src/lib/nodes.ts",
     "src/lib/paths.ts",
@@ -70,12 +71,27 @@
   },
   "requiredRuntimeResultFields": [
     "answer",
+    "recommendations",
     "sources",
     "mode",
     "intent",
     "fallback",
     "limits",
     "auditSummary"
+  ],
+  "requiredAuditSummaryFields": [
+    "requestId",
+    "questionDigest",
+    "sourceIds",
+    "excludedReasons",
+    "cache",
+    "timeout",
+    "outputSummary"
+  ],
+  "requiredApiHeaders": [
+    "cache-control",
+    "x-worldos-lighthouse-mode",
+    "x-worldos-provider-status"
   ],
   "releaseStates": {
     "realTimeAIProviderEnabled": false,

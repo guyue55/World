@@ -169,6 +169,8 @@ function main() {
     [
       'getPublicWorldObjectIndex',
       'buildAIContextSlice',
+      'buildLighthouseRuntimeEnvelope',
+      'getLighthouseRuntimeGovernance',
       'getLocalAIProviderStatus',
       'getRecommendationsForHome',
       'low-light',
@@ -179,6 +181,21 @@ function main() {
   )
   for (const field of contract.requiredRuntimeResultFields ?? []) {
     assert(lighthouseRuntime.includes(`${field}:`) || lighthouseRuntime.includes(`${field}?`), `lighthouse runtime missing result field: ${field}`)
+  }
+  for (const field of contract.requiredAuditSummaryFields ?? []) {
+    assert(lighthouseRuntime.includes(`${field}:`) || lighthouseRuntime.includes(`${field}?`), `lighthouse runtime missing audit field: ${field}`)
+  }
+
+  const lighthouseGovernance = read('src/server/ai/lighthouse-governance.ts')
+  includesEvery(
+    lighthouseGovernance,
+    ['normalizeLighthouseQuestion', 'buildLighthouseRuntimeEnvelope', 'questionDigest', 'timeoutMs', 'cacheTtlSeconds'],
+    'lighthouse governance',
+  )
+
+  const askApiHeaders = read('src/app/api/lighthouse/ask/route.ts').toLowerCase()
+  for (const header of contract.requiredApiHeaders ?? []) {
+    assert(askApiHeaders.includes(header), `lighthouse ask api missing header: ${header}`)
   }
 
   for (const file of contract.runtimeSourceFiles) {
