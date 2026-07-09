@@ -16,7 +16,7 @@
 
 | 阶段 | 状态 | commit | 关键检查 | 人工体验 | 备注 |
 | --- | --- | --- | --- | --- | --- |
-| M8 | 已完成 | `fe755ecd` | `check:homepage`、`typecheck`、`lint`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 通过：desktop 首屏已形成入口舞台，mobile reduced-motion 无空白和遮挡 | 已将新手入口、首访仪式、运行态星图和三层空间说明合并到首页主舞台 |
+| M8 | 已完成 | `caf1abdb` | `check:homepage`、`typecheck`、`lint`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 通过：desktop 首屏已形成入口舞台，mobile reduced-motion 无空白和遮挡 | 已将新手入口、首访仪式、运行态星图和三层空间说明合并到首页主舞台 |
 | M9 | 未开始 | - | - | - | 四大核心场景舞台化 |
 | M10 | 未开始 | - | - | - | Node 地点化 |
 | M11 | 未开始 | - | - | - | 场景迁移叙事 |
