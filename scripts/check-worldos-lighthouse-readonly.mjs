@@ -160,6 +160,27 @@ function main() {
   const consoleComponent = read('src/components/ask/PublicLighthouseConsole.tsx')
   includesEvery(consoleComponent, ['surface.boundaryNotice', 'surface.fallbackActions.map', 'LOW LIGHT CONSOLE'], 'lighthouse console')
 
+  const askApiRoute = read('src/app/api/lighthouse/ask/route.ts')
+  includesEvery(askApiRoute, ['runLowLightLighthouse', '问题不能为空'], 'lighthouse ask api')
+
+  const lighthouseRuntime = read('src/server/ai/lighthouse-runtime.ts')
+  includesEvery(
+    lighthouseRuntime,
+    [
+      'getPublicWorldObjectIndex',
+      'buildAIContextSlice',
+      'getLocalAIProviderStatus',
+      'getRecommendationsForHome',
+      'low-light',
+      '真实 AI Provider 未启用',
+      '不写入、不发布、不删除、不修改可见性',
+    ],
+    'lighthouse server runtime',
+  )
+  for (const field of contract.requiredRuntimeResultFields ?? []) {
+    assert(lighthouseRuntime.includes(`${field}:`) || lighthouseRuntime.includes(`${field}?`), `lighthouse runtime missing result field: ${field}`)
+  }
+
   for (const file of contract.runtimeSourceFiles) {
     assertNoForbiddenRuntimeTokens(file, read(file))
   }

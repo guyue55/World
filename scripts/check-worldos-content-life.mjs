@@ -14,6 +14,10 @@ const paths = readJson('data/domains/experience/paths.json')
 const relations = readJson('data/core/relations.json')
 const events = readJson('data/core/world-events.json')
 const packageJson = readJson('package.json')
+const publicIndexSource = fs.readFileSync(rel('src/lib/public-index.ts'), 'utf-8')
+const publicObjectsSource = fs.readFileSync(rel('src/lib/public-world-objects.ts'), 'utf-8')
+const contentLifeSource = fs.existsSync(rel('src/lib/content-life.ts')) ? fs.readFileSync(rel('src/lib/content-life.ts'), 'utf-8') : ''
+const lighthouseRuntimeSource = fs.existsSync(rel('src/server/ai/lighthouse-runtime.ts')) ? fs.readFileSync(rel('src/server/ai/lighthouse-runtime.ts'), 'utf-8') : ''
 
 const gates = contract.qualityGates ?? {}
 const publicNodes = nodes.filter((node) => node.visibility === 'public')
@@ -42,6 +46,7 @@ requireCount('公开区域覆盖', new Set(publicNodes.map((node) => node.areaId
 for (const node of publicNodes) {
   if (!node.title || !node.slug) failures.push(`${node.id} 缺少标题或 slug`)
   if (!node.summary || node.summary.length < (gates.minSummaryLength ?? 18)) failures.push(`${node.id} 缺少足够清晰的 summary`)
+  if (gates.requireAiReadableSummaryForPublicNodes && !node.summary && !node.ai?.summary) failures.push(`${node.id} 缺少 AI 可读摘要来源`)
   if (!areaIds.has(node.areaId)) failures.push(`${node.id} 指向不存在区域：${node.areaId}`)
   if (!node.lifeStage) failures.push(`${node.id} 缺少生命周期`)
   if (gates.requireContentPathForPublicNodes && (!node.contentPath || !fs.existsSync(rel(node.contentPath)))) failures.push(`${node.id} 缺少可读取正文：${node.contentPath ?? '未设置'}`)
@@ -83,7 +88,12 @@ for (const event of events.filter((event) => event.visibility === 'public' || !e
 }
 
 for (const target of contract.publicAbsorptionTargets ?? []) {
-  const token = target === 'node' ? 'NodeRelationRail' : target
+  const targetTokens = {
+    node: 'NodeRelationRail',
+    lighthouse: 'runLowLightLighthouse',
+    'public-index': 'contentLifeFacts',
+  }
+  const token = targetTokens[target] ?? target
   // 门面拆分后，需要同时扫描 public-world-surfaces 主文件与 public-surfaces/ 子模块
   const surfaceDir = 'src/lib/public-surfaces'
   const surfaceDirPart = fs.existsSync(rel(surfaceDir))
@@ -100,8 +110,28 @@ for (const target of contract.publicAbsorptionTargets ?? []) {
   ]
     .map((file) => (fs.existsSync(rel(file)) ? fs.readFileSync(rel(file), 'utf-8') : ''))
     .concat(surfaceDirPart)
+    .concat([publicIndexSource, publicObjectsSource, contentLifeSource, lighthouseRuntimeSource])
     .join('\n')
   if (!sources.includes(token)) failures.push(`公开吸收目标缺少代码证据：${target}`)
+}
+
+if (gates.requireContentLifeFactForPublicNodes) {
+  for (const token of [
+    'buildContentLifeFacts',
+    'getNodeAiReadableSummary',
+    'relationReasons',
+    'pathIds',
+    'timelineEventIds',
+    'recommendedPathIds',
+  ]) {
+    if (!contentLifeSource.includes(token)) failures.push(`内容生命事实模块缺少：${token}`)
+  }
+
+  for (const token of ['contentLifeFacts', 'buildContentLifeFacts', 'aiReadableSummary']) {
+    if (!publicIndexSource.includes(token) && !publicObjectsSource.includes(token)) {
+      failures.push(`公开索引缺少内容生命事实证据：${token}`)
+    }
+  }
 }
 
 if (!packageJson.scripts?.['check:content']?.includes('check:content-life')) failures.push('check:content 必须纳入 check:content-life')

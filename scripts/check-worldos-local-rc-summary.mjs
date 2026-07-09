@@ -43,6 +43,15 @@ if (failures.length === 0) {
   if ((report.gates?.sceneQa?.reducedMotionChecks ?? 0) < 9) failures.push('Scene QA reduced-motion 证据不足')
   if ((report.gates?.audit?.high ?? 0) > 0 || (report.gates?.audit?.critical ?? 0) > 0) failures.push('npm audit 存在 high/critical 风险')
   if ((report.gates?.buildArtifacts?.missing ?? []).length > 0) failures.push(`构建产物缺失：${report.gates.buildArtifacts.missing.join(', ')}`)
+  if (report.gates?.contentLife?.status !== 'passed') failures.push('内容生命事实门禁未通过')
+  if ((report.gates?.contentLife?.publicNodeFacts ?? 0) < 50) failures.push('内容生命公开节点事实不足')
+  if (report.gates?.contentLife?.publicNodeFacts !== report.gates?.contentLife?.completePublicNodeFacts) failures.push('内容生命事实存在不完整项')
+  for (const target of ['atlas', 'timeline', 'archive', 'paths', 'node', 'lighthouse']) {
+    if (!report.gates?.contentLife?.absorbedBy?.includes(target)) failures.push(`内容生命吸收目标缺少：${target}`)
+  }
+  if (report.gates?.lighthouseReadonly?.mode !== 'low-light') failures.push('灯塔必须保持 low-light')
+  if (report.gates?.lighthouseReadonly?.providerStatus !== 'disabled-dry-run') failures.push('灯塔 Provider 必须保持 disabled-dry-run')
+  if (report.gates?.lighthouseReadonly?.writesWorldSource !== false) failures.push('灯塔不得写入世界源文件')
 
   for (const key of ['productionLive', 'releaseReady', 'cleanProductionReady']) {
     if (report.releaseStates?.[key] !== false) failures.push(`${key} 在缺少外部证据前必须保持 false`)

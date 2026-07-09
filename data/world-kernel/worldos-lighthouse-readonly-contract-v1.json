@@ -13,6 +13,8 @@
   ],
   "runtimeSourceFiles": [
     "src/app/ask/page.tsx",
+    "src/app/api/lighthouse/ask/route.ts",
+    "src/server/ai/lighthouse-runtime.ts",
     "src/lib/lighthouse.ts",
     "src/lib/nodes.ts",
     "src/lib/paths.ts",
@@ -66,6 +68,15 @@
     "ownerReviewRequiredForSuggestions": true,
     "frontendVisibilityIsNotPermission": true
   },
+  "requiredRuntimeResultFields": [
+    "answer",
+    "sources",
+    "mode",
+    "intent",
+    "fallback",
+    "limits",
+    "auditSummary"
+  ],
   "releaseStates": {
     "realTimeAIProviderEnabled": false,
     "ownerWriteAutomationEnabled": false,

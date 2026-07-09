@@ -57,10 +57,19 @@ for (const token of ['AI 低光状态', 'Provider', '禁止动作', 'status.forb
   assert(statusPanel.includes(token), `灯塔状态面板证据缺失：${token}`)
 }
 
+const runtimeSource = read('src/server/ai/lighthouse-runtime.ts')
+for (const token of ['runLowLightLighthouse', 'intent', 'fallback', 'limits', 'auditSummary', 'publicContextCount']) {
+  assert(runtimeSource.includes(token), `灯塔服务端运行器证据缺失：${token}`)
+}
+
+const askApiSource = read('src/app/api/lighthouse/ask/route.ts')
+assert(askApiSource.includes('runLowLightLighthouse'), '灯塔问答 API 必须调用服务端低光运行器')
+
 for (const forbidden of ['OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'new OpenAI', 'responses.create', 'chat.completions', 'fetch(']) {
   assert(!searchSource.includes(forbidden), `搜索增强不得接入真实 Provider：${forbidden}`)
   assert(!recommendSource.includes(forbidden), `推荐增强不得接入真实 Provider：${forbidden}`)
   assert(!statusPanel.includes(forbidden), `状态面板不得接入真实 Provider：${forbidden}`)
+  assert(!runtimeSource.includes(forbidden), `服务端低光运行器不得接入真实 Provider：${forbidden}`)
 }
 
 if (failures.length) {

@@ -49,6 +49,8 @@
       "public",
       "semiPublic",
       "private",
+      "family",
+      "partner",
       "vault",
       "sealed",
       "silent"

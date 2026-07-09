@@ -1,17 +1,25 @@
 import { getAreaLinks, type AreaLink } from './atlas'
 import { getAllAreas } from './areas'
+import { buildContentLifeFacts, getNodeAiReadableSummary, getNodeDisplayTitle, type ContentLifeNodeFact } from './content-life'
 import { getPublicNodes } from './nodes'
 import { getAllPaths } from './paths'
+import { getAllRelations } from './relations'
 import { getPublicWorldEvents } from './world-events'
-import type { Area, Node, Path, WorldEvent } from './types'
+import type { Area, Node, Path, Relation, WorldEvent } from './types'
 
 export type PublicNodeReference = {
   id: string
   slug: string
   href: string
   title: string
+  aiReadableSummary: string
   areaId: string
   areaTitle: string
+  lifeStage: Node['lifeStage']
+  status: ContentLifeNodeFact['status']
+  pathIds: string[]
+  timelineEventIds: string[]
+  relationReasons: string[]
 }
 
 export type PublicPathReference = {
@@ -34,6 +42,8 @@ export type PublicWorldObjectIndex = {
   nodes: Node[]
   paths: Path[]
   events: WorldEvent[]
+  relations: Relation[]
+  contentLifeFacts: ContentLifeNodeFact[]
   areaLinks: AreaLink[]
   nodeRefs: PublicNodeReference[]
   pathRefs: PublicPathReference[]
@@ -43,20 +53,27 @@ export type PublicWorldObjectIndex = {
   areaById: Map<string, Area>
 }
 
-function nodeTitle(node: Node) {
-  return node.worldTitle ?? node.title
-}
-
-function nodeReference(node: Node, areaById: Map<string, Area>): PublicNodeReference {
+function nodeReference(
+  node: Node,
+  areaById: Map<string, Area>,
+  factByNodeId: Map<string, ContentLifeNodeFact>,
+): PublicNodeReference {
   const area = areaById.get(node.areaId)
+  const fact = factByNodeId.get(node.id)
 
   return {
     id: node.id,
     slug: node.slug,
     href: `/node/${node.slug}`,
-    title: nodeTitle(node),
+    title: fact?.title ?? getNodeDisplayTitle(node),
+    aiReadableSummary: fact?.aiReadableSummary ?? getNodeAiReadableSummary(node),
     areaId: node.areaId,
     areaTitle: area?.worldName ?? node.areaId,
+    lifeStage: node.lifeStage,
+    status: fact?.status ?? 'emerging',
+    pathIds: fact?.pathIds ?? [],
+    timelineEventIds: fact?.timelineEventIds ?? [],
+    relationReasons: fact?.relationReasons ?? [],
   }
 }
 
@@ -68,7 +85,10 @@ export function getPublicWorldObjectIndex(): PublicWorldObjectIndex {
   const nodeBySlug = new Map(nodes.map((node) => [node.slug, node]))
   const paths = getAllPaths()
   const events = getPublicWorldEvents()
-  const nodeRefs = nodes.map((node) => nodeReference(node, areaById))
+  const relations = getAllRelations()
+  const contentLifeFacts = buildContentLifeFacts({ nodes, paths, relations, events })
+  const factByNodeId = new Map(contentLifeFacts.map((fact) => [fact.id, fact]))
+  const nodeRefs = nodes.map((node) => nodeReference(node, areaById, factByNodeId))
   const nodeRefBySlug = new Map(nodeRefs.map((node) => [node.slug, node]))
   const nodeRefById = new Map(nodeRefs.map((node) => [node.id, node]))
 
@@ -77,6 +97,8 @@ export function getPublicWorldObjectIndex(): PublicWorldObjectIndex {
     nodes,
     paths,
     events,
+    relations,
+    contentLifeFacts,
     areaLinks: getAreaLinks().filter((link) => areaById.has(link.from) && areaById.has(link.to)),
     nodeRefs,
     pathRefs: paths.map((path) => ({
@@ -106,7 +128,7 @@ export function getPublicWorldObjectConsistencyIssues(index = getPublicWorldObje
     if (seenSlugs.has(node.slug)) issues.push(`公开节点 slug 重复：${node.slug}`)
     seenSlugs.add(node.slug)
 
-    if (!node.slug || !nodeTitle(node)) issues.push(`公开节点缺少 slug 或标题：${node.id}`)
+    if (!node.slug || !getNodeDisplayTitle(node)) issues.push(`公开节点缺少 slug 或标题：${node.id}`)
     if (!index.areaById.has(node.areaId)) issues.push(`公开节点指向不存在区域：${node.id} -> ${node.areaId}`)
   }
 
@@ -129,6 +151,9 @@ export function getPublicWorldObjectConsistencyIssues(index = getPublicWorldObje
   for (const nodeRef of index.nodeRefs) {
     if (!nodeRef.href.startsWith('/node/')) issues.push(`公开节点 href 非法：${nodeRef.id} -> ${nodeRef.href}`)
     if (!nodeRef.title) issues.push(`公开节点引用缺少标题：${nodeRef.id}`)
+    if (!nodeRef.aiReadableSummary || nodeRef.aiReadableSummary.length < 18) issues.push(`公开节点缺少 AI 可读摘要：${nodeRef.id}`)
+    if (nodeRef.relationReasons.length === 0) issues.push(`公开节点缺少关系理由：${nodeRef.id}`)
+    if (nodeRef.pathIds.length === 0) issues.push(`公开节点没有被路径吸收：${nodeRef.id}`)
   }
 
   for (const pathRef of index.pathRefs) {

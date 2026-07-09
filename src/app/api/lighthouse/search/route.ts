@@ -29,11 +29,9 @@ export function GET(request: Request) {
   }
 
   const publicWorld = getPublicWorldObjectIndex()
-  const nodeSummaries = new Map(publicWorld.nodes.map((n) => [n.slug, n.summary ?? '']))
-
   const results = publicWorld.nodeRefs
     .map((node) => {
-      const summary = nodeSummaries.get(node.slug) ?? ''
+      const summary = node.aiReadableSummary
       const score = scoreNode(q, node.title, summary, node.areaTitle)
       return { node, summary, score }
     })

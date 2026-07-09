@@ -1,8 +1,10 @@
 import type { Area, Node } from './types'
+import { buildContentLifeFacts } from './content-life'
 import { getPublicNodes } from './nodes'
 import { getAllAreas } from './areas'
 import { getAllPaths } from './paths'
 import { getArchiveProjections, getHomeProjections } from './projections'
+import { getAllRelations } from './relations'
 import { getPublicStarGraph } from './star-lines'
 import { getPublicWorldEvents, getWorldState } from './world-events'
 import { isPublicVisible } from './visibility'
@@ -11,9 +13,10 @@ export type PublicWorldIndex = {
   generatedAt: string
   state: ReturnType<typeof getWorldState>
   areas: Array<Pick<Area, 'id' | 'worldName' | 'realName' | 'description' | 'level' | 'status' | 'icon' | 'order'> & { accessLabel: '公开区域' | '公开节点投影' }>
-  nodes: Array<Pick<Node, 'id' | 'slug' | 'title' | 'worldTitle' | 'type' | 'areaId' | 'summary' | 'tags' | 'visibility' | 'lifeStage' | 'createdAt' | 'updatedAt'>>
+  nodes: Array<Pick<Node, 'id' | 'slug' | 'title' | 'worldTitle' | 'type' | 'areaId' | 'summary' | 'tags' | 'visibility' | 'lifeStage' | 'featured' | 'createdAt' | 'updatedAt'>>
   paths: ReturnType<typeof getAllPaths>
   events: ReturnType<typeof getPublicWorldEvents>
+  contentLifeFacts: ReturnType<typeof buildContentLifeFacts>
   projections: {
     home: ReturnType<typeof getHomeProjections>
     archive: ReturnType<typeof getArchiveProjections>
@@ -23,6 +26,8 @@ export type PublicWorldIndex = {
 
 export function createPublicWorldIndex(): PublicWorldIndex {
   const publicNodes = getPublicNodes()
+  const paths = getAllPaths()
+  const events = getPublicWorldEvents()
   const publicAreaIds = new Set(publicNodes.map((node) => node.areaId))
   const areas = getAllAreas()
     .filter((area) => isPublicVisible(area.defaultVisibility) || publicAreaIds.has(area.id))
@@ -48,6 +53,7 @@ export function createPublicWorldIndex(): PublicWorldIndex {
     tags: node.tags,
     visibility: node.visibility,
     lifeStage: node.lifeStage,
+    featured: node.featured,
     createdAt: node.createdAt,
     updatedAt: node.updatedAt,
   }))
@@ -57,8 +63,14 @@ export function createPublicWorldIndex(): PublicWorldIndex {
     state: getWorldState(),
     areas,
     nodes,
-    paths: getAllPaths(),
-    events: getPublicWorldEvents(),
+    paths,
+    events,
+    contentLifeFacts: buildContentLifeFacts({
+      nodes: publicNodes,
+      paths,
+      relations: getAllRelations(),
+      events,
+    }),
     projections: {
       home: getHomeProjections(),
       archive: getArchiveProjections(),

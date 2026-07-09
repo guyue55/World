@@ -1,4 +1,4 @@
-export type AIContextVisibility = 'public' | 'semiPublic' | 'private' | 'vault' | 'sealed' | 'silent'
+export type AIContextVisibility = 'public' | 'semiPublic' | 'private' | 'family' | 'partner' | 'vault' | 'sealed' | 'silent'
 
 export type AIContextCandidate = {
   id: string
@@ -18,7 +18,7 @@ export type AIContextSlice = {
 }
 
 export const allowedAIContextVisibilities: AIContextVisibility[] = ['public', 'semiPublic']
-export const excludedAIContextVisibilities: AIContextVisibility[] = ['private', 'vault', 'sealed', 'silent']
+export const excludedAIContextVisibilities: AIContextVisibility[] = ['private', 'family', 'partner', 'vault', 'sealed', 'silent']
 
 export function buildAIContextSlice(candidates: AIContextCandidate[]): AIContextSlice {
   const allowed: AIContextCandidate[] = []
@@ -33,7 +33,7 @@ export function buildAIContextSlice(candidates: AIContextCandidate[]): AIContext
     excluded.push({
       id: candidate.id,
       visibility: candidate.visibility,
-      reason: 'AI provider context excludes private, vault, sealed and silent content unless backend authorization is explicit.',
+      reason: 'AI provider context excludes private, family, partner, vault, sealed and silent content unless backend authorization is explicit.',
     })
   }
 

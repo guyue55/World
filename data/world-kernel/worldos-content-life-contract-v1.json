@@ -13,6 +13,8 @@
     "requireContentPathForPublicNodes": true,
     "requireRelationForPublicNodes": true,
     "requirePathForPublicNodes": true,
+    "requireAiReadableSummaryForPublicNodes": true,
+    "requireContentLifeFactForPublicNodes": true,
     "requireReviewedStrongRelations": true,
     "requireReasonForStrongRelations": true,
     "requireFeaturedNodePath": true,
@@ -30,7 +32,9 @@
     "timeline",
     "archive",
     "paths",
-    "node"
+    "node",
+    "lighthouse",
+    "public-index"
   ],
   "releaseStates": {
     "productionLive": false,

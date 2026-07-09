@@ -870,5 +870,21 @@
     "visibility": "public",
     "actor": "worldos-kernel",
     "summary": "Phase 19 仍保持本地局域网范围事件记录"
+  },
+  {
+    "id": "evt-worldos-rc1-lessons",
+    "type": "node-updated",
+    "title": "RC1 收束经验进入时间河",
+    "date": "2026-07-04",
+    "description": "WorldOS 1.0 RC1 的 legacy runtime、外部证据、内容密度和构建风险被整理成公开复盘节点，作为后续本地/LAN 成熟度的时间锚点。",
+    "nodeIds": [
+      "node-worldos-rc-lessons"
+    ],
+    "areaIds": [
+      "timeline"
+    ],
+    "visibility": "public",
+    "actor": "system",
+    "summary": "RC1 收束经验进入时间河事件记录"
   }
 ]

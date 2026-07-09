@@ -7,11 +7,33 @@ const failures = getPublicWorldObjectConsistencyIssues(index)
 if (index.areas.length < 1) failures.push('公开世界对象索引缺少公开区域')
 if (index.nodes.length < 1) failures.push('公开世界对象索引缺少公开节点')
 if (index.paths.length < 1) failures.push('公开世界对象索引缺少公开路径')
+if (index.contentLifeFacts.length !== index.nodes.length) failures.push(`内容生命事实数量不一致：${index.contentLifeFacts.length}/${index.nodes.length}`)
 if (index.nodeRefs.length !== index.nodes.length) failures.push(`公开节点引用数量不一致：${index.nodeRefs.length}/${index.nodes.length}`)
 if (index.pathRefs.length !== index.paths.length) failures.push(`公开路径引用数量不一致：${index.pathRefs.length}/${index.paths.length}`)
 
 const pathNodeRefCount = index.pathRefs.reduce((sum, pathRef) => sum + pathRef.nodeRefs.length, 0)
 if (pathNodeRefCount < index.paths.length) failures.push('公开路径缺少可进入的公开节点引用')
+
+const incompleteFacts = index.contentLifeFacts.filter((fact) =>
+  !fact.aiReadableSummary
+  || fact.relationReasons.length === 0
+  || fact.pathIds.length === 0,
+)
+if (incompleteFacts.length > 0) {
+  failures.push(`内容生命事实不完整：${incompleteFacts.slice(0, 5).map((fact) => fact.id).join(', ')}`)
+}
+
+const timelineKeyNodeIds = new Set(
+  index.nodes
+    .filter((node) => node.featured?.timelineKey)
+    .map((node) => node.id),
+)
+const missingTimelineFacts = index.contentLifeFacts.filter((fact) =>
+  timelineKeyNodeIds.has(fact.id) && fact.timelineEventIds.length === 0,
+)
+if (missingTimelineFacts.length > 0) {
+  failures.push(`关键节点缺少时间线吸收：${missingTimelineFacts.slice(0, 5).map((fact) => fact.id).join(', ')}`)
+}
 
 if (failures.length > 0) {
   console.error('Public world object index check failed:')

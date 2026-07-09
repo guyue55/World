@@ -24,6 +24,7 @@
   ],
   "diffPolicy": [
     "summary、runtime、LAN、Scene QA、audit 和截图证据只应在执行 release:local-rc 后提交。",
+    "本地 RC 汇总必须包含内容生命事实覆盖和灯塔只读低光边界，避免只证明页面可打开。",
     "仅 generatedAt 或运行时日志变化不足以构成有价值提交；提交前优先检查是否存在源码、配置、截图或门禁结论变化。",
     "截图用于证明 desktop、mobile-reduced-motion 和关键首屏区域；视觉变化应和对应代码或样式变化一起提交。",
     "reports/ 下的进程日志是排障材料，不作为规范提交产物。"

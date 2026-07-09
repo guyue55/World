@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T12:55:28.559Z",
+  "generatedAt": "2026-07-09T13:10:33.434Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -72,7 +72,29 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-09T12:54:36.880Z"
+      "buildIdMtime": "2026-07-09T13:09:45.054Z"
+    },
+    "contentLife": {
+      "status": "passed",
+      "publicNodeFacts": 200,
+      "completePublicNodeFacts": 200,
+      "publicIndex": "public/world-index.json",
+      "absorbedBy": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "node",
+        "lighthouse"
+      ]
+    },
+    "lighthouseReadonly": {
+      "status": "passed-by-check:mainline",
+      "mode": "low-light",
+      "providerStatus": "disabled-dry-run",
+      "serverRuntime": "src/server/ai/lighthouse-runtime.ts",
+      "api": "src/app/api/lighthouse/ask/route.ts",
+      "writesWorldSource": false
     }
   },
   "dynamicWorldEvidence": {

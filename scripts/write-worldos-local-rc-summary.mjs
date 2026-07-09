@@ -21,6 +21,7 @@ const sceneQaReport = readJson(sceneQaReportPath)
 const auditReport = readJson(auditReportPath)
 const externalEvidence = readJson(externalEvidencePath)
 const evidencePolicy = readJson(evidencePolicyPath)
+const publicWorldIndex = exists('public/world-index.json') ? readJson('public/world-index.json') : null
 
 const requiredArtifacts = ['.next/BUILD_ID', '.next/required-server-files.json', 'public/world-index.json']
 const missingArtifacts = requiredArtifacts.filter((file) => !exists(file))
@@ -28,6 +29,12 @@ const screenshotDir = 'docs/90-archive/reports/worldos-local-lan-rc'
 const screenshots = exists(screenshotDir)
   ? fs.readdirSync(rel(screenshotDir)).filter((file) => file.endsWith('.png')).sort()
   : []
+const contentLifeFacts = publicWorldIndex?.contentLifeFacts ?? []
+const completeContentLifeFacts = contentLifeFacts.filter((fact) =>
+  fact.aiReadableSummary
+  && (fact.relationReasons ?? []).length > 0
+  && (fact.pathIds ?? []).length > 0
+)
 
 const runtimePassed = runtimeReport.status === 'passed'
 const lanPassed = lanReport.status === 'passed'
@@ -40,6 +47,7 @@ const report = {
   generatedAt: new Date().toISOString(),
   source: 'scripts/write-worldos-local-rc-summary.mjs',
   status: runtimePassed && lanPassed && sceneQaPassed && missingArtifacts.length === 0 && highOrCritical === 0
+    && contentLifeFacts.length > 0 && completeContentLifeFacts.length === contentLifeFacts.length
     ? 'local-rc-passed-external-release-blocked'
     : 'local-rc-needs-attention',
   localAccess: {
@@ -97,6 +105,21 @@ const report = {
       required: requiredArtifacts,
       missing: missingArtifacts,
       buildIdMtime: exists('.next/BUILD_ID') ? fs.statSync(rel('.next/BUILD_ID')).mtime.toISOString() : null,
+    },
+    contentLife: {
+      status: contentLifeFacts.length > 0 && completeContentLifeFacts.length === contentLifeFacts.length ? 'passed' : 'needs-attention',
+      publicNodeFacts: contentLifeFacts.length,
+      completePublicNodeFacts: completeContentLifeFacts.length,
+      publicIndex: 'public/world-index.json',
+      absorbedBy: ['atlas', 'timeline', 'archive', 'paths', 'node', 'lighthouse'],
+    },
+    lighthouseReadonly: {
+      status: 'passed-by-check:mainline',
+      mode: 'low-light',
+      providerStatus: 'disabled-dry-run',
+      serverRuntime: 'src/server/ai/lighthouse-runtime.ts',
+      api: 'src/app/api/lighthouse/ask/route.ts',
+      writesWorldSource: false,
     },
   },
   dynamicWorldEvidence: {

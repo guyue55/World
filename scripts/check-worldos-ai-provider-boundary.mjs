@@ -59,6 +59,7 @@ assert(lighthouseReadonly.policies?.noRemoteAIInLowLightMode === true, '灯塔�
 
 for (const forbidden of [
   'read vault/sealed/silent content',
+  'index private/family/partner/vault/sealed/silent content',
   'publish content automatically',
   'change visibility automatically',
   'delete or overwrite original content',
