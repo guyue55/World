@@ -1,0 +1,178 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS Phase 29 公开场景人格注册表",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-phase29-scene-personality-execution-plan-2026-07-09.md",
+  "principle": "场景人格只负责公开体验识别、下一站引导和低门槛中文说明；不承担权限判断，不读取私密层，不引入重型视觉依赖。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "display": {
+    "component": "src/components/world/SceneIdentityBand.tsx",
+    "mount": "src/components/world/WorldShell.tsx#main-content",
+    "maxSignals": 3,
+    "compactMaxSignals": 2,
+    "usesHeavyMedia": false,
+    "usesThreeJs": false,
+    "usesNewAnimationLibrary": false,
+    "usesStaticGsapImport": false,
+    "reducedMotionBehavior": "保持静态身份、主行动和下一站，不依赖位移、缩放或扫光。"
+  },
+  "personalities": [
+    {
+      "sceneId": "gateway",
+      "persona": "世界入口",
+      "landmark": "书桌上的星河刚被点亮。",
+      "promise": "从这里进入地图、路径和灯塔，不需要先理解项目背景。",
+      "signals": ["入口", "罗盘", "新手路径"],
+      "primaryActionLabel": "进入世界地图",
+      "primaryActionHref": "/atlas",
+      "nextStationLabel": "走第一条路径",
+      "nextStationHref": "/paths/first-visit",
+      "tone": "paper-starlight",
+      "reducedMotionFallback": "直接显示入口身份、地图按钮和第一条路径。"
+    },
+    {
+      "sceneId": "atlas",
+      "persona": "星图穹顶",
+      "landmark": "区域像浮屿悬在同一张公开星图上。",
+      "promise": "先看世界结构，再从星点进入节点房间。",
+      "signals": ["星图", "区域", "星线"],
+      "primaryActionLabel": "沿时间河前进",
+      "primaryActionHref": "/timeline",
+      "nextStationLabel": "进入档案馆",
+      "nextStationHref": "/archive",
+      "tone": "dome-lake",
+      "reducedMotionFallback": "保留区域、星线和节点列表的静态结构。"
+    },
+    {
+      "sceneId": "timeline",
+      "persona": "时间河",
+      "landmark": "公开事件顺流排列，显示世界如何生长。",
+      "promise": "从变化进入内容，而不是只看发布时间。",
+      "signals": ["事件", "涟漪", "季节"],
+      "primaryActionLabel": "查看档案馆",
+      "primaryActionHref": "/archive",
+      "nextStationLabel": "回到星图",
+      "nextStationHref": "/atlas",
+      "tone": "river-moss",
+      "reducedMotionFallback": "使用静态事件流和区域筛选表达时间关系。"
+    },
+    {
+      "sceneId": "archive",
+      "persona": "档案馆",
+      "landmark": "卷宗、索引和馆藏状态帮助快速找到公开节点。",
+      "promise": "当你不想漫游时，可以直接检索这个世界。",
+      "signals": ["卷宗", "检索", "馆藏"],
+      "primaryActionLabel": "打开精选路径",
+      "primaryActionHref": "/paths",
+      "nextStationLabel": "切回星图",
+      "nextStationHref": "/atlas",
+      "tone": "archive-gold",
+      "reducedMotionFallback": "直接保留检索、筛选和结果状态，不依赖抽屉位移。"
+    },
+    {
+      "sceneId": "paths",
+      "persona": "星路入口",
+      "landmark": "路径把节点串成可以完成的一段旅程。",
+      "promise": "不知道从哪开始时，先选一条短路线。",
+      "signals": ["路线", "脚印", "下一站"],
+      "primaryActionLabel": "开始第一条路径",
+      "primaryActionHref": "/paths/first-visit",
+      "nextStationLabel": "去问灯塔",
+      "nextStationHref": "/ask",
+      "tone": "route-leaf",
+      "reducedMotionFallback": "直接显示路径卡片、预计时间和下一站。"
+    },
+    {
+      "sceneId": "path-detail",
+      "persona": "旅程路线",
+      "landmark": "当前位置、已走节点和下一站共同构成路线感。",
+      "promise": "沿节点顺序阅读，也随时能回到地图。",
+      "signals": ["当前位置", "节点序列", "回望"],
+      "primaryActionLabel": "继续到下一站",
+      "primaryActionHref": "/archive",
+      "nextStationLabel": "返回路径入口",
+      "nextStationHref": "/paths",
+      "tone": "route-leaf",
+      "reducedMotionFallback": "使用静态步骤序列和下一站按钮。"
+    },
+    {
+      "sceneId": "node",
+      "persona": "节点展开室",
+      "landmark": "节点护照、正文、关系和下一站围成一个阅读房间。",
+      "promise": "先读清楚这颗节点，再决定回地图、档案馆或继续相关内容。",
+      "signals": ["护照", "正文", "关系"],
+      "primaryActionLabel": "回到档案馆",
+      "primaryActionHref": "/archive",
+      "nextStationLabel": "看世界地图",
+      "nextStationHref": "/atlas",
+      "tone": "room-ink",
+      "reducedMotionFallback": "直接展示护照、正文、关系和下一站。"
+    },
+    {
+      "sceneId": "lighthouse",
+      "persona": "低光灯塔",
+      "landmark": "灯塔只照路，不替你决定，也不读取私密层。",
+      "promise": "用公开索引回答我在哪、能去哪、下一步看什么。",
+      "signals": ["只读", "问路", "边界"],
+      "primaryActionLabel": "打开世界地图",
+      "primaryActionHref": "/atlas",
+      "nextStationLabel": "进入精选路径",
+      "nextStationHref": "/paths",
+      "tone": "beacon-night",
+      "reducedMotionFallback": "静态保留推荐问题、路径建议和只读边界。"
+    },
+    {
+      "sceneId": "status",
+      "persona": "维护舱",
+      "landmark": "这里展示本地门禁、运行证据和世界系统状态。",
+      "promise": "让每次验收都能被复查，而不是只靠主观感觉。",
+      "signals": ["门禁", "证据", "心跳"],
+      "primaryActionLabel": "返回入口",
+      "primaryActionHref": "/",
+      "nextStationLabel": "查看星图",
+      "nextStationHref": "/atlas",
+      "tone": "console-slate",
+      "reducedMotionFallback": "直接展示状态账本、场景系统和 RC 证据。"
+    }
+  ],
+  "fallback": {
+    "sceneId": "unknown",
+    "persona": "未命名星域",
+    "landmark": "这是公开世界里的通用页面。",
+    "promise": "如果迷路，可以先回到入口或地图。",
+    "signals": ["路标", "公开", "返回"],
+    "primaryActionLabel": "回到入口",
+    "primaryActionHref": "/",
+    "nextStationLabel": "查看星图",
+    "nextStationHref": "/atlas",
+    "tone": "paper-starlight",
+    "reducedMotionFallback": "直接显示页面内容和返回入口。"
+  },
+  "acceptance": {
+    "requiredSceneIds": ["gateway", "atlas", "timeline", "archive", "paths", "path-detail", "node", "lighthouse", "status"],
+    "mustHavePrimaryAction": true,
+    "mustHaveNextStation": true,
+    "forbiddenClientTokens": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "new OpenAI", "responses.create", "chat.completions", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"],
+    "requiredFiles": [
+      "data/domains/experience/scene-personality-registry.json",
+      "src/lib/scene-personality.ts",
+      "src/components/world/SceneIdentityBand.tsx"
+    ]
+  },
+  "nextActions": [
+    "阶段 30：建立 Journey Memory 与路径连续性。",
+    "阶段 31：让 Ambient Environment v2 根据场景人格调整空气。",
+    "阶段 32：将场景人格纳入截图 QA 和本地 RC 证据。"
+  ]
+}

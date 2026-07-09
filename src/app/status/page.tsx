@@ -10,6 +10,7 @@ import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { getPathQualityLedger } from '@/lib/path-quality-ledger'
 import { getOwnerReadonlyConsoleLedger } from '@/lib/owner-readonly-console'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
+import { getScenePersonalitySummary } from '@/lib/scene-personality'
 import { getSceneTransitionSummary } from '@/lib/scene-transition'
 import {
   AiLowLightStatusPanel,
@@ -58,6 +59,7 @@ export default function StatusPage() {
   const pathQualityLedger = getPathQualityLedger()
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const sceneRuntimeSummary = getPublicSceneSummary()
+  const scenePersonalitySummary = getScenePersonalitySummary()
   const sceneTransitionSummary = getSceneTransitionSummary()
   const dynamicWorldStatus = buildDynamicWorldStatusSurface({
     areas,
@@ -103,7 +105,11 @@ export default function StatusPage() {
 
       <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
 
-      <SceneRuntimeStatusPanel summary={sceneRuntimeSummary} transitionSummary={sceneTransitionSummary} />
+      <SceneRuntimeStatusPanel
+        summary={sceneRuntimeSummary}
+        personalitySummary={scenePersonalitySummary}
+        transitionSummary={sceneTransitionSummary}
+      />
 
       <section className="grid gap-5 lg:grid-cols-3">
         <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">

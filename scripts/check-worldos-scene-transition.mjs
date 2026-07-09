@@ -108,7 +108,7 @@ assert(!/localStorage|sessionStorage/.test(shell), 'SceneTransitionShell 不得�
 
 const worldShell = read('src/components/world/WorldShell.tsx')
 assert(worldShell.includes("import { SceneTransitionShell }"), 'WorldShell 缺少 SceneTransitionShell import')
-assert(worldShell.includes('<SceneTransitionShell>{children}</SceneTransitionShell>'), 'WorldShell 必须统一包裹 children')
+assert(worldShell.includes('<SceneTransitionShell>') && worldShell.includes('{children}') && worldShell.includes('</SceneTransitionShell>'), 'WorldShell 必须通过 SceneTransitionShell 统一包裹 children')
 
 const statusPage = read('src/app/status/page.tsx')
 const statusPanel = read('src/components/status/SceneRuntimeStatusPanel.tsx')

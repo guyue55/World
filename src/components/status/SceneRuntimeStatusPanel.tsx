@@ -1,12 +1,15 @@
 import { Compass, GitBranch, Map, ShieldCheck } from 'lucide-react'
 import type { SceneRuntimeSummary } from '@/lib/scene-runtime'
+import type { ScenePersonalitySummary } from '@/lib/scene-personality'
 import type { SceneTransitionSummary } from '@/lib/scene-transition'
 
 export function SceneRuntimeStatusPanel({
   summary,
+  personalitySummary,
   transitionSummary,
 }: {
   summary: SceneRuntimeSummary
+  personalitySummary?: ScenePersonalitySummary
   transitionSummary?: SceneTransitionSummary
 }) {
   return (
@@ -95,6 +98,33 @@ export function SceneRuntimeStatusPanel({
                 <p className="truncate text-xs font-semibold tracking-[0.18em] text-moss">{motion.id}</p>
                 <h4 className="mt-2 truncate text-base font-semibold text-ink">{motion.label}</h4>
                 <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{motion.intent}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {personalitySummary && (
+        <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Scene Personality</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">公开场景拥有可辨认的人格身份</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
+                身份带用同一份事实源说明当前位置、空间信号、主行动和下一站，帮助访问者不看 URL 也能知道自己在哪。
+              </p>
+            </div>
+            <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
+              <p className="text-xs font-semibold tracking-[0.22em] text-gold">PERSONAS</p>
+              <p className="mt-2 text-2xl font-semibold">{personalitySummary.personalityCount}/{personalitySummary.requiredPersonalityCount}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {personalitySummary.personalities.slice(0, 9).map((personality) => (
+              <article key={personality.sceneId} className="rounded-[1rem] bg-white/70 p-4">
+                <p className="truncate text-xs font-semibold tracking-[0.18em] text-moss">{personality.sceneId}</p>
+                <h4 className="mt-2 truncate text-base font-semibold text-ink">{personality.persona}</h4>
+                <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{personality.landmark}</p>
               </article>
             ))}
           </div>
