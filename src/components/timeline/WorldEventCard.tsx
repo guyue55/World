@@ -23,8 +23,8 @@ export function WorldEventCard({
       <div className="mt-4 flex flex-wrap gap-2 text-xs">
         <span className="shrink-0 rounded-full bg-ink/5 px-3 py-1 text-moss">{formatWorldEventType(event.type)}</span>
         <span className="shrink-0 rounded-full bg-ink/5 px-3 py-1 text-ink/50">{formatWorldEventActor(actor)}</span>
-        {linked.nodes.slice(0, 3).map((name) => <span key={name} className="truncate rounded-full bg-white/65 px-3 py-1 text-ink/50 max-w-full">节点：{name}</span>)}
-        {linked.areas.slice(0, 3).map((name) => <span key={name} className="truncate rounded-full bg-white/65 px-3 py-1 text-ink/50 max-w-full">区域：{name}</span>)}
+        {linked.nodes.slice(0, 3).map((name, index) => <span key={`${name}-${index}`} className="truncate rounded-full bg-white/65 px-3 py-1 text-ink/50 max-w-full">节点：{name}</span>)}
+        {linked.areas.slice(0, 3).map((name, index) => <span key={`${name}-${index}`} className="truncate rounded-full bg-white/65 px-3 py-1 text-ink/50 max-w-full">区域：{name}</span>)}
       </div>
     </article>
   )

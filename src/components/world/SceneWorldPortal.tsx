@@ -41,6 +41,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
   accent: string
   runtimeLabel: string
   visualLabel: string
+  arrivalHint: string
   variantClass: string
 }> = {
   gateway: {
@@ -48,6 +49,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-gold',
     runtimeLabel: '书桌向星河打开',
     visualLabel: 'Gateway',
+    arrivalHint: '入口已经打开：先完成一次抵达，再从星图、时间河、档案馆或路径进入公开世界。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(37,48,42,0.96),rgba(57,73,66,0.92)_48%,rgba(24,32,35,0.96))]',
   },
   atlas: {
@@ -55,6 +57,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-lake',
     runtimeLabel: '区域正在连成穹顶',
     visualLabel: 'Atlas',
+    arrivalHint: '你站在穹顶前厅：先看区域如何互相牵引，再沿星线进入节点、时间河或路径。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(24,38,44,0.96),rgba(37,48,42,0.94)_48%,rgba(16,24,32,0.96))]',
   },
   timeline: {
@@ -62,6 +65,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-lake',
     runtimeLabel: '事件正在入河',
     visualLabel: 'Timeline',
+    arrivalHint: '河面已经显形：事件会按时间留下涟漪，适合从变化、项目和阶段回看世界生长。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(39,56,58,0.95),rgba(76,91,78,0.9)_48%,rgba(29,38,41,0.96))]',
   },
   archive: {
@@ -69,6 +73,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-gold',
     runtimeLabel: '卷宗正在归位',
     visualLabel: 'Archive',
+    arrivalHint: '馆门已经开启：这里优先服务检索、筛选和回收线索，而不是继续堆文章列表。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(47,42,35,0.96),rgba(68,64,53,0.92)_48%,rgba(28,32,30,0.96))]',
   },
   paths: {
@@ -76,6 +81,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-leaf',
     runtimeLabel: '路径正在点亮',
     visualLabel: 'Paths',
+    arrivalHint: '路径从脚下开始：先选择一条路线，再按下一站、返回地图、继续阅读的节奏前进。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(37,48,42,0.96),rgba(65,75,52,0.92)_48%,rgba(22,30,34,0.96))]',
   },
   lighthouse: {
@@ -83,6 +89,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-gold',
     runtimeLabel: '灯塔只照亮公开路径',
     visualLabel: 'Lighthouse',
+    arrivalHint: '灯塔只做导览：它解释公开内容、推荐下一站，不拥有修改世界事实的权限。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(24,30,38,0.97),rgba(39,49,54,0.92)_46%,rgba(18,23,31,0.97))]',
   },
   status: {
@@ -90,6 +97,7 @@ const sceneCopy: Record<SceneWorldPortalId, {
     accent: 'text-lake',
     runtimeLabel: '本地门禁正在回传',
     visualLabel: 'Status',
+    arrivalHint: '维护舱给出运行证据：本地/LAN 可复查，外部发布继续冻结，不用漂亮话代替事实。',
     variantClass: 'bg-[linear-gradient(118deg,rgba(30,38,39,0.97),rgba(43,53,49,0.92)_48%,rgba(24,30,31,0.97))]',
   },
 }
@@ -218,6 +226,48 @@ function SceneIllustration({ scene, objects }: { scene: SceneWorldPortalId; obje
   )
 }
 
+function SceneStagePanel({
+  scene,
+  objects,
+  meta,
+  stats,
+  runtimeLabel,
+}: {
+  scene: SceneWorldPortalId
+  objects: string[]
+  meta: (typeof sceneCopy)[SceneWorldPortalId]
+  stats: SceneWorldPortalStat[]
+  runtimeLabel: string
+}) {
+  return (
+    <div
+      data-scene-stage-panel={scene}
+      data-scene-part="SceneMotionLayer"
+      className="relative min-h-[22rem] overflow-hidden rounded-[1.35rem] border border-paper/16 bg-night/34 shadow-[inset_0_0_0_1px_rgba(247,241,230,0.05),0_24px_80px_rgba(0,0,0,0.24)] md:min-h-[34rem] md:rounded-[1.6rem]"
+    >
+      <SceneIllustration scene={scene} objects={objects} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(247,241,230,0.11),transparent_28rem),linear-gradient(180deg,rgba(12,18,20,0.08),rgba(12,18,20,0.74))]" />
+      <div className="absolute left-4 top-4 z-10 rounded-full border border-paper/14 bg-paper/10 px-3 py-1.5 text-[11px] font-semibold tracking-[0.24em] text-paper/70 backdrop-blur-md">
+        {meta.visualLabel}
+      </div>
+      <div className="absolute bottom-4 left-4 right-4 z-10">
+        <div className="rounded-[1.15rem] border border-paper/14 bg-night/54 p-4 backdrop-blur-xl">
+          <p className={`text-xs font-semibold tracking-[0.24em] ${meta.accent}`}>{meta.label}</p>
+          <h2 className="mt-2 text-2xl font-semibold leading-tight text-paper md:text-3xl">{runtimeLabel}</h2>
+          <div className="mt-4 grid gap-2 sm:grid-cols-3">
+            {stats.slice(0, 3).map((stat) => (
+              <div key={`${stat.label}-${stat.value}`} className="rounded-[0.9rem] border border-paper/10 bg-paper/8 px-3 py-2">
+                <p className="text-lg font-semibold text-paper">{stat.value}</p>
+                <p className="mt-0.5 text-[11px] font-semibold text-paper/64">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function SceneWorldPortal({
   scene,
   eyebrow,
@@ -285,21 +335,22 @@ export function SceneWorldPortal({
     <section
       ref={rootRef}
       data-testid="scene-world-portal"
+      data-world-portal={scene}
       data-scene-world-portal={scene}
       data-scene-production={scene}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
-      className={`relative min-h-[min(660px,calc(100vh-5rem))] overflow-hidden rounded-[1.6rem] border border-white/18 px-5 py-7 text-paper shadow-soft md:min-h-[min(760px,calc(100vh-6rem))] md:rounded-[2rem] md:px-8 md:py-10 ${meta.variantClass}`}
+      className={`relative overflow-hidden rounded-[1.6rem] border border-white/18 px-5 py-7 text-paper shadow-soft md:min-h-[min(760px,calc(100vh-6rem))] md:rounded-[2rem] md:px-8 md:py-10 ${meta.variantClass}`}
     >
-      <SceneIllustration scene={scene} objects={objects} />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,22,23,0.84),rgba(16,22,23,0.48)_48%,rgba(16,22,23,0.22))]" />
+      <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(247,241,230,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,241,230,0.10)_1px,transparent_1px)] [background-size:72px_72px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(12,18,20,0.84),rgba(12,18,20,0.50)_42%,rgba(12,18,20,0.18))]" />
 
-      <div className="relative z-10 flex min-h-[inherit] flex-col justify-between gap-8">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.6fr)] lg:items-start">
+      <div className="relative z-10 flex flex-col gap-8">
+        <div className="grid min-h-[min(690px,calc(100vh-7rem))] gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(420px,0.9fr)] lg:items-center">
           <div data-scene-part="SceneHeader" className="max-w-4xl">
             <p data-scene-reveal className={`text-xs font-semibold tracking-[0.32em] ${meta.accent}`}>
               {eyebrow}
             </p>
-            <h1 data-scene-reveal className="mt-4 max-w-4xl break-words text-4xl font-semibold leading-tight sm:text-5xl md:mt-5 md:text-6xl">
+            <h1 data-scene-reveal className="mt-4 max-w-4xl break-words text-4xl font-semibold leading-tight sm:text-5xl md:mt-5 md:text-6xl lg:text-7xl">
               {title}
             </h1>
             <p data-scene-reveal className="mt-4 max-w-2xl text-base leading-8 text-paper/74 md:mt-5 md:text-lg">
@@ -316,7 +367,7 @@ export function SceneWorldPortal({
               </Link>
               {secondaryActions.slice(0, 3).map((action) => (
                 <Link
-                  key={action.href}
+                  key={`${action.href}-${action.label}`}
                   href={action.href}
                   className="inline-flex items-center gap-2 rounded-full border border-paper/18 bg-paper/10 px-5 py-3 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-paper/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper/70"
                 >
@@ -327,42 +378,30 @@ export function SceneWorldPortal({
           </div>
 
           <aside data-scene-reveal data-scene-part="SceneEvidence" className="space-y-4">
-            <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="rounded-[1.2rem] border border-paper/14 bg-paper/10 p-4 backdrop-blur-xl md:rounded-[1.35rem] md:p-5">
-              <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.26em] text-paper/62">
-                <Radio className="h-4 w-4 text-gold" />
-                {meta.visualLabel}
+            <SceneStagePanel
+              scene={scene}
+              objects={objects}
+              meta={meta}
+              stats={statusStats}
+              runtimeLabel={meta.runtimeLabel}
+            />
+            <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="grid gap-3 rounded-[1.15rem] border border-paper/12 bg-paper/8 p-4 text-sm leading-6 text-paper/64 backdrop-blur-xl sm:grid-cols-2">
+              <p className="flex items-start gap-2">
+                <Compass className="mt-1 h-4 w-4 shrink-0 text-lake" />
+                {meta.label} · {runtime.dayPeriod} · {runtime.season}
               </p>
-              <h2 className="mt-3 text-xl font-semibold md:text-2xl">{meta.runtimeLabel}</h2>
-              <div className="mt-4 grid gap-3">
-                <p className="flex items-start gap-2 text-sm leading-6 text-paper/66">
-                  <Compass className="mt-1 h-4 w-4 shrink-0 text-lake" />
-                  {meta.label} · {runtime.dayPeriod} · {runtime.season}
-                </p>
-                <p className="flex items-start gap-2 text-sm leading-6 text-paper/66">
-                  <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-leaf" />
-                  公开场景，只展示已放行内容。
-                </p>
-              </div>
+              <p className="flex items-start gap-2">
+                <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-leaf" />
+                公开场景，只展示已放行内容。
+              </p>
             </div>
-
-            {statusStats.length > 0 ? (
-              <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-                {statusStats.map((stat) => (
-                  <div key={stat.label} className="rounded-[1rem] border border-paper/12 bg-paper/8 p-3 backdrop-blur md:rounded-[1.15rem] md:p-4">
-                    <p className="truncate text-xl font-semibold md:text-2xl">{stat.value}</p>
-                    <p className="mt-1 text-sm font-semibold text-paper/78">{stat.label}</p>
-                    <p className="mt-1 line-clamp-2 text-xs leading-5 text-paper/52">{stat.note}</p>
-                  </div>
-                ))}
-              </div>
-            ) : null}
           </aside>
         </div>
 
         <div data-scene-reveal data-scene-part="SceneBody" className="max-w-5xl">
           {children ?? (
             <p className="rounded-[1rem] border border-paper/12 bg-paper/8 px-4 py-3 text-sm leading-6 text-paper/62">
-              场景主体在下方继续展开：先抵达这里，再进入列表、地图、时间河或档案内容。
+              {meta.arrivalHint}
             </p>
           )}
         </div>

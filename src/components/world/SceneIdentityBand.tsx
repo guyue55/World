@@ -31,6 +31,7 @@ export function SceneIdentityBand() {
   if (pathname === '/') return null
 
   const isPortalScene = portalSceneIds.has(personality.sceneId)
+  if (isPortalScene) return null
   const signals = runtime.compactMotion ? personality.signals.slice(0, 2) : personality.signals.slice(0, 3)
   const mutedTextClass = personality.tone === 'beacon-night' ? 'text-paper/62' : 'text-ink/58'
   const chipClass = personality.tone === 'beacon-night' ? 'border-paper/12 bg-paper/8 text-paper/72' : 'border-white/70 bg-white/58 text-ink/62'
@@ -47,7 +48,7 @@ export function SceneIdentityBand() {
       data-scene-tone={personality.tone}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
       data-compact-scene-band={isPortalScene ? 'true' : 'false'}
-      className="world-container pt-4 md:pt-6"
+      className={`${isPortalScene ? 'hidden md:block' : 'block'} world-container pt-4 md:pt-6`}
     >
       <div className={`overflow-hidden border backdrop-blur ${getToneClass(personality)} ${
         isPortalScene

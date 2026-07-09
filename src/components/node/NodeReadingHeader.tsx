@@ -24,7 +24,7 @@ export function NodeReadingHeader({
         {node.summary && <p className="max-w-3xl break-words text-lg leading-9 text-ink/75">{node.summary}</p>}
       </div>
       <div className="flex flex-wrap gap-2">
-        {node.tags.map((tag) => <span key={tag} className="rounded-full bg-white/50 px-3 py-1 text-sm text-ink/55">#{tag}</span>)}
+        {node.tags.map((tag, index) => <span key={`${tag}-${index}`} className="rounded-full bg-white/50 px-3 py-1 text-sm text-ink/55">#{tag}</span>)}
       </div>
     </header>
   )

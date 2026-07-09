@@ -104,8 +104,8 @@ export function ArchiveDynamicGuide({ surface }: { surface: ArchiveDynamicSurfac
                 标签索引
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {surface.tags.map((tag) => (
-                  <a key={tag.tag} href="#archive-search" className="rounded-full bg-white/72 px-3 py-1 text-xs font-medium text-ink/64">
+                {surface.tags.map((tag, index) => (
+                  <a key={`${tag.tag}-${index}`} href="#archive-search" className="rounded-full bg-white/72 px-3 py-1 text-xs font-medium text-ink/64">
                     #{tag.tag} · {tag.count}
                   </a>
                 ))}

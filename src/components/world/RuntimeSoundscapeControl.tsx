@@ -57,17 +57,15 @@ export function RuntimeSoundscapeControl() {
   return (
     <aside
       data-testid="runtime-soundscape-control"
+      data-soundscape-control={soundscape.sceneId}
       data-sound-mode={runtime.soundMode}
       data-soundscape-scene={soundscape.sceneId}
       data-sensory-mode={runtime.sensoryMode}
-      className="pointer-events-none fixed bottom-4 right-4 z-40 w-[min(20rem,calc(100vw-2rem))] text-xs text-ink/62 md:bottom-6 md:right-6"
+      className="pointer-events-none fixed bottom-4 right-4 z-40 text-xs text-ink/62 md:bottom-6 md:right-6"
     >
-      <div className="pointer-events-auto rounded-[1rem] border border-white/70 bg-white/78 p-3 shadow-soft backdrop-blur-xl">
-        <div className="flex items-center justify-between gap-3">
-          <div className="min-w-0">
-            <p className="truncate font-semibold text-ink">声景：{soundscape.label}</p>
-            <p className="mt-1 truncate text-ink/50">{disabled ? '默认静音，主动开启后才试音' : soundscape.reason}</p>
-          </div>
+      <div className="pointer-events-auto rounded-full border border-white/70 bg-white/82 p-2 shadow-soft backdrop-blur-xl">
+        <div className="flex items-center justify-between gap-2">
+          <span className="sr-only">声景：{soundscape.label}。{disabled ? '默认静音，主动开启后才试音' : soundscape.reason}</span>
           <button
             type="button"
             aria-label={canPlay ? '关闭声景' : '开启声景'}
@@ -87,7 +85,7 @@ export function RuntimeSoundscapeControl() {
             {canPlay ? <Volume2 className="h-4 w-4" /> : <VolumeX className="h-4 w-4" />}
           </button>
         </div>
-        <div className="mt-3 flex items-center gap-3">
+        <div className="sr-only">
           <input
             aria-label="声景音量"
             type="range"
@@ -108,7 +106,7 @@ export function RuntimeSoundscapeControl() {
             试音
           </button>
         </div>
-        <p className="mt-2 truncate text-[11px] text-ink/42">
+        <p className="sr-only">
           {lastPlayedScene === runtime.currentScene ? '刚刚播放过此场景提示音' : registry.runtime.lazyLoadPolicy}
         </p>
       </div>

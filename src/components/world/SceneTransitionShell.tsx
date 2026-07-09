@@ -155,7 +155,9 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
           data-scene-source-ghost={transitionRuntime.fromScene.title}
           data-scene-target-preview={transitionRuntime.toScene.title}
           aria-live="polite"
-          className="rounded-[1rem] border border-ink/8 bg-white/72 px-4 py-3 text-sm text-ink/62 shadow-soft backdrop-blur"
+          className={shouldDescribeTransition
+            ? 'hidden rounded-[1rem] border border-ink/8 bg-white/72 px-4 py-3 text-sm text-ink/62 shadow-soft backdrop-blur md:block'
+            : 'sr-only'}
         >
           <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <span className="font-semibold text-ink">{shouldDescribeTransition ? '场景迁移' : '场景定位'}</span>

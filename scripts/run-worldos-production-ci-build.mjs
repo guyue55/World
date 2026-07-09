@@ -21,5 +21,9 @@ const child = spawn(nextBin, ['build'], {
 })
 
 child.on('exit', (code, signal) => {
+  if (code === 0) {
+    // 生产本地 RC 只需要可被 next start 读取的产物；构建缓存会随机器波动，不进入门禁预算。
+    fs.rmSync(path.join(nextDir, 'cache'), { recursive: true, force: true })
+  }
   process.exit(code ?? (signal ? 1 : 0))
 })
