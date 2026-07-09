@@ -9,6 +9,9 @@
 > [!IMPORTANT]
 > 2026-07-10 高目标追加：M8-M18 完成后只代表本地成熟世界 MVP+。若用户目标包含 8/10、9/10 或终局候选，必须继续读取并执行 M19-M30 高目标文档，不能把 MVP+ 误称终局宇宙。
 
+> [!IMPORTANT]
+> 终局体验必须覆盖八个支柱：每个场景像独立空间、切换像真实穿梭、内容像地点和生命体、AI 灯塔像真正陪伴者、音乐 / 氛围 / 视觉 / 交互形成统一世界观、用户愿意长期逛和回访、作者能持续养世界、验收真实可信。
+
 ## 1. 机制判断
 
 结论：可以只设置一次 Goal，但不能把所有细节塞进 `/goal` 输入框。正确做法是：
@@ -69,18 +72,19 @@
 2. `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`
 3. `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md`
 4. `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`
-5. `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
-6. `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md`
-7. `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md`
-8. `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`
-9. `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md`
-10. `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
-11. `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
-12. `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
-13. `docs/00-overview/worldos-quality-control-system-2026-07-09.md`
-14. `docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md`
-15. `docs/00-overview/worldos-performance-asset-budget-2026-07-09.md`
-16. `docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md`
+5. `docs/00-overview/worldos-ultimate-experience-charter-2026-07-10.md`
+6. `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
+7. `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md`
+8. `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md`
+9. `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`
+10. `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md`
+11. `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
+12. `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
+13. `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
+14. `docs/00-overview/worldos-quality-control-system-2026-07-09.md`
+15. `docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md`
+16. `docs/00-overview/worldos-performance-asset-budget-2026-07-09.md`
+17. `docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ## 5. 执行顺序
 

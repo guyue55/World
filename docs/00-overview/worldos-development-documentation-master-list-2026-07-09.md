@@ -22,7 +22,7 @@
 >
 > 2026-07-10 追加：真实视觉审查确认，现有页面仍存在“舞台壳强于场景主体”的问题。后续开发前必须读取 `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md`、`docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`、`docs/00-overview/worldos-true-world-global-standard-2026-07-10.md` 和 `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`。
 >
-> 2026-07-10 高目标追加：如果目标不是 7.5/10 本地成熟 MVP+，而是冲击 8/10、9/10，需要额外读取 `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`、`docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` 和 `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md`。
+> 2026-07-10 高目标追加：如果目标不是 7.5/10 本地成熟 MVP+，而是冲击 8/10、9/10，需要额外读取 `docs/00-overview/worldos-ultimate-experience-charter-2026-07-10.md`、`docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`、`docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` 和 `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md`。
 
 ## 2. 需求逐项分析
 
@@ -209,6 +209,7 @@
 
 | 文档 | 产物路径 | 作用 |
 | --- | --- | --- |
+| 终局体验宪章 | `docs/00-overview/worldos-ultimate-experience-charter-2026-07-10.md` | 定义独立空间、真实穿梭、内容生命体、陪伴型灯塔、统一世界观、长期回访、作者共生、真实可信八个体验支柱 |
 | 终局世界高目标路线图 | `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md` | 定义 7.5/10、8/10、8.5/10、9/10、10/10 的真实分层和 M19-M30 阶段 |
 | 终局目标所需文档集 | `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` | 列出 M19-M30 需要补齐的 12 份细文档和进入条件 |
 | 终局目标执行计划 | `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md` | 定义 M19-M30 的阶段目标、具体项、验收方式和停止条件 |
@@ -221,14 +222,15 @@
 2. `worldos-true-world-realization-gap-analysis-2026-07-10.md`
 3. `worldos-true-world-global-standard-2026-07-10.md`
 4. `worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`
-5. `worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
-6. `worldos-ultimate-required-documentation-set-2026-07-10.md`
-7. `worldos-ultimate-execution-plan-2026-07-10.md`
-8. `worldos-high-goal-readiness-audit-2026-07-09.md`
-9. `worldos-experience-governance-master-control-2026-07-09.md`
-10. `worldos-development-documentation-master-list-2026-07-09.md`
-11. `worldos-quality-control-system-2026-07-09.md`
-12. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
+5. `worldos-ultimate-experience-charter-2026-07-10.md`
+6. `worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
+7. `worldos-ultimate-required-documentation-set-2026-07-10.md`
+8. `worldos-ultimate-execution-plan-2026-07-10.md`
+9. `worldos-high-goal-readiness-audit-2026-07-09.md`
+10. `worldos-experience-governance-master-control-2026-07-09.md`
+11. `worldos-development-documentation-master-list-2026-07-09.md`
+12. `worldos-quality-control-system-2026-07-09.md`
+13. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ### 7.2 做任意场景前
 
