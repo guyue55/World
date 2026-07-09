@@ -1736,6 +1736,11 @@
       "id": "worldos-controlled-execution-plan",
       "path": "docs/00-overview/worldos-controlled-execution-plan-2026-07-09.md",
       "layer": "overview"
+    },
+    {
+      "id": "worldos-predevelopment-readiness-review",
+      "path": "docs/00-overview/worldos-predevelopment-readiness-review-2026-07-09.md",
+      "layer": "governance"
     }
   ],
   "docTypes": [
