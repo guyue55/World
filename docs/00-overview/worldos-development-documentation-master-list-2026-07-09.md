@@ -11,7 +11,10 @@
 2. **生产层**：定义场景、转场、氛围、音频、AI、内容生命和运行状态。
 3. **验收层**：定义本地 / LAN、浏览器、性能、权限、人工体验和证据标准。
 
-当前总控层基本就绪；生产层仍是最大缺口；验收层已有基础，但需要补音频、AI、氛围、资产预算和人工体验验收。
+当前总控层基本就绪；生产层曾是最大缺口；验收层已有基础，但需要补音频、AI、氛围、资产预算和人工体验验收。
+
+> [!NOTE]
+> 2026-07-09 更新：本文第 4-6 节列出的 P0/P1/P2 文档已补齐，详见 `docs/00-overview/worldos-predevelopment-document-completion-index-2026-07-09.md`。后续开发应从 `docs/00-overview/worldos-controlled-execution-plan-2026-07-09.md` 进入。
 
 ## 2. 需求逐项分析
 
@@ -227,16 +230,12 @@ flowchart TD
 
 ## 10. 下一步执行顺序
 
-严格顺序如下：
+开发前文档已经补齐。后续严格从以下文档进入：
 
-1. 创建 `worldos-scene-production-matrix-2026-07-09.md`。
-2. 创建 `worldos-transition-choreography-spec-2026-07-09.md`。
-3. 创建 `worldos-atmosphere-sensory-system-spec-2026-07-09.md`。
-4. 创建 `worldos-ai-lighthouse-runtime-spec-2026-07-09.md`。
-5. 创建 `worldos-performance-asset-budget-2026-07-09.md`。
-6. 创建 `worldos-world-runtime-state-machine-spec-2026-07-09.md`。
-7. 创建 `worldos-local-lan-observability-spec-2026-07-09.md`。
-8. 再进入 Home / Atlas / Node / Paths / Timeline / Archive / Lighthouse 场景规格。
+1. `worldos-predevelopment-document-completion-index-2026-07-09.md`
+2. `worldos-controlled-execution-plan-2026-07-09.md`
+3. `worldos-scene-production-matrix-2026-07-09.md`
+4. `worldos-transition-choreography-spec-2026-07-09.md`
+5. `worldos-performance-asset-budget-2026-07-09.md`
 
-只有这些文档补齐后，才适合进入下一轮开发。
-
+只有对应阶段的检查和人工验收通过，才允许标记阶段完成。

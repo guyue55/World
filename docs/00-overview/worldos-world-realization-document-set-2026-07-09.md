@@ -7,6 +7,9 @@
 
 现有问题不是没有阶段文档，而是缺少把“高目标、质量门禁、技术选型、场景生产”连起来的总控体系。
 
+> [!NOTE]
+> 2026-07-09 更新：开发前 P0/P1/P2 文档已经补齐，当前应以 `worldos-predevelopment-document-completion-index-2026-07-09.md` 和 `worldos-controlled-execution-plan-2026-07-09.md` 作为后续入口。
+
 本轮文档集的目标：
 
 - 把“博客骨架”和“真格世界”的差距说清楚。
@@ -52,15 +55,15 @@
 
 ### 阶段 B：生产规格
 
-待执行项：
+已完成项：
 
-- [ ] 场景制作矩阵。
-- [ ] 转场编舞规范。
-- [ ] 氛围与感官系统规格。
-- [ ] AI 灯塔运行规格。
-- [ ] 性能与资产预算。
-- [ ] 场景人格验收表。
-- [ ] 体验术语统一表。
+- [x] 场景制作矩阵。
+- [x] 转场编舞规范。
+- [x] 氛围与感官系统规格。
+- [x] AI 灯塔运行规格。
+- [x] 性能与资产预算。
+- [x] 场景人格验收表：由 `worldos-human-experience-review-rubric-2026-07-09.md` 承接。
+- [x] 体验术语统一表：由场景制作矩阵和各场景规格共同承接。
 
 ### 阶段 C：场景试点
 
@@ -126,21 +129,4 @@
 
 ## 6. 下一步唯一建议
 
-下一步不要直接开发，也不要继续问“加什么动态效果”。  
-
-下一步应先输出：
-
-**`worldos-scene-production-matrix-2026-07-09.md`**
-
-该文档应逐个定义 Home、Atlas、Timeline、Archive、Paths、Node、Lighthouse 的：
-
-- 空间隐喻。
-- 首屏结构。
-- 动态层。
-- 内容层。
-- 转场入口 / 出口。
-- reduced-motion 降级。
-- desktop / mobile 验收截图要求。
-- “不像骨架”的人工判断标准。
-
-场景制作矩阵完成后，紧接着补 `worldos-transition-choreography-spec-2026-07-09.md`、`worldos-atmosphere-sensory-system-spec-2026-07-09.md`、`worldos-ai-lighthouse-runtime-spec-2026-07-09.md` 和 `worldos-performance-asset-budget-2026-07-09.md`。
+开发前文档已经补齐。下一步应严格按 `worldos-controlled-execution-plan-2026-07-09.md` 进入 M1 场景运行底座，不再跳过文档门禁直接做零散动效。

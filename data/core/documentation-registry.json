@@ -1621,6 +1621,121 @@
       "id": "worldos-development-documentation-master-list",
       "path": "docs/00-overview/worldos-development-documentation-master-list-2026-07-09.md",
       "layer": "governance"
+    },
+    {
+      "id": "worldos-scene-production-matrix",
+      "path": "docs/00-overview/worldos-scene-production-matrix-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-transition-choreography-spec",
+      "path": "docs/00-overview/worldos-transition-choreography-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-atmosphere-sensory-system-spec",
+      "path": "docs/00-overview/worldos-atmosphere-sensory-system-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-ai-lighthouse-runtime-spec",
+      "path": "docs/00-overview/worldos-ai-lighthouse-runtime-spec-2026-07-09.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "worldos-performance-asset-budget",
+      "path": "docs/00-overview/worldos-performance-asset-budget-2026-07-09.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "worldos-world-runtime-state-machine-spec",
+      "path": "docs/00-overview/worldos-world-runtime-state-machine-spec-2026-07-09.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "worldos-local-lan-observability-spec",
+      "path": "docs/00-overview/worldos-local-lan-observability-spec-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-home-world-gateway-spec",
+      "path": "docs/00-overview/worldos-home-world-gateway-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-atlas-world-map-spec",
+      "path": "docs/00-overview/worldos-atlas-world-map-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-node-place-reading-spec",
+      "path": "docs/00-overview/worldos-node-place-reading-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-paths-journey-system-spec",
+      "path": "docs/00-overview/worldos-paths-journey-system-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-timeline-river-spec",
+      "path": "docs/00-overview/worldos-timeline-river-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-archive-memory-library-spec",
+      "path": "docs/00-overview/worldos-archive-memory-library-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-lighthouse-observatory-spec",
+      "path": "docs/00-overview/worldos-lighthouse-observatory-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-audio-music-governance-spec",
+      "path": "docs/00-overview/worldos-audio-music-governance-spec-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-content-life-runtime-contract",
+      "path": "docs/00-overview/worldos-content-life-runtime-contract-2026-07-09.md",
+      "layer": "content"
+    },
+    {
+      "id": "worldos-asset-pipeline-and-licensing-spec",
+      "path": "docs/00-overview/worldos-asset-pipeline-and-licensing-spec-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-scene-component-api-spec",
+      "path": "docs/00-overview/worldos-scene-component-api-spec-2026-07-09.md",
+      "layer": "engineering"
+    },
+    {
+      "id": "worldos-human-experience-review-rubric",
+      "path": "docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-scene-data-contract",
+      "path": "docs/00-overview/worldos-scene-data-contract-2026-07-09.md",
+      "layer": "content"
+    },
+    {
+      "id": "worldos-fallback-experience-spec",
+      "path": "docs/00-overview/worldos-fallback-experience-spec-2026-07-09.md",
+      "layer": "experience"
+    },
+    {
+      "id": "worldos-predevelopment-document-completion-index",
+      "path": "docs/00-overview/worldos-predevelopment-document-completion-index-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-controlled-execution-plan",
+      "path": "docs/00-overview/worldos-controlled-execution-plan-2026-07-09.md",
+      "layer": "overview"
     }
   ],
   "docTypes": [
