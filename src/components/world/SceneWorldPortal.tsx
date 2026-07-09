@@ -31,6 +31,8 @@ export type SceneWorldPortalProps = {
   primaryAction: SceneWorldPortalAction
   secondaryActions?: SceneWorldPortalAction[]
   stats?: SceneWorldPortalStat[]
+  fallbackLabel?: string
+  evidenceLabel?: string
   children?: ReactNode
 }
 
@@ -130,7 +132,7 @@ function SceneIllustration({ scene, objects }: { scene: SceneWorldPortalId; obje
   const objectLabels = objects.length > 0 ? objects : [sceneCopy[scene].label]
 
   return (
-    <div className="absolute inset-0" aria-hidden="true">
+    <div data-scene-part="SceneMotionLayer" className="absolute inset-0" aria-hidden="true">
       <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(247,241,230,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,241,230,0.10)_1px,transparent_1px)] [background-size:72px_72px]" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-paper/36 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-paper/20 to-transparent" />
@@ -225,12 +227,14 @@ export function SceneWorldPortal({
   primaryAction,
   secondaryActions = [],
   stats = [],
+  fallbackLabel,
+  evidenceLabel,
   children,
 }: SceneWorldPortalProps) {
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
   const meta = sceneCopy[scene]
-  const shouldMove = !runtime.reducedMotion && !runtime.compactMotion
+  const shouldMove = runtime.motionMode === 'full'
   const statusStats = useMemo(() => stats.slice(0, 3), [stats])
 
   useEffect(() => {
@@ -282,6 +286,7 @@ export function SceneWorldPortal({
       ref={rootRef}
       data-testid="scene-world-portal"
       data-scene-world-portal={scene}
+      data-scene-production={scene}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
       className={`relative min-h-[min(660px,calc(100vh-5rem))] overflow-hidden rounded-[1.6rem] border border-white/18 px-5 py-7 text-paper shadow-soft md:min-h-[min(760px,calc(100vh-6rem))] md:rounded-[2rem] md:px-8 md:py-10 ${meta.variantClass}`}
     >
@@ -290,7 +295,7 @@ export function SceneWorldPortal({
 
       <div className="relative z-10 flex min-h-[inherit] flex-col justify-between gap-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.6fr)] lg:items-start">
-          <div className="max-w-4xl">
+          <div data-scene-part="SceneHeader" className="max-w-4xl">
             <p data-scene-reveal className={`text-xs font-semibold tracking-[0.32em] ${meta.accent}`}>
               {eyebrow}
             </p>
@@ -300,7 +305,7 @@ export function SceneWorldPortal({
             <p data-scene-reveal className="mt-4 max-w-2xl text-base leading-8 text-paper/74 md:mt-5 md:text-lg">
               {description}
             </p>
-            <div data-scene-reveal className="mt-6 flex flex-wrap gap-3 md:mt-7">
+            <div data-scene-reveal data-scene-part="SceneExitRail" className="mt-6 flex flex-wrap gap-3 md:mt-7">
               <Link
                 href={primaryAction.href}
                 data-testid={primaryAction.testId}
@@ -321,7 +326,7 @@ export function SceneWorldPortal({
             </div>
           </div>
 
-          <aside data-scene-reveal className="space-y-4">
+          <aside data-scene-reveal data-scene-part="SceneEvidence" className="space-y-4">
             <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="rounded-[1.2rem] border border-paper/14 bg-paper/10 p-4 backdrop-blur-xl md:rounded-[1.35rem] md:p-5">
               <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.26em] text-paper/62">
                 <Radio className="h-4 w-4 text-gold" />
@@ -354,11 +359,22 @@ export function SceneWorldPortal({
           </aside>
         </div>
 
-        {children ? (
-          <div data-scene-reveal className="max-w-5xl">
-            {children}
-          </div>
-        ) : null}
+        <div data-scene-reveal data-scene-part="SceneBody" className="max-w-5xl">
+          {children ?? (
+            <p className="rounded-[1rem] border border-paper/12 bg-paper/8 px-4 py-3 text-sm leading-6 text-paper/62">
+              场景主体在下方继续展开：先抵达这里，再进入列表、地图、时间河或档案内容。
+            </p>
+          )}
+        </div>
+
+        <div data-scene-reveal className="grid gap-3 border-t border-paper/12 pt-5 md:grid-cols-2">
+          <p data-scene-part="SceneFallback" className="rounded-[1rem] border border-paper/12 bg-paper/8 px-4 py-3 text-sm leading-6 text-paper/62">
+            降级形态：{fallbackLabel ?? '关闭强动效后，保留标题、核心行动、下一站和静态内容。'}
+          </p>
+          <p data-scene-part="SceneEvidence" className="rounded-[1rem] border border-paper/12 bg-paper/8 px-4 py-3 text-sm leading-6 text-paper/62">
+            场景证据：{evidenceLabel ?? 'desktop、mobile、reduced-motion 与 LAN smoke 均可复核。'}
+          </p>
+        </div>
       </div>
     </section>
   )

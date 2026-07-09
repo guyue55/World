@@ -10,6 +10,7 @@ import { createPageMetadata } from '@/lib/metadata'
 import { nodeArticleJsonLd } from '@/lib/jsonld'
 import { Breadcrumbs } from '@/components/common/Breadcrumbs'
 import { JsonLd } from '@/components/common/JsonLd'
+import { SceneProductionFrame } from '@/components/world/SceneProductionFrame'
 import {
   NodeCover,
   NodeNextStepPanel,
@@ -71,6 +72,21 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
             { label: '世界地图', href: '/atlas' },
             { label: area?.worldName ?? node.areaId, href: `/atlas#${node.areaId}` },
             { label: node.worldTitle ?? node.title },
+          ]}
+        />
+
+        <SceneProductionFrame
+          sceneId="node"
+          eyebrow="NODE · 节点展开室"
+          title={node.worldTitle ?? node.title}
+          description={`你抵达的是 ${area?.worldName ?? node.areaId} 中的一处公开地点。先读节点护照，再看正文和关系出口。`}
+          motionLabel="节点只保留来源残影、关系提示和下一步浮层；正文始终先可读。"
+          fallback="reduced-motion 或无 JS 时退回标准文章详情、节点护照和静态关系清单。"
+          evidence="节点页纳入 Scene QA 的 node 路由，验证身份带、空气层、转场壳、正文和下一步出口。"
+          actions={[
+            { href: `/atlas#${node.areaId}`, label: '回到所在星域', description: area?.worldName ?? node.areaId, tone: 'primary' },
+            { href: '/paths', label: '选择一条路径', description: '把这个节点放回旅程中' },
+            { href: '/timeline', label: '回看时间河', description: '从事件线索继续探索' },
           ]}
         />
 

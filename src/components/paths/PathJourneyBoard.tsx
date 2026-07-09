@@ -10,7 +10,7 @@ import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
 export function PathJourneyBoard({ surface }: { surface: PathJourneySurface }) {
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
-  const shouldMove = !runtime.reducedMotion
+  const shouldMove = runtime.motionMode === 'full'
   useGsapEntrance(rootRef, shouldMove)
 
   return (

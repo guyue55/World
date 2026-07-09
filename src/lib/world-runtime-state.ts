@@ -15,6 +15,7 @@ export type WorldRuntimeStateInput = {
   hydrated: boolean
   reducedMotion: boolean
   compactMotion: boolean
+  motionOff?: boolean
   sensoryQuiet?: boolean
   sensorySilent?: boolean
   aiStatus: 'enabled' | 'low-light' | 'disabled'
@@ -110,7 +111,8 @@ export function getWorldRuntimeStateSummary(): WorldRuntimeStateSummary {
   }
 }
 
-export function getMotionRuntimeMode(input: Pick<WorldRuntimeStateInput, 'reducedMotion' | 'compactMotion'>): WorldMotionMode {
+export function getMotionRuntimeMode(input: Pick<WorldRuntimeStateInput, 'reducedMotion' | 'compactMotion' | 'motionOff'>): WorldMotionMode {
+  if (input.motionOff) return 'off'
   if (input.reducedMotion) return 'reduced'
   if (input.compactMotion) return 'reduced'
   return 'full'

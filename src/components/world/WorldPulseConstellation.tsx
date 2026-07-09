@@ -31,7 +31,7 @@ const dayPeriodText = {
 
 export function WorldPulseConstellation({ surface }: { surface: HomeDynamicWorldSurface }) {
   const runtime = useWorldRuntime()
-  const shouldMove = !runtime.reducedMotion && !runtime.compactMotion
+  const shouldMove = runtime.motionMode === 'full'
   const activeRoutes = surface.routes.slice(0, routePositions.length)
   const primaryRoute = surface.routes.find((route) => route.href === surface.primaryHref) ?? surface.routes[0]
   const publicRouteCount = surface.routes.filter((route) => route.id !== 'home').length

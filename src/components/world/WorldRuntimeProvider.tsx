@@ -24,6 +24,7 @@ import {
 export type DayPeriod = 'dawn' | 'day' | 'dusk' | 'night'
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
 export type AiRuntimeStatus = 'enabled' | 'low-light' | 'disabled'
+export type MotionPreference = 'system' | 'reduced' | 'off'
 
 type WorldRuntime = {
   dayPeriod: DayPeriod
@@ -37,11 +38,13 @@ type WorldRuntime = {
   sceneRuntime: WorldRuntimeState
   reducedMotion: boolean
   compactMotion: boolean
+  motionPreference: MotionPreference
   currentJourney: JourneyMemoryEntry | null
   lastJourney: JourneyMemoryEntry | null
   journeyHistory: JourneyMemoryEntry[]
   visitedCount: number
   setReducedMotion: (value: boolean) => void
+  setMotionPreference: (value: MotionPreference) => void
 }
 
 const WorldRuntimeContext = createContext<WorldRuntime | null>(null)
@@ -117,6 +120,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const [aiStatus] = useState<AiRuntimeStatus>('low-light')
   const [reducedMotion, setReducedMotion] = useState(false)
   const [compactMotion, setCompactMotion] = useState(false)
+  const [motionPreference, setMotionPreference] = useState<MotionPreference>('system')
   const [hydrated, setHydrated] = useState(false)
   const [currentJourney, setCurrentJourney] = useState<JourneyMemoryEntry | null>(null)
   const [lastJourney, setLastJourney] = useState<JourneyMemoryEntry | null>(null)
@@ -179,10 +183,11 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
       hydrated,
       reducedMotion,
       compactMotion,
+      motionOff: motionPreference === 'off',
       aiStatus,
       networkMode: 'local',
     }),
-    [aiStatus, compactMotion, hydrated, lastJourney?.path, pathname, reducedMotion, visitedCount]
+    [aiStatus, compactMotion, hydrated, lastJourney?.path, motionPreference, pathname, reducedMotion, visitedCount]
   )
 
   const value = useMemo<WorldRuntime>(() => ({
@@ -197,16 +202,18 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     sceneRuntime,
     reducedMotion,
     compactMotion,
+    motionPreference,
     currentJourney,
     lastJourney,
     journeyHistory,
     visitedCount,
     setReducedMotion,
-  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, reducedMotion, sceneRuntime, season, visitedCount])
+    setMotionPreference,
+  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, motionPreference, reducedMotion, sceneRuntime, season, visitedCount])
 
   return (
     <WorldRuntimeContext.Provider value={value}>
-      <MotionConfig reducedMotion={reducedMotion ? 'always' : 'user'}>
+      <MotionConfig reducedMotion={sceneRuntime.motionMode !== 'full' ? 'always' : 'user'}>
         <RuntimeAtmosphere />
         {children}
         <RuntimeSignalDock />

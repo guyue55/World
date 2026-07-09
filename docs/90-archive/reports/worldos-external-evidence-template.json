@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T12:26:23.472Z",
+  "generatedAt": "2026-07-09T12:55:26.067Z",
   "timezone": "America/Chicago",
   "source": "scripts/write-worldos-external-evidence-template.mjs",
   "status": "external-evidence-template-generated-real-environment-required",

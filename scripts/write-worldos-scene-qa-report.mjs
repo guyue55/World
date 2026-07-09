@@ -83,6 +83,15 @@ function validateCheck(scene, viewport, check) {
   }
   if (!bool(sceneQa.journeyMemoryEntryPresent)) localFailures.push(`${viewport} ${scene.route} 缺少 Journey Memory 入口证据`)
 
+  const requiredProductionParts = ['SceneHeader', 'SceneBody', 'SceneMotionLayer', 'SceneExitRail', 'SceneFallback', 'SceneEvidence']
+  if (!bool(sceneQa.sceneProductionFramePresent)) {
+    localFailures.push(`${viewport} ${scene.route} 缺少场景生产框架证据`)
+  }
+  const productionParts = new Set(sceneQa.sceneProductionParts ?? [])
+  for (const part of requiredProductionParts) {
+    if (!productionParts.has(part)) localFailures.push(`${viewport} ${scene.route} 缺少场景生产部件：${part}`)
+  }
+
   return {
     metrics,
     sceneQa,
@@ -120,6 +129,9 @@ for (const scene of checklist.requiredScenes) {
         sceneIdentityBandCompact: bool(result.sceneQa.sceneIdentityBandCompact),
         sceneWorldPortalPresent: bool(result.sceneQa.sceneWorldPortalPresent),
         sceneWorldPortalVariant: result.sceneQa.sceneWorldPortalVariant ?? '',
+        sceneProductionFramePresent: bool(result.sceneQa.sceneProductionFramePresent),
+        sceneProductionParts: result.sceneQa.sceneProductionParts ?? [],
+        sceneMigrationCuePresent: bool(result.sceneQa.sceneMigrationCuePresent),
         firstVisitRitualPresent: bool(result.sceneQa.firstVisitRitualPresent),
         journeyMemoryEntryPresent: bool(result.sceneQa.journeyMemoryEntryPresent),
         hasReturningVisitorCopy: bool(result.sceneQa.hasReturningVisitorCopy),
@@ -150,8 +162,13 @@ const requiredPortalIdentityChecks = routeChecks.filter((check) => {
   return scene?.requiresSceneWorldPortal === true && scene?.requiresSceneIdentityBand === true
 })
 const returningVisitorChecks = routeChecks.filter((check) => check.sceneQa.hasReturningVisitorCopy)
+const requiredProductionParts = ['SceneHeader', 'SceneBody', 'SceneMotionLayer', 'SceneExitRail', 'SceneFallback', 'SceneEvidence']
+const sceneMigrationCueChecks = routeChecks.filter((check) => check.sceneQa.sceneMigrationCuePresent)
 
 if (returningVisitorChecks.length === 0) fail('缺少返回访客文案证据：Journey Memory 没有出现“上次停在”')
+if (sceneMigrationCueChecks.length !== routeChecks.length) {
+  fail(`场景迁移证据不足：${sceneMigrationCueChecks.length}/${routeChecks.length}`)
+}
 
 const report = {
   generatedAt: new Date().toISOString(),
@@ -176,6 +193,12 @@ const report = {
     compactSceneIdentityBand: requiredPortalIdentityChecks.every((check) => check.sceneQa.sceneIdentityBandCompact),
     sceneWorldPortal: requiredPortalChecks.every((check) => check.sceneQa.sceneWorldPortalPresent),
     sceneWorldPortalVariants: [...new Set(requiredPortalChecks.map((check) => check.sceneQa.sceneWorldPortalVariant).filter(Boolean))],
+    sceneProductionFrame: routeChecks.every((check) => check.sceneQa.sceneProductionFramePresent),
+    sceneProductionParts: Object.fromEntries(requiredProductionParts.map((part) => [
+      part,
+      routeChecks.filter((check) => (check.sceneQa.sceneProductionParts ?? []).includes(part)).length,
+    ])),
+    sceneMigrationCueChecks: sceneMigrationCueChecks.length,
     journeyMemoryEntry: routeChecks.every((check) => check.sceneQa.journeyMemoryEntryPresent),
     reducedMotionChecks: routeChecks.filter((check) => check.viewport === 'mobile-reduced-motion').length,
     domNonEmptyChecks: routeChecks.filter((check) => check.textLength >= checklist.thresholds.minTextLength).length,

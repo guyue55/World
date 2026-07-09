@@ -42,7 +42,7 @@ function lineStyle(from: Point, to: Point) {
 export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellationSurface }) {
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
-  const shouldMove = !runtime.reducedMotion
+  const shouldMove = runtime.motionMode === 'full'
   useGsapEntrance(rootRef, shouldMove, '[data-gsap-reveal]', 'connection')
 
   const points = surface.areas.slice(0, positions.length).map((area, index) => ({

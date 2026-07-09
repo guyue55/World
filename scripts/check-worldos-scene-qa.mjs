@@ -58,6 +58,12 @@ if (failures.length === 0) {
     for (const expected of checklist.requiredScenes.map((scene) => scene.expectedSceneWorldPortal).filter(Boolean)) {
       if (!report.evidence?.sceneWorldPortalVariants?.includes(expected)) fail(`Scene QA 缺少 ${expected} 场景门户类型证据`)
     }
+    if (report.evidence?.sceneProductionFrame !== true) fail('Scene QA 缺少场景生产框架全量证据')
+    for (const part of ['SceneHeader', 'SceneBody', 'SceneMotionLayer', 'SceneExitRail', 'SceneFallback', 'SceneEvidence']) {
+      if ((report.evidence?.sceneProductionParts?.[part] ?? 0) < expectedRouteChecks) {
+        fail(`Scene QA 缺少 ${part} 全量证据`)
+      }
+    }
     if (report.evidence?.journeyMemoryEntry !== true) fail('Scene QA 缺少 Journey Memory 入口全量证据')
     if ((report.evidence?.reducedMotionChecks ?? 0) < checklist.requiredScenes.length) fail('Scene QA reduced-motion 证据不足')
     if ((report.evidence?.domNonEmptyChecks ?? 0) < expectedRouteChecks) fail('Scene QA DOM 非空证据不足')
@@ -108,6 +114,24 @@ if (failures.length === 0) {
     for (const token of checklist.acceptance.forbiddenClientTokens ?? []) {
       if (text.includes(token)) fail(`客户端源码出现禁止令牌 ${token}：${file}`)
     }
+  }
+
+  const sceneWorldPortal = fileText('src/components/world/SceneWorldPortal.tsx')
+  for (const part of ['SceneHeader', 'SceneBody', 'SceneMotionLayer', 'SceneExitRail', 'SceneFallback', 'SceneEvidence']) {
+    if (!sceneWorldPortal.includes(`data-scene-part="${part}"`)) fail(`SceneWorldPortal 缺少场景生产部件：${part}`)
+  }
+
+  const sceneProductionFrame = fileText('src/components/world/SceneProductionFrame.tsx')
+  for (const part of ['SceneHeader', 'SceneBody', 'SceneMotionLayer', 'SceneExitRail', 'SceneFallback', 'SceneEvidence']) {
+    if (!sceneProductionFrame.includes(`data-scene-part="${part}"`)) fail(`SceneProductionFrame 缺少场景生产部件：${part}`)
+  }
+
+  const transitionShell = fileText('src/components/world/SceneTransitionShell.tsx')
+  for (const token of ['scene-migration-cue', 'data-scene-migration-state', 'data-scene-migration-from', 'data-scene-migration-to', 'data-scene-migration-step']) {
+    if (!transitionShell.includes(token)) fail(`SceneTransitionShell 缺少场景迁移可见证据：${token}`)
+  }
+  for (const step of ['source', 'leaving', 'preview', 'arriving', 'settled']) {
+    if (!transitionShell.includes(`'${step}'`)) fail(`SceneTransitionShell 缺少场景迁移阶段：${step}`)
   }
 }
 

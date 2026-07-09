@@ -28,7 +28,7 @@ function markRitualSeen() {
 }
 
 export function FirstVisitRitual() {
-  const { reducedMotion } = useWorldRuntime()
+  const { motionMode } = useWorldRuntime()
   const [hasSeen, setHasSeen] = useState(false)
   const [expanded, setExpanded] = useState(true)
 
@@ -73,6 +73,7 @@ export function FirstVisitRitual() {
     <section
       data-testid="first-visit-ritual"
       data-has-seen={hasSeen ? 'true' : 'false'}
+      data-motion-mode={motionMode}
       className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/8 p-4 text-paper"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(197,164,109,0.16),transparent_9rem)]" />
@@ -85,9 +86,9 @@ export function FirstVisitRitual() {
           <p className="mt-2 text-sm leading-6 text-paper/68">
             {ritual.copy.description}
           </p>
-          {reducedMotion && (
+          {motionMode !== 'full' && (
             <p className="mt-3 rounded-2xl border border-white/10 bg-white/8 px-4 py-3 text-sm leading-6 text-paper/64">
-              {ritual.copy.reducedMotionNote}
+              {motionMode === 'off' ? '动效已关闭：入口仪式只保留选择、跳过和返回路径。' : ritual.copy.reducedMotionNote}
             </p>
           )}
         </div>

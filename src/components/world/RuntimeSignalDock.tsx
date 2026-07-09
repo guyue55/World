@@ -3,7 +3,7 @@
 // 世界运行时状态坞：抽离自 WorldRuntimeProvider 的桌面 HUD 组件。
 import Link from 'next/link'
 import { Activity, BookOpen, Map, Route, Waves } from 'lucide-react'
-import { useWorldRuntime, type DayPeriod, type Season } from './WorldRuntimeProvider'
+import { useWorldRuntime, type DayPeriod, type MotionPreference, type Season } from './WorldRuntimeProvider'
 
 const dayPeriodLabels: Record<DayPeriod, string> = {
   dawn: '清晨',
@@ -18,6 +18,12 @@ const seasonLabels: Record<Season, string> = {
   autumn: '秋｜沉淀',
   winter: '冬｜静读',
 }
+
+const motionOptions: { value: MotionPreference; label: string }[] = [
+  { value: 'system', label: '系统' },
+  { value: 'reduced', label: '降低' },
+  { value: 'off', label: '关闭' },
+]
 
 export function RuntimeSignalDock() {
   const runtime = useWorldRuntime()
@@ -79,14 +85,37 @@ export function RuntimeSignalDock() {
           )}
         </div>
       )}
-      <button
-        type="button"
-        className="mt-3 flex w-full items-center justify-center gap-2 rounded-[1rem] border border-ink/10 px-3 py-2 text-xs font-semibold text-ink/65 transition hover:bg-white active:scale-[0.99]"
-        onClick={() => runtime.setReducedMotion(!runtime.reducedMotion)}
-      >
-        <Waves className="h-3.5 w-3.5" />
-        {runtime.reducedMotion ? '恢复轻动效' : '降低动效'}
-      </button>
+      <div className="mt-3 rounded-[1rem] border border-ink/10 p-2">
+        <p className="flex items-center gap-2 px-1 pb-2 text-xs font-semibold text-ink/55">
+          <Waves className="h-3.5 w-3.5" />
+          动效模式
+        </p>
+        <div className="grid grid-cols-3 gap-1">
+          {motionOptions.map((option) => {
+            const active = runtime.motionPreference === option.value
+            return (
+              <button
+                key={option.value}
+                type="button"
+                aria-pressed={active}
+                className={active
+                  ? 'rounded-[0.8rem] bg-ink px-2 py-2 text-xs font-semibold text-paper'
+                  : 'rounded-[0.8rem] bg-white/55 px-2 py-2 text-xs font-semibold text-ink/58 transition hover:bg-white'}
+                onClick={() => {
+                  runtime.setMotionPreference(option.value)
+                  if (option.value === 'system') {
+                    runtime.setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+                  } else {
+                    runtime.setReducedMotion(option.value === 'reduced')
+                  }
+                }}
+              >
+                {option.label}
+              </button>
+            )
+          })}
+        </div>
+      </div>
       <div className="mt-3 flex gap-2 text-xs font-semibold text-ink/55">
         <Link href={runtime.sceneRuntime.navigation.homeHref} className="flex-1 rounded-[0.85rem] bg-white/55 px-3 py-2 text-center transition hover:bg-white">
           Home

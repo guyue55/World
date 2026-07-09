@@ -464,6 +464,11 @@ async function runBrowserChecks() {
               sceneIdentityBandCompact: document.querySelector('[data-testid="scene-identity-band"]')?.getAttribute('data-compact-scene-band') === 'true',
               sceneWorldPortalPresent: testIdExists('scene-world-portal'),
               sceneWorldPortalVariant: document.querySelector('[data-testid="scene-world-portal"]')?.getAttribute('data-scene-world-portal') || '',
+              sceneProductionFramePresent: testIdExists('scene-production-frame') || Boolean(document.querySelector('[data-scene-production]')),
+              sceneProductionParts: Array.from(document.querySelectorAll('[data-scene-part]'))
+                .map((element) => element.getAttribute('data-scene-part'))
+                .filter(Boolean),
+              sceneMigrationCuePresent: testIdExists('scene-migration-cue'),
               firstVisitRitualPresent: testIdExists('first-visit-ritual') || testIdExists('first-visit-ritual-collapsed'),
               journeyMemoryEntryPresent: testIdExists('journey-memory-entry'),
               journeyMemoryText: textForTestId('journey-memory-entry'),

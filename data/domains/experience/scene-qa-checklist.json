@@ -87,6 +87,9 @@
     "sceneTransitionShellPresent",
     "sceneIdentityBandPresent",
     "sceneWorldPortalPresent",
+    "sceneProductionFramePresent",
+    "sceneProductionParts",
+    "sceneMigrationCuePresent",
     "firstVisitRitualPresent",
     "journeyMemoryEntryPresent",
     "hasReturningVisitorCopy"

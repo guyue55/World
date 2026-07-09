@@ -21,6 +21,14 @@ function showContentStatically(content: HTMLElement) {
   content.style.transform = ''
 }
 
+const migrationSteps = [
+  { id: 'source', label: '来源' },
+  { id: 'leaving', label: '离开' },
+  { id: 'preview', label: '预告' },
+  { id: 'arriving', label: '抵达' },
+  { id: 'settled', label: '沉淀' },
+]
+
 export function SceneTransitionShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? '/'
   const previousPathnameRef = useRef(pathname)
@@ -113,18 +121,52 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
       data-network-mode={runtime.sceneRuntime.networkMode}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
     >
-      {shouldDescribeTransition ? (
-        <p
-          data-testid="scene-transition-static-cue"
-          aria-live="polite"
-          className="sr-only"
-        >
-          从{transitionRuntime.fromScene.title}到{transitionRuntime.toScene.title}：
+      <div className="world-container pt-4">
+        <p data-testid="scene-transition-static-cue" className="sr-only">
+          {shouldDescribeTransition
+            ? `从${transitionRuntime.fromScene.title}到${transitionRuntime.toScene.title}`
+            : `当前抵达${transitionRuntime.toScene.title}`}
+          ：
           {runtime.motionMode !== 'full'
             ? transitionRuntime.transition.reducedMotionFallback
             : transitionRuntime.transition.intent}
         </p>
-      ) : null}
+        <div
+          data-testid="scene-migration-cue"
+          data-scene-migration-state={shellTransitionState}
+          data-scene-migration-from={transitionRuntime.fromScene.id}
+          data-scene-migration-to={transitionRuntime.toScene.id}
+          aria-live="polite"
+          className="rounded-[1rem] border border-ink/8 bg-white/72 px-4 py-3 text-sm text-ink/62 shadow-soft backdrop-blur"
+        >
+          <span className="font-semibold text-ink">{shouldDescribeTransition ? '场景迁移' : '场景定位'}</span>
+          <span className="mx-2 text-ink/35">/</span>
+          <span>
+            {shouldDescribeTransition
+              ? `从 ${transitionRuntime.fromScene.title} 抵达 ${transitionRuntime.toScene.title}`
+              : `当前抵达 ${transitionRuntime.toScene.title}`}
+          </span>
+          <span className="mx-2 text-ink/35">/</span>
+          <span>
+            {runtime.motionMode !== 'full'
+              ? transitionRuntime.transition.reducedMotionFallback
+              : transitionRuntime.transition.intent}
+          </span>
+          <span className="mt-2 flex flex-wrap gap-1.5">
+            {migrationSteps.map((step) => (
+              <span
+                key={step.id}
+                data-scene-migration-step={step.id}
+                className={step.id === shellTransitionState
+                  ? 'rounded-full bg-ink px-2.5 py-1 text-xs font-semibold text-paper'
+                  : 'rounded-full bg-ink/6 px-2.5 py-1 text-xs font-semibold text-ink/45'}
+              >
+                {step.label}
+              </span>
+            ))}
+          </span>
+        </div>
+      </div>
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={pathname}
