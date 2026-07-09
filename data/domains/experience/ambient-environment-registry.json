@@ -1,0 +1,184 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS Phase 31 公开空气层注册表",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-phase31-ambient-environment-v2-execution-plan-2026-07-09.md",
+  "principle": "空气层只表达公开世界的时间、季节、场景和灯塔状态；不承担权限判断，不读取私密层，不引入重型媒体。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "display": {
+    "component": "src/components/world/RuntimeAtmosphere.tsx",
+    "usesHeavyMedia": false,
+    "usesThreeJs": false,
+    "usesWebGl": false,
+    "usesNewAnimationLibrary": false,
+    "usesStaticGsapImport": false,
+    "maxMovingObjects": 9,
+    "compactMaxMovingObjects": 5,
+    "reducedMotionBehavior": "关闭连续位移和旋转，只保留静态色温、微纹理和场景标签。"
+  },
+  "dayPeriods": [
+    {
+      "id": "dawn",
+      "label": "清晨",
+      "light": "柔亮",
+      "background": "linear-gradient(115deg,rgba(250,238,218,0.78),rgba(216,226,208,0.42) 48%,rgba(237,190,102,0.18))",
+      "glow": "rgba(237,190,102,0.22)"
+    },
+    {
+      "id": "day",
+      "label": "白日",
+      "light": "清亮",
+      "background": "linear-gradient(115deg,rgba(247,241,230,0.72),rgba(216,226,208,0.38) 46%,rgba(125,154,162,0.20))",
+      "glow": "rgba(125,154,162,0.20)"
+    },
+    {
+      "id": "dusk",
+      "label": "黄昏",
+      "light": "低暖",
+      "background": "linear-gradient(115deg,rgba(240,223,196,0.76),rgba(197,164,109,0.30) 44%,rgba(125,154,162,0.20))",
+      "glow": "rgba(197,164,109,0.24)"
+    },
+    {
+      "id": "night",
+      "label": "深夜",
+      "light": "低光",
+      "background": "linear-gradient(115deg,rgba(28,35,34,0.08),rgba(125,154,162,0.20) 48%,rgba(247,241,230,0.48))",
+      "glow": "rgba(125,154,162,0.18)"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "spring",
+      "label": "春｜萌发",
+      "textureOpacity": 0.14,
+      "pulseDuration": 8,
+      "nodeLabel": "萌发"
+    },
+    {
+      "id": "summer",
+      "label": "夏｜生长",
+      "textureOpacity": 0.16,
+      "pulseDuration": 7,
+      "nodeLabel": "生长"
+    },
+    {
+      "id": "autumn",
+      "label": "秋｜沉淀",
+      "textureOpacity": 0.12,
+      "pulseDuration": 9,
+      "nodeLabel": "沉淀"
+    },
+    {
+      "id": "winter",
+      "label": "冬｜静读",
+      "textureOpacity": 0.10,
+      "pulseDuration": 11,
+      "nodeLabel": "静读"
+    }
+  ],
+  "aiStatuses": [
+    {
+      "id": "low-light",
+      "label": "灯塔低光",
+      "beaconOpacity": 0.18,
+      "hint": "灯塔只做公开导览，不读取私密层。"
+    },
+    {
+      "id": "disabled",
+      "label": "灯塔关闭",
+      "beaconOpacity": 0.08,
+      "hint": "灯塔关闭时仍可通过地图、路径和档案馆探索。"
+    },
+    {
+      "id": "enabled",
+      "label": "灯塔可用",
+      "beaconOpacity": 0.24,
+      "hint": "灯塔可用时也只遵守公开边界。"
+    }
+  ],
+  "sceneEnvironments": [
+    {
+      "sceneId": "gateway",
+      "label": "入口空气",
+      "objects": ["入口", "罗盘", "星河"],
+      "rhythm": "arrival"
+    },
+    {
+      "sceneId": "atlas",
+      "label": "星图空气",
+      "objects": ["星图", "区域", "星线"],
+      "rhythm": "connection"
+    },
+    {
+      "sceneId": "timeline",
+      "label": "时间河空气",
+      "objects": ["时间", "涟漪", "事件"],
+      "rhythm": "flow"
+    },
+    {
+      "sceneId": "archive",
+      "label": "档案馆空气",
+      "objects": ["卷宗", "索引", "书架"],
+      "rhythm": "emergence"
+    },
+    {
+      "sceneId": "paths",
+      "label": "星路空气",
+      "objects": ["路径", "脚印", "下一站"],
+      "rhythm": "flow"
+    },
+    {
+      "sceneId": "path-detail",
+      "label": "路线空气",
+      "objects": ["路线", "节点", "回望"],
+      "rhythm": "flow"
+    },
+    {
+      "sceneId": "node",
+      "label": "节点房间空气",
+      "objects": ["护照", "正文", "关系"],
+      "rhythm": "focus"
+    },
+    {
+      "sceneId": "lighthouse",
+      "label": "灯塔空气",
+      "objects": ["灯塔", "光束", "边界"],
+      "rhythm": "feedback"
+    },
+    {
+      "sceneId": "status",
+      "label": "维护舱空气",
+      "objects": ["心跳", "证据", "门禁"],
+      "rhythm": "feedback"
+    }
+  ],
+  "fallback": {
+    "sceneId": "unknown",
+    "label": "通用空气",
+    "objects": ["路标", "公开", "返回"],
+    "rhythm": "arrival"
+  },
+  "acceptance": {
+    "requiredRuntimeInputs": ["dayPeriod", "season", "currentScene", "aiStatus", "reducedMotion"],
+    "requiredFiles": [
+      "data/domains/experience/ambient-environment-registry.json",
+      "src/lib/ambient-environment.ts",
+      "src/components/world/RuntimeAtmosphere.tsx"
+    ],
+    "forbiddenClientTokens": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "new OpenAI", "responses.create", "chat.completions", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"]
+  },
+  "nextActions": [
+    "阶段 32：Scene QA 增加环境状态、reduced-motion 和 returning visitor 证据。"
+  ]
+}

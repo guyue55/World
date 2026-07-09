@@ -1,4 +1,5 @@
 import { Compass, GitBranch, Map, ShieldCheck } from 'lucide-react'
+import type { AmbientEnvironmentSummary } from '@/lib/ambient-environment'
 import type { JourneyMemorySummary } from '@/lib/journey-memory'
 import type { SceneRuntimeSummary } from '@/lib/scene-runtime'
 import type { ScenePersonalitySummary } from '@/lib/scene-personality'
@@ -6,11 +7,13 @@ import type { SceneTransitionSummary } from '@/lib/scene-transition'
 
 export function SceneRuntimeStatusPanel({
   summary,
+  ambientEnvironmentSummary,
   journeyMemorySummary,
   personalitySummary,
   transitionSummary,
 }: {
   summary: SceneRuntimeSummary
+  ambientEnvironmentSummary?: AmbientEnvironmentSummary
   journeyMemorySummary?: JourneyMemorySummary
   personalitySummary?: ScenePersonalitySummary
   transitionSummary?: SceneTransitionSummary
@@ -161,6 +164,42 @@ export function SceneRuntimeStatusPanel({
             <div className="rounded-[1rem] bg-white/70 p-4">
               <p className="text-xs font-semibold tracking-[0.18em] text-moss">边界</p>
               <p className="mt-2 text-sm font-semibold text-ink">{journeyMemorySummary.allowedFieldCount} 可存 / {journeyMemorySummary.forbiddenFieldCount} 禁止</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {ambientEnvironmentSummary && (
+        <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Ambient Environment v2</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">空气层由时间、季节、场景和灯塔状态共同驱动</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
+                环境只使用轻量颜色、微纹理和场景标签表达世界状态；reduced-motion 下保留静态空气，不播放连续位移。
+              </p>
+            </div>
+            <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
+              <p className="text-xs font-semibold tracking-[0.22em] text-gold">SCENES</p>
+              <p className="mt-2 text-2xl font-semibold">{ambientEnvironmentSummary.sceneEnvironmentCount}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-4">
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">日光</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{ambientEnvironmentSummary.dayPeriodCount} 段</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">季节</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{ambientEnvironmentSummary.seasonCount} 类</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">灯塔</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{ambientEnvironmentSummary.aiStatusCount} 态</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">降级</p>
+              <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{ambientEnvironmentSummary.reducedMotionBehavior}</p>
             </div>
           </div>
         </div>

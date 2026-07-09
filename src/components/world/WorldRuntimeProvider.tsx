@@ -15,10 +15,13 @@ import {
 
 export type DayPeriod = 'dawn' | 'day' | 'dusk' | 'night'
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
+export type AiRuntimeStatus = 'enabled' | 'low-light' | 'disabled'
 
 type WorldRuntime = {
   dayPeriod: DayPeriod
   season: Season
+  aiStatus: AiRuntimeStatus
+  currentScene: string
   reducedMotion: boolean
   compactMotion: boolean
   currentJourney: JourneyMemoryEntry | null
@@ -98,6 +101,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const [dayPeriod, setDayPeriod] = useState<DayPeriod>('day')
   const [season, setSeason] = useState<Season>('spring')
+  const [aiStatus] = useState<AiRuntimeStatus>('low-light')
   const [reducedMotion, setReducedMotion] = useState(false)
   const [compactMotion, setCompactMotion] = useState(false)
   const [currentJourney, setCurrentJourney] = useState<JourneyMemoryEntry | null>(null)
@@ -155,6 +159,8 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const value = useMemo<WorldRuntime>(() => ({
     dayPeriod,
     season,
+    aiStatus,
+    currentScene: currentJourney?.sceneId ?? 'gateway',
     reducedMotion,
     compactMotion,
     currentJourney,
@@ -162,7 +168,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     journeyHistory,
     visitedCount,
     setReducedMotion,
-  }), [compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, reducedMotion, season, visitedCount])
+  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, reducedMotion, season, visitedCount])
 
   return (
     <WorldRuntimeContext.Provider value={value}>

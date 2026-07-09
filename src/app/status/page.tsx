@@ -9,6 +9,7 @@ import { getLighthouseLocalStatus } from '@/lib/lighthouse-status'
 import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { getPathQualityLedger } from '@/lib/path-quality-ledger'
 import { getOwnerReadonlyConsoleLedger } from '@/lib/owner-readonly-console'
+import { getAmbientEnvironmentSummary } from '@/lib/ambient-environment'
 import { getJourneyMemorySummary } from '@/lib/journey-memory'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
 import { getScenePersonalitySummary } from '@/lib/scene-personality'
@@ -59,6 +60,7 @@ export default function StatusPage() {
   const localMaturityLedger = getLocalMaturityLedger()
   const pathQualityLedger = getPathQualityLedger()
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
+  const ambientEnvironmentSummary = getAmbientEnvironmentSummary()
   const journeyMemorySummary = getJourneyMemorySummary()
   const sceneRuntimeSummary = getPublicSceneSummary()
   const scenePersonalitySummary = getScenePersonalitySummary()
@@ -109,6 +111,7 @@ export default function StatusPage() {
 
       <SceneRuntimeStatusPanel
         summary={sceneRuntimeSummary}
+        ambientEnvironmentSummary={ambientEnvironmentSummary}
         journeyMemorySummary={journeyMemorySummary}
         personalitySummary={scenePersonalitySummary}
         transitionSummary={sceneTransitionSummary}

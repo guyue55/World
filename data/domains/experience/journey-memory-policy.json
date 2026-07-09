@@ -111,7 +111,6 @@
     }
   },
   "nextActions": [
-    "阶段 31：Ambient Environment v2 读取 currentScene，但不读取权限状态。",
     "阶段 32：Scene QA 增加 returning visitor 与 cleared storage 两种截图证据。"
   ]
 }
