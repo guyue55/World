@@ -1616,6 +1616,11 @@
       "id": "worldos-high-goal-readiness-audit",
       "path": "docs/00-overview/worldos-high-goal-readiness-audit-2026-07-09.md",
       "layer": "governance"
+    },
+    {
+      "id": "worldos-development-documentation-master-list",
+      "path": "docs/00-overview/worldos-development-documentation-master-list-2026-07-09.md",
+      "layer": "governance"
     }
   ],
   "docTypes": [
