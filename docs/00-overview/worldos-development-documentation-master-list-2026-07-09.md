@@ -15,6 +15,10 @@
 
 > [!NOTE]
 > 2026-07-09 更新：本文第 4-6 节列出的 P0/P1/P2 文档已补齐，详见 `docs/00-overview/worldos-predevelopment-document-completion-index-2026-07-09.md`。后续开发应从 `docs/00-overview/worldos-controlled-execution-plan-2026-07-09.md` 进入。
+>
+> 2026-07-09 追加：M0-M7 的完成范围是“运行底座与可信验收”。若目标是摆脱骨架感并落地真格世界体验，后续必须从 `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md` 和 `docs/00-overview/worldos-m8-m12-goal-mode-prompts-2026-07-09.md` 进入。
+>
+> 2026-07-09 再追加：如果目标包含所有场景、切换、特效、氛围、音频 / 音乐、灯塔 AI、内容生命、性能与长期运行，那么还必须读取 `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`、`docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md` 和 `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`。
 
 ## 2. 需求逐项分析
 
@@ -149,6 +153,41 @@
 | 场景数据契约 | `docs/00-overview/worldos-scene-data-contract-2026-07-09.md` | 场景如何消费节点、关系、时间、路径、AI 摘要 |
 | 错误与降级体验规格 | `docs/00-overview/worldos-fallback-experience-spec-2026-07-09.md` | 无 JS、低性能、音频关闭、AI 不可用、权限不足 |
 
+## 6.1 M8-M12 体验落地专用文档
+
+这些文档用于解决“底座完成但页面仍像骨架”的问题。它们不是替代 P0/P1/P2，而是把高目标拆成可挂机执行的阶段计划。
+
+| 文档 | 产物路径 | 作用 |
+| --- | --- | --- |
+| 真格世界体验差距审计 | `docs/00-overview/worldos-true-world-experience-gap-audit-2026-07-09.md` | 说明 M0-M7 与目标体验之间的真实差距 |
+| M8-M12 真格世界体验总控计划 | `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md` | 作为 M8-M12 的总入口、顺序和完成标准 |
+| M8 世界入口与主舞台计划 | `docs/00-overview/worldos-m8-world-gateway-main-stage-execution-plan-2026-07-09.md` | 首页世界入口、首访仪式、主舞台重塑 |
+| M9 四大核心场景舞台化计划 | `docs/00-overview/worldos-m9-core-scene-stage-execution-plan-2026-07-09.md` | Atlas / Timeline / Archive / Paths 的差异化舞台 |
+| M10 Node 地点化阅读计划 | `docs/00-overview/worldos-m10-node-place-immersive-reading-execution-plan-2026-07-09.md` | 节点地点化、阅读出口、关系门和路径门 |
+| M11 场景迁移叙事化计划 | `docs/00-overview/worldos-m11-narrative-scene-transition-execution-plan-2026-07-09.md` | 来源、离开、目标预告、抵达、沉淀 |
+| M12 灯塔导览体验计划 | `docs/00-overview/worldos-m12-lighthouse-guidance-experience-execution-plan-2026-07-09.md` | 灯塔观测站、问路、解释、推荐、边界 |
+| M8-M12 Goal 模式 Prompt | `docs/00-overview/worldos-m8-m12-goal-mode-prompts-2026-07-09.md` | 可直接复制到 Goal 模式的分阶段与全批次提示词 |
+
+## 6.2 M13-M18 完整运行闭环文档
+
+这些文档用于解决“体验像世界，但能否长期、稳定、轻量、可维护运行”的问题。它们把感官、音频、AI、内容、性能、证据和作者运维纳入 Goal 模式。
+
+| 文档 | 产物路径 | 作用 |
+| --- | --- | --- |
+| 高目标文档缺口总审计 | `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md` | 逐项判断高目标下还缺哪些文档和计划 |
+| M13-M18 完整世界运行闭环总计划 | `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md` | 定义 M13-M18 阶段顺序、目标和完成口径 |
+| M13 感官、音频与资产生产计划 | `docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md` | 氛围、音频、音乐、视觉资产、授权和预算 |
+| M14 灯塔 AI 运行化计划 | `docs/00-overview/worldos-m14-ai-lighthouse-operationalization-execution-plan-2026-07-09.md` | 服务端 Provider、上下文裁剪、缓存、审计和 fallback |
+| M15 内容世界生产计划 | `docs/00-overview/worldos-m15-content-world-production-execution-plan-2026-07-09.md` | 真实节点、关系、路径、时间、档案事实补齐 |
+| M16 性能与依赖硬化计划 | `docs/00-overview/worldos-m16-performance-dependency-hardening-execution-plan-2026-07-09.md` | 技术栈足够且不臃肿的执行门禁 |
+| M17 本地 QA 与证据自动化计划 | `docs/00-overview/worldos-m17-local-qa-evidence-automation-execution-plan-2026-07-09.md` | localhost / LAN / 截图 / 人工体验证据闭环 |
+| M18 作者治理与运行运维计划 | `docs/00-overview/worldos-m18-authoring-governance-runtime-ops-execution-plan-2026-07-09.md` | 中文作者流程、资产审批、AI 审计、备份回滚 |
+| M13-M18 Goal 模式 Prompt | `docs/00-overview/worldos-m13-m18-goal-mode-prompts-2026-07-09.md` | 可直接复制到 Goal 模式的分阶段与全批次提示词 |
+| Goal 模式完整文档包 | `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md` | M0-M18 的总入口和文档使用顺序 |
+| Goal 模式完整文档就绪核验 | `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md` | 最终确认文档是否足够支撑目标实现 |
+| 一次性 Goal 总提示词 | `docs/00-overview/worldos-one-shot-goal-master-prompt-2026-07-09.md` | 只设置一次 Goal 时使用的唯一总控提示词 |
+| 一次性 Goal 执行账本 | `docs/00-overview/worldos-one-shot-goal-execution-ledger-2026-07-09.md` | 长任务恢复、阶段状态、失败修复和最终验收记录 |
+
 ## 7. 开发时文档阅读顺序
 
 ### 7.1 每个开发阶段开始前
@@ -230,12 +269,35 @@ flowchart TD
 
 ## 10. 下一步执行顺序
 
-开发前文档已经补齐。后续严格从以下文档进入：
+开发前文档已经补齐。若继续做 M0-M7 底座维护，从以下文档进入：
 
 1. `worldos-predevelopment-document-completion-index-2026-07-09.md`
 2. `worldos-controlled-execution-plan-2026-07-09.md`
 3. `worldos-scene-production-matrix-2026-07-09.md`
 4. `worldos-transition-choreography-spec-2026-07-09.md`
 5. `worldos-performance-asset-budget-2026-07-09.md`
+
+若进入 M8-M12 真格世界体验落地，从以下文档进入：
+
+1. `worldos-true-world-experience-gap-audit-2026-07-09.md`
+2. `worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
+3. `worldos-m8-m12-goal-mode-prompts-2026-07-09.md`
+4. 对应阶段执行计划：M8 / M9 / M10 / M11 / M12。
+5. 对应场景规格、性能预算、质量把控和人工体验量表。
+
+若进入 M13-M18 完整世界运行闭环，从以下文档进入：
+
+1. `worldos-complete-goal-mode-document-pack-2026-07-09.md`
+2. `worldos-full-goal-document-gap-analysis-2026-07-09.md`
+3. `worldos-complete-goal-document-readiness-review-2026-07-09.md`
+4. `worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
+5. `worldos-m13-m18-goal-mode-prompts-2026-07-09.md`
+6. 对应阶段执行计划：M13 / M14 / M15 / M16 / M17 / M18。
+
+若只设置一次 Goal，从以下文档进入：
+
+1. `worldos-one-shot-goal-master-prompt-2026-07-09.md`
+2. `worldos-complete-goal-mode-document-pack-2026-07-09.md`
+3. `worldos-one-shot-goal-execution-ledger-2026-07-09.md`
 
 只有对应阶段的检查和人工验收通过，才允许标记阶段完成。

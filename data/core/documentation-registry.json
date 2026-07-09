@@ -1728,6 +1728,111 @@
       "layer": "experience"
     },
     {
+      "id": "worldos-true-world-experience-gap-audit",
+      "path": "docs/00-overview/worldos-true-world-experience-gap-audit-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-m8-m12-true-world-experience-master-plan",
+      "path": "docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m8-world-gateway-main-stage-execution-plan",
+      "path": "docs/00-overview/worldos-m8-world-gateway-main-stage-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m9-core-scene-stage-execution-plan",
+      "path": "docs/00-overview/worldos-m9-core-scene-stage-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m10-node-place-immersive-reading-execution-plan",
+      "path": "docs/00-overview/worldos-m10-node-place-immersive-reading-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m11-narrative-scene-transition-execution-plan",
+      "path": "docs/00-overview/worldos-m11-narrative-scene-transition-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m12-lighthouse-guidance-experience-execution-plan",
+      "path": "docs/00-overview/worldos-m12-lighthouse-guidance-experience-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m8-m12-goal-mode-prompts",
+      "path": "docs/00-overview/worldos-m8-m12-goal-mode-prompts-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-full-goal-document-gap-analysis",
+      "path": "docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-m13-m18-complete-world-operation-master-plan",
+      "path": "docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m13-sensory-audio-asset-production-execution-plan",
+      "path": "docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m14-ai-lighthouse-operationalization-execution-plan",
+      "path": "docs/00-overview/worldos-m14-ai-lighthouse-operationalization-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m15-content-world-production-execution-plan",
+      "path": "docs/00-overview/worldos-m15-content-world-production-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m16-performance-dependency-hardening-execution-plan",
+      "path": "docs/00-overview/worldos-m16-performance-dependency-hardening-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m17-local-qa-evidence-automation-execution-plan",
+      "path": "docs/00-overview/worldos-m17-local-qa-evidence-automation-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m18-authoring-governance-runtime-ops-execution-plan",
+      "path": "docs/00-overview/worldos-m18-authoring-governance-runtime-ops-execution-plan-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-m13-m18-goal-mode-prompts",
+      "path": "docs/00-overview/worldos-m13-m18-goal-mode-prompts-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-complete-goal-mode-document-pack",
+      "path": "docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-complete-goal-document-readiness-review",
+      "path": "docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
+      "id": "worldos-one-shot-goal-master-prompt",
+      "path": "docs/00-overview/worldos-one-shot-goal-master-prompt-2026-07-09.md",
+      "layer": "overview"
+    },
+    {
+      "id": "worldos-one-shot-goal-execution-ledger",
+      "path": "docs/00-overview/worldos-one-shot-goal-execution-ledger-2026-07-09.md",
+      "layer": "governance"
+    },
+    {
       "id": "worldos-predevelopment-document-completion-index",
       "path": "docs/00-overview/worldos-predevelopment-document-completion-index-2026-07-09.md",
       "layer": "governance"

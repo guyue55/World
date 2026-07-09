@@ -28,6 +28,8 @@
 | `worldos-predevelopment-document-completion-index-2026-07-09.md` | 开发前文档补齐状态 |
 | `worldos-quality-control-system-2026-07-09.md` | 质量门禁和体验验收 |
 | `worldos-tech-stack-and-open-source-research-2026-07-09.md` | 技术选型与依赖否决 |
+| `worldos-full-goal-document-gap-analysis-2026-07-09.md` | 高目标下的文档和计划缺口总审计 |
+| `worldos-complete-goal-mode-document-pack-2026-07-09.md` | M0-M18 Goal 模式完整文档包 |
 | `worldos-scene-production-matrix-2026-07-09.md` | 场景生产规格 |
 | `worldos-transition-choreography-spec-2026-07-09.md` | 转场编舞 |
 | `worldos-atmosphere-sensory-system-spec-2026-07-09.md` | 氛围与感官 |
@@ -46,8 +48,22 @@
 | M5 氛围 + 音频试点 | 感官层可控、可静音、可降级 | opt-in、reduced-sensory 通过 |
 | M6 Lighthouse AI 运行试点 | 服务端只读问路与推荐 | dry-run / fallback / 审计可用 |
 | M7 本地 / LAN RC 固化 | 本地可信验收闭环 | `release:local-rc` 输出可信摘要 |
+| M8 世界入口与主舞台 | 第一眼不再像博客骨架 | Home 人工体验量表通过 |
+| M9 四大核心场景舞台化 | Atlas / Timeline / Archive / Paths 明显不同 | 四场景截图一眼可区分 |
+| M10 Node 地点化阅读 | 节点像地点，阅读像进入房间 | Node 不再只是文章详情 |
+| M11 场景迁移叙事化 | 跳转像迁移 | 来源、预告、抵达、沉淀可见 |
+| M12 灯塔导览可感知化 | 灯塔像观测站 | 问路、解释、推荐、边界可感知 |
+| M13 感官音频资产 | 氛围、声音、视觉资产可控运行 | 默认无声、可关闭、可授权、可降级 |
+| M14 灯塔 AI 运行化 | 服务端只读 AI 问路与推荐 | 无前端 key、无私密泄漏、有审计 |
+| M15 内容世界生产 | 真实节点和关系支撑探索 | 多场景共享同一内容事实源 |
+| M16 性能依赖硬化 | 高目标不变臃肿 | 依赖、bundle、移动端、降级通过 |
+| M17 本地 QA 证据自动化 | 真实新鲜证据证明体验 | localhost / LAN / 截图 / 人工复核闭环 |
+| M18 作者治理运维 | 世界可持续维护 | 中文作者流程、资产审批、AI 审计、回滚可用 |
 
 ## 4. 阶段任务
+
+> [!NOTE]
+> 下方 M0-M7 是底座任务。M8-M18 的具体执行以对应阶段计划为准，不在本文重复铺开，避免总控文档臃肿。
 
 ### 阶段 M0：文档锁定
 
@@ -187,6 +203,41 @@
 - `npm run check:rc:full`
 - `npm run check:mainline`
 
+### 阶段 M8-M12：真格世界体验落地
+
+目标：把可信底座转化为用户可感知的世界体验。
+
+入口文档：
+
+- `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
+- `docs/00-overview/worldos-m8-m12-goal-mode-prompts-2026-07-09.md`
+- M8-M12 对应阶段执行计划。
+
+检查：
+
+- 每阶段定向检查。
+- `npm run check:mainline`
+- `npm run release:local-rc`
+- 人工体验量表。
+
+### 阶段 M13-M18：完整世界运行闭环
+
+目标：让感官、音频、AI、内容、性能、证据和作者运维都进入可运行、可维护、可复查状态。
+
+入口文档：
+
+- `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
+- `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
+- `docs/00-overview/worldos-m13-m18-goal-mode-prompts-2026-07-09.md`
+- M13-M18 对应阶段执行计划。
+
+检查：
+
+- 每阶段定向检查。
+- `npm run check:mainline`
+- `npm run release:local-rc`
+- 性能、权限、降级、证据和人工复核。
+
 ## 5. 操作纪律
 
 - 每个阶段开始前读对应规格文档。
@@ -218,4 +269,3 @@
 - 人工体验量表通过。
 - 本地 / LAN 证据新鲜。
 - 无新增未解释依赖。
-
