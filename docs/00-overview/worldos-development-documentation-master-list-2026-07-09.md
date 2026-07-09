@@ -211,8 +211,10 @@
 | --- | --- | --- |
 | 终局体验宪章 | `docs/00-overview/worldos-ultimate-experience-charter-2026-07-10.md` | 定义独立空间、真实穿梭、内容生命体、陪伴型灯塔、统一世界观、长期回访、作者共生、真实可信八个体验支柱 |
 | 终局世界高目标路线图 | `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md` | 定义 7.5/10、8/10、8.5/10、9/10、10/10 的真实分层和 M19-M30 阶段 |
-| 终局目标所需文档集 | `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` | 列出 M19-M30 需要补齐的 12 份细文档和进入条件 |
+| 终局目标所需文档集 | `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` | 列出 M19-M30 的 13 份高目标细文档、1 份全面执行总计划和进入条件 |
 | 终局目标执行计划 | `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md` | 定义 M19-M30 的阶段目标、具体项、验收方式和停止条件 |
+| 终局文档充分性审计 | `docs/00-overview/worldos-ultimate-documentation-sufficiency-audit-2026-07-10.md` | 审计文档是否足够、记录联网调研和补漏结论 |
+| M19-M30 全面执行总计划 | `docs/00-overview/worldos-m19-m30-comprehensive-execution-master-plan-2026-07-10.md` | 指定 M19-M30 全阶段具体流程、检查、提交和失败处理 |
 
 ## 7. 开发时文档阅读顺序
 
@@ -226,11 +228,13 @@
 6. `worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
 7. `worldos-ultimate-required-documentation-set-2026-07-10.md`
 8. `worldos-ultimate-execution-plan-2026-07-10.md`
-9. `worldos-high-goal-readiness-audit-2026-07-09.md`
-10. `worldos-experience-governance-master-control-2026-07-09.md`
-11. `worldos-development-documentation-master-list-2026-07-09.md`
-12. `worldos-quality-control-system-2026-07-09.md`
-13. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
+9. `worldos-ultimate-documentation-sufficiency-audit-2026-07-10.md`
+10. `worldos-m19-m30-comprehensive-execution-master-plan-2026-07-10.md`
+11. `worldos-high-goal-readiness-audit-2026-07-09.md`
+12. `worldos-experience-governance-master-control-2026-07-09.md`
+13. `worldos-development-documentation-master-list-2026-07-09.md`
+14. `worldos-quality-control-system-2026-07-09.md`
+15. `worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ### 7.2 做任意场景前
 

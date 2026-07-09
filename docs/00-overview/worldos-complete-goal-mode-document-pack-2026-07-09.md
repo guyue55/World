@@ -44,6 +44,8 @@
 | `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md` | 8/10、9/10 与长期 10/10 高目标路线图 |
 | `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` | M19-M30 高目标所需文档清单 |
 | `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md` | M19-M30 终局目标执行计划 |
+| `docs/00-overview/worldos-ultimate-documentation-sufficiency-audit-2026-07-10.md` | 终局文档充分性审计与补漏结论 |
+| `docs/00-overview/worldos-m19-m30-comprehensive-execution-master-plan-2026-07-10.md` | M19-M30 全面详细执行总计划 |
 | `docs/00-overview/worldos-high-goal-readiness-audit-2026-07-09.md` | 判断目标高度和方向 |
 | `docs/00-overview/worldos-experience-governance-master-control-2026-07-09.md` | 判断是否仍像博客 |
 | `docs/00-overview/worldos-development-documentation-master-list-2026-07-09.md` | 查所有开发文档入口 |
