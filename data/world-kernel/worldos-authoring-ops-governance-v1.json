@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS M18 作者治理与运行运维契约",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-m18-authoring-governance-runtime-ops-execution-plan-2026-07-09.md",
+  "principle": "作者维护流程必须低门槛、中文优先、可复跑、受权限与质量门禁监管；当前只服务 localhost / LAN。",
+  "localOnly": true,
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  },
+  "requiredDocuments": [
+    {
+      "id": "author-handbook",
+      "path": "docs/05-engineering/worldos-author-handbook-local-lan.md",
+      "requiredPhrases": ["localhost / LAN", "后端控制权限", "npm run release:local-rc"]
+    },
+    {
+      "id": "content-node-authoring",
+      "path": "docs/05-engineering/worldos-content-node-authoring-checklist.md",
+      "requiredPhrases": ["标题", "摘要", "区域", "关系", "推荐路径"]
+    },
+    {
+      "id": "scene-extension",
+      "path": "docs/05-engineering/worldos-scene-extension-checklist.md",
+      "requiredPhrases": ["scene-registry", "reduced-motion", "check:human-experience"]
+    },
+    {
+      "id": "asset-approval",
+      "path": "docs/05-engineering/worldos-asset-approval-checklist.md",
+      "requiredPhrases": ["来源", "授权", "默认静音", "重型依赖"]
+    },
+    {
+      "id": "ai-audit-review",
+      "path": "docs/05-engineering/worldos-ai-audit-review-checklist.md",
+      "requiredPhrases": ["Provider 默认 disabled", "AI 不写入", "公开事实源"]
+    },
+    {
+      "id": "local-lan-runbook",
+      "path": "docs/05-engineering/worldos-local-lan-runbook.md",
+      "requiredPhrases": ["npm run start", "LAN IP", "local-rc-passed-external-release-blocked"]
+    },
+    {
+      "id": "backup-rollback",
+      "path": "docs/05-engineering/worldos-backup-rollback-runbook.md",
+      "requiredPhrases": ["git status --short", "npm run backup:world", "禁止"]
+    }
+  ],
+  "requiredCommands": [
+    "check:authoring-ops",
+    "check:mainline",
+    "release:local-rc",
+    "check:permission-boundary",
+    "check:api-boundary",
+    "check:human-experience"
+  ],
+  "forbiddenDocumentPhrases": [
+    "productionLive=true",
+    "releaseReady=true",
+    "cleanProductionReady=true",
+    "前端控制权限",
+    "AI 自动写入源数据",
+    "允许默认自动播放"
+  ],
+  "policies": {
+    "backendControlsPermission": true,
+    "frontendOnlyReflectsPermission": true,
+    "aiReadonlyByDefault": true,
+    "audioMutedByDefault": true,
+    "freshRcRequired": true,
+    "externalPreviewOutOfScope": true
+  }
+}

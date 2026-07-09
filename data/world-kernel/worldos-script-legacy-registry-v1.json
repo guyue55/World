@@ -23,6 +23,7 @@
     "check:ambient-environment",
     "check:scene-qa",
     "check:human-experience",
+    "check:authoring-ops",
     "check:ai-provider-boundary",
     "check:phase21-lighthouse",
     "check:api-boundary",
@@ -56,6 +57,7 @@
     "npm run check:ambient-environment",
     "npm run check:scene-qa",
     "npm run check:human-experience",
+    "npm run check:authoring-ops",
     "npm run check:dependency-hardening"
   ],
   "releaseCandidateCommands": [
@@ -66,6 +68,7 @@
     "npm run smoke:lan-local",
     "npm run check:scene-qa",
     "npm run check:human-experience",
+    "npm run check:authoring-ops",
     "npm run check:rc-evidence-policy"
   ],
   "policies": {
@@ -83,8 +86,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 282,
-    "checkScripts": 154,
+    "totalScripts": 283,
+    "checkScripts": 155,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
