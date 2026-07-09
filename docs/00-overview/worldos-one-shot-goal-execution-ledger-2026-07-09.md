@@ -8,9 +8,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M18 |
-| 当前阶段 | M18 |
+| 当前阶段 | M8-M18 全部完成 |
 | 最后更新时间 | 2026-07-09 |
-| 当前结论 | M17 本地 QA 与证据自动化已通过本地 / LAN RC；下一阶段进入 M18 作者治理与运维 |
+| 当前结论 | M8-M18 已全部完成；最终本地 / LAN RC 通过，外部 Preview / Production 仍按计划不纳入当前验收 |
 
 ## 2. 阶段进度
 
@@ -26,7 +26,7 @@
 | M15 | 已完成 | `c966950b` | `check:content-life`、`check:content`、`check:worldos-content-density`、`check:content-jaccard`、`check:node-reading`、`check:atlas`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：深度审计确认 200 公开节点、29 公开路径、398 关系、51 事件；短摘要、低关系、缺路径、缺时间锚点、缺 AI 摘要均为 0 | 补齐 51 条偏短公开节点摘要，并将内容生命契约 `minSummaryLength` 从 18 提升至 24；无私密内容进入公开事实源 |
 | M16 | 已完成 | `101513f1` | `check:lib-budget`、`check:performance-budget`、`check:performance`、`check:performance-implementation`、`check:performance-regression`、`check:dependency-hardening`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：运行时依赖固定为 14 个，无 Three/Pixi/Howler/Tone/XState 等重型候选；compact/reduced 下空气层显式停止背景动画；RC shared First Load JS 约 194 kB | 新增 M16 依赖硬化策略与 `check:dependency-hardening`，已纳入 mainline；脚本注册表同步为 281 scripts / 153 check scripts |
 | M17 | 已完成 | `0168685c` | `check:human-experience`、`check:scene-qa`、`check:dependency-hardening`、`check:mainline`、`release:local-rc` 通过 | 通过：9 个场景进入人类体验 Rubric，平均分 2.00；LAN 22 HTTP / 20 browser checks 通过；runtime smoke 20 HTTP checks 通过 | 新增人类体验门禁并纳入 mainline；生产构建改为可被 `next start` 验证的 fresh build；`/private-archive` 增加服务端 redirect 兜底；性能预算拆分 total/cache/runtime artifact |
-| M18 | 未开始 | - | - | - | 作者治理与运维 |
+| M18 | 已完成 | `6cee17c4` | `check:authoring-ops`、`check:docs`、`validate:world`、`check:content-life`、`check:permission-boundary`、`check:api-boundary`、`typecheck`、`lint`、`check:mainline`、`release:local-rc` 通过 | 通过：作者手册、内容新增、场景扩展、资产审批、AI 审计、本地 LAN、备份回滚 7 份中文文档进入门禁；作者能按文档维护本地世界 | 未建设复杂后台；坚持 localhost / LAN only；作者治理门禁已纳入 mainline |
 
 ## 3. 失败与修复记录
 
@@ -51,15 +51,16 @@
 | 2026-07-09 | M15 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-archive.png` 文本长度 23777、fixed overlay 为 0；内容摘要补齐后 Archive/Atlas/Ask 仍可读 | 通过：`mobile-reduced-motion-ask.png`、`mobile-reduced-motion-status.png` 无白屏、无遮挡 | 通过：Jaccard 最大相似度 0.5565，未因批量摘要补齐造成过度重复 | M15 体验达标，进入 M16 |
 | 2026-07-09 | M16 | 通过：20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-home.png`、`desktop-status.png` 无 fixed overlay；构建输出 shared First Load JS 约 194 kB | 通过：mobile reduced-motion 多路由无白屏、无遮挡 | 通过：`check:dependency-hardening` 确认默认无重型 3D/音频库、声音默认静音、Provider 默认 disabled | M16 体验达标，进入 M17 |
 | 2026-07-09 | M17 | 通过：runtime smoke 20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：`desktop-home.png`、`desktop-atlas.png`、`desktop-timeline.png`、`desktop-archive.png`、`desktop-paths.png`、`desktop-ask.png`、`desktop-status.png`、节点与路径详情截图全部刷新 | 通过：mobile reduced-motion 9 条核心浏览器检查无白屏、无遮挡 | 通过：`check:human-experience` 9 scenes avg=2.00；`/private-archive` 在 runtime smoke 中受保护；生产构建 shared First Load JS 约 102 kB | M17 体验与证据门禁达标，进入 M18 |
+| 2026-07-09 | M18 | 通过：runtime smoke 20 HTTP checks | 通过：`http://172.30.111.222:4320`，22 HTTP / 20 browser checks | 通过：最终 RC 刷新 desktop 全套截图，scene QA 状态 passed | 通过：mobile reduced-motion 核心路径无白屏、无遮挡 | 通过：`check:authoring-ops` 7 docs；`check:human-experience` 9 scenes avg=2.00；RC summary 为 `local-rc-passed-external-release-blocked` | M8-M18 全部完成，进入后续长期演化规划 |
 
 ## 5. 最终验收
 
 | 条件 | 状态 |
 | --- | --- |
-| M8-M18 全部完成 | 未完成 |
-| `npm run check:mainline` 通过 | 未完成 |
-| `npm run release:local-rc` 通过 | 未完成 |
-| 人工体验量表通过 | 未完成 |
-| 无白屏、遮挡、死链 | 未完成 |
-| 无权限泄漏、默认音频、前端 AI key | 未完成 |
-| 所有阶段中文 commit | 未完成 |
+| M8-M18 全部完成 | 已完成 |
+| `npm run check:mainline` 通过 | 已完成 |
+| `npm run release:local-rc` 通过 | 已完成 |
+| 人工体验量表通过 | 已完成：`check:human-experience` 9 scenes avg=2.00 |
+| 无白屏、遮挡、死链 | 已完成：最终 LAN RC 22 HTTP / 20 browser checks，scene QA passed |
+| 无权限泄漏、默认音频、前端 AI key | 已完成：`check:permission-boundary`、`check:api-boundary`、`check:ai-provider-boundary`、`check:dependency-hardening` 已纳入阶段验收 |
+| 所有阶段中文 commit | 已完成：M8-M18 均有中文 conventional commit |
