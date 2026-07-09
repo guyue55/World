@@ -6,6 +6,7 @@ import { buildLighthouseConsoleSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { PublicLighthouseConsole } from '@/components/ask/PublicLighthouseConsole'
+import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
 
 export const metadata = createPageMetadata({
   title: 'AI 灯塔',
@@ -41,23 +42,30 @@ export default function AskPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
+      <SceneWorldPortal
+        scene="lighthouse"
+        eyebrow="LIGHTHOUSE · 低光灯塔"
+        title="灯塔只照路，不替你改写世界。"
+        description="这里读取公开索引，解释你在哪里、能去哪、下一步看什么。它不会修改节点，不读取私密层，也不会绕过后端权限。"
+        objects={['灯塔', '光束', '问路', '路径', '边界', '公开索引']}
+        primaryAction={{ href: '/atlas', label: '打开世界地图' }}
+        secondaryActions={[
+          { href: '/paths', label: '进入精选路径' },
+          { href: '/archive', label: '查找公开节点' },
+        ]}
+        stats={[
+          { label: '推荐路径', value: recommendedPaths.length, note: '来自公开路径索引' },
+          { label: '推荐节点', value: recommendedNodes.length, note: '只读公开节点' },
+          { label: '权限边界', value: '只读', note: '后端守门，前端体现' },
+        ]}
+      />
+
       <ProductRouteGuide
         current="AI 灯塔"
         description="灯塔当前以低光模式运行：只读公开索引，只做导览和路径推荐，不修改节点、不写入数据、不读取私密内容。"
         primaryHref="/atlas"
         primaryLabel="打开世界地图"
       />
-
-      <section className="relative overflow-hidden rounded-[2.2rem] border border-white/65 bg-night p-8 text-paper shadow-soft md:p-10">
-        <div className="absolute -right-20 top-0 h-72 w-72 rounded-full bg-gold/18 blur-3xl" />
-        <div className="relative max-w-4xl">
-          <p className="text-sm tracking-[0.35em] text-gold">LIGHTHOUSE</p>
-          <h1 className="mt-4 break-words text-5xl font-semibold leading-tight md:text-6xl">灯塔不是太阳</h1>
-          <p className="mt-5 break-words text-lg leading-9 text-paper/75">
-            它只负责照亮路径：解释当前位置、推荐下一步、把访问者带回世界地图。
-          </p>
-        </div>
-      </section>
 
       <PublicLighthouseConsole surface={lighthouseSurface} />
 

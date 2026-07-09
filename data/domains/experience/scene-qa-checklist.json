@@ -70,12 +70,16 @@
     {
       "sceneId": "lighthouse",
       "route": "/ask",
-      "requiresSceneIdentityBand": true
+      "requiresSceneIdentityBand": true,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "lighthouse"
     },
     {
       "sceneId": "status",
       "route": "/status",
-      "requiresSceneIdentityBand": true
+      "requiresSceneIdentityBand": true,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "status"
     }
   ],
   "requiredSignals": [

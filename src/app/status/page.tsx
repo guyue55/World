@@ -22,6 +22,7 @@ import {
   PathQualityLedgerPanel,
   SceneRuntimeStatusPanel,
 } from '@/components/status'
+import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -74,20 +75,30 @@ export default function StatusPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
+      <SceneWorldPortal
+        scene="status"
+        eyebrow="STATUS · 维护舱"
+        title="本地世界可以被复查，外部发布继续冻结。"
+        description="维护舱只展示公开运行态、本地 RC、场景 QA、内容质量和权限边界摘要。它帮助判断 localhost / LAN 是否成熟，不伪装成外部 production。"
+        objects={['门禁', '证据', '心跳', '截图', '边界', '本地 RC']}
+        primaryAction={{ href: '/', label: '返回世界入口' }}
+        secondaryActions={[
+          { href: '/atlas', label: '查看星图' },
+          { href: '/ask', label: '询问灯塔' },
+        ]}
+        stats={[
+          { label: '公开节点', value: publicNodes.length, note: '可被公开入口读取' },
+          { label: '路径', value: paths.length, note: '用于连续探索' },
+          { label: '发布状态', value: '冻结', note: '只做本地/LAN 成熟' },
+        ]}
+      />
+
       <ProductRouteGuide
         current="世界状态"
         description="这里只展示公开运行态需要知道的状态，不暴露内部阶段页、审计队列或调试面板。"
         primaryHref="/atlas"
         primaryLabel="回到世界地图"
       />
-
-      <section className="rounded-[2.2rem] border border-white/65 bg-night p-8 text-paper shadow-soft md:p-10">
-        <p className="text-xs font-semibold tracking-[0.35em] text-gold">运行态</p>
-        <h1 className="mt-3 break-words text-4xl font-semibold md:text-5xl">世界可以被进入，但上线证据仍需真实环境补齐。</h1>
-        <p className="mt-5 max-w-3xl break-words text-base leading-8 text-paper/70">
-          当前代码已经完成产品入口收束、公开索引守门和本地构建产物验证。这里不会伪装为 productionLive，真实外部 URL、线上 smoke test、域名 HTTPS 与人工签收仍需要在部署平台完成。
-        </p>
-      </section>
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {statusCards.map((card) => (

@@ -3,7 +3,7 @@ import { spawn } from 'node:child_process'
 import { setInterval, clearInterval } from 'node:timers'
 
 const commands = [
-  ['npm', ['run', 'check:release:rc']],
+  ['npm', ['run', 'check:worldos-rc']],
   ['npm', ['run', 'lint']],
   ['npm', ['run', 'typecheck']],
   ['npm', ['run', 'build:kernel-release'], { WORLD_KERNEL_FORCE_REBUILD: '1' }],
@@ -12,6 +12,9 @@ const commands = [
   ['npm', ['run', 'smoke:runtime-local']],
   ['npm', ['run', 'smoke:lan-local']],
   ['npm', ['run', 'check:scene-qa']],
+  ['npm', ['run', 'check:mainline']],
+  ['npm', ['run', 'check:lan-local']],
+  ['npm', ['run', 'evidence:worldos-external-template']],
   ['npm', ['run', 'audit:report']],
   ['node', ['scripts/write-worldos-local-rc-summary.mjs']],
   ['node', ['scripts/check-worldos-local-rc-summary.mjs']],

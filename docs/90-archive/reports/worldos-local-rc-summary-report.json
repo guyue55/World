@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T07:57:35.628Z",
+  "generatedAt": "2026-07-09T09:38:44.477Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -47,7 +47,9 @@
         "atlas",
         "timeline",
         "archive",
-        "paths"
+        "paths",
+        "lighthouse",
+        "status"
       ],
       "reducedMotionChecks": 9
     },
@@ -70,7 +72,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-09T07:54:38.984Z"
+      "buildIdMtime": "2026-07-09T09:36:42.844Z"
     }
   },
   "dynamicWorldEvidence": {

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-09T07:57:31.405Z",
+  "generatedAt": "2026-07-09T09:38:36.238Z",
   "source": "scripts/write-worldos-scene-qa-report.mjs",
   "checklist": "data/domains/experience/scene-qa-checklist.json",
   "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-  "lanGeneratedAt": "2026-07-09T07:57:30.837Z",
+  "lanGeneratedAt": "2026-07-09T09:38:25.411Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -35,7 +35,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "先抵达原点，再进入这片星河。",
-      "textLength": 2579,
+      "textLength": 2580,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -44,7 +44,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 897167,
+        "size": 900995,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
       },
       "sceneQa": {
@@ -67,7 +67,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "先抵达原点，再进入这片星河。",
-      "textLength": 2619,
+      "textLength": 2620,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -76,7 +76,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 840711,
+        "size": 856172,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png"
       },
       "sceneQa": {
@@ -99,7 +99,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "从这里看见整片公开世界。",
-      "textLength": 22159,
+      "textLength": 22161,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -108,7 +108,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 801442,
+        "size": 802314,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
       },
       "sceneQa": {
@@ -131,7 +131,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "从这里看见整片公开世界。",
-      "textLength": 22138,
+      "textLength": 22140,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -140,7 +140,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 833129,
+        "size": 848625,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png"
       },
       "sceneQa": {
@@ -163,7 +163,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 7222,
+      "textLength": 7223,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -172,7 +172,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 860358,
+        "size": 863765,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
       },
       "sceneQa": {
@@ -195,7 +195,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 7198,
+      "textLength": 7199,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -204,7 +204,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 884994,
+        "size": 908601,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
       },
       "sceneQa": {
@@ -227,7 +227,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "当你不想漫游，就在馆内检索。",
-      "textLength": 21561,
+      "textLength": 21562,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -236,7 +236,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 836225,
+        "size": 842492,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
       },
       "sceneQa": {
@@ -259,7 +259,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "当你不想漫游，就在馆内检索。",
-      "textLength": 21535,
+      "textLength": 21536,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -268,7 +268,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 886810,
+        "size": 896944,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png"
       },
       "sceneQa": {
@@ -291,7 +291,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "路径不是分类，是一段可行走的旅程。",
-      "textLength": 1030,
+      "textLength": 1031,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -300,7 +300,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 839481,
+        "size": 848763,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
       },
       "sceneQa": {
@@ -323,7 +323,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "路径不是分类，是一段可行走的旅程。",
-      "textLength": 1002,
+      "textLength": 1003,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -332,7 +332,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 891678,
+        "size": 907042,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png"
       },
       "sceneQa": {
@@ -364,7 +364,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 731677,
+        "size": 721337,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
       },
       "sceneQa": {
@@ -396,7 +396,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 621251,
+        "size": 612620,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png"
       },
       "sceneQa": {
@@ -428,7 +428,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 761261,
+        "size": 768537,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -460,7 +460,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 672506,
+        "size": 683740,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -482,8 +482,8 @@
       "route": "/ask",
       "viewport": "desktop",
       "passed": true,
-      "h1": "AI 灯塔",
-      "textLength": 1469,
+      "h1": "灯塔只照路，不替你改写世界。",
+      "textLength": 1617,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -492,16 +492,16 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 440258,
+        "size": 830293,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
       },
       "sceneQa": {
         "ambientEnvironmentPresent": true,
         "sceneTransitionShellPresent": true,
         "sceneIdentityBandPresent": true,
-        "sceneIdentityBandCompact": false,
-        "sceneWorldPortalPresent": false,
-        "sceneWorldPortalVariant": "",
+        "sceneIdentityBandCompact": true,
+        "sceneWorldPortalPresent": true,
+        "sceneWorldPortalVariant": "lighthouse",
         "firstVisitRitualPresent": false,
         "journeyMemoryEntryPresent": true,
         "hasReturningVisitorCopy": true,
@@ -514,8 +514,8 @@
       "route": "/ask",
       "viewport": "mobile-reduced-motion",
       "passed": true,
-      "h1": "AI 灯塔",
-      "textLength": 1455,
+      "h1": "灯塔只照路，不替你改写世界。",
+      "textLength": 1589,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -524,16 +524,16 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 458742,
+        "size": 874984,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
       },
       "sceneQa": {
         "ambientEnvironmentPresent": true,
         "sceneTransitionShellPresent": true,
         "sceneIdentityBandPresent": true,
-        "sceneIdentityBandCompact": false,
-        "sceneWorldPortalPresent": false,
-        "sceneWorldPortalVariant": "",
+        "sceneIdentityBandCompact": true,
+        "sceneWorldPortalPresent": true,
+        "sceneWorldPortalVariant": "lighthouse",
         "firstVisitRitualPresent": false,
         "journeyMemoryEntryPresent": true,
         "hasReturningVisitorCopy": true,
@@ -546,8 +546,8 @@
       "route": "/status",
       "viewport": "desktop",
       "passed": true,
-      "h1": "世界状态",
-      "textLength": 5628,
+      "h1": "本地世界可以被复查，外部发布继续冻结。",
+      "textLength": 5721,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -556,16 +556,16 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 466459,
+        "size": 815023,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
       },
       "sceneQa": {
         "ambientEnvironmentPresent": true,
         "sceneTransitionShellPresent": true,
         "sceneIdentityBandPresent": true,
-        "sceneIdentityBandCompact": false,
-        "sceneWorldPortalPresent": false,
-        "sceneWorldPortalVariant": "",
+        "sceneIdentityBandCompact": true,
+        "sceneWorldPortalPresent": true,
+        "sceneWorldPortalVariant": "status",
         "firstVisitRitualPresent": false,
         "journeyMemoryEntryPresent": true,
         "hasReturningVisitorCopy": true,
@@ -578,8 +578,8 @@
       "route": "/status",
       "viewport": "mobile-reduced-motion",
       "passed": true,
-      "h1": "世界状态",
-      "textLength": 5614,
+      "h1": "本地世界可以被复查，外部发布继续冻结。",
+      "textLength": 5697,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -588,16 +588,16 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 516389,
+        "size": 910137,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png"
       },
       "sceneQa": {
         "ambientEnvironmentPresent": true,
         "sceneTransitionShellPresent": true,
         "sceneIdentityBandPresent": true,
-        "sceneIdentityBandCompact": false,
-        "sceneWorldPortalPresent": false,
-        "sceneWorldPortalVariant": "",
+        "sceneIdentityBandCompact": true,
+        "sceneWorldPortalPresent": true,
+        "sceneWorldPortalVariant": "status",
         "firstVisitRitualPresent": false,
         "journeyMemoryEntryPresent": true,
         "hasReturningVisitorCopy": true,
@@ -620,7 +620,9 @@
       "atlas",
       "timeline",
       "archive",
-      "paths"
+      "paths",
+      "lighthouse",
+      "status"
     ],
     "journeyMemoryEntry": true,
     "reducedMotionChecks": 9,

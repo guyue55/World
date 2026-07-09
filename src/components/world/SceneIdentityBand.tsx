@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { getScenePersonalityForPathname, type ScenePersonalityDefinition } from '@/lib/scene-personality'
 import { useWorldRuntime } from './WorldRuntimeProvider'
 
-const portalSceneIds = new Set(['atlas', 'timeline', 'archive', 'paths'])
+const portalSceneIds = new Set(['atlas', 'timeline', 'archive', 'paths', 'lighthouse', 'status'])
 
 const toneClasses: Record<string, string> = {
   'paper-starlight': 'border-white/70 bg-white/72 text-ink shadow-soft',

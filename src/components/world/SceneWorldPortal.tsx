@@ -6,7 +6,7 @@ import { ArrowRight, Compass, Radio, ShieldCheck } from 'lucide-react'
 import { gsap } from 'gsap'
 import { useWorldRuntime } from './WorldRuntimeProvider'
 
-export type SceneWorldPortalId = 'gateway' | 'atlas' | 'timeline' | 'archive' | 'paths'
+export type SceneWorldPortalId = 'gateway' | 'atlas' | 'timeline' | 'archive' | 'paths' | 'lighthouse' | 'status'
 
 export type SceneWorldPortalAction = {
   href: string
@@ -76,6 +76,20 @@ const sceneCopy: Record<SceneWorldPortalId, {
     visualLabel: 'Paths',
     variantClass: 'bg-[linear-gradient(118deg,rgba(37,48,42,0.96),rgba(65,75,52,0.92)_48%,rgba(22,30,34,0.96))]',
   },
+  lighthouse: {
+    label: '低光灯塔',
+    accent: 'text-gold',
+    runtimeLabel: '灯塔只照亮公开路径',
+    visualLabel: 'Lighthouse',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(24,30,38,0.97),rgba(39,49,54,0.92)_46%,rgba(18,23,31,0.97))]',
+  },
+  status: {
+    label: '维护舱',
+    accent: 'text-lake',
+    runtimeLabel: '本地门禁正在回传',
+    visualLabel: 'Status',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(30,38,39,0.97),rgba(43,53,49,0.92)_48%,rgba(24,30,31,0.97))]',
+  },
 }
 
 const portalNodes = [
@@ -138,6 +152,21 @@ function SceneIllustration({ scene, objects }: { scene: SceneWorldPortalId; obje
           </>
         ) : scene === 'paths' ? (
           <path data-scene-object d="M12 72 C 25 46, 38 58, 48 34 S 72 28, 86 18" fill="none" stroke="rgba(197,164,109,0.64)" strokeWidth="0.62" strokeDasharray="2.2 2.4" />
+        ) : scene === 'lighthouse' ? (
+          <>
+            <path data-scene-object d="M50 18 L88 82" fill="none" stroke="rgba(197,164,109,0.58)" strokeWidth="0.42" />
+            <path data-scene-object d="M50 18 L16 78" fill="none" stroke="rgba(247,241,230,0.28)" strokeWidth="0.3" />
+            <path data-scene-object d="M43 78 H57 L54 42 H46 Z" fill="none" stroke="rgba(247,241,230,0.48)" strokeWidth="0.42" />
+          </>
+        ) : scene === 'status' ? (
+          <>
+            {[26, 40, 54, 68].map((y) => (
+              <path key={y} data-scene-object d={`M12 ${y} H88`} stroke="rgba(247,241,230,0.30)" strokeWidth="0.28" />
+            ))}
+            {[24, 50, 76].map((x) => (
+              <path key={x} data-scene-object d={`M${x} 20 V74`} stroke="rgba(125,154,162,0.28)" strokeWidth="0.26" />
+            ))}
+          </>
         ) : (
           portalLines.map(([fromId, toId]) => {
             const from = nodeById.get(fromId)
@@ -159,7 +188,7 @@ function SceneIllustration({ scene, objects }: { scene: SceneWorldPortalId; obje
         )}
       </svg>
 
-      {portalLines.slice(0, scene === 'timeline' || scene === 'archive' ? 3 : 7).map(([fromId, toId], index) => {
+      {portalLines.slice(0, scene === 'timeline' || scene === 'archive' || scene === 'lighthouse' || scene === 'status' ? 3 : 7).map(([fromId, toId], index) => {
         const from = nodeById.get(fromId)
         const to = nodeById.get(toId)
         if (!from || !to) return null
