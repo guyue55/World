@@ -5,6 +5,8 @@ import { getRecommendedPathOrder } from '@/lib/path-guidance'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { PathsDynamicDirectory } from '@/components/paths/PathsDynamicDirectory'
 import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
+import { SceneDeepInteractionPanel } from '@/components/world/SceneDeepInteractionPanel'
+import { buildPathsDeepInteractionModel } from '@/lib/scene-deep-interaction'
 
 export const metadata = createPageMetadata({
   title: '精选路径',
@@ -17,6 +19,7 @@ export default function PathsPage() {
   const paths = getRecommendedPathOrder(publicWorld.paths)
   const nodes = publicWorld.nodes
   const surface = buildPathsDirectorySurface(paths, nodes)
+  const interactionModel = buildPathsDeepInteractionModel(paths, nodes)
 
   return (
     <main className="world-container space-y-10 py-16">
@@ -43,6 +46,7 @@ export default function PathsPage() {
         primaryHref="/atlas"
         primaryLabel="回到世界地图"
       />
+      <SceneDeepInteractionPanel model={interactionModel} />
       <PathsDynamicDirectory surface={surface} />
     </main>
   )

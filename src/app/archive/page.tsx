@@ -5,6 +5,8 @@ import { createPageMetadata } from '@/lib/metadata'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { ArchiveDynamicGuide } from '@/components/archive/ArchiveDynamicGuide'
 import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
+import { SceneDeepInteractionPanel } from '@/components/world/SceneDeepInteractionPanel'
+import { buildArchiveDeepInteractionModel } from '@/lib/scene-deep-interaction'
 
 export const metadata = createPageMetadata({
   title: '档案馆',
@@ -17,6 +19,7 @@ export default function ArchivePage() {
   const nodes = publicWorld.nodes
   const areas = publicWorld.areas
   const archiveSurface = buildArchiveDynamicSurface(nodes, areas)
+  const interactionModel = buildArchiveDeepInteractionModel(nodes, areas)
 
   return (
     <main className="world-container space-y-10 py-16">
@@ -44,6 +47,7 @@ export default function ArchivePage() {
         primaryLabel="切回世界地图"
       />
       <ArchiveDynamicGuide surface={archiveSurface} />
+      <SceneDeepInteractionPanel model={interactionModel} />
       <ArchiveView nodes={nodes} areas={areas} />
     </main>
   )

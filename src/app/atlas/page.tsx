@@ -10,6 +10,8 @@ import { AtlasLiveConstellation } from '@/components/atlas/AtlasLiveConstellatio
 import { AtlasStarLines } from '@/components/atlas/AtlasStarLines'
 import { AtlasFallbackList } from '@/components/atlas/AtlasFallbackList'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
+import { SceneDeepInteractionPanel } from '@/components/world/SceneDeepInteractionPanel'
+import { buildAtlasDeepInteractionModel } from '@/lib/scene-deep-interaction'
 
 export const metadata = createPageMetadata({
   title: '世界地图',
@@ -25,6 +27,7 @@ export default function AtlasPage() {
   const areaLinks = publicWorld.areaLinks
   const primaryAreas = areas.filter((area) => area.level === 1)
   const atlasSurface = buildAtlasConstellationSurface(areas, publicNodes, areaLinks)
+  const interactionModel = buildAtlasDeepInteractionModel(areas, publicNodes)
   const getPublicNodesByArea = (areaId: string) => publicNodes.filter((node) => node.areaId === areaId)
 
   return (
@@ -43,6 +46,7 @@ export default function AtlasPage() {
         areaLinkCount={stats.areaLinkCount}
       />
       <AtlasLiveConstellation surface={atlasSurface} />
+      <SceneDeepInteractionPanel model={interactionModel} />
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {primaryAreas.slice(0, 8).map((area) => (

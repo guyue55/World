@@ -28,6 +28,12 @@
 | 证据 | `docs/90-archive/reports/worldos-local-lan-rc-report.json`、`docs/90-archive/reports/worldos-scene-qa-report.json`、`docs/90-archive/reports/worldos-local-rc-summary-report.json`、`docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png` |
 | 下一阶段 | 进入 M19：场景主体深度交互。不得再以“壳存在、脚本通过”宣称终局，只能按截图/录屏/人工体验量表证明场景主体真的可探索。 |
 
+## 1.2 M19 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 进行中 | 新增 `build*DeepInteractionModel()` 公开事实源适配器；新增 `SceneDeepInteractionPanel`；Atlas / Timeline / Archive / Paths 均接入可点击状态面板，覆盖区域聚焦、事件回看、卷宗展开和路线进度 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 这是 M19 第一批主体交互落地，证明四场景已有可操作状态层；但默认 LAN 首屏截图仍主要展示 Portal 舞台，尚不能宣称四场景“终局独立空间”完成 | 继续 M19：让交互主体进入首屏/第一交互证据，补录屏或专用 M19 体验检查，避免只在页面下方出现交互面板 |
+
 ## 2. 阶段进度
 
 | 阶段 | 状态 | commit | 关键检查 | 人工体验 | 备注 |
