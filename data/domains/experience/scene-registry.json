@@ -114,7 +114,7 @@
       "sceneType": "path-detail",
       "motionGrammar": "flow",
       "entryTransition": "path-pulse",
-      "exitTransition": "fade-rise",
+      "exitTransition": "path-to-node",
       "ambientLayer": "journey-route",
       "primaryAction": "继续到下一个节点",
       "href": "/archive",
@@ -213,6 +213,14 @@
       "reducedMotionFallback": "直接进入节点页，并显示返回档案馆入口。"
     },
     {
+      "id": "path-to-node",
+      "from": "path-detail",
+      "to": "node",
+      "motion": "path-arrive",
+      "intent": "从旅程路线抵达下一站节点，让访问者知道这是路径中的一步。",
+      "reducedMotionFallback": "直接进入节点页，并显示路径返回入口。"
+    },
+    {
       "id": "default-scene-shift",
       "from": "*",
       "to": "*",
@@ -241,7 +249,7 @@
   },
   "acceptance": {
     "requiredSceneMatches": ["/", "/atlas", "/timeline", "/archive", "/paths", "/paths/[id]", "/node/[slug]", "/ask", "/status"],
-    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "default-scene-shift"],
+    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "path-to-node", "default-scene-shift"],
     "forbiddenRoutePrefixes": ["/_legacy", "/api", "/forbidden"],
     "forbiddenClientTokens": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "new OpenAI", "responses.create", "chat.completions", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"],
     "releaseStates": {

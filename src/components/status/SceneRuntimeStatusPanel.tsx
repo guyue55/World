@@ -98,12 +98,21 @@ export function SceneRuntimeStatusPanel({
               <p className="mt-2 text-2xl font-semibold">{transitionSummary.motionCount}/{transitionSummary.requiredMotionCount}</p>
             </div>
           </div>
-          <div className="mt-4 grid gap-3 md:grid-cols-4">
+          <div className="mt-4 grid gap-3 md:grid-cols-5">
             {transitionSummary.motions.map((motion) => (
               <article key={motion.id} className="rounded-[1rem] bg-white/70 p-4">
                 <p className="truncate text-xs font-semibold tracking-[0.18em] text-moss">{motion.id}</p>
                 <h4 className="mt-2 truncate text-base font-semibold text-ink">{motion.label}</h4>
                 <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{motion.intent}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-5">
+            {transitionSummary.routeExamples.map((route) => (
+              <article key={route.transitionId} className="rounded-[1rem] border border-ink/8 bg-white/65 p-4">
+                <p className="truncate text-xs font-semibold tracking-[0.18em] text-moss">{route.transitionId}</p>
+                <h4 className="mt-2 truncate text-sm font-semibold text-ink">{route.from} → {route.to}</h4>
+                <p className="mt-2 truncate text-xs text-ink/52">{route.motion}</p>
               </article>
             ))}
           </div>

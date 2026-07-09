@@ -116,9 +116,39 @@
 - `npm run release:local-rc` 通过：LAN `http://172.30.111.222:4320`，22 个 HTTP 检查、20 个浏览器检查、Scene QA、mainline、evidence policy 全部通过。
 - 本轮只更新时间戳的内容相似度报告未纳入最终 diff。
 
+### 批次 5：转场语法闭环
+
+目标：把“页面切换”升级为可解释的公开场景移动，但仍保持轻量、可降级、不遮挡。
+
+任务：
+
+- [x] 1. Gateway 到 Atlas 表达视角拉远/展开地图。
+- [x] 2. Atlas 到 Node 表达星点进入节点房间。
+- [x] 3. Timeline 到 Node 表达时间片展开。
+- [x] 4. Archive 到 Node 表达档案抽出。
+- [x] 5. Paths 到 Node 表达旅程抵达。
+- [x] 6. reduced-motion 下统一提供静态语义提示。
+- [x] 7. `/status` 展示转场语义示例，方便本地维护者复核。
+- [x] 8. 检查脚本覆盖 5 条语义转场，不只检查壳存在。
+
+验收：
+
+- [x] `data/domains/experience/scene-transition-registry.json` 有 5 个 motion、5 条 route example。
+- [x] `data/domains/experience/scene-registry.json` 有 `path-to-node` 转场。
+- [x] `SceneTransitionShell` 使用 `aria-live` 静态提示，不在 reduced-motion 下播放位移。
+- [x] `npm run check:scene-transition` 通过。
+
+证据：
+
+- `npm run check:scene-transition` 通过：5 motions, 5 route examples。
+- `npm run typecheck` 通过。
+- `npm run lint` 通过。
+
 ## 4. 本轮执行范围
 
-本轮优先完成批次 1，并为后续批次保留清晰入口。原因：
+本轮已从批次 1 延伸到批次 5，目标是把总控清单中仍属当前本地/LAN 范围的项目闭环。外部 Preview / Production 相关冻结项不执行。
+
+原始优先级：
 
 - 用户当前最强反馈是“仍像骨架，不像世界/宇宙”。
 - 批次 1 对体验影响最大，且可以通过少量统一组件改动完成。

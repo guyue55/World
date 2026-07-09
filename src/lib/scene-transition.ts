@@ -8,6 +8,7 @@ import {
 
 export type SceneTransitionRegistry = typeof sceneTransitionRegistry
 export type SceneTransitionMotion = SceneTransitionRegistry['motions'][number]
+export type SceneTransitionRouteExample = SceneTransitionRegistry['routeExamples'][number]
 
 export type SceneTransitionRuntime = {
   fromScene: SceneDefinition
@@ -27,6 +28,8 @@ export type SceneTransitionSummary = {
   requiredMotionCount: number
   routeExampleCount: number
   motions: SceneTransitionMotion[]
+  routeExamples: SceneTransitionRouteExample[]
+  requiredSemanticRoutes: string[]
   nextActions: string[]
 }
 
@@ -69,6 +72,8 @@ export function getSceneTransitionSummary(): SceneTransitionSummary {
     requiredMotionCount: sceneTransitionRegistry.acceptance.requiredMotions.length,
     routeExampleCount: sceneTransitionRegistry.routeExamples.length,
     motions: sceneTransitionRegistry.motions,
+    routeExamples: sceneTransitionRegistry.routeExamples,
+    requiredSemanticRoutes: sceneTransitionRegistry.acceptance.requiredSemanticRoutes,
     nextActions: sceneTransitionRegistry.nextActions,
   }
 }

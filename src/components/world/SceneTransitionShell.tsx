@@ -27,6 +27,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
     () => getSceneTransitionForPathnames(previousPathnameRef.current, pathname),
     [pathname]
   )
+  const shouldDescribeTransition = transitionRuntime.fromScene.id !== transitionRuntime.toScene.id
 
   useEffect(() => {
     const content = contentRef.current
@@ -95,6 +96,18 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
       data-scene-to={transitionRuntime.toScene.id}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
     >
+      {shouldDescribeTransition ? (
+        <p
+          data-testid="scene-transition-static-cue"
+          aria-live="polite"
+          className="sr-only"
+        >
+          从{transitionRuntime.fromScene.title}到{transitionRuntime.toScene.title}：
+          {runtime.reducedMotion
+            ? transitionRuntime.transition.reducedMotionFallback
+            : transitionRuntime.transition.intent}
+        </p>
+      ) : null}
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={pathname}

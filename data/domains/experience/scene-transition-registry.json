@@ -62,6 +62,15 @@
       "to": { "autoAlpha": 1, "y": 0, "scale": 1, "duration": 0.34, "ease": "power2.out" },
       "compactFrom": { "autoAlpha": 0, "y": 8, "scale": 1 },
       "reducedMotion": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1 }
+    },
+    {
+      "id": "path-arrive",
+      "label": "旅程抵达",
+      "intent": "从路径旅程进入节点时，用轻微前进感表达抵达下一站。",
+      "from": { "autoAlpha": 0, "x": -10, "y": 8, "scale": 0.996 },
+      "to": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1, "duration": 0.32, "ease": "power2.out" },
+      "compactFrom": { "autoAlpha": 0, "y": 8, "scale": 1 },
+      "reducedMotion": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1 }
     }
   ],
   "routeExamples": [
@@ -88,11 +97,24 @@
       "to": "/node/world-manifesto",
       "transitionId": "archive-to-node",
       "motion": "archive-drawer"
+    },
+    {
+      "from": "/paths/first-visit",
+      "to": "/node/world-manifesto",
+      "transitionId": "path-to-node",
+      "motion": "path-arrive"
     }
   ],
   "acceptance": {
-    "requiredMotions": ["fade-rise", "zoom-star", "river-shift", "archive-drawer"],
-    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "default-scene-shift"],
+    "requiredMotions": ["fade-rise", "zoom-star", "river-shift", "archive-drawer", "path-arrive"],
+    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "path-to-node", "default-scene-shift"],
+    "requiredSemanticRoutes": [
+      "gateway-to-atlas",
+      "atlas-to-node",
+      "timeline-to-node",
+      "archive-to-node",
+      "path-to-node"
+    ],
     "requiredFiles": [
       "src/lib/scene-transition.ts",
       "src/components/world/SceneTransitionShell.tsx",

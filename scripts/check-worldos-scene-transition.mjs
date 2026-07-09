@@ -46,6 +46,13 @@ for (const id of registry.acceptance?.requiredMotions ?? []) {
   assert(motionIds.has(id), `缺少 motion variant：${id}`)
 }
 
+const requiredSemanticRoutes = registry.acceptance?.requiredSemanticRoutes ?? []
+const routeExampleIds = new Set((registry.routeExamples ?? []).map((example) => example.transitionId))
+for (const id of requiredSemanticRoutes) {
+  assert(routeExampleIds.has(id), `缺少语义转场示例：${id}`)
+}
+assert(requiredSemanticRoutes.length >= 5, '至少需要覆盖 Gateway/Atlas/Timeline/Archive/Paths 到 Node 的语义转场')
+
 for (const motion of registry.motions ?? []) {
   assert(typeof motion.intent === 'string' && motion.intent.length >= 12, `${motion.id} 缺少 intent`)
   assert(motion.from?.autoAlpha === 0, `${motion.id} from 必须使用 autoAlpha`)
@@ -95,8 +102,11 @@ for (const token of [
   "import('gsap')",
   'prefers-reduced-motion',
   'data-testid="scene-transition-shell"',
+  'data-testid="scene-transition-static-cue"',
+  'aria-live="polite"',
   'data-scene-transition',
   'data-scene-motion',
+  'reducedMotionFallback',
 ]) {
   assert(shell.includes(token), `SceneTransitionShell 缺少必要能力：${token}`)
 }
@@ -114,6 +124,9 @@ const statusPage = read('src/app/status/page.tsx')
 const statusPanel = read('src/components/status/SceneRuntimeStatusPanel.tsx')
 for (const token of ['getSceneTransitionSummary', 'transitionSummary', 'Scene Transition Shell']) {
   assert(statusPage.includes(token) || statusPanel.includes(token), `/status 缺少转场壳状态：${token}`)
+}
+for (const token of ['routeExamples', 'transitionId']) {
+  assert(statusPanel.includes(token), `/status 缺少语义转场示例展示：${token}`)
 }
 
 for (const file of ['src/components/world/SceneTransitionShell.tsx', 'src/components/world/WorldShell.tsx', 'src/components/status/SceneRuntimeStatusPanel.tsx']) {
