@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS Phase 27 首次进入仪式",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-phase27-first-visit-ritual-execution-plan-2026-07-09.md",
+  "principle": "首次进入仪式只服务公开体验恢复与低门槛导览，不读取私密层，不承担权限判断。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicExperienceOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "storage": {
+    "key": "guyue-world:gateway-ritual-seen",
+    "value": "seen",
+    "purpose": "仅记录公开首页进入仪式是否已看过，避免二次访问强打扰。",
+    "permissionSource": false
+  },
+  "copy": {
+    "eyebrow": "首次抵达",
+    "title": "先点亮入口，再进入这片世界。",
+    "description": "这里是古月浮屿的公开世界层。你可以先看地图，也可以沿第一条路径进入，或者去灯塔问路。",
+    "reducedMotionNote": "低动效模式下，入口仪式会保持静态，只保留清晰路径与按钮。",
+    "collapsedTitle": "世界入口已准备好",
+    "collapsedDescription": "你可以继续从地图、路径或灯塔进入。"
+  },
+  "actions": [
+    {
+      "id": "open-atlas",
+      "label": "看地图",
+      "title": "进入星图穹顶",
+      "href": "/atlas",
+      "tone": "primary",
+      "description": "从全局地图理解区域、节点和关系。"
+    },
+    {
+      "id": "start-first-path",
+      "label": "走第一条路径",
+      "title": "按路线慢慢进入",
+      "href": "/paths/first-visit",
+      "tone": "quiet",
+      "description": "适合第一次来的人，减少背景门槛。"
+    },
+    {
+      "id": "ask-lighthouse",
+      "label": "问灯塔",
+      "title": "让只读导览帮你找路",
+      "href": "/ask",
+      "tone": "quiet",
+      "description": "只做公开问路，不修改世界。"
+    }
+  ],
+  "acceptance": {
+    "requiredActions": ["open-atlas", "start-first-path", "ask-lighthouse"],
+    "requiredHrefs": ["/atlas", "/paths/first-visit", "/ask"],
+    "requiredCopy": ["首次抵达", "先点亮入口", "看地图", "走第一条路径", "问灯塔", "低动效模式"],
+    "requiredFiles": [
+      "src/lib/first-visit-ritual.ts",
+      "src/components/world/FirstVisitRitual.tsx",
+      "src/components/product/ProductHome.tsx"
+    ],
+    "forbiddenClientTokens": [
+      "OPENAI_API_KEY",
+      "ANTHROPIC_API_KEY",
+      "GUYUE_OWNER_TOKEN",
+      "R8_OWNER_TOKEN",
+      "ownerToken",
+      "authToken",
+      "permissionToken",
+      "role ===",
+      "isOwner",
+      "isAdmin"
+    ]
+  }
+}

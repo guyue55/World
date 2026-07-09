@@ -9,6 +9,7 @@ import { ProductDynamicWorldGuide } from '@/components/product/ProductDynamicWor
 import { WorldLiveMapPanel } from '@/components/world/WorldLiveMapPanel'
 import { WorldPulseConstellation } from '@/components/world/WorldPulseConstellation'
 import { useGsapEntrance } from '@/components/world/useGsapEntrance'
+import { FirstVisitRitual } from '@/components/world/FirstVisitRitual'
 import { useRef } from 'react'
 
 
@@ -50,7 +51,7 @@ export function ProductHome({
       <section data-gsap-reveal className="relative overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/78 px-6 py-10 shadow-soft backdrop-blur-xl md:px-10 md:py-16">
         <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-lake/20 blur-3xl" />
         <div className="absolute -bottom-32 left-10 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
-        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center">
+        <div className="relative grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-start">
           <div className="space-y-8">
             <div className="inline-flex shrink-0 rounded-full border border-ink/10 bg-paper/80 px-4 py-2 text-sm text-ink/65">
               古月浮屿 · 公开世界入口
@@ -83,6 +84,7 @@ export function ProductHome({
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(197,164,109,0.28),transparent_10rem),radial-gradient(circle_at_76%_70%,rgba(125,154,162,0.28),transparent_12rem)]" />
             <div className="relative flex h-full flex-col justify-between gap-8">
               <WorldPulseConstellation surface={dynamicWorld} />
+              <FirstVisitRitual />
               <div>
                 <p className="text-xs font-semibold tracking-[0.4em] text-gold">上线状态</p>
                 <h2 className="mt-3 text-2xl font-semibold">入口清澈，深处浩瀚</h2>
