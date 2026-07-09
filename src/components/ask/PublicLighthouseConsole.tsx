@@ -3,12 +3,19 @@
 import { useRef } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Bot, Route, Search, ShieldCheck } from 'lucide-react'
+import { Bot, FileSearch, LockKeyhole, RadioTower, Route, Search, ShieldCheck } from 'lucide-react'
 import type { LighthouseConsoleSurface } from '@/lib/public-world-surfaces'
+import type { LighthouseRuntimeResponse } from '@/server/ai/lighthouse-runtime'
 import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
 import { useGsapEntrance } from '@/components/world/useGsapEntrance'
 
-export function PublicLighthouseConsole({ surface }: { surface: LighthouseConsoleSurface }) {
+export function PublicLighthouseConsole({
+  surface,
+  runtimeResponse,
+}: {
+  surface: LighthouseConsoleSurface
+  runtimeResponse: LighthouseRuntimeResponse
+}) {
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
   const shouldMove = !runtime.reducedMotion
@@ -18,6 +25,12 @@ export function PublicLighthouseConsole({ surface }: { surface: LighthouseConsol
     { label: '公开问题', value: surface.questions.length },
     { label: '推荐路径', value: surface.paths.length },
     { label: '推荐节点', value: surface.nodes.length },
+  ]
+  const auditSignals = [
+    { label: '模式', value: runtimeResponse.mode },
+    { label: '意图', value: runtimeResponse.intent },
+    { label: '公开上下文', value: runtimeResponse.auditSummary.publicContextCount },
+    { label: '排除上下文', value: runtimeResponse.auditSummary.excludedContextCount },
   ]
 
   return (
@@ -64,6 +77,22 @@ export function PublicLighthouseConsole({ surface }: { surface: LighthouseConsol
         </div>
 
         <div className="grid gap-4 p-6 sm:p-8">
+          <div data-gsap-reveal className="rounded-[1.2rem] border border-paper/12 bg-paper/8 p-4">
+            <p className="flex items-center gap-2 text-sm font-semibold text-paper">
+              <RadioTower className="h-4 w-4 text-gold" />
+              观测回声
+            </p>
+            <p className="mt-3 text-sm leading-7 text-paper/66">{runtimeResponse.answer}</p>
+            <div className="mt-4 grid gap-2 sm:grid-cols-4">
+              {auditSignals.map((signal) => (
+                <div key={signal.label} className="rounded-[0.9rem] border border-paper/10 bg-paper/7 p-3">
+                  <p className="truncate text-sm font-semibold text-paper">{signal.value}</p>
+                  <p className="mt-1 text-xs text-paper/45">{signal.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div data-gsap-reveal className="rounded-[1.2rem] border border-gold/24 bg-gold/10 p-4">
             <p className="text-sm font-semibold text-gold">不想问也可以继续</p>
             <div className="mt-3 grid gap-2 md:grid-cols-3">
@@ -114,6 +143,37 @@ export function PublicLighthouseConsole({ surface }: { surface: LighthouseConsol
                   </Link>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+            <div data-gsap-reveal className="rounded-[1.2rem] border border-paper/12 bg-paper/8 p-4">
+              <p className="flex items-center gap-2 text-sm font-semibold text-paper/72">
+                <FileSearch className="h-4 w-4 text-gold" />
+                公开来源
+              </p>
+              <div className="mt-4 grid gap-2">
+                {runtimeResponse.sources.slice(0, 4).map((source) => (
+                  <Link key={`${source.href}-${source.title}`} href={source.href} className="rounded-[0.9rem] bg-paper/8 p-3 transition hover:bg-paper/14">
+                    <span className="block truncate text-sm font-semibold">{source.title}</span>
+                    <span className="mt-1 block line-clamp-2 text-xs leading-5 text-paper/50">{source.reason}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div data-gsap-reveal className="rounded-[1.2rem] border border-paper/12 bg-paper/8 p-4">
+              <p className="flex items-center gap-2 text-sm font-semibold text-paper/72">
+                <LockKeyhole className="h-4 w-4 text-leaf" />
+                低光边界
+              </p>
+              <div className="mt-4 space-y-2">
+                {runtimeResponse.limits.map((limit) => (
+                  <p key={limit} className="rounded-[0.9rem] bg-paper/8 p-3 text-xs leading-5 text-paper/54">{limit}</p>
+                ))}
+              </div>
+              <p className="mt-4 rounded-[0.9rem] border border-leaf/20 bg-leaf/10 p-3 text-xs leading-5 text-paper/58">
+                Provider：{runtimeResponse.auditSummary.providerStatus}；写入世界源：{runtimeResponse.auditSummary.writesWorldSource ? '是' : '否'}。
+              </p>
             </div>
           </div>
         </div>

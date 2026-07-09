@@ -3,6 +3,7 @@ import { getAllPaths } from '@/lib/paths'
 import { getPublicNodes } from '@/lib/nodes'
 import { getLighthouseRecommendedNodes, getLighthouseRecommendedPaths } from '@/lib/lighthouse'
 import { buildLighthouseConsoleSurface } from '@/lib/public-world-surfaces'
+import { runLowLightLighthouse } from '@/server/ai/lighthouse-runtime'
 import { createPageMetadata } from '@/lib/metadata'
 import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { PublicLighthouseConsole } from '@/components/ask/PublicLighthouseConsole'
@@ -39,6 +40,7 @@ export default function AskPage() {
     paths: recommendedPaths,
     nodes: recommendedNodes,
   })
+  const lighthouseRuntime = runLowLightLighthouse('我第一次来到古月浮屿，下一步去哪？')
 
   return (
     <main className="world-container space-y-10 py-16">
@@ -67,7 +69,7 @@ export default function AskPage() {
         primaryLabel="打开世界地图"
       />
 
-      <PublicLighthouseConsole surface={lighthouseSurface} />
+      <PublicLighthouseConsole surface={lighthouseSurface} runtimeResponse={lighthouseRuntime} />
 
       <section className="grid gap-4 md:grid-cols-3">
         {guideQuestions.map((question) => (
