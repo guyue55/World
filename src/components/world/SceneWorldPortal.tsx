@@ -243,7 +243,7 @@ function SceneStagePanel({
     <div
       data-scene-stage-panel={scene}
       data-scene-part="SceneMotionLayer"
-      className="relative min-h-[22rem] overflow-hidden rounded-[1.35rem] border border-paper/16 bg-night/34 shadow-[inset_0_0_0_1px_rgba(247,241,230,0.05),0_24px_80px_rgba(0,0,0,0.24)] md:min-h-[34rem] md:rounded-[1.6rem]"
+      className="relative min-h-[17rem] overflow-hidden rounded-[1.35rem] border border-paper/16 bg-night/34 shadow-[inset_0_0_0_1px_rgba(247,241,230,0.05),0_24px_80px_rgba(0,0,0,0.24)] md:min-h-[34rem] md:rounded-[1.6rem]"
     >
       <SceneIllustration scene={scene} objects={objects} />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(247,241,230,0.11),transparent_28rem),linear-gradient(180deg,rgba(12,18,20,0.08),rgba(12,18,20,0.74))]" />
@@ -345,7 +345,7 @@ export function SceneWorldPortal({
       <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(12,18,20,0.84),rgba(12,18,20,0.50)_42%,rgba(12,18,20,0.18))]" />
 
       <div className="relative z-10 flex flex-col gap-8">
-        <div className="grid min-h-[min(690px,calc(100vh-7rem))] gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(420px,0.9fr)] lg:items-center">
+        <div className="grid gap-8 lg:min-h-[min(690px,calc(100vh-7rem))] lg:grid-cols-[minmax(0,0.82fr)_minmax(420px,0.9fr)] lg:items-center">
           <div data-scene-part="SceneHeader" className="max-w-4xl">
             <p data-scene-reveal className={`text-xs font-semibold tracking-[0.32em] ${meta.accent}`}>
               {eyebrow}
@@ -378,13 +378,6 @@ export function SceneWorldPortal({
           </div>
 
           <aside data-scene-reveal data-scene-part="SceneEvidence" className="space-y-4">
-            <SceneStagePanel
-              scene={scene}
-              objects={objects}
-              meta={meta}
-              stats={statusStats}
-              runtimeLabel={meta.runtimeLabel}
-            />
             <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="grid gap-3 rounded-[1.15rem] border border-paper/12 bg-paper/8 p-4 text-sm leading-6 text-paper/64 backdrop-blur-xl sm:grid-cols-2">
               <p className="flex items-start gap-2">
                 <Compass className="mt-1 h-4 w-4 shrink-0 text-lake" />
@@ -395,6 +388,13 @@ export function SceneWorldPortal({
                 公开场景，只展示已放行内容。
               </p>
             </div>
+            <SceneStagePanel
+              scene={scene}
+              objects={objects}
+              meta={meta}
+              stats={statusStats}
+              runtimeLabel={meta.runtimeLabel}
+            />
           </aside>
         </div>
 

@@ -2,15 +2,31 @@
 
 > [!NOTE]
 > 本账本由 `worldos-one-shot-goal-master-prompt-2026-07-09.md` 驱动。Goal 模式执行 M8-M18 时必须持续更新它，用于长任务恢复、上下文压缩后续接和最终验收追踪。
+>
+> 2026-07-10 追加：终局 Goal 已升级为 `worldos-ultimate-one-shot-goal-prompt-2026-07-10.md` 驱动的 M8-M30。下方 M8-M18 “已完成”仅代表历史 MVP+ 底座，不代表“真格世界 / 宇宙体验”终局完成。进入 M19-M30 前必须以真实生产态截图、LAN RC、Scene QA 和人工体验缺陷为准。
 
 ## 1. 当前状态
 
 | 字段 | 值 |
 | --- | --- |
-| Goal 范围 | M8-M18 |
-| 当前阶段 | M8-M18 全部完成 |
-| 最后更新时间 | 2026-07-09 |
-| 当前结论 | M8-M18 已全部完成；最终本地 / LAN RC 通过，外部 Preview / Production 仍按计划不纳入当前验收 |
+| Goal 范围 | M8-M30 |
+| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M30 终局体验尚未完成 |
+| 最后更新时间 | 2026-07-10 |
+| 当前结论 | 2026-07-10 真实 RC 复验发现首页 mobile reduced-motion 核心状态卡不可见、核心门户场景缺少身份带证据；已修复并通过 `release:local-rc`。这只能证明本地可信门禁恢复，不代表世界/宇宙终局达成。 |
+
+## 1.1 2026-07-10 终局 Goal 真实起点
+
+| 项 | 真实状态 |
+| --- | --- |
+| 总控文档 | `docs/00-overview/worldos-ultimate-one-shot-goal-prompt-2026-07-10.md` |
+| 体验宪章 | `docs/00-overview/worldos-ultimate-experience-charter-2026-07-10.md` |
+| 总计划 | `docs/00-overview/worldos-m19-m30-comprehensive-execution-master-plan-2026-07-10.md` |
+| 前置结论 | M8-M18 不能被当作终局完成；M19-M30 才是“独立空间、真实穿梭、内容生命体、陪伴型灯塔、统一世界观、长期回访、作者共生、真实可信”的终局候选阶段 |
+| 本轮真实缺陷 | `smoke:lan-local` 首轮失败：`mobile-reduced-motion /` 首页 `dynamic-world-status-card` 不在视口；`check:scene-qa` 首轮失败：Atlas / Timeline / Archive / Paths / Ask / Status 缺少场景身份带证据 |
+| 本轮修复 | `SceneWorldPortal` 移动端取消桌面首屏强制高度、压缩移动舞台高度、提前展示核心状态卡；`SceneIdentityBand` 恢复核心门户场景的紧凑身份带 |
+| 本轮复验 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:homepage`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 |
+| 证据 | `docs/90-archive/reports/worldos-local-lan-rc-report.json`、`docs/90-archive/reports/worldos-scene-qa-report.json`、`docs/90-archive/reports/worldos-local-rc-summary-report.json`、`docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png` |
+| 下一阶段 | 进入 M19：场景主体深度交互。不得再以“壳存在、脚本通过”宣称终局，只能按截图/录屏/人工体验量表证明场景主体真的可探索。 |
 
 ## 2. 阶段进度
 

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-09T16:30:22.733Z",
+  "generatedAt": "2026-07-09T23:35:14.918Z",
   "source": "scripts/write-worldos-scene-qa-report.mjs",
   "checklist": "data/domains/experience/scene-qa-checklist.json",
   "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-  "lanGeneratedAt": "2026-07-09T16:09:14.033Z",
+  "lanGeneratedAt": "2026-07-09T23:35:09.805Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -35,7 +35,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "古月浮屿，正在打开的个人世界。",
-      "textLength": 3158,
+      "textLength": 3128,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -44,7 +44,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 774844,
+        "size": 917259,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
       },
       "sceneQa": {
@@ -56,10 +56,11 @@
         "sceneWorldPortalVariant": "gateway",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -78,7 +79,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "古月浮屿，正在打开的个人世界。",
-      "textLength": 3126,
+      "textLength": 3096,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -87,7 +88,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 811188,
+        "size": 695555,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png"
       },
       "sceneQa": {
@@ -99,10 +100,11 @@
         "sceneWorldPortalVariant": "gateway",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -121,7 +123,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "从这里看见整片公开世界。",
-      "textLength": 9364,
+      "textLength": 9340,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -130,7 +132,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 718272,
+        "size": 819701,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
       },
       "sceneQa": {
@@ -142,10 +144,11 @@
         "sceneWorldPortalVariant": "atlas",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -164,7 +167,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "从这里看见整片公开世界。",
-      "textLength": 9268,
+      "textLength": 9231,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -173,7 +176,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 791239,
+        "size": 726558,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png"
       },
       "sceneQa": {
@@ -185,10 +188,11 @@
         "sceneWorldPortalVariant": "atlas",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -207,7 +211,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 7663,
+      "textLength": 7639,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -216,7 +220,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 758327,
+        "size": 883164,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
       },
       "sceneQa": {
@@ -228,10 +232,11 @@
         "sceneWorldPortalVariant": "timeline",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -250,7 +255,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 7635,
+      "textLength": 7599,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -259,7 +264,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 843006,
+        "size": 783754,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-timeline.png"
       },
       "sceneQa": {
@@ -271,10 +276,11 @@
         "sceneWorldPortalVariant": "timeline",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -293,7 +299,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "当你不想漫游，就在馆内检索。",
-      "textLength": 23777,
+      "textLength": 23750,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -302,7 +308,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 747262,
+        "size": 868331,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
       },
       "sceneQa": {
@@ -314,10 +320,11 @@
         "sceneWorldPortalVariant": "archive",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -336,7 +343,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "当你不想漫游，就在馆内检索。",
-      "textLength": 23676,
+      "textLength": 23637,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -345,7 +352,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 828156,
+        "size": 774272,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-archive.png"
       },
       "sceneQa": {
@@ -357,10 +364,11 @@
         "sceneWorldPortalVariant": "archive",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -379,7 +387,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "路径不是分类，是一段可行走的旅程。",
-      "textLength": 1725,
+      "textLength": 1659,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -388,7 +396,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 753114,
+        "size": 868804,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
       },
       "sceneQa": {
@@ -400,10 +408,11 @@
         "sceneWorldPortalVariant": "paths",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -422,7 +431,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "路径不是分类，是一段可行走的旅程。",
-      "textLength": 1626,
+      "textLength": 1547,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -431,7 +440,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 852257,
+        "size": 778189,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths.png"
       },
       "sceneQa": {
@@ -443,10 +452,11 @@
         "sceneWorldPortalVariant": "paths",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -465,7 +475,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "第一次来到古月浮屿",
-      "textLength": 2597,
+      "textLength": 2595,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -474,7 +484,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 615669,
+        "size": 644346,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
       },
       "sceneQa": {
@@ -507,7 +517,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "第一次来到古月浮屿",
-      "textLength": 2511,
+      "textLength": 2509,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -516,7 +526,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 649957,
+        "size": 627082,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-paths-first-visit.png"
       },
       "sceneQa": {
@@ -549,7 +559,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "创世初光",
-      "textLength": 5144,
+      "textLength": 5142,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -558,7 +568,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 496072,
+        "size": 466637,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -591,7 +601,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "创世初光",
-      "textLength": 5056,
+      "textLength": 5054,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -600,7 +610,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 637898,
+        "size": 537296,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -633,7 +643,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "灯塔只照路，不替你改写世界。",
-      "textLength": 2746,
+      "textLength": 2718,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -642,7 +652,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 738429,
+        "size": 847143,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
       },
       "sceneQa": {
@@ -654,10 +664,11 @@
         "sceneWorldPortalVariant": "lighthouse",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -676,7 +687,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "灯塔只照路，不替你改写世界。",
-      "textLength": 2638,
+      "textLength": 2597,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -685,7 +696,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 798849,
+        "size": 755193,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
       },
       "sceneQa": {
@@ -697,10 +708,11 @@
         "sceneWorldPortalVariant": "lighthouse",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -719,7 +731,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 7484,
+      "textLength": 7459,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -728,7 +740,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 732844,
+        "size": 836408,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
       },
       "sceneQa": {
@@ -740,10 +752,11 @@
         "sceneWorldPortalVariant": "status",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
@@ -762,7 +775,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 7384,
+      "textLength": 7347,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -771,7 +784,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 847303,
+        "size": 748341,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png"
       },
       "sceneQa": {
@@ -783,10 +796,11 @@
         "sceneWorldPortalVariant": "status",
         "sceneProductionFramePresent": true,
         "sceneProductionParts": [
-          "SceneMotionLayer",
           "SceneHeader",
           "SceneExitRail",
           "SceneEvidence",
+          "SceneMotionLayer",
+          "SceneMotionLayer",
           "SceneBody",
           "SceneFallback",
           "SceneEvidence"
