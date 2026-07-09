@@ -9,6 +9,9 @@
 > [!IMPORTANT]
 > 2026-07-10 追加：真实视觉审查确认“底座完成”和“真格世界体验完成”不是一回事。进入 M8-M18 前必须先读 `docs/00-overview/worldos-real-visual-audit-record-2026-07-10.md`、`docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`、`docs/00-overview/worldos-true-world-global-standard-2026-07-10.md`、`docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`。
 
+> [!IMPORTANT]
+> 2026-07-10 高目标追加：M8-M18 只能达到本地成熟世界 MVP+，不能误称终局宇宙。若目标冲击 8/10、9/10，还必须读取 `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`、`docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md`、`docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md`。
+
 ## 1. 当前分层
 
 | 范围 | 状态 | 说明 |
@@ -37,6 +40,9 @@
 | `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md` | 区分舞台壳与真格世界主体 |
 | `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md` | 2026-07-10 后的世界体验上位规范 |
 | `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md` | 外部调研、文档清单和执行计划入口 |
+| `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md` | 8/10、9/10 与长期 10/10 高目标路线图 |
+| `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md` | M19-M30 高目标所需文档清单 |
+| `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md` | M19-M30 终局目标执行计划 |
 | `docs/00-overview/worldos-high-goal-readiness-audit-2026-07-09.md` | 判断目标高度和方向 |
 | `docs/00-overview/worldos-experience-governance-master-control-2026-07-09.md` | 判断是否仍像博客 |
 | `docs/00-overview/worldos-development-documentation-master-list-2026-07-09.md` | 查所有开发文档入口 |
@@ -118,3 +124,9 @@ Goal 模式不得以“文档存在”或“命令通过”作为最终完成。
 - 页面不再像骨架。
 - 没有白屏、遮挡、死链、权限泄漏、默认音频、前端 AI key。
 - 新依赖、新资产、新 AI 能力都有理由、预算、降级和证据。
+
+若进入 M19-M30 高目标阶段，还必须满足：
+
+- M19-M30 对应文档已按阶段补齐。
+- 高级可视化、复杂音频、AI Provider、IndexedDB、状态机等新增技术均有 ADR 或规格依据。
+- M30 明确列出仍未达 10/10 的缺口，不允许把 9/10 终局候选说成长期生命宇宙完成。

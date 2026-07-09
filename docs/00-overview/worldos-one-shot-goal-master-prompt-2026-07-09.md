@@ -6,6 +6,9 @@
 > [!IMPORTANT]
 > 2026-07-10 追加：后续 Goal 必须先读取真实视觉审查后的纠偏文档。不得再用“脚本通过”“统一壳存在”“页面无白屏”宣称世界体验完成。
 
+> [!IMPORTANT]
+> 2026-07-10 高目标追加：M8-M18 完成后只代表本地成熟世界 MVP+。若用户目标包含 8/10、9/10 或终局候选，必须继续读取并执行 M19-M30 高目标文档，不能把 MVP+ 误称终局宇宙。
+
 ## 1. 机制判断
 
 结论：可以只设置一次 Goal，但不能把所有细节塞进 `/goal` 输入框。正确做法是：
@@ -66,15 +69,18 @@
 2. `docs/00-overview/worldos-true-world-realization-gap-analysis-2026-07-10.md`
 3. `docs/00-overview/worldos-true-world-global-standard-2026-07-10.md`
 4. `docs/00-overview/worldos-true-world-research-documentation-and-execution-plan-2026-07-10.md`
-5. `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`
-6. `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md`
-7. `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
-8. `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
-9. `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
-10. `docs/00-overview/worldos-quality-control-system-2026-07-09.md`
-11. `docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md`
-12. `docs/00-overview/worldos-performance-asset-budget-2026-07-09.md`
-13. `docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md`
+5. `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`
+6. `docs/00-overview/worldos-ultimate-required-documentation-set-2026-07-10.md`
+7. `docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md`
+8. `docs/00-overview/worldos-complete-goal-mode-document-pack-2026-07-09.md`
+9. `docs/00-overview/worldos-complete-goal-document-readiness-review-2026-07-09.md`
+10. `docs/00-overview/worldos-full-goal-document-gap-analysis-2026-07-09.md`
+11. `docs/00-overview/worldos-m8-m12-true-world-experience-master-plan-2026-07-09.md`
+12. `docs/00-overview/worldos-m13-m18-complete-world-operation-master-plan-2026-07-09.md`
+13. `docs/00-overview/worldos-quality-control-system-2026-07-09.md`
+14. `docs/00-overview/worldos-human-experience-review-rubric-2026-07-09.md`
+15. `docs/00-overview/worldos-performance-asset-budget-2026-07-09.md`
+16. `docs/00-overview/worldos-tech-stack-and-open-source-research-2026-07-09.md`
 
 ## 5. 执行顺序
 
@@ -93,6 +99,7 @@
 | M16 | 性能与依赖硬化 | `docs/00-overview/worldos-m16-performance-dependency-hardening-execution-plan-2026-07-09.md` |
 | M17 | 本地 QA 与证据自动化 | `docs/00-overview/worldos-m17-local-qa-evidence-automation-execution-plan-2026-07-09.md` |
 | M18 | 作者治理与运行运维 | `docs/00-overview/worldos-m18-authoring-governance-runtime-ops-execution-plan-2026-07-09.md` |
+| M19-M30 | 高目标与终局候选 | `docs/00-overview/worldos-ultimate-world-ambition-roadmap-2026-07-10.md`、`docs/00-overview/worldos-ultimate-execution-plan-2026-07-10.md` |
 
 ## 6. 每阶段固定流程
 
