@@ -25,27 +25,37 @@
       "sceneId": "gateway",
       "route": "/",
       "requiresFirstVisitRitual": true,
-      "requiresSceneIdentityBand": false
+      "requiresSceneIdentityBand": false,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "gateway"
     },
     {
       "sceneId": "atlas",
       "route": "/atlas",
-      "requiresSceneIdentityBand": true
+      "requiresSceneIdentityBand": true,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "atlas"
     },
     {
       "sceneId": "timeline",
       "route": "/timeline",
-      "requiresSceneIdentityBand": true
+      "requiresSceneIdentityBand": true,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "timeline"
     },
     {
       "sceneId": "archive",
       "route": "/archive",
-      "requiresSceneIdentityBand": true
+      "requiresSceneIdentityBand": true,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "archive"
     },
     {
       "sceneId": "paths",
       "route": "/paths",
-      "requiresSceneIdentityBand": true
+      "requiresSceneIdentityBand": true,
+      "requiresSceneWorldPortal": true,
+      "expectedSceneWorldPortal": "paths"
     },
     {
       "sceneId": "path-detail",
@@ -72,6 +82,7 @@
     "ambientEnvironmentPresent",
     "sceneTransitionShellPresent",
     "sceneIdentityBandPresent",
+    "sceneWorldPortalPresent",
     "firstVisitRitualPresent",
     "journeyMemoryEntryPresent",
     "hasReturningVisitorCopy"

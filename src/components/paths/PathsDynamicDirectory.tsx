@@ -32,28 +32,6 @@ export function PathsDynamicDirectory({ surface }: { surface: PathsDirectorySurf
 
   return (
     <div ref={containerRef} className="space-y-10">
-      <section data-gsap-reveal className="relative overflow-hidden rounded-[2rem] border border-ink/10 bg-white/50 p-8 shadow-soft md:p-10">
-        <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-gold/20 blur-3xl" />
-        <div className="relative grid gap-8 lg:grid-cols-[1fr_360px] lg:items-end">
-          <div className="max-w-3xl">
-            <p className="text-sm tracking-[0.35em] text-moss">{surface.eyebrow}</p>
-            <h1 className="mt-4 break-words text-5xl font-semibold leading-tight md:text-6xl">{surface.title}</h1>
-            <p className="mt-5 break-words text-lg leading-9 text-ink/70">
-              {surface.description}
-            </p>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
-            {surface.audiences.map((item) => (
-              <div key={item.audience} className="min-w-0 rounded-2xl bg-paper/70 p-4">
-                <p className="truncate text-sm text-ink/50">{item.label}</p>
-                <p className="mt-1 truncate text-2xl font-semibold">{item.count} 条路径</p>
-                <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/48">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section data-gsap-reveal className="grid gap-4 rounded-[2rem] border border-white/65 bg-white/74 p-6 shadow-soft backdrop-blur md:grid-cols-3 md:p-8">
         {surface.metrics.map((metric) => (
           <div key={metric.label}>

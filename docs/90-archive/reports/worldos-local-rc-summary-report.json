@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T07:10:47.731Z",
+  "generatedAt": "2026-07-09T07:36:33.969Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -40,6 +40,14 @@
       "ambientEnvironment": true,
       "sceneTransitionShell": true,
       "sceneIdentityBand": true,
+      "sceneWorldPortal": true,
+      "sceneWorldPortalVariants": [
+        "gateway",
+        "atlas",
+        "timeline",
+        "archive",
+        "paths"
+      ],
       "reducedMotionChecks": 9
     },
     "audit": {
@@ -61,7 +69,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-09T07:09:36.144Z"
+      "buildIdMtime": "2026-07-09T07:35:49.604Z"
     }
   },
   "dynamicWorldEvidence": {

@@ -1,0 +1,336 @@
+'use client'
+
+import Link from 'next/link'
+import { useEffect, useMemo, useRef, type ReactNode } from 'react'
+import { ArrowRight, Compass, Radio, ShieldCheck } from 'lucide-react'
+import { gsap } from 'gsap'
+import { useWorldRuntime } from './WorldRuntimeProvider'
+
+export type SceneWorldPortalId = 'gateway' | 'atlas' | 'timeline' | 'archive' | 'paths'
+
+export type SceneWorldPortalAction = {
+  href: string
+  label: string
+  description?: string
+  tone?: 'primary' | 'quiet'
+  testId?: string
+}
+
+export type SceneWorldPortalStat = {
+  label: string
+  value: string | number
+  note: string
+}
+
+export type SceneWorldPortalProps = {
+  scene: SceneWorldPortalId
+  eyebrow: string
+  title: string
+  description: string
+  objects: string[]
+  primaryAction: SceneWorldPortalAction
+  secondaryActions?: SceneWorldPortalAction[]
+  stats?: SceneWorldPortalStat[]
+  children?: ReactNode
+}
+
+const sceneCopy: Record<SceneWorldPortalId, {
+  label: string
+  accent: string
+  runtimeLabel: string
+  visualLabel: string
+  variantClass: string
+}> = {
+  gateway: {
+    label: '创世原点',
+    accent: 'text-gold',
+    runtimeLabel: '书桌向星河打开',
+    visualLabel: 'Gateway',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(37,48,42,0.96),rgba(57,73,66,0.92)_48%,rgba(24,32,35,0.96))]',
+  },
+  atlas: {
+    label: '星图穹顶',
+    accent: 'text-lake',
+    runtimeLabel: '区域正在连成穹顶',
+    visualLabel: 'Atlas',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(24,38,44,0.96),rgba(37,48,42,0.94)_48%,rgba(16,24,32,0.96))]',
+  },
+  timeline: {
+    label: '时间河',
+    accent: 'text-lake',
+    runtimeLabel: '事件正在入河',
+    visualLabel: 'Timeline',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(39,56,58,0.95),rgba(76,91,78,0.9)_48%,rgba(29,38,41,0.96))]',
+  },
+  archive: {
+    label: '档案馆',
+    accent: 'text-gold',
+    runtimeLabel: '卷宗正在归位',
+    visualLabel: 'Archive',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(47,42,35,0.96),rgba(68,64,53,0.92)_48%,rgba(28,32,30,0.96))]',
+  },
+  paths: {
+    label: '星路入口',
+    accent: 'text-leaf',
+    runtimeLabel: '路径正在点亮',
+    visualLabel: 'Paths',
+    variantClass: 'bg-[linear-gradient(118deg,rgba(37,48,42,0.96),rgba(65,75,52,0.92)_48%,rgba(22,30,34,0.96))]',
+  },
+}
+
+const portalNodes = [
+  { id: 'a', x: 17, y: 33 },
+  { id: 'b', x: 38, y: 18 },
+  { id: 'c', x: 63, y: 28 },
+  { id: 'd', x: 79, y: 57 },
+  { id: 'e', x: 50, y: 74 },
+  { id: 'f', x: 23, y: 66 },
+]
+
+const portalLines = [
+  ['a', 'b'],
+  ['b', 'c'],
+  ['c', 'd'],
+  ['d', 'e'],
+  ['e', 'f'],
+  ['f', 'a'],
+  ['b', 'e'],
+]
+
+function lineFromPoints(from: (typeof portalNodes)[number], to: (typeof portalNodes)[number]) {
+  const dx = to.x - from.x
+  const dy = to.y - from.y
+  const width = Math.sqrt(dx * dx + dy * dy)
+  const rotate = Math.atan2(dy, dx) * (180 / Math.PI)
+
+  return {
+    left: `${from.x}%`,
+    top: `${from.y}%`,
+    width: `${width}%`,
+    transform: `rotate(${rotate}deg)`,
+  }
+}
+
+function SceneIllustration({ scene, objects }: { scene: SceneWorldPortalId; objects: string[] }) {
+  const nodeById = new Map(portalNodes.map((node) => [node.id, node]))
+  const objectLabels = objects.length > 0 ? objects : [sceneCopy[scene].label]
+
+  return (
+    <div className="absolute inset-0" aria-hidden="true">
+      <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(247,241,230,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(247,241,230,0.10)_1px,transparent_1px)] [background-size:72px_72px]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-paper/36 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-paper/20 to-transparent" />
+
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        {scene === 'timeline' ? (
+          <>
+            <path data-scene-object d="M-8 58 C 15 46, 25 74, 48 57 S 78 41, 108 55" fill="none" stroke="rgba(247,241,230,0.44)" strokeWidth="0.35" />
+            <path data-scene-object d="M-8 64 C 16 54, 29 78, 51 63 S 77 50, 108 61" fill="none" stroke="rgba(125,154,162,0.55)" strokeWidth="0.8" />
+          </>
+        ) : scene === 'archive' ? (
+          <>
+            {[21, 36, 51, 66].map((y) => (
+              <path key={y} data-scene-object d={`M8 ${y} H92`} stroke="rgba(247,241,230,0.34)" strokeWidth="0.28" />
+            ))}
+            {[20, 34, 48, 62, 76].map((x) => (
+              <path key={x} data-scene-object d={`M${x} 18 V72`} stroke="rgba(197,164,109,0.25)" strokeWidth="0.24" />
+            ))}
+          </>
+        ) : scene === 'paths' ? (
+          <path data-scene-object d="M12 72 C 25 46, 38 58, 48 34 S 72 28, 86 18" fill="none" stroke="rgba(197,164,109,0.64)" strokeWidth="0.62" strokeDasharray="2.2 2.4" />
+        ) : (
+          portalLines.map(([fromId, toId]) => {
+            const from = nodeById.get(fromId)
+            const to = nodeById.get(toId)
+            if (!from || !to) return null
+            return (
+              <line
+                key={`${fromId}-${toId}`}
+                data-scene-object
+                x1={from.x}
+                y1={from.y}
+                x2={to.x}
+                y2={to.y}
+                stroke="rgba(247,241,230,0.32)"
+                strokeWidth="0.22"
+              />
+            )
+          })
+        )}
+      </svg>
+
+      {portalLines.slice(0, scene === 'timeline' || scene === 'archive' ? 3 : 7).map(([fromId, toId], index) => {
+        const from = nodeById.get(fromId)
+        const to = nodeById.get(toId)
+        if (!from || !to) return null
+        return (
+          <span
+            key={`${fromId}-${toId}-beam`}
+            data-scene-object
+            className="absolute h-px origin-left bg-gradient-to-r from-transparent via-paper/42 to-transparent"
+            style={{ ...lineFromPoints(from, to), animationDelay: `${index * 0.28}s` }}
+          />
+        )
+      })}
+
+      {portalNodes.map((node, index) => (
+        <span
+          key={node.id}
+          data-scene-object
+          className="absolute min-w-14 -translate-x-1/2 -translate-y-1/2 rounded-[0.95rem] border border-paper/24 bg-paper/10 px-3 py-2 text-center text-[11px] font-semibold text-paper/82 backdrop-blur-md"
+          style={{ left: `${node.x}%`, top: `${node.y}%` }}
+        >
+          {objectLabels[index % objectLabels.length]}
+        </span>
+      ))}
+    </div>
+  )
+}
+
+export function SceneWorldPortal({
+  scene,
+  eyebrow,
+  title,
+  description,
+  objects,
+  primaryAction,
+  secondaryActions = [],
+  stats = [],
+  children,
+}: SceneWorldPortalProps) {
+  const rootRef = useRef<HTMLElement | null>(null)
+  const runtime = useWorldRuntime()
+  const meta = sceneCopy[scene]
+  const shouldMove = !runtime.reducedMotion && !runtime.compactMotion
+  const statusStats = useMemo(() => stats.slice(0, 3), [stats])
+
+  useEffect(() => {
+    const root = rootRef.current
+    if (!root) return
+    const objects = Array.from(root.querySelectorAll<HTMLElement>('[data-scene-object]'))
+    const reveal = Array.from(root.querySelectorAll<HTMLElement>('[data-scene-reveal]'))
+    if (!objects.length && !reveal.length) return
+
+    const mm = gsap.matchMedia()
+    mm.add(
+      {
+        reduceMotion: '(prefers-reduced-motion: reduce)',
+        compactMotion: '(max-width: 767px)',
+      },
+      (context) => {
+        const reduceMotion = Boolean(context.conditions?.reduceMotion) || runtime.reducedMotion
+        const compactMotion = Boolean(context.conditions?.compactMotion) || runtime.compactMotion
+
+        gsap.set([...objects, ...reveal], { autoAlpha: 1, clearProps: 'visibility' })
+        if (reduceMotion || compactMotion || !shouldMove) {
+          gsap.set(objects, { x: 0, y: 0, scale: 1, rotation: 0, clearProps: 'transform' })
+          return
+        }
+
+        gsap.fromTo(
+          reveal,
+          { autoAlpha: 0, y: 18 },
+          { autoAlpha: 1, y: 0, duration: 0.72, ease: 'power3.out', stagger: 0.08, overwrite: 'auto' }
+        )
+        gsap.to(objects, {
+          y: (index) => (index % 2 === 0 ? -8 : 8),
+          x: (index) => (index % 3 === 0 ? 6 : -4),
+          duration: 5.8,
+          ease: 'sine.inOut',
+          repeat: -1,
+          yoyo: true,
+          stagger: { amount: 1.2, from: 'center' },
+          overwrite: 'auto',
+        })
+      }
+    )
+
+    return () => mm.revert()
+  }, [runtime.compactMotion, runtime.reducedMotion, shouldMove])
+
+  return (
+    <section
+      ref={rootRef}
+      data-testid="scene-world-portal"
+      data-scene-world-portal={scene}
+      data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
+      className={`relative min-h-[min(760px,calc(100vh-6rem))] overflow-hidden rounded-[2rem] border border-white/18 px-5 py-8 text-paper shadow-soft md:px-8 md:py-10 ${meta.variantClass}`}
+    >
+      <SceneIllustration scene={scene} objects={objects} />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,22,23,0.84),rgba(16,22,23,0.48)_48%,rgba(16,22,23,0.22))]" />
+
+      <div className="relative z-10 flex min-h-[inherit] flex-col justify-between gap-8">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.6fr)] lg:items-start">
+          <div className="max-w-4xl">
+            <p data-scene-reveal className={`text-xs font-semibold tracking-[0.32em] ${meta.accent}`}>
+              {eyebrow}
+            </p>
+            <h1 data-scene-reveal className="mt-5 max-w-4xl break-words text-5xl font-semibold leading-tight md:text-6xl">
+              {title}
+            </h1>
+            <p data-scene-reveal className="mt-5 max-w-2xl text-base leading-8 text-paper/74 md:text-lg">
+              {description}
+            </p>
+            <div data-scene-reveal className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href={primaryAction.href}
+                data-testid={primaryAction.testId}
+                className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-night shadow-soft transition hover:-translate-y-0.5 hover:bg-gold/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper/80"
+              >
+                {primaryAction.label}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              {secondaryActions.slice(0, 3).map((action) => (
+                <Link
+                  key={action.href}
+                  href={action.href}
+                  className="inline-flex items-center gap-2 rounded-full border border-paper/18 bg-paper/10 px-5 py-3 text-sm font-semibold text-paper transition hover:-translate-y-0.5 hover:bg-paper/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper/70"
+                >
+                  {action.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <aside data-scene-reveal className="space-y-4">
+            <div data-testid={scene === 'gateway' ? 'dynamic-world-status-card' : undefined} className="rounded-[1.35rem] border border-paper/14 bg-paper/10 p-5 backdrop-blur-xl">
+              <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.26em] text-paper/62">
+                <Radio className="h-4 w-4 text-gold" />
+                {meta.visualLabel}
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold">{meta.runtimeLabel}</h2>
+              <div className="mt-4 grid gap-3">
+                <p className="flex items-start gap-2 text-sm leading-6 text-paper/66">
+                  <Compass className="mt-1 h-4 w-4 shrink-0 text-lake" />
+                  {meta.label} · {runtime.dayPeriod} · {runtime.season}
+                </p>
+                <p className="flex items-start gap-2 text-sm leading-6 text-paper/66">
+                  <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-leaf" />
+                  公开场景，只展示已放行内容。
+                </p>
+              </div>
+            </div>
+
+            {statusStats.length > 0 ? (
+              <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+                {statusStats.map((stat) => (
+                  <div key={stat.label} className="rounded-[1.15rem] border border-paper/12 bg-paper/8 p-4 backdrop-blur">
+                    <p className="truncate text-2xl font-semibold">{stat.value}</p>
+                    <p className="mt-1 text-sm font-semibold text-paper/78">{stat.label}</p>
+                    <p className="mt-1 line-clamp-2 text-xs leading-5 text-paper/52">{stat.note}</p>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </aside>
+        </div>
+
+        {children ? (
+          <div data-scene-reveal className="max-w-5xl">
+            {children}
+          </div>
+        ) : null}
+      </div>
+    </section>
+  )
+}

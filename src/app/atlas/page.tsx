@@ -29,13 +29,13 @@ export default function AtlasPage() {
 
   return (
     <main className="world-container space-y-12 py-16">
+      <AtlasHero />
       <ProductRouteGuide
         current="世界地图"
         description="你正在查看古月浮屿的公开空间层。这里不会展示私密区域原文，只展示可公开进入的区域、节点与路径。"
         primaryHref="/timeline"
         primaryLabel="沿时间流继续"
       />
-      <AtlasHero />
       <AtlasStats
         areaCount={stats.areaCount}
         publicAreaCount={stats.publicAreaCount}

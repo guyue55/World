@@ -1,15 +1,23 @@
+import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
+
 export function AtlasHero() {
   return (
-    <section className="relative overflow-hidden rounded-[2.2rem] border border-white/65 bg-night p-8 text-paper shadow-soft md:p-10">
-      <div className="absolute -right-12 top-0 h-72 w-72 rounded-full bg-lake/25 blur-3xl" />
-      <div className="absolute left-10 top-10 h-48 w-48 rounded-full bg-gold/20 blur-3xl" />
-      <div className="relative max-w-4xl">
-        <p className="text-sm tracking-[0.35em] text-gold">ATLAS</p>
-        <h1 className="mt-4 text-5xl font-semibold leading-tight md:text-6xl">世界地图</h1>
-        <p className="mt-5 text-lg leading-9 text-paper/75">
-          这里是古月浮屿的空间入口。先看五个主区域，再进入节点；想快速查找时，可以切换到档案馆。
-        </p>
-      </div>
-    </section>
+    <SceneWorldPortal
+      scene="atlas"
+      eyebrow="ATLAS · 星图穹顶"
+      title="从这里看见整片公开世界。"
+      description="区域不再只是分类卡片，而是一组可进入、可返回、可继续探索的星域。你可以先看主区域，再沿时间河或档案馆深入。"
+      objects={['星域', '区域', '节点', '星线', '路径', '雾区']}
+      primaryAction={{ href: '/timeline', label: '沿时间河继续' }}
+      secondaryActions={[
+        { href: '/archive', label: '打开档案馆' },
+        { href: '/paths', label: '选择路径' },
+      ]}
+      stats={[
+        { label: '主区域', value: '8', note: '公开空间骨架' },
+        { label: '星线', value: '实时', note: '关系正在连接' },
+        { label: '下一幕', value: '时间河', note: '从空间转入事件' },
+      ]}
+    />
   )
 }

@@ -72,6 +72,12 @@ function validateCheck(scene, viewport, check) {
   if (scene.requiresSceneIdentityBand && !bool(sceneQa.sceneIdentityBandPresent)) {
     localFailures.push(`${viewport} ${scene.route} 缺少场景身份带证据`)
   }
+  if (scene.requiresSceneWorldPortal && !bool(sceneQa.sceneWorldPortalPresent)) {
+    localFailures.push(`${viewport} ${scene.route} 缺少世界化场景门户证据`)
+  }
+  if (scene.expectedSceneWorldPortal && sceneQa.sceneWorldPortalVariant !== scene.expectedSceneWorldPortal) {
+    localFailures.push(`${viewport} ${scene.route} 场景门户类型不正确：${sceneQa.sceneWorldPortalVariant || 'missing'}`)
+  }
   if (scene.requiresFirstVisitRitual && !bool(sceneQa.firstVisitRitualPresent)) {
     localFailures.push(`${viewport} ${scene.route} 缺少首次进入仪式证据`)
   }
@@ -111,6 +117,8 @@ for (const scene of checklist.requiredScenes) {
         ambientEnvironmentPresent: bool(result.sceneQa.ambientEnvironmentPresent),
         sceneTransitionShellPresent: bool(result.sceneQa.sceneTransitionShellPresent),
         sceneIdentityBandPresent: bool(result.sceneQa.sceneIdentityBandPresent),
+        sceneWorldPortalPresent: bool(result.sceneQa.sceneWorldPortalPresent),
+        sceneWorldPortalVariant: result.sceneQa.sceneWorldPortalVariant ?? '',
         firstVisitRitualPresent: bool(result.sceneQa.firstVisitRitualPresent),
         journeyMemoryEntryPresent: bool(result.sceneQa.journeyMemoryEntryPresent),
         hasReturningVisitorCopy: bool(result.sceneQa.hasReturningVisitorCopy),
@@ -131,6 +139,10 @@ if (screenshotCount < checklist.thresholds.minScreenshots) {
 const requiredIdentityChecks = routeChecks.filter((check) => {
   const scene = checklist.requiredScenes.find((item) => item.sceneId === check.sceneId)
   return scene?.requiresSceneIdentityBand === true
+})
+const requiredPortalChecks = routeChecks.filter((check) => {
+  const scene = checklist.requiredScenes.find((item) => item.sceneId === check.sceneId)
+  return scene?.requiresSceneWorldPortal === true
 })
 const returningVisitorChecks = routeChecks.filter((check) => check.sceneQa.hasReturningVisitorCopy)
 
@@ -156,6 +168,8 @@ const report = {
     ambientEnvironment: routeChecks.every((check) => check.sceneQa.ambientEnvironmentPresent),
     sceneTransitionShell: routeChecks.every((check) => check.sceneQa.sceneTransitionShellPresent),
     sceneIdentityBand: requiredIdentityChecks.every((check) => check.sceneQa.sceneIdentityBandPresent),
+    sceneWorldPortal: requiredPortalChecks.every((check) => check.sceneQa.sceneWorldPortalPresent),
+    sceneWorldPortalVariants: [...new Set(requiredPortalChecks.map((check) => check.sceneQa.sceneWorldPortalVariant).filter(Boolean))],
     journeyMemoryEntry: routeChecks.every((check) => check.sceneQa.journeyMemoryEntryPresent),
     reducedMotionChecks: routeChecks.filter((check) => check.viewport === 'mobile-reduced-motion').length,
     domNonEmptyChecks: routeChecks.filter((check) => check.textLength >= checklist.thresholds.minTextLength).length,

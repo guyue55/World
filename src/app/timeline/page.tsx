@@ -26,13 +26,13 @@ export default function TimelinePage() {
 
   return (
     <main className="world-container space-y-10 py-16">
+      <TimelineHero state={state} />
       <ProductRouteGuide
         current="时间流"
         description="这里不是调试日志，而是公开世界的成长记录。私密事件不会进入这条公开时间流。"
         primaryHref="/atlas"
         primaryLabel="回到世界地图"
       />
-      <TimelineHero state={state} />
       <TimelineStats {...stats} />
       <TimelineRiverRuntime surface={timelineSurface} />
       <TimelineEventStream events={events} nodes={nodes} areas={areas} />

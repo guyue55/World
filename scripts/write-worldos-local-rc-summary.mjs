@@ -80,6 +80,8 @@ const report = {
       ambientEnvironment: sceneQaReport.evidence?.ambientEnvironment === true,
       sceneTransitionShell: sceneQaReport.evidence?.sceneTransitionShell === true,
       sceneIdentityBand: sceneQaReport.evidence?.sceneIdentityBand === true,
+      sceneWorldPortal: sceneQaReport.evidence?.sceneWorldPortal === true,
+      sceneWorldPortalVariants: sceneQaReport.evidence?.sceneWorldPortalVariants ?? [],
       reducedMotionChecks: sceneQaReport.evidence?.reducedMotionChecks ?? 0,
     },
     audit: {
