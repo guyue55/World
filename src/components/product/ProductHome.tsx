@@ -9,6 +9,7 @@ import { ProductDynamicWorldGuide } from '@/components/product/ProductDynamicWor
 import { useGsapEntrance } from '@/components/world/useGsapEntrance'
 import { FirstVisitRitual } from '@/components/world/FirstVisitRitual'
 import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
+import { WorldPulseConstellation } from '@/components/world/WorldPulseConstellation'
 import { useRef } from 'react'
 
 
@@ -69,7 +70,10 @@ export function ProductHome({
           { label: '推荐起点', value: primaryEntry?.label ?? '地图', note: '先看地图，再进入深处' },
         ]}
       >
-        <FirstVisitRitual />
+        <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+          <FirstVisitRitual />
+          <WorldPulseConstellation surface={dynamicWorld} />
+        </div>
       </SceneWorldPortal>
 
       <section data-gsap-reveal className="rounded-[2.5rem] border border-white/65 bg-white/72 p-6 shadow-soft backdrop-blur md:p-8 xl:p-10">

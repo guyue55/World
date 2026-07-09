@@ -19,11 +19,11 @@
 
 - 已完成：Scene Runtime、First Visit Ritual、Scene Transition Shell、Scene Personality、Journey Memory、Ambient Environment、Scene QA、SceneWorldPortal。
 - 已完成：Gateway / Atlas / Timeline / Archive / Paths 的世界化门户。
-- 主要缺口：
-  - `/ask` 仍是独立灯塔 Hero，未进入统一门户组件。
-  - `/status` 仍是独立维护说明 Hero，未进入统一门户组件。
-  - Scene QA 只要求 5 类门户，不足以证明主体验全线世界化。
-  - 全局任务板尚未把“详细计划已输出”和“批次 1 执行状态”闭环。
+- 已完成：`/ask`、`/status` 已进入统一场景门户，Scene QA 覆盖 Gateway / Atlas / Timeline / Archive / Paths / Lighthouse / Status。
+- 已追补：首页首屏动态世界运行态脉冲层恢复，Atlas 区域节点改为代表节点预览，避免地图页承担完整档案馆重量。
+- 当前缺口：
+  - 场景差异已明显建立，但完整“空间转场语法”仍是后续阶段。
+  - 动态宇宙已从骨架进入可验收体验，但还需要继续加强 Atlas 到 Node、Timeline 到 Node、Archive 到 Node 的抵达感。
 
 ## 3. 批次规划
 
@@ -55,15 +55,21 @@
 
 任务：
 
-- [ ] 1. 检查公开节点最低字段。
-- [ ] 2. 强化代表节点和路径之间的“为什么相关”。
-- [ ] 3. 让 Atlas / Timeline / Archive / Paths / Node 共享同一内容事实源。
-- [ ] 4. 补齐或修复缺摘要、缺区域、缺关系的精选节点。
+- [x] 1. 检查公开节点最低字段。
+- [x] 2. 强化代表节点和路径之间的“为什么相关”。
+- [x] 3. 让 Atlas / Timeline / Archive / Paths / Node 共享同一内容事实源。
+- [x] 4. 补齐或修复缺摘要、缺区域、缺关系的精选节点。
 
 验收：
 
-- [ ] 精选节点无摘要、无区域、无关系问题被脚本发现或修复。
-- [ ] 核心路径可以连续阅读。
+- [x] 精选节点无摘要、无区域、无关系问题被脚本发现或修复。
+- [x] 核心路径可以连续阅读。
+
+证据：
+
+- `npm run check:content` 通过：200 个公开节点、398 条关系、29 条路径、50 条事件。
+- `check-worldos-content-life.mjs` 覆盖公开节点标题、摘要、区域、生命周期、路径、关系，以及精选准入。
+- 路径详情由 `PathJourneyBoard` 呈现进度、下一步、返回地图和相关节点；节点详情由 `NodeRelationRail` 呈现“为什么相关”。
 
 ### 批次 3：只读智能与权限可信
 
@@ -71,15 +77,20 @@
 
 任务：
 
-- [ ] 1. 复核 `/ask` 只读边界。
-- [ ] 2. 复核 owner-only API 服务端 guard。
-- [ ] 3. 复核前端显隐只依据后端事实源。
-- [ ] 4. 跑 `check:api-boundary`。
+- [x] 1. 复核 `/ask` 只读边界。
+- [x] 2. 复核 owner-only API 服务端 guard。
+- [x] 3. 复核前端显隐只依据后端事实源。
+- [x] 4. 跑 `check:api-boundary`。
 
 验收：
 
-- [ ] 未授权 API 返回 403。
-- [ ] 前端没有硬编码 owner token 或私密权限判断。
+- [x] 未授权 API 返回 403。
+- [x] 前端没有硬编码 owner token 或私密权限判断。
+
+证据：
+
+- `npm run check:lighthouse` 通过：灯塔保持只读、provider disabled 时可解释。
+- `npm run check:boundary` 通过：26 个 API route 已登记并 guard，owner workbench、permission boundary、AI provider boundary、app boundary 均通过。
 
 ### 批次 4：性能与长期治理
 
@@ -87,15 +98,23 @@
 
 任务：
 
-- [ ] 1. 记录构建体积基线。
-- [ ] 2. 检查 GSAP 使用是否仍是 transform / opacity。
-- [ ] 3. 检查报告是否只有时间戳漂移。
-- [ ] 4. 跑 `build:production-ci`、`check:strict`、`release:local-rc`。
+- [x] 1. 记录构建体积基线。
+- [x] 2. 检查 GSAP 使用是否仍是 transform / opacity。
+- [x] 3. 检查报告是否只有时间戳漂移。
+- [x] 4. 跑最终 `check:strict`、`release:local-rc`。
 
 验收：
 
-- [ ] 首屏包体无异常增长。
-- [ ] 报告和截图能证明真实本地/LAN 体验。
+- [x] 首屏包体无异常增长。
+- [x] 报告和截图能证明真实本地/LAN 体验。
+
+证据：
+
+- `npm run build:production-ci` 通过，当前首页 First Load JS 为 215 kB，`/atlas` 为 210 kB。
+- `npm run check:performance-budget` 通过，`.next` 总大小 44.35 MB；Atlas HTML 已回到预算内。
+- `npm run check:strict` 通过，覆盖 world-core、内容、路径、Atlas、Timeline、Lighthouse、权限、release freeze 等横向门禁。
+- `npm run release:local-rc` 通过：LAN `http://172.30.111.222:4320`，22 个 HTTP 检查、20 个浏览器检查、Scene QA、mainline、evidence policy 全部通过。
+- 本轮只更新时间戳的内容相似度报告未纳入最终 diff。
 
 ## 4. 本轮执行范围
 
