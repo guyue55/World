@@ -26,12 +26,17 @@
     {
       "id": "future-visual-asset",
       "policy": "behind provider, never first paint dependency"
+    },
+    {
+      "id": "audio-generated",
+      "policy": "generated after explicit user opt-in, no external audio download, default muted"
     }
   ],
   "rules": [
     "图片必须区分内容图片与装饰图片。",
     "首页不因装饰图片阻塞世界入口。",
     "公共索引只包含公开投影摘要。",
+    "声音默认静音，音频上下文只能在用户点击后创建。",
     "未来大型资源必须登记 provider 与 fallback。",
     "资源优化不能破坏可访问性和语义。"
   ]

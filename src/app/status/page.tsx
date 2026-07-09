@@ -11,6 +11,7 @@ import { getPathQualityLedger } from '@/lib/path-quality-ledger'
 import { getOwnerReadonlyConsoleLedger } from '@/lib/owner-readonly-console'
 import { getAmbientEnvironmentSummary } from '@/lib/ambient-environment'
 import { getJourneyMemorySummary } from '@/lib/journey-memory'
+import { getSensoryAudioSummary } from '@/lib/sensory-audio'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
 import { getScenePersonalitySummary } from '@/lib/scene-personality'
 import { getSceneTransitionSummary } from '@/lib/scene-transition'
@@ -64,6 +65,7 @@ export default function StatusPage() {
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const ambientEnvironmentSummary = getAmbientEnvironmentSummary()
   const journeyMemorySummary = getJourneyMemorySummary()
+  const sensoryAudioSummary = getSensoryAudioSummary()
   const sceneRuntimeSummary = getPublicSceneSummary()
   const scenePersonalitySummary = getScenePersonalitySummary()
   const sceneTransitionSummary = getSceneTransitionSummary()
@@ -126,6 +128,7 @@ export default function StatusPage() {
         summary={sceneRuntimeSummary}
         ambientEnvironmentSummary={ambientEnvironmentSummary}
         journeyMemorySummary={journeyMemorySummary}
+        sensoryAudioSummary={sensoryAudioSummary}
         personalitySummary={scenePersonalitySummary}
         transitionSummary={sceneTransitionSummary}
         runtimeStateSummary={runtimeStateSummary}

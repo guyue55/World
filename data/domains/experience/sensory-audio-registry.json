@@ -1,0 +1,161 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS M13 感官与声景注册表",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md",
+  "principle": "声音只作为用户主动开启后的空间反馈；首访默认静音，不读取私密层，不引入未知授权资产。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false,
+    "defaultSoundEnabled": false,
+    "storesOnlyLocalPreference": true
+  },
+  "runtime": {
+    "component": "src/components/world/RuntimeSoundscapeControl.tsx",
+    "library": "src/lib/sensory-audio.ts",
+    "storageKey": "guyue-world:soundscape-preference",
+    "volumeStorageKey": "guyue-world:soundscape-volume",
+    "defaultVolume": 0.35,
+    "maxVolume": 0.7,
+    "usesHtmlAudio": false,
+    "usesWebAudio": true,
+    "usesExternalAudioAsset": false,
+    "usesHowler": false,
+    "usesTone": false,
+    "autoPlayAllowed": false,
+    "lazyLoadPolicy": "Web Audio context is created only inside an explicit user click handler."
+  },
+  "modes": [
+    {
+      "id": "muted",
+      "label": "静音",
+      "description": "默认模式，不创建音频上下文。"
+    },
+    {
+      "id": "preview",
+      "label": "试音",
+      "description": "用户点击后播放一次短促场景提示音。"
+    },
+    {
+      "id": "enabled",
+      "label": "开启",
+      "description": "用户主动开启后，场景切换可播放极短空间反馈。"
+    }
+  ],
+  "sceneSoundscapes": [
+    {
+      "sceneId": "gateway",
+      "label": "入口回声",
+      "reason": "用于确认已经抵达世界入口。",
+      "tone": "warm-bell",
+      "frequency": 392,
+      "durationMs": 180,
+      "maxGain": 0.045,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "atlas",
+      "label": "星图脉冲",
+      "reason": "用于表达关系网络被点亮。",
+      "tone": "soft-pulse",
+      "frequency": 246,
+      "durationMs": 220,
+      "maxGain": 0.035,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "timeline",
+      "label": "时间涟漪",
+      "reason": "用于表达时间流经过。",
+      "tone": "river-chime",
+      "frequency": 329,
+      "durationMs": 210,
+      "maxGain": 0.032,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "archive",
+      "label": "抽屉轻响",
+      "reason": "用于表达档案被打开。",
+      "tone": "paper-tap",
+      "frequency": 196,
+      "durationMs": 150,
+      "maxGain": 0.03,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "paths",
+      "label": "步进信号",
+      "reason": "用于表达旅程进入下一段。",
+      "tone": "step-signal",
+      "frequency": 440,
+      "durationMs": 160,
+      "maxGain": 0.034,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "path-detail",
+      "label": "路线定位",
+      "reason": "用于表达旅程路线被锁定。",
+      "tone": "route-lock",
+      "frequency": 415,
+      "durationMs": 170,
+      "maxGain": 0.032,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "node",
+      "label": "房间静响",
+      "reason": "用于表达进入具体内容房间。",
+      "tone": "room-soft",
+      "frequency": 294,
+      "durationMs": 140,
+      "maxGain": 0.026,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "lighthouse",
+      "label": "灯塔信标",
+      "reason": "用于表达公开导览已响应。",
+      "tone": "beacon-ping",
+      "frequency": 523,
+      "durationMs": 190,
+      "maxGain": 0.038,
+      "loadPolicy": "opt-in-generated"
+    },
+    {
+      "sceneId": "status",
+      "label": "维护心跳",
+      "reason": "用于表达运行状态可被审计。",
+      "tone": "status-tick",
+      "frequency": 220,
+      "durationMs": 130,
+      "maxGain": 0.028,
+      "loadPolicy": "opt-in-generated"
+    }
+  ],
+  "assetInventory": [
+    {
+      "assetId": "generated-web-audio-short-tone",
+      "kind": "audio-generated",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "notes": "运行时振荡器合成短提示音，不下载外部音频文件。"
+    }
+  ],
+  "acceptance": {
+    "requiredScenes": ["gateway", "atlas", "timeline", "archive", "paths", "path-detail", "node", "lighthouse", "status"],
+    "requiredRuntimeTokens": ["defaultSoundEnabled", "autoPlayAllowed", "storageKey", "sceneSoundscapes", "assetInventory"],
+    "forbiddenTokens": ["howler", "tone", ".mp3", ".wav", ".ogg", "OPENAI_API_KEY", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"]
+  }
+}

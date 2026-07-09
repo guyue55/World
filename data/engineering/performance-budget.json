@@ -46,6 +46,12 @@
       "level": "warning"
     },
     {
+      "id": "audio-policy",
+      "target": "no audio file or audio context on first paint; sound only after explicit opt-in",
+      "scope": "sensory/audio",
+      "level": "warning"
+    },
+    {
       "id": "search-policy",
       "target": "local search index can be split when public nodes grow",
       "scope": "archive/search",
@@ -56,6 +62,7 @@
     "首页不一次性渲染完整世界。",
     "状态页和骨架页可以重，但必须组件化隔离，未来可拆分或懒加载。",
     "动态图形、2.5D、星图、WebXR 不得进入 V1 首屏关键路径。",
+    "音频不得自动播放，用户开启前不得下载外部音频文件。",
     "搜索、图谱、统计、面板类功能必须允许渐进加载。",
     "性能预算超限时优先做结构拆分，而不是压缩可维护性。"
   ]

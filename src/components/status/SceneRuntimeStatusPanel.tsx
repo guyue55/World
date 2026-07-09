@@ -1,6 +1,7 @@
 import { Compass, GitBranch, Map, ShieldCheck } from 'lucide-react'
 import type { AmbientEnvironmentSummary } from '@/lib/ambient-environment'
 import type { JourneyMemorySummary } from '@/lib/journey-memory'
+import type { SensoryAudioSummary } from '@/lib/sensory-audio'
 import type { SceneRuntimeSummary } from '@/lib/scene-runtime'
 import type { ScenePersonalitySummary } from '@/lib/scene-personality'
 import type { SceneTransitionSummary } from '@/lib/scene-transition'
@@ -10,6 +11,7 @@ export function SceneRuntimeStatusPanel({
   summary,
   ambientEnvironmentSummary,
   journeyMemorySummary,
+  sensoryAudioSummary,
   personalitySummary,
   transitionSummary,
   runtimeStateSummary,
@@ -17,6 +19,7 @@ export function SceneRuntimeStatusPanel({
   summary: SceneRuntimeSummary
   ambientEnvironmentSummary?: AmbientEnvironmentSummary
   journeyMemorySummary?: JourneyMemorySummary
+  sensoryAudioSummary?: SensoryAudioSummary
   personalitySummary?: ScenePersonalitySummary
   transitionSummary?: SceneTransitionSummary
   runtimeStateSummary?: WorldRuntimeStateSummary
@@ -261,6 +264,52 @@ export function SceneRuntimeStatusPanel({
               <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{ambientEnvironmentSummary.reducedMotionBehavior}</p>
             </div>
           </div>
+        </div>
+      )}
+
+      {sensoryAudioSummary && (
+        <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Sensory Audio M13</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">声景只在用户主动开启后成为空间反馈</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
+                首访默认静音；当前只使用项目内 Web Audio 短提示音，不下载外部音频文件，不把声音放进首屏关键路径。
+              </p>
+            </div>
+            <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
+              <p className="text-xs font-semibold tracking-[0.22em] text-gold">SOUNDSCAPES</p>
+              <p className="mt-2 text-2xl font-semibold">{sensoryAudioSummary.soundscapeCount}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-4">
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">默认声音</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.defaultSoundEnabled ? '开启' : '静音'}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">自动播放</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.autoPlayAllowed ? '允许' : '禁止'}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">外部音频</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.usesExternalAudioAsset ? '存在' : '无'}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">资产清单</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.assetCount} 项</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-2 md:grid-cols-3">
+            {sensoryAudioSummary.sceneLabels.slice(0, 9).map((label) => (
+              <p key={label} className="rounded-[0.9rem] bg-white/65 px-4 py-3 text-sm leading-6 text-ink/62">
+                {label}
+              </p>
+            ))}
+          </div>
+          <p className="mt-4 rounded-[0.9rem] bg-ink/5 px-4 py-3 text-xs leading-5 text-ink/52">
+            {sensoryAudioSummary.lazyLoadPolicy}
+          </p>
         </div>
       )}
 

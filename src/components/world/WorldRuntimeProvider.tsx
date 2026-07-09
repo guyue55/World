@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { MotionConfig } from 'framer-motion'
 import { RuntimeAtmosphere } from './RuntimeAtmosphere'
 import { RuntimeSignalDock } from './RuntimeSignalDock'
+import { RuntimeSoundscapeControl } from './RuntimeSoundscapeControl'
 import {
   buildJourneyMemoryEntry,
   getJourneyStorageKeys,
@@ -12,6 +13,7 @@ import {
   mergeJourneyHistory,
   type JourneyMemoryEntry,
 } from '@/lib/journey-memory'
+import { clampSoundscapeVolume, getSensoryAudioRegistry } from '@/lib/sensory-audio'
 import {
   buildWorldRuntimeState,
   type WorldMotionMode,
@@ -25,6 +27,7 @@ export type DayPeriod = 'dawn' | 'day' | 'dusk' | 'night'
 export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
 export type AiRuntimeStatus = 'enabled' | 'low-light' | 'disabled'
 export type MotionPreference = 'system' | 'reduced' | 'off'
+export type WorldSoundMode = 'muted' | 'enabled'
 
 type WorldRuntime = {
   dayPeriod: DayPeriod
@@ -39,18 +42,25 @@ type WorldRuntime = {
   reducedMotion: boolean
   compactMotion: boolean
   motionPreference: MotionPreference
+  soundMode: WorldSoundMode
+  soundVolume: number
   currentJourney: JourneyMemoryEntry | null
   lastJourney: JourneyMemoryEntry | null
   journeyHistory: JourneyMemoryEntry[]
   visitedCount: number
   setReducedMotion: (value: boolean) => void
   setMotionPreference: (value: MotionPreference) => void
+  setSoundMode: (value: WorldSoundMode) => void
+  setSoundVolume: (value: number) => void
 }
 
 const WorldRuntimeContext = createContext<WorldRuntime | null>(null)
 
 const visitedKey = 'guyue-world:visited-count'
 const journeyStorageKeys = getJourneyStorageKeys()
+const sensoryAudioRegistry = getSensoryAudioRegistry()
+const soundModeKey = sensoryAudioRegistry.runtime.storageKey
+const soundVolumeKey = sensoryAudioRegistry.runtime.volumeStorageKey
 
 function getDayPeriod(hour: number): DayPeriod {
   if (hour >= 5 && hour < 9) return 'dawn'
@@ -113,6 +123,39 @@ function readVisitedCount() {
   }
 }
 
+function readSoundMode(): WorldSoundMode {
+  try {
+    return window.localStorage.getItem(soundModeKey) === 'enabled' ? 'enabled' : 'muted'
+  } catch {
+    return 'muted'
+  }
+}
+
+function writeSoundMode(value: WorldSoundMode) {
+  try {
+    window.localStorage.setItem(soundModeKey, value)
+  } catch {
+    // 声音偏好只是本地体验增强；存储失败时保持默认静音。
+  }
+}
+
+function readSoundVolume() {
+  try {
+    const raw = window.localStorage.getItem(soundVolumeKey)
+    return clampSoundscapeVolume(raw ? Number(raw) : sensoryAudioRegistry.runtime.defaultVolume)
+  } catch {
+    return sensoryAudioRegistry.runtime.defaultVolume
+  }
+}
+
+function writeSoundVolume(value: number) {
+  try {
+    window.localStorage.setItem(soundVolumeKey, String(clampSoundscapeVolume(value)))
+  } catch {
+    // 声音偏好只是本地体验增强；存储失败时保持默认音量。
+  }
+}
+
 export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const [dayPeriod, setDayPeriod] = useState<DayPeriod>('day')
@@ -121,6 +164,8 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const [reducedMotion, setReducedMotion] = useState(false)
   const [compactMotion, setCompactMotion] = useState(false)
   const [motionPreference, setMotionPreference] = useState<MotionPreference>('system')
+  const [soundMode, setSoundModeState] = useState<WorldSoundMode>('muted')
+  const [soundVolume, setSoundVolumeState] = useState(sensoryAudioRegistry.runtime.defaultVolume)
   const [hydrated, setHydrated] = useState(false)
   const [currentJourney, setCurrentJourney] = useState<JourneyMemoryEntry | null>(null)
   const [lastJourney, setLastJourney] = useState<JourneyMemoryEntry | null>(null)
@@ -134,6 +179,8 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     setSeason(getSeason(now.getMonth()))
     setLastJourney(readJourneyMemory())
     setJourneyHistory(readJourneyHistory())
+    setSoundModeState(readSoundMode())
+    setSoundVolumeState(readSoundVolume())
 
     const nextVisitedCount = readVisitedCount() + 1
     setVisitedCount(nextVisitedCount)
@@ -190,6 +237,17 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     [aiStatus, compactMotion, hydrated, lastJourney?.path, motionPreference, pathname, reducedMotion, visitedCount]
   )
 
+  function setSoundMode(value: WorldSoundMode) {
+    setSoundModeState(value)
+    writeSoundMode(value)
+  }
+
+  function setSoundVolume(value: number) {
+    const nextValue = clampSoundscapeVolume(value)
+    setSoundVolumeState(nextValue)
+    writeSoundVolume(nextValue)
+  }
+
   const value = useMemo<WorldRuntime>(() => ({
     dayPeriod,
     season,
@@ -203,19 +261,24 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     reducedMotion,
     compactMotion,
     motionPreference,
+    soundMode,
+    soundVolume,
     currentJourney,
     lastJourney,
     journeyHistory,
     visitedCount,
     setReducedMotion,
     setMotionPreference,
-  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, motionPreference, reducedMotion, sceneRuntime, season, visitedCount])
+    setSoundMode,
+    setSoundVolume,
+  }), [aiStatus, compactMotion, currentJourney, dayPeriod, journeyHistory, lastJourney, motionPreference, reducedMotion, sceneRuntime, season, soundMode, soundVolume, visitedCount])
 
   return (
     <WorldRuntimeContext.Provider value={value}>
       <MotionConfig reducedMotion={sceneRuntime.motionMode !== 'full' ? 'always' : 'user'}>
         <RuntimeAtmosphere />
         {children}
+        <RuntimeSoundscapeControl />
         <RuntimeSignalDock />
       </MotionConfig>
     </WorldRuntimeContext.Provider>
