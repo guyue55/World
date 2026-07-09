@@ -166,6 +166,8 @@ export type PathJourneyStepSignal = {
   summary?: string
   caption: string
   orderLabel: string
+  progressLabel: string
+  whyThisStep: string
 }
 
 export type PathJourneySurface = {
@@ -175,6 +177,9 @@ export type PathJourneySurface = {
   boundaryLabel: string
   estimatedLabel: string
   audienceLabel: string
+  promise: string
+  rhythmLabel: string
+  completionHint: string
   steps: PathJourneyStepSignal[]
   nextPaths: Array<{
     id: string
@@ -187,6 +192,11 @@ export type PathJourneySurface = {
     label: string
     description: string
     tone: 'primary' | 'quiet'
+  }>
+  qualitySignals: Array<{
+    label: string
+    value: number | string
+    note: string
   }>
   metrics: Array<{
     label: string

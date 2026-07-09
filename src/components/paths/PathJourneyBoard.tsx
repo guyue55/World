@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Compass, Footprints, Route, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Compass, Footprints, Route, ShieldCheck, Sparkles } from 'lucide-react'
 import type { PathJourneySurface } from '@/lib/public-world-surfaces'
 import { useGsapEntrance } from '@/components/world/useGsapEntrance'
 import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
@@ -39,10 +39,28 @@ export function PathJourneyBoard({ surface }: { surface: PathJourneySurface }) {
                 </p>
               </div>
             </div>
+            <div data-gsap-reveal className="mt-5 rounded-[1.1rem] border border-paper/12 bg-paper/8 p-4">
+              <p className="flex items-center gap-2 text-sm font-semibold text-paper">
+                <Sparkles className="h-4 w-4 text-gold" />
+                旅程承诺
+              </p>
+              <p className="mt-2 text-sm leading-7 text-paper/66">{surface.promise}</p>
+            </div>
           </div>
         </div>
 
         <div className="grid gap-5 p-7 md:p-8">
+          <div data-gsap-reveal className="grid gap-3 lg:grid-cols-[1fr_1fr]">
+            <div className="rounded-[1.2rem] border border-ink/8 bg-paper/70 p-5">
+              <p className="text-sm font-semibold text-ink/72">阅读节奏</p>
+              <p className="mt-2 text-lg font-semibold text-ink">{surface.rhythmLabel}</p>
+            </div>
+            <div className="rounded-[1.2rem] border border-ink/8 bg-paper/70 p-5">
+              <p className="text-sm font-semibold text-ink/72">完成后</p>
+              <p className="mt-2 text-sm leading-7 text-ink/62">{surface.completionHint}</p>
+            </div>
+          </div>
+
           <div data-gsap-reveal className="grid gap-3 sm:grid-cols-4">
             {surface.metrics.map((metric) => (
               <div key={metric.label} className="rounded-[1.1rem] bg-paper/70 p-4">
@@ -53,19 +71,35 @@ export function PathJourneyBoard({ surface }: { surface: PathJourneySurface }) {
             ))}
           </div>
 
+          <div data-gsap-reveal className="grid gap-3 sm:grid-cols-4">
+            {surface.qualitySignals.map((signal) => (
+              <div key={signal.label} className="rounded-[1.1rem] border border-moss/15 bg-moss/8 p-4">
+                <p className="truncate text-2xl font-semibold text-ink">{signal.value}</p>
+                <p className="mt-1 text-sm font-semibold text-ink/72">{signal.label}</p>
+                <p className="mt-1 text-xs leading-5 text-ink/50">{signal.note}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="grid gap-3">
-            {surface.steps.slice(0, 4).map((step) => (
-              <Link key={step.id} href={step.href} data-gsap-reveal className="flex min-w-0 items-center gap-4 rounded-[1.15rem] bg-paper/70 p-4 transition hover:-translate-y-0.5 hover:bg-white">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ink text-xs font-semibold text-paper">
-                  {step.orderLabel.replace('第 ', '').replace(' 步', '')}
+            {surface.steps.slice(0, 5).map((step) => (
+              <Link key={step.id} href={step.href} data-gsap-reveal className="grid min-w-0 gap-3 rounded-[1.15rem] bg-paper/70 p-4 transition hover:-translate-y-0.5 hover:bg-white sm:grid-cols-[2.75rem_minmax(0,1fr)_1rem] sm:items-center">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink text-xs font-semibold text-paper">
+                  {step.progressLabel}
                 </span>
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-semibold text-ink">{step.title}</span>
                   <span className="mt-1 block truncate text-xs text-ink/48">{step.caption}</span>
+                  <span className="mt-2 block text-xs leading-5 text-ink/58">为什么这一步：{step.whyThisStep}</span>
                 </span>
-                <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-moss" />
+                <ArrowRight className="h-4 w-4 shrink-0 text-moss" />
               </Link>
             ))}
+            {surface.steps.length > 5 ? (
+              <p data-gsap-reveal className="rounded-[1rem] border border-ink/8 bg-white/50 px-4 py-3 text-sm leading-6 text-ink/58">
+                余下 {surface.steps.length - 5} 步在下方节点序列中继续展开，避免首屏被长路径压满。
+              </p>
+            ) : null}
           </div>
 
           <div data-gsap-reveal className="rounded-[1.35rem] border border-ink/8 bg-white/55 p-5">

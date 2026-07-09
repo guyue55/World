@@ -29,6 +29,15 @@ function archiveNodeSignal(node: Node, areaById: Map<string, Area>): ArchiveDyna
   }
 }
 
+function buildStepReason(index: number, total: number, node: Node, area?: Area) {
+  const areaLabel = area && isPublicArea(area) ? area.worldName : '公开区域'
+  if (index === 0) return `先用「${node.worldTitle ?? node.title}」建立入口和坐标，知道自己为什么来到 ${areaLabel}。`
+  if (index === total - 1) return `最后用这一步收束前面的线索，带着问题回到地图、档案馆或下一条路径。`
+  if (node.lifeStage === 'fruit' || node.featured?.pathCore) return `这是路径里的核心节点，用来把前后两段内容连接成可理解的主线。`
+  if (node.lifeStage === 'bloom') return `这一节点已经进入可公开阅读状态，适合在这里补足背景和判断。`
+  return `这一节点把路径推进到 ${areaLabel}，让旅程不只停留在单个主题。`
+}
+
 export function buildArchiveDynamicSurface(nodes: Node[], areas: Area[], tagLimit = 10): ArchiveDynamicSurface {
   const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
   const publicAreas = areas.filter((area) => area.level === 1 && isPublicArea(area))
@@ -89,6 +98,11 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
   const areaById = new Map(areas.map((area) => [area.id, area]))
   const publicNodes = nodes.filter((node) => isPublicVisible(node.visibility))
   const estimatedMinutes = path.estimatedMinutes ?? Math.max(8, publicNodes.length * 4)
+  const areaCount = new Set(publicNodes.map((node) => node.areaId)).size
+  const lifeStageCount = new Set(publicNodes.map((node) => node.lifeStage)).size
+  const completionHint = nextPaths[0]
+    ? `读完后建议继续「${nextPaths[0].title}」，也可以随时回到地图重新选择区域。`
+    : '读完后可以回到地图重新选择区域，或进入档案馆按关键词继续检索。'
 
   return {
     eyebrow: '动态路径',
@@ -97,6 +111,9 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
     boundaryLabel: '只含公开节点 · 可随时返回',
     estimatedLabel: `约 ${estimatedMinutes} 分钟`,
     audienceLabel: formatPathAudience(path.audience),
+    promise: `${path.title} 会帮你从「${publicNodes[0]?.worldTitle ?? publicNodes[0]?.title ?? '公开入口'}」进入，沿 ${publicNodes.length} 个公开节点形成一次完整抵达。`,
+    rhythmLabel: `${publicNodes.length} 步 · ${areaCount} 个公开区域 · 约 ${estimatedMinutes} 分钟`,
+    completionHint,
     steps: publicNodes.map((node, index) => {
       const area = areaById.get(node.areaId)
 
@@ -107,6 +124,8 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
         summary: node.summary,
         caption: `${area && isPublicArea(area) ? area.worldName : '公开节点'} · ${node.type}`,
         orderLabel: `第 ${index + 1} 步`,
+        progressLabel: `${index + 1}/${publicNodes.length}`,
+        whyThisStep: buildStepReason(index, publicNodes.length, node, area),
       }
     }),
     nextPaths: nextPaths.map((item) => ({
@@ -141,6 +160,12 @@ export function buildPathJourneySurface(path: Path, nodes: Node[], nextPaths: Pa
             description: '重新按兴趣选择路线',
             tone: 'quiet',
           },
+    ],
+    qualitySignals: [
+      { label: '旅程步数', value: publicNodes.length, note: '公开节点按顺序组织' },
+      { label: '区域覆盖', value: areaCount, note: '帮助访问者跨区域理解世界' },
+      { label: '生命阶段', value: lifeStageCount, note: '能看到节点从生长到沉淀的状态' },
+      { label: '出口保障', value: nextPaths.length > 0 ? '下一条路径' : '地图 / 档案馆', note: '读完之后仍有清晰去处' },
     ],
     metrics: [
       { label: '公开节点', value: publicNodes.length, note: '按顺序阅读' },

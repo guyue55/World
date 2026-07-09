@@ -1,0 +1,65 @@
+{
+  "name": "WorldOS Phase 24 路径与内容质量精修合同 v1",
+  "updatedAt": "2026-07-09",
+  "source": "Phase 24: path and content quality refinement",
+  "principle": "路径不是节点清单，而是低门槛、可完成、可继续探索的公开阅读旅程。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false,
+    "serverBuildsPublicFacts": true
+  },
+  "minimums": {
+    "publicPaths": 29,
+    "publicNodes": 200,
+    "relations": 398,
+    "pathsWithAtLeastFourNodes": 29,
+    "pathsWithEstimatedMinutes": 29,
+    "pathsWithNarrativeDescription": 29,
+    "pathsWithExitOrNext": 29,
+    "pathsWithMultipleAreas": 18,
+    "averageNodesPerPath": 5
+  },
+  "requiredCommands": [
+    "build:path-quality-ledger",
+    "check:phase24-path-quality",
+    "check:mainline"
+  ],
+  "requiredFiles": [
+    "data/domains/experience/path-journey-quality-ledger.json",
+    "src/lib/path-quality-ledger.ts",
+    "src/components/status/PathQualityLedgerPanel.tsx",
+    "src/components/paths/PathJourneyBoard.tsx",
+    "src/lib/public-surfaces/archive-and-paths.ts"
+  ],
+  "requiredStatusTokens": [
+    "路径质量",
+    "平均节点",
+    "跨区域路径",
+    "local-only"
+  ],
+  "requiredPathJourneyTokens": [
+    "旅程承诺",
+    "阅读节奏",
+    "为什么这一步",
+    "完成后",
+    "surface.qualitySignals"
+  ],
+  "forbiddenClientTokens": [
+    "OPENAI_API_KEY",
+    "ANTHROPIC_API_KEY",
+    "new OpenAI",
+    "responses.create",
+    "chat.completions",
+    "GUYUE_OWNER_TOKEN",
+    "R8_OWNER_TOKEN"
+  ],
+  "releaseStates": {
+    "productionLive": false,
+    "releaseReady": false,
+    "cleanProductionReady": false
+  }
+}
