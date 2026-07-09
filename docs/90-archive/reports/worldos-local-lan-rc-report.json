@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T15:42:03.599Z",
+  "generatedAt": "2026-07-09T15:47:01.054Z",
   "status": "passed",
   "lanIp": "172.30.111.222",
   "baseUrl": "http://172.30.111.222:4320",
@@ -22,8 +22,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -38,8 +38,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 19,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -54,8 +54,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 12,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 13,
       "ok": true,
       "expected": {
         "status": 200,
@@ -70,8 +70,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 18,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 16,
       "ok": true,
       "expected": {
         "status": 200,
@@ -86,8 +86,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 6,
       "ok": true,
       "expected": {
         "status": 200,
@@ -102,8 +102,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 8,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 7,
       "ok": true,
       "expected": {
         "status": 200,
@@ -118,7 +118,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
       "durationMs": 11,
       "ok": true,
       "expected": {
@@ -134,8 +134,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 10,
       "ok": true,
       "expected": {
         "status": 200,
@@ -150,8 +150,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
-      "durationMs": 11,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -166,7 +166,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
       "durationMs": 8,
       "ok": true,
       "expected": {
@@ -182,8 +182,8 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-09T15:41:00.083Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
-      "durationMs": 11,
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-09T15:45:59.452Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "durationMs": 10,
       "ok": true,
       "expected": {
         "status": 200,
@@ -199,7 +199,7 @@
       "contentType": "application/json; charset=UTF-8",
       "location": "",
       "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"/paths\",\n    \"/ask\",\n    \"/manifesto\"\n  ",
-      "durationMs": 1,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 200,
@@ -230,8 +230,8 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-09T15:41:21.685Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
-      "durationMs": 10,
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-09T15:46:19.368Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -361,8 +361,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--NWAQgXFKFYeaX_llv_8QE--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
-      "durationMs": 6,
+      "bodyPreview": "<!DOCTYPE html><!--PnqRNAX_4k7uPtTxL9e5L--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/chunks/742b00fc6c437fea.css\" data-pre",
+      "durationMs": 5,
       "ok": true,
       "expected": {
         "status": 404
@@ -431,7 +431,7 @@
       "metrics": {
         "title": "世界地图｜古月浮屿",
         "h1": "从这里看见整片公开世界。",
-        "textLength": 8962,
+        "textLength": 9364,
         "textSample": "星图 区域 星线 生长 灯塔低光 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 当前抵达星图穹顶：普通公开场景之间使用轻量抵达过渡。 场景定位 / 当前抵达 星图穹顶 / 普通公开场景之间使用轻量抵达过渡。 来源残影 星图穹顶 世界地图 目标预告 星图穹顶 星图 / 浮屿 / 路径 抵达方式 轻量抵达 connection 来源 离开 预告 抵达 沉淀 星图穹顶 星图 区域 星线 沿时间河前进 进入档案馆 星域 区域 节点 星线 路径 雾区 ATLAS · 星图穹顶 从这里看见整片公开世界。 区域不再只是分类卡片，而是一组可进入、可返回、可继续探索的星域。你可以先看主区域，再沿时间河或档案馆深入。 沿时间河继续 打开档案馆 ",
         "hiddenBody": false,
         "scrollWidth": 1440,
@@ -537,7 +537,7 @@
       "metrics": {
         "title": "档案馆｜古月浮屿",
         "h1": "当你不想漫游，就在馆内检索。",
-        "textLength": 21968,
+        "textLength": 23777,
         "textSample": "卷宗 索引 书架 生长 灯塔低光 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 当前抵达档案馆：普通公开场景之间使用轻量抵达过渡。 场景定位 / 当前抵达 档案馆 / 普通公开场景之间使用轻量抵达过渡。 来源残影 档案馆 现实检索与归档 目标预告 档案馆 卷宗 / 书页 / 书架 抵达方式 轻量抵达 emergence 来源 离开 预告 抵达 沉淀 档案馆 卷宗 检索 馆藏 打开精选路径 切回星图 卷宗 索引 书页 标签 馆藏 归档 ARCHIVE · 档案馆 当你不想漫游，就在馆内检索。 档案馆不是普通文章列表，而是公开世界的索引大厅。你可以按区域、标签、生命周期和关键词找到已经放行的节点。 开始检索 切回星图 沿路径进入",
         "hiddenBody": false,
         "scrollWidth": 1440,
@@ -749,7 +749,7 @@
       "metrics": {
         "title": "第一次来到古月浮屿｜古月浮屿",
         "h1": "第一次来到古月浮屿",
-        "textLength": 2531,
+        "textLength": 2597,
         "textSample": "路线 节点 回望 生长 灯塔低光 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 当前抵达旅程路线：普通公开场景之间使用轻量抵达过渡。 场景定位 / 当前抵达 旅程路线 / 普通公开场景之间使用轻量抵达过渡。 来源残影 旅程路线 单条路径详情 目标预告 旅程路线 路线 / 路标 / 下一站 抵达方式 轻量抵达 flow 来源 离开 预告 抵达 沉淀 旅程路线 当前位置、已走节点和下一站共同构成路线感。 沿节点顺序阅读，也随时能回到地图。 当前位置 节点序列 回望 继续到下一站 返回路径入口 古月浮屿 / 精选路径 / 第一次来到古月浮屿 FIRST-TIME 第一次来到古月浮屿 从世界宣言开始，理解这里为什么不是普通博客。 7",
         "hiddenBody": false,
         "scrollWidth": 1440,
@@ -958,7 +958,7 @@
       "metrics": {
         "title": "世界地图｜古月浮屿",
         "h1": "从这里看见整片公开世界。",
-        "textLength": 8866,
+        "textLength": 9268,
         "textSample": "星图 区域 星线 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 当前抵达星图穹顶：直接显示目标页面。 场景定位 / 当前抵达 星图穹顶 / 直接显示目标页面。 来源 离开 预告 抵达 沉淀 星图穹顶 星图 区域 星域 区域 节点 星线 路径 雾区 ATLAS · 星图穹顶 从这里看见整片公开世界。 区域不再只是分类卡片，而是一组可进入、可返回、可继续探索的星域。你可以先看主区域，再沿时间河或档案馆深入。 沿时间河继续 打开档案馆 选择路径 Atlas 区域正在连成穹顶 星图穹顶 · night · summer 公开场景，只展示已放行内容。 8 主区域 公开空间骨架 实时 星线 关系正在连接 时间河 下一幕 从空间转入事件 场景主",
         "hiddenBody": false,
         "scrollWidth": 390,
@@ -1064,7 +1064,7 @@
       "metrics": {
         "title": "档案馆｜古月浮屿",
         "h1": "当你不想漫游，就在馆内检索。",
-        "textLength": 21867,
+        "textLength": 23676,
         "textSample": "卷宗 索引 书架 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 当前抵达档案馆：直接显示目标页面。 场景定位 / 当前抵达 档案馆 / 直接显示目标页面。 来源 离开 预告 抵达 沉淀 档案馆 卷宗 检索 卷宗 索引 书页 标签 馆藏 归档 ARCHIVE · 档案馆 当你不想漫游，就在馆内检索。 档案馆不是普通文章列表，而是公开世界的索引大厅。你可以按区域、标签、生命周期和关键词找到已经放行的节点。 开始检索 切回星图 沿路径进入 Archive 卷宗正在归位 档案馆 · night · summer 公开场景，只展示已放行内容。 200 公开节点 只来自公开索引 8 区域 馆藏按空间归类 公开 边界 私密层不进入前台 场景主体",
         "hiddenBody": false,
         "scrollWidth": 390,
@@ -1276,7 +1276,7 @@
       "metrics": {
         "title": "第一次来到古月浮屿｜古月浮屿",
         "h1": "第一次来到古月浮屿",
-        "textLength": 2445,
+        "textLength": 2511,
         "textSample": "路线 节点 回望 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 当前抵达旅程路线：直接显示目标页面。 场景定位 / 当前抵达 旅程路线 / 直接显示目标页面。 来源 离开 预告 抵达 沉淀 旅程路线 当前位置、已走节点和下一站共同构成路线感。 沿节点顺序阅读，也随时能回到地图。 当前位置 节点序列 继续到下一站 返回路径入口 古月浮屿 / 精选路径 / 第一次来到古月浮屿 FIRST-TIME 第一次来到古月浮屿 从世界宣言开始，理解这里为什么不是普通博客。 7 个节点 约 12 分钟 public PATH · 旅程路线 这条路径是一段可以完成的旅程。 当前路线包含 7 个公开节点，目标是把分散内容组织成起点、途中站和抵达后的下",
         "hiddenBody": false,
         "scrollWidth": 390,

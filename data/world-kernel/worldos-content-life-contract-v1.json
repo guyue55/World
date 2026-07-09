@@ -4,7 +4,7 @@
   "source": "阶段 3A：内容生命主线收束",
   "principle": "公开内容必须能被地图、路径、时间线、档案馆共同吸收；精选内容必须有摘要、区域、正文、关系、生命周期和推荐路径。",
   "qualityGates": {
-    "minSummaryLength": 18,
+    "minSummaryLength": 24,
     "minPublicNodes": 50,
     "minPublicPaths": 12,
     "minRelations": 80,

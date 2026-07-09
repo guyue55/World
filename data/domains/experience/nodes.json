@@ -331,7 +331,7 @@
     "title": "入口清澈，深处浩瀚",
     "type": "fragment",
     "areaId": "fragments",
-    "summary": "第一眼要清楚，继续走下去才发现深处。",
+    "summary": "第一眼要清楚，继续走下去才发现深处。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "tags": [
       "ux",
       "principle",
@@ -1467,7 +1467,7 @@
     "worldTitle": "内容搬迁",
     "type": "article",
     "areaId": "workshop",
-    "summary": "从旧格式迁移到世界节点结构的自动化脚本经验。",
+    "summary": "从旧格式迁移到世界节点结构的自动化脚本经验。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/articles/content-migration-script.md",
     "tags": [
       "maintenance",
@@ -1490,7 +1490,7 @@
     "worldTitle": "索引引擎",
     "type": "article",
     "areaId": "workshop",
-    "summary": "自动生成公开世界对象索引的工具设计与实现。",
+    "summary": "自动生成公开世界对象索引的工具设计与实现。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/articles/world-index-generator.md",
     "tags": [
       "export",
@@ -1513,7 +1513,7 @@
     "worldTitle": "创世台",
     "type": "article",
     "areaId": "workshop",
-    "summary": "世界维护者的本地工作台设计原则与交互边界。",
+    "summary": "世界维护者的本地工作台设计原则与交互边界。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/articles/owner-workbench-design.md",
     "tags": [
       "world",
@@ -1558,7 +1558,7 @@
     "worldTitle": "世界法则",
     "type": "article",
     "areaId": "origin",
-    "summary": "定义世界如何与外部能力交互的协议规范。",
+    "summary": "定义世界如何与外部能力交互的协议规范。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/world-protocol-document.md",
     "tags": [
       "protocol",
@@ -1581,7 +1581,7 @@
     "worldTitle": "审计框架",
     "type": "article",
     "areaId": "origin",
-    "summary": "如何审计一个个人数字世界的健康度和诚实度。",
+    "summary": "如何审计一个个人数字世界的健康度和诚实度。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/world-audit-method.md",
     "tags": [
       "audit",
@@ -1603,7 +1603,7 @@
     "worldTitle": "健康仪表",
     "type": "article",
     "areaId": "origin",
-    "summary": "量化世界健康度的指标体系设计与仪表盘。",
+    "summary": "量化世界健康度的指标体系设计与仪表盘。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/world-health-metrics.md",
     "tags": [
       "metrics",
@@ -1625,7 +1625,7 @@
     "worldTitle": "传承法则",
     "type": "article",
     "areaId": "origin",
-    "summary": "定义世界在创作者不在后如何处理的协议文档。",
+    "summary": "定义世界在创作者不在后如何处理的协议文档。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/world-inheritance-protocol-node.md",
     "tags": [
       "export",
@@ -1648,7 +1648,7 @@
     "worldTitle": "上线前夜",
     "type": "article",
     "areaId": "timeline",
-    "summary": "从 RC8 到真实上线的准备过程与待办清单。",
+    "summary": "从 RC8 到真实上线的准备过程与待办清单。作为时间河里的阶段标记，帮助访问者看见项目演进、修复节奏和下一步方向。",
     "contentPath": "content/articles/rc9-preparation-record.md",
     "tags": [
       "rc",
@@ -1670,7 +1670,7 @@
     "worldTitle": "修复记录",
     "type": "article",
     "areaId": "timeline",
-    "summary": "本月世界修复日的变更记录与经验沉淀。",
+    "summary": "本月世界修复日的变更记录与经验沉淀。作为时间河里的阶段标记，帮助访问者看见项目演进、修复节奏和下一步方向。",
     "contentPath": "content/articles/monthly-fix-log-2026-07.md",
     "tags": [
       "fix",
@@ -1692,7 +1692,7 @@
     "worldTitle": "季度回望",
     "type": "article",
     "areaId": "timeline",
-    "summary": "第三季度世界方向审视与下阶段调整记录。",
+    "summary": "第三季度世界方向审视与下阶段调整记录。作为时间河里的阶段标记，帮助访问者看见项目演进、修复节奏和下一步方向。",
     "contentPath": "content/articles/quarterly-review-2026-q3.md",
     "tags": [
       "timeline",
@@ -1715,7 +1715,7 @@
     "worldTitle": "星线互联",
     "type": "article",
     "areaId": "fragments",
-    "summary": "多个个人世界之间通过星线互联的联邦化设想。",
+    "summary": "多个个人世界之间通过星线互联的联邦化设想。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "contentPath": "content/articles/federation-vision.md",
     "tags": [
       "federation",
@@ -1738,7 +1738,7 @@
     "worldTitle": "互操作设想",
     "type": "article",
     "areaId": "fragments",
-    "summary": "不同个人数字世界之间互操作的协议设想。",
+    "summary": "不同个人数字世界之间互操作的协议设想。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "contentPath": "content/articles/world-interop-protocol.md",
     "tags": [
       "interop",
@@ -1761,7 +1761,7 @@
     "worldTitle": "边界演化",
     "type": "article",
     "areaId": "fragments",
-    "summary": "AI 能力增强时世界边界如何同步进化的思考。",
+    "summary": "AI 能力增强时世界边界如何同步进化的思考。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "contentPath": "content/articles/ai-boundary-evolution.md",
     "tags": [
       "ai",
@@ -1784,7 +1784,7 @@
     "worldTitle": "语言规范",
     "type": "article",
     "areaId": "fragments",
-    "summary": "古月浮屿内容撰写的语言风格与表达规范。",
+    "summary": "古月浮屿内容撰写的语言风格与表达规范。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "contentPath": "content/articles/world-language-style-guide.md",
     "tags": [
       "language",
@@ -1807,7 +1807,7 @@
     "worldTitle": "四季光影",
     "type": "article",
     "areaId": "memory",
-    "summary": "不同季节窗边光线的脱敏记录与四季感受。",
+    "summary": "不同季节窗边光线的脱敏记录与四季感受。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/articles/seasonal-light-record.md",
     "tags": [
       "timeline",
@@ -1830,7 +1830,7 @@
     "worldTitle": "修复仪式",
     "type": "article",
     "areaId": "memory",
-    "summary": "世界修复日仪式的公开片段与维护心得。",
+    "summary": "世界修复日仪式的公开片段与维护心得。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/articles/repair-day-ritual-public.md",
     "tags": [
       "maintenance",
@@ -1853,7 +1853,7 @@
     "worldTitle": "日常锚点",
     "type": "article",
     "areaId": "memory",
-    "summary": "一段关于晨间咖啡与工作节奏的脱敏记忆。",
+    "summary": "一段关于晨间咖啡与工作节奏的脱敏记忆。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/articles/morning-coffee-coordinates.md",
     "tags": [
       "life"
@@ -1874,7 +1874,7 @@
     "worldTitle": "迁移档案",
     "type": "article",
     "areaId": "archive",
-    "summary": "从旧博客到世界节点结构的内容迁移历史记录。",
+    "summary": "从旧博客到世界节点结构的内容迁移历史记录。作为档案馆索引条目，帮助回看治理、迁移和版本历史，而不是散落成普通日志。",
     "contentPath": "content/articles/content-migration-history.md",
     "tags": [
       "maintenance",
@@ -1897,7 +1897,7 @@
     "worldTitle": "治理档案",
     "type": "article",
     "areaId": "archive",
-    "summary": "254 个脚本的治理过程与收束记录。",
+    "summary": "254 个脚本的治理过程与收束记录。作为档案馆索引条目，帮助回看治理、迁移和版本历史，而不是散落成普通日志。",
     "contentPath": "content/articles/script-governance-history.md",
     "tags": [
       "script",
@@ -1920,7 +1920,7 @@
     "worldTitle": "灯塔蓝图",
     "type": "article",
     "areaId": "lighthouse",
-    "summary": "AI 灯塔的系统设计与低光降级策略文档。",
+    "summary": "AI 灯塔的系统设计与低光降级策略文档。作为灯塔边界材料，说明 AI 可以照路但不能越权、写入或替人决定。",
     "contentPath": "content/articles/lighthouse-design-document.md",
     "tags": [
       "lighthouse",
@@ -1943,7 +1943,7 @@
     "worldTitle": "提示工程",
     "type": "article",
     "areaId": "lighthouse",
-    "summary": "灯塔 AI 问答的提示词设计与上下文裁剪策略。",
+    "summary": "灯塔 AI 问答的提示词设计与上下文裁剪策略。作为灯塔边界材料，说明 AI 可以照路但不能越权、写入或替人决定。",
     "contentPath": "content/articles/lighthouse-prompt-engineering.md",
     "tags": [
       "ai",
@@ -2284,7 +2284,7 @@
     "worldTitle": "世界编年史",
     "type": "article",
     "areaId": "origin",
-    "summary": "记录世界从诞生到现在的关键进化节点和设计决策。",
+    "summary": "记录世界从诞生到现在的关键进化节点和设计决策。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/world-evolution-log.md",
     "tags": [
       "world",
@@ -3255,7 +3255,7 @@
     "worldTitle": "阅读顺序",
     "type": "article",
     "areaId": "origin",
-    "summary": "为节点、区域、关系、路径、事件建立推荐阅读顺序",
+    "summary": "为节点、区域、关系、路径、事件建立推荐阅读顺序。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/world-model-reading-order.md",
     "tags": [
       "phase19",
@@ -3284,7 +3284,7 @@
     "worldTitle": "待客规则",
     "type": "article",
     "areaId": "origin",
-    "summary": "把降低门槛翻译成页面、文案和路径的待客规则",
+    "summary": "把降低门槛翻译成页面、文案和路径的待客规则。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/public-world-hospitality-rule.md",
     "tags": [
       "phase19",
@@ -3313,7 +3313,7 @@
     "worldTitle": "本地优先",
     "type": "article",
     "areaId": "origin",
-    "summary": "说明为什么当前先打磨本地和局域网体验",
+    "summary": "说明为什么当前先打磨本地和局域网体验。作为世界规则和起源解释的公开锚点，帮助访问者理解项目为什么这样运行。",
     "contentPath": "content/articles/worldos-local-first-principle.md",
     "tags": [
       "phase19",
@@ -3516,7 +3516,7 @@
     "worldTitle": "相似度门禁",
     "type": "article",
     "areaId": "tech",
-    "summary": "解释 jaccard 检查如何阻止复读机式节点",
+    "summary": "解释 jaccard 检查如何阻止复读机式节点。作为技术区域的实践节点，连接架构、性能、脚本和可维护性经验。",
     "contentPath": "content/articles/content-jaccard-quality-gate.md",
     "tags": [
       "phase19",
@@ -3632,7 +3632,7 @@
     "worldTitle": "主题架构",
     "type": "article",
     "areaId": "tech",
-    "summary": "记录深色模式如何通过 CSS 变量驱动色板",
+    "summary": "记录深色模式如何通过 CSS 变量驱动色板。作为技术区域的实践节点，连接架构、性能、脚本和可维护性经验。",
     "contentPath": "content/articles/theme-css-variable-architecture.md",
     "tags": [
       "phase19",
@@ -3748,7 +3748,7 @@
     "worldTitle": "体积观察",
     "type": "article",
     "areaId": "tech",
-    "summary": "整理构建体积增长与内容扩展之间的关系",
+    "summary": "整理构建体积增长与内容扩展之间的关系。作为技术区域的实践节点，连接架构、性能、脚本和可维护性经验。",
     "contentPath": "content/articles/build-size-observation-log.md",
     "tags": [
       "phase19",
@@ -3777,7 +3777,7 @@
     "worldTitle": "搜索权重",
     "type": "article",
     "areaId": "tech",
-    "summary": "为灯塔搜索标题、标签、摘要权重调优做准备",
+    "summary": "为灯塔搜索标题、标签、摘要权重调优做准备。作为技术区域的实践节点，连接架构、性能、脚本和可维护性经验。",
     "contentPath": "content/articles/search-weighting-experiment.md",
     "tags": [
       "phase19",
@@ -3806,7 +3806,7 @@
     "worldTitle": "工作台故事",
     "type": "project",
     "areaId": "workshop",
-    "summary": "把审核队列、导出任务和维护提醒串成一个产品故事",
+    "summary": "把审核队列、导出任务和维护提醒串成一个产品故事。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/projects/owner-review-workbench-story.md",
     "tags": [
       "phase19",
@@ -3893,7 +3893,7 @@
     "worldTitle": "卡片系统",
     "type": "project",
     "areaId": "workshop",
-    "summary": "描述节点卡片如何在首页、地图、档案馆保持一致",
+    "summary": "描述节点卡片如何在首页、地图、档案馆保持一致。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/projects/worldos-reading-card-system.md",
     "tags": [
       "phase19",
@@ -3922,7 +3922,7 @@
     "worldTitle": "路径进度",
     "type": "project",
     "areaId": "workshop",
-    "summary": "为后续路径旅程加入当前进度和下一步动作",
+    "summary": "为后续路径旅程加入当前进度和下一步动作。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/projects/path-progress-widget-idea.md",
     "tags": [
       "phase19",
@@ -3951,7 +3951,7 @@
     "worldTitle": "筛选体验",
     "type": "project",
     "areaId": "workshop",
-    "summary": "记录类型、区域、标签筛选如何降低查找成本",
+    "summary": "记录类型、区域、标签筛选如何降低查找成本。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/projects/archive-filter-ergonomics.md",
     "tags": [
       "phase19",
@@ -3980,7 +3980,7 @@
     "worldTitle": "移动入口",
     "type": "project",
     "areaId": "workshop",
-    "summary": "说明小屏幕上入口、导航和状态卡如何避免拥挤",
+    "summary": "说明小屏幕上入口、导航和状态卡如何避免拥挤。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/projects/mobile-route-entry-polish.md",
     "tags": [
       "phase19",
@@ -4038,7 +4038,7 @@
     "worldTitle": "维护面板",
     "type": "project",
     "areaId": "workshop",
-    "summary": "构思内容密度、相似度和孤岛节点的维护视图",
+    "summary": "构思内容密度、相似度和孤岛节点的维护视图。作为创作工坊的维护记录，说明工具、脚本和工作台如何支撑世界持续生长。",
     "contentPath": "content/projects/content-maintenance-dashboard-draft.md",
     "tags": [
       "phase19",
@@ -4125,7 +4125,7 @@
     "worldTitle": "安静界面",
     "type": "fragment",
     "areaId": "fragments",
-    "summary": "记录克制界面比堆满组件更适合个人世界",
+    "summary": "记录克制界面比堆满组件更适合个人世界。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "contentPath": "content/fragments/quiet-interface-thought.md",
     "tags": [
       "phase19",
@@ -4241,7 +4241,7 @@
     "worldTitle": "首屏",
     "type": "fragment",
     "areaId": "fragments",
-    "summary": "提醒首页第一屏要帮人而不是炫耀系统复杂度",
+    "summary": "提醒首页第一屏要帮人而不是炫耀系统复杂度。作为碎片星群里的设想种子，保留未来扩展方向，同时避免把概念误当成已上线能力。",
     "contentPath": "content/fragments/first-screen-kindness.md",
     "tags": [
       "phase19",
@@ -4357,7 +4357,7 @@
     "worldTitle": "台灯",
     "type": "memory",
     "areaId": "memory",
-    "summary": "记录 build 通过后回看页面的安静瞬间",
+    "summary": "记录 build 通过后回看页面的安静瞬间。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/memory/desk-lamp-after-build.md",
     "tags": [
       "phase19",
@@ -4386,7 +4386,7 @@
     "worldTitle": "手机访问",
     "type": "memory",
     "areaId": "memory",
-    "summary": "记录用手机打开 LAN 地址时的真实体验",
+    "summary": "记录用手机打开 LAN 地址时的真实体验。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/memory/lan-phone-first-visit.md",
     "tags": [
       "phase19",
@@ -4415,7 +4415,7 @@
     "worldTitle": "咖啡脚本",
     "type": "memory",
     "areaId": "memory",
-    "summary": "把脚本计数同步这种小事记录成维护记忆",
+    "summary": "把脚本计数同步这种小事记录成维护记忆。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/memory/coffee-and-script-registry.md",
     "tags": [
       "phase19",
@@ -4473,7 +4473,7 @@
     "worldTitle": "修复日",
     "type": "memory",
     "areaId": "memory",
-    "summary": "记录一次没有新增功能、只复核边界的维护日",
+    "summary": "记录一次没有新增功能、只复核边界的维护日。作为脱敏记忆的公开坐标，只保留可分享的生活节奏和维护感受，不暴露私密原文。",
     "contentPath": "content/memory/repair-day-breathing-room.md",
     "tags": [
       "phase19",
@@ -4589,7 +4589,7 @@
     "worldTitle": "主题稳定",
     "type": "event",
     "areaId": "timeline",
-    "summary": "记录深色模式从半成品风险到完整可用的修复过程",
+    "summary": "记录深色模式从半成品风险到完整可用的修复过程。作为时间河里的阶段标记，帮助访问者看见项目演进、修复节奏和下一步方向。",
     "contentPath": "content/articles/theme-system-stabilized.md",
     "tags": [
       "phase19",
@@ -4676,7 +4676,7 @@
     "worldTitle": "warning 归零",
     "type": "event",
     "areaId": "timeline",
-    "summary": "记录主线门面拆分后 warning 清零",
+    "summary": "记录主线门面拆分后 warning 清零。作为时间河里的阶段标记，帮助访问者看见项目演进、修复节奏和下一步方向。",
     "contentPath": "content/articles/lib-warning-zero-milestone.md",
     "tags": [
       "phase19",
@@ -4705,7 +4705,7 @@
     "worldTitle": "相似度守门",
     "type": "event",
     "areaId": "timeline",
-    "summary": "记录复读机式节点被 jaccard 检查约束",
+    "summary": "记录复读机式节点被 jaccard 检查约束。作为时间河里的阶段标记，帮助访问者看见项目演进、修复节奏和下一步方向。",
     "contentPath": "content/articles/content-jaccard-guard-added.md",
     "tags": [
       "phase19",
@@ -4792,7 +4792,7 @@
     "worldTitle": "内容台账",
     "type": "document",
     "areaId": "archive",
-    "summary": "记录本轮新增节点、关系、路径和事件的核对方式",
+    "summary": "记录本轮新增节点、关系、路径和事件的核对方式。作为档案馆索引条目，帮助回看治理、迁移和版本历史，而不是散落成普通日志。",
     "contentPath": "content/documents/phase19-content-ledger.md",
     "tags": [
       "phase19",
@@ -4908,7 +4908,7 @@
     "worldTitle": "关系说明",
     "type": "document",
     "areaId": "archive",
-    "summary": "规定强关系 note 应回答为什么相关",
+    "summary": "规定强关系 note 应回答为什么相关。作为档案馆索引条目，帮助回看治理、迁移和版本历史，而不是散落成普通日志。",
     "contentPath": "content/documents/relation-note-style-guide.md",
     "tags": [
       "phase19",
@@ -4995,7 +4995,7 @@
     "worldTitle": "脚本计数",
     "type": "document",
     "areaId": "archive",
-    "summary": "记录新增检查命令时如何同步 registry",
+    "summary": "记录新增检查命令时如何同步 registry。作为档案馆索引条目，帮助回看治理、迁移和版本历史，而不是散落成普通日志。",
     "contentPath": "content/documents/script-count-change-log.md",
     "tags": [
       "phase19",
@@ -5024,7 +5024,7 @@
     "worldTitle": "视觉复核",
     "type": "document",
     "areaId": "archive",
-    "summary": "整理首屏、移动导航、CTA、状态卡的复核字段",
+    "summary": "整理首屏、移动导航、CTA、状态卡的复核字段。作为档案馆索引条目，帮助回看治理、迁移和版本历史，而不是散落成普通日志。",
     "contentPath": "content/documents/visual-qa-review-sheet.md",
     "tags": [
       "phase19",
@@ -5082,7 +5082,7 @@
     "worldTitle": "搜索权重",
     "type": "article",
     "areaId": "lighthouse",
-    "summary": "为标题、世界名、标签、摘要设置更清晰的权重",
+    "summary": "为标题、世界名、标签、摘要设置更清晰的权重。作为灯塔边界材料，说明 AI 可以照路但不能越权、写入或替人决定。",
     "contentPath": "content/articles/lighthouse-search-weight-model.md",
     "tags": [
       "phase19",
@@ -5198,7 +5198,7 @@
     "worldTitle": "审核承诺",
     "type": "article",
     "areaId": "lighthouse",
-    "summary": "说明 AI 输出为什么必须进入人工审核",
+    "summary": "说明 AI 输出为什么必须进入人工审核。作为灯塔边界材料，说明 AI 可以照路但不能越权、写入或替人决定。",
     "contentPath": "content/articles/ai-review-queue-promise.md",
     "tags": [
       "phase19",
