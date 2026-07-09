@@ -2,6 +2,7 @@ import { CompassNav } from './CompassNav'
 import { MobileNav } from './MobileNav'
 import { ThemeToggle } from './ThemeToggle'
 import { WorldRuntimeProvider } from './WorldRuntimeProvider'
+import { SceneTransitionShell } from './SceneTransitionShell'
 import { ProductBackdrop } from '@/components/product/ProductBackdrop'
 import { ProductJourneyDock } from '@/components/product/ProductJourneyDock'
 
@@ -17,7 +18,7 @@ export function WorldShell({ children }: { children: React.ReactNode }) {
           <ThemeToggle />
         </div>
         <div id="main-content" tabIndex={-1}>
-          {children}
+          <SceneTransitionShell>{children}</SceneTransitionShell>
         </div>
         <ProductJourneyDock />
         <footer className="world-container mt-16 border-t border-ink/10 py-10 text-sm text-ink/60">

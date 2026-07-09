@@ -1,7 +1,14 @@
 import { Compass, GitBranch, Map, ShieldCheck } from 'lucide-react'
 import type { SceneRuntimeSummary } from '@/lib/scene-runtime'
+import type { SceneTransitionSummary } from '@/lib/scene-transition'
 
-export function SceneRuntimeStatusPanel({ summary }: { summary: SceneRuntimeSummary }) {
+export function SceneRuntimeStatusPanel({
+  summary,
+  transitionSummary,
+}: {
+  summary: SceneRuntimeSummary
+  transitionSummary?: SceneTransitionSummary
+}) {
   return (
     <section className="rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur md:p-8">
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
@@ -66,6 +73,33 @@ export function SceneRuntimeStatusPanel({ summary }: { summary: SceneRuntimeSumm
           </article>
         ))}
       </div>
+
+      {transitionSummary && (
+        <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Scene Transition Shell</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">公开转场语法已进入统一壳</h3>
+              <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
+                Shell 只包裹公开页面内容，GSAP 负责编排轻量入场，Framer Motion 只处理显隐；reduced-motion 下直接显示目标页面。
+              </p>
+            </div>
+            <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
+              <p className="text-xs font-semibold tracking-[0.22em] text-gold">MOTIONS</p>
+              <p className="mt-2 text-2xl font-semibold">{transitionSummary.motionCount}/{transitionSummary.requiredMotionCount}</p>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-4">
+            {transitionSummary.motions.map((motion) => (
+              <article key={motion.id} className="rounded-[1rem] bg-white/70 p-4">
+                <p className="truncate text-xs font-semibold tracking-[0.18em] text-moss">{motion.id}</p>
+                <h4 className="mt-2 truncate text-base font-semibold text-ink">{motion.label}</h4>
+                <p className="mt-2 line-clamp-2 text-xs leading-5 text-ink/58">{motion.intent}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="mt-6 rounded-[1.25rem] bg-night p-5 text-paper">
         <p className="text-sm font-semibold">下一阶段</p>

@@ -10,12 +10,15 @@ import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { getPathQualityLedger } from '@/lib/path-quality-ledger'
 import { getOwnerReadonlyConsoleLedger } from '@/lib/owner-readonly-console'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
-import { DynamicWorldStatusBoard } from '@/components/status/DynamicWorldStatusBoard'
-import { AiLowLightStatusPanel } from '@/components/status/AiLowLightStatusPanel'
-import { LocalMaturityLedgerPanel } from '@/components/status/LocalMaturityLedgerPanel'
-import { PathQualityLedgerPanel } from '@/components/status/PathQualityLedgerPanel'
-import { OwnerReadonlyConsolePanel } from '@/components/status/OwnerReadonlyConsolePanel'
-import { SceneRuntimeStatusPanel } from '@/components/status/SceneRuntimeStatusPanel'
+import { getSceneTransitionSummary } from '@/lib/scene-transition'
+import {
+  AiLowLightStatusPanel,
+  DynamicWorldStatusBoard,
+  LocalMaturityLedgerPanel,
+  OwnerReadonlyConsolePanel,
+  PathQualityLedgerPanel,
+  SceneRuntimeStatusPanel,
+} from '@/components/status'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -55,6 +58,7 @@ export default function StatusPage() {
   const pathQualityLedger = getPathQualityLedger()
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const sceneRuntimeSummary = getPublicSceneSummary()
+  const sceneTransitionSummary = getSceneTransitionSummary()
   const dynamicWorldStatus = buildDynamicWorldStatusSurface({
     areas,
     nodes: publicNodes,
@@ -99,7 +103,7 @@ export default function StatusPage() {
 
       <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
 
-      <SceneRuntimeStatusPanel summary={sceneRuntimeSummary} />
+      <SceneRuntimeStatusPanel summary={sceneRuntimeSummary} transitionSummary={sceneTransitionSummary} />
 
       <section className="grid gap-5 lg:grid-cols-3">
         <div className="min-w-0 rounded-[2rem] border border-white/65 bg-white/74 p-7 shadow-soft backdrop-blur">

@@ -1,0 +1,119 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS Phase 28 公开场景转场注册表",
+  "updatedAt": "2026-07-09",
+  "source": "docs/00-overview/worldos-phase28-scene-transition-shell-execution-plan-2026-07-09.md",
+  "principle": "场景转场只解释公开页面之间的空间关系，不阻塞导航，不承担权限判断。",
+  "scope": {
+    "localOnly": true,
+    "localhostAccepted": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false,
+    "requiresRealAI": false
+  },
+  "shell": {
+    "component": "src/components/world/SceneTransitionShell.tsx",
+    "mount": "src/components/world/WorldShell.tsx#main-content",
+    "usesGsap": true,
+    "usesFramerMotionPresence": true,
+    "usesViewTransitionApi": false,
+    "maxDurationMs": 420,
+    "compactMaxDurationMs": 260,
+    "reducedMotionBehavior": "直接显示目标页面，不播放位移、缩放或抽屉动作。"
+  },
+  "motions": [
+    {
+      "id": "fade-rise",
+      "label": "轻量抵达",
+      "intent": "普通公开场景之间使用轻量抵达，避免过度打扰阅读。",
+      "from": { "autoAlpha": 0, "y": 14, "scale": 1 },
+      "to": { "autoAlpha": 1, "y": 0, "scale": 1, "duration": 0.28, "ease": "power2.out" },
+      "compactFrom": { "autoAlpha": 0, "y": 8, "scale": 1 },
+      "reducedMotion": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1 }
+    },
+    {
+      "id": "zoom-star",
+      "label": "星点拉近",
+      "intent": "入口到星图、星图到节点时，表达视角拉远或从星点进入。",
+      "from": { "autoAlpha": 0, "y": 8, "scale": 0.985 },
+      "to": { "autoAlpha": 1, "y": 0, "scale": 1, "duration": 0.36, "ease": "power3.out" },
+      "compactFrom": { "autoAlpha": 0, "y": 8, "scale": 1 },
+      "reducedMotion": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1 }
+    },
+    {
+      "id": "river-shift",
+      "label": "时间河展开",
+      "intent": "从时间河进入节点时，用轻微横向流动表达时间片展开。",
+      "from": { "autoAlpha": 0, "x": 18, "y": 0, "scale": 1 },
+      "to": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1, "duration": 0.34, "ease": "sine.out" },
+      "compactFrom": { "autoAlpha": 0, "y": 8, "scale": 1 },
+      "reducedMotion": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1 }
+    },
+    {
+      "id": "archive-drawer",
+      "label": "卷宗抽出",
+      "intent": "从档案馆进入节点时，用短促的纵向抽出感表达卷宗被打开。",
+      "from": { "autoAlpha": 0, "y": 18, "scale": 0.992 },
+      "to": { "autoAlpha": 1, "y": 0, "scale": 1, "duration": 0.34, "ease": "power2.out" },
+      "compactFrom": { "autoAlpha": 0, "y": 8, "scale": 1 },
+      "reducedMotion": { "autoAlpha": 1, "x": 0, "y": 0, "scale": 1 }
+    }
+  ],
+  "routeExamples": [
+    {
+      "from": "/",
+      "to": "/atlas",
+      "transitionId": "gateway-to-atlas",
+      "motion": "zoom-star"
+    },
+    {
+      "from": "/atlas",
+      "to": "/node/world-manifesto",
+      "transitionId": "atlas-to-node",
+      "motion": "zoom-star"
+    },
+    {
+      "from": "/timeline",
+      "to": "/node/world-manifesto",
+      "transitionId": "timeline-to-node",
+      "motion": "river-shift"
+    },
+    {
+      "from": "/archive",
+      "to": "/node/world-manifesto",
+      "transitionId": "archive-to-node",
+      "motion": "archive-drawer"
+    }
+  ],
+  "acceptance": {
+    "requiredMotions": ["fade-rise", "zoom-star", "river-shift", "archive-drawer"],
+    "requiredTransitions": ["gateway-to-atlas", "atlas-to-node", "timeline-to-node", "archive-to-node", "default-scene-shift"],
+    "requiredFiles": [
+      "src/lib/scene-transition.ts",
+      "src/components/world/SceneTransitionShell.tsx",
+      "src/components/world/WorldShell.tsx"
+    ],
+    "forbiddenClientTokens": [
+      "OPENAI_API_KEY",
+      "ANTHROPIC_API_KEY",
+      "GUYUE_OWNER_TOKEN",
+      "R8_OWNER_TOKEN",
+      "ownerToken",
+      "authToken",
+      "permissionToken",
+      "role ===",
+      "isOwner",
+      "isAdmin"
+    ]
+  },
+  "nextActions": [
+    "阶段 29：深化 Atlas、Timeline、Archive、Node、Ask 的场景人格。",
+    "阶段 30：建立 Journey Memory 与路径连续性。",
+    "阶段 32：把 scene transition 截图证据纳入本地 RC 报告。"
+  ]
+}

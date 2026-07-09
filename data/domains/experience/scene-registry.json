@@ -251,8 +251,8 @@
     }
   },
   "nextActions": [
-    "阶段 27：基于 gateway scene 建立首次进入仪式。",
-    "阶段 28：基于 transitions 建立 SceneTransitionShell。",
-    "阶段 29：让 Atlas、Timeline、Archive、Node、Ask 形成更强场景人格。"
+    "阶段 29：让 Atlas、Timeline、Archive、Node、Ask 形成更强场景人格。",
+    "阶段 30：建立 Journey Memory 与路径连续性。",
+    "阶段 32：将场景、转场和旅程记忆纳入截图 QA。"
   ]
 }
