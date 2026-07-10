@@ -79,15 +79,15 @@
 - Consumes: existing M30 screenshots, package scripts, public route registry.
 - Produces: `npm run audit:world-experience` and a truthful baseline report with `status: FOUNDATION_ONLY`.
 
-- [ ] **C0.1** 从 `check:mainline` 移除 `check:m29-high-fidelity-polish` 与 `check:m30-ultimate-candidate`；保留命令供历史复查，但不得再参与发布判定。
-- [ ] **C0.2** 在 script registry 中把旧 M29 / M30 命令登记为 `historicalInvalidatedEntrypoints`，并从 daily / RC active entrypoints 移除。
-- [ ] **C0.3** 从 `/status` 移除“9/10 候选”当前态展示，改为历史结论已失效和 `FOUNDATION_ONLY` 真实基线；不得继续读取旧分数作为当前摘要。
-- [ ] **C0.4** 新建 route contract，固定七类空间、动态 route 样本、desktop / mobile / reduced-motion / reduced-sensory 模式、禁用公开文案和必需流程。
-- [ ] **C0.5** 新建 audit script：扫描核心 route imports、公开源码禁用文案、旧共享 portal 使用、旧报告新鲜度；输出 findings，禁止生成分数。
-- [ ] **C0.6** 把现有五组 M30 画面登记为 anti-baseline；manifest 记录 commit、证据路径与已确认缺陷，不复制图片。
-- [ ] **C0.7** 运行 audit，确认结果明确为未达标而命令本身可正常完成；不得把 findings 清零。
-- [ ] **C0.8** 运行 `npm run typecheck`、`npm run lint`、`npm run check:scripts`、`git diff --check`。
-- [ ] **C0.9** 更新 ledger，提交 `test(world): 废止终局自评分并建立真实基线`。
+- [x] **C0.1** 从 `check:mainline` 移除 `check:m29-high-fidelity-polish` 与 `check:m30-ultimate-candidate`；保留命令供历史复查，但不得再参与发布判定。
+- [x] **C0.2** 在 script registry 中把旧 M29 / M30 命令登记为 `historicalInvalidatedEntrypoints`，并从 daily / RC active entrypoints 移除。
+- [x] **C0.3** 从 `/status` 移除“9/10 候选”当前态展示，改为历史结论已失效和 `FOUNDATION_ONLY` 真实基线；不得继续读取旧分数作为当前摘要。
+- [x] **C0.4** 新建 route contract，固定七类空间、动态 route 样本、desktop / mobile / reduced-motion / reduced-sensory 模式、禁用公开文案和必需流程。
+- [x] **C0.5** 新建 audit script：扫描核心 route imports、公开源码禁用文案、旧共享 portal 使用、旧报告新鲜度；输出 findings，禁止生成分数。
+- [x] **C0.6** 把现有五组 M30 画面登记为 anti-baseline；manifest 记录 commit、证据路径与已确认缺陷，不复制图片。
+- [x] **C0.7** 运行 audit，确认结果明确为未达标而命令本身可正常完成；不得把 findings 清零。
+- [x] **C0.8** 运行 `npm run typecheck`、`npm run lint`、`npm run check:scripts`、`git diff --check`。
+- [x] **C0.9** 更新 ledger，提交 `test(world): 废止终局自评分并建立真实基线`。
 
 **Expected audit facts:**
 

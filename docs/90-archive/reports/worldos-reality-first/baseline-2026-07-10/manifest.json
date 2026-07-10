@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "kind": "anti-baseline",
+  "status": "FOUNDATION_ONLY",
+  "sourceCommit": "d34db104f5a0aa7e7e44168219c0df8c71a3e53c",
+  "sourceCommitSubject": "feat(world): 完成M30终局候选验收",
+  "invalidatedConclusion": "旧 9/10 与终局候选结论不能作为 Reality-First 验收依据。",
+  "assets": [
+    { "flow": "first-visit", "path": "docs/90-archive/reports/worldos-m30-recordings/first-visit/001-arrival.png", "defects": ["首屏以大标题和双栏面板为主体", "世界对象弱于说明文字"] },
+    { "flow": "scene-migration", "path": "docs/90-archive/reports/worldos-m30-recordings/scene-migration/001-arrival.png", "defects": ["场景共享同一 hero 构图", "迁移缺少来源、途中与抵达连续性"] },
+    { "flow": "path-to-node", "path": "docs/90-archive/reports/worldos-m30-recordings/path-to-node/001-arrival.png", "defects": ["路径表现为内容卡与进度侧栏", "缺少可行走的路线主体"] },
+    { "flow": "node-reading", "path": "docs/90-archive/reports/worldos-m30-recordings/node-reading/001-arrival.png", "defects": ["内容仍像文章详情页", "公开页面出现工程验收文案"] },
+    { "flow": "lighthouse-guidance", "path": "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/001-arrival.png", "defects": ["灯塔仍是 hero、按钮和卡片", "陪伴式导览不可感知"] }
+  ],
+  "use": "仅用于防止新实现回归旧骨架构图；不得作为当前完成证据。"
+}

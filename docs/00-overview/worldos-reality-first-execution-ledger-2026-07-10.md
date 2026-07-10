@@ -6,11 +6,11 @@
 ## 1. 当前指针
 
 ```yaml
-goal_status: NOT_STARTED
+goal_status: IN_PROGRESS
 product_status: FOUNDATION_ONLY
-current_checkpoint: C0
-current_item: C0.1
-last_completed_checkpoint: null
+current_checkpoint: C1
+current_item: C1.1
+last_completed_checkpoint: C0
 baseline_commit: d34db104f5a0aa7e7e44168219c0df8c71a3e53c
 baseline_commit_subject: "feat(world): 完成M30终局候选验收"
 baseline_commit_truth: "工程提交存在，但其9/10体验结论已被真实视觉审查否决"
@@ -30,7 +30,7 @@ live_ai_provider: unavailable
 | 远端差异 | 启动准备前 ahead 8 | 不自动 push |
 | Node.js | `v24.13.0` | 可运行当前脚本 |
 | npm | `11.6.2` | 使用 `npm` |
-| Playwright CLI | `1.58.0` | 可截图；复杂流程可复用 CDP recorder |
+| Playwright CLI | `1.61.1` | 可截图；复杂流程可复用 CDP recorder |
 | Google Chrome | `150.0.7871.115` | 优先用于生产态实测 |
 | ffmpeg | `6.0` | 可录屏与转码 |
 | `OPENAI_API_KEY` | shell 未设置，仓库无本地 env | 不得声称实时 Provider 可用 |
@@ -59,8 +59,8 @@ live_ai_provider: unavailable
 
 | Checkpoint | 目标 | 状态 | Commit | 证据 run |
 | --- | --- | --- | --- | --- |
-| C0 | 废止假绿灯，建立真实基线 | pending | - | baseline-2026-07-10 |
-| C1 | 视觉资产、token 与 scene primitives | pending | - | - |
+| C0 | 废止假绿灯，建立真实基线 | passed | 本检查点提交 | baseline-2026-07-10 |
+| C1 | 视觉资产、token 与 scene primitives | in_progress | - | - |
 | C2 | 世界壳与 Gateway | pending | - | - |
 | C3 | Atlas 可探索地图 | pending | - | - |
 | C4 | Timeline 与 Archive 独立空间 | pending | - | - |
@@ -77,12 +77,21 @@ live_ai_provider: unavailable
 执行计划是任务定义，本节只记录当前指针，避免复制全部要求：
 
 ```yaml
-completed_items: []
+completed_items:
+  - C0.1
+  - C0.2
+  - C0.3
+  - C0.4
+  - C0.5
+  - C0.6
+  - C0.7
+  - C0.8
+  - C0.9
 failed_items: []
 blocked_items:
   - id: C7.6-live-provider
     reason: "仅在合法服务端凭据存在时验证；不阻塞 low-light 本地世界完成"
-next_item: C0.1
+next_item: C1.1
 ```
 
 每完成一个 item，立即：
@@ -118,6 +127,42 @@ verification:
   - "npm run build:production-ci -> passed, 260 static pages, shared First Load JS=102 KB"
   - "Markdown local-link / whitespace / requirement coverage checks -> passed"
 result: "旧终局结论失效；进入新控制包，尚未开始产品重构"
+```
+
+### Record 001：C0 真实基线
+
+```yaml
+checkpoint: C0
+item: C0.1-C0.9
+status: passed
+started_at: 2026-07-10T12:32:00+08:00
+finished_at: 2026-07-10T12:36:27+08:00
+files_changed:
+  - "package.json"
+  - "data/world-kernel/worldos-script-legacy-registry-v1.json"
+  - "data/domains/experience/reality-first-route-contract.json"
+  - "scripts/audit-worldos-reality-first.mjs"
+  - "src/app/status/page.tsx"
+  - "src/components/status/RealityFirstBaselinePanel.tsx"
+  - "docs/90-archive/reports/worldos-reality-first/baseline-2026-07-10/manifest.json"
+commands:
+  - command: "node scripts/check-worldos-reality-first-control.mjs"
+    exit_code: 0
+    observed: "冻结锁通过，6 份文件一致"
+  - command: "npm run audit:world-experience"
+    exit_code: 0
+    observed: "FOUNDATION_ONLY；共享 portal 导入 6 个；公开工程文案 4 处；visualAcceptance=not-run"
+  - command: "npm run typecheck && npm run lint && npm run check:scripts && git diff --check"
+    exit_code: 0
+    observed: "类型、lint、298 个脚本注册边界与差异格式均通过"
+evidence:
+  - "docs/90-archive/reports/worldos-reality-first/baseline-2026-07-10/manifest.json"
+failures:
+  - "审计器首轮把 JSON 字段名和标识符误算为公开文案"
+fixes:
+  - "收紧为可见 JSX 文本和明确展示字符串；portal 统计改为导入文件数"
+commit: "本检查点提交：test(world): 废止终局自评分并建立真实基线"
+next_item: C1.1
 ```
 
 后续记录使用同一结构：
@@ -171,7 +216,8 @@ latest source/data mtime
 
 | Checkpoint | Commit | Message | Worktree after commit |
 | --- | --- | --- | --- |
-| PREP | pending | `docs(world): 建立真实世界一次性Goal控制包` | pending |
+| PREP | `fd0ac87b` | `docs(world): 建立真实世界一次性Goal控制包` | clean |
+| C0 | 本检查点提交 | `test(world): 废止终局自评分并建立真实基线` | 提交后复核 |
 
 Goal 执行期间每个 checkpoint 新增一行。不得把多个未验证 checkpoint 合并成一个“全部完成”提交。
 

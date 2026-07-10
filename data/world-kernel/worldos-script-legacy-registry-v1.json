@@ -1,6 +1,6 @@
 {
   "name": "WorldOS 历史脚本治理注册表 v1",
-  "updatedAt": "2026-07-09",
+  "updatedAt": "2026-07-10",
   "source": "WorldOS local maturity gate follow-up",
   "principle": "默认入口必须短且可复跑；历史阶段脚本保留为 reference，但不能继续扩展为新开发默认入口。",
   "activeEntrypoints": [
@@ -28,8 +28,6 @@
     "check:scene-qa",
     "check:m27-layered-permission",
     "check:m28-observability-rollback",
-    "check:m29-high-fidelity-polish",
-    "check:m30-ultimate-candidate",
     "check:m19-scene-interaction",
     "check:m20-spatial-continuity",
     "check:m20-spa-transitions",
@@ -74,8 +72,6 @@
     "npm run check:m25-author-world-editor",
     "npm run check:m27-layered-permission",
     "npm run check:m28-observability-rollback",
-    "npm run check:m29-high-fidelity-polish",
-    "npm run check:m30-ultimate-candidate",
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
@@ -99,8 +95,6 @@
     "npm run check:m26-world-memory",
     "npm run check:m27-layered-permission",
     "npm run check:m28-observability-rollback",
-    "npm run check:m29-high-fidelity-polish",
-    "npm run check:m30-ultimate-candidate",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
     "npm run check:m20-spa-transitions",
@@ -109,6 +103,16 @@
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:rc-evidence-policy"
+  ],
+  "historicalInvalidatedEntrypoints": [
+    {
+      "script": "check:m29-high-fidelity-polish",
+      "reason": "仅保留历史复查；旧视觉打磨结论不能证明真实世界体验完成。"
+    },
+    {
+      "script": "check:m30-ultimate-candidate",
+      "reason": "包含硬编码分数与阈值托底，已从主线、日常和 RC 判定中废止。"
+    }
   ],
   "policies": {
     "allowExistingStageScripts": true,
@@ -125,7 +129,7 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 297,
+    "totalScripts": 298,
     "checkScripts": 168,
     "stageLikeCheckScripts": 2,
     "longScripts": 2
@@ -137,7 +141,7 @@
   "longScripts": [
     {
       "name": "check:mainline",
-      "length": 1329
+      "length": 1247
     },
     {
       "name": "check:world-core",

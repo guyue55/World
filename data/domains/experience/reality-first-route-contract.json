@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "status": "FOUNDATION_ONLY",
+  "principle": "七类空间共享公开事实源和 URL，但必须以不同空间主体与交互语法呈现。",
+  "spaces": [
+    { "id": "gateway", "route": "/", "sample": "/", "subject": "可进入的月下浮屿主舞台", "interaction": "抵达、选择方向、继续旅程" },
+    { "id": "atlas", "route": "/atlas", "sample": "/atlas", "subject": "区域、节点与关系构成的可探索星图", "interaction": "平移、聚焦、选择、穿梭" },
+    { "id": "timeline", "route": "/timeline", "sample": "/timeline", "subject": "承载事件和阶段锚点的时间河", "interaction": "沿流回看、定位阶段、进入事件" },
+    { "id": "archive", "route": "/archive", "sample": "/archive", "subject": "具有分区和检索台的记忆档案馆", "interaction": "检索、筛选、开卷、返回分区" },
+    { "id": "paths", "route": "/paths/[id]", "sample": "/paths/first-visit", "subject": "由站点、方向和进度组成的旅程道路", "interaction": "选路、行走、抵达、继续" },
+    { "id": "node", "route": "/node/[slug]", "sample": "/node/world-manifesto", "subject": "具有入口、正文和关系出口的内容地点", "interaction": "进入、阅读、穿过关系门" },
+    { "id": "lighthouse", "route": "/ask", "sample": "/ask", "subject": "面向公开世界的陪伴式观测灯塔", "interaction": "问路、查看依据、接受建议、继续探索" }
+  ],
+  "modes": [
+    { "id": "desktop", "viewport": "1440x900" },
+    { "id": "mobile", "viewport": "390x844" },
+    { "id": "reduced-motion", "media": "prefers-reduced-motion: reduce" },
+    { "id": "reduced-sensory", "runtime": "motion reduced; sound off; ambient effects minimal" }
+  ],
+  "forbiddenPublicCopy": [
+    "Motion Layer",
+    "Fallback",
+    "Evidence",
+    "场景证据",
+    "候选验收",
+    "9/10",
+    "8.9"
+  ],
+  "requiredFlows": [
+    "first-visit",
+    "scene-migration",
+    "atlas-exploration",
+    "timeline-revisit",
+    "archive-retrieval",
+    "path-journey",
+    "node-reading",
+    "lighthouse-guidance",
+    "return-visit-continuation"
+  ],
+  "rules": [
+    "JavaScript 关闭时，所有 sample 路径仍须可读、可导航且不泄漏私密内容。",
+    "隐藏主要文字后，七类空间仍须能凭构图、空间对象和交互被区分。",
+    "公开页面不得呈现工程验收、降级实现、证据路径或内部评分文案。",
+    "动态体验只能渐进增强同一份公开事实源，不能维护第二套内容或权限事实。"
+  ]
+}

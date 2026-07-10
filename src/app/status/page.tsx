@@ -19,7 +19,6 @@ import { getSensoryAudioSummary } from '@/lib/sensory-audio'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
 import { getScenePersonalitySummary } from '@/lib/scene-personality'
 import { getSceneTransitionSummary } from '@/lib/scene-transition'
-import { getUltimateCandidateSummary } from '@/lib/ultimate-candidate'
 import { getWorldRuntimeStateSummary } from '@/lib/world-runtime-state'
 import {
   AdvancedVisualizationPilotPanel,
@@ -32,7 +31,7 @@ import {
   OwnerReadonlyConsolePanel,
   PathQualityLedgerPanel,
   SceneRuntimeStatusPanel,
-  UltimateCandidatePanel,
+  RealityFirstBaselinePanel,
 } from '@/components/status'
 import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
 
@@ -83,7 +82,6 @@ export default function StatusPage() {
   const sceneRuntimeSummary = getPublicSceneSummary()
   const scenePersonalitySummary = getScenePersonalitySummary()
   const sceneTransitionSummary = getSceneTransitionSummary()
-  const ultimateCandidateSummary = getUltimateCandidateSummary()
   const runtimeStateSummary = getWorldRuntimeStateSummary()
   const dynamicWorldStatus = buildDynamicWorldStatusSurface({
     areas,
@@ -143,7 +141,7 @@ export default function StatusPage() {
 
       <HighFidelityPolishPanel summary={highFidelityPolishSummary} />
 
-      <UltimateCandidatePanel summary={ultimateCandidateSummary} />
+      <RealityFirstBaselinePanel />
 
       <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
 
