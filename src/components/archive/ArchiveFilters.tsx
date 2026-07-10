@@ -1,85 +1,58 @@
-import type { Area, LifeStage, NodeType } from '@/lib/types'
-import {
-  formatArchiveLifeStage,
-  formatArchiveNodeType,
-  type ArchiveFilters as ArchiveFilterState,
-  type ArchiveSort,
-} from '@/lib/archive'
+import { RotateCcw, Search } from 'lucide-react'
+import type { ArchiveFilters as ArchiveFilterState, ArchiveSort } from '@/lib/archive'
+import type { ArchiveViewModel } from '@/lib/scenes/build-archive-model'
+import styles from './ArchiveHallStage.module.css'
 
 export function ArchiveFilters({
   filters,
-  areas,
-  nodeTypes,
-  lifeStages,
-  popularTags,
+  model,
+  searchState,
   onChange,
   onReset,
 }: {
   filters: ArchiveFilterState
-  areas: Area[]
-  nodeTypes: NodeType[]
-  lifeStages: LifeStage[]
-  popularTags: Array<{ tag: string; count: number }>
+  model: ArchiveViewModel
+  searchState: 'idle' | 'loading' | 'ready'
   onChange: (filters: ArchiveFilterState) => void
   onReset: () => void
 }) {
   const update = (patch: Partial<ArchiveFilterState>) => onChange({ ...filters, ...patch })
 
   return (
-    <div className="space-y-4 rounded-world border border-ink/10 bg-white/45 p-4 shadow-soft">
-      <div className="grid gap-3 md:grid-cols-[1fr_180px_180px_180px_150px]">
+    <div className={styles.filters} data-fuse-state={searchState}>
+      <label className={styles.searchField}>
+        <Search aria-hidden="true" size={17} />
         <input
           value={filters.query}
           onChange={(event) => update({ query: event.target.value })}
-          placeholder="搜索标题、摘要、标签或世界名"
-          className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-5 py-3 outline-none focus-visible:ring-2 focus-visible:ring-gold/70"
+          placeholder="输入卷宗名、摘要或标签"
+          aria-label="搜索公开卷宗"
         />
-        <select value={filters.areaId} onChange={(event) => update({ areaId: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <small>{searchState === 'loading' ? '检索中' : filters.query ? '模糊检索' : '输入后加载检索器'}</small>
+      </label>
+      <div className={styles.filterMenus}>
+        <select value={filters.areaId} onChange={(event) => update({ areaId: event.target.value })} aria-label="按馆藏分区筛选">
           <option value="all">全部区域</option>
-          {areas.map((area) => <option key={area.id} value={area.id}>{area.worldName}</option>)}
+          {model.shelves.map((shelf) => <option key={shelf.areaId} value={shelf.areaId}>{shelf.title}</option>)}
         </select>
-        <select value={filters.type} onChange={(event) => update({ type: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.type} onChange={(event) => update({ type: event.target.value })} aria-label="按卷宗类型筛选">
           <option value="all">全部类型</option>
-          {nodeTypes.map((type) => <option key={type} value={type}>{formatArchiveNodeType(type)}</option>)}
+          {model.options.types.map((type) => <option key={type.value} value={type.value}>{type.label}</option>)}
         </select>
-        <select value={filters.lifeStage} onChange={(event) => update({ lifeStage: event.target.value })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.lifeStage} onChange={(event) => update({ lifeStage: event.target.value })} aria-label="按生命阶段筛选">
           <option value="all">全部阶段</option>
-          {lifeStages.map((stage) => <option key={stage} value={stage}>{formatArchiveLifeStage(stage)}</option>)}
+          {model.options.lifeStages.map((stage) => <option key={stage.value} value={stage.value}>{stage.label}</option>)}
         </select>
-        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value as ArchiveSort })} className="min-w-0 rounded-full border border-ink/10 bg-white/75 px-4 py-3">
+        <select value={filters.tag} onChange={(event) => update({ tag: event.target.value })} aria-label="按标签筛选">
+          <option value="all">全部标签</option>
+          {model.options.tags.map((tag) => <option key={tag.value} value={tag.value}>{tag.label}</option>)}
+        </select>
+        <select value={filters.sort} onChange={(event) => update({ sort: event.target.value as ArchiveSort })} aria-label="卷宗排序">
           <option value="newest">最近优先</option>
           <option value="oldest">最早优先</option>
           <option value="title">标题排序</option>
         </select>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => update({ tag: 'all' })}
-          className={`rounded-full px-3 py-1 text-sm ${filters.tag === 'all' ? 'bg-ink text-paper' : 'bg-white/70 text-ink/65'}`}
-        >
-          全部标签
-        </button>
-        {popularTags.map((item) => (
-          <button
-            key={item.tag}
-            type="button"
-            onClick={() => update({ tag: item.tag })}
-            className={`rounded-full px-3 py-1 text-sm transition ${
-              filters.tag === item.tag ? 'bg-ink text-paper' : 'bg-white/70 text-ink/65 hover:bg-white'
-            }`}
-          >
-            #{item.tag} · {item.count}
-          </button>
-        ))}
-        <button
-          type="button"
-          onClick={onReset}
-          className="ml-auto rounded-full border border-ink/10 bg-paper/70 px-3 py-1 text-sm text-ink/60 hover:bg-white"
-        >
-          清空筛选
-        </button>
+        <button type="button" onClick={onReset} aria-label="清除档案馆筛选" title="清除筛选"><RotateCcw aria-hidden="true" size={16} /></button>
       </div>
     </div>
   )

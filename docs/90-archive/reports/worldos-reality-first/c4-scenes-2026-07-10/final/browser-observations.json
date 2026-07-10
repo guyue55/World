@@ -1,0 +1,380 @@
+{
+  "generatedAt": "2026-07-10T11:19:19.457Z",
+  "baseUrl": "http://127.0.0.1:3411",
+  "observations": [
+    {
+      "mode": "timeline-arrival-desktop",
+      "scene": "timeline",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 7,
+      "activeAnchor": "time-2026-07-08",
+      "timelineInspector": false,
+      "shelfCount": 0,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": null,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "timeline-event-focused",
+      "scene": "timeline",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 7,
+      "activeAnchor": "time-2026-07-08",
+      "timelineInspector": true,
+      "shelfCount": 0,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": null,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "timeline-mobile",
+      "scene": "timeline",
+      "viewport": {
+        "top": 0,
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 7,
+      "activeAnchor": "time-2026-07-08",
+      "timelineInspector": false,
+      "shelfCount": 0,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": null,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "timeline-reduced-motion",
+      "scene": "timeline",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 7,
+      "activeAnchor": "time-2026-07-08",
+      "timelineInspector": false,
+      "shelfCount": 0,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": null,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "timeline-text-hidden",
+      "scene": "timeline",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 7,
+      "activeAnchor": "time-2026-07-08",
+      "timelineInspector": false,
+      "shelfCount": 0,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": null,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "timeline-image-fallback",
+      "scene": "timeline",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 7,
+      "activeAnchor": "time-2026-07-08",
+      "timelineInspector": false,
+      "shelfCount": 0,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": null,
+      "soundMode": "muted",
+      "errors": [
+        "network:  50585.34"
+      ],
+      "expectedNetworkFailure": true
+    },
+    {
+      "mode": "archive-arrival-desktop",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-search",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "ready",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-filtered",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 3,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "ready",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-empty",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 0,
+      "archiveInspector": false,
+      "archiveEmpty": true,
+      "fuseState": "ready",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-record-focused",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": true,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-mobile",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-reduced-motion",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-reduced-sensory",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-text-hidden",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "archive-image-fallback",
+      "scene": "archive",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "inspectorOverlapsMobileNav": false,
+      "anchorCount": 0,
+      "activeAnchor": null,
+      "timelineInspector": false,
+      "shelfCount": 8,
+      "litRecordCount": 6,
+      "archiveInspector": false,
+      "archiveEmpty": false,
+      "fuseState": "idle",
+      "soundMode": "muted",
+      "errors": [
+        "network:  55964.34"
+      ],
+      "expectedNetworkFailure": true
+    }
+  ],
+  "flowChecks": {
+    "timelineKeyboardChangedAnchor": true,
+    "timelineAnchorRestored": true,
+    "timelineInspectorOpened": true,
+    "fuseLoadedOnlyAfterInput": true,
+    "archiveFilterChangedCollection": true,
+    "archiveInspectorOpened": true,
+    "archiveReachedNode": true,
+    "archiveContextRestored": true,
+    "archiveEmptyState": true
+  },
+  "recordings": {
+    "timelineFrames": 64,
+    "archiveFrames": 51
+  },
+  "failures": []
+}

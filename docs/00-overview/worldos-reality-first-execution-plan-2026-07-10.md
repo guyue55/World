@@ -241,12 +241,12 @@ export type AtlasViewModel = {
 - Modify: `src/app/timeline/page.tsx`
 - Retire from route: `TimelineHero.tsx`, `TimelineStats.tsx`, `SceneDeepInteractionPanel`, `ProductRouteGuide`
 
-- [ ] **C4.1** 建立稳定时间锚、河段、事件 marker 和相关节点 view model。
-- [ ] **C4.2** 实现沿河浏览、时间锚跳转、事件聚焦、前后事件和返回位置。
-- [ ] **C4.3** 把事件直接放入河道，不再先渲染 stats / cards；长列表移入可访问 fallback。
-- [ ] **C4.4** 保存 scroll / anchor 到公开 journey memory；后退或回访恢复同一河段。
-- [ ] **C4.5** reduced-motion 使用静态河道和即时锚点切换，不做视差与长距离滑动。
-- [ ] **C4.6** 截图 arrival / event-focused / mobile / text-hidden，录制 timeline-review。
+- [x] **C4.1** 建立稳定时间锚、河段、事件 marker 和相关节点 view model。
+- [x] **C4.2** 实现沿河浏览、时间锚跳转、事件聚焦、前后事件和返回位置。
+- [x] **C4.3** 把事件直接放入河道，不再先渲染 stats / cards；长列表移入可访问 fallback。
+- [x] **C4.4** 保存 scroll / anchor 到公开 journey memory；后退或回访恢复同一河段。
+- [x] **C4.5** reduced-motion 使用静态河道和即时锚点切换，不做视差与长距离滑动。
+- [x] **C4.6** 截图 arrival / event-focused / mobile / text-hidden，录制 timeline-review。
 
 ### Task C4-B：Archive
 
@@ -260,18 +260,18 @@ export type AtlasViewModel = {
 - Modify: `src/components/archive/ArchiveView.tsx`
 - Modify: `src/app/archive/page.tsx`
 
-- [ ] **C4.7** 把公开节点映射为馆内分区、书架 / 抽屉位置和卷宗摘要；布局确定且可筛选。
-- [ ] **C4.8** 搜索按需加载 Fuse.js；输入前不加载；匹配结果在馆内点亮 / 聚拢。
-- [ ] **C4.9** 筛选变化真实改变显示集合、分区数量和可访问结果，不只是更新标签。
-- [ ] **C4.10** 实现无结果、清除筛选、卷宗预览、进入 Node 和返回搜索上下文。
-- [ ] **C4.11** 从 `/archive` 移除共享 portal、动态说明卡、route guide 和普通卡片瀑布主体。
-- [ ] **C4.12** 截图 arrival / search / filtered / empty / mobile / text-hidden，录制 archive-search。
+- [x] **C4.7** 把公开节点映射为馆内分区、书架 / 抽屉位置和卷宗摘要；布局确定且可筛选。
+- [x] **C4.8** 搜索按需加载 Fuse.js；输入前不加载；匹配结果在馆内点亮 / 聚拢。
+- [x] **C4.9** 筛选变化真实改变显示集合、分区数量和可访问结果，不只是更新标签。
+- [x] **C4.10** 实现无结果、清除筛选、卷宗预览、进入 Node 和返回搜索上下文。
+- [x] **C4.11** 从 `/archive` 移除共享 portal、动态说明卡、route guide 和普通卡片瀑布主体。
+- [x] **C4.12** 截图 arrival / search / filtered / empty / mobile / text-hidden，录制 archive-search。
 
 ### C4 共同门禁
 
-- [ ] **C4.13** 并排查看 Timeline / Archive 的 arrival 与 text-hidden 图，确认河道和馆藏空间无需标题即可区分。
-- [ ] **C4.14** 运行定向测试、`typecheck`、`lint`、生产 build、搜索与 keyboard smoke。
-- [ ] **C4.15** 更新 ledger，提交 `feat(world): 落地时间河与档案馆独立空间`。
+- [x] **C4.13** 并排查看 Timeline / Archive 的 arrival 与 text-hidden 图，确认河道和馆藏空间无需标题即可区分。
+- [x] **C4.14** 运行定向测试、`typecheck`、`lint`、生产 build、搜索与 keyboard smoke。
+- [x] **C4.15** 更新 ledger，提交 `feat(world): 落地时间河与档案馆独立空间`。
 
 ---
 

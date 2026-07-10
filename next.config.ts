@@ -7,6 +7,9 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = {
   distDir: process.env.WORLDOS_DIST_DIR || '.next',
+  images: {
+    qualities: [78, 82],
+  },
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   eslint: {
     // lint is enforced by npm run lint; keep build focused on production compilation.
