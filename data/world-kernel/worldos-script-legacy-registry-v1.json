@@ -24,6 +24,7 @@
     "check:scene-qa",
     "check:m19-scene-interaction",
     "check:m20-spatial-continuity",
+    "check:m20-spa-transitions",
     "check:human-experience",
     "check:authoring-ops",
     "check:ai-provider-boundary",
@@ -60,6 +61,7 @@
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
+    "npm run check:m20-spa-transitions",
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:dependency-hardening"
@@ -73,6 +75,7 @@
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
+    "npm run check:m20-spa-transitions",
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:rc-evidence-policy"
@@ -92,8 +95,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 285,
-    "checkScripts": 157,
+    "totalScripts": 286,
+    "checkScripts": 158,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
