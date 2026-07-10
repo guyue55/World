@@ -1,0 +1,133 @@
+{
+  "name": "WorldOS M28 long-running observability rollback report",
+  "generatedAt": "2026-07-10T02:07:47.132Z",
+  "status": "passed",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false,
+    "noDaemonRequired": true
+  },
+  "observabilityTargets": [
+    {
+      "id": "build",
+      "command": "npm run build:production-ci",
+      "evidence": "reports/world-kernel-release-build.log"
+    },
+    {
+      "id": "mainline",
+      "command": "npm run check:mainline",
+      "evidence": "terminal output and stage reports"
+    },
+    {
+      "id": "local-rc",
+      "command": "npm run release:local-rc",
+      "evidence": "docs/90-archive/reports/worldos-local-rc-summary-report.json"
+    },
+    {
+      "id": "lan-browser",
+      "command": "npm run smoke:lan-local",
+      "evidence": "docs/90-archive/reports/worldos-local-lan-rc-report.json"
+    },
+    {
+      "id": "permission",
+      "command": "npm run check:m27-layered-permission",
+      "evidence": "docs/90-archive/reports/worldos-m27-layered-permission-report.json"
+    },
+    {
+      "id": "assets",
+      "command": "npm run check:m23-sensory-audio-production",
+      "evidence": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json"
+    }
+  ],
+  "failureTaxonomy": [
+    {
+      "id": "build-artifact-stale",
+      "signals": [
+        ".next missing",
+        "BUILD_ID older than source"
+      ],
+      "firstAction": "npm run build:production-ci"
+    },
+    {
+      "id": "browser-visual-regression",
+      "signals": [
+        "white screen",
+        "fixedOverlayIssues",
+        "mobile CTA missing"
+      ],
+      "firstAction": "npm run smoke:lan-local"
+    },
+    {
+      "id": "permission-leak",
+      "signals": [
+        "private visibility in public index",
+        "owner route without guard"
+      ],
+      "firstAction": "npm run check:m27-layered-permission"
+    },
+    {
+      "id": "content-fact-breakage",
+      "signals": [
+        "missing node",
+        "missing relation",
+        "path references missing slug"
+      ],
+      "firstAction": "npm run check:content"
+    }
+  ],
+  "rollbackDrill": {
+    "unit": "git commit",
+    "safeCommands": [
+      "git status --short",
+      "git log --oneline -5",
+      "git diff --stat",
+      "npm run check:mainline",
+      "npm run release:local-rc"
+    ],
+    "forbiddenWithoutExplicitUserApproval": [
+      "git reset --hard",
+      "git checkout --",
+      "rm -rf",
+      "git clean -fd"
+    ],
+    "backupCommands": [
+      "npm run export:world",
+      "npm run backup:world"
+    ],
+    "runbook": "docs/05-engineering/worldos-backup-rollback-runbook.md"
+  },
+  "latestLocalRc": {
+    "status": "local-rc-passed-external-release-blocked",
+    "generatedAt": "2026-07-10T02:07:38.678Z"
+  },
+  "latestLanRc": {
+    "status": "passed",
+    "generatedAt": "2026-07-10T02:06:02.812Z"
+  },
+  "evidenceSummary": [
+    {
+      "path": "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+      "bytes": 6515,
+      "updatedAt": "2026-07-10T02:07:38.679Z"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+      "bytes": 80188,
+      "updatedAt": "2026-07-10T02:06:02.818Z"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-m27-layered-permission-report.json",
+      "bytes": 1327,
+      "updatedAt": "2026-07-10T02:06:16.858Z"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+      "bytes": 485,
+      "updatedAt": "2026-07-10T02:06:15.294Z"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,98 @@
+{
+  "name": "WorldOS M28 长期运行观测与回滚契约",
+  "version": "1.0.0",
+  "source": "docs/00-overview/worldos-m28-long-running-observability-rollback-runbook-2026-07-10.md",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false,
+    "noDaemonRequired": true
+  },
+  "observabilityTargets": [
+    {
+      "id": "build",
+      "command": "npm run build:production-ci",
+      "evidence": "reports/world-kernel-release-build.log"
+    },
+    {
+      "id": "mainline",
+      "command": "npm run check:mainline",
+      "evidence": "terminal output and stage reports"
+    },
+    {
+      "id": "local-rc",
+      "command": "npm run release:local-rc",
+      "evidence": "docs/90-archive/reports/worldos-local-rc-summary-report.json"
+    },
+    {
+      "id": "lan-browser",
+      "command": "npm run smoke:lan-local",
+      "evidence": "docs/90-archive/reports/worldos-local-lan-rc-report.json"
+    },
+    {
+      "id": "permission",
+      "command": "npm run check:m27-layered-permission",
+      "evidence": "docs/90-archive/reports/worldos-m27-layered-permission-report.json"
+    },
+    {
+      "id": "assets",
+      "command": "npm run check:m23-sensory-audio-production",
+      "evidence": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json"
+    }
+  ],
+  "failureTaxonomy": [
+    {
+      "id": "build-artifact-stale",
+      "signals": [".next missing", "BUILD_ID older than source"],
+      "firstAction": "npm run build:production-ci"
+    },
+    {
+      "id": "browser-visual-regression",
+      "signals": ["white screen", "fixedOverlayIssues", "mobile CTA missing"],
+      "firstAction": "npm run smoke:lan-local"
+    },
+    {
+      "id": "permission-leak",
+      "signals": ["private visibility in public index", "owner route without guard"],
+      "firstAction": "npm run check:m27-layered-permission"
+    },
+    {
+      "id": "content-fact-breakage",
+      "signals": ["missing node", "missing relation", "path references missing slug"],
+      "firstAction": "npm run check:content"
+    }
+  ],
+  "rollbackDrill": {
+    "unit": "git commit",
+    "safeCommands": [
+      "git status --short",
+      "git log --oneline -5",
+      "git diff --stat",
+      "npm run check:mainline",
+      "npm run release:local-rc"
+    ],
+    "forbiddenWithoutExplicitUserApproval": [
+      "git reset --hard",
+      "git checkout --",
+      "rm -rf",
+      "git clean -fd"
+    ],
+    "backupCommands": [
+      "npm run export:world",
+      "npm run backup:world"
+    ],
+    "runbook": "docs/05-engineering/worldos-backup-rollback-runbook.md"
+  },
+  "acceptance": {
+    "command": "check:m28-observability-rollback",
+    "report": "docs/90-archive/reports/worldos-m28-observability-rollback-report.json",
+    "requiredStatusTokens": [
+      "Long Running Ops M28",
+      "回滚演练",
+      "最近失败",
+      "本地 / LAN"
+    ]
+  }
+}

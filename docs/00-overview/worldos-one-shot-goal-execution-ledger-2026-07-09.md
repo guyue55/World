@@ -10,9 +10,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M30 |
-| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M27 首批终局体验证据已完成；M28-M30 尚未完成 |
+| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M28 首批终局体验证据与长期运行回滚底座已完成；M29-M30 尚未完成 |
 | 最后更新时间 | 2026-07-10 |
-| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁；M25 已补作者世界编辑台 dry-run 契约、校验模型、只读影响预览、Status 面板和专项门禁；M26 已补返回访客记忆策略、清除入口、运行时清除 API、状态面板和专项门禁；M27 已补 unlisted 权限层、多层权限矩阵、AI 访问矩阵、M27 权限报告和主线门禁。当前仍不能宣称终局完成，下一步必须进入 M28 长期运行观测与回滚。 |
+| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁；M25 已补作者世界编辑台 dry-run 契约、校验模型、只读影响预览、Status 面板和专项门禁；M26 已补返回访客记忆策略、清除入口、运行时清除 API、状态面板和专项门禁；M27 已补 unlisted 权限层、多层权限矩阵、AI 访问矩阵、M27 权限报告和主线门禁；M28 已补本地/LAN 长期运行观测与回滚契约、Status 面板、专项门禁和报告证据。当前仍不能宣称终局完成，下一步必须进入 M29 终局验收与缺陷清单固化。 |
 
 ## 1.1 2026-07-10 终局 Goal 真实起点
 
@@ -85,6 +85,12 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 通过 | 新增 `unlisted` visibility 层并接入 `src/lib/types.ts`、`permissions.json`、`ai-boundary-policy.json`、`visibility.ts`、`schemas.ts`、标签注册表、Node 护照和 world-core 深度映射；`worldos-permission-boundary-contract-v1.json` 指向 M27 规范，声明 unlisted 只能直接入口/owner 可见、不得进入公开索引；`check-worldos-permission-boundary.mjs` 升级为 M27 报告门禁，写入 `docs/90-archive/reports/worldos-m27-layered-permission-report.json`；新增 `check:m27-layered-permission` 并纳入 `check:mainline` 与脚本治理注册表 | `npm run check:m27-layered-permission`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过；脚本治理首次发现 `check:mainline` 超过 1200 字符后进入 longScripts，已同步注册表并重跑通过 | M27 真实完成的是“权限层契约补齐与泄漏扫描强化”：public、unlisted、semiPublic、private、family、partner、vault、sealed、silent 九层齐全；unlisted buildTarget=public 但 searchable/recommendable/aiIndexable=false；公开索引中 unlisted=0、forbidden=0；私密、家庭、伴侣、保险箱、封存、沉默仍不得进入 public build；AI 默认不读取 unlisted 和私密层。限制也要写清：M27 没有实现真实登录/群组会话，只是把多层权限事实源、公开索引泄漏扫描和 owner/API 边界门禁固化。 | 进入 M28：长期运行观测与回滚。目标是本地/LAN 长期运行时可发现、可定位、可备份、可回滚，而不是只依赖单次 RC。 |
+
+## 1.11 M28 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 通过 | 新增 `data/domains/operations/long-running-observability-rollback-v1.json` 作为本地/LAN 长期运行观测与回滚契约；新增 `src/lib/long-running-ops.ts` 与 `/status` 的 `LongRunningOpsPanel`，展示观测目标、失败分类、回滚演练手册、最近失败首动作和证据报告；新增 `check:m28-observability-rollback`，检查契约范围、回滚手册、页面 token、证据报告、主线与脚本注册，并写入 `docs/90-archive/reports/worldos-m28-observability-rollback-report.json` | `npm run check:m28-observability-rollback`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过；RC 后再次执行 `check:m28-observability-rollback`，报告读取最新 local RC 与 LAN RC 摘要，failures=0 | M28 真实完成的是“长期运行可观测与回滚演练入口”：它不引入 daemon、不做外部 preview/production、不自动执行破坏性回滚；只把构建、主线、本地 RC、LAN 浏览器、权限和资产证据收束为可复查的状态面板与门禁报告。限制也要写清：当前是本地/LAN 操作契约和演练门禁，不是线上 APM、真实事故平台或自动化回滚系统。 | 进入 M29：终局验收与缺陷清单固化。必须基于真实截图、报告、RC 和人工体验量表判断是否仍像骨架，并列出不可自证完成的缺陷。 |
 
 ## 2. 阶段进度
 

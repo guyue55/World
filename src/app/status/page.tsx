@@ -13,6 +13,7 @@ import { getPathQualityLedger } from '@/lib/path-quality-ledger'
 import { getOwnerReadonlyConsoleLedger } from '@/lib/owner-readonly-console'
 import { getAmbientEnvironmentSummary } from '@/lib/ambient-environment'
 import { getJourneyMemorySummary } from '@/lib/journey-memory'
+import { getLongRunningOpsSummary } from '@/lib/long-running-ops'
 import { getSensoryAudioSummary } from '@/lib/sensory-audio'
 import { getPublicSceneSummary } from '@/lib/scene-runtime'
 import { getScenePersonalitySummary } from '@/lib/scene-personality'
@@ -24,6 +25,7 @@ import {
   AuthorWorldEditorPanel,
   DynamicWorldStatusBoard,
   LocalMaturityLedgerPanel,
+  LongRunningOpsPanel,
   OwnerReadonlyConsolePanel,
   PathQualityLedgerPanel,
   SceneRuntimeStatusPanel,
@@ -71,6 +73,7 @@ export default function StatusPage() {
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const ambientEnvironmentSummary = getAmbientEnvironmentSummary()
   const journeyMemorySummary = getJourneyMemorySummary()
+  const longRunningOpsSummary = getLongRunningOpsSummary()
   const sensoryAudioSummary = getSensoryAudioSummary()
   const sceneRuntimeSummary = getPublicSceneSummary()
   const scenePersonalitySummary = getScenePersonalitySummary()
@@ -133,6 +136,8 @@ export default function StatusPage() {
       <AuthorWorldEditorPanel summary={authorWorldEditorSummary} />
 
       <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
+
+      <LongRunningOpsPanel summary={longRunningOpsSummary} />
 
       <SceneRuntimeStatusPanel
         summary={sceneRuntimeSummary}

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-10T01:52:47.068Z",
+  "generatedAt": "2026-07-10T02:06:17.718Z",
   "source": "scripts/write-worldos-scene-qa-report.mjs",
   "checklist": "data/domains/experience/scene-qa-checklist.json",
   "sourceLanReport": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-  "lanGeneratedAt": "2026-07-10T01:52:39.148Z",
+  "lanGeneratedAt": "2026-07-10T02:06:02.812Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -44,7 +44,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 926431,
+        "size": 926404,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-home.png"
       },
       "sceneQa": {
@@ -88,7 +88,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 701301,
+        "size": 701472,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-home.png"
       },
       "sceneQa": {
@@ -132,7 +132,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 777765,
+        "size": 777987,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png"
       },
       "sceneQa": {
@@ -211,7 +211,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "事件不是日志，是世界的水位。",
-      "textLength": 8127,
+      "textLength": 8193,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -220,7 +220,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 847356,
+        "size": 847359,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-timeline.png"
       },
       "sceneQa": {
@@ -308,7 +308,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 838883,
+        "size": 838866,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-archive.png"
       },
       "sceneQa": {
@@ -396,7 +396,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 842788,
+        "size": 842574,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths.png"
       },
       "sceneQa": {
@@ -484,7 +484,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 649220,
+        "size": 649106,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-paths-first-visit.png"
       },
       "sceneQa": {
@@ -568,7 +568,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 474152,
+        "size": 474175,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -610,7 +610,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 546759,
+        "size": 546775,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-node-world-manifesto.png"
       },
       "sceneQa": {
@@ -643,7 +643,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "灯塔只照路，不替你改写世界。",
-      "textLength": 2951,
+      "textLength": 2953,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -652,7 +652,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 862801,
+        "size": 862902,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-ask.png"
       },
       "sceneQa": {
@@ -687,7 +687,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "灯塔只照路，不替你改写世界。",
-      "textLength": 2830,
+      "textLength": 2832,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -696,7 +696,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 766521,
+        "size": 766799,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-ask.png"
       },
       "sceneQa": {
@@ -731,7 +731,7 @@
       "viewport": "desktop",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 9052,
+      "textLength": 10165,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -740,7 +740,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 852289,
+        "size": 852950,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/desktop-status.png"
       },
       "sceneQa": {
@@ -775,7 +775,7 @@
       "viewport": "mobile-reduced-motion",
       "passed": true,
       "h1": "本地世界可以被复查，外部发布继续冻结。",
-      "textLength": 8940,
+      "textLength": 10053,
       "hiddenBody": false,
       "overflowX": false,
       "fixedOverlayIssueCount": 0,
@@ -784,7 +784,7 @@
       "failedNetworkCount": 0,
       "screenshot": {
         "exists": true,
-        "size": 762525,
+        "size": 762528,
         "path": "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-status.png"
       },
       "sceneQa": {

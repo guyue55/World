@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T01:53:30.446Z",
+  "generatedAt": "2026-07-10T02:07:38.678Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -72,7 +72,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-10T01:51:53.815Z"
+      "buildIdMtime": "2026-07-10T02:04:24.094Z"
     },
     "contentLife": {
       "status": "passed",
