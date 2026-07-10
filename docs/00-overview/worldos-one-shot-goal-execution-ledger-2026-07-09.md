@@ -10,9 +10,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M30 |
-| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M21 首批终局体验证据已完成；M22-M30 尚未完成 |
+| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M22 首批终局体验证据已完成；M23-M30 尚未完成 |
 | 最后更新时间 | 2026-07-10 |
-| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告。当前仍不能宣称终局完成，下一步必须进入 M22 灯塔 AI 深度导览。 |
+| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告。当前仍不能宣称终局完成，下一步必须进入 M23 感官/音频/氛围资产生产化。 |
 
 ## 1.1 2026-07-10 终局 Goal 真实起点
 
@@ -49,6 +49,12 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 通过 | 新增 `ContentLifeLoopFact` / `buildContentLifeLoopFacts`，把节点是否被 Atlas、Timeline、Archive、Paths、Lighthouse 吸收统一成内容生命循环事实；节点页新增 `NodeLifeLoopPanel`，在地点护照附近展示 5 个场景吸收状态；新增 `check:m21-content-life-loop` 与 `docs/90-archive/reports/worldos-m21-content-life-loop-report.json` | `npm run check:m21-content-life-loop`、`npm run typecheck`、`npm run lint`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc`、`npm run check:scripts` 通过 | M21 首批达成真实口径：200 个公开节点生成生命循环事实，62 个节点达到 5/5 场景吸收，30 个高连接度核心样本通过；已 featured 且 5/5 的节点为 22 个，未伪造成 30 个。代表节点 `world-manifesto` 同时进入 origin 星域、6 条时间痕迹、公开档案馆、5 条公开旅程和灯塔只读事实源。 | 进入 M22：灯塔 AI 深度导览。目标是让灯塔不只是低光推荐，而能基于公开事实源做 grounded 问路、解释、下一步推荐和失败回退；仍不得前端持 key、不得读取私密层、不得写入世界源。 |
+
+## 1.5 M22 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 通过 | 扩展 `runLowLightLighthouse()`：新增 `grounding`、`nextSteps`、`boundary`、`unknown`，让灯塔能区分有依据导览、静态回退、权限拒答和无证据回退；`/ask` 控制台新增 Grounded 导览区；新增 `check:m22-lighthouse-guidance` 与 `docs/90-archive/reports/worldos-m22-lighthouse-guidance-eval-report.json`，覆盖 10 个问路、解释、推荐、边界和失败问题；脚本纳入 `check:lighthouse`、`check:mainline` 与脚本治理注册表 | `npm run check:m22-lighthouse-guidance`、`npm run check:lighthouse`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过 | M22 真实完成的是“低光、本地、公开事实源导览深化”：10 题评估中包含 grounded、fallback、refusal、no-evidence 四类；Provider 仍为 `disabled-dry-run`，服务端 only，未向前端暴露 key，未发起 Provider 网络请求，未写世界源；私密/保险箱/亲友层问题返回拒答且 sources=0；未知内容返回无证据说明并回退到公开地图/路径/档案馆。它不是最终在线陪伴型 AI，只是 M12/M14 之后更可信的只读导览层。 | 进入 M23：感官/音频/氛围资产生产化。必须继续坚持默认静音、用户 opt-in、可降级、轻资产预算、授权记录和无重型依赖，不得因为追求氛围引入性能或权限风险。 |
 
 ## 2. 阶段进度
 

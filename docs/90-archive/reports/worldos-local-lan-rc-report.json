@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T00:46:06.734Z",
+  "generatedAt": "2026-07-10T00:55:51.728Z",
   "status": "passed",
   "lanIp": "172.30.111.222",
   "baseUrl": "http://172.30.111.222:4320",
@@ -22,8 +22,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "durationMs": 9,
       "ok": true,
       "expected": {
         "status": 200,
@@ -38,7 +38,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
       "durationMs": 10,
       "ok": true,
       "expected": {
@@ -54,8 +54,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
-      "durationMs": 10,
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "durationMs": 11,
       "ok": true,
       "expected": {
         "status": 200,
@@ -70,7 +70,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
       "durationMs": 14,
       "ok": true,
       "expected": {
@@ -86,7 +86,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
       "durationMs": 5,
       "ok": true,
       "expected": {
@@ -102,7 +102,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
       "durationMs": 5,
       "ok": true,
       "expected": {
@@ -118,8 +118,8 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
-      "durationMs": 7,
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "durationMs": 8,
       "ok": true,
       "expected": {
         "status": 200,
@@ -134,7 +134,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
       "durationMs": 7,
       "ok": true,
       "expected": {
@@ -150,7 +150,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-world-gateway.svg\"/><link rel",
       "durationMs": 8,
       "ok": true,
       "expected": {
@@ -166,7 +166,7 @@
       "status": 200,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"preload\" as=\"image\" href=\"/covers/cover-natural-tech.svg\"/><link rel=",
       "durationMs": 6,
       "ok": true,
       "expected": {
@@ -182,7 +182,7 @@
       "status": 200,
       "contentType": "application/json; charset=UTF-8",
       "location": "",
-      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-10T00:45:10.591Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
+      "bodyPreview": "{\n  \"generatedAt\": \"2026-07-10T00:54:56.763Z\",\n  \"state\": {\n    \"mode\": \"alive\",\n    \"season\": \"spring\",\n    \"dayPhase\": \"night\",\n    \"aiStatus\": \"low-light\",\n    \"lastUpdated\": \"2026-05-19\"\n  },\n  \"areas\": [\n    {\n      \"id\": \"origin\",\n   ",
       "durationMs": 9,
       "ok": true,
       "expected": {
@@ -199,7 +199,7 @@
       "contentType": "application/json; charset=UTF-8",
       "location": "",
       "bodyPreview": "{\n  \"name\": \"古月浮屿\",\n  \"version\": \"0.1.0\",\n  \"type\": \"personal-digital-world\",\n  \"slogan\": \"一张书桌连接星河。\",\n  \"entrypoints\": [\n    \"/\",\n    \"/atlas\",\n    \"/skeleton\",\n    \"/archive\",\n    \"/timeline\",\n    \"/paths\",\n    \"/ask\",\n    \"/manifesto\"\n  ",
-      "durationMs": 1,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 200,
@@ -230,7 +230,7 @@
       "status": 200,
       "contentType": "application/xml",
       "location": "",
-      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-10T00:45:27.955Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
+      "bodyPreview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n<loc>https://guyue-floating-world.example.com/</loc>\n<lastmod>2026-07-10T00:55:13.194Z</lastmod>\n<changefreq>weekly</changefreq>\n<prio",
       "durationMs": 8,
       "ok": true,
       "expected": {
@@ -247,7 +247,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 1,
+      "durationMs": 2,
       "ok": true,
       "expected": {
         "status": 308,
@@ -263,7 +263,7 @@
       "contentType": "",
       "location": "/atlas",
       "bodyPreview": "/atlas",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -279,7 +279,7 @@
       "contentType": "",
       "location": "/timeline",
       "bodyPreview": "/timeline",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -311,7 +311,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 308,
@@ -328,7 +328,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 0,
+      "durationMs": 1,
       "ok": true,
       "expected": {
         "status": 308,
@@ -345,7 +345,7 @@
       "contentType": "",
       "location": "/forbidden",
       "bodyPreview": "/forbidden",
-      "durationMs": 1,
+      "durationMs": 0,
       "ok": true,
       "expected": {
         "status": 307,
@@ -361,8 +361,8 @@
       "status": 404,
       "contentType": "text/html; charset=utf-8",
       "location": "",
-      "bodyPreview": "<!DOCTYPE html><!--m_e_qfq_K87lcxuCBs8A0--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
-      "durationMs": 3,
+      "bodyPreview": "<!DOCTYPE html><!--Orqz__5drVKEhCII9Dtul--><html lang=\"zh-CN\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/_next/static/css/51c1f32f8a2b2a74.css\" data-preced",
+      "durationMs": 4,
       "ok": true,
       "expected": {
         "status": 404
@@ -754,13 +754,13 @@
       "metrics": {
         "title": "AI 灯塔｜古月浮屿",
         "h1": "灯塔只照路，不替你改写世界。",
-        "textLength": 2718,
+        "textLength": 2949,
         "textSample": "灯塔 光束 边界 生长 灯塔低光 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 宪章 当前抵达AI 灯塔：普通公开场景之间使用轻量抵达过渡。 场景定位 / 当前抵达 AI 灯塔 / 普通公开场景之间使用轻量抵达过渡。 来源残影 AI 灯塔 公开导览与问路入口 目标预告 AI 灯塔 灯塔 / 光束 / 问答 抵达方式 轻量抵达 feedback 来源 离开 预告 抵达 沉淀 低光灯塔 只读 问路 边界 打开世界地图 进入精选路径 LIGHTHOUSE · 低光灯塔 灯塔只照路，不替你改写世界。 这里读取公开索引，解释你在哪里、能去哪、下一步看什么。它不会修改节点，不读取私密层，也不会绕过后端权限。 打开世界地图 进入精选路径 查找公",
         "hiddenBody": false,
         "scrollWidth": 1440,
         "clientWidth": 1440,
         "overflowX": false,
-        "interactiveCount": 66,
+        "interactiveCount": 69,
         "primaryCtaVisible": false,
         "mobileNavigationVisible": false,
         "coreStatusCardVisible": false,
@@ -1498,13 +1498,13 @@
       "metrics": {
         "title": "AI 灯塔｜古月浮屿",
         "h1": "灯塔只照路，不替你改写世界。",
-        "textLength": 2597,
+        "textLength": 2828,
         "textSample": "灯塔 光束 边界 跳到主要内容 古月浮屿 地图 时间 档案 灯塔 当前抵达AI 灯塔：直接显示目标页面。 场景定位 / 当前抵达 AI 灯塔 / 直接显示目标页面。 来源 离开 预告 抵达 沉淀 LIGHTHOUSE · 低光灯塔 灯塔只照路，不替你改写世界。 这里读取公开索引，解释你在哪里、能去哪、下一步看什么。它不会修改节点，不读取私密层，也不会绕过后端权限。 打开世界地图 进入精选路径 查找公开节点 低光灯塔 · dawn · summer 公开场景，只展示已放行内容。 灯塔 光束 问路 路径 边界 公开索引 Lighthouse 低光灯塔 灯塔只照亮公开路径 3 推荐路径 4 推荐节点 只读 权限边界 灯塔只做导览：它解释公",
         "hiddenBody": false,
         "scrollWidth": 390,
         "clientWidth": 390,
         "overflowX": false,
-        "interactiveCount": 66,
+        "interactiveCount": 69,
         "primaryCtaVisible": false,
         "mobileNavigationVisible": true,
         "coreStatusCardVisible": false,

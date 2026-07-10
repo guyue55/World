@@ -29,6 +29,8 @@ export function PublicLighthouseConsole({
   const auditSignals = [
     { label: '模式', value: runtimeResponse.mode },
     { label: '意图', value: runtimeResponse.intent },
+    { label: '依据', value: runtimeResponse.grounding.status },
+    { label: '置信度', value: runtimeResponse.grounding.confidence },
     { label: '公开上下文', value: runtimeResponse.auditSummary.publicContextCount },
     { label: '排除上下文', value: runtimeResponse.auditSummary.excludedContextCount },
     { label: '缓存', value: `${runtimeResponse.auditSummary.cache.ttlSeconds}s` },
@@ -91,6 +93,32 @@ export function PublicLighthouseConsole({
                   <p className="truncate text-sm font-semibold text-paper">{signal.value}</p>
                   <p className="mt-1 text-xs text-paper/45">{signal.label}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          <div data-gsap-reveal className="rounded-[1.2rem] border border-lake/22 bg-lake/10 p-4">
+            <p className="text-sm font-semibold text-lake">Grounded 导览</p>
+            <div className="mt-3 grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
+              <div className="rounded-[0.9rem] bg-paper/8 p-3">
+                <p className="text-xs font-semibold tracking-[0.22em] text-paper/46">依据状态</p>
+                <p className="mt-2 text-sm font-semibold text-paper">{runtimeResponse.grounding.status} / {runtimeResponse.grounding.confidence}</p>
+                <p className="mt-2 text-xs leading-5 text-paper/52">
+                  公开来源 {runtimeResponse.grounding.sourceCount} 条；publicOnly：{runtimeResponse.grounding.publicOnly ? '是' : '否'}。
+                </p>
+              </div>
+              <div className="grid gap-2">
+                {runtimeResponse.grounding.basis.slice(0, 3).map((basis) => (
+                  <p key={basis} className="rounded-[0.9rem] bg-paper/8 p-3 text-xs leading-5 text-paper/58">{basis}</p>
+                ))}
+              </div>
+            </div>
+            <div className="mt-3 grid gap-2 md:grid-cols-3">
+              {runtimeResponse.nextSteps.map((step) => (
+                <Link key={`${step.href}-${step.title}`} href={step.href} className="rounded-[0.9rem] bg-paper/8 p-3 transition hover:bg-paper/14">
+                  <span className="block truncate text-sm font-semibold text-paper">{step.title}</span>
+                  <span className="mt-1 block line-clamp-2 text-xs leading-5 text-paper/50">{step.reason}</span>
+                </Link>
               ))}
             </div>
           </div>

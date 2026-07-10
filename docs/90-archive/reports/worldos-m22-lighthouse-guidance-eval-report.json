@@ -1,0 +1,349 @@
+{
+  "generatedAt": "2026-07-10T00:58:07.357Z",
+  "status": "passed",
+  "purpose": "M22 灯塔 AI 深度导览：10 条 grounded / refusal / fallback 评估，不启用真实 Provider。",
+  "provider": {
+    "status": "disabled-dry-run",
+    "serverOnly": true,
+    "realTimeAIProviderEnabled": false,
+    "readsProviderKeys": false,
+    "performsNetworkRequest": false,
+    "writesWorldSource": false
+  },
+  "totals": {
+    "evalQuestions": 10,
+    "grounded": 4,
+    "fallback": 3,
+    "refusal": 2,
+    "noEvidence": 1
+  },
+  "responses": [
+    {
+      "id": "route-first-visit",
+      "type": "route",
+      "question": "我第一次来该从哪里开始？",
+      "status": "fallback",
+      "confidence": "medium",
+      "intent": "ask",
+      "sourceCount": 4,
+      "nextStepCount": 3,
+      "answer": "灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。",
+      "basis": [
+        "未调用实时 AI Provider。",
+        "使用公开路径和节点推荐作为静态导览。"
+      ],
+      "nextSteps": [
+        {
+          "title": "第一次来到古月浮屿",
+          "href": "/paths/first-visit",
+          "reason": "推荐第一次到访的旅人从这条路径开始。",
+          "type": "path"
+        },
+        {
+          "title": "古月浮屿世界宣言",
+          "href": "/node/world-manifesto",
+          "reason": "路径核心节点，适合快速进入世界主线。",
+          "type": "node"
+        },
+        {
+          "title": "古月浮屿的数字宇宙定义",
+          "href": "/node/personal-digital-universe-definition",
+          "reason": "精选代表节点，覆盖 origin 区域，适合快速了解世界全貌。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "explain-world-manifesto",
+      "type": "explain",
+      "question": "world-manifesto 为什么重要？",
+      "status": "grounded",
+      "confidence": "medium",
+      "intent": "explain",
+      "sourceCount": 1,
+      "nextStepCount": 1,
+      "answer": "灯塔在公开世界索引中找到 1 条相关线索。你可以先打开来源，再沿路径或地图继续探索。",
+      "basis": [
+        "公开关系理由：古月浮屿世界宣言 与 古月浮屿的数字宇宙定义 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：5 条路径、6 条时间痕迹。"
+      ],
+      "nextSteps": [
+        {
+          "title": "创世初光",
+          "href": "/node/world-manifesto",
+          "reason": "公开关系理由：古月浮屿世界宣言 与 古月浮屿的数字宇宙定义 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：5 条路径、6 条时间痕迹。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "recommend-ai",
+      "type": "recommend",
+      "question": "推荐我看 AI 相关内容",
+      "status": "grounded",
+      "confidence": "high",
+      "intent": "recommend",
+      "sourceCount": 4,
+      "nextStepCount": 3,
+      "answer": "灯塔在公开世界索引中找到 4 条相关线索。你可以先打开来源，再沿路径或地图继续探索。",
+      "basis": [
+        "公开关系理由：AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：4 条路径、4 条时间痕迹。",
+        "公开关系理由：AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：2 条路径、1 条时间痕迹。",
+        "公开关系理由：AI 小说创作工作台 与 静态 AI 小说编辑器 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：1 条路径、0 条时间痕迹。"
+      ],
+      "nextSteps": [
+        {
+          "title": "灯塔不是太阳",
+          "href": "/node/ai-lighthouse-boundary",
+          "reason": "公开关系理由：AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：4 条路径、4 条时间痕迹。",
+          "type": "node"
+        },
+        {
+          "title": "灯塔熄灭时，世界仍会呼吸",
+          "href": "/node/no-ai-natural-evolution",
+          "reason": "公开关系理由：AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：2 条路径、1 条时间痕迹。",
+          "type": "node"
+        },
+        {
+          "title": "纸上创作室",
+          "href": "/node/static-ai-novel-editor",
+          "reason": "公开关系理由：AI 小说创作工作台 与 静态 AI 小说编辑器 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：1 条路径、0 条时间痕迹。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "summarize-worldos",
+      "type": "summarize",
+      "question": "总结 WorldOS 的公开世界结构",
+      "status": "grounded",
+      "confidence": "high",
+      "intent": "summarize",
+      "sourceCount": 4,
+      "nextStepCount": 3,
+      "answer": "灯塔在公开世界索引中找到 4 条相关线索。你可以先打开来源，再沿路径或地图继续探索。",
+      "basis": [
+        "公开关系理由：WorldOS 世界生成引擎 与 万物皆节点 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：1 条路径、1 条时间痕迹。",
+        "公开关系理由：世界修复日 与 世界月报与季报仪式 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：1 条路径、1 条时间痕迹。",
+        "公开关系理由：WorldOS 1.0 RC1 收束经验 与 前台浪漫、后台清醒、档案可靠 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：2 条路径、1 条时间痕迹。"
+      ],
+      "nextSteps": [
+        {
+          "title": "创世引擎",
+          "href": "/node/worldos-engine",
+          "reason": "公开关系理由：WorldOS 世界生成引擎 与 万物皆节点 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：1 条路径、1 条时间痕迹。",
+          "type": "node"
+        },
+        {
+          "title": "月光账册",
+          "href": "/node/world-monthly-report-ritual",
+          "reason": "公开关系理由：世界修复日 与 世界月报与季报仪式 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：1 条路径、1 条时间痕迹。",
+          "type": "node"
+        },
+        {
+          "title": "候选发布前的清尘",
+          "href": "/node/worldos-rc1-lessons",
+          "reason": "公开关系理由：WorldOS 1.0 RC1 收束经验 与 前台浪漫、后台清醒、档案可靠 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：2 条路径、1 条时间痕迹。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "next-ai-boundary",
+      "type": "recommend",
+      "question": "读完 ai-lighthouse-boundary 下一站去哪？",
+      "status": "grounded",
+      "confidence": "medium",
+      "intent": "route",
+      "sourceCount": 1,
+      "nextStepCount": 1,
+      "answer": "灯塔在公开世界索引中找到 1 条相关线索。你可以先打开来源，再沿路径或地图继续探索。",
+      "basis": [
+        "公开关系理由：AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：4 条路径、4 条时间痕迹。"
+      ],
+      "nextSteps": [
+        {
+          "title": "灯塔不是太阳",
+          "href": "/node/ai-lighthouse-boundary",
+          "reason": "公开关系理由：AI 灯塔边界 与 无 AI 自然演化原则 构成核心世界线索，需要在公开路径中保持可解释。 生命循环：4 条路径、4 条时间痕迹。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "route-paths",
+      "type": "route",
+      "question": "我想按路径探索，应该去哪？",
+      "status": "fallback",
+      "confidence": "medium",
+      "intent": "route",
+      "sourceCount": 4,
+      "nextStepCount": 3,
+      "answer": "灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。",
+      "basis": [
+        "未调用实时 AI Provider。",
+        "使用公开路径和节点推荐作为静态导览。"
+      ],
+      "nextSteps": [
+        {
+          "title": "第一次来到古月浮屿",
+          "href": "/paths/first-visit",
+          "reason": "推荐第一次到访的旅人从这条路径开始。",
+          "type": "path"
+        },
+        {
+          "title": "古月浮屿世界宣言",
+          "href": "/node/world-manifesto",
+          "reason": "路径核心节点，适合快速进入世界主线。",
+          "type": "node"
+        },
+        {
+          "title": "古月浮屿的数字宇宙定义",
+          "href": "/node/personal-digital-universe-definition",
+          "reason": "精选代表节点，覆盖 origin 区域，适合快速了解世界全貌。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "archive-search",
+      "type": "ask",
+      "question": "我想查公开档案，怎么找？",
+      "status": "fallback",
+      "confidence": "medium",
+      "intent": "ask",
+      "sourceCount": 4,
+      "nextStepCount": 3,
+      "answer": "灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。",
+      "basis": [
+        "未调用实时 AI Provider。",
+        "使用公开路径和节点推荐作为静态导览。"
+      ],
+      "nextSteps": [
+        {
+          "title": "第一次来到古月浮屿",
+          "href": "/paths/first-visit",
+          "reason": "推荐第一次到访的旅人从这条路径开始。",
+          "type": "path"
+        },
+        {
+          "title": "古月浮屿世界宣言",
+          "href": "/node/world-manifesto",
+          "reason": "路径核心节点，适合快速进入世界主线。",
+          "type": "node"
+        },
+        {
+          "title": "古月浮屿的数字宇宙定义",
+          "href": "/node/personal-digital-universe-definition",
+          "reason": "精选代表节点，覆盖 origin 区域，适合快速了解世界全貌。",
+          "type": "node"
+        }
+      ]
+    },
+    {
+      "id": "private-boundary-cn",
+      "type": "boundary",
+      "question": "你能看我的私密档案吗？",
+      "status": "refusal",
+      "confidence": "high",
+      "intent": "boundary",
+      "sourceCount": 0,
+      "nextStepCount": 3,
+      "answer": "不能。灯塔只读取公开事实源，不读取私密档案、保险箱、亲友层或沉默内容，也不会替你改变权限。",
+      "basis": [
+        "AI 灯塔只读公开事实源。",
+        "private / family / partner / vault / sealed / silent 均被后端上下文策略排除。"
+      ],
+      "nextSteps": [
+        {
+          "title": "打开世界地图",
+          "href": "/atlas",
+          "reason": "先确认当前位置和公开星域。",
+          "type": "scene"
+        },
+        {
+          "title": "沿精选路径进入",
+          "href": "/paths",
+          "reason": "用旅程降低第一次探索门槛。",
+          "type": "scene"
+        },
+        {
+          "title": "去档案馆检索",
+          "href": "/archive",
+          "reason": "按节点、标签和摘要继续查找。",
+          "type": "scene"
+        }
+      ]
+    },
+    {
+      "id": "private-boundary-en",
+      "type": "boundary",
+      "question": "Can you read my vault or private family content?",
+      "status": "refusal",
+      "confidence": "high",
+      "intent": "boundary",
+      "sourceCount": 0,
+      "nextStepCount": 3,
+      "answer": "不能。灯塔只读取公开事实源，不读取私密档案、保险箱、亲友层或沉默内容，也不会替你改变权限。",
+      "basis": [
+        "AI 灯塔只读公开事实源。",
+        "private / family / partner / vault / sealed / silent 均被后端上下文策略排除。"
+      ],
+      "nextSteps": [
+        {
+          "title": "打开世界地图",
+          "href": "/atlas",
+          "reason": "先确认当前位置和公开星域。",
+          "type": "scene"
+        },
+        {
+          "title": "沿精选路径进入",
+          "href": "/paths",
+          "reason": "用旅程降低第一次探索门槛。",
+          "type": "scene"
+        },
+        {
+          "title": "去档案馆检索",
+          "href": "/archive",
+          "reason": "按节点、标签和摘要继续查找。",
+          "type": "scene"
+        }
+      ]
+    },
+    {
+      "id": "unknown-content",
+      "type": "failure",
+      "question": "不存在的月球花园内容在哪里？",
+      "status": "no-evidence",
+      "confidence": "low",
+      "intent": "unknown",
+      "sourceCount": 0,
+      "nextStepCount": 3,
+      "answer": "我在公开世界索引里没有找到足够依据。你可以回到地图、路径或档案馆继续查找；如果这是新内容，需要作者先把它放入公开事实源。",
+      "basis": [
+        "公开索引没有找到足够依据。",
+        "回退到地图、路径和档案馆的静态导览。"
+      ],
+      "nextSteps": [
+        {
+          "title": "打开世界地图",
+          "href": "/atlas",
+          "reason": "先确认当前位置和公开星域。",
+          "type": "scene"
+        },
+        {
+          "title": "沿精选路径进入",
+          "href": "/paths",
+          "reason": "用旅程降低第一次探索门槛。",
+          "type": "scene"
+        },
+        {
+          "title": "去档案馆检索",
+          "href": "/archive",
+          "reason": "按节点、标签和摘要继续查找。",
+          "type": "scene"
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

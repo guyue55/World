@@ -6,7 +6,7 @@ import { buildAIContextSlice, type AIContextCandidate } from './context-policy'
 import { buildLighthouseRuntimeEnvelope, getLighthouseRuntimeGovernance } from './lighthouse-governance'
 import { getLocalAIProviderStatus } from './provider'
 
-export type LighthouseIntent = 'ask' | 'explain' | 'recommend' | 'route' | 'summarize'
+export type LighthouseIntent = 'ask' | 'explain' | 'recommend' | 'route' | 'summarize' | 'boundary' | 'unknown'
 
 export type LighthouseSource = {
   slug: string
@@ -22,10 +22,27 @@ export type LighthouseRecommendation = {
   type: 'node' | 'path' | 'fallback'
 }
 
+export type LighthouseGroundedNextStep = {
+  title: string
+  href: string
+  reason: string
+  type: 'node' | 'path' | 'scene' | 'fallback'
+}
+
+export type LighthouseGrounding = {
+  status: 'grounded' | 'fallback' | 'refusal' | 'no-evidence'
+  basis: string[]
+  publicOnly: true
+  sourceCount: number
+  confidence: 'high' | 'medium' | 'low'
+}
+
 export type LighthouseRuntimeResponse = {
   answer: string
   recommendations: LighthouseRecommendation[]
   sources: LighthouseSource[]
+  nextSteps: LighthouseGroundedNextStep[]
+  grounding: LighthouseGrounding
   mode: 'low-light'
   intent: LighthouseIntent
   fallback: {
@@ -60,6 +77,8 @@ export type LighthouseRuntimeResponse = {
 }
 
 function inferIntent(question: string): LighthouseIntent {
+  if (/私密|隐私|保险箱|vault|private|family|partner|sealed|silent/i.test(question)) return 'boundary'
+  if (/找不到|不存在|未知|没有内容|unknown|missing/i.test(question)) return 'unknown'
   if (/总结|概括|summary/i.test(question)) return 'summarize'
   if (/解释|为什么|是什么|explain/i.test(question)) return 'explain'
   if (/推荐|看什么|下一步|recommend/i.test(question)) return 'recommend'
@@ -69,8 +88,13 @@ function inferIntent(question: string): LighthouseIntent {
 
 function matchesQuestion(node: PublicNodeReference, question: string) {
   const query = question.toLowerCase()
-  return [node.title, node.aiReadableSummary, node.areaTitle, node.lifeStage, node.status]
-    .some((value) => String(value).toLowerCase().includes(query))
+  const terms = query.split(/[\s,，。！？?/.、]+/).filter((term) => term.length >= 2)
+  const haystack = [node.title, node.slug, node.aiReadableSummary, node.areaTitle, node.lifeStage, node.status]
+    .join(' ')
+    .toLowerCase()
+  return terms.length > 0
+    ? terms.some((term) => haystack.includes(term))
+    : haystack.includes(query)
 }
 
 function sourceFromNode(node: PublicNodeReference): LighthouseSource {
@@ -95,6 +119,24 @@ function contextCandidates(nodes: PublicNodeReference[]): AIContextCandidate[] {
     summary: node.aiReadableSummary,
     visibility: 'public',
   }))
+}
+
+function sceneNextSteps(): LighthouseGroundedNextStep[] {
+  return [
+    { title: '打开世界地图', href: '/atlas', reason: '先确认当前位置和公开星域。', type: 'scene' },
+    { title: '沿精选路径进入', href: '/paths', reason: '用旅程降低第一次探索门槛。', type: 'scene' },
+    { title: '去档案馆检索', href: '/archive', reason: '按节点、标签和摘要继续查找。', type: 'scene' },
+  ]
+}
+
+function nextStepsFromRecommendations(recommendations: LighthouseRecommendation[]): LighthouseGroundedNextStep[] {
+  const steps = recommendations.slice(0, 3).map((item) => ({
+    title: item.title,
+    href: item.href,
+    reason: item.reason,
+    type: item.type === 'node' || item.type === 'path' ? item.type : 'fallback' as const,
+  }))
+  return steps.length > 0 ? steps : sceneNextSteps()
 }
 
 export function runLowLightLighthouse(question: string): LighthouseRuntimeResponse {
@@ -132,14 +174,60 @@ export function runLowLightLighthouse(question: string): LighthouseRuntimeRespon
       type: source.slug ? 'node' : source.href.startsWith('/paths/') ? 'path' : 'fallback',
     }))
 
-  const answer = matchedSources.length > 0
-    ? `灯塔在公开世界索引中找到 ${matchedSources.length} 条相关线索。你可以先打开来源，再沿路径或地图继续探索。`
-    : '灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。'
+  const isBoundaryQuestion = intent === 'boundary'
+  const isUnknownQuestion = intent === 'unknown'
+  const finalSources = isBoundaryQuestion || isUnknownQuestion ? [] : sources
+  const finalRecommendations = isBoundaryQuestion || isUnknownQuestion ? [] : recommendations
+  const nextSteps = isBoundaryQuestion || isUnknownQuestion ? sceneNextSteps() : nextStepsFromRecommendations(recommendations)
+  const grounding: LighthouseGrounding = isBoundaryQuestion
+    ? {
+        status: 'refusal',
+        basis: [
+          'AI 灯塔只读公开事实源。',
+          'private / family / partner / vault / sealed / silent 均被后端上下文策略排除。',
+        ],
+        publicOnly: true,
+        sourceCount: 0,
+        confidence: 'high',
+      }
+    : isUnknownQuestion && matchedSources.length === 0
+      ? {
+          status: 'no-evidence',
+          basis: ['公开索引没有找到足够依据。', '回退到地图、路径和档案馆的静态导览。'],
+          publicOnly: true,
+          sourceCount: 0,
+          confidence: 'low',
+        }
+      : matchedSources.length > 0
+        ? {
+            status: 'grounded',
+            basis: finalSources.slice(0, 3).map((source) => source.reason),
+            publicOnly: true,
+            sourceCount: matchedSources.length,
+            confidence: matchedSources.length >= 2 ? 'high' : 'medium',
+          }
+        : {
+            status: 'fallback',
+            basis: ['未调用实时 AI Provider。', '使用公开路径和节点推荐作为静态导览。'],
+            publicOnly: true,
+            sourceCount: finalSources.length,
+            confidence: 'medium',
+          }
+
+  const answer = isBoundaryQuestion
+    ? '不能。灯塔只读取公开事实源，不读取私密档案、保险箱、亲友层或沉默内容，也不会替你改变权限。'
+    : isUnknownQuestion && matchedSources.length === 0
+      ? '我在公开世界索引里没有找到足够依据。你可以回到地图、路径或档案馆继续查找；如果这是新内容，需要作者先把它放入公开事实源。'
+      : matchedSources.length > 0
+        ? `灯塔在公开世界索引中找到 ${matchedSources.length} 条相关线索。你可以先打开来源，再沿路径或地图继续探索。`
+        : '灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。'
 
   return {
     answer,
-    recommendations,
-    sources,
+    recommendations: finalRecommendations,
+    sources: finalSources,
+    nextSteps,
+    grounding,
     mode: 'low-light',
     intent,
     fallback: {

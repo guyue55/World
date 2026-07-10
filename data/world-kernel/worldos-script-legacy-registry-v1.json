@@ -26,6 +26,7 @@
     "check:m20-spatial-continuity",
     "check:m20-spa-transitions",
     "check:m21-content-life-loop",
+    "check:m22-lighthouse-guidance",
     "check:human-experience",
     "check:authoring-ops",
     "check:ai-provider-boundary",
@@ -64,6 +65,7 @@
     "npm run check:m20-spatial-continuity",
     "npm run check:m20-spa-transitions",
     "npm run check:m21-content-life-loop",
+    "npm run check:m22-lighthouse-guidance",
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:dependency-hardening"
@@ -79,6 +81,7 @@
     "npm run check:m20-spatial-continuity",
     "npm run check:m20-spa-transitions",
     "npm run check:m21-content-life-loop",
+    "npm run check:m22-lighthouse-guidance",
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:rc-evidence-policy"
@@ -98,8 +101,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 287,
-    "checkScripts": 159,
+    "totalScripts": 288,
+    "checkScripts": 160,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
