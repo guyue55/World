@@ -21,9 +21,14 @@ export type JourneyMemorySummary = {
   publicSceneOnly: boolean
   primaryKey: string
   historyKey: string
+  clearedAtKey: string
   maxHistory: number
   allowedFieldCount: number
   forbiddenFieldCount: number
+  returningVisitorEnabled: boolean
+  clearMemoryEnabled: boolean
+  clearMemoryRemovesKeys: string[]
+  postClearBehavior: string
   nextActions: string[]
 }
 
@@ -35,6 +40,7 @@ export function getJourneyStorageKeys() {
   return {
     primaryKey: journeyMemoryPolicy.storage.primaryKey,
     historyKey: journeyMemoryPolicy.storage.historyKey,
+    clearedAtKey: journeyMemoryPolicy.storage.clearedAtKey,
   }
 }
 
@@ -46,9 +52,14 @@ export function getJourneyMemorySummary(): JourneyMemorySummary {
     publicSceneOnly: journeyMemoryPolicy.scope.publicSceneOnly,
     primaryKey: journeyMemoryPolicy.storage.primaryKey,
     historyKey: journeyMemoryPolicy.storage.historyKey,
+    clearedAtKey: journeyMemoryPolicy.storage.clearedAtKey,
     maxHistory: journeyMemoryPolicy.storage.maxHistory,
     allowedFieldCount: journeyMemoryPolicy.storage.allowedFields.length,
     forbiddenFieldCount: journeyMemoryPolicy.storage.forbiddenFields.length,
+    returningVisitorEnabled: journeyMemoryPolicy.returningVisitor.enabled,
+    clearMemoryEnabled: journeyMemoryPolicy.clearMemory.enabled,
+    clearMemoryRemovesKeys: journeyMemoryPolicy.clearMemory.removesKeys,
+    postClearBehavior: journeyMemoryPolicy.clearMemory.postClearBehavior,
     nextActions: journeyMemoryPolicy.nextActions,
   }
 }
@@ -74,6 +85,19 @@ export function buildJourneyMemoryEntry(pathname: string, visitedAt: string): Jo
 export function mergeJourneyHistory(history: JourneyMemoryEntry[], entry: JourneyMemoryEntry): JourneyMemoryEntry[] {
   const filtered = history.filter((item) => item.path !== entry.path)
   return [entry, ...filtered].slice(0, journeyMemoryPolicy.storage.maxHistory)
+}
+
+export function getReturningJourney(history: JourneyMemoryEntry[], currentPath: string): JourneyMemoryEntry | null {
+  return history.find((entry) => entry.path !== normalizeJourneyPath(currentPath)) ?? null
+}
+
+export function getClearedJourneyMemoryState(clearedAt: string) {
+  return {
+    lastJourney: null,
+    journeyHistory: [] as JourneyMemoryEntry[],
+    clearedAt,
+    message: journeyMemoryPolicy.returningVisitor.clearedState,
+  }
 }
 
 export function isJourneyMemoryEntry(value: unknown): value is JourneyMemoryEntry {

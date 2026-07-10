@@ -18,6 +18,7 @@ function JourneyCard({ compact = false }: { compact?: boolean }) {
     () => runtime.journeyHistory.filter((entry) => entry.path !== runtime.currentJourney?.path).slice(0, compact ? 2 : 3),
     [compact, runtime.currentJourney?.path, runtime.journeyHistory]
   )
+  const hasJourneyMemory = runtime.journeyHistory.length > 0 || Boolean(runtime.lastJourney)
 
   return (
     <div data-testid="journey-memory-entry" className="rounded-[1.35rem] border border-white/70 bg-paper/88 p-4 text-sm shadow-soft backdrop-blur-xl">
@@ -31,10 +32,21 @@ function JourneyCard({ compact = false }: { compact?: boolean }) {
             <p className="mt-1 truncate text-xs text-ink/46">当前：{runtime.currentJourney.sceneTitle}</p>
           )}
         </div>
-        {runtime.lastJourney && (
-          <Link href={runtime.lastJourney.path} className="shrink-0 rounded-full bg-ink px-3 py-2 text-xs font-semibold text-paper transition hover:bg-night">
-            继续
-          </Link>
+        {hasJourneyMemory && (
+          <div className="flex shrink-0 flex-col gap-2">
+            {runtime.lastJourney && (
+              <Link href={runtime.lastJourney.path} className="rounded-full bg-ink px-3 py-2 text-center text-xs font-semibold text-paper transition hover:bg-night">
+                继续
+              </Link>
+            )}
+            <button
+              type="button"
+              onClick={runtime.clearJourneyMemory}
+              className="rounded-full border border-ink/10 bg-white/70 px-3 py-2 text-xs font-semibold text-ink/58 transition hover:bg-white hover:text-ink"
+            >
+              清除
+            </button>
+          </div>
         )}
       </div>
 

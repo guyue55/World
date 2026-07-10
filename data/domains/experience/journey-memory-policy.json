@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "name": "WorldOS Phase 30 公开旅程记忆策略",
-  "updatedAt": "2026-07-09",
-  "source": "docs/00-overview/worldos-phase30-journey-memory-execution-plan-2026-07-09.md",
-  "principle": "Journey Memory 只保存公开体验恢复所需的轻量状态，不承担权限判断，不保存私密内容，不参与后端 guard。",
+  "name": "WorldOS M26 世界记忆与回访体验策略",
+  "updatedAt": "2026-07-10",
+  "source": "docs/00-overview/worldos-m26-world-memory-returning-visitor-spec-2026-07-10.md",
+  "principle": "World Memory 只保存公开体验恢复所需的轻量状态，让返回访客继续探索；它不承担权限判断，不保存私密内容，不参与后端 guard。",
   "scope": {
     "localOnly": true,
     "localhostAccepted": true,
@@ -19,6 +19,7 @@
   "storage": {
     "primaryKey": "guyue-world:journey-memory-v1",
     "historyKey": "guyue-world:journey-history-v1",
+    "clearedAtKey": "guyue-world:journey-cleared-at-v1",
     "maxHistory": 5,
     "allowedFields": [
       "path",
@@ -84,6 +85,23 @@
     "sceneTitle": "创世原点",
     "path": "/"
   },
+  "returningVisitor": {
+    "enabled": true,
+    "minimumPreviousEntries": 1,
+    "continueActionLabel": "继续",
+    "emptyState": "当前位置已被轻轻记录。",
+    "clearedState": "旅程记忆已清空；继续浏览时只记录公开路径。"
+  },
+  "clearMemory": {
+    "enabled": true,
+    "label": "清除",
+    "removesKeys": [
+      "guyue-world:journey-memory-v1",
+      "guyue-world:journey-history-v1"
+    ],
+    "writesKey": "guyue-world:journey-cleared-at-v1",
+    "postClearBehavior": "不显示继续探索；下一次公开路由变化后重新开始轻量记录。"
+  },
   "acceptance": {
     "requiredFiles": [
       "data/domains/experience/journey-memory-policy.json",
@@ -93,7 +111,8 @@
     ],
     "requiredStorageKeys": [
       "guyue-world:journey-memory-v1",
-      "guyue-world:journey-history-v1"
+      "guyue-world:journey-history-v1",
+      "guyue-world:journey-cleared-at-v1"
     ],
     "forbiddenClientTokens": [
       "OPENAI_API_KEY",
@@ -111,6 +130,6 @@
     }
   },
   "nextActions": [
-    "阶段 32：Scene QA 增加 returning visitor 与 cleared storage 两种截图证据。"
+    "M30 终局候选验收时补 returning visitor 与 cleared storage 的完整录屏。"
   ]
 }

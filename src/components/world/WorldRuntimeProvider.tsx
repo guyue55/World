@@ -8,7 +8,9 @@ import { RuntimeSignalDock } from './RuntimeSignalDock'
 import { RuntimeSoundscapeControl } from './RuntimeSoundscapeControl'
 import {
   buildJourneyMemoryEntry,
+  getClearedJourneyMemoryState,
   getJourneyStorageKeys,
+  getReturningJourney,
   isJourneyMemoryEntry,
   mergeJourneyHistory,
   type JourneyMemoryEntry,
@@ -48,6 +50,7 @@ type WorldRuntime = {
   lastJourney: JourneyMemoryEntry | null
   journeyHistory: JourneyMemoryEntry[]
   visitedCount: number
+  clearJourneyMemory: () => void
   setReducedMotion: (value: boolean) => void
   setMotionPreference: (value: MotionPreference) => void
   setSoundMode: (value: WorldSoundMode) => void
@@ -112,6 +115,16 @@ function writeJourneyHistory(history: JourneyMemoryEntry[]) {
     window.localStorage.setItem(journeyStorageKeys.historyKey, JSON.stringify(history))
   } catch {
     // Journey Memory is an experience enhancement; browsing must keep working without storage.
+  }
+}
+
+function clearStoredJourneyMemory() {
+  try {
+    window.localStorage.removeItem(journeyStorageKeys.primaryKey)
+    window.localStorage.removeItem(journeyStorageKeys.historyKey)
+    window.localStorage.setItem(journeyStorageKeys.clearedAtKey, new Date().toISOString())
+  } catch {
+    // 清除失败不影响公开浏览；UI 状态仍按本轮操作立即收敛。
   }
 }
 
@@ -213,7 +226,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     const nextHistory = mergeJourneyHistory(readJourneyHistory(), nextJourney)
     const previousDifferentJourney = previousJourney?.path !== nextJourney.path
       ? previousJourney
-      : nextHistory.find((entry) => entry.path !== nextJourney.path) ?? null
+      : getReturningJourney(nextHistory, nextJourney.path)
 
     writeJourneyMemory(nextJourney)
     writeJourneyHistory(nextHistory)
@@ -248,6 +261,13 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     writeSoundVolume(nextValue)
   }
 
+  function clearJourneyMemory() {
+    clearStoredJourneyMemory()
+    const clearedState = getClearedJourneyMemoryState(new Date().toISOString())
+    setLastJourney(clearedState.lastJourney)
+    setJourneyHistory(clearedState.journeyHistory)
+  }
+
   const value = useMemo<WorldRuntime>(() => ({
     dayPeriod,
     season,
@@ -267,6 +287,7 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     lastJourney,
     journeyHistory,
     visitedCount,
+    clearJourneyMemory,
     setReducedMotion,
     setMotionPreference,
     setSoundMode,

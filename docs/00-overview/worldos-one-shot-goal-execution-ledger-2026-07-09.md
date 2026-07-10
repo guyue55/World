@@ -10,9 +10,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M30 |
-| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M25 首批终局体验证据已完成；M26-M30 尚未完成 |
+| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M26 首批终局体验证据已完成；M27-M30 尚未完成 |
 | 最后更新时间 | 2026-07-10 |
-| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁；M25 已补作者世界编辑台 dry-run 契约、校验模型、只读影响预览、Status 面板和专项门禁。当前仍不能宣称终局完成，下一步必须进入 M26 世界记忆与回访体验。 |
+| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁；M25 已补作者世界编辑台 dry-run 契约、校验模型、只读影响预览、Status 面板和专项门禁；M26 已补返回访客记忆策略、清除入口、运行时清除 API、状态面板和专项门禁。当前仍不能宣称终局完成，下一步必须进入 M27 多层权限与私密宇宙。 |
 
 ## 1.1 2026-07-10 终局 Goal 真实起点
 
@@ -73,6 +73,12 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 通过 | 新增 `data/domains/operations/author-world-editor-dry-run-v1.json` 作为 M25 作者编辑台契约，明确 local/LAN only、只读 dry-run、前端不写世界源、前端不是权限事实源；新增 `src/lib/author-world-editor.ts`，提供作者节点草稿、无效草稿、`validateAuthorNodeDraft()`、五场景影响预览和维护提示；新增 `/status` 的 `AuthorWorldEditorPanel`，展示模块、权限事实源、坏草稿阻止和 Atlas / Archive / Paths / Timeline / Lighthouse 吸收预览；新增 `check:m25-author-world-editor` 与 `docs/90-archive/reports/worldos-m25-author-world-editor-report.json`，并纳入 `check:mainline` 与脚本治理注册表 | `npm run check:m25-author-world-editor`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过；第一次并行跑 `build:production-ci` 与 `check:mainline` 曾导致 M20 SPA 检查读到被清理中的 `.next` 产物并失败，随后按顺序重跑 `check:mainline` 通过 | M25 真实完成的是“作者维护前的低门槛 dry-run 编辑台”：有效中文草稿可通过校验并预览进入 Atlas、Archive、Paths、Timeline、Lighthouse；无摘要、无区域、前端权限事实源三类坏草稿被阻止；Status 面板可复查“只读 dry-run”和“权限事实源”。限制也要写清：当前不是云端 CMS，也不是前端直接写入 UI；实际写入世界源仍需后续在备份、回滚、owner/API 边界稳定后再开放。 | 进入 M26：世界记忆与回访体验。目标是让用户再次访问时能继续探索，同时提供隐私边界和清除入口，不记录敏感内容。 |
+
+## 1.9 M26 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 通过 | 将 `data/domains/experience/journey-memory-policy.json` 从旧 Phase 30 旅程记忆策略升级为 M26 世界记忆与回访体验策略，新增 `clearedAtKey`、returning visitor、clear memory 规则；`src/lib/journey-memory.ts` 新增 `getReturningJourney()`、`getClearedJourneyMemoryState()` 和摘要字段；`WorldRuntimeProvider` 暴露 `clearJourneyMemory()`，清除 primary/history 并写入 clearedAt；`ProductJourneyDock` 增加“继续 / 清除”入口；`SceneRuntimeStatusPanel` 展示返回访客、清除入口、清除键和清除后行为；`check:m26-world-memory` 写入 `docs/90-archive/reports/worldos-m26-world-memory-report.json`，并纳入 `check:mainline` 与脚本治理注册表 | `npm run check:m26-world-memory`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过 | M26 真实完成的是“轻量公开回访记忆”：只记录公开路径、公开节点、公开路径 ID 和访问时间；返回访客可看到上次停留和最近记录；用户可一键清除 history/primary，清除后不显示继续探索；不记录 owner/auth/permission/role/token/private/vault，不把本地记忆发给 AI。限制也要写清：M26 仍使用 localStorage，未引入 IndexedDB；完整 returning visitor / cleared storage 录屏留到 M30 终局验收补齐。 | 进入 M27：多层权限与私密宇宙。目标是让公开、私密、owner、AI 可读边界由后端/数据契约控制，前端只体现显隐，不能硬编码越权。 |
 
 ## 2. 阶段进度
 

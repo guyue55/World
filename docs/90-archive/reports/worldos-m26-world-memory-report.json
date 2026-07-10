@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-07-10T01:43:36.993Z",
+  "status": "passed",
+  "stage": "M26",
+  "policy": {
+    "name": "WorldOS M26 世界记忆与回访体验策略",
+    "source": "docs/00-overview/worldos-m26-world-memory-returning-visitor-spec-2026-07-10.md",
+    "localOnly": true,
+    "publicSceneOnly": true,
+    "frontendPermissionControl": false
+  },
+  "storage": {
+    "primaryKey": "guyue-world:journey-memory-v1",
+    "historyKey": "guyue-world:journey-history-v1",
+    "clearedAtKey": "guyue-world:journey-cleared-at-v1",
+    "maxHistory": 5,
+    "allowedFields": [
+      "path",
+      "label",
+      "sceneId",
+      "sceneTitle",
+      "recentNodeSlug",
+      "recentPathId",
+      "visitedAt"
+    ],
+    "forbiddenFields": [
+      "owner",
+      "auth",
+      "permission",
+      "role",
+      "token",
+      "secret",
+      "visibility",
+      "private",
+      "vault"
+    ]
+  },
+  "returningVisitor": {
+    "enabled": true,
+    "minimumPreviousEntries": 1,
+    "continueActionLabel": "继续",
+    "emptyState": "当前位置已被轻轻记录。",
+    "clearedState": "旅程记忆已清空；继续浏览时只记录公开路径。"
+  },
+  "clearMemory": {
+    "enabled": true,
+    "label": "清除",
+    "removesKeys": [
+      "guyue-world:journey-memory-v1",
+      "guyue-world:journey-history-v1"
+    ],
+    "writesKey": "guyue-world:journey-cleared-at-v1",
+    "postClearBehavior": "不显示继续探索；下一次公开路由变化后重新开始轻量记录。"
+  },
+  "evidence": {
+    "providerHasClearApi": true,
+    "dockHasContinueAndClear": true,
+    "pathProgressUsesHistory": true,
+    "nodeCanReturnToSource": true,
+    "statusShowsClearPolicy": true
+  },
+  "failures": []
+}

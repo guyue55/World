@@ -227,7 +227,22 @@ export function SceneRuntimeStatusPanel({
               <p className="text-xs font-semibold tracking-[0.18em] text-moss">边界</p>
               <p className="mt-2 text-sm font-semibold text-ink">{journeyMemorySummary.allowedFieldCount} 可存 / {journeyMemorySummary.forbiddenFieldCount} 禁止</p>
             </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">返回访客</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{journeyMemorySummary.returningVisitorEnabled ? '启用' : '关闭'}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">清除入口</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{journeyMemorySummary.clearMemoryEnabled ? '可用' : '关闭'}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">清除键</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{journeyMemorySummary.clearMemoryRemovesKeys.length} 项</p>
+            </div>
           </div>
+          <p className="mt-4 rounded-[0.9rem] bg-ink/5 px-4 py-3 text-xs leading-5 text-ink/52">
+            {journeyMemorySummary.postClearBehavior}
+          </p>
         </div>
       )}
 
