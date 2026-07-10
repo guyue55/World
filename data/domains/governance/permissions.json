@@ -7,6 +7,13 @@
     "buildTarget": "public"
   },
   {
+    "visibility": "unlisted",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "public"
+  },
+  {
     "visibility": "semiPublic",
     "searchable": true,
     "recommendable": false,

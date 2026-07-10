@@ -72,6 +72,7 @@ export const WORLD_LAYERS: Array<{
 
 export const VISIBILITY_DEPTH: Record<Visibility, WorldDepth> = {
   public: 'surface',
+  unlisted: 'surface',
   semiPublic: 'surface',
   private: 'deep',
   family: 'deep',

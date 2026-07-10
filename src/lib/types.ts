@@ -1,5 +1,6 @@
 export type Visibility =
   | 'public'
+  | 'unlisted'
   | 'semiPublic'
   | 'private'
   | 'family'

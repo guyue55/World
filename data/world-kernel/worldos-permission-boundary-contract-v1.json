@@ -1,13 +1,14 @@
 {
   "name": "WorldOS 权限与私密边界契约 v1",
-  "updatedAt": "2026-07-07",
-  "source": "阶段 4A：公开/私密事实源边界",
+  "updatedAt": "2026-07-10",
+  "source": "docs/00-overview/worldos-m27-layered-permission-private-universe-spec-2026-07-10.md",
   "principle": "后端控制权限，前端只体现结果；公开页面只能消费公开数据或公开 surface。",
   "roles": [
     {
       "id": "public",
       "label": "公开访问者",
       "canRead": ["public", "semiPublic"],
+      "canDirectRead": ["unlisted"],
       "cannotRead": ["private", "family", "partner", "vault", "sealed", "silent"]
     },
     {
@@ -68,7 +69,9 @@
     "middlewareExcludesApiRoutes": true,
     "apiRoutesMustUseOwnGuards": true,
     "ownerTokenMustBeServerConfigured": true,
-    "forbiddenPageMustOfferPublicAlternatives": true
+    "forbiddenPageMustOfferPublicAlternatives": true,
+    "unlistedMustNotEnterPublicIndex": true,
+    "aiReadsPublicOnlyByDefault": true
   },
   "releaseStates": {
     "productionLive": false,

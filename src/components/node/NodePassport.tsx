@@ -11,6 +11,7 @@ export type NodePlaceLifeSignal = {
 
 const visibilityLabel: Record<Visibility, string> = {
   public: '公开',
+  unlisted: '不列入索引',
   semiPublic: '半公开',
   private: '私密',
   family: '亲友可见',

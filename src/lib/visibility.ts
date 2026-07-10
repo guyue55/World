@@ -11,3 +11,7 @@ export function isSearchableVisibility(visibility: Visibility): boolean {
 export function mustExcludeFromPublicBuild(visibility: Visibility): boolean {
   return ['private', 'family', 'partner', 'vault', 'sealed', 'silent'].includes(visibility)
 }
+
+export function isUnlistedVisibility(visibility: Visibility): boolean {
+  return visibility === 'unlisted'
+}

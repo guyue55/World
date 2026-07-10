@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-07-10T01:52:46.744Z",
+  "status": "passed",
+  "stage": "M27",
+  "contract": "data/world-kernel/worldos-permission-boundary-contract-v1.json",
+  "source": "docs/00-overview/worldos-m27-layered-permission-private-universe-spec-2026-07-10.md",
+  "expectedVisibilities": [
+    "public",
+    "unlisted",
+    "semiPublic",
+    "private",
+    "family",
+    "partner",
+    "vault",
+    "sealed",
+    "silent"
+  ],
+  "forbiddenVisibilities": [
+    "private",
+    "family",
+    "partner",
+    "vault",
+    "sealed",
+    "silent"
+  ],
+  "unlisted": {
+    "visibility": "unlisted",
+    "searchable": false,
+    "recommendable": false,
+    "aiIndexable": false,
+    "buildTarget": "public"
+  },
+  "publicIndex": {
+    "nodes": 200,
+    "events": 51,
+    "unlistedNodes": 0,
+    "forbiddenNodes": 0
+  },
+  "policies": {
+    "frontendVisibilityIsNotPermission": true,
+    "publicPagesUsePublicSourcesOnly": true,
+    "middlewareExcludesApiRoutes": true,
+    "apiRoutesMustUseOwnGuards": true,
+    "ownerTokenMustBeServerConfigured": true,
+    "forbiddenPageMustOfferPublicAlternatives": true,
+    "unlistedMustNotEnterPublicIndex": true,
+    "aiReadsPublicOnlyByDefault": true
+  },
+  "requiredPrivateRoutes": [
+    "/r4-creator",
+    "/r6-service",
+    "/r7-evolution",
+    "/private-archive"
+  ],
+  "failures": []
+}

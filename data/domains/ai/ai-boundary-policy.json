@@ -25,6 +25,12 @@
       "index": true,
       "recommend": true
     },
+    "unlisted": {
+      "search": false,
+      "summarize": false,
+      "index": false,
+      "recommend": false
+    },
     "semiPublic": {
       "search": true,
       "summarize": true,

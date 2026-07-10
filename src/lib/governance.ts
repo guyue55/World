@@ -128,6 +128,7 @@ export function governanceScore(issues = evaluateWorldGovernance()): number {
 export function visibilityLabel(visibility: Visibility): string {
   const labels: Record<Visibility, string> = {
     public: '公开',
+    unlisted: '不列入索引',
     semiPublic: '半公开摘要',
     private: '私密',
     family: '家庭',

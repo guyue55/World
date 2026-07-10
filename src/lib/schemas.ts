@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const visibilitySchema = z.enum([
-  'public', 'semiPublic', 'private', 'family', 'partner', 'vault', 'sealed', 'silent',
+  'public', 'unlisted', 'semiPublic', 'private', 'family', 'partner', 'vault', 'sealed', 'silent',
 ])
 
 export const lifeStageSchema = z.enum([

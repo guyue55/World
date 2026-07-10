@@ -26,6 +26,7 @@
     "check:m24-advanced-visualization",
     "check:m25-author-world-editor",
     "check:scene-qa",
+    "check:m27-layered-permission",
     "check:m19-scene-interaction",
     "check:m20-spatial-continuity",
     "check:m20-spa-transitions",
@@ -68,6 +69,7 @@
     "npm run check:m23-sensory-audio-production",
     "npm run check:m24-advanced-visualization",
     "npm run check:m25-author-world-editor",
+    "npm run check:m27-layered-permission",
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
@@ -89,6 +91,7 @@
     "npm run check:m24-advanced-visualization",
     "npm run check:m25-author-world-editor",
     "npm run check:m26-world-memory",
+    "npm run check:m27-layered-permission",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
     "npm run check:m20-spa-transitions",
@@ -113,16 +116,20 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 292,
-    "checkScripts": 164,
+    "totalScripts": 293,
+    "checkScripts": 165,
     "stageLikeCheckScripts": 2,
-    "longScripts": 1
+    "longScripts": 2
   },
   "legacyStageLikeCheckScripts": [
     "check:stage-acceptance",
     "check:stage-completion-transition"
   ],
   "longScripts": [
+    {
+      "name": "check:mainline",
+      "length": 1203
+    },
     {
       "name": "check:world-core",
       "length": 2817
