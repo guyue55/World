@@ -27,7 +27,7 @@ export function SceneInspector({ open, title, children, onClose }: SceneInspecto
 
   return (
     <aside
-      className="world-ui-surface fixed inset-x-3 bottom-3 z-40 max-h-[70svh] overflow-y-auto border border-white/20 bg-night/95 p-4 text-paper shadow-2xl md:absolute md:inset-auto md:right-4 md:top-4 md:w-[min(32%,24rem)]"
+      className="world-ui-surface fixed inset-x-3 bottom-[5.5rem] z-40 max-h-[calc(70svh-5rem)] overflow-y-auto border border-white/20 bg-[rgba(4,15,19,0.97)] p-4 text-paper shadow-2xl md:absolute md:inset-auto md:right-4 md:top-20 md:max-h-[calc(100svh-6rem)] md:w-[min(32%,24rem)]"
       role="dialog"
       aria-modal="true"
       aria-labelledby="scene-inspector-title"

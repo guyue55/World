@@ -19,6 +19,7 @@ export default [
   {
     ignores: [
       '.next/**',
+      '.next-reality/**',
       'out/**',
       'node_modules/**',
       'next-env.d.ts',

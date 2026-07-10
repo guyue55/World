@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
-import { AnimatePresence, motion } from 'framer-motion'
 import { getSceneTransitionForPathnames, type SceneTransitionMotion } from '@/lib/scene-transition'
 import type { WorldTransitionState } from '@/lib/world-runtime-state'
 import { useWorldRuntime } from './WorldRuntimeProvider'
@@ -130,21 +129,15 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
           ? `从${transitionRuntime.fromScene.title}抵达${transitionRuntime.toScene.title}`
           : `当前抵达${transitionRuntime.toScene.title}`}
       </p>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={pathname}
-          ref={contentRef}
-          data-testid="scene-transition-content"
-          data-current-scene={runtime.currentScene}
-          data-scene-fallback={runtime.sceneRuntime.fallbackState.sceneFallback ? 'true' : 'false'}
-          initial={false}
-          animate={{ opacity: 1 }}
-          exit={runtime.motionMode !== 'full' ? { opacity: 1 } : { opacity: 0.98 }}
-          transition={{ duration: runtime.motionMode !== 'full' ? 0 : 0.12, ease: 'easeOut' }}
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+      <div
+        key={pathname}
+        ref={contentRef}
+        data-testid="scene-transition-content"
+        data-current-scene={runtime.currentScene}
+        data-scene-fallback={runtime.sceneRuntime.fallbackState.sceneFallback ? 'true' : 'false'}
+      >
+        {children}
+      </div>
     </div>
   )
 }

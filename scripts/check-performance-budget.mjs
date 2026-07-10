@@ -1,10 +1,11 @@
-// 用途：构建产物大小监控 - 检查 .next 目录和首页产物是否在预算内
+// 用途：构建产物大小监控 - 检查当前生产 dist 目录和页面产物是否在预算内
 import fs from 'node:fs'
 import path from 'node:path'
 import { gzipSync } from 'node:zlib'
 
 const root = process.cwd()
-const nextDir = path.join(root, '.next')
+const distDir = process.env.WORLDOS_DIST_DIR || '.next'
+const nextDir = path.resolve(root, distDir)
 const failures = []
 
 // 阈值（MB）
@@ -33,9 +34,9 @@ function formatMB(bytes) {
   return (bytes / 1024 / 1024).toFixed(2) + ' MB'
 }
 
-// 检查 .next 总大小
+// 检查生产构建总大小
 if (!fs.existsSync(nextDir)) {
-  failures.push('.next 目录不存在，请先运行 npm run build')
+  failures.push(`${distDir} 目录不存在，请先运行 npm run build`)
 } else {
   const totalSize = dirSize(nextDir)
   const totalMB = totalSize / 1024 / 1024

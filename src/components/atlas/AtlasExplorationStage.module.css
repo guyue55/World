@@ -1,0 +1,262 @@
+.stage {
+  background: #071116;
+}
+
+.viewport {
+  min-height: 100svh;
+}
+
+.backgroundFallback {
+  position: absolute;
+  inset: 0;
+  background-color: #0a1a22;
+  background-image: linear-gradient(180deg, #122a3b 0%, #071116 68%);
+}
+
+.camera {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.picture,
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.stage[data-image-failed="true"] .picture {
+  display: none;
+}
+
+.imageVeil {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(3, 10, 14, 0.08);
+  box-shadow: inset 0 8rem 8rem rgba(2, 7, 10, 0.54), inset 0 -8rem 9rem rgba(2, 7, 10, 0.52);
+  pointer-events: none;
+}
+
+.hotspotLayer {
+  position: absolute;
+  inset: 0;
+}
+
+.areaHotspot,
+.nodeHotspot {
+  position: absolute;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  color: #f7edd7;
+  text-shadow: 0 2px 10px #020708;
+}
+
+.areaHotspot {
+  display: grid;
+  min-width: 6.8rem;
+  min-height: 4.5rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--area-color) 65%, transparent);
+  border-radius: 50%;
+  background-color: rgba(6, 19, 24, 0.62);
+  padding: 0.55rem 0.8rem;
+  box-shadow: 0 0 0 6px rgba(8, 26, 31, 0.2), 0 12px 36px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(4px);
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.areaHotspot:hover,
+.areaHotspot[aria-pressed="true"] {
+  border-color: var(--area-color);
+  background-color: rgba(7, 25, 30, 0.9);
+}
+
+.areaHotspot > span { font-size: 0.8rem; color: var(--area-color); }
+.areaHotspot strong { font-family: var(--world-font-scene); font-size: 0.83rem; line-height: 1.15; }
+.areaHotspot small { font-size: 0.62rem; color: rgba(247, 237, 215, 0.62); }
+
+.nodeHotspot {
+  display: flex;
+  max-width: 8.5rem;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0;
+  background: transparent;
+  padding: 0.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.nodeHotspot[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nodeHotspot i {
+  width: calc(0.42rem + var(--node-importance) * 0.18rem);
+  height: calc(0.42rem + var(--node-importance) * 0.18rem);
+  flex: 0 0 auto;
+  border: 1px solid #f5d995;
+  border-radius: 50%;
+  background-color: #f0c979;
+  box-shadow: 0 0 12px #f0c979;
+}
+
+.nodeHotspot span {
+  overflow: hidden;
+  padding: 0.2rem 0.35rem;
+  background-color: rgba(3, 12, 16, 0.74);
+  font-size: 0.62rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrival {
+  position: absolute;
+  z-index: 12;
+  top: 5.6rem;
+  left: clamp(1rem, 3vw, 3rem);
+  max-width: 25rem;
+  color: #f7edd7;
+  text-shadow: 0 2px 16px #000;
+}
+
+.arrival p { color: #95d1d1; font-size: 0.7rem; font-weight: 700; }
+.arrival h1 { margin-top: 0.3rem; font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1; }
+.arrival span { display: block; margin-top: 0.6rem; color: rgba(247, 237, 215, 0.72); font-size: 0.8rem; line-height: 1.5; }
+
+.controls {
+  position: absolute;
+  z-index: 18;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.35rem;
+  border: 1px solid rgba(238, 223, 191, 0.2);
+  border-radius: 8px;
+  background-color: rgba(4, 15, 19, 0.82);
+  padding: 0.3rem;
+}
+
+.controls button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 6px;
+  color: #f7edd7;
+}
+
+.controls button:hover { background-color: rgba(255, 255, 255, 0.1); }
+.controls svg { width: 1rem; height: 1rem; }
+
+.sceneStatus {
+  position: absolute;
+  z-index: 14;
+  bottom: 1.15rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-left: 2px solid #8fc6c2;
+  background-color: rgba(4, 15, 19, 0.72);
+  padding: 0.55rem 0.7rem;
+  color: rgba(247, 237, 215, 0.82);
+  font-size: 0.72rem;
+}
+
+.exitRail {
+  position: absolute;
+  z-index: 14;
+  right: 10.2rem;
+  bottom: 1rem;
+}
+
+.inspectorBody { display: grid; gap: 0.9rem; color: rgba(247, 237, 215, 0.76); font-size: 0.85rem; line-height: 1.65; }
+.inspectorKicker { display: flex; align-items: center; gap: 0.4rem; color: #8fc6c2; font-size: 0.72rem; font-weight: 700; }
+.relationReason { border-left: 2px solid #8fc6c2; padding-left: 0.7rem; color: rgba(247, 237, 215, 0.62); }
+.areaCount { color: rgba(247, 237, 215, 0.55); font-size: 0.73rem; }
+.nodeChoices, .relationList { display: grid; gap: 0.4rem; }
+.nodeChoices button, .relationList button {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  border: 1px solid rgba(247, 237, 215, 0.14);
+  border-radius: 6px;
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+}
+.nodeChoices button:hover, .relationList button:hover { background-color: rgba(255, 255, 255, 0.08); }
+.relationList small { display: block; color: rgba(247, 237, 215, 0.45); font-size: 0.62rem; }
+.primaryJourneyLink, .timelineLink, .backToArea {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 6px;
+  padding: 0.55rem 0.8rem;
+  font-weight: 700;
+}
+.primaryJourneyLink { background-color: #d8b875; color: #10201f; }
+.timelineLink, .backToArea { border: 1px solid rgba(247, 237, 215, 0.18); color: #f7edd7; }
+
+.staticFallback {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  width: min(42rem, calc(100% - 2rem));
+  max-height: min(70svh, 38rem);
+  transform: translate(-50%, -50%);
+  overflow-y: auto;
+  border: 1px solid rgba(247, 237, 215, 0.22);
+  border-radius: 8px;
+  background-color: rgba(4, 15, 19, 0.94);
+  padding: 1.25rem;
+  color: #f7edd7;
+}
+
+.stage[data-enhanced="true"][data-image-ready="true"] .staticFallback { display: none; }
+
+.noScriptRail {
+  position: absolute;
+  z-index: 20;
+  inset: auto 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  background-color: rgba(4, 15, 19, 0.9);
+  padding: 0.5rem;
+}
+.noScriptRail a { min-height: 2.75rem; padding: 0.65rem; color: #f7edd7; }
+
+@media (max-width: 767px) {
+  .viewport { min-height: 100svh; }
+  .camera { inset: 0 -34%; }
+  .image { object-position: center; }
+  .arrival { top: 4.3rem; left: 1rem; right: 1rem; max-width: 18rem; }
+  .arrival h1 { font-size: 1.45rem; white-space: nowrap; }
+  .arrival span { display: none; }
+  .areaHotspot { min-width: 5.7rem; min-height: 3.8rem; padding: 0.4rem 0.55rem; }
+  .areaHotspot strong { font-size: 0.72rem; }
+  .nodeHotspot span { max-width: 5.8rem; }
+  .controls { right: 0.75rem; bottom: 5.4rem; flex-direction: column; }
+  .sceneStatus { bottom: 5.5rem; left: 0.75rem; max-width: calc(100% - 5.2rem); }
+  .exitRail { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .areaHotspot,
+  .nodeHotspot { transition: none; }
+}

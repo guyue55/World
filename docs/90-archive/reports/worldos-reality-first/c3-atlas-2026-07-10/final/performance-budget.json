@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-07-10T09:52:37.909Z",
+  "baseUrl": "http://127.0.0.1:3411",
+  "navigationReadyMs": 3935,
+  "interactionProxyMs": 8,
+  "maxLongTaskMs": 63,
+  "longTaskCountOver200ms": 0,
+  "lcpMs": 228,
+  "cls": 0.0009183153694058641,
+  "bitmapTransferBytes": 140330,
+  "scriptTransferBytes": 183148,
+  "resourceCount": 24,
+  "assetSourceBytes": 143970,
+  "budgets": {
+    "bitmapDesktopMaxBytes": 716800,
+    "longTaskMaxMs": 200,
+    "lcpTargetMs": 2500,
+    "clsMax": 0.1,
+    "interactionTargetMs": 200
+  },
+  "passes": {
+    "bitmap": true,
+    "longTask": true,
+    "lcp": true,
+    "cls": true,
+    "interactionProxy": true
+  },
+  "sharedFirstLoadJsFromBuild": "158 kB",
+  "sharedFirstLoadFrozenBudget": "130 kB",
+  "sharedFirstLoadPass": false,
+  "sharedFirstLoadNote": "全局继承预算仍未闭合；已从 193 kB 降至 158 kB，必须在 C6-C8 继续处理，不计作终局通过。",
+  "errors": []
+}

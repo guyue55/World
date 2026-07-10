@@ -5,21 +5,22 @@ import path from 'node:path'
 import { clearInterval, clearTimeout, setInterval, setTimeout } from 'node:timers'
 
 const root = process.cwd()
-const nextDir = path.join(root, '.next')
+const distDir = process.env.WORLDOS_DIST_DIR || '.next'
+const nextDir = path.resolve(root, distDir)
 const timeoutMs = Number(process.env.R8_NEXT_BUILD_TIMEOUT_MS ?? 120000)
 const nextBin = path.join(root, 'node_modules', '.bin', 'next')
 const logPath = path.join(root, 'reports', 'r8-fresh-build.log')
 
 const requiredArtifacts = [
-  '.next/BUILD_ID',
-  '.next/build-manifest.json',
-  '.next/server/app-paths-manifest.json',
-  '.next/routes-manifest.json',
-  '.next/required-server-files.json',
+  'BUILD_ID',
+  'build-manifest.json',
+  'server/app-paths-manifest.json',
+  'routes-manifest.json',
+  'required-server-files.json',
 ]
 
 function missingArtifacts() {
-  return requiredArtifacts.filter((artifact) => !fs.existsSync(path.join(root, artifact)))
+  return requiredArtifacts.filter((artifact) => !fs.existsSync(path.join(nextDir, artifact)))
 }
 
 function killProcessTree(child) {
@@ -40,7 +41,7 @@ function finish(child, status, code = 0) {
     process.exit(0)
   }
   console.error(`R8 fresh Next build failed: ${status}`)
-  console.error(`Missing build artifacts: ${missing.join(', ')}`)
+  console.error(`Missing build artifacts in ${distDir}: ${missing.join(', ')}`)
   console.error(`R8 fresh build log: ${logPath}`)
   process.exit(code || 1)
 }

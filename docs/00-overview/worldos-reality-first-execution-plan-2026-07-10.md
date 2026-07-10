@@ -210,17 +210,17 @@ export type AtlasViewModel = {
 }
 ```
 
-- [ ] **C3.1** 用确定性纯函数从区域、节点和关系生成布局；同一数据和 viewport 产生稳定位置，避免 hydration 抖动。
-- [ ] **C3.2** 根据实际节点密度选择 SVG 或 Canvas；无性能证据不得引入第三方图形依赖。
-- [ ] **C3.3** 实现全图、区域聚焦、节点聚焦、关系理由和返回全图；聚焦对象成为迁移锚点。
-- [ ] **C3.4** desktop inspector 不超过 32% 宽；mobile 使用可关闭 drawer，地图仍保留可见上下文。
-- [ ] **C3.5** 建立键盘方向 / Tab 操作和 DOM 等价列表；Canvas 不得成为唯一导航。
-- [ ] **C3.6** 从 `/atlas` 移除卡片网格、统计区、`ProductRouteGuide`、`SceneDeepInteractionPanel` 和共享 hero。
-- [ ] **C3.7** 对 200 节点采用层级 / viewport / focus 渲染，不把全部标签常驻首屏。
-- [ ] **C3.8** 验证区域 -> 节点 -> Node、区域 -> Timeline、返回全图和浏览器后退。
-- [ ] **C3.9** 生产截图 arrival / area-focused / node-focused / mobile / text-hidden，录制 Atlas 探索流程并逐帧审查。
-- [ ] **C3.10** 运行定向测试、`typecheck`、`lint`、生产 build 和资源 / long-task 预算。
-- [ ] **C3.11** 更新 ledger，提交 `feat(world): 将星图重构为可探索世界地图`。
+- [x] **C3.1** 用确定性纯函数从区域、节点和关系生成布局；同一数据和 viewport 产生稳定位置，避免 hydration 抖动。
+- [x] **C3.2** 根据实际节点密度选择 SVG 或 Canvas；无性能证据不得引入第三方图形依赖。
+- [x] **C3.3** 实现全图、区域聚焦、节点聚焦、关系理由和返回全图；聚焦对象成为迁移锚点。
+- [x] **C3.4** desktop inspector 不超过 32% 宽；mobile 使用可关闭 drawer，地图仍保留可见上下文。
+- [x] **C3.5** 建立键盘方向 / Tab 操作和 DOM 等价列表；Canvas 不得成为唯一导航。
+- [x] **C3.6** 从 `/atlas` 移除卡片网格、统计区、`ProductRouteGuide`、`SceneDeepInteractionPanel` 和共享 hero。
+- [x] **C3.7** 对 200 节点采用层级 / viewport / focus 渲染，不把全部标签常驻首屏。
+- [x] **C3.8** 验证区域 -> 节点 -> Node、区域 -> Timeline、返回全图和浏览器后退。
+- [x] **C3.9** 生产截图 arrival / area-focused / node-focused / mobile / text-hidden，录制 Atlas 探索流程并逐帧审查。
+- [x] **C3.10** 运行定向测试、`typecheck`、`lint`、生产 build 和资源 / long-task 预算。
+- [x] **C3.11** 更新 ledger，提交 `feat(world): 将星图重构为可探索世界地图`。
 
 **Gate:** 没有页面说明文字时，用户仍能通过浮屿、节点层级、星线和聚焦行为理解地图；普通区域卡片不得先于地图出现。
 

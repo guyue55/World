@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
-import { MotionConfig } from 'framer-motion'
 import { RuntimeAtmosphere } from './RuntimeAtmosphere'
 import { RuntimeSoundscapeControl } from './RuntimeSoundscapeControl'
 import {
@@ -200,11 +199,9 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
 
   return (
     <WorldRuntimeContext.Provider value={value}>
-      <MotionConfig reducedMotion={sceneRuntime.motionMode !== 'full' ? 'always' : 'user'}>
-        <RuntimeAtmosphere />
-        {children}
-        <RuntimeSoundscapeControl />
-      </MotionConfig>
+      <RuntimeAtmosphere />
+      {children}
+      <RuntimeSoundscapeControl />
     </WorldRuntimeContext.Provider>
   )
 }
