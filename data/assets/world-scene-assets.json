@@ -1,0 +1,72 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-07-10",
+  "generator": "OpenAI image generation tool",
+  "license": {
+    "id": "openai-user-generated-asset-2026-07-10",
+    "status": "approved-for-project-use",
+    "owner": "WorldOS workspace user"
+  },
+  "budgets": {
+    "desktopMaxBytes": 716800,
+    "mobileMaxBytes": 358400
+  },
+  "assets": [
+    {
+      "sceneId": "gateway",
+      "desktop": { "src": "/world/scenes/gateway/desktop.webp", "width": 1672, "height": 941, "bytes": 231686 },
+      "mobile": { "src": "/world/scenes/gateway/mobile.webp", "width": 941, "height": 1672, "bytes": 183240 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "月门、观测桌、浮屿与三条可进入光路；移动端为纵向单岛入口。"
+    },
+    {
+      "sceneId": "atlas",
+      "desktop": { "src": "/world/scenes/atlas/desktop.webp", "width": 1672, "height": 941, "bytes": 143970 },
+      "mobile": { "src": "/world/scenes/atlas/mobile.webp", "width": 941, "height": 1672, "bytes": 132522 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "俯瞰七座差异浮屿与关系光线；移动端突出中央岛和相邻岛。"
+    },
+    {
+      "sceneId": "timeline",
+      "desktop": { "src": "/world/scenes/timeline/desktop.webp", "width": 1672, "height": 941, "bytes": 253010 },
+      "mobile": { "src": "/world/scenes/timeline/mobile.webp", "width": 941, "height": 1672, "bytes": 203320 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "发光时间河、沿岸停靠点与阶段石碑；移动端为贯穿纵向河道。"
+    },
+    {
+      "sceneId": "archive",
+      "desktop": { "src": "/world/scenes/archive/desktop.webp", "width": 1672, "height": 941, "bytes": 198062 },
+      "mobile": { "src": "/world/scenes/archive/mobile.webp", "width": 941, "height": 1672, "bytes": 176160 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "月下档案大厅、抽屉柜、检索桌和纵深分区；移动端为单条柜架走廊。"
+    },
+    {
+      "sceneId": "paths",
+      "desktop": { "src": "/world/scenes/paths/desktop.webp", "width": 1672, "height": 941, "bytes": 286846 },
+      "mobile": { "src": "/world/scenes/paths/mobile.webp", "width": 941, "height": 1672, "bytes": 192170 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "分岔广场、三条道路与实体路标；移动端为有连续站点的纵向主路。"
+    },
+    {
+      "sceneId": "node",
+      "desktop": { "src": "/world/scenes/node/desktop.webp", "width": 1672, "height": 941, "bytes": 194846 },
+      "mobile": { "src": "/world/scenes/node/mobile.webp", "width": 941, "height": 1672, "bytes": 159378 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "可进入的观测阅读房间、中央桌、区域窗与关系出口；移动端为上下层空间。"
+    },
+    {
+      "sceneId": "lighthouse",
+      "desktop": { "src": "/world/scenes/lighthouse/desktop.webp", "width": 1672, "height": 941, "bytes": 144166 },
+      "mobile": { "src": "/world/scenes/lighthouse/mobile.webp", "width": 941, "height": 1672, "bytes": 148504 },
+      "source": "generated",
+      "licenseId": "openai-user-generated-asset-2026-07-10",
+      "promptSummary": "海上石塔、来路和连接浮屿的光束；移动端塔体贯穿中轴。"
+    }
+  ]
+}

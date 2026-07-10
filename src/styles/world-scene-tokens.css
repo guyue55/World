@@ -1,0 +1,54 @@
+:root {
+  --world-font-scene: "Songti SC", "STSong", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  --world-font-ui: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --world-scene-foreground: #f4ead5;
+  --world-scene-overlay: rgba(7, 15, 16, 0.58);
+  --world-scene-fog: rgba(117, 151, 157, 0.18);
+  --world-scene-accent: #d8b875;
+  --world-scene-surface: rgba(13, 24, 24, 0.78);
+  --world-scene-focus: #f0c979;
+  --world-ui-radius: 8px;
+  --world-transition-fast: 160ms;
+  --world-transition-scene: 640ms;
+  --world-transition-long: 880ms;
+}
+
+[data-world-scene="atlas"] { --world-scene-accent: #8fc6c2; --world-scene-fog: rgba(82, 135, 145, 0.2); }
+[data-world-scene="timeline"] { --world-scene-accent: #e2c777; --world-scene-fog: rgba(74, 124, 151, 0.24); }
+[data-world-scene="archive"] { --world-scene-accent: #d0a76a; --world-scene-fog: rgba(104, 82, 57, 0.2); }
+[data-world-scene="paths"] { --world-scene-accent: #d3bb72; --world-scene-fog: rgba(77, 112, 83, 0.2); }
+[data-world-scene="node"] { --world-scene-accent: #ddb879; --world-scene-fog: rgba(92, 117, 94, 0.16); }
+[data-world-scene="lighthouse"] { --world-scene-accent: #f0c979; --world-scene-fog: rgba(101, 145, 160, 0.24); }
+
+.world-ui-surface {
+  border-radius: var(--world-ui-radius);
+}
+
+.world-scene-title {
+  font-family: var(--world-font-scene);
+  letter-spacing: 0;
+}
+
+.world-viewport {
+  position: relative;
+  min-height: min(calc(100svh - var(--world-chrome-height, 5rem)), 900px);
+  overflow: clip;
+  color: var(--world-scene-foreground);
+  background: #071011;
+  isolation: isolate;
+}
+
+@media (max-width: 767px) {
+  .world-viewport {
+    min-height: calc(100svh - var(--world-mobile-chrome-height, 4.5rem));
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --world-transition-fast: 0ms;
+    --world-transition-scene: 120ms;
+    --world-transition-long: 120ms;
+  }
+}

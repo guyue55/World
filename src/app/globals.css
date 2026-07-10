@@ -1,3 +1,5 @@
+@import '../styles/world-scene-tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -134,7 +136,7 @@ body {
 .prose-guyue h1,
 .prose-guyue h2,
 .prose-guyue h3 {
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 
 .prose-guyue code {

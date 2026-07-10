@@ -131,15 +131,15 @@ export type WorldSceneAsset = {
 }
 ```
 
-- [ ] **C1.1** 使用 `ui-ux-pro-max` 复核构图、色彩、字体、触控与导航；使用 `gsap-core` 复核可动对象和 reduced-motion 策略。
-- [ ] **C1.2** 按架构文档的七份冻结 brief 制作 desktop / mobile bitmap；有图像生成能力时使用 `imagegen-frontend-web` / `imagegen` 工作流，逐张用图像查看工具检查对象清晰、没有烘焙文字、没有统一科技模板。
-- [ ] **C1.3** 转为 WebP / AVIF，写入精确尺寸和字节；mobile 单张不超过 350 KB，desktop 单张不超过 700 KB。
-- [ ] **C1.4** 建立资产 registry，记录工具 / 来源、日期、提示摘要、用途、许可与预算；没有许可状态的资产不得被 route 引用。
-- [ ] **C1.5** 抽离世界级 token：scene foreground、overlay、fog、accent、surface、focus、transition duration、中文 serif / sans fallback；清理负 letter-spacing，并把普通 UI 圆角控制在 8px 内。
-- [ ] **C1.6** 实现五个无人格 primitive，并写键盘、focus、drawer、fallback 的组件测试或静态检查。
-- [ ] **C1.7** 建立 `WorldViewport` 稳定尺寸：desktop 至少 `min(100svh - chrome, 900px)`，mobile 首屏不被固定控件遮挡。
-- [ ] **C1.8** 运行 `npm run typecheck`、`npm run lint`、资产预算检查、`git diff --check`。
-- [ ] **C1.9** 保存资产 contact sheet 和逐图审查记录，更新 ledger，提交 `feat(world): 建立七类场景视觉资产与基础控件`。
+- [x] **C1.1** 使用 `ui-ux-pro-max` 复核构图、色彩、字体、触控与导航；使用 `gsap-core` 复核可动对象和 reduced-motion 策略。
+- [x] **C1.2** 按架构文档的七份冻结 brief 制作 desktop / mobile bitmap；有图像生成能力时使用 `imagegen-frontend-web` / `imagegen` 工作流，逐张用图像查看工具检查对象清晰、没有烘焙文字、没有统一科技模板。
+- [x] **C1.3** 转为 WebP / AVIF，写入精确尺寸和字节；mobile 单张不超过 350 KB，desktop 单张不超过 700 KB。
+- [x] **C1.4** 建立资产 registry，记录工具 / 来源、日期、提示摘要、用途、许可与预算；没有许可状态的资产不得被 route 引用。
+- [x] **C1.5** 抽离世界级 token：scene foreground、overlay、fog、accent、surface、focus、transition duration、中文 serif / sans fallback；清理负 letter-spacing，并把普通 UI 圆角控制在 8px 内。
+- [x] **C1.6** 实现五个无人格 primitive，并写键盘、focus、drawer、fallback 的组件测试或静态检查。
+- [x] **C1.7** 建立 `WorldViewport` 稳定尺寸：desktop 至少 `min(100svh - chrome, 900px)`，mobile 首屏不被固定控件遮挡。
+- [x] **C1.8** 运行 `npm run typecheck`、`npm run lint`、资产预算检查、`git diff --check`。
+- [x] **C1.9** 保存资产 contact sheet 和逐图审查记录，更新 ledger，提交 `feat(world): 建立七类场景视觉资产与基础控件`。
 
 **Gate:** 七组 desktop / mobile 资产全部可见且各自空间对象不同；任何纯氛围、模糊或无法承载交互的图必须重做。
 
