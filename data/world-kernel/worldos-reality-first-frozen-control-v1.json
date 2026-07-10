@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "algorithm": "sha256",
+  "purpose": "锁定 Reality-First 单次 Goal 的目标、验收、架构和执行文字，防止执行者降低完成门槛。",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "mode": "exact",
+      "sha256": "f9405576b186488278844074c6ef64f4eb984b8c4cab65a2511508e5ec6f044c"
+    },
+    {
+      "path": "docs/00-overview/worldos-reality-first-control-contract-2026-07-10.md",
+      "mode": "exact",
+      "sha256": "61908c530fe6d460b9998740090956c5f649553106a6a699fde6fccdf19273cc"
+    },
+    {
+      "path": "docs/00-overview/worldos-reality-first-experience-acceptance-2026-07-10.md",
+      "mode": "exact",
+      "sha256": "b50a78a33e8a9c67548f2466c6d9f31c44dbd84d2aa364ebf2615a4a3c024ace"
+    },
+    {
+      "path": "docs/00-overview/worldos-reality-first-architecture-stack-2026-07-10.md",
+      "mode": "exact",
+      "sha256": "2a129bc0ad6511e0dc7a0549e7e64b34cf2581234822e40fc421278bbb69bb76"
+    },
+    {
+      "path": "docs/00-overview/worldos-reality-first-execution-plan-2026-07-10.md",
+      "mode": "checkbox-status-only",
+      "sha256": "a46652efa4d5a5b5704bff21f4b66e90ad7968526c4811d92ad63a51ef135e3f"
+    },
+    {
+      "path": "docs/00-overview/worldos-reality-first-one-shot-goal-prompt-2026-07-10.md",
+      "mode": "exact",
+      "sha256": "e19661faf33d02665e10b7931b8fad3b203911c92c6c1a422eb6ae776cb69f91"
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 # WorldOS 终局版一次性 Goal 提示词
 
+> [!CAUTION]
+> **本文档已经失效，不得再用于启动 Goal。** 旧 M29 / M30 验收以硬编码分数、阈值托底、文件存在和 DOM token 形成了自证循环，而真实截图仍显示博客式骨架。新的唯一入口是 `docs/00-overview/worldos-reality-first-one-shot-goal-prompt-2026-07-10.md`，完成口径由冻结 Reality-First 控制包决定。
+
 > [!IMPORTANT]
 > 本文档用于在 Codex Goal 模式中只设置一次目标，让 Codex 持续完成 WorldOS M8-M30 的开发、检查、修复、验收和中文提交。它取代旧的 M8-M18 版本，覆盖本地成熟世界 MVP+ 与 9/10 终局候选两层目标。
 

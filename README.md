@@ -1,5 +1,8 @@
 # word-life｜古月浮屿 / WorldOS
 
+> [!IMPORTANT]
+> 当前真实状态是 `FOUNDATION_ONLY`：工程底座可运行，但公开体验仍像“博客骨架 + 简单动态”。旧 M30 的 `8.9 / 9/10` 结论已失效。下一次长线开发只使用 [Reality-First 一次性 Goal 提示词](docs/00-overview/worldos-reality-first-one-shot-goal-prompt-2026-07-10.md) 和根目录 `AGENTS.md`，不得再续写 M31 或新的阶段终点。
+
 `word-life` 是古月浮屿 / 我的博客 / WorldOS 的长期项目仓库。
 
 它不是传统博客，而是一个正在收束为产品形态的个人数字世界：

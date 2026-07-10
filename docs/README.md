@@ -1,5 +1,8 @@
 # 文档中心
 
+> [!IMPORTANT]
+> 当前开发唯一入口是 [WorldOS Reality-First 一次性 Goal 提示词](00-overview/worldos-reality-first-one-shot-goal-prompt-2026-07-10.md)。其总控、验收、架构、执行计划和账本共同取代旧 M8-M30 的完成口径；旧 `ultimate`、Phase、M 与 RC 文档只作历史参考。
+
 本文档中心按长期 GitHub 项目治理方式组织，避免把“代码开发前文档”和“开发过程文档”混在一起。
 
 ## 目录
