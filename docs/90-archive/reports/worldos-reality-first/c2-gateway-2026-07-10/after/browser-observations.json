@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-07-10T07:00:21.261Z",
+  "baseUrl": "http://127.0.0.1:3410",
+  "observations": [
+    {
+      "mode": "desktop-first",
+      "overflowX": false,
+      "viewportRatio": 1,
+      "engineeringCopy": false,
+      "entered": false,
+      "hasPrimaryAction": true,
+      "hasReturning": false,
+      "browserErrors": []
+    },
+    {
+      "mode": "mobile-first",
+      "overflowX": false,
+      "viewportRatio": 1,
+      "engineeringCopy": false,
+      "entered": false,
+      "hasPrimaryAction": true,
+      "hasReturning": false,
+      "browserErrors": []
+    },
+    {
+      "mode": "desktop-returning",
+      "overflowX": false,
+      "viewportRatio": 1,
+      "engineeringCopy": false,
+      "entered": true,
+      "hasPrimaryAction": false,
+      "hasReturning": true,
+      "browserErrors": []
+    },
+    {
+      "mode": "text-hidden",
+      "overflowX": false,
+      "viewportRatio": 1,
+      "engineeringCopy": false,
+      "entered": true,
+      "hasPrimaryAction": false,
+      "hasReturning": false,
+      "browserErrors": []
+    },
+    {
+      "mode": "image-failure",
+      "fallbackVisible": true,
+      "expectedNetworkFailure": true
+    },
+    {
+      "mode": "js-off",
+      "requiredRoutes": [
+        "/atlas",
+        "/paths/first-visit",
+        "/archive"
+      ],
+      "pass": true
+    }
+  ],
+  "findings": [],
+  "status": "browser-facts-captured"
+}

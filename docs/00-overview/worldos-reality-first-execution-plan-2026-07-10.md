@@ -169,18 +169,18 @@ export type WorldSceneAsset = {
 - Consumes: public areas / nodes / paths, journey memory, scene assets.
 - Produces: `GatewayViewModel`, `SceneDestination`, first-visit and returning-visit entry states.
 
-- [ ] **C2.1** 把 `SceneContext`、`SceneDestination` 与 schema 版本写成单一类型入口；不得复制 Node / Area 类型。
-- [ ] **C2.2** 建立公开策展 registry：至少 24 个来源可追溯的代表节点覆盖项目、记忆、片段、规则和主要区域；把 RC、QA、script、evidence 类节点降为 Archive-only，不改变 visibility。
-- [ ] **C2.3** 拆分 `WorldRuntimeProvider` 的纯函数和 storage 逻辑，保持外部 context API 向后兼容。
-- [ ] **C2.4** 新建 route-aware `WorldChrome`：desktop 使用轻量空间罗盘，mobile 使用底部 / 顶部紧凑导航；隐藏无关全局 footer 和身份条。
-- [ ] **C2.5** 实现 Gateway first-visit：世界远景、一个进入动作、入口开启、三个可感知方向；场景主体首屏占比达标。
-- [ ] **C2.6** 实现 returning visit：显示上次公开地点、未完成路径、继续与清除；不展示敏感历史。
-- [ ] **C2.7** 从首页移除 `SceneWorldPortal`、统计卡、运行模式说明、Evidence / Fallback 文案和重复 CTA。
-- [ ] **C2.8** 为 JS / storage / image 失败提供静态 Gateway，仍可进入 Atlas、Paths 与 Archive。
-- [ ] **C2.9** 使用 GSAP 编排入口开启与对象响应；通过 `matchMedia()` 提供 mobile / reduced-motion 分支并清理 timeline。
-- [ ] **C2.10** 生产构建并截图 `home-desktop-first`、`home-mobile-first`、`home-desktop-returning`、`home-text-hidden`；逐张视觉审查。
-- [ ] **C2.11** 运行定向测试、策展 schema / 引用检查、`typecheck`、`lint`、`build:production-ci`、`git diff --check`。
-- [ ] **C2.12** 更新 ledger，提交 `feat(world): 重塑世界入口与回访抵达体验`。
+- [x] **C2.1** 把 `SceneContext`、`SceneDestination` 与 schema 版本写成单一类型入口；不得复制 Node / Area 类型。
+- [x] **C2.2** 建立公开策展 registry：至少 24 个来源可追溯的代表节点覆盖项目、记忆、片段、规则和主要区域；把 RC、QA、script、evidence 类节点降为 Archive-only，不改变 visibility。
+- [x] **C2.3** 拆分 `WorldRuntimeProvider` 的纯函数和 storage 逻辑，保持外部 context API 向后兼容。
+- [x] **C2.4** 新建 route-aware `WorldChrome`：desktop 使用轻量空间罗盘，mobile 使用底部 / 顶部紧凑导航；隐藏无关全局 footer 和身份条。
+- [x] **C2.5** 实现 Gateway first-visit：世界远景、一个进入动作、入口开启、三个可感知方向；场景主体首屏占比达标。
+- [x] **C2.6** 实现 returning visit：显示上次公开地点、未完成路径、继续与清除；不展示敏感历史。
+- [x] **C2.7** 从首页移除 `SceneWorldPortal`、统计卡、运行模式说明、Evidence / Fallback 文案和重复 CTA。
+- [x] **C2.8** 为 JS / storage / image 失败提供静态 Gateway，仍可进入 Atlas、Paths 与 Archive。
+- [x] **C2.9** 使用 GSAP 编排入口开启与对象响应；通过 `matchMedia()` 提供 mobile / reduced-motion 分支并清理 timeline。
+- [x] **C2.10** 生产构建并截图 `home-desktop-first`、`home-mobile-first`、`home-desktop-returning`、`home-text-hidden`；逐张视觉审查。
+- [x] **C2.11** 运行定向测试、策展 schema / 引用检查、`typecheck`、`lint`、`build:production-ci`、`git diff --check`。
+- [x] **C2.12** 更新 ledger，提交 `feat(world): 重塑世界入口与回访抵达体验`。
 
 **Gate:** 隐藏文字后仍能看出“入口 / 门厅 / 浮屿方向”；首屏不得再具有旧双栏 hero 轮廓。
 

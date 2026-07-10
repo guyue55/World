@@ -37,6 +37,14 @@
       "mobile": true
     },
     {
+      "id": "paths",
+      "label": "路径",
+      "href": "/paths",
+      "match": "section",
+      "desktop": true,
+      "mobile": true
+    },
+    {
       "id": "lighthouse",
       "label": "灯塔",
       "href": "/ask",
@@ -80,7 +88,7 @@
     }
   ],
   "rules": [
-    "主导航只展示 Home / Atlas / Timeline / Archive / Lighthouse / Manifesto。",
+    "主导航只展示 Home / Atlas / Timeline / Archive / Paths / Lighthouse / Manifesto。",
     "阶段页、治理页、调试页、AI 审计页不得进入公开主导航。",
     "私密、vault、sealed、silent 内容不得进入公开构建索引。",
     "桌面和移动端必须共用同一份导航数据。",

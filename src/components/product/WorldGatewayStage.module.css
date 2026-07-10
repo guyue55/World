@@ -1,0 +1,354 @@
+.stage {
+  background: #071011;
+}
+
+.viewport {
+  min-height: 100svh;
+}
+
+.picture,
+.image,
+.imageFallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.imageFallback {
+  position: absolute;
+  inset: 0;
+  background-color: #10201f;
+}
+
+.stage[data-image-failed="true"] .picture {
+  display: none;
+}
+
+.atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(4, 11, 12, 0.2);
+  box-shadow: inset 0 -12rem 10rem rgba(2, 8, 9, 0.7), inset 0 8rem 8rem rgba(2, 8, 9, 0.3);
+  pointer-events: none;
+}
+
+.arrival {
+  position: absolute;
+  z-index: 12;
+  top: clamp(5.5rem, 13vh, 8rem);
+  left: clamp(1.25rem, 5vw, 5rem);
+  max-width: 27rem;
+  color: var(--world-scene-foreground);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+}
+
+.arrival h1 {
+  margin-top: 0.4rem;
+  font-size: clamp(2.4rem, 5vw, 5.2rem);
+  line-height: 1;
+  font-weight: 600;
+}
+
+.arrival > p:last-child {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(244, 234, 213, 0.78);
+}
+
+.eyebrow {
+  color: var(--world-scene-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.door {
+  position: absolute;
+  z-index: 8;
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background-color: rgba(6, 15, 15, 0.38);
+  border-color: rgba(216, 184, 117, 0.26);
+  backdrop-filter: saturate(0.72);
+  pointer-events: none;
+}
+
+.doorLeft {
+  left: 0;
+  border-right: 1px solid;
+  transform-origin: left center;
+}
+
+.doorRight {
+  right: 0;
+  border-left: 1px solid;
+  transform-origin: right center;
+}
+
+.enterButton {
+  position: absolute;
+  z-index: 15;
+  left: 50%;
+  bottom: clamp(7rem, 17vh, 10rem);
+  display: inline-flex;
+  min-height: 3.25rem;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgba(248, 230, 190, 0.55);
+  border-radius: 8px;
+  background: rgba(11, 24, 23, 0.86);
+  padding: 0.75rem 1.15rem;
+  color: #f7e7c3;
+  font-weight: 700;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.36);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.enterButton:hover {
+  background-color: rgba(30, 50, 44, 0.94);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.enterButton:focus-visible {
+  outline: 3px solid var(--world-scene-focus);
+  outline-offset: 4px;
+}
+
+.directions {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  pointer-events: none;
+}
+
+.directions > div {
+  position: absolute;
+  pointer-events: auto;
+}
+
+.directions > div[data-scene-target="atlas"] {
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.directions > div[data-scene-target="paths"] {
+  left: 19%;
+  bottom: 24%;
+}
+
+.directions > div[data-scene-target="archive"] {
+  right: 17%;
+  bottom: 24%;
+}
+
+.directionObject {
+  border-color: rgba(247, 231, 195, 0.48) !important;
+  background-color: rgba(8, 20, 20, 0.8) !important;
+  padding: 0.65rem 0.85rem !important;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.38);
+}
+
+.directionCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.directionCopy strong {
+  font-family: var(--world-font-scene);
+  font-size: 1rem;
+}
+
+.directionCopy small {
+  margin-top: 0.25rem;
+  color: rgba(244, 234, 213, 0.62);
+  font-size: 0.68rem;
+}
+
+.returnDock {
+  position: absolute;
+  z-index: 14;
+  left: clamp(1rem, 4vw, 4rem);
+  bottom: 1rem;
+  width: min(22rem, calc(100% - 2rem));
+  border: 1px solid rgba(247, 231, 195, 0.24);
+  border-radius: 8px;
+  background-color: rgba(7, 18, 18, 0.86);
+  padding: 1rem;
+  color: var(--world-scene-foreground);
+  backdrop-filter: blur(12px);
+}
+
+.returnDock p,
+.returnDock small {
+  display: block;
+  color: rgba(244, 234, 213, 0.62);
+  font-size: 0.75rem;
+}
+
+.returnDock strong {
+  display: block;
+  margin: 0.25rem 0 0.4rem;
+  font-family: var(--world-font-scene);
+  font-size: 1.2rem;
+}
+
+.returnDock > div {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.returnDock a,
+.returnDock button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.returnDock a { background-color: var(--world-scene-accent); color: #10201f; }
+.returnDock button { border: 1px solid rgba(244, 234, 213, 0.2); }
+
+.placeRail {
+  position: absolute;
+  z-index: 9;
+  right: clamp(1rem, 4vw, 4rem);
+  bottom: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.placeRail a {
+  width: 10.5rem;
+  border-left: 1px solid rgba(247, 231, 195, 0.45);
+  padding: 0.25rem 0.6rem;
+  color: var(--world-scene-foreground);
+  text-shadow: 0 2px 12px #000;
+}
+
+.placeRail span,
+.placeRail strong {
+  display: block;
+}
+
+.placeRail span { font-size: 0.65rem; color: var(--world-scene-accent); }
+.placeRail strong { margin-top: 0.2rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.78rem; }
+
+.staticFallback {
+  position: relative;
+  z-index: 20;
+  margin: 100svh auto 0;
+  max-width: 48rem;
+  background: #f7f1e6;
+  padding: 2rem 1rem 7rem;
+  color: #25302a;
+}
+
+.noScriptRail {
+  position: absolute;
+  z-index: 18;
+  left: 50%;
+  bottom: 2rem;
+  display: flex;
+  transform: translateX(-50%);
+  gap: 0.5rem;
+  border: 1px solid rgba(247, 231, 195, 0.35);
+  border-radius: 8px;
+  background-color: rgba(7, 18, 18, 0.9);
+  padding: 0.5rem;
+}
+
+.noScriptRail a {
+  min-height: 2.75rem;
+  border-radius: 8px;
+  padding: 0.7rem;
+  color: var(--world-scene-foreground);
+  font-size: 0.8rem;
+}
+
+.stage[data-enhanced="true"][data-image-ready="true"] .staticFallback {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .arrival {
+    top: 5.2rem;
+    left: 1.1rem;
+    right: 1.1rem;
+    max-width: none;
+    text-align: center;
+  }
+
+  .arrival h1 {
+    font-size: clamp(2.5rem, 13vw, 4.2rem);
+  }
+
+  .door {
+    width: 50.5%;
+  }
+
+  .enterButton {
+    bottom: 8rem;
+  }
+
+  .directions > div[data-scene-target="atlas"] {
+    top: 43%;
+  }
+
+  .directions > div[data-scene-target="paths"] {
+    left: 0.75rem;
+    bottom: 25%;
+  }
+
+  .directions > div[data-scene-target="archive"] {
+    right: 0.75rem;
+    bottom: 25%;
+  }
+
+  .directionObject {
+    max-width: 9rem;
+  }
+
+  .directionCopy strong { font-size: 0.88rem; }
+
+  .placeRail {
+    display: none;
+  }
+
+  .returnDock {
+    left: 0.75rem;
+    bottom: 5.5rem;
+    width: calc(100% - 1.5rem);
+  }
+
+  .noScriptRail {
+    right: 0.5rem;
+    bottom: 5.5rem;
+    left: 0.5rem;
+    transform: none;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enterButton,
+  .directionObject {
+    transition: none;
+  }
+}

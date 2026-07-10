@@ -98,7 +98,7 @@ export function RuntimeSoundscapeControl() {
       data-soundscape-scene={soundscape.sceneId}
       data-sensory-mode={runtime.sensoryMode}
       data-scene-switch-policy={registry.runtime.sceneSwitchPolicy}
-      className="pointer-events-none fixed bottom-4 right-4 z-40 text-xs text-ink/62 md:bottom-6 md:right-6"
+      className="pointer-events-none fixed right-14 top-2 z-40 text-xs text-ink/62 md:bottom-6 md:right-6 md:top-auto"
     >
       <div className="pointer-events-auto rounded-full border border-white/70 bg-white/82 p-2 shadow-soft backdrop-blur-xl">
         <div className="flex items-center justify-between gap-2">

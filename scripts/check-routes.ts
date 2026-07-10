@@ -19,7 +19,6 @@ const requiredRoutes = [
   'src/app/forbidden/page.tsx',
   'src/app/not-found.tsx',
   'src/app/error.tsx',
-  'src/app/loading.tsx',
   'src/app/sitemap.ts',
   'src/app/robots.ts',
   'src/app/manifest.ts',

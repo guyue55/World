@@ -43,7 +43,7 @@ if (!runtime.includes('getLegacyRuntimePolicy')) failures.push('缺少 getLegacy
 if (!runtime.includes('isForbiddenFormalRuntimeToken')) failures.push('缺少 isForbiddenFormalRuntimeToken')
 
 const shell = read('src/components/world/WorldShell.tsx')
-for (const token of ['ProductBackdrop', 'ProductJourneyDock', 'skip-link', 'main-content']) {
+for (const token of ['WorldChrome', 'WorldRuntimeProvider', 'skip-link', 'main-content']) {
   if (!shell.includes(token)) failures.push(`WorldShell 缺少正式 runtime 标识：${token}`)
 }
 

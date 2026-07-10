@@ -9,7 +9,6 @@ const files = [
   'src/app/error.tsx',
   'src/app/global-error.tsx',
   'src/app/not-found.tsx',
-  'src/app/loading.tsx',
 ]
 
 // 门面拆分：把 src/lib/public-surfaces/ 下的所有 ts 文件加入扫描

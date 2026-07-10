@@ -54,7 +54,7 @@ const forbiddenTokens = [
   '@/components/r8-civilization-universe',
 ]
 
-const allowedNavHrefs = new Set(['/', '/atlas', '/timeline', '/archive', '/ask', '/manifesto'])
+const allowedNavHrefs = new Set(['/', '/atlas', '/timeline', '/archive', '/paths', '/ask', '/manifesto'])
 const disallowedSitemapRouteTokens = [
   ...PRODUCT_INTERNAL_EXACT_ROUTES,
   '/skeleton',
@@ -101,10 +101,10 @@ const rootPage = read('src/app/page.tsx')
 if (!rootPage.includes('ProductHome')) failures.push('home page must use ProductHome')
 
 const shell = read('src/components/world/WorldShell.tsx')
-if (!shell.includes('ProductBackdrop')) failures.push('world shell must use lightweight ProductBackdrop')
+if (!shell.includes('WorldChrome')) failures.push('world shell must use route-aware WorldChrome')
 if (!shell.includes('skip-link')) failures.push('world shell must expose a skip link')
 if (!shell.includes('main-content')) failures.push('world shell must expose a main content target')
-if (!shell.includes('ProductJourneyDock')) failures.push('world shell must expose local journey continuity')
+if (!shell.includes('WorldRuntimeProvider')) failures.push('world shell must preserve local journey runtime')
 
 const sitemap = read('src/app/sitemap.ts')
 for (const token of disallowedSitemapRouteTokens) {
