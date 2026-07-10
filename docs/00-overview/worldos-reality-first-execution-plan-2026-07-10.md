@@ -373,13 +373,13 @@ export type AtlasViewModel = {
 - Modify: `src/app/ask/page.tsx`
 - Modify: `src/components/ask/PublicLighthouseConsole.tsx`
 
-- [ ] **C7.1** 先写服务测试：公开问题 grounded、未知问题 no-evidence、私密问题 refusal、provider timeout fallback、schema invalid fallback、rate limit。
-- [ ] **C7.2** 实现 provider-neutral adapter；OpenAI 使用 server-only 环境变量与 native fetch，disabled adapter 明确返回低光模式。
-- [ ] **C7.3** 把 ask API 改为 POST；验证问题长度、Zod body、超时、取消、cache、LAN 单进程限流和审计摘要。
-- [ ] **C7.4** 确保 `buildAIContextSlice()` 是唯一上下文入口；private / family / partner / vault / sealed / silent 不进入 provider request。
-- [ ] **C7.5** Lighthouse 场景消费 current SceneContext，回答“在哪里 / 为什么相关 / 下一步 / 回去”，来源链接进入真实场景。
-- [ ] **C7.6** 无 Key 时完整演练 low-light；有 Key 时额外验证真实 usage、model、latency、grounding 和成本，不伪造元数据。
-- [ ] **C7.7** 从 `/ask` 移除共享 portal、三 CTA hero 和工程状态卡；塔体、光束和当前来路成为首屏主体。
+- [x] **C7.1** 先写服务测试：公开问题 grounded、未知问题 no-evidence、私密问题 refusal、provider timeout fallback、schema invalid fallback、rate limit。
+- [x] **C7.2** 实现 provider-neutral adapter；OpenAI 使用 server-only 环境变量与 native fetch，disabled adapter 明确返回低光模式。
+- [x] **C7.3** 把 ask API 改为 POST；验证问题长度、Zod body、超时、取消、cache、LAN 单进程限流和审计摘要。
+- [x] **C7.4** 确保 `buildAIContextSlice()` 是唯一上下文入口；private / family / partner / vault / sealed / silent 不进入 provider request。
+- [x] **C7.5** Lighthouse 场景消费 current SceneContext，回答“在哪里 / 为什么相关 / 下一步 / 回去”，来源链接进入真实场景。
+- [x] **C7.6** 无 Key 时完整演练 low-light；有 Key 时额外验证真实 usage、model、latency、grounding 和成本，不伪造元数据。
+- [x] **C7.7** 从 `/ask` 移除共享 portal、三 CTA hero 和工程状态卡；塔体、光束和当前来路成为首屏主体。
 
 ### Task C7-B：声景
 
@@ -391,12 +391,12 @@ export type AtlasViewModel = {
 - Modify: `data/assets/world-scene-assets.json`
 - Create: `public/world/audio/**` only for licensed or generated assets
 
-- [ ] **C7.8** 实现用户手势后加载、单主 loop、单 cue、crossfade、page hidden pause、volume、mute、dispose；让 dayPeriod / season 通过各场景光线与至少一项氛围对象真实变化，而非只显示文本标签。
-- [ ] **C7.9** 为七个场景配置可区分但克制的 ambience，并为 Gateway / Lighthouse 制作一个经变奏的短音乐动机；可使用已授权文件或登记过的程序化 patch，没有合法来源时不得下载来源不明音乐凑验收。
-- [ ] **C7.10** 验证首次加载没有音频请求、默认静音、开启后才下载、关闭 / reduced-sensory 后停止。
-- [ ] **C7.11** 截图 Lighthouse arrival / grounded / refusal / low-light / mobile / text-hidden；录制 lighthouse-guide。
-- [ ] **C7.12** 运行 AI / permission / audio 测试、`typecheck`、`lint`、生产 build、client bundle Key scan 和资产预算。
-- [ ] **C7.13** 更新 ledger；按实际模式提交 `feat(world): 落地灯塔导览与可选场景声景`。
+- [x] **C7.8** 实现用户手势后加载、单主 loop、单 cue、crossfade、page hidden pause、volume、mute、dispose；让 dayPeriod / season 通过各场景光线与至少一项氛围对象真实变化，而非只显示文本标签。
+- [x] **C7.9** 为七个场景配置可区分但克制的 ambience，并为 Gateway / Lighthouse 制作一个经变奏的短音乐动机；可使用已授权文件或登记过的程序化 patch，没有合法来源时不得下载来源不明音乐凑验收。
+- [x] **C7.10** 验证首次加载没有音频请求、默认静音、开启后才下载、关闭 / reduced-sensory 后停止。
+- [x] **C7.11** 截图 Lighthouse arrival / grounded / refusal / low-light / mobile / text-hidden；录制 lighthouse-guide。
+- [x] **C7.12** 运行 AI / permission / audio 测试、`typecheck`、`lint`、生产 build、client bundle Key scan 和资产预算。
+- [x] **C7.13** 更新 ledger；按实际模式提交 `feat(world): 落地灯塔导览与可选场景声景`。
 
 ---
 

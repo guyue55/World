@@ -1,4 +1,6 @@
-import sceneTransitionRegistry from '../../data/domains/experience/scene-transition-registry.json'
+import runtimeConfig from '../../data/generated/world-runtime-public.json'
+
+const sceneTransitionRegistry = runtimeConfig.transition
 import {
   getSceneForPathname,
   getSceneTransition,

@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "name": "WorldOS M23 感官与声景生产注册表",
+  "version": "1.2.0",
+  "name": "WorldOS 场景声景注册表",
   "updatedAt": "2026-07-10",
   "source": "docs/00-overview/worldos-m23-sensory-audio-production-spec-2026-07-10.md",
   "legacySource": "docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md",
@@ -33,7 +33,7 @@
     "autoPlayAllowed": false,
     "lazyLoadPolicy": "Web Audio context is created only inside an explicit user click handler.",
     "sessionArmPolicy": "Stored preference never creates audio by itself; every browser session must be armed by a fresh user click.",
-    "sceneSwitchPolicy": "When an armed session changes scene, the previous oscillator is stopped before the next short cue is synthesized.",
+    "sceneSwitchPolicy": "Armed sessions keep one procedural ambience group and one short cue; scene changes crossfade for 650-800ms before releasing the previous group.",
     "reducedSensoryPolicy": "silent sensory mode keeps the control visible but never creates or resumes audio."
   },
   "modes": [
@@ -51,6 +51,17 @@
       "id": "enabled",
       "label": "开启",
       "description": "用户主动开启后，场景切换可播放极短空间反馈。"
+    }
+  ],
+  "motifs": [
+    {
+      "id": "gateway-lighthouse-beacon",
+      "scenes": ["gateway", "lighthouse"],
+      "source": "project-generated-procedural",
+      "license": "project-owned-runtime-synthesis",
+      "description": "入口使用较低三音信号，灯塔使用同音程的较高变奏；仅在用户开启声景后播放。",
+      "peakGain": 0.026,
+      "bytes": 0
     }
   ],
   "sceneSoundscapes": [

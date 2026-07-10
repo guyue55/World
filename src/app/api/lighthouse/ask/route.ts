@@ -1,24 +1,32 @@
-// 用途：灯塔问答 API，低光模式下返回静态推荐，不调用真实 AI
-
 import { NextResponse } from 'next/server'
-import { getLighthouseRuntimeGovernance, normalizeLighthouseQuestion } from '@/server/ai/lighthouse-governance'
-import { runLowLightLighthouse } from '@/server/ai/lighthouse-runtime'
+import { z } from 'zod'
+import { sceneContextSchema } from '@/lib/scenes/scene-context'
+import { getLighthouseRuntimeGovernance } from '@/server/ai/lighthouse-governance'
+import { lighthouseRateLimiter } from '@/server/ai/lighthouse-rate-limit'
+import { answerLighthouseQuestion } from '@/server/ai/lighthouse-service'
 
-export const dynamic = 'force-static'
+export const dynamic = 'force-dynamic'
 
-export function GET(request: Request) {
-  const governance = getLighthouseRuntimeGovernance()
-  const { searchParams } = new URL(request.url)
-  const question = normalizeLighthouseQuestion(searchParams.get('q') ?? '')
+const governance = getLighthouseRuntimeGovernance()
+const requestSchema = z.object({
+  question: z.string().trim().min(1).max(governance.runtime.maxQuestionLength),
+  context: sceneContextSchema.optional(),
+})
 
-  if (!question) {
-    return NextResponse.json({ error: '问题不能为空' }, { status: 400 })
-  }
+export async function POST(request: Request) {
+  const rate = lighthouseRateLimiter.consume('local-lan-process')
+  if (!rate.allowed) return NextResponse.json({ error: '问路太频繁，请稍后再试。' }, { status: 429, headers: { 'retry-after': String(rate.retryAfterSeconds) } })
 
-  const response = NextResponse.json(runLowLightLighthouse(question))
-  response.headers.set('cache-control', governance.runtime.cachePolicy)
-  response.headers.set('x-worldos-lighthouse-mode', governance.runtime.mode)
-  response.headers.set('x-worldos-provider-status', governance.runtime.providerStatus)
+  let body: unknown
+  try { body = await request.json() } catch { return NextResponse.json({ error: '请求格式无效。' }, { status: 400 }) }
+  const parsed = requestSchema.safeParse(body)
+  if (!parsed.success) return NextResponse.json({ error: `问题不能为空，且不能超过 ${governance.runtime.maxQuestionLength} 个字符。` }, { status: 400 })
+
+  const answer = await answerLighthouseQuestion(parsed.data.question, parsed.data.context, { signal: request.signal })
+  const response = NextResponse.json(answer)
+  response.headers.set('cache-control', 'private, no-store')
+  response.headers.set('x-worldos-lighthouse-mode', answer.mode)
+  response.headers.set('x-ratelimit-remaining', String(rate.remaining))
   response.headers.set('x-worldos-question-max-length', String(governance.runtime.maxQuestionLength))
   return response
 }

@@ -5,6 +5,8 @@ import type { PublicNodeReference } from '@/lib/public-world-objects'
 import { buildAIContextSlice, type AIContextCandidate } from './context-policy'
 import { buildLighthouseRuntimeEnvelope, getLighthouseRuntimeGovernance } from './lighthouse-governance'
 import { getLocalAIProviderStatus } from './provider'
+import type { SceneContext } from '@/lib/scenes/scene-context'
+import type { AIContextSlice } from './context-policy'
 
 export type LighthouseIntent = 'ask' | 'explain' | 'recommend' | 'route' | 'summarize' | 'boundary' | 'unknown'
 
@@ -43,7 +45,7 @@ export type LighthouseRuntimeResponse = {
   sources: LighthouseSource[]
   nextSteps: LighthouseGroundedNextStep[]
   grounding: LighthouseGrounding
-  mode: 'low-light'
+  mode: 'live-provider' | 'low-light'
   intent: LighthouseIntent
   fallback: {
     active: boolean
@@ -52,7 +54,7 @@ export type LighthouseRuntimeResponse = {
   }
   limits: string[]
   auditSummary: {
-    providerStatus: 'disabled-dry-run'
+    providerStatus: string
     writesWorldSource: false
     publicContextCount: number
     excludedContextCount: number
@@ -73,6 +75,12 @@ export type LighthouseRuntimeResponse = {
       timedOut: false
     }
     outputSummary: string
+    elapsedMs: number
+    cached: boolean
+    provider?: string
+    model?: string
+    inputTokens?: number
+    outputTokens?: number
   }
 }
 
@@ -82,7 +90,7 @@ function inferIntent(question: string): LighthouseIntent {
   if (/总结|概括|summary/i.test(question)) return 'summarize'
   if (/解释|为什么|是什么|explain/i.test(question)) return 'explain'
   if (/推荐|看什么|下一步|recommend/i.test(question)) return 'recommend'
-  if (/去哪|路线|路径|route|where/i.test(question)) return 'route'
+  if (/在哪|哪里|去哪|路线|路径|route|where/i.test(question)) return 'route'
   return 'ask'
 }
 
@@ -139,14 +147,25 @@ function nextStepsFromRecommendations(recommendations: LighthouseRecommendation[
   return steps.length > 0 ? steps : sceneNextSteps()
 }
 
-export function runLowLightLighthouse(question: string): LighthouseRuntimeResponse {
+function describeSourcePath(sceneContext?: SceneContext) {
+  const path = sceneContext?.sourcePath
+  if (!path) return '你正站在浮屿灯塔，来路没有被浏览器保留。'
+  if (path.startsWith('/node/')) return '你从一个内容地点来到灯塔，光束会优先照向相邻地点与下一站。'
+  if (path.startsWith('/paths/')) return '你从一条旅程来到灯塔，当前路线仍会保留在本机浏览上下文中。'
+  if (path.startsWith('/atlas')) return '你从星图来到灯塔，可以沿光束进入被点亮的地点。'
+  if (path.startsWith('/timeline')) return '你从时间河来到灯塔，可以回看相关地点或继续向前。'
+  if (path.startsWith('/archive')) return '你从档案馆来到灯塔，可以打开卷宗对应的地点。'
+  return '你正站在浮屿灯塔，来路连接着公开世界入口。'
+}
+
+export function runLowLightLighthouse(question: string, sceneContext?: SceneContext, providedContext?: AIContextSlice): LighthouseRuntimeResponse {
   const startedAt = Date.now()
   const governance = getLighthouseRuntimeGovernance()
   const envelope = buildLighthouseRuntimeEnvelope(question, startedAt)
   const publicWorld = getPublicWorldObjectIndex()
   const provider = getLocalAIProviderStatus()
   const intent = inferIntent(envelope.normalizedQuestion)
-  const context = buildAIContextSlice(contextCandidates(publicWorld.nodeRefs))
+  const context = providedContext ?? buildAIContextSlice(contextCandidates(publicWorld.nodeRefs))
 
   const matchedSources = publicWorld.nodeRefs
     .filter((node) => matchesQuestion(node, envelope.normalizedQuestion))
@@ -214,11 +233,14 @@ export function runLowLightLighthouse(question: string): LighthouseRuntimeRespon
             confidence: 'medium',
           }
 
+  const asksWhere = /在哪|哪里|where/i.test(envelope.normalizedQuestion)
   const answer = isBoundaryQuestion
     ? '不能。灯塔只读取公开事实源，不读取私密档案、保险箱、亲友层或沉默内容，也不会替你改变权限。'
     : isUnknownQuestion && matchedSources.length === 0
       ? '我在公开世界索引里没有找到足够依据。你可以回到地图、路径或档案馆继续查找；如果这是新内容，需要作者先把它放入公开事实源。'
-      : matchedSources.length > 0
+      : asksWhere
+        ? describeSourcePath(sceneContext)
+        : matchedSources.length > 0
         ? `灯塔在公开世界索引中找到 ${matchedSources.length} 条相关线索。你可以先打开来源，再沿路径或地图继续探索。`
         : '灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。'
 
@@ -255,6 +277,8 @@ export function runLowLightLighthouse(question: string): LighthouseRuntimeRespon
         elapsedMs: Math.max(0, Date.now() - startedAt),
       },
       outputSummary: `${intent} / sources=${sources.length} / recommendations=${recommendations.length} / fallback=${provider.realTimeAIProviderEnabled === false}`,
+      elapsedMs: Math.max(0, Date.now() - startedAt),
+      cached: false,
     },
   }
 }

@@ -1,4 +1,6 @@
-import ambientEnvironmentRegistry from '../../data/domains/experience/ambient-environment-registry.json'
+import runtimeConfig from '../../data/generated/world-runtime-public.json'
+
+const ambientEnvironmentRegistry = runtimeConfig.ambient
 
 export type AmbientEnvironmentRegistry = typeof ambientEnvironmentRegistry
 export type AmbientDayPeriodId = AmbientEnvironmentRegistry['dayPeriods'][number]['id']

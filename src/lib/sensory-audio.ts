@@ -1,4 +1,6 @@
-import sensoryAudioRegistry from '../../data/domains/experience/sensory-audio-registry.json'
+import runtimeConfig from '../../data/generated/world-runtime-public.json'
+
+const sensoryAudioRegistry = runtimeConfig.audio
 
 export type SensoryAudioRegistry = typeof sensoryAudioRegistry
 export type SensorySoundscape = SensoryAudioRegistry['sceneSoundscapes'][number]

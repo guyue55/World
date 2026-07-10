@@ -1,0 +1,1165 @@
+{
+  "scene": {
+    "name": "WorldOS Phase 26 公开场景注册表",
+    "version": "1.0.0",
+    "scope": {
+      "localOnly": true,
+      "localhostAccepted": true,
+      "lanIpAccepted": true,
+      "externalPreviewConsidered": false,
+      "productionConsidered": false,
+      "publicSceneOnly": true,
+      "frontendPermissionControl": false,
+      "requiresOwner": false,
+      "requiresRealAI": false
+    },
+    "scenes": [
+      {
+        "id": "gateway",
+        "match": "/",
+        "title": "创世原点",
+        "realName": "首页世界入口",
+        "sceneType": "gateway",
+        "motionGrammar": "arrival",
+        "entryTransition": "fade-rise",
+        "exitTransition": "gateway-to-atlas",
+        "ambientLayer": "desk-starlight",
+        "primaryAction": "进入世界地图",
+        "href": "/atlas",
+        "objects": [
+          "书桌",
+          "灯",
+          "纸页",
+          "星河",
+          "罗盘"
+        ],
+        "reducedMotionFallback": "直接显示完整入口、主 CTA 和新手路径，不播放位移或缩放。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "atlas",
+        "match": "/atlas",
+        "title": "星图穹顶",
+        "realName": "世界地图",
+        "sceneType": "atlas",
+        "motionGrammar": "connection",
+        "entryTransition": "zoom-star",
+        "exitTransition": "atlas-to-node",
+        "ambientLayer": "constellation-dome",
+        "primaryAction": "沿时间河前进",
+        "href": "/timeline",
+        "objects": [
+          "星图",
+          "浮屿",
+          "路径",
+          "雾区"
+        ],
+        "reducedMotionFallback": "保留区域聚焦和节点列表，禁用星点缩放与连续漂移。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "timeline",
+        "match": "/timeline",
+        "title": "时间河",
+        "realName": "时间线与事件流",
+        "sceneType": "timeline",
+        "motionGrammar": "flow",
+        "entryTransition": "river-shift",
+        "exitTransition": "timeline-to-node",
+        "ambientLayer": "time-river",
+        "primaryAction": "查看档案馆",
+        "href": "/archive",
+        "objects": [
+          "河流",
+          "涟漪",
+          "回声",
+          "旧星"
+        ],
+        "reducedMotionFallback": "使用静态事件列表与区域筛选，不播放横向流动。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "archive",
+        "match": "/archive",
+        "title": "档案馆",
+        "realName": "现实检索与归档",
+        "sceneType": "archive",
+        "motionGrammar": "emergence",
+        "entryTransition": "archive-drawer",
+        "exitTransition": "archive-to-node",
+        "ambientLayer": "archive-hall",
+        "primaryAction": "打开精选路径",
+        "href": "/paths",
+        "objects": [
+          "卷宗",
+          "书页",
+          "书架",
+          "索引"
+        ],
+        "reducedMotionFallback": "保留检索、筛选和馆藏状态，禁用抽屉位移。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "paths",
+        "match": "/paths",
+        "title": "星路入口",
+        "realName": "精选探索路径",
+        "sceneType": "paths",
+        "motionGrammar": "flow",
+        "entryTransition": "path-pulse",
+        "exitTransition": "fade-rise",
+        "ambientLayer": "journey-board",
+        "primaryAction": "开始第一条路径",
+        "href": "/paths/first-visit",
+        "objects": [
+          "路径",
+          "脚印",
+          "节点",
+          "星线"
+        ],
+        "reducedMotionFallback": "直接显示路径卡片、预计时间和下一步，不播放脉冲。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "path-detail",
+        "match": "/paths/[id]",
+        "title": "旅程路线",
+        "realName": "单条路径详情",
+        "sceneType": "path-detail",
+        "motionGrammar": "flow",
+        "entryTransition": "path-pulse",
+        "exitTransition": "path-to-node",
+        "ambientLayer": "journey-route",
+        "primaryAction": "继续到下一个节点",
+        "href": "/archive",
+        "objects": [
+          "路线",
+          "路标",
+          "下一站",
+          "回望"
+        ],
+        "reducedMotionFallback": "使用静态步骤序列和下一站按钮，不依赖进度动画。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "node",
+        "match": "/node/[slug]",
+        "title": "节点展开室",
+        "realName": "内容节点详情",
+        "sceneType": "node",
+        "motionGrammar": "focus",
+        "entryTransition": "node-open",
+        "exitTransition": "fade-rise",
+        "ambientLayer": "node-room",
+        "primaryAction": "回到档案馆",
+        "href": "/archive",
+        "objects": [
+          "护照",
+          "卷轴",
+          "星线",
+          "生命阶段"
+        ],
+        "reducedMotionFallback": "直接展示节点护照、正文和关系，不播放模糊或放大。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "lighthouse",
+        "match": "/ask",
+        "title": "AI 灯塔",
+        "realName": "公开导览与问路入口",
+        "sceneType": "lighthouse",
+        "motionGrammar": "feedback",
+        "entryTransition": "lighthouse-sweep",
+        "exitTransition": "fade-rise",
+        "ambientLayer": "low-light-beacon",
+        "primaryAction": "返回世界入口",
+        "href": "/",
+        "objects": [
+          "灯塔",
+          "光束",
+          "问答",
+          "边界"
+        ],
+        "reducedMotionFallback": "保留推荐问题、路径建议和边界提示，不播放光束扫动。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      },
+      {
+        "id": "status",
+        "match": "/status",
+        "title": "维护舱",
+        "realName": "公开状态与运行证据",
+        "sceneType": "status",
+        "motionGrammar": "feedback",
+        "entryTransition": "fade-rise",
+        "exitTransition": "fade-rise",
+        "ambientLayer": "maintenance-console",
+        "primaryAction": "返回入口",
+        "href": "/",
+        "objects": [
+          "心跳",
+          "状态",
+          "证据",
+          "低光"
+        ],
+        "reducedMotionFallback": "直接展示状态账本、门禁结果和下一步建议。",
+        "publicOnly": true,
+        "requiresOwner": false,
+        "requiresRealAI": false
+      }
+    ],
+    "transitions": [
+      {
+        "id": "gateway-to-atlas",
+        "from": "gateway",
+        "to": "atlas",
+        "motion": "zoom-star",
+        "intent": "从书桌入口拉远到世界星图，让访问者理解自己进入了地图层。",
+        "reducedMotionFallback": "直接切换到 Atlas，并保留返回入口按钮。"
+      },
+      {
+        "id": "atlas-to-node",
+        "from": "atlas",
+        "to": "node",
+        "motion": "zoom-star",
+        "intent": "从星图中的节点放大进入节点房间。",
+        "reducedMotionFallback": "直接进入节点页，并显示所在星域。"
+      },
+      {
+        "id": "timeline-to-node",
+        "from": "timeline",
+        "to": "node",
+        "motion": "river-shift",
+        "intent": "从时间河中的事件片段展开到对应节点。",
+        "reducedMotionFallback": "直接进入节点页，并显示事件日期。"
+      },
+      {
+        "id": "archive-to-node",
+        "from": "archive",
+        "to": "node",
+        "motion": "archive-drawer",
+        "intent": "从档案馆抽出一份卷宗进入节点阅读。",
+        "reducedMotionFallback": "直接进入节点页，并显示返回档案馆入口。"
+      },
+      {
+        "id": "path-to-node",
+        "from": "path-detail",
+        "to": "node",
+        "motion": "path-arrive",
+        "intent": "从旅程路线抵达下一站节点，让访问者知道这是路径中的一步。",
+        "reducedMotionFallback": "直接进入节点页，并显示路径返回入口。"
+      },
+      {
+        "id": "node-to-paths",
+        "from": "node",
+        "to": "paths",
+        "motion": "path-arrive",
+        "intent": "从节点地点退回旅程入口，把当前节点理解为可继续行走的一站。",
+        "reducedMotionFallback": "直接进入路径页，并显示路径选择入口。"
+      },
+      {
+        "id": "paths-to-timeline",
+        "from": "paths",
+        "to": "timeline",
+        "motion": "river-shift",
+        "intent": "从路径列表回看时间河，把旅程进度转化为世界发生顺序。",
+        "reducedMotionFallback": "直接进入时间河，并保留事件列表。"
+      },
+      {
+        "id": "timeline-to-archive",
+        "from": "timeline",
+        "to": "archive",
+        "motion": "archive-drawer",
+        "intent": "从时间河沉入档案馆，把事件线索收束为可检索卷宗。",
+        "reducedMotionFallback": "直接进入档案馆，并显示检索与筛选。"
+      },
+      {
+        "id": "default-scene-shift",
+        "from": "*",
+        "to": "*",
+        "motion": "fade-rise",
+        "intent": "普通公开场景之间使用轻量抵达过渡。",
+        "reducedMotionFallback": "直接显示目标页面。"
+      }
+    ],
+    "fallback": {
+      "id": "unknown",
+      "match": "*",
+      "title": "未命名星域",
+      "realName": "通用公开页面",
+      "sceneType": "unknown",
+      "motionGrammar": "arrival",
+      "entryTransition": "fade-rise",
+      "exitTransition": "fade-rise",
+      "ambientLayer": "soft-breath",
+      "primaryAction": "回到入口",
+      "href": "/",
+      "objects": [
+        "雾区",
+        "星尘",
+        "路标"
+      ],
+      "reducedMotionFallback": "直接显示页面内容和返回入口。",
+      "publicOnly": true,
+      "requiresOwner": false,
+      "requiresRealAI": false
+    },
+    "acceptance": {
+      "requiredSceneMatches": [
+        "/",
+        "/atlas",
+        "/timeline",
+        "/archive",
+        "/paths",
+        "/paths/[id]",
+        "/node/[slug]",
+        "/ask",
+        "/status"
+      ],
+      "requiredTransitions": [
+        "gateway-to-atlas",
+        "atlas-to-node",
+        "timeline-to-node",
+        "archive-to-node",
+        "path-to-node",
+        "node-to-paths",
+        "paths-to-timeline",
+        "timeline-to-archive",
+        "default-scene-shift"
+      ]
+    },
+    "nextActions": [
+      "阶段 32：将场景、转场和旅程记忆纳入截图 QA。"
+    ]
+  },
+  "transition": {
+    "name": "WorldOS Phase 28 公开场景转场注册表",
+    "version": "1.0.0",
+    "scope": {
+      "localOnly": true,
+      "localhostAccepted": true,
+      "lanIpAccepted": true,
+      "externalPreviewConsidered": false,
+      "productionConsidered": false,
+      "publicSceneOnly": true,
+      "frontendPermissionControl": false,
+      "requiresOwner": false,
+      "requiresAuth": false,
+      "requiresRealAI": false
+    },
+    "shell": {
+      "component": "src/components/world/SceneTransitionShell.tsx",
+      "mount": "src/components/world/WorldShell.tsx#main-content",
+      "usesGsap": true,
+      "usesFramerMotionPresence": true,
+      "usesViewTransitionApi": false,
+      "maxDurationMs": 420,
+      "compactMaxDurationMs": 260,
+      "reducedMotionBehavior": "直接显示目标页面，不播放位移、缩放或抽屉动作。"
+    },
+    "motions": [
+      {
+        "id": "fade-rise",
+        "label": "轻量抵达",
+        "intent": "普通公开场景之间使用轻量抵达，避免过度打扰阅读。",
+        "from": {
+          "autoAlpha": 0,
+          "y": 14,
+          "scale": 1
+        },
+        "to": {
+          "autoAlpha": 1,
+          "y": 0,
+          "scale": 1,
+          "duration": 0.28,
+          "ease": "power2.out"
+        },
+        "compactFrom": {
+          "autoAlpha": 0,
+          "y": 8,
+          "scale": 1
+        },
+        "reducedMotion": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1
+        }
+      },
+      {
+        "id": "zoom-star",
+        "label": "星点拉近",
+        "intent": "入口到星图、星图到节点时，表达视角拉远或从星点进入。",
+        "from": {
+          "autoAlpha": 0,
+          "y": 8,
+          "scale": 0.985
+        },
+        "to": {
+          "autoAlpha": 1,
+          "y": 0,
+          "scale": 1,
+          "duration": 0.36,
+          "ease": "power3.out"
+        },
+        "compactFrom": {
+          "autoAlpha": 0,
+          "y": 8,
+          "scale": 1
+        },
+        "reducedMotion": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1
+        }
+      },
+      {
+        "id": "river-shift",
+        "label": "时间河展开",
+        "intent": "从时间河进入节点时，用轻微横向流动表达时间片展开。",
+        "from": {
+          "autoAlpha": 0,
+          "x": 18,
+          "y": 0,
+          "scale": 1
+        },
+        "to": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "duration": 0.34,
+          "ease": "sine.out"
+        },
+        "compactFrom": {
+          "autoAlpha": 0,
+          "y": 8,
+          "scale": 1
+        },
+        "reducedMotion": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1
+        }
+      },
+      {
+        "id": "archive-drawer",
+        "label": "卷宗抽出",
+        "intent": "从档案馆进入节点时，用短促的纵向抽出感表达卷宗被打开。",
+        "from": {
+          "autoAlpha": 0,
+          "y": 18,
+          "scale": 0.992
+        },
+        "to": {
+          "autoAlpha": 1,
+          "y": 0,
+          "scale": 1,
+          "duration": 0.34,
+          "ease": "power2.out"
+        },
+        "compactFrom": {
+          "autoAlpha": 0,
+          "y": 8,
+          "scale": 1
+        },
+        "reducedMotion": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1
+        }
+      },
+      {
+        "id": "path-arrive",
+        "label": "旅程抵达",
+        "intent": "从路径旅程进入节点时，用轻微前进感表达抵达下一站。",
+        "from": {
+          "autoAlpha": 0,
+          "x": -10,
+          "y": 8,
+          "scale": 0.996
+        },
+        "to": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "duration": 0.32,
+          "ease": "power2.out"
+        },
+        "compactFrom": {
+          "autoAlpha": 0,
+          "y": 8,
+          "scale": 1
+        },
+        "reducedMotion": {
+          "autoAlpha": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1
+        }
+      }
+    ],
+    "routeExamples": [
+      {
+        "from": "/",
+        "to": "/atlas",
+        "transitionId": "gateway-to-atlas",
+        "motion": "zoom-star"
+      },
+      {
+        "from": "/atlas",
+        "to": "/node/world-manifesto",
+        "transitionId": "atlas-to-node",
+        "motion": "zoom-star"
+      },
+      {
+        "from": "/timeline",
+        "to": "/node/world-manifesto",
+        "transitionId": "timeline-to-node",
+        "motion": "river-shift"
+      },
+      {
+        "from": "/archive",
+        "to": "/node/world-manifesto",
+        "transitionId": "archive-to-node",
+        "motion": "archive-drawer"
+      },
+      {
+        "from": "/paths/first-visit",
+        "to": "/node/world-manifesto",
+        "transitionId": "path-to-node",
+        "motion": "path-arrive"
+      },
+      {
+        "from": "/node/world-manifesto",
+        "to": "/paths",
+        "transitionId": "node-to-paths",
+        "motion": "path-arrive"
+      },
+      {
+        "from": "/paths",
+        "to": "/timeline",
+        "transitionId": "paths-to-timeline",
+        "motion": "river-shift"
+      },
+      {
+        "from": "/timeline",
+        "to": "/archive",
+        "transitionId": "timeline-to-archive",
+        "motion": "archive-drawer"
+      },
+      {
+        "from": "/archive",
+        "to": "/",
+        "transitionId": "default-scene-shift",
+        "motion": "fade-rise"
+      }
+    ],
+    "acceptance": {
+      "requiredMotions": [
+        "fade-rise",
+        "zoom-star",
+        "river-shift",
+        "archive-drawer",
+        "path-arrive"
+      ],
+      "requiredSemanticRoutes": [
+        "gateway-to-atlas",
+        "atlas-to-node",
+        "timeline-to-node",
+        "archive-to-node",
+        "path-to-node",
+        "node-to-paths",
+        "paths-to-timeline",
+        "timeline-to-archive",
+        "default-scene-shift"
+      ]
+    },
+    "nextActions": [
+      "阶段 29：深化 Atlas、Timeline、Archive、Node、Ask 的场景人格。",
+      "阶段 30：建立 Journey Memory 与路径连续性。",
+      "阶段 32：把 scene transition 截图证据纳入本地 RC 报告。"
+    ]
+  },
+  "ambient": {
+    "name": "WorldOS Phase 31 公开空气层注册表",
+    "version": "1.0.0",
+    "scope": {
+      "localOnly": true,
+      "localhostAccepted": true,
+      "lanIpAccepted": true,
+      "externalPreviewConsidered": false,
+      "productionConsidered": false,
+      "publicSceneOnly": true,
+      "frontendPermissionControl": false,
+      "requiresOwner": false,
+      "requiresAuth": false,
+      "requiresRealAI": false
+    },
+    "display": {
+      "component": "src/components/world/RuntimeAtmosphere.tsx",
+      "usesHeavyMedia": false,
+      "usesThreeJs": false,
+      "usesWebGl": false,
+      "usesNewAnimationLibrary": false,
+      "usesStaticGsapImport": false,
+      "maxMovingObjects": 9,
+      "compactMaxMovingObjects": 5,
+      "reducedMotionBehavior": "关闭连续位移和旋转，只保留静态色温、微纹理和场景标签。"
+    },
+    "dayPeriods": [
+      {
+        "id": "dawn",
+        "label": "清晨",
+        "light": "柔亮",
+        "background": "linear-gradient(115deg,rgba(250,238,218,0.78),rgba(216,226,208,0.42) 48%,rgba(237,190,102,0.18))",
+        "glow": "rgba(237,190,102,0.22)"
+      },
+      {
+        "id": "day",
+        "label": "白日",
+        "light": "清亮",
+        "background": "linear-gradient(115deg,rgba(247,241,230,0.72),rgba(216,226,208,0.38) 46%,rgba(125,154,162,0.20))",
+        "glow": "rgba(125,154,162,0.20)"
+      },
+      {
+        "id": "dusk",
+        "label": "黄昏",
+        "light": "低暖",
+        "background": "linear-gradient(115deg,rgba(240,223,196,0.76),rgba(197,164,109,0.30) 44%,rgba(125,154,162,0.20))",
+        "glow": "rgba(197,164,109,0.24)"
+      },
+      {
+        "id": "night",
+        "label": "深夜",
+        "light": "低光",
+        "background": "linear-gradient(115deg,rgba(28,35,34,0.08),rgba(125,154,162,0.20) 48%,rgba(247,241,230,0.48))",
+        "glow": "rgba(125,154,162,0.18)"
+      }
+    ],
+    "seasons": [
+      {
+        "id": "spring",
+        "label": "春｜萌发",
+        "textureOpacity": 0.14,
+        "pulseDuration": 8,
+        "nodeLabel": "萌发"
+      },
+      {
+        "id": "summer",
+        "label": "夏｜生长",
+        "textureOpacity": 0.16,
+        "pulseDuration": 7,
+        "nodeLabel": "生长"
+      },
+      {
+        "id": "autumn",
+        "label": "秋｜沉淀",
+        "textureOpacity": 0.12,
+        "pulseDuration": 9,
+        "nodeLabel": "沉淀"
+      },
+      {
+        "id": "winter",
+        "label": "冬｜静读",
+        "textureOpacity": 0.1,
+        "pulseDuration": 11,
+        "nodeLabel": "静读"
+      }
+    ],
+    "aiStatuses": [
+      {
+        "id": "low-light",
+        "label": "灯塔低光",
+        "beaconOpacity": 0.18,
+        "hint": "灯塔只做公开导览，不读取私密层。"
+      },
+      {
+        "id": "disabled",
+        "label": "灯塔关闭",
+        "beaconOpacity": 0.08,
+        "hint": "灯塔关闭时仍可通过地图、路径和档案馆探索。"
+      },
+      {
+        "id": "enabled",
+        "label": "灯塔可用",
+        "beaconOpacity": 0.24,
+        "hint": "灯塔可用时也只遵守公开边界。"
+      }
+    ],
+    "sceneEnvironments": [
+      {
+        "sceneId": "gateway",
+        "label": "入口空气",
+        "objects": [
+          "入口",
+          "罗盘",
+          "星河"
+        ],
+        "rhythm": "arrival"
+      },
+      {
+        "sceneId": "atlas",
+        "label": "星图空气",
+        "objects": [
+          "星图",
+          "区域",
+          "星线"
+        ],
+        "rhythm": "connection"
+      },
+      {
+        "sceneId": "timeline",
+        "label": "时间河空气",
+        "objects": [
+          "时间",
+          "涟漪",
+          "事件"
+        ],
+        "rhythm": "flow"
+      },
+      {
+        "sceneId": "archive",
+        "label": "档案馆空气",
+        "objects": [
+          "卷宗",
+          "索引",
+          "书架"
+        ],
+        "rhythm": "emergence"
+      },
+      {
+        "sceneId": "paths",
+        "label": "星路空气",
+        "objects": [
+          "路径",
+          "脚印",
+          "下一站"
+        ],
+        "rhythm": "flow"
+      },
+      {
+        "sceneId": "path-detail",
+        "label": "路线空气",
+        "objects": [
+          "路线",
+          "节点",
+          "回望"
+        ],
+        "rhythm": "flow"
+      },
+      {
+        "sceneId": "node",
+        "label": "节点房间空气",
+        "objects": [
+          "护照",
+          "正文",
+          "关系"
+        ],
+        "rhythm": "focus"
+      },
+      {
+        "sceneId": "lighthouse",
+        "label": "灯塔空气",
+        "objects": [
+          "灯塔",
+          "光束",
+          "边界"
+        ],
+        "rhythm": "feedback"
+      },
+      {
+        "sceneId": "status",
+        "label": "维护舱空气",
+        "objects": [
+          "心跳",
+          "证据",
+          "门禁"
+        ],
+        "rhythm": "feedback"
+      }
+    ],
+    "fallback": {
+      "sceneId": "unknown",
+      "label": "通用空气",
+      "objects": [
+        "路标",
+        "公开",
+        "返回"
+      ],
+      "rhythm": "arrival"
+    },
+    "nextActions": [
+      "阶段 32：Scene QA 增加环境状态、reduced-motion 和 returning visitor 证据。"
+    ]
+  },
+  "journey": {
+    "name": "WorldOS M26 世界记忆与回访体验策略",
+    "version": "1.0.0",
+    "scope": {
+      "localOnly": true,
+      "localhostAccepted": true,
+      "lanIpAccepted": true,
+      "externalPreviewConsidered": false,
+      "productionConsidered": false,
+      "publicSceneOnly": true,
+      "frontendPermissionControl": false,
+      "requiresOwner": false,
+      "requiresAuth": false,
+      "requiresRealAI": false
+    },
+    "storage": {
+      "primaryKey": "guyue-world:journey-memory-v1",
+      "historyKey": "guyue-world:journey-history-v1",
+      "clearedAtKey": "guyue-world:journey-cleared-at-v1",
+      "maxHistory": 5,
+      "allowedFields": [
+        "path",
+        "label",
+        "sceneId",
+        "sceneTitle",
+        "recentNodeSlug",
+        "recentPathId",
+        "visitedAt"
+      ],
+      "forbiddenFields": [
+        "owner",
+        "auth",
+        "permission",
+        "role",
+        "token",
+        "secret",
+        "visibility",
+        "private",
+        "vault"
+      ]
+    },
+    "routeRules": [
+      {
+        "prefix": "/atlas",
+        "label": "世界地图",
+        "kind": "scene"
+      },
+      {
+        "prefix": "/timeline",
+        "label": "时间河",
+        "kind": "scene"
+      },
+      {
+        "prefix": "/archive",
+        "label": "档案馆",
+        "kind": "scene"
+      },
+      {
+        "prefix": "/ask",
+        "label": "低光灯塔",
+        "kind": "scene"
+      },
+      {
+        "prefix": "/paths/",
+        "label": "旅程路线",
+        "kind": "path"
+      },
+      {
+        "prefix": "/paths",
+        "label": "星路入口",
+        "kind": "scene"
+      },
+      {
+        "prefix": "/node/",
+        "label": "节点展开室",
+        "kind": "node"
+      }
+    ],
+    "returningVisitor": {
+      "enabled": true,
+      "minimumPreviousEntries": 1,
+      "continueActionLabel": "继续",
+      "emptyState": "当前位置已被轻轻记录。",
+      "clearedState": "旅程记忆已清空；继续浏览时只记录公开路径。"
+    },
+    "clearMemory": {
+      "enabled": true,
+      "label": "清除",
+      "removesKeys": [
+        "guyue-world:journey-memory-v1",
+        "guyue-world:journey-history-v1"
+      ],
+      "writesKey": "guyue-world:journey-cleared-at-v1",
+      "postClearBehavior": "不显示继续探索；下一次公开路由变化后重新开始轻量记录。"
+    },
+    "fallback": {
+      "label": "世界入口",
+      "sceneId": "gateway",
+      "sceneTitle": "创世原点",
+      "path": "/"
+    },
+    "nextActions": [
+      "M30 终局候选验收时补 returning visitor 与 cleared storage 的完整录屏。"
+    ]
+  },
+  "audio": {
+    "name": "WorldOS 场景声景注册表",
+    "version": "1.2.0",
+    "scope": {
+      "localOnly": true,
+      "localhostAccepted": true,
+      "lanIpAccepted": true,
+      "externalPreviewConsidered": false,
+      "productionConsidered": false,
+      "publicSceneOnly": true,
+      "requiresOwner": false,
+      "requiresAuth": false,
+      "requiresRealAI": false,
+      "defaultSoundEnabled": false,
+      "storesOnlyLocalPreference": true
+    },
+    "runtime": {
+      "component": "src/components/world/RuntimeSoundscapeControl.tsx",
+      "library": "src/lib/sensory-audio.ts",
+      "storageKey": "guyue-world:soundscape-preference",
+      "volumeStorageKey": "guyue-world:soundscape-volume",
+      "defaultVolume": 0.35,
+      "maxVolume": 0.7,
+      "usesHtmlAudio": false,
+      "usesWebAudio": true,
+      "usesExternalAudioAsset": false,
+      "usesHowler": false,
+      "usesTone": false,
+      "autoPlayAllowed": false,
+      "lazyLoadPolicy": "Web Audio context is created only inside an explicit user click handler.",
+      "sessionArmPolicy": "Stored preference never creates audio by itself; every browser session must be armed by a fresh user click.",
+      "sceneSwitchPolicy": "Armed sessions keep one procedural ambience group and one short cue; scene changes crossfade for 650-800ms before releasing the previous group.",
+      "reducedSensoryPolicy": "silent sensory mode keeps the control visible but never creates or resumes audio."
+    },
+    "sceneSoundscapes": [
+      {
+        "sceneId": "gateway",
+        "label": "入口回声",
+        "reason": "用于确认已经抵达世界入口。",
+        "tone": "warm-bell",
+        "frequency": 392,
+        "durationMs": 180,
+        "maxGain": 0.045,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "入口远光与开门回声保持一致。",
+        "interactionCue": "用户主动开启后用短音确认进入世界入口。",
+        "reducedSensoryBehavior": "silent 下不发声，仅保留按钮状态。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "atlas",
+        "label": "星图脉冲",
+        "reason": "用于表达关系网络被点亮。",
+        "tone": "soft-pulse",
+        "frequency": 246,
+        "durationMs": 220,
+        "maxGain": 0.035,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "星线与关系网络点亮。",
+        "interactionCue": "进入 Atlas 后给出低频空间脉冲。",
+        "reducedSensoryBehavior": "silent 下不发声，仅保留地图语义。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "timeline",
+        "label": "时间涟漪",
+        "reason": "用于表达时间流经过。",
+        "tone": "river-chime",
+        "frequency": 329,
+        "durationMs": 210,
+        "maxGain": 0.032,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "时间河与涟漪节奏。",
+        "interactionCue": "进入 Timeline 后给出轻钟点。",
+        "reducedSensoryBehavior": "silent 下不发声，时间线仍完整可读。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "archive",
+        "label": "抽屉轻响",
+        "reason": "用于表达档案被打开。",
+        "tone": "paper-tap",
+        "frequency": 196,
+        "durationMs": 150,
+        "maxGain": 0.03,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "档案抽屉与纸页打开。",
+        "interactionCue": "进入 Archive 后给出短促木架轻响。",
+        "reducedSensoryBehavior": "silent 下不发声，检索和馆藏仍可用。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "paths",
+        "label": "步进信号",
+        "reason": "用于表达旅程进入下一段。",
+        "tone": "step-signal",
+        "frequency": 440,
+        "durationMs": 160,
+        "maxGain": 0.034,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "路标、脚步与下一段提示。",
+        "interactionCue": "进入 Paths 后给出步进信号。",
+        "reducedSensoryBehavior": "silent 下不发声，路径进度仍由文本呈现。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "path-detail",
+        "label": "路线定位",
+        "reason": "用于表达旅程路线被锁定。",
+        "tone": "route-lock",
+        "frequency": 415,
+        "durationMs": 170,
+        "maxGain": 0.032,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "路线被定位并锁定。",
+        "interactionCue": "进入路线详情后给出定位短音。",
+        "reducedSensoryBehavior": "silent 下不发声，路线步骤仍完整。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "node",
+        "label": "房间静响",
+        "reason": "用于表达进入具体内容房间。",
+        "tone": "room-soft",
+        "frequency": 294,
+        "durationMs": 140,
+        "maxGain": 0.026,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "内容房间与地点护照。",
+        "interactionCue": "进入节点后给出很轻的房间确认音。",
+        "reducedSensoryBehavior": "silent 下不发声，阅读优先。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "lighthouse",
+        "label": "灯塔信标",
+        "reason": "用于表达公开导览已响应。",
+        "tone": "beacon-ping",
+        "frequency": 523,
+        "durationMs": 190,
+        "maxGain": 0.038,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "低光灯塔与方向提示。",
+        "interactionCue": "进入 Lighthouse 后给出信标短音。",
+        "reducedSensoryBehavior": "silent 下不发声，导览和拒答仍可读。",
+        "stopPolicy": "scene-change-stop-previous"
+      },
+      {
+        "sceneId": "status",
+        "label": "维护心跳",
+        "reason": "用于表达运行状态可被审计。",
+        "tone": "status-tick",
+        "frequency": 220,
+        "durationMs": 130,
+        "maxGain": 0.028,
+        "loadPolicy": "opt-in-generated",
+        "assetId": "generated-web-audio-short-tone",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "visualCue": "维护心跳与审计面板。",
+        "interactionCue": "进入 Status 后给出克制的状态 tick。",
+        "reducedSensoryBehavior": "silent 下不发声，审计信息仍完整。",
+        "stopPolicy": "scene-change-stop-previous"
+      }
+    ],
+    "motifs": [
+      {
+        "id": "gateway-lighthouse-beacon",
+        "scenes": [
+          "gateway",
+          "lighthouse"
+        ],
+        "source": "project-generated-procedural",
+        "license": "project-owned-runtime-synthesis",
+        "description": "入口使用较低三音信号，灯塔使用同音程的较高变奏；仅在用户开启声景后播放。",
+        "peakGain": 0.026,
+        "bytes": 0
+      }
+    ],
+    "assetInventory": [
+      {
+        "assetId": "generated-web-audio-short-tone",
+        "kind": "audio-generated",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "durationMsMax": 220,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "compression": "not-applicable-runtime-synthesis",
+        "notes": "运行时振荡器合成短提示音，不下载外部音频文件。"
+      }
+    ]
+  }
+}

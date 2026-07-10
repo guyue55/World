@@ -1,7 +1,7 @@
 'use client'
 
 // 世界运行时底色只负责无脚本可见的环境兜底；场景动态由各舞台自行管理。
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { getAmbientEnvironmentState } from '@/lib/ambient-environment'
 import { useWorldRuntime } from './WorldRuntimeProvider'
 
@@ -38,6 +38,16 @@ export function RuntimeAtmosphere() {
     environment.ai.label,
   ]
   const activeRuntimeNodes = runtime.compactMotion ? runtimeNodePositions.slice(0, 3) : runtimeNodePositions
+
+  useEffect(() => {
+    const root = document.documentElement
+    root.dataset.worldDayPeriod = environment.dayPeriod
+    root.dataset.worldSeason = environment.season
+    return () => {
+      delete root.dataset.worldDayPeriod
+      delete root.dataset.worldSeason
+    }
+  }, [environment.dayPeriod, environment.season])
 
   return (
     <div

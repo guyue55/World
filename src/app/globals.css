@@ -163,3 +163,15 @@ body {
   height: auto;
   border-radius: 0.5rem;
 }
+html[data-world-day-period='day'] [data-world-scene] picture img {
+  filter: brightness(1.08) saturate(.94);
+}
+
+html[data-world-day-period='dawn'] [data-world-scene] picture img,
+html[data-world-day-period='dusk'] [data-world-scene] picture img {
+  filter: brightness(.98) saturate(1.04) sepia(.08);
+}
+
+html[data-world-season='winter'] [data-world-scene] picture img {
+  filter: brightness(.94) saturate(.88) hue-rotate(5deg);
+}

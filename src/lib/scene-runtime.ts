@@ -1,4 +1,6 @@
-import sceneRegistry from '../../data/domains/experience/scene-registry.json'
+import runtimeConfig from '../../data/generated/world-runtime-public.json'
+
+const sceneRegistry = runtimeConfig.scene
 
 export type SceneRegistry = typeof sceneRegistry
 export type SceneDefinition = SceneRegistry['scenes'][number] | SceneRegistry['fallback']

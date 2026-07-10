@@ -1,5 +1,7 @@
-import journeyMemoryPolicy from '../../data/domains/experience/journey-memory-policy.json'
+import runtimeConfig from '../../data/generated/world-runtime-public.json'
 import { getSceneForPathname } from './scene-runtime'
+
+const journeyMemoryPolicy = runtimeConfig.journey
 
 export type JourneyMemoryPolicy = typeof journeyMemoryPolicy
 export type JourneyRouteKind = JourneyMemoryPolicy['routeRules'][number]['kind'] | 'gateway'
