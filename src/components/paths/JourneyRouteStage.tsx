@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import { ArrowRight, Compass, Map, RotateCcw, Route } from 'lucide-react'
 import { gsap } from 'gsap'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
+import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import { WorldExitRail } from '@/components/world/primitives/WorldExitRail'
 import { WorldViewport } from '@/components/world/primitives/WorldViewport'
 import { readPathProgress, resetPathProgress } from '@/lib/runtime/path-progress'
@@ -90,7 +91,7 @@ export function JourneyRouteStage({ model }: { model: PathDetailModel }) {
       {selected && !completed ? <aside className={styles.waypointLedger} data-testid="path-waypoint-ledger">
         <p>{statusFor(selected.index, currentIndex) === 'walked' ? '走过的地点' : selected.index === currentIndex ? '当前位置' : selected.index === currentIndex + 1 ? '下一站' : '远方路标'}</p>
         <h2>{selected.title}</h2><span>{selected.summary}</span>
-        {selected.index <= currentIndex + 1 || completed ? <Link href={selected.href}>{selected.index < currentIndex ? '再次抵达' : '进入地点'} <ArrowRight size={15} /></Link> : <small>走完前一站后，这里会亮起。</small>}
+        {selected.index <= currentIndex + 1 || completed ? <SceneTransitionLink href={selected.href} destination={{ href: selected.href, sceneId: 'node', objectId: selected.slug, transitionObject: 'waypoint', accessibleLabel: `从路径抵达 ${selected.title}` }} sourceObjectId={selected.slug}>{selected.index < currentIndex ? '再次抵达' : '进入地点'} <ArrowRight size={15} /></SceneTransitionLink> : <small>走完前一站后，这里会亮起。</small>}
       </aside> : null}
       {completed ? <section className={styles.completion} data-testid="path-complete"><Compass aria-hidden="true" /><div><strong>你抵达了这条路的尽头</strong><span>{model.areaTitles.join('、')} 已成为一段完整来路。</span></div>{model.nextPaths[0] ? <Link href={model.nextPaths[0].href}>继续下一条路</Link> : <Link href="/atlas">回望世界</Link>}</section> : null}
       <div className={styles.routeActions}><Link href="/atlas" title="返回星图"><Map size={17} /><span>星图</span></Link><button type="button" onClick={reset} title="重置本路线"><RotateCcw size={17} /><span>重置</span></button></div>

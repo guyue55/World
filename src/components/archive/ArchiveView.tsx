@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { ArrowRight, FileSearch } from 'lucide-react'
 import { gsap } from 'gsap'
@@ -8,6 +7,7 @@ import type { ArchiveFilters as ArchiveFilterState } from '@/lib/archive'
 import { readArchiveContext, writeArchiveContext } from '@/lib/runtime/archive-context'
 import type { ArchiveRecordView, ArchiveViewModel } from '@/lib/scenes/build-archive-model'
 import { SceneInspector } from '@/components/world/primitives/SceneInspector'
+import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import { ArchiveFilters } from './ArchiveFilters'
 import { ArchiveShelf } from './ArchiveShelf'
 import styles from './ArchiveHallStage.module.css'
@@ -103,7 +103,7 @@ export function ArchiveView({ model }: { model: ArchiveViewModel }) {
       </section>
 
       <SceneInspector open={Boolean(activeRecord)} title={activeRecord?.title ?? '公开卷宗'} onClose={() => setActiveRecordId(null)}>
-        {activeRecord ? <div className={styles.inspectorBody} data-testid="archive-record-inspector"><p className={styles.inspectorKicker}>{activeRecord.areaTitle} · {activeRecord.typeLabel}</p><p>{activeRecord.summary}</p><p className={styles.recordMeta}>{activeRecord.lifeStageLabel} · {activeRecord.tags.slice(0, 3).map((tag) => `#${tag}`).join(' ')}</p><Link href={activeRecord.href} className={styles.nodeLink} data-archive-enter-node>展开卷宗 <ArrowRight size={15} aria-hidden="true" /></Link></div> : null}
+        {activeRecord ? <div className={styles.inspectorBody} data-testid="archive-record-inspector"><p className={styles.inspectorKicker}>{activeRecord.areaTitle} · {activeRecord.typeLabel}</p><p>{activeRecord.summary}</p><p className={styles.recordMeta}>{activeRecord.lifeStageLabel} · {activeRecord.tags.slice(0, 3).map((tag) => `#${tag}`).join(' ')}</p><SceneTransitionLink href={activeRecord.href} destination={{ href: activeRecord.href, sceneId: 'node', objectId: activeRecord.id, transitionObject: 'document', accessibleLabel: `展开卷宗 ${activeRecord.title}` }} sourceObjectId={activeRecord.id} className={styles.nodeLink} data-archive-enter-node>展开卷宗 <ArrowRight size={15} aria-hidden="true" /></SceneTransitionLink></div> : null}
       </SceneInspector>
     </>
   )

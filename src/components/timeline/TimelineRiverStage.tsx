@@ -1,12 +1,12 @@
 'use client'
 
-import Link from 'next/link'
 import { getImageProps } from 'next/image'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import { ArrowLeft, ArrowRight, CalendarDays, RotateCcw, Waves } from 'lucide-react'
 import { gsap } from 'gsap'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { SceneInspector } from '@/components/world/primitives/SceneInspector'
+import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import { WorldExitRail } from '@/components/world/primitives/WorldExitRail'
 import { WorldViewport } from '@/components/world/primitives/WorldViewport'
 import { readTimelineAnchor, writeTimelineAnchor } from '@/lib/runtime/timeline-position'
@@ -159,7 +159,7 @@ export function TimelineRiverStage({ model }: { model: TimelineViewModel }) {
             <p className={styles.inspectorKicker}><Waves size={14} aria-hidden="true" /> {activeEvent.date} · {activeEvent.typeLabel}</p>
             <p>{activeEvent.description}</p>
             <p className={styles.eventMeta}>{activeEvent.areaLabels.join(' · ') || '世界公共河段'} · {activeEvent.actorLabel}</p>
-            {activeEvent.nodeHref ? <Link href={activeEvent.nodeHref} className={styles.nodeLink}>{activeEvent.nodeTitle ?? '进入相关地点'} <ArrowRight size={15} aria-hidden="true" /></Link> : null}
+            {activeEvent.nodeHref ? <SceneTransitionLink href={activeEvent.nodeHref} destination={{ href: activeEvent.nodeHref, sceneId: 'node', objectId: activeEvent.id, transitionObject: 'ripple', accessibleLabel: `从时间河进入 ${activeEvent.nodeTitle ?? '相关地点'}` }} sourceObjectId={activeEvent.id} className={styles.nodeLink}>{activeEvent.nodeTitle ?? '进入相关地点'} <ArrowRight size={15} aria-hidden="true" /></SceneTransitionLink> : null}
             <div className={styles.inspectorNav}>
               <button type="button" disabled={activeEventIndex <= 0} onClick={() => setActiveEventId(activeEvents[activeEventIndex - 1]?.id ?? null)}>上一道</button>
               <button type="button" disabled={activeEventIndex >= activeEvents.length - 1} onClick={() => setActiveEventId(activeEvents[activeEventIndex + 1]?.id ?? null)}>下一道</button>

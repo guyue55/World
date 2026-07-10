@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-07-10T15:48:14.869Z",
+  "baseUrl": "http://127.0.0.1:3411",
+  "results": [
+    {
+      "name": "gateway-atlas",
+      "object": "island",
+      "targetScene": "atlas",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 23,
+      "final": {
+        "path": "/atlas",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "atlas-node",
+      "object": "star",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 12,
+      "final": {
+        "path": "/node/world-manifesto",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "timeline-node",
+      "object": "ripple",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 10,
+      "final": {
+        "path": "/node/world-manifesto",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "archive-node",
+      "object": "document",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 12,
+      "final": {
+        "path": "/node/2025-year-review",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "path-node",
+      "object": "waypoint",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 9,
+      "final": {
+        "path": "/node/world-manifesto",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "node-lighthouse",
+      "object": "beam",
+      "targetScene": "lighthouse",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 11,
+      "final": {
+        "path": "/ask",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "reduced-path-node",
+      "object": "waypoint",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "frames": 7,
+      "final": {
+        "path": "/node/world-manifesto",
+        "state": "reduced",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    }
+  ],
+  "edgeChecks": {
+    "fastCancelBack": true,
+    "route404Settled": true
+  },
+  "failures": []
+}

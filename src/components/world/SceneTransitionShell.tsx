@@ -5,6 +5,11 @@ import { usePathname } from 'next/navigation'
 import { getSceneTransitionForPathnames, type SceneTransitionMotion } from '@/lib/scene-transition'
 import type { WorldTransitionState } from '@/lib/world-runtime-state'
 import { useWorldRuntime } from './WorldRuntimeProvider'
+import { SceneMigrationLayer } from './migration/SceneMigrationLayer'
+import { beginSceneMigration, cancelSceneMigration, markSceneMigrationArriving, restoreSceneMigrationFocus, settleSceneMigration } from '@/lib/runtime/scene-migration'
+import { createSceneContext } from '@/lib/scenes/scene-destination'
+import { getSceneForPathname } from '@/lib/scene-runtime'
+import type { SceneId } from '@/lib/scenes/scene-context'
 
 function varsForMotion(motion: SceneTransitionMotion, compactMotion: boolean) {
   return compactMotion ? motion.compactFrom : motion.from
@@ -33,6 +38,29 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
     [pathname]
   )
   const shouldDescribeTransition = transitionRuntime.fromScene.id !== transitionRuntime.toScene.id
+
+  useEffect(() => {
+    const scene = getSceneForPathname(pathname)
+    const context = createSceneContext(scene.id as SceneId, pathname)
+    markSceneMigrationArriving()
+    settleSceneMigration(context, runtime.motionMode !== 'full')
+    const focusTimer = window.setTimeout(restoreSceneMigrationFocus, 500)
+    return () => window.clearTimeout(focusTimer)
+  }, [pathname, runtime.motionMode])
+
+  useEffect(() => () => cancelSceneMigration('unmount'), [])
+
+  useEffect(() => {
+    const onPopState = () => {
+      const element = (document.querySelector('[data-world-scene]') ?? document.querySelector('[data-world-exit-rail]') ?? document.body) as HTMLElement
+      const targetScene = getSceneForPathname(window.location.pathname)
+      beginSceneMigration({ source: createSceneContext(runtime.currentScene as SceneId, pathname), target: { href: window.location.pathname, sceneId: targetScene.id as SceneId, transitionObject: 'door', accessibleLabel: '返回上一处世界空间' }, element, reduced: runtime.motionMode !== 'full' })
+    }
+    const onRouteError = () => cancelSceneMigration('route-error')
+    window.addEventListener('popstate', onPopState)
+    window.addEventListener('unhandledrejection', onRouteError)
+    return () => { window.removeEventListener('popstate', onPopState); window.removeEventListener('unhandledrejection', onRouteError) }
+  }, [pathname, runtime.currentScene, runtime.motionMode])
 
   useEffect(() => {
     const content = contentRef.current
@@ -124,6 +152,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
       data-network-mode={runtime.sceneRuntime.networkMode}
       data-reduced-motion={runtime.reducedMotion ? 'true' : 'false'}
     >
+      <SceneMigrationLayer />
       <p data-testid="scene-transition-static-cue" className="sr-only" aria-live="polite">
         {shouldDescribeTransition
           ? `从${transitionRuntime.fromScene.title}抵达${transitionRuntime.toScene.title}`

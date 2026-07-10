@@ -62,10 +62,10 @@ live_ai_provider: unavailable
 | C0 | 废止假绿灯，建立真实基线 | passed | `6736d461` | baseline-2026-07-10 |
 | C1 | 视觉资产、token 与 scene primitives | passed | `f2d533b6` | assets-2026-07-10 |
 | C2 | 世界壳与 Gateway | passed | `9813f596` | c2-gateway-2026-07-10 |
-| C3 | Atlas 可探索地图 | passed | 本检查点提交 | c3-atlas-2026-07-10 |
-| C4 | Timeline 与 Archive 独立空间 | pending | - | - |
-| C5 | Paths 与 Node 连续旅程 | pending | - | - |
-| C6 | 场景迁移与上下文延续 | pending | - | - |
+| C3 | Atlas 可探索地图 | passed | `66c0731c` | c3-atlas-2026-07-10 |
+| C4 | Timeline 与 Archive 独立空间 | passed | `8d510588` | c4-scenes-2026-07-10 |
+| C5 | Paths 与 Node 连续旅程 | passed | `275fe4be` | c5-journey-2026-07-10 |
+| C6 | 场景迁移与上下文延续 | passed | 本检查点提交 | c6-migration-2026-07-10 |
 | C7 | Lighthouse 与声景 | pending | - | - |
 | C8 | 性能、无障碍、权限和证据入口 | pending | - | - |
 | C9 | 多轮 Reality Audit 与终止 | pending | - | - |
@@ -149,11 +149,20 @@ completed_items:
   - C5.13
   - C5.14
   - C5.15
+  - C6.1
+  - C6.2
+  - C6.3
+  - C6.4
+  - C6.5
+  - C6.6
+  - C6.7
+  - C6.8
+  - C6.9
 failed_items: []
 blocked_items:
   - id: C7.6-live-provider
     reason: "仅在合法服务端凭据存在时验证；不阻塞 low-light 本地世界完成"
-next_item: C6.1
+next_item: C7.1
 ```
 
 每完成一个 item，立即：
@@ -491,6 +500,61 @@ fixes:
   - "mobile 仅保留四个首屏关系门，其余在正文关系区完整呈现"
 commit: "本检查点提交：feat(world): 连通可行走路径与内容地点"
 next_item: C6.1
+```
+
+### Record 007：C6 连续场景迁移
+
+```yaml
+checkpoint: C6
+item: C6.1-C6.9
+status: passed
+started_at: 2026-07-10T20:25:00+08:00
+finished_at: 2026-07-10T23:34:00+08:00
+files_changed:
+  - "src/lib/runtime/scene-migration.ts"
+  - "src/components/world/migration/SceneTransitionLink.tsx"
+  - "src/components/world/migration/SceneMigrationLayer.tsx"
+  - "src/components/world/migration/SceneMigrationLayer.module.css"
+  - "src/components/world/SceneTransitionShell.tsx"
+  - "src/components/world/primitives/SceneObjectButton.tsx"
+  - "src/components/product/WorldGatewayStage.tsx"
+  - "src/components/atlas/AtlasInspector.tsx"
+  - "src/components/timeline/TimelineRiverStage.tsx"
+  - "src/components/archive/ArchiveView.tsx"
+  - "src/components/paths/JourneyRouteStage.tsx"
+  - "src/components/node/NodePlaceRoom.tsx"
+commands:
+  - command: "npx tsx scripts/check-world-c6-migration.ts"
+    exit_code: 0
+    observed: "纯状态机覆盖 idle/leaving/inTransit/arriving/settled、reduced、cancel/error/unmount，六类共享对象绑定通过"
+  - command: "npm run typecheck && npm run lint && git diff --check"
+    exit_code: 0
+    observed: "类型、全仓 lint 与差异格式通过"
+  - command: "WORLDOS_DIST_DIR=.next-reality npm run build"
+    exit_code: 0
+    observed: "删除旧隔离产物后的 fresh production build 通过"
+  - command: "WORLDOS_BASE_URL=http://127.0.0.1:3411 node scripts/capture-world-c6-migrations.mjs"
+    exit_code: 0
+    observed: "六类正常迁移与一条 reduced-motion 降级均通过，快速连点后退和 404 均释放迁移层"
+evidence:
+  - "docs/90-archive/reports/worldos-reality-first/c6-migration-2026-07-10/final/**"
+  - "docs/90-archive/reports/worldos-reality-first/c6-migration-2026-07-10/visual-review.md"
+failures:
+  - "原生 View Transition 发生文档替换时，15ms CDP 轮询遇到 Inspected target navigated or closed"
+  - "快速后退测试与待执行的 60ms 导航竞争，错误落入下一页"
+  - "首轮 Path 航点在 GSAP 动态定位前短暂显示于左上角"
+  - "Node -> Lighthouse 只能证明迁移抵达，目标页仍是待 C7 重做的旧舞台"
+  - "首轮 LAN curl 循环误用 zsh 特殊变量 path，导致命令查找路径被覆盖"
+  - "复审发现 View Transition 只包住定时器而非真实路由更新，且 GSAP 异步导入存在旧 effect 晚到风险"
+fixes:
+  - "截图、screencast ACK 与停止流程增加跨文档重试和容错，不吞掉业务断言"
+  - "边界测试改为快速双击、稳定抵达后执行 back，再单独验证 404 释放"
+  - "迁移对象默认透明，完成来源几何定位后才由 GSAP 显示，并 fresh build 重录"
+  - "视觉审查明确保留 C7 Lighthouse 债务，不把路由 settled 冒充目标场景完成"
+  - "循环变量改为 route 并使用绝对 curl 路径，localhost 与 192.168.1.200 七个页面均为 200，预期缺失页为 404"
+  - "将 60ms 延迟置于 View Transition 外并让回调直接导航；异步导入增加 cancelled 清理，server snapshot 改为稳定引用"
+commit: "本检查点提交：feat(world): 将路由切换升级为连续场景迁移"
+next_item: C7.1
 ```
 
 后续记录使用同一结构：

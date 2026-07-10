@@ -338,15 +338,15 @@ export type AtlasViewModel = {
 
 **Interfaces:** Uses the `MigrationState` union and `SceneDestination` from the architecture document.
 
-- [ ] **C6.1** 写纯状态机测试：idle -> leaving -> inTransit -> arriving -> settled；覆盖 cancel、route error、reduced 和 unmount。
-- [ ] **C6.2** 实现 `SceneTransitionLink`，点击时记录 source object、target、focus return 和 destination context。
-- [ ] **C6.3** 重写 migration layer：使用真实场景对象的快照 / 几何 / 色彩过渡，不展示步骤条、说明卡或工程标签。
-- [ ] **C6.4** 在支持环境试点 View Transition；不支持或 reduced-motion 时走 GSAP / CSS fallback。
-- [ ] **C6.5** 每个核心迁移至少定义一个共享对象：Gateway->Atlas 岛屿、Atlas->Node 星点、Timeline->Node 涟漪、Archive->Node 卷宗、Path->Node 站点、Node->Lighthouse 光束。
-- [ ] **C6.6** 处理快速连点、浏览器 back / forward、目标 404、图片未加载、focus 恢复和 scroll / map position。
-- [ ] **C6.7** 录制至少六种迁移的 source / transit / arrival；逐段确认不是普通 fade。
-- [ ] **C6.8** 运行状态机测试、browser navigation smoke、`typecheck`、`lint`、生产 build。
-- [ ] **C6.9** 更新 ledger，提交 `feat(world): 将路由切换升级为连续场景迁移`。
+- [x] **C6.1** 写纯状态机测试：idle -> leaving -> inTransit -> arriving -> settled；覆盖 cancel、route error、reduced 和 unmount。
+- [x] **C6.2** 实现 `SceneTransitionLink`，点击时记录 source object、target、focus return 和 destination context。
+- [x] **C6.3** 重写 migration layer：使用真实场景对象的快照 / 几何 / 色彩过渡，不展示步骤条、说明卡或工程标签。
+- [x] **C6.4** 在支持环境试点 View Transition；不支持或 reduced-motion 时走 GSAP / CSS fallback。
+- [x] **C6.5** 每个核心迁移至少定义一个共享对象：Gateway->Atlas 岛屿、Atlas->Node 星点、Timeline->Node 涟漪、Archive->Node 卷宗、Path->Node 站点、Node->Lighthouse 光束。
+- [x] **C6.6** 处理快速连点、浏览器 back / forward、目标 404、图片未加载、focus 恢复和 scroll / map position。
+- [x] **C6.7** 录制至少六种迁移的 source / transit / arrival；逐段确认不是普通 fade。
+- [x] **C6.8** 运行状态机测试、browser navigation smoke、`typecheck`、`lint`、生产 build。
+- [x] **C6.9** 更新 ledger，提交 `feat(world): 将路由切换升级为连续场景迁移`。
 
 **Gate:** 任一迁移若只能通过屏幕文字知道“正在穿梭”，判失败。
 

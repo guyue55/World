@@ -68,6 +68,8 @@ function DirectionObject({ direction }: { direction: GatewayDirection }) {
   return (
     <SceneObjectButton
       href={direction.href}
+      destination={direction}
+      sourceObjectId={direction.objectId ?? direction.sceneId}
       label={direction.accessibleLabel}
       icon={<Icon aria-hidden="true" size={17} />}
       className={styles.directionObject}

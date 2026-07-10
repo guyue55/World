@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, type RefObject } from 'react'
 import { Archive, ArrowDown, BookOpen, Lightbulb, Map, Waves } from 'lucide-react'
 import { gsap } from 'gsap'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
+import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import { WorldViewport } from '@/components/world/primitives/WorldViewport'
 import type { NodePlaceModel } from '@/lib/scenes/build-node-model'
 import { NodeJourneyControls } from './NodeJourneyControls'
@@ -33,11 +34,11 @@ export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
       <header className={styles.arrival} data-room-object><p>NODE · {model.area?.worldName ?? model.node.areaId}</p><h1 className="world-scene-title">{model.title}</h1><span>{model.summary}</span></header>
       <NodePassport node={model.node} area={model.area} lifeSignal={model.lifeSignal} compact className={styles.passport} />
       <div className={styles.relationDoors} aria-label="相邻地点">
-        {model.relationDoors.map((door) => <Link key={door.id} href={door.href} data-room-object style={{ '--door-x': `${door.x}%`, '--door-y': `${door.y}%`, '--door-mobile-y': `${door.mobileY}%` } as React.CSSProperties}><i aria-hidden="true" /><span>{door.title}</span><small>{door.groupTitle}</small></Link>)}
+        {model.relationDoors.map((door) => <SceneTransitionLink key={door.id} href={door.href} destination={{ href: door.href, sceneId: 'node', objectId: door.id, transitionObject: 'door', accessibleLabel: `穿过关系门抵达 ${door.title}` }} sourceObjectId={model.node.id} data-room-object style={{ '--door-x': `${door.x}%`, '--door-y': `${door.y}%`, '--door-mobile-y': `${door.mobileY}%` } as React.CSSProperties}><i aria-hidden="true" /><span>{door.title}</span><small>{door.groupTitle}</small></SceneTransitionLink>)}
       </div>
       <a href="#reading" className={styles.readingDoor} data-room-object><BookOpen size={17} /><span>展开这里的正文</span><small>{model.readingMinutes ? `约 ${model.readingMinutes} 分钟` : '轻量记录'}</small><ArrowDown size={16} /></a>
       {model.pathContext ? <div className={styles.journey}><NodeJourneyControls context={model.pathContext} /></div> : null}
-      <nav className={styles.exits} aria-label="地点出口"><Link href={`/atlas#${model.node.areaId}`} title="回所在星域"><Map size={17} /><span>星图</span></Link><Link href="/timeline" title="查看时间河"><Waves size={17} /><span>时间</span></Link><Link href="/archive" title="进入档案馆"><Archive size={17} /><span>档案</span></Link><Link href={`/ask?fromNode=${model.node.slug}`} title="询问灯塔"><Lightbulb size={17} /><span>灯塔</span></Link></nav>
+      <nav className={styles.exits} aria-label="地点出口"><Link href={`/atlas#${model.node.areaId}`} title="回所在星域"><Map size={17} /><span>星图</span></Link><Link href="/timeline" title="查看时间河"><Waves size={17} /><span>时间</span></Link><Link href="/archive" title="进入档案馆"><Archive size={17} /><span>档案</span></Link><SceneTransitionLink href={`/ask?fromNode=${model.node.slug}`} destination={{ href: `/ask?fromNode=${model.node.slug}`, sceneId: 'lighthouse', objectId: model.node.id, transitionObject: 'beam', accessibleLabel: `从 ${model.title} 向灯塔问路` }} sourceObjectId={model.node.id} title="询问灯塔"><Lightbulb size={17} /><span>灯塔</span></SceneTransitionLink></nav>
     </WorldViewport>
   </div>
 }

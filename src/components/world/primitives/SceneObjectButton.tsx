@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import clsx from 'clsx'
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { SceneDestination } from '@/lib/scenes/scene-destination'
+import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 
 type CommonProps = {
   label: string
@@ -11,7 +13,7 @@ type CommonProps = {
 }
 
 type SceneObjectButtonProps = CommonProps & (
-  | { href: string; onClick?: never; type?: never }
+  | { href: string; destination?: SceneDestination; sourceObjectId?: string; onClick?: never; type?: never }
   | ({ href?: never } & Pick<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'type' | 'disabled'>)
 )
 
@@ -25,6 +27,7 @@ export function SceneObjectButton(props: SceneObjectButtonProps) {
   const content = <>{props.icon}<span>{props.children ?? props.label}</span></>
 
   if ('href' in props && props.href) {
+    if (props.destination) return <SceneTransitionLink href={props.href} destination={props.destination} sourceObjectId={props.sourceObjectId} aria-label={props.label} aria-current={props.selected ? 'location' : undefined} className={className}>{content}</SceneTransitionLink>
     return <Link href={props.href} aria-label={props.label} aria-current={props.selected ? 'location' : undefined} className={className}>{content}</Link>
   }
 

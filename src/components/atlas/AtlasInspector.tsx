@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { ArrowRight, Clock3, LocateFixed } from 'lucide-react'
 import { SceneInspector } from '@/components/world/primitives/SceneInspector'
+import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import type { AtlasAreaView, AtlasLinkView, AtlasNodeView } from '@/lib/scenes/build-atlas-model'
 import styles from './AtlasExplorationStage.module.css'
 
@@ -28,9 +29,9 @@ export function AtlasInspector({ area, node, areaNodes, relatedLinks, areaById, 
           <p className={styles.inspectorKicker}><LocateFixed size={14} aria-hidden="true" /> {area.title} · 地点</p>
           <p>{node.summary}</p>
           {node.relationReasons[0] ? <p className={styles.relationReason}>与世界相连：{node.relationReasons[0]}</p> : null}
-          <Link href={node.href} className={styles.primaryJourneyLink} data-atlas-enter-node>
+          <SceneTransitionLink href={node.href} destination={{ href: node.href, sceneId: 'node', objectId: node.id, transitionObject: 'star', accessibleLabel: `进入地点 ${node.title}` }} sourceObjectId={node.id} className={styles.primaryJourneyLink} data-atlas-enter-node>
             进入地点 <ArrowRight size={16} aria-hidden="true" />
-          </Link>
+          </SceneTransitionLink>
           <button type="button" className={styles.backToArea} onClick={() => onSelectArea(area.id)}>返回 {area.title}</button>
         </div>
       ) : area ? (
