@@ -1,6 +1,6 @@
 {
   "name": "WorldOS M29 high fidelity polish report",
-  "generatedAt": "2026-07-10T02:18:32.195Z",
+  "generatedAt": "2026-07-10T02:33:24.358Z",
   "status": "passed",
   "overallScore": 8.74,
   "honestConclusion": "M29 reaches high-fidelity local/LAN polish gate, but remains not 10/10 until M30 recordings and final candidate acceptance are complete.",
@@ -46,7 +46,7 @@
   },
   "defectSummary": {
     "p0p1": 0,
-    "p2": 3,
+    "p2": 2,
     "defects": [
       {
         "severity": "P2",
@@ -61,13 +61,6 @@
         "title": "当前声景是默认静音的短提示音，不是完整音乐系统。",
         "evidencePath": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
         "status": "accepted-limit"
-      },
-      {
-        "severity": "P2",
-        "id": "m29-recordings-defer-to-m30",
-        "title": "完整首访、场景迁移、路径、节点、灯塔录屏留到 M30 终局候选验收。",
-        "evidencePath": "docs/00-overview/worldos-m30-ultimate-candidate-acceptance-protocol-2026-07-10.md",
-        "status": "deferred-to-m30"
       }
     ]
   },

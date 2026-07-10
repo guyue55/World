@@ -10,9 +10,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M30 |
-| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M29 首批终局体验证据、高保真打磨与长期运行回滚底座已完成；M30 尚未完成 |
+| 当前阶段 | M8-M30 已完成；当前为 localhost / LAN 9/10 候选，不是外部 preview / production，也不是 10/10 |
 | 最后更新时间 | 2026-07-10 |
-| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁；M25 已补作者世界编辑台 dry-run 契约、校验模型、只读影响预览、Status 面板和专项门禁；M26 已补返回访客记忆策略、清除入口、运行时清除 API、状态面板和专项门禁；M27 已补 unlisted 权限层、多层权限矩阵、AI 访问矩阵、M27 权限报告和主线门禁；M28 已补本地/LAN 长期运行观测与回滚契约、Status 面板、专项门禁和报告证据；M29 已补统一世界化兜底状态、高保真打磨契约、Status 面板、截图墙审查报告和 P0/P1/P2 缺陷分级。当前仍不能宣称 9/10 终局候选，下一步必须进入 M30 终局候选验收。 |
+| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁；M25 已补作者世界编辑台 dry-run 契约、校验模型、只读影响预览、Status 面板和专项门禁；M26 已补返回访客记忆策略、清除入口、运行时清除 API、状态面板和专项门禁；M27 已补 unlisted 权限层、多层权限矩阵、AI 访问矩阵、M27 权限报告和主线门禁；M28 已补本地/LAN 长期运行观测与回滚契约、Status 面板、专项门禁和报告证据；M29 已补统一世界化兜底状态、高保真打磨契约、Status 面板、截图墙审查报告和 P0/P1/P2 缺陷分级；M30 已补最终录屏、八支柱评分、终局候选报告和主线/RC 门禁。当前可称为 localhost / LAN 9/10 候选，但不是 10/10、不是外部生产。 |
 
 ## 1.1 2026-07-10 终局 Goal 真实起点
 
@@ -97,6 +97,12 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 通过 | 新增统一 `WorldFallbackScene`，让 loading、404、403、global error 共用世界化兜底舞台和可恢复路径；新增 `data/domains/experience/high-fidelity-polish-review-v1.json`、`src/lib/high-fidelity-polish.ts`、`HighFidelityPolishPanel` 和 `/status` 接入；新增 `check:m29-high-fidelity-polish`，基于 Scene QA、LAN RC、local RC、音频、可视化和兜底文件生成 `docs/90-archive/reports/worldos-m29-high-fidelity-polish-report.json` | `npm run check:m29-high-fidelity-polish`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过；RC 后再次执行 M28/M29 专项报告刷新。M29 最新分数 8.74，P0/P1=0，P2=3，截图墙 18 张，LAN browser checks 20 个 | M29 真实完成的是“高保真本地/LAN 打磨门禁”：它把兜底状态从普通卡片提升为统一世界舞台，并把“是否还像骨架”转化为截图墙、场景差异、动效纪律、移动低动效、声景一致性和缺陷分级。限制也要写清：8.74 不是 10/10；当前仍是轻量 SVG/CSS 舞台、短提示音声景，完整录屏与 9/10 终局候选判断必须留给 M30。 | 进入 M30：终局候选验收。必须真实汇总八支柱、截图、录屏/关键帧、AI、权限、资产、作者演练、P0/P1/P2 缺陷和最终评分。 |
+
+## 1.13 M30 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 通过 | 新增 `record:m30-ultimate-candidate`，用 production server + 系统 Chrome/CDP + ffmpeg 生成 5 条终局验收录屏：首访入口、场景迁移、路径抵达节点、节点阅读出口、灯塔导览；新增 `data/domains/experience/ultimate-candidate-acceptance-v1.json`、`src/lib/ultimate-candidate.ts`、`UltimateCandidatePanel` 和 `/status` 接入；新增 `check:m30-ultimate-candidate`，汇总 local RC、LAN RC、Scene QA、M20-M29 报告、录屏、AI、权限、资产、作者演练和缺陷分级，生成 `docs/90-archive/reports/worldos-m30-ultimate-candidate-report.json` | `npm run record:m30-ultimate-candidate`、`npm run check:m30-ultimate-candidate`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过；最终 RC 后重新录屏并刷新 M28/M29/M30 报告。最终 M30：score=8.90，candidateStatus=`9-10-local-lan-candidate`，P0/P1=0，P2=4，录屏=5 | M30 真实完成的是“localhost / LAN 9/10 候选验收”：八支柱均有报告或录屏证据，主线和本地 RC 通过，无白屏、遮挡、权限泄漏、默认音频、前端 AI key 或重依赖新增。限制也要写清：不是 10/10，不是外部 production；P2 包括完整 3D 宇宙、完整音乐系统、真实 Provider 陪伴体、跨设备长期记忆。 | 后续不应继续补 M8-M30；下一轮应按 M30 报告的 P2 路线进入真实 Provider、音乐系统、局部 3D 和跨设备记忆的专项设计。 |
 
 ## 2. 阶段进度
 

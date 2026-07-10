@@ -1,0 +1,51 @@
+{
+  "name": "WorldOS M30 终局候选验收契约",
+  "version": "1.0.0",
+  "source": "docs/00-overview/worldos-m30-ultimate-candidate-acceptance-protocol-2026-07-10.md",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false
+  },
+  "candidateThreshold": 8.9,
+  "pillars": [
+    { "id": "S1", "label": "独立空间", "minimumScore": 8.5 },
+    { "id": "S2", "label": "真实穿梭", "minimumScore": 8.5 },
+    { "id": "S3", "label": "内容生命", "minimumScore": 8.5 },
+    { "id": "S4", "label": "灯塔陪伴", "minimumScore": 8.5 },
+    { "id": "S5", "label": "统一世界观", "minimumScore": 8.5 },
+    { "id": "S6", "label": "长期回访", "minimumScore": 8.5 },
+    { "id": "S7", "label": "作者共生", "minimumScore": 8.5 },
+    { "id": "S8", "label": "可信运行", "minimumScore": 8.5 }
+  ],
+  "requiredReports": {
+    "localRc": "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+    "lanRc": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "sceneQa": "docs/90-archive/reports/worldos-scene-qa-report.json",
+    "recordings": "docs/90-archive/reports/worldos-m30-recording-report.json",
+    "m20Transitions": "docs/90-archive/reports/worldos-m20-spa-transition-report.json",
+    "m21ContentLife": "docs/90-archive/reports/worldos-m21-content-life-loop-report.json",
+    "m22Lighthouse": "docs/90-archive/reports/worldos-m22-lighthouse-guidance-eval-report.json",
+    "m23Audio": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+    "m24Visualization": "docs/90-archive/reports/worldos-m24-advanced-visualization-report.json",
+    "m25Authoring": "docs/90-archive/reports/worldos-m25-author-world-editor-report.json",
+    "m26Memory": "docs/90-archive/reports/worldos-m26-world-memory-report.json",
+    "m27Permission": "docs/90-archive/reports/worldos-m27-layered-permission-report.json",
+    "m28Ops": "docs/90-archive/reports/worldos-m28-observability-rollback-report.json",
+    "m29Polish": "docs/90-archive/reports/worldos-m29-high-fidelity-polish-report.json"
+  },
+  "acceptance": {
+    "command": "check:m30-ultimate-candidate",
+    "report": "docs/90-archive/reports/worldos-m30-ultimate-candidate-report.json",
+    "requiredRecordings": ["first-visit", "scene-migration", "path-to-node", "node-reading", "lighthouse-guidance"],
+    "maxP0P1Defects": 0,
+    "requiredStatusTokens": [
+      "Ultimate Candidate M30",
+      "9/10 候选",
+      "P0/P1",
+      "不是 10/10"
+    ]
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-07-10T02:33:05.883Z",
+  "status": "passed",
+  "baseUrl": "http://127.0.0.1:4334",
+  "recordDir": "docs/90-archive/reports/worldos-m30-recordings",
+  "nextLogPath": "reports/worldos-m30-record-next-start.log",
+  "chromeLogPath": "reports/worldos-m30-record-chrome.log",
+  "requiredFlows": [
+    "first-visit",
+    "scene-migration",
+    "path-to-node",
+    "node-reading",
+    "lighthouse-guidance"
+  ],
+  "recordings": [
+    {
+      "id": "first-visit",
+      "label": "首访入口到星图",
+      "viewport": "desktop",
+      "start": "/",
+      "expectedPath": "/atlas",
+      "before": {
+        "path": "/",
+        "h1": "古月浮屿，正在打开的个人世界。",
+        "textLength": 3131,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "after": {
+        "path": "/atlas",
+        "h1": "从这里看见整片公开世界。",
+        "textLength": 9859,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "click": {
+        "clicked": true,
+        "text": "地图",
+        "href": "/atlas"
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/005-settled.png"
+      ],
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/first-visit.webm",
+        "bytes": 160628
+      }
+    },
+    {
+      "id": "scene-migration",
+      "label": "时间河迁移到档案馆",
+      "viewport": "desktop",
+      "start": "/timeline",
+      "expectedPath": "/archive",
+      "before": {
+        "path": "/timeline",
+        "h1": "事件不是日志，是世界的水位。",
+        "textLength": 8193,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "after": {
+        "path": "/archive",
+        "h1": "当你不想漫游，就在馆内检索。",
+        "textLength": 24223,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "click": {
+        "clicked": true,
+        "text": "档案",
+        "href": "/archive"
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/005-settled.png"
+      ],
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/scene-migration.webm",
+        "bytes": 145367
+      }
+    },
+    {
+      "id": "path-to-node",
+      "label": "路径抵达节点",
+      "viewport": "desktop",
+      "start": "/paths/first-visit",
+      "expectedPath": "/node/world-manifesto",
+      "before": {
+        "path": "/paths/first-visit",
+        "h1": "第一次来到古月浮屿",
+        "textLength": 2597,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "after": {
+        "path": "/node/world-manifesto",
+        "h1": "创世初光",
+        "textLength": 5419,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "click": {
+        "clicked": true,
+        "text": "进入第一站\n创世初光",
+        "href": "/node/world-manifesto"
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/005-settled.png"
+      ],
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/path-to-node.webm",
+        "bytes": 176980
+      }
+    },
+    {
+      "id": "node-reading",
+      "label": "节点阅读与出口",
+      "viewport": "desktop",
+      "start": "/node/world-manifesto",
+      "expectedPath": "/paths",
+      "before": {
+        "path": "/node/world-manifesto",
+        "h1": "创世初光",
+        "textLength": 5391,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "after": {
+        "path": "/paths",
+        "h1": "路径不是分类，是一段可行走的旅程。",
+        "textLength": 2161,
+        "overflowX": false,
+        "reducedMotion": "false"
+      },
+      "click": {
+        "clicked": true,
+        "text": "选择一条路径\n把这个节点放回旅程中",
+        "href": "/paths"
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/005-settled.png"
+      ],
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/node-reading.webm",
+        "bytes": 182568
+      }
+    },
+    {
+      "id": "lighthouse-guidance",
+      "label": "灯塔导览控制台",
+      "viewport": "mobile-reduced-motion",
+      "start": "/ask",
+      "expectedPath": "/paths",
+      "before": {
+        "path": "/ask",
+        "h1": "灯塔只照路，不替你改写世界。",
+        "textLength": 2832,
+        "overflowX": false,
+        "reducedMotion": "true"
+      },
+      "after": {
+        "path": "/paths",
+        "h1": "路径不是分类，是一段可行走的旅程。",
+        "textLength": 1972,
+        "overflowX": false,
+        "reducedMotion": "true"
+      },
+      "click": {
+        "clicked": true,
+        "text": "进入精选路径",
+        "href": "/paths"
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/005-settled.png"
+      ],
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance.webm",
+        "bytes": 195406
+      }
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,247 @@
+{
+  "name": "WorldOS M30 ultimate candidate report",
+  "generatedAt": "2026-07-10T02:33:24.414Z",
+  "status": "passed",
+  "candidateStatus": "9-10-local-lan-candidate",
+  "candidateScore": 8.9,
+  "honestConclusion": "WorldOS reaches a local/LAN 9/10 candidate: not 10/10, not external production, but no P0/P1 blockers and all eight pillars have evidence.",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false
+  },
+  "pillarScores": [
+    {
+      "id": "S1",
+      "label": "独立空间",
+      "score": 9,
+      "evidence": "7 个场景变体，6 类 production parts"
+    },
+    {
+      "id": "S2",
+      "label": "真实穿梭",
+      "score": 9,
+      "evidence": "5 条 SPA 迁移，M30 scene-migration 录屏"
+    },
+    {
+      "id": "S3",
+      "label": "内容生命",
+      "score": 9.1,
+      "evidence": "M21 内容生命报告通过，完整吸收事实 见报告"
+    },
+    {
+      "id": "S4",
+      "label": "灯塔陪伴",
+      "score": 8.8,
+      "evidence": "10 题 grounded / refusal / fallback 评估通过，Provider 仍 disabled-dry-run"
+    },
+    {
+      "id": "S5",
+      "label": "统一世界观",
+      "score": 8.8,
+      "evidence": "M29 高保真分 8.74，音频默认静音，可视化依赖 delta=0"
+    },
+    {
+      "id": "S6",
+      "label": "长期回访",
+      "score": 8.7,
+      "evidence": "M26 回访记忆、清除入口和隐私字段门禁通过"
+    },
+    {
+      "id": "S7",
+      "label": "作者共生",
+      "score": 8.7,
+      "evidence": "M25 作者 dry-run 编辑台、坏草稿阻止和影响预览通过"
+    },
+    {
+      "id": "S8",
+      "label": "可信运行",
+      "score": 9.1,
+      "evidence": "M27 权限、M28 观测回滚、local RC、LAN RC 全部通过"
+    }
+  ],
+  "evidence": {
+    "localRc": {
+      "path": "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+      "status": "local-rc-passed-external-release-blocked"
+    },
+    "lanRc": {
+      "path": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+      "status": "passed"
+    },
+    "sceneQa": {
+      "path": "docs/90-archive/reports/worldos-scene-qa-report.json",
+      "status": "passed"
+    },
+    "recordings": {
+      "path": "docs/90-archive/reports/worldos-m30-recording-report.json",
+      "status": "passed"
+    },
+    "m20Transitions": {
+      "path": "docs/90-archive/reports/worldos-m20-spa-transition-report.json",
+      "status": "passed"
+    },
+    "m21ContentLife": {
+      "path": "docs/90-archive/reports/worldos-m21-content-life-loop-report.json",
+      "status": "passed"
+    },
+    "m22Lighthouse": {
+      "path": "docs/90-archive/reports/worldos-m22-lighthouse-guidance-eval-report.json",
+      "status": "passed"
+    },
+    "m23Audio": {
+      "path": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+      "status": "passed"
+    },
+    "m24Visualization": {
+      "path": "docs/90-archive/reports/worldos-m24-advanced-visualization-report.json",
+      "status": "passed"
+    },
+    "m25Authoring": {
+      "path": "docs/90-archive/reports/worldos-m25-author-world-editor-report.json",
+      "status": "passed"
+    },
+    "m26Memory": {
+      "path": "docs/90-archive/reports/worldos-m26-world-memory-report.json",
+      "status": "passed"
+    },
+    "m27Permission": {
+      "path": "docs/90-archive/reports/worldos-m27-layered-permission-report.json",
+      "status": "passed"
+    },
+    "m28Ops": {
+      "path": "docs/90-archive/reports/worldos-m28-observability-rollback-report.json",
+      "status": "passed"
+    },
+    "m29Polish": {
+      "path": "docs/90-archive/reports/worldos-m29-high-fidelity-polish-report.json",
+      "status": "passed"
+    }
+  },
+  "recordings": [
+    {
+      "id": "first-visit",
+      "label": "首访入口到星图",
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/first-visit.webm",
+        "bytes": 160628
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/first-visit/005-settled.png"
+      ]
+    },
+    {
+      "id": "scene-migration",
+      "label": "时间河迁移到档案馆",
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/scene-migration.webm",
+        "bytes": 145367
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/scene-migration/005-settled.png"
+      ]
+    },
+    {
+      "id": "path-to-node",
+      "label": "路径抵达节点",
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/path-to-node.webm",
+        "bytes": 176980
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/path-to-node/005-settled.png"
+      ]
+    },
+    {
+      "id": "node-reading",
+      "label": "节点阅读与出口",
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/node-reading.webm",
+        "bytes": 182568
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/node-reading/005-settled.png"
+      ]
+    },
+    {
+      "id": "lighthouse-guidance",
+      "label": "灯塔导览控制台",
+      "video": {
+        "path": "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance.webm",
+        "bytes": 195406
+      },
+      "frames": [
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/001-arrival.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/002-scan.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/003-after-action.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/004-after-scroll.png",
+        "docs/90-archive/reports/worldos-m30-recordings/lighthouse-guidance/005-settled.png"
+      ]
+    }
+  ],
+  "defects": {
+    "p0p1": 0,
+    "p2": 4,
+    "items": [
+      {
+        "severity": "P2",
+        "id": "m30-no-full-3d-cosmos",
+        "title": "当前候选仍以轻量 SVG/CSS/GSAP 舞台为主，不是完整 3D 宇宙。",
+        "evidencePath": "docs/90-archive/reports/worldos-m24-advanced-visualization-report.json",
+        "nextAction": "仅在明确收益、预算和降级策略成立时再引入局部 3D。"
+      },
+      {
+        "severity": "P2",
+        "id": "m30-audio-not-full-music-system",
+        "title": "当前声景是默认静音、短提示音级别，不是完整音乐系统。",
+        "evidencePath": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+        "nextAction": "后续补授权音乐、分场景 loop、音量记忆和 reduced-sensory 审查。"
+      },
+      {
+        "severity": "P2",
+        "id": "m30-ai-provider-disabled-dry-run",
+        "title": "灯塔仍是 disabled-dry-run 低光导览，不是真实在线 Provider 陪伴体。",
+        "evidencePath": "docs/90-archive/reports/worldos-m22-lighthouse-guidance-eval-report.json",
+        "nextAction": "上线前用服务端 key、速率限制、审计和成本预算接入真实 Provider。"
+      },
+      {
+        "severity": "P2",
+        "id": "m30-memory-localstorage-only",
+        "title": "回访记忆仍是 localStorage 轻量记忆，不是跨设备长期记忆系统。",
+        "evidencePath": "docs/90-archive/reports/worldos-m26-world-memory-report.json",
+        "nextAction": "后续在权限/隐私边界稳定后再评估 IndexedDB 或服务端同步。"
+      }
+    ]
+  },
+  "not10Gaps": [
+    "当前候选仍以轻量 SVG/CSS/GSAP 舞台为主，不是完整 3D 宇宙。",
+    "当前声景是默认静音、短提示音级别，不是完整音乐系统。",
+    "灯塔仍是 disabled-dry-run 低光导览，不是真实在线 Provider 陪伴体。",
+    "回访记忆仍是 localStorage 轻量记忆，不是跨设备长期记忆系统。"
+  ],
+  "nextRoundRoadmap": [
+    "真实 Provider 灯塔：服务端 key、成本预算、审计、拒答和越权测试。",
+    "完整音乐/氛围系统：授权素材、场景 loop、reduced-sensory 和音量记忆。",
+    "更强空间舞台：只在收益明确时局部引入 3D / Canvas，不破坏轻量预算。",
+    "跨设备长期记忆：在权限和隐私模型稳定后评估服务端同步。"
+  ],
+  "failures": []
+}

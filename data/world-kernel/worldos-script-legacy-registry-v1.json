@@ -29,6 +29,7 @@
     "check:m27-layered-permission",
     "check:m28-observability-rollback",
     "check:m29-high-fidelity-polish",
+    "check:m30-ultimate-candidate",
     "check:m19-scene-interaction",
     "check:m20-spatial-continuity",
     "check:m20-spa-transitions",
@@ -74,6 +75,7 @@
     "npm run check:m27-layered-permission",
     "npm run check:m28-observability-rollback",
     "npm run check:m29-high-fidelity-polish",
+    "npm run check:m30-ultimate-candidate",
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
@@ -98,6 +100,7 @@
     "npm run check:m27-layered-permission",
     "npm run check:m28-observability-rollback",
     "npm run check:m29-high-fidelity-polish",
+    "npm run check:m30-ultimate-candidate",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
     "npm run check:m20-spa-transitions",
@@ -122,8 +125,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 295,
-    "checkScripts": 167,
+    "totalScripts": 297,
+    "checkScripts": 168,
     "stageLikeCheckScripts": 2,
     "longScripts": 2
   },
@@ -134,7 +137,7 @@
   "longScripts": [
     {
       "name": "check:mainline",
-      "length": 1289
+      "length": 1329
     },
     {
       "name": "check:world-core",
