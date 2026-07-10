@@ -22,6 +22,7 @@
     "check:journey-memory",
     "check:ambient-environment",
     "check:m23-sensory-audio-production",
+    "check:m24-advanced-visualization",
     "check:scene-qa",
     "check:m19-scene-interaction",
     "check:m20-spatial-continuity",
@@ -62,6 +63,7 @@
     "npm run check:journey-memory",
     "npm run check:ambient-environment",
     "npm run check:m23-sensory-audio-production",
+    "npm run check:m24-advanced-visualization",
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
@@ -80,6 +82,7 @@
     "npm run smoke:lan-local",
     "npm run check:scene-qa",
     "npm run check:m23-sensory-audio-production",
+    "npm run check:m24-advanced-visualization",
     "npm run check:m19-scene-interaction",
     "npm run check:m20-spatial-continuity",
     "npm run check:m20-spa-transitions",
@@ -104,8 +107,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 289,
-    "checkScripts": 161,
+    "totalScripts": 290,
+    "checkScripts": 162,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },

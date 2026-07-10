@@ -25,20 +25,6 @@ const positions = [
   { left: 50, top: 48 },
 ]
 
-function lineStyle(from: Point, to: Point) {
-  const dx = to.left - from.left
-  const dy = to.top - from.top
-  const length = Math.sqrt(dx * dx + dy * dy)
-  const angle = Math.atan2(dy, dx) * (180 / Math.PI)
-
-  return {
-    left: `${from.left}%`,
-    top: `${from.top}%`,
-    width: `${length}%`,
-    transform: `rotate(${angle}deg)`,
-  }
-}
-
 export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellationSurface }) {
   const rootRef = useRef<HTMLElement | null>(null)
   const runtime = useWorldRuntime()
@@ -56,19 +42,47 @@ export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellatio
     .slice(0, 10)
 
   return (
-    <section ref={rootRef} className="overflow-hidden rounded-[1.75rem] border border-ink/10 bg-ink text-paper shadow-soft">
+    <section
+      ref={rootRef}
+      data-testid="advanced-visualization-pilot"
+      data-visualization-renderer="svg-css"
+      data-visualization-scene="atlas"
+      data-dependency-delta="0"
+      data-node-count={points.length}
+      data-link-count={visibleLinks.length}
+      className="overflow-hidden rounded-[1.75rem] border border-ink/10 bg-ink text-paper shadow-soft"
+    >
       <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="relative min-h-[28rem] overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_32%_24%,rgba(189,207,168,0.22),transparent_34%),radial-gradient(circle_at_76%_68%,rgba(125,154,162,0.28),transparent_35%)] lg:border-b-0 lg:border-r">
           <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(247,241,230,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(247,241,230,0.14)_1px,transparent_1px)] [background-size:64px_64px]" />
-          {visibleLinks.map(({ link, from, to }, index) => (
-            <motion.span
-              key={link.id}
-              className="absolute h-px origin-left bg-gradient-to-r from-transparent via-paper/58 to-transparent"
-              style={lineStyle(from, to)}
-              animate={shouldMove ? { opacity: [0.24, 0.82, 0.24] } : undefined}
-              transition={{ duration: 5.5, delay: index * 0.22, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          ))}
+          <svg
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full"
+            preserveAspectRatio="none"
+            viewBox="0 0 100 100"
+          >
+            <defs>
+              <linearGradient id="atlas-m24-line" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="rgba(247,241,230,0)" />
+                <stop offset="50%" stopColor="rgba(247,241,230,0.62)" />
+                <stop offset="100%" stopColor="rgba(247,241,230,0)" />
+              </linearGradient>
+            </defs>
+            {visibleLinks.map(({ link, from, to }, index) => (
+              <motion.line
+                key={link.id}
+                x1={from.left}
+                y1={from.top}
+                x2={to.left}
+                y2={to.top}
+                stroke="url(#atlas-m24-line)"
+                strokeWidth="0.25"
+                vectorEffect="non-scaling-stroke"
+                animate={shouldMove ? { opacity: [0.24, 0.86, 0.24] } : undefined}
+                transition={{ duration: 5.5, delay: index * 0.22, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            ))}
+          </svg>
           {points.map((point, index) => (
             <Link
               key={point.area.id}
@@ -115,6 +129,10 @@ export function AtlasLiveConstellation({ surface }: { surface: AtlasConstellatio
               <Compass className="h-5 w-5 text-lake" />
               <p className="mt-3 text-2xl font-semibold">{visibleLinks.length}</p>
               <p className="mt-1 text-xs text-paper/52">公开星线正在连接</p>
+            </div>
+            <div className="rounded-[1.1rem] border border-paper/12 bg-paper/8 p-4 sm:col-span-2">
+              <p className="text-xs font-semibold tracking-[0.2em] text-leaf">M24 SVG PILOT</p>
+              <p className="mt-2 text-sm leading-6 text-paper/62">当前使用 SVG/CSS 关系场，零新增运行时依赖；D3 / Three 继续候选制。</p>
             </div>
           </div>
           

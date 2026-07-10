@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-10T01:19:29.868Z",
+  "status": "passed",
+  "stage": "M24",
+  "registry": "data/domains/experience/advanced-visualization-candidates.json",
+  "renderer": "svg-css",
+  "pilot": "atlas-svg-relationship-field",
+  "dependencyDelta": 0,
+  "newRuntimeDependencies": [],
+  "acceptedCandidates": [
+    "svg-css"
+  ],
+  "deferredCandidates": [
+    "canvas",
+    "d3-force",
+    "pixi"
+  ],
+  "rejectedCandidates": [
+    "three-r3f"
+  ],
+  "evidence": [
+    "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png",
+    "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png",
+    "docs/90-archive/reports/worldos-scene-qa-report.json"
+  ],
+  "failures": []
+}

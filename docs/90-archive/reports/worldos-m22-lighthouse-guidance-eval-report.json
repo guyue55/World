@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T01:07:56.000Z",
+  "generatedAt": "2026-07-10T01:18:22.636Z",
   "status": "passed",
   "purpose": "M22 灯塔 AI 深度导览：10 条 grounded / refusal / fallback 评估，不启用真实 Provider。",
   "provider": {

@@ -5,6 +5,7 @@ import { getAllPaths } from '@/lib/paths'
 import { getPublicWorldEvents } from '@/lib/world-events'
 import { buildDynamicWorldStatusSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
+import { getAdvancedVisualizationSummary } from '@/lib/advanced-visualization'
 import { getLighthouseLocalStatus } from '@/lib/lighthouse-status'
 import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { getPathQualityLedger } from '@/lib/path-quality-ledger'
@@ -17,6 +18,7 @@ import { getScenePersonalitySummary } from '@/lib/scene-personality'
 import { getSceneTransitionSummary } from '@/lib/scene-transition'
 import { getWorldRuntimeStateSummary } from '@/lib/world-runtime-state'
 import {
+  AdvancedVisualizationPilotPanel,
   AiLowLightStatusPanel,
   DynamicWorldStatusBoard,
   LocalMaturityLedgerPanel,
@@ -61,6 +63,7 @@ export default function StatusPage() {
   const paths = getAllPaths()
   const lighthouseStatus = getLighthouseLocalStatus()
   const localMaturityLedger = getLocalMaturityLedger()
+  const advancedVisualizationSummary = getAdvancedVisualizationSummary()
   const pathQualityLedger = getPathQualityLedger()
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const ambientEnvironmentSummary = getAmbientEnvironmentSummary()
@@ -121,6 +124,8 @@ export default function StatusPage() {
       <LocalMaturityLedgerPanel ledger={localMaturityLedger} />
 
       <PathQualityLedgerPanel ledger={pathQualityLedger} />
+
+      <AdvancedVisualizationPilotPanel summary={advancedVisualizationSummary} />
 
       <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
 

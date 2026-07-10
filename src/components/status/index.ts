@@ -1,3 +1,4 @@
+export { AdvancedVisualizationPilotPanel } from './AdvancedVisualizationPilotPanel'
 export { AiLowLightStatusPanel } from './AiLowLightStatusPanel'
 export { DynamicWorldStatusBoard } from './DynamicWorldStatusBoard'
 export { LocalMaturityLedgerPanel } from './LocalMaturityLedgerPanel'

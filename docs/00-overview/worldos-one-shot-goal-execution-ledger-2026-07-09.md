@@ -10,9 +10,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M30 |
-| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M23 首批终局体验证据已完成；M24-M30 尚未完成 |
+| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M24 首批终局体验证据已完成；M25-M30 尚未完成 |
 | 最后更新时间 | 2026-07-10 |
-| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告。当前仍不能宣称终局完成，下一步必须进入 M24 高级可视化试点。 |
+| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告；M22 已补灯塔低光模式的 grounded 导览、边界拒答、未知回退与 10 题评估报告；M23 已补声景生产注册表、会话 armed 控制、场景切换停旧音和专项资产授权/预算报告；M24 已补高级可视化候选账本、Atlas SVG 关系场试点、Status 可视化准入面板和专项依赖门禁。当前仍不能宣称终局完成，下一步必须进入 M25 作者世界编辑台。 |
 
 ## 1.1 2026-07-10 终局 Goal 真实起点
 
@@ -61,6 +61,12 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 通过 | 将 `sensory-audio-registry` 升级为 M23 生产注册表：每个公开场景声景补齐 `assetId/source/license/bytes/duration/visualCue/interactionCue/reducedSensoryBehavior/stopPolicy`；`RuntimeSoundscapeControl` 新增本会话 `audioArmed`、`data-audio-armed`、场景切换停旧音、静音关闭停止和桌面音量滑杆；`/status` 展示 M23 授权场景数、生产资产数、总字节和 armed/scene switch/reduced-sensory 策略；新增 `check:m23-sensory-audio-production` 与报告 `docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json`，并纳入 `check:mainline` 和脚本治理注册表 | `npm run check:m23-sensory-audio-production`、`npm run check:ambient-environment`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过 | M23 真实完成的是“轻量感官音频资产生产化”：9/9 场景声景有授权和预算，资产数 1，音频总字节 0，首访默认静音，自动播放 false，无外部音频文件，无 Howler/Tone；LAN RC 为 `http://172.30.111.222:4320`，22 个 HTTP、20 个浏览器检查、18 个 scene QA route checks 通过。限制也要写清：当前仍是项目内 Web Audio 短提示音，不是完整音乐系统；统一世界观先通过场景短音人格、状态页证据和 opt-in 控制建立，复杂音乐/生成式声景仍需后续收益证明。 | 进入 M24：高级可视化试点。必须先做收益/成本对比和局部原型门禁，不得为了“宇宙感”直接引入 D3/Three/WebGL 或全站重依赖。 |
+
+## 1.7 M24 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 通过 | 新增 `data/domains/experience/advanced-visualization-candidates.json` 作为 ADR-0007 的本地候选账本；Atlas `AtlasLiveConstellation` 从 CSS 线段升级为 SVG 关系场，并暴露 `advanced-visualization-pilot`、`data-visualization-renderer="svg-css"`、`data-dependency-delta="0"` 等 DOM 证据；新增 `src/lib/advanced-visualization.ts` 和 `/status` 的 `AdvancedVisualizationPilotPanel`，展示候选状态、零新增依赖和证据位置；新增 `check:m24-advanced-visualization` 与 `docs/90-archive/reports/worldos-m24-advanced-visualization-report.json`，并纳入 `check:mainline` 和脚本治理注册表 | `npm run check:m24-advanced-visualization`、`npm run typecheck`、`npm run lint`、`npm run check:scripts`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc` 通过 | M24 真实完成的是“局部高级可视化试点与准入门禁”：当前 renderer 为 `svg-css`，dependencyDelta=0，newRuntimeDependencies=[]；接受 `svg-css`，暂缓 `canvas` / `d3-force` / `pixi`，当前拒绝 `three-r3f`。Atlas production build 页面大小约 4.35 kB，shared First Load JS 约 102 kB，运行时依赖仍为 14 个，`check:dependency-hardening` 证明重候选缺席；LAN RC 仍为 22 HTTP、20 browser checks。限制也要写清：这不是全局 3D 宇宙，只是 Atlas 局部 SVG 关系场和后续高级可视化准入规则。 | 进入 M25：作者世界编辑台。目标不是做复杂后台，而是让作者能低门槛、中文优先地维护内容、关系、路径和资产，并继续坚持后端/数据契约为权限事实源。 |
 
 ## 2. 阶段进度
 

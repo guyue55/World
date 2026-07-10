@@ -1,0 +1,103 @@
+{
+  "version": "1.0.0",
+  "name": "WorldOS M24 高级可视化候选账本",
+  "updatedAt": "2026-07-10",
+  "source": "docs/09-adr/ADR-0007-advanced-visualization-candidates.md",
+  "principle": "高级可视化先证明收益，再决定是否引入依赖；SVG / CSS 能完成时，不引入 D3、Canvas、Three、Pixi 或全站 WebGL。",
+  "scope": {
+    "localOnly": true,
+    "publicSceneOnly": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false,
+    "requiresOwner": false,
+    "requiresAuth": false
+  },
+  "runtime": {
+    "currentRenderer": "svg-css",
+    "pilotComponent": "src/components/atlas/AtlasLiveConstellation.tsx",
+    "pilotRoute": "/atlas",
+    "fallbackComponent": "src/components/atlas/AtlasFallbackList.tsx",
+    "newRuntimeDependencies": [],
+    "dependencyDelta": 0,
+    "usesD3": false,
+    "usesThree": false,
+    "usesReactThreeFiber": false,
+    "usesPixi": false,
+    "usesCanvas": false,
+    "usesWebGl": false,
+    "reducedMotionFallback": "保留 SVG 星线、区域按钮和列表 fallback，禁用连续漂移动画。",
+    "mobileFallback": "移动端继续使用同一 SVG/CSS 结构和列表 fallback，不加载重图谱库。"
+  },
+  "pilot": {
+    "id": "atlas-svg-relationship-field",
+    "sceneId": "atlas",
+    "title": "Atlas SVG 关系场",
+    "beforeState": "Atlas 已有区域与星线，但缺少明确的高级可视化准入证据和可复查成本账本。",
+    "afterState": "Atlas 星图使用 SVG 关系线表达区域连接，并通过候选账本证明当前无需 D3/Three。",
+    "benefit": "访问者能在第一眼看到区域之间的空间关系，同时维护者能看到未来升级候选的门槛。",
+    "cost": "零新增运行时依赖，零外部资产，继续复用公开世界事实源。",
+    "evidence": [
+      "docs/90-archive/reports/worldos-local-lan-rc/desktop-atlas.png",
+      "docs/90-archive/reports/worldos-local-lan-rc/mobile-reduced-motion-atlas.png",
+      "docs/90-archive/reports/worldos-scene-qa-report.json"
+    ],
+    "acceptanceCommand": "check:m24-advanced-visualization"
+  },
+  "candidates": [
+    {
+      "id": "svg-css",
+      "label": "SVG / CSS",
+      "status": "accepted-now",
+      "allowedWhen": "节点数量可控、交互简单、需要稳定移动端和 reduced-motion。",
+      "currentDecision": "M24 默认采用。",
+      "fallback": "静态列表和区域卡片。"
+    },
+    {
+      "id": "canvas",
+      "label": "Canvas",
+      "status": "deferred",
+      "allowedWhen": "同屏节点或持续动画数量超过 SVG/CSS 可维护范围。",
+      "currentDecision": "当前 8 个区域、10 条星线不需要 Canvas。",
+      "fallback": "SVG / CSS 关系场。"
+    },
+    {
+      "id": "d3-force",
+      "label": "D3 / d3-force",
+      "status": "deferred",
+      "allowedWhen": "Atlas 关系布局需要力导向、碰撞约束或复杂动态布局。",
+      "currentDecision": "当前布局由固定语义位置承担，暂不引入。",
+      "fallback": "手工策展位置与公开关系线。"
+    },
+    {
+      "id": "three-r3f",
+      "label": "Three.js / React Three Fiber",
+      "status": "rejected-for-now",
+      "allowedWhen": "局部空间必须 3D 才成立，且有移动端静态替代和预算。",
+      "currentDecision": "M24 不做全站或 Atlas 3D。",
+      "fallback": "2D 星图、场景舞台和空间迁移。"
+    },
+    {
+      "id": "pixi",
+      "label": "PixiJS",
+      "status": "deferred",
+      "allowedWhen": "2D WebGL 舞台收益明显，且 CSS/SVG 性能不足。",
+      "currentDecision": "当前不需要。",
+      "fallback": "SVG / CSS。"
+    }
+  ],
+  "acceptance": {
+    "requiredPilotDataAttributes": [
+      "data-testid=\"advanced-visualization-pilot\"",
+      "data-visualization-renderer=\"svg-css\"",
+      "data-dependency-delta=\"0\""
+    ],
+    "requiredStatusTokens": [
+      "Advanced Visualization M24",
+      "Atlas SVG 关系场",
+      "零新增运行时依赖"
+    ],
+    "forbiddenDependencies": ["d3", "d3-force", "three", "@react-three/fiber", "pixi.js", "sigma", "cytoscape"],
+    "forbiddenSourceTokens": ["from 'three'", "from \"three\"", "from 'd3-force'", "from \"d3-force\"", "new WebGLRenderer", "getContext('webgl", "getContext(\"webgl"]
+  }
+}
