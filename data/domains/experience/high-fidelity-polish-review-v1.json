@@ -1,0 +1,75 @@
+{
+  "name": "WorldOS M29 高保真体验打磨契约",
+  "version": "1.0.0",
+  "source": "docs/00-overview/worldos-m29-high-fidelity-polish-standard-2026-07-10.md",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false
+  },
+  "pillars": ["S1", "S2", "S5", "S6"],
+  "dimensions": [
+    {
+      "id": "visual-distinctness",
+      "label": "场景可区分",
+      "minimumScore": 8
+    },
+    {
+      "id": "motion-discipline",
+      "label": "动效服务叙事",
+      "minimumScore": 8
+    },
+    {
+      "id": "fallback-state",
+      "label": "空错状态可恢复",
+      "minimumScore": 8
+    },
+    {
+      "id": "mobile-reduced-motion",
+      "label": "移动端与低动效专业",
+      "minimumScore": 8
+    },
+    {
+      "id": "sensory-coherence",
+      "label": "声景与视觉同频",
+      "minimumScore": 8
+    }
+  ],
+  "thresholds": {
+    "minOverallScore": 8.5,
+    "minScenePortalVariants": 7,
+    "minProductionPartKinds": 6,
+    "minBrowserChecks": 20,
+    "minScreenshots": 18,
+    "maxFixedOverlayIssues": 0,
+    "maxP0P1Defects": 0,
+    "maxHeavyRuntimeDependencyDelta": 0
+  },
+  "requiredFallbackFiles": [
+    "src/components/world/WorldFallbackScene.tsx",
+    "src/components/common/PageLoader.tsx",
+    "src/app/not-found.tsx",
+    "src/app/forbidden/page.tsx",
+    "src/app/global-error.tsx"
+  ],
+  "reports": {
+    "sceneQa": "docs/90-archive/reports/worldos-scene-qa-report.json",
+    "lanRc": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "localRc": "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+    "audio": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+    "visualization": "docs/90-archive/reports/worldos-m24-advanced-visualization-report.json",
+    "m29": "docs/90-archive/reports/worldos-m29-high-fidelity-polish-report.json"
+  },
+  "acceptance": {
+    "command": "check:m29-high-fidelity-polish",
+    "requiredStatusTokens": [
+      "High Fidelity Polish M29",
+      "截图墙审查",
+      "P0/P1",
+      "不是 10/10"
+    ],
+    "allowedOpenDefectSeverity": ["P2"]
+  }
+}

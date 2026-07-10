@@ -1,6 +1,6 @@
 {
   "name": "WorldOS M28 long-running observability rollback report",
-  "generatedAt": "2026-07-10T02:07:47.132Z",
+  "generatedAt": "2026-07-10T02:18:31.946Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -101,32 +101,32 @@
   },
   "latestLocalRc": {
     "status": "local-rc-passed-external-release-blocked",
-    "generatedAt": "2026-07-10T02:07:38.678Z"
+    "generatedAt": "2026-07-10T02:18:18.679Z"
   },
   "latestLanRc": {
     "status": "passed",
-    "generatedAt": "2026-07-10T02:06:02.812Z"
+    "generatedAt": "2026-07-10T02:17:34.578Z"
   },
   "evidenceSummary": [
     {
       "path": "docs/90-archive/reports/worldos-local-rc-summary-report.json",
       "bytes": 6515,
-      "updatedAt": "2026-07-10T02:07:38.679Z"
+      "updatedAt": "2026-07-10T02:18:18.682Z"
     },
     {
       "path": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
-      "bytes": 80188,
-      "updatedAt": "2026-07-10T02:06:02.818Z"
+      "bytes": 80182,
+      "updatedAt": "2026-07-10T02:17:34.584Z"
     },
     {
       "path": "docs/90-archive/reports/worldos-m27-layered-permission-report.json",
       "bytes": 1327,
-      "updatedAt": "2026-07-10T02:06:16.858Z"
+      "updatedAt": "2026-07-10T02:17:40.363Z"
     },
     {
       "path": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
       "bytes": 485,
-      "updatedAt": "2026-07-10T02:06:15.294Z"
+      "updatedAt": "2026-07-10T02:17:39.641Z"
     }
   ],
   "failures": []

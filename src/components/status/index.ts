@@ -2,6 +2,7 @@ export { AdvancedVisualizationPilotPanel } from './AdvancedVisualizationPilotPan
 export { AiLowLightStatusPanel } from './AiLowLightStatusPanel'
 export { AuthorWorldEditorPanel } from './AuthorWorldEditorPanel'
 export { DynamicWorldStatusBoard } from './DynamicWorldStatusBoard'
+export { HighFidelityPolishPanel } from './HighFidelityPolishPanel'
 export { LocalMaturityLedgerPanel } from './LocalMaturityLedgerPanel'
 export { LongRunningOpsPanel } from './LongRunningOpsPanel'
 export { OwnerReadonlyConsolePanel } from './OwnerReadonlyConsolePanel'

@@ -1,0 +1,82 @@
+{
+  "name": "WorldOS M29 high fidelity polish report",
+  "generatedAt": "2026-07-10T02:18:32.195Z",
+  "status": "passed",
+  "overallScore": 8.74,
+  "honestConclusion": "M29 reaches high-fidelity local/LAN polish gate, but remains not 10/10 until M30 recordings and final candidate acceptance are complete.",
+  "scope": {
+    "localOnly": true,
+    "lanIpAccepted": true,
+    "externalPreviewConsidered": false,
+    "productionConsidered": false,
+    "frontendPermissionControl": false
+  },
+  "dimensions": [
+    {
+      "id": "visual-distinctness",
+      "score": 8.9,
+      "evidence": "7 portal variants, 6 production part kinds"
+    },
+    {
+      "id": "motion-discipline",
+      "score": 8.8,
+      "evidence": "18/18 no overlay, 18 migration cues"
+    },
+    {
+      "id": "fallback-state",
+      "score": 8.7,
+      "evidence": "5/5 fallback files use WorldFallbackScene"
+    },
+    {
+      "id": "mobile-reduced-motion",
+      "score": 8.9,
+      "evidence": "10/10 mobile reduced-motion browser checks passed"
+    },
+    {
+      "id": "sensory-coherence",
+      "score": 8.4,
+      "evidence": "audio=passed, autoplay=false, dependencyDelta=0"
+    }
+  ],
+  "screenshotWall": {
+    "routeChecks": 18,
+    "screenshots": 18,
+    "browserChecks": 20,
+    "mobileReducedMotionChecks": 10
+  },
+  "defectSummary": {
+    "p0p1": 0,
+    "p2": 3,
+    "defects": [
+      {
+        "severity": "P2",
+        "id": "m29-no-full-3d-universe",
+        "title": "当前仍是轻量 SVG/CSS 舞台，不是完整 3D 宇宙。",
+        "evidencePath": "docs/90-archive/reports/worldos-m24-advanced-visualization-report.json",
+        "status": "accepted-limit"
+      },
+      {
+        "severity": "P2",
+        "id": "m29-audio-short-cues-only",
+        "title": "当前声景是默认静音的短提示音，不是完整音乐系统。",
+        "evidencePath": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+        "status": "accepted-limit"
+      },
+      {
+        "severity": "P2",
+        "id": "m29-recordings-defer-to-m30",
+        "title": "完整首访、场景迁移、路径、节点、灯塔录屏留到 M30 终局候选验收。",
+        "evidencePath": "docs/00-overview/worldos-m30-ultimate-candidate-acceptance-protocol-2026-07-10.md",
+        "status": "deferred-to-m30"
+      }
+    ]
+  },
+  "evidence": {
+    "sceneQa": "docs/90-archive/reports/worldos-scene-qa-report.json",
+    "lanRc": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
+    "localRc": "docs/90-archive/reports/worldos-local-rc-summary-report.json",
+    "audio": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
+    "visualization": "docs/90-archive/reports/worldos-m24-advanced-visualization-report.json"
+  },
+  "failures": []
+}
