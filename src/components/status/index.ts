@@ -1,5 +1,6 @@
 export { AdvancedVisualizationPilotPanel } from './AdvancedVisualizationPilotPanel'
 export { AiLowLightStatusPanel } from './AiLowLightStatusPanel'
+export { AuthorWorldEditorPanel } from './AuthorWorldEditorPanel'
 export { DynamicWorldStatusBoard } from './DynamicWorldStatusBoard'
 export { LocalMaturityLedgerPanel } from './LocalMaturityLedgerPanel'
 export { OwnerReadonlyConsolePanel } from './OwnerReadonlyConsolePanel'

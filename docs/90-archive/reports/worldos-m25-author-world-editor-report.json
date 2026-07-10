@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-07-10T01:33:46.375Z",
+  "status": "passed",
+  "stage": "M25",
+  "purpose": "作者世界编辑台：用中文草稿 dry-run 证明内容写入前可校验、可预览、可阻止坏草稿。",
+  "contract": "data/domains/operations/author-world-editor-dry-run-v1.json",
+  "mode": "readonly-dry-run",
+  "localOnly": true,
+  "frontendWritesWorldSource": false,
+  "frontendPermissionAuthority": false,
+  "permissionFactSource": "data contract / server-side checks",
+  "modules": [
+    {
+      "id": "node",
+      "label": "节点草稿",
+      "requiredFieldCount": 7
+    },
+    {
+      "id": "relation",
+      "label": "关系解释",
+      "requiredFieldCount": 5
+    },
+    {
+      "id": "path",
+      "label": "旅程吸收",
+      "requiredFieldCount": 2
+    },
+    {
+      "id": "timeline",
+      "label": "时间痕迹",
+      "requiredFieldCount": 2
+    },
+    {
+      "id": "asset",
+      "label": "资产元数据",
+      "requiredFieldCount": 3
+    },
+    {
+      "id": "preview",
+      "label": "影响预览",
+      "requiredFieldCount": 5
+    }
+  ],
+  "validDraft": {
+    "draftId": "draft-author-world-editor-sample",
+    "valid": true,
+    "featuredAllowed": true,
+    "issueCount": 0,
+    "impactPreview": {
+      "atlas": "将进入 创世原点，作为 世界入口与宪章 下的新地点。",
+      "archive": "将进入公开档案馆，可被检索和回看。",
+      "paths": "将进入 第一次来到古月浮屿。",
+      "timeline": "将出现时间锚点：作者维护台开始 dry-run 演练。",
+      "lighthouse": "将进入灯塔只读公开事实源。",
+      "featured": "可进入精选候选。",
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "absorptionScore": 5
+    }
+  },
+  "invalidDrafts": [
+    {
+      "draftId": "draft-missing-summary",
+      "valid": false,
+      "featuredAllowed": false,
+      "issues": [
+        {
+          "id": "summary-too-short",
+          "severity": "error",
+          "message": "摘要至少需要 24 个字符。"
+        }
+      ]
+    },
+    {
+      "draftId": "draft-missing-area",
+      "valid": false,
+      "featuredAllowed": false,
+      "issues": [
+        {
+          "id": "missing-area",
+          "severity": "error",
+          "message": "区域不存在或未进入事实源：unknown-area"
+        }
+      ]
+    },
+    {
+      "draftId": "draft-frontend-permission",
+      "valid": false,
+      "featuredAllowed": false,
+      "issues": [
+        {
+          "id": "permission-authority-invalid",
+          "severity": "error",
+          "message": "权限事实源必须来自数据契约或服务端，不能来自前端。"
+        }
+      ]
+    }
+  ],
+  "authorMaintenanceSignal": {
+    "canPreparePublicNodeWithoutCode": true,
+    "badDraftsBlocked": true,
+    "scenesPreviewed": [
+      "atlas",
+      "timeline",
+      "archive",
+      "paths",
+      "lighthouse"
+    ],
+    "reportPath": "docs/90-archive/reports/worldos-m25-author-world-editor-report.json"
+  },
+  "failures": []
+}

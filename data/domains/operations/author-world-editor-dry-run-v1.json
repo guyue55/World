@@ -1,0 +1,80 @@
+{
+  "name": "WorldOS M25 作者世界编辑台 dry-run 契约",
+  "version": "1.0.0",
+  "source": "docs/00-overview/worldos-m25-author-world-editor-spec-2026-07-10.md",
+  "scope": {
+    "localOnly": true,
+    "lanInspectable": true,
+    "readonlyPreview": true,
+    "frontendWritesWorldSource": false,
+    "frontendPermissionAuthority": false,
+    "cloudCms": false
+  },
+  "authority": {
+    "contentFacts": [
+      "data/domains/experience/nodes.json",
+      "data/domains/experience/areas.json",
+      "data/core/relations.json",
+      "data/domains/experience/paths.json",
+      "data/core/world-events.json"
+    ],
+    "permissionFactSource": "data contract / server-side checks",
+    "rollbackRequiredBeforeWrite": true
+  },
+  "modules": [
+    {
+      "id": "node",
+      "label": "节点草稿",
+      "requiredFields": ["title", "slug", "summary", "areaId", "visibility", "lifeStage", "contentPath"]
+    },
+    {
+      "id": "relation",
+      "label": "关系解释",
+      "requiredFields": ["from", "to", "type", "note", "reviewed"]
+    },
+    {
+      "id": "path",
+      "label": "旅程吸收",
+      "requiredFields": ["pathIds", "why"]
+    },
+    {
+      "id": "timeline",
+      "label": "时间痕迹",
+      "requiredFields": ["eventDraft.date", "eventDraft.title"]
+    },
+    {
+      "id": "asset",
+      "label": "资产元数据",
+      "requiredFields": ["asset.source", "asset.license", "asset.bytes"]
+    },
+    {
+      "id": "preview",
+      "label": "影响预览",
+      "requiredFields": ["atlas", "archive", "paths", "timeline", "lighthouse"]
+    }
+  ],
+  "featuredGate": {
+    "minSummaryLength": 24,
+    "requiresPublicVisibility": true,
+    "requiresArea": true,
+    "requiresRelationReason": true,
+    "requiresPathAbsorption": true,
+    "requiresPermissionAuthority": true
+  },
+  "acceptance": {
+    "command": "check:m25-author-world-editor",
+    "report": "docs/90-archive/reports/worldos-m25-author-world-editor-report.json",
+    "requiredStatusTokens": [
+      "Author World Editor M25",
+      "只读 dry-run",
+      "权限事实源",
+      "影响预览"
+    ],
+    "forbiddenSourceTokens": [
+      "localStorage.getItem('role')",
+      "window.localStorage.setItem('permission'",
+      "fs.writeFileSync",
+      "writeFileSync("
+    ]
+  }
+}

@@ -6,6 +6,7 @@ import { getPublicWorldEvents } from '@/lib/world-events'
 import { buildDynamicWorldStatusSurface } from '@/lib/public-world-surfaces'
 import { createPageMetadata } from '@/lib/metadata'
 import { getAdvancedVisualizationSummary } from '@/lib/advanced-visualization'
+import { getAuthorWorldEditorSummary } from '@/lib/author-world-editor'
 import { getLighthouseLocalStatus } from '@/lib/lighthouse-status'
 import { getLocalMaturityLedger } from '@/lib/local-maturity-ledger'
 import { getPathQualityLedger } from '@/lib/path-quality-ledger'
@@ -20,6 +21,7 @@ import { getWorldRuntimeStateSummary } from '@/lib/world-runtime-state'
 import {
   AdvancedVisualizationPilotPanel,
   AiLowLightStatusPanel,
+  AuthorWorldEditorPanel,
   DynamicWorldStatusBoard,
   LocalMaturityLedgerPanel,
   OwnerReadonlyConsolePanel,
@@ -64,6 +66,7 @@ export default function StatusPage() {
   const lighthouseStatus = getLighthouseLocalStatus()
   const localMaturityLedger = getLocalMaturityLedger()
   const advancedVisualizationSummary = getAdvancedVisualizationSummary()
+  const authorWorldEditorSummary = getAuthorWorldEditorSummary()
   const pathQualityLedger = getPathQualityLedger()
   const ownerReadonlyConsoleLedger = getOwnerReadonlyConsoleLedger()
   const ambientEnvironmentSummary = getAmbientEnvironmentSummary()
@@ -126,6 +129,8 @@ export default function StatusPage() {
       <PathQualityLedgerPanel ledger={pathQualityLedger} />
 
       <AdvancedVisualizationPilotPanel summary={advancedVisualizationSummary} />
+
+      <AuthorWorldEditorPanel summary={authorWorldEditorSummary} />
 
       <OwnerReadonlyConsolePanel ledger={ownerReadonlyConsoleLedger} />
 
