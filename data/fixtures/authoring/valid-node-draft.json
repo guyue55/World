@@ -1,0 +1,28 @@
+{
+  "id": "node-local-authoring-fixture",
+  "slug": "local-authoring-fixture",
+  "title": "本地作者维护演练",
+  "worldTitle": "新生观测点",
+  "type": "article",
+  "areaId": "origin",
+  "summary": "这是一份只在临时工作区演练的中文公开节点，用于验证预览、原子写入、公开索引更新和可校验回滚。",
+  "contentPath": "content/fixtures/local-authoring-fixture.md",
+  "content": "这个观测点只用于隔离工作区的维护演练。它把一份中文草稿依次送入结构校验、影响预览、备份、临时文件写入和原子替换；完成后重新构建公开索引，再用本工具生成的 backup id 恢复所有文件。真实仓库在整段演练前后必须保持完全相同。",
+  "tags": ["authoring", "local", "fixture"],
+  "visibility": "public",
+  "lifeStage": "sprout",
+  "permissionAuthority": "data-contract",
+  "featured": { "recommended": true },
+  "ai": { "generated": false, "reviewed": true, "summary": "本地作者维护演练只读取并写入明确的公开事实字段。" },
+  "relations": [
+    { "to": "node-world-manifesto", "type": "derived", "note": "从世界宣言延伸出可验证、可回滚的本地维护路径。", "reviewed": true }
+  ],
+  "pathIds": ["first-visit"],
+  "eventDraft": {
+    "id": "evt-local-authoring-fixture",
+    "title": "本地作者维护完成临时演练",
+    "date": "2026-07-11",
+    "description": "在隔离工作区完成预览、写入、公开索引校验和 checksum 回滚。"
+  },
+  "asset": { "source": "project-internal", "license": "project-owned", "bytes": 0 }
+}

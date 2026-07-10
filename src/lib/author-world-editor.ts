@@ -17,6 +17,7 @@ export type AuthorNodeDraft = {
   areaId: string
   summary: string
   contentPath: string
+  content?: string
   tags: string[]
   visibility?: Visibility
   lifeStage?: LifeStage

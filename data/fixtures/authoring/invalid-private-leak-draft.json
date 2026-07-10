@@ -1,0 +1,18 @@
+{
+  "id": "node-private-leak-fixture",
+  "slug": "private-leak-fixture",
+  "title": "不应写入的私密演练",
+  "type": "article",
+  "areaId": "origin",
+  "summary": "该草稿故意声称私密可见性却要求进入公开路径，用于确认作者入口在写盘前拒绝权限泄漏。",
+  "contentPath": "content/fixtures/private-leak-fixture.md",
+  "content": "这段正文只用于故意构造错误边界。草稿声明为 private，却又要求加入公开路径，并把权限事实错误地交给 frontend。作者入口必须在任何备份或写盘发生前拒绝它，不能依赖前端隐藏来掩盖泄漏。",
+  "tags": ["private", "fixture"],
+  "visibility": "private",
+  "lifeStage": "sprout",
+  "permissionAuthority": "frontend",
+  "relations": [
+    { "to": "node-world-manifesto", "type": "derived", "note": "这条关系不应越过服务端和数据契约进入公开世界。", "reviewed": true }
+  ],
+  "pathIds": ["first-visit"]
+}

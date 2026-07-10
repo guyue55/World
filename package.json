@@ -274,6 +274,7 @@
     "check:api-boundary": "node scripts/check-worldos-api-boundary.mjs",
     "check:worldos-script-legacy-registry": "node scripts/check-worldos-script-legacy-registry.mjs",
     "check:scripts": "npm run check:worldos-script-taxonomy && npm run check:worldos-script-legacy-registry",
+    "world:author": "tsx scripts/world-author.mjs",
     "audit:world-experience": "node scripts/audit-worldos-reality-first.mjs",
     "check:daily": "npm run check:mainline && npm run lint && npm run typecheck",
     "check:dynamic-world": "node scripts/check-public-dynamic-world-surfaces.mjs && tsx scripts/check-public-world-object-index.ts && node scripts/check-public-chinese-copy.mjs",
