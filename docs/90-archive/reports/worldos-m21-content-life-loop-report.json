@@ -1,0 +1,1017 @@
+{
+  "generatedAt": "2026-07-10T00:48:08.622Z",
+  "status": "passed",
+  "purpose": "M21 内容生命循环：证明单节点能被 Atlas / Timeline / Archive / Paths / Lighthouse 同时吸收。",
+  "totals": {
+    "publicNodes": 200,
+    "publicPaths": 29,
+    "publicRelations": 398,
+    "publicEvents": 51,
+    "loopFacts": 200,
+    "completeAbsorptionFacts": 62,
+    "featuredCompleteFacts": 22,
+    "coreCompleteFacts": 30
+  },
+  "representativeNode": {
+    "id": "node-world-manifesto",
+    "slug": "world-manifesto",
+    "title": "创世初光",
+    "areaId": "origin",
+    "lifeStage": "bloom",
+    "status": "ready",
+    "absorptionScore": 5,
+    "absorptionScenes": [
+      "atlas",
+      "timeline",
+      "archive",
+      "paths",
+      "lighthouse"
+    ],
+    "relationReasonCount": 58,
+    "pathIds": [
+      "first-visit",
+      "life-memory",
+      "eight-minute-world",
+      "world-architecture",
+      "phase19-origin-expansion"
+    ],
+    "timelineEventIds": [
+      "evt-022",
+      "evt-023",
+      "evt-001",
+      "evt-005",
+      "evt-phase2-001",
+      "evt-phase2-005"
+    ],
+    "authorImpactScope": {
+      "atlas": "进入 origin 星域，作为可抵达地点。",
+      "timeline": "进入 6 条时间痕迹。",
+      "archive": "进入公开档案馆，可被检索、筛选和回看。",
+      "paths": "进入 5 条公开旅程。",
+      "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+    }
+  },
+  "coreFacts": [
+    {
+      "id": "node-world-manifesto",
+      "slug": "world-manifesto",
+      "title": "创世初光",
+      "areaId": "origin",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 58,
+      "pathIds": [
+        "first-visit",
+        "life-memory",
+        "eight-minute-world",
+        "world-architecture",
+        "phase19-origin-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-022",
+        "evt-023",
+        "evt-001",
+        "evt-005",
+        "evt-phase2-001",
+        "evt-phase2-005"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 6 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 5 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-ai-lighthouse",
+      "slug": "ai-lighthouse-boundary",
+      "title": "灯塔不是太阳",
+      "areaId": "lighthouse",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 17,
+      "pathIds": [
+        "first-visit",
+        "tech-ai",
+        "eight-minute-world",
+        "phase19-lighthouse-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-023",
+        "evt-002",
+        "evt-005",
+        "evt-phase2-005"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 lighthouse 星域，作为可抵达地点。",
+        "timeline": "进入 4 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 4 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-memory-light",
+      "slug": "memory-lake-first-light",
+      "title": "记忆湖初光",
+      "areaId": "memory",
+      "lifeStage": "sprout",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 14,
+      "pathIds": [
+        "first-visit",
+        "life-memory",
+        "public-life-memory",
+        "tech-to-life",
+        "phase19-memory-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-022"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 memory 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 5 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-mainline-code-map",
+      "slug": "worldos-mainline-code-map",
+      "title": "主干星图",
+      "areaId": "archive",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 17,
+      "pathIds": [
+        "code-architecture-cleanup",
+        "phase19-archive-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-029",
+        "evt-017"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 archive 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-everything-node",
+      "slug": "everything-is-node",
+      "title": "第一枚种子",
+      "areaId": "fragments",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 16,
+      "pathIds": [
+        "how-world-created",
+        "deep-world",
+        "phase19-fragments-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-phase2-004"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 fragments 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 3 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-world-space",
+      "slug": "world-space-layer",
+      "title": "地图不是分类页",
+      "areaId": "origin",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 2,
+      "pathIds": [
+        "first-visit",
+        "how-world-created",
+        "deep-world",
+        "tech-to-life"
+      ],
+      "timelineEventIds": [
+        "evt-023",
+        "evt-005",
+        "evt-phase2-001",
+        "evt-phase2-003",
+        "evt-phase2-006"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 5 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 4 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-rc2-nondeploy-lessons",
+      "slug": "worldos-rc2-nondeploy-lessons",
+      "title": "不能部署时如何继续生长",
+      "areaId": "timeline",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 12,
+      "pathIds": [
+        "rc-governance-trace",
+        "phase19-timeline-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-016"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 timeline 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-digital-universe",
+      "slug": "personal-digital-universe-definition",
+      "title": "宇宙感不是 3D",
+      "areaId": "origin",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "first-visit",
+        "how-world-created",
+        "eight-minute-world"
+      ],
+      "timelineEventIds": [
+        "evt-023",
+        "evt-003",
+        "evt-005"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 3 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 3 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-world-design-axioms",
+      "slug": "world-design-axioms",
+      "title": "九条法则",
+      "areaId": "origin",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 5,
+      "pathIds": [
+        "deep-world",
+        "tech-to-life",
+        "world-architecture"
+      ],
+      "timelineEventIds": [
+        "evt-026",
+        "evt-012"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 3 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-data-guardian",
+      "slug": "world-data-guardian",
+      "title": "骨架需要校验",
+      "areaId": "tech",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 9,
+      "pathIds": [
+        "tech-ai"
+      ],
+      "timelineEventIds": [
+        "evt-028"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 tech 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-heritage-note",
+      "slug": "worldos-heritage-note",
+      "title": "让世界能被交接",
+      "areaId": "archive",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 8,
+      "pathIds": [
+        "world-governance-lane"
+      ],
+      "timelineEventIds": [
+        "evt-032"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 archive 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-project-operating-principles",
+      "slug": "worldos-project-operating-principles",
+      "title": "工程里的世界法则",
+      "areaId": "origin",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 6,
+      "pathIds": [
+        "code-architecture-cleanup",
+        "rc-governance-trace"
+      ],
+      "timelineEventIds": [
+        "evt-030"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-backlinks",
+      "slug": "backlinks-and-star-lines",
+      "title": "哪些星彼此照见",
+      "areaId": "origin",
+      "lifeStage": "sprout",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "how-world-created",
+        "deep-world"
+      ],
+      "timelineEventIds": [
+        "evt-phase2-003",
+        "evt-phase2-004"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-codex-agent-workflow",
+      "slug": "codex-agent-workflow",
+      "title": "与 Codex 的协作纪律",
+      "areaId": "tech",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 5,
+      "pathIds": [
+        "agent-workflow-lane"
+      ],
+      "timelineEventIds": [
+        "evt-031",
+        "evt-034"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 tech 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-daily-review-ritual",
+      "slug": "daily-review-ritual",
+      "title": "日落时的整理",
+      "areaId": "archive",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 5,
+      "pathIds": [
+        "daily-ritual-tour"
+      ],
+      "timelineEventIds": [
+        "evt-031",
+        "evt-034"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 archive 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-birth-story",
+      "slug": "worldos-birth-story",
+      "title": "第一颗星被点亮",
+      "areaId": "memory",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 5,
+      "pathIds": [
+        "memory-lane"
+      ],
+      "timelineEventIds": [
+        "evt-032",
+        "evt-034"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 memory 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-2026-spring-milestones",
+      "slug": "2026-spring-milestones",
+      "title": "春季的十二块拼图",
+      "areaId": "timeline",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 4,
+      "pathIds": [
+        "memory-lane"
+      ],
+      "timelineEventIds": [
+        "evt-032",
+        "evt-035"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 timeline 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-codex-skills-workflow",
+      "slug": "codex-skills-workflow",
+      "title": "技能编排",
+      "areaId": "tech",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 2,
+      "pathIds": [
+        "tech-ai",
+        "tech-to-life"
+      ],
+      "timelineEventIds": [
+        "evt-025",
+        "evt-027"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 tech 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-gemini-cli-skills",
+      "slug": "gemini-cli-skills-agent-workflow",
+      "title": "技能星桥",
+      "areaId": "tech",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 2,
+      "pathIds": [
+        "tech-ai",
+        "tech-to-life"
+      ],
+      "timelineEventIds": [
+        "evt-026",
+        "evt-012"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 tech 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-engine",
+      "slug": "worldos-engine",
+      "title": "创世引擎",
+      "areaId": "workshop",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 6,
+      "pathIds": [
+        "product-workshop"
+      ],
+      "timelineEventIds": [
+        "evt-012"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 workshop 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-rc-lessons",
+      "slug": "worldos-rc1-lessons",
+      "title": "候选发布前的清尘",
+      "areaId": "timeline",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 4,
+      "pathIds": [
+        "worldos-rc-lessons",
+        "rc-governance-trace"
+      ],
+      "timelineEventIds": [
+        "evt-worldos-rc1-lessons"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 timeline 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-worldos-rc3-governance",
+      "slug": "worldos-rc3-governance",
+      "title": "收束不是停下",
+      "areaId": "origin",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 6,
+      "pathIds": [
+        "rc-governance-trace"
+      ],
+      "timelineEventIds": [
+        "evt-019"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-lantern-search-engine",
+      "slug": "lantern-search-engine",
+      "title": "灯塔照到的星星",
+      "areaId": "lighthouse",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 5,
+      "pathIds": [
+        "product-workshop"
+      ],
+      "timelineEventIds": [
+        "evt-033"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 lighthouse 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-lighthouse-search-weight-model",
+      "slug": "lighthouse-search-weight-model",
+      "title": "搜索权重",
+      "areaId": "lighthouse",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "phase19-lighthouse-expansion",
+        "phase19-local-maturity-loop"
+      ],
+      "timelineEventIds": [
+        "evt-phase19-009"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 lighthouse 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-local-rc-evidence-map",
+      "slug": "local-rc-evidence-map",
+      "title": "证据地图",
+      "areaId": "archive",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "phase19-archive-expansion",
+        "phase19-local-maturity-loop"
+      ],
+      "timelineEventIds": [
+        "evt-phase19-008"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 archive 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-local-rc-fresh-build-playbook",
+      "slug": "local-rc-fresh-build-playbook",
+      "title": "RC 手册",
+      "areaId": "tech",
+      "lifeStage": "archive",
+      "status": "archived",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "phase19-tech-expansion",
+        "phase19-local-maturity-loop"
+      ],
+      "timelineEventIds": [
+        "evt-phase19-003"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 tech 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-no-ai",
+      "slug": "no-ai-natural-evolution",
+      "title": "灯塔熄灭时，世界仍会呼吸",
+      "areaId": "origin",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "tech-ai",
+        "life-memory"
+      ],
+      "timelineEventIds": [
+        "evt-005"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-phase19-content-expansion-start",
+      "slug": "phase19-content-expansion-start",
+      "title": "扩展启动",
+      "areaId": "timeline",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "phase19-timeline-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-phase19-007",
+        "evt-phase19-011"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 timeline 星域，作为可抵达地点。",
+        "timeline": "进入 2 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-phase19-content-ledger",
+      "slug": "phase19-content-ledger",
+      "title": "内容台账",
+      "areaId": "archive",
+      "lifeStage": "growing",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "phase19-archive-expansion",
+        "phase19-local-maturity-loop"
+      ],
+      "timelineEventIds": [
+        "evt-phase19-001"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 archive 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-public-ai-context-contract",
+      "slug": "public-ai-context-contract",
+      "title": "灯塔只照公开海面",
+      "areaId": "lighthouse",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 5,
+      "pathIds": [
+        "public-safety-accessibility"
+      ],
+      "timelineEventIds": [
+        "evt-018"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 lighthouse 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 1 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    }
+  ],
+  "authorMaintenanceSignal": {
+    "description": "作者新增或修改公开节点后，可通过本报告看到该节点进入了哪些场景、缺少哪类吸收，以及对 Atlas / Timeline / Archive / Paths / Lighthouse 的影响范围。",
+    "reportPath": "docs/90-archive/reports/worldos-m21-content-life-loop-report.json"
+  },
+  "failures": []
+}

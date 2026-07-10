@@ -10,9 +10,9 @@
 | 字段 | 值 |
 | --- | --- |
 | Goal 范围 | M8-M30 |
-| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M30 终局体验尚未完成 |
+| 当前阶段 | M8-M18 MVP+ 历史底座已完成；M19-M21 首批终局体验证据已完成；M22-M30 尚未完成 |
 | 最后更新时间 | 2026-07-10 |
-| 当前结论 | 2026-07-10 真实 RC 复验发现首页 mobile reduced-motion 核心状态卡不可见、核心门户场景缺少身份带证据；已修复并通过 `release:local-rc`。这只能证明本地可信门禁恢复，不代表世界/宇宙终局达成。 |
+| 当前结论 | M20 已补真实 SPA 点击/回退证据；M21 已补内容生命循环模型、节点页生命循环面板和单节点多场景吸收报告。当前仍不能宣称终局完成，下一步必须进入 M22 灯塔 AI 深度导览。 |
 
 ## 1.1 2026-07-10 终局 Goal 真实起点
 
@@ -41,8 +41,14 @@
 | 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 进行中 | LAN RC 浏览器报告新增 `previousRoute` 和 `spatialContinuity` 字段；新增 `check:m20-spatial-continuity` 并纳入 `check:mainline` 与脚本治理注册表 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:m20-spatial-continuity`、`check:scene-qa`、`check:scripts`、`check:mainline`、`release:local-rc` 通过 | M20 第一批建立了自动门禁：核心场景在 desktop 与 mobile reduced-motion 下必须有迁移 cue、来源测试路由、目标场景、五段迁移步骤、截图、无遮挡、无横向溢出。真实限制：全页面 LAN 导航中应用 cue 的 from/to 仍等于当前场景，连续来源由 runner `previousRoute` 证明；这还不是完整 SPA 迁移录屏。 | 继续 M20：补真实点击/录屏证据，验证 Home→Atlas、Atlas→Node、Timeline→Archive、Paths→Node 等 SPA 路径的来源残影、目标预告、抵达状态和回退行为。 |
-| 2026-07-10 | 进行中 | 新增 `check:m20-spa-transitions`，启动本地 production server 与系统 Chrome，真实点击 5 条 SPA 迁移路径，验证浏览器回退，并输出 `docs/90-archive/reports/worldos-m20-spa-transition-report.json` 与 25 张关键帧截图 | `build:production-ci`、`node scripts/check-worldos-m20-spa-transitions.mjs`、`check:scripts` 通过 | M20 现在补上了真实 SPA 点击与回退证据：`/`→`/atlas` 运行时为 gateway→atlas，`/atlas`→公开节点为 atlas→node，`/timeline`→`/archive` 为 timeline→archive，`/paths/first-visit`→`/node/world-manifesto` 为 path-detail→node，移动 reduced-motion gateway→atlas 状态为 reduced。第一次运行曾暴露测试预期错误（把 gateway/path-detail 误写成 home/paths），后续又暴露旧 `.next` 产物导致 Atlas 缺节点入口；已通过 fresh build 修正，并在脚本内置 stale artifact 检查，源码/数据新于 `.next/BUILD_ID` 时直接失败。 | 继续 M21：灯塔陪伴体验可感知化，不得把“有 API 边界”误判为“灯塔像陪伴者”；同时保留 M20 录屏/关键帧证据进入主线门禁。 |
-| 2026-07-10 | 通过 | M20 SPA 证据目录改为每次运行前清空，避免旧失败关键帧混入；`check:m20-spa-transitions` 纳入 `check:mainline` 与 RC 脚本治理注册表 | `npm run check:m20-spa-transitions`、`npm run check:mainline`、`npm run lint`、`npm run typecheck`、`npm run release:local-rc`、`npm run check:scripts` 通过 | M20 当前可作为“真实空间连续性首批完成”：报告 5 条迁移、25 张关键帧、0 failures；完整 RC 通过，LAN 地址为 `http://172.30.111.222:4320`。剩余不是 M20 基础门禁，而是后续阶段体验深化。 | 进入 M21：灯塔陪伴体验可感知化；目标是让灯塔不只是问答入口，而像能解释当前位置、推荐下一步、记住公开旅程上下文的只读陪伴者。 |
+| 2026-07-10 | 进行中 | 新增 `check:m20-spa-transitions`，启动本地 production server 与系统 Chrome，真实点击 5 条 SPA 迁移路径，验证浏览器回退，并输出 `docs/90-archive/reports/worldos-m20-spa-transition-report.json` 与 25 张关键帧截图 | `build:production-ci`、`node scripts/check-worldos-m20-spa-transitions.mjs`、`check:scripts` 通过 | M20 现在补上了真实 SPA 点击与回退证据：`/`→`/atlas` 运行时为 gateway→atlas，`/atlas`→公开节点为 atlas→node，`/timeline`→`/archive` 为 timeline→archive，`/paths/first-visit`→`/node/world-manifesto` 为 path-detail→node，移动 reduced-motion gateway→atlas 状态为 reduced。第一次运行曾暴露测试预期错误（把 gateway/path-detail 误写成 home/paths），后续又暴露旧 `.next` 产物导致 Atlas 缺节点入口；已通过 fresh build 修正，并在脚本内置 stale artifact 检查，源码/数据新于 `.next/BUILD_ID` 时直接失败。 | 继续 M21：内容生命循环。不得把“内容字段齐全”误判为“内容像生命体”，必须证明单节点被 Atlas / Timeline / Archive / Paths / Lighthouse 同时吸收。 |
+| 2026-07-10 | 通过 | M20 SPA 证据目录改为每次运行前清空，避免旧失败关键帧混入；`check:m20-spa-transitions` 纳入 `check:mainline` 与 RC 脚本治理注册表 | `npm run check:m20-spa-transitions`、`npm run check:mainline`、`npm run lint`、`npm run typecheck`、`npm run release:local-rc`、`npm run check:scripts` 通过 | M20 当前可作为“真实空间连续性首批完成”：报告 5 条迁移、25 张关键帧、0 failures；完整 RC 通过，LAN 地址为 `http://172.30.111.222:4320`。剩余不是 M20 基础门禁，而是后续阶段体验深化。 | 进入 M21：内容生命循环。 |
+
+## 1.4 M21 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 通过 | 新增 `ContentLifeLoopFact` / `buildContentLifeLoopFacts`，把节点是否被 Atlas、Timeline、Archive、Paths、Lighthouse 吸收统一成内容生命循环事实；节点页新增 `NodeLifeLoopPanel`，在地点护照附近展示 5 个场景吸收状态；新增 `check:m21-content-life-loop` 与 `docs/90-archive/reports/worldos-m21-content-life-loop-report.json` | `npm run check:m21-content-life-loop`、`npm run typecheck`、`npm run lint`、`npm run build:production-ci`、`npm run check:mainline`、`npm run release:local-rc`、`npm run check:scripts` 通过 | M21 首批达成真实口径：200 个公开节点生成生命循环事实，62 个节点达到 5/5 场景吸收，30 个高连接度核心样本通过；已 featured 且 5/5 的节点为 22 个，未伪造成 30 个。代表节点 `world-manifesto` 同时进入 origin 星域、6 条时间痕迹、公开档案馆、5 条公开旅程和灯塔只读事实源。 | 进入 M22：灯塔 AI 深度导览。目标是让灯塔不只是低光推荐，而能基于公开事实源做 grounded 问路、解释、下一步推荐和失败回退；仍不得前端持 key、不得读取私密层、不得写入世界源。 |
 
 ## 2. 阶段进度
 

@@ -4,7 +4,7 @@ import { getAreaById } from '@/lib/areas'
 import { readContentFile } from '@/lib/content'
 import { isPublicVisible } from '@/lib/visibility'
 import { estimateReadingMinutes, getNodeExplorationGroups } from '@/lib/node-reading'
-import { buildContentLifeNodeFact } from '@/lib/content-life'
+import { buildContentLifeLoopFact, buildContentLifeNodeFact } from '@/lib/content-life'
 import { getAllPaths } from '@/lib/paths'
 import { getAllRelations } from '@/lib/relations'
 import { getAllWorldEvents } from '@/lib/world-events'
@@ -17,6 +17,7 @@ import { JsonLd } from '@/components/common/JsonLd'
 import { SceneProductionFrame } from '@/components/world/SceneProductionFrame'
 import {
   NodeCover,
+  NodeLifeLoopPanel,
   NodeNextStepPanel,
   NodeOpeningRitual,
   NodePassport,
@@ -71,6 +72,7 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
     relations: getAllRelations(),
     events: getAllWorldEvents(),
   })
+  const contentLifeLoopFact = buildContentLifeLoopFact(contentLifeFact)
   const nodePlaceLifeSignal = {
     status: contentLifeFact.status,
     relationCount: contentLifeFact.relationReasons.length,
@@ -119,6 +121,9 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
           <NodePassport node={node} area={area} lifeSignal={nodePlaceLifeSignal} />
         </div>
         <div className="xl:hidden">
+          <NodeLifeLoopPanel fact={contentLifeLoopFact} />
+        </div>
+        <div className="xl:hidden">
           <ReadingToc headings={headings} />
         </div>
         <NodeReadingBody content={content} />
@@ -129,6 +134,9 @@ export default async function NodePage({ params }: { params: Promise<NodePagePar
       <aside className="space-y-6 xl:sticky xl:top-24 xl:self-start">
         <div className="hidden xl:block">
           <NodePassport node={node} area={area} lifeSignal={nodePlaceLifeSignal} />
+        </div>
+        <div className="hidden xl:block">
+          <NodeLifeLoopPanel fact={contentLifeLoopFact} />
         </div>
         <div className="hidden xl:block">
           <ReadingToc headings={headings} />

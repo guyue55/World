@@ -75,9 +75,10 @@ function matchesQuestion(node: PublicNodeReference, question: string) {
 
 function sourceFromNode(node: PublicNodeReference): LighthouseSource {
   const relationReason = node.relationReasons[0]
+  const lifeLoopReason = `生命循环：${node.pathIds.length} 条路径、${node.timelineEventIds.length} 条时间痕迹。`
   const reason = relationReason
-    ? `公开关系理由：${relationReason}`
-    : `公开节点摘要：${node.aiReadableSummary}`
+    ? `公开关系理由：${relationReason} ${lifeLoopReason}`
+    : `公开节点摘要：${node.aiReadableSummary} ${lifeLoopReason}`
 
   return {
     slug: node.slug,

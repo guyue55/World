@@ -18,6 +18,20 @@ export type ContentLifeNodeFact = {
   recommendedPathIds: string[]
 }
 
+export type ContentLifeAbsorptionScene = 'atlas' | 'timeline' | 'archive' | 'paths' | 'lighthouse'
+
+export type ContentLifeLoopFact = ContentLifeNodeFact & {
+  absorptionScenes: ContentLifeAbsorptionScene[]
+  absorptionScore: number
+  authorImpactScope: {
+    atlas: string
+    timeline: string
+    archive: string
+    paths: string
+    lighthouse: string
+  }
+}
+
 export function getNodeDisplayTitle(node: Node) {
   return node.worldTitle ?? node.title
 }
@@ -88,4 +102,43 @@ export function buildContentLifeFacts(input: {
   return input.nodes
     .filter((node) => isPublicVisible(node.visibility))
     .map((node) => buildContentLifeNodeFact({ node, paths: input.paths, relations: input.relations, events: input.events }))
+}
+
+export function buildContentLifeLoopFact(fact: ContentLifeNodeFact): ContentLifeLoopFact {
+  const absorptionScenes: ContentLifeAbsorptionScene[] = []
+  if (fact.areaId) absorptionScenes.push('atlas')
+  if (fact.timelineEventIds.length > 0) absorptionScenes.push('timeline')
+  if (fact.visibility === 'public' && fact.summary) absorptionScenes.push('archive')
+  if (fact.pathIds.length > 0) absorptionScenes.push('paths')
+  if (fact.aiReadableSummary && fact.relationReasons.length > 0) absorptionScenes.push('lighthouse')
+
+  return {
+    ...fact,
+    absorptionScenes,
+    absorptionScore: absorptionScenes.length,
+    authorImpactScope: {
+      atlas: `进入 ${fact.areaId} 星域，作为可抵达地点。`,
+      timeline: fact.timelineEventIds.length > 0
+        ? `进入 ${fact.timelineEventIds.length} 条时间痕迹。`
+        : '尚未进入时间河，需要补世界事件。',
+      archive: fact.visibility === 'public'
+        ? '进入公开档案馆，可被检索、筛选和回看。'
+        : '不进入公开档案馆。',
+      paths: fact.pathIds.length > 0
+        ? `进入 ${fact.pathIds.length} 条公开旅程。`
+        : '尚未进入公开路径，需要补推荐路线。',
+      lighthouse: fact.aiReadableSummary
+        ? '进入灯塔只读事实源，可被解释和推荐。'
+        : '缺少灯塔可读摘要。',
+    },
+  }
+}
+
+export function buildContentLifeLoopFacts(input: {
+  nodes: Node[]
+  paths: Path[]
+  relations: Relation[]
+  events: WorldEvent[]
+}): ContentLifeLoopFact[] {
+  return buildContentLifeFacts(input).map(buildContentLifeLoopFact)
 }
