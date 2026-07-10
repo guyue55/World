@@ -34,6 +34,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 2026-07-10 | 进行中 | 新增 `build*DeepInteractionModel()` 公开事实源适配器；新增 `SceneDeepInteractionPanel`；Atlas / Timeline / Archive / Paths 均接入可点击状态面板，覆盖区域聚焦、事件回看、卷宗展开和路线进度 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 这是 M19 第一批主体交互落地，证明四场景已有可操作状态层；但默认 LAN 首屏截图仍主要展示 Portal 舞台，尚不能宣称四场景“终局独立空间”完成 | 继续 M19：让交互主体进入首屏/第一交互证据，补录屏或专用 M19 体验检查，避免只在页面下方出现交互面板 |
 | 2026-07-10 | 进行中 | `SceneWorldPortal` 接入 `interactionModel`，在 Atlas / Timeline / Archive / Paths 首屏右侧展示 M19 紧凑交互坞；Atlas / Timeline 完整交互面板前移到动态展示前 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 真实截图已看到 `desktop-atlas.png` 和 `mobile-reduced-motion-atlas.png` 首屏出现“区域聚焦 / 节点预览 / 关系解释”交互坞；这使 M19 从“页面下方有面板”推进到“第一屏可感知可操作主体”。仍不能宣称 M19 终局完成，因为还缺专用 M19 录屏/检查来证明四场景交互状态变化。 | 继续 M19：补专用 `check:m19-scene-interaction` 或等价证据，覆盖四场景交互坞、完整面板、键盘/点击状态、reduced-motion 与移动端；再进入 M20 |
+| 2026-07-10 | 进行中 | LAN RC 浏览器报告新增 M19 DOM 证据字段；新增 `check:m19-scene-interaction` 并纳入 `check:mainline` 与脚本治理注册表 | `build:production-ci`、`smoke:lan-local`、`check:m19-scene-interaction`、`check:scripts`、`check:mainline`、`release:local-rc` 通过 | M19 现在有独立自动门禁：四个核心场景在 desktop 与 mobile reduced-motion 下必须同时具备首屏交互坞、完整交互面板、截图证据、无遮挡、无横向溢出。期间一次 `smoke:lan-local` 因旧/不完整 `.next` 产物导致多路由 404，已通过 fresh `build:production-ci` 重建后重跑通过。 | M19 可进入人工录屏/体验复核；随后推进 M20 空间连续性，不得跳过真实迁移录屏与状态沉淀证据。 |
 
 ## 2. 阶段进度
 
@@ -59,6 +60,7 @@
 | 2026-07-09 | M17 | `release:local-rc` 首轮失败：Turbopack production build 生成的 `.next/server/vendor-chunks/framer-motion.js` 缺失，`next start` 无法稳定就绪 | 新增 `scripts/run-worldos-production-ci-build.mjs`，`build:production-ci` 每次清理 `.next` 后运行标准 `next build`，确保最终产物可被 `next start` 验证 | `build:production-ci` + `smoke:runtime-local` 重跑通过，shared First Load JS 降至约 102 kB |
 | 2026-07-09 | M17 | `smoke:runtime-local` 暴露 `/private-archive` 在标准构建下返回 404，而非服务端受保护跳转 | 在 `next.config.ts` 增加 `/private-archive` 与子路径到 `/forbidden` 的服务端 redirect 兜底，保持 route policy 与 middleware 源码治理不变 | `smoke:runtime-local` 重跑通过：20 HTTP checks |
 | 2026-07-09 | M17 | `check:dependency-hardening` 因 `.next` 总体积 206.36MB 超过 200MB；拆解后 158MB 为 `.next/cache`，运行产物约 51MB | 将依赖硬化预算拆分为 total/cache/runtime artifact 三层，继续约束 runtime artifact 与 JS chunk，避免把构建 cache 误判为运行包体积 | `check:dependency-hardening`、`check:mainline`、`release:local-rc` 全部重跑通过 |
+| 2026-07-10 | M19 | 新增 M19 LAN 报告字段后直接跑 `smoke:lan-local`，发现当前 `.next` 对 `/atlas`、`/timeline`、`/archive`、`/paths`、`/ask`、`/status`、核心节点和 `/sitemap.xml` 返回 404 | 强制执行 `npm run build:production-ci` 重新生成 fresh production artifacts，再重跑同一 LAN smoke | `smoke:lan-local` 重跑通过：22 HTTP checks、20 browser checks；随后 `check:m19-scene-interaction`、`check:mainline`、`release:local-rc` 通过 |
 
 ## 4. 浏览器与 RC 证据摘要
 

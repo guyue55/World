@@ -401,6 +401,8 @@ async function runBrowserChecks() {
             const element = document.querySelector(\`[data-testid="\${id}"]\`)
             return (element?.innerText || element?.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 160)
           }
+          const m19Dock = document.querySelector('[data-m19-scene-interaction-dock]')
+          const m19Panel = document.querySelector('[data-m19-scene-interaction]')
           const overlapRatio = (a, b) => {
             const left = Math.max(a.left, b.left)
             const right = Math.min(a.right, b.right)
@@ -473,6 +475,10 @@ async function runBrowserChecks() {
               journeyMemoryEntryPresent: testIdExists('journey-memory-entry'),
               journeyMemoryText: textForTestId('journey-memory-entry'),
               hasReturningVisitorCopy: textForTestId('journey-memory-entry').includes('上次停在'),
+              m19SceneInteractionDockPresent: Boolean(m19Dock),
+              m19SceneInteractionDockKind: m19Dock?.getAttribute('data-m19-scene-interaction-dock') || '',
+              m19SceneInteractionPanelPresent: Boolean(m19Panel),
+              m19SceneInteractionPanelKind: m19Panel?.getAttribute('data-m19-scene-interaction') || '',
             },
             fixedOverlayIssues
           }
