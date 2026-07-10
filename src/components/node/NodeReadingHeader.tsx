@@ -19,7 +19,7 @@ export function NodeReadingHeader({
         {readingMinutes && <span className="rounded-full bg-ink/5 px-3 py-1 text-sm text-ink/60">约 {readingMinutes} 分钟</span>}
       </div>
       <div className="space-y-4">
-        <h1 className="max-w-4xl break-words text-5xl font-semibold leading-tight tracking-tight md:text-6xl">{node.title}</h1>
+        <h2 className="max-w-4xl break-words text-4xl font-semibold leading-tight md:text-5xl">{node.title}</h2>
         {node.worldTitle && <p className="break-words text-2xl text-moss">{node.worldTitle}</p>}
         {node.summary && <p className="max-w-3xl break-words text-lg leading-9 text-ink/75">{node.summary}</p>}
       </div>

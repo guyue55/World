@@ -290,11 +290,11 @@ export type AtlasViewModel = {
 - Modify: `src/app/paths/page.tsx`
 - Modify: `src/app/paths/[id]/page.tsx`
 
-- [ ] **C5.1** 建立路径几何、站点状态、当前 / 已走 / 可达 / 未达、估时和区域穿越 view model。
-- [ ] **C5.2** Paths overview 以多条路线在世界中的形状和主题为主体，不以卡片网格为主体。
-- [ ] **C5.3** Path Detail 在首屏呈现完整路线的可读部分、当前位置、下一站和终点；mobile 使用纵向路线。
-- [ ] **C5.4** 实现继续、回到已走站、返回 Atlas、重置和完成抵达；所有状态本地保存并可清除。
-- [ ] **C5.5** 完成态显示世界变化和相关路线，不只显示数字进度。
+- [x] **C5.1** 建立路径几何、站点状态、当前 / 已走 / 可达 / 未达、估时和区域穿越 view model。
+- [x] **C5.2** Paths overview 以多条路线在世界中的形状和主题为主体，不以卡片网格为主体。
+- [x] **C5.3** Path Detail 在首屏呈现完整路线的可读部分、当前位置、下一站和终点；mobile 使用纵向路线。
+- [x] **C5.4** 实现继续、回到已走站、返回 Atlas、重置和完成抵达；所有状态本地保存并可清除。
+- [x] **C5.5** 完成态显示世界变化和相关路线，不只显示数字进度。
 
 ### Task C5-B：Node
 
@@ -307,19 +307,19 @@ export type AtlasViewModel = {
 - Modify: `NodePassport.tsx`, `NodeRelationRail.tsx`, `NodeNextStepPanel.tsx`, `NodeReadingBody.tsx`
 - Retire from route: `NodeOpeningRitual.tsx` if it remains a generic panel stack
 
-- [ ] **C5.6** 把地点护照压缩为场景内标签 / 物件，不再与正文并列占据大侧栏。
-- [ ] **C5.7** 以场景视觉、区域对象和正文入口建立抵达；长文正文仍保持 60-72ch 阅读宽度。
-- [ ] **C5.8** 关系门逐条显示“为什么相关”，并携带 source context 进入目标。
-- [ ] **C5.9** 提供回所在 Atlas 区域、回当前 Path、看 Timeline、入 Archive、问 Lighthouse 的自然出口。
-- [ ] **C5.10** 删除公开 Motion Layer / Fallback / Evidence / QA 文案和开发解释卡。
-- [ ] **C5.11** 抽样 12 个代表节点，验证多场景吸收、关系、路径、时间、Lighthouse 和至少两个出口。
+- [x] **C5.6** 把地点护照压缩为场景内标签 / 物件，不再与正文并列占据大侧栏。
+- [x] **C5.7** 以场景视觉、区域对象和正文入口建立抵达；长文正文仍保持 60-72ch 阅读宽度。
+- [x] **C5.8** 关系门逐条显示“为什么相关”，并携带 source context 进入目标。
+- [x] **C5.9** 提供回所在 Atlas 区域、回当前 Path、看 Timeline、入 Archive、问 Lighthouse 的自然出口。
+- [x] **C5.10** 删除公开 Motion Layer / Fallback / Evidence / QA 文案和开发解释卡。
+- [x] **C5.11** 抽样 12 个代表节点，验证多场景吸收、关系、路径、时间、Lighthouse 和至少两个出口。
 
 ### C5 共同门禁
 
-- [ ] **C5.12** 截图 paths overview / path start / path progress / path complete / node arrival / node reading / node relations / mobile / text-hidden。
-- [ ] **C5.13** 录制 path-journey 与 node-explore；验证路径 -> Node -> 下一站 -> 返回路径位置。
-- [ ] **C5.14** 运行定向测试、内容 schema、`typecheck`、`lint`、生产 build 和浏览器 smoke。
-- [ ] **C5.15** 更新 ledger，提交 `feat(world): 连通可行走路径与内容地点`。
+- [x] **C5.12** 截图 paths overview / path start / path progress / path complete / node arrival / node reading / node relations / mobile / text-hidden。
+- [x] **C5.13** 录制 path-journey 与 node-explore；验证路径 -> Node -> 下一站 -> 返回路径位置。
+- [x] **C5.14** 运行定向测试、内容 schema、`typecheck`、`lint`、生产 build 和浏览器 smoke。
+- [x] **C5.15** 更新 ledger，提交 `feat(world): 连通可行走路径与内容地点`。
 
 ---
 
