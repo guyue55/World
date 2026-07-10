@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-07-10T01:08:59.922Z",
+  "status": "passed",
+  "stage": "M23",
+  "registry": "data/domains/experience/sensory-audio-registry.json",
+  "requiredScenes": 9,
+  "soundscapes": 9,
+  "licensedSoundscapes": 9,
+  "budgetedSoundscapes": 9,
+  "assetCount": 1,
+  "totalAssetBytes": 0,
+  "defaultSoundEnabled": false,
+  "autoPlayAllowed": false,
+  "usesExternalAudioAsset": false,
+  "usesHowler": false,
+  "usesTone": false,
+  "forbiddenAudioFiles": [],
+  "failures": []
+}

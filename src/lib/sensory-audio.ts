@@ -11,8 +11,14 @@ export type SensoryAudioSummary = {
   defaultSoundEnabled: boolean
   autoPlayAllowed: boolean
   usesExternalAudioAsset: boolean
+  sessionArmPolicy: string
+  sceneSwitchPolicy: string
+  reducedSensoryPolicy: string
   soundscapeCount: number
   assetCount: number
+  productionReadyAssetCount: number
+  licensedSoundscapeCount: number
+  totalAssetBytes: number
   storageKey: string
   volumeStorageKey: string
   defaultVolume: number
@@ -36,6 +42,10 @@ export function clampSoundscapeVolume(value: number): number {
 }
 
 export function getSensoryAudioSummary(): SensoryAudioSummary {
+  const totalAssetBytes = sensoryAudioRegistry.assetInventory.reduce((sum, asset) => sum + asset.bytes, 0)
+  const productionReadyAssetCount = sensoryAudioRegistry.assetInventory.filter((asset) => asset.productionReady).length
+  const licensedSoundscapeCount = sensoryAudioRegistry.sceneSoundscapes.filter((item) => item.source && item.license).length
+
   return {
     name: sensoryAudioRegistry.name,
     version: sensoryAudioRegistry.version,
@@ -43,8 +53,14 @@ export function getSensoryAudioSummary(): SensoryAudioSummary {
     defaultSoundEnabled: sensoryAudioRegistry.scope.defaultSoundEnabled,
     autoPlayAllowed: sensoryAudioRegistry.runtime.autoPlayAllowed,
     usesExternalAudioAsset: sensoryAudioRegistry.runtime.usesExternalAudioAsset,
+    sessionArmPolicy: sensoryAudioRegistry.runtime.sessionArmPolicy,
+    sceneSwitchPolicy: sensoryAudioRegistry.runtime.sceneSwitchPolicy,
+    reducedSensoryPolicy: sensoryAudioRegistry.runtime.reducedSensoryPolicy,
     soundscapeCount: sensoryAudioRegistry.sceneSoundscapes.length,
     assetCount: sensoryAudioRegistry.assetInventory.length,
+    productionReadyAssetCount,
+    licensedSoundscapeCount,
+    totalAssetBytes,
     storageKey: sensoryAudioRegistry.runtime.storageKey,
     volumeStorageKey: sensoryAudioRegistry.runtime.volumeStorageKey,
     defaultVolume: sensoryAudioRegistry.runtime.defaultVolume,

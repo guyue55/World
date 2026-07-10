@@ -271,10 +271,10 @@ export function SceneRuntimeStatusPanel({
         <div className="mt-6 rounded-[1.25rem] border border-ink/8 bg-paper/65 p-5">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Sensory Audio M13</p>
-              <h3 className="mt-2 text-2xl font-semibold text-ink">声景只在用户主动开启后成为空间反馈</h3>
+              <p className="text-xs font-semibold tracking-[0.28em] text-moss">Sensory Audio M23</p>
+              <h3 className="mt-2 text-2xl font-semibold text-ink">声景、氛围和交互收束为同一套世界人格</h3>
               <p className="mt-2 max-w-3xl text-sm leading-7 text-ink/62">
-                首访默认静音；当前只使用项目内 Web Audio 短提示音，不下载外部音频文件，不把声音放进首屏关键路径。
+                首访默认静音；每次浏览器会话都必须用户主动 armed 后才创建 Web Audio。当前只使用项目内短提示音，不下载外部音频文件，不把声音放进首屏关键路径。
               </p>
             </div>
             <div className="rounded-[1rem] bg-night px-4 py-3 text-paper">
@@ -297,7 +297,15 @@ export function SceneRuntimeStatusPanel({
             </div>
             <div className="rounded-[1rem] bg-white/70 p-4">
               <p className="text-xs font-semibold tracking-[0.18em] text-moss">资产清单</p>
-              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.assetCount} 项</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.productionReadyAssetCount}/{sensoryAudioSummary.assetCount} 项</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">授权场景</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.licensedSoundscapeCount}/{sensoryAudioSummary.soundscapeCount}</p>
+            </div>
+            <div className="rounded-[1rem] bg-white/70 p-4">
+              <p className="text-xs font-semibold tracking-[0.18em] text-moss">音频字节</p>
+              <p className="mt-2 text-sm font-semibold text-ink">{sensoryAudioSummary.totalAssetBytes} B</p>
             </div>
           </div>
           <div className="mt-4 grid gap-2 md:grid-cols-3">
@@ -310,6 +318,11 @@ export function SceneRuntimeStatusPanel({
           <p className="mt-4 rounded-[0.9rem] bg-ink/5 px-4 py-3 text-xs leading-5 text-ink/52">
             {sensoryAudioSummary.lazyLoadPolicy}
           </p>
+          <div className="mt-3 grid gap-2 md:grid-cols-3">
+            {[sensoryAudioSummary.sessionArmPolicy, sensoryAudioSummary.sceneSwitchPolicy, sensoryAudioSummary.reducedSensoryPolicy].map((policy) => (
+              <p key={policy} className="rounded-[0.9rem] bg-ink/5 px-4 py-3 text-xs leading-5 text-ink/52">{policy}</p>
+            ))}
+          </div>
         </div>
       )}
 

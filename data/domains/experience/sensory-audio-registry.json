@@ -1,9 +1,10 @@
 {
-  "version": "1.0.0",
-  "name": "WorldOS M13 感官与声景注册表",
-  "updatedAt": "2026-07-09",
-  "source": "docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md",
-  "principle": "声音只作为用户主动开启后的空间反馈；首访默认静音，不读取私密层，不引入未知授权资产。",
+  "version": "1.1.0",
+  "name": "WorldOS M23 感官与声景生产注册表",
+  "updatedAt": "2026-07-10",
+  "source": "docs/00-overview/worldos-m23-sensory-audio-production-spec-2026-07-10.md",
+  "legacySource": "docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md",
+  "principle": "声音只作为用户主动开启后的空间反馈；首访默认静音，不读取私密层，不引入未知授权资产；每个公开场景的音频人格必须服务同一套世界观。",
   "scope": {
     "localOnly": true,
     "localhostAccepted": true,
@@ -30,7 +31,10 @@
     "usesHowler": false,
     "usesTone": false,
     "autoPlayAllowed": false,
-    "lazyLoadPolicy": "Web Audio context is created only inside an explicit user click handler."
+    "lazyLoadPolicy": "Web Audio context is created only inside an explicit user click handler.",
+    "sessionArmPolicy": "Stored preference never creates audio by itself; every browser session must be armed by a fresh user click.",
+    "sceneSwitchPolicy": "When an armed session changes scene, the previous oscillator is stopped before the next short cue is synthesized.",
+    "reducedSensoryPolicy": "silent sensory mode keeps the control visible but never creates or resumes audio."
   },
   "modes": [
     {
@@ -58,7 +62,17 @@
       "frequency": 392,
       "durationMs": 180,
       "maxGain": 0.045,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "入口远光与开门回声保持一致。",
+      "interactionCue": "用户主动开启后用短音确认进入世界入口。",
+      "reducedSensoryBehavior": "silent 下不发声，仅保留按钮状态。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "atlas",
@@ -68,7 +82,17 @@
       "frequency": 246,
       "durationMs": 220,
       "maxGain": 0.035,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "星线与关系网络点亮。",
+      "interactionCue": "进入 Atlas 后给出低频空间脉冲。",
+      "reducedSensoryBehavior": "silent 下不发声，仅保留地图语义。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "timeline",
@@ -78,7 +102,17 @@
       "frequency": 329,
       "durationMs": 210,
       "maxGain": 0.032,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "时间河与涟漪节奏。",
+      "interactionCue": "进入 Timeline 后给出轻钟点。",
+      "reducedSensoryBehavior": "silent 下不发声，时间线仍完整可读。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "archive",
@@ -88,7 +122,17 @@
       "frequency": 196,
       "durationMs": 150,
       "maxGain": 0.03,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "档案抽屉与纸页打开。",
+      "interactionCue": "进入 Archive 后给出短促木架轻响。",
+      "reducedSensoryBehavior": "silent 下不发声，检索和馆藏仍可用。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "paths",
@@ -98,7 +142,17 @@
       "frequency": 440,
       "durationMs": 160,
       "maxGain": 0.034,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "路标、脚步与下一段提示。",
+      "interactionCue": "进入 Paths 后给出步进信号。",
+      "reducedSensoryBehavior": "silent 下不发声，路径进度仍由文本呈现。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "path-detail",
@@ -108,7 +162,17 @@
       "frequency": 415,
       "durationMs": 170,
       "maxGain": 0.032,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "路线被定位并锁定。",
+      "interactionCue": "进入路线详情后给出定位短音。",
+      "reducedSensoryBehavior": "silent 下不发声，路线步骤仍完整。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "node",
@@ -118,7 +182,17 @@
       "frequency": 294,
       "durationMs": 140,
       "maxGain": 0.026,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "内容房间与地点护照。",
+      "interactionCue": "进入节点后给出很轻的房间确认音。",
+      "reducedSensoryBehavior": "silent 下不发声，阅读优先。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "lighthouse",
@@ -128,7 +202,17 @@
       "frequency": 523,
       "durationMs": 190,
       "maxGain": 0.038,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "低光灯塔与方向提示。",
+      "interactionCue": "进入 Lighthouse 后给出信标短音。",
+      "reducedSensoryBehavior": "silent 下不发声，导览和拒答仍可读。",
+      "stopPolicy": "scene-change-stop-previous"
     },
     {
       "sceneId": "status",
@@ -138,9 +222,30 @@
       "frequency": 220,
       "durationMs": 130,
       "maxGain": 0.028,
-      "loadPolicy": "opt-in-generated"
+      "loadPolicy": "opt-in-generated",
+      "assetId": "generated-web-audio-short-tone",
+      "source": "project-generated",
+      "license": "project-owned-runtime-synthesis",
+      "bytes": 0,
+      "productionReady": true,
+      "firstPaintDependency": false,
+      "visualCue": "维护心跳与审计面板。",
+      "interactionCue": "进入 Status 后给出克制的状态 tick。",
+      "reducedSensoryBehavior": "silent 下不发声，审计信息仍完整。",
+      "stopPolicy": "scene-change-stop-previous"
     }
   ],
+  "productionReadiness": {
+    "stage": "M23",
+    "unifiedWorldview": true,
+    "audioPersonalityPerScene": true,
+    "allSceneAssetsLicensed": true,
+    "allSceneAssetsBudgeted": true,
+    "defaultSilentVerifiedByScript": "check:m23-sensory-audio-production",
+    "noExternalAudioFiles": true,
+    "noRuntimeAudioDependency": true,
+    "nextEscalation": "Only evaluate Howler or Tone after native Web Audio cannot express scene cues within budget."
+  },
   "assetInventory": [
     {
       "assetId": "generated-web-audio-short-tone",
@@ -148,14 +253,17 @@
       "source": "project-generated",
       "license": "project-owned-runtime-synthesis",
       "bytes": 0,
+      "durationMsMax": 220,
       "productionReady": true,
       "firstPaintDependency": false,
+      "compression": "not-applicable-runtime-synthesis",
       "notes": "运行时振荡器合成短提示音，不下载外部音频文件。"
     }
   ],
   "acceptance": {
     "requiredScenes": ["gateway", "atlas", "timeline", "archive", "paths", "path-detail", "node", "lighthouse", "status"],
     "requiredRuntimeTokens": ["defaultSoundEnabled", "autoPlayAllowed", "storageKey", "sceneSoundscapes", "assetInventory"],
+    "requiredM23SoundscapeFields": ["assetId", "source", "license", "bytes", "durationMs", "visualCue", "interactionCue", "reducedSensoryBehavior", "stopPolicy"],
     "forbiddenTokens": ["howler", "tone", ".mp3", ".wav", ".ogg", "OPENAI_API_KEY", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"]
   }
 }
