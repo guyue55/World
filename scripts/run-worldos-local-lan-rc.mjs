@@ -338,6 +338,7 @@ async function runBrowserChecks() {
   fs.mkdirSync(screenshotDir, { recursive: true })
 
   for (const viewport of registry.browser?.viewports ?? []) {
+    let previousBrowserRoute = ''
     await send('Emulation.setDeviceMetricsOverride', {
       width: viewport.width,
       height: viewport.height,
@@ -403,6 +404,10 @@ async function runBrowserChecks() {
           }
           const m19Dock = document.querySelector('[data-m19-scene-interaction-dock]')
           const m19Panel = document.querySelector('[data-m19-scene-interaction]')
+          const migrationCue = document.querySelector('[data-testid="scene-migration-cue"]')
+          const migrationSteps = Array.from(document.querySelectorAll('[data-scene-migration-step]'))
+            .map((element) => element.getAttribute('data-scene-migration-step'))
+            .filter(Boolean)
           const overlapRatio = (a, b) => {
             const left = Math.max(a.left, b.left)
             const right = Math.min(a.right, b.right)
@@ -479,6 +484,16 @@ async function runBrowserChecks() {
               m19SceneInteractionDockKind: m19Dock?.getAttribute('data-m19-scene-interaction-dock') || '',
               m19SceneInteractionPanelPresent: Boolean(m19Panel),
               m19SceneInteractionPanelKind: m19Panel?.getAttribute('data-m19-scene-interaction') || '',
+              spatialContinuity: {
+                cuePresent: Boolean(migrationCue),
+                state: migrationCue?.getAttribute('data-scene-migration-state') || '',
+                from: migrationCue?.getAttribute('data-scene-migration-from') || '',
+                to: migrationCue?.getAttribute('data-scene-migration-to') || '',
+                sourceGhost: migrationCue?.getAttribute('data-scene-source-ghost') || '',
+                targetPreview: migrationCue?.getAttribute('data-scene-target-preview') || '',
+                stepCount: migrationSteps.length,
+                steps: migrationSteps,
+              },
             },
             fixedOverlayIssues
           }
@@ -525,6 +540,7 @@ async function runBrowserChecks() {
       const item = {
         viewport: viewport.id,
         route,
+        previousRoute: previousBrowserRoute,
         url: `${baseUrl}${route}`,
         metrics,
         visibilityChecks,
@@ -535,6 +551,7 @@ async function runBrowserChecks() {
         passed,
       }
       browserChecks.push(item)
+      previousBrowserRoute = route
       if (!passed) {
         fail(`browser ${viewport.id} ${route} 失败：${JSON.stringify({
           textLength: metrics.textLength,

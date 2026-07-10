@@ -36,6 +36,12 @@
 | 2026-07-10 | 进行中 | `SceneWorldPortal` 接入 `interactionModel`，在 Atlas / Timeline / Archive / Paths 首屏右侧展示 M19 紧凑交互坞；Atlas / Timeline 完整交互面板前移到动态展示前 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:scene-qa`、`check:mainline`、`release:local-rc` 通过 | 真实截图已看到 `desktop-atlas.png` 和 `mobile-reduced-motion-atlas.png` 首屏出现“区域聚焦 / 节点预览 / 关系解释”交互坞；这使 M19 从“页面下方有面板”推进到“第一屏可感知可操作主体”。仍不能宣称 M19 终局完成，因为还缺专用 M19 录屏/检查来证明四场景交互状态变化。 | 继续 M19：补专用 `check:m19-scene-interaction` 或等价证据，覆盖四场景交互坞、完整面板、键盘/点击状态、reduced-motion 与移动端；再进入 M20 |
 | 2026-07-10 | 进行中 | LAN RC 浏览器报告新增 M19 DOM 证据字段；新增 `check:m19-scene-interaction` 并纳入 `check:mainline` 与脚本治理注册表 | `build:production-ci`、`smoke:lan-local`、`check:m19-scene-interaction`、`check:scripts`、`check:mainline`、`release:local-rc` 通过 | M19 现在有独立自动门禁：四个核心场景在 desktop 与 mobile reduced-motion 下必须同时具备首屏交互坞、完整交互面板、截图证据、无遮挡、无横向溢出。期间一次 `smoke:lan-local` 因旧/不完整 `.next` 产物导致多路由 404，已通过 fresh `build:production-ci` 重建后重跑通过。 | M19 可进入人工录屏/体验复核；随后推进 M20 空间连续性，不得跳过真实迁移录屏与状态沉淀证据。 |
 
+## 1.3 M20 执行记录
+
+| 时间 | 状态 | 本轮完成 | 检查 | 真实结论 | 下一步 |
+| --- | --- | --- | --- | --- | --- |
+| 2026-07-10 | 进行中 | LAN RC 浏览器报告新增 `previousRoute` 和 `spatialContinuity` 字段；新增 `check:m20-spatial-continuity` 并纳入 `check:mainline` 与脚本治理注册表 | `typecheck`、`lint`、`build:production-ci`、`smoke:lan-local`、`check:m20-spatial-continuity`、`check:scene-qa`、`check:scripts`、`check:mainline`、`release:local-rc` 通过 | M20 第一批建立了自动门禁：核心场景在 desktop 与 mobile reduced-motion 下必须有迁移 cue、来源测试路由、目标场景、五段迁移步骤、截图、无遮挡、无横向溢出。真实限制：全页面 LAN 导航中应用 cue 的 from/to 仍等于当前场景，连续来源由 runner `previousRoute` 证明；这还不是完整 SPA 迁移录屏。 | 继续 M20：补真实点击/录屏证据，验证 Home→Atlas、Atlas→Node、Timeline→Archive、Paths→Node 等 SPA 路径的来源残影、目标预告、抵达状态和回退行为。 |
+
 ## 2. 阶段进度
 
 | 阶段 | 状态 | commit | 关键检查 | 人工体验 | 备注 |

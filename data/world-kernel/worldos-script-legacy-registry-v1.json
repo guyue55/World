@@ -23,6 +23,7 @@
     "check:ambient-environment",
     "check:scene-qa",
     "check:m19-scene-interaction",
+    "check:m20-spatial-continuity",
     "check:human-experience",
     "check:authoring-ops",
     "check:ai-provider-boundary",
@@ -58,6 +59,7 @@
     "npm run check:ambient-environment",
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
+    "npm run check:m20-spatial-continuity",
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:dependency-hardening"
@@ -70,6 +72,7 @@
     "npm run smoke:lan-local",
     "npm run check:scene-qa",
     "npm run check:m19-scene-interaction",
+    "npm run check:m20-spatial-continuity",
     "npm run check:human-experience",
     "npm run check:authoring-ops",
     "npm run check:rc-evidence-policy"
@@ -89,8 +92,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 284,
-    "checkScripts": 156,
+    "totalScripts": 285,
+    "checkScripts": 157,
     "stageLikeCheckScripts": 2,
     "longScripts": 1
   },
