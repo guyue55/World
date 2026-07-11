@@ -1,7 +1,7 @@
 {
   "version": "1.2.0",
   "status": "CONTROL_READY_IMPLEMENTATION_NOT_STARTED",
-  "controlBaselineCommit": null,
+  "controlBaselineCommit": "987d1a6deac7727253b7f3d85bc7b93ab5b7ca90",
   "algorithm": "sha256",
   "purpose": "冻结生命世界候选的一次性 Goal 价值、范围、验收、架构、计划和触发入口，并校验任务与恢复指针。",
   "authority": [

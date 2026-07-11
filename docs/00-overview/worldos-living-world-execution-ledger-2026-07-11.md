@@ -10,7 +10,7 @@ control_status: READY
 goal_status: NOT_STARTED
 goal_id: not-created
 goal_started_at: null
-control_baseline_commit: pending-v1.2-anchor
+control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
