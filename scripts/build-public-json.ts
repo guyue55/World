@@ -11,7 +11,9 @@ import { createPublicWorldIndex } from '../src/lib/public-index'
 
 function writeJson(file: string, data: unknown) {
   fs.mkdirSync(path.dirname(file), { recursive: true })
-  fs.writeFileSync(file, `${JSON.stringify(data, null, 2)}\n`, 'utf8')
+  const next = `${JSON.stringify(data, null, 2)}\n`
+  if (fs.existsSync(file) && fs.readFileSync(file, 'utf8') === next) return
+  fs.writeFileSync(file, next, 'utf8')
 }
 
 writeJson('public/world-index.json', createPublicWorldIndex())
