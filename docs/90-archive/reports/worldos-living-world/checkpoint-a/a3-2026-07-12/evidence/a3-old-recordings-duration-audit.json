@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.3",
+  "generatedAt": "2026-07-11T16:50:54.064Z",
+  "source": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings",
+  "recordingCount": 9,
+  "minDurationSeconds": 1.72,
+  "maxDurationSeconds": 10.16,
+  "requiredSceneLifeRangeSeconds": [
+    60,
+    120
+  ],
+  "requiredVerticalSliceSoakSeconds": 600,
+  "recordings": [
+    {
+      "name": "archive-search.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/archive-search.webm",
+      "sha256": "62fd3d9b510ad1d4fe22f8949c32a899df26fb5a9f69ced18ccbcc7c107e7694",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 42,
+      "durationSeconds": 3.76,
+      "bytes": 133538,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "atlas-explore.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/atlas-explore.webm",
+      "sha256": "7c347ffccdd6a3baa1e7dcb3d37e67a788c2c93abbb389a5a5ef0409740090a4",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 67,
+      "durationSeconds": 4.36,
+      "bytes": 325633,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "first-visit.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/first-visit.webm",
+      "sha256": "da5a6fb3632389dfd6d244ffdd66f1fe9d7e461b3c9cbaad3e5a6ea7a1347cbe",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 41,
+      "durationSeconds": 3.2,
+      "bytes": 203129,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "lighthouse-guide.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/lighthouse-guide.webm",
+      "sha256": "1bf66de4f2718bec5bb6609438d0df58f12f44182148c0aefd1f5b10e332ebe9",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 108,
+      "durationSeconds": 4.64,
+      "bytes": 423494,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "node-explore.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/node-explore.webm",
+      "sha256": "22c554251022ad62963a7aefa165ce684cb001e01eba6143b413f274eb378624",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 87,
+      "durationSeconds": 5.92,
+      "bytes": 913562,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "path-journey.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/path-journey.webm",
+      "sha256": "0a93c8f871e02207723cd553ec8af3a1b14bd3f16bd9b7e45746a461f18d9418",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 180,
+      "durationSeconds": 10.16,
+      "bytes": 696479,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "returning-visit.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/returning-visit.webm",
+      "sha256": "64272079f606fd6aa1aecadef7913982650557e1eac96f350eee15e2f37e7e96",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 27,
+      "durationSeconds": 2.76,
+      "bytes": 228204,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "scene-migration.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/scene-migration.webm",
+      "sha256": "e454bab962ef12766654ca9e98a395c183eb2aa2321acb3893c7b282730d1fc1",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 17,
+      "durationSeconds": 1.72,
+      "bytes": 243109,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    },
+    {
+      "name": "timeline-review.webm",
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/timeline-review.webm",
+      "sha256": "915b937f1ec6482c5de80d420d6e7a8d6408d19f42ce2315f6c70b5cb8afd276",
+      "codec": "vp9",
+      "width": 1280,
+      "height": 720,
+      "frames": 43,
+      "durationSeconds": 3.92,
+      "bytes": 155572,
+      "qualifiesAsSceneLifeRecording": false,
+      "qualifiesAsVerticalSliceSoak": false
+    }
+  ],
+  "verdict": "OLD_RECORDINGS_INVALID_FOR_LIVING_WORLD_DURATION",
+  "allowedUse": [
+    "historical-flow-reference",
+    "anti-baseline"
+  ],
+  "forbiddenUse": [
+    "scene-life-proof",
+    "vertical-slice-soak",
+    "long-running-proof",
+    "final-evidence"
+  ]
+}

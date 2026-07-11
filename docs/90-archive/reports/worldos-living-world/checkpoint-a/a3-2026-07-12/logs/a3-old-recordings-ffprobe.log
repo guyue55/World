@@ -1,0 +1,83 @@
+captured_at=2026-07-12T00:50:23+08:00
+source=docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings
+
+[file] archive-search.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=42
+duration=3.760000
+size=133538
+62fd3d9b510ad1d4fe22f8949c32a899df26fb5a9f69ced18ccbcc7c107e7694  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/archive-search.webm
+
+[file] atlas-explore.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=67
+duration=4.360000
+size=325633
+7c347ffccdd6a3baa1e7dcb3d37e67a788c2c93abbb389a5a5ef0409740090a4  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/atlas-explore.webm
+
+[file] first-visit.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=41
+duration=3.200000
+size=203129
+da5a6fb3632389dfd6d244ffdd66f1fe9d7e461b3c9cbaad3e5a6ea7a1347cbe  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/first-visit.webm
+
+[file] lighthouse-guide.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=108
+duration=4.640000
+size=423494
+1bf66de4f2718bec5bb6609438d0df58f12f44182148c0aefd1f5b10e332ebe9  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/lighthouse-guide.webm
+
+[file] node-explore.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=87
+duration=5.920000
+size=913562
+22c554251022ad62963a7aefa165ce684cb001e01eba6143b413f274eb378624  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/node-explore.webm
+
+[file] path-journey.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=180
+duration=10.160000
+size=696479
+0a93c8f871e02207723cd553ec8af3a1b14bd3f16bd9b7e45746a461f18d9418  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/path-journey.webm
+
+[file] returning-visit.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=27
+duration=2.760000
+size=228204
+64272079f606fd6aa1aecadef7913982650557e1eac96f350eee15e2f37e7e96  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/returning-visit.webm
+
+[file] scene-migration.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=17
+duration=1.720000
+size=243109
+e454bab962ef12766654ca9e98a395c183eb2aa2321acb3893c7b282730d1fc1  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/scene-migration.webm
+
+[file] timeline-review.webm
+codec_name=vp9
+width=1280
+height=720
+nb_read_frames=43
+duration=3.920000
+size=155572
+915b937f1ec6482c5de80d420d6e7a8d6408d19f42ce2315f6c70b5cb8afd276  docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/timeline-review.webm
