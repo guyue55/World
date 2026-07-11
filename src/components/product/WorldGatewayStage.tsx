@@ -106,7 +106,7 @@ export function WorldGatewayStage({ model }: { model: GatewayViewModel }) {
 
   useEffect(() => {
     setEnhanced(true)
-    if (returning) setEntered(true)
+    setEntered(returning)
   }, [returning])
 
   useEffect(() => {
