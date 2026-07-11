@@ -32,8 +32,8 @@ function visibleCopyLine(line, phrase) {
   return new RegExp(`>[^<]*${escaped}[^<]*<`).test(withoutExpressions) || new RegExp(`(?:title|label|description|caption|note)=?[{]?['\"][^'\"]*${escaped}`, 'i').test(line)
 }
 
-const control = spawnSync(process.execPath, ['scripts/check-worldos-reality-first-control.mjs'], { cwd: root, encoding: 'utf8' })
-assert(control.status === 0, `冻结控制锁失败：${control.stderr || control.stdout}`)
+const control = spawnSync(process.execPath, ['scripts/check-worldos-living-world-control.mjs'], { cwd: root, encoding: 'utf8' })
+assert(control.status === 0, `生命世界控制完整性失败：${control.stderr || control.stdout}`)
 
 const requiredRoutes = [
   'src/app/page.tsx',

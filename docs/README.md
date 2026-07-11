@@ -1,7 +1,18 @@
 # 文档中心
 
 > [!IMPORTANT]
-> 当前开发唯一入口是 [WorldOS Reality-First 一次性 Goal 提示词](00-overview/worldos-reality-first-one-shot-goal-prompt-2026-07-10.md)。其总控、验收、架构、执行计划和账本共同取代旧 M8-M30 的完成口径；旧 `ultimate`、Phase、M 与 RC 文档只作历史参考。
+> 当前开发唯一入口是 [WorldOS 生命世界一次性 Goal 提示词](00-overview/worldos-living-world-one-shot-goal-prompt-2026-07-11.md)。它受根目录 `AGENTS.md`、元总控、体验验收、架构数据契约、单一执行计划和持久账本共同管控。Reality-First、`ultimate`、Phase、M 与 RC 文档均只作历史和反基线，不再拥有当前完成判定权。
+
+当前强制读取面固定为：
+
+1. 根目录 `AGENTS.md`。
+2. `00-overview/worldos-meta-control-contract-2026-07-11.md`。
+3. `00-overview/worldos-living-world-experience-acceptance-2026-07-11.md`。
+4. `03-engineering-architecture/worldos-living-world-architecture-data-contract-2026-07-11.md`。
+5. `00-overview/worldos-living-world-execution-plan-2026-07-11.md`。
+6. `00-overview/worldos-living-world-execution-ledger-2026-07-11.md`。
+
+旧 `check-worldos-reality-first-control.mjs` 会因根 `AGENTS.md` 已被新总控合法取代而报告历史锁漂移；这是 superseded 状态的预期结果，不得更新旧 checksum 伪造“双绿”。当前只运行 `node scripts/check-worldos-living-world-control.mjs`。
 
 本文档中心按长期 GitHub 项目治理方式组织，避免把“代码开发前文档”和“开发过程文档”混在一起。
 
@@ -30,6 +41,9 @@
 ---
 
 ## 版本设计
+
+> [!NOTE]
+> 下列 V0-V10 是历史产品演进地图，不是当前执行顺序，也不能覆盖上方生命世界控制包。
 
 ```text
 V0：概念与世界观版

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "planId": "worldos-living-world-a-h-2026-07-11",
+  "goal": {
+    "status": "NOT_STARTED",
+    "id": "not-created",
+    "startedAt": null,
+    "currentItem": "A.1",
+    "taskState": "pending"
+  },
+  "completedItems": {},
+  "failedAttempts": [],
+  "riskGates": [
+    {
+      "id": "content-projection",
+      "status": "pending",
+      "attemptCount": 0,
+      "maxAttemptsBeforeDesignReview": 3,
+      "lastFailedHypothesis": null,
+      "removalPath": null,
+      "evidence": []
+    },
+    {
+      "id": "living-vertical-slice",
+      "status": "pending",
+      "attemptCount": 0,
+      "maxAttemptsBeforeDesignReview": 3,
+      "lastFailedHypothesis": null,
+      "removalPath": null,
+      "evidence": []
+    },
+    {
+      "id": "sensory-prototype",
+      "status": "pending",
+      "attemptCount": 0,
+      "maxAttemptsBeforeDesignReview": 3,
+      "lastFailedHypothesis": null,
+      "removalPath": null,
+      "evidence": []
+    },
+    {
+      "id": "extension-integrity",
+      "status": "pending",
+      "attemptCount": 0,
+      "maxAttemptsBeforeDesignReview": 3,
+      "lastFailedHypothesis": null,
+      "removalPath": null,
+      "evidence": []
+    }
+  ],
+  "independentReviews": [],
+  "humanAudioSignoff": {
+    "status": "pending_external",
+    "records": []
+  }
+}

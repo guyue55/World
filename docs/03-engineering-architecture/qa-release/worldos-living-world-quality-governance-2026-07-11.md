@@ -1,5 +1,8 @@
 # WorldOS 生命世界质量治理与真实完成标准
 
+> [!WARNING]
+> 本文档保留为质量研究输入。当前正式体验矩阵、证据要求和固定否决项已收束到 `docs/00-overview/worldos-living-world-experience-acceptance-2026-07-11.md`；旧 `LOCAL_WORLD_COMPLETE_AI_FALLBACK` 不再作为新目标已完成的前提。
+
 > 状态：质量标准提案，尚未进入执行
 > 日期：2026-07-11
 > 原则：先看真实体验，再看工程报告；任何单项通过都不能抵消另一个核心失败。

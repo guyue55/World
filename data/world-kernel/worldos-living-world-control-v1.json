@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "status": "CONTROL_READY_IMPLEMENTATION_NOT_STARTED",
+  "controlBaselineCommit": null,
+  "algorithm": "sha256",
+  "purpose": "冻结生命世界候选的一次性 Goal 价值、范围、验收、架构、计划和触发入口，并校验任务与恢复指针。",
+  "authority": [
+    "AGENTS.md",
+    "docs/00-overview/worldos-meta-control-contract-2026-07-11.md",
+    "docs/00-overview/worldos-living-world-experience-acceptance-2026-07-11.md",
+    "docs/03-engineering-architecture/worldos-living-world-architecture-data-contract-2026-07-11.md",
+    "docs/00-overview/worldos-living-world-execution-plan-2026-07-11.md",
+    "docs/00-overview/worldos-living-world-execution-ledger-2026-07-11.md"
+  ],
+  "baseline": {
+    "status": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
+    "invalidatedCompletionClaim": "LOCAL_WORLD_COMPLETE_AI_FALLBACK",
+    "evidence": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z",
+    "recordingDurationRangeSeconds": [1.72, 10.16]
+  },
+  "target": {
+    "currentGoalFinal": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING",
+    "automaticWithoutHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING",
+    "fallbackWithHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK",
+    "providerWithHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER",
+    "promotionOutsideGoalRequired": true
+  },
+  "forbiddenClaims": [
+    "LONG_LIVED_WORLD",
+    "完美",
+    "终局宇宙",
+    "无限扩展",
+    "长期陪伴已证明"
+  ],
+  "acceptanceContract": {
+    "path": "data/domains/experience/living-world-acceptance.json",
+    "schemaVersion": "1.0.0"
+  },
+  "riskGates": [
+    { "id": "content-projection", "plan": "B", "ledger": "内容投影门" },
+    { "id": "living-vertical-slice", "plan": "C", "ledger": "生命样板门" },
+    { "id": "sensory-prototype", "plan": "E", "ledger": "感官原型门" },
+    { "id": "extension-integrity", "plan": "D,E", "ledger": "扩展门" }
+  ],
+  "completionEvidence": {
+    "requiredLedgerFields": [
+      "final_evidence_run",
+      "final_source_commit",
+      "final_build_hash",
+      "independent_review_1_id",
+      "independent_review_1_started_at",
+      "independent_review_2_id",
+      "independent_review_2_started_at"
+    ]
+  },
+  "plan": {
+    "path": "docs/00-overview/worldos-living-world-execution-plan-2026-07-11.md",
+    "ledgerPath": "docs/00-overview/worldos-living-world-execution-ledger-2026-07-11.md",
+    "executionStatePath": "data/world-kernel/worldos-living-world-execution-state.json",
+    "totalItems": 90,
+    "checkpoints": [
+      { "id": "A", "first": "A.1", "last": "A.9", "count": 9 },
+      { "id": "B", "first": "B.1", "last": "B.10", "count": 10 },
+      { "id": "C", "first": "C.1", "last": "C.13", "count": 13 },
+      { "id": "D", "first": "D.1", "last": "D.9", "count": 9 },
+      { "id": "E", "first": "E.1", "last": "E.12", "count": 12 },
+      { "id": "F", "first": "F.1", "last": "F.10", "count": 10 },
+      { "id": "G", "first": "G.1", "last": "G.11", "count": 11 },
+      { "id": "H", "first": "H.1", "last": "H.16", "count": 16 }
+    ]
+  },
+  "mutableFiles": [
+    "docs/00-overview/worldos-living-world-execution-ledger-2026-07-11.md",
+    "data/world-kernel/worldos-living-world-execution-state.json"
+  ],
+  "referenceOnly": [
+    "docs/00-overview/worldos-living-world-strategy-control-2026-07-11.md",
+    "docs/20-research/worldos-living-world-research-benchmark-2026-07-11.md",
+    "docs/01-world-design/worldos-living-world-experience-blueprint-2026-07-11.md",
+    "docs/03-engineering-architecture/worldos-living-world-runtime-architecture-2026-07-11.md",
+    "docs/03-engineering-architecture/qa-release/worldos-living-world-quality-governance-2026-07-11.md",
+    "docs/00-overview/worldos-reality-first-control-contract-2026-07-10.md"
+  ],
+  "checker": {
+    "path": "scripts/check-worldos-living-world-control.mjs",
+    "sha256": "a9b9b1b511e64142df5e0f67981e2d4182062fa1aaf00b48301b9e11dd3514ea"
+  },
+  "finalVerifier": {
+    "path": "scripts/verify-worldos-living-world-final.mjs",
+    "sha256": "3440c758375df9acad25a040277cab8f0d4c45a2a65592a240f20362b100ad08"
+  },
+  "frozenFiles": [
+    { "path": "AGENTS.md", "mode": "exact", "sha256": "2312e2fdd14d744f50c8ecab8107b660b79cb019cc95124a0aa1442b216c13bb" },
+    { "path": "docs/README.md", "mode": "exact", "sha256": "ade7d1aac75772fd5b4b3a7b97b8c5f604589195f8d6fc24d0a06409b33388f7" },
+    { "path": "docs/00-overview/worldos-meta-control-contract-2026-07-11.md", "mode": "exact", "sha256": "9a0ee7c20f9a12f01861925beed00d72ae557d05329b5f7fe7271ee922236f45" },
+    { "path": "docs/00-overview/worldos-living-world-experience-acceptance-2026-07-11.md", "mode": "exact", "sha256": "d20c2f499caf2e95bf0fd4cfccc00097534ec6c8c7cf81a7b97fb09dd71e5e78" },
+    { "path": "docs/03-engineering-architecture/worldos-living-world-architecture-data-contract-2026-07-11.md", "mode": "exact", "sha256": "f2b06c63baba978afcc4c668ecd754b40a93955104392e3ebaa87ca439000108" },
+    { "path": "docs/00-overview/worldos-living-world-execution-plan-2026-07-11.md", "mode": "checkbox-status-only", "sha256": "898cedc034c644a78276d37abc486807b04746a7da25197b351054065949aaf8" },
+    { "path": "docs/00-overview/worldos-living-world-one-shot-goal-prompt-2026-07-11.md", "mode": "exact", "sha256": "9e9ba0ba4e7265123e9d1753a22faf5282b749046b6ebccbfbfd545d20c40646" },
+    { "path": "data/domains/experience/living-world-acceptance.json", "mode": "exact", "sha256": "ec453b26ffa7c6a2c429b078602382ca6e560096db0c20fa46c86f12391d89a3" }
+  ]
+}
