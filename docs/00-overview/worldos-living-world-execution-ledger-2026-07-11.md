@@ -6,11 +6,11 @@
 ## 1. 当前指针
 
 ```yaml
-control_status: READY_PENDING_GIT_ANCHOR
+control_status: READY
 goal_status: NOT_STARTED
 goal_id: not-created
 goal_started_at: null
-control_baseline_commit: unanchored
+control_baseline_commit: 43dc627ea67408d081415a856649b3cb6504a43c
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING
 current_checkpoint: A
