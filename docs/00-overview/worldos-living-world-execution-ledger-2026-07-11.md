@@ -56,6 +56,7 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 | 部署 | localhost / LAN only | 外部发布不在范围 |
 | 工具链 | Playwright Python 1.58 + Chromium 145、ffmpeg 可启动 | 终局浏览器与媒体探针具备本地前提 |
 | 框架版本 | Next 15.5.20、React 19.2.7、GSAP 3.15.0、Zod 3.25.76 | 保持维护线，不在本 Goal 叠加 major 迁移 |
+| 生产依赖审计 | 0 high、0 critical、2 moderate；来自 Next 内置 PostCSS，npm 的自动修复建议会错误降级 Next 9 | 不执行 `audit fix --force`；监控 Next 15.5 后续 patch 并在独立回归后升级 |
 
 ## 3. 基线 Reality Matrix
 
@@ -209,6 +210,44 @@ commands:
   - "npm run check:world-experience -> expected stale failure"
   - "npm run check:mainline -> expected stop at stale world experience"
 decision: "CONTROL_PACKAGE_HARDENED; product implementation still not started"
+next_item: A.1
+```
+
+### Record PREP-003：控制包 v1.1 可执行性加固
+
+```yaml
+status: passed
+date: 2026-07-11
+scope: "技术栈复核、Goal 节奏、证据绑定、本地 RC 和环境就绪；不实现产品场景"
+research:
+  - "Playwright 官方要求版本配套浏览器，采用 Python 1.58 + Chromium 145 headless shell"
+  - "Next 15.5.20 仍在维护发布线；Next 16 与 Zod 4 均延后到 Goal 外 ADR"
+  - "GSAP 3.15 matchMedia/context 继续负责响应式生命周期与清理"
+  - "View Transition、Web Audio、Page Visibility 只做渐进增强并保留静态降级"
+findings_fixed:
+  - "补齐只读 readiness checker 和可选 Chromium repair"
+  - "90 项改为定向小循环，完整媒体流水线只在 A-H 检查点执行"
+  - "同检查点最多四项共享高内聚提交和 fresh 原始证据，跨检查点禁止复用"
+  - "九模式截图与 F1-F14 媒体增加 source/build/server/capture nonce sidecar"
+  - "权限 canary 临时 Next server 等待退出后再清理"
+  - "本地 RC 不再生成外部发布模板，也不再读取 stale Scene QA 报告"
+  - "H14-H16 固定为报告提交 -> final build/evidence -> preflight/final verifier"
+commands:
+  - "node scripts/check-worldos-living-world-control.mjs -> pass"
+  - "node scripts/check-worldos-living-world-readiness.mjs -> pass"
+  - "node scripts/verify-worldos-living-world-final.mjs --contract-only -> pass"
+  - "npm run check:docs -> pass"
+  - "npm run typecheck -> pass"
+  - "npm run lint -> pass"
+  - "npm run check:scripts -> pass"
+  - "npm run build:production-ci -> pass, 259 static pages"
+  - "Playwright localhost desktop + LAN mobile reduced-motion -> 16/16 routes pass, no console/page error"
+  - "npm run check:world-experience -> expected stale failure"
+  - "npm run check:mainline -> expected stale failure; confirmed old report timestamp side effects and removed generated noise"
+commits:
+  - "6bb8705247bd2794616129551fc181be26e233b9 docs(world): 加固生命世界控制与技术栈基线"
+  - "ad5c2257 test(world): 锚定生命世界加固控制包"
+decision: "CONTROL_V1_1_ANCHORED_AND_EXECUTABLE; product Goal remains NOT_STARTED"
 next_item: A.1
 ```
 
