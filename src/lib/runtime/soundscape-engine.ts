@@ -10,13 +10,12 @@ export type ProceduralSoundscapePatch = {
 }
 
 export function buildProceduralSoundscapePatch(soundscape: SensorySoundscape): ProceduralSoundscapePatch {
-  const root = Math.max(48, soundscape.frequency / 3)
-  const motifBase = soundscape.sceneId === 'lighthouse' ? soundscape.frequency : soundscape.sceneId === 'gateway' ? soundscape.frequency * .75 : 0
+  const registered = soundscape.proceduralPatch
   return {
     sceneId: soundscape.sceneId,
-    ambientFrequencies: [root, root * 1.502],
-    ambientGain: Math.min(.008, soundscape.maxGain * .12),
-    motifFrequencies: motifBase ? [motifBase, motifBase * 1.25, motifBase * 1.5] : [],
+    ambientFrequencies: [registered.ambientFrequenciesHz[0], registered.ambientFrequenciesHz[1]],
+    ambientGain: registered.peakGain,
+    motifFrequencies: [...registered.motifFrequenciesHz],
   }
 }
 

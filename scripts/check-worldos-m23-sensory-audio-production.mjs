@@ -48,7 +48,7 @@ const audioLib = read('src/lib/sensory-audio.ts')
 const statusPanel = read('src/components/status/SceneRuntimeStatusPanel.tsx')
 
 assert(registry.name === 'WorldOS 场景声景注册表', 'M23 声景注册表名称不正确')
-assert(registry.version === '1.2.0', '场景声景注册表版本应为 1.2.0')
+assert(registry.version === '1.3.0', '场景声景注册表版本应为 1.3.0')
 assert(registry.updatedAt === '2026-07-10', 'M23 声景注册表更新时间不正确')
 assert(registry.source === 'docs/00-overview/worldos-m23-sensory-audio-production-spec-2026-07-10.md', 'M23 声景注册表 source 不正确')
 assert(registry.productionReadiness?.stage === 'M23', '缺少 M23 productionReadiness')
@@ -88,6 +88,16 @@ for (const sceneId of requiredScenes) {
   assert(soundscape.stopPolicy === 'scene-change-stop-previous', `${sceneId} 必须停止旧场景声音`)
   assert(soundscape.durationMs <= 240, `${sceneId} 声景时长过长`)
   assert(soundscape.maxGain <= 0.05, `${sceneId} 声景增益过高`)
+  const patch = soundscape.proceduralPatch
+  assert(Boolean(patch?.patchId), `${sceneId} 缺少程序化 patch id`)
+  assert(patch?.kind === 'procedural-ambience', `${sceneId} patch 类型不正确`)
+  assert(patch?.loop === true, `${sceneId} 必须登记主 ambience loop`)
+  assert(patch?.ambientFrequenciesHz?.length === 2, `${sceneId} 必须登记双音频率`)
+  assert(patch?.peakGain > 0 && patch?.peakGain <= 0.008, `${sceneId} ambience 峰值未受控`)
+  assert(Boolean(patch?.purpose), `${sceneId} 缺少声景用途`)
+  assert(String(patch?.lifecycle ?? '').includes('one active ambience loop'), `${sceneId} 缺少单主 loop 生命周期`)
+  assert(patch?.listeningReview?.status === 'passed', `${sceneId} 缺少听感审查结论`)
+  assert(Boolean(patch?.listeningReview?.method) && Boolean(patch?.listeningReview?.finding), `${sceneId} 听感审查信息不完整`)
   if (soundscape.source && soundscape.license) licensedSoundscapes += 1
   if (Number.isFinite(soundscape.bytes) && soundscape.bytes <= 0) budgetedSoundscapes += 1
 }
@@ -101,6 +111,9 @@ for (const asset of assets) {
   assert(asset.firstPaintDependency === false, `资产不得进入首屏依赖：${asset.assetId}`)
   assert(Number(asset.bytes) === 0, `运行时合成资产字节应为 0：${asset.assetId}`)
   assert(asset.compression, `资产缺少压缩/合成说明：${asset.assetId}`)
+  assert(asset.encoding, `资产缺少编码/合成方式：${asset.assetId}`)
+  assert(Number.isFinite(asset.peakGain) && asset.peakGain <= 0.026, `资产峰值未登记或过高：${asset.assetId}`)
+  assert(asset.usage && asset.review, `资产缺少用途或听感审查：${asset.assetId}`)
 }
 
 const forbiddenAudioFiles = listFiles('public').filter((file) => /\.(mp3|wav|ogg|flac|aac|m4a)$/i.test(file))

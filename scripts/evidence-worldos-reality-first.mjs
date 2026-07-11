@@ -20,7 +20,7 @@ const contract = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experi
 const routes = contract.spaces.map((space) => ({ id: space.id, path: space.sample }))
 const configSnapshots = new Map(['next-env.d.ts', 'tsconfig.json'].map((file) => [file, fs.readFileSync(path.join(root, file), 'utf8')]))
 const sourceCommit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).stdout.trim()
-const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'public/world', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
+const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
 const chromeBinary = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 const browserVersion = spawnSync(chromeBinary, ['--version'], { encoding: 'utf8' }).stdout.trim()
 const failures = []
@@ -144,12 +144,40 @@ async function inspectPage(page, route, mode) {
       metrics:window.__worldosEvidenceMetrics??null,
       soundMode:document.querySelector('[data-sound-mode]')?.getAttribute('data-sound-mode')??null,
       ariaLive:document.querySelectorAll('[aria-live]').length,
+      storageAvailable:(()=>{try{localStorage.setItem('__worldos_probe','1');localStorage.removeItem('__worldos_probe');return true}catch{return false}})(),
     };
   })()`)
 }
 
+async function inspectKeyboardRoute(page, route) {
+  const sequence = []
+  let reachedSceneObject = false
+  let firstFocus = null
+  for (let index = 0; index < 60; index += 1) {
+    await page.send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 })
+    await page.send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 })
+    await delay(12)
+    const focused = await evaluate(page.send, `(() => {
+      const element=document.activeElement;
+      if(!element||element===document.body)return null;
+      return {tag:element.tagName,href:element.getAttribute('href'),label:element.getAttribute('aria-label')||element.textContent?.trim().slice(0,60)||'',focusVisible:element.matches(':focus-visible'),sceneObject:element.matches(${JSON.stringify(mainInteractive[route.id])})};
+    })()`)
+    if (!focused) continue
+    if (!firstFocus) firstFocus = focused
+    sequence.push(focused)
+    if (focused.sceneObject) { reachedSceneObject = true; break }
+  }
+  return {
+    firstFocus,
+    reachedSceneObject,
+    visibleFocus: sequence.some((item) => item.focusVisible),
+    focusCount: sequence.length,
+    focusSequence: sequence.slice(0, 16),
+  }
+}
+
 async function captureMode(route, mode, options = {}) {
-  const mobile = mode === 'mobile'
+  const mobile = mode === 'mobile' || mode === 'reduced-sensory'
   const targetBaseUrl = options.targetBaseUrl ?? baseUrl
   const screenshotPrefix = options.screenshotPrefix ?? route.id
   const page = await browserRuntime.createPage({ width: mobile ? 390 : mode === 'zoom-200' ? 720 : 1440, height: mobile ? 844 : mode === 'zoom-200' ? 450 : 900, mobile, reducedMotion: mode === 'reduced-motion' })
@@ -158,6 +186,7 @@ async function captureMode(route, mode, options = {}) {
     else {
       await page.send('Page.addScriptToEvaluateOnNewDocument', { source: performanceProbe })
       if (mode === 'reduced-sensory') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:soundscape-preference','muted');localStorage.setItem('guyue-world:motion-preference','reduced')` })
+      if (mode === 'storage-off') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `try{localStorage.clear();sessionStorage.clear()}catch{};for(const method of ['getItem','setItem','removeItem','clear'])Object.defineProperty(Storage.prototype,method,{configurable:true,value(){throw new DOMException('Storage disabled for Reality-First evidence','SecurityError')}})` })
     }
     await page.send('Page.navigate', { url: `${targetBaseUrl}${route.path}` })
     if (mode === 'js-off') await delay(1300)
@@ -169,6 +198,7 @@ async function captureMode(route, mode, options = {}) {
       if (mode === 'text-hidden') await evaluate(page.send, `document.head.insertAdjacentHTML('beforeend','<style data-reality-text-hidden>h1,h2,h3,p,span,strong,small,a,button,label,input,select,textarea{color:transparent!important;text-shadow:none!important} .arrival{visibility:hidden!important}</style>')`)
     }
     const observation = await inspectPage(page, route, mode)
+    if (mode === 'keyboard') observation.keyboard = await inspectKeyboardRoute(page, route)
     observation.browserErrors = page.errors.filter(Boolean)
     const screenshot = path.join(screenshotsDir, `${screenshotPrefix}-${mode}.jpg`)
     await captureJpeg(page.send, screenshot)
@@ -262,7 +292,7 @@ async function recordReturnVisit() {
 }
 
 try {
-  const sourceMtime = latestMtime(['src', 'data', 'content', 'public/world', 'package.json', 'next.config.ts'])
+  const sourceMtime = latestMtime(['src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts'])
   const buildStartedAt = Date.now()
   const buildOutput = run('npm', ['run', 'build:production-ci'], { env: { WORLDOS_DIST_DIR: distDirName }, log: 'build.log' })
   for (const [file, content] of configSnapshots) fs.writeFileSync(path.join(root, file), content)
@@ -282,7 +312,7 @@ try {
   browserRuntime = await launchRealityBrowser('worldos-reality-evidence')
   const observations = []
   for (const route of routes) {
-    for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'text-hidden', 'js-off']) {
+    for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'keyboard', 'storage-off', 'text-hidden', 'js-off']) {
       console.log(`[Reality evidence] ${route.id} ${mode}`)
       const observation = await captureMode(route, mode)
       observations.push(observation)
@@ -292,8 +322,10 @@ try {
       if (observation.privateCanary) failures.push(`${route.path} ${mode}: 私密演练内容进入公开载荷`)
       if (observation.fixedOverlayIssues.length) failures.push(`${route.path} ${mode}: 大面积固定层 ${observation.fixedOverlayIssues.join(',')}`)
       if (mode === 'js-off' ? observation.links < 2 || observation.bodyTextLength < 80 : !observation.interactiveVisible) failures.push(`${route.path} ${mode}: 主交互或静态等价路径不可见`)
+      if (mode === 'keyboard' && (!observation.keyboard?.firstFocus || observation.keyboard.firstFocus.href !== '#main-content' || !observation.keyboard.reachedSceneObject || !observation.keyboard.visibleFocus)) failures.push(`${route.path} keyboard: skip link、可见焦点或场景对象不可达`)
+      if (mode === 'storage-off' && observation.storageAvailable) failures.push(`${route.path} storage-off: 存储未被禁用`)
       if (observation.browserErrors.length) failures.push(`${route.path} ${mode}: ${observation.browserErrors.join('; ')}`)
-      const bitmapBudget = mode === 'mobile' ? 350 * 1024 : 700 * 1024
+      const bitmapBudget = mode === 'mobile' || mode === 'reduced-sensory' ? 350 * 1024 : 700 * 1024
       if (observation.bitmapBytes > bitmapBudget) failures.push(`${route.path} ${mode}: 首屏 bitmap ${observation.bitmapBytes} > ${bitmapBudget}`)
       if (observation.audioBytes > 0 || observation.soundMode === 'playing') failures.push(`${route.path} ${mode}: 默认加载或播放声音`)
       if (mode === 'desktop' && observation.metrics) {
@@ -475,6 +507,8 @@ try {
   const permissionCheck = run('npm', ['run', 'check:permission-boundary'], { log: 'permission-boundary.log' })
   const aiBoundaryCheck = run('npm', ['run', 'check:ai-provider-boundary'], { log: 'ai-provider-boundary.log' })
   const authoringCheck = run('npx', ['tsx', 'scripts/check-world-c8-authoring.ts'], { log: 'authoring-transaction.log' })
+  const authoringEvidenceLine = authoringCheck.split(/\r?\n/).find((line) => line.startsWith('AUTHORING_EVIDENCE_JSON='))
+  const authoringEvidence = authoringEvidenceLine ? JSON.parse(authoringEvidenceLine.slice('AUTHORING_EVIDENCE_JSON='.length)) : null
   const sceneAssets = JSON.parse(fs.readFileSync(path.join(root, 'data/assets/world-scene-assets.json'), 'utf8'))
   const sensoryAssets = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experience/sensory-audio-registry.json'), 'utf8'))
   const desktopPerformance = observations
@@ -484,8 +518,30 @@ try {
     'browser-matrix.json': { runId, observations, lanObservations, lanJourney, accessibility, flows },
     'permission-boundary.json': { runId, bundleLeaks, permissionCheck: permissionCheck.trim(), aiBoundaryCheck: aiBoundaryCheck.trim(), passed: bundleLeaks.length === 0 },
     'performance-budget.json': { runId, build: buildMetrics, desktop: desktopPerformance, budgets: { sharedKb: 130, routeIncrementKb: 80, lcpMs: 2500, cls: 0.1, tbtMs: 300 } },
-    'asset-license.json': { runId, sceneLicense: sceneAssets.license, sceneAssets: sceneAssets.assets.map((item) => ({ sceneId: item.sceneId, source: item.source, licenseId: item.licenseId, desktopBytes: item.desktop.bytes, mobileBytes: item.mobile.bytes })), audioProductionReadiness: sensoryAssets.productionReadiness, audioAssets: sensoryAssets.assetInventory },
-    'authoring-transaction.json': { runId, command: 'npx tsx scripts/check-world-c8-authoring.ts', output: authoringCheck.trim(), passed: /realWorkspaceUntouched=true/.test(authoringCheck) },
+    'asset-license.json': {
+      runId,
+      sceneLicense: sceneAssets.license,
+      sceneAssets: sceneAssets.assets.map((item) => ({ sceneId: item.sceneId, source: item.source, licenseId: item.licenseId, desktopBytes: item.desktop.bytes, mobileBytes: item.mobile.bytes })),
+      audioProductionReadiness: sensoryAssets.productionReadiness,
+      proceduralSoundscapes: sensoryAssets.sceneSoundscapes.map((item) => ({
+        sceneId: item.sceneId,
+        patch: item.proceduralPatch,
+        cueDurationMs: item.durationMs,
+        source: item.source,
+        license: item.license,
+      })),
+      audioAssets: sensoryAssets.assetInventory,
+    },
+    'authoring-transaction.json': {
+      runId,
+      command: 'npx tsx scripts/check-world-c8-authoring.ts',
+      evidence: authoringEvidence,
+      output: authoringCheck.trim(),
+      passed: /realWorkspaceUntouched=true/.test(authoringCheck)
+        && authoringEvidence?.negativeCases?.length >= 6
+        && authoringEvidence?.backup?.checksumsVerified === true
+        && Object.values(authoringEvidence?.actualSceneImpact ?? {}).every(Boolean),
+    },
   }
   for (const [fileName, value] of Object.entries(auditArtifacts)) fs.writeFileSync(path.join(auditsDir, fileName), `${JSON.stringify(value, null, 2)}\n`)
   const artifactTimes = {

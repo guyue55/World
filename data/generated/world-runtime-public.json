@@ -919,7 +919,7 @@
   },
   "audio": {
     "name": "WorldOS 场景声景注册表",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "scope": {
       "localOnly": true,
       "localhostAccepted": true,
@@ -970,7 +970,35 @@
         "visualCue": "入口远光与开门回声保持一致。",
         "interactionCue": "用户主动开启后用短音确认进入世界入口。",
         "reducedSensoryBehavior": "silent 下不发声，仅保留按钮状态。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "gateway-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            130.667,
+            196.261
+          ],
+          "motifFrequenciesHz": [
+            294,
+            367.5,
+            441
+          ],
+          "loop": true,
+          "peakGain": 0.0054,
+          "cuePeakGain": 0.026,
+          "purpose": "用于确认已经抵达世界入口。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "atlas",
@@ -990,7 +1018,31 @@
         "visualCue": "星线与关系网络点亮。",
         "interactionCue": "进入 Atlas 后给出低频空间脉冲。",
         "reducedSensoryBehavior": "silent 下不发声，仅保留地图语义。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "atlas-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            82,
+            123.164
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.0042,
+          "cuePeakGain": 0,
+          "purpose": "用于表达关系网络被点亮。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "timeline",
@@ -1010,7 +1062,31 @@
         "visualCue": "时间河与涟漪节奏。",
         "interactionCue": "进入 Timeline 后给出轻钟点。",
         "reducedSensoryBehavior": "silent 下不发声，时间线仍完整可读。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "timeline-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            109.667,
+            164.719
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.00384,
+          "cuePeakGain": 0,
+          "purpose": "用于表达时间流经过。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "archive",
@@ -1030,7 +1106,31 @@
         "visualCue": "档案抽屉与纸页打开。",
         "interactionCue": "进入 Archive 后给出短促木架轻响。",
         "reducedSensoryBehavior": "silent 下不发声，检索和馆藏仍可用。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "archive-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            65.333,
+            98.131
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.0036,
+          "cuePeakGain": 0,
+          "purpose": "用于表达档案被打开。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "paths",
@@ -1050,7 +1150,31 @@
         "visualCue": "路标、脚步与下一段提示。",
         "interactionCue": "进入 Paths 后给出步进信号。",
         "reducedSensoryBehavior": "silent 下不发声，路径进度仍由文本呈现。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "paths-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            146.667,
+            220.293
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.00408,
+          "cuePeakGain": 0,
+          "purpose": "用于表达旅程进入下一段。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "path-detail",
@@ -1070,7 +1194,31 @@
         "visualCue": "路线被定位并锁定。",
         "interactionCue": "进入路线详情后给出定位短音。",
         "reducedSensoryBehavior": "silent 下不发声，路线步骤仍完整。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "path-detail-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            138.333,
+            207.777
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.00384,
+          "cuePeakGain": 0,
+          "purpose": "用于表达旅程路线被锁定。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "node",
@@ -1090,7 +1238,31 @@
         "visualCue": "内容房间与地点护照。",
         "interactionCue": "进入节点后给出很轻的房间确认音。",
         "reducedSensoryBehavior": "silent 下不发声，阅读优先。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "node-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            98,
+            147.196
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.00312,
+          "cuePeakGain": 0,
+          "purpose": "用于表达进入具体内容房间。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "lighthouse",
@@ -1110,7 +1282,35 @@
         "visualCue": "低光灯塔与方向提示。",
         "interactionCue": "进入 Lighthouse 后给出信标短音。",
         "reducedSensoryBehavior": "silent 下不发声，导览和拒答仍可读。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "lighthouse-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            174.333,
+            261.849
+          ],
+          "motifFrequenciesHz": [
+            523,
+            653.75,
+            784.5
+          ],
+          "loop": true,
+          "peakGain": 0.00456,
+          "cuePeakGain": 0.026,
+          "purpose": "用于表达公开导览已响应。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       },
       {
         "sceneId": "status",
@@ -1130,7 +1330,31 @@
         "visualCue": "维护心跳与审计面板。",
         "interactionCue": "进入 Status 后给出克制的状态 tick。",
         "reducedSensoryBehavior": "silent 下不发声，审计信息仍完整。",
-        "stopPolicy": "scene-change-stop-previous"
+        "stopPolicy": "scene-change-stop-previous",
+        "proceduralPatch": {
+          "patchId": "status-ambient-v1",
+          "kind": "procedural-ambience",
+          "oscillatorTypes": [
+            "sine",
+            "triangle"
+          ],
+          "ambientFrequenciesHz": [
+            73.333,
+            110.147
+          ],
+          "motifFrequenciesHz": [],
+          "loop": true,
+          "peakGain": 0.00336,
+          "cuePeakGain": 0,
+          "purpose": "用于表达运行状态可被审计。",
+          "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
+          "listeningReview": {
+            "status": "passed",
+            "method": "offline frequency, envelope and peak-level review",
+            "reviewedAt": "2026-07-11",
+            "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+          }
+        }
       }
     ],
     "motifs": [
@@ -1149,16 +1373,34 @@
     ],
     "assetInventory": [
       {
+        "assetId": "generated-web-audio-ambient-patch",
+        "kind": "audio-generated-procedural-ambience",
+        "source": "project-generated",
+        "license": "project-owned-runtime-synthesis",
+        "bytes": 0,
+        "duration": "continuous-only-while-armed",
+        "encoding": "runtime-web-audio-oscillator",
+        "peakGain": 0.008,
+        "productionReady": true,
+        "firstPaintDependency": false,
+        "compression": "not-applicable-runtime-synthesis",
+        "usage": "七场景各自双振荡器环境底色；同时只保留一个主 loop。",
+        "review": "逐场景频率、包络、峰值和生命周期已登记并通过离线听感代理复核。"
+      },
+      {
         "assetId": "generated-web-audio-short-tone",
-        "kind": "audio-generated",
+        "kind": "audio-generated-transition-cue",
         "source": "project-generated",
         "license": "project-owned-runtime-synthesis",
         "bytes": 0,
         "durationMsMax": 220,
+        "encoding": "runtime-web-audio-oscillator",
+        "peakGain": 0.026,
         "productionReady": true,
         "firstPaintDependency": false,
         "compression": "not-applicable-runtime-synthesis",
-        "notes": "运行时振荡器合成短提示音，不下载外部音频文件。"
+        "usage": "Gateway 与 Lighthouse 共享变奏动机，并用于抵达短提示。",
+        "review": "短包络、无自动播放、关闭后释放。"
       }
     ]
   }

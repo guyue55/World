@@ -17,7 +17,13 @@ export type MigrationEvent =
   | { type: 'CANCEL' | 'ROUTE_ERROR' | 'UNMOUNT' }
 
 export type SourceGeometry = { left: number; top: number; width: number; height: number; color: string }
-export type MigrationSnapshot = { state: MigrationState; geometry: SourceGeometry | null; requestId: number; focusReturnId: string | null }
+export type MigrationSnapshot = { state: MigrationState; geometry: SourceGeometry | null; requestId: number; focusReturnId: string | null; startedAt: number | null; arrivedAt: number | null }
+
+export const SCENE_MIGRATION_TIMING = {
+  navigationDelayMs: 220,
+  settleDelayMs: 260,
+  reducedNavigationDelayMs: 60,
+} as const
 
 export function reduceMigrationState(state: MigrationState, event: MigrationEvent): MigrationState {
   if (event.type === 'START') return event.reduced ? { kind: 'reduced', current: event.source } : { kind: 'leaving', source: event.source, target: event.target }
@@ -28,8 +34,8 @@ export function reduceMigrationState(state: MigrationState, event: MigrationEven
   return state
 }
 
-let snapshot: MigrationSnapshot = { state: { kind: 'idle' }, geometry: null, requestId: 0, focusReturnId: null }
-const serverSnapshot: MigrationSnapshot = { state: { kind: 'idle' }, geometry: null, requestId: 0, focusReturnId: null }
+let snapshot: MigrationSnapshot = { state: { kind: 'idle' }, geometry: null, requestId: 0, focusReturnId: null, startedAt: null, arrivedAt: null }
+const serverSnapshot: MigrationSnapshot = { state: { kind: 'idle' }, geometry: null, requestId: 0, focusReturnId: null, startedAt: null, arrivedAt: null }
 const listeners = new Set<() => void>()
 let transitTimer: number | null = null
 let settleTimer: number | null = null
@@ -47,19 +53,20 @@ export function beginSceneMigration({ source, target, element, focusReturnId, re
   const rect = element.getBoundingClientRect()
   const color = getComputedStyle(element).borderColor || getComputedStyle(element).color || '#d8b875'
   const requestId = snapshot.requestId + 1
-  update(reduceMigrationState(snapshot.state, { type: 'START', source, target, reduced }), { requestId, focusReturnId: focusReturnId ?? element.id ?? null, geometry: { left: rect.left, top: rect.top, width: rect.width, height: rect.height, color } })
+  const startedAt = Date.now()
+  update(reduceMigrationState(snapshot.state, { type: 'START', source, target, reduced }), { requestId, focusReturnId: focusReturnId ?? element.id ?? null, geometry: { left: rect.left, top: rect.top, width: rect.width, height: rect.height, color }, startedAt, arrivedAt: reduced ? startedAt : null })
   if (!reduced) transitTimer = window.setTimeout(() => { if (snapshot.requestId === requestId) update(reduceMigrationState(snapshot.state, { type: 'TRANSIT' })) }, 45)
   return requestId
 }
 
 export function markSceneMigrationArriving() {
-  if (snapshot.state.kind === 'leaving' || snapshot.state.kind === 'inTransit') update(reduceMigrationState(snapshot.state, { type: 'ARRIVE' }))
+  if (snapshot.state.kind === 'leaving' || snapshot.state.kind === 'inTransit') update(reduceMigrationState(snapshot.state, { type: 'ARRIVE' }), { arrivedAt: Date.now() })
 }
 
 export function settleSceneMigration(current: SceneContext, reduced: boolean) {
   clearTimers()
   if (reduced) update({ kind: 'reduced', current })
-  else settleTimer = window.setTimeout(() => update(reduceMigrationState(snapshot.state, { type: 'SETTLE', current })), 430)
+  else settleTimer = window.setTimeout(() => update(reduceMigrationState(snapshot.state, { type: 'SETTLE', current })), SCENE_MIGRATION_TIMING.settleDelayMs)
 }
 
 export function cancelSceneMigration(reason: 'cancel' | 'route-error' | 'unmount' = 'cancel') {

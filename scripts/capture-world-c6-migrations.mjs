@@ -42,6 +42,7 @@ async function recordMigration({ name, sourcePath, object, targetScene, setup, p
   let arrived = false
   let arrivalState = reducedMotion
   let transitionDurationMs = 0
+  let routeArrivalDurationMs = 0
   const recording = await recordPageScreencast({ browser: launch.browser, page, outputPath: target, action: async () => {
     if (preTrigger) await preTrigger(page)
     if (!await waitForExpression(page.send, `!!document.querySelector('[data-scene-transition-object="${object}"]')`)) throw new Error(`${name} 缺少 ${object} 来源对象`)
@@ -50,13 +51,15 @@ async function recordMigration({ name, sourcePath, object, targetScene, setup, p
     transit = reducedMotion ? true : await waitFast(page, `document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state')==='inTransit'`, 3000)
     if (!reducedMotion && transit) await safeCapture(page, path.join(outputDir, `${name}-transit.png`))
     arrived = await waitFast(page, `!!document.querySelector('[data-world-scene="${targetScene}"]')||document.querySelector('[data-testid="scene-transition-content"]')?.getAttribute('data-current-scene')==='${targetScene}'`, 15000)
+    routeArrivalDurationMs = Date.now() - transitionStartedAt
     arrivalState = reducedMotion ? true : await waitFast(page, `['arriving','settled'].includes(document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state'))`, 3000)
-    transitionDurationMs = Date.now() - transitionStartedAt
+    const runtimeTiming = await evaluate(page.send, `(() => { const layer=document.querySelector('[data-testid="scene-migration-layer"]'); const started=Number(layer?.getAttribute('data-migration-started-at')); const arrived=Number(layer?.getAttribute('data-migration-arrived-at')); return {started,arrived}; })()`)
+    transitionDurationMs = runtimeTiming.started > 0 && runtimeTiming.arrived >= runtimeTiming.started ? runtimeTiming.arrived - runtimeTiming.started : Date.now() - transitionStartedAt
     await safeCapture(page, path.join(outputDir, `${name}-arrival.png`))
     await delay(650)
   } })
   const final = await evaluate(page.send, `({path:location.pathname,state:document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state'),active:document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-active'),engineering:/正在迁移|迁移中|leaving|inTransit|arriving/.test(document.querySelector('[data-testid="scene-migration-layer"]')?.innerText??''),overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth})`)
-  results.push({ name, object, targetScene, transit, arrived, arrivalState, transitionDurationMs, frames: recording.frames, durationSeconds: recording.durationSeconds, final, errors: page.errors.filter(Boolean) })
+  results.push({ name, object, targetScene, transit, arrived, arrivalState, transitionDurationMs, routeArrivalDurationMs, frames: recording.frames, durationSeconds: recording.durationSeconds, final, errors: page.errors.filter(Boolean) })
   console.log(`capture ${name}: done frames=${recording.frames}`)
 }
 
@@ -82,7 +85,8 @@ try {
   const failures = results.flatMap((result) => {
     const issues = []
     if (!result.arrived || !result.arrivalState) issues.push(`${result.name}: 未抵达`)
-    if (!result.name.startsWith('reduced-') && result.transitionDurationMs > 1100) issues.push(`${result.name}: 迁移叙事 ${result.transitionDurationMs}ms 超过 1100ms 上限`)
+    if (!result.name.startsWith('reduced-') && result.transitionDurationMs > 900) issues.push(`${result.name}: 迁移叙事 ${result.transitionDurationMs}ms 超过冻结的 900ms 上限`)
+    if (result.name.startsWith('reduced-') && result.transitionDurationMs > 160) issues.push(`${result.name}: 减少动效视觉迁移 ${result.transitionDurationMs}ms 超过 160ms 上限`)
     if (result.name !== 'reduced-path-node' && !result.transit) issues.push(`${result.name}: 未捕捉途中态`)
     if (result.final.engineering || result.final.overflow || result.errors.length) issues.push(`${result.name}: 公开文字/溢出/浏览器错误`)
     if (result.final.active !== 'false') issues.push(`${result.name}: 迁移层未释放`)

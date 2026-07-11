@@ -67,7 +67,7 @@ export default async function NodePage({ params, searchParams }: { params: Promi
       <div className={roomStyles.readingLayout}>
         <article className={roomStyles.readingArticle}>
           <NodeReadingHeader node={node} areaName={area?.worldName} readingMinutes={readingMinutes} />
-          <ReadingComfortBar readingMinutes={comfort.readingMinutes} headingCount={comfort.headingCount} readingWidth={comfort.readingWidth} />
+          <ReadingComfortBar readingMinutes={comfort.readingMinutes} headingCount={comfort.headingCount} />
           <NodeReadingBody content={content} />
           <NodeRelationRail groups={explorationGroups} sourceSlug={node.slug} />
         </article>

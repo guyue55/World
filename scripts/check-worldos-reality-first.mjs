@@ -116,13 +116,13 @@ if (exists(pointerPath)) {
     assert(manifest.status === 'objective-evidence-captured', '最新客观证据仍有失败')
     assert(Array.isArray(manifest.failures) && manifest.failures.length === 0, '最新客观证据 failures 非空')
     assert(manifest.freshness?.valid === true, '证据 source -> build -> server -> evidence 时间链无效')
-    assert(manifest.freshness?.sourceMtime >= latestMtime(['src', 'data', 'content', 'public/world', 'package.json', 'next.config.ts']) - 1, '证据早于当前源码或数据')
+    assert(manifest.freshness?.sourceMtime >= latestMtime(['src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts']) - 1, '证据早于当前源码、数据或验收脚本')
     assert(manifest.build?.sharedKb <= 130, `shared First Load JS 超预算：${manifest.build?.sharedKb}`)
     assert(Object.keys(manifest.build?.routes ?? {}).length === contract.spaces.length, '核心 route 构建体积未覆盖七类空间')
     for (const [route, metric] of Object.entries(manifest.build?.routes ?? {})) assert(metric.firstLoadKb - manifest.build.sharedKb <= 80, `${route} route JS 增量超预算`)
     const observations = manifest.browser?.observations ?? []
     for (const scene of contract.spaces) {
-      for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'text-hidden', 'js-off']) {
+      for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'keyboard', 'storage-off', 'text-hidden', 'js-off']) {
         const item = observations.find((observation) => observation.scene === scene.id && observation.mode === mode)
         assert(item, `${scene.id} 缺少 ${mode} 浏览器证据`)
         if (item) {
@@ -132,6 +132,9 @@ if (exists(pointerPath)) {
           assert(item.engineeringCopy === false, `${scene.id} ${mode} 出现工程文案`)
           assert(item.privateCanary === false, `${scene.id} ${mode} 出现私密 canary`)
           assert((item.fixedOverlayIssues ?? []).length === 0, `${scene.id} ${mode} 存在固定层遮挡`)
+          if (mode === 'reduced-sensory') assert(item.sceneRect?.width <= 390, `${scene.id} reduced-sensory 未使用 mobile 视口`)
+          if (mode === 'keyboard') assert(item.keyboard?.firstFocus?.href === '#main-content' && item.keyboard?.reachedSceneObject && item.keyboard?.visibleFocus, `${scene.id} keyboard 证据不完整`)
+          if (mode === 'storage-off') assert(item.storageAvailable === false, `${scene.id} storage-off 未真正禁用存储`)
         }
       }
     }

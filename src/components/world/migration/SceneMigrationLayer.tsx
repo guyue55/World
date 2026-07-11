@@ -49,8 +49,8 @@ export function SceneMigrationLayer() {
         }
         if (state.kind === 'arriving') {
           gsap.to(trail, { opacity: 0, duration: .18, overwrite: true })
-          gsap.to(targetAnchor, { opacity: 0, scale: 1.65, duration: .34, ease: 'power3.out', overwrite: true })
-          gsap.to(object, { x: targetX, y: targetY, scale: .2, opacity: 0, duration: .34, ease: 'power3.out', overwrite: true })
+          gsap.to(targetAnchor, { opacity: 0, scale: 1.65, duration: .22, ease: 'power3.out', overwrite: true })
+          gsap.to(object, { x: targetX, y: targetY, scale: .2, opacity: 0, duration: .22, ease: 'power3.out', overwrite: true })
         }
       })
       if (cancelled) context.revert()
@@ -62,7 +62,7 @@ export function SceneMigrationLayer() {
     }
   }, [active, snapshot.geometry, snapshot.requestId, state.kind, target])
 
-  return <div className={styles.layer} data-testid="scene-migration-layer" data-active={active ? 'true' : 'false'} data-migration-state={state.kind} data-migration-object={target?.transitionObject ?? 'none'} data-migration-target={target?.sceneId ?? 'none'} aria-hidden="true">
+  return <div className={styles.layer} data-testid="scene-migration-layer" data-active={active ? 'true' : 'false'} data-migration-state={state.kind} data-migration-object={target?.transitionObject ?? 'none'} data-migration-target={target?.sceneId ?? 'none'} data-migration-started-at={snapshot.startedAt ?? ''} data-migration-arrived-at={snapshot.arrivedAt ?? ''} aria-hidden="true">
     <span className={styles.destination} />
     <span ref={washRef} className={styles.wash} />
     <span ref={trailRef} className={styles.trail} />
