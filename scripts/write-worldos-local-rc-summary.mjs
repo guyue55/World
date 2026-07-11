@@ -73,9 +73,9 @@ const report = {
       passedHttpChecks: lanReport.checks?.filter((check) => check.passed).length ?? 0,
       browserChecks: lanReport.browserChecks?.length ?? 0,
       passedBrowserChecks: lanReport.browserChecks?.filter((check) => check.passed).length ?? 0,
-      passedHomePrimaryCtaChecks: lanReport.browserChecks?.filter((check) => check.route === '/' && check.metrics?.primaryCtaVisible === true).length ?? 0,
+      passedSceneViewportChecks: lanReport.browserChecks?.filter((check) => check.metrics?.sceneViewportVisible === true && check.metrics?.sceneViewportRatio >= 0.65).length ?? 0,
+      passedPrimaryInteractionChecks: lanReport.browserChecks?.filter((check) => check.metrics?.primaryInteractionVisible === true).length ?? 0,
       passedMobileNavigationChecks: lanReport.browserChecks?.filter((check) => check.viewport?.includes('mobile') && check.metrics?.mobileNavigationVisible === true).length ?? 0,
-      passedHomeCoreStatusCardChecks: lanReport.browserChecks?.filter((check) => check.route === '/' && check.metrics?.coreStatusCardVisible === true).length ?? 0,
       screenshotCount: screenshots.length,
     },
     sceneQa: {

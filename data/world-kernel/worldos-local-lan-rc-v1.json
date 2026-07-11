@@ -132,16 +132,20 @@
     "/node/ai-lighthouse-boundary"
   ],
   "browserExpectations": {
-    "minBodyTextLength": 500,
+    "minBodyTextLength": 80,
     "mustHaveH1": true,
     "mustNotHideBody": true,
     "mustHaveNoPageErrors": true,
     "mustHaveNoConsoleErrors": true,
     "mustHaveNoUncanceledNetworkFailures": true,
     "mobileMustNotOverflowX": true,
-    "mustHaveHomePrimaryCta": true,
-    "mustHaveHomeCoreStatusCard": true,
-    "mustHaveMobileNavigation": true
+    "mustHaveSceneViewport": true,
+    "minSceneViewportRatio": 0.65,
+    "mustHavePrimaryInteraction": true,
+    "mustHaveMobileNavigation": true,
+    "mustNotExposeEngineeringCopy": true,
+    "mustNotExposePrivateCanary": true,
+    "nonSceneRoutes": ["/status"]
   },
   "evidenceOutput": "docs/90-archive/reports/worldos-local-lan-rc-report.json",
   "logOutput": "reports/worldos-local-lan-rc-next-start.log",

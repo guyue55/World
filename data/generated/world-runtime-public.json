@@ -366,8 +366,8 @@
       "component": "src/components/world/SceneTransitionShell.tsx",
       "mount": "src/components/world/WorldShell.tsx#main-content",
       "usesGsap": true,
-      "usesFramerMotionPresence": true,
-      "usesViewTransitionApi": false,
+      "usesFramerMotionPresence": false,
+      "usesViewTransitionApi": true,
       "maxDurationMs": 420,
       "compactMaxDurationMs": 260,
       "reducedMotionBehavior": "直接显示目标页面，不播放位移、缩放或抽屉动作。"

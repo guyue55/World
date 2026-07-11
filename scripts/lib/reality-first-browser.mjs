@@ -40,6 +40,7 @@ async function connectCdp(wsUrl) {
     const pair = data.id ? pending.get(data.id) : null
     if (pair) {
       pending.delete(data.id)
+      globalThis.clearTimeout(pair.timeoutId)
       if (data.error) pair.reject(new Error(JSON.stringify(data.error)))
       else pair.resolve(data.result ?? {})
       return
@@ -48,11 +49,27 @@ async function connectCdp(wsUrl) {
       for (const listener of listeners.get(data.method) ?? []) listener(data.params ?? {}, data.sessionId)
     }
   })
+  const rejectPending = (reason) => {
+    for (const [id, pair] of pending) {
+      globalThis.clearTimeout(pair.timeoutId)
+      pair.reject(new Error(`${reason} (CDP id=${id})`))
+    }
+    pending.clear()
+  }
+  ws.addEventListener('close', () => rejectPending('Chrome DevTools WebSocket 已关闭'))
+  ws.addEventListener('error', () => rejectPending('Chrome DevTools WebSocket 异常'))
   return {
     send(method, params = {}, sessionId) {
+      if (ws.readyState !== 1) return Promise.reject(new Error(`Chrome DevTools 尚未连接：${method}`))
       const id = nextId++
       ws.send(JSON.stringify({ id, method, params, sessionId }))
-      return new Promise((resolve, reject) => pending.set(id, { resolve, reject }))
+      return new Promise((resolve, reject) => {
+        const timeoutId = globalThis.setTimeout(() => {
+          if (!pending.delete(id)) return
+          reject(new Error(`Chrome DevTools 命令超时：${method} (CDP id=${id})`))
+        }, 20000)
+        pending.set(id, { resolve, reject, timeoutId })
+      })
     },
     on(method, listener) {
       const current = listeners.get(method) ?? new Set()

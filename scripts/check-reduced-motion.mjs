@@ -43,9 +43,12 @@ if (failures.length) {
 }
 
 const providerContent = fs.readFileSync(path.join(srcDir, 'components/world/WorldRuntimeProvider.tsx'), 'utf-8')
-if (!providerContent.includes('MotionConfig')) {
-  console.error('\n严重：WorldRuntimeProvider 中缺少 MotionConfig，framer-motion 不会自动降级！')
+const hasGlobalMotionConfig = providerContent.includes('MotionConfig')
+if (!hasGlobalMotionConfig && failures.length) {
+  console.error('\n严重：存在未显式处理 reducedMotion 的活动组件，且没有 MotionConfig 兜底！')
   process.exit(1)
 }
 
-console.log('\n动效降级审计通过：MotionConfig 全局生效，GSAP 组件显式检查')
+console.log(hasGlobalMotionConfig
+  ? '\n动效降级审计通过：MotionConfig 全局生效，GSAP 组件显式检查'
+  : '\n动效降级审计通过：活动 Framer 组件显式检查，主线不常驻 MotionConfig')

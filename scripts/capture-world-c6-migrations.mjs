@@ -32,18 +32,19 @@ async function safeCapture(page, filePath) {
   throw lastError
 }
 
-async function recordMigration({ name, sourcePath, object, targetScene, setup, trigger, reducedMotion = false }) {
+async function recordMigration({ name, sourcePath, object, targetScene, setup, preTrigger, trigger, reducedMotion = false }) {
   console.log(`capture ${name}: source`)
   const page = await launch.createPage({ width: 1280, height: 720, reducedMotion })
   await navigate(page, sourcePath)
   if (setup) await setup(page)
-  if (!await waitForExpression(page.send, `!!document.querySelector('[data-scene-transition-object="${object}"]')`)) throw new Error(`${name} 缺少 ${object} 来源对象`)
   await safeCapture(page, path.join(outputDir, `${name}-source.png`))
   const framesDir = path.join(outputDir, `${name}-frames`); fs.rmSync(framesDir, { recursive: true, force: true }); fs.mkdirSync(framesDir, { recursive: true })
   const initial = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false }); fs.writeFileSync(path.join(framesDir, 'frame-0001.jpg'), Buffer.from(initial.data, 'base64'))
   let frameIndex = 1; let accepting = true
   const off = launch.browser.on('Page.screencastFrame', async (params) => { if (!accepting) return; frameIndex += 1; fs.writeFileSync(path.join(framesDir, `frame-${String(frameIndex).padStart(4, '0')}.jpg`), Buffer.from(params.data, 'base64')); await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }).catch(() => {}) })
   await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
+  if (preTrigger) await preTrigger(page)
+  if (!await waitForExpression(page.send, `!!document.querySelector('[data-scene-transition-object="${object}"]')`)) throw new Error(`${name} 缺少 ${object} 来源对象`)
   await trigger(page)
   const transit = reducedMotion ? true : await waitFast(page, `document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state')==='inTransit'`, 3000)
   if (!reducedMotion && transit) await safeCapture(page, path.join(outputDir, `${name}-transit.png`))
@@ -63,7 +64,7 @@ async function recordMigration({ name, sourcePath, object, targetScene, setup, t
 const click = (selector) => async (page) => evaluate(page.send, `document.querySelector(${JSON.stringify(selector)})?.click()`)
 
 try {
-  await recordMigration({ name: 'gateway-atlas', sourcePath: '/', object: 'island', targetScene: 'atlas', setup: async (page) => { await click('[data-testid="gateway-enter"]')(page); await delay(700) }, trigger: click('[data-scene-transition-object="island"]') })
+  await recordMigration({ name: 'gateway-atlas', sourcePath: '/', object: 'island', targetScene: 'atlas', preTrigger: async (page) => { await click('[data-testid="gateway-enter"]')(page); await delay(900) }, trigger: click('[data-scene-transition-object="island"]') })
   await recordMigration({ name: 'atlas-node', sourcePath: '/atlas', object: 'star', targetScene: 'node', setup: async (page) => { await click('[data-atlas-area]')(page); await delay(500); await click('[data-atlas-node][data-visible="true"]')(page); await waitForExpression(page.send, `!!document.querySelector('[data-atlas-enter-node]')`) }, trigger: click('[data-atlas-enter-node]') })
   await recordMigration({ name: 'timeline-node', sourcePath: '/timeline', object: 'ripple', targetScene: 'node', setup: async (page) => { await click('[data-time-event]')(page); await waitForExpression(page.send, `!!document.querySelector('[data-testid="timeline-event-inspector"] [data-scene-transition-object="ripple"]')`) }, trigger: click('[data-scene-transition-object="ripple"]') })
   await recordMigration({ name: 'archive-node', sourcePath: '/archive', object: 'document', targetScene: 'node', setup: async (page) => { await click('[data-archive-record]')(page); await waitForExpression(page.send, `!!document.querySelector('[data-archive-enter-node]')`) }, trigger: click('[data-archive-enter-node]') })

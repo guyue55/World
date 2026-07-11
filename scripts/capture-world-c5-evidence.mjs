@@ -87,14 +87,15 @@ try {
     if (!await waitForExpression(page.send, `!!document.querySelector('[data-image-ready="true"]')`)) throw new Error('路径录屏起点位图未就绪')
     await delay(1000)
     await evaluate(page.send, `document.querySelector('[data-testid="path-waypoint-ledger"] a')?.click()`)
-    if (!await waitForExpression(page.send, `!!document.querySelector('[data-testid="node-journey-controls"] button')`)) throw new Error('路径录屏未抵达第一站')
-    if (!await waitForExpression(page.send, `document.querySelector('[data-world-scene="node"]')?.parentElement?.getAttribute('data-image-ready')==='true'`)) throw new Error('路径录屏第一站位图未就绪')
-    await delay(1000); await evaluate(page.send, `document.querySelector('[data-testid="node-journey-controls"] button')?.click()`)
-    if (!await waitForExpression(page.send, `new URLSearchParams(location.search).get('step')==='1'`)) throw new Error('路径录屏未抵达下一站')
-    if (!await waitForExpression(page.send, `document.querySelector('[data-world-scene="node"]')?.parentElement?.getAttribute('data-image-ready')==='true'`)) throw new Error('路径录屏下一站位图未就绪')
-    await delay(1000); await evaluate(page.send, `document.querySelector('[data-testid="node-journey-controls"] a')?.click()`)
-    if (!await waitForExpression(page.send, `location.pathname==='/paths/first-visit'&&document.body.innerText.includes('当前位置 2 / 7')`)) throw new Error('路径录屏未恢复进度')
-    await delay(1000)
+    for (let step = 0; step < 7; step += 1) {
+      if (!await waitForExpression(page.send, `!!document.querySelector('[data-testid="node-journey-controls"] button')`)) throw new Error(`路径录屏第 ${step + 1} 站未抵达`)
+      if (!await waitForExpression(page.send, `document.querySelector('[data-world-scene="node"]')?.parentElement?.getAttribute('data-image-ready')==='true'`)) throw new Error(`路径录屏第 ${step + 1} 站位图未就绪`)
+      await delay(650)
+      await evaluate(page.send, `document.querySelector('[data-testid="node-journey-controls"] button')?.click()`)
+      if (step < 6 && !await waitForExpression(page.send, `new URLSearchParams(location.search).get('step')==='${step + 1}'`)) throw new Error(`路径录屏第 ${step + 2} 站未继续`)
+    }
+    if (!await waitForExpression(page.send, `location.pathname==='/paths/first-visit'&&!!document.querySelector('[data-testid="path-complete"]')`)) throw new Error('路径录屏未出现完整抵达仪式')
+    await delay(1600)
   })
   const nodeFrames = await recordFlow('node-explore', '/node/world-manifesto', async (page) => {
     await evaluate(page.send, `document.querySelector('[href="#reading"]')?.click()`); await delay(1000)

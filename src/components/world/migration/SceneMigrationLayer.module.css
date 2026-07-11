@@ -1,7 +1,25 @@
 .layer { position:fixed; inset:0; z-index:60; pointer-events:none; overflow:hidden; opacity:0; }
 .layer[data-active="true"] { opacity:1; }
-.wash { position:absolute; inset:0; background:rgba(4,9,9,.18); opacity:0; }
-.object { position:absolute; top:0; left:0; display:block; width:3rem; height:3rem; border:1px solid var(--migration-color,#d8b875); background:rgba(11,18,17,.92); box-shadow:0 0 28px color-mix(in srgb,var(--migration-color,#d8b875) 45%,transparent); opacity:0; transform-origin:center; }
+.destination { position:absolute; z-index:0; inset:-4%; background-position:center; background-size:cover; filter:blur(8px) saturate(.82); opacity:0; transform:scale(1.06); transition:opacity 180ms ease,transform 420ms ease; }
+.layer[data-migration-target="gateway"] .destination { background-image:url('/world/scenes/gateway/desktop.webp'); }
+.layer[data-migration-target="atlas"] .destination { background-image:url('/world/scenes/atlas/desktop.webp'); }
+.layer[data-migration-target="timeline"] .destination { background-image:url('/world/scenes/timeline/desktop.webp'); }
+.layer[data-migration-target="archive"] .destination { background-image:url('/world/scenes/archive/desktop.webp'); }
+.layer[data-migration-target="paths"] .destination { background-image:url('/world/scenes/paths/desktop.webp'); }
+.layer[data-migration-target="node"] .destination { background-image:url('/world/scenes/node/desktop.webp'); }
+.layer[data-migration-target="lighthouse"] .destination { background-image:url('/world/scenes/lighthouse/desktop.webp'); }
+.layer[data-migration-state="inTransit"] .destination { opacity:.46; transform:scale(1.015); }
+.layer[data-migration-state="arriving"] .destination { opacity:.18; transform:scale(1); transition-duration:220ms; }
+.wash { position:absolute; z-index:1; inset:0; background:rgba(4,9,9,.18); opacity:0; }
+.trail { position:absolute; z-index:2; top:0; left:0; display:block; height:2px; background:#ead18f; box-shadow:0 0 12px rgba(234,209,143,.9),0 0 34px rgba(234,209,143,.48); opacity:0; transform-origin:0 50%; }
+.targetAnchor { position:absolute; z-index:3; top:0; left:0; display:block; width:4.4rem; height:4.4rem; border:2px solid #ead18f; border-radius:50%; background:rgba(8,18,20,.5); box-shadow:0 0 0 8px rgba(234,209,143,.12),0 0 36px rgba(234,209,143,.52); opacity:0; }
+.targetAnchor[data-target-scene="atlas"] { border-radius:42% 58% 36% 64%; clip-path:polygon(18% 5%,82% 0,100% 44%,72% 88%,34% 100%,0 58%); }
+.targetAnchor[data-target-scene="timeline"] { border-style:double; border-width:5px; background:rgba(8,34,43,.46); }
+.targetAnchor[data-target-scene="archive"] { width:3.4rem; height:4.5rem; border-radius:3px; background:rgba(38,28,14,.72); }
+.targetAnchor[data-target-scene="paths"] { width:3.8rem; height:3.8rem; border-width:3px; }
+.targetAnchor[data-target-scene="node"] { width:3.8rem; height:5rem; border-radius:50% 50% 4px 4px; background:rgba(8,18,20,.74); }
+.targetAnchor[data-target-scene="lighthouse"] { width:8rem; height:.45rem; border:0; border-radius:4px; background:#f2d58a; box-shadow:0 0 14px #f2d58a,0 0 42px rgba(242,213,138,.55); }
+.object { position:absolute; z-index:4; top:0; left:0; display:block; width:3rem; height:3rem; border:1px solid var(--migration-color,#d8b875); background:rgba(11,18,17,.92); box-shadow:0 0 28px color-mix(in srgb,var(--migration-color,#d8b875) 45%,transparent); opacity:0; transform-origin:center; }
 .object::before,.object::after { content:""; position:absolute; inset:18%; border:1px solid var(--migration-color,#d8b875); opacity:.72; }
 .object[data-object="island"] { border-radius:45% 55% 38% 62%; clip-path:polygon(18% 8%,82% 2%,100% 45%,70% 88%,34% 100%,0 58%); }
 .object[data-object="island"]::before { border-radius:50%; }
@@ -13,3 +31,12 @@
 .object[data-object="door"] { border-radius:50% 50% 3px 3px; }.object[data-object="door"]::before { border-radius:50% 50% 0 0; }
 .object[data-object="beam"] { width:8rem; height:3px; border:0; border-radius:3px; background:#f2d58a; box-shadow:0 0 12px #f2d58a,0 0 35px rgba(242,213,138,.45); }
 @media(prefers-reduced-motion:reduce){ .layer { display:none; } }
+@media(max-width:767px){
+  .layer[data-migration-target="gateway"] .destination { background-image:url('/world/scenes/gateway/mobile.webp'); }
+  .layer[data-migration-target="atlas"] .destination { background-image:url('/world/scenes/atlas/mobile.webp'); }
+  .layer[data-migration-target="timeline"] .destination { background-image:url('/world/scenes/timeline/mobile.webp'); }
+  .layer[data-migration-target="archive"] .destination { background-image:url('/world/scenes/archive/mobile.webp'); }
+  .layer[data-migration-target="paths"] .destination { background-image:url('/world/scenes/paths/mobile.webp'); }
+  .layer[data-migration-target="node"] .destination { background-image:url('/world/scenes/node/mobile.webp'); }
+  .layer[data-migration-target="lighthouse"] .destination { background-image:url('/world/scenes/lighthouse/mobile.webp'); }
+}

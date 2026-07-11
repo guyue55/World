@@ -93,9 +93,10 @@ if (!failures.length) {
   if (!registry.browser?.viewports?.some((item) => item.mobile === true && item.reducedMotion === true)) {
     failures.push('LAN RC 必须覆盖移动端低动效视口')
   }
-  for (const key of ['mustHaveHomePrimaryCta', 'mustHaveHomeCoreStatusCard', 'mustHaveMobileNavigation']) {
+  for (const key of ['mustHaveSceneViewport', 'mustHavePrimaryInteraction', 'mustHaveMobileNavigation', 'mustNotExposeEngineeringCopy', 'mustNotExposePrivateCanary']) {
     if (registry.browserExpectations?.[key] !== true) failures.push(`LAN RC 浏览器预期缺少 ${key}`)
   }
+  if ((registry.browserExpectations?.minSceneViewportRatio ?? 0) < 0.65) failures.push('LAN RC 场景主体占比不得低于 0.65')
 
   for (const token of [
     'os.networkInterfaces()',
@@ -110,9 +111,12 @@ if (!failures.length) {
     'Page.captureScreenshot',
     'prefers-reduced-motion',
     'overflowX',
-    'primaryCtaVisible',
+    'sceneViewportVisible',
+    'sceneViewportRatio',
+    'primaryInteractionVisible',
     'mobileNavigationVisible',
-    'coreStatusCardVisible',
+    'engineeringCopy',
+    'privateCanary',
     'frontendVisibilityIsNotPermission',
     'productionLive',
   ]) {

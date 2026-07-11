@@ -12,17 +12,23 @@ const runId = `run-${new Date().toISOString().replace(/[:.]/g, '-').replace('T',
 const reportDir = path.join(root, 'docs/90-archive/reports/worldos-reality-first', runId)
 const screenshotsDir = path.join(reportDir, 'screenshots')
 const flowsDir = path.join(reportDir, 'flows')
+const recordingsDir = path.join(reportDir, 'recordings')
+const auditsDir = path.join(reportDir, 'audits')
 const logsDir = path.join(reportDir, 'logs')
 const latestPointer = path.join(root, 'docs/90-archive/reports/worldos-reality-first/latest-evidence.json')
 const contract = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experience/reality-first-route-contract.json'), 'utf8'))
 const routes = contract.spaces.map((space) => ({ id: space.id, path: space.sample }))
 const configSnapshots = new Map(['next-env.d.ts', 'tsconfig.json'].map((file) => [file, fs.readFileSync(path.join(root, file), 'utf8')]))
+const sourceCommit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).stdout.trim()
+const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'public', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
+const chromeBinary = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+const browserVersion = spawnSync(chromeBinary, ['--version'], { encoding: 'utf8' }).stdout.trim()
 const failures = []
 let server
 let browserRuntime
 let baseUrl
 
-for (const directory of [reportDir, screenshotsDir, flowsDir, logsDir]) fs.mkdirSync(directory, { recursive: true })
+for (const directory of [reportDir, screenshotsDir, flowsDir, recordingsDir, auditsDir, logsDir]) fs.mkdirSync(directory, { recursive: true })
 
 function latestMtime(relativeRoots) {
   let latest = 0
@@ -218,6 +224,8 @@ async function recordReturnVisit() {
     await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:visited-count','3');localStorage.setItem('guyue-world:journey-memory-v1',JSON.stringify({path:'/atlas',label:'群岛星图',sceneId:'atlas',sceneTitle:'世界地图',visitedAt:new Date().toISOString()}))` })
     await page.send('Page.navigate', { url: `${baseUrl}/` })
     if (!await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-returning"]')`, 20000)) throw new Error('回访入口未出现')
+    const returningScreenshot = await page.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false })
+    fs.writeFileSync(path.join(screenshotsDir, 'home-desktop-returning.png'), Buffer.from(returningScreenshot.data, 'base64'))
     const initial = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false })
     writeFrame(initial.data)
     const off = browserRuntime.browser.on('Page.screencastFrame', async (params, sessionId) => {
@@ -227,15 +235,23 @@ async function recordReturnVisit() {
     })
     await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
     await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] a')?.click()`)
-    if (!await waitForExpression(page.send, `location.pathname==='/atlas'`, 15000)) throw new Error('回访未继续到上次位置')
-    await delay(1100)
+    const continued = await waitForExpression(page.send, `location.pathname==='/atlas'`, 15000)
+    if (!continued) throw new Error('回访未继续到上次位置')
+    await delay(900)
+    await evaluate(page.send, `history.back()`)
+    if (!await waitForExpression(page.send, `location.pathname==='/'&&!!document.querySelector('[data-testid="gateway-returning"]')`, 15000)) throw new Error('回访未返回入口')
+    await delay(500)
+    await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] button')?.click()`)
+    const cleared = await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-enter"]')&&!document.querySelector('[data-testid="gateway-returning"]')`, 5000)
+    if (!cleared) throw new Error('回访记忆清除后未恢复首访入口')
+    await delay(900)
     accepting = false
     await page.send('Page.stopScreencast').catch(() => {})
     off()
     const output = path.join(flowsDir, 'return-visit-continuation.mp4')
     const encoded = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(frameDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', output], { encoding: 'utf8' })
     if (encoded.status !== 0) throw new Error(`回访录屏编码失败：${encoded.stderr}`)
-    return { frames, path: path.relative(root, output) }
+    return { frames, path: path.relative(root, output), continued, cleared }
   } finally {
     fs.rmSync(frameDir, { recursive: true, force: true })
     await page.close()
@@ -302,7 +318,60 @@ try {
   ]
   for (const [name, script] of flowCommands) run('node', [script], { env: { WORLDOS_BASE_URL: baseUrl, WORLDOS_EVIDENCE_DIR: path.join(flowsDir, name) }, log: `flow-${name}.log` })
 
-  const requiredFlowFiles = {
+  const screenshotAliases = {
+    'home-desktop-arrival.png': 'screenshots/gateway-desktop.jpg',
+    'home-mobile-arrival.png': 'screenshots/gateway-mobile.jpg',
+    'home-desktop-text-hidden.png': 'screenshots/gateway-text-hidden.jpg',
+    'atlas-desktop-arrival.png': 'flows/atlas/atlas-arrival-desktop.png',
+    'atlas-desktop-focused.png': 'flows/atlas/atlas-node-focused.png',
+    'atlas-desktop-text-hidden.png': 'flows/atlas/atlas-text-hidden.png',
+    'atlas-mobile-arrival.png': 'flows/atlas/atlas-mobile.png',
+    'timeline-desktop-arrival.png': 'flows/timeline-archive/timeline-arrival-desktop.png',
+    'timeline-desktop-focused.png': 'flows/timeline-archive/timeline-event-focused.png',
+    'timeline-desktop-text-hidden.png': 'flows/timeline-archive/timeline-text-hidden.png',
+    'timeline-mobile-arrival.png': 'flows/timeline-archive/timeline-mobile.png',
+    'archive-desktop-arrival.png': 'flows/timeline-archive/archive-arrival-desktop.png',
+    'archive-desktop-search.png': 'flows/timeline-archive/archive-search.png',
+    'archive-desktop-text-hidden.png': 'flows/timeline-archive/archive-text-hidden.png',
+    'archive-mobile-arrival.png': 'flows/timeline-archive/archive-mobile.png',
+    'paths-desktop-overview.png': 'flows/path-node/paths-overview-desktop.png',
+    'paths-desktop-progress.png': 'flows/path-node/path-progress.png',
+    'paths-desktop-completed.png': 'flows/path-node/path-complete.png',
+    'paths-desktop-text-hidden.png': 'flows/path-node/paths-overview-text-hidden.png',
+    'paths-mobile-progress.png': 'flows/path-node/path-mobile.png',
+    'node-desktop-arrival.png': 'flows/path-node/node-arrival.png',
+    'node-desktop-reading.png': 'flows/path-node/node-reading.png',
+    'node-desktop-relations.png': 'flows/path-node/node-relations.png',
+    'node-desktop-text-hidden.png': 'flows/path-node/node-text-hidden.png',
+    'node-mobile-reading.png': 'flows/path-node/node-mobile.png',
+    'lighthouse-desktop-arrival.png': 'flows/lighthouse/lighthouse-arrival.png',
+    'lighthouse-desktop-answer.png': 'flows/lighthouse/lighthouse-grounded.png',
+    'lighthouse-desktop-fallback.png': 'flows/lighthouse/lighthouse-low-light.png',
+    'lighthouse-desktop-text-hidden.png': 'flows/lighthouse/lighthouse-text-hidden.png',
+    'lighthouse-mobile-arrival.png': 'flows/lighthouse/lighthouse-mobile.png',
+    'home-desktop-reduced-motion.png': 'screenshots/gateway-reduced-motion.jpg',
+    'atlas-desktop-reduced-motion.png': 'screenshots/atlas-reduced-motion.jpg',
+    'timeline-desktop-reduced-motion.png': 'screenshots/timeline-reduced-motion.jpg',
+    'archive-desktop-reduced-motion.png': 'screenshots/archive-reduced-motion.jpg',
+    'paths-desktop-reduced-motion.png': 'screenshots/paths-reduced-motion.jpg',
+    'node-desktop-reduced-motion.png': 'screenshots/node-reduced-motion.jpg',
+    'lighthouse-desktop-reduced-motion.png': 'screenshots/lighthouse-reduced-motion.jpg',
+  }
+  for (const [targetName, relativeSource] of Object.entries(screenshotAliases)) {
+    const source = path.join(reportDir, relativeSource)
+    const target = path.join(screenshotsDir, targetName)
+    if (!fs.existsSync(source)) {
+      failures.push(`关键截图缺失：${relativeSource}`)
+      continue
+    }
+    if (path.extname(source).toLowerCase() === '.png') fs.copyFileSync(source, target)
+    else {
+      const converted = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-i', source, '-frames:v', '1', target], { encoding: 'utf8' })
+      if (converted.status !== 0) failures.push(`关键截图转换失败：${targetName}`)
+    }
+  }
+
+  const requiredFlowSources = {
     'first-visit': 'migrations/gateway-atlas.mp4',
     'scene-migration': 'migrations/atlas-node.mp4',
     'atlas-exploration': 'atlas/atlas-exploration.mp4',
@@ -313,8 +382,28 @@ try {
     'lighthouse-guidance': 'lighthouse/lighthouse-guide.mp4',
     'return-visit-continuation': 'return-visit-continuation.mp4',
   }
+  const recordingNames = {
+    'first-visit': 'first-visit.webm',
+    'scene-migration': 'scene-migration.webm',
+    'atlas-exploration': 'atlas-explore.webm',
+    'timeline-revisit': 'timeline-review.webm',
+    'archive-retrieval': 'archive-search.webm',
+    'path-journey': 'path-journey.webm',
+    'node-reading': 'node-explore.webm',
+    'lighthouse-guidance': 'lighthouse-guide.webm',
+    'return-visit-continuation': 'returning-visit.webm',
+  }
+  for (const [id, relativeSource] of Object.entries(requiredFlowSources)) {
+    const source = path.join(flowsDir, relativeSource)
+    const target = path.join(recordingsDir, recordingNames[id])
+    if (!fs.existsSync(source)) {
+      failures.push(`${id}: 连续录屏源文件缺失`)
+      continue
+    }
+    const encoded = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-i', source, '-c:v', 'libvpx-vp9', '-crf', '38', '-b:v', '0', '-an', target], { encoding: 'utf8' })
+    if (encoded.status !== 0) failures.push(`${id}: WebM 编码失败：${encoded.stderr}`)
+  }
   const retainedFlowFiles = new Set([
-    ...Object.values(requiredFlowFiles).map((relativePath) => path.normalize(relativePath)),
     ...flowCommands.map(([name]) => path.normalize(`${name}/browser-observations.json`)),
   ])
   const pruneFlowEvidence = (directory, relativeDirectory = '') => {
@@ -328,12 +417,29 @@ try {
     }
   }
   pruneFlowEvidence(flowsDir)
-  const flows = Object.fromEntries(Object.entries(requiredFlowFiles).map(([id, relativePath]) => {
-    const absolutePath = path.join(flowsDir, relativePath)
+  const flows = Object.fromEntries(Object.entries(recordingNames).map(([id, fileName]) => {
+    const absolutePath = path.join(recordingsDir, fileName)
     if (!fs.existsSync(absolutePath)) failures.push(`${id}: 连续录屏缺失`)
-    return [id, { path: path.relative(root, absolutePath), bytes: fs.existsSync(absolutePath) ? fs.statSync(absolutePath).size : 0 }]
+    const probe = fs.existsSync(absolutePath)
+      ? spawnSync('ffprobe', ['-v', 'error', '-count_frames', '-select_streams', 'v:0', '-show_entries', 'stream=nb_read_frames:format=duration', '-of', 'json', absolutePath], { encoding: 'utf8' })
+      : null
+    const metadata = probe?.status === 0 ? JSON.parse(probe.stdout) : {}
+    return [id, {
+      path: path.relative(root, absolutePath),
+      bytes: fs.existsSync(absolutePath) ? fs.statSync(absolutePath).size : 0,
+      durationSeconds: Number(metadata.format?.duration ?? 0),
+      frames: Number(metadata.streams?.[0]?.nb_read_frames ?? 0),
+    }]
   }))
-  flows['return-visit-continuation'].frames = returnVisit.frames
+  flows['return-visit-continuation'].continued = returnVisit.continued
+  flows['return-visit-continuation'].cleared = returnVisit.cleared
+  const minimumFlowDurations = { 'first-visit': 1.4, 'path-journey': 8, 'return-visit-continuation': 2.2 }
+  for (const [id, minimum] of Object.entries(minimumFlowDurations)) {
+    if ((flows[id]?.durationSeconds ?? 0) < minimum) failures.push(`${id}: 录屏时长不足以覆盖固定流程，${flows[id]?.durationSeconds ?? 0}s < ${minimum}s`)
+  }
+  const pathFlowReport = JSON.parse(fs.readFileSync(path.join(flowsDir, 'path-node/browser-observations.json'), 'utf8'))
+  if (pathFlowReport.flowChecks?.fullJourneyComplete !== true) failures.push('path-journey: 未证明完整旅程抵达')
+  if (!returnVisit.continued || !returnVisit.cleared) failures.push('return-visit-continuation: 继续或清除流程不完整')
 
   const staticBundles = fs.existsSync(path.join(distDir, 'static'))
     ? fs.readdirSync(path.join(distDir, 'static'), { recursive: true }).filter((file) => typeof file === 'string' && file.endsWith('.js'))
@@ -348,6 +454,26 @@ try {
   if (buildMetrics.sharedKb === null || buildMetrics.sharedKb > 130) failures.push(`shared First Load JS 超预算或不可解析：${buildMetrics.sharedKb}`)
   if (Object.keys(buildMetrics.routes).length !== routes.length) failures.push(`核心 route 构建体积仅解析 ${Object.keys(buildMetrics.routes).length}/${routes.length}`)
   for (const [pathname, metric] of Object.entries(buildMetrics.routes)) if (metric.firstLoadKb - buildMetrics.sharedKb > 80) failures.push(`${pathname} route JS 增量超预算`)
+  const permissionCheck = run('npm', ['run', 'check:permission-boundary'], { log: 'permission-boundary.log' })
+  const aiBoundaryCheck = run('npm', ['run', 'check:ai-provider-boundary'], { log: 'ai-provider-boundary.log' })
+  const authoringCheck = run('npx', ['tsx', 'scripts/check-world-c8-authoring.ts'], { log: 'authoring-transaction.log' })
+  const sceneAssets = JSON.parse(fs.readFileSync(path.join(root, 'data/assets/world-scene-assets.json'), 'utf8'))
+  const sensoryAssets = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experience/sensory-audio-registry.json'), 'utf8'))
+  const desktopPerformance = observations
+    .filter((item) => item.mode === 'desktop')
+    .map((item) => ({ scene: item.scene, route: item.route, bitmapBytes: item.bitmapBytes, audioBytes: item.audioBytes, metrics: item.metrics }))
+  const auditArtifacts = {
+    'browser-matrix.json': { runId, observations, accessibility, flows },
+    'permission-boundary.json': { runId, bundleLeaks, permissionCheck: permissionCheck.trim(), aiBoundaryCheck: aiBoundaryCheck.trim(), passed: bundleLeaks.length === 0 },
+    'performance-budget.json': { runId, build: buildMetrics, desktop: desktopPerformance, budgets: { sharedKb: 130, routeIncrementKb: 80, lcpMs: 2500, cls: 0.1, tbtMs: 300 } },
+    'asset-license.json': { runId, sceneLicense: sceneAssets.license, sceneAssets: sceneAssets.assets.map((item) => ({ sceneId: item.sceneId, source: item.source, licenseId: item.licenseId, desktopBytes: item.desktop.bytes, mobileBytes: item.mobile.bytes })), audioProductionReadiness: sensoryAssets.productionReadiness, audioAssets: sensoryAssets.assetInventory },
+    'authoring-transaction.json': { runId, command: 'npx tsx scripts/check-world-c8-authoring.ts', output: authoringCheck.trim(), passed: /realWorkspaceUntouched=true/.test(authoringCheck) },
+  }
+  for (const [fileName, value] of Object.entries(auditArtifacts)) fs.writeFileSync(path.join(auditsDir, fileName), `${JSON.stringify(value, null, 2)}\n`)
+  const artifactTimes = {
+    screenshots: fs.readdirSync(screenshotsDir).map((fileName) => ({ path: path.relative(root, path.join(screenshotsDir, fileName)), mtimeMs: fs.statSync(path.join(screenshotsDir, fileName)).mtimeMs })),
+    recordings: fs.readdirSync(recordingsDir).map((fileName) => ({ path: path.relative(root, path.join(recordingsDir, fileName)), mtimeMs: fs.statSync(path.join(recordingsDir, fileName)).mtimeMs })),
+  }
   const evidenceFinishedAt = Date.now()
   const freshness = { sourceMtime, buildStartedAt, buildArtifactMtime, serverStartedAt, firstBrowserCheckAt, evidenceFinishedAt, valid: sourceMtime < buildStartedAt && buildStartedAt <= buildArtifactMtime && buildArtifactMtime < serverStartedAt && serverStartedAt < firstBrowserCheckAt && firstBrowserCheckAt <= evidenceFinishedAt }
   if (!freshness.valid) failures.push('source -> build -> server -> evidence 时间链无效')
@@ -358,12 +484,24 @@ try {
     generatedAt: new Date().toISOString(),
     status: failures.length ? 'defects-found' : 'objective-evidence-captured',
     aiMode: process.env.OPENAI_API_KEY ? 'provider-present-unreviewed' : 'low-light',
+    source: { commit: sourceCommit, worktreeChangesAtStart: sourceStatus },
     server: { localhost: baseUrl, lan: `http://${lanIp}:${port}`, lanStatus },
     freshness,
     build: buildMetrics,
-    browser: { observations, accessibility },
+    browser: { version: browserVersion, viewports: [{ id: 'desktop', width: 1440, height: 900 }, { id: 'mobile', width: 390, height: 844 }, { id: 'zoom-200', width: 720, height: 450 }], observations, accessibility },
     flows,
+    artifactTimes,
     privacy: { bundleLeaks },
+    commands: [
+      'npm run build:production-ci',
+      'next start -H 0.0.0.0',
+      '42 route/mode browser captures + 200% zoom',
+      ...flowCommands.map(([, script]) => `node ${script}`),
+      'npm run check:permission-boundary',
+      'npm run check:ai-provider-boundary',
+      'npx tsx scripts/check-world-c8-authoring.ts',
+    ],
+    audits: Object.keys(auditArtifacts).map((fileName) => path.relative(root, path.join(auditsDir, fileName))),
     failures,
     note: '本 manifest 只记录客观事实；视觉是否达到世界体验仍需逐图、逐录屏和独立 Reality Audit。',
   }

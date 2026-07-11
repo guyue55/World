@@ -429,7 +429,11 @@ async function runBrowserChecks() {
             })
             .map((element) => ({ element, rect: element.getBoundingClientRect(), label: labelFor(element) }))
 
-          const readableCandidates = Array.from(document.body.querySelectorAll('main h1, main h2, main h3, main p, main a, main button, main li, main label, footer p, footer a'))
+          const sceneViewport = document.querySelector('[data-world-scene]')
+          const sceneRect = sceneViewport?.getBoundingClientRect()
+          const primaryInteraction = Array.from(document.querySelectorAll('[data-testid="gateway-enter"],[data-atlas-area],[data-time-anchor],[data-archive-record],[data-path-route],[data-scene-transition-object="waypoint"],a[href="#reading"],[data-scene-transition-object="door"],#lighthouse-question'))
+            .find((element) => isVisible(element))
+          const readableCandidates = Array.from(document.body.querySelectorAll('main h1,[data-testid="gateway-enter"],[data-atlas-area],[data-time-anchor],[data-archive-record],[data-path-route],[data-scene-transition-object="waypoint"],a[href="#reading"],[data-scene-transition-object="door"],#lighthouse-question'))
             .filter((element) => isVisible(element) && (element.innerText || element.textContent || '').replace(/\\s+/g, '').length >= 2)
             .map((element) => ({ element, rect: element.getBoundingClientRect(), label: labelFor(element) }))
 
@@ -461,9 +465,12 @@ async function runBrowserChecks() {
             clientWidth: document.documentElement.clientWidth,
             overflowX: document.documentElement.scrollWidth > document.documentElement.clientWidth + 2,
             interactiveCount: document.querySelectorAll('a[href],button,input,select,textarea').length,
-            primaryCtaVisible: testIdVisible('home-primary-cta'),
+            sceneViewportVisible: Boolean(sceneViewport && isVisible(sceneViewport)),
+            sceneViewportRatio: sceneRect ? Number(((sceneRect.width * sceneRect.height) / (innerWidth * innerHeight)).toFixed(3)) : 0,
+            primaryInteractionVisible: Boolean(primaryInteraction),
             mobileNavigationVisible: testIdVisible('mobile-primary-navigation'),
-            coreStatusCardVisible: testIdVisible('dynamic-world-status-card'),
+            engineeringCopy: /Motion Layer|Fallback|Evidence|场景证据|候选验收|9\\/10|8\\.9|降级规则|验收报告/.test(text),
+            privateCanary: /private-leak-fixture|不应写入的私密演练|这段正文只用于故意构造错误边界/.test(document.documentElement.innerHTML),
             sceneQa: {
               ambientEnvironmentPresent: testIdExists('ambient-environment-v2'),
               sceneTransitionShellPresent: testIdExists('scene-transition-shell'),
@@ -521,11 +528,13 @@ async function runBrowserChecks() {
 
       const metrics = dom.result.value
       const minText = registry.browserExpectations?.minBodyTextLength ?? 500
-      const isHomeRoute = route === '/'
+      const sceneRoute = !(registry.browserExpectations?.nonSceneRoutes ?? []).includes(route)
       const visibilityChecks = {
-        primaryCta: !registry.browserExpectations?.mustHaveHomePrimaryCta || !isHomeRoute || metrics.primaryCtaVisible,
+        sceneViewport: !registry.browserExpectations?.mustHaveSceneViewport || !sceneRoute || (metrics.sceneViewportVisible && metrics.sceneViewportRatio >= (registry.browserExpectations?.minSceneViewportRatio ?? 0.65)),
+        primaryInteraction: !registry.browserExpectations?.mustHavePrimaryInteraction || !sceneRoute || metrics.primaryInteractionVisible,
         mobileNavigation: !registry.browserExpectations?.mustHaveMobileNavigation || !viewport.mobile || metrics.mobileNavigationVisible,
-        coreStatusCard: !registry.browserExpectations?.mustHaveHomeCoreStatusCard || !isHomeRoute || metrics.coreStatusCardVisible,
+        engineeringCopy: !registry.browserExpectations?.mustNotExposeEngineeringCopy || !sceneRoute || !metrics.engineeringCopy,
+        privateCanary: !registry.browserExpectations?.mustNotExposePrivateCanary || !metrics.privateCanary,
       }
       const passed = metrics.textLength >= minText
         && (!registry.browserExpectations?.mustHaveH1 || Boolean(metrics.h1))
