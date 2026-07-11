@@ -94,7 +94,7 @@
 - Consumes: current production routes, latest Reality-First evidence, source / asset mtimes.
 - Produces: truthful baseline `CINEMATIC_STATIC_WORLD_IN_PROGRESS`, machine acceptance contract, first fresh evidence run.
 
-- [ ] **A.1** 运行控制校验、只读环境预检、`git status --short --branch`、最近提交和旧证据 freshness；记录 Node、Playwright 配套 Chromium、ffmpeg、LAN 地址、用户改动、可复用实现和无效完成声明。
+- [x] **A.1** 运行控制校验、只读环境预检、`git status --short --branch`、最近提交和旧证据 freshness；记录 Node、Playwright 配套 Chromium、ffmpeg、LAN 地址、用户改动、可复用实现和无效完成声明。
 - [ ] **A.2** 用 fresh production build 重新采集七场景 desktop / mobile / text-hidden / background-hidden；记录每个页面静态位图、语义对象、持续环境、主要交互和公开工程文案的真实占比与缺陷。
 - [ ] **A.3** 使用 `ffprobe` 记录旧九段录屏真实时长；不得把 1.72 至 10.16 秒旧视频算作持续生命、soak 或长期运行证据。
 - [ ] **A.4** 消费 Goal 前已冻结的 `living-world-acceptance.json`，先写失败的 schema / 数量 / 状态阶梯测试，再让 evidence 与终局校验器读取同一契约；不得在执行期创建、补项或降低它。

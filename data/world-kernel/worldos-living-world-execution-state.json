@@ -6,12 +6,36 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.1",
+    "currentItem": "A.2",
     "taskState": "in_progress",
-    "activeRecordId": "LW-001",
-    "resumeAction": "continue A.1 baseline audit"
+    "activeRecordId": "LW-002",
+    "resumeAction": "start A.2 fresh production visual baseline"
   },
-  "completedItems": {},
+  "completedItems": {
+    "A.1": {
+      "status": "passed",
+      "itemId": "A.1",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T00:28:14+08:00",
+      "finishedAt": "2026-07-12T00:31:10+08:00",
+      "commands": [
+        {
+          "command": "A.1 control, readiness, toolchain, LAN, Git, freshness and inventory audit",
+          "exitCode": 0,
+          "outputSha256": "d8a4753bcbf0b1ccbb77c526714c6a2a2aed2fb9790aa7303de9ed25031f4c1b",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a1-2026-07-12/logs/a1-baseline-audit.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a1-2026-07-12/evidence/a1-baseline-summary.json",
+          "sha256": "9ac6ce703cc0bbe185103206cc743d4371a464bea932f15124aebea7ac2dd099"
+        }
+      ],
+      "commitHash": "4ec64bc2ccfed367887f74ff3afa8456922f3d9d",
+      "commitSubject": "test(world): 记录生命世界执行基线"
+    }
+  },
   "failedAttempts": [],
   "riskGates": [
     {

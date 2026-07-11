@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
-current_item: A.1
+current_item: A.2
 task_state: in_progress
-active_record_id: LW-001
-last_successful_command: "node scripts/check-worldos-living-world-readiness.mjs --repair-browser"
-resume_action: "continue A.1 baseline audit"
-last_completed_item: none
+active_record_id: LW-002
+last_successful_command: "A.1 baseline audit and hashed evidence"
+resume_action: "start A.2 fresh production visual baseline"
+last_completed_item: A.1
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: []
+completed_items: [A.1]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.1
+next_item: A.2
 ```
 
 每完成一项立即：
@@ -273,6 +273,42 @@ security_boundary:
   - "本地 Ollama key 不构成认证；服务端代理、私有 LAN allowlist、公开投影和 source ID 求交才是边界"
 decision: "CONTROL_V1_2_PROVIDER_TARGET_PREPARED; product Goal remains NOT_STARTED"
 next_item: A.1
+```
+
+### Record LW-001：A.1 执行环境与旧证据基线
+
+```yaml
+record: LW-001
+checkpoint: A
+item: A.1
+status: passed
+started_at: 2026-07-12T00:28:14+08:00
+finished_at: 2026-07-12T00:31:10+08:00
+verified_facts:
+  - "Goal 启动前工作树 clean；当前分支 codex/visual-overlay-qa，不自动 push"
+  - "控制校验和 readiness 通过，但 productCompletion=not-evaluated"
+  - "Node 24.13.0、Python Playwright 1.58.0、Chromium 145.0.7632.6、ffmpeg/ffprobe 6.0 可用"
+  - "主 LAN 地址 192.168.1.200；另有三个私有接口可达候选"
+  - "旧 run manifest 早于新控制包，九段录屏与旧 passed 只能作为反基线"
+  - "14 张场景 WebP、0 个公开音频资产；32 个现有 runtime/迁移/场景/音频相关文件可渐进复用"
+hypothesis:
+  id: null
+  result: null
+files_changed:
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a1-2026-07-12/logs/a1-baseline-audit.log"
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a1-2026-07-12/evidence/a1-baseline-summary.json"
+commands:
+  - command: "A.1 control, readiness, toolchain, LAN, Git, freshness and inventory audit"
+    exit_code: 0
+    observed: "CONTROL_INTEGRITY_PASS; LIVING_WORLD_READINESS_PASS; old evidence stale"
+evidence:
+  - "a1-baseline-audit.log sha256=d8a4753bcbf0b1ccbb77c526714c6a2a2aed2fb9790aa7303de9ed25031f4c1b"
+  - "a1-baseline-summary.json sha256=9ac6ce703cc0bbe185103206cc743d4371a464bea932f15124aebea7ac2dd099"
+failures: []
+fixes:
+  - "将 Goal ID、启动时间、活动记录和恢复动作写入账本及机器镜像"
+commit: "4ec64bc2ccfed367887f74ff3afa8456922f3d9d test(world): 记录生命世界执行基线"
+next_item: A.2
 ```
 
 ## 10. 后续记录模板
