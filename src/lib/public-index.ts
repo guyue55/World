@@ -24,6 +24,13 @@ export type PublicWorldIndex = {
   graph: ReturnType<typeof getPublicStarGraph>
 }
 
+export function preservePublicIndexGeneratedAt(next: PublicWorldIndex, existing: PublicWorldIndex | null): PublicWorldIndex {
+  if (!existing) return next
+  const { generatedAt: _nextGeneratedAt, ...nextFacts } = next
+  const { generatedAt: _existingGeneratedAt, ...existingFacts } = existing
+  return JSON.stringify(nextFacts) === JSON.stringify(existingFacts) ? { ...next, generatedAt: existing.generatedAt } : next
+}
+
 export function createPublicWorldIndex(): PublicWorldIndex {
   const publicNodes = getPublicNodes()
   const paths = getAllPaths()

@@ -7,7 +7,7 @@ import transitionRegistry from '../data/domains/experience/scene-transition-regi
 import ambientRegistry from '../data/domains/experience/ambient-environment-registry.json'
 import journeyPolicy from '../data/domains/experience/journey-memory-policy.json'
 import audioRegistry from '../data/domains/experience/sensory-audio-registry.json'
-import { createPublicWorldIndex } from '../src/lib/public-index'
+import { createPublicWorldIndex, preservePublicIndexGeneratedAt, type PublicWorldIndex } from '../src/lib/public-index'
 
 function writeJson(file: string, data: unknown) {
   fs.mkdirSync(path.dirname(file), { recursive: true })
@@ -16,7 +16,9 @@ function writeJson(file: string, data: unknown) {
   fs.writeFileSync(file, next, 'utf8')
 }
 
-writeJson('public/world-index.json', createPublicWorldIndex())
+const publicIndexFile = 'public/world-index.json'
+const existingPublicIndex = fs.existsSync(publicIndexFile) ? JSON.parse(fs.readFileSync(publicIndexFile, 'utf8')) as PublicWorldIndex : null
+writeJson(publicIndexFile, preservePublicIndexGeneratedAt(createPublicWorldIndex(), existingPublicIndex))
 writeJson('public/world-manifest.json', manifest)
 writeJson('data/generated/world-runtime-public.json', {
   scene: {
