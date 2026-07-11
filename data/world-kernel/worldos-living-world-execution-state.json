@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.2",
+    "currentItem": "A.3",
     "taskState": "in_progress",
-    "activeRecordId": "LW-002",
-    "resumeAction": "start A.2 fresh production visual baseline"
+    "activeRecordId": "LW-003",
+    "resumeAction": "start A.3 old recording ffprobe audit"
   },
   "completedItems": {
     "A.1": {
@@ -34,6 +34,29 @@
       ],
       "commitHash": "4ec64bc2ccfed367887f74ff3afa8456922f3d9d",
       "commitSubject": "test(world): 记录生命世界执行基线"
+    },
+    "A.2": {
+      "status": "passed",
+      "itemId": "A.2",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T00:31:12+08:00",
+      "finishedAt": "2026-07-12T00:49:14+08:00",
+      "commands": [
+        {
+          "command": "A.2 manifest and visual-audit expected-defect validation",
+          "exitCode": 0,
+          "outputSha256": "5b7c72a24c8761098bee67768caddb629d1ef6c03d8c135ce52009720c110399",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a2-2026-07-12/raw/logs/a2-baseline-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a2-2026-07-12/evidence/a2-visual-baseline-audit.json",
+          "sha256": "b926d92f3b5f25249dc2bfe48c7b6a2dbbcd29d43bc7c9d51eb3f05900b0a2bb"
+        }
+      ],
+      "commitHash": "3d53cac79ea318824ae8d21ee7cdbcfdb3bd5fc2",
+      "commitSubject": "test(world): 建立四视图真实视觉基线"
     }
   },
   "failedAttempts": [],
