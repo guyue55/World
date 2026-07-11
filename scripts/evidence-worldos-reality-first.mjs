@@ -16,8 +16,28 @@ const recordingsDir = path.join(reportDir, 'recordings')
 const auditsDir = path.join(reportDir, 'audits')
 const logsDir = path.join(reportDir, 'logs')
 const latestPointer = path.join(root, 'docs/90-archive/reports/worldos-reality-first/latest-evidence.json')
-const contract = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experience/reality-first-route-contract.json'), 'utf8'))
-const routes = contract.spaces.map((space) => ({ id: space.id, path: space.sample }))
+const acceptanceContractPath = path.join(root, 'data/domains/experience/living-world-acceptance.json')
+const acceptanceContract = JSON.parse(fs.readFileSync(acceptanceContractPath, 'utf8'))
+const expectedTargetStatus = 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING'
+const contractOnly = process.argv.includes('--contract-only')
+const acceptanceFailures = []
+
+if (acceptanceContract.schemaVersion !== '1.2.0') acceptanceFailures.push('schemaVersion must be 1.2.0')
+if (acceptanceContract.status !== 'FROZEN_PRE_GOAL') acceptanceFailures.push('contract status must remain FROZEN_PRE_GOAL')
+if (acceptanceContract.scenes?.length !== 7) acceptanceFailures.push('scene count must be 7')
+if (acceptanceContract.views?.length !== 9) acceptanceFailures.push('view count must be 9')
+if (acceptanceContract.flows?.length !== 14) acceptanceFailures.push('flow count must be 14')
+if (acceptanceContract.targets?.currentGoalFinal !== expectedTargetStatus
+  || acceptanceContract.targets?.automaticWithoutHumanAudioSignoff !== expectedTargetStatus
+  || acceptanceContract.targets?.promotionOutsideGoalRequired !== true) acceptanceFailures.push('candidate status ladder drift')
+if (acceptanceFailures.length) throw new Error(`生命世界验收契约无效：${acceptanceFailures.join('; ')}`)
+
+if (contractOnly) {
+  console.log(`EVIDENCE_ACCEPTANCE_CONTRACT_PASS scenes=${acceptanceContract.scenes.length} views=${acceptanceContract.views.length} flows=${acceptanceContract.flows.length} target=${acceptanceContract.targets.currentGoalFinal}`)
+  process.exit(0)
+}
+
+const routes = acceptanceContract.scenes.map((scene) => ({ id: scene.id, path: scene.route }))
 const configSnapshots = new Map(['next-env.d.ts', 'tsconfig.json'].map((file) => [file, fs.readFileSync(path.join(root, file), 'utf8')]))
 const sourceCommit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).stdout.trim()
 const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
@@ -566,6 +586,15 @@ try {
     runId,
     generatedAt: new Date().toISOString(),
     status: failures.length ? 'defects-found' : 'objective-evidence-captured',
+    acceptanceContract: {
+      path: path.relative(root, acceptanceContractPath),
+      schemaVersion: acceptanceContract.schemaVersion,
+      status: acceptanceContract.status,
+      scenes: acceptanceContract.scenes.length,
+      views: acceptanceContract.views.length,
+      flows: acceptanceContract.flows.length,
+      target: acceptanceContract.targets.currentGoalFinal,
+    },
     aiMode: process.env.OPENAI_API_KEY ? 'provider-present-unreviewed' : 'low-light',
     source: { commit: sourceCommit, worktreeChangesAtStart: sourceStatus },
     server: { localhost: baseUrl, lan: `http://${lanIp}:${port}`, lanStatus },

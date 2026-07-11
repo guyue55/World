@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.4",
+  "generatedAt": "2026-07-11T16:53:53.463Z",
+  "frozenContract": {
+    "path": "data/domains/experience/living-world-acceptance.json",
+    "sha256": "54ac299ad46dccaf7d9cdef015589933fddb81c14693693ec28253c72766bbea",
+    "schemaVersion": "1.2.0",
+    "status": "FROZEN_PRE_GOAL",
+    "sceneCount": 7,
+    "viewCount": 9,
+    "flowCount": 14,
+    "statusLadder": {
+      "currentGoalFinal": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING",
+      "automaticWithoutHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING",
+      "fallbackWithoutHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING",
+      "fallbackWithHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK",
+      "providerWithHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER",
+      "promotionOutsideGoalRequired": true
+    }
+  },
+  "consumers": {
+    "evidence": {
+      "path": "scripts/evidence-worldos-reality-first.mjs",
+      "contractOnly": "EVIDENCE_ACCEPTANCE_CONTRACT_PASS",
+      "routeOwner": "contract.scenes",
+      "legacyRouteContractRemoved": true
+    },
+    "finalVerifier": {
+      "path": "scripts/verify-worldos-living-world-final.mjs",
+      "contractOnly": "ACCEPTANCE_CONTRACT_PASS",
+      "frozenChecksumPreserved": true
+    }
+  },
+  "test": {
+    "path": "scripts/check-worldos-living-world-acceptance-consumers.mjs",
+    "redLogSha256": "286e990103dece7ea89a9538926fd630a54e97e5bb6d80f1fc71185b0979b51b",
+    "redFindingCount": 2,
+    "greenLogSha256": "1f236438bca79a473e51f3b761bd414953143007675200546a29295fd4fce0be",
+    "result": "passed"
+  },
+  "productCompletion": "not-evaluated"
+}

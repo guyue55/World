@@ -1,0 +1,3 @@
+LIVING_WORLD_ACCEPTANCE_CONSUMERS_FAIL findings=2
+- evidence does not consume living-world acceptance
+- evidence still consumes legacy route contract
