@@ -18,6 +18,26 @@
 - 为“宇宙感”预装 3D、ECS、数据库、通用插件和第二套状态框架。
 - 把机构级保存标准原样搬进单作者本地项目。
 
+### 1.1 2026-07-11 技术栈复核
+
+选型按稳定性、时效性、本项目匹配度、运行体积、降级能力和替换成本共同决定，不以“最新大版本”单独决定升级。
+
+| 能力 | 当前实装 | 外部状态与决定 | 本 Goal 边界 |
+| --- | --- | --- | --- |
+| 应用框架 | Next.js 15.5.20 | [npm registry](https://registry.npmjs.org/next/15.5.20) 显示 15.5.20 于 2026-07-01 仍获维护发布；16.2.10 是新主版本。当前 259 个静态页面和 `next start` 已真实通过，因此保持 15.5 维护线，不在体验重构前迁移 16 | Goal 内只接收 15.5 patch；major 迁移需 Goal 外 ADR、迁移清单与全量回归 |
+| UI runtime | React / React DOM 19.2.7 | 当前稳定版本；React 官方 19.2 系列继续修复 RSC，现有版本已高于 19.2.6 安全修复线 | 保持 19.2；不引入第二状态框架 |
+| 动效 | GSAP 3.15.0 | 官方当前 3.15；`gsap.matchMedia()` 会统一收集并 revert 响应式动画，适合本项目 desktop/mobile/reduced-motion 生命周期 | 只用 core/context/matchMedia/timeline；插件按可见收益单独审查 |
+| 契约 | Zod 3.25.76 | Zod 4.4.3 已是新主版本，但现有事实契约和构建稳定；此时迁移只增加类型与序列化回归面 | Goal 内保持 Zod 3；未来独立 ADR 迁移 Zod 4 |
+| 检索 | Fuse.js 7.4.2 | 本地小规模公开投影足够，无需搜索服务或向量数据库 | 只读公开投影；规模和质量证据不足前不更换 |
+| 场景绘制 | CSS + SVG + Canvas 2D | 与 SSR 静态降级、低体积和七场景差异化最匹配 | Three.js / R3F / PixiJS 等默认不引入 |
+| 场景迁移 | 原生 View Transition 渐进增强 + GSAP coordinator | View Transition 已支持 SPA/MPA 迁移，但仍必须 feature-detect 并保留直接导航、焦点和 reduced-motion 路径 | 原生 API 负责浏览器快照能力，GSAP 只编排语义阶段，不建立双状态机 |
+| 声音 | 原生 Web Audio + HTMLMediaElement | 浏览器要求用户手势创建或恢复 AudioContext；长音乐流适合 media element，短 cue / 程序化层适合 buffer/audio graph | 单 AudioContext、默认关闭、隐藏暂停、可完全降级；不引入 Howler/Tone |
+| 生命周期 | Page Visibility + rAF / timer | Page Visibility 广泛可用；后台 rAF 会暂停、timer 会节流，必须主动释放而不是假设仍按时运行 | 一个 scheduler owner，hidden/quiet/dispose 资源归零 |
+| 浏览器验收 | Playwright Python 1.58 + 配套 Chromium 145 headless shell | Playwright 官方要求每个版本安装配套浏览器；配套 Chromium 比依赖本机 Chrome 更可复现 | `check-worldos-living-world-readiness.mjs --repair-browser` 只安装缺失 shell，不升级项目依赖 |
+| 媒体验证 | ffmpeg / ffprobe | 成熟本地工具，可回算连续性、时长、帧差、PCM、峰值和频谱 | 作为技术证据，不冒充视觉与人类听感判断 |
+
+主要一手依据：[Playwright 浏览器管理](https://playwright.dev/docs/browsers)、[Next.js production checklist](https://nextjs.org/docs/app/guides/production-checklist)、[GSAP matchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia%28%29/)、[MDN View Transition](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)、[MDN Web Audio best practices](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices)、[MDN Page Visibility](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)、[Core Web Vitals 阈值](https://web.dev/articles/defining-core-web-vitals-thresholds)。外部版本只作为决策输入；仓库 lockfile、fresh build 与浏览器实测才是当前实现事实。
+
 ## 2. 总体结构
 
 ```mermaid

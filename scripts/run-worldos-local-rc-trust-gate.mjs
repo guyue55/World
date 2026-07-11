@@ -14,7 +14,6 @@ const commands = [
   ['npm', ['run', 'check:scene-qa']],
   ['npm', ['run', 'check:mainline']],
   ['npm', ['run', 'check:lan-local']],
-  ['npm', ['run', 'evidence:worldos-external-template']],
   ['npm', ['run', 'audit:report']],
   ['node', ['scripts/write-worldos-local-rc-summary.mjs']],
   ['node', ['scripts/check-worldos-local-rc-summary.mjs']],

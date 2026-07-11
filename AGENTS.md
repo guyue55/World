@@ -16,9 +16,10 @@
 
 ```bash
 node scripts/check-worldos-living-world-control.mjs
+node scripts/check-worldos-living-world-readiness.mjs --repair-browser
 ```
 
-失败表示权威文件、任务结构或恢复指针发生漂移。除非用户在 Goal 外明确批准新版本，否则不得继续，也不得修改 checksum 降低标准。
+第一条失败表示权威文件、任务结构或恢复指针发生漂移；第二条失败表示本机缺少 Node、Playwright Chromium、ffmpeg 或 LAN 条件。除非用户在 Goal 外明确批准新版本，否则不得继续，也不得修改 checksum 降低标准。
 
 校验器只允许输出 `CONTROL_INTEGRITY_PASS`，它永远不判定产品完成。产品完成仍必须由最新浏览器、长录屏、音频技术证据、运行证据和两个独立 reviewer context 共同判定；人类听感只由真实人类签收。
 
@@ -51,7 +52,7 @@ node scripts/check-worldos-living-world-control.mjs
 - 元总控、体验验收、架构与数据契约、Goal 提示词和机器清单在 Goal 内冻结。
 - 执行计划只允许把已真实完成项从 `[ ]` 改为 `[x]`，不得删项、改写验收或新增后续阶段。
 - 执行账本是唯一可持续更新的恢复事实，必须记录失败、假设、实验、修复、命令、证据和提交。
-- `data/world-kernel/worldos-living-world-execution-state.json` 是账本的机器镜像；每个 `[x]` 必须绑定结构化命令输出 hash、原始证据 hash 和唯一、可由 Git 反查的中文实现 commit hash / subject，二者不一致即失败。
+- `data/world-kernel/worldos-living-world-execution-state.json` 是账本的机器镜像；每个 `[x]` 必须绑定结构化命令输出 hash、原始证据 hash 和可由 Git 反查的中文实现 commit hash / subject。一个最小高内聚实现提交最多覆盖同一检查点内四项，跨检查点不得复用；同一检查点的 fresh 原始证据可以共享，但每项仍要有自己的完成记录。
 - 若实现与验收冲突，修改实现；若假设被实测否定，在账本登记并按同一目标修正方案，不改低验收标准。
 - 任何旧完成声明、截图或报告不得自动迁移为新计划的通过项。
 
@@ -105,7 +106,8 @@ node scripts/check-worldos-living-world-control.mjs
 - 使用“事实 -> 期望体验 -> 最小机制 -> 真实动态 -> 人工感受”的逆向链路，不以基础设施数量推导体验完成。
 - 风险样板未通过前不得复制到七场景；失败时修正假设或删除原型，不扩大错误。
 - 同一风险门连续三次完整实验失败时必须进入 `BLOCKED_DESIGN_REVIEW_REQUIRED`，记录最后假设与删除路径，停止自动实现并请求 Goal 外设计决策；不得无限自旋或绕过风险门。
-- 每个检查点执行 baseline、实现、定向测试、typecheck/lint、fresh production build、localhost/LAN 浏览器实测、截图/长录屏/音频技术验证、独立审查、修复、账本、中文提交，并自动继续。
+- 每一项执行控制校验、针对性 baseline/失败观察、最小实现、定向测试、完成记录和中文提交；相邻且高内聚的项可按最多四项组成一个提交，但必须逐项记录和勾选。
+- 每个 A-H 检查点才执行完整的 typecheck/lint、fresh production build、localhost/LAN 浏览器实测、适用的九模式截图/长录屏/音频技术验证、独立审查、修复和封存，避免把同一套重型证据重复九十次。
 - 提交格式：`feat(world): 中文说明`、`fix(world): 中文说明`、`refactor(world): 中文说明`、`test(world): 中文说明`、`docs(world): 中文说明`。
 - 不新增 M、Phase、RC、下一轮、空壳报告、硬编码分数或只验证字符串存在的完成脚本。
 

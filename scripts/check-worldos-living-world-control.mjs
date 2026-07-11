@@ -99,7 +99,7 @@ if (!blockerPolicyValid({ goalStatus: 'BLOCKED', blockerKind: 'design-review-req
   failures.push('internal blocker policy regression')
 }
 
-if (manifest.version !== '1.0.0') failures.push(`unexpected manifest version: ${manifest.version}`)
+if (manifest.version !== '1.1.0') failures.push(`unexpected manifest version: ${manifest.version}`)
 if (JSON.stringify(manifest.authority) !== JSON.stringify(expectedAuthority)) {
   failures.push('manifest authority set changed')
 }
@@ -130,6 +130,10 @@ const finalVerifierContent = read(manifest.finalVerifier?.path ?? 'missing-final
 if (finalVerifierContent && hash(finalVerifierContent) !== manifest.finalVerifier?.sha256) {
   failures.push('final evidence verifier changed')
 }
+const readinessCheckerContent = read(manifest.readinessChecker?.path ?? 'missing-readiness-checker')
+if (readinessCheckerContent && hash(readinessCheckerContent) !== manifest.readinessChecker?.sha256) {
+  failures.push('readiness checker changed')
+}
 
 for (const entry of manifest.frozenFiles) {
   const content = normalize(read(entry.path), entry.mode)
@@ -159,6 +163,10 @@ if (manifest.controlBaselineCommit) {
   const baselineFinalVerifier = readAtCommit(manifest.controlBaselineCommit, manifest.finalVerifier.path)
   if (baselineFinalVerifier && baselineFinalVerifier !== finalVerifierContent) {
     failures.push('final evidence verifier differs from approved baseline')
+  }
+  const baselineReadinessChecker = readAtCommit(manifest.controlBaselineCommit, manifest.readinessChecker.path)
+  if (baselineReadinessChecker && baselineReadinessChecker !== readinessCheckerContent) {
+    failures.push('readiness checker differs from approved baseline')
   }
 }
 
@@ -270,7 +278,7 @@ if (firstUnchecked !== 'none' && goalStatus === 'COMPLETE') {
 }
 
 if (executionState) {
-  if (executionState.schemaVersion !== '1.0.0' || executionState.planId !== 'worldos-living-world-a-h-2026-07-11') {
+  if (executionState.schemaVersion !== '1.1.0' || executionState.planId !== 'worldos-living-world-a-h-2026-07-11') {
     failures.push('execution state identity drift')
   }
   if (executionState.goal?.status !== goalStatus
@@ -303,12 +311,14 @@ if (executionState) {
     }
   }
 
-  const usedCommitHashes = new Set()
-  const usedCommandLogHashes = new Set()
-  const usedEvidenceHashes = new Set()
+  const usedCommitHashes = new Map()
+  const usedCommandLogHashes = new Map()
+  const usedEvidenceHashes = new Map()
   for (const itemId of checkedIds) {
     const record = completedItems[itemId]
+    const checkpoint = itemId.slice(0, 1)
     if (record?.status !== 'passed' || record?.itemId !== itemId) failures.push(`invalid completed item record: ${itemId}`)
+    if (record?.checkpoint !== checkpoint) failures.push(`completed item checkpoint mismatch: ${itemId}`)
     if (!Number.isFinite(Date.parse(record?.startedAt)) || !Number.isFinite(Date.parse(record?.finishedAt)) || Date.parse(record.finishedAt) < Date.parse(record.startedAt)) {
       failures.push(`invalid completed item timestamps: ${itemId}`)
     }
@@ -322,8 +332,9 @@ if (executionState) {
       if (!logPath || hash(fs.readFileSync(logPath)) !== command.outputSha256) {
         failures.push(`command log hash mismatch: ${itemId}`)
       }
-      if (usedCommandLogHashes.has(command.outputSha256)) failures.push(`completed items cannot reuse a command log: ${itemId}`)
-      usedCommandLogHashes.add(command.outputSha256)
+      const commandCheckpoint = usedCommandLogHashes.get(command.outputSha256)
+      if (commandCheckpoint && commandCheckpoint !== checkpoint) failures.push(`command log reused across checkpoints: ${itemId}`)
+      usedCommandLogHashes.set(command.outputSha256, checkpoint)
     }
     if (!Array.isArray(record?.evidence) || record.evidence.length === 0) failures.push(`completed item has no evidence: ${itemId}`)
     for (const evidence of record?.evidence ?? []) {
@@ -331,8 +342,9 @@ if (executionState) {
       if (!evidencePath || !/^[a-f0-9]{64}$/.test(evidence.sha256 ?? '') || hash(fs.readFileSync(evidencePath)) !== evidence.sha256) {
         failures.push(`evidence hash mismatch: ${itemId}`)
       }
-      if (usedEvidenceHashes.has(evidence.sha256)) failures.push(`completed items cannot reuse the same evidence artifact: ${itemId}`)
-      usedEvidenceHashes.add(evidence.sha256)
+      const evidenceCheckpoint = usedEvidenceHashes.get(evidence.sha256)
+      if (evidenceCheckpoint && evidenceCheckpoint !== checkpoint) failures.push(`evidence artifact reused across checkpoints: ${itemId}`)
+      usedEvidenceHashes.set(evidence.sha256, checkpoint)
     }
     if (!/^(?:feat|fix|refactor|test|docs)\(world\): .*[\u3400-\u9fff]/u.test(record?.commitSubject ?? '')) {
       failures.push(`invalid Chinese commit subject: ${itemId}`)
@@ -342,9 +354,16 @@ if (executionState) {
     } else if (manifest.controlBaselineCommit) {
       const commit = commitsByHash.get(record.commitHash)
       if (!commit || commit.subject !== record.commitSubject) failures.push(`completed item commit identity mismatch: ${itemId}`)
-      if (usedCommitHashes.has(record.commitHash)) failures.push(`completed items cannot reuse an implementation commit: ${itemId}`)
-      usedCommitHashes.add(record.commitHash)
+      const commitUsage = usedCommitHashes.get(record.commitHash) ?? { checkpoint, items: [] }
+      if (commitUsage.checkpoint !== checkpoint) failures.push(`implementation commit reused across checkpoints: ${itemId}`)
+      commitUsage.items.push(itemId)
+      usedCommitHashes.set(record.commitHash, commitUsage)
       if (commit && Date.parse(commit.committedAt) < Date.parse(record.finishedAt)) failures.push(`completed item commit predates its finish time: ${itemId}`)
+    }
+  }
+  for (const [commitHash, usage] of usedCommitHashes) {
+    if (usage.items.length > manifest.executionAttestation.maxItemsPerImplementationCommit) {
+      failures.push(`implementation commit covers too many items: ${commitHash} (${usage.items.join(',')})`)
     }
   }
 }

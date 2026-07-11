@@ -6,7 +6,7 @@
 
 **Architecture:** 保持 Next.js 模块化单体和 World Kernel 事实主权；先用一个真实内容变更与 Gateway -> Atlas -> Node 纵向样板证伪架构，再固定 Clock、Signals、Scheduler、Scene Module、Migration、Sensory、Memory 与 Export 边界，最后扩展七场景。不得在风险样板失败时复制方案或引入重型引擎。
 
-**Tech Stack:** Next.js 15、React 19、TypeScript、Zod、GSAP、CSS、SVG / Canvas 2D、原生 View Transition / Web Audio / Page Visibility / Performance API、Fuse.js、Playwright CLI / Chrome、ffmpeg。
+**Tech Stack:** 固定当前维护中的 Next.js 15.5、React 19.2、TypeScript、Zod 3.25、GSAP 3.15、CSS、SVG / Canvas 2D、原生 View Transition / Web Audio / Page Visibility / Performance API、Fuse.js 7、Playwright 1.58 配套 Chromium 与 ffmpeg。Next 16、Zod 4 和新渲染引擎只允许 Goal 外 ADR 后迁移。
 
 ## Global Constraints
 
@@ -20,6 +20,8 @@
 - 每种持续资源只有一个 owner；页面隐藏、场景离开、静谧、错误和卸载必须清理。
 - 声音默认关闭；AI Key 只在服务端；无 Provider 时必须诚实 low-light。
 - 不新增里程碑编号 npm script、分数报告或文件存在性检查；扩展现有主入口。
+- 开始和恢复时运行 `node scripts/check-worldos-living-world-readiness.mjs --repair-browser`；只修复缺失的 Playwright 配套 Chromium，不自动升级框架或运行时依赖。
+- 每项只运行与其改动相称的定向检查；同一高内聚提交最多覆盖同一检查点四项。完整 build、LAN、九模式媒体与独立审查只在 A-H 检查点边界执行。
 - 每个检查点完成后运行定向检查、fresh build、浏览器 / 视觉 / 音频技术验证，更新账本，中文提交并自动继续；真实人类听感只记录外部签收。
 
 ## 固定文件责任图
@@ -46,7 +48,7 @@
 | `src/server/export/verify-export.ts` | checksum、schema、引用验证 |
 | `src/server/export/restore-export.ts` | 仅临时工作区恢复 |
 | `data/domains/experience/living-world-acceptance.json` | Goal 前已冻结的 route、mode、flow、采样、状态与风险门机器契约；执行期只读 |
-| `data/world-kernel/worldos-living-world-execution-state.json` | checkbox、命令 hash、证据 hash、唯一实现 commit hash / subject、风险门尝试和 reviewer 的机器状态；执行期可更新 |
+| `data/world-kernel/worldos-living-world-execution-state.json` | checkbox、命令 hash、证据 hash、同检查点最多四项的高内聚实现 commit hash / subject、风险门尝试和 reviewer 的机器状态；执行期可更新 |
 
 ### 渐进改造的现有文件
 
@@ -92,13 +94,13 @@
 - Consumes: current production routes, latest Reality-First evidence, source / asset mtimes.
 - Produces: truthful baseline `CINEMATIC_STATIC_WORLD_IN_PROGRESS`, machine acceptance contract, first fresh evidence run.
 
-- [ ] **A.1** 运行控制校验、`git status --short --branch`、最近提交和旧证据 freshness；在账本记录用户改动、可复用实现和无效完成声明。
+- [ ] **A.1** 运行控制校验、只读环境预检、`git status --short --branch`、最近提交和旧证据 freshness；记录 Node、Playwright 配套 Chromium、ffmpeg、LAN 地址、用户改动、可复用实现和无效完成声明。
 - [ ] **A.2** 用 fresh production build 重新采集七场景 desktop / mobile / text-hidden / background-hidden；记录每个页面静态位图、语义对象、持续环境、主要交互和公开工程文案的真实占比与缺陷。
 - [ ] **A.3** 使用 `ffprobe` 记录旧九段录屏真实时长；不得把 1.72 至 10.16 秒旧视频算作持续生命、soak 或长期运行证据。
 - [ ] **A.4** 消费 Goal 前已冻结的 `living-world-acceptance.json`，先写失败的 schema / 数量 / 状态阶梯测试，再让 evidence 与终局校验器读取同一契约；不得在执行期创建、补项或降低它。
 - [ ] **A.5** 扩展客观检查器，只检查可自动回算的 route、禁用文案、背景隐藏、主对象 bounding box、控制台、资源、权限和 freshness；不得接受 evidence manifest 裸 `pass` 或生成体验分。
 - [ ] **A.6** `/status` 显示当前真实状态、第一项未完成风险门和证据时间；production build 生成排除自身的完整 `.next` 运行 Merkle，并提供只读 build identity JSON（buildId、sourceCommit、buildRootHash）供 localhost / LAN 终局校验与 live chunk 比对。旧 `LOCAL_WORLD_COMPLETE_AI_FALLBACK` 只作为历史，不作当前摘要。
-- [ ] **A.7** 抽样执行 package 主命令并核对直接文件引用；不存在的历史命令登记为 legacy drift，不在本检查点大规模删除。
+- [ ] **A.7** 审计 package 主命令及全部旧 M / Phase / RC 检查：客观且仍匹配当前契约者保留在 `check:mainline`，只检查旧实现字符串、旧报告或外部 Preview 者移出完成门并登记到 legacy registry；不得为兼容历史骨架保留无效约束，也不得新增阶段脚本。
 - [ ] **A.8** 运行 `npm run typecheck`、`npm run lint`、`npm run check:world-experience`、fresh build、`git diff --check`。
 - [ ] **A.9** 独立审查者先看 baseline contact sheet 和录屏时长，再读报告；确认结论仍是未完成后更新账本并提交 `test(world): 撤销继承式完成并建立生命世界基线`。
 
@@ -323,7 +325,7 @@
 ### H2. Fresh 证据
 
 - [ ] **H.6** 从 clean source 运行 fresh `npm run build:production-ci`，启动新的 `next start -H 0.0.0.0`，记录 localhost 与实际 LAN IP，并从两者读取同一 build identity JSON；不得复用旧 server。
-- [ ] **H.7** 扩展并运行 `npm run evidence:world-experience`：manifest 只索引 13 类冻结原始 artifact 及 hash；生成 7 段连续未剪辑的 60-120 秒场景视频、十分钟 soak、F1-F14 trace、9 views、时间 / 季节成对截图、完整迁移边、音频分析、灯塔 case、固定权限 canary、public export/restore、性能原始样本、复杂度、资产和盲审包。不得用汇总 `pass` 代替原始文件。
+- [ ] **H.7** 扩展并运行 `npm run evidence:world-experience`：manifest 只索引 13 类冻结原始 artifact 及 hash；生成 7 段连续未剪辑的 60-120 秒场景视频、十分钟 soak、F1-F14 trace / trace summary / build-bound recording、9 views 及逐图 build/server sidecar、时间 / 季节成对截图、完整迁移边、音频分析、灯塔 case、固定权限 canary、public export/restore、性能原始样本、复杂度、资产和盲审包。不得用汇总 `pass`、文件 mtime 或裸 hash 代替当前 build 绑定。
 - [ ] **H.8** 实现者先逐张、逐段检查页面、录屏和音频技术记录，不看 `passed` 摘要；有真实人类签收时一并核对，所有观察、P0/P1/P2 和修复写入账本。
 - [ ] **H.9** 修复全部 P0/P1 后 fresh rebuild，并重新生成所有受公共 runtime 影响的证据。
 
@@ -333,29 +335,33 @@
 - [ ] **H.11** 独立审查逐行判定七场景、持续生命、时间季节、迁移、内容、回访、声音、灯塔、静态、性能、权限、导出恢复和复杂度，只使用 pass / fail / blocked。
 - [ ] **H.12** 对所有 fail / blocked 回到对应 A-G 项修复；不新增 I、M、Phase、RC 或第二份计划。
 - [ ] **H.13** 至少完成两次 fresh 独立视觉 / 交互 / soak 审查，使用两个不同 reviewer context；若首轮有 finding，第二轮必须晚于对应修复 commit；第二轮证据必须晚于最终源码、数据、资产、build 和 server。
-- [ ] **H.14** fresh 运行 `npm run typecheck`、`npm run lint`、`npm run build:production-ci`、`npm run check:world-experience`、`npm run check:mainline`、`npm run release:local-rc`、`git diff --check`。
+- [ ] **H.14** fresh 运行 `npm run typecheck`、`npm run lint`、`npm run build:production-ci`、`npm run check:world-experience`、`npm run check:mainline`、`npm run release:local-rc`、`git diff --check`；把这些命令生成的受 Git 跟踪本地报告、H.14 checkbox、账本与机器状态提交为最终 source commit，之后不得再运行会改写旧报告的命令。
 - [ ] **H.15** 运行 `node scripts/verify-worldos-living-world-final.mjs --preflight` 独立读取冻结契约、账本和真实媒体；确认四个风险门、F1-F14、固定否决项、P0/P1、权限、AI、资产、恢复和 freshness 全部通过，否则持续推进。H.16 写入最终状态后，控制校验必须再调用无参数终局校验。
 - [ ] **H.16** 最终状态固定写为 `LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING`，真实 Provider 或人类听感记录只列为 Goal 外待用户复核事实，不在本 Goal 自动晋级；列残余 P2 与未验证长期目标，提交 `docs(world): 完成生命世界候选真实验收`。
 
 ## 每项固定小循环
 
 ```text
-读取控制包和账本
+读取控制包、环境预检和账本
   -> git status / 证据 freshness
   -> 记录 Verified Fact / Hypothesis / Experiment
   -> baseline
   -> 失败测试或可证伪观察
   -> 最小完整实现
   -> 定向检查
-  -> fresh production / localhost / LAN
-  -> 长录屏 / 截图 / trace / 音频技术验证 / 可选人类签收
-  -> 实现者与独立审查
-  -> 修复
   -> checkbox + ledger
-  -> 中文实现提交
-  -> execution state 绑定命令 / 证据 hash / 唯一 commit hash / subject 并在下一次状态提交中确认
+  -> 最多四个同检查点高内聚项组成中文实现提交
+  -> execution state 逐项绑定命令 / 证据 hash / commit hash / subject
   -> 自动进入下一项
 ```
+
+到达 A-H 任一检查点末项时，再执行 fresh production、localhost/LAN、适用的九模式长录屏/截图/trace/音频技术验证、实现者与独立审查、修复和检查点封存。同一份 fresh 检查点原始证据允许被该检查点多个完成记录引用，跨检查点或跨 source commit 不得复用。
+
+### 最终封存顺序
+
+1. H.14 先完成所有会改写受 Git 跟踪报告的主线与本地 RC 命令，并提交这些报告和 H.14 状态；该提交成为 `final_source_commit`。
+2. 从该 clean commit 再运行一次 fresh production build，生成 build identity，启动新的 localhost/LAN server 并采集最终证据。此后只允许修改最终 evidence run、执行计划 checkbox、账本和机器状态。
+3. H.15 preflight 通过后提交其状态；H.16 只更新允许的控制状态并提交，再运行无参数终局 verifier。不得在 `final_source_commit` 后重跑会改写旧 RC 或 audit 报告的命令。
 
 同一风险门的 `attempt_count` 只在完成一次有明确假设、实现、测量和删除 / 简化处置的实验后增加。连续三次仍失败必须进入 `BLOCKED_DESIGN_REVIEW_REQUIRED`，不得在同一 Goal 内无限换皮重试。
 

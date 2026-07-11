@@ -331,6 +331,27 @@ function readHashedJsonDescriptor(descriptor, label) {
   return absolutePath ? readJson(absolutePath) : null
 }
 
+function validateCaptureSidecar({ descriptor, absolutePath, label, sourceCommit, buildId, serverPid, serverStartedAt, allowedOrigins, sceneId, viewId, flowId }) {
+  const sidecar = readHashedJsonDescriptor(descriptor?.sidecar, `${label} sidecar`)
+  if (!sidecar) return null
+  for (const field of contract.evidenceArtifactProtocol.captureSidecarRequiredFields) {
+    assert(sidecar[field] !== undefined && sidecar[field] !== null && sidecar[field] !== '', `${label} sidecar missing ${field}`)
+  }
+  assert(sidecar.sourceCommit === sourceCommit && sidecar.buildId === buildId, `${label} sidecar build identity mismatch`)
+  assert(allowedOrigins.has(sidecar.origin), `${label} sidecar origin is unattested`)
+  assert(sidecar.serverPid === serverPid && sidecar.serverStartedAt === serverStartedAt, `${label} sidecar server identity mismatch`)
+  assert(sidecar.outputSha256 === descriptor.sha256, `${label} sidecar output hash mismatch`)
+  assert(/^[a-f0-9]{32,}$/.test(sidecar.captureNonce ?? ''), `${label} sidecar nonce is invalid`)
+  assert(Number.isFinite(Date.parse(sidecar.capturedAt)), `${label} sidecar capture time is invalid`)
+  if (absolutePath && Number.isFinite(Date.parse(sidecar.capturedAt))) {
+    assert(Math.abs(fs.statSync(absolutePath).mtimeMs - Date.parse(sidecar.capturedAt)) <= 2000, `${label} file mtime differs from sidecar capture time`)
+  }
+  if (sceneId) assert(sidecar.sceneId === sceneId, `${label} sidecar scene mismatch`)
+  if (viewId) assert(sidecar.viewId === viewId && sidecar.mode === viewId, `${label} sidecar view/mode mismatch`)
+  if (flowId) assert(sidecar.flowId === flowId, `${label} sidecar flow mismatch`)
+  return sidecar
+}
+
 function analyzePcmAudio(absolutePath) {
   try {
     const durationSeconds = Number(execFileSync('ffprobe', [
@@ -438,11 +459,24 @@ function collectAbsoluteFiles(absoluteRoot) {
   return files.sort()
 }
 
+function resolvePlaywrightPython(playwrightExecutable) {
+  const shebang = fs.readFileSync(playwrightExecutable, 'utf8').split('\n')[0]
+  if (!shebang.startsWith('#!')) return null
+  const tokens = shebang.slice(2).trim().split(/\s+/)
+  if (tokens[0] === '/usr/bin/env' && tokens[1]) {
+    try {
+      return execFileSync('which', [tokens[1]], { encoding: 'utf8' }).trim()
+    } catch {
+      return null
+    }
+  }
+  return tokens.length === 1 && fs.existsSync(tokens[0]) ? tokens[0] : null
+}
+
 function runFrozenBrowserProbe(origin, routes) {
   try {
     const playwrightExecutable = execFileSync('which', ['playwright'], { encoding: 'utf8' }).trim()
-    const shebang = fs.readFileSync(playwrightExecutable, 'utf8').split('\n')[0]
-    const pythonExecutable = shebang.startsWith('#!') ? shebang.slice(2).trim() : null
+    const pythonExecutable = resolvePlaywrightPython(playwrightExecutable)
     if (!pythonExecutable || !fs.existsSync(pythonExecutable)) throw new Error('Playwright Python runtime cannot be resolved')
     const pythonSource = String.raw`
 import json, sys
@@ -585,6 +619,26 @@ async function waitForJson(url, timeoutMs) {
   throw lastError ?? new Error(`timeout waiting for ${url}`)
 }
 
+async function stopChildProcess(child, timeoutMs = 5000) {
+  if (!child || child.exitCode !== null || child.signalCode !== null) return
+  await new Promise((resolve) => {
+    let settled = false
+    const finish = () => {
+      if (settled) return
+      settled = true
+      globalThis.clearTimeout(forceTimer)
+      globalThis.clearTimeout(abandonTimer)
+      resolve()
+    }
+    child.once('exit', finish)
+    const forceTimer = globalThis.setTimeout(() => {
+      if (child.exitCode === null && child.signalCode === null) child.kill('SIGKILL')
+    }, timeoutMs)
+    const abandonTimer = globalThis.setTimeout(finish, timeoutMs + 2000)
+    child.kill('SIGTERM')
+  })
+}
+
 async function runFrozenPermissionCanaryProbe({ sourceCommit, buildId, buildHash, routes, tokens }) {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'worldos-frozen-canary-'))
   const fixturePath = path.join(tempRoot, 'private-canary-fixture.json')
@@ -645,14 +699,14 @@ async function runFrozenPermissionCanaryProbe({ sourceCommit, buildId, buildHash
     failures.push(`frozen permission canary probe failed: ${error.message}\n${serverLog}`)
     return null
   } finally {
-    if (child && !child.killed) child.kill('SIGTERM')
+    await stopChildProcess(child)
     fs.rmSync(tempRoot, { recursive: true, force: true })
   }
 }
 
 function validateContract(contract) {
   if (!contract) return
-  assert(contract.schemaVersion === '1.0.0', 'acceptance schemaVersion must be 1.0.0')
+  assert(contract.schemaVersion === '1.1.0', 'acceptance schemaVersion must be 1.1.0')
   assert(contract.status === 'FROZEN_PRE_GOAL', 'acceptance contract is not frozen pre-Goal')
 
   const sceneIds = contract.scenes?.map((item) => item.id) ?? []
@@ -687,6 +741,8 @@ function validateContract(contract) {
   }), 'candidate status ladder drift')
   assert(contract.evidenceArtifactProtocol?.rejectSymlinks === true, 'evidence symlink policy drift')
   assert(contract.evidenceArtifactProtocol?.liveLocalhostAndLanBuildIdentityRequired === true, 'live build identity policy drift')
+  assert(contract.evidenceArtifactProtocol?.sceneViewSidecarRequired === true && contract.evidenceArtifactProtocol?.flowMediaSidecarRequired === true, 'media sidecar policy drift')
+  assert(contract.evidenceArtifactProtocol?.captureSidecarRequiredFields?.length === 11 && unique(contract.evidenceArtifactProtocol.captureSidecarRequiredFields), 'capture sidecar field set drift')
   assert(contract.evidenceArtifactProtocol?.buildFingerprintExcludedPrefixes?.length === 3 && contract.evidenceArtifactProtocol?.buildFingerprintExcludedFiles?.length === 2, 'build fingerprint exclusion allowlist drift')
   assert(contract.evidenceArtifactProtocol?.requiredArtifacts?.length === 13 && unique(contract.evidenceArtifactProtocol.requiredArtifacts), 'required raw artifact set drift')
   assert(contract.evidenceArtifactProtocol?.fixedPrivateCanaryTokens?.length === 6 && unique(contract.evidenceArtifactProtocol.fixedPrivateCanaryTokens), 'fixed permission canary set drift')
@@ -855,6 +911,7 @@ if (evidence) {
   }
 
   const sceneEvidence = evidence.sceneEvidence ?? []
+  const captureNonces = new Set()
   for (const scene of contract.scenes) {
     const item = sceneEvidence.find((candidate) => candidate.sceneId === scene.id)
     assert(item, `missing scene evidence: ${scene.id}`)
@@ -893,7 +950,26 @@ if (evidence) {
     for (const view of contract.views) {
       const capturedView = capturedViews.get(view.id)
       assert(capturedView, `${scene.id} missing view ${view.id}`)
-      if (capturedView) assertHashedFile(capturedView, `${scene.id} ${view.id}`)
+      if (capturedView) {
+        const viewPath = assertHashedFile(capturedView, `${scene.id} ${view.id}`)
+        const sidecar = validateCaptureSidecar({
+          descriptor: capturedView,
+          absolutePath: viewPath,
+          label: `${scene.id} ${view.id}`,
+          sourceCommit,
+          buildId: evidence.buildId,
+          serverPid,
+          serverStartedAt: evidence.freshness.serverStartedAt,
+          allowedOrigins,
+          sceneId: scene.id,
+          viewId: view.id,
+        })
+        if (sidecar) {
+          assert(!captureNonces.has(sidecar.captureNonce), `${scene.id} ${view.id} reused a capture nonce`)
+          captureNonces.add(sidecar.captureNonce)
+          if (view.viewport) assert(sidecar.viewport === view.viewport, `${scene.id} ${view.id} viewport differs from contract`)
+        }
+      }
     }
   }
 
@@ -925,10 +1001,35 @@ if (evidence) {
     if (!item) continue
     assert(Number.isFinite(Date.parse(item.startedAt)) && Date.parse(item.finishedAt) >= Date.parse(item.startedAt), `flow timing invalid: ${flow.id}`)
     assert(allowedOrigins.has(item.origin), `flow used an unattested origin: ${flow.id}`)
-    assert(Array.isArray(item.observedSteps) && item.observedSteps.length >= flow.steps.length, `flow steps incomplete: ${flow.id}`)
-    assert((item.consoleErrors ?? []).length === 0 && (item.pageErrors ?? []).length === 0 && (item.unexpectedFailedRequests ?? []).length === 0, `flow runtime errors: ${flow.id}`)
-    assertHashedFile(item.trace, `${flow.id} trace`)
-    assertHashedFile(item.recording, `${flow.id} recording`)
+    const tracePath = assertHashedFile(item.trace, `${flow.id} trace`)
+    const traceSummary = readHashedJsonDescriptor(item.traceSummary, `${flow.id} trace summary`)
+    assert(tracePath && traceSummary?.flowId === flow.id && traceSummary?.sourceCommit === sourceCommit && traceSummary?.buildId === evidence.buildId && traceSummary?.origin === item.origin, `flow trace summary identity mismatch: ${flow.id}`)
+    assert(Array.isArray(traceSummary?.observedSteps) && traceSummary.observedSteps.length >= flow.steps.length, `flow steps incomplete: ${flow.id}`)
+    assert((traceSummary?.consoleErrors ?? []).length === 0 && (traceSummary?.pageErrors ?? []).length === 0 && (traceSummary?.unexpectedFailedRequests ?? []).length === 0, `flow runtime errors: ${flow.id}`)
+    assert(traceSummary?.traceSha256 === item.trace.sha256, `flow trace summary does not bind trace: ${flow.id}`)
+    const flowRecordingPath = assertHashedFile(item.recording, `${flow.id} recording`)
+    const flowRecordingSidecar = validateCaptureSidecar({
+      descriptor: item.recording,
+      absolutePath: flowRecordingPath,
+      label: `${flow.id} recording`,
+      sourceCommit,
+      buildId: evidence.buildId,
+      serverPid,
+      serverStartedAt: evidence.freshness.serverStartedAt,
+      allowedOrigins,
+      flowId: flow.id,
+    })
+    if (flowRecordingSidecar) {
+      assert(flowRecordingSidecar.mode === 'flow', `flow recording mode mismatch: ${flow.id}`)
+      assert(!captureNonces.has(flowRecordingSidecar.captureNonce), `flow recording reused a capture nonce: ${flow.id}`)
+      captureNonces.add(flowRecordingSidecar.captureNonce)
+    }
+    if (flowRecordingPath) {
+      const flowMedia = mediaAnalysis(flowRecordingPath, contract.recordingProtocol.frameSampleFps)
+      assert(flowMedia.durationSeconds >= contract.recordingProtocol.flowRecordingMinSeconds, `flow recording is too short: ${flow.id}`)
+      assert(flowMedia.packetCount > 0 && flowMedia.nonMonotonicPacketCount === 0 && flowMedia.maxPacketGapSeconds <= contract.recordingProtocol.maxPacketGapSeconds, `flow recording timeline is invalid: ${flow.id}`)
+      assert(flowMedia.uniqueFrameRatio >= contract.recordingProtocol.flowMinUniqueFrameRatio, `flow recording lacks visible interaction change: ${flow.id}`)
+    }
   }
 
   const timeCausality = readIndexedJson(evidence, 'time-causality')

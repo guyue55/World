@@ -10,7 +10,7 @@ control_status: READY
 goal_status: NOT_STARTED
 goal_id: not-created
 goal_started_at: null
-control_baseline_commit: 43dc627ea67408d081415a856649b3cb6504a43c
+control_baseline_commit: pending-v1.1-anchor
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING
 current_checkpoint: A
@@ -54,6 +54,8 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 | 声音 | 无音频文件，程序化 patch | 未完成真实长期试听 |
 | AI | low-light，无合法 Provider | 默认 fallback 目标 |
 | 部署 | localhost / LAN only | 外部发布不在范围 |
+| 工具链 | Playwright Python 1.58 + Chromium 145、ffmpeg 可启动 | 终局浏览器与媒体探针具备本地前提 |
+| 框架版本 | Next 15.5.20、React 19.2.7、GSAP 3.15.0、Zod 3.25.76 | 保持维护线，不在本 Goal 叠加 major 迁移 |
 
 ## 3. 基线 Reality Matrix
 
@@ -87,6 +89,9 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 | D-08 | 只借用保存标准的必要原则 | 避免 OCFL / PREMIS 机构级过度实现 |
 | D-09 | 私密世界和继承只保留不锁死底座 | 当前公开体验仍是最高风险 |
 | D-10 | 不新增下一轮 / 第二计划 | 防止终点继续移动 |
+| D-11 | 每项定向验证，A-H 检查点才跑完整媒体流水线 | 防止九十次重复 build 和证据膨胀 |
+| D-12 | 同一高内聚提交最多覆盖同检查点四项 | 在可追溯与提交噪音之间建立机器边界 |
+| D-13 | final RC 报告先提交，再 final build 和 evidence | 消除 dirty report 与 build identity 循环 |
 
 ## 5. 待证伪假设
 

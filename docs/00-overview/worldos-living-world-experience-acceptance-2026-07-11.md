@@ -401,7 +401,7 @@ type WorldTimeSnapshot = {
 
 ## 21. 证据与独立审查
 
-每个最终 run 必须记录：commit、源码 / 数据 / 资产时间、build、server、浏览器版本、URL、viewport、motion、sensory、time、season、AI mode、步骤、期望、截图 / 录屏 / trace / 音频 hash 和观察缺陷。录屏必须连续、未剪辑、非重复拼接，并记录 wall-clock、单调时钟、`ffprobe` 时长、capture command 与 checksum。
+每个最终 run 必须记录：commit、源码 / 数据 / 资产时间、build、server、浏览器版本、URL、viewport、motion、sensory、time、season、AI mode、步骤、期望、截图 / 录屏 / trace / 音频 hash 和观察缺陷。每张九模式场景截图都必须有独立 sidecar，绑定 scene、view、sourceCommit、buildId、origin、viewport、mode、server PID / start time、capture time、command、nonce 与图片 hash，不能只靠文件 mtime。录屏必须连续、未剪辑、非重复拼接，并记录 wall-clock、单调时钟、`ffprobe` 时长、capture command、server-bound sidecar 与 checksum；F1-F14 的 trace summary 和录屏也必须绑定同一 build/server。
 
 最低证据：
 

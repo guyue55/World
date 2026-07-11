@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "status": "FROZEN_PRE_GOAL",
   "baselineStatus": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
   "targets": {
@@ -147,6 +147,8 @@
     "continuousWallClock": true,
     "unedited": true,
     "nonRepeatedAssembly": true,
+    "flowRecordingMinSeconds": 5,
+    "flowMinUniqueFrameRatio": 0.1,
     "requiredMetadata": [
       "sceneId",
       "sourceCommit",
@@ -332,6 +334,21 @@
     "rejectSymlinks": true,
     "requireCleanWorktreeForFinal": true,
     "liveLocalhostAndLanBuildIdentityRequired": true,
+    "sceneViewSidecarRequired": true,
+    "flowMediaSidecarRequired": true,
+    "captureSidecarRequiredFields": [
+      "sourceCommit",
+      "buildId",
+      "origin",
+      "viewport",
+      "mode",
+      "serverPid",
+      "serverStartedAt",
+      "capturedAt",
+      "captureCommand",
+      "captureNonce",
+      "outputSha256"
+    ],
     "buildFingerprintExcludedPrefixes": [
       ".next/cache/",
       ".next/diagnostics/",
