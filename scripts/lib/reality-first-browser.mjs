@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import net from 'node:net'
 import os from 'node:os'
 import path from 'node:path'
-import { spawn } from 'node:child_process'
+import { spawn, spawnSync } from 'node:child_process'
 
 const delay = (ms) => new Promise((resolve) => globalThis.setTimeout(resolve, ms))
 
@@ -142,6 +142,7 @@ export async function launchRealityBrowser(label = 'worldos-reality-first') {
       })
       return {
         send,
+        sessionId: attached.sessionId,
         targetId: target.targetId,
         errors,
         async close() {
@@ -190,6 +191,62 @@ export async function captureJpeg(send, filePath, quality = 82) {
   const screenshot = await send('Page.captureScreenshot', { format: 'jpeg', quality, captureBeyondViewport: false })
   fs.mkdirSync(path.dirname(filePath), { recursive: true })
   fs.writeFileSync(filePath, Buffer.from(screenshot.data, 'base64'))
+}
+
+export async function recordPageScreencast({ browser, page, outputPath, action, width = 1280, height = 720, quality = 82 }) {
+  const frameDir = `${outputPath}.frames`
+  fs.rmSync(frameDir, { recursive: true, force: true })
+  fs.mkdirSync(frameDir, { recursive: true })
+  const frames = []
+  let accepting = true
+
+  const writeFrame = (data) => {
+    const filePath = path.join(frameDir, `frame-${String(frames.length + 1).padStart(4, '0')}.jpg`)
+    fs.writeFileSync(filePath, Buffer.from(data, 'base64'))
+    frames.push({ filePath, capturedAt: Date.now() / 1000 })
+  }
+
+  const initial = await page.send('Page.captureScreenshot', { format: 'jpeg', quality, captureBeyondViewport: false })
+  writeFrame(initial.data)
+  const off = browser.on('Page.screencastFrame', async (params, sessionId) => {
+    if (!accepting || sessionId !== page.sessionId) return
+    writeFrame(params.data)
+    await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }).catch(() => {})
+  })
+
+  let actionError
+  try {
+    await page.send('Page.startScreencast', { format: 'jpeg', quality, maxWidth: width, maxHeight: height, everyNthFrame: 1 })
+    await action()
+  } catch (error) {
+    actionError = error
+  } finally {
+    accepting = false
+    await page.send('Page.stopScreencast').catch(() => {})
+    off()
+  }
+  if (actionError) {
+    fs.rmSync(frameDir, { recursive: true, force: true })
+    throw actionError
+  }
+
+  const finalFrame = await page.send('Page.captureScreenshot', { format: 'jpeg', quality, captureBeyondViewport: false })
+  writeFrame(finalFrame.data)
+  const concatPath = path.join(frameDir, 'frames.ffconcat')
+  const lines = ['ffconcat version 1.0']
+  for (let index = 0; index < frames.length; index += 1) {
+    const current = frames[index]
+    const next = frames[index + 1]
+    const duration = next ? Math.max(0.016, next.capturedAt - current.capturedAt) : 0.04
+    lines.push(`file '${current.filePath.replaceAll("'", "'\\''")}'`, `duration ${duration.toFixed(6)}`)
+  }
+  lines.push(`file '${frames.at(-1).filePath.replaceAll("'", "'\\''")}'`)
+  fs.writeFileSync(concatPath, `${lines.join('\n')}\n`)
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true })
+  const encoded = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', concatPath, '-fps_mode', 'vfr', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', outputPath], { encoding: 'utf8' })
+  fs.rmSync(frameDir, { recursive: true, force: true })
+  if (encoded.status !== 0) throw new Error(`录屏编码失败：${encoded.stderr}`)
+  return { frames: frames.length, durationSeconds: Math.max(0, frames.at(-1).capturedAt - frames[0].capturedAt), outputPath }
 }
 
 export { delay }

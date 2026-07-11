@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T01:52:07.767Z",
+  "generatedAt": "2026-07-11T06:09:54.729Z",
   "state": {
     "mode": "alive",
     "season": "spring",
@@ -4353,17 +4353,17 @@
     {
       "id": "first-visit",
       "title": "第一次来到古月浮屿",
-      "description": "从世界宣言开始，理解这里为什么不是普通博客。",
+      "description": "从作品、日常、记忆与思考出发，认识这个世界里真正生活着的内容。",
       "audience": "first-time",
       "estimatedMinutes": 12,
       "nodeSlugs": [
-        "world-manifesto",
-        "personal-digital-universe-definition",
-        "world-space-layer",
-        "ai-lighthouse-boundary",
-        "memory-lake-first-light",
-        "lighthouse-design-document",
-        "lighthouse-prompt-engineering"
+        "moonframe-loft",
+        "static-ai-novel-editor",
+        "morning-coffee-coordinates",
+        "evening-walk-memory",
+        "second-brain-critique",
+        "writing-momentum-loop",
+        "ai-lighthouse-boundary"
       ],
       "nextPathIds": [
         "tech-ai"
@@ -4954,7 +4954,9 @@
         "low-light-ai-status-panel",
         "public-context-slice-note",
         "ai-review-queue-promise",
-        "lighthouse-question-shortcuts"
+        "lighthouse-question-shortcuts",
+        "lighthouse-design-document",
+        "lighthouse-prompt-engineering"
       ],
       "nextPathIds": [
         "first-visit"
@@ -5943,7 +5945,6 @@
         "灯塔搜索权重模型 从世界宣言延伸出公开内容增长线索。"
       ],
       "pathIds": [
-        "first-visit",
         "life-memory",
         "eight-minute-world",
         "world-architecture",
@@ -5958,7 +5959,6 @@
         "evt-phase2-005"
       ],
       "recommendedPathIds": [
-        "first-visit",
         "life-memory",
         "eight-minute-world",
         "world-architecture",
@@ -5981,7 +5981,6 @@
         "本地世界入口仪式 与数字宇宙定义共同解释世界入口。"
       ],
       "pathIds": [
-        "first-visit",
         "how-world-created",
         "eight-minute-world"
       ],
@@ -6079,7 +6078,6 @@
         "WorldOS 世界生成引擎 与 世界空间层设计 构成核心世界线索，需要在公开路径中保持可解释。"
       ],
       "pathIds": [
-        "first-visit",
         "how-world-created",
         "deep-world",
         "tech-to-life"
@@ -6248,10 +6246,12 @@
         "维护命令设计 与 静态 AI 小说编辑器 属于同一区域，存在主题关联。"
       ],
       "pathIds": [
+        "first-visit",
         "product-workshop"
       ],
       "timelineEventIds": [],
       "recommendedPathIds": [
+        "first-visit",
         "product-workshop"
       ]
     },
@@ -6269,10 +6269,12 @@
         "世界图谱浏览器 与 moonframe-loft 的reference关联。"
       ],
       "pathIds": [
+        "first-visit",
         "product-workshop"
       ],
       "timelineEventIds": [],
       "recommendedPathIds": [
+        "first-visit",
         "product-workshop"
       ]
     },
@@ -6366,7 +6368,6 @@
         "低动效的体贴记忆 回到 记忆湖 的代表节点，帮助读者理解区域主线。"
       ],
       "pathIds": [
-        "first-visit",
         "life-memory",
         "public-life-memory",
         "tech-to-life",
@@ -7872,6 +7873,7 @@
         "晨间咖啡坐标 跨区域引用 古月浮屿世界宣言。"
       ],
       "pathIds": [
+        "first-visit",
         "life-memory"
       ],
       "timelineEventIds": [],
@@ -7933,7 +7935,7 @@
         "灯塔搜索引擎 与 lighthouse-design-document 的reference关联。"
       ],
       "pathIds": [
-        "first-visit"
+        "phase19-lighthouse-expansion"
       ],
       "timelineEventIds": [],
       "recommendedPathIds": []
@@ -7953,7 +7955,7 @@
         "灯塔提示词工程 跨区域引用 古月浮屿世界宣言。"
       ],
       "pathIds": [
-        "first-visit"
+        "phase19-lighthouse-expansion"
       ],
       "timelineEventIds": [],
       "recommendedPathIds": []
@@ -8286,6 +8288,7 @@
         "散步中的家人身影按索引原则处理可见性。"
       ],
       "pathIds": [
+        "first-visit",
         "life-memory"
       ],
       "timelineEventIds": [],
@@ -8541,6 +8544,7 @@
         "对第二大脑的反思 与 clear-entrance-deep-world 的reference关联。"
       ],
       "pathIds": [
+        "first-visit",
         "world-vision-lane"
       ],
       "timelineEventIds": [],
@@ -8653,6 +8657,7 @@
         "极简笔记法与写作动量循环互为方法论。"
       ],
       "pathIds": [
+        "first-visit",
         "daily-ritual-tour"
       ],
       "timelineEventIds": [],

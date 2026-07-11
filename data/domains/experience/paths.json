@@ -2,17 +2,17 @@
   {
     "id": "first-visit",
     "title": "第一次来到古月浮屿",
-    "description": "从世界宣言开始，理解这里为什么不是普通博客。",
+    "description": "从作品、日常、记忆与思考出发，认识这个世界里真正生活着的内容。",
     "audience": "first-time",
     "estimatedMinutes": 12,
     "nodeSlugs": [
-      "world-manifesto",
-      "personal-digital-universe-definition",
-      "world-space-layer",
-      "ai-lighthouse-boundary",
-      "memory-lake-first-light",
-      "lighthouse-design-document",
-      "lighthouse-prompt-engineering"
+      "moonframe-loft",
+      "static-ai-novel-editor",
+      "morning-coffee-coordinates",
+      "evening-walk-memory",
+      "second-brain-critique",
+      "writing-momentum-loop",
+      "ai-lighthouse-boundary"
     ],
     "nextPathIds": [
       "tech-ai"
@@ -603,7 +603,9 @@
       "low-light-ai-status-panel",
       "public-context-slice-note",
       "ai-review-queue-promise",
-      "lighthouse-question-shortcuts"
+      "lighthouse-question-shortcuts",
+      "lighthouse-design-document",
+      "lighthouse-prompt-engineering"
     ],
     "nextPathIds": [
       "first-visit"

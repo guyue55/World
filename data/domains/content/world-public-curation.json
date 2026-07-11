@@ -20,6 +20,7 @@
     "lighthouse": ["node-ai-lighthouse", "node-lighthouse-design-document", "node-public-ai-context-contract"]
   },
   "onboardingPathIds": ["first-visit", "eight-minute-world", "life-memory"],
+  "featuredPathIds": ["first-visit", "life-memory", "product-workshop", "memory-lane", "world-vision-lane", "tech-ai"],
   "archiveOnlyNodeIds": [
     "node-worldos-rc-lessons",
     "node-worldos-mainline-code-map",

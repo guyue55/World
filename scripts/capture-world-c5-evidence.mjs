@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { spawnSync } from 'node:child_process'
-import { capturePng, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+import { capturePng, delay, evaluate, launchRealityBrowser, recordPageScreencast, waitForExpression } from './lib/reality-first-browser.mjs'
 
 const baseUrl = process.env.WORLDOS_BASE_URL || 'http://127.0.0.1:3411'
 const outputDir = path.resolve(process.env.WORLDOS_EVIDENCE_DIR || 'docs/90-archive/reports/worldos-reality-first/c5-journey-2026-07-10/final')
@@ -19,7 +18,7 @@ async function observe(page, mode, scene) {
   const value = await evaluate(page.send, `(() => {
     const viewport=document.querySelector('[data-world-scene="${scene}"]')?.getBoundingClientRect();
     const reading=document.querySelector('.reading-container')?.getBoundingClientRect();
-    return {viewport:viewport?{top:viewport.top,width:viewport.width,height:viewport.height}:null,horizontalOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,engineeringCopy:/Motion Layer|Fallback|Evidence|场景证据|Scene QA/.test(document.body.innerText),routeCount:document.querySelectorAll('[data-path-route]').length,waypointCount:document.querySelectorAll('[data-path-step]').length,nodeDoorCount:document.querySelectorAll('[data-world-scene="node"] [href*="via=relation"]').length,pathComplete:Boolean(document.querySelector('[data-testid="path-complete"]')),journeyControls:Boolean(document.querySelector('[data-testid="node-journey-controls"]')),readingWidth:reading?.width??null,soundMode:document.querySelector('[data-sound-mode]')?.getAttribute('data-sound-mode')??null}
+    return {viewport:viewport?{top:viewport.top,width:viewport.width,height:viewport.height}:null,horizontalOverflow:document.documentElement.scrollWidth>document.documentElement.clientWidth,engineeringCopy:/Motion Layer|Fallback|Evidence|场景证据|Scene QA/.test(document.body.innerText),routeCount:document.querySelectorAll('[data-path-route]').length,waypointCount:document.querySelectorAll('[data-path-step]').length,nodeDoorCount:document.querySelectorAll('[data-world-scene="node"] [href*="via=relation"]').length,pathComplete:Boolean(document.querySelector('[data-testid="path-complete"]')),journeyControls:Boolean(document.querySelector('[data-testid="node-journey-controls"]')),readingWidth:reading?.width??null,readingVisible:Boolean(reading&&reading.top<innerHeight&&reading.bottom>0),soundMode:document.querySelector('[data-sound-mode]')?.getAttribute('data-sound-mode')??null}
   })()`)
   observations.push({ mode, scene, ...value, errors: page.errors.filter(Boolean) })
 }
@@ -42,19 +41,8 @@ async function recordFlow(name, pathname, actions) {
   const page = await launch.createPage({ width: 1280, height: 720 })
   await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.removeItem('guyue-world:path-progress')` })
   await navigate(page, pathname, '[data-world-scene]')
-  const framesDir = path.join(outputDir, `${name}-frames`)
-  fs.rmSync(framesDir, { recursive: true, force: true }); fs.mkdirSync(framesDir, { recursive: true })
-  const initialFrame = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false })
-  fs.writeFileSync(path.join(framesDir, 'frame-0001.jpg'), Buffer.from(initialFrame.data, 'base64'))
-  let frameIndex = 1; let accepting = true
-  const off = launch.browser.on('Page.screencastFrame', async (params) => { if (!accepting) return; frameIndex += 1; fs.writeFileSync(path.join(framesDir, `frame-${String(frameIndex).padStart(4, '0')}.jpg`), Buffer.from(params.data, 'base64')); await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }) })
-  await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
-  await actions(page); await delay(700); accepting = false; await page.send('Page.stopScreencast'); off()
-  const target = path.join(outputDir, `${name}.mp4`)
-  const ffmpeg = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(framesDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', target], { encoding: 'utf8' })
-  if (ffmpeg.status !== 0) throw new Error(`${name} 编码失败：${ffmpeg.stderr}`)
-  fs.rmSync(framesDir, { recursive: true, force: true })
-  return frameIndex
+  const recording = await recordPageScreencast({ browser: launch.browser, page, outputPath: path.join(outputDir, `${name}.mp4`), action: async () => { await actions(page); await delay(700) } })
+  return recording.frames
 }
 
 try {
@@ -74,10 +62,10 @@ try {
   await captureMode({ mode: 'path-reduced-motion', scene: 'paths', pathname: '/paths/first-visit', reducedMotion: true })
 
   await captureMode({ mode: 'node-arrival', scene: 'node', pathname: '/node/world-manifesto' })
-  await captureMode({ mode: 'node-path-context', scene: 'node', pathname: '/node/world-manifesto?fromPath=first-visit&step=0' })
+  await captureMode({ mode: 'node-path-context', scene: 'node', pathname: '/node/moonframe-loft?fromPath=first-visit&step=0' })
   await captureMode({ mode: 'node-reading', scene: 'node', pathname: '/node/world-manifesto', setup: scrollTo('#reading') })
   await captureMode({ mode: 'node-relations', scene: 'node', pathname: '/node/world-manifesto', setup: scrollTo('.node-relation-rail') })
-  await captureMode({ mode: 'node-mobile', scene: 'node', pathname: '/node/world-manifesto', width: 390, height: 844, mobile: true })
+  await captureMode({ mode: 'node-mobile', scene: 'node', pathname: '/node/world-manifesto', width: 390, height: 844, mobile: true, setup: scrollTo('#reading') })
   await captureMode({ mode: 'node-reduced-motion', scene: 'node', pathname: '/node/world-manifesto', reducedMotion: true })
   await captureMode({ mode: 'node-reduced-sensory', scene: 'node', pathname: '/node/world-manifesto', init: `localStorage.setItem('guyue-world:soundscape-preference','muted')` })
   await captureMode({ mode: 'node-text-hidden', scene: 'node', pathname: '/node/world-manifesto', setup: hideText })
@@ -130,10 +118,10 @@ try {
     sampleNodeChecks.push(await evaluate(page.send, `(() => ({slug:${JSON.stringify(slug)},title:Boolean(document.querySelector('h1')),doors:document.querySelectorAll('[data-world-scene="node"] [href*="via=relation"]').length,exits:document.querySelectorAll('[data-world-scene="node"] nav a').length,reading:Boolean(document.querySelector('#reading')),engineering:/Motion Layer|Fallback|Evidence|场景证据/.test(document.body.innerText),overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth}))()`))
   }
 
-  const flowChecks = { pathOverviewSelectsRoute: observations.find((item) => item.mode === 'paths-overview-desktop')?.routeCount === 6, fullJourneyComplete, resetPassed, journeyHasSevenUniqueNodes: new Set(journeyNodes).size === 7, nodePathContextVisible: observations.find((item) => item.mode === 'node-path-context')?.journeyControls === true, readingWidthWithin72ch: (observations.find((item) => item.mode === 'node-reading')?.readingWidth ?? 9999) <= 760, twelveNodesPass: sampleNodeChecks.length === 12 && sampleNodeChecks.every((item) => item.title && item.doors >= 2 && item.exits >= 4 && item.reading && !item.engineering && !item.overflow) }
+  const flowChecks = { pathOverviewSelectsRoute: observations.find((item) => item.mode === 'paths-overview-desktop')?.routeCount === 6, fullJourneyComplete, resetPassed, journeyHasSevenUniqueNodes: new Set(journeyNodes).size === 7, nodePathContextVisible: observations.find((item) => item.mode === 'node-path-context')?.journeyControls === true, readingWidthWithin72ch: (observations.find((item) => item.mode === 'node-reading')?.readingWidth ?? 9999) <= 760, mobileReadingVisible: observations.find((item) => item.mode === 'node-mobile')?.readingVisible === true, twelveNodesPass: sampleNodeChecks.length === 12 && sampleNodeChecks.every((item) => item.title && item.doors >= 2 && item.exits >= 4 && item.reading && !item.engineering && !item.overflow) }
   const failures = observations.flatMap((item) => {
     const issues = []
-    if (!item.viewport || (item.mode !== 'node-reading' && item.mode !== 'node-relations' && item.viewport.top !== 0)) issues.push(`${item.mode}: viewport 异常`)
+    if (!item.viewport || (!['node-reading', 'node-relations', 'node-mobile'].includes(item.mode) && item.viewport.top !== 0)) issues.push(`${item.mode}: viewport 异常`)
     if (item.horizontalOverflow) issues.push(`${item.mode}: 横向溢出`)
     if (item.engineeringCopy) issues.push(`${item.mode}: 公开工程文案`)
     if (item.errors.length && !item.expectedNetworkFailure) issues.push(`${item.mode}: ${item.errors.join('; ')}`)

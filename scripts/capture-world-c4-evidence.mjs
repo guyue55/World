@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { spawnSync } from 'node:child_process'
-import { capturePng, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+import { capturePng, delay, evaluate, launchRealityBrowser, recordPageScreencast, waitForExpression } from './lib/reality-first-browser.mjs'
 
 const baseUrl = process.env.WORLDOS_BASE_URL || 'http://127.0.0.1:3411'
 const outputDir = path.resolve(process.env.WORLDOS_EVIDENCE_DIR || 'docs/90-archive/reports/worldos-reality-first/c4-scenes-2026-07-10/final')
@@ -44,22 +43,8 @@ async function captureMode({ mode, scene, pathname, width, height, mobile = fals
 async function recordFlow({ name, pathname, readySelector, actions }) {
   const page = await launch.createPage({ width: 1280, height: 720 })
   await navigate(page, pathname, readySelector)
-  const framesDir = path.join(outputDir, `${name}-frames`)
-  fs.rmSync(framesDir, { recursive: true, force: true }); fs.mkdirSync(framesDir, { recursive: true })
-  let frameIndex = 0; let accepting = true
-  const off = launch.browser.on('Page.screencastFrame', async (params) => {
-    if (!accepting) return
-    frameIndex += 1
-    fs.writeFileSync(path.join(framesDir, `frame-${String(frameIndex).padStart(4, '0')}.jpg`), Buffer.from(params.data, 'base64'))
-    await page.send('Page.screencastFrameAck', { sessionId: params.sessionId })
-  })
-  await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
-  await actions(page); await delay(700); accepting = false; await page.send('Page.stopScreencast'); off()
-  const target = path.join(outputDir, `${name}.mp4`)
-  const ffmpeg = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(framesDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', target], { encoding: 'utf8' })
-  if (ffmpeg.status !== 0) throw new Error(`${name} 编码失败：${ffmpeg.stderr}`)
-  fs.rmSync(framesDir, { recursive: true, force: true })
-  return frameIndex
+  const recording = await recordPageScreencast({ browser: launch.browser, page, outputPath: path.join(outputDir, `${name}.mp4`), action: async () => { await actions(page); await delay(700) } })
+  return recording.frames
 }
 
 try {

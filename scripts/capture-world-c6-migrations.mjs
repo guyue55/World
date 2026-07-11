@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { spawnSync } from 'node:child_process'
-import { capturePng, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+import { capturePng, delay, evaluate, launchRealityBrowser, recordPageScreencast, waitForExpression } from './lib/reality-first-browser.mjs'
 
 const baseUrl = process.env.WORLDOS_BASE_URL || 'http://127.0.0.1:3411'
 const outputDir = path.resolve(process.env.WORLDOS_EVIDENCE_DIR || 'docs/90-archive/reports/worldos-reality-first/c6-migration-2026-07-10/final')
@@ -38,27 +37,27 @@ async function recordMigration({ name, sourcePath, object, targetScene, setup, p
   await navigate(page, sourcePath)
   if (setup) await setup(page)
   await safeCapture(page, path.join(outputDir, `${name}-source.png`))
-  const framesDir = path.join(outputDir, `${name}-frames`); fs.rmSync(framesDir, { recursive: true, force: true }); fs.mkdirSync(framesDir, { recursive: true })
-  const initial = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false }); fs.writeFileSync(path.join(framesDir, 'frame-0001.jpg'), Buffer.from(initial.data, 'base64'))
-  let frameIndex = 1; let accepting = true
-  const off = launch.browser.on('Page.screencastFrame', async (params) => { if (!accepting) return; frameIndex += 1; fs.writeFileSync(path.join(framesDir, `frame-${String(frameIndex).padStart(4, '0')}.jpg`), Buffer.from(params.data, 'base64')); await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }).catch(() => {}) })
-  await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
-  if (preTrigger) await preTrigger(page)
-  if (!await waitForExpression(page.send, `!!document.querySelector('[data-scene-transition-object="${object}"]')`)) throw new Error(`${name} 缺少 ${object} 来源对象`)
-  await trigger(page)
-  const transit = reducedMotion ? true : await waitFast(page, `document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state')==='inTransit'`, 3000)
-  if (!reducedMotion && transit) await safeCapture(page, path.join(outputDir, `${name}-transit.png`))
-  const arrived = await waitFast(page, `!!document.querySelector('[data-world-scene="${targetScene}"]')||document.querySelector('[data-testid="scene-transition-content"]')?.getAttribute('data-current-scene')==='${targetScene}'`, 15000)
-  const arrivalState = reducedMotion ? true : await waitFast(page, `['arriving','settled'].includes(document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state'))`, 3000)
-  await safeCapture(page, path.join(outputDir, `${name}-arrival.png`))
-  await delay(650); accepting = false; await page.send('Page.stopScreencast').catch(() => {}); off()
   const target = path.join(outputDir, `${name}.mp4`)
-  const ffmpeg = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '18', '-i', path.join(framesDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', target], { encoding: 'utf8' })
-  if (ffmpeg.status !== 0) throw new Error(`${name} 编码失败：${ffmpeg.stderr}`)
-  fs.rmSync(framesDir, { recursive: true, force: true })
+  let transit = reducedMotion
+  let arrived = false
+  let arrivalState = reducedMotion
+  let transitionDurationMs = 0
+  const recording = await recordPageScreencast({ browser: launch.browser, page, outputPath: target, action: async () => {
+    if (preTrigger) await preTrigger(page)
+    if (!await waitForExpression(page.send, `!!document.querySelector('[data-scene-transition-object="${object}"]')`)) throw new Error(`${name} 缺少 ${object} 来源对象`)
+    const transitionStartedAt = Date.now()
+    await trigger(page)
+    transit = reducedMotion ? true : await waitFast(page, `document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state')==='inTransit'`, 3000)
+    if (!reducedMotion && transit) await safeCapture(page, path.join(outputDir, `${name}-transit.png`))
+    arrived = await waitFast(page, `!!document.querySelector('[data-world-scene="${targetScene}"]')||document.querySelector('[data-testid="scene-transition-content"]')?.getAttribute('data-current-scene')==='${targetScene}'`, 15000)
+    arrivalState = reducedMotion ? true : await waitFast(page, `['arriving','settled'].includes(document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state'))`, 3000)
+    transitionDurationMs = Date.now() - transitionStartedAt
+    await safeCapture(page, path.join(outputDir, `${name}-arrival.png`))
+    await delay(650)
+  } })
   const final = await evaluate(page.send, `({path:location.pathname,state:document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-migration-state'),active:document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-active'),engineering:/正在迁移|迁移中|leaving|inTransit|arriving/.test(document.querySelector('[data-testid="scene-migration-layer"]')?.innerText??''),overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth})`)
-  results.push({ name, object, targetScene, transit, arrived, arrivalState, frames: frameIndex, final, errors: page.errors.filter(Boolean) })
-  console.log(`capture ${name}: done frames=${frameIndex}`)
+  results.push({ name, object, targetScene, transit, arrived, arrivalState, transitionDurationMs, frames: recording.frames, durationSeconds: recording.durationSeconds, final, errors: page.errors.filter(Boolean) })
+  console.log(`capture ${name}: done frames=${recording.frames}`)
 }
 
 const click = (selector) => async (page) => evaluate(page.send, `document.querySelector(${JSON.stringify(selector)})?.click()`)
@@ -83,6 +82,7 @@ try {
   const failures = results.flatMap((result) => {
     const issues = []
     if (!result.arrived || !result.arrivalState) issues.push(`${result.name}: 未抵达`)
+    if (!result.name.startsWith('reduced-') && result.transitionDurationMs > 1100) issues.push(`${result.name}: 迁移叙事 ${result.transitionDurationMs}ms 超过 1100ms 上限`)
     if (result.name !== 'reduced-path-node' && !result.transit) issues.push(`${result.name}: 未捕捉途中态`)
     if (result.final.engineering || result.final.overflow || result.errors.length) issues.push(`${result.name}: 公开文字/溢出/浏览器错误`)
     if (result.final.active !== 'false') issues.push(`${result.name}: 迁移层未释放`)

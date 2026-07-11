@@ -3,7 +3,7 @@ import net from 'node:net'
 import os from 'node:os'
 import path from 'node:path'
 import { spawn, spawnSync } from 'node:child_process'
-import { captureJpeg, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+import { captureJpeg, delay, evaluate, launchRealityBrowser, recordPageScreencast, waitForExpression } from './lib/reality-first-browser.mjs'
 
 const root = process.cwd()
 const distDirName = '.next-world-evidence'
@@ -20,7 +20,7 @@ const contract = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experi
 const routes = contract.spaces.map((space) => ({ id: space.id, path: space.sample }))
 const configSnapshots = new Map(['next-env.d.ts', 'tsconfig.json'].map((file) => [file, fs.readFileSync(path.join(root, file), 'utf8')]))
 const sourceCommit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).stdout.trim()
-const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'public', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
+const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'public/world', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
 const chromeBinary = process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 const browserVersion = spawnSync(chromeBinary, ['--version'], { encoding: 'utf8' }).stdout.trim()
 const failures = []
@@ -148,8 +148,10 @@ async function inspectPage(page, route, mode) {
   })()`)
 }
 
-async function captureMode(route, mode) {
+async function captureMode(route, mode, options = {}) {
   const mobile = mode === 'mobile'
+  const targetBaseUrl = options.targetBaseUrl ?? baseUrl
+  const screenshotPrefix = options.screenshotPrefix ?? route.id
   const page = await browserRuntime.createPage({ width: mobile ? 390 : mode === 'zoom-200' ? 720 : 1440, height: mobile ? 844 : mode === 'zoom-200' ? 450 : 900, mobile, reducedMotion: mode === 'reduced-motion' })
   try {
     if (mode === 'js-off') await page.send('Emulation.setScriptExecutionDisabled', { value: true })
@@ -157,7 +159,7 @@ async function captureMode(route, mode) {
       await page.send('Page.addScriptToEvaluateOnNewDocument', { source: performanceProbe })
       if (mode === 'reduced-sensory') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:soundscape-preference','muted');localStorage.setItem('guyue-world:motion-preference','reduced')` })
     }
-    await page.send('Page.navigate', { url: `${baseUrl}${route.path}` })
+    await page.send('Page.navigate', { url: `${targetBaseUrl}${route.path}` })
     if (mode === 'js-off') await delay(1300)
     else {
       const ready = await waitForExpression(page.send, `document.readyState==='complete'&&!!document.querySelector('[data-world-scene="${route.id}"]')`, 25000)
@@ -168,10 +170,29 @@ async function captureMode(route, mode) {
     }
     const observation = await inspectPage(page, route, mode)
     observation.browserErrors = page.errors.filter(Boolean)
-    const screenshot = path.join(screenshotsDir, `${route.id}-${mode}.jpg`)
+    const screenshot = path.join(screenshotsDir, `${screenshotPrefix}-${mode}.jpg`)
     await captureJpeg(page.send, screenshot)
     observation.screenshot = path.relative(root, screenshot)
     return observation
+  } finally {
+    await page.close()
+  }
+}
+
+async function runLanJourney(lanBaseUrl) {
+  const page = await browserRuntime.createPage({ width: 1280, height: 720 })
+  try {
+    await page.send('Page.navigate', { url: `${lanBaseUrl}/` })
+    if (!await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-enter"]')`, 20000)) throw new Error('LAN 首访入口未出现')
+    await evaluate(page.send, `document.querySelector('[data-testid="gateway-enter"]')?.click()`)
+    if (!await waitForExpression(page.send, `!!document.querySelector('[data-scene-transition-object="island"]')`, 5000)) throw new Error('LAN 入口方向未出现')
+    await evaluate(page.send, `document.querySelector('[data-scene-transition-object="island"]')?.click()`)
+    const reachedAtlas = await waitForExpression(page.send, `location.pathname==='/atlas'&&!!document.querySelector('[data-atlas-area]')`, 15000)
+    if (!reachedAtlas) throw new Error('LAN 未抵达 Atlas')
+    await evaluate(page.send, `document.querySelector('[data-atlas-area]')?.click()`)
+    const focusedAtlas = await waitForExpression(page.send, `!!document.querySelector('[data-testid="atlas-area-inspector"]')`, 5000)
+    await captureJpeg(page.send, path.join(screenshotsDir, 'lan-journey-atlas-focused.jpg'))
+    return { reachedAtlas, focusedAtlas, errors: page.errors.filter(Boolean) }
   } finally {
     await page.close()
   }
@@ -212,48 +233,30 @@ async function runAccessibilityChecks() {
 
 async function recordReturnVisit() {
   const page = await browserRuntime.createPage({ width: 1280, height: 720 })
-  const frameDir = path.join(flowsDir, 'return-visit-frames')
-  fs.mkdirSync(frameDir, { recursive: true })
-  let frames = 0
-  let accepting = true
-  const writeFrame = (data) => {
-    frames += 1
-    fs.writeFileSync(path.join(frameDir, `frame-${String(frames).padStart(4, '0')}.jpg`), Buffer.from(data, 'base64'))
-  }
   try {
     await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:visited-count','3');localStorage.setItem('guyue-world:journey-memory-v1',JSON.stringify({path:'/atlas',label:'群岛星图',sceneId:'atlas',sceneTitle:'世界地图',visitedAt:new Date().toISOString()}))` })
     await page.send('Page.navigate', { url: `${baseUrl}/` })
     if (!await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-returning"]')`, 20000)) throw new Error('回访入口未出现')
     const returningScreenshot = await page.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false })
     fs.writeFileSync(path.join(screenshotsDir, 'home-desktop-returning.png'), Buffer.from(returningScreenshot.data, 'base64'))
-    const initial = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false })
-    writeFrame(initial.data)
-    const off = browserRuntime.browser.on('Page.screencastFrame', async (params, sessionId) => {
-      if (!accepting) return
-      writeFrame(params.data)
-      await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }).catch(() => {})
-    })
-    await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
-    await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] a')?.click()`)
-    const continued = await waitForExpression(page.send, `location.pathname==='/atlas'`, 15000)
-    if (!continued) throw new Error('回访未继续到上次位置')
-    await delay(900)
-    await evaluate(page.send, `history.back()`)
-    if (!await waitForExpression(page.send, `location.pathname==='/'&&!!document.querySelector('[data-testid="gateway-returning"]')`, 15000)) throw new Error('回访未返回入口')
-    await delay(500)
-    await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] button')?.click()`)
-    const cleared = await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-enter"]')&&!document.querySelector('[data-testid="gateway-returning"]')`, 5000)
-    if (!cleared) throw new Error('回访记忆清除后未恢复首访入口')
-    await delay(900)
-    accepting = false
-    await page.send('Page.stopScreencast').catch(() => {})
-    off()
     const output = path.join(flowsDir, 'return-visit-continuation.mp4')
-    const encoded = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(frameDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', output], { encoding: 'utf8' })
-    if (encoded.status !== 0) throw new Error(`回访录屏编码失败：${encoded.stderr}`)
-    return { frames, path: path.relative(root, output), continued, cleared }
+    let continued = false
+    let cleared = false
+    const recording = await recordPageScreencast({ browser: browserRuntime.browser, page, outputPath: output, action: async () => {
+      await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] a')?.click()`)
+      continued = await waitForExpression(page.send, `location.pathname==='/atlas'`, 15000)
+      if (!continued) throw new Error('回访未继续到上次位置')
+      await delay(900)
+      await evaluate(page.send, `history.back()`)
+      if (!await waitForExpression(page.send, `location.pathname==='/'&&!!document.querySelector('[data-testid="gateway-returning"]')`, 15000)) throw new Error('回访未返回入口')
+      await delay(500)
+      await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] button')?.click()`)
+      cleared = await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-enter"]')&&!document.querySelector('[data-testid="gateway-returning"]')`, 5000)
+      if (!cleared) throw new Error('回访记忆清除后未恢复首访入口')
+      await delay(900)
+    } })
+    return { frames: recording.frames, durationSeconds: recording.durationSeconds, path: path.relative(root, output), continued, cleared }
   } finally {
-    fs.rmSync(frameDir, { recursive: true, force: true })
     await page.close()
   }
 }
@@ -302,6 +305,20 @@ try {
       }
     }
   }
+  const lanBaseUrl = `http://${lanIp}:${port}`
+  const lanObservations = []
+  for (const route of routes) {
+    for (const mode of ['desktop', 'mobile']) {
+      console.log(`[Reality evidence] LAN ${route.id} ${mode}`)
+      const observation = await captureMode(route, mode, { targetBaseUrl: lanBaseUrl, screenshotPrefix: `lan-${route.id}` })
+      lanObservations.push(observation)
+      if (!observation.sceneRect || observation.sceneRect.ratio < 0.7 || !observation.interactiveVisible) failures.push(`LAN ${route.path} ${mode}: 场景主体或主交互不可见`)
+      if (observation.overflowX || observation.engineeringCopy || observation.privateCanary || observation.fixedOverlayIssues.length) failures.push(`LAN ${route.path} ${mode}: 溢出、工程文案、私密载荷或固定层异常`)
+      if (observation.browserErrors.length) failures.push(`LAN ${route.path} ${mode}: ${observation.browserErrors.join('; ')}`)
+    }
+  }
+  const lanJourney = await runLanJourney(lanBaseUrl)
+  if (!lanJourney.reachedAtlas || !lanJourney.focusedAtlas || lanJourney.errors.length) failures.push(`LAN 连续导航失败：${lanJourney.errors.join('; ')}`)
   const accessibility = await runAccessibilityChecks()
   if (!accessibility.focusedOnOpen || !accessibility.focusRestored || !accessibility.triggerKeyboardReachable || !accessibility.dialogClosed) failures.push('详情抽屉焦点进入/返回闭环失败')
   if (accessibility.zoom200.overflowX || accessibility.zoom200.links < 2) failures.push('200% 缩放等价检查出现溢出或可见链接丢失')
@@ -347,6 +364,7 @@ try {
     'lighthouse-desktop-arrival.png': 'flows/lighthouse/lighthouse-arrival.png',
     'lighthouse-desktop-answer.png': 'flows/lighthouse/lighthouse-grounded.png',
     'lighthouse-desktop-fallback.png': 'flows/lighthouse/lighthouse-low-light.png',
+    'lighthouse-image-fallback.png': 'flows/lighthouse/lighthouse-image-fallback.png',
     'lighthouse-desktop-text-hidden.png': 'flows/lighthouse/lighthouse-text-hidden.png',
     'lighthouse-mobile-arrival.png': 'flows/lighthouse/lighthouse-mobile.png',
     'home-desktop-reduced-motion.png': 'screenshots/gateway-reduced-motion.jpg',
@@ -463,7 +481,7 @@ try {
     .filter((item) => item.mode === 'desktop')
     .map((item) => ({ scene: item.scene, route: item.route, bitmapBytes: item.bitmapBytes, audioBytes: item.audioBytes, metrics: item.metrics }))
   const auditArtifacts = {
-    'browser-matrix.json': { runId, observations, accessibility, flows },
+    'browser-matrix.json': { runId, observations, lanObservations, lanJourney, accessibility, flows },
     'permission-boundary.json': { runId, bundleLeaks, permissionCheck: permissionCheck.trim(), aiBoundaryCheck: aiBoundaryCheck.trim(), passed: bundleLeaks.length === 0 },
     'performance-budget.json': { runId, build: buildMetrics, desktop: desktopPerformance, budgets: { sharedKb: 130, routeIncrementKb: 80, lcpMs: 2500, cls: 0.1, tbtMs: 300 } },
     'asset-license.json': { runId, sceneLicense: sceneAssets.license, sceneAssets: sceneAssets.assets.map((item) => ({ sceneId: item.sceneId, source: item.source, licenseId: item.licenseId, desktopBytes: item.desktop.bytes, mobileBytes: item.mobile.bytes })), audioProductionReadiness: sensoryAssets.productionReadiness, audioAssets: sensoryAssets.assetInventory },
@@ -488,7 +506,7 @@ try {
     server: { localhost: baseUrl, lan: `http://${lanIp}:${port}`, lanStatus },
     freshness,
     build: buildMetrics,
-    browser: { version: browserVersion, viewports: [{ id: 'desktop', width: 1440, height: 900 }, { id: 'mobile', width: 390, height: 844 }, { id: 'zoom-200', width: 720, height: 450 }], observations, accessibility },
+    browser: { version: browserVersion, viewports: [{ id: 'desktop', width: 1440, height: 900 }, { id: 'mobile', width: 390, height: 844 }, { id: 'zoom-200', width: 720, height: 450 }], observations, lanObservations, lanJourney, accessibility },
     flows,
     artifactTimes,
     privacy: { bundleLeaks },
@@ -496,6 +514,7 @@ try {
       'npm run build:production-ci',
       'next start -H 0.0.0.0',
       '42 route/mode browser captures + 200% zoom',
+      '14 LAN route/mode browser captures + LAN Gateway -> Atlas journey',
       ...flowCommands.map(([, script]) => `node ${script}`),
       'npm run check:permission-boundary',
       'npm run check:ai-provider-boundary',

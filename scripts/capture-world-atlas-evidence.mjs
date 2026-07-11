@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { spawnSync } from 'node:child_process'
-import { capturePng, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+import { capturePng, delay, evaluate, launchRealityBrowser, recordPageScreencast, waitForExpression } from './lib/reality-first-browser.mjs'
 
 const baseUrl = process.env.WORLDOS_BASE_URL || 'http://127.0.0.1:3411'
 const outputDir = path.resolve(process.env.WORLDOS_EVIDENCE_DIR || 'docs/90-archive/reports/worldos-reality-first/c3-atlas-2026-07-10/final')
@@ -97,33 +96,16 @@ try {
 
   const recordingPage = await launch.createPage({ width: 1280, height: 720 })
   await navigate(recordingPage)
-  const framesDir = path.join(outputDir, 'recording-frames')
-  fs.rmSync(framesDir, { recursive: true, force: true })
-  fs.mkdirSync(framesDir, { recursive: true })
-  let frameIndex = 0
-  let acceptingFrames = true
-  const off = launch.browser.on('Page.screencastFrame', async (params) => {
-    if (!acceptingFrames) return
-    frameIndex += 1
-    fs.writeFileSync(path.join(framesDir, `frame-${String(frameIndex).padStart(4, '0')}.jpg`), Buffer.from(params.data, 'base64'))
-    await recordingPage.send('Page.screencastFrameAck', { sessionId: params.sessionId })
-  })
-  await recordingPage.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
-  await delay(700)
-  await evaluate(recordingPage.send, `document.querySelector('[data-atlas-area="tech"]')?.click()`)
-  await delay(1200)
-  await evaluate(recordingPage.send, `document.querySelector('[data-atlas-node="node-cli-agent"]')?.click()`)
-  await delay(1200)
-  await evaluate(recordingPage.send, `document.querySelector('[aria-label="返回全图"]')?.click()`)
-  await delay(1000)
-  acceptingFrames = false
-  await recordingPage.send('Page.stopScreencast')
-  off()
-
   const recordingPath = path.join(outputDir, 'atlas-exploration.mp4')
-  const ffmpeg = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(framesDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', recordingPath], { encoding: 'utf8' })
-  if (ffmpeg.status !== 0) throw new Error(`Atlas 录屏编码失败：${ffmpeg.stderr}`)
-  fs.rmSync(framesDir, { recursive: true, force: true })
+  const recording = await recordPageScreencast({ browser: launch.browser, page: recordingPage, outputPath: recordingPath, action: async () => {
+    await delay(700)
+    await evaluate(recordingPage.send, `document.querySelector('[data-atlas-area="tech"]')?.click()`)
+    await delay(1200)
+    await evaluate(recordingPage.send, `document.querySelector('[data-atlas-node="node-cli-agent"]')?.click()`)
+    await delay(1200)
+    await evaluate(recordingPage.send, `document.querySelector('[aria-label="返回全图"]')?.click()`)
+    await delay(1000)
+  } })
 
   const journeyPage = await launch.createPage({ width: 1280, height: 720 })
   await navigate(journeyPage)
@@ -172,9 +154,9 @@ try {
     return issues
   })
   for (const [check, passed] of Object.entries(journeyChecks)) if (!passed) failures.push(`journey: ${check} 未通过`)
-  fs.writeFileSync(path.join(outputDir, 'browser-observations.json'), `${JSON.stringify({ generatedAt: new Date().toISOString(), baseUrl, observations, journeyChecks, recordingFrames: frameIndex, failures }, null, 2)}\n`)
+  fs.writeFileSync(path.join(outputDir, 'browser-observations.json'), `${JSON.stringify({ generatedAt: new Date().toISOString(), baseUrl, observations, journeyChecks, recordingFrames: recording.frames, recordingDurationSeconds: recording.durationSeconds, failures }, null, 2)}\n`)
   if (failures.length) throw new Error(failures.join('\n'))
-  console.log(`Atlas evidence captured. modes=${observations.length} frames=${frameIndex} failures=0`)
+  console.log(`Atlas evidence captured. modes=${observations.length} frames=${recording.frames} failures=0`)
 } finally {
   await launch.close()
 }

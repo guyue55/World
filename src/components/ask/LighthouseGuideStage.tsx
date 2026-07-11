@@ -56,7 +56,7 @@ export function LighthouseGuideStage({ model, initialResponse }: { model: Lighth
 
   const fallbackItems = model.fallbackLinks.map((item) => ({ id: item.href, href: item.href, title: item.title, description: item.reason }))
   return <div ref={stageRef} className={styles.stage} data-image-ready={imageReady} data-image-failed={imageFailed}>
-    <WorldViewport sceneId="lighthouse" label="浮屿灯塔导览空间" className={styles.viewport} background={<div className={styles.backgroundFallback} />} fallback={<AccessibleSceneList title="灯塔静态导览" items={fallbackItems} className={styles.staticFallback} />}>
+    <WorldViewport sceneId="lighthouse" label="浮屿灯塔导览空间" className={styles.viewport} background={<div className={styles.backgroundFallback}><span className={styles.fallbackMoon} /><span className={styles.fallbackIsland} /><span className={styles.fallbackTower}><i /></span><span className={styles.fallbackBeam} /></div>} fallback={<AccessibleSceneList title="灯塔静态导览" items={fallbackItems} className={styles.staticFallback} />}>
       <LighthouseBackdrop model={model} imageRef={imageRef} onLoad={() => { setImageReady(true); setImageFailed(false) }} onError={() => { setImageReady(false); setImageFailed(true) }} />
       <div className={styles.veil} aria-hidden="true" />
       <span className={styles.liveBeam} data-lighthouse-beam aria-hidden="true" />

@@ -1,6 +1,7 @@
 import { getRecommendedPathOrder } from '@/lib/path-guidance'
 import type { PublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { getWorldSceneAsset } from '@/lib/world-scene-assets'
+import publicCuration from '../../../data/domains/content/world-public-curation.json'
 
 export type JourneyStepView = {
   index: number
@@ -80,7 +81,9 @@ function buildPath(index: PublicWorldObjectIndex, pathId: string, routeIndex: nu
 export function buildPathsOverviewModel(index: PublicWorldObjectIndex): PathsOverviewModel {
   const ordered = getRecommendedPathOrder(index.paths)
   const allPaths = ordered.map((path, routeIndex) => buildPath(index, path.id, routeIndex)).filter((path): path is JourneyPathView => Boolean(path))
-  return { title: '星路岔口', arrivalLine: '选择一条路，不必先理解整个世界。', featured: allPaths.slice(0, 6), allPaths, asset: getWorldSceneAsset('paths') }
+  const byId = new Map(allPaths.map((path) => [path.id, path]))
+  const featured = publicCuration.featuredPathIds.map((id) => byId.get(id)).filter((path): path is JourneyPathView => Boolean(path))
+  return { title: '星路岔口', arrivalLine: '选择一条路，不必先理解整个世界。', featured, allPaths, asset: getWorldSceneAsset('paths') }
 }
 
 export function buildPathDetailModel(index: PublicWorldObjectIndex, pathId: string): PathDetailModel | null {

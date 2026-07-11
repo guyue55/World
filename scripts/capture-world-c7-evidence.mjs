@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { spawnSync } from 'node:child_process'
-import { capturePng, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+import { capturePng, delay, evaluate, launchRealityBrowser, recordPageScreencast, waitForExpression } from './lib/reality-first-browser.mjs'
 
 const baseUrl = process.env.WORLDOS_BASE_URL || 'http://127.0.0.1:3411'
 const outputDir = path.resolve(process.env.WORLDOS_EVIDENCE_DIR || 'docs/90-archive/reports/worldos-reality-first/c7-lighthouse-audio-2026-07-10/final')
@@ -46,25 +45,20 @@ async function recordGuide() {
   await page.send('Page.navigate', { url: `${baseUrl}/node/world-manifesto` })
   if (!await waitForExpression(page.send, `document.readyState==='complete'&&!!document.querySelector('[data-scene-transition-object="beam"]')`, 20000)) throw new Error('灯塔录屏来源 Node 未就绪')
   await delay(800)
-  const framesDir = path.join(outputDir, 'lighthouse-guide-frames'); fs.rmSync(framesDir, { recursive: true, force: true }); fs.mkdirSync(framesDir, { recursive: true })
-  const first = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false }); fs.writeFileSync(path.join(framesDir, 'frame-0001.jpg'), Buffer.from(first.data, 'base64'))
-  let frameIndex = 1; let accepting = true
-  const off = launch.browser.on('Page.screencastFrame', async (params) => { if (!accepting) return; frameIndex += 1; fs.writeFileSync(path.join(framesDir, `frame-${String(frameIndex).padStart(4, '0')}.jpg`), Buffer.from(params.data, 'base64')); await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }).catch(() => {}) })
-  await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
-  await evaluate(page.send, `document.querySelector('[data-scene-transition-object="beam"]')?.click()`)
-  if (!await waitForExpression(page.send, `location.pathname==='/ask'&&!!document.querySelector('[data-world-scene="lighthouse"]')`, 15000)) throw new Error('灯塔录屏未抵达')
-  await delay(900)
-  await setQuestion(page, '我现在在哪里？')
-  await delay(900)
-  const target = await evaluate(page.send, `document.querySelector('[aria-label="灯塔推荐的下一站"] a')?.getAttribute('href')`)
-  await evaluate(page.send, `document.querySelector('[aria-label="灯塔推荐的下一站"] a')?.click()`)
-  if (!target || !await waitForExpression(page.send, `location.pathname!== '/ask'`, 15000)) throw new Error('灯塔推荐未进入下一站')
-  await delay(800); accepting = false; await page.send('Page.stopScreencast').catch(() => {}); off()
   const video = path.join(outputDir, 'lighthouse-guide.mp4')
-  const encoded = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(framesDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', video], { encoding: 'utf8' })
-  if (encoded.status !== 0) throw new Error(`灯塔录屏编码失败：${encoded.stderr}`)
-  fs.rmSync(framesDir, { recursive: true, force: true })
-  return { frames: frameIndex, target }
+  let target = null
+  const recording = await recordPageScreencast({ browser: launch.browser, page, outputPath: video, action: async () => {
+    await evaluate(page.send, `document.querySelector('[data-scene-transition-object="beam"]')?.click()`)
+    if (!await waitForExpression(page.send, `location.pathname==='/ask'&&!!document.querySelector('[data-world-scene="lighthouse"]')`, 15000)) throw new Error('灯塔录屏未抵达')
+    await delay(900)
+    await setQuestion(page, '我现在在哪里？')
+    await delay(900)
+    target = await evaluate(page.send, `document.querySelector('[aria-label="灯塔推荐的下一站"] a')?.getAttribute('href')`)
+    await evaluate(page.send, `document.querySelector('[aria-label="灯塔推荐的下一站"] a')?.click()`)
+    if (!target || !await waitForExpression(page.send, `location.pathname!== '/ask'`, 15000)) throw new Error('灯塔推荐未进入下一站')
+    await delay(800)
+  } })
+  return { frames: recording.frames, durationSeconds: recording.durationSeconds, target }
 }
 
 try {
