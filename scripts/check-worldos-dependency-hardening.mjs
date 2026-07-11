@@ -56,8 +56,9 @@ for (const dep of policy.heavyCandidatesRequireAdr ?? []) {
   assert(!pkg.dependencies?.[dep] && !pkg.devDependencies?.[dep], `重型候选依赖必须先 ADR：${dep}`)
 }
 
-const runtimeAtmosphere = read('src/components/world/RuntimeAtmosphere.tsx')
-assert(runtimeAtmosphere.includes('!runtime.reducedMotion && !runtime.compactMotion'), 'RuntimeAtmosphere 必须显式在 reduced/compact 下停止背景动画')
+const runtimeProvider = read('src/components/world/WorldRuntimeProvider.tsx')
+assert(runtimeProvider.includes('worldDayPeriod') && runtimeProvider.includes('worldSeason'), 'World Runtime 必须暴露轻量环境属性')
+assert(!fs.existsSync(rel('src/components/world/RuntimeAtmosphere.tsx')), '不得恢复全局常驻 RuntimeAtmosphere')
 
 const sensoryAudio = readJson('data/domains/experience/sensory-audio-registry.json')
 assert(sensoryAudio.scope?.defaultSoundEnabled === false, '声音必须默认静音')
@@ -74,7 +75,8 @@ for (const dir of scanRoots) {
     const source = fs.readFileSync(abs, 'utf-8')
     const relative = path.relative(root, abs)
     for (const token of policy.forbiddenMainlineTokens ?? []) {
-      assert(!source.includes(token), `${relative} 包含 M16 禁用 token：${token}`)
+      const serverProviderBoundary = relative.startsWith(`src${path.sep}server${path.sep}ai${path.sep}provider${path.sep}`) && ['OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'new OpenAI'].includes(token)
+      assert(serverProviderBoundary || !source.includes(token), `${relative} 包含 M16 禁用 token：${token}`)
     }
   })
 }

@@ -1,4 +1,4 @@
-import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
+import Link from 'next/link'
 import { getAllAreas } from '@/lib/areas'
 import { getPublicNodes } from '@/lib/nodes'
 import { getAllPaths } from '@/lib/paths'
@@ -33,7 +33,6 @@ import {
   SceneRuntimeStatusPanel,
   RealityFirstBaselinePanel,
 } from '@/components/status'
-import { SceneWorldPortal } from '@/components/world/SceneWorldPortal'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -92,30 +91,7 @@ export default function StatusPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
-      <SceneWorldPortal
-        scene="status"
-        eyebrow="STATUS · 维护舱"
-        title="本地世界可以被复查，外部发布继续冻结。"
-        description="维护舱只展示公开运行态、本地 RC、场景 QA、内容质量和权限边界摘要。它帮助判断 localhost / LAN 是否成熟，不伪装成外部 production。"
-        objects={['门禁', '证据', '心跳', '截图', '边界', '本地 RC']}
-        primaryAction={{ href: '/', label: '返回世界入口' }}
-        secondaryActions={[
-          { href: '/atlas', label: '查看星图' },
-          { href: '/ask', label: '询问灯塔' },
-        ]}
-        stats={[
-          { label: '公开节点', value: publicNodes.length, note: '可被公开入口读取' },
-          { label: '路径', value: paths.length, note: '用于连续探索' },
-          { label: '发布状态', value: '冻结', note: '只做本地/LAN 成熟' },
-        ]}
-      />
-
-      <ProductRouteGuide
-        current="世界状态"
-        description="这里只展示公开运行态需要知道的状态，不暴露内部阶段页、审计队列或调试面板。"
-        primaryHref="/atlas"
-        primaryLabel="回到世界地图"
-      />
+      <header className="border-b border-ink/15 pb-8"><p className="text-xs font-semibold text-moss">STATUS · 本地维护舱</p><h1 className="mt-3 text-4xl font-semibold text-ink">世界状态</h1><p className="mt-3 max-w-3xl text-sm leading-7 text-ink/62">这里集中展示 localhost / LAN 的客观运行、权限与证据摘要，不进入访客探索主线。</p><nav className="mt-5 flex gap-4 text-sm font-semibold"><Link href="/">返回入口</Link><Link href="/atlas">查看星图</Link><Link href="/ask">询问灯塔</Link></nav></header>
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {statusCards.map((card) => (

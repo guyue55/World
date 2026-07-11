@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useLayoutEffect, useRef, type ReactNode } from 'react'
 import { X } from 'lucide-react'
 
 type SceneInspectorProps = {
@@ -12,15 +12,21 @@ type SceneInspectorProps = {
 
 export function SceneInspector({ open, title, children, onClose }: SceneInspectorProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const returnFocusRef = useRef<HTMLElement | null>(null)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return
+    returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
     closeButtonRef.current?.focus()
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      if (returnFocusRef.current?.isConnected) returnFocusRef.current.focus({ preventScroll: true })
+      returnFocusRef.current = null
+    }
   }, [onClose, open])
 
   if (!open) return null

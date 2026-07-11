@@ -174,7 +174,8 @@
     "requiredFiles": [
       "data/domains/experience/ambient-environment-registry.json",
       "src/lib/ambient-environment.ts",
-      "src/components/world/RuntimeAtmosphere.tsx"
+      "src/components/world/WorldRuntimeProvider.tsx",
+      "src/app/globals.css"
     ],
     "forbiddenClientTokens": ["OPENAI_API_KEY", "ANTHROPIC_API_KEY", "new OpenAI", "responses.create", "chat.completions", "GUYUE_OWNER_TOKEN", "R8_OWNER_TOKEN"]
   },

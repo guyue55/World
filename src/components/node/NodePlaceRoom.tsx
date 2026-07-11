@@ -4,7 +4,6 @@ import { getImageProps } from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState, type RefObject } from 'react'
 import { Archive, ArrowDown, BookOpen, Lightbulb, Map, Waves } from 'lucide-react'
-import { gsap } from 'gsap'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import { WorldViewport } from '@/components/world/primitives/WorldViewport'
@@ -25,7 +24,26 @@ export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
   const [imageReady, setImageReady] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
   useEffect(() => { const image = imageRef.current; if (!image?.complete) return; if (image.naturalWidth > 0) setImageReady(true); else setImageFailed(true) }, [])
-  useEffect(() => { if (!roomRef.current) return; const media = gsap.matchMedia(); media.add('(prefers-reduced-motion: no-preference)', () => gsap.fromTo(roomRef.current!.querySelectorAll('[data-room-object]'), { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, stagger: .06, duration: .5, ease: 'power2.out' })); return () => media.revert() }, [])
+  useEffect(() => {
+    let cancelled = false
+    let cleanup = () => {}
+
+    void import('gsap').then(({ gsap }) => {
+      if (cancelled || !roomRef.current) return
+      const media = gsap.matchMedia()
+      media.add('(prefers-reduced-motion: no-preference)', () => gsap.fromTo(
+        roomRef.current!.querySelectorAll('[data-room-object]'),
+        { autoAlpha: 0, y: 12 },
+        { autoAlpha: 1, y: 0, stagger: 0.06, duration: 0.5, ease: 'power2.out' },
+      ))
+      cleanup = () => media.revert()
+    })
+
+    return () => {
+      cancelled = true
+      cleanup()
+    }
+  }, [])
   const fallbackItems = [{ id: 'reading', href: '#reading', title: '展开正文', description: model.summary }, ...model.relationDoors.map((door) => ({ id: door.id, href: door.href, title: door.title, description: door.reason }))]
   return <div ref={roomRef} className={styles.stage} data-image-ready={imageReady} data-image-failed={imageFailed}>
     <WorldViewport sceneId="node" label={`${model.title}内容地点`} className={styles.viewport} background={<div className={styles.backgroundFallback} />} fallback={<AccessibleSceneList title={model.title} items={fallbackItems} className={styles.staticFallback} />}>

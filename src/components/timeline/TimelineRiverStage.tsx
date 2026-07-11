@@ -3,7 +3,6 @@
 import { getImageProps } from 'next/image'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import { ArrowLeft, ArrowRight, CalendarDays, RotateCcw, Waves } from 'lucide-react'
-import { gsap } from 'gsap'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { SceneInspector } from '@/components/world/primitives/SceneInspector'
 import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
@@ -64,12 +63,39 @@ export function TimelineRiverStage({ model }: { model: TimelineViewModel }) {
   useLayoutEffect(() => {
     const layer = eventLayerRef.current
     if (!layer) return
-    const media = gsap.matchMedia()
-    media.add({ desktop: '(min-width: 768px)', mobile: '(max-width: 767px)', reduceMotion: '(prefers-reduced-motion: reduce)' }, (context) => {
-      const reduced = Boolean(context.conditions?.reduceMotion)
-      gsap.fromTo(layer.querySelectorAll('[data-time-event]'), { autoAlpha: 0, scale: reduced ? 1 : 0.72 }, { autoAlpha: 1, scale: 1, duration: reduced ? 0 : 0.48, stagger: reduced ? 0 : 0.07, ease: 'back.out(1.4)' })
+    let cancelled = false
+    let cleanup = () => {}
+
+    void import('gsap').then(({ gsap }) => {
+      if (cancelled) return
+      const media = gsap.matchMedia()
+      let tween: ReturnType<typeof gsap.fromTo> | null = null
+      const syncVisibility = () => {
+        if (!tween) return
+        if (document.hidden) tween.pause()
+        else tween.resume()
+      }
+      media.add({ desktop: '(min-width: 768px)', mobile: '(max-width: 767px)', reduceMotion: '(prefers-reduced-motion: reduce)' }, (context) => {
+        const reduced = Boolean(context.conditions?.reduceMotion)
+        tween = gsap.fromTo(
+          layer.querySelectorAll('[data-time-event]'),
+          { autoAlpha: 0, scale: reduced ? 1 : 0.72 },
+          { autoAlpha: 1, scale: 1, duration: reduced || document.hidden ? 0 : 0.48, stagger: reduced ? 0 : 0.07, ease: 'back.out(1.4)' },
+        )
+        syncVisibility()
+      })
+      document.addEventListener('visibilitychange', syncVisibility)
+      cleanup = () => {
+        document.removeEventListener('visibilitychange', syncVisibility)
+        tween?.kill()
+        media.revert()
+      }
     })
-    return () => media.revert()
+
+    return () => {
+      cancelled = true
+      cleanup()
+    }
   }, [activeAnchorId])
 
   const selectAnchor = useCallback((anchorId: string) => {

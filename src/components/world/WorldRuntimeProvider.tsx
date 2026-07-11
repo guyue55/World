@@ -2,7 +2,6 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
-import { RuntimeAtmosphere } from './RuntimeAtmosphere'
 import { RuntimeSoundscapeControl } from './RuntimeSoundscapeControl'
 import {
   buildJourneyMemoryEntry,
@@ -122,6 +121,16 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
+    const root = document.documentElement
+    root.dataset.worldDayPeriod = dayPeriod
+    root.dataset.worldSeason = season
+    return () => {
+      delete root.dataset.worldDayPeriod
+      delete root.dataset.worldSeason
+    }
+  }, [dayPeriod, season])
+
+  useEffect(() => {
     if (!pathname) return
     const nextJourney = buildJourneyMemoryEntry(pathname, new Date().toISOString())
     const previousJourney = readJourneyMemory()
@@ -199,7 +208,6 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
 
   return (
     <WorldRuntimeContext.Provider value={value}>
-      <RuntimeAtmosphere />
       {children}
       <RuntimeSoundscapeControl />
     </WorldRuntimeContext.Provider>

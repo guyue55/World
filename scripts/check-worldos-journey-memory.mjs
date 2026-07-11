@@ -78,7 +78,6 @@ assert(!/window|document|localStorage|sessionStorage/.test(lib), 'journey-memory
 const provider = read('src/components/world/WorldRuntimeProvider.tsx')
 for (const token of [
   'buildJourneyMemoryEntry',
-  'getJourneyStorageKeys',
   'mergeJourneyHistory',
   'currentJourney',
   'journeyHistory',
@@ -86,8 +85,6 @@ for (const token of [
   'clearStoredJourneyMemory',
   'writeJourneyMemory',
   'writeJourneyHistory',
-  'removeItem',
-  'clearedAtKey',
 ]) {
   assert(provider.includes(token), `WorldRuntimeProvider 缺少 Journey Memory 能力：${token}`)
 }
@@ -107,16 +104,19 @@ for (const token of [
 }
 assert(!productDock.includes('localStorage'), 'ProductJourneyDock 不得再散写 localStorage')
 
-const pathProgress = read('src/components/paths/PathProgress.tsx')
-for (const token of ['useWorldRuntime', 'visitedNodes.length', '下一站', 'pathId']) {
-  assert(pathProgress.includes(token), `PathProgress 缺少路径连续性能力：${token}`)
-}
+const journeyStorage = read('src/lib/runtime/journey-storage.ts')
+for (const token of ['getJourneyStorageKeys', 'removeItem(keys.primaryKey)', 'removeItem(keys.historyKey)', 'keys.clearedAtKey']) assert(journeyStorage.includes(token), `Journey Storage 缺少清除边界：${token}`)
+
+const pathProgress = read('src/components/paths/JourneyRouteStage.tsx')
+for (const token of ['readPathProgress(model.id', 'resetPathProgress(model.id', '当前位置']) assert(pathProgress.includes(token), `JourneyRouteStage 缺少路径连续性能力：${token}`)
+const nodeJourney = read('src/components/node/NodeJourneyControls.tsx')
+for (const token of ['completePathStep(context.pathId', 'context.stepIndex', '回到路线']) assert(nodeJourney.includes(token), `NodeJourneyControls 缺少路径推进能力：${token}`)
 
 const pathPage = read('src/app/paths/[id]/page.tsx')
-assert(pathPage.includes('pathId={path.id}'), 'Path Detail 必须向 PathProgress 传入 pathId')
+assert(pathPage.includes('JourneyRouteStage') && pathPage.includes('buildPathDetailModel'), 'Path Detail 必须接入路径旅程模型')
 
 const nodeNextStep = read('src/components/node/NodeNextStepPanel.tsx')
-for (const token of ['useWorldRuntime', '返回来源', 'returnJourney']) {
+for (const token of ['useWorldRuntime', '返回来路', 'returnJourney']) {
   assert(nodeNextStep.includes(token), `NodeNextStepPanel 缺少来源返回能力：${token}`)
 }
 
@@ -171,10 +171,10 @@ const report = {
   returningVisitor: policy.returningVisitor,
   clearMemory: policy.clearMemory,
   evidence: {
-    providerHasClearApi: provider.includes('clearJourneyMemory') && provider.includes('removeItem'),
+    providerHasClearApi: provider.includes('clearJourneyMemory') && provider.includes('clearStoredJourneyMemory'),
     dockHasContinueAndClear: productDock.includes('继续') && productDock.includes('清除'),
-    pathProgressUsesHistory: pathProgress.includes('runtime.journeyHistory'),
-    nodeCanReturnToSource: nodeNextStep.includes('返回来源'),
+    pathProgressUsesHistory: pathProgress.includes('readPathProgress(model.id') && nodeJourney.includes('completePathStep(context.pathId'),
+    nodeCanReturnToSource: nodeNextStep.includes('返回来路'),
     statusShowsClearPolicy: statusPanel.includes('清除入口') && statusPanel.includes('返回访客'),
   },
   failures,

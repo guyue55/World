@@ -43,11 +43,12 @@ const scriptRegistry = readJson('data/world-kernel/worldos-script-legacy-registr
 const performanceBudget = readJson('data/engineering/performance-budget.json')
 const staticAssetPolicy = readJson('data/domains/governance/static-asset-policy.json')
 const control = read('src/components/world/RuntimeSoundscapeControl.tsx')
+const engine = read('src/lib/runtime/soundscape-engine.ts')
 const audioLib = read('src/lib/sensory-audio.ts')
 const statusPanel = read('src/components/status/SceneRuntimeStatusPanel.tsx')
 
-assert(registry.name === 'WorldOS M23 感官与声景生产注册表', 'M23 声景注册表名称不正确')
-assert(registry.version === '1.1.0', 'M23 声景注册表版本应为 1.1.0')
+assert(registry.name === 'WorldOS 场景声景注册表', 'M23 声景注册表名称不正确')
+assert(registry.version === '1.2.0', '场景声景注册表版本应为 1.2.0')
 assert(registry.updatedAt === '2026-07-10', 'M23 声景注册表更新时间不正确')
 assert(registry.source === 'docs/00-overview/worldos-m23-sensory-audio-production-spec-2026-07-10.md', 'M23 声景注册表 source 不正确')
 assert(registry.productionReadiness?.stage === 'M23', '缺少 M23 productionReadiness')
@@ -63,7 +64,7 @@ assert(registry.runtime?.usesHowler === false, 'M23 不得引入 Howler')
 assert(registry.runtime?.usesTone === false, 'M23 不得引入 Tone')
 assert(registry.runtime?.maxVolume <= 0.7, '声景最大音量必须克制')
 assert(String(registry.runtime?.sessionArmPolicy ?? '').includes('fresh user click'), '必须声明本会话用户点击 armed 策略')
-assert(String(registry.runtime?.sceneSwitchPolicy ?? '').includes('previous oscillator is stopped'), '必须声明场景切换停止旧声音策略')
+assert(String(registry.runtime?.sceneSwitchPolicy ?? '').includes('releasing the previous group'), '必须声明场景切换释放旧声音策略')
 assert(String(registry.runtime?.reducedSensoryPolicy ?? '').includes('never creates or resumes audio'), '必须声明 reduced-sensory 不创建音频策略')
 
 const requiredScenes = registry.acceptance?.requiredScenes ?? []
@@ -110,9 +111,10 @@ for (const forbiddenDependency of ['howler', 'tone']) {
   assert(!dependencies[forbiddenDependency], `M23 不应引入 ${forbiddenDependency}`)
 }
 
-for (const token of ['audioArmed', 'data-audio-armed', 'stopActiveSound', 'sceneSwitchPolicy', 'aria-pressed']) {
+for (const token of ['audioArmed', 'data-audio-armed', 'SoundscapeEngine', 'disable', 'aria-pressed']) {
   assert(control.includes(token), `RuntimeSoundscapeControl 缺少 M23 控制证据：${token}`)
 }
+for (const token of ['activeLoop', 'stopGroup(previous)', 'visibilitychange', 'dispose']) assert(engine.includes(token), `SoundscapeEngine 缺少生命周期能力：${token}`)
 assert(!/<\s*audio[\s>]/i.test(control), 'RuntimeSoundscapeControl 不得使用 audio 元素')
 assert(!/autoPlay\s*=\s*{?true}?/i.test(control), 'RuntimeSoundscapeControl 不得启用自动播放')
 assert(!/localStorage.*(owner|permission|auth|role|token)/i.test(control), '声景控件不得用本地存储控制权限')

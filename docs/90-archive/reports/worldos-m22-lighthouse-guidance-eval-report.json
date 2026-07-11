@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T02:31:43.406Z",
+  "generatedAt": "2026-07-11T01:04:21.865Z",
   "status": "passed",
   "purpose": "M22 灯塔 AI 深度导览：10 条 grounded / refusal / fallback 评估，不启用真实 Provider。",
   "provider": {
@@ -24,10 +24,10 @@
       "question": "我第一次来该从哪里开始？",
       "status": "fallback",
       "confidence": "medium",
-      "intent": "ask",
+      "intent": "route",
       "sourceCount": 4,
       "nextStepCount": 3,
-      "answer": "灯塔当前以低光模式运行，没有调用实时 AI Provider。下面给出公开路径和节点推荐，你仍然可以继续探索。",
+      "answer": "你正站在浮屿灯塔，来路没有被浏览器保留。",
       "basis": [
         "未调用实时 AI Provider。",
         "使用公开路径和节点推荐作为静态导览。"

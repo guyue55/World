@@ -70,30 +70,15 @@ for (const token of [
 }
 assert(!/window|document|localStorage|sessionStorage/.test(lib), 'first-visit-ritual lib 必须保持纯事实源读取')
 
-const component = read('src/components/world/FirstVisitRitual.tsx')
-for (const token of ritual.acceptance?.requiredCopy ?? []) {
-  assert(component.includes(token) || JSON.stringify(ritual).includes(token), `FirstVisitRitual 缺少关键文案：${token}`)
-}
-for (const token of [
-  'useWorldRuntime',
-  'reducedMotion',
-  'FIRST_VISIT_RITUAL_STORAGE_KEY',
-  'FIRST_VISIT_RITUAL_STORAGE_VALUE',
-  'markRitualSeen',
-  'readHasSeenRitual',
-  '重新展开入口',
-  '跳过，以后不打扰',
-]) {
-  assert(component.includes(token), `FirstVisitRitual 缺少必要能力：${token}`)
-}
-assert(!component.includes('guyue-world:gateway-ritual-seen'), '组件不得直接硬编码 storage key')
-assert(!/setItem\([^,]*owner|setItem\([^,]*permission|setItem\([^,]*auth/i.test(component), '组件不得用 localStorage 控制权限')
+const component = read('src/components/product/WorldGatewayStage.tsx')
+for (const token of ['useWorldRuntime', 'gateway-enter', '推开月门', 'returning', 'gateway-returning', 'AccessibleSceneList']) assert(component.includes(token), `Gateway 首访/回访缺少能力：${token}`)
+assert(!/setItem\([^,]*owner|setItem\([^,]*permission|setItem\([^,]*auth/i.test(component), 'Gateway 不得用 localStorage 控制权限')
 
 const productHome = read('src/components/product/ProductHome.tsx')
-assert(productHome.includes("import { FirstVisitRitual }"), 'ProductHome 缺少 FirstVisitRitual import')
-assert(productHome.includes('<FirstVisitRitual />'), 'ProductHome 缺少 FirstVisitRitual 接入')
+assert(productHome.includes("import { WorldGatewayStage }"), 'ProductHome 缺少 WorldGatewayStage import')
+assert(productHome.includes('<WorldGatewayStage'), 'ProductHome 缺少世界入口舞台')
 
-for (const file of ['src/components/world/FirstVisitRitual.tsx', 'src/components/product/ProductHome.tsx']) {
+for (const file of ['src/components/product/WorldGatewayStage.tsx', 'src/components/product/ProductHome.tsx', 'src/components/world/WorldRuntimeProvider.tsx']) {
   const content = read(file)
   for (const forbidden of ritual.acceptance?.forbiddenClientTokens ?? []) {
     assert(!content.includes(forbidden), `${file} 不得包含敏感 token 或权限判断：${forbidden}`)

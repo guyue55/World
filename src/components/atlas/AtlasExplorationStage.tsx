@@ -3,7 +3,6 @@
 import { getImageProps } from 'next/image'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type RefObject } from 'react'
 import { LocateFixed, Minus, Plus, RotateCcw } from 'lucide-react'
-import { gsap } from 'gsap'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { WorldExitRail } from '@/components/world/primitives/WorldExitRail'
 import { WorldViewport } from '@/components/world/primitives/WorldViewport'
@@ -60,23 +59,46 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
   useLayoutEffect(() => {
     const cameraElement = cameraRef.current
     if (!cameraElement) return
-    const media = gsap.matchMedia()
-    media.add({
-      desktop: '(min-width: 768px)',
-      mobile: '(max-width: 767px)',
-      reduceMotion: '(prefers-reduced-motion: reduce)',
-    }, (context) => {
-      const reduced = Boolean(context.conditions?.reduceMotion)
-      gsap.to(cameraElement, {
-        xPercent: camera.x,
-        yPercent: camera.y,
-        scale: camera.scale,
-        duration: reduced ? 0 : 0.7,
-        ease: 'power3.inOut',
-        overwrite: 'auto',
+    let cancelled = false
+    let cleanup = () => {}
+
+    void import('gsap').then(({ gsap }) => {
+      if (cancelled) return
+      const media = gsap.matchMedia()
+      let tween: ReturnType<typeof gsap.to> | null = null
+      const syncVisibility = () => {
+        if (!tween) return
+        if (document.hidden) tween.pause()
+        else tween.resume()
+      }
+      media.add({
+        desktop: '(min-width: 768px)',
+        mobile: '(max-width: 767px)',
+        reduceMotion: '(prefers-reduced-motion: reduce)',
+      }, (context) => {
+        const reduced = Boolean(context.conditions?.reduceMotion)
+        tween = gsap.to(cameraElement, {
+          xPercent: camera.x,
+          yPercent: camera.y,
+          scale: camera.scale,
+          duration: reduced || document.hidden ? 0 : 0.7,
+          ease: 'power3.inOut',
+          overwrite: 'auto',
+        })
+        syncVisibility()
       })
+      document.addEventListener('visibilitychange', syncVisibility)
+      cleanup = () => {
+        document.removeEventListener('visibilitychange', syncVisibility)
+        tween?.kill()
+        media.revert()
+      }
     })
-    return () => media.revert()
+
+    return () => {
+      cancelled = true
+      cleanup()
+    }
   }, [camera])
 
   const focusArea = useCallback((areaId: string) => {

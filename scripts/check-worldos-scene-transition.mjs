@@ -36,8 +36,8 @@ assert(registry.scope?.requiresOwner === false, 'Scene Transition 不得要求 o
 assert(registry.scope?.requiresAuth === false, 'Scene Transition 不得要求 auth')
 assert(registry.scope?.requiresRealAI === false, 'Scene Transition 不得要求真实 AI')
 assert(registry.shell?.usesGsap === true, 'SceneTransitionShell 必须声明使用 GSAP 编排')
-assert(registry.shell?.usesFramerMotionPresence === true, 'SceneTransitionShell 必须声明 Framer Motion 只处理显隐')
-assert(registry.shell?.usesViewTransitionApi === false, 'Phase 28 不得硬依赖 View Transition API')
+assert(registry.shell?.usesFramerMotionPresence === false, 'SceneTransitionShell 不应继续依赖 Framer Motion presence')
+assert(registry.shell?.usesViewTransitionApi === true, 'SceneTransitionShell 应声明渐进使用 View Transition API')
 assert(registry.shell?.maxDurationMs <= 420, '桌面转场时长必须控制在 420ms 内')
 assert(registry.shell?.compactMaxDurationMs <= 260, '移动端转场时长必须控制在 260ms 内')
 
@@ -96,7 +96,6 @@ const shell = read('src/components/world/SceneTransitionShell.tsx')
 for (const token of [
   "'use client'",
   'usePathname',
-  'AnimatePresence',
   'gsap.matchMedia',
   'useWorldRuntime',
   "import('gsap')",
@@ -106,7 +105,9 @@ for (const token of [
   'aria-live="polite"',
   'data-scene-transition',
   'data-scene-motion',
-  'reducedMotionFallback',
+  'SceneMigrationLayer',
+  'markSceneMigrationArriving',
+  'settleSceneMigration',
 ]) {
   assert(shell.includes(token), `SceneTransitionShell 缺少必要能力：${token}`)
 }

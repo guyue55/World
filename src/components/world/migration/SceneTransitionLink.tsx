@@ -32,7 +32,7 @@ export const SceneTransitionLink = forwardRef<HTMLAnchorElement, Props>(function
       if (runtime.motionMode === 'full' && 'startViewTransition' in document) {
         ;(document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(navigate)
       } else navigate()
-    }, 60)
+    }, runtime.motionMode === 'full' ? 340 : 60)
   }
 
   return <Link {...props} id={sourceId} href={href} ref={ref} onClick={handleClick} data-scene-transition-object={destination.transitionObject} data-scene-transition-target={destination.sceneId}>{children}</Link>

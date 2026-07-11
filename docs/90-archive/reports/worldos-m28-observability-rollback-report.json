@@ -1,6 +1,6 @@
 {
   "name": "WorldOS M28 long-running observability rollback report",
-  "generatedAt": "2026-07-10T02:33:24.231Z",
+  "generatedAt": "2026-07-11T01:04:19.621Z",
   "status": "passed",
   "scope": {
     "localOnly": true,
@@ -121,12 +121,12 @@
     {
       "path": "docs/90-archive/reports/worldos-m27-layered-permission-report.json",
       "bytes": 1327,
-      "updatedAt": "2026-07-10T02:31:01.099Z"
+      "updatedAt": "2026-07-11T01:04:19.264Z"
     },
     {
       "path": "docs/90-archive/reports/worldos-m23-sensory-audio-production-report.json",
       "bytes": 485,
-      "updatedAt": "2026-07-10T02:30:59.948Z"
+      "updatedAt": "2026-07-11T01:04:18.439Z"
     }
   ],
   "failures": []

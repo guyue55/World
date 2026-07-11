@@ -79,15 +79,17 @@ for (const token of ['ContentLifeLoopFact', 'absorptionScenes', 'authorImpactSco
 }
 
 const nodePageSource = read('src/app/node/[slug]/page.tsx')
-for (const token of ['buildContentLifeLoopFact', 'NodeLifeLoopPanel', 'contentLifeLoopFact']) {
-  assert(nodePageSource.includes(token), `节点页缺少 M21 循环证据：${token}`)
+for (const token of ['buildNodePlaceModel', 'NodePlaceRoom', 'getPublicWorldObjectIndex']) {
+  assert(nodePageSource.includes(token), `节点页缺少当前内容地点事实：${token}`)
 }
 
-const nodeLoopPanelSource = read('src/components/node/NodeLifeLoopPanel.tsx')
-for (const token of ['data-testid="node-life-loop-panel"', 'data-content-life-loop-scene', 'data-content-life-loop-active', '/ask']) {
-  assert(nodeLoopPanelSource.includes(token), `NodeLifeLoopPanel 缺少场景吸收证据：${token}`)
+const nodeModelSource = read('src/lib/scenes/build-node-model.ts')
+for (const token of ['contentLifeFacts', 'lifeSignal', 'relationDoors', 'pathExits', 'timelineEventCount']) {
+  assert(nodeModelSource.includes(token), `内容地点模型缺少多场景吸收事实：${token}`)
 }
-assert(!nodeLoopPanelSource.includes('private') && !nodeLoopPanelSource.includes('vault'), 'M21 公开面板不得展示私密或 vault 语义')
+const nodeRoomSource = read('src/components/node/NodePlaceRoom.tsx')
+for (const token of ['NodePassport', 'model.relationDoors', '/ask']) assert(nodeRoomSource.includes(token), `内容地点缺少可见生命线索：${token}`)
+assert(!nodeRoomSource.includes('private') && !nodeRoomSource.includes('vault'), '公开内容地点不得展示私密或 vault 语义')
 
 const lighthouseRuntimeSource = read('src/server/ai/lighthouse-runtime.ts')
 for (const token of ['relationReasons', 'aiReadableSummary', 'pathIds', 'timelineEventIds']) {

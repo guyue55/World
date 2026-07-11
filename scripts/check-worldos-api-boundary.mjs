@@ -82,7 +82,14 @@ for (const route of registeredRoutes) {
     if (actual.mutating) failures.push(`公开 API 不允许暴露写入方法：${route.path} -> ${actual.methods.join(',')}`)
     if (actual.ownerGuarded || actual.permissionGuarded) failures.push(`公开 API 不应同时注册守门 classification：${route.path}`)
   }
-  if (actual.mutating && !(actual.ownerGuarded || actual.permissionGuarded)) failures.push(`写入型 API 缺少服务端守门：${route.path}`)
+  if (route.classification === 'public-query') {
+    if (actual.methods.some((method) => method !== 'POST')) failures.push(`public-query 只允许 POST 查询：${route.path}`)
+    if (route.mutability !== 'read-only' || route.productionWrite !== false) failures.push(`public-query 必须声明不写世界源：${route.path}`)
+    if (actual.productionWriteSignal) failures.push(`public-query 路由出现事实写入信号：${route.path}`)
+    if (!actual.noStore) failures.push(`public-query 必须 private no-store：${route.path}`)
+  }
+  const declaredReadOnlyQuery = route.classification === 'public-query' && route.mutability === 'read-only' && route.productionWrite === false
+  if (actual.mutating && !declaredReadOnlyQuery && !(actual.ownerGuarded || actual.permissionGuarded)) failures.push(`写入型 API 缺少服务端守门：${route.path}`)
   if (route.productionWrite !== false) failures.push(`当前 RC API 不允许声明 productionWrite=true：${route.path}`)
   if (route.requiresRealAI !== false) failures.push(`当前 RC API 不允许依赖真实 AI：${route.path}`)
   if (route.requiresDatabase !== false) failures.push(`当前 RC API 不允许依赖真实数据库：${route.path}`)

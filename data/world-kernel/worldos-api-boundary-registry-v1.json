@@ -6,6 +6,7 @@
   "allowedClassifications": [
     "public-read",
     "static-safe-public",
+    "public-query",
     "permission-guarded",
     "owner-only",
     "internal-reference",
@@ -630,24 +631,24 @@
       "path": "/api/lighthouse/ask",
       "file": "src/app/api/lighthouse/ask/route.ts",
       "methods": [
-        "GET"
+        "POST"
       ],
-      "classification": "static-safe-public",
+      "classification": "public-query",
       "guard": "none",
       "mutability": "read-only",
       "productionWrite": false,
-      "cachePolicy": "public-max-age-300",
+      "cachePolicy": "private-no-store",
       "publicPayload": "public",
       "requiresDatabase": false,
       "requiresRealAI": false,
       "status": "active",
-      "description": "灯塔问答 API，低光模式下返回静态推荐，不调用真实 AI。",
+      "description": "灯塔只读问路 API；POST 只承载问题正文，不写入世界事实源。",
       "expectedSignals": {
         "ownerGuard": false,
         "permissionGuard": false,
-        "forceStatic": true,
-        "noStore": false,
-        "usesRuntimeMemory": false
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": true
       }
     }
   ],
@@ -656,7 +657,8 @@
     "ownerOnly": 5,
     "permissionGuarded": 5,
     "publicRead": 9,
-    "staticSafePublic": 7,
+    "staticSafePublic": 6,
+    "publicQuery": 1,
     "mutatingRoutes": 2
   }
 }

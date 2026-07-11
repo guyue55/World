@@ -1,0 +1,201 @@
+{
+  "generatedAt": "2026-07-11T01:02:23.120Z",
+  "baseUrl": "http://127.0.0.1:53990",
+  "observations": [
+    {
+      "mode": "lighthouse-arrival",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "fallback",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-mobile",
+      "viewport": {
+        "top": 0,
+        "width": 390,
+        "height": 844
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "fallback",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-reduced-motion",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "fallback",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-reduced-sensory",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "fallback",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-text-hidden",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "fallback",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-grounded",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "grounded",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-refusal",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "refusal",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-low-light",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "true",
+      "imageFailed": "false",
+      "grounding": "fallback",
+      "answerVisible": true,
+      "fallbackVisible": false,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": []
+    },
+    {
+      "mode": "lighthouse-image-fallback",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "imageReady": "false",
+      "imageFailed": "true",
+      "grounding": "fallback",
+      "answerVisible": false,
+      "fallbackVisible": true,
+      "signalCount": 4,
+      "engineering": false,
+      "overflow": false,
+      "soundMode": "muted",
+      "audioContext": "none",
+      "errors": [],
+      "browserErrors": [],
+      "expectedNetworkFailure": true
+    }
+  ],
+  "audio": {
+    "before": {
+      "armed": "false",
+      "context": "none",
+      "audioRequests": 0
+    },
+    "started": true,
+    "stopped": true
+  },
+  "recording": {
+    "frames": 200,
+    "target": "/paths/first-visit"
+  },
+  "failures": []
+}

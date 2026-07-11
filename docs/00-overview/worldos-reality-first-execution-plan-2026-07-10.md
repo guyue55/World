@@ -421,22 +421,22 @@ export type AtlasViewModel = {
 - Modify: `src/app/status/page.tsx` only to link current evidence without score
 - Modify / move: old shared portal and production-frame files after import scan
 
-- [ ] **C8.1** 先写 authoring 测试：valid preview、invalid visibility、duplicate slug、missing relation target、apply to temp workspace、checksum rollback、真实 workspace 零改动。
-- [ ] **C8.2** 实现 Zod draft schema 与影响预览，复用现有 Node / Relation / Path / Event 事实模型，不定义第二套业务字段。
-- [ ] **C8.3** 实现本机事务写入：backup manifest、checksum、temp file、完整校验、atomic rename；任一步失败自动恢复。
-- [ ] **C8.4** 实现受限 rollback，只接受本工具生成且 checksum 匹配的 backup-id；拒绝任意路径覆盖。
-- [ ] **C8.5** 用临时 workspace 演练 preview -> apply -> 内容 / public index 检查 -> rollback -> checksum 一致；不向真实内容写入样例。
-- [ ] **C8.6** 删除核心 route 对 `SceneWorldPortal`、`SceneProductionFrame`、`SceneDeepInteractionPanel`、`ProductRouteGuide` 的 import；无其他 active use 时移入 `_legacy` 或删除。
-- [ ] **C8.7** 清扫公开文案：禁止词、调试状态、验收说明、内部权限实现、score / P0/P1 只允许在 `/status`。
-- [ ] **C8.8** 新建客观 gate：route import、禁用文案、首屏主体 bounding box、可见主交互、无 overflow / overlay、控制台错误、资源失败、证据 freshness、权限 scan。
-- [ ] **C8.9** 新建 evidence runner：真实 `next build` -> `next start -H 0.0.0.0` -> localhost / LAN -> 固定视口 / 模式 -> 截图 / 录屏 -> manifest；不得复用已启动旧 server。
-- [ ] **C8.10** package 只新增 `world:author`、`audit:world-experience`、`check:world-experience`、`evidence:world-experience` 四个入口；把 `check:world-experience` 接入 `check:mainline`。
-- [ ] **C8.11** 统计并限制 shared / route JS、bitmap、audio、LCP / CLS / TBT / long task；失败时优化或延迟加载，不调高冻结预算。
-- [ ] **C8.12** 对 Atlas / Timeline 的动画和绘制做 visibility pause、viewport culling、DPR cap、resize cleanup。
-- [ ] **C8.13** 验证 keyboard、200% zoom、focus restore、aria-live、Canvas DOM 等价、颜色非唯一表达，以及 JavaScript 关闭时七类 route 的静态内容和链接可读可走。
-- [ ] **C8.14** 验证公开 HTML / RSC / JSON / search / AI / sitemap / manifest / bundle 不含私密数据与 Key。
-- [ ] **C8.15** 运行 authoring tests、`typecheck`、`lint`、`check:scripts`、`check:world-experience`、`build:production-ci`、`check:mainline`。
-- [ ] **C8.16** 更新 ledger，分别提交 `feat(world): 落地本地作者原子维护流程` 与 `test(world): 建立真实世界体验与边界门禁`。
+- [x] **C8.1** 先写 authoring 测试：valid preview、invalid visibility、duplicate slug、missing relation target、apply to temp workspace、checksum rollback、真实 workspace 零改动。
+- [x] **C8.2** 实现 Zod draft schema 与影响预览，复用现有 Node / Relation / Path / Event 事实模型，不定义第二套业务字段。
+- [x] **C8.3** 实现本机事务写入：backup manifest、checksum、temp file、完整校验、atomic rename；任一步失败自动恢复。
+- [x] **C8.4** 实现受限 rollback，只接受本工具生成且 checksum 匹配的 backup-id；拒绝任意路径覆盖。
+- [x] **C8.5** 用临时 workspace 演练 preview -> apply -> 内容 / public index 检查 -> rollback -> checksum 一致；不向真实内容写入样例。
+- [x] **C8.6** 删除核心 route 对 `SceneWorldPortal`、`SceneProductionFrame`、`SceneDeepInteractionPanel`、`ProductRouteGuide` 的 import；无其他 active use 时移入 `_legacy` 或删除。
+- [x] **C8.7** 清扫公开文案：禁止词、调试状态、验收说明、内部权限实现、score / P0/P1 只允许在 `/status`。
+- [x] **C8.8** 新建客观 gate：route import、禁用文案、首屏主体 bounding box、可见主交互、无 overflow / overlay、控制台错误、资源失败、证据 freshness、权限 scan。
+- [x] **C8.9** 新建 evidence runner：真实 `next build` -> `next start -H 0.0.0.0` -> localhost / LAN -> 固定视口 / 模式 -> 截图 / 录屏 -> manifest；不得复用已启动旧 server。
+- [x] **C8.10** package 只新增 `world:author`、`audit:world-experience`、`check:world-experience`、`evidence:world-experience` 四个入口；把 `check:world-experience` 接入 `check:mainline`。
+- [x] **C8.11** 统计并限制 shared / route JS、bitmap、audio、LCP / CLS / TBT / long task；失败时优化或延迟加载，不调高冻结预算。
+- [x] **C8.12** 对 Atlas / Timeline 的动画和绘制做 visibility pause、viewport culling、DPR cap、resize cleanup。
+- [x] **C8.13** 验证 keyboard、200% zoom、focus restore、aria-live、Canvas DOM 等价、颜色非唯一表达，以及 JavaScript 关闭时七类 route 的静态内容和链接可读可走。
+- [x] **C8.14** 验证公开 HTML / RSC / JSON / search / AI / sitemap / manifest / bundle 不含私密数据与 Key。
+- [x] **C8.15** 运行 authoring tests、`typecheck`、`lint`、`check:scripts`、`check:world-experience`、`build:production-ci`、`check:mainline`。
+- [x] **C8.16** 更新 ledger，分别提交 `feat(world): 落地本地作者原子维护流程` 与 `test(world): 建立真实世界体验与边界门禁`。
 
 ---
 

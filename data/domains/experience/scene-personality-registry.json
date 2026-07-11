@@ -167,7 +167,13 @@
     "requiredFiles": [
       "data/domains/experience/scene-personality-registry.json",
       "src/lib/scene-personality.ts",
-      "src/components/world/SceneIdentityBand.tsx"
+      "src/components/product/WorldGatewayStage.tsx",
+      "src/components/atlas/AtlasExplorationStage.tsx",
+      "src/components/timeline/TimelineRiverStage.tsx",
+      "src/components/archive/ArchiveHallStage.tsx",
+      "src/components/paths/JourneyRouteStage.tsx",
+      "src/components/node/NodePlaceRoom.tsx",
+      "src/components/ask/LighthouseGuideStage.tsx"
     ]
   },
   "nextActions": [

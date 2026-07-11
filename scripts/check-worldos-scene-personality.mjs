@@ -78,29 +78,15 @@ for (const token of [
 assert(lib.includes('getSceneForPathname'), 'scene-personality 必须复用 scene-runtime 的 pathname 解析')
 assert(!/window|document|localStorage|sessionStorage/.test(lib), 'scene-personality lib 必须保持纯函数，不得访问浏览器状态')
 
-const component = read('src/components/world/SceneIdentityBand.tsx')
-for (const token of [
-  "'use client'",
-  'usePathname',
-  'useWorldRuntime',
-  'getScenePersonalityForPathname',
-  'data-testid="scene-identity-band"',
-  'data-scene-personality',
-  'data-scene-tone',
-  'primaryActionHref',
-  'nextStationHref',
-]) {
-  assert(component.includes(token), `SceneIdentityBand 缺少必要能力：${token}`)
+const stageFiles = registry.acceptance.requiredFiles.filter((file) => file.endsWith('Stage.tsx') || file.endsWith('Room.tsx'))
+for (const file of stageFiles) {
+  const component = read(file)
+  assert(component.includes('WorldViewport'), `${file} 缺少独立场景视口`)
+  assert(component.includes('world-scene-title'), `${file} 缺少场景内身份锚点`)
 }
-assert(!component.includes("import('gsap')"), 'SceneIdentityBand 不应引入 GSAP，避免身份带变重')
-assert(!component.includes("import { gsap }"), 'SceneIdentityBand 不得静态导入 GSAP')
-assert(!component.includes('framer-motion'), 'SceneIdentityBand 不得新增 motion 依赖')
-assert(!/localStorage|sessionStorage/.test(component), 'SceneIdentityBand 不得访问 localStorage/sessionStorage')
-assert(!/(?<!-)\b(width|height|top|left)\s*:/.test(component), 'SceneIdentityBand 不得动画布局属性')
 
 const worldShell = read('src/components/world/WorldShell.tsx')
-assert(worldShell.includes("import { SceneIdentityBand }"), 'WorldShell 缺少 SceneIdentityBand import')
-assert(worldShell.includes('<SceneIdentityBand />'), 'WorldShell 必须统一接入 SceneIdentityBand')
+assert(!worldShell.includes('SceneIdentityBand'), 'WorldShell 不得用统一身份带覆盖独立场景人格')
 
 const statusPage = read('src/app/status/page.tsx')
 const statusPanel = read('src/components/status/SceneRuntimeStatusPanel.tsx')
@@ -108,7 +94,7 @@ for (const token of ['getScenePersonalitySummary', 'personalitySummary', 'Scene 
   assert(statusPage.includes(token) || statusPanel.includes(token), `/status 缺少场景人格状态：${token}`)
 }
 
-for (const file of ['src/components/world/SceneIdentityBand.tsx', 'src/components/world/WorldShell.tsx', 'src/components/status/SceneRuntimeStatusPanel.tsx']) {
+for (const file of [...stageFiles, 'src/components/world/WorldShell.tsx', 'src/components/status/SceneRuntimeStatusPanel.tsx']) {
   const content = read(file)
   for (const forbidden of registry.acceptance?.forbiddenClientTokens ?? []) {
     assert(!content.includes(forbidden), `${file} 不得包含敏感 token 或权限判断：${forbidden}`)

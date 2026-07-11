@@ -95,7 +95,7 @@ for (const token of ['nextSteps', 'grounding', 'confidence', 'publicOnly', 'refu
 }
 
 const consoleSource = read('src/components/ask/PublicLighthouseConsole.tsx')
-for (const token of ['Grounded 导览', 'runtimeResponse.grounding', 'runtimeResponse.nextSteps']) {
+for (const token of ['低光导览', 'response.grounding', 'response.nextSteps', '光束依据']) {
   assert(consoleSource.includes(token), `灯塔界面缺少 M22 可见证据：${token}`)
 }
 

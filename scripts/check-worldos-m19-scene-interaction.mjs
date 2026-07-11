@@ -1,78 +1,39 @@
-// 用途：验证 M19 场景主体交互是否进入真实 LAN 浏览器证据
+// 用途：兼容旧入口，改用 Reality-First 新鲜浏览器事实验证四个探索场景。
 import fs from 'node:fs'
 import path from 'node:path'
 
 const root = process.cwd()
-const rel = (file) => path.join(root, file)
-const readJson = (file) => JSON.parse(fs.readFileSync(rel(file), 'utf8'))
-const exists = (file) => fs.existsSync(rel(file))
+const readJson = (file) => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'))
 const failures = []
-
-function fail(message) {
-  failures.push(message)
-}
-
-const reportPath = 'docs/90-archive/reports/worldos-local-lan-rc-report.json'
-if (!exists(reportPath)) fail(`缺少 LAN RC 报告：${reportPath}`)
-
+const pointerPath = 'docs/90-archive/reports/worldos-reality-first/latest-evidence.json'
 const required = [
-  { route: '/atlas', kind: 'atlas' },
-  { route: '/timeline', kind: 'timeline' },
-  { route: '/archive', kind: 'archive' },
-  { route: '/paths', kind: 'paths' },
+  { scene: 'atlas', stage: 'src/components/atlas/AtlasExplorationStage.tsx' },
+  { scene: 'timeline', stage: 'src/components/timeline/TimelineRiverStage.tsx' },
+  { scene: 'archive', stage: 'src/components/archive/ArchiveHallStage.tsx' },
+  { scene: 'paths', stage: 'src/components/paths/JourneyRouteStage.tsx' },
 ]
-const viewports = ['desktop', 'mobile-reduced-motion']
 
-if (failures.length === 0) {
-  const report = readJson(reportPath)
-  if (report.status !== 'passed') fail(`LAN RC 报告未通过：${report.status}`)
-
-  for (const item of required) {
-    for (const viewport of viewports) {
-      const check = (report.browserChecks ?? []).find((entry) => entry.route === item.route && entry.viewport === viewport)
-      const sceneQa = check?.metrics?.sceneQa ?? {}
-      if (!check) {
-        fail(`缺少浏览器证据：${viewport} ${item.route}`)
-        continue
-      }
-      if (check.passed !== true) fail(`浏览器证据未通过：${viewport} ${item.route}`)
-      if (sceneQa.m19SceneInteractionDockPresent !== true) {
-        fail(`${viewport} ${item.route} 缺少 M19 首屏交互坞`)
-      }
-      if (sceneQa.m19SceneInteractionDockKind !== item.kind) {
-        fail(`${viewport} ${item.route} M19 交互坞类型错误：${sceneQa.m19SceneInteractionDockKind || 'missing'}`)
-      }
-      if (sceneQa.m19SceneInteractionPanelPresent !== true) {
-        fail(`${viewport} ${item.route} 缺少 M19 完整交互面板`)
-      }
-      if (sceneQa.m19SceneInteractionPanelKind !== item.kind) {
-        fail(`${viewport} ${item.route} M19 完整交互面板类型错误：${sceneQa.m19SceneInteractionPanelKind || 'missing'}`)
-      }
-      if (!check.screenshotPath || !exists(check.screenshotPath)) {
-        fail(`${viewport} ${item.route} 缺少截图证据`)
-      }
-      if ((check.metrics?.fixedOverlayIssues ?? []).length > 0) {
-        fail(`${viewport} ${item.route} 存在固定遮挡`)
-      }
-      if (check.metrics?.overflowX === true) {
-        fail(`${viewport} ${item.route} 出现横向溢出`)
+if (!fs.existsSync(path.join(root, pointerPath))) failures.push('缺少 Reality-First fresh evidence 指针')
+else {
+  const pointer = readJson(pointerPath)
+  const manifest = readJson(pointer.manifest)
+  for (const { scene, stage } of required) {
+    if (!fs.existsSync(path.join(root, stage))) failures.push(`${scene} 独立场景文件缺失`)
+    for (const mode of ['desktop', 'mobile']) {
+      const item = manifest.browser?.observations?.find((entry) => entry.scene === scene && entry.mode === mode)
+      if (!item) failures.push(`${scene} 缺少 ${mode} 浏览器证据`)
+      else {
+        if (!item.interactiveVisible) failures.push(`${scene} ${mode} 主交互不可见`)
+        if (item.overflowX || item.fixedOverlayIssues?.length) failures.push(`${scene} ${mode} 存在溢出或遮挡`)
+        if (!item.screenshot || !fs.existsSync(path.join(root, item.screenshot))) failures.push(`${scene} ${mode} 截图缺失`)
       }
     }
   }
-
-  const portal = fs.readFileSync(rel('src/components/world/SceneWorldPortal.tsx'), 'utf8')
-  for (const token of ['data-m19-scene-interaction-dock', 'interactionModel']) {
-    if (!portal.includes(token)) fail(`SceneWorldPortal 缺少 M19 首屏证据令牌：${token}`)
-  }
-
-  const panel = fs.readFileSync(rel('src/components/world/SceneDeepInteractionPanel.tsx'), 'utf8')
-  if (!panel.includes('data-m19-scene-interaction')) fail('SceneDeepInteractionPanel 缺少 M19 完整面板证据令牌')
 }
 
-if (failures.length > 0) {
-  console.error('WorldOS M19 scene interaction check failed:')
-  for (const failure of failures) console.error(`- ${failure}`)
+if (failures.length) {
+  console.error('WorldOS scene interaction check failed:')
+  failures.forEach((failure) => console.error(`- ${failure}`))
   process.exit(1)
 }
-
-console.log('WorldOS M19 scene interaction check passed')
+console.log('WorldOS scene interaction check passed: fresh Atlas/Timeline/Archive/Paths evidence')

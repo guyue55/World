@@ -1,0 +1,382 @@
+import fs from 'node:fs'
+import net from 'node:net'
+import os from 'node:os'
+import path from 'node:path'
+import { spawn, spawnSync } from 'node:child_process'
+import { captureJpeg, delay, evaluate, launchRealityBrowser, waitForExpression } from './lib/reality-first-browser.mjs'
+
+const root = process.cwd()
+const distDirName = '.next-world-evidence'
+const distDir = path.join(root, distDirName)
+const runId = `run-${new Date().toISOString().replace(/[:.]/g, '-').replace('T', '_')}`
+const reportDir = path.join(root, 'docs/90-archive/reports/worldos-reality-first', runId)
+const screenshotsDir = path.join(reportDir, 'screenshots')
+const flowsDir = path.join(reportDir, 'flows')
+const logsDir = path.join(reportDir, 'logs')
+const latestPointer = path.join(root, 'docs/90-archive/reports/worldos-reality-first/latest-evidence.json')
+const contract = JSON.parse(fs.readFileSync(path.join(root, 'data/domains/experience/reality-first-route-contract.json'), 'utf8'))
+const routes = contract.spaces.map((space) => ({ id: space.id, path: space.sample }))
+const configSnapshots = new Map(['next-env.d.ts', 'tsconfig.json'].map((file) => [file, fs.readFileSync(path.join(root, file), 'utf8')]))
+const failures = []
+let server
+let browserRuntime
+let baseUrl
+
+for (const directory of [reportDir, screenshotsDir, flowsDir, logsDir]) fs.mkdirSync(directory, { recursive: true })
+
+function latestMtime(relativeRoots) {
+  let latest = 0
+  const visit = (absolutePath) => {
+    if (!fs.existsSync(absolutePath)) return
+    const stat = fs.statSync(absolutePath)
+    if (stat.isDirectory()) {
+      for (const child of fs.readdirSync(absolutePath)) visit(path.join(absolutePath, child))
+    } else latest = Math.max(latest, stat.mtimeMs)
+  }
+  relativeRoots.forEach((relativePath) => visit(path.join(root, relativePath)))
+  return latest
+}
+
+function run(command, args, options = {}) {
+  const result = spawnSync(command, args, {
+    cwd: root,
+    env: { ...process.env, ...options.env },
+    encoding: 'utf8',
+    maxBuffer: 64 * 1024 * 1024,
+  })
+  const output = `${result.stdout ?? ''}${result.stderr ?? ''}`
+  if (options.log) fs.writeFileSync(path.join(logsDir, options.log), output)
+  if (result.status !== 0) throw new Error(`${command} ${args.join(' ')} 失败：\n${output.slice(-5000)}`)
+  return output
+}
+
+async function freePort() {
+  return await new Promise((resolve, reject) => {
+    const candidate = net.createServer()
+    candidate.once('error', reject)
+    candidate.listen(0, '127.0.0.1', () => {
+      const address = candidate.address()
+      candidate.close(() => resolve(address.port))
+    })
+  })
+}
+
+function detectLanIp() {
+  for (const entries of Object.values(os.networkInterfaces())) {
+    for (const entry of entries ?? []) {
+      if (entry.family === 'IPv4' && !entry.internal && !entry.address.startsWith('169.254.')) return entry.address
+    }
+  }
+  return null
+}
+
+function parseBuildMetrics(output) {
+  const shared = output.match(/First Load JS shared by all\s+([\d.]+)\s*kB/i)
+  const routeMetrics = {}
+  for (const { id, path: pathname } of routes) {
+    const routeLabel = id === 'gateway' ? '/' : id === 'paths' ? '/paths/[id]' : id === 'node' ? '/node/[slug]' : id === 'lighthouse' ? '/ask' : `/${id}`
+    const line = output.split(/\r?\n/).find((candidate) => new RegExp(`^[┌├└] [○●ƒ] ${routeLabel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s`).test(candidate))
+    const match = line?.match(/\s([\d.]+)\s*(B|kB)\s+([\d.]+)\s*kB\s*$/i)
+    if (match) routeMetrics[pathname] = { routeKb: match[2].toLowerCase() === 'b' ? Number(match[1]) / 1024 : Number(match[1]), firstLoadKb: Number(match[3]) }
+  }
+  return { sharedKb: shared ? Number(shared[1]) : null, routes: routeMetrics }
+}
+
+async function waitForServer(url, timeoutMs = 45000) {
+  const deadline = Date.now() + timeoutMs
+  while (Date.now() < deadline) {
+    try {
+      const response = await fetch(url, { redirect: 'manual' })
+      if (response.status >= 200 && response.status < 500) return response.status
+    } catch { /* 独立生产服务器仍在启动。 */ }
+    await delay(200)
+  }
+  throw new Error(`生产服务器未在 ${timeoutMs}ms 内就绪：${url}`)
+}
+
+const performanceProbe = `(() => {
+  window.__worldosEvidenceMetrics = { lcp: 0, cls: 0, longTasks: [] };
+  try { new PerformanceObserver((list) => { for (const entry of list.getEntries()) window.__worldosEvidenceMetrics.lcp = Math.max(window.__worldosEvidenceMetrics.lcp, entry.startTime); }).observe({ type: 'largest-contentful-paint', buffered: true }); } catch {}
+  try { new PerformanceObserver((list) => { for (const entry of list.getEntries()) if (!entry.hadRecentInput) window.__worldosEvidenceMetrics.cls += entry.value; }).observe({ type: 'layout-shift', buffered: true }); } catch {}
+  try { new PerformanceObserver((list) => { for (const entry of list.getEntries()) window.__worldosEvidenceMetrics.longTasks.push(entry.duration); }).observe({ type: 'longtask', buffered: true }); } catch {}
+})()`
+
+const mainInteractive = {
+  gateway: '[data-testid="gateway-enter"], [aria-label="入口方向"] a',
+  atlas: '[data-atlas-area]',
+  timeline: '[data-time-anchor]',
+  archive: '[data-testid="archive-catalogue-desk"], [data-archive-record]',
+  paths: '[data-testid="journey-route"], [data-scene-transition-object="waypoint"]',
+  node: 'a[href="#reading"], [data-scene-transition-object="door"]',
+  lighthouse: '#lighthouse-question, [data-lighthouse-signal]',
+}
+
+async function inspectPage(page, route, mode) {
+  return await evaluate(page.send, `(() => {
+    const scene = document.querySelector('[data-world-scene="${route.id}"]');
+    const rect = scene?.getBoundingClientRect();
+    const interactive = document.querySelector(${JSON.stringify(mainInteractive[route.id])});
+    const interactiveRect = interactive?.getBoundingClientRect();
+    const visible = (element) => { if (!element) return false; const r=element.getBoundingClientRect(); const s=getComputedStyle(element); return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0; };
+    const fixedOverlayIssues = [...document.querySelectorAll('body *')].filter((element) => {
+      const style=getComputedStyle(element); if(style.position!=='fixed'||style.pointerEvents==='none') return false;
+      const r=element.getBoundingClientRect(); const ratio=(r.width*r.height)/(innerWidth*innerHeight);
+      return ratio>0.35 && !element.matches('[data-testid="scene-migration-layer"]') && visible(element);
+    }).map((element) => element.getAttribute('data-testid')||element.getAttribute('aria-label')||element.tagName);
+    const resources=performance.getEntriesByType('resource').map((entry)=>({name:entry.name,transferSize:entry.transferSize||0,encodedBodySize:entry.encodedBodySize||0,duration:entry.duration||0}));
+    const bitmapBytes=resources.filter((entry)=>/\\.(?:avif|webp|png|jpe?g)(?:\\?|$)/i.test(entry.name)||entry.name.includes('/_next/image')).reduce((sum,entry)=>sum+(entry.transferSize||entry.encodedBodySize),0);
+    const audioBytes=resources.filter((entry)=>/\\.(?:mp3|wav|ogg|m4a)(?:\\?|$)/i.test(entry.name)).reduce((sum,entry)=>sum+(entry.transferSize||entry.encodedBodySize),0);
+    return {
+      route:${JSON.stringify(route.path)}, scene:${JSON.stringify(route.id)}, mode:${JSON.stringify(mode)},
+      sceneRect:rect?{top:Math.round(rect.top),left:Math.round(rect.left),width:Math.round(rect.width),height:Math.round(rect.height),ratio:Number(((rect.width*rect.height)/(innerWidth*innerHeight)).toFixed(3))}:null,
+      interactiveVisible:visible(interactive), interactiveRect:interactiveRect?{width:Math.round(interactiveRect.width),height:Math.round(interactiveRect.height)}:null,
+      headingVisible:visible(document.querySelector('h1')), links:document.querySelectorAll('a[href]').length, bodyTextLength:(document.body.innerText||'').trim().length,
+      overflowX:document.documentElement.scrollWidth>document.documentElement.clientWidth+2,
+      engineeringCopy:/Motion Layer|Fallback|Evidence|场景证据|候选验收|9\\/10|8\\.9|降级规则|验收报告/.test(document.body.innerText||''),
+      privateCanary:/private-leak-fixture|不应写入的私密演练|这段正文只用于故意构造错误边界/.test(document.documentElement.innerHTML),
+      fixedOverlayIssues, bitmapBytes, audioBytes,
+      metrics:window.__worldosEvidenceMetrics??null,
+      soundMode:document.querySelector('[data-sound-mode]')?.getAttribute('data-sound-mode')??null,
+      ariaLive:document.querySelectorAll('[aria-live]').length,
+    };
+  })()`)
+}
+
+async function captureMode(route, mode) {
+  const mobile = mode === 'mobile'
+  const page = await browserRuntime.createPage({ width: mobile ? 390 : mode === 'zoom-200' ? 720 : 1440, height: mobile ? 844 : mode === 'zoom-200' ? 450 : 900, mobile, reducedMotion: mode === 'reduced-motion' })
+  try {
+    if (mode === 'js-off') await page.send('Emulation.setScriptExecutionDisabled', { value: true })
+    else {
+      await page.send('Page.addScriptToEvaluateOnNewDocument', { source: performanceProbe })
+      if (mode === 'reduced-sensory') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:soundscape-preference','muted');localStorage.setItem('guyue-world:motion-preference','reduced')` })
+    }
+    await page.send('Page.navigate', { url: `${baseUrl}${route.path}` })
+    if (mode === 'js-off') await delay(1300)
+    else {
+      const ready = await waitForExpression(page.send, `document.readyState==='complete'&&!!document.querySelector('[data-world-scene="${route.id}"]')`, 25000)
+      if (!ready) throw new Error(`${route.path} ${mode} 未就绪`)
+      await waitForExpression(page.send, `document.querySelector('[data-image-ready]')?.getAttribute('data-image-ready')==='true'||!document.querySelector('[data-image-ready]')`, 12000)
+      await delay(650)
+      if (mode === 'text-hidden') await evaluate(page.send, `document.head.insertAdjacentHTML('beforeend','<style data-reality-text-hidden>h1,h2,h3,p,span,strong,small,a,button,label,input,select,textarea{color:transparent!important;text-shadow:none!important} .arrival{visibility:hidden!important}</style>')`)
+    }
+    const observation = await inspectPage(page, route, mode)
+    observation.browserErrors = page.errors.filter(Boolean)
+    const screenshot = path.join(screenshotsDir, `${route.id}-${mode}.jpg`)
+    await captureJpeg(page.send, screenshot)
+    observation.screenshot = path.relative(root, screenshot)
+    return observation
+  } finally {
+    await page.close()
+  }
+}
+
+async function runAccessibilityChecks() {
+  const page = await browserRuntime.createPage({ width: 1440, height: 900 })
+  try {
+    await page.send('Page.navigate', { url: `${baseUrl}/atlas` })
+    await waitForExpression(page.send, `document.querySelector('[data-enhanced]')?.getAttribute('data-enhanced')==='true'&&!!document.querySelector('[data-atlas-area]')`, 20000)
+    await delay(250)
+    const result = await evaluate(page.send, `(() => {
+      const trigger=document.querySelector('[data-atlas-area]'); trigger.focus(); trigger.click();
+      return new Promise((resolve)=>{
+        const deadline=performance.now()+1000;
+        const inspect=()=>{
+          const close=document.querySelector('[aria-label="关闭详情"]');
+          if(document.activeElement!==close&&performance.now()<deadline){requestAnimationFrame(inspect);return;}
+          const focusedOnOpen=document.activeElement===close;
+          close?.click();
+          setTimeout(()=>resolve({focusedOnOpen,focusRestored:document.activeElement===trigger,triggerKeyboardReachable:trigger.tabIndex>=0,dialogClosed:!document.querySelector('[role="dialog"]')}),80);
+        };
+        requestAnimationFrame(inspect);
+      });
+    })()`)
+    const zoomPage = await browserRuntime.createPage({ width: 720, height: 450 })
+    try {
+      await zoomPage.send('Page.navigate', { url: `${baseUrl}/node/world-manifesto` })
+      await waitForExpression(zoomPage.send, `!!document.querySelector('[data-world-scene="node"]')`, 20000)
+      await zoomPage.send('Emulation.setPageScaleFactor', { pageScaleFactor: 2 })
+      await delay(500)
+      result.zoom200 = await evaluate(zoomPage.send, `({overflowX:document.documentElement.scrollWidth>document.documentElement.clientWidth+2,links:[...document.querySelectorAll('a[href]')].filter(a=>a.getBoundingClientRect().width>0).length,scale:visualViewport?.scale??null})`)
+      await captureJpeg(zoomPage.send, path.join(screenshotsDir, 'node-zoom-200.jpg'))
+    } finally { await zoomPage.close() }
+    return result
+  } finally { await page.close() }
+}
+
+async function recordReturnVisit() {
+  const page = await browserRuntime.createPage({ width: 1280, height: 720 })
+  const frameDir = path.join(flowsDir, 'return-visit-frames')
+  fs.mkdirSync(frameDir, { recursive: true })
+  let frames = 0
+  let accepting = true
+  const writeFrame = (data) => {
+    frames += 1
+    fs.writeFileSync(path.join(frameDir, `frame-${String(frames).padStart(4, '0')}.jpg`), Buffer.from(data, 'base64'))
+  }
+  try {
+    await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:visited-count','3');localStorage.setItem('guyue-world:journey-memory-v1',JSON.stringify({path:'/atlas',label:'群岛星图',sceneId:'atlas',sceneTitle:'世界地图',visitedAt:new Date().toISOString()}))` })
+    await page.send('Page.navigate', { url: `${baseUrl}/` })
+    if (!await waitForExpression(page.send, `!!document.querySelector('[data-testid="gateway-returning"]')`, 20000)) throw new Error('回访入口未出现')
+    const initial = await page.send('Page.captureScreenshot', { format: 'jpeg', quality: 82, captureBeyondViewport: false })
+    writeFrame(initial.data)
+    const off = browserRuntime.browser.on('Page.screencastFrame', async (params, sessionId) => {
+      if (!accepting) return
+      writeFrame(params.data)
+      await page.send('Page.screencastFrameAck', { sessionId: params.sessionId }).catch(() => {})
+    })
+    await page.send('Page.startScreencast', { format: 'jpeg', quality: 82, maxWidth: 1280, maxHeight: 720, everyNthFrame: 1 })
+    await evaluate(page.send, `document.querySelector('[data-testid="gateway-returning"] a')?.click()`)
+    if (!await waitForExpression(page.send, `location.pathname==='/atlas'`, 15000)) throw new Error('回访未继续到上次位置')
+    await delay(1100)
+    accepting = false
+    await page.send('Page.stopScreencast').catch(() => {})
+    off()
+    const output = path.join(flowsDir, 'return-visit-continuation.mp4')
+    const encoded = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '12', '-i', path.join(frameDir, 'frame-%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', output], { encoding: 'utf8' })
+    if (encoded.status !== 0) throw new Error(`回访录屏编码失败：${encoded.stderr}`)
+    return { frames, path: path.relative(root, output) }
+  } finally {
+    fs.rmSync(frameDir, { recursive: true, force: true })
+    await page.close()
+  }
+}
+
+try {
+  const sourceMtime = latestMtime(['src', 'data', 'content', 'public/world', 'package.json', 'next.config.ts'])
+  const buildStartedAt = Date.now()
+  const buildOutput = run('npm', ['run', 'build:production-ci'], { env: { WORLDOS_DIST_DIR: distDirName }, log: 'build.log' })
+  for (const [file, content] of configSnapshots) fs.writeFileSync(path.join(root, file), content)
+  const buildMetrics = parseBuildMetrics(buildOutput)
+  const buildArtifactMtime = fs.statSync(path.join(distDir, 'BUILD_ID')).mtimeMs
+  const port = await freePort()
+  const lanIp = detectLanIp()
+  if (!lanIp) throw new Error('未检测到 LAN IPv4，无法完成局域网证据')
+  const serverStartedAt = Date.now()
+  const logFd = fs.openSync(path.join(logsDir, 'server.log'), 'w')
+  server = spawn(path.join(root, 'node_modules/.bin/next'), ['start', '-H', '0.0.0.0', '-p', String(port)], { cwd: root, env: { ...process.env, WORLDOS_DIST_DIR: distDirName, NEXT_TELEMETRY_DISABLED: '1' }, stdio: ['ignore', logFd, logFd] })
+  baseUrl = `http://127.0.0.1:${port}`
+  await waitForServer(`${baseUrl}/`)
+  const lanStatus = await waitForServer(`http://${lanIp}:${port}/`)
+  const firstBrowserCheckAt = Date.now()
+
+  browserRuntime = await launchRealityBrowser('worldos-reality-evidence')
+  const observations = []
+  for (const route of routes) {
+    for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'text-hidden', 'js-off']) {
+      console.log(`[Reality evidence] ${route.id} ${mode}`)
+      const observation = await captureMode(route, mode)
+      observations.push(observation)
+      if (!observation.sceneRect || observation.sceneRect.ratio < 0.7) failures.push(`${route.path} ${mode}: 场景主体不足首屏 70%`)
+      if (observation.overflowX) failures.push(`${route.path} ${mode}: 横向溢出`)
+      if (observation.engineeringCopy) failures.push(`${route.path} ${mode}: 公开工程文案`)
+      if (observation.privateCanary) failures.push(`${route.path} ${mode}: 私密演练内容进入公开载荷`)
+      if (observation.fixedOverlayIssues.length) failures.push(`${route.path} ${mode}: 大面积固定层 ${observation.fixedOverlayIssues.join(',')}`)
+      if (mode === 'js-off' ? observation.links < 2 || observation.bodyTextLength < 80 : !observation.interactiveVisible) failures.push(`${route.path} ${mode}: 主交互或静态等价路径不可见`)
+      if (observation.browserErrors.length) failures.push(`${route.path} ${mode}: ${observation.browserErrors.join('; ')}`)
+      const bitmapBudget = mode === 'mobile' ? 350 * 1024 : 700 * 1024
+      if (observation.bitmapBytes > bitmapBudget) failures.push(`${route.path} ${mode}: 首屏 bitmap ${observation.bitmapBytes} > ${bitmapBudget}`)
+      if (observation.audioBytes > 0 || observation.soundMode === 'playing') failures.push(`${route.path} ${mode}: 默认加载或播放声音`)
+      if (mode === 'desktop' && observation.metrics) {
+        const tbt = observation.metrics.longTasks.reduce((sum, duration) => sum + Math.max(0, duration - 50), 0)
+        if (observation.metrics.lcp > 2500) failures.push(`${route.path}: LCP ${Math.round(observation.metrics.lcp)}ms > 2500ms`)
+        if (observation.metrics.cls > 0.1) failures.push(`${route.path}: CLS ${observation.metrics.cls.toFixed(3)} > 0.1`)
+        if (observation.metrics.longTasks.some((duration) => duration > 200)) failures.push(`${route.path}: 存在超过 200ms 的 long task`)
+        if (tbt > 300) failures.push(`${route.path}: lab TBT ${Math.round(tbt)}ms > 300ms`)
+      }
+    }
+  }
+  const accessibility = await runAccessibilityChecks()
+  if (!accessibility.focusedOnOpen || !accessibility.focusRestored || !accessibility.triggerKeyboardReachable || !accessibility.dialogClosed) failures.push('详情抽屉焦点进入/返回闭环失败')
+  if (accessibility.zoom200.overflowX || accessibility.zoom200.links < 2) failures.push('200% 缩放等价检查出现溢出或可见链接丢失')
+  const returnVisit = await recordReturnVisit()
+  await browserRuntime.close()
+  browserRuntime = null
+
+  const flowCommands = [
+    ['atlas', 'scripts/capture-world-atlas-evidence.mjs'],
+    ['timeline-archive', 'scripts/capture-world-c4-evidence.mjs'],
+    ['path-node', 'scripts/capture-world-c5-evidence.mjs'],
+    ['migrations', 'scripts/capture-world-c6-migrations.mjs'],
+    ['lighthouse', 'scripts/capture-world-c7-evidence.mjs'],
+  ]
+  for (const [name, script] of flowCommands) run('node', [script], { env: { WORLDOS_BASE_URL: baseUrl, WORLDOS_EVIDENCE_DIR: path.join(flowsDir, name) }, log: `flow-${name}.log` })
+
+  const requiredFlowFiles = {
+    'first-visit': 'migrations/gateway-atlas.mp4',
+    'scene-migration': 'migrations/atlas-node.mp4',
+    'atlas-exploration': 'atlas/atlas-exploration.mp4',
+    'timeline-revisit': 'timeline-archive/timeline-review.mp4',
+    'archive-retrieval': 'timeline-archive/archive-search.mp4',
+    'path-journey': 'path-node/path-journey.mp4',
+    'node-reading': 'path-node/node-explore.mp4',
+    'lighthouse-guidance': 'lighthouse/lighthouse-guide.mp4',
+    'return-visit-continuation': 'return-visit-continuation.mp4',
+  }
+  const retainedFlowFiles = new Set([
+    ...Object.values(requiredFlowFiles).map((relativePath) => path.normalize(relativePath)),
+    ...flowCommands.map(([name]) => path.normalize(`${name}/browser-observations.json`)),
+  ])
+  const pruneFlowEvidence = (directory, relativeDirectory = '') => {
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      const relativePath = path.normalize(path.join(relativeDirectory, entry.name))
+      const absolutePath = path.join(directory, entry.name)
+      if (entry.isDirectory()) {
+        pruneFlowEvidence(absolutePath, relativePath)
+        if (fs.readdirSync(absolutePath).length === 0) fs.rmdirSync(absolutePath)
+      } else if (!retainedFlowFiles.has(relativePath)) fs.rmSync(absolutePath, { force: true })
+    }
+  }
+  pruneFlowEvidence(flowsDir)
+  const flows = Object.fromEntries(Object.entries(requiredFlowFiles).map(([id, relativePath]) => {
+    const absolutePath = path.join(flowsDir, relativePath)
+    if (!fs.existsSync(absolutePath)) failures.push(`${id}: 连续录屏缺失`)
+    return [id, { path: path.relative(root, absolutePath), bytes: fs.existsSync(absolutePath) ? fs.statSync(absolutePath).size : 0 }]
+  }))
+  flows['return-visit-continuation'].frames = returnVisit.frames
+
+  const staticBundles = fs.existsSync(path.join(distDir, 'static'))
+    ? fs.readdirSync(path.join(distDir, 'static'), { recursive: true }).filter((file) => typeof file === 'string' && file.endsWith('.js'))
+    : []
+  const forbiddenBundleTokens = ['OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'private-leak-fixture', '不应写入的私密演练']
+  const bundleLeaks = []
+  for (const relativeFile of staticBundles) {
+    const content = fs.readFileSync(path.join(distDir, 'static', relativeFile), 'utf8')
+    for (const token of forbiddenBundleTokens) if (content.includes(token)) bundleLeaks.push({ file: relativeFile, token })
+  }
+  if (bundleLeaks.length) failures.push(`客户端 bundle 泄漏：${bundleLeaks.map((item) => item.token).join(',')}`)
+  if (buildMetrics.sharedKb === null || buildMetrics.sharedKb > 130) failures.push(`shared First Load JS 超预算或不可解析：${buildMetrics.sharedKb}`)
+  if (Object.keys(buildMetrics.routes).length !== routes.length) failures.push(`核心 route 构建体积仅解析 ${Object.keys(buildMetrics.routes).length}/${routes.length}`)
+  for (const [pathname, metric] of Object.entries(buildMetrics.routes)) if (metric.firstLoadKb - buildMetrics.sharedKb > 80) failures.push(`${pathname} route JS 增量超预算`)
+  const evidenceFinishedAt = Date.now()
+  const freshness = { sourceMtime, buildStartedAt, buildArtifactMtime, serverStartedAt, firstBrowserCheckAt, evidenceFinishedAt, valid: sourceMtime < buildStartedAt && buildStartedAt <= buildArtifactMtime && buildArtifactMtime < serverStartedAt && serverStartedAt < firstBrowserCheckAt && firstBrowserCheckAt <= evidenceFinishedAt }
+  if (!freshness.valid) failures.push('source -> build -> server -> evidence 时间链无效')
+
+  const manifest = {
+    schemaVersion: 1,
+    runId,
+    generatedAt: new Date().toISOString(),
+    status: failures.length ? 'defects-found' : 'objective-evidence-captured',
+    aiMode: process.env.OPENAI_API_KEY ? 'provider-present-unreviewed' : 'low-light',
+    server: { localhost: baseUrl, lan: `http://${lanIp}:${port}`, lanStatus },
+    freshness,
+    build: buildMetrics,
+    browser: { observations, accessibility },
+    flows,
+    privacy: { bundleLeaks },
+    failures,
+    note: '本 manifest 只记录客观事实；视觉是否达到世界体验仍需逐图、逐录屏和独立 Reality Audit。',
+  }
+  fs.writeFileSync(path.join(reportDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`)
+  fs.writeFileSync(latestPointer, `${JSON.stringify({ runId, manifest: path.relative(root, path.join(reportDir, 'manifest.json')), generatedAt: manifest.generatedAt }, null, 2)}\n`)
+  if (failures.length) throw new Error(failures.join('\n'))
+  console.log(`Reality-First objective evidence captured: ${runId}, screenshots=${observations.length + 1}, flows=${Object.keys(flows).length}`)
+} finally {
+  if (browserRuntime) await browserRuntime.close().catch(() => {})
+  if (server?.exitCode === null) {
+    server.kill('SIGTERM')
+    await Promise.race([new Promise((resolve) => server.once('exit', resolve)), delay(2500)])
+  }
+  for (const [file, content] of configSnapshots) fs.writeFileSync(path.join(root, file), content)
+  fs.rmSync(distDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 150 })
+}

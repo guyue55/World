@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import { ManifestoDynamicHero } from '@/components/manifesto/ManifestoDynamicHero'
-import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { createPageMetadata } from '@/lib/metadata'
 import { buildManifestoDynamicSurface } from '@/lib/public-world-surfaces'
 
@@ -14,12 +14,7 @@ export default function ManifestoPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
-      <ProductRouteGuide
-        current="世界宪章"
-        description="这里记录古月浮屿的稳定法则。浪漫表达之下必须有清晰的数据、权限、路由和 AI 边界。"
-        primaryHref="/atlas"
-        primaryLabel="回到世界地图"
-      />
+      <nav aria-label="宪章页出口" className="flex gap-3 text-sm"><Link href="/">返回入口</Link><Link href="/atlas">回到星图</Link></nav>
       <ManifestoDynamicHero surface={surface} />
     </main>
   )

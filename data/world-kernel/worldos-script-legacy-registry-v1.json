@@ -51,7 +51,11 @@
     "check:lan-local",
     "smoke:lan-local",
     "check:rc-evidence-policy",
-    "check:dependency-hardening"
+    "check:dependency-hardening",
+    "world:author",
+    "audit:world-experience",
+    "check:world-experience",
+    "evidence:world-experience"
   ],
   "recommendedDailyCommands": [
     "npm run check:daily",
@@ -129,8 +133,8 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 298,
-    "checkScripts": 168,
+    "totalScripts": 301,
+    "checkScripts": 169,
     "stageLikeCheckScripts": 2,
     "longScripts": 2
   },
@@ -141,7 +145,7 @@
   "longScripts": [
     {
       "name": "check:mainline",
-      "length": 1247
+      "length": 1281
     },
     {
       "name": "check:world-core",

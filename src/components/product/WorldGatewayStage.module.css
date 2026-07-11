@@ -251,13 +251,15 @@
 .placeRail strong { margin-top: 0.2rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.78rem; }
 
 .staticFallback {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 20;
-  margin: 100svh auto 0;
-  max-width: 48rem;
-  background: #f7f1e6;
-  padding: 2rem 1rem 7rem;
-  color: #25302a;
+  display: grid;
+  align-content: end;
+  width: 100%;
+  background: #071011;
+  padding: 2rem clamp(1rem, 5vw, 4rem) 6rem;
+  color: #f7f1e6;
 }
 
 .noScriptRail {

@@ -136,7 +136,9 @@ if (!JSON.stringify(WORLD_KERNEL_ROUTE_POLICY.publicRoutes).includes('/paths')) 
 
 const pathsPage = read('src/app/paths/page.tsx')
 if (pathsPage.includes('@/components/r8-')) failures.push('paths page must not expose r8 dynamic universe components')
-if (!pathsPage.includes('ProductRouteGuide')) failures.push('paths page must explain current location and exit routes')
+if (!pathsPage.includes('PathsOverviewStage')) failures.push('paths page must render its independent journey stage')
+const pathsStage = read('src/components/paths/JourneyRouteStage.tsx')
+if (!pathsStage.includes('WorldExitRail') || !pathsStage.includes("href: '/atlas'") || !pathsStage.includes("href: '/archive'")) failures.push('paths stage must provide visible world exits')
 
 if (failures.length) {
   console.error('Product release check failed:')

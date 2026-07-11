@@ -4,7 +4,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const root = process.cwd()
-const nextDir = path.join(root, '.next')
+const distDirName = process.env.WORLDOS_DIST_DIR ?? '.next'
+if (!/^\.next(?:-[a-z0-9-]+)?$/i.test(distDirName)) {
+  console.error('WORLDOS_DIST_DIR 只允许仓库内 .next 或 .next-* 隔离目录')
+  process.exit(1)
+}
+const nextDir = path.join(root, distDirName)
 const nextBin = path.join(root, 'node_modules', '.bin', 'next')
 
 if (!fs.existsSync(nextBin)) {

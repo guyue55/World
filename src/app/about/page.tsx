@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import { AboutDynamicHero } from '@/components/about/AboutDynamicHero'
-import { ProductRouteGuide } from '@/components/product/ProductRouteGuide'
 import { createPageMetadata } from '@/lib/metadata'
 import { buildAboutDynamicSurface } from '@/lib/public-world-surfaces'
 
@@ -14,12 +14,7 @@ export default function AboutPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
-      <ProductRouteGuide
-        current="关于古月"
-        description="这里是公开世界的现实解释：说明这个世界为什么被建造、能从哪里开始，以及哪些边界不会被越过。"
-        primaryHref="/atlas"
-        primaryLabel="打开世界地图"
-      />
+      <nav aria-label="关于页出口" className="flex gap-3 text-sm"><Link href="/">返回入口</Link><Link href="/atlas">打开星图</Link></nav>
       <AboutDynamicHero surface={surface} />
     </main>
   )

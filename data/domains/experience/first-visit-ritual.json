@@ -62,8 +62,9 @@
     "requiredCopy": ["首次抵达", "先点亮入口", "看地图", "走第一条路径", "问灯塔", "低动效模式"],
     "requiredFiles": [
       "src/lib/first-visit-ritual.ts",
-      "src/components/world/FirstVisitRitual.tsx",
-      "src/components/product/ProductHome.tsx"
+      "src/components/product/WorldGatewayStage.tsx",
+      "src/components/product/ProductHome.tsx",
+      "src/components/world/WorldRuntimeProvider.tsx"
     ],
     "forbiddenClientTokens": [
       "OPENAI_API_KEY",

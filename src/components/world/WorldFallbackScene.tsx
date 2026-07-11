@@ -96,7 +96,7 @@ export function WorldFallbackScene({
                 <p className="mt-2 text-sm leading-6 text-paper/62">任何雾区、私密门或临时错误都必须给出返回地图、档案馆、灯塔或重试入口。</p>
               </div>
               <div className="rounded-[1rem] border border-paper/10 bg-paper/8 p-4">
-                <p className="text-sm font-semibold text-paper">降级规则</p>
+                <p className="text-sm font-semibold text-paper">仍可继续</p>
                 <p className="mt-2 text-sm leading-6 text-paper/62">reduced-motion 下保留结构、行动和说明，不依赖强动效表达状态。</p>
               </div>
               {children}
