@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "1.2.0",
   "planId": "worldos-living-world-a-h-2026-07-11",
-  "controlBaselineCommit": "6bb8705247bd2794616129551fc181be26e233b9",
+  "controlBaselineCommit": null,
   "goal": {
     "status": "NOT_STARTED",
     "id": "not-created",

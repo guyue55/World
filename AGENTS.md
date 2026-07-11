@@ -38,13 +38,13 @@ node scripts/check-worldos-living-world-readiness.mjs --repair-browser
 - `WorldRuntimeProvider` 只在首次挂载计算昼夜与季节；Timeline 河流、Atlas 星图和大多数场景环境没有统一持续运行层。
 - 公开主线仍高度依赖全屏静态 WebP；隐藏背景图后，场景主体和世界运行能力尚未被证明。
 - 当前声音是程序化低增益音色，没有经真实长期试听的完整声景或音乐资产。
-- Lighthouse 只有诚实的 low-light 能力；无合法 Provider 凭据时不得声称实时 AI。
+- Lighthouse 当前代码只有 OpenAI/low-light 边界，但 Goal 外已现场验证 LAN Ollama `qwen2.5:7b` 可达；产品尚未接入、评测或证明 Provider 候选。
 - 因此当前产品状态是 `CINEMATIC_STATIC_WORLD_IN_PROGRESS`，不是生命世界完成态。
 
 ## 目标层级
 
 - **终极愿景**：一个由作者长期拥有、可公开也可私密、可导出恢复、随真实内容和时间成长的个人数字世界。它需要数月或数年真实使用，不能由一次 Goal 宣布完成。
-- **本次唯一交付**：`LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING`。它只覆盖 localhost / LAN 的公开生命世界体验和不锁死未来的数据主权底座；本 Goal 内任何执行者都无权去掉 `HUMAN_AUDIO_PENDING`。
+- **本次唯一交付**：`LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING`。它覆盖 localhost / LAN 的公开生命世界体验、经固定评测的 Ollama 灯塔和不锁死未来的数据主权底座；本 Goal 内任何执行者都无权去掉 `HUMAN_AUDIO_PENDING`。Provider 超时或故障必须回到诚实 low-light，不能把 fallback 冒充 Provider 完成。
 - **明确不做**：外部部署、多人在线、跨设备同步、完整私密宇宙、家庭继承流程、全站 3D、伪造用户经历、购买资产、秘密获取和实时 AI 凭据。
 
 ## 冻结与状态规则
@@ -88,7 +88,7 @@ node scripts/check-worldos-living-world-readiness.mjs --repair-browser
 - 未经 ADR、可见收益、体积测量、降级和删除证明，不新增 Three.js、R3F、PixiJS、D3、Sigma、XState、Howler、Tone 等运行时依赖。
 - 权限由服务端、事实契约和公开投影过滤决定；前端只体现显隐、禁用、说明和引导。
 - private、owner、vault、family、partner、sealed、silent 内容不得进入公开 HTML、RSC、JSON、索引、AI 上下文、Canvas buffer、截图、音频命名或导出。
-- AI Key 只存在于服务端环境；AI 只读，不写事实、不改权限、不改路径进度。
+- Ollama URL、Key 与模型只存在于服务端环境；当前固定 Provider 为私有 LAN Ollama `qwen2.5:7b`。AI 只读，不写事实、不改权限、不改路径进度；正常 Provider、冷启动、超时、schema 错误和 low-light 都必须真实验证。
 
 ## 视觉与感官工作流
 
@@ -129,4 +129,4 @@ git diff --check
 
 以下任一项存在必须继续：静态大图仍是主体、持续生命只能在短录屏或点击中看到、河流不流、星图不活、日夜四季只是一层滤镜、迁移是换页遮罩、内容更新需改场景代码、声音未通过技术验证或伪造人类签收、AI 无依据、私密事实泄漏、JS-off/reduced/mobile 失去主路径、30 次迁移后资源增长。
 
-本 Goal 最终只允许声明 `LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING`。无后缀 fallback 与 Provider 状态只能在 Goal 外由用户核验真实听感、Provider 和证据后批准新的控制版本；当前执行者不得自行升级。不得声明“完美”“终局宇宙”“长期生命世界”或任何数字体验分。
+本 Goal 最终只允许声明 `LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING`。若 Ollama 未通过固定正常/故障/权限/依据评测则不得完成 Goal，也不得静默降级终点；无后缀 Provider 状态只能在 Goal 外由用户核验真实听感和证据后批准新的控制版本。不得声明“完美”“终局宇宙”“长期生命世界”或任何数字体验分。

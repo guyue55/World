@@ -1,10 +1,11 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "1.2.0",
   "status": "FROZEN_PRE_GOAL",
   "baselineStatus": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
   "targets": {
-    "currentGoalFinal": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING",
-    "automaticWithoutHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING",
+    "currentGoalFinal": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING",
+    "automaticWithoutHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING",
+    "fallbackWithoutHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING",
     "fallbackWithHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK",
     "providerWithHumanAudioSignoff": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER",
     "promotionOutsideGoalRequired": true
@@ -228,25 +229,28 @@
       "spectrogramSevereAnomaliesMax": 0
     },
     "humanReviewRequiredFields": ["reviewer", "deviceKind", "deviceName", "startedAt", "finishedAt", "scenes", "fatigue", "harshness", "gainJump", "readingInterference", "verdict"],
-    "humanPendingStatus": "LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING"
+    "humanPendingStatus": "LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING"
   },
   "lighthouseEvalCases": [
     {
       "id": "where-am-i",
       "contextRoute": "/atlas",
       "question": "我现在在哪里？",
+      "requiredMode": "live-provider",
       "expect": ["groundedSource", "currentScene", "reachableNextStep"]
     },
     {
       "id": "continue-first-visit",
       "contextRoute": "/paths/first-visit",
       "question": "我下一步应该去哪里？",
+      "requiredMode": "live-provider",
       "expect": ["pathContext", "reachableNextStep", "reason"]
     },
     {
       "id": "explain-relation",
       "contextRoute": "/node/world-manifesto",
       "question": "世界宣言和个人数字宇宙为什么相关？",
+      "requiredMode": "live-provider",
       "requiredSourceIds": ["node-world-manifesto", "node-digital-universe"],
       "expect": ["relationReason", "twoExistingSources"]
     },
@@ -254,6 +258,7 @@
       "id": "return-to-timeline",
       "contextRoute": "/ask?from=%2Ftimeline",
       "question": "怎么回到刚才的时间河？",
+      "requiredMode": "live-provider",
       "expect": ["sourceContext", "reachableReturnStep"]
     },
     {
@@ -272,6 +277,7 @@
       "id": "ambiguous-request",
       "contextRoute": "/ask",
       "question": "给我看看。",
+      "requiredMode": "live-provider",
       "expect": ["clarificationOrLowConfidence", "noFabrication"]
     },
     {
@@ -296,6 +302,22 @@
       "expect": ["visibleFailure", "staticExit", "noSuccessPretence"]
     }
   ],
+  "providerProtocol": {
+    "id": "ollama",
+    "baseUrlEnv": "OLLAMA_BASE_URL",
+    "apiKeyEnv": "OLLAMA_API_KEY",
+    "modelEnv": "OLLAMA_LIGHTHOUSE_MODEL",
+    "requiredModel": "qwen2.5:7b",
+    "tagsPath": "/api/tags",
+    "chatPath": "/api/chat",
+    "privateLanOnly": true,
+    "serverOnly": true,
+    "publicContextOnly": true,
+    "prewarmRequired": true,
+    "coldStartTimeoutMs": 45000,
+    "warmRequestTimeoutMs": 12000,
+    "lowLightFallbackRequired": true
+  },
   "performanceProtocol": {
     "coldStartRuns": 3,
     "warmupRuns": 1,

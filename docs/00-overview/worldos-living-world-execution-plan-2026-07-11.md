@@ -6,19 +6,19 @@
 
 **Architecture:** 保持 Next.js 模块化单体和 World Kernel 事实主权；先用一个真实内容变更与 Gateway -> Atlas -> Node 纵向样板证伪架构，再固定 Clock、Signals、Scheduler、Scene Module、Migration、Sensory、Memory 与 Export 边界，最后扩展七场景。不得在风险样板失败时复制方案或引入重型引擎。
 
-**Tech Stack:** 固定当前维护中的 Next.js 15.5、React 19.2、TypeScript、Zod 3.25、GSAP 3.15、CSS、SVG / Canvas 2D、原生 View Transition / Web Audio / Page Visibility / Performance API、Fuse.js 7、Playwright 1.58 配套 Chromium 与 ffmpeg。Next 16、Zod 4 和新渲染引擎只允许 Goal 外 ADR 后迁移。
+**Tech Stack:** 固定当前维护中的 Next.js 15.5、React 19.2、TypeScript、Zod 3.25、GSAP 3.15、CSS、SVG / Canvas 2D、原生 View Transition / Web Audio / Page Visibility / Performance API、Fuse.js 7、私有 LAN Ollama `qwen2.5:7b`、Playwright 1.58 配套 Chromium 与 ffmpeg。Next 16、Zod 4 和新渲染引擎只允许 Goal 外 ADR 后迁移。
 
 ## Global Constraints
 
 - 只支持 localhost / LAN；不做外部 Preview / Production、域名、HTTPS 或 push。
 - 当前状态是 `CINEMATIC_STATIC_WORLD_IN_PROGRESS`；旧完成项和证据全部从零复核。
-- 本 Goal 唯一交付为 `LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING`；去掉后缀或晋级 Provider 只允许用户在 Goal 外批准新控制版本，长期回访、完整私密宇宙与继承不在停止条件。
+- 本 Goal 唯一交付为 `LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING`；Provider 固定为服务端私有 LAN Ollama `qwen2.5:7b`，且 low-light 故障回退仍是必备能力。去掉人类音频后缀只允许用户在 Goal 外批准新控制版本。
 - 元总控、体验验收、架构、Goal 提示词和 checksum 冻结；计划只可勾选，账本可更新。
 - 中文优先；权限由服务端 / 数据投影控制，前端只体现。
 - Server Components 优先；动态是静态事实的渐进增强，不建立第二份内容或权限状态。
 - 新运行时依赖默认 0；未通过 ADR、A/B 测量、降级和删除证明不得引入。
 - 每种持续资源只有一个 owner；页面隐藏、场景离开、静谧、错误和卸载必须清理。
-- 声音默认关闭；AI Key 只在服务端；无 Provider 时必须诚实 low-light。
+- 声音默认关闭；Ollama URL/Key/模型只在服务端；本地 key 不能冒充 Ollama 访问控制，浏览器不得直连 Provider。Provider 故障时必须诚实 low-light，但 fallback 不是本 Goal 的替代完成态。
 - 不新增里程碑编号 npm script、分数报告或文件存在性检查；扩展现有主入口。
 - 开始和恢复时运行 `node scripts/check-worldos-living-world-readiness.mjs --repair-browser`；只修复缺失的 Playwright 配套 Chromium，不自动升级框架或运行时依赖。
 - 每项只运行与其改动相称的定向检查；同一高内聚提交最多覆盖同一检查点四项。完整 build、LAN、九模式媒体与独立审查只在 A-H 检查点边界执行。
@@ -291,8 +291,8 @@
 - [ ] **G.1** 用已通过的世界动机建立七场景 SoundscapeRecipe；优先自制 / 程序化 / 可核验 CC0，逐件登记来源、许可、hash、峰值、用途和 fallback。
 - [ ] **G.2** 实现单 AudioContext、手势 arm、一个 ambience + 一个 cue、crossfade、volume、mute、quiet、hidden、error 和 dispose；声音启用前网络音频 0 B。
 - [ ] **G.3** 自动完成 Gateway / Timeline / Archive / Node / Lighthouse 与三次迁移的十分钟离线渲染、true peak、接缝、波形 / 频谱和资源释放验证；若真实人类可参与，再用耳机和扬声器各连续试听 10 分钟并登记疲劳、刺耳、增益跳变和阅读干扰。Codex 不得代签，缺少签收时保留 `HUMAN_AUDIO_PENDING`。
-- [ ] **G.4** Lighthouse 检索只读公开投影，返回来源、下一站、原因和不确定性；low-light、timeout、schema error、限流、无来源和私密请求有一致契约，并在 `/api/status/lighthouse-eval` 提供仅本地 QA 可用的固定十例重放入口，返回 build/source 身份供终局现场比对。
-- [ ] **G.5** 若环境存在合法 Provider，额外验证真实 model / usage / latency / grounded / cost；不存在时保持 low-light，不安装重型模型、不伪造元数据。
+- [ ] **G.4** Lighthouse 检索只读公开投影，返回来源、下一站、原因和不确定性；实现独立 `ollama` adapter，原生 `/api/chat` 使用 structured output、`stream:false`、低温度、public context allowlist 和 Zod 后验校验；low-light、timeout、schema error、限流、无来源和私密请求有一致契约，并在 `/api/status/lighthouse-eval` 提供仅本地 QA 可用的固定十例重放入口，返回 build/source 身份供终局现场比对。
+- [ ] **G.5** 用 `.env.local` 的服务端 Ollama 配置执行真实预热、模型存在性、5 个正常 live-provider case、私密/未知拒答和 3 个故障回退 case；记录真实 model、duration/load/eval metrics、冷启动与热请求 latency。冷启动不得超过 45 秒，预热后请求不得超过 12 秒；Key 不得被解释为本地 Ollama 的认证边界。
 - [ ] **G.6** 固定 seed / growing / active / settled / archived 的事实规则和作者确认边界；AI 不得改变生命周期。
 - [ ] **G.7** 抽样 24 个真实节点验证六投影、关系理由、路径、时间、Lighthouse 和至少两个出口；工程过程内容可检索但不主导首访。
 - [ ] **G.8** 完整演练中文 authoring preview -> apply -> impact -> export -> verify -> temp restore -> rollback；真实工作区最终 checksum 一致。
@@ -337,7 +337,7 @@
 - [ ] **H.13** 至少完成两次 fresh 独立视觉 / 交互 / soak 审查，使用两个不同 reviewer context；若首轮有 finding，第二轮必须晚于对应修复 commit；第二轮证据必须晚于最终源码、数据、资产、build 和 server。
 - [ ] **H.14** fresh 运行 `npm run typecheck`、`npm run lint`、`npm run build:production-ci`、`npm run check:world-experience`、`npm run check:mainline`、`npm run release:local-rc`、`git diff --check`；把这些命令生成的受 Git 跟踪本地报告、H.14 checkbox、账本与机器状态提交为最终 source commit，之后不得再运行会改写旧报告的命令。
 - [ ] **H.15** 运行 `node scripts/verify-worldos-living-world-final.mjs --preflight` 独立读取冻结契约、账本和真实媒体；确认四个风险门、F1-F14、固定否决项、P0/P1、权限、AI、资产、恢复和 freshness 全部通过，否则持续推进。H.16 写入最终状态后，控制校验必须再调用无参数终局校验。
-- [ ] **H.16** 最终状态固定写为 `LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING`，真实 Provider 或人类听感记录只列为 Goal 外待用户复核事实，不在本 Goal 自动晋级；列残余 P2 与未验证长期目标，提交 `docs(world): 完成生命世界候选真实验收`。
+- [ ] **H.16** 最终状态固定写为 `LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING`；Ollama 必须在 fresh server 上通过固定正常/故障/权限/依据评测，人类听感记录只列为 Goal 外待用户复核事实，不在本 Goal 自动去掉后缀；列残余 P2 与未验证长期目标，提交 `docs(world): 完成生命世界候选真实验收`。
 
 ## 每项固定小循环
 

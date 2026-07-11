@@ -706,7 +706,7 @@ async function runFrozenPermissionCanaryProbe({ sourceCommit, buildId, buildHash
 
 function validateContract(contract) {
   if (!contract) return
-  assert(contract.schemaVersion === '1.1.0', 'acceptance schemaVersion must be 1.1.0')
+  assert(contract.schemaVersion === '1.2.0', 'acceptance schemaVersion must be 1.2.0')
   assert(contract.status === 'FROZEN_PRE_GOAL', 'acceptance contract is not frozen pre-Goal')
 
   const sceneIds = contract.scenes?.map((item) => item.id) ?? []
@@ -721,6 +721,7 @@ function validateContract(contract) {
   assert(contract.riskGates?.length === 4 && unique(contract.riskGates.map((item) => item.id)), 'acceptance risk gates drift')
   assert(matrixIds.length === 20 && unique(matrixIds), 'final Reality Matrix must contain 20 unique claims')
   assert(lighthouseIds.length === 10 && unique(lighthouseIds), 'Lighthouse eval set must contain 10 unique cases')
+  assert(contract.lighthouseEvalCases.filter((item) => item.requiredMode === 'live-provider').length === 5, 'Ollama live-provider case coverage drift')
   assert(contract.recordingProtocol?.sceneRecordingMinSeconds === 60, 'scene recording minimum drift')
   assert(contract.recordingProtocol?.verticalSliceMinSeconds === 600, 'vertical slice soak minimum drift')
   assert(contract.recordingProtocol?.maxPacketGapSeconds === 1 && contract.recordingProtocol?.frameSampleFps === 1, 'recording continuity protocol drift')
@@ -733,12 +734,29 @@ function validateContract(contract) {
   assert(JSON.stringify(contract.audioProtocol?.humanReviewRequiredDeviceKinds) === JSON.stringify(['headphones', 'speakers']), 'human audio device protocol drift')
   assert(contract.audioProtocol?.humanReviewMinSecondsPerDevice === 600, 'human audio duration protocol drift')
   assert(JSON.stringify(contract.targets) === JSON.stringify({
-    currentGoalFinal: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING',
-    automaticWithoutHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING',
+    currentGoalFinal: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING',
+    automaticWithoutHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING',
+    fallbackWithoutHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING',
     fallbackWithHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK',
     providerWithHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER',
     promotionOutsideGoalRequired: true,
   }), 'candidate status ladder drift')
+  assert(JSON.stringify(contract.providerProtocol) === JSON.stringify({
+    id: 'ollama',
+    baseUrlEnv: 'OLLAMA_BASE_URL',
+    apiKeyEnv: 'OLLAMA_API_KEY',
+    modelEnv: 'OLLAMA_LIGHTHOUSE_MODEL',
+    requiredModel: 'qwen2.5:7b',
+    tagsPath: '/api/tags',
+    chatPath: '/api/chat',
+    privateLanOnly: true,
+    serverOnly: true,
+    publicContextOnly: true,
+    prewarmRequired: true,
+    coldStartTimeoutMs: 45000,
+    warmRequestTimeoutMs: 12000,
+    lowLightFallbackRequired: true,
+  }), 'Ollama provider protocol drift')
   assert(contract.evidenceArtifactProtocol?.rejectSymlinks === true, 'evidence symlink policy drift')
   assert(contract.evidenceArtifactProtocol?.liveLocalhostAndLanBuildIdentityRequired === true, 'live build identity policy drift')
   assert(contract.evidenceArtifactProtocol?.sceneViewSidecarRequired === true && contract.evidenceArtifactProtocol?.flowMediaSidecarRequired === true, 'media sidecar policy drift')
@@ -1185,6 +1203,10 @@ if (evidence) {
   const publicSourceIds = new Set((publicProjection?.nodes ?? []).map((node) => node.id))
   const reachableHrefs = new Set((migration?.edges ?? []).flatMap((edge) => [edge.source, edge.target]))
   const lighthouseMap = new Map((lighthouse?.cases ?? []).map((item) => [item.id, item]))
+  assert(lighthouse?.provider?.id === contract.providerProtocol.id && lighthouse?.provider?.model === contract.providerProtocol.requiredModel, 'Ollama provider identity mismatch')
+  assert(lighthouse?.provider?.baseUrl === undefined && lighthouse?.provider?.apiKey === undefined, 'Ollama endpoint or key leaked into evidence')
+  assert(lighthouse?.provider?.prewarm?.status === 'success' && Number(lighthouse.provider.prewarm.elapsedMs) <= contract.providerProtocol.coldStartTimeoutMs, 'Ollama prewarm failed or exceeded cold-start budget')
+  assert(Number(lighthouse?.provider?.warmProbeElapsedMs) <= contract.providerProtocol.warmRequestTimeoutMs, 'Ollama warm probe exceeded request budget')
   for (const evalCase of contract.lighthouseEvalCases) {
     const item = lighthouseMap.get(evalCase.id)
     assert(item, `Lighthouse eval missing: ${evalCase.id}`)
@@ -1214,6 +1236,11 @@ if (evidence) {
     assert(liveStatus === item.httpStatus && canonicalJson(liveEnvelope) === canonicalJson(storedEnvelope), `stored Lighthouse response differs from live replay: ${evalCase.id}`)
     const response = storedEnvelope?.payload
     if (!response) continue
+    if (evalCase.requiredMode) {
+      assert(response.mode === evalCase.requiredMode, `Lighthouse did not use required mode: ${evalCase.id}`)
+      assert(response.auditSummary?.provider === contract.providerProtocol.id && response.auditSummary?.model === contract.providerProtocol.requiredModel, `Lighthouse provider/model mismatch: ${evalCase.id}`)
+      assert(Number(item.elapsedMs) <= contract.providerProtocol.warmRequestTimeoutMs, `Lighthouse warm request exceeded budget: ${evalCase.id}`)
+    }
     const serializedResponse = JSON.stringify(response)
     for (const canary of contract.evidenceArtifactProtocol.fixedPrivateCanaryTokens) assert(!serializedResponse.includes(canary), `Lighthouse leaked private canary: ${evalCase.id}`)
     assert((response.sourceIds ?? []).every((sourceId) => publicSourceIds.has(sourceId)), `Lighthouse used non-public source: ${evalCase.id}`)

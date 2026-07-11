@@ -230,7 +230,7 @@ docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/
 
 **low-light：** 明确说明未连接实时模型，使用确定性检索与关系解释；不能冒充 AI 生成。
 
-**Provider：** 只有合法服务端 Provider 真实返回且通过评测才显示 Provider 模式。
+**Provider：** 当前固定为服务端私有 LAN Ollama `qwen2.5:7b`。必须先预热，再通过正常问路、来源约束、未知拒答、私密拒答、超时、schema 错误和限流评测；URL/Key 不进入客户端。冷启动实测可接近 30 秒，不能用普通热请求超时误杀，正常交互仍必须在 12 秒预算内完成或诚实回退。
 
 **否决：** 全屏聊天框；灯塔只是插画；建议与当前位置无关；无来源长文；低光结果冒充模型。
 
@@ -332,7 +332,7 @@ type WorldTimeSnapshot = {
 - 自动技术验证必须覆盖：用户手势前 0 B、单一 `AudioContext`、同时最多一个 ambience 与一个 cue、crossfade 释放旧 source、hidden / mute / quiet / dispose、true peak、循环接缝、十分钟离线渲染、波形与频谱异常。
 - Codex 不能把频率表、peakGain、离线渲染或自己的文字判断冒充真实听感。
 - 若有真实人类签收，必须用耳机和扬声器各试听至少 10 分钟，记录设备、开始 / 结束时间、场景、疲劳、刺耳、增益跳变、阅读干扰和结论。
-- 技术验证通过可以结束本 Goal，但状态始终只能是 `LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING`；自报人类记录不触发自动晋级。
+- 技术验证和 Ollama Provider 验收通过可以结束本 Goal，但状态始终只能是 `LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING`；自报人类记录不触发自动晋级。
 - 七场景最终应可辨但共享材质与动机；Node / Archive 最稀疏。
 
 ### 16.3 资产
@@ -451,19 +451,19 @@ type WorldTimeSnapshot = {
 自动工程、浏览器与独立审查全部通过，但尚无真实人类音频签收时，只能说明：
 
 ```text
-LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING
+LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 ```
 
 真实人类完成耳机与扬声器签收后，用户可在 Goal 外复核并批准新的控制版本，才可能晋级为：
 
 ```text
-LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK
+LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER
 ```
 
-若合法 Provider 真实通过固定中文评测、权限、依据、成本和失败回退，并且人类听感也已由用户在 Goal 外核验，可在新控制版本中改为：
+若 Ollama 在执行期间无法通过固定评测，只能据实记录下列 fallback-pending 状态并继续修复或按外部阻断规则暂停，不能把它当作本 Goal 的替代完成态：
 
 ```text
-LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER
+LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING
 ```
 
 真实用户长期回访、完整私密世界、家庭 / 继承流程和多年保存不在本次候选声明内。

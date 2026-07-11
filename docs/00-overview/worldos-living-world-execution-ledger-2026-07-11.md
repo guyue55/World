@@ -10,9 +10,9 @@ control_status: READY
 goal_status: NOT_STARTED
 goal_id: not-created
 goal_started_at: null
-control_baseline_commit: 6bb8705247bd2794616129551fc181be26e233b9
+control_baseline_commit: pending-v1.2-anchor
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
-target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING
+target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
 current_item: A.1
 task_state: pending
@@ -20,7 +20,7 @@ active_record_id: none
 last_successful_command: "npm run build:production-ci"
 resume_action: "start A.1"
 last_completed_item: none
-live_ai_provider: unavailable
+live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
 long_lived_world: unproven_by_definition
@@ -52,7 +52,9 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 | 时间运行 | 首次挂载计算一次 | 生命时钟未建立 |
 | 场景主体 | 静态 WebP + 热点为主 | background-hidden 必须重验 |
 | 声音 | 无音频文件，程序化 patch | 未完成真实长期试听 |
-| AI | low-light，无合法 Provider | 默认 fallback 目标 |
+| AI | 私有 LAN Ollama `qwen2.5:7b` 已现场验证 `/api/tags`、`/api/chat` 可用；产品尚未接入 | Goal 目标升级为 Provider + low-light fallback |
+| Ollama 延迟 | 首次模型装载约 29.14 秒，随后热请求约 0.41 秒 | 需要 45 秒预热预算和 12 秒热请求预算 |
+| Ollama 认证 | 本地接口无 Key 也可访问；提供的 key 仅可作客户端兼容占位 | 浏览器禁止直连，服务端私有 LAN allowlist 才是边界 |
 | 部署 | localhost / LAN only | 外部发布不在范围 |
 | 工具链 | Playwright Python 1.58 + Chromium 145、ffmpeg 可启动 | 终局浏览器与媒体探针具备本地前提 |
 | 框架版本 | Next 15.5.20、React 19.2.7、GSAP 3.15.0、Zod 3.25.76 | 保持维护线，不在本 Goal 叠加 major 迁移 |
@@ -86,7 +88,7 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 | D-04 | 现有栈优先，新依赖按证据准入 | 主要问题不是缺引擎 |
 | D-05 | 静态位图保留为一层，不再承担全部主体 | 保留资产价值，同时摆脱热点骨架 |
 | D-06 | 权限继续由服务端 / 事实投影控制 | LAN 与前端身份不构成授权 |
-| D-07 | AI 缺席不阻塞世界，默认 low-light | 当前没有合法 Provider |
+| D-07 | Ollama Provider 是当前 Goal 必达能力，low-light 是故障降级 | Provider 已由用户提供并现场验证；不得静默降级终点 |
 | D-08 | 只借用保存标准的必要原则 | 避免 OCFL / PREMIS 机构级过度实现 |
 | D-09 | 私密世界和继承只保留不锁死底座 | 当前公开体验仍是最高风险 |
 | D-10 | 不新增下一轮 / 第二计划 | 防止终点继续移动 |
@@ -139,8 +141,6 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 completed_items: []
 failed_items: []
 blocked_items:
-  - id: G.5-live-provider
-    reason: "只有合法 Provider 凭据存在时验证；不阻塞 fallback 候选"
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
 next_item: A.1
@@ -251,6 +251,30 @@ decision: "CONTROL_V1_1_ANCHORED_AND_EXECUTABLE; product Goal remains NOT_STARTE
 next_item: A.1
 ```
 
+### Record PREP-004：Ollama Provider 纳入终局
+
+```yaml
+status: passed
+date: 2026-07-11
+scope: "Goal 外 Provider 事实验证与控制包 v1.2 升级；不实现产品 adapter"
+verified_facts:
+  - "私有 LAN Ollama /api/tags 可达，qwen2.5:7b 存在，digest=845dbda0...b697e"
+  - "/api/chat 对固定中文问题返回正确结果"
+  - "首次加载约 29.14 秒，随后热请求约 0.41 秒"
+  - "/v1/models 可达；本地 Ollama 无 Key 也可访问"
+  - "用户提供的 key 只保存于 gitignored .env.local，不进入仓库或客户端"
+frozen_decisions:
+  - "本 Goal 终点升级为 LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING"
+  - "Provider 固定为服务端私有 LAN Ollama qwen2.5:7b"
+  - "冷启动预热预算 45 秒，热请求预算 12 秒"
+  - "原生 /api/chat structured output + Zod 后验校验；浏览器不得直连"
+  - "low-light 保留为故障回退，但不是替代完成态"
+security_boundary:
+  - "本地 Ollama key 不构成认证；服务端代理、私有 LAN allowlist、公开投影和 source ID 求交才是边界"
+decision: "CONTROL_V1_2_PROVIDER_TARGET_PREPARED; product Goal remains NOT_STARTED"
+next_item: A.1
+```
+
 ## 10. 后续记录模板
 
 ```yaml
@@ -323,9 +347,9 @@ latest source / data / asset mtime
 | --- | --- |
 | A-H 任一未通过 | `CINEMATIC_STATIC_WORLD_IN_PROGRESS` 或 `LIVING_WORLD_IN_PROGRESS` |
 | 任一风险门 / 核心体验 fail | 继续修复 |
-| 全部自动验证通过，但无真实人类音频签收 | `LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING` |
+| 全部自动验证和 Ollama 固定评测通过，但无真实人类音频签收 | `LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING` |
 | 真实人类音频签收记录存在 | 本 Goal 仍保持待签后缀；用户 Goal 外复核后才可批准无后缀状态 |
-| 合法 Provider 与人类记录均存在 | 本 Goal 仍不晋级；用户 Goal 外复核后才可批准 Provider 状态 |
+| Ollama 未通过正常、依据、权限、冷/热启动或故障评测 | 继续修复或按外部阻断规则暂停；fallback-pending 不构成完成 |
 | 长期用户 / 内容 / 保存证据不足 | 不影响候选，但不得声明 `LONG_LIVED_WORLD` |
 
 禁止输出：完美、终局宇宙、无限扩展、长期陪伴已证明、所有目标都完成、数字体验分。

@@ -8,7 +8,7 @@
 - 当前工作区是 `/Users/guyue/GitProject/World`。
 - Codex 能自动读取根目录 `AGENTS.md`。
 - 本地 / LAN 是唯一运行范围。
-- 没有合法 Provider 时接受诚实的 AI fallback 候选。
+- 私有 LAN Ollama 已在 Goal 外现场验证可达；本 Goal 必须交付 Provider 候选，同时保留诚实 low-light 故障回退。
 - 本 Goal 的唯一结果带 `HUMAN_AUDIO_PENDING` 后缀；Codex 不得代签或自动去掉后缀。
 - 只触发一次；状态查询、暂停和恢复都操作同一 Goal。
 
@@ -25,13 +25,13 @@
 
 开发保持 Next.js 模块化单体、Server Components 优先、World Kernel 与服务端公开投影为事实源。前端和 UI 必须读取并遵循 gsap-core 与 ui-ux-pro-max，使用现有“月下浮屿”世界观；静态位图只能是一层，语义对象、持续环境、交互、内容和静态 fallback 必须解耦。复用 React、GSAP、CSS、SVG/Canvas 2D、原生 View Transition/Web Audio/Page Visibility/Performance API、Fuse.js、Zod 和现有依赖；保持高内聚、低耦合、场景模块化、中文优先、轻量和性能预算。未经 ADR、可见体验收益、A/B trace、gzip/资产测量、mobile/JS-off/reduced 降级和删除路径，不新增 Three.js、R3F、PixiJS、D3、Sigma、XState、Howler、Tone、SQLite 等运行时依赖。
 
-权限由服务端、事实契约与数据过滤控制，前端只体现；private、owner、vault、family、partner、sealed、silent 不得进入公开 HTML、RSC、JSON、索引、Canvas、localStorage、AI 上下文、截图、音频命名和本 Goal 的 public export。AI Key 只在服务端，灯塔只读，不写事实、不改权限和路径。没有合法 Provider 时完整实现并真实标记 low-light；不得安装重型模型或伪造 Provider、usage、模型名和实时 AI。声音默认关闭且用户手势前下载 0 B；程序化和文件音频都要有来源/许可、hash、峰值、接缝和技术验证。Codex 不能冒充人类耳机/扬声器听感；本 Goal 无论是否出现自报签收记录，最终状态都固定为 LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING。
+权限由服务端、事实契约与数据过滤控制，前端只体现；private、owner、vault、family、partner、sealed、silent 不得进入公开 HTML、RSC、JSON、索引、Canvas、localStorage、AI 上下文、截图、音频命名和本 Goal 的 public export。Ollama URL、Key 与模型只在服务端环境，浏览器不得直连 Provider；本地 Ollama key 可能只是兼容占位，不能冒充权限控制。灯塔只读，不写事实、不改权限和路径。固定使用私有 LAN Ollama `qwen2.5:7b`，先预热再执行 structured output 与公开来源后验校验；正常请求、未知/私密拒答、超时、schema error 和限流全部真实验证。Provider 故障时完整回到 low-light，但 fallback 不是本 Goal 的替代完成态；不得安装重型模型或伪造 Provider、usage、模型名和实时 AI。声音默认关闭且用户手势前下载 0 B；程序化和文件音频都要有来源/许可、hash、峰值、接缝和技术验证。Codex 不能冒充人类耳机/扬声器听感；本 Goal 无论是否出现自报签收记录，最终状态都固定为 LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING。
 
 每项固定执行：控制校验与 git 状态 -> 针对性 baseline -> 失败测试或可证伪观察 -> 最小完整实现 -> 定向检查 -> 更新计划 checkbox、ledger 和机器完成记录 -> 与同检查点最多三项高内聚工作组成中文提交 -> 自动继续。到达 A-H 检查点末项才执行完整 typecheck/lint、fresh production build、新 next start -H 0.0.0.0、localhost/LAN 浏览器实测、desktop/mobile/text-hidden/background-hidden/quiet/reduced/JS-off/resource-failure、连续长录屏、必要 trace、音频技术验证、逐图逐段真实审查、修复和检查点封存；不得把同一重型流水线重复九十次。提交格式仅使用 feat(world)、fix(world)、refactor(world)、test(world)、docs(world) 加中文说明；保护用户改动，不执行破坏性 Git、不 push、不外部部署、不购买或获取秘密。
 
 终局必须按执行计划的封存顺序运行 npm run typecheck、npm run lint、npm run build:production-ci、npm run check:world-experience、npm run check:mainline、npm run release:local-rc 和 git diff --check，提交所有会变动的本地报告后，将该 clean commit 作为 final_source_commit 再 fresh build、启动 server、采集证据并运行 node scripts/verify-worldos-living-world-final.mjs；final_source_commit 后只允许更新最终 evidence run、计划 checkbox、ledger 和 execution state。完成 A-H、四个风险门、F1-F14、七段连续 60-120 秒场景视频、十分钟 soak、30 次迁移、时间/季节成对因果证据、完整迁移边清单、音频技术包与可选人类签收、内容新增与 export/restore、权限/AI/资产/性能/无障碍/故障审查。至少两轮修复后全量审查，终轮调用 fresh reality-auditor 或独立 reviewer，以随机顺序先看隐藏标题、导航、标签和报告状态的截图、background-hidden、长录屏、迁移和音频记录，再看报告；任一 Reality Matrix 行 fail/blocked、任一 P0/P1、任一冻结否决项、资源增长或证据 stale 时继续修复和重跑，不得以平均分抵消。
 
-只有所有条件同时通过且最终证据晚于源码、数据、资产、构建和 server，才允许完成 Goal，并且最终状态固定为 LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING。真实人类听感或 Provider 记录只作为 Goal 外待用户复核材料，当前 Goal 不得自动升级状态。不得声明完美、终局宇宙、无限扩展、长期陪伴已证明、完整私密世界、家庭继承或 LONG_LIVED_WORLD；这些需要未来真实用户、内容、权限和时间证据，不属于本 Goal。触发本 Goal 即批准控制包范围内的本地代码、数据 schema、视觉/音频资产、测试、报告、临时实验和中文 Git 提交；授权不含外部部署、购买、秘密获取、公开私密事实、破坏性 Git、push 或结束未知进程。
+只有所有条件同时通过且最终证据晚于源码、数据、资产、构建和 server，才允许完成 Goal，并且最终状态固定为 LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING。Ollama 未通过固定 live-provider、依据、权限、冷/热启动和故障回退评测时不得完成，也不得把 fallback 状态冒充终点。真实人类听感只作为 Goal 外待用户复核材料，当前 Goal 不得自动去掉后缀。不得声明完美、终局宇宙、无限扩展、长期陪伴已证明、完整私密世界、家庭继承或 LONG_LIVED_WORLD；这些需要未来真实用户、内容、权限和时间证据，不属于本 Goal。触发本 Goal 即批准控制包范围内的本地代码、数据 schema、视觉/音频资产、测试、报告、临时实验和中文 Git 提交；授权不含外部部署、购买、秘密获取、公开私密事实、破坏性 Git、push 或结束未知进程。
 ```
 
 ## CLI

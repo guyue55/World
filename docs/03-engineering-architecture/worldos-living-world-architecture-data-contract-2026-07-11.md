@@ -33,6 +33,7 @@
 | 场景迁移 | 原生 View Transition 渐进增强 + GSAP coordinator | View Transition 已支持 SPA/MPA 迁移，但仍必须 feature-detect 并保留直接导航、焦点和 reduced-motion 路径 | 原生 API 负责浏览器快照能力，GSAP 只编排语义阶段，不建立双状态机 |
 | 声音 | 原生 Web Audio + HTMLMediaElement | 浏览器要求用户手势创建或恢复 AudioContext；长音乐流适合 media element，短 cue / 程序化层适合 buffer/audio graph | 单 AudioContext、默认关闭、隐藏暂停、可完全降级；不引入 Howler/Tone |
 | 生命周期 | Page Visibility + rAF / timer | Page Visibility 广泛可用；后台 rAF 会暂停、timer 会节流，必须主动释放而不是假设仍按时运行 | 一个 scheduler owner，hidden/quiet/dispose 资源归零 |
+| AI 灯塔 | 私有 LAN Ollama `qwen2.5:7b` + Zod | 原生 Chat API 支持 structured output、性能指标与 keep_alive；本地 key 不构成认证 | 只走服务端公开上下文代理；45 秒预热、12 秒热请求、low-light 必备 |
 | 浏览器验收 | Playwright Python 1.58 + 配套 Chromium 145 headless shell | Playwright 官方要求每个版本安装配套浏览器；配套 Chromium 比依赖本机 Chrome 更可复现 | `check-worldos-living-world-readiness.mjs --repair-browser` 只安装缺失 shell，不升级项目依赖 |
 | 媒体验证 | ffmpeg / ffprobe | 成熟本地工具，可回算连续性、时长、帧差、PCM、峰值和频谱 | 作为技术证据，不冒充视觉与人类听感判断 |
 
@@ -647,7 +648,7 @@ flowchart LR
   R --> C["最小公开上下文"]
   C --> M{"Provider mode"}
   M -->|low-light| D["确定性导览"]
-  M -->|cloud/local| P["Provider adapter"]
+  M -->|private LAN Ollama| P["Ollama adapter"]
   D --> Z["Zod + 来源核验"]
   P --> Z
   Z --> A["回答 / 来源 / 下一站 / 不确定性"]
@@ -673,7 +674,13 @@ export type LighthouseAnswer = {
 }
 ```
 
-先检索后生成；无来源、超时、schema 错误、限流和权限冲突回 low-light。NIST AI RMF 的 Govern、Map、Measure、Manage 用于组织风险，而不是作为打勾替代评测。[来源：NIST AI RMF](https://airc.nist.gov/airmf-resources/airmf/)
+当前 Provider 固定为私有 LAN Ollama，模型 `qwen2.5:7b`。服务端只读取 `OLLAMA_BASE_URL`、`OLLAMA_API_KEY`、`OLLAMA_LIGHTHOUSE_MODEL`；客户端、RSC payload、公开报告和截图不能出现 URL 或 Key。Ollama 官方说明本地 API 默认无需认证，OpenAI 兼容调用中的 key 可能只是被忽略的占位，因此 `OLLAMA_API_KEY` 不能被当作权限边界；真正边界是服务端代理、私有 LAN allowlist、公开投影和响应后验过滤。适配器优先使用 Ollama 原生 `/api/chat` structured output，设置 `stream:false`、JSON schema、低温度和 Zod 后验校验；不把 OpenAI Responses API 形状强套给 Ollama。
+
+启动或首次真实问路前执行一次受控预热，并用 `keep_alive` 控制模型驻留，而不是让每次请求承担装载。冷启动预算 45 秒，只用于 readiness / prewarm，不阻塞页面导航；预热后正常请求预算 12 秒。超时、网络中断、schema 错误、模型无依据、限流和权限冲突必须回 low-light，并保留静态出口。Goal 外现场实测表明首次加载约 29 秒、热请求约 0.41 秒；这只是环境基线，最终仍以 fresh evidence 为准。
+
+先检索后生成；模型只接收服务端筛出的公开上下文，返回 source IDs 后再次与允许集合求交。NIST AI RMF 的 Govern、Map、Measure、Manage 用于组织风险，而不是作为打勾替代评测。[来源：NIST AI RMF](https://airc.nist.gov/airmf-resources/airmf/)
+
+Ollama 一手依据：[Chat API](https://docs.ollama.com/api/chat)、[Structured Outputs](https://docs.ollama.com/capabilities/structured-outputs)、[预热与 keep_alive](https://docs.ollama.com/faq)、[本地认证边界](https://docs.ollama.com/api/authentication)、[OpenAI 兼容范围](https://docs.ollama.com/api/openai-compatibility)。
 
 `/api/status/lighthouse-eval` 只在本地 QA 模式接受冻结的十个 case ID、context、question 与 fault，返回 `buildId`、`sourceCommit`、`caseId` 和真实服务 payload；它不接受任意私密上下文，不进入访客旅程。终局校验器必须现场重放并与带 hash 的响应逐项相等。
 

@@ -8,6 +8,15 @@ const root = process.cwd()
 const repairBrowser = process.argv.includes('--repair-browser')
 const failures = []
 
+function readEnvironmentFile(relativePath) {
+  const absolutePath = path.join(root, relativePath)
+  if (!fs.existsSync(absolutePath)) return {}
+  return Object.fromEntries(fs.readFileSync(absolutePath, 'utf8').split('\n').map((line) => line.trim()).filter((line) => line && !line.startsWith('#') && line.includes('=')).map((line) => {
+    const separator = line.indexOf('=')
+    return [line.slice(0, separator), line.slice(separator + 1)]
+  }))
+}
+
 function commandPath(command) {
   try {
     return execFileSync('which', [command], { encoding: 'utf8' }).trim()
@@ -80,6 +89,25 @@ const privateLanAddresses = Object.values(os.networkInterfaces()).flat().filter(
 }).map((entry) => entry.address)
 if (privateLanAddresses.length === 0) failures.push('未发现可用于 LAN 验收的私有 IPv4 地址')
 
+const localEnvironment = { ...readEnvironmentFile('.env.local'), ...process.env }
+const ollamaBaseUrl = localEnvironment.OLLAMA_BASE_URL
+const ollamaModel = localEnvironment.OLLAMA_LIGHTHOUSE_MODEL
+let ollamaStatus = 'unavailable'
+try {
+  if (!ollamaBaseUrl || !ollamaModel) throw new Error('缺少 OLLAMA_BASE_URL 或 OLLAMA_LIGHTHOUSE_MODEL')
+  const parsedBaseUrl = new URL(ollamaBaseUrl)
+  const privateHost = /^10\./.test(parsedBaseUrl.hostname) || /^192\.168\./.test(parsedBaseUrl.hostname) || /^172\.(1[6-9]|2\d|3[01])\./.test(parsedBaseUrl.hostname)
+  if (parsedBaseUrl.protocol !== 'http:' || !privateHost) throw new Error('Ollama 必须使用私有 LAN HTTP 地址')
+  const headers = localEnvironment.OLLAMA_API_KEY ? { authorization: `Bearer ${localEnvironment.OLLAMA_API_KEY}` } : undefined
+  const response = await fetch(new URL('/api/tags', parsedBaseUrl), { headers, signal: globalThis.AbortSignal.timeout(5000), cache: 'no-store' })
+  if (!response.ok) throw new Error(`HTTP ${response.status}`)
+  const payload = await response.json()
+  if (!(payload.models ?? []).some((model) => model.name === ollamaModel || model.model === ollamaModel)) throw new Error(`模型不存在：${ollamaModel}`)
+  ollamaStatus = `${ollamaModel}@${parsedBaseUrl.host}`
+} catch (error) {
+  failures.push(`Ollama Provider 不可用：${error.message}`)
+}
+
 if (failures.length) {
   console.error(`LIVING_WORLD_READINESS_FAIL findings=${failures.length}`)
   failures.forEach((failure) => console.error(`- ${failure}`))
@@ -91,5 +119,6 @@ console.log([
   `node=${process.versions.node}`,
   `playwrightChromium=${browserProbe.version}`,
   `lan=${privateLanAddresses.join(',')}`,
+  `ollama=${ollamaStatus}`,
   `stack=${Object.entries(selectedVersions).map(([name, version]) => `${name}@${version}`).join(',')}`,
 ].join(' '))

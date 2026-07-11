@@ -32,11 +32,21 @@ const expectedMutablePaths = [
   'data/world-kernel/worldos-living-world-execution-state.json',
 ]
 const expectedTargets = {
-  currentGoalFinal: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING',
-  automaticWithoutHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING',
+  currentGoalFinal: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING',
+  automaticWithoutHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING',
+  fallbackWithoutHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK_HUMAN_AUDIO_PENDING',
   fallbackWithHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_FALLBACK',
   providerWithHumanAudioSignoff: 'LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER',
   promotionOutsideGoalRequired: true,
+}
+const expectedProvider = {
+  id: 'ollama',
+  requiredModel: 'qwen2.5:7b',
+  baseUrlEnv: 'OLLAMA_BASE_URL',
+  apiKeyEnv: 'OLLAMA_API_KEY',
+  modelEnv: 'OLLAMA_LIGHTHOUSE_MODEL',
+  privateLanOnly: true,
+  fallbackRequired: true,
 }
 
 function read(relativePath) {
@@ -99,7 +109,7 @@ if (!blockerPolicyValid({ goalStatus: 'BLOCKED', blockerKind: 'design-review-req
   failures.push('internal blocker policy regression')
 }
 
-if (manifest.version !== '1.1.0') failures.push(`unexpected manifest version: ${manifest.version}`)
+if (manifest.version !== '1.2.0') failures.push(`unexpected manifest version: ${manifest.version}`)
 if (JSON.stringify(manifest.authority) !== JSON.stringify(expectedAuthority)) {
   failures.push('manifest authority set changed')
 }
@@ -111,6 +121,9 @@ if (JSON.stringify(manifest.mutableFiles) !== JSON.stringify(expectedMutablePath
 }
 if (JSON.stringify(manifest.target) !== JSON.stringify(expectedTargets)) {
   failures.push('manifest target status ladder changed')
+}
+if (JSON.stringify(manifest.provider) !== JSON.stringify(expectedProvider)) {
+  failures.push('manifest Ollama provider contract changed')
 }
 if (manifest.acceptanceContract?.path !== 'data/domains/experience/living-world-acceptance.json') {
   failures.push('manifest acceptance contract path changed')
@@ -278,7 +291,7 @@ if (firstUnchecked !== 'none' && goalStatus === 'COMPLETE') {
 }
 
 if (executionState) {
-  if (executionState.schemaVersion !== '1.1.0' || executionState.planId !== 'worldos-living-world-a-h-2026-07-11') {
+  if (executionState.schemaVersion !== '1.2.0' || executionState.planId !== 'worldos-living-world-a-h-2026-07-11') {
     failures.push('execution state identity drift')
   }
   if (executionState.goal?.status !== goalStatus
