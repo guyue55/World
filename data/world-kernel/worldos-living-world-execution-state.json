@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.3",
+    "currentItem": "A.4",
     "taskState": "in_progress",
-    "activeRecordId": "LW-003",
-    "resumeAction": "start A.3 old recording ffprobe audit"
+    "activeRecordId": "LW-004",
+    "resumeAction": "start A.4 frozen acceptance contract consumer tests"
   },
   "completedItems": {
     "A.1": {
@@ -57,6 +57,29 @@
       ],
       "commitHash": "3d53cac79ea318824ae8d21ee7cdbcfdb3bd5fc2",
       "commitSubject": "test(world): 建立四视图真实视觉基线"
+    },
+    "A.3": {
+      "status": "passed",
+      "itemId": "A.3",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T00:49:17+08:00",
+      "finishedAt": "2026-07-12T00:51:09+08:00",
+      "commands": [
+        {
+          "command": "A.3 structured duration validation",
+          "exitCode": 0,
+          "outputSha256": "27345f78c2a37a5dd8c9023ed10664bbfb40b342ac00378cb2e984cc0884b04e",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a3-2026-07-12/logs/a3-duration-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a3-2026-07-12/evidence/a3-old-recordings-duration-audit.json",
+          "sha256": "b63ba7109e8e5ec429e25b039815ddd8729bbb21f854c9abcf984266e28eb4f6"
+        }
+      ],
+      "commitHash": "cb8e8ec2c84a9656393d5e2bba52a2cd4cf92ebd",
+      "commitSubject": "test(world): 固化旧短录屏时长反证"
     }
   },
   "failedAttempts": [],

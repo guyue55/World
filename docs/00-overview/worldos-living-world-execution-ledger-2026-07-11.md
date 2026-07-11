@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
-current_item: A.3
+current_item: A.4
 task_state: in_progress
-active_record_id: LW-003
-last_successful_command: "A.2 expected-defect baseline validation"
-resume_action: "start A.3 old recording ffprobe audit"
-last_completed_item: A.2
+active_record_id: LW-004
+last_successful_command: "A.3 old recording duration validation"
+resume_action: "start A.4 frozen acceptance contract consumer tests"
+last_completed_item: A.3
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2]
+completed_items: [A.1, A.2, A.3]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.3
+next_item: A.4
 ```
 
 每完成一项立即：
@@ -349,6 +349,42 @@ fixes:
   - "将 background-hidden 纳入唯一 evidence 入口并保留失败基线；空间主体修复由 C-E 按风险门推进"
 commit: "3d53cac79ea318824ae8d21ee7cdbcfdb3bd5fc2 test(world): 建立四视图真实视觉基线"
 next_item: A.3
+```
+
+### Record LW-003：A.3 旧短录屏时长反证
+
+```yaml
+record: LW-003
+checkpoint: A
+item: A.3
+status: passed
+started_at: 2026-07-12T00:49:17+08:00
+finished_at: 2026-07-12T00:51:09+08:00
+verified_facts:
+  - "旧 Reality-First run 恰有九段 WebM"
+  - "ffprobe 实测时长范围为 1.72-10.16 秒"
+  - "满足 60-120 秒场景生命要求的视频为 0"
+  - "满足 600 秒纵向样板 soak 要求的视频为 0"
+hypothesis:
+  id: null
+  result: null
+files_changed:
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a3-2026-07-12/"
+commands:
+  - command: "ffprobe nine legacy Reality-First WebM recordings"
+    exit_code: 0
+    observed: "nine VP9 files; duration range 1.72-10.16 seconds"
+  - command: "A.3 structured duration validation"
+    exit_code: 0
+    observed: "A3_DURATION_AUDIT_PASS; sceneLifeAccepted=0; soakAccepted=0"
+evidence:
+  - "a3-duration-validation.log sha256=27345f78c2a37a5dd8c9023ed10664bbfb40b342ac00378cb2e984cc0884b04e"
+  - "a3-old-recordings-duration-audit.json sha256=b63ba7109e8e5ec429e25b039815ddd8729bbb21f854c9abcf984266e28eb4f6"
+failures: []
+fixes:
+  - "固定 allowedUse 与 forbiddenUse，禁止旧短录屏进入生命、soak、长时或最终证据"
+commit: "cb8e8ec2c84a9656393d5e2bba52a2cd4cf92ebd test(world): 固化旧短录屏时长反证"
+next_item: A.4
 ```
 
 ## 10. 后续记录模板
