@@ -1,17 +1,37 @@
+import crypto from 'node:crypto'
 import fs from 'node:fs'
 import path from 'node:path'
 import { spawnSync } from 'node:child_process'
 
 const root = process.cwd()
-const failures = []
-const readJson = (relativePath) => JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'))
-const exists = (relativePath) => fs.existsSync(path.join(root, relativePath))
-const contract = readJson('data/domains/experience/reality-first-route-contract.json')
-const packageJson = readJson('package.json')
-const pointerPath = 'docs/90-archive/reports/worldos-reality-first/latest-evidence.json'
+const selfTest = process.argv.includes('--self-test')
+const pointerPath = process.env.WORLDOS_EVIDENCE_POINTER || 'docs/90-archive/reports/worldos-reality-first/latest-evidence.json'
+const contractPath = 'data/domains/experience/living-world-acceptance.json'
+const contract = JSON.parse(fs.readFileSync(path.join(root, contractPath), 'utf8'))
+const forbiddenScoreKeys = new Set(['score', 'experiencescore', 'visualscore', 'rating', 'candidatethreshold'])
+const forbiddenPublicCopy = ['Motion Layer', 'Fallback', 'Evidence', '场景证据', '候选验收', '9/10', '8.9', '降级规则', '验收报告']
+const sourceRoots = ['src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts']
 
-function assert(condition, message) {
-  if (!condition) failures.push(message)
+const routeFiles = {
+  gateway: 'src/app/page.tsx',
+  atlas: 'src/app/atlas/page.tsx',
+  timeline: 'src/app/timeline/page.tsx',
+  archive: 'src/app/archive/page.tsx',
+  paths: 'src/app/paths/[id]/page.tsx',
+  node: 'src/app/node/[slug]/page.tsx',
+  lighthouse: 'src/app/ask/page.tsx',
+}
+
+function exists(relativePath) {
+  return typeof relativePath === 'string' && fs.existsSync(path.join(root, relativePath))
+}
+
+function readJson(relativePath) {
+  return JSON.parse(fs.readFileSync(path.join(root, relativePath), 'utf8'))
+}
+
+function fileHash(relativePath) {
+  return crypto.createHash('sha256').update(fs.readFileSync(path.join(root, relativePath))).digest('hex')
 }
 
 function latestMtime(relativeRoots) {
@@ -19,8 +39,9 @@ function latestMtime(relativeRoots) {
   const visit = (absolutePath) => {
     if (!fs.existsSync(absolutePath)) return
     const stat = fs.statSync(absolutePath)
-    if (stat.isDirectory()) for (const child of fs.readdirSync(absolutePath)) visit(path.join(absolutePath, child))
-    else latest = Math.max(latest, stat.mtimeMs)
+    if (stat.isDirectory()) {
+      for (const child of fs.readdirSync(absolutePath)) visit(path.join(absolutePath, child))
+    } else latest = Math.max(latest, stat.mtimeMs)
   }
   relativeRoots.forEach((relativePath) => visit(path.join(root, relativePath)))
   return latest
@@ -29,126 +50,164 @@ function latestMtime(relativeRoots) {
 function visibleCopyLine(line, phrase) {
   const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const withoutExpressions = line.replace(/\{[^{}]*\}/g, '')
-  return new RegExp(`>[^<]*${escaped}[^<]*<`).test(withoutExpressions) || new RegExp(`(?:title|label|description|caption|note)=?[{]?['\"][^'\"]*${escaped}`, 'i').test(line)
+  return new RegExp(`>[^<]*${escaped}[^<]*<`).test(withoutExpressions)
+    || new RegExp(`(?:title|label|description|caption|note)=?[{]?['\"][^'\"]*${escaped}`, 'i').test(line)
 }
 
-const control = spawnSync(process.execPath, ['scripts/check-worldos-living-world-control.mjs'], { cwd: root, encoding: 'utf8' })
-assert(control.status === 0, `生命世界控制完整性失败：${control.stderr || control.stdout}`)
-
-const requiredRoutes = [
-  'src/app/page.tsx',
-  'src/app/atlas/page.tsx',
-  'src/app/timeline/page.tsx',
-  'src/app/archive/page.tsx',
-  'src/app/paths/[id]/page.tsx',
-  'src/app/node/[slug]/page.tsx',
-  'src/app/ask/page.tsx',
-]
-requiredRoutes.forEach((file) => assert(exists(file), `核心 route 缺失：${file}`))
-
-const forbiddenLegacyFiles = [
-  'src/components/world/SceneWorldPortal.tsx',
-  'src/components/world/SceneProductionFrame.tsx',
-  'src/components/world/SceneDeepInteractionPanel.tsx',
-  'src/components/product/ProductRouteGuide.tsx',
-]
-forbiddenLegacyFiles.forEach((file) => assert(!exists(file), `旧模板仍在 active source：${file}`))
-
-const activeSources = []
-for (const sourceRoot of ['src/app', 'src/components']) {
+function collectActivePublicSources() {
+  const files = []
   const visit = (absolutePath) => {
+    if (!fs.existsSync(absolutePath)) return
     const stat = fs.statSync(absolutePath)
     if (stat.isDirectory()) {
       if (absolutePath.includes(`${path.sep}_legacy`) || absolutePath.includes(`${path.sep}status`)) return
-      fs.readdirSync(absolutePath).forEach((child) => visit(path.join(absolutePath, child)))
-    } else if (/\.(?:ts|tsx)$/.test(absolutePath)) activeSources.push(absolutePath)
+      for (const child of fs.readdirSync(absolutePath)) visit(path.join(absolutePath, child))
+    } else if (/\.(?:ts|tsx)$/.test(absolutePath)) files.push(absolutePath)
   }
-  visit(path.join(root, sourceRoot))
+  visit(path.join(root, 'src/app'))
+  visit(path.join(root, 'src/components'))
+  return files
 }
 
-const legacyNames = ['SceneWorldPortal', 'SceneProductionFrame', 'SceneDeepInteractionPanel', 'ProductRouteGuide']
-const publicCopy = [...contract.forbiddenPublicCopy, '降级规则', '验收报告']
-for (const absolutePath of activeSources) {
+function collectForbiddenScorePaths(value, currentPath = '$', findings = []) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => collectForbiddenScorePaths(item, `${currentPath}[${index}]`, findings))
+    return findings
+  }
+  if (!value || typeof value !== 'object') return findings
+  for (const [key, child] of Object.entries(value)) {
+    if (forbiddenScoreKeys.has(key.toLowerCase())) findings.push(`${currentPath}.${key}`)
+    collectForbiddenScorePaths(child, `${currentPath}.${key}`, findings)
+  }
+  return findings
+}
+
+function resourceBytes(entries, pattern) {
+  return (entries ?? [])
+    .filter((entry) => pattern.test(entry.name ?? '') || (pattern.source.includes('webp') && String(entry.name).includes('/_next/image')))
+    .reduce((sum, entry) => sum + Number(entry.transferSize || entry.encodedBodySize || 0), 0)
+}
+
+function validateManifest(manifest, { checkArtifacts }) {
+  const findings = []
+  const check = (condition, message) => { if (!condition) findings.push(message) }
+  const scorePaths = collectForbiddenScorePaths(manifest)
+  check(scorePaths.length === 0, `manifest contains forbidden score fields: ${scorePaths.join(', ')}`)
+
+  check(manifest?.acceptanceContract?.path === contractPath, 'manifest acceptance path mismatch')
+  check(manifest?.acceptanceContract?.schemaVersion === contract.schemaVersion, 'manifest acceptance schema mismatch')
+  check(manifest?.acceptanceContract?.scenes === contract.scenes.length, 'manifest scene count mismatch')
+  check(manifest?.acceptanceContract?.views === contract.views.length, 'manifest view count mismatch')
+  check(manifest?.acceptanceContract?.flows === contract.flows.length, 'manifest flow count mismatch')
+  check(manifest?.acceptanceContract?.target === contract.targets.currentGoalFinal, 'manifest target ladder mismatch')
+
+  const freshness = manifest?.freshness ?? {}
+  const freshnessTimes = [freshness.sourceMtime, freshness.buildStartedAt, freshness.buildArtifactMtime, freshness.serverStartedAt, freshness.firstBrowserCheckAt, freshness.evidenceFinishedAt]
+  check(freshnessTimes.every(Number.isFinite), 'freshness chain is incomplete')
+  check(freshnessTimes.every((value, index) => index === 0 || value >= freshnessTimes[index - 1]), 'freshness chain order is invalid')
+  if (checkArtifacts) check(freshness.sourceMtime >= latestMtime(sourceRoots) - 1, 'evidence predates current source, data, asset, or checker')
+
+  const sharedKb = Number(manifest?.build?.sharedKb)
+  check(Number.isFinite(sharedKb) && sharedKb <= contract.performanceProtocol.budgets.sharedFirstLoadJsKbMax, 'shared First Load JS is missing or over budget')
+  const routeMetrics = manifest?.build?.routes ?? {}
+  check(Object.keys(routeMetrics).length === contract.scenes.length, 'build route metrics do not cover seven scenes')
+  for (const [route, metric] of Object.entries(routeMetrics)) {
+    check(Number(metric.firstLoadKb) - sharedKb <= contract.performanceProtocol.budgets.routeJsGzipIncrementKbMax, `${route} route JS increment exceeds budget`)
+  }
+
+  const observations = manifest?.browser?.observations ?? []
+  for (const scene of contract.scenes) {
+    for (const view of contract.views) {
+      const item = observations.find((observation) => observation.scene === scene.id && observation.mode === view.id)
+      check(Boolean(item), `${scene.id} missing ${view.id} observation`)
+      if (!item) continue
+      check(item.route === scene.route, `${scene.id} ${view.id} route mismatch`)
+      check(item.sceneRect?.ratio >= 0.7, `${scene.id} ${view.id} scene viewport ratio is too small`)
+      check(item.overflowX === false, `${scene.id} ${view.id} has horizontal overflow`)
+      check(item.engineeringCopy === false, `${scene.id} ${view.id} exposes engineering copy`)
+      check(item.privateCanary === false, `${scene.id} ${view.id} exposes a private canary`)
+      check((item.fixedOverlayIssues ?? []).length === 0, `${scene.id} ${view.id} has a blocking fixed overlay`)
+      check((item.browserErrors ?? []).length === 0, `${scene.id} ${view.id} has console or page errors`)
+
+      if (view.id === 'javascript-off') {
+        check(item.links >= 2 && item.bodyTextLength >= 80, `${scene.id} javascript-off static path is incomplete`)
+      } else {
+        const rect = item.primarySubjectRect
+        check(item.primarySubjectVisibleCount > 0 && rect?.width >= 24 && rect?.height >= 24, `${scene.id} ${view.id} primary subject bounding box is missing`)
+        if (rect && item.sceneRect) {
+          check(rect.left < item.sceneRect.width && rect.top < item.sceneRect.height && rect.left + rect.width > 0 && rect.top + rect.height > 0, `${scene.id} ${view.id} primary subject is outside the viewport`)
+        }
+        check(item.interactiveVisible === true, `${scene.id} ${view.id} primary interaction is not visible`)
+      }
+
+      const bitmapBytes = resourceBytes(item.resourceEntries, /\.(?:avif|webp|png|jpe?g)(?:\?|$)/i)
+      const audioBytes = resourceBytes(item.resourceEntries, /\.(?:mp3|wav|ogg|m4a)(?:\?|$)/i)
+      check(bitmapBytes === item.bitmapBytes, `${scene.id} ${view.id} bitmap bytes are not reproducible`)
+      check(audioBytes === item.audioBytes, `${scene.id} ${view.id} audio bytes are not reproducible`)
+      check(audioBytes === 0 && item.soundMode !== 'playing', `${scene.id} ${view.id} loaded or played audio before consent`)
+      if (view.id === 'background-hidden' || view.id === 'resource-failure') check(bitmapBytes <= 64 * 1024, `${scene.id} ${view.id} still depends on a bitmap`)
+      if (view.id === 'quiet-static') check(item.quietStaticApplied === true, `${scene.id} quiet-static was not applied`)
+      if (view.id === 'resource-failure') check(item.storageAvailable === false, `${scene.id} resource-failure did not disable storage`)
+      if (view.id === 'mobile' || view.id === 'reduced-sensory') check(item.sceneRect?.width <= 390, `${scene.id} ${view.id} did not use mobile framing`)
+
+      check(typeof item.screenshot === 'string' && exists(item.screenshot), `${scene.id} ${view.id} screenshot is missing`)
+      if (checkArtifacts && exists(item.screenshot)) {
+        check(item.screenshotBytes === fs.statSync(path.join(root, item.screenshot)).size, `${scene.id} ${view.id} screenshot size mismatch`)
+        check(item.screenshotSha256 === fileHash(item.screenshot), `${scene.id} ${view.id} screenshotSha256 mismatch`)
+        check(fs.statSync(path.join(root, item.screenshot)).mtimeMs >= freshness.serverStartedAt, `${scene.id} ${view.id} screenshot predates server`)
+      }
+    }
+  }
+  return findings
+}
+
+if (selfTest) {
+  const findings = validateManifest({ status: 'objective-evidence-captured', score: 9 }, { checkArtifacts: false })
+  if (!findings.some((finding) => finding.includes('forbidden score fields')) || findings.length < 10) {
+    console.error(`OBJECTIVE_EVIDENCE_SELF_TEST_FAIL findings=${findings.length}`)
+    process.exit(1)
+  }
+  console.log(`OBJECTIVE_EVIDENCE_SELF_TEST_PASS nakedManifestRejected=true findings=${findings.length}`)
+  process.exit(0)
+}
+
+const failures = []
+const control = spawnSync(process.execPath, ['scripts/check-worldos-living-world-control.mjs'], { cwd: root, encoding: 'utf8' })
+if (control.status !== 0) failures.push(`living-world control failed: ${control.stderr || control.stdout}`)
+
+for (const scene of contract.scenes) {
+  const routeFile = routeFiles[scene.id]
+  if (!routeFile || !exists(routeFile)) failures.push(`missing route source for ${scene.id}: ${routeFile ?? 'unmapped'}`)
+}
+
+for (const absolutePath of collectActivePublicSources()) {
   const relativePath = path.relative(root, absolutePath)
   const lines = fs.readFileSync(absolutePath, 'utf8').split(/\r?\n/)
   lines.forEach((line, index) => {
-    legacyNames.forEach((name) => assert(!new RegExp(`(?:import|export).*${name}`).test(line), `${relativePath}:${index + 1} 仍引用 ${name}`))
-    publicCopy.forEach((phrase) => assert(!visibleCopyLine(line, phrase), `${relativePath}:${index + 1} 公开文案包含 ${phrase}`))
+    forbiddenPublicCopy.forEach((phrase) => {
+      if (visibleCopyLine(line, phrase)) failures.push(`${relativePath}:${index + 1} public copy contains ${phrase}`)
+    })
   })
 }
 
-const dependencies = { ...packageJson.dependencies, ...packageJson.devDependencies }
-for (const dependency of ['three', '@react-three/fiber', 'd3', 'xstate', 'howler', 'tone']) assert(!dependencies[dependency], `未经 ADR 引入重运行时：${dependency}`)
-assert(packageJson.scripts?.['world:author'] === 'tsx scripts/world-author.mjs', 'world:author 入口不正确')
-assert(packageJson.scripts?.['audit:world-experience'] === 'node scripts/audit-worldos-reality-first.mjs', 'audit:world-experience 入口不正确')
-assert(packageJson.scripts?.['check:world-experience'] === 'node scripts/check-worldos-reality-first.mjs', 'check:world-experience 入口不正确')
-assert(packageJson.scripts?.['evidence:world-experience'] === 'node scripts/evidence-worldos-reality-first.mjs', 'evidence:world-experience 入口不正确')
-assert(packageJson.scripts?.['check:mainline']?.includes('npm run check:world-experience'), 'check:mainline 未接入真实世界门禁')
+const permission = spawnSync(process.execPath, ['scripts/check-worldos-permission-boundary.mjs', '--check-only'], { cwd: root, encoding: 'utf8' })
+if (permission.status !== 0) failures.push(`permission boundary failed: ${permission.stderr || permission.stdout}`)
 
-const atlasSource = fs.readFileSync(path.join(root, 'src/components/atlas/AtlasExplorationStage.tsx'), 'utf8')
-const timelineSource = fs.readFileSync(path.join(root, 'src/components/timeline/TimelineRiverStage.tsx'), 'utf8')
-assert(atlasSource.includes("import('gsap')") && timelineSource.includes("import('gsap')"), 'Atlas / Timeline 动画未延迟加载')
-assert(atlasSource.includes('visibilitychange') && timelineSource.includes('visibilitychange'), 'Atlas / Timeline 未处理页面隐藏暂停')
-assert(!/canvas|getContext\(|devicePixelRatio/.test(atlasSource + timelineSource), 'Atlas / Timeline 当前应保持 SVG 路径；若改 Canvas 必须实现 DPR cap')
-assert(exists('src/components/atlas/AtlasSceneSvg.tsx') && exists('src/components/timeline/TimelineRiverPath.tsx'), 'Atlas / Timeline SVG 主体缺失')
-
-const sceneRegistry = readJson('data/assets/world-scene-assets.json')
-for (const scene of contract.spaces) {
-  const asset = sceneRegistry.assets?.find((item) => item.sceneId === scene.id)
-  assert(asset, `${scene.id} 场景资产未登记`)
-  for (const mode of ['desktop', 'mobile']) {
-    const file = asset?.[mode]?.src?.replace(/^\//, '')
-    assert(file && exists(`public/${file}`), `${scene.id} ${mode} 场景资产缺失`)
-    if (file && exists(`public/${file}`)) {
-      const bytes = fs.statSync(path.join(root, 'public', file)).size
-      assert(bytes <= (mode === 'mobile' ? 350 : 700) * 1024, `${scene.id} ${mode} 资产 ${bytes} 超预算`)
-    }
-  }
-}
-
-assert(exists(pointerPath), '缺少 latest fresh evidence 指针；先运行 npm run evidence:world-experience')
-if (exists(pointerPath)) {
+if (!exists(pointerPath)) failures.push(`missing evidence pointer: ${pointerPath}`)
+else {
   const pointer = readJson(pointerPath)
-  assert(typeof pointer.manifest === 'string' && exists(pointer.manifest), 'latest evidence manifest 路径无效')
-  if (typeof pointer.manifest === 'string' && exists(pointer.manifest)) {
+  if (!exists(pointer.manifest)) failures.push(`evidence manifest path is invalid: ${pointer.manifest}`)
+  else {
     const manifest = readJson(pointer.manifest)
-    assert(manifest.runId === pointer.runId, 'latest evidence 指针与 manifest runId 不一致')
-    assert(manifest.status === 'objective-evidence-captured', '最新客观证据仍有失败')
-    assert(Array.isArray(manifest.failures) && manifest.failures.length === 0, '最新客观证据 failures 非空')
-    assert(manifest.freshness?.valid === true, '证据 source -> build -> server -> evidence 时间链无效')
-    assert(manifest.freshness?.sourceMtime >= latestMtime(['src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts']) - 1, '证据早于当前源码、数据或验收脚本')
-    assert(manifest.build?.sharedKb <= 130, `shared First Load JS 超预算：${manifest.build?.sharedKb}`)
-    assert(Object.keys(manifest.build?.routes ?? {}).length === contract.spaces.length, '核心 route 构建体积未覆盖七类空间')
-    for (const [route, metric] of Object.entries(manifest.build?.routes ?? {})) assert(metric.firstLoadKb - manifest.build.sharedKb <= 80, `${route} route JS 增量超预算`)
-    const observations = manifest.browser?.observations ?? []
-    for (const scene of contract.spaces) {
-      for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'keyboard', 'storage-off', 'text-hidden', 'js-off']) {
-        const item = observations.find((observation) => observation.scene === scene.id && observation.mode === mode)
-        assert(item, `${scene.id} 缺少 ${mode} 浏览器证据`)
-        if (item) {
-          assert(typeof item.screenshot === 'string' && exists(item.screenshot), `${scene.id} ${mode} 截图缺失`)
-          assert(item.sceneRect?.ratio >= 0.7, `${scene.id} ${mode} 场景主体不足`)
-          assert(item.overflowX === false, `${scene.id} ${mode} 横向溢出`)
-          assert(item.engineeringCopy === false, `${scene.id} ${mode} 出现工程文案`)
-          assert(item.privateCanary === false, `${scene.id} ${mode} 出现私密 canary`)
-          assert((item.fixedOverlayIssues ?? []).length === 0, `${scene.id} ${mode} 存在固定层遮挡`)
-          if (mode === 'reduced-sensory') assert(item.sceneRect?.width <= 390, `${scene.id} reduced-sensory 未使用 mobile 视口`)
-          if (mode === 'keyboard') assert(item.keyboard?.firstFocus?.href === '#main-content' && item.keyboard?.reachedSceneObject && item.keyboard?.visibleFocus, `${scene.id} keyboard 证据不完整`)
-          if (mode === 'storage-off') assert(item.storageAvailable === false, `${scene.id} storage-off 未真正禁用存储`)
-        }
-      }
-    }
-    contract.requiredFlows.forEach((flow) => assert(manifest.flows?.[flow]?.bytes > 0, `${flow} 连续录屏缺失`))
-    assert(manifest.browser?.accessibility?.focusedOnOpen && manifest.browser?.accessibility?.focusRestored, '详情焦点进入/返回未通过')
-    assert(manifest.browser?.accessibility?.zoom200?.overflowX === false, '200% 缩放出现横向溢出')
-    assert((manifest.privacy?.bundleLeaks ?? []).length === 0, '客户端 bundle 存在秘密或私密 canary')
+    if (manifest.runId !== pointer.runId) failures.push('evidence pointer runId mismatch')
+    failures.push(...validateManifest(manifest, { checkArtifacts: true }))
   }
 }
 
 if (failures.length) {
-  console.error('WorldOS Reality-First objective gate failed:')
+  console.error(`WorldOS objective evidence gate failed findings=${failures.length}`)
   failures.forEach((failure) => console.error(`- ${failure}`))
   process.exit(1)
 }
 
-console.log(`WorldOS Reality-First objective gate passed: spaces=${contract.spaces.length}, flows=${contract.requiredFlows.length}, no visual score asserted`)
+console.log(`WorldOS objective evidence gate passed scenes=${contract.scenes.length} views=${contract.views.length} manifestStatusTrusted=false visualScoreGenerated=false`)

@@ -1,0 +1,10 @@
+OBJECTIVE_EVIDENCE_BOUNDARY_FAIL findings=9
+- objective checker does not consume living-world acceptance
+- objective checker still consumes legacy route contract
+- objective checker trusts manifest status
+- objective checker does not reject scores
+- objective checker does not recalculate screenshot hash
+- objective checker does not verify background-hidden
+- objective checker does not verify the primary subject bounding box
+- evidence modes are not derived from frozen views
+- permission checker lacks side-effect-free mode

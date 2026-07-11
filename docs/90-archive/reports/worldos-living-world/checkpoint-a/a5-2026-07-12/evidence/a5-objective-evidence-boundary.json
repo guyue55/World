@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.5",
+  "generatedAt": "2026-07-11T17:01:36.422Z",
+  "checker": "scripts/check-worldos-reality-first.mjs",
+  "frozenContract": "data/domains/experience/living-world-acceptance.json",
+  "objectiveFields": [
+    "route",
+    "forbidden-public-copy",
+    "background-hidden",
+    "primary-subject-bounding-box",
+    "console-and-page-errors",
+    "resource-entry-recalculation",
+    "permission-check-only",
+    "freshness-chain",
+    "screenshot-size-and-sha256"
+  ],
+  "trustBoundary": {
+    "manifestStatusTrusted": false,
+    "manifestFailuresTrusted": false,
+    "visualScoreGenerated": false,
+    "forbiddenScoreKeys": [
+      "score",
+      "experienceScore",
+      "visualScore",
+      "rating",
+      "candidateThreshold"
+    ],
+    "syntheticBarePassRejected": true,
+    "syntheticFindingCount": 74
+  },
+  "currentEvidence": {
+    "accepted": false,
+    "findingCount": 175,
+    "reason": "latest pointer still targets stale pre-living-world evidence without frozen views, resource entries, primary subject bbox, and screenshot hashes"
+  },
+  "modes": {
+    "source": "acceptanceContract.views",
+    "count": 9,
+    "extraOperationalCapture": "keyboard"
+  },
+  "permissionCheckSideEffects": false,
+  "logs": {
+    "redSha256": "30650070f3b2406fd1b0107059a22c37dfd3cfab99a31dd1c5f7e76ee71a2fe3",
+    "currentEvidenceFailureSha256": "640a50e2803abdc1779d6a4764c76356b08ec87420963ea7624d2a8b730775ca",
+    "greenSha256": "54e31ad1c33238a6d66489e1429f82b422522dd5b8865019fe6d4f3c0742d620"
+  },
+  "productCompletion": "not-evaluated"
+}

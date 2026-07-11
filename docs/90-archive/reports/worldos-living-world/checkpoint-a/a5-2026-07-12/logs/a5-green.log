@@ -1,0 +1,4 @@
+OBJECTIVE_EVIDENCE_BOUNDARY_PASS manifestStatusTrusted=false visualScoreAccepted=false
+OBJECTIVE_EVIDENCE_SELF_TEST_PASS nakedManifestRejected=true findings=74
+WorldOS permission boundary check passed mode=check-only
+LIVING_WORLD_ACCEPTANCE_CONSUMERS_PASS scenes=7 views=9 flows=14 target=LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING

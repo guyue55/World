@@ -7,6 +7,7 @@ const rel = (file) => path.join(root, file)
 const read = (file) => fs.readFileSync(rel(file), 'utf-8')
 const readJson = (file) => JSON.parse(read(file))
 const failures = []
+const checkOnly = process.argv.includes('--check-only')
 
 const contractPath = 'data/world-kernel/worldos-permission-boundary-contract-v1.json'
 const contract = readJson(contractPath)
@@ -166,8 +167,10 @@ const report = {
   failures,
 }
 
-fs.mkdirSync(path.dirname(rel(reportPath)), { recursive: true })
-fs.writeFileSync(rel(reportPath), `${JSON.stringify(report, null, 2)}\n`, 'utf8')
+if (!checkOnly) {
+  fs.mkdirSync(path.dirname(rel(reportPath)), { recursive: true })
+  fs.writeFileSync(rel(reportPath), `${JSON.stringify(report, null, 2)}\n`, 'utf8')
+}
 
 if (failures.length) {
   console.error('WorldOS permission boundary check failed:')
@@ -175,4 +178,4 @@ if (failures.length) {
   process.exit(1)
 }
 
-console.log('WorldOS permission boundary check passed')
+console.log(`WorldOS permission boundary check passed mode=${checkOnly ? 'check-only' : 'report'}`)

@@ -1,3 +1,4 @@
+import crypto from 'node:crypto'
 import fs from 'node:fs'
 import net from 'node:net'
 import os from 'node:os'
@@ -38,6 +39,7 @@ if (contractOnly) {
 }
 
 const routes = acceptanceContract.scenes.map((scene) => ({ id: scene.id, path: scene.route }))
+const evidenceModes = acceptanceContract.views.map((view) => view.id)
 const configSnapshots = new Map(['next-env.d.ts', 'tsconfig.json'].map((file) => [file, fs.readFileSync(path.join(root, file), 'utf8')]))
 const sourceCommit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).stdout.trim()
 const sourceStatus = spawnSync('git', ['status', '--short', '--', 'src', 'data', 'content', 'scripts', 'public/world', 'package.json', 'next.config.ts'], { cwd: root, encoding: 'utf8' }).stdout.trim().split('\n').filter(Boolean)
@@ -137,13 +139,25 @@ const mainInteractive = {
   lighthouse: '#lighthouse-question, [data-lighthouse-signal]',
 }
 
+const primarySubjectSelectors = {
+  gateway: '[data-testid="gateway-enter"], [data-gateway-direction]',
+  atlas: '[data-atlas-area], [data-atlas-node]',
+  timeline: '[data-time-anchor], [data-time-event]',
+  archive: '[data-archive-shelf], [data-archive-record], [data-testid="archive-catalogue-desk"]',
+  paths: '[data-testid="journey-route"], [data-path-route], [data-path-step]',
+  node: 'a[href="#reading"], [data-scene-transition-object="door"]',
+  lighthouse: '#lighthouse-question, [data-lighthouse-signal]',
+}
+
 async function inspectPage(page, route, mode) {
   return await evaluate(page.send, `(() => {
     const scene = document.querySelector('[data-world-scene="${route.id}"]');
     const rect = scene?.getBoundingClientRect();
+    const visible = (element) => { if (!element) return false; const r=element.getBoundingClientRect(); const s=getComputedStyle(element); return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0; };
     const interactive = document.querySelector(${JSON.stringify(mainInteractive[route.id])});
     const interactiveRect = interactive?.getBoundingClientRect();
-    const visible = (element) => { if (!element) return false; const r=element.getBoundingClientRect(); const s=getComputedStyle(element); return r.width>0&&r.height>0&&s.display!=='none'&&s.visibility!=='hidden'&&Number(s.opacity)!==0; };
+    const primarySubjects = [...document.querySelectorAll(${JSON.stringify(primarySubjectSelectors[route.id])})].filter(visible);
+    const primarySubjectRect = primarySubjects.length ? primarySubjects.map((element)=>element.getBoundingClientRect()).reduce((union,current)=>({left:Math.min(union.left,current.left),top:Math.min(union.top,current.top),right:Math.max(union.right,current.right),bottom:Math.max(union.bottom,current.bottom)}),{left:Infinity,top:Infinity,right:-Infinity,bottom:-Infinity}) : null;
     const fixedOverlayIssues = [...document.querySelectorAll('body *')].filter((element) => {
       const style=getComputedStyle(element); if(style.position!=='fixed'||style.pointerEvents==='none') return false;
       const r=element.getBoundingClientRect(); const ratio=(r.width*r.height)/(innerWidth*innerHeight);
@@ -156,15 +170,19 @@ async function inspectPage(page, route, mode) {
       route:${JSON.stringify(route.path)}, scene:${JSON.stringify(route.id)}, mode:${JSON.stringify(mode)},
       sceneRect:rect?{top:Math.round(rect.top),left:Math.round(rect.left),width:Math.round(rect.width),height:Math.round(rect.height),ratio:Number(((rect.width*rect.height)/(innerWidth*innerHeight)).toFixed(3))}:null,
       interactiveVisible:visible(interactive), interactiveRect:interactiveRect?{width:Math.round(interactiveRect.width),height:Math.round(interactiveRect.height)}:null,
+      primarySubjectVisibleCount:primarySubjects.length,
+      primarySubjectRect:primarySubjectRect?{left:Math.round(primarySubjectRect.left),top:Math.round(primarySubjectRect.top),width:Math.round(primarySubjectRect.right-primarySubjectRect.left),height:Math.round(primarySubjectRect.bottom-primarySubjectRect.top)}:null,
       headingVisible:visible(document.querySelector('h1')), links:document.querySelectorAll('a[href]').length, bodyTextLength:(document.body.innerText||'').trim().length,
       overflowX:document.documentElement.scrollWidth>document.documentElement.clientWidth+2,
       engineeringCopy:/Motion Layer|Fallback|Evidence|场景证据|候选验收|9\\/10|8\\.9|降级规则|验收报告/.test(document.body.innerText||''),
       privateCanary:/private-leak-fixture|不应写入的私密演练|这段正文只用于故意构造错误边界/.test(document.documentElement.innerHTML),
       fixedOverlayIssues, bitmapBytes, audioBytes,
+      resourceEntries:resources.filter((entry)=>/\.(?:avif|webp|png|jpe?g|mp3|wav|ogg|m4a|css|js)(?:\?|$)/i.test(entry.name)||entry.name.includes('/_next/image')),
       metrics:window.__worldosEvidenceMetrics??null,
       soundMode:document.querySelector('[data-sound-mode]')?.getAttribute('data-sound-mode')??null,
       ariaLive:document.querySelectorAll('[aria-live]').length,
       storageAvailable:(()=>{try{localStorage.setItem('__worldos_probe','1');localStorage.removeItem('__worldos_probe');return true}catch{return false}})(),
+      quietStaticApplied:Boolean(document.querySelector('style[data-worldos-quiet-static]')),
     };
   })()`)
 }
@@ -200,9 +218,9 @@ async function captureMode(route, mode, options = {}) {
   const mobile = mode === 'mobile' || mode === 'reduced-sensory'
   const targetBaseUrl = options.targetBaseUrl ?? baseUrl
   const screenshotPrefix = options.screenshotPrefix ?? route.id
-  const page = await browserRuntime.createPage({ width: mobile ? 390 : mode === 'zoom-200' ? 720 : 1440, height: mobile ? 844 : mode === 'zoom-200' ? 450 : 900, mobile, reducedMotion: mode === 'reduced-motion' })
+  const page = await browserRuntime.createPage({ width: mobile ? 390 : mode === 'zoom-200' ? 720 : 1440, height: mobile ? 844 : mode === 'zoom-200' ? 450 : 900, mobile, reducedMotion: mode === 'reduced-motion' || mode === 'quiet-static' })
   try {
-    if (mode === 'background-hidden') {
+    if (mode === 'background-hidden' || mode === 'resource-failure') {
       await page.send('Network.setBlockedURLs', {
         urls: [
           `*/world/scenes/${route.id}/*`,
@@ -210,20 +228,21 @@ async function captureMode(route, mode, options = {}) {
         ],
       })
     }
-    if (mode === 'js-off') await page.send('Emulation.setScriptExecutionDisabled', { value: true })
+    if (mode === 'javascript-off') await page.send('Emulation.setScriptExecutionDisabled', { value: true })
     else {
       await page.send('Page.addScriptToEvaluateOnNewDocument', { source: performanceProbe })
       if (mode === 'reduced-sensory') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `localStorage.setItem('guyue-world:soundscape-preference','muted');localStorage.setItem('guyue-world:motion-preference','reduced')` })
-      if (mode === 'storage-off') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `try{localStorage.clear();sessionStorage.clear()}catch{};for(const method of ['getItem','setItem','removeItem','clear'])Object.defineProperty(Storage.prototype,method,{configurable:true,value(){throw new DOMException('Storage disabled for Reality-First evidence','SecurityError')}})` })
+      if (mode === 'resource-failure') await page.send('Page.addScriptToEvaluateOnNewDocument', { source: `try{localStorage.clear();sessionStorage.clear()}catch{};for(const method of ['getItem','setItem','removeItem','clear'])Object.defineProperty(Storage.prototype,method,{configurable:true,value(){throw new DOMException('Storage disabled for Reality-First evidence','SecurityError')}})` })
     }
     await page.send('Page.navigate', { url: `${targetBaseUrl}${route.path}` })
-    if (mode === 'js-off') await delay(1300)
+    if (mode === 'javascript-off') await delay(1300)
     else {
       const ready = await waitForExpression(page.send, `document.readyState==='complete'&&!!document.querySelector('[data-world-scene="${route.id}"]')`, 25000)
       if (!ready) throw new Error(`${route.path} ${mode} 未就绪`)
-      await waitForExpression(page.send, `document.querySelector('[data-image-ready]')?.getAttribute('data-image-ready')==='true'||!document.querySelector('[data-image-ready]')`, 12000)
+      await waitForExpression(page.send, `document.querySelector('[data-image-ready]')?.getAttribute('data-image-ready')==='true'||document.querySelector('[data-image-failed]')?.getAttribute('data-image-failed')==='true'||!document.querySelector('[data-image-ready]')`, 12000)
       await delay(650)
       if (mode === 'text-hidden') await evaluate(page.send, `document.head.insertAdjacentHTML('beforeend','<style data-reality-text-hidden>h1,h2,h3,p,span,strong,small,a,button,label,input,select,textarea{color:transparent!important;text-shadow:none!important} .arrival{visibility:hidden!important}</style>')`)
+      if (mode === 'quiet-static') await evaluate(page.send, `document.head.insertAdjacentHTML('beforeend','<style data-worldos-quiet-static>*,*::before,*::after{animation-play-state:paused!important;transition:none!important;scroll-behavior:auto!important}</style>')`)
     }
     const observation = await inspectPage(page, route, mode)
     if (mode === 'keyboard') observation.keyboard = await inspectKeyboardRoute(page, route)
@@ -231,6 +250,8 @@ async function captureMode(route, mode, options = {}) {
     const screenshot = path.join(screenshotsDir, `${screenshotPrefix}-${mode}.jpg`)
     await captureJpeg(page.send, screenshot)
     observation.screenshot = path.relative(root, screenshot)
+    observation.screenshotBytes = fs.statSync(screenshot).size
+    observation.screenshotSha256 = crypto.createHash('sha256').update(fs.readFileSync(screenshot)).digest('hex')
     return observation
   } finally {
     await page.close()
@@ -340,7 +361,7 @@ try {
   browserRuntime = await launchRealityBrowser('worldos-reality-evidence')
   const observations = []
   for (const route of routes) {
-    for (const mode of ['desktop', 'mobile', 'text-hidden', 'background-hidden', 'reduced-motion', 'reduced-sensory', 'keyboard', 'storage-off', 'js-off']) {
+    for (const mode of [...evidenceModes, 'keyboard']) {
       console.log(`[Reality evidence] ${route.id} ${mode}`)
       const observation = await captureMode(route, mode)
       observations.push(observation)
@@ -349,14 +370,15 @@ try {
       if (observation.engineeringCopy) failures.push(`${route.path} ${mode}: 公开工程文案`)
       if (observation.privateCanary) failures.push(`${route.path} ${mode}: 私密演练内容进入公开载荷`)
       if (observation.fixedOverlayIssues.length) failures.push(`${route.path} ${mode}: 大面积固定层 ${observation.fixedOverlayIssues.join(',')}`)
-      if (mode === 'js-off' ? observation.links < 2 || observation.bodyTextLength < 80 : !observation.interactiveVisible) failures.push(`${route.path} ${mode}: 主交互或静态等价路径不可见`)
+      if (mode === 'javascript-off' ? observation.links < 2 || observation.bodyTextLength < 80 : !observation.interactiveVisible) failures.push(`${route.path} ${mode}: 主交互或静态等价路径不可见`)
       if (mode === 'keyboard' && (!observation.keyboard?.firstFocus || observation.keyboard.firstFocus.href !== '#main-content' || !observation.keyboard.reachedSceneObject || !observation.keyboard.visibleFocus)) failures.push(`${route.path} keyboard: skip link、可见焦点或场景对象不可达`)
-      if (mode === 'storage-off' && observation.storageAvailable) failures.push(`${route.path} storage-off: 存储未被禁用`)
+      if (mode === 'resource-failure' && observation.storageAvailable) failures.push(`${route.path} resource-failure: 存储未被禁用`)
+      if (mode === 'quiet-static' && !observation.quietStaticApplied) failures.push(`${route.path} quiet-static: 静谧样式未应用`)
       if (observation.browserErrors.length) failures.push(`${route.path} ${mode}: ${observation.browserErrors.join('; ')}`)
       const bitmapBudget = mode === 'mobile' || mode === 'reduced-sensory' ? 350 * 1024 : 700 * 1024
       if (observation.bitmapBytes > bitmapBudget) failures.push(`${route.path} ${mode}: 首屏 bitmap ${observation.bitmapBytes} > ${bitmapBudget}`)
       if (observation.audioBytes > 0 || observation.soundMode === 'playing') failures.push(`${route.path} ${mode}: 默认加载或播放声音`)
-      if (mode === 'background-hidden' && observation.bitmapBytes > 64 * 1024) failures.push(`${route.path} ${mode}: 场景位图阻断后仍加载 ${observation.bitmapBytes} bytes bitmap`)
+      if ((mode === 'background-hidden' || mode === 'resource-failure') && observation.bitmapBytes > 64 * 1024) failures.push(`${route.path} ${mode}: 场景位图阻断后仍加载 ${observation.bitmapBytes} bytes bitmap`)
       if (mode === 'desktop' && observation.metrics) {
         const tbt = observation.metrics.longTasks.reduce((sum, duration) => sum + Math.max(0, duration - 50), 0)
         if (observation.metrics.lcp > 2500) failures.push(`${route.path}: LCP ${Math.round(observation.metrics.lcp)}ms > 2500ms`)
