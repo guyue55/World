@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
-current_item: A.5
+current_item: A.6
 task_state: in_progress
-active_record_id: LW-005
-last_successful_command: "living world acceptance consumer red-green test"
-resume_action: "start A.5 objective evidence checker expansion"
-last_completed_item: A.4
+active_record_id: LW-006
+last_successful_command: "objective evidence boundary and naked-manifest self-test"
+resume_action: "start A.6 truthful status and production build identity"
+last_completed_item: A.5
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4]
+completed_items: [A.1, A.2, A.3, A.4, A.5]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.5
+next_item: A.6
 ```
 
 每完成一项立即：
@@ -425,6 +425,51 @@ fixes:
   - "移除旧 route contract 依赖，加入冻结契约启动校验、contract-only 和 manifest 摘要"
 commit: "a8df97e0f1f224d7607962b2ddc8b1ccc9c15e9a test(world): 统一生命世界验收契约消费者"
 next_item: A.5
+```
+
+### Record LW-005：A.5 客观证据回算边界
+
+```yaml
+record: LW-005
+checkpoint: A
+item: A.5
+status: passed
+started_at: 2026-07-12T00:54:03+08:00
+finished_at: 2026-07-12T01:01:59+08:00
+verified_facts:
+  - "旧 checker 有九项信任边界缺口，包括旧契约、manifest status、分数和缺失 background-hidden/bbox/hash"
+  - "objective checker 现只检查 route、公开禁用文案、背景隐藏、主语义对象 bbox、控制台、资源、权限、freshness 和截图 hash"
+  - "一个只有 passed status 与 score=9 的合成 manifest 被拒绝，产生 74 个客观缺失"
+  - "当前旧 latest evidence 被真实拒绝并产生 175 个缺口；没有通过修改报告变绿"
+  - "permission checker 的 check-only 模式通过且未改历史报告"
+hypothesis:
+  id: null
+  result: null
+files_changed:
+  - "scripts/check-worldos-reality-first.mjs"
+  - "scripts/evidence-worldos-reality-first.mjs"
+  - "scripts/check-worldos-permission-boundary.mjs"
+  - "scripts/check-worldos-objective-evidence-boundary.mjs"
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a5-2026-07-12/"
+commands:
+  - command: "node scripts/check-worldos-objective-evidence-boundary.mjs before implementation"
+    exit_code: 1
+    observed: "nine checker/evidence/permission boundary findings"
+  - command: "node scripts/check-worldos-objective-evidence-boundary.mjs and checker self-test"
+    exit_code: 0
+    observed: "OBJECTIVE_EVIDENCE_BOUNDARY_PASS; nakedManifestRejected=true"
+  - command: "node scripts/check-worldos-reality-first.mjs against current latest"
+    exit_code: 1
+    observed: "175 objective findings retained; old latest not accepted"
+evidence:
+  - "a5-green.log sha256=54e31ad1c33238a6d66489e1429f82b422522dd5b8865019fe6d4f3c0742d620"
+  - "a5-objective-evidence-boundary.json sha256=5a6146c73678d848b49068235aab61ab54e4210b6546ff8ff9a300ea0f633766"
+failures:
+  - "当前产品证据仍不满足新 objective checker；这是后续实现必须消除的真实红灯"
+fixes:
+  - "移除 manifest status 信任与旧契约杂项，加入冻结视图、资源明细、主对象 bbox、截图 hash 和无副作用权限复算"
+commit: "9a65bc5fa3044ebb2ee8694afb10e64d012c78f7 test(world): 收束客观证据回算边界"
+next_item: A.6
 ```
 
 ## 10. 后续记录模板

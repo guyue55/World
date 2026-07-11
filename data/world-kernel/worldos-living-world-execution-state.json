@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.5",
+    "currentItem": "A.6",
     "taskState": "in_progress",
-    "activeRecordId": "LW-005",
-    "resumeAction": "start A.5 objective evidence checker expansion"
+    "activeRecordId": "LW-006",
+    "resumeAction": "start A.6 truthful status and production build identity"
   },
   "completedItems": {
     "A.1": {
@@ -103,6 +103,29 @@
       ],
       "commitHash": "a8df97e0f1f224d7607962b2ddc8b1ccc9c15e9a",
       "commitSubject": "test(world): 统一生命世界验收契约消费者"
+    },
+    "A.5": {
+      "status": "passed",
+      "itemId": "A.5",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T00:54:03+08:00",
+      "finishedAt": "2026-07-12T01:01:59+08:00",
+      "commands": [
+        {
+          "command": "objective evidence boundary and naked-manifest self-test",
+          "exitCode": 0,
+          "outputSha256": "54e31ad1c33238a6d66489e1429f82b422522dd5b8865019fe6d4f3c0742d620",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a5-2026-07-12/logs/a5-green.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a5-2026-07-12/evidence/a5-objective-evidence-boundary.json",
+          "sha256": "5a6146c73678d848b49068235aab61ab54e4210b6546ff8ff9a300ea0f633766"
+        }
+      ],
+      "commitHash": "9a65bc5fa3044ebb2ee8694afb10e64d012c78f7",
+      "commitSubject": "test(world): 收束客观证据回算边界"
     }
   },
   "failedAttempts": [],

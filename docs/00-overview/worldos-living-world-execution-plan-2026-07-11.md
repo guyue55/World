@@ -98,7 +98,7 @@
 - [x] **A.2** 用 fresh production build 重新采集七场景 desktop / mobile / text-hidden / background-hidden；记录每个页面静态位图、语义对象、持续环境、主要交互和公开工程文案的真实占比与缺陷。
 - [x] **A.3** 使用 `ffprobe` 记录旧九段录屏真实时长；不得把 1.72 至 10.16 秒旧视频算作持续生命、soak 或长期运行证据。
 - [x] **A.4** 消费 Goal 前已冻结的 `living-world-acceptance.json`，先写失败的 schema / 数量 / 状态阶梯测试，再让 evidence 与终局校验器读取同一契约；不得在执行期创建、补项或降低它。
-- [ ] **A.5** 扩展客观检查器，只检查可自动回算的 route、禁用文案、背景隐藏、主对象 bounding box、控制台、资源、权限和 freshness；不得接受 evidence manifest 裸 `pass` 或生成体验分。
+- [x] **A.5** 扩展客观检查器，只检查可自动回算的 route、禁用文案、背景隐藏、主对象 bounding box、控制台、资源、权限和 freshness；不得接受 evidence manifest 裸 `pass` 或生成体验分。
 - [ ] **A.6** `/status` 显示当前真实状态、第一项未完成风险门和证据时间；production build 生成排除自身的完整 `.next` 运行 Merkle，并提供只读 build identity JSON（buildId、sourceCommit、buildRootHash）供 localhost / LAN 终局校验与 live chunk 比对。旧 `LOCAL_WORLD_COMPLETE_AI_FALLBACK` 只作为历史，不作当前摘要。
 - [ ] **A.7** 审计 package 主命令及全部旧 M / Phase / RC 检查：客观且仍匹配当前契约者保留在 `check:mainline`，只检查旧实现字符串、旧报告或外部 Preview 者移出完成门并登记到 legacy registry；不得为兼容历史骨架保留无效约束，也不得新增阶段脚本。
 - [ ] **A.8** 运行 `npm run typecheck`、`npm run lint`、`npm run check:world-experience`、fresh build、`git diff --check`。
