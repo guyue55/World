@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.7",
+    "currentItem": "A.8",
     "taskState": "in_progress",
-    "activeRecordId": "LW-007",
-    "resumeAction": "start A.7 command and legacy completion gate audit"
+    "activeRecordId": "LW-008",
+    "resumeAction": "start A.8 checkpoint engineering and fresh baseline rerun"
   },
   "completedItems": {
     "A.1": {
@@ -149,6 +149,29 @@
       ],
       "commitHash": "ce67de1975991e5ca4803c23572fb681f67f98d3",
       "commitSubject": "feat(world): 建立可信构建身份与状态面"
+    },
+    "A.7": {
+      "status": "passed",
+      "itemId": "A.7",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T01:13:39+08:00",
+      "finishedAt": "2026-07-12T01:23:13+08:00",
+      "commands": [
+        {
+          "command": "current command spine, content, boundary and dependency audit",
+          "exitCode": 0,
+          "outputSha256": "e77bad7e0074be2793c1274fdadd5c20977ce0f12b4083cc594f848141b24f53",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a7-2026-07-12/logs/a7-green.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a7-2026-07-12/evidence/a7-command-spine-audit.json",
+          "sha256": "cda3568f8bb41b8df21d6cd8a0e8a928404983aa7ac8c4a01fd73b04f25a2734"
+        }
+      ],
+      "commitHash": "280341e37d1868136894a47ad379829cff453252",
+      "commitSubject": "refactor(world): 收束当前主线与历史脚本边界"
     }
   },
   "failedAttempts": [],

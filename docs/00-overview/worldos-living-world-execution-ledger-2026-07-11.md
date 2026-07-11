@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
-current_item: A.7
+current_item: A.8
 task_state: in_progress
-active_record_id: LW-007
-last_successful_command: "fresh production Merkle and localhost/LAN live identity validation"
-resume_action: "start A.7 command and legacy completion gate audit"
-last_completed_item: A.6
+active_record_id: LW-008
+last_successful_command: "current command spine, content, boundary and dependency audit"
+resume_action: "start A.8 checkpoint engineering and fresh baseline rerun"
+last_completed_item: A.7
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.7
+next_item: A.8
 ```
 
 每完成一项立即：
@@ -522,6 +522,57 @@ fixes:
   - "探针改为纯 ESM fs 读取；删除旧面板当前挂载并重建、重截、重验"
 commit: "ce67de1975991e5ca4803c23572fb681f67f98d3 feat(world): 建立可信构建身份与状态面"
 next_item: A.7
+```
+
+### Record LW-007：A.7 当前命令脊柱与历史脚本边界
+
+```yaml
+record: LW-007
+checkpoint: A
+item: A.7
+status: passed
+started_at: 2026-07-12T01:13:39+08:00
+finished_at: 2026-07-12T01:23:13+08:00
+verified_facts:
+  - "旧 check:mainline 有 37 个子门禁，注册表有 27 个每日命令"
+  - "当前 mainline 固定为 8 个生命世界入口，每日命令上限和实际均为 8"
+  - "20 个 M/Phase/Stage 脚本全部登记 historicalInvalidated，仍保留文件供定位旧实现"
+  - "4 个外部 Preview 入口独立登记，不进入 localhost/LAN Goal"
+  - "content、boundary、scripts 和 dependency 当前门禁通过；build identity API 已进入后端注册表"
+  - "新 mainline 前七项通过，唯一红灯是 world-experience 对旧 latest 的 175 项客观拒绝"
+hypothesis:
+  id: null
+  result: null
+files_changed:
+  - "package.json"
+  - "data/world-kernel/worldos-script-legacy-registry-v1.json"
+  - "data/world-kernel/worldos-api-boundary-registry-v1.json"
+  - "scripts/check-worldos-current-command-spine.mjs"
+  - "scripts/check-worldos-script-legacy-registry.mjs"
+  - "scripts/check-worldos-script-taxonomy.mjs"
+  - "scripts/check-worldos-permission-boundary.mjs"
+  - "scripts/check-worldos-content-jaccard.mjs"
+commands:
+  - command: "node scripts/check-worldos-current-command-spine.mjs before implementation"
+    exit_code: 1
+    observed: "54 old-mainline, daily, historical-registration and Preview findings"
+  - command: "npm run check:content && npm run check:boundary && npm run check:dependency-hardening"
+    exit_code: 0
+    observed: "content facts, 27 API routes, permission, scripts and dependencies passed without report timestamp side effects"
+  - command: "npm run check:mainline"
+    exit_code: 1
+    observed: "seven current gates passed; world-experience retained 175 stale/shape findings"
+evidence:
+  - "a7-green.log sha256=e77bad7e0074be2793c1274fdadd5c20977ce0f12b4083cc594f848141b24f53"
+  - "a7-command-spine-audit.json sha256=cda3568f8bb41b8df21d6cd8a0e8a928404983aa7ac8c4a01fd73b04f25a2734"
+failures:
+  - "A.6 新 build identity API 初次未登记服务端 API 边界"
+  - "旧 taxonomy/permission/legacy 检查强制历史脚本直接进入 mainline"
+  - "当前 content-jaccard 检查每次改报告时间戳"
+fixes:
+  - "补 API 注册；改为 mainline -> boundary -> API/permission/scripts；加入 check-only 并恢复生成噪音"
+commit: "280341e37d1868136894a47ad379829cff453252 refactor(world): 收束当前主线与历史脚本边界"
+next_item: A.8
 ```
 
 ## 10. 后续记录模板
