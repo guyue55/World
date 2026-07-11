@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T01:04:18.438Z",
+  "generatedAt": "2026-07-11T07:28:11.213Z",
   "status": "passed",
   "stage": "M23",
   "registry": "data/domains/experience/sensory-audio-registry.json",
@@ -7,7 +7,7 @@
   "soundscapes": 9,
   "licensedSoundscapes": 9,
   "budgetedSoundscapes": 9,
-  "assetCount": 1,
+  "assetCount": 2,
   "totalAssetBytes": 0,
   "defaultSoundEnabled": false,
   "autoPlayAllowed": false,

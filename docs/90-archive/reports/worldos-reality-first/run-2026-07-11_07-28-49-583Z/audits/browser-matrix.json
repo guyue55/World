@@ -1,0 +1,3270 @@
+{
+  "runId": "run-2026-07-11_07-28-49-583Z",
+  "observations": [
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 113,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221884,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 184,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-desktop.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 107,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 85492,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 132,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-mobile.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 113,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221584,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 136,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-reduced-motion.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 107,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 85192,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 148,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-reduced-sensory.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 113,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221584,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 148,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 11,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "推开月门",
+            "focusVisible": true,
+            "sceneObject": true
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-keyboard.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 113,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221584,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 140,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-storage-off.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 113,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221584,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-text-hidden.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 900,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": false,
+      "interactiveRect": {
+        "width": 0,
+        "height": 0
+      },
+      "headingVisible": true,
+      "links": 27,
+      "bodyTextLength": 361,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221584,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/gateway-js-off.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 364,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140330,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-desktop.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 91,
+        "height": 62
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 328,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 67234,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-mobile.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 364,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140030,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-reduced-motion.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 91,
+        "height": 62
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 328,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 66934,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-reduced-sensory.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 364,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140030,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 11,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "聚焦创世原点，30 个公开地点",
+            "focusVisible": true,
+            "sceneObject": true
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-keyboard.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 364,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140030,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-storage-off.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 364,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140030,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-text-hidden.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 33,
+      "bodyTextLength": 605,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140030,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/atlas-js-off.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 244,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246434,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-desktop.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 61,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 199,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 101456,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 184,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-mobile.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 244,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246134,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-reduced-motion.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 61,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 199,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 101156,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-reduced-sensory.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 244,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246134,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 11,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "前往 5月19日，11 条事件",
+            "focusVisible": true,
+            "sceneObject": true
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-keyboard.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 244,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246134,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-storage-off.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 244,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246134,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-text-hidden.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 3642,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246134,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/timeline-js-off.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 612,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191394,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-desktop.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 566,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 84526,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-mobile.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 612,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191094,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-reduced-motion.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 566,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 84226,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-reduced-sensory.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 612,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191094,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 19,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "创世原点馆藏，当前 30 卷",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "技术星域馆藏，当前 39 卷",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "产品工坊馆藏，当前 28 卷",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "灵感云层馆藏，当前 21 卷",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "记忆湖馆藏，当前 19 卷",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "时间河馆藏，当前 20 卷",
+            "focusVisible": true,
+            "sceneObject": false
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-keyboard.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 612,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191094,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-storage-off.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 612,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191094,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-text-hidden.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 3801,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191094,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/archive-js-off.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 251,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 281204,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-desktop.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 390,
+        "height": 844
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 245,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 94414,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-mobile.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 251,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 280904,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 148,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-reduced-motion.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 390,
+        "height": 844
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 245,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 94114,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 128,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-reduced-sensory.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 251,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 280904,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 148,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 14,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "PATH · 返回岔口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "1. 月下造物间，当前位置",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "2. 纸上创作室，可以前往",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/node/moonframe-loft?fromPath=first-visit&step=0",
+            "label": "进入地点",
+            "focusVisible": true,
+            "sceneObject": true
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-keyboard.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 251,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 280904,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-storage-off.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 251,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 280904,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-text-hidden.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 359,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 280904,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/paths-js-off.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4206,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 187078,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 180,
+        "cls": 0,
+        "longTasks": [
+          54
+        ]
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-desktop.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4155,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 71720,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": [
+          52
+        ]
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-mobile.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4206,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 186778,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 180,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-reduced-motion.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4155,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 71420,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-reduced-sensory.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4206,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 186778,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 11,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/node/personal-digital-universe-definition?fromNode=world-manifesto&via=relation",
+            "label": "宇宙感不是 3D从这里可以去哪里",
+            "focusVisible": true,
+            "sceneObject": true
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-keyboard.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 53,
+      "bodyTextLength": 4196,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 186778,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-storage-off.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 53,
+      "bodyTextLength": 4196,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 186778,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-text-hidden.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 53,
+      "bodyTextLength": 4508,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 186778,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/node-js-off.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 481,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137494,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 136,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-desktop.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 240,
+        "height": 80
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 376,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 76338,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 132,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-mobile.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "reduced-motion",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 481,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137194,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 148,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-reduced-motion.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "reduced-sensory",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 240,
+        "height": 80
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 376,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 76038,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 132,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-reduced-sensory.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "keyboard",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 481,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137194,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "keyboard": {
+        "firstFocus": {
+          "tag": "A",
+          "href": "#main-content",
+          "label": "跳到主要内容",
+          "focusVisible": true,
+          "sceneObject": false
+        },
+        "reachedSceneObject": true,
+        "visibleFocus": true,
+        "focusCount": 11,
+        "focusSequence": [
+          {
+            "tag": "A",
+            "href": "#main-content",
+            "label": "跳到主要内容",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "古月浮屿",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/",
+            "label": "入口",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/atlas",
+            "label": "地图",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/timeline",
+            "label": "时间",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/archive",
+            "label": "档案",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths",
+            "label": "路径",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/ask",
+            "label": "灯塔",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/manifesto",
+            "label": "宪章",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "BUTTON",
+            "href": null,
+            "label": "切换到深色模式",
+            "focusVisible": true,
+            "sceneObject": false
+          },
+          {
+            "tag": "A",
+            "href": "/paths/first-visit",
+            "label": "第一次来到古月浮屿推荐第一次到访的旅人从这条路径开始。",
+            "focusVisible": true,
+            "sceneObject": true
+          }
+        ]
+      },
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-keyboard.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "storage-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 481,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137194,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": false,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-storage-off.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "text-hidden",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 481,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137194,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-text-hidden.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "js-off",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 533,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137194,
+      "audioBytes": 0,
+      "metrics": null,
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lighthouse-js-off.jpg"
+    }
+  ],
+  "lanObservations": [
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 113,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 221884,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 176,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-gateway-desktop.jpg"
+    },
+    {
+      "route": "/",
+      "scene": "gateway",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 134,
+        "height": 52
+      },
+      "headingVisible": true,
+      "links": 21,
+      "bodyTextLength": 107,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 85492,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 128,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-gateway-mobile.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 109,
+        "height": 72
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 364,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 140330,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-atlas-desktop.jpg"
+    },
+    {
+      "route": "/atlas",
+      "scene": "atlas",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 91,
+        "height": 62
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 328,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 67234,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-atlas-mobile.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 72,
+        "height": 53
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 244,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 246434,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-timeline-desktop.jpg"
+    },
+    {
+      "route": "/timeline",
+      "scene": "timeline",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 61,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 68,
+      "bodyTextLength": 199,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 101456,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-timeline-mobile.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 612,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 191394,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-archive-desktop.jpg"
+    },
+    {
+      "route": "/archive",
+      "scene": "archive",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 85,
+        "height": 28
+      },
+      "headingVisible": true,
+      "links": 217,
+      "bodyTextLength": 566,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 84526,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 164,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-archive-mobile.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 1440,
+        "height": 900
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 251,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 281204,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 132,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-paths-desktop.jpg"
+    },
+    {
+      "route": "/paths/first-visit",
+      "scene": "paths",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 390,
+        "height": 844
+      },
+      "headingVisible": true,
+      "links": 25,
+      "bodyTextLength": 245,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 94414,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 128,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-paths-mobile.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4206,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 187078,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-node-desktop.jpg"
+    },
+    {
+      "route": "/node/world-manifesto",
+      "scene": "node",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 106,
+        "height": 48
+      },
+      "headingVisible": true,
+      "links": 54,
+      "bodyTextLength": 4155,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 71720,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 196,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 1,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-node-mobile.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "desktop",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 1440,
+        "height": 900,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 400,
+        "height": 108
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 481,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 137494,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-lighthouse-desktop.jpg"
+    },
+    {
+      "route": "/ask",
+      "scene": "lighthouse",
+      "mode": "mobile",
+      "sceneRect": {
+        "top": 0,
+        "left": 0,
+        "width": 390,
+        "height": 844,
+        "ratio": 1
+      },
+      "interactiveVisible": true,
+      "interactiveRect": {
+        "width": 240,
+        "height": 80
+      },
+      "headingVisible": true,
+      "links": 28,
+      "bodyTextLength": 376,
+      "overflowX": false,
+      "engineeringCopy": false,
+      "privateCanary": false,
+      "fixedOverlayIssues": [],
+      "bitmapBytes": 76338,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      },
+      "soundMode": "muted",
+      "ariaLive": 2,
+      "storageAvailable": true,
+      "browserErrors": [],
+      "screenshot": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/screenshots/lan-lighthouse-mobile.jpg"
+    }
+  ],
+  "lanJourney": {
+    "reachedAtlas": true,
+    "focusedAtlas": true,
+    "errors": []
+  },
+  "accessibility": {
+    "focusedOnOpen": true,
+    "focusRestored": true,
+    "triggerKeyboardReachable": true,
+    "dialogClosed": true,
+    "zoom200": {
+      "overflowX": false,
+      "links": 37,
+      "scale": 2
+    }
+  },
+  "flows": {
+    "first-visit": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/first-visit.webm",
+      "bytes": 203129,
+      "durationSeconds": 3.2,
+      "frames": 41
+    },
+    "scene-migration": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/scene-migration.webm",
+      "bytes": 243109,
+      "durationSeconds": 1.72,
+      "frames": 17
+    },
+    "atlas-exploration": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/atlas-explore.webm",
+      "bytes": 325633,
+      "durationSeconds": 4.36,
+      "frames": 67
+    },
+    "timeline-revisit": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/timeline-review.webm",
+      "bytes": 155572,
+      "durationSeconds": 3.92,
+      "frames": 43
+    },
+    "archive-retrieval": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/archive-search.webm",
+      "bytes": 133538,
+      "durationSeconds": 3.76,
+      "frames": 42
+    },
+    "path-journey": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/path-journey.webm",
+      "bytes": 696479,
+      "durationSeconds": 10.16,
+      "frames": 180
+    },
+    "node-reading": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/node-explore.webm",
+      "bytes": 913562,
+      "durationSeconds": 5.92,
+      "frames": 87
+    },
+    "lighthouse-guidance": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/lighthouse-guide.webm",
+      "bytes": 423494,
+      "durationSeconds": 4.64,
+      "frames": 108
+    },
+    "return-visit-continuation": {
+      "path": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/recordings/returning-visit.webm",
+      "bytes": 228204,
+      "durationSeconds": 2.76,
+      "frames": 27,
+      "continued": true,
+      "cleared": true
+    }
+  }
+}

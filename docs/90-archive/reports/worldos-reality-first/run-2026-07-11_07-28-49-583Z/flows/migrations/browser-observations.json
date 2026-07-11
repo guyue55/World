@@ -1,0 +1,151 @@
+{
+  "generatedAt": "2026-07-11T07:35:03.338Z",
+  "baseUrl": "http://127.0.0.1:49472",
+  "results": [
+    {
+      "name": "gateway-atlas",
+      "object": "island",
+      "targetScene": "atlas",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 310,
+      "captureObservedAfterMs": 958,
+      "frames": 59,
+      "durationSeconds": 2.9830000400543213,
+      "final": {
+        "path": "/atlas",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "atlas-node",
+      "object": "star",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 343,
+      "captureObservedAfterMs": 483,
+      "frames": 19,
+      "durationSeconds": 1.5759999752044678,
+      "final": {
+        "path": "/node/world-manifesto",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "timeline-node",
+      "object": "ripple",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 295,
+      "captureObservedAfterMs": 575,
+      "frames": 35,
+      "durationSeconds": 1.6309998035430908,
+      "final": {
+        "path": "/node/world-manifesto",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "archive-node",
+      "object": "document",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 283,
+      "captureObservedAfterMs": 517,
+      "frames": 20,
+      "durationSeconds": 1.625,
+      "final": {
+        "path": "/node/2025-year-review",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "path-node",
+      "object": "waypoint",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 294,
+      "captureObservedAfterMs": 605,
+      "frames": 30,
+      "durationSeconds": 1.6649999618530273,
+      "final": {
+        "path": "/node/moonframe-loft",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "node-lighthouse",
+      "object": "beam",
+      "targetScene": "lighthouse",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 289,
+      "captureObservedAfterMs": 534,
+      "frames": 56,
+      "durationSeconds": 1.5860002040863037,
+      "final": {
+        "path": "/ask",
+        "state": "settled",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    },
+    {
+      "name": "reduced-path-node",
+      "object": "waypoint",
+      "targetScene": "node",
+      "transit": true,
+      "arrived": true,
+      "arrivalState": true,
+      "transitionDurationMs": 0,
+      "captureObservedAfterMs": 165,
+      "frames": 8,
+      "durationSeconds": 1.1520001888275146,
+      "final": {
+        "path": "/node/moonframe-loft",
+        "state": "reduced",
+        "active": "false",
+        "engineering": false,
+        "overflow": false
+      },
+      "errors": []
+    }
+  ],
+  "edgeChecks": {
+    "fastCancelBack": true,
+    "route404Settled": true
+  },
+  "failures": []
+}

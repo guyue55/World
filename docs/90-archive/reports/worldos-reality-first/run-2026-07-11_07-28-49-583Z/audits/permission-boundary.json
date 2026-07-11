@@ -1,0 +1,7 @@
+{
+  "runId": "run-2026-07-11_07-28-49-583Z",
+  "bundleLeaks": [],
+  "permissionCheck": "> word-life@0.1.0 check:permission-boundary\n> node scripts/check-worldos-permission-boundary.mjs\n\nWorldOS permission boundary check passed",
+  "aiBoundaryCheck": "> word-life@0.1.0 check:ai-provider-boundary\n> node scripts/check-worldos-ai-provider-boundary.mjs\n\nWorldOS AI provider boundary check passed: provider disabled, 4 backend boundary files verified",
+  "passed": true
+}

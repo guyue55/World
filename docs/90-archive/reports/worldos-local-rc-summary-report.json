@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T02:31:48.280Z",
+  "generatedAt": "2026-07-11T07:28:19.445Z",
   "source": "scripts/write-worldos-local-rc-summary.mjs",
   "status": "local-rc-passed-external-release-blocked",
   "localAccess": {
@@ -25,9 +25,9 @@
       "passedHttpChecks": 22,
       "browserChecks": 20,
       "passedBrowserChecks": 20,
-      "passedHomePrimaryCtaChecks": 2,
+      "passedSceneViewportChecks": 18,
+      "passedPrimaryInteractionChecks": 18,
       "passedMobileNavigationChecks": 10,
-      "passedHomeCoreStatusCardChecks": 2,
       "screenshotCount": 20
     },
     "sceneQa": {
@@ -72,7 +72,7 @@
         "public/world-index.json"
       ],
       "missing": [],
-      "buildIdMtime": "2026-07-10T02:30:04.116Z"
+      "buildIdMtime": "2026-07-11T07:27:22.925Z"
     },
     "contentLife": {
       "status": "passed",

@@ -1,0 +1,52 @@
+{
+  "runId": "run-2026-07-11_07-28-49-583Z",
+  "command": "npx tsx scripts/check-world-c8-authoring.ts",
+  "evidence": {
+    "negativeCases": [
+      "private-visibility",
+      "duplicate-slug",
+      "missing-relation-target",
+      "invalid-path-id",
+      "content-path-traversal",
+      "invalid-event-date"
+    ],
+    "previewImpact": {
+      "atlas": "将进入 创世原点，作为 世界入口与宪章 下的新地点。",
+      "archive": "将进入公开档案馆，可被检索和回看。",
+      "paths": "将进入 第一次来到古月浮屿。",
+      "timeline": "将出现时间锚点：本地作者维护完成临时演练。",
+      "lighthouse": "将进入灯塔只读公开事实源。",
+      "featured": "可进入精选候选。",
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "absorptionScore": 5
+    },
+    "actualSceneImpact": {
+      "atlas": true,
+      "timeline": true,
+      "archive": true,
+      "paths": true,
+      "lighthouse": true,
+      "publicIndex": true
+    },
+    "backup": {
+      "manifestPresent": true,
+      "backupIdPatternValid": true,
+      "entryCount": 6,
+      "checksumsVerified": true
+    },
+    "rollback": {
+      "restoredFiles": 6,
+      "checksumsRestored": true
+    },
+    "tamperRejected": true,
+    "realWorkspaceUntouched": true
+  },
+  "output": "AUTHORING_EVIDENCE_JSON={\"negativeCases\":[\"private-visibility\",\"duplicate-slug\",\"missing-relation-target\",\"invalid-path-id\",\"content-path-traversal\",\"invalid-event-date\"],\"previewImpact\":{\"atlas\":\"将进入 创世原点，作为 世界入口与宪章 下的新地点。\",\"archive\":\"将进入公开档案馆，可被检索和回看。\",\"paths\":\"将进入 第一次来到古月浮屿。\",\"timeline\":\"将出现时间锚点：本地作者维护完成临时演练。\",\"lighthouse\":\"将进入灯塔只读公开事实源。\",\"featured\":\"可进入精选候选。\",\"absorptionScenes\":[\"atlas\",\"timeline\",\"archive\",\"paths\",\"lighthouse\"],\"absorptionScore\":5},\"actualSceneImpact\":{\"atlas\":true,\"timeline\":true,\"archive\":true,\"paths\":true,\"lighthouse\":true,\"publicIndex\":true},\"backup\":{\"manifestPresent\":true,\"backupIdPatternValid\":true,\"entryCount\":6,\"checksumsVerified\":true},\"rollback\":{\"restoredFiles\":6,\"checksumsRestored\":true},\"tamperRejected\":true,\"realWorkspaceUntouched\":true}\nC8 authoring check passed. preview=true apply=6 rollback=6 negativeCases=6 sceneImpacts=6 backupChecksums=true tamperRejected=true realWorkspaceUntouched=true",
+  "passed": true
+}

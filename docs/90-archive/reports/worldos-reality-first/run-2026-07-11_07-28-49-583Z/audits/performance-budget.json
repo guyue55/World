@@ -1,0 +1,124 @@
+{
+  "runId": "run-2026-07-11_07-28-49-583Z",
+  "build": {
+    "sharedKb": 103,
+    "routes": {
+      "/": {
+        "routeKb": 5.67,
+        "firstLoadKb": 170
+      },
+      "/atlas": {
+        "routeKb": 7.48,
+        "firstLoadKb": 143
+      },
+      "/timeline": {
+        "routeKb": 7.43,
+        "firstLoadKb": 143
+      },
+      "/archive": {
+        "routeKb": 7.27,
+        "firstLoadKb": 171
+      },
+      "/paths/first-visit": {
+        "routeKb": 0.1826171875,
+        "firstLoadKb": 171
+      },
+      "/node/world-manifesto": {
+        "routeKb": 6.48,
+        "firstLoadKb": 142
+      },
+      "/ask": {
+        "routeKb": 5.91,
+        "firstLoadKb": 170
+      }
+    }
+  },
+  "desktop": [
+    {
+      "scene": "gateway",
+      "route": "/",
+      "bitmapBytes": 221884,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 184,
+        "cls": 0,
+        "longTasks": []
+      }
+    },
+    {
+      "scene": "atlas",
+      "route": "/atlas",
+      "bitmapBytes": 140330,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 160,
+        "cls": 0,
+        "longTasks": []
+      }
+    },
+    {
+      "scene": "timeline",
+      "route": "/timeline",
+      "bitmapBytes": 246434,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 152,
+        "cls": 0,
+        "longTasks": []
+      }
+    },
+    {
+      "scene": "archive",
+      "route": "/archive",
+      "bitmapBytes": 191394,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 168,
+        "cls": 0,
+        "longTasks": []
+      }
+    },
+    {
+      "scene": "paths",
+      "route": "/paths/first-visit",
+      "bitmapBytes": 281204,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 144,
+        "cls": 0,
+        "longTasks": []
+      }
+    },
+    {
+      "scene": "node",
+      "route": "/node/world-manifesto",
+      "bitmapBytes": 187078,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 180,
+        "cls": 0,
+        "longTasks": [
+          54
+        ]
+      }
+    },
+    {
+      "scene": "lighthouse",
+      "route": "/ask",
+      "bitmapBytes": 137494,
+      "audioBytes": 0,
+      "metrics": {
+        "lcp": 136,
+        "cls": 0,
+        "longTasks": []
+      }
+    }
+  ],
+  "budgets": {
+    "sharedKb": 130,
+    "routeIncrementKb": 80,
+    "lcpMs": 2500,
+    "cls": 0.1,
+    "tbtMs": 300
+  }
+}

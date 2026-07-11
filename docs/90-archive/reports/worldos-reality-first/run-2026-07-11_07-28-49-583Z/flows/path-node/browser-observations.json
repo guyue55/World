@@ -1,0 +1,493 @@
+{
+  "generatedAt": "2026-07-11T07:34:27.951Z",
+  "baseUrl": "http://127.0.0.1:49472",
+  "observations": [
+    {
+      "mode": "paths-overview-desktop",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 6,
+      "waypointCount": 0,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "paths-overview-mobile",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 6,
+      "waypointCount": 0,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "paths-overview-text-hidden",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 6,
+      "waypointCount": 0,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "paths-overview-image-fallback",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 6,
+      "waypointCount": 0,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": [],
+      "expectedNetworkFailure": true
+    },
+    {
+      "mode": "path-start",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 7,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "path-progress",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 7,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "path-complete",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 7,
+      "nodeDoorCount": 0,
+      "pathComplete": true,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "path-mobile",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 7,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "path-reduced-motion",
+      "scene": "paths",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 7,
+      "nodeDoorCount": 0,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": null,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-arrival",
+      "scene": "node",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-path-context",
+      "scene": "node",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 10,
+      "pathComplete": false,
+      "journeyControls": true,
+      "readingWidth": 693.625,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-reading",
+      "scene": "node",
+      "viewport": {
+        "top": -900,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": true,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-relations",
+      "scene": "node",
+      "viewport": {
+        "top": -5724,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": true,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-mobile",
+      "scene": "node",
+      "viewport": {
+        "top": -844,
+        "width": 390,
+        "height": 844
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 358,
+      "readingVisible": true,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-reduced-motion",
+      "scene": "node",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-reduced-sensory",
+      "scene": "node",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-text-hidden",
+      "scene": "node",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": []
+    },
+    {
+      "mode": "node-image-fallback",
+      "scene": "node",
+      "viewport": {
+        "top": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "horizontalOverflow": false,
+      "engineeringCopy": false,
+      "routeCount": 0,
+      "waypointCount": 0,
+      "nodeDoorCount": 12,
+      "pathComplete": false,
+      "journeyControls": false,
+      "readingWidth": 693.625,
+      "readingVisible": false,
+      "soundMode": "muted",
+      "errors": [],
+      "expectedNetworkFailure": true
+    }
+  ],
+  "flowChecks": {
+    "pathOverviewSelectsRoute": true,
+    "fullJourneyComplete": true,
+    "resetPassed": true,
+    "journeyHasSevenUniqueNodes": true,
+    "nodePathContextVisible": true,
+    "readingWidthWithin72ch": true,
+    "mobileReadingVisible": true,
+    "twelveNodesPass": true
+  },
+  "sampleNodeChecks": [
+    {
+      "slug": "world-manifesto",
+      "title": true,
+      "doors": 12,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "codex-cli-custom-provider-routing",
+      "title": true,
+      "doors": 8,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "window-light-memory-seed",
+      "title": true,
+      "doors": 8,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "worldos-rc3-governance",
+      "title": true,
+      "doors": 12,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "world-audit-method",
+      "title": true,
+      "doors": 8,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "homelab-network-notes",
+      "title": true,
+      "doors": 12,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "daily-review-ritual",
+      "title": true,
+      "doors": 12,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "2026-spring-milestones",
+      "title": true,
+      "doors": 12,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "worldos-local-first-principle",
+      "title": true,
+      "doors": 10,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "owner-review-workbench-story",
+      "title": true,
+      "doors": 10,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "permission-is-a-promise",
+      "title": true,
+      "doors": 10,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    },
+    {
+      "slug": "ai-provider-disabled-adapter-added",
+      "title": true,
+      "doors": 10,
+      "exits": 4,
+      "reading": true,
+      "engineering": false,
+      "overflow": false
+    }
+  ],
+  "recordings": {
+    "pathFrames": 349,
+    "nodeFrames": 130
+  },
+  "failures": []
+}

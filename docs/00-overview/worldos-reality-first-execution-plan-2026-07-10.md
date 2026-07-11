@@ -453,31 +453,31 @@ export type AtlasViewModel = {
 
 ### Round A：工程与浏览器事实
 
-- [ ] **C9.1** 确认工作树范围和最后提交；运行真实 fresh `npm run build:production-ci`。
-- [ ] **C9.2** 运行 `npm run check:world-experience`、`npm run check:mainline`、`npm run release:local-rc`、`git diff --check`。
-- [ ] **C9.3** 运行 `npm run evidence:world-experience`，确认 manifest 中 source < build < server < evidence。
-- [ ] **C9.4** 手动 / 自动点击九条连续流程，检查控制台、网络、焦点、滚动、后退、错误和空状态。
+- [x] **C9.1** 确认工作树范围和最后提交；运行真实 fresh `npm run build:production-ci`。
+- [x] **C9.2** 运行 `npm run check:world-experience`、`npm run check:mainline`、`npm run release:local-rc`、`git diff --check`。
+- [x] **C9.3** 运行 `npm run evidence:world-experience`，确认 manifest 中 source < build < server < evidence。
+- [x] **C9.4** 手动 / 自动点击九条连续流程，检查控制台、网络、焦点、滚动、后退、错误和空状态。
 
 ### Round B：主视觉逐页审查
 
-- [ ] **C9.5** 真实打开所有 desktop / mobile / reduced-motion / text-hidden 截图，按验收标准逐项写 primary review。
-- [ ] **C9.6** 逐段观看九条录屏，确认场景主体、迁移和上下文连续性；仅录屏存在或字节足够不能通过。
-- [ ] **C9.7** 将新 arrival 截图与 M30 anti-baseline 并排比较；若仍是大标题 + 卡片 + 同模板，登记 P0 并返回对应检查点修复。
+- [x] **C9.5** 真实打开所有 desktop / mobile / reduced-motion / text-hidden 截图，按验收标准逐项写 primary review。
+- [x] **C9.6** 逐段观看九条录屏，确认场景主体、迁移和上下文连续性；仅录屏存在或字节足够不能通过。
+- [x] **C9.7** 将新 arrival 截图与 M30 anti-baseline 并排比较；若仍是大标题 + 卡片 + 同模板，登记 P0 并返回对应检查点修复。
 
 ### Round C：独立 Reality Audit
 
-- [ ] **C9.8** 调用 `reality-auditor` 或 fresh independent reviewer；审查者先看图 / 录屏，再读报告和源码。
-- [ ] **C9.9** 独立审查逐行填写 Reality Matrix；不得给数字分，不得平均抵消失败。
-- [ ] **C9.10** 对所有 `fail / blocked` 建立缺陷，回到对应代码修复，重新构建并重生成全部受影响证据。
+- [x] **C9.8** 调用 `reality-auditor` 或 fresh independent reviewer；审查者先看图 / 录屏，再读报告和源码。
+- [x] **C9.9** 独立审查逐行填写 Reality Matrix；不得给数字分，不得平均抵消失败。
+- [x] **C9.10** 对所有 `fail / blocked` 建立缺陷，回到对应代码修复，重新构建并重生成全部受影响证据。
 
 ### Round D：回归和终止
 
-- [ ] **C9.11** 至少完成两次“修复后全量截图审查”；第二次必须使用最新 build 和新 run-id。
-- [ ] **C9.12** 确认 Reality Matrix 九行全部 pass，P0/P1=0，冻结否决项=0。
-- [ ] **C9.13** 确认最终状态只可能是 `LOCAL_WORLD_COMPLETE_AI_FALLBACK` 或 `LOCAL_WORLD_COMPLETE_LIVE_AI`，并说明实际 AI 模式。
-- [ ] **C9.14** 把所有检查点、命令、证据、提交和残余 P2 写入 ledger；不使用 9/10 或完美表述。
-- [ ] **C9.15** 提交 `docs(world): 完成真实世界体验终局验收`；再次确认工作树干净或仅有明确用户改动。
-- [ ] **C9.16** 只有此时才允许 Goal complete；否则继续执行，不新建 C10 / M31 或“下一轮”。
+- [x] **C9.11** 至少完成两次“修复后全量截图审查”；第二次必须使用最新 build 和新 run-id。
+- [x] **C9.12** 确认 Reality Matrix 九行全部 pass，P0/P1=0，冻结否决项=0。
+- [x] **C9.13** 确认最终状态只可能是 `LOCAL_WORLD_COMPLETE_AI_FALLBACK` 或 `LOCAL_WORLD_COMPLETE_LIVE_AI`，并说明实际 AI 模式。
+- [x] **C9.14** 把所有检查点、命令、证据、提交和残余 P2 写入 ledger；不使用 9/10 或完美表述。
+- [x] **C9.15** 提交 `docs(world): 完成真实世界体验终局验收`；再次确认工作树干净或仅有明确用户改动。
+- [x] **C9.16** 只有此时才允许 Goal complete；否则继续执行，不新建 C10 / M31 或“下一轮”。
 
 ---
 

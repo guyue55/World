@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T01:04:21.483Z",
+  "generatedAt": "2026-07-11T07:28:13.685Z",
   "status": "passed",
   "purpose": "M21 内容生命循环：证明单节点能被 Atlas / Timeline / Archive / Paths / Lighthouse 同时吸收。",
   "totals": {
@@ -29,7 +29,6 @@
     ],
     "relationReasonCount": 58,
     "pathIds": [
-      "first-visit",
       "life-memory",
       "eight-minute-world",
       "world-architecture",
@@ -47,7 +46,7 @@
       "atlas": "进入 origin 星域，作为可抵达地点。",
       "timeline": "进入 6 条时间痕迹。",
       "archive": "进入公开档案馆，可被检索、筛选和回看。",
-      "paths": "进入 5 条公开旅程。",
+      "paths": "进入 4 条公开旅程。",
       "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
     }
   },
@@ -69,7 +68,6 @@
       ],
       "relationReasonCount": 58,
       "pathIds": [
-        "first-visit",
         "life-memory",
         "eight-minute-world",
         "world-architecture",
@@ -87,7 +85,7 @@
         "atlas": "进入 origin 星域，作为可抵达地点。",
         "timeline": "进入 6 条时间痕迹。",
         "archive": "进入公开档案馆，可被检索、筛选和回看。",
-        "paths": "进入 5 条公开旅程。",
+        "paths": "进入 4 条公开旅程。",
         "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
       }
     },
@@ -124,40 +122,6 @@
         "timeline": "进入 4 条时间痕迹。",
         "archive": "进入公开档案馆，可被检索、筛选和回看。",
         "paths": "进入 4 条公开旅程。",
-        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
-      }
-    },
-    {
-      "id": "node-memory-light",
-      "slug": "memory-lake-first-light",
-      "title": "记忆湖初光",
-      "areaId": "memory",
-      "lifeStage": "sprout",
-      "status": "growing",
-      "absorptionScore": 5,
-      "absorptionScenes": [
-        "atlas",
-        "timeline",
-        "archive",
-        "paths",
-        "lighthouse"
-      ],
-      "relationReasonCount": 14,
-      "pathIds": [
-        "first-visit",
-        "life-memory",
-        "public-life-memory",
-        "tech-to-life",
-        "phase19-memory-expansion"
-      ],
-      "timelineEventIds": [
-        "evt-022"
-      ],
-      "authorImpactScope": {
-        "atlas": "进入 memory 星域，作为可抵达地点。",
-        "timeline": "进入 1 条时间痕迹。",
-        "archive": "进入公开档案馆，可被检索、筛选和回看。",
-        "paths": "进入 5 条公开旅程。",
         "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
       }
     },
@@ -226,6 +190,39 @@
       }
     },
     {
+      "id": "node-memory-light",
+      "slug": "memory-lake-first-light",
+      "title": "记忆湖初光",
+      "areaId": "memory",
+      "lifeStage": "sprout",
+      "status": "growing",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 14,
+      "pathIds": [
+        "life-memory",
+        "public-life-memory",
+        "tech-to-life",
+        "phase19-memory-expansion"
+      ],
+      "timelineEventIds": [
+        "evt-022"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 memory 星域，作为可抵达地点。",
+        "timeline": "进入 1 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 4 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
       "id": "node-world-space",
       "slug": "world-space-layer",
       "title": "地图不是分类页",
@@ -242,7 +239,6 @@
       ],
       "relationReasonCount": 2,
       "pathIds": [
-        "first-visit",
         "how-world-created",
         "deep-world",
         "tech-to-life"
@@ -258,7 +254,7 @@
         "atlas": "进入 origin 星域，作为可抵达地点。",
         "timeline": "进入 5 条时间痕迹。",
         "archive": "进入公开档案馆，可被检索、筛选和回看。",
-        "paths": "进入 4 条公开旅程。",
+        "paths": "进入 3 条公开旅程。",
         "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
       }
     },
@@ -294,40 +290,6 @@
       }
     },
     {
-      "id": "node-digital-universe",
-      "slug": "personal-digital-universe-definition",
-      "title": "宇宙感不是 3D",
-      "areaId": "origin",
-      "lifeStage": "bloom",
-      "status": "ready",
-      "absorptionScore": 5,
-      "absorptionScenes": [
-        "atlas",
-        "timeline",
-        "archive",
-        "paths",
-        "lighthouse"
-      ],
-      "relationReasonCount": 3,
-      "pathIds": [
-        "first-visit",
-        "how-world-created",
-        "eight-minute-world"
-      ],
-      "timelineEventIds": [
-        "evt-023",
-        "evt-003",
-        "evt-005"
-      ],
-      "authorImpactScope": {
-        "atlas": "进入 origin 星域，作为可抵达地点。",
-        "timeline": "进入 3 条时间痕迹。",
-        "archive": "进入公开档案馆，可被检索、筛选和回看。",
-        "paths": "进入 3 条公开旅程。",
-        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
-      }
-    },
-    {
       "id": "node-world-design-axioms",
       "slug": "world-design-axioms",
       "title": "九条法则",
@@ -357,6 +319,39 @@
         "timeline": "进入 2 条时间痕迹。",
         "archive": "进入公开档案馆，可被检索、筛选和回看。",
         "paths": "进入 3 条公开旅程。",
+        "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
+      }
+    },
+    {
+      "id": "node-digital-universe",
+      "slug": "personal-digital-universe-definition",
+      "title": "宇宙感不是 3D",
+      "areaId": "origin",
+      "lifeStage": "bloom",
+      "status": "ready",
+      "absorptionScore": 5,
+      "absorptionScenes": [
+        "atlas",
+        "timeline",
+        "archive",
+        "paths",
+        "lighthouse"
+      ],
+      "relationReasonCount": 3,
+      "pathIds": [
+        "how-world-created",
+        "eight-minute-world"
+      ],
+      "timelineEventIds": [
+        "evt-023",
+        "evt-003",
+        "evt-005"
+      ],
+      "authorImpactScope": {
+        "atlas": "进入 origin 星域，作为可抵达地点。",
+        "timeline": "进入 3 条时间痕迹。",
+        "archive": "进入公开档案馆，可被检索、筛选和回看。",
+        "paths": "进入 2 条公开旅程。",
         "lighthouse": "进入灯塔只读事实源，可被解释和推荐。"
       }
     },
