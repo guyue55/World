@@ -52,6 +52,7 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const onPopState = () => {
+      if (window.location.pathname === pathname) return
       const element = (document.querySelector('[data-world-scene]') ?? document.querySelector('[data-world-exit-rail]') ?? document.body) as HTMLElement
       const targetScene = getSceneForPathname(window.location.pathname)
       beginSceneMigration({ source: createSceneContext(runtime.currentScene as SceneId, pathname), target: { href: window.location.pathname, sceneId: targetScene.id as SceneId, transitionObject: 'door', accessibleLabel: '返回上一处世界空间' }, element, reduced: runtime.motionMode !== 'full' })

@@ -87,6 +87,8 @@ try {
   })
   const nodeFrames = await recordFlow('node-explore', '/node/world-manifesto', async (page) => {
     await evaluate(page.send, `document.querySelector('[href="#reading"]')?.click()`); await delay(1000)
+    const readingMigrationActive = await evaluate(page.send, `document.querySelector('[data-testid="scene-migration-layer"]')?.getAttribute('data-active')==='true'`)
+    if (readingMigrationActive) throw new Error('Node 页内阅读错误触发场景迁移层')
     await evaluate(page.send, `document.querySelector('.node-relation-rail')?.scrollIntoView()`); await delay(1000)
     const target = await evaluate(page.send, `document.querySelector('.node-relation-rail a')?.getAttribute('href')`)
     await evaluate(page.send, `document.querySelector('.node-relation-rail a')?.click()`)
