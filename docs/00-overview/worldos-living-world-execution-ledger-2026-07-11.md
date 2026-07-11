@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
-current_item: A.6
+current_item: A.7
 task_state: in_progress
-active_record_id: LW-006
-last_successful_command: "objective evidence boundary and naked-manifest self-test"
-resume_action: "start A.6 truthful status and production build identity"
-last_completed_item: A.5
+active_record_id: LW-007
+last_successful_command: "fresh production Merkle and localhost/LAN live identity validation"
+resume_action: "start A.7 command and legacy completion gate audit"
+last_completed_item: A.6
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.6
+next_item: A.7
 ```
 
 每完成一项立即：
@@ -470,6 +470,58 @@ fixes:
   - "移除 manifest status 信任与旧契约杂项，加入冻结视图、资源明细、主对象 bbox、截图 hash 和无副作用权限复算"
 commit: "9a65bc5fa3044ebb2ee8694afb10e64d012c78f7 test(world): 收束客观证据回算边界"
 next_item: A.6
+```
+
+### Record LW-006：A.6 可信构建身份与当前状态面
+
+```yaml
+record: LW-006
+checkpoint: A
+item: A.6
+status: passed
+started_at: 2026-07-12T01:02:01+08:00
+finished_at: 2026-07-12T01:13:37+08:00
+verified_facts:
+  - "/status 只展示 CINEMATIC_STATIC_WORLD_IN_PROGRESS、A.6、内容投影门、证据时间和 Provider 待接入事实"
+  - "旧外部签收叙事与 M/Phase 当前面板已从 /status 挂载移除"
+  - "fresh production build 为 367 个运行文件生成排除 identity/cache/trace/diagnostics 的 Merkle"
+  - "独立回算 root 与构建记录一致，localhost 与 192.168.1.200 返回同一 buildId/sourceCommit/root"
+  - "身份接口 no-store；desktop/mobile 无横向溢出和浏览器错误"
+  - "检查点构建 sourceDirty=true，已明确标记 finalEvidenceEligible=false，不冒充终局"
+hypothesis:
+  id: null
+  result: null
+files_changed:
+  - "scripts/run-worldos-production-ci-build.mjs"
+  - "scripts/check-worldos-build-identity.mjs"
+  - "src/app/api/status/build-identity/route.ts"
+  - "src/lib/living-world-status.ts"
+  - "src/app/status/page.tsx"
+  - "src/components/status/RealityFirstBaselinePanel.tsx"
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a6-2026-07-12/"
+commands:
+  - command: "node scripts/check-worldos-build-identity.mjs before implementation"
+    exit_code: 1
+    observed: "six missing status/build identity boundaries"
+  - command: "npm run typecheck && npm run build:production-ci"
+    exit_code: 0
+    observed: "fresh build; buildId=3VXuTbj_HHJiI7GuBGnY-; files=367; Merkle independently matched"
+  - command: "localhost/LAN build identity and status live probe"
+    exit_code: 0
+    observed: "two origins matched; no invalid status summary"
+  - command: "desktop/mobile Playwright status screenshots"
+    exit_code: 0
+    observed: "no horizontal overflow or browser errors; legacy panel removed after first visual review"
+evidence:
+  - "a6-green.log sha256=e7bc9551c391853626a95194b46a11e5cf4d0ab6c92a90aba8d66af12f7a6e51"
+  - "a6-status-build-identity.json sha256=0e4bf37e7e840c7c07f78fc7e66bbcb6b324a6e5893f78db9822cc4dbc97c33b"
+failures:
+  - "首次 live 探针混用顶层 await 与 CommonJS require，Node 24 拒绝执行"
+  - "首次状态截图仍挂载历史 SceneRuntimeStatusPanel，形成旧阶段叙事和页面膨胀"
+fixes:
+  - "探针改为纯 ESM fs 读取；删除旧面板当前挂载并重建、重截、重验"
+commit: "ce67de1975991e5ca4803c23572fb681f67f98d3 feat(world): 建立可信构建身份与状态面"
+next_item: A.7
 ```
 
 ## 10. 后续记录模板

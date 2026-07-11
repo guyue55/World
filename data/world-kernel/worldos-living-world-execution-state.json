@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.6",
+    "currentItem": "A.7",
     "taskState": "in_progress",
-    "activeRecordId": "LW-006",
-    "resumeAction": "start A.6 truthful status and production build identity"
+    "activeRecordId": "LW-007",
+    "resumeAction": "start A.7 command and legacy completion gate audit"
   },
   "completedItems": {
     "A.1": {
@@ -126,6 +126,29 @@
       ],
       "commitHash": "9a65bc5fa3044ebb2ee8694afb10e64d012c78f7",
       "commitSubject": "test(world): 收束客观证据回算边界"
+    },
+    "A.6": {
+      "status": "passed",
+      "itemId": "A.6",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T01:02:01+08:00",
+      "finishedAt": "2026-07-12T01:13:37+08:00",
+      "commands": [
+        {
+          "command": "fresh production Merkle and localhost/LAN live identity validation",
+          "exitCode": 0,
+          "outputSha256": "e7bc9551c391853626a95194b46a11e5cf4d0ab6c92a90aba8d66af12f7a6e51",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a6-2026-07-12/logs/a6-green.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a6-2026-07-12/evidence/a6-status-build-identity.json",
+          "sha256": "0e4bf37e7e840c7c07f78fc7e66bbcb6b324a6e5893f78db9822cc4dbc97c33b"
+        }
+      ],
+      "commitHash": "ce67de1975991e5ca4803c23572fb681f67f98d3",
+      "commitSubject": "feat(world): 建立可信构建身份与状态面"
     }
   },
   "failedAttempts": [],
