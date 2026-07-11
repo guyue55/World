@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.4",
+    "currentItem": "A.5",
     "taskState": "in_progress",
-    "activeRecordId": "LW-004",
-    "resumeAction": "start A.4 frozen acceptance contract consumer tests"
+    "activeRecordId": "LW-005",
+    "resumeAction": "start A.5 objective evidence checker expansion"
   },
   "completedItems": {
     "A.1": {
@@ -80,6 +80,29 @@
       ],
       "commitHash": "cb8e8ec2c84a9656393d5e2bba52a2cd4cf92ebd",
       "commitSubject": "test(world): 固化旧短录屏时长反证"
+    },
+    "A.4": {
+      "status": "passed",
+      "itemId": "A.4",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T00:51:11+08:00",
+      "finishedAt": "2026-07-12T00:54:01+08:00",
+      "commands": [
+        {
+          "command": "node scripts/check-worldos-living-world-acceptance-consumers.mjs after implementation",
+          "exitCode": 0,
+          "outputSha256": "1f236438bca79a473e51f3b761bd414953143007675200546a29295fd4fce0be",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a4-2026-07-12/logs/a4-green.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a4-2026-07-12/evidence/a4-contract-consumers.json",
+          "sha256": "7cb5c8d387ca9bc43ff5e18c6d6c529b9cbe54a9ea2448adb5cd4fc60288084f"
+        }
+      ],
+      "commitHash": "a8df97e0f1f224d7607962b2ddc8b1ccc9c15e9a",
+      "commitSubject": "test(world): 统一生命世界验收契约消费者"
     }
   },
   "failedAttempts": [],

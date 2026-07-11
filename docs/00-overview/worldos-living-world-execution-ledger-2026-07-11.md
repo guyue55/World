@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
-current_item: A.4
+current_item: A.5
 task_state: in_progress
-active_record_id: LW-004
-last_successful_command: "A.3 old recording duration validation"
-resume_action: "start A.4 frozen acceptance contract consumer tests"
-last_completed_item: A.3
+active_record_id: LW-005
+last_successful_command: "living world acceptance consumer red-green test"
+resume_action: "start A.5 objective evidence checker expansion"
+last_completed_item: A.4
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3]
+completed_items: [A.1, A.2, A.3, A.4]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.4
+next_item: A.5
 ```
 
 每完成一项立即：
@@ -385,6 +385,46 @@ fixes:
   - "固定 allowedUse 与 forbiddenUse，禁止旧短录屏进入生命、soak、长时或最终证据"
 commit: "cb8e8ec2c84a9656393d5e2bba52a2cd4cf92ebd test(world): 固化旧短录屏时长反证"
 next_item: A.4
+```
+
+### Record LW-004：A.4 冻结验收契约双消费者
+
+```yaml
+record: LW-004
+checkpoint: A
+item: A.4
+status: passed
+started_at: 2026-07-12T00:51:11+08:00
+finished_at: 2026-07-12T00:54:01+08:00
+verified_facts:
+  - "红灯测试确认 evidence 原先仍消费旧 reality-first route contract"
+  - "冻结 living-world acceptance 保持 schema 1.2.0、7 场景、9 视图、F1-F14 和完整状态阶梯"
+  - "evidence 现在从 contract.scenes 派生 route，并在构建前支持无副作用 contract-only"
+  - "冻结 final verifier checksum 未修改，仍独立读取同一 contract"
+  - "两个消费者均明确 product completion 未评估"
+hypothesis:
+  id: null
+  result: null
+files_changed:
+  - "scripts/check-worldos-living-world-acceptance-consumers.mjs"
+  - "scripts/evidence-worldos-reality-first.mjs"
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a4-2026-07-12/"
+commands:
+  - command: "node scripts/check-worldos-living-world-acceptance-consumers.mjs before implementation"
+    exit_code: 1
+    observed: "two precise findings: evidence missing living contract and retaining legacy route contract"
+  - command: "node scripts/check-worldos-living-world-acceptance-consumers.mjs after implementation"
+    exit_code: 0
+    observed: "LIVING_WORLD_ACCEPTANCE_CONSUMERS_PASS scenes=7 views=9 flows=14"
+evidence:
+  - "a4-green.log sha256=1f236438bca79a473e51f3b761bd414953143007675200546a29295fd4fce0be"
+  - "a4-contract-consumers.json sha256=7cb5c8d387ca9bc43ff5e18c6d6c529b9cbe54a9ea2448adb5cd4fc60288084f"
+failures:
+  - "初始 evidence 契约消费者漂移"
+fixes:
+  - "移除旧 route contract 依赖，加入冻结契约启动校验、contract-only 和 manifest 摘要"
+commit: "a8df97e0f1f224d7607962b2ddc8b1ccc9c15e9a test(world): 统一生命世界验收契约消费者"
+next_item: A.5
 ```
 
 ## 10. 后续记录模板
