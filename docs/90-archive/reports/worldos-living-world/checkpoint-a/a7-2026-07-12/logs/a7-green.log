@@ -1,0 +1,73 @@
+CURRENT_COMMAND_SPINE_PASS mainline=8 daily=8 historical=20
+
+> word-life@0.1.0 check:content
+> npm run check:world-kernel-consolidation && npm run check:worldos-content-density && npm run check:content-life && npm run check:local-content-growth && npm run check:content-jaccard
+
+
+> word-life@0.1.0 check:world-kernel-consolidation
+> node scripts/check-world-kernel-consolidation.mjs
+
+World Kernel audit check passed
+World Kernel core check passed
+World Kernel runtime check passed
+Legacy boundary check passed: 9 top-level pages classified
+World Kernel consolidation check passed
+
+> word-life@0.1.0 check:worldos-content-density
+> node scripts/check-worldos-content-density.mjs
+
+WorldOS content density check passed: 200 public nodes, 200 content nodes, 398 relations, 29 paths
+
+> word-life@0.1.0 check:content-life
+> node scripts/check-worldos-content-life.mjs
+
+WorldOS content life check passed: 200 public nodes, 29 paths, 398 relations
+
+> word-life@0.1.0 check:local-content-growth
+> node scripts/check-worldos-local-content-growth.mjs
+
+WorldOS local content growth check passed: 8 core nodes, 8 area representatives, 29 paths, 398 relations
+
+> word-life@0.1.0 check:content-jaccard
+> node scripts/check-worldos-content-jaccard.mjs --check-only
+
+WorldOS content jaccard check passed: 200 nodes, max similarity 0.5565 (threshold 0.65)
+
+> word-life@0.1.0 check:boundary
+> npm run check:api-boundary && npm run check:permission-boundary && npm run check:app-boundary && npm run check:scripts
+
+
+> word-life@0.1.0 check:api-boundary
+> node scripts/check-worldos-api-boundary.mjs
+
+WorldOS API boundary check passed: 27 API routes registered and guarded
+
+> word-life@0.1.0 check:permission-boundary
+> node scripts/check-worldos-permission-boundary.mjs --check-only
+
+WorldOS permission boundary check passed mode=check-only
+
+> word-life@0.1.0 check:app-boundary
+> node scripts/check-public-app-r8-imports.mjs
+
+App runtime boundary passed
+
+> word-life@0.1.0 check:scripts
+> npm run check:worldos-script-taxonomy && npm run check:worldos-script-legacy-registry
+
+
+> word-life@0.1.0 check:worldos-script-taxonomy
+> node scripts/check-worldos-script-taxonomy.mjs
+
+WorldOS script taxonomy check passed: 11 categories
+
+> word-life@0.1.0 check:worldos-script-legacy-registry
+> node scripts/check-worldos-script-legacy-registry.mjs
+
+WorldOS script legacy registry check passed: 306 scripts, 20 stage-like check scripts tracked
+
+> word-life@0.1.0 check:dependency-hardening
+> node scripts/check-worldos-dependency-hardening.mjs
+
+WorldOS dependency hardening check passed: 14 runtime deps, heavy candidates absent
+CONTROL_INTEGRITY_PASS frozen=8 tasks=90 next=A.7 anchor=987d1a6deac7727253b7f3d85bc7b93ab5b7ca90 productCompletion=not-evaluated

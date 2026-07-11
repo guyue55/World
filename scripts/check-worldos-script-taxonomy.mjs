@@ -27,11 +27,11 @@ for (const command of taxonomy.releaseCandidateCommands ?? []) {
   if (!pkg.scripts?.[script]) failures.push(`releaseCandidateCommands 指向不存在脚本：${command}`)
 }
 
-if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:worldos-mainline-governance')) {
-  failures.push('check:mainline 必须包含 check:worldos-mainline-governance')
+if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:current-command-spine')) {
+  failures.push('check:mainline 必须包含当前命令脊柱检查')
 }
-if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:worldos-script-taxonomy') && !pkg.scripts['check:mainline'].includes('check:scripts')) {
-  failures.push('check:mainline 必须通过 check:scripts 或直接包含 check:worldos-script-taxonomy')
+if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:boundary')) {
+  failures.push('check:mainline 必须通过 check:boundary 收束边界检查')
 }
 const rcGateSource = fs.existsSync(path.join(root, 'scripts/run-worldos-rc-release-gate.mjs'))
   ? fs.readFileSync(path.join(root, 'scripts/run-worldos-rc-release-gate.mjs'), 'utf-8')
@@ -47,11 +47,11 @@ if (taxonomy.legacyPolicy?.legacyRegistry !== 'data/world-kernel/worldos-script-
 }
 if (!pkg.scripts?.['check:api-boundary']) failures.push('package scripts 缺少 check:api-boundary')
 if (!pkg.scripts?.['check:scripts']) failures.push('package scripts 缺少 check:scripts')
-if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:api-boundary')) {
-  failures.push('check:mainline 必须包含 check:api-boundary')
+if (pkg.scripts?.['check:boundary'] && !pkg.scripts['check:boundary'].includes('check:api-boundary')) {
+  failures.push('check:boundary 必须包含 check:api-boundary')
 }
-if (pkg.scripts?.['check:mainline'] && !pkg.scripts['check:mainline'].includes('check:scripts')) {
-  failures.push('check:mainline 必须包含 check:scripts')
+if (pkg.scripts?.['check:boundary'] && !pkg.scripts['check:boundary'].includes('check:scripts')) {
+  failures.push('check:boundary 必须包含 check:scripts')
 }
 
 if (failures.length) {

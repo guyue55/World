@@ -1,121 +1,133 @@
 {
   "name": "WorldOS 历史脚本治理注册表 v1",
-  "updatedAt": "2026-07-10",
-  "source": "WorldOS local maturity gate follow-up",
-  "principle": "默认入口必须短且可复跑；历史阶段脚本保留为 reference，但不能继续扩展为新开发默认入口。",
+  "updatedAt": "2026-07-12",
+  "source": "WorldOS living-world checkpoint A.7",
+  "principle": "当前入口只运行生命世界客观门禁；历史 M/Phase/RC 与外部 Preview 保留可追溯，但不得判定当前 Goal 完成。",
   "activeEntrypoints": [
     "check:daily",
     "check:boundary",
     "check:mainline",
     "check:content",
-    "check:phase19-content",
-    "check:local-content-growth",
     "check:experience:public",
-    "check:local-product-maturity",
-    "check:phase23-local-maturity",
-    "check:phase24-path-quality",
-    "check:phase25-owner-console",
-    "check:scene-runtime",
-    "check:first-visit-ritual",
-    "check:scene-transition",
-    "check:scene-personality",
-    "check:journey-memory",
-    "check:m26-world-memory",
-    "check:ambient-environment",
-    "check:m23-sensory-audio-production",
-    "check:m24-advanced-visualization",
-    "check:m25-author-world-editor",
-    "check:scene-qa",
-    "check:m27-layered-permission",
-    "check:m28-observability-rollback",
-    "check:m19-scene-interaction",
-    "check:m20-spatial-continuity",
-    "check:m20-spa-transitions",
-    "check:m21-content-life-loop",
-    "check:m22-lighthouse-guidance",
-    "check:human-experience",
-    "check:authoring-ops",
-    "check:ai-provider-boundary",
-    "check:phase21-lighthouse",
     "check:api-boundary",
-    "check:local-owner-workbench",
+    "check:permission-boundary",
+    "check:app-boundary",
     "check:scripts",
-    "check:maintenance-command-spine",
-    "check:rc",
-    "check:rc:fast",
-    "check:rc:full",
-    "release:local-rc",
-    "audit:project",
+    "check:dependency-hardening",
+    "check:living-world-control",
+    "check:living-world-contract",
+    "check:current-command-spine",
+    "check:objective-evidence-boundary",
+    "check:build-identity",
+    "world:author",
+    "audit:world-experience",
+    "check:world-experience",
+    "evidence:world-experience",
+    "build:production-ci",
     "check:runtime-local",
     "smoke:runtime-local",
     "check:lan-local",
     "smoke:lan-local",
     "check:rc-evidence-policy",
-    "check:dependency-hardening",
-    "world:author",
-    "audit:world-experience",
-    "check:world-experience",
-    "evidence:world-experience"
+    "release:local-rc"
   ],
   "recommendedDailyCommands": [
-    "npm run check:daily",
+    "npm run check:living-world-control",
+    "npm run check:living-world-contract",
+    "npm run check:content",
     "npm run check:boundary",
-    "npm run check:local-product-maturity",
-    "npm run check:phase23-local-maturity",
-    "npm run check:phase24-path-quality",
-    "npm run check:phase25-owner-console",
-    "npm run check:scene-runtime",
-    "npm run check:first-visit-ritual",
-    "npm run check:scene-transition",
-    "npm run check:scene-personality",
-    "npm run check:journey-memory",
-    "npm run check:m26-world-memory",
-    "npm run check:ambient-environment",
-    "npm run check:m23-sensory-audio-production",
-    "npm run check:m24-advanced-visualization",
-    "npm run check:m25-author-world-editor",
-    "npm run check:m27-layered-permission",
-    "npm run check:m28-observability-rollback",
-    "npm run check:scene-qa",
-    "npm run check:m19-scene-interaction",
-    "npm run check:m20-spatial-continuity",
-    "npm run check:m20-spa-transitions",
-    "npm run check:m21-content-life-loop",
-    "npm run check:m22-lighthouse-guidance",
-    "npm run check:human-experience",
-    "npm run check:authoring-ops",
-    "npm run check:dependency-hardening"
+    "npm run check:mainline",
+    "npm run lint",
+    "npm run typecheck",
+    "npm run build:production-ci"
   ],
   "releaseCandidateCommands": [
-    "npm run check:rc:fast",
-    "npm run check:rc:full",
+    "npm run check:mainline",
+    "npm run build:production-ci",
+    "npm run check:build-identity",
     "npm run release:local-rc",
-    "npm run smoke:runtime-local",
-    "npm run smoke:lan-local",
-    "npm run check:scene-qa",
-    "npm run check:m23-sensory-audio-production",
-    "npm run check:m24-advanced-visualization",
-    "npm run check:m25-author-world-editor",
-    "npm run check:m26-world-memory",
-    "npm run check:m27-layered-permission",
-    "npm run check:m28-observability-rollback",
-    "npm run check:m19-scene-interaction",
-    "npm run check:m20-spatial-continuity",
-    "npm run check:m20-spa-transitions",
-    "npm run check:m21-content-life-loop",
-    "npm run check:m22-lighthouse-guidance",
-    "npm run check:human-experience",
-    "npm run check:authoring-ops",
     "npm run check:rc-evidence-policy"
   ],
   "historicalInvalidatedEntrypoints": [
     {
+      "script": "check:m19-scene-interaction",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m20-spa-transitions",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m20-spatial-continuity",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m21-content-life-loop",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m22-lighthouse-guidance",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m23-sensory-audio-production",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m24-advanced-visualization",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m25-author-world-editor",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m26-world-memory",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m27-layered-permission",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:m28-observability-rollback",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
       "script": "check:m29-high-fidelity-polish",
-      "reason": "仅保留历史复查；旧视觉打磨结论不能证明真实世界体验完成。"
+      "reason": "旧视觉打磨结论不能证明生命世界体验，只允许历史复查。"
     },
     {
       "script": "check:m30-ultimate-candidate",
-      "reason": "包含硬编码分数与阈值托底，已从主线、日常和 RC 判定中废止。"
+      "reason": "含硬编码候选阈值或旧终局结论，只允许历史复查。"
+    },
+    {
+      "script": "check:phase19-content",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:phase21-lighthouse",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:phase23-local-maturity",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:phase24-path-quality",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:phase25-owner-console",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:stage-acceptance",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
+    },
+    {
+      "script": "check:stage-completion-transition",
+      "reason": "旧 M/Phase/Stage 实现检查；可复用客观代码，但不再进入当前 mainline、daily 或 RC 完成判定。"
     }
   ],
   "policies": {
@@ -124,7 +136,8 @@
     "defaultEntrypointsMustNotUseStagePattern": true,
     "keepLegacyScriptsTracked": true,
     "reduceCheckWorldCoreAsDailyEntrypoint": true,
-    "frontendVisibilityIsNotPermission": true
+    "frontendVisibilityIsNotPermission": true,
+    "currentMainlineUsesFrozenLivingWorldContract": true
   },
   "thresholds": {
     "maxTotalScripts": 800,
@@ -133,28 +146,105 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 301,
-    "checkScripts": 169,
-    "stageLikeCheckScripts": 2,
-    "longScripts": 2
+    "totalScripts": 306,
+    "checkScripts": 174,
+    "stageLikeCheckScripts": 20,
+    "longScripts": 1
   },
   "legacyStageLikeCheckScripts": [
+    "check:m19-scene-interaction",
+    "check:m20-spa-transitions",
+    "check:m20-spatial-continuity",
+    "check:m21-content-life-loop",
+    "check:m22-lighthouse-guidance",
+    "check:m23-sensory-audio-production",
+    "check:m24-advanced-visualization",
+    "check:m25-author-world-editor",
+    "check:m26-world-memory",
+    "check:m27-layered-permission",
+    "check:m28-observability-rollback",
+    "check:m29-high-fidelity-polish",
+    "check:m30-ultimate-candidate",
+    "check:phase19-content",
+    "check:phase21-lighthouse",
+    "check:phase23-local-maturity",
+    "check:phase24-path-quality",
+    "check:phase25-owner-console",
     "check:stage-acceptance",
     "check:stage-completion-transition"
   ],
   "longScripts": [
-    {
-      "name": "check:mainline",
-      "length": 1281
-    },
     {
       "name": "check:world-core",
       "length": 2817
     }
   ],
   "notes": [
-    "本注册表不是鼓励继续保留阶段脚本，而是在未完成物理归档前提供可审计边界。",
-    "日常开发默认入口应使用 check:mainline / check:content / check:local-content-growth / check:experience:public / check:local-product-maturity / check:phase23-local-maturity / check:phase24-path-quality / check:phase25-owner-console / check:scene-runtime / check:first-visit-ritual / check:scene-transition / check:scene-personality / check:journey-memory / check:ambient-environment / check:scene-qa / check:api-boundary / check:local-owner-workbench / check:scripts。",
-    "新增功能或修复不得继续添加 check:r* / check:v* / check:stage* / check:round* 作为默认门禁。"
-  ]
+    "历史脚本保留用于定位旧实现，不进入当前 mainline、daily 或 local RC 完成结论。",
+    "当前 mainline 只有八个入口，并由 check:current-command-spine 固定。",
+    "外部 Preview 与外部发布继续 out_of_scope；本地和 LAN 证据必须来自 fresh build。",
+    "新增 M/Phase/RC/round 命名脚本默认拒绝。"
+  ],
+  "externalPreviewEntrypoints": [
+    {
+      "script": "preview:smoke",
+      "reason": "外部 Preview 不在当前 localhost/LAN Goal 范围。"
+    },
+    {
+      "script": "smoke:preview",
+      "reason": "外部 Preview 不在当前 localhost/LAN Goal 范围。"
+    },
+    {
+      "script": "check:preview-performance",
+      "reason": "外部 Preview 性能不参与当前本地候选完成判定。"
+    },
+    {
+      "script": "check:preview-smoke-config",
+      "reason": "只保留未来外部环境准备参考。"
+    }
+  ],
+  "mainlineDisposition": {
+    "kept": [
+      "check:living-world-control",
+      "check:living-world-contract",
+      "check:current-command-spine",
+      "check:content",
+      "check:boundary",
+      "check:objective-evidence-boundary",
+      "check:dependency-hardening",
+      "check:world-experience"
+    ],
+    "removedHistorical": [
+      "check:product-release",
+      "check:worldos-public-experience",
+      "check:local-product-maturity",
+      "check:phase23-local-maturity",
+      "check:phase24-path-quality",
+      "check:phase25-owner-console",
+      "check:scene-runtime",
+      "check:first-visit-ritual",
+      "check:scene-transition",
+      "check:scene-personality",
+      "check:m26-world-memory",
+      "check:ambient-environment",
+      "check:m23-sensory-audio-production",
+      "check:m24-advanced-visualization",
+      "check:m25-author-world-editor",
+      "check:m27-layered-permission",
+      "check:m28-observability-rollback",
+      "check:scene-qa",
+      "check:m19-scene-interaction",
+      "check:m20-spatial-continuity",
+      "check:m20-spa-transitions",
+      "check:m21-content-life-loop",
+      "check:m22-lighthouse-guidance",
+      "check:human-experience",
+      "check:authoring-ops",
+      "check:worldos-mainline-governance",
+      "check:maintenance-command-spine",
+      "check:runtime-local",
+      "check:lib-budget"
+    ],
+    "rule": "移出 mainline 不删除脚本；只要仍依赖旧报告 passed、旧阶段字符串或外部发布条件，就不能判定当前 Goal 完成。"
+  }
 }

@@ -1,0 +1,55 @@
+CURRENT_COMMAND_SPINE_FAIL findings=54
+- check:mainline drift: check:world-kernel-consolidation,check:product-release,check:content,check:worldos-public-experience,check:local-product-maturity,check:phase23-local-maturity,check:phase24-path-quality,check:phase25-owner-console,check:scene-runtime,check:first-visit-ritual,check:scene-transition,check:scene-personality,check:m26-world-memory,check:ambient-environment,check:m23-sensory-audio-production,check:m24-advanced-visualization,check:m25-author-world-editor,check:m27-layered-permission,check:m28-observability-rollback,check:scene-qa,check:m19-scene-interaction,check:m20-spatial-continuity,check:m20-spa-transitions,check:m21-content-life-loop,check:m22-lighthouse-guidance,check:human-experience,check:authoring-ops,check:api-boundary,check:worldos-mainline-governance,check:scripts,check:maintenance-command-spine,check:runtime-local,check:lib-budget,check:dependency-hardening,check:world-experience
+- stage command in mainline: check:phase23-local-maturity
+- stage command in mainline: check:phase24-path-quality
+- stage command in mainline: check:phase25-owner-console
+- stage command in mainline: check:m26-world-memory
+- stage command in mainline: check:m23-sensory-audio-production
+- stage command in mainline: check:m24-advanced-visualization
+- stage command in mainline: check:m25-author-world-editor
+- stage command in mainline: check:m27-layered-permission
+- stage command in mainline: check:m28-observability-rollback
+- stage command in mainline: check:m19-scene-interaction
+- stage command in mainline: check:m20-spatial-continuity
+- stage command in mainline: check:m20-spa-transitions
+- stage command in mainline: check:m21-content-life-loop
+- stage command in mainline: check:m22-lighthouse-guidance
+- stage command nested in check:content: check:phase19-content
+- stage command nested in check:content: check:m21-content-life-loop
+- recommended daily commands exceed 8: 27
+- stage command remains daily: npm run check:phase23-local-maturity
+- stage command remains daily: npm run check:phase24-path-quality
+- stage command remains daily: npm run check:phase25-owner-console
+- stage command remains daily: npm run check:m26-world-memory
+- stage command remains daily: npm run check:m23-sensory-audio-production
+- stage command remains daily: npm run check:m24-advanced-visualization
+- stage command remains daily: npm run check:m25-author-world-editor
+- stage command remains daily: npm run check:m27-layered-permission
+- stage command remains daily: npm run check:m28-observability-rollback
+- stage command remains daily: npm run check:m19-scene-interaction
+- stage command remains daily: npm run check:m20-spatial-continuity
+- stage command remains daily: npm run check:m20-spa-transitions
+- stage command remains daily: npm run check:m21-content-life-loop
+- stage command remains daily: npm run check:m22-lighthouse-guidance
+- stage script is not registered historical: check:stage-acceptance
+- stage script is not registered historical: check:stage-completion-transition
+- stage script is not registered historical: check:phase21-lighthouse
+- stage script is not registered historical: check:phase19-content
+- stage script is not registered historical: check:phase23-local-maturity
+- stage script is not registered historical: check:phase24-path-quality
+- stage script is not registered historical: check:phase25-owner-console
+- stage script is not registered historical: check:m26-world-memory
+- stage script is not registered historical: check:m23-sensory-audio-production
+- stage script is not registered historical: check:m24-advanced-visualization
+- stage script is not registered historical: check:m25-author-world-editor
+- stage script is not registered historical: check:m28-observability-rollback
+- stage script is not registered historical: check:m19-scene-interaction
+- stage script is not registered historical: check:m20-spatial-continuity
+- stage script is not registered historical: check:m27-layered-permission
+- stage script is not registered historical: check:m20-spa-transitions
+- stage script is not registered historical: check:m21-content-life-loop
+- stage script is not registered historical: check:m22-lighthouse-guidance
+- external preview script is not isolated: preview:smoke
+- external preview script is not isolated: smoke:preview
+- external preview script is not isolated: check:preview-performance
+- external preview script is not isolated: check:preview-smoke-config

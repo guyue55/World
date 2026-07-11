@@ -604,6 +604,30 @@
       }
     },
     {
+      "path": "/api/status/build-identity",
+      "file": "src/app/api/status/build-identity/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "public-or-static-status-only",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "localhost/LAN 只读生产构建身份；仅公开 buildId、源码提交和 Merkle 根。",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
       "path": "/api/lighthouse/search",
       "file": "src/app/api/lighthouse/search/route.ts",
       "methods": [
@@ -653,10 +677,10 @@
     }
   ],
   "summary": {
-    "totalRoutes": 26,
+    "totalRoutes": 27,
     "ownerOnly": 5,
     "permissionGuarded": 5,
-    "publicRead": 9,
+    "publicRead": 10,
     "staticSafePublic": 6,
     "publicQuery": 1,
     "mutatingRoutes": 2

@@ -13,6 +13,7 @@ const NODES = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/domains/experienc
 const REPORT_PATH = path.join(ROOT, 'docs/90-archive/reports/worldos-content-jaccard-report.json')
 
 const THRESHOLD = Number(process.env.WORLDOS_JACCARD_THRESHOLD ?? 0.65)
+const checkOnly = process.argv.includes('--check-only')
 
 function tokenize(text) {
   // 中文按字切分，英文按词切分；忽略 markdown 标记与空白
@@ -80,8 +81,10 @@ const report = {
   highSimilarityPairs: highPairs,
 }
 
-fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true })
-fs.writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2) + '\n', 'utf-8')
+if (!checkOnly) {
+  fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true })
+  fs.writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2) + '\n', 'utf-8')
+}
 
 if (highPairs.length > 0) {
   console.error(`WorldOS content jaccard check failed: ${highPairs.length} pairs above threshold ${THRESHOLD}`)

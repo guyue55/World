@@ -13,7 +13,8 @@ const taxonomy = readJson('data/world-kernel/worldos-script-taxonomy-v1.json')
 const scripts = pkg.scripts ?? {}
 const scriptNames = Object.keys(scripts).sort()
 const checkScripts = scriptNames.filter((name) => name.startsWith('check'))
-const stageLike = scriptNames.filter((name) => /^check:(?:r\d|v\d|phase-|stage-|round)/.test(name))
+const stagePattern = /^check:(?:r\d|v\d|phase\d*|stage|round|m\d+)/i
+const stageLike = scriptNames.filter((name) => stagePattern.test(name))
 const longScripts = scriptNames
   .map((name) => ({ name, length: String(scripts[name]).length }))
   .filter((item) => item.length > 1200)
@@ -21,7 +22,7 @@ const longScripts = scriptNames
 
 for (const entrypoint of registry.activeEntrypoints ?? []) {
   if (!scripts[entrypoint]) failures.push(`activeEntrypoints 指向不存在脚本：${entrypoint}`)
-  if (/^check:(?:r\d|v\d|phase-|stage-|round)/.test(entrypoint)) failures.push(`activeEntrypoints 不允许使用阶段型脚本：${entrypoint}`)
+  if (stagePattern.test(entrypoint)) failures.push(`activeEntrypoints 不允许使用阶段型脚本：${entrypoint}`)
 }
 
 for (const command of registry.recommendedDailyCommands ?? []) {
@@ -63,7 +64,9 @@ if (registry.policies?.newStageScriptDefault !== 'deny') failures.push('newStage
 if (registry.policies?.keepLegacyScriptsTracked !== true) failures.push('keepLegacyScriptsTracked 必须是 true')
 if (taxonomy.legacyPolicy?.legacyRegistry !== 'data/world-kernel/worldos-script-legacy-registry-v1.json') failures.push('script taxonomy 必须指向 legacy registry')
 if (!scripts['check:scripts']?.includes('check:worldos-script-taxonomy') || !scripts['check:scripts']?.includes('check:worldos-script-legacy-registry')) failures.push('check:scripts 必须同时运行 taxonomy 与 legacy registry 检查')
-if (!scripts['check:mainline']?.includes('check:scripts')) failures.push('check:mainline 必须包含 check:scripts')
+if (!scripts['check:mainline']?.includes('check:boundary') || !scripts['check:boundary']?.includes('check:scripts')) {
+  failures.push('check:mainline 必须通过 check:boundary 纳入 check:scripts')
+}
 
 if (failures.length) {
   console.error('WorldOS script legacy registry check failed:')

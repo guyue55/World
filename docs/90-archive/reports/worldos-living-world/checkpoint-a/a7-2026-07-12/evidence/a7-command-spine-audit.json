@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.7",
+  "generatedAt": "2026-07-11T17:23:01.968Z",
+  "mainline": {
+    "commands": [
+      "check:living-world-control",
+      "check:living-world-contract",
+      "check:current-command-spine",
+      "check:content",
+      "check:boundary",
+      "check:objective-evidence-boundary",
+      "check:dependency-hardening",
+      "check:world-experience"
+    ],
+    "count": 8,
+    "stageCommands": [],
+    "currentFailureCount": 175,
+    "currentFailureOwner": "check:world-experience",
+    "allEarlierCommandsPassed": true
+  },
+  "registry": {
+    "totalScripts": 306,
+    "checkScripts": 174,
+    "stageLikeScripts": 20,
+    "historicalInvalidatedCount": 20,
+    "dailyCount": 8,
+    "externalPreviewCount": 4
+  },
+  "guarantees": {
+    "oldMPhaseRcInCurrentMainline": false,
+    "oldReportPassedCanCompleteGoal": false,
+    "externalPreviewInCurrentGoal": false,
+    "historicalScriptsDeleted": false,
+    "permissionCurrentCheckSideEffectFree": true,
+    "contentJaccardCurrentCheckSideEffectFree": true,
+    "buildIdentityApiRegisteredServerSide": true
+  },
+  "logs": {
+    "redSha256": "83eb763d8ac5a6d7625a45b52c0fe19e8d7da8aaec94e6be52cd81b61eb0fd3d",
+    "mainlineExpectedFailureSha256": "a4b1002ea06beaeafe753c9260f890fb6c247c4975f74fdeb3c69fb02556613b",
+    "greenSha256": "e77bad7e0074be2793c1274fdadd5c20977ce0f12b4083cc594f848141b24f53"
+  },
+  "productCompletion": "not-evaluated"
+}

@@ -136,14 +136,13 @@ if (publicIndex) {
 
 if (!packageJson.scripts?.['check:api-boundary']?.includes('check-worldos-api-boundary')) failures.push('缺少 check:api-boundary')
 if (packageJson.scripts?.['check:m27-layered-permission'] !== 'node scripts/check-worldos-permission-boundary.mjs') failures.push('缺少 check:m27-layered-permission')
-if (!packageJson.scripts?.['check:mainline']?.includes('check:m27-layered-permission')) failures.push('check:mainline 必须纳入 check:m27-layered-permission')
 if (!packageJson.scripts?.['check:public']?.includes('check-public-build')) failures.push('缺少 check:public')
 if (!packageJson.scripts?.['check:boundary']?.includes('check:permission-boundary')) failures.push('check:boundary 必须纳入 check:permission-boundary')
 
 const scriptRegistry = readJson('data/world-kernel/worldos-script-legacy-registry-v1.json')
-if (!(scriptRegistry.activeEntrypoints ?? []).includes('check:m27-layered-permission')) failures.push('脚本注册表缺少 check:m27-layered-permission active entrypoint')
-if (!(scriptRegistry.recommendedDailyCommands ?? []).includes('npm run check:m27-layered-permission')) failures.push('脚本注册表缺少 check:m27-layered-permission daily command')
-if (!(scriptRegistry.releaseCandidateCommands ?? []).includes('npm run check:m27-layered-permission')) failures.push('脚本注册表缺少 check:m27-layered-permission RC command')
+if (!(scriptRegistry.historicalInvalidatedEntrypoints ?? []).some((entry) => entry.script === 'check:m27-layered-permission')) {
+  failures.push('历史脚本注册表必须登记 check:m27-layered-permission 已退出当前完成门')
+}
 
 const report = {
   generatedAt: new Date().toISOString(),
