@@ -1,0 +1,49 @@
+captured_at=2026-07-12T00:29:58+08:00
+goal_id=019f2cdf-f708-7ba1-8742-986b516c4421
+control_baseline_commit=987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
+CONTROL_INTEGRITY_PASS frozen=8 tasks=90 next=A.1 anchor=987d1a6deac7727253b7f3d85bc7b93ab5b7ca90 productCompletion=not-evaluated
+LIVING_WORLD_READINESS_PASS node=24.13.0 playwrightChromium=145.0.7632.6 lan=172.30.111.222,192.168.1.200,192.168.2.1,10.211.55.2 ollama=qwen2.5:7b@192.168.1.189:11434 stack=next@15.5.20,react@19.2.7,react-dom@19.2.7,gsap@3.15.0,zod@3.25.76,fuse.js@7.4.2
+
+[versions]
+v24.13.0
+11.6.2
+ffmpeg version 6.0 Copyright (c) 2000-2023 the FFmpeg developers
+ffprobe version 6.0 Copyright (c) 2007-2023 the FFmpeg developers
+python-playwright=1.58.0
+chromium-executable=/Users/guyue/Library/Caches/ms-playwright/chromium-1208/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+chromium-version=145.0.7632.6
+Version 1.61.1
+
+[lan]
+feth190=172.30.111.222
+en0=192.168.1.200
+bridge0=192.168.2.1
+bridge100=10.211.55.2
+utun1024=198.18.0.1
+
+[git]
+## codex/visual-overlay-qa...origin/codex/visual-overlay-qa [ahead 7]
+ M data/world-kernel/worldos-living-world-execution-state.json
+ M docs/00-overview/worldos-living-world-execution-ledger-2026-07-11.md
+638938dd8065a6aa2ea00ab4cc31eb7d0242a1aa 2026-07-12T00:09:15+08:00 test(world): 锚定Ollama生命世界控制包
+987d1a6deac7727253b7f3d85bc7b93ab5b7ca90 2026-07-12T00:08:46+08:00 docs(world): 纳入Ollama灯塔终局目标
+0948333e0fb67fbbf3c03153ab68337f84a718a9 2026-07-11T20:54:22+08:00 docs(world): 记录控制包复核与技术栈决策
+ad5c225750faaa34fcd6da3cb10fedfbc01750eb 2026-07-11T20:48:12+08:00 test(world): 锚定生命世界加固控制包
+6bb8705247bd2794616129551fc181be26e233b9 2026-07-11T20:47:18+08:00 docs(world): 加固生命世界控制与技术栈基线
+e79024805d4cfadd8ef566104b0dd688ee856716 2026-07-11T19:53:51+08:00 test(world): 锚定生命世界控制包基线
+43dc627ea67408d081415a856649b3cb6504a43c 2026-07-11T19:53:05+08:00 docs(world): 重建生命世界元总控与执行包
+7c8b95593e9900ccc39b9dadc71c239566067441 2026-07-11T17:44:57+08:00 docs(world): 建立生命世界全局战略控制包
+
+[freshness]
+old_manifest_mtime_epoch=1783756086 old_manifest_mtime=2026-07-11T15:48:06+0800 path=docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z/manifest.json
+latest_control_mtime_epoch=1783786140 latest_control_mtime=2026-07-12T00:09:00+0800 path=data/world-kernel/worldos-living-world-control-v1.json
+
+[inventory]
+legacy_completion_files=31
+
+active_scene_webp=14
+
+audio_asset_files=0
+
+reusable_runtime_files=32
+

@@ -7,18 +7,18 @@
 
 ```yaml
 control_status: READY
-goal_status: NOT_STARTED
-goal_id: not-created
-goal_started_at: null
+goal_status: IN_PROGRESS
+goal_id: 019f2cdf-f708-7ba1-8742-986b516c4421
+goal_started_at: 2026-07-12T00:28:14+08:00
 control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: A
 current_item: A.1
-task_state: pending
-active_record_id: none
-last_successful_command: "npm run build:production-ci"
-resume_action: "start A.1"
+task_state: in_progress
+active_record_id: LW-001
+last_successful_command: "node scripts/check-worldos-living-world-readiness.mjs --repair-browser"
+resume_action: "continue A.1 baseline audit"
 last_completed_item: none
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope

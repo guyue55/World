@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.1",
+  "capturedAt": "2026-07-12T00:29:58+08:00",
+  "goalId": "019f2cdf-f708-7ba1-8742-986b516c4421",
+  "controlBaselineCommit": "987d1a6deac7727253b7f3d85bc7b93ab5b7ca90",
+  "headAtStart": "638938dd8065a6aa2ea00ab4cc31eb7d0242a1aa",
+  "preGoalWorktree": "clean",
+  "branch": "codex/visual-overlay-qa",
+  "toolchain": {
+    "node": "24.13.0",
+    "npm": "11.6.2",
+    "pythonPlaywright": "1.58.0",
+    "nodePlaywrightCli": "1.61.1",
+    "chromium": "145.0.7632.6",
+    "ffmpeg": "6.0",
+    "ffprobe": "6.0"
+  },
+  "lan": {
+    "primary": "192.168.1.200",
+    "eligibleAddresses": [
+      "172.30.111.222",
+      "192.168.1.200",
+      "192.168.2.1",
+      "10.211.55.2"
+    ],
+    "excludedProbeAddress": "198.18.0.1"
+  },
+  "oldEvidence": {
+    "run": "docs/90-archive/reports/worldos-reality-first/run-2026-07-11_07-28-49-583Z",
+    "manifestModifiedAt": "2026-07-11T15:48:06+08:00",
+    "latestControlModifiedAt": "2026-07-12T00:09:00+08:00",
+    "freshness": "stale",
+    "recordingCount": 9,
+    "acceptedForLivingWorldCompletion": false,
+    "reason": "旧 run 早于新控制包、当前 Goal 和源码状态，只能作为反基线。"
+  },
+  "currentInventory": {
+    "activeSceneWebpCount": 14,
+    "publicAudioAssetCount": 0,
+    "reusableRuntimeRelatedFileCount": 32,
+    "legacyCompletionClaimFileCount": 31
+  },
+  "reusableImplementation": [
+    {
+      "owner": "src/components/world/WorldRuntimeProvider.tsx",
+      "reuse": "保留运行上下文、旅程和感官偏好接口；修复只在首次挂载计算时间的问题。"
+    },
+    {
+      "owner": "src/lib/runtime/scene-migration.ts",
+      "reuse": "保留迁移状态与 timing 基础；后续补来源、途中、抵达、沉淀和恢复证据。"
+    },
+    {
+      "owner": "src/components/world/migration/SceneMigrationLayer.tsx",
+      "reuse": "保留单一迁移层，避免场景各建一套遮罩。"
+    },
+    {
+      "owner": "src/components/atlas/AtlasLiveConstellation.tsx",
+      "reuse": "作为 Atlas 持续星图的现有起点，需接受事实和统一 clock 驱动。"
+    },
+    {
+      "owner": "src/components/timeline/TimelineRiverRuntime.tsx",
+      "reuse": "作为 Timeline 河流运行原型起点，需通过长录屏与 mobile 性能门。"
+    },
+    {
+      "owner": "src/lib/runtime/soundscape-engine.ts",
+      "reuse": "保留懒创建 AudioContext 和程序化 patch 基础，后续统一生命周期与技术验证。"
+    }
+  ],
+  "invalidCompletionClaims": [
+    "LOCAL_WORLD_COMPLETE_AI_FALLBACK 仅是历史状态，不得作为当前摘要或通过证据。",
+    "M29/M30、Phase 21-25、8.9 和 9/10 阈值不能证明生命世界体验。",
+    "旧报告 passed、DOM token、截图存在与 1.72-10.16 秒短录屏不能证明持续生命。",
+    "当前 /status 的 FOUNDATION_ONLY 比旧 COMPLETE 诚实，但仍需在 A.6 收束为 CINEMATIC_STATIC_WORLD_IN_PROGRESS 并移除外部发布叙事。"
+  ],
+  "verifiedFailures": [
+    "WorldRuntimeProvider 的昼夜和季节只在首次挂载时计算。",
+    "background-hidden 七场景证据不存在或不可继承。",
+    "公开目录没有真实音频文件。",
+    "现行 14 张 WebP 仍承担七场景的主要电影感构图。"
+  ],
+  "decision": "A.1 只建立真实恢复基线，不据此宣布任何产品能力完成。"
+}

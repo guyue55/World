@@ -3,11 +3,13 @@
   "planId": "worldos-living-world-a-h-2026-07-11",
   "controlBaselineCommit": "987d1a6deac7727253b7f3d85bc7b93ab5b7ca90",
   "goal": {
-    "status": "NOT_STARTED",
-    "id": "not-created",
-    "startedAt": null,
+    "status": "IN_PROGRESS",
+    "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
+    "startedAt": "2026-07-12T00:28:14+08:00",
     "currentItem": "A.1",
-    "taskState": "pending"
+    "taskState": "in_progress",
+    "activeRecordId": "LW-001",
+    "resumeAction": "continue A.1 baseline audit"
   },
   "completedItems": {},
   "failedAttempts": [],
