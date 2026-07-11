@@ -182,6 +182,14 @@ async function captureMode(route, mode, options = {}) {
   const screenshotPrefix = options.screenshotPrefix ?? route.id
   const page = await browserRuntime.createPage({ width: mobile ? 390 : mode === 'zoom-200' ? 720 : 1440, height: mobile ? 844 : mode === 'zoom-200' ? 450 : 900, mobile, reducedMotion: mode === 'reduced-motion' })
   try {
+    if (mode === 'background-hidden') {
+      await page.send('Network.setBlockedURLs', {
+        urls: [
+          `*/world/scenes/${route.id}/*`,
+          `*url=%2Fworld%2Fscenes%2F${route.id}%2F*`,
+        ],
+      })
+    }
     if (mode === 'js-off') await page.send('Emulation.setScriptExecutionDisabled', { value: true })
     else {
       await page.send('Page.addScriptToEvaluateOnNewDocument', { source: performanceProbe })
@@ -312,7 +320,7 @@ try {
   browserRuntime = await launchRealityBrowser('worldos-reality-evidence')
   const observations = []
   for (const route of routes) {
-    for (const mode of ['desktop', 'mobile', 'reduced-motion', 'reduced-sensory', 'keyboard', 'storage-off', 'text-hidden', 'js-off']) {
+    for (const mode of ['desktop', 'mobile', 'text-hidden', 'background-hidden', 'reduced-motion', 'reduced-sensory', 'keyboard', 'storage-off', 'js-off']) {
       console.log(`[Reality evidence] ${route.id} ${mode}`)
       const observation = await captureMode(route, mode)
       observations.push(observation)
@@ -328,6 +336,7 @@ try {
       const bitmapBudget = mode === 'mobile' || mode === 'reduced-sensory' ? 350 * 1024 : 700 * 1024
       if (observation.bitmapBytes > bitmapBudget) failures.push(`${route.path} ${mode}: 首屏 bitmap ${observation.bitmapBytes} > ${bitmapBudget}`)
       if (observation.audioBytes > 0 || observation.soundMode === 'playing') failures.push(`${route.path} ${mode}: 默认加载或播放声音`)
+      if (mode === 'background-hidden' && observation.bitmapBytes > 64 * 1024) failures.push(`${route.path} ${mode}: 场景位图阻断后仍加载 ${observation.bitmapBytes} bytes bitmap`)
       if (mode === 'desktop' && observation.metrics) {
         const tbt = observation.metrics.longTasks.reduce((sum, duration) => sum + Math.max(0, duration - 50), 0)
         if (observation.metrics.lcp > 2500) failures.push(`${route.path}: LCP ${Math.round(observation.metrics.lcp)}ms > 2500ms`)
@@ -569,7 +578,7 @@ try {
     commands: [
       'npm run build:production-ci',
       'next start -H 0.0.0.0',
-      '42 route/mode browser captures + 200% zoom',
+      `${observations.length} route/mode browser captures + 200% zoom`,
       '14 LAN route/mode browser captures + LAN Gateway -> Atlas journey',
       ...flowCommands.map(([, script]) => `node ${script}`),
       'npm run check:permission-boundary',

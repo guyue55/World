@@ -1,0 +1,8 @@
+A2_BASELINE_VALIDATION_PASS
+runId=run-2026-07-11_16-33-30-659Z
+status=defects-found
+freshness=true
+localhostObservations=63
+lanObservations=14
+automatedFailures=5
+visualVerdict=CINEMATIC_STATIC_WORLD_IN_PROGRESS

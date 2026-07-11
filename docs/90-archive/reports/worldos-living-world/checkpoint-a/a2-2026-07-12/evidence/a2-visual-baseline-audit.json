@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.2",
+  "auditedAt": "2026-07-12T00:47:30+08:00",
+  "sourceRunId": "run-2026-07-11_16-33-30-659Z",
+  "sourceCommit": "396ab26ee0f33aac72763240d847ab380620c9ac",
+  "productionBuildFresh": true,
+  "freshnessValid": true,
+  "capture": {
+    "localhostObservations": 63,
+    "lanObservations": 14,
+    "requiredBaselineScreenshots": 28,
+    "viewOrder": [
+      "desktop",
+      "mobile",
+      "text-hidden",
+      "background-hidden"
+    ],
+    "sceneOrder": [
+      "gateway",
+      "atlas",
+      "timeline",
+      "archive",
+      "paths",
+      "node",
+      "lighthouse"
+    ]
+  },
+  "method": {
+    "visualShareMeaning": "对 1440x900 首屏中承担空间辨识的可见面积作区间估计，不是体验分，也不用于抵消失败。",
+    "bitmapHiddenMechanism": "在导航前阻断当前场景 desktop/mobile WebP 及 Next image URL，不以另一张图替换。",
+    "continuousLifeRule": "本项只有静态截图，不得据此把任何持续生命标为 passed。",
+    "engineeringCopyProbe": "扫描公开正文中的 Motion Layer、Fallback、Evidence、场景证据、候选验收、9/10、8.9、降级规则和验收报告。"
+  },
+  "scenes": [
+    {
+      "id": "gateway",
+      "desktopBitmapBytes": 221884,
+      "mobileBitmapBytes": 85492,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "首访遮罩时 0-20%；进入方向舞台后约 70-90%",
+      "semanticObjectVisualShare": "约 10-30%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "fail",
+      "backgroundHiddenSubject": "fail",
+      "backgroundHiddenPrimaryInteraction": true,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "首次 desktop 几乎只有大标题和按钮；隐藏文字后接近空屏。阻断位图后退化为链接清单，不再是浮屿方向、入口与远处灯塔组成的门厅。"
+    },
+    {
+      "id": "atlas",
+      "desktopBitmapBytes": 140330,
+      "mobileBitmapBytes": 67234,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "约 70-85%",
+      "semanticObjectVisualShare": "约 15-30%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "pass-by-bitmap-only",
+      "backgroundHiddenSubject": "partial-fail",
+      "backgroundHiddenPrimaryInteraction": true,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "位图隐藏后仍有同心星轨和节点位置，是七场景中最接近独立语义主体者；但主体被列表/inspector 压住，关系航线与可航行空间不足，不能通过冻结验收。"
+    },
+    {
+      "id": "timeline",
+      "desktopBitmapBytes": 246434,
+      "mobileBitmapBytes": 101456,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "约 75-90%",
+      "semanticObjectVisualShare": "约 10-25%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "pass-by-bitmap-only",
+      "backgroundHiddenSubject": "fail",
+      "backgroundHiddenPrimaryInteraction": false,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "时间河身份来自静态河流画面。位图隐藏后只剩事件纵向列表，无河道、河段、停靠点或流向，主交互选择器不可见。"
+    },
+    {
+      "id": "archive",
+      "desktopBitmapBytes": 191394,
+      "mobileBitmapBytes": 84526,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "约 70-85%",
+      "semanticObjectVisualShare": "约 15-30%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "pass-by-bitmap-only",
+      "backgroundHiddenSubject": "fail",
+      "backgroundHiddenPrimaryInteraction": false,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "馆厅、书架和窗光由位图承担。阻断后变成资料列表，没有分区、书架、卷宗和索引台的空间关系，主交互选择器不可见。"
+    },
+    {
+      "id": "paths",
+      "desktopBitmapBytes": 281204,
+      "mobileBitmapBytes": 94414,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "约 70-85%",
+      "semanticObjectVisualShare": "约 15-30%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "pass-by-bitmap-only",
+      "backgroundHiddenSubject": "fail",
+      "backgroundHiddenPrimaryInteraction": false,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "路径感主要来自山路位图和叠加站点。隐藏位图后退化为行程清单，没有可行走道路、当前位置和终点的连续空间。"
+    },
+    {
+      "id": "node",
+      "desktopBitmapBytes": 187078,
+      "mobileBitmapBytes": 71720,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "首屏约 65-80%",
+      "semanticObjectVisualShare": "约 20-35%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "pass-by-bitmap-only",
+      "backgroundHiddenSubject": "fail",
+      "backgroundHiddenPrimaryInteraction": false,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "房间与远景由位图承担，正文可读性在下方保留。阻断位图后首屏是标题、摘要和关系列表，不再构成可停留地点，关系门主交互不可见。"
+    },
+    {
+      "id": "lighthouse",
+      "desktopBitmapBytes": 137494,
+      "mobileBitmapBytes": 76338,
+      "backgroundHiddenBitmapBytes": 0,
+      "bitmapVisualShare": "约 65-80%",
+      "semanticObjectVisualShare": "约 20-35%",
+      "desktopMobile": "partial",
+      "textHiddenIdentity": "pass-by-bitmap-only",
+      "backgroundHiddenSubject": "partial-fail",
+      "backgroundHiddenPrimaryInteraction": false,
+      "continuousEnvironment": "unproven",
+      "engineeringCopyVisible": false,
+      "finding": "阻断位图后仍有简化塔、月亮和光束几何轮廓，但海面、可达方向和主要问路交互消失；只能证明 fallback 不白屏，不能证明观测站成立。"
+    }
+  ],
+  "automatedCaptureFailures": [
+    "/timeline background-hidden: 主交互或静态等价路径不可见",
+    "/archive background-hidden: 主交互或静态等价路径不可见",
+    "/paths/first-visit background-hidden: 主交互或静态等价路径不可见",
+    "/node/world-manifesto background-hidden: 主交互或静态等价路径不可见",
+    "/ask background-hidden: 主交互或静态等价路径不可见"
+  ],
+  "humanVisualFindings": [
+    "七场景 desktop/mobile 构图可区分，但空间人格主要由不同 WebP 提供。",
+    "text-hidden 的六个非 Gateway 场景仍可辨认，原因主要是位图而非独立语义结构。",
+    "七场景 background-hidden 均未达到冻结契约；Atlas 和 Lighthouse 仅保留部分结构，其他场景明显退化为列表。",
+    "未发现公开工程验收文案、横向溢出、浏览器异常或默认音频加载。",
+    "本项没有 60-120 秒连续证据，因此所有持续环境与生命行为保持 unproven。"
+  ],
+  "verdict": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
+  "nextAction": "A.3 先固化旧九段视频时长反证；A.4-A.7 收束机器契约和完成门，后续 C-E 才修复这里确认的空间主体缺陷。"
+}
