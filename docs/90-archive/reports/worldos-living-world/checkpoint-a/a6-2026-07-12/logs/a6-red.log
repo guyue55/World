@@ -1,0 +1,7 @@
+WORLDOS_BUILD_IDENTITY_FAIL findings=6
+- missing status/build identity file: src/app/api/status/build-identity/route.ts
+- missing status/build identity file: src/lib/living-world-status.ts
+- /status still contains external release narrative
+- /status does not consume server-side living world status
+- baseline panel does not expose the truthful product status
+- missing build identity: .next/worldos-build-identity.json

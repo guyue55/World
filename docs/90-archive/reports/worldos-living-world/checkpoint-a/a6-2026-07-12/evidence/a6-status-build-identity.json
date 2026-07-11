@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "itemId": "A.6",
+  "generatedAt": "2026-07-11T17:13:15.241Z",
+  "statusSurface": {
+    "productStatus": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
+    "currentItem": "A.6",
+    "firstOpenRiskGate": "content-projection",
+    "evidenceTimestampVisible": true,
+    "externalReleaseNarrativeVisible": false,
+    "historicalPhasePanelsMounted": false,
+    "desktopScreenshot": {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a6-2026-07-12/evidence/a6-status-desktop.png",
+      "sha256": "2e8b1c49902a95a7854a4b61bdbd0192a61ca302e4a382b197949a9e133dce98"
+    },
+    "mobileScreenshot": {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a6-2026-07-12/evidence/a6-status-mobile.png",
+      "sha256": "210380b1d5824bcf071a470fb4fed2c94350ba0ae1953e135465928404255fb3"
+    },
+    "visualReview": "desktop/mobile clear; no horizontal overflow or browser errors; existing fixed mobile navigation remains for later full mobile review"
+  },
+  "buildIdentity": {
+    "schemaVersion": "1.0.0",
+    "buildId": "3VXuTbj_HHJiI7GuBGnY-",
+    "sourceCommit": "0eb7bbba21ffa513c9088af78a09f8a45ca16c74",
+    "sourceDirty": true,
+    "distDir": ".next",
+    "buildStartedAt": "2026-07-11T17:11:24.212Z",
+    "generatedAt": "2026-07-11T17:11:49.861Z",
+    "fileCount": 367,
+    "buildRootHash": "2c3f54fa71f7cefb2228f525b71a504595c859ddf1366d57b488eb8085bdb1ca",
+    "identityFileSha256": "00531d23b22880f4499a8b5ffde3f1303b7c61b5d5704840a97299771acff2ae",
+    "independentlyRecalculated": true,
+    "liveOrigins": [
+      "http://127.0.0.1:3416",
+      "http://192.168.1.200:3416"
+    ],
+    "liveIdentityMatched": true,
+    "cacheControl": "no-store",
+    "sourceDirtyAcceptedForCheckpointOnly": true,
+    "finalEvidenceEligible": false
+  },
+  "logs": {
+    "buildSha256": "2267427d4ab10c826f717127a299a57fb35d5f8bd783eb692fc0cc83a664d794",
+    "liveSha256": "ac3a333b75fd0b2d036776d5d9817ba9de32b4ca9234fe79c2437053a15c1fca",
+    "greenSha256": "e7bc9551c391853626a95194b46a11e5cf4d0ab6c92a90aba8d66af12f7a6e51"
+  },
+  "productCompletion": "not-evaluated"
+}

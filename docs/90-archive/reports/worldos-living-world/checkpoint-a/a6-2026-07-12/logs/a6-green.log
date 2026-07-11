@@ -1,0 +1,7 @@
+WORLDOS_BUILD_IDENTITY_PASS dist=.next
+
+> word-life@0.1.0 typecheck
+> tsc --noEmit
+
+CONTROL_INTEGRITY_PASS frozen=8 tasks=90 next=A.6 anchor=987d1a6deac7727253b7f3d85bc7b93ab5b7ca90 productCompletion=not-evaluated
+OBJECTIVE_EVIDENCE_BOUNDARY_PASS manifestStatusTrusted=false visualScoreAccepted=false
