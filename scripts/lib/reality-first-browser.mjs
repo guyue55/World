@@ -194,7 +194,8 @@ export async function captureJpeg(send, filePath, quality = 82) {
 }
 
 export async function recordPageScreencast({ browser, page, outputPath, action, width = 1280, height = 720, quality = 82 }) {
-  const frameDir = `${outputPath}.frames`
+  const absoluteOutputPath = path.resolve(outputPath)
+  const frameDir = `${absoluteOutputPath}.frames`
   fs.rmSync(frameDir, { recursive: true, force: true })
   fs.mkdirSync(frameDir, { recursive: true })
   const frames = []
@@ -242,8 +243,8 @@ export async function recordPageScreencast({ browser, page, outputPath, action, 
   }
   lines.push(`file '${frames.at(-1).filePath.replaceAll("'", "'\\''")}'`)
   fs.writeFileSync(concatPath, `${lines.join('\n')}\n`)
-  fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-  const encoded = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', concatPath, '-fps_mode', 'vfr', '-c:v', 'libx264', '-bf', '0', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', outputPath], { encoding: 'utf8' })
+  fs.mkdirSync(path.dirname(absoluteOutputPath), { recursive: true })
+  const encoded = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', concatPath, '-fps_mode', 'vfr', '-c:v', 'libx264', '-bf', '0', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', absoluteOutputPath], { encoding: 'utf8' })
   fs.rmSync(frameDir, { recursive: true, force: true })
   if (encoded.status !== 0) throw new Error(`录屏编码失败：${encoded.stderr}`)
   return { frames: frames.length, durationSeconds: Math.max(0, frames.at(-1).capturedAt - frames[0].capturedAt), outputPath }
