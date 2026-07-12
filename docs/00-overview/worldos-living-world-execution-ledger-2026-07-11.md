@@ -14,12 +14,13 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.4
+current_item: C.5
+next_item: C.5
 task_state: in_progress
-active_record_id: LW-023
-last_successful_command: "C.3 clean production React profiler and sliced store tests"
-resume_action: "migrate C.4 low-frequency runtime facts to store while keeping useWorldRuntime compatibility facade"
-last_completed_item: C.3
+active_record_id: LW-024
+last_successful_command: "C.4 fresh production minute tick, hidden pause and visible rebuild verification"
+resume_action: "implement C.5 Gateway spatial base, semantic objects and continuously scheduled ambient layer with quiet, hidden and background-hidden degradation"
+last_completed_item: C.4
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -1202,6 +1203,50 @@ fixes:
   - "改用 runtime ref 和稳定 store effect；未完成清理复位，fresh build 重测通过"
 commit: "e9e93206a54d3424a6b6f19bd5bb7694a0dc8726 fix(world): 稳定运行时订阅性能探针"
 next_item: C.4
+```
+
+### Record LW-023：C.4 兼容运行时接入世界时钟
+
+```yaml
+record: LW-023
+checkpoint: C
+item: C.4
+status: passed
+started_at: 2026-07-12T16:32:00+08:00
+finished_at: 2026-07-12T16:40:08+08:00
+verified_facts:
+  - "WorldRuntimeProvider 保留 useWorldRuntime 兼容 facade，并提供分片 selector"
+  - "WorldClockController 按分钟边界更新；hidden 清除 timer，visible 使用当前 epoch 立即重建"
+  - "clean production Atlas 实测发生真实 minute tick，隐藏期 epoch 不变，恢复后 epoch 更新"
+  - "时间、可见性、场景和声音进入唯一 Store；不存在每帧 React state"
+  - "fresh build sourceDirty=false，build source commit 为 fc8e1b23，浏览器无 console error"
+hypothesis:
+  id: H-04
+  result: passed
+files_changed:
+  - "src/components/world/WorldRuntimeProvider.tsx"
+  - "src/world/runtime/clock.ts"
+  - "src/world/runtime/clock-lifecycle.test.ts"
+commands:
+  - command: "runtime clock/scheduler/store node:test, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "16 tests pass; engineering checks pass"
+  - command: "fresh production build and /atlas minute/visibility browser verification"
+    exit_code: 0
+    observed: "minute tick observed; hidden paused; visibility resume rebuilt; sourceDirty=false"
+evidence:
+  - "c4-targeted-validation.log sha256=eb06a33a4b1d739506e6849c0115c7408775c82971656d200c9d768f4e1d792c"
+  - "c4-fresh-build.log sha256=882322703409b25471b2940f2722cdcc77d65ab6935770596544993a3cd61174"
+  - "c4-live-clock-browser.log sha256=7a19df93e2f040a8ff1cfe94bd4d9dd1399289c43af5ab19f752204fef218d0c"
+  - "c4-provider-clock-integration.json sha256=fdf36086db9923ba53af8a64e587f9300d9646f52b139bc48def25c7df128da9"
+failures:
+  - "首次 CDP frozen/active 验证未触发标准 visibilitychange，不能作为浏览器可见性事件证据"
+fixes:
+  - "改用 document.hidden 与标准 visibilitychange 契约实测；独立单测覆盖 listener/timer 清理"
+claim_boundary:
+  - "C.4 只证明低频时钟与兼容适配，不证明 Gateway 持续生命或十分钟稳定运行"
+commit: "fc8e1b23a24e36ae94b1bdd5ef9eddddf36b0be4 feat(world): 将兼容运行时接入世界时钟"
+next_item: C.5
 ```
 
 ## 10. 后续记录模板

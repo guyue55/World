@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.4",
+    "currentItem": "C.5",
     "taskState": "in_progress",
-    "activeRecordId": "LW-023",
-    "resumeAction": "migrate C.4 low-frequency runtime facts to store while keeping useWorldRuntime compatibility facade"
+    "activeRecordId": "LW-024",
+    "resumeAction": "implement C.5 Gateway spatial base, semantic objects and continuously scheduled ambient layer with quiet, hidden and background-hidden degradation"
   },
   "completedItems": {
     "A.1": {
@@ -537,6 +537,35 @@
       ],
       "commitHash": "e9e93206a54d3424a6b6f19bd5bb7694a0dc8726",
       "commitSubject": "fix(world): 稳定运行时订阅性能探针"
+    },
+    "C.4": {
+      "status": "passed",
+      "itemId": "C.4",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T16:32:00+08:00",
+      "finishedAt": "2026-07-12T16:40:08+08:00",
+      "commands": [
+        {
+          "command": "runtime clock scheduler store tests, fresh production build and live minute/visibility browser verification",
+          "exitCode": 0,
+          "outputSha256": "eb06a33a4b1d739506e6849c0115c7408775c82971656d200c9d768f4e1d792c",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c4-2026-07-12/logs/c4-targeted-validation.log"
+        },
+        {
+          "command": "clean production /atlas minute tick, hidden pause and visible rebuild",
+          "exitCode": 0,
+          "outputSha256": "7a19df93e2f040a8ff1cfe94bd4d9dd1399289c43af5ab19f752204fef218d0c",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c4-2026-07-12/logs/c4-live-clock-browser.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c4-2026-07-12/evidence/c4-provider-clock-integration.json",
+          "sha256": "fdf36086db9923ba53af8a64e587f9300d9646f52b139bc48def25c7df128da9"
+        }
+      ],
+      "commitHash": "fc8e1b23a24e36ae94b1bdd5ef9eddddf36b0be4",
+      "commitSubject": "feat(world): 将兼容运行时接入世界时钟"
     }
   },
   "failedAttempts": [],
