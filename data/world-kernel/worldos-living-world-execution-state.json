@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.10",
+    "currentItem": "C.11",
     "taskState": "in_progress",
-    "activeRecordId": "LW-029",
-    "resumeAction": "run C.10 ten-minute vertical slice soak with minute tick, two-minute hidden recovery, audio toggle, related Node round trip, memory clear and resource counters"
+    "activeRecordId": "LW-030",
+    "resumeAction": "capture C.11 continuous 60-120 second Gateway Atlas Node recordings plus background-hidden text-hidden mobile reduced contact sheet and bound audio technical record"
   },
   "completedItems": {
     "A.1": {
@@ -673,6 +673,22 @@
       ],
       "commitHash": "51bd4780eb416ad9b7ca653008c7dbeae669d385",
       "commitSubject": "feat(world): 建立可验证世界声音样板"
+    },
+    "C.10": {
+      "status": "passed",
+      "itemId": "C.10",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T18:35:00+08:00",
+      "finishedAt": "2026-07-12T18:49:48+08:00",
+      "commands": [
+        { "command": "continuous 600-second Gateway Atlas Node Gateway soak", "exitCode": 0, "outputSha256": "1bb014f9df1c0dfa7eb2ea07a3dadc79e45d974155fd17ce93c7fb9620459e81", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/logs/c10-vertical-soak-600s.log" },
+        { "command": "independent raw sample, frame, resource and audio event recalculation", "exitCode": 0, "outputSha256": "7901869341f8e13d3b40d977afe0452fc08e0892ed280e3ed666f06fea8273a6", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/logs/c10-independent-recalculation.log" }
+      ],
+      "evidence": [
+        { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/evidence/c10-vertical-soak-summary.json", "sha256": "e724406841c0141c5a79baa643429f070fb7d1f04daef00ae26046c3dc7547f1" }
+      ],
+      "commitHash": "8a68402274d06f57ad2cb857615bfeb6e2936e6b",
+      "commitSubject": "test(world): 回算十分钟样板资源稳定性"
     }
   },
   "failedAttempts": [],
