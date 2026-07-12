@@ -1,0 +1,21 @@
+A.8 fresh evidence browser-expression regression
+
+RED
+command: node scripts/check-worldos-objective-evidence-boundary.mjs
+exit: 1
+finding: evidence resource regex is not escaped for the browser expression
+runtime reproduction: Chromium received /.(?:avif|webp|png|jpe?g|mp3|wav|ogg|m4a|css|js)(?:?|$)/i and rejected it.
+
+ROOT CAUSE
+inspectPage is serialized through a JavaScript template literal. resourceEntries used one escape layer while bitmapBytes and audioBytes used two, so Node consumed the backslashes before Runtime.evaluate.
+
+GREEN
+command: node scripts/check-worldos-objective-evidence-boundary.mjs
+exit: 0
+output: OBJECTIVE_EVIDENCE_BOUNDARY_PASS manifestStatusTrusted=false visualScoreAccepted=false
+
+command: browser regex serialization probe
+exit: 0
+output: BROWSER_REGEX_SERIALIZATION_PASS
+
+runtime verification: npm run evidence:world-experience completed all 70 localhost observations and 14 LAN observations, then exited only on 11 product defects.

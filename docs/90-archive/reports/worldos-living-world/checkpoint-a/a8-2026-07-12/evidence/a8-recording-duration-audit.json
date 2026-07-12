@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12T01:44:35+08:00",
+  "sourceRun": "run-2026-07-11_17-30-24-632Z",
+  "allowedUse": "A 检查点流程存在性与未完成反证",
+  "forbiddenUse": "不得用于 60-120 秒持续生命、十分钟 soak 或终局验收",
+  "recordings": [
+    { "name": "archive-search.webm", "durationSeconds": 3.92 },
+    { "name": "atlas-explore.webm", "durationSeconds": 4.4 },
+    { "name": "first-visit.webm", "durationSeconds": 3.88 },
+    { "name": "lighthouse-guide.webm", "durationSeconds": 5.56 },
+    { "name": "node-explore.webm", "durationSeconds": 5.44 },
+    { "name": "path-journey.webm", "durationSeconds": 13.76 },
+    { "name": "returning-visit.webm", "durationSeconds": 2.84 },
+    { "name": "scene-migration.webm", "durationSeconds": 3.12 },
+    { "name": "timeline-review.webm", "durationSeconds": 4.28 }
+  ],
+  "minimumSeconds": 2.84,
+  "maximumSeconds": 13.76,
+  "sceneLifeEligibleCount": 0,
+  "soakEligibleCount": 0,
+  "verdict": "SHORT_FLOW_RECORDINGS_ONLY"
+}

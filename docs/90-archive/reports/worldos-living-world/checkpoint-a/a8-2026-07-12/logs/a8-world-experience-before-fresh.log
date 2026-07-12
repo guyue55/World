@@ -1,0 +1,180 @@
+
+> word-life@0.1.0 check:world-experience
+> node scripts/check-worldos-reality-first.mjs
+
+WorldOS objective evidence gate failed findings=175
+- manifest acceptance path mismatch
+- manifest acceptance schema mismatch
+- manifest scene count mismatch
+- manifest view count mismatch
+- manifest flow count mismatch
+- manifest target ladder mismatch
+- evidence predates current source, data, asset, or checker
+- gateway desktop primary subject bounding box is missing
+- gateway desktop bitmap bytes are not reproducible
+- gateway desktop screenshot size mismatch
+- gateway desktop screenshotSha256 mismatch
+- gateway mobile primary subject bounding box is missing
+- gateway mobile bitmap bytes are not reproducible
+- gateway mobile screenshot size mismatch
+- gateway mobile screenshotSha256 mismatch
+- gateway text-hidden primary subject bounding box is missing
+- gateway text-hidden bitmap bytes are not reproducible
+- gateway text-hidden screenshot size mismatch
+- gateway text-hidden screenshotSha256 mismatch
+- gateway missing background-hidden observation
+- gateway missing quiet-static observation
+- gateway reduced-motion primary subject bounding box is missing
+- gateway reduced-motion bitmap bytes are not reproducible
+- gateway reduced-motion screenshot size mismatch
+- gateway reduced-motion screenshotSha256 mismatch
+- gateway reduced-sensory primary subject bounding box is missing
+- gateway reduced-sensory bitmap bytes are not reproducible
+- gateway reduced-sensory screenshot size mismatch
+- gateway reduced-sensory screenshotSha256 mismatch
+- gateway missing javascript-off observation
+- gateway missing resource-failure observation
+- atlas desktop primary subject bounding box is missing
+- atlas desktop bitmap bytes are not reproducible
+- atlas desktop screenshot size mismatch
+- atlas desktop screenshotSha256 mismatch
+- atlas mobile primary subject bounding box is missing
+- atlas mobile bitmap bytes are not reproducible
+- atlas mobile screenshot size mismatch
+- atlas mobile screenshotSha256 mismatch
+- atlas text-hidden primary subject bounding box is missing
+- atlas text-hidden bitmap bytes are not reproducible
+- atlas text-hidden screenshot size mismatch
+- atlas text-hidden screenshotSha256 mismatch
+- atlas missing background-hidden observation
+- atlas missing quiet-static observation
+- atlas reduced-motion primary subject bounding box is missing
+- atlas reduced-motion bitmap bytes are not reproducible
+- atlas reduced-motion screenshot size mismatch
+- atlas reduced-motion screenshotSha256 mismatch
+- atlas reduced-sensory primary subject bounding box is missing
+- atlas reduced-sensory bitmap bytes are not reproducible
+- atlas reduced-sensory screenshot size mismatch
+- atlas reduced-sensory screenshotSha256 mismatch
+- atlas missing javascript-off observation
+- atlas missing resource-failure observation
+- timeline desktop primary subject bounding box is missing
+- timeline desktop bitmap bytes are not reproducible
+- timeline desktop screenshot size mismatch
+- timeline desktop screenshotSha256 mismatch
+- timeline mobile primary subject bounding box is missing
+- timeline mobile bitmap bytes are not reproducible
+- timeline mobile screenshot size mismatch
+- timeline mobile screenshotSha256 mismatch
+- timeline text-hidden primary subject bounding box is missing
+- timeline text-hidden bitmap bytes are not reproducible
+- timeline text-hidden screenshot size mismatch
+- timeline text-hidden screenshotSha256 mismatch
+- timeline missing background-hidden observation
+- timeline missing quiet-static observation
+- timeline reduced-motion primary subject bounding box is missing
+- timeline reduced-motion bitmap bytes are not reproducible
+- timeline reduced-motion screenshot size mismatch
+- timeline reduced-motion screenshotSha256 mismatch
+- timeline reduced-sensory primary subject bounding box is missing
+- timeline reduced-sensory bitmap bytes are not reproducible
+- timeline reduced-sensory screenshot size mismatch
+- timeline reduced-sensory screenshotSha256 mismatch
+- timeline missing javascript-off observation
+- timeline missing resource-failure observation
+- archive desktop primary subject bounding box is missing
+- archive desktop bitmap bytes are not reproducible
+- archive desktop screenshot size mismatch
+- archive desktop screenshotSha256 mismatch
+- archive mobile primary subject bounding box is missing
+- archive mobile bitmap bytes are not reproducible
+- archive mobile screenshot size mismatch
+- archive mobile screenshotSha256 mismatch
+- archive text-hidden primary subject bounding box is missing
+- archive text-hidden bitmap bytes are not reproducible
+- archive text-hidden screenshot size mismatch
+- archive text-hidden screenshotSha256 mismatch
+- archive missing background-hidden observation
+- archive missing quiet-static observation
+- archive reduced-motion primary subject bounding box is missing
+- archive reduced-motion bitmap bytes are not reproducible
+- archive reduced-motion screenshot size mismatch
+- archive reduced-motion screenshotSha256 mismatch
+- archive reduced-sensory primary subject bounding box is missing
+- archive reduced-sensory bitmap bytes are not reproducible
+- archive reduced-sensory screenshot size mismatch
+- archive reduced-sensory screenshotSha256 mismatch
+- archive missing javascript-off observation
+- archive missing resource-failure observation
+- paths desktop primary subject bounding box is missing
+- paths desktop bitmap bytes are not reproducible
+- paths desktop screenshot size mismatch
+- paths desktop screenshotSha256 mismatch
+- paths mobile primary subject bounding box is missing
+- paths mobile bitmap bytes are not reproducible
+- paths mobile screenshot size mismatch
+- paths mobile screenshotSha256 mismatch
+- paths text-hidden primary subject bounding box is missing
+- paths text-hidden bitmap bytes are not reproducible
+- paths text-hidden screenshot size mismatch
+- paths text-hidden screenshotSha256 mismatch
+- paths missing background-hidden observation
+- paths missing quiet-static observation
+- paths reduced-motion primary subject bounding box is missing
+- paths reduced-motion bitmap bytes are not reproducible
+- paths reduced-motion screenshot size mismatch
+- paths reduced-motion screenshotSha256 mismatch
+- paths reduced-sensory primary subject bounding box is missing
+- paths reduced-sensory bitmap bytes are not reproducible
+- paths reduced-sensory screenshot size mismatch
+- paths reduced-sensory screenshotSha256 mismatch
+- paths missing javascript-off observation
+- paths missing resource-failure observation
+- node desktop primary subject bounding box is missing
+- node desktop bitmap bytes are not reproducible
+- node desktop screenshot size mismatch
+- node desktop screenshotSha256 mismatch
+- node mobile primary subject bounding box is missing
+- node mobile bitmap bytes are not reproducible
+- node mobile screenshot size mismatch
+- node mobile screenshotSha256 mismatch
+- node text-hidden primary subject bounding box is missing
+- node text-hidden bitmap bytes are not reproducible
+- node text-hidden screenshot size mismatch
+- node text-hidden screenshotSha256 mismatch
+- node missing background-hidden observation
+- node missing quiet-static observation
+- node reduced-motion primary subject bounding box is missing
+- node reduced-motion bitmap bytes are not reproducible
+- node reduced-motion screenshot size mismatch
+- node reduced-motion screenshotSha256 mismatch
+- node reduced-sensory primary subject bounding box is missing
+- node reduced-sensory bitmap bytes are not reproducible
+- node reduced-sensory screenshot size mismatch
+- node reduced-sensory screenshotSha256 mismatch
+- node missing javascript-off observation
+- node missing resource-failure observation
+- lighthouse desktop primary subject bounding box is missing
+- lighthouse desktop bitmap bytes are not reproducible
+- lighthouse desktop screenshot size mismatch
+- lighthouse desktop screenshotSha256 mismatch
+- lighthouse mobile primary subject bounding box is missing
+- lighthouse mobile bitmap bytes are not reproducible
+- lighthouse mobile screenshot size mismatch
+- lighthouse mobile screenshotSha256 mismatch
+- lighthouse text-hidden primary subject bounding box is missing
+- lighthouse text-hidden bitmap bytes are not reproducible
+- lighthouse text-hidden screenshot size mismatch
+- lighthouse text-hidden screenshotSha256 mismatch
+- lighthouse missing background-hidden observation
+- lighthouse missing quiet-static observation
+- lighthouse reduced-motion primary subject bounding box is missing
+- lighthouse reduced-motion bitmap bytes are not reproducible
+- lighthouse reduced-motion screenshot size mismatch
+- lighthouse reduced-motion screenshotSha256 mismatch
+- lighthouse reduced-sensory primary subject bounding box is missing
+- lighthouse reduced-sensory bitmap bytes are not reproducible
+- lighthouse reduced-sensory screenshot size mismatch
+- lighthouse reduced-sensory screenshotSha256 mismatch
+- lighthouse missing javascript-off observation
+- lighthouse missing resource-failure observation

@@ -19,6 +19,7 @@ assert(checkerSource.includes('screenshotSha256'), 'objective checker does not r
 assert(checkerSource.includes("'background-hidden'"), 'objective checker does not verify background-hidden')
 assert(checkerSource.includes('primarySubjectRect'), 'objective checker does not verify the primary subject bounding box')
 assert(evidenceSource.includes('acceptanceContract.views.map'), 'evidence modes are not derived from frozen views')
+assert(evidenceSource.includes("resourceEntries:resources.filter((entry)=>/\\\\.(?:avif|webp|png|jpe?g|mp3|wav|ogg|m4a|css|js)(?:\\\\?|$)/i"), 'evidence resource regex is not escaped for the browser expression')
 assert(permissionSource.includes("process.argv.includes('--check-only')"), 'permission checker lacks side-effect-free mode')
 
 if (failures.length === 0) {

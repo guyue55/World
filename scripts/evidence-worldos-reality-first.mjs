@@ -177,7 +177,7 @@ async function inspectPage(page, route, mode) {
       engineeringCopy:/Motion Layer|Fallback|Evidence|场景证据|候选验收|9\\/10|8\\.9|降级规则|验收报告/.test(document.body.innerText||''),
       privateCanary:/private-leak-fixture|不应写入的私密演练|这段正文只用于故意构造错误边界/.test(document.documentElement.innerHTML),
       fixedOverlayIssues, bitmapBytes, audioBytes,
-      resourceEntries:resources.filter((entry)=>/\.(?:avif|webp|png|jpe?g|mp3|wav|ogg|m4a|css|js)(?:\?|$)/i.test(entry.name)||entry.name.includes('/_next/image')),
+      resourceEntries:resources.filter((entry)=>/\\.(?:avif|webp|png|jpe?g|mp3|wav|ogg|m4a|css|js)(?:\\?|$)/i.test(entry.name)||entry.name.includes('/_next/image')),
       metrics:window.__worldosEvidenceMetrics??null,
       soundMode:document.querySelector('[data-sound-mode]')?.getAttribute('data-sound-mode')??null,
       ariaLive:document.querySelectorAll('[aria-live]').length,

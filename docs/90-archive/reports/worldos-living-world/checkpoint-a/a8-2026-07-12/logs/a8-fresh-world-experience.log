@@ -1,0 +1,23 @@
+A.8 fresh evidence run
+
+command: npm run evidence:world-experience
+exit: 1
+run: run-2026-07-11_17-30-24-632Z
+freshness.valid: true
+observations: localhost=70, LAN=14
+result: defects-found
+findings: 11
+- Timeline background-hidden/resource-failure: 主交互或静态等价路径不可见
+- Archive background-hidden/resource-failure: 主交互或静态等价路径不可见
+- Paths background-hidden/resource-failure: 主交互或静态等价路径不可见
+- Node desktop: 存在超过 200ms 的 long task
+- Node background-hidden/resource-failure: 主交互或静态等价路径不可见
+- Lighthouse background-hidden/resource-failure: 主交互或静态等价路径不可见
+
+command: npm run check:world-experience
+exit: 1
+result: objective evidence gate failed findings=18
+- Timeline, Archive, Paths and Lighthouse each lack both primary subject bounding box and primary interaction in background-hidden/resource-failure.
+- Node lacks primary interaction in background-hidden/resource-failure.
+
+interpretation: 工程命令已真实执行；体验门保持红灯。该结果用于 A 检查点证明旧完成声明无效，不代表 A-H 产品完成。

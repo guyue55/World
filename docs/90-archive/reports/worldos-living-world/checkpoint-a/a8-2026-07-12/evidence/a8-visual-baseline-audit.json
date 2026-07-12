@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12T01:44:35+08:00",
+  "sourceRun": "run-2026-07-11_17-30-24-632Z",
+  "reviewOrder": [
+    "desktop contact sheet",
+    "mobile contact sheet",
+    "text-hidden contact sheet",
+    "background-hidden contact sheet",
+    "quiet-static contact sheet",
+    "resource-failure contact sheet",
+    "fresh manifest and browser matrix"
+  ],
+  "freshness": {
+    "validWithinRun": true,
+    "finalEvidenceEligible": false,
+    "reason": "A 检查点失败基线在 evidence 脚本回归修复的 dirty worktree 上生成，只用于撤销继承式完成"
+  },
+  "machineFindings": {
+    "captureFailures": 11,
+    "objectiveCheckerFindings": 18,
+    "browserObservations": 70,
+    "lanObservations": 14,
+    "audioBytesBeforeGesture": 0,
+    "scenesWithoutBackgroundPrimaryInteraction": [
+      "timeline",
+      "archive",
+      "paths",
+      "node",
+      "lighthouse"
+    ],
+    "performanceFindings": [
+      "node desktop observation contains a long task above 200ms"
+    ]
+  },
+  "viewVerdicts": {
+    "desktop": "七场景可见且没有白屏，但主体差异主要由全屏 WebP 承担",
+    "mobile": "主路径可见且无横向溢出；空间仍随位图存在",
+    "text-hidden": "位图存在时七场景可区分，不能证明独立语义空间",
+    "background-hidden": "Atlas 保留关系星图；Lighthouse 保留低光灯塔轮廓但契约主交互缺失；其余场景退化为空壳或列表",
+    "quiet-static": "主要内容可读，但只是静谧可达基线，不证明持续生命",
+    "resource-failure": "与 background-hidden 同形，五场景缺失主交互或静态等价路径"
+  },
+  "sceneVerdicts": {
+    "gateway": "fail-human: 仅入口按钮与线框不足以构成隐藏背景后的世界入口主体",
+    "atlas": "partial: 关系结构在隐藏背景后仍存在，但持续星图生命尚未证明",
+    "timeline": "fail: 隐藏背景后退化为事件列表，没有时间河主体",
+    "archive": "fail: 隐藏背景后退化为公开馆藏列表，没有档案馆空间主体",
+    "paths": "fail: 隐藏背景后退化为旅程步骤列表，没有道路或旅程空间主体",
+    "node": "fail: 隐藏背景后只保留阅读摘要，没有地点化空间主体和可见进入动作",
+    "lighthouse": "partial-human-machine-fail: 低光轮廓存在，但冻结选择器下主主体与提问交互缺失"
+  },
+  "verdict": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
+  "completionClaim": "NOT_ALLOWED"
+}

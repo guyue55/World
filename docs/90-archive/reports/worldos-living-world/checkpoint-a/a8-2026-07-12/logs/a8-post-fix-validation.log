@@ -1,0 +1,21 @@
+A.8 post-fix validation
+
+command: npm run typecheck
+exit: 0
+output: tsc --noEmit
+
+command: npm run lint
+exit: 0
+output: eslint . --max-warnings=0
+
+command: node scripts/check-worldos-objective-evidence-boundary.mjs
+exit: 0
+output: OBJECTIVE_EVIDENCE_BOUNDARY_PASS manifestStatusTrusted=false visualScoreAccepted=false
+
+command: validate four A.8 JSON artifacts
+exit: 0
+output: A8_JSON_VALIDATION_PASS files=4
+
+command: git diff --check
+exit: 0
+output: clean
