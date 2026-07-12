@@ -1,0 +1,24 @@
+CONTROL_INTEGRITY_PASS frozen=8 tasks=90 next=C.9 anchor=987d1a6deac7727253b7f3d85bc7b93ab5b7ca90 productCompletion=not-evaluated
+✔ SoundscapeEngine 只在 arm 创建一个上下文，并统一处理 quiet/hidden/mute/dispose (3.641041ms)
+✔ 世界声音样板是 90 秒可删除循环，并让入口与灯塔共享同源变奏 (0.707334ms)
+✔ 离线渲染确定、峰值受控且循环接缝低于冻结阈值 (327.223708ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 901.74
+
+> word-life@0.1.0 check:m23-sensory-audio-production
+> node scripts/check-worldos-m23-sensory-audio-production.mjs
+
+WorldOS M23 sensory audio production check passed: 9/9 licensed soundscapes, 0 audio bytes
+
+> word-life@0.1.0 typecheck
+> tsc --noEmit
+
+
+> word-life@0.1.0 lint
+> eslint . --max-warnings=0

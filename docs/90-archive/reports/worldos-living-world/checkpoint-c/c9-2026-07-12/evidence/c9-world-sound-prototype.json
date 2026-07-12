@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-07-12T18:27:00+08:00",
+  "item": "C.9",
+  "status": "passed-technical-human-listening-pending",
+  "implementationCommit": {
+    "hash": "51bd4780eb416ad9b7ca653008c7dbeae669d385",
+    "subject": "feat(world): 建立可验证世界声音样板"
+  },
+  "sourceBoundBuild": {
+    "buildId": "QnR08b-O886Ci5x6uKUkR",
+    "sourceCommit": "fc5ad9a28999e807cba10f359f9eaf0e8752bf68",
+    "sourceDirty": false,
+    "buildRootHash": "5834dbfd288cc8568ad4fd994585eb7b72415ddd59f35dc5a9ec480b8c36500f",
+    "localhostAndLanIdentityEqual": true,
+    "lanUrl": "http://192.168.1.200:3411"
+  },
+  "prototype": {
+    "durationSeconds": 90,
+    "offlineRenderSeconds": 600,
+    "sampleRate": 48000,
+    "channels": 1,
+    "truePeakDbfs": -23.2,
+    "maximumBoundaryDelta": 0.0000033937394618988037,
+    "dcOffset": 2.7338320091258235e-12,
+    "nonFiniteSamples": 0,
+    "gatewayAndLighthouseShareIntervals": true,
+    "runtimeAndOfflineRecipeShareSource": "src/world/sensory/prototype.ts"
+  },
+  "browserLifecycle": {
+    "beforeGestureAudioContextCount": 0,
+    "beforeGestureAudioNetworkBytes": 0,
+    "maximumConstructedAudioContexts": 1,
+    "muteState": "suspended",
+    "muteLoopCount": 0,
+    "muteCueCount": 0,
+    "reenableReusedContext": true,
+    "spaSceneSwitchKeptOneContext": true,
+    "backgroundSuspended": true,
+    "foregroundResumed": true,
+    "browserErrors": 0
+  },
+  "artifacts": [
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/audio/world-motif-prototype-technical-report.json",
+      "sha256": "29623780a43b8a8b0703a9d661251ed2baea64013f670d40fc31f2144e5d8f84"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/audio/world-motif-prototype-10m.flac",
+      "sha256": "e33f9f5abc03201ba6eb05f010f93fd4f074cccc1e5620a9bda0ac8ac1ffa51e"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/evidence/c9-browser-audio-lifecycle.json",
+      "sha256": "8f85de33e6b6ee117be523432e5f97bf196a3e8e6f530d7b17f7fff30a10dcca"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/logs/c9-targeted-validation-final.log",
+      "sha256": "b96a046b0b9753754508ff553f13172945d4f6f3a5b8d6a160351f80ef02212d"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/logs/c9-clean-build-bound.log",
+      "sha256": "c56d0d900b6a587304e6836b6f42b32a28e3d53322e75b8e646f75951fcdd824"
+    }
+  ],
+  "claimBoundary": {
+    "technicalValidation": "passed",
+    "humanListening": "HUMAN_AUDIO_PENDING",
+    "sevenSceneSoundscape": "not-proven-by-C.9",
+    "longTermListeningComfort": "not-proven"
+  }
+}
