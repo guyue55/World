@@ -131,7 +131,7 @@
 - [x] **B.1** 从仓库已有真实内容中选择一个公开代表节点和一次可追溯的小更新；不得编造作者经历，也不得用 RC / QA / WorldOS 自述节点。
 - [x] **B.2** 为“节点变更 -> Atlas / Timeline / Archive / Paths / Node / Lighthouse / export”写一个失败的跨投影契约测试，明确“不适用”也必须有结构化原因。
 - [x] **B.3** 在临时工作区执行 authoring preview -> apply -> public projection rebuild；验证 visibility、slug、关系、路径、日期和资产错误在写入前阻止。
-- [ ] **B.4** 修复投影链，使场景 model builder、搜索与 Lighthouse 只消费同一 public projection；不在场景中手工追加节点。
+- [x] **B.4** 修复投影链，使场景 model builder、搜索与 Lighthouse 只消费同一 public projection；不在场景中手工追加节点。
 - [ ] **B.5** 实现轻量 export：manifest、facts、content、assets registry、preservation objects / events / rights、`checksums.sha256` 和中文 README。
 - [ ] **B.6** 实现并执行固定接口 `node scripts/world-export.mjs verify-restore --input <export-root> --output <empty-temp-dir>`，在独立临时目录验证 checksum、schema、引用、权限范围并完成最小恢复构建；禁止覆盖真实工作区。
 - [ ] **B.7** rollback authoring 后，真实工作区 checksum 与更新前一致；导出包仍能解释其来源和版本。

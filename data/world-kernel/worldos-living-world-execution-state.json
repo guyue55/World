@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.4",
+    "currentItem": "B.5",
     "taskState": "in_progress",
-    "activeRecordId": "LW-013",
-    "resumeAction": "implement B.4 unified public projection revision facts and apply representative update"
+    "activeRecordId": "LW-014",
+    "resumeAction": "implement B.5 lightweight public world export manifest and checksums"
   },
   "completedItems": {
     "A.1": {
@@ -295,6 +295,29 @@
       ],
       "commitHash": "09f4ec0e7760563cbb2b13e67f4a8faa3d2db11a",
       "commitSubject": "feat(world): 支持公开节点原子更新事务"
+    },
+    "B.4": {
+      "status": "passed",
+      "itemId": "B.4",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:22:00+08:00",
+      "finishedAt": "2026-07-12T15:28:50+08:00",
+      "commands": [
+        {
+          "command": "formal author update, unified six-model revision, search API, content, permission and exact pending-export validation",
+          "exitCode": 0,
+          "outputSha256": "8d8e327339fe9500f5896ea1a082f56e0c5fbe011f6a78aae06b7ea90ccb4db4",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b4-2026-07-12/logs/b4-unified-projection-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b4-2026-07-12/evidence/b4-unified-public-projection.json",
+          "sha256": "5222046629a694f5eead9f66afaad3eba3fe57db6d4eac731b67b0afaa46af86"
+        }
+      ],
+      "commitHash": "ac2c0da1a7149a4b2b045fad8b789cda7fe33bc9",
+      "commitSubject": "feat(world): 统一公开内容修订投影"
     }
   },
   "failedAttempts": [],

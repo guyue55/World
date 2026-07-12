@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.4
+current_item: B.5
 task_state: in_progress
-active_record_id: LW-013
-last_successful_command: "B.3 isolated update preview, apply, rebuild and rollback validation"
-resume_action: "implement B.4 unified public projection revision facts and apply representative update"
-last_completed_item: B.3
+active_record_id: LW-014
+last_successful_command: "B.4 six public projection and search revision validation"
+resume_action: "implement B.5 lightweight public world export manifest and checksums"
+last_completed_item: B.4
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.4
+next_item: B.5
 ```
 
 每完成一项立即：
@@ -784,6 +784,63 @@ fixes:
   - "抽取统一 applyAuthorTransaction，并让 create/update 共用原子写与 checksum manifest"
 commit: "09f4ec0e7760563cbb2b13e67f4a8faa3d2db11a feat(world): 支持公开节点原子更新事务"
 next_item: B.4
+```
+
+### Record LW-013：B.4 统一公开内容修订投影
+
+```yaml
+record: LW-013
+checkpoint: B
+item: B.4
+status: passed
+started_at: 2026-07-12T15:22:00+08:00
+finished_at: 2026-07-12T15:28:50+08:00
+verified_facts:
+  - "正式 author update 已应用，revision=64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3"
+  - "唯一内容修订 owner 是 PublicNodeReference；场景 model 不直接读取 Markdown"
+  - "Atlas、Timeline、Archive、Paths、Node、Lighthouse 与公开搜索 API 返回同一 revision hash"
+  - "Atlas 依据 area 内最新修订补充地点，不手工登记代表节点；Timeline 由 node-updated 事实事件吸收"
+  - "Archive 与 Lighthouse 可用新增正文短语检索，且只消费公开正文"
+  - "B.2 红灯从 8 项降为 export 唯一一项，未删除或放宽契约"
+  - "rollback backup manifest hash 已封存，目录被 gitignore 保护并保留到 B.7"
+hypothesis:
+  id: H-01
+  result: null
+files_changed:
+  - "src/lib/content.ts"
+  - "src/lib/public-world-objects.ts"
+  - "src/lib/scenes/build-atlas-model.ts"
+  - "src/lib/scenes/build-timeline-model.ts"
+  - "src/lib/scenes/build-archive-model.ts"
+  - "src/lib/scenes/build-path-model.ts"
+  - "src/lib/scenes/build-node-model.ts"
+  - "src/server/ai/lighthouse-runtime.ts"
+  - "src/app/api/lighthouse/search/route.ts"
+  - "content/articles/kavita-reader-txt-epub-pipeline.md"
+  - "data/domains/experience/nodes.json"
+  - "data/core/world-events.json"
+commands:
+  - command: "world-author apply representative update"
+    exit_code: 0
+    observed: "five managed files changed; backupId=author-1783841103039-kavita-portable-checksum-2026-07-12"
+  - command: "six scene models and public search API revision validation"
+    exit_code: 0
+    observed: "B4_UNIFIED_PUBLIC_PROJECTION_PASS"
+  - command: "content projection contract exact pending set"
+    exit_code: 0
+    observed: "only export remains pending"
+  - command: "typecheck, lint, content, permission/API boundary and diff checks"
+    exit_code: 0
+    observed: "all targeted engineering gates pass"
+evidence:
+  - "b4-unified-projection-validation.log sha256=8d8e327339fe9500f5896ea1a082f56e0c5fbe011f6a78aae06b7ea90ccb4db4"
+  - "b4-unified-public-projection.json sha256=5222046629a694f5eead9f66afaad3eba3fe57db6d4eac731b67b0afaa46af86"
+failures:
+  - "Markdown 标题索引初次把 fenced code 注释计入标题，导致新增章节被截断"
+fixes:
+  - "统一内容解析器先排除 fenced code blocks，再提取有限章节标题"
+commit: "ac2c0da1a7149a4b2b045fad8b789cda7fe33bc9 feat(world): 统一公开内容修订投影"
+next_item: B.5
 ```
 
 ## 10. 后续记录模板
