@@ -12,6 +12,7 @@ export type TimelineEventView = {
   areaLabels: string[]
   nodeHref: string | null
   nodeTitle: string | null
+  contentRevisionSha256: string | null
 }
 
 export type TimelineAnchorView = {
@@ -74,6 +75,7 @@ export function buildTimelineViewModel(index: PublicWorldObjectIndex): TimelineV
         areaLabels: (event.areaIds ?? []).map((id) => index.areaById.get(id)?.worldName).filter((title): title is string => Boolean(title)),
         nodeHref: nodeReference?.href ?? null,
         nodeTitle: nodeReference?.title ?? null,
+        contentRevisionSha256: nodeReference?.contentRevisionSha256 ?? null,
       }
     })
 

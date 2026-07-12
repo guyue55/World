@@ -14,6 +14,7 @@ export type JourneyStepView = {
   x: number
   y: number
   mobileY: number
+  contentRevisionSha256: string | null
 }
 
 export type JourneyPathView = {
@@ -62,7 +63,7 @@ function buildPath(index: PublicWorldObjectIndex, pathId: string, routeIndex: nu
   const refs = path.nodeSlugs.map((slug) => index.nodeRefs.find((node) => node.slug === slug)).filter((node): node is NonNullable<typeof node> => Boolean(node))
   const steps = refs.map((node, stepIndex) => {
     const position = stationPositions[stepIndex % stationPositions.length]
-    return { index: stepIndex, slug: node.slug, title: node.title, summary: node.aiReadableSummary, areaId: node.areaId, areaTitle: node.areaTitle, href: `/node/${node.slug}?fromPath=${path.id}&step=${stepIndex}`, x: position.x, y: position.y, mobileY: 24 + stepIndex * Math.min(11, 62 / Math.max(1, refs.length - 1)) }
+    return { index: stepIndex, slug: node.slug, title: node.title, summary: node.aiReadableSummary, areaId: node.areaId, areaTitle: node.areaTitle, href: `/node/${node.slug}?fromPath=${path.id}&step=${stepIndex}`, x: position.x, y: position.y, mobileY: 24 + stepIndex * Math.min(11, 62 / Math.max(1, refs.length - 1)), contentRevisionSha256: node.contentRevisionSha256 }
   })
   return {
     id: path.id,

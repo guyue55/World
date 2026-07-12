@@ -1,0 +1,26 @@
+B.4 unified public projection validation
+
+command: world-author apply representative-node-update.json
+exit: 0
+backupId: author-1783841103039-kavita-portable-checksum-2026-07-12
+contentRevisionSha256: 64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3
+changedFiles: nodes,events,content,public-index,public-manifest
+
+command: content projection contract after first implementation
+exit: 1
+findings: archive,export
+rootCause: fenced code comments were counted as Markdown headings
+
+command: content projection contract after heading parser fix
+exit: 1
+findings: export only
+passed: atlas,timeline,archive,paths,node,lighthouse
+
+command: direct six model and public search API revision check
+exit: 0
+output: B4_UNIFIED_PUBLIC_PROJECTION_PASS revision=64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3 checks=atlas,timeline,archive,paths,node,lighthouse,searchApi
+
+command: npm run typecheck && npm run lint && npm run check:content && npm run check:boundary && git diff --check
+exit: 0
+
+interpretation: B.4 六个公开体验投影与搜索已统一；export 的唯一红灯保留给 B.5，未降低契约。

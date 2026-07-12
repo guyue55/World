@@ -460,7 +460,8 @@
     "layer": "fact",
     "createdAt": "2026-07-04",
     "cover": "/covers/cover-natural-tech.svg",
-    "reviewed": true
+    "reviewed": true,
+    "updatedAt": "2026-07-12"
   },
   {
     "id": "node-ai-report-demo",

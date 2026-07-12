@@ -53,7 +53,7 @@ export function ArchiveView({ model }: { model: ArchiveViewModel }) {
     setSearchState('loading')
     void import('fuse.js').then(({ default: Fuse }) => {
       if (cancelled) return
-      const fuse = new Fuse(model.records, { keys: ['title', 'summary', 'tags', 'areaTitle', 'typeLabel', 'lifeStageLabel'], threshold: 0.3, ignoreLocation: true, minMatchCharLength: 1 })
+      const fuse = new Fuse(model.records, { keys: ['title', 'summary', 'contentSearchText', 'tags', 'areaTitle', 'typeLabel', 'lifeStageLabel'], threshold: 0.3, ignoreLocation: true, minMatchCharLength: 1 })
       setMatchedIds(new Set(fuse.search(query).map((result) => result.item.id)))
       setSearchState('ready')
     })

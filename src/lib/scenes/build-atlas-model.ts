@@ -28,6 +28,7 @@ export type AtlasNodeView = {
   y: number
   importance: number
   relationReasons: string[]
+  contentRevisionSha256: string | null
 }
 
 export type AtlasLinkView = {
@@ -98,8 +99,11 @@ export function buildAtlasViewModel(
     const coordinate = coordinateByArea.get(area.id)
     if (!coordinate) return []
     const point = projectCoordinate(coordinate, viewport)
-    const representativeNodeIds = (curation.representativeNodeIdsByArea[area.id] ?? [])
-      .filter((id) => index.nodeById.has(id))
+    const latestNodeId = index.nodeRefs
+      .filter((node) => node.areaId === area.id)
+      .sort((left, right) => right.updatedAt.localeCompare(left.updatedAt) || left.id.localeCompare(right.id))[0]?.id
+    const representativeNodeIds = [...new Set([...(curation.representativeNodeIdsByArea[area.id] ?? []), latestNodeId].filter(Boolean))]
+      .filter((id): id is string => index.nodeById.has(id as string))
 
     return [{
       id: area.id,
@@ -132,6 +136,7 @@ export function buildAtlasViewModel(
       y: clamp(area.y + (offset.y / 100) * viewport.height, 5, viewport.height - 5),
       importance: nodeIndex === 0 ? 1 : nodeIndex === 1 ? 0.8 : 0.6,
       relationReasons: reference.relationReasons,
+      contentRevisionSha256: reference.contentRevisionSha256,
     }]
   }))
 

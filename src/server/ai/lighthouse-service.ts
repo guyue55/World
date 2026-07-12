@@ -96,6 +96,7 @@ export async function answerLighthouseQuestion(question: string, sceneContext?: 
           title: node.title,
           href: node.href,
           reason: node.relationReasons[0] ?? node.aiReadableSummary,
+          contentRevisionSha256: node.contentRevisionSha256,
         }]))
         const sources = sourceIds.map((id) => sourceById.get(id)).filter((source): source is NonNullable<typeof source> => Boolean(source))
         if (sources.length > 0) {

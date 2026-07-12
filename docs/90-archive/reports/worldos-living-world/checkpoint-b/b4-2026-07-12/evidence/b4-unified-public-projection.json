@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12T15:29:00+08:00",
+  "item": "B.4",
+  "updateId": "kavita-portable-checksum-2026-07-12",
+  "nodeId": "node-kavita-reader-pipeline",
+  "contentPath": "content/articles/kavita-reader-txt-epub-pipeline.md",
+  "contentRevisionSha256": "64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3",
+  "authoringTransaction": {
+    "backupId": "author-1783841103039-kavita-portable-checksum-2026-07-12",
+    "manifestSha256": "ff27e58937ce420af9dc05e19f7583cb428174a3d8c83b2973be5bf20097de99",
+    "status": "applied",
+    "changedFiles": {
+      "data/domains/experience/nodes.json": {
+        "before": "a1e30db6a7171b990b5a79b194b2e84fc658f06ff5a8dbbfc886283d43bc9bf0",
+        "after": "fe55aec80c0364a7c0ddb4868416c7bd405422b89044119d04e18b40e2c8bd12"
+      },
+      "data/core/world-events.json": {
+        "before": "cf3c3dee9410ab5520daed2c16322c9f3253e57823ad927d788a88e2ea392b3f",
+        "after": "4972bc1d72413d59830df74fd086b0dbeec23edc6d5234d490631fad8f772e90"
+      },
+      "content/articles/kavita-reader-txt-epub-pipeline.md": {
+        "before": "1f18b155a63fca16b3c5f9dde35b6891648fcc9fb0f7a95a8225383933b3ca9b",
+        "after": "64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3"
+      },
+      "public/world-index.json": {
+        "before": "5305b9b103eac0f85f76392a84f1365d9136eccba79a7c85d5785806074f5e2d",
+        "after": "25153f735bee2bdc7adbd09920bb32826180895c599043443f8953397660e684"
+      },
+      "public/world-manifest.json": {
+        "before": "bdd7b35cb1fb2cd2e0ab85152c8b887479bebddb09dc9a9a2f8dcc64ffc11ae3",
+        "after": "bdd7b35cb1fb2cd2e0ab85152c8b887479bebddb09dc9a9a2f8dcc64ffc11ae3"
+      }
+    }
+  },
+  "singleProjectionOwner": {
+    "module": "src/lib/public-world-objects.ts",
+    "contentReader": "src/lib/content.ts",
+    "fields": [
+      "contentRevisionSha256",
+      "contentSearchText",
+      "contentHeadings",
+      "updatedAt"
+    ],
+    "sceneReadsMarkdownDirectly": false
+  },
+  "projectionResults": {
+    "atlas": "pass",
+    "timeline": "pass",
+    "archive": "pass",
+    "paths": "pass",
+    "node": "pass",
+    "lighthouse": "pass",
+    "searchApi": "pass",
+    "export": "pending-B.5"
+  },
+  "contentContractFindingsBeforeB5": [
+    "export: 公开内容更新未提供 manifestPath, contentPath, contentRevisionSha256"
+  ],
+  "engineering": {
+    "typecheck": "pass",
+    "lint": "pass",
+    "contentChecks": "pass",
+    "permissionAndApiBoundary": "pass",
+    "diffCheck": "pass"
+  },
+  "verdict": "B4_SIX_PUBLIC_PROJECTIONS_PASS_EXPORT_PENDING"
+}

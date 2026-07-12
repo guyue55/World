@@ -886,5 +886,20 @@
     "visibility": "public",
     "actor": "system",
     "summary": "RC1 收束经验进入时间河事件记录"
+  },
+  {
+    "id": "evt-kavita-portable-checksum-2026-07-12",
+    "type": "node-updated",
+    "title": "电子书归档命令补充跨平台边界",
+    "date": "2026-07-12",
+    "description": "为 TXT 与 EPUB 整理管线补充 macOS、Linux 校验和差异及含空格路径的安全约束。",
+    "nodeIds": [
+      "node-kavita-reader-pipeline"
+    ],
+    "areaIds": [
+      "tech"
+    ],
+    "visibility": "public",
+    "actor": "creator"
   }
 ]

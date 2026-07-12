@@ -6,6 +6,7 @@ import { getAllPaths } from './paths'
 import { getAllRelations } from './relations'
 import { getPublicWorldEvents } from './world-events'
 import type { Area, Node, Path, Relation, WorldEvent } from './types'
+import { getContentRevision } from './content'
 
 export type PublicNodeReference = {
   id: string
@@ -20,6 +21,10 @@ export type PublicNodeReference = {
   pathIds: string[]
   timelineEventIds: string[]
   relationReasons: string[]
+  updatedAt: string
+  contentRevisionSha256: string | null
+  contentSearchText: string
+  contentHeadings: string[]
 }
 
 export type PublicPathReference = {
@@ -60,6 +65,7 @@ function nodeReference(
 ): PublicNodeReference {
   const area = areaById.get(node.areaId)
   const fact = factByNodeId.get(node.id)
+  const revision = getContentRevision(node.contentPath)
 
   return {
     id: node.id,
@@ -74,6 +80,10 @@ function nodeReference(
     pathIds: fact?.pathIds ?? [],
     timelineEventIds: fact?.timelineEventIds ?? [],
     relationReasons: fact?.relationReasons ?? [],
+    updatedAt: node.updatedAt ?? node.createdAt,
+    contentRevisionSha256: revision?.sha256 ?? null,
+    contentSearchText: revision?.searchText ?? '',
+    contentHeadings: revision?.headings ?? [],
   }
 }
 

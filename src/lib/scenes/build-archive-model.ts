@@ -18,6 +18,8 @@ export type ArchiveRecordView = {
   date: string
   shelfId: string
   drawer: number
+  contentRevisionSha256: string | null
+  contentSearchText: string
 }
 
 export type ArchiveShelfView = {
@@ -62,7 +64,7 @@ export function buildArchiveViewModel(index: PublicWorldObjectIndex): ArchiveVie
         slug: node.slug,
         href: `/node/${node.slug}`,
         title: reference?.title ?? node.worldTitle ?? node.title,
-        summary: reference?.aiReadableSummary ?? node.summary ?? '',
+        summary: [reference?.aiReadableSummary ?? node.summary ?? '', ...(reference?.contentHeadings.slice(1) ?? [])].filter(Boolean).join(' · '),
         areaId: node.areaId,
         areaTitle: area?.worldName ?? node.areaId,
         type: node.type,
@@ -73,6 +75,8 @@ export function buildArchiveViewModel(index: PublicWorldObjectIndex): ArchiveVie
         date: node.updatedAt ?? node.createdAt,
         shelfId: shelfByArea.get(node.areaId) ?? 'shelf-archive',
         drawer: recordIndex,
+        contentRevisionSha256: reference?.contentRevisionSha256 ?? null,
+        contentSearchText: reference?.contentSearchText ?? '',
       }
     })
   const shelves = primaryAreas.map((area, areaIndex) => ({

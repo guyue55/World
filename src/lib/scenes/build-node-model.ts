@@ -28,6 +28,7 @@ export type NodePlaceModel = {
   pathContext: NodePathContext | null
   pathExits: Array<{ id: string; title: string; href: string }>
   asset: ReturnType<typeof getWorldSceneAsset>
+  contentRevisionSha256: string | null
 }
 
 const doorPositions = [{ x: 21, y: 53 }, { x: 77, y: 47 }, { x: 30, y: 72 }, { x: 70, y: 69 }, { x: 45, y: 38 }, { x: 58, y: 80 }]
@@ -35,6 +36,7 @@ const doorPositions = [{ x: 21, y: 53 }, { x: 77, y: 47 }, { x: 30, y: 72 }, { x
 export function buildNodePlaceModel({ index, node, readingMinutes, groups, pathContext }: { index: PublicWorldObjectIndex; node: Node; readingMinutes: number | null; groups: ExplorationGroup[]; pathContext: NodePathContext | null }): NodePlaceModel {
   const area = index.areaById.get(node.areaId)
   const fact = index.contentLifeFacts.find((item) => item.id === node.id)
+  const reference = index.nodeRefs.find((item) => item.id === node.id)
   const seen = new Set<string>()
   const relationDoors = groups.flatMap((group) => group.items.map((item) => ({ group, item }))).filter(({ item }) => {
     if (seen.has(item.node.id)) return false
@@ -62,5 +64,6 @@ export function buildNodePlaceModel({ index, node, readingMinutes, groups, pathC
     pathContext,
     pathExits,
     asset: getWorldSceneAsset('node'),
+    contentRevisionSha256: reference?.contentRevisionSha256 ?? null,
   }
 }

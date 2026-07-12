@@ -15,6 +15,7 @@ export type LighthouseSource = {
   title: string
   href: string
   reason: string
+  contentRevisionSha256: string | null
 }
 
 export type LighthouseRecommendation = {
@@ -97,7 +98,7 @@ function inferIntent(question: string): LighthouseIntent {
 function matchesQuestion(node: PublicNodeReference, question: string) {
   const query = question.toLowerCase()
   const terms = query.split(/[\s,，。！？?/.、]+/).filter((term) => term.length >= 2)
-  const haystack = [node.title, node.slug, node.aiReadableSummary, node.areaTitle, node.lifeStage, node.status]
+  const haystack = [node.title, node.slug, node.aiReadableSummary, node.contentSearchText, node.areaTitle, node.lifeStage, node.status]
     .join(' ')
     .toLowerCase()
   return terms.length > 0
@@ -117,6 +118,7 @@ function sourceFromNode(node: PublicNodeReference): LighthouseSource {
     title: node.title,
     href: node.href,
     reason,
+    contentRevisionSha256: node.contentRevisionSha256,
   }
 }
 
@@ -124,7 +126,7 @@ function contextCandidates(nodes: PublicNodeReference[]): AIContextCandidate[] {
   return nodes.map((node) => ({
     id: node.id,
     title: node.title,
-    summary: node.aiReadableSummary,
+    summary: `${node.aiReadableSummary}\n${node.contentSearchText}`.slice(0, 4_000),
     visibility: 'public',
   }))
 }
@@ -176,12 +178,13 @@ export function runLowLightLighthouse(question: string, sceneContext?: SceneCont
     ? matchedSources
     : getRecommendationsForHome(publicWorld.nodes, publicWorld.paths, governance.contextPolicy.recommendationLimit).map((item) => {
         if (item.type === 'node' && item.node) {
-          return { slug: item.node.slug, title: item.node.title, href: item.node.href, reason: item.reason }
+          const reference = publicWorld.nodeRefs.find((node) => node.slug === item.node?.slug)
+          return { slug: item.node.slug, title: item.node.title, href: item.node.href, reason: item.reason, contentRevisionSha256: reference?.contentRevisionSha256 ?? null }
         }
         if (item.type === 'path' && item.path) {
-          return { slug: '', title: item.path.title, href: item.path.href, reason: item.reason }
+          return { slug: '', title: item.path.title, href: item.path.href, reason: item.reason, contentRevisionSha256: null }
         }
-        return { slug: '', title: '公开入口', href: '/paths', reason: '低光 fallback 推荐公开路径。' }
+        return { slug: '', title: '公开入口', href: '/paths', reason: '低光 fallback 推荐公开路径。', contentRevisionSha256: null }
       })
 
   const recommendations: LighthouseRecommendation[] = sources

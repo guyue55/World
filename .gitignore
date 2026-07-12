@@ -26,6 +26,7 @@ out/
 coverage/
 .nyc_output/
 tmp/
+.world-author-backups/
 
 *.tsbuildinfo
 
