@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.7",
+    "currentItem": "C.8",
     "taskState": "in_progress",
-    "activeRecordId": "LW-026",
-    "resumeAction": "implement C.7 Node low-activity window light and distant-view adapter without disturbing reading width or 200 percent zoom"
+    "activeRecordId": "LW-027",
+    "resumeAction": "implement C.8 Gateway to Atlas to Node to Gateway migration source, transit, arrival, focus and return context"
   },
   "completedItems": {
     "A.1": {
@@ -624,6 +624,22 @@
       ],
       "commitHash": "42eca2c06d257badc81822713c6295c2eee20499",
       "commitSubject": "fix(world): 消除星图节点轨道重叠"
+    },
+    "C.7": {
+      "status": "passed",
+      "itemId": "C.7",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T17:23:00+08:00",
+      "finishedAt": "2026-07-12T17:32:46+08:00",
+      "commands": [
+        { "command": "Node adapter coordinator tests and engineering checks", "exitCode": 0, "outputSha256": "33e57d1ad723f1958d7b2f6b303cdc4b1f66dd94f82605ab7c70e41634b728ef", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/logs/c7-targeted-validation.log" },
+        { "command": "fresh Node quiet room background-hidden reduced and reading reflow review", "exitCode": 0, "outputSha256": "96553914b01297712828fec251e33c8e49d8247a4c1191497635dc4abf74b525", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/logs/c7-browser-attempt-4.log" }
+      ],
+      "evidence": [
+        { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/evidence/c7-node-quiet-room.json", "sha256": "7cce11273b13211e6074996f110949e16e33d2a5f902876e59581b47315b7055" }
+      ],
+      "commitHash": "ce2dabd4ad8f80e691fc82f8419b5c132e947dad",
+      "commitSubject": "fix(world): 增强内容地点静态空间骨架"
     }
   },
   "failedAttempts": [],

@@ -14,13 +14,13 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.7
-next_item: C.7
+current_item: C.8
+next_item: C.8
 task_state: in_progress
-active_record_id: LW-026
-last_successful_command: "C.6 fresh Atlas content-life projection, focused subgraph and background-hidden natural interaction review"
-resume_action: "implement C.7 Node low-activity window light and distant-view adapter without disturbing reading width or 200 percent zoom"
-last_completed_item: C.6
+active_record_id: LW-027
+last_successful_command: "C.7 fresh Node quiet room, background-hidden, reduced and 200 percent equivalent reading review"
+resume_action: "implement C.8 Gateway to Atlas to Node to Gateway migration source, transit, arrival, focus and return context"
+last_completed_item: C.7
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -1352,6 +1352,52 @@ commit: "42eca2c06d257badc81822713c6295c2eee20499 fix(world): 消除星图节点
 next_item: C.7
 ```
 
+### Record LW-026：C.7 Node 静谧窗景与阅读边界
+
+```yaml
+record: LW-026
+checkpoint: C
+item: C.7
+status: passed
+started_at: 2026-07-12T17:23:00+08:00
+finished_at: 2026-07-12T17:32:46+08:00
+verified_facts:
+  - "Node adapter 只驱动首屏窗光、远岛与尘光；正文 DOM 不注册动画"
+  - "窗景由 dayProgress/dayPeriod/season/lifeStage/status/relation count 确定投影"
+  - "normal 远岛 drift 1.200px -> 1.399px；reduced 为 paused 且 1.052px 不变"
+  - "background-hidden 保留拱墙、立柱、地面、书桌、窗、远岛、8 个房间对象、阅读门和 4 个出口"
+  - "720 CSS px 的 200% 等价 reflow 下 scrollWidth=clientWidth=720，正文 688px，无横向溢出"
+hypothesis:
+  id: H-05
+  result: passed-for-node-only
+files_changed:
+  - "src/world/scenes/node/module.ts"
+  - "src/components/node/NodePlaceRoom.tsx"
+  - "src/components/node/NodePlaceRoom.module.css"
+commands:
+  - command: "Node adapter/coordinator tests, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "4 tests pass"
+  - command: "fresh Node normal/background-hidden/reduced/200-percent-equivalent browser review"
+    exit_code: 0
+    observed: "sourceDirty=false; Node 147 kB; quiet runtime and reading boundaries pass"
+evidence:
+  - "c7-targeted-validation.log sha256=33e57d1ad723f1958d7b2f6b303cdc4b1f66dd94f82605ab7c70e41634b728ef"
+  - "c7-fresh-build-attempt-2.log sha256=61420025d91e4199884cc1f3714a3608fce8cb497e98153a97d7759dc237e718"
+  - "c7-browser-attempt-4.log sha256=96553914b01297712828fec251e33c8e49d8247a4c1191497635dc4abf74b525"
+  - "c7-node-quiet-room.json sha256=7cce11273b13211e6074996f110949e16e33d2a5f902876e59581b47315b7055"
+failures:
+  - "浏览器 selector 同时匹配动态阅读门与 fallback 链接"
+  - "第二轮在关闭 page context 后读取 build identity"
+  - "首轮 background-hidden 仍像黑底浮动标签"
+fixes:
+  - "使用 data-room-object 复合 selector 与独立 request context；增加拱墙、地面和书桌空间几何"
+claim_boundary:
+  - "只证明代表 Node；完整无障碍、长时稳定和跨路由清理仍留待 C.10-C.13"
+commit: "ce2dabd4ad8f80e691fc82f8419b5c132e947dad fix(world): 增强内容地点静态空间骨架"
+next_item: C.8
+```
+
 ## 10. 后续记录模板
 
 ```yaml
@@ -1396,6 +1442,7 @@ next_item: "A.1-H.16 or none"
 | 2026-07-12T17:03:00+08:00 | C.5 | 首次 hidden 探针有 0.006px 在途帧且状态字段为空 | 采样了继承变量的 WorldViewport，并在 pause 落稳前取基线 | 增加稳定 stage 标记，等待 paused 后采样；2.2 秒值完全不变 | C.5 browser runtime attempt 2 | fixed |
 | 2026-07-12T17:13:00+08:00 | C.6 | Atlas 聚焦后第一个节点无法自然点击 | 4 个代表节点复用 3 个偏移，第 4 个与第 1 个精确重叠 | 六个唯一确定性轨道、坐标回归与真实入口计数；fresh build 重测自然点击 | C.6 browser attempt 2 | fixed |
 | 2026-07-12T17:18:00+08:00 | C.6 | active relation probe 错报零边 | Playwright 在 line 元素下查后代而非同元素复合条件 | 改用复合 selector，并在 tech 星域验证两条 offset 持续变化的事实边 | C.6 browser attempt 4 | fixed |
+| 2026-07-12T17:31:00+08:00 | C.7 | Node background-hidden 仍像黑底浮动标签 | 只有窗景和关系门，缺少房间边界与承载面 | 增加 DOM/CSS 拱墙、立柱、地面和书桌；fresh build 重拍 | C.7 browser attempt 4 | fixed |
 
 ## 12. 证据新鲜度
 
