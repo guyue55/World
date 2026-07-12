@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-12T11:27:49.332Z",
+  "reportPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/c11-capture-observations.json",
+  "buildId": "JBzvipTzNhbFb7aIWNG1c",
+  "sourceCommit": "73f63df657d6faf10eb13ce75cf20db655e6f4d1",
+  "media": [
+    {
+      "sceneId": "gateway",
+      "durationSeconds": 66.4,
+      "packetCount": 1215,
+      "maxPacketGapSeconds": 0.3999999999999986,
+      "nonMonotonicPacketCount": 0,
+      "sampledFrameCount": 66,
+      "uniqueFrameRatio": 1,
+      "roiFrameCount": 66,
+      "roiDynamicFrameRatio": 0.7076923076923077
+    },
+    {
+      "sceneId": "atlas",
+      "durationSeconds": 66.48,
+      "packetCount": 1170,
+      "maxPacketGapSeconds": 0.480000000000004,
+      "nonMonotonicPacketCount": 0,
+      "sampledFrameCount": 66,
+      "uniqueFrameRatio": 1,
+      "roiFrameCount": 66,
+      "roiDynamicFrameRatio": 0.8923076923076924
+    },
+    {
+      "sceneId": "node",
+      "durationSeconds": 66.44,
+      "packetCount": 1278,
+      "maxPacketGapSeconds": 0.7999999999999998,
+      "nonMonotonicPacketCount": 0,
+      "sampledFrameCount": 66,
+      "uniqueFrameRatio": 1,
+      "roiFrameCount": 66,
+      "roiDynamicFrameRatio": 0.5384615384615384
+    }
+  ],
+  "failures": []
+}

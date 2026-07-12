@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-07-12T19:29:00+08:00",
+  "reviewerRole": "implementer-first-pass",
+  "reviewOrder": [
+    "contact-sheet-before-reports",
+    "gateway-five-frame-strip",
+    "atlas-five-frame-strip",
+    "node-five-frame-strip",
+    "media-analysis-after-visuals"
+  ],
+  "observations": [
+    {
+      "sceneId": "gateway",
+      "continuousLife": "全景雾光、星点、浮屿和信标缓慢变化；五帧构图稳定",
+      "backgroundHidden": "月门、三座目的地、路径与灯塔可辨，但整体比 Atlas/Node 更暗",
+      "finding": "P2-background-hidden-sparse-dark"
+    },
+    {
+      "sceneId": "atlas",
+      "continuousLife": "星域中心冷光与关系域持续呼吸，热点、Inspector 和航线不跳位",
+      "backgroundHidden": "区域、节点和关系结构完整可辨可操作",
+      "finding": "none"
+    },
+    {
+      "sceneId": "node",
+      "continuousLife": "变化限制在窗侧月光与远景，正文入口、关系门和阅读承载面静止",
+      "backgroundHidden": "拱墙、书桌、窗、远岛、关系门与出口仍构成房间",
+      "finding": "none"
+    }
+  ],
+  "crossMode": {
+    "mobileOverflow": false,
+    "reducedAdaptersPaused": true,
+    "textHiddenSpatialIdentityRetained": true,
+    "engineeringCopyVisible": false
+  },
+  "severity": {
+    "P0": [],
+    "P1": [],
+    "P2": [
+      "Gateway background-hidden 的空间信号较暗且稀疏，交由 C.12 fresh reviewer 判定是否需要回到 C.5。"
+    ]
+  },
+  "claimBoundary": "这是实现者首轮视觉审查，不替代 C.12 fresh 独立审查，也不构成人类音频听感签收。"
+}

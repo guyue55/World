@@ -1,0 +1,20 @@
+{
+  "sceneId": "gateway",
+  "sourceCommit": "73f63df657d6faf10eb13ce75cf20db655e6f4d1",
+  "buildId": "JBzvipTzNhbFb7aIWNG1c",
+  "buildRootHash": "587b830ed5e5af339035cce4148b3a625be23a6b42ce3965de075645bd8a0c16",
+  "startedAt": "2026-07-12T11:22:43.873Z",
+  "finishedAt": "2026-07-12T11:24:07.641Z",
+  "monotonicStartedMs": 64550.689792,
+  "monotonicFinishedMs": 148302.611708,
+  "wallClockSeconds": 83.768,
+  "captureDurationSeconds": 65.19600009918213,
+  "ffprobeDurationSeconds": 66.4,
+  "frameCount": 1268,
+  "sha256": "bc1e1d661ddf6e6f849981210942388db281f3496ad3e483bb9dce8994fd9da3",
+  "bytes": 3631298,
+  "continuousWallClock": true,
+  "edited": false,
+  "repeatedAssembly": false,
+  "captureCommand": "Page.startScreencast + 65s uninterrupted wait + ffmpeg VFR concat"
+}

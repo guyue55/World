@@ -1,0 +1,20 @@
+{
+  "sceneId": "node",
+  "sourceCommit": "73f63df657d6faf10eb13ce75cf20db655e6f4d1",
+  "buildId": "JBzvipTzNhbFb7aIWNG1c",
+  "buildRootHash": "587b830ed5e5af339035cce4148b3a625be23a6b42ce3965de075645bd8a0c16",
+  "startedAt": "2026-07-12T11:25:45.612Z",
+  "finishedAt": "2026-07-12T11:27:08.302Z",
+  "monotonicStartedMs": 246272.059083,
+  "monotonicFinishedMs": 328960.392333,
+  "wallClockSeconds": 82.69,
+  "captureDurationSeconds": 65.08699989318848,
+  "ffprobeDurationSeconds": 66.44,
+  "frameCount": 1319,
+  "sha256": "ed26fc74043246b2c9cf81efa7c09882880b98e16a929d77cccb207c622ffe05",
+  "bytes": 1520746,
+  "continuousWallClock": true,
+  "edited": false,
+  "repeatedAssembly": false,
+  "captureCommand": "Page.startScreencast + 65s uninterrupted wait + ffmpeg VFR concat"
+}

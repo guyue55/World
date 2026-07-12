@@ -1,0 +1,20 @@
+{
+  "sceneId": "atlas",
+  "sourceCommit": "73f63df657d6faf10eb13ce75cf20db655e6f4d1",
+  "buildId": "JBzvipTzNhbFb7aIWNG1c",
+  "buildRootHash": "587b830ed5e5af339035cce4148b3a625be23a6b42ce3965de075645bd8a0c16",
+  "startedAt": "2026-07-12T11:24:11.146Z",
+  "finishedAt": "2026-07-12T11:25:42.938Z",
+  "monotonicStartedMs": 151808.515708,
+  "monotonicFinishedMs": 243597.520583,
+  "wallClockSeconds": 91.792,
+  "captureDurationSeconds": 65.33400011062622,
+  "ffprobeDurationSeconds": 66.48,
+  "frameCount": 1209,
+  "sha256": "cdc8485ecb0d013957666a84fc6b6bc8ae1b117387f82954d046172610f537cb",
+  "bytes": 4505372,
+  "continuousWallClock": true,
+  "edited": false,
+  "repeatedAssembly": false,
+  "captureCommand": "Page.startScreencast + 65s uninterrupted wait + ffmpeg VFR concat"
+}

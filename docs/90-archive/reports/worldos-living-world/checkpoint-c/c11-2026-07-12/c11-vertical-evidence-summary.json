@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-07-12T19:30:00+08:00",
+  "item": "C.11",
+  "status": "passed-with-P2-for-independent-review",
+  "build": {
+    "buildId": "JBzvipTzNhbFb7aIWNG1c",
+    "sourceCommit": "73f63df657d6faf10eb13ce75cf20db655e6f4d1",
+    "sourceDirty": false,
+    "buildRootHash": "587b830ed5e5af339035cce4148b3a625be23a6b42ce3965de075645bd8a0c16"
+  },
+  "screenshots": {
+    "count": 15,
+    "scenes": ["gateway", "atlas", "node"],
+    "modes": ["normal", "background-hidden", "text-hidden", "mobile", "reduced"],
+    "contactSheetSha256": "8b49bded8ece9bd2132a8f576e7c86cf676f34097082c39f9548b6cfb2c93251"
+  },
+  "recordings": [
+    {
+      "sceneId": "gateway",
+      "durationSeconds": 66.4,
+      "uniqueFrameRatio": 1,
+      "roiDynamicFrameRatio": 0.7076923076923077,
+      "maxPacketGapSeconds": 0.4,
+      "sha256": "bc1e1d661ddf6e6f849981210942388db281f3496ad3e483bb9dce8994fd9da3"
+    },
+    {
+      "sceneId": "atlas",
+      "durationSeconds": 66.48,
+      "uniqueFrameRatio": 1,
+      "roiDynamicFrameRatio": 0.8923076923076924,
+      "maxPacketGapSeconds": 0.48,
+      "sha256": "cdc8485ecb0d013957666a84fc6b6bc8ae1b117387f82954d046172610f537cb"
+    },
+    {
+      "sceneId": "node",
+      "durationSeconds": 66.44,
+      "uniqueFrameRatio": 1,
+      "roiDynamicFrameRatio": 0.5384615384615384,
+      "maxPacketGapSeconds": 0.8,
+      "sha256": "ed26fc74043246b2c9cf81efa7c09882880b98e16a929d77cccb207c622ffe05"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/c11-capture-observations.json",
+      "sha256": "5a227c32f18f733a6b8688f3c19e25452834e44ead0de97aab0bea346fb7d165"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/c11-independent-media-analysis.json",
+      "sha256": "100b593965b888d921473a8a4a532cfdd178acb511c00f18a752965a24222a42"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/c11-three-scene-contact-sheet.png",
+      "sha256": "8b49bded8ece9bd2132a8f576e7c86cf676f34097082c39f9548b6cfb2c93251"
+    }
+  ],
+  "audio": {
+    "technicalRecordSha256": "29623780a43b8a8b0703a9d661251ed2baea64013f670d40fc31f2144e5d8f84",
+    "humanListeningStatus": "HUMAN_AUDIO_PENDING"
+  },
+  "remaining": {
+    "P0": 0,
+    "P1": 0,
+    "P2": ["Gateway background-hidden 较暗且稀疏，待 C.12 独立判定。"],
+    "gateC": "pending-C.12-C.13"
+  }
+}
