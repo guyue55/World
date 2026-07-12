@@ -13,13 +13,13 @@ goal_started_at: 2026-07-12T00:28:14+08:00
 control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
-current_checkpoint: B
-current_item: B.10
+current_checkpoint: C
+current_item: C.1
 task_state: in_progress
-active_record_id: LW-019
-last_successful_command: "B.9 clean engineering gates and localhost LAN six-projection browser review"
-resume_action: "seal B.10 content projection risk gate and checkpoint B conclusion without upgrading product completion"
-last_completed_item: B.9
+active_record_id: LW-020
+last_successful_command: "B.10 content projection gate seal and portable restore verification"
+resume_action: "start C.1 falsifiable world clock tests and pure buildWorldTimeSnapshot implementation"
+last_completed_item: B.10
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -113,7 +113,7 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 
 | Gate | 对应计划 | 当前状态 | 通过证据 |
 | --- | --- | --- | --- |
-| 内容投影门 | B | pending | 真实节点、六投影、export、restore、rollback |
+| 内容投影门 | B | passed | `checkpoint-b/checkpoint-b-content-projection-gate.json`；真实节点、七投影、export、restore、rollback |
 | 生命样板门 | C | pending | 十分钟 soak、3 长录屏、hidden / quiet / background-hidden |
 | 感官原型门 | E | pending | Timeline 河流视频、音频技术包、可选人类签收、mobile trace |
 | 扩展门 | D / E | pending | 单 manifest、单 lifecycle、新场景无五处修改 |
@@ -123,7 +123,7 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 | Checkpoint | 目标 | 状态 | Commit | Evidence |
 | --- | --- | --- | --- | --- |
 | A | 撤销继承式完成与新鲜基线 | passed | 0c91f59c | `checkpoint-a/a8-2026-07-12/` |
-| B | 一份事实长成整个世界 | pending | null | null |
+| B | 一份事实长成整个世界 | passed | d8cc56f3 | `checkpoint-b/checkpoint-b-content-projection-gate.json` |
 | C | 三场景生命纵向样板 | pending | null | null |
 | D | 唯一生命运行内核 | pending | null | null |
 | E | 七场景生命与感官原型 | pending | null | null |
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.10
+next_item: C.1
 ```
 
 每完成一项立即：
@@ -1046,6 +1046,39 @@ fixes:
   - "改用 Playwright CLI 自带 Python 3.9 运行时，不新增项目依赖"
 commit: "d6008b164e4783c2dc8d2b837f015acea41be44b fix(world): 登记公开世界导出命令"
 next_item: B.10
+```
+
+### Record LW-019：B.10 内容投影风险门封存
+
+```yaml
+record: LW-019
+checkpoint: B
+item: B.10
+status: passed
+started_at: 2026-07-12T16:07:00+08:00
+finished_at: 2026-07-12T16:10:40+08:00
+verified_facts:
+  - "代表内容更新按 failing -> applied -> exported -> rolled-back 时间链留有互不覆盖的事实与证据"
+  - "应用期七投影共享 applied revision；回滚后工作区等于 before，历史 export 仍可恢复 applied revision"
+  - "场景没有为代表节点增加专用注册；PublicWorldObjectIndex 是 revision 和公开投影 owner"
+  - "export 同时包含原始事实、正文、资产、保存记录和校验和，不是页面或截图备份"
+  - "内容投影风险门 passed，Checkpoint B passed；产品完成状态仍是 CINEMATIC_STATIC_WORLD_IN_PROGRESS"
+  - "静态位图主体、持续生命、长录屏、迁移和声景缺陷继续由 C-H 承担"
+hypothesis:
+  id: H-01
+  result: passed
+files_changed:
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-b/checkpoint-b-content-projection-gate.json"
+commands:
+  - command: "fresh export verify-restore and control integrity before Gate B seal"
+    exit_code: 0
+    observed: "checksums=221; restoredFiles=220; CONTROL_INTEGRITY_PASS; evidence chain present"
+evidence:
+  - "checkpoint-b-content-projection-gate.json sha256=1853f032a0268b75f54741877ca2fb4b76784d5090ceca100bdc0dca54d18873"
+failures: []
+fixes: []
+commit: "d8cc56f33c995253d804dc72822bc51287d5387a feat(world): 打通事实投影与可移植恢复链"
+next_item: C.1
 ```
 
 ## 10. 后续记录模板
