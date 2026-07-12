@@ -9,7 +9,7 @@ import { WorldViewport } from '@/components/world/primitives/WorldViewport'
 import { SceneObjectButton } from '@/components/world/primitives/SceneObjectButton'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
-import type { GatewayDirection, GatewayViewModel } from '@/lib/scenes/build-gateway-model'
+import { isGatewayReturnArrival, type GatewayDirection, type GatewayViewModel } from '@/lib/scenes/build-gateway-model'
 import { createGatewayAmbientAdapter } from '@/world/scenes/gateway/module'
 import styles from './WorldGatewayStage.module.css'
 
@@ -110,7 +110,7 @@ export function WorldGatewayStage({ model }: { model: GatewayViewModel }) {
     () => runtime.journeyHistory.find((entry) => Boolean(entry.recentPathId)),
     [runtime.journeyHistory],
   )
-  const returning = runtime.hydrated && runtime.visitedCount > 1 && Boolean(returningJourney)
+  const returning = isGatewayReturnArrival({ hydrated: runtime.hydrated, hasReturningJourney: Boolean(returningJourney) })
 
   useEffect(() => {
     setEnhanced(true)
