@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.5",
+    "currentItem": "B.6",
     "taskState": "in_progress",
-    "activeRecordId": "LW-014",
-    "resumeAction": "implement B.5 lightweight public world export manifest and checksums"
+    "activeRecordId": "LW-015",
+    "resumeAction": "implement B.6 isolated verify-restore checksum schema reference permission and minimal rebuild"
   },
   "completedItems": {
     "A.1": {
@@ -318,6 +318,29 @@
       ],
       "commitHash": "ac2c0da1a7149a4b2b045fad8b789cda7fe33bc9",
       "commitSubject": "feat(world): 统一公开内容修订投影"
+    },
+    "B.5": {
+      "status": "passed",
+      "itemId": "B.5",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:30:00+08:00",
+      "finishedAt": "2026-07-12T15:38:00+08:00",
+      "commands": [
+        {
+          "command": "public export create, typecheck, lint, seven-projection contract, Node checksum/visibility validation and diff check",
+          "exitCode": 0,
+          "outputSha256": "ee7427abff1b7b9b36f466544ccfbc471c964b274b626219370d1f72133f7db2",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b5-2026-07-12/logs/b5-targeted-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b5-2026-07-12/evidence/b5-public-export.json",
+          "sha256": "14da0504089f55d373945d449735d115783ef6691b27445f291639a8d2764060"
+        }
+      ],
+      "commitHash": "d9d7fc8115fbd7135b1efac2c442fa40bb242875",
+      "commitSubject": "feat(world): 建立公开世界可移植导出"
     }
   },
   "failedAttempts": [],

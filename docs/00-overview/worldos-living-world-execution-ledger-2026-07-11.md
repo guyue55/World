@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.5
+current_item: B.6
 task_state: in_progress
-active_record_id: LW-014
-last_successful_command: "B.4 six public projection and search revision validation"
-resume_action: "implement B.5 lightweight public world export manifest and checksums"
-last_completed_item: B.4
+active_record_id: LW-015
+last_successful_command: "B.5 public export create and checksum validation"
+resume_action: "implement B.6 isolated verify-restore checksum schema reference permission and minimal rebuild"
+last_completed_item: B.5
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.5
+next_item: B.6
 ```
 
 每完成一项立即：
@@ -841,6 +841,49 @@ fixes:
   - "统一内容解析器先排除 fenced code blocks，再提取有限章节标题"
 commit: "ac2c0da1a7149a4b2b045fad8b789cda7fe33bc9 feat(world): 统一公开内容修订投影"
 next_item: B.5
+```
+
+### Record LW-014：B.5 公开世界可移植导出
+
+```yaml
+record: LW-014
+checkpoint: B
+item: B.5
+status: passed
+started_at: 2026-07-12T15:30:00+08:00
+finished_at: 2026-07-12T15:38:00+08:00
+verified_facts:
+  - "world:export 只消费服务端 PublicWorldObjectIndex，导出 public/semiPublic 投影并明确排除 private/family/partner/vault/sealed/silent/unlisted"
+  - "目录包包含 facts、200 份原始公开内容、9 个资产引用、preservation objects/events/rights、manifest、中文 README 和 checksums.sha256"
+  - "221 个受管文件由 Node 逐项回算 SHA-256，无失败项"
+  - "代表正文在 manifest 中的 revision 与当前事实源完全一致，B.2 七投影契约由 export 补齐后通过"
+  - "三个缺失封面使用仓库配置的 fallback，并在 registry 中同时记录请求路径、实际来源与 resolution"
+  - "资产权利缺失保持 metadata-not-registered，6 个唯一来源只记录 6 条权利对象，不补造许可"
+hypothesis:
+  id: H-01
+  result: null
+files_changed:
+  - ".gitignore"
+  - "package.json"
+  - "scripts/world-export.mjs"
+  - "src/server/export/build-export.ts"
+commands:
+  - command: "public export create, typecheck, lint, seven-projection contract, Node checksum/visibility validation and diff check"
+    exit_code: 0
+    observed: "200 nodes; 221 checksum entries; private markers=0; representative revision matched; all targeted gates pass"
+evidence:
+  - "b5-targeted-validation.log sha256=ee7427abff1b7b9b36f466544ccfbc471c964b274b626219370d1f72133f7db2"
+  - "b5-public-export.json sha256=14da0504089f55d373945d449735d115783ef6691b27445f291639a8d2764060"
+failures:
+  - "Node 24 tsImport 查询参数无法解析 TypeScript 依赖"
+  - "三个公开节点封面路径在源仓库中不存在"
+  - "macOS shasum 在继承 C.UTF-8 时因 locale 崩溃"
+fixes:
+  - "CLI 自举到仓库既有 tsx，固定 node scripts/world-export.mjs 接口不变"
+  - "依据 home-cover-assets fallback 复制可恢复别名，并显式记录映射"
+  - "使用 Node crypto 逐项复算，不把外部命令环境故障误判为包损坏"
+commit: "d9d7fc8115fbd7135b1efac2c442fa40bb242875 feat(world): 建立公开世界可移植导出"
+next_item: B.6
 ```
 
 ## 10. 后续记录模板
