@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "C.1",
+  "status": "pass",
+  "createdAt": "2026-07-12T08:15:25.586Z",
+  "redObservation": {
+    "command": "npx tsx --test src/world/runtime/clock.test.ts",
+    "exitCode": 1,
+    "observed": "Cannot find module './clock'"
+  },
+  "green": {
+    "command": "clock tests + typecheck + lint + diff check",
+    "exitCode": 0,
+    "tests": 6,
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c1-2026-07-12/logs/c1-clock-validation.log",
+    "logSha256": "6a1bef43e7cb3e2ed7fb3576d2a49dbd9bf27a0201afaa73cfd252c5ee1390db"
+  },
+  "contract": {
+    "timeZone": "Asia/Shanghai",
+    "dayBoundaries": [
+      5,
+      9,
+      17,
+      21
+    ],
+    "seasonStartMonths": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "hiddenRecovery": "rebuild-from-current-epoch",
+    "deterministic": true
+  },
+  "limitations": [
+    "C.1 只实现纯时间快照；timer、visibility 生命周期和 React 适配属于 C.2-C.4。"
+  ]
+}
