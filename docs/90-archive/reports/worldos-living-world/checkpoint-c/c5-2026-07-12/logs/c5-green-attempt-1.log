@@ -1,0 +1,12 @@
+✔ Coordinator 接续挂载前注册，并且只拥有一个 active adapter 与 rAF (1.391458ms)
+✔ Coordinator 统一响应 quiet、hidden、signal update 和重新挂载 (0.149334ms)
+✔ Gateway adapter 用世界信号确定性驱动视觉变量，不写 React state (1.5355ms)
+✔ Gateway adapter pause/resume/dispose 保留静态状态并清理资源 (0.187333ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 245.526459

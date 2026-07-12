@@ -1,0 +1,68 @@
+node:internal/modules/cjs/loader:1421
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module './coordinator'
+Require stack:
+- /Users/guyue/GitProject/World/src/world/runtime/coordinator.test.ts
+    at node:internal/modules/cjs/loader:1421:15
+    at nextResolveSimple (/Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:10:1017)
+    at /Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:9:4613
+    at /Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:9:3894
+    at resolveTsPaths (/Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:10:770)
+    at /Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:10:1171
+    at T._resolveFilename (file:///Users/guyue/GitProject/World/node_modules/tsx/dist/register-D5KIhaFJ.mjs:2:15244)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at defaultResolve (node:internal/modules/cjs/loader:1094:31)
+    at nextStep (node:internal/modules/customization_hooks:189:26) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/guyue/GitProject/World/src/world/runtime/coordinator.test.ts'
+  ]
+}
+
+Node.js v24.13.0
+✖ src/world/runtime/coordinator.test.ts (646.579458ms)
+node:internal/modules/cjs/loader:1421
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module './module'
+Require stack:
+- /Users/guyue/GitProject/World/src/world/scenes/gateway/module.test.ts
+    at node:internal/modules/cjs/loader:1421:15
+    at nextResolveSimple (/Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:10:1017)
+    at /Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:9:4613
+    at /Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:9:3894
+    at resolveTsPaths (/Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:10:770)
+    at /Users/guyue/GitProject/World/node_modules/tsx/dist/register-BLUABhh3.cjs:10:1171
+    at T._resolveFilename (file:///Users/guyue/GitProject/World/node_modules/tsx/dist/register-D5KIhaFJ.mjs:2:15244)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1059:19)
+    at defaultResolve (node:internal/modules/cjs/loader:1094:31)
+    at nextStep (node:internal/modules/customization_hooks:189:26) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/Users/guyue/GitProject/World/src/world/scenes/gateway/module.test.ts'
+  ]
+}
+
+Node.js v24.13.0
+✖ src/world/scenes/gateway/module.test.ts (631.801834ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 688.916
+
+✖ failing tests:
+
+test at src/world/runtime/coordinator.test.ts:1:1
+✖ src/world/runtime/coordinator.test.ts (646.579458ms)
+  'test failed'
+
+test at src/world/scenes/gateway/module.test.ts:1:1
+✖ src/world/scenes/gateway/module.test.ts (631.801834ms)
+  'test failed'

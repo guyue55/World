@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "item": "C.5",
+  "status": "passed",
+  "generatedAt": "2026-07-12T17:10:00+08:00",
+  "implementation": {
+    "primaryCommit": "8ecc00f850cfffe09d1e14fca41096df3b658607",
+    "primarySubject": "feat(world): 建立入口持续环境样板",
+    "finalFixCommit": "dbd5a8376f10770c6277e87ebbaa480903a8e2b3",
+    "finalFixSubject": "fix(world): 恢复入口电影材质与结构降级",
+    "newRuntimeDependencies": [],
+    "rendering": "DOM and CSS custom properties through the single AmbientScheduler at no more than 30fps",
+    "layers": ["cinematic bitmap material", "semantic spatial base", "semantic destinations", "ambient life", "finite GSAP entrance"]
+  },
+  "freshBuild": {
+    "buildId": "2eRnsKmOYek_rFXCLvQLq",
+    "sourceCommit": "dbd5a8376f10770c6277e87ebbaa480903a8e2b3",
+    "sourceDirty": false,
+    "buildRootHash": "e11c75015b240d79344c62ae5cb0138e0a2c2636e84e260f7e4ac39e872550bc",
+    "sharedFirstLoadJs": "103 kB",
+    "gatewayFirstLoadJs": "175 kB",
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/logs/c5-fresh-build-attempt-2.log",
+    "logSha256": "66091d558ff66d121aed9047527bebc584770dc692a23a9ce9a0e65db3cbea73"
+  },
+  "runtimeObservations": {
+    "desktop": { "state": "running", "changedAfterMs": 4200, "signals": ["star pulse", "fog shift", "beacon angle"] },
+    "lan": { "state": "running", "changedAfterMs": 4200, "consoleErrors": [] },
+    "backgroundHidden": { "state": "running", "destinationsVisible": 3, "spatialBaseVisible": true, "ambientLayerVisible": true },
+    "reducedQuiet": { "state": "paused", "changedAfterMs": 4200, "value": false, "semanticDestinationsRetained": 3 },
+    "mobile": { "state": "paused", "reason": "existing compact motion policy", "semanticDestinationsRetained": 3 },
+    "hidden": { "state": "paused", "sampleBefore": "13.747px", "sampleAfterMs": 2200, "sampleAfter": "13.747px", "unchanged": true },
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/logs/c5-browser-runtime-attempt-2.log",
+    "logSha256": "4b96c8799e69eb3f053d0fd02f88961dddea3ccb72dabd5f0082f055d84da1cd"
+  },
+  "visualReview": {
+    "reviewedFromRawPixels": true,
+    "normalMode": "The cinematic moon gate, cloud sea, floating islands and lamp roads remain the material layer; semantic routes and ongoing light cues align over it.",
+    "backgroundHiddenMode": "With the bitmap wrapper removed, a moon, three floating island bodies, three route lines, a distant lighthouse and three operable destinations remain distinguishable.",
+    "mobileMode": "The vertical moon gate and central destination remain visible; side destinations and fixed navigation fit without overlap.",
+    "firstAttemptFailure": "The opaque spatial base covered the cinematic asset and made normal mode look like a wireframe skeleton.",
+    "correction": "The final fix makes the spatial base transparent only while the image is healthy and strengthens it for resource failure or explicit background-hidden mode.",
+    "screenshots": [
+      { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/raw/screenshots/gateway-desktop-v2.png", "sha256": "c9d331b8a1a40d556a971ee285582b02f8e9b36b55fc5ad40b5870ff4b32645a" },
+      { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/raw/screenshots/gateway-background-hidden-v2.png", "sha256": "5200f1cebb28ffafeba3b47a1062f0e8263b839d3f2887f874032583c86c4a1c" },
+      { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/raw/screenshots/gateway-reduced-quiet-v2.png", "sha256": "fd35554db678d08dc1197f5a192f971f19073cbd65848bbcd96be149ceab1772" },
+      { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/raw/screenshots/gateway-mobile-v2.png", "sha256": "13ab04fd2276a9114e780a48de7e7d5fa20bf53f77217fc966431b2f193427c2" },
+      { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/raw/screenshots/gateway-lan-v2.png", "sha256": "59cc24a72761263362629c72e7752feacf45520cef9144947e931d9c373785b7" }
+    ]
+  },
+  "failedExperiments": [
+    {
+      "kind": "expected-red",
+      "result": "coordinator and gateway module were absent",
+      "logSha256": "44b4e00c8786ce56d8d4936af1d45d97c20997d9f3ffa7cda3ac32ac70769dcb"
+    },
+    {
+      "kind": "browser-test-method",
+      "result": "the first probe sampled inherited variables from WorldViewport and captured one in-flight frame before hidden pause",
+      "logSha256": "0bf52200bbc87433c9c8b237410db049fadce64ff800386937dc3f813718c390"
+    }
+  ],
+  "claimBoundary": [
+    "C.5 proves only the Gateway layer split and ambient lifecycle sample.",
+    "It does not prove the C risk gate, ten-minute stability, long recording, sound, Atlas, Node or migration continuity.",
+    "The background-hidden projection is intentionally schematic but spatially and operationally distinct; it is not claimed to equal the cinematic material layer."
+  ]
+}
