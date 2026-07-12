@@ -39,7 +39,7 @@ async function collect(label, collectGarbage = false) {
       ambient:Array.from(document.querySelectorAll('[data-gateway-ambient],[data-atlas-ambient],[data-node-ambient]')).map((node)=>({scene:node.hasAttribute('data-gateway-ambient')?'gateway':node.hasAttribute('data-atlas-ambient')?'atlas':'node',state:node.getAttribute('data-gateway-ambient')||node.getAttribute('data-atlas-ambient')||node.getAttribute('data-node-ambient')})),
       sound:sound?{armed:sound.getAttribute('data-audio-armed'),context:sound.getAttribute('data-audio-context'),loops:Number(sound.getAttribute('data-audio-loops')),scene:sound.getAttribute('data-soundscape-scene'),error:sound.getAttribute('data-audio-error')}:null,
       audio:{constructed:window.__worldosSoakAudio?.contexts.length??-1,states:(window.__worldosSoakAudio?.contexts??[]).map((context)=>context.state),activeOscillators:window.__worldosSoakAudio?.active.size??-1,events:window.__worldosSoakAudio?.events.length??-1},
-      frame:frame?{count:frame.count,maxMs:frame.maxMs,over34:frame.over34,over50:frame.over50,intervals:frame.intervals.slice(-4000)}:null,
+      frame:frame?{count:frame.count,maxMs:frame.maxMs,over34:frame.over34,over50:frame.over50}:null,
       journeyKeys,
     };
   })()`)
@@ -164,7 +164,7 @@ try {
   const finishedWall = Date.now()
   const finishedMonotonic = performance.now()
 
-  const frameIntervals = final.runtime.frame?.intervals ?? []
+  const frameIntervals = await evaluate(page.send, 'window.__worldosSoakFrame?.intervals.slice(-4000)??[]')
   const sortedFrames = [...frameIntervals].sort((a, b) => a - b)
   const frameP95 = sortedFrames.length ? sortedFrames[Math.min(sortedFrames.length - 1, Math.floor(sortedFrames.length * 0.95))] : null
   const coldToFinalGrowth = {
@@ -178,6 +178,9 @@ try {
     nodes: (final.metrics.Nodes ?? 0) - (afterClear.metrics.Nodes ?? 0),
   }
   const memoryClear = actions.find((action) => action.type === 'memory-clear')
+  const audioEvents = await evaluate(page.send, 'window.__worldosSoakAudio?.events??[]')
+  const startedSources = audioEvents.filter((event) => event.type === 'source-start').length
+  const endedSources = audioEvents.filter((event) => event.type === 'source-ended').length
   const failures = []
   const wallElapsedSeconds = (finishedWall - startedWall) / 1000
   const monotonicElapsedSeconds = (finishedMonotonic - startedMonotonic) / 1000
@@ -185,6 +188,10 @@ try {
   if (!smoke && !minuteTickObserved) failures.push('未观测到自然 minute tick')
   if (hiddenElapsedSeconds < hiddenSeconds || !resumed || afterHidden.runtime.ambient.some((item) => item.state !== 'running')) failures.push('后台时长或恢复失败')
   if (final.runtime.audio.constructed !== 1 || final.runtime.audio.states[0] !== 'running') failures.push('AudioContext 数量或终态异常')
+  if (final.runtime.audio.activeOscillators !== 4) failures.push(`Gateway 终态 oscillator 数量异常：${final.runtime.audio.activeOscillators}`)
+  if (startedSources - endedSources !== final.runtime.audio.activeOscillators) failures.push(`oscillator 事件账不平：start=${startedSources} ended=${endedSources}`)
+  if (final.runtime.ambient.length !== 1 || final.runtime.ambient[0].scene !== 'gateway' || final.runtime.ambient[0].state !== 'running') failures.push('终态 active adapter 不唯一或未运行')
+  if (!smoke && ((final.runtime.frame?.count ?? 0) < 10_000 || frameP95 === null || frameP95 > 34)) failures.push(`持续帧样本不足或 p95 越界：count=${final.runtime.frame?.count} p95=${frameP95}`)
   if (settledGrowth.heapBytes > 2 * 1024 * 1024) failures.push(`稳定尾段 GC 后 heap 持续增长：${settledGrowth.heapBytes}`)
   if (settledGrowth.listeners > 2) failures.push(`稳定尾段 listener 持续增长：${settledGrowth.listeners}`)
   if (settledGrowth.nodes > 8) failures.push(`稳定尾段 DOM node 持续增长：${settledGrowth.nodes}`)
@@ -206,11 +213,11 @@ try {
     repeatedAssembly: false,
     minuteTickObserved,
     hiddenElapsedSeconds,
-    frame: { count: final.runtime.frame?.count ?? 0, p95Ms: frameP95, maxMs: final.runtime.frame?.maxMs ?? null, over34: final.runtime.frame?.over34 ?? null, over50: final.runtime.frame?.over50 ?? null },
+    frame: { count: final.runtime.frame?.count ?? 0, p95Ms: frameP95, maxMs: final.runtime.frame?.maxMs ?? null, over34: final.runtime.frame?.over34 ?? null, over50: final.runtime.frame?.over50 ?? null, sampleIntervalsMs: frameIntervals },
     resources: { baseline: baseline.metrics, settledBaseline: afterClear.metrics, final: final.metrics, coldToFinalGrowth, settledGrowth, audioContexts: final.runtime.audio.constructed, activeOscillators: final.runtime.audio.activeOscillators },
     actions,
     samples,
-    audioEvents: await evaluate(page.send, 'window.__worldosSoakAudio?.events??[]'),
+    audioEvents,
     browserErrors: page.errors.filter(Boolean),
     failures,
   }
