@@ -20,6 +20,7 @@
     "check:objective-evidence-boundary",
     "check:build-identity",
     "world:author",
+    "world:export",
     "audit:world-experience",
     "check:world-experience",
     "evidence:world-experience",
@@ -146,7 +147,7 @@
     "maxLongScripts": 20
   },
   "scriptCounts": {
-    "totalScripts": 306,
+    "totalScripts": 307,
     "checkScripts": 174,
     "stageLikeCheckScripts": 20,
     "longScripts": 1
