@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.5",
+    "currentItem": "C.6",
     "taskState": "in_progress",
-    "activeRecordId": "LW-024",
-    "resumeAction": "implement C.5 Gateway spatial base, semantic objects and continuously scheduled ambient layer with quiet, hidden and background-hidden degradation"
+    "activeRecordId": "LW-025",
+    "resumeAction": "implement C.6 Atlas semantic regions, node stars and relation routes independent of the cinematic bitmap"
   },
   "completedItems": {
     "A.1": {
@@ -566,6 +566,35 @@
       ],
       "commitHash": "fc8e1b23a24e36ae94b1bdd5ef9eddddf36b0be4",
       "commitSubject": "feat(world): 将兼容运行时接入世界时钟"
+    },
+    "C.5": {
+      "status": "passed",
+      "itemId": "C.5",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T16:48:30+08:00",
+      "finishedAt": "2026-07-12T16:58:12+08:00",
+      "commands": [
+        {
+          "command": "coordinator scheduler Gateway tests and engineering checks",
+          "exitCode": 0,
+          "outputSha256": "5bf491b8e91a0f09d2fb4e480d5655f5c9a6e2abd83068f74d8bd8a4b79ed608",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/logs/c5-green-attempt-1.log"
+        },
+        {
+          "command": "fresh Gateway localhost LAN background-hidden reduced mobile and hidden browser review",
+          "exitCode": 0,
+          "outputSha256": "4b96c8799e69eb3f053d0fd02f88961dddea3ccb72dabd5f0082f055d84da1cd",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/logs/c5-browser-runtime-attempt-2.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c5-2026-07-12/evidence/c5-gateway-living-stage.json",
+          "sha256": "9a777cac50921a1e0d3daf1032b3f29f93452bad3c322e76736ae2b0e9f25ace"
+        }
+      ],
+      "commitHash": "dbd5a8376f10770c6277e87ebbaa480903a8e2b3",
+      "commitSubject": "fix(world): 恢复入口电影材质与结构降级"
     }
   },
   "failedAttempts": [],
