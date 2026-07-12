@@ -9,6 +9,8 @@ import { WorldViewport } from '@/components/world/primitives/WorldViewport'
 import type { AtlasViewModel } from '@/lib/scenes/build-atlas-model'
 import { AtlasInspector } from './AtlasInspector'
 import { AtlasSceneSvg } from './AtlasSceneSvg'
+import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
+import { createAtlasAmbientAdapter } from '@/world/scenes/atlas/module'
 import styles from './AtlasExplorationStage.module.css'
 
 type Camera = { x: number; y: number; scale: number }
@@ -30,6 +32,7 @@ function clamp(value: number, min: number, max: number) {
 }
 
 export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
+  const runtime = useWorldRuntime()
   const stageRef = useRef<HTMLDivElement>(null)
   const cameraRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null)
@@ -65,19 +68,13 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
     void import('gsap').then(({ gsap }) => {
       if (cancelled) return
       const media = gsap.matchMedia()
-      let tween: ReturnType<typeof gsap.to> | null = null
-      const syncVisibility = () => {
-        if (!tween) return
-        if (document.hidden) tween.pause()
-        else tween.resume()
-      }
       media.add({
         desktop: '(min-width: 768px)',
         mobile: '(max-width: 767px)',
         reduceMotion: '(prefers-reduced-motion: reduce)',
       }, (context) => {
         const reduced = Boolean(context.conditions?.reduceMotion)
-        tween = gsap.to(cameraElement, {
+        gsap.to(cameraElement, {
           xPercent: camera.x,
           yPercent: camera.y,
           scale: camera.scale,
@@ -85,12 +82,9 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
           ease: 'power3.inOut',
           overwrite: 'auto',
         })
-        syncVisibility()
       })
-      document.addEventListener('visibilitychange', syncVisibility)
       cleanup = () => {
-        document.removeEventListener('visibilitychange', syncVisibility)
-        tween?.kill()
+        gsap.killTweensOf(cameraElement)
         media.revert()
       }
     })
@@ -100,6 +94,15 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
       cleanup()
     }
   }, [camera])
+
+  useEffect(() => {
+    const host = stageRef.current
+    if (!host) return
+    const controller = new AbortController()
+    const adapter = createAtlasAmbientAdapter(host, model, { signal: controller.signal })
+    const leave = runtime.registerAmbientScene('atlas', adapter)
+    return () => { controller.abort(); leave() }
+  }, [model, runtime.registerAmbientScene])
 
   const focusArea = useCallback((areaId: string) => {
     const area = areaById.get(areaId)
@@ -154,7 +157,7 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
   }))
 
   return (
-    <div ref={stageRef} className={styles.stage} data-enhanced={enhanced ? 'true' : 'false'} data-image-ready={imageReady ? 'true' : 'false'} data-image-failed={imageFailed ? 'true' : 'false'}>
+    <div ref={stageRef} className={styles.stage} data-atlas-stage data-enhanced={enhanced ? 'true' : 'false'} data-image-ready={imageReady ? 'true' : 'false'} data-image-failed={imageFailed ? 'true' : 'false'}>
       <WorldViewport
         sceneId="atlas"
         label="古月浮屿可探索星图"
@@ -165,7 +168,7 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
         <div ref={cameraRef} className={styles.camera} data-testid="atlas-camera">
           <AtlasBackdrop model={model} imageRef={imageRef} onLoad={() => { setImageReady(true); setImageFailed(false) }} onError={() => { setImageReady(false); setImageFailed(true) }} />
           <div className={styles.imageVeil} aria-hidden="true" />
-          <AtlasSceneSvg areas={model.areas} links={model.links} focusedAreaId={focusedAreaId} />
+          <AtlasSceneSvg areas={model.areas} links={model.links} focusedAreaId={focusedAreaId} linkClassName={styles.semanticLink} areaClassName={styles.semanticArea} />
 
           <div className={styles.hotspotLayer} aria-label="星图区域与地点">
             {model.areas.map((area) => (
@@ -199,6 +202,8 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
                   tabIndex={visible ? 0 : -1}
                   data-visible={visible ? 'true' : 'false'}
                   data-atlas-node={node.id}
+                  data-atlas-life-stage={node.lifeStage}
+                  data-atlas-life-status={node.status}
                 >
                   <i aria-hidden="true" />
                   <span>{node.title}</span>

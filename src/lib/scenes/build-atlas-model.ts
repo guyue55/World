@@ -2,6 +2,7 @@ import type { PublicWorldObjectIndex } from '@/lib/public-world-objects'
 import { getPublicWorldCuration } from '@/lib/public-world-curation'
 import { getAllAreaCoordinates, type SpatialCoordinate } from '@/lib/spatial'
 import { getWorldSceneAsset, type WorldSceneAsset } from '@/lib/world-scene-assets'
+import type { PublicNodeReference } from '@/lib/public-world-objects'
 
 export type AtlasAreaView = {
   id: string
@@ -27,6 +28,9 @@ export type AtlasNodeView = {
   x: number
   y: number
   importance: number
+  lifeStage: PublicNodeReference['lifeStage']
+  status: PublicNodeReference['status']
+  updatedAt: string
   relationReasons: string[]
   contentRevisionSha256: string | null
 }
@@ -135,6 +139,9 @@ export function buildAtlasViewModel(
       x: clamp(area.x + (offset.x / 100) * viewport.width, 4, viewport.width - 4),
       y: clamp(area.y + (offset.y / 100) * viewport.height, 5, viewport.height - 5),
       importance: nodeIndex === 0 ? 1 : nodeIndex === 1 ? 0.8 : 0.6,
+      lifeStage: reference.lifeStage,
+      status: reference.status,
+      updatedAt: reference.updatedAt,
       relationReasons: reference.relationReasons,
       contentRevisionSha256: reference.contentRevisionSha256,
     }]

@@ -1,4 +1,6 @@
 .stage {
+  --atlas-node-life: 0.5;
+  --atlas-node-phase: 0;
   background: #071116;
 }
 
@@ -90,7 +92,7 @@
   border: 0;
   background: transparent;
   padding: 0.25rem;
-  opacity: 0;
+  opacity: 0.52;
   pointer-events: none;
   transition: opacity 160ms ease;
 }
@@ -100,6 +102,10 @@
   pointer-events: auto;
 }
 
+.nodeHotspot:not([data-visible="true"]) span {
+  opacity: 0;
+}
+
 .nodeHotspot i {
   width: calc(0.42rem + var(--node-importance) * 0.18rem);
   height: calc(0.42rem + var(--node-importance) * 0.18rem);
@@ -107,7 +113,18 @@
   border: 1px solid #f5d995;
   border-radius: 50%;
   background-color: #f0c979;
-  box-shadow: 0 0 12px #f0c979;
+  opacity: calc(0.34 + var(--atlas-node-life) * 0.66);
+  transform: scale(calc(0.72 + var(--atlas-node-life) * 0.34 + var(--atlas-node-phase) * 0.08));
+  box-shadow: 0 0 calc(5px + var(--atlas-node-life) * 13px) rgba(240, 201, 121, 0.9);
+}
+
+.semanticLink[data-atlas-link-active="true"] {
+  stroke-dasharray: 1.4 0.9;
+  stroke-dashoffset: var(--atlas-link-offset, 0);
+}
+
+.semanticArea {
+  pointer-events: none;
 }
 
 .nodeHotspot span {
@@ -259,4 +276,9 @@
 @media (prefers-reduced-motion: reduce) {
   .areaHotspot,
   .nodeHotspot { transition: none; }
+  .nodeHotspot i { transform: none; }
+}
+
+.stage[data-atlas-ambient="paused"] .nodeHotspot i {
+  transform: none;
 }

@@ -1,6 +1,6 @@
 import type { AtlasAreaView, AtlasLinkView } from '@/lib/scenes/build-atlas-model'
 
-export function AtlasSceneSvg({ areas, links, focusedAreaId }: { areas: AtlasAreaView[]; links: AtlasLinkView[]; focusedAreaId: string | null }) {
+export function AtlasSceneSvg({ areas, links, focusedAreaId, linkClassName, areaClassName }: { areas: AtlasAreaView[]; links: AtlasLinkView[]; focusedAreaId: string | null; linkClassName?: string; areaClassName?: string }) {
   const areaById = new Map(areas.map((area) => [area.id, area]))
 
   return (
@@ -29,11 +29,14 @@ export function AtlasSceneSvg({ areas, links, focusedAreaId }: { areas: AtlasAre
             strokeDasharray={highlighted ? '0' : '1.2 1.5'}
             opacity={highlighted ? 0.78 : 0.22}
             filter={highlighted ? 'url(#atlas-link-glow)' : undefined}
+            className={linkClassName}
+            data-atlas-link={link.id}
+            data-atlas-link-active={focusedAreaId && highlighted ? 'true' : 'false'}
           />
         )
       })}
       {areas.map((area) => (
-        <g key={area.id} opacity={focusedAreaId && focusedAreaId !== area.id ? 0.3 : 0.85}>
+        <g key={area.id} className={areaClassName} data-atlas-region={area.id} opacity={focusedAreaId && focusedAreaId !== area.id ? 0.3 : 0.85}>
           <circle cx={area.x} cy={area.y} r={area.radius + 1.4} fill="none" stroke={area.color} strokeWidth="0.12" strokeDasharray="0.8 1.2" />
           <circle cx={area.x} cy={area.y} r={area.radius * 0.48} fill={area.color} opacity="0.09" />
         </g>
