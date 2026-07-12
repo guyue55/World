@@ -243,7 +243,7 @@ export async function recordPageScreencast({ browser, page, outputPath, action, 
   lines.push(`file '${frames.at(-1).filePath.replaceAll("'", "'\\''")}'`)
   fs.writeFileSync(concatPath, `${lines.join('\n')}\n`)
   fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-  const encoded = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', concatPath, '-fps_mode', 'vfr', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', outputPath], { encoding: 'utf8' })
+  const encoded = spawnSync('ffmpeg', ['-nostdin', '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', concatPath, '-fps_mode', 'vfr', '-c:v', 'libx264', '-bf', '0', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', outputPath], { encoding: 'utf8' })
   fs.rmSync(frameDir, { recursive: true, force: true })
   if (encoded.status !== 0) throw new Error(`录屏编码失败：${encoded.stderr}`)
   return { frames: frames.length, durationSeconds: Math.max(0, frames.at(-1).capturedAt - frames[0].capturedAt), outputPath }
