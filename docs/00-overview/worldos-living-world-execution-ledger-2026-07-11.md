@@ -14,13 +14,13 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.9
-next_item: C.9
+current_item: C.10
+next_item: C.10
 task_state: in_progress
-active_record_id: LW-028
-last_successful_command: "C.8 fresh Gateway Atlas Node Gateway migration state, arrival focus, return context and bundle review"
-resume_action: "implement C.9 removable world sound prototype with gesture-zero-byte, single AudioContext, suspension and technical evidence"
-last_completed_item: C.8
+active_record_id: LW-029
+last_successful_command: "C.9 source-bound 600-second audio package and fresh single-AudioContext browser lifecycle review"
+resume_action: "run C.10 ten-minute vertical slice soak with minute tick, two-minute hidden recovery, audio toggle, related Node round trip, memory clear and resource counters"
+last_completed_item: C.9
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -1439,6 +1439,56 @@ commit: "5cc4276df0c38e2e12c8a12add8be97bf1996fa2 fix(world): 隔离入口返回
 next_item: C.9
 ```
 
+### Record LW-028：C.9 可删除世界声音样板
+
+```yaml
+record: LW-028
+checkpoint: C
+item: C.9
+status: passed
+started_at: 2026-07-12T17:52:00+08:00
+finished_at: 2026-07-12T18:22:02+08:00
+verified_facts:
+  - "Gateway 与 Lighthouse 的运行时 patch 和 90 秒离线样板共同派生自 src/world/sensory/prototype.ts；其他场景未复制原型"
+  - "48kHz/16-bit mono 完整离线渲染 600 秒；true peak -23.2 dBFS，最大循环边界 delta 0.0000033937394618988037，无非有限采样"
+  - "fresh 浏览器手势前 AudioContext=0、音频网络资源=0；启用后构造 1 个上下文"
+  - "mute 后同一上下文 suspended 且 loop/cue=0；再次启用、SPA 到 Atlas、后台返回后构造数仍为 1"
+  - "clean build QnR08b-O886Ci5x6uKUkR 绑定 fc5ad9a2、sourceDirty=false，localhost/LAN identity 相同"
+hypothesis:
+  id: H-06
+  result: passed-technical-prototype-only
+files_changed:
+  - "src/world/sensory/prototype.ts"
+  - "src/lib/runtime/soundscape-engine.ts"
+  - "src/components/world/RuntimeSoundscapeControl.tsx"
+  - "data/domains/experience/sensory-audio-registry.json"
+commands:
+  - command: "prototype/audio lifecycle tests, typecheck, lint and historical audio boundary"
+    exit_code: 0
+    observed: "3 tests pass; quiet/hidden/mute/dispose 生命周期与单上下文复用通过"
+  - command: "600-second offline render, ffmpeg true peak, waveform and spectrum"
+    exit_code: 0
+    observed: "FLAC 600s; truePeak=-23.2dBFS; seam=0.0000033937394618988037"
+  - command: "clean build plus localhost/LAN and fresh CDP browser audio probe"
+    exit_code: 0
+    observed: "sourceDirty=false; contexts=1; audioResources=0; hidden suspend and foreground resume"
+evidence:
+  - "c9-world-sound-prototype.json sha256=ca6e14fd23ac90387d936c0ecd3262d3ddc05688cfffd442db79fd89871f98fe"
+  - "world-motif-prototype-10m.flac sha256=e33f9f5abc03201ba6eb05f010f93fd4f074cccc1e5620a9bda0ac8ac1ffa51e"
+  - "c9-browser-audio-lifecycle.json sha256=8f85de33e6b6ee117be523432e5f97bf196a3e8e6f530d7b17f7fff30a10dcca"
+failures:
+  - "首轮页面端正则转义错误；修复后才进入产品探针"
+  - "Page.setWebLifecycleState 不保证重新可见；改用真实双标签后台/返回"
+  - "固定 500ms 恢复观察存在时序波动；改为等待实际 AudioContext running，5 秒仍未恢复才失败"
+fixes:
+  - "修正证据脚本转义、目标激活和可证伪状态等待；旧 M23 离线审查改为 technical-verified-human-pending"
+claim_boundary:
+  - "仅通过 C.9 技术样板；未有人类耳机/扬声器听感签收，固定保留 HUMAN_AUDIO_PENDING"
+  - "七场景完整声景、十分钟在线 soak 和长期舒适度未由 C.9 证明"
+commit: "51bd4780eb416ad9b7ca653008c7dbeae669d385 feat(world): 建立可验证世界声音样板"
+next_item: C.10
+```
+
 ## 10. 后续记录模板
 
 ```yaml
@@ -1486,6 +1536,9 @@ next_item: "A.1-H.16 or none"
 | 2026-07-12T17:31:00+08:00 | C.7 | Node background-hidden 仍像黑底浮动标签 | 只有窗景和关系门，缺少房间边界与承载面 | 增加 DOM/CSS 拱墙、立柱、地面和书桌；fresh build 重拍 | C.7 browser attempt 4 | fixed |
 | 2026-07-12T17:45:00+08:00 | C.8 | Node 返回 Gateway 后月门重新关闭 | visitedCount 只统计 Provider 挂载，不代表同会话返回 | 改用 hydrated real journey，返回时直接抵达并显示继续旅程 | C.8 browser final | fixed |
 | 2026-07-12T17:47:00+08:00 | C.8 | Gateway first-load 升至 178 kB | 客户端为简单谓词导入 server-oriented build model | 抽离 client-safe runtime helper，fresh build 回落 175 kB | C.8 build attempt 3 | fixed |
+| 2026-07-12T18:05:00+08:00 | C.9 | 页面端音频资源正则非法，首次探针未进入产品验证 | 模板字符串吞掉单层反斜杠 | 双层转义并启用 pipefail，失败证据保留 | C.9 browser attempt 2 | fixed |
+| 2026-07-12T18:12:00+08:00 | C.9 | CDP freeze 后 suspend 成功但 active 不恢复可见 | Page lifecycle active 不等于标签页重新可见 | 使用第二标签真实触发后台，再激活来源标签 | C.9 browser attempt 5 | fixed |
+| 2026-07-12T18:24:00+08:00 | C.9 | 后台返回已发出 resume-request，但固定 500ms 观察偶发过早失败 | AudioContext resume Promise 完成时间有波动 | 等待真实 running，5 秒超时仍保持失败 | C.9 final source-bound browser | fixed |
 
 ## 12. 证据新鲜度
 

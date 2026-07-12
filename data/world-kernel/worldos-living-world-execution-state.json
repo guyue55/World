@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.9",
+    "currentItem": "C.10",
     "taskState": "in_progress",
-    "activeRecordId": "LW-028",
-    "resumeAction": "implement C.9 removable world sound prototype with gesture-zero-byte, single AudioContext, suspension and technical evidence"
+    "activeRecordId": "LW-029",
+    "resumeAction": "run C.10 ten-minute vertical slice soak with minute tick, two-minute hidden recovery, audio toggle, related Node round trip, memory clear and resource counters"
   },
   "completedItems": {
     "A.1": {
@@ -656,6 +656,23 @@
       ],
       "commitHash": "5cc4276df0c38e2e12c8a12add8be97bf1996fa2",
       "commitSubject": "fix(world): 隔离入口返回判断的客户端边界"
+    },
+    "C.9": {
+      "status": "passed",
+      "itemId": "C.9",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T17:52:00+08:00",
+      "finishedAt": "2026-07-12T18:22:02+08:00",
+      "commands": [
+        { "command": "C.9 prototype and AudioContext lifecycle tests, historical audio check, typecheck, lint and diff check", "exitCode": 0, "outputSha256": "b96a046b0b9753754508ff553f13172945d4f6f3a5b8d6a160351f80ef02212d", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/logs/c9-targeted-validation-final.log" },
+        { "command": "clean source-bound production build", "exitCode": 0, "outputSha256": "c56d0d900b6a587304e6836b6f42b32a28e3d53322e75b8e646f75951fcdd824", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/logs/c9-clean-build-bound.log" },
+        { "command": "fresh browser gesture, mute, rearm, SPA switch and background lifecycle validation", "exitCode": 0, "outputSha256": "cfebecc766698a0af4bb370ba83a832aabc0016a8decb522fcd435cedca0a9a0", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/logs/c9-browser-source-bound.log" }
+      ],
+      "evidence": [
+        { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/evidence/c9-world-sound-prototype.json", "sha256": "ca6e14fd23ac90387d936c0ecd3262d3ddc05688cfffd442db79fd89871f98fe" }
+      ],
+      "commitHash": "51bd4780eb416ad9b7ca653008c7dbeae669d385",
+      "commitSubject": "feat(world): 建立可验证世界声音样板"
     }
   },
   "failedAttempts": [],
