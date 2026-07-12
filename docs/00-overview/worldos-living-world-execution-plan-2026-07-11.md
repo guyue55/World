@@ -171,7 +171,7 @@
 - [x] **C.3** 建立最小 manifest、Signal Snapshot 和 Runtime Store；用 React Profiler 记录现有 Context 与候选分片订阅的重渲染，再决定是否完整迁移 `useSyncExternalStore`。
 - [x] **C.4** 让 `WorldRuntimeProvider` 成为兼容适配层：时间每分钟更新，页面恢复重新派生；每帧变化不进入 React state。
 - [x] **C.5** Gateway 分离空间底层、语义对象和环境层；入场结束后星点 / 雾 / 浮屿 / 灯塔至少两类持续运行，并能 quiet / hidden / background-hidden。
-- [ ] **C.6** Atlas 将区域、节点、关系航线从位图中解耦；星体生命来自真实节点状态和关系，背景隐藏后仍可操作和辨认。
+- [x] **C.6** Atlas 将区域、节点、关系航线从位图中解耦；星体生命来自真实节点状态和关系，背景隐藏后仍可操作和辨认。
 - [ ] **C.7** Node 建立低活动度窗光 / 远景 adapter；正文附近静止，day / season 不破坏 60-72ch 阅读和 200% zoom。
 - [ ] **C.8** 把 Gateway -> Atlas -> Node -> Gateway 的来源对象、途中介质、抵达对象、焦点和返回位置接入现有迁移协议。
 - [ ] **C.9** 制作一个可删除的世界声音样板：一个 ambience + Gateway / Lighthouse 动机草案；用户手势前 0 B，hidden / mute / quiet 后 suspend，并生成 peak、接缝、十分钟离线渲染、波形与频谱技术包。

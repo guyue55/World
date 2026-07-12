@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.6",
+    "currentItem": "C.7",
     "taskState": "in_progress",
-    "activeRecordId": "LW-025",
-    "resumeAction": "implement C.6 Atlas semantic regions, node stars and relation routes independent of the cinematic bitmap"
+    "activeRecordId": "LW-026",
+    "resumeAction": "implement C.7 Node low-activity window light and distant-view adapter without disturbing reading width or 200 percent zoom"
   },
   "completedItems": {
     "A.1": {
@@ -595,6 +595,35 @@
       ],
       "commitHash": "dbd5a8376f10770c6277e87ebbaa480903a8e2b3",
       "commitSubject": "fix(world): 恢复入口电影材质与结构降级"
+    },
+    "C.6": {
+      "status": "passed",
+      "itemId": "C.6",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T17:02:00+08:00",
+      "finishedAt": "2026-07-12T17:14:42+08:00",
+      "commands": [
+        {
+          "command": "Atlas projection model coordinator tests and engineering checks",
+          "exitCode": 0,
+          "outputSha256": "15bae6de89e4a36729030587a44a7000db335a25464646036648d853882aaae7",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/logs/c6-targeted-validation.log"
+        },
+        {
+          "command": "fresh Atlas content-life focused subgraph and background-hidden browser review",
+          "exitCode": 0,
+          "outputSha256": "4ab3a2679bf12f89b91612dd7fb21c55bd3b7a8f2f7142e7dcf7cebf160f4581",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/logs/c6-browser-attempt-4.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/evidence/c6-atlas-living-constellation.json",
+          "sha256": "946d9a447a887535a14515c3dbfc9137943bb9ce3ebe761c5a9353ef4b794b24"
+        }
+      ],
+      "commitHash": "42eca2c06d257badc81822713c6295c2eee20499",
+      "commitSubject": "fix(world): 消除星图节点轨道重叠"
     }
   },
   "failedAttempts": [],

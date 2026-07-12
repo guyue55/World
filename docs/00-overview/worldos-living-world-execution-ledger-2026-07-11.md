@@ -14,13 +14,13 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.6
-next_item: C.6
+current_item: C.7
+next_item: C.7
 task_state: in_progress
-active_record_id: LW-025
-last_successful_command: "C.5 fresh production Gateway localhost/LAN, background-hidden, reduced, mobile and hidden runtime review"
-resume_action: "implement C.6 Atlas semantic regions, node stars and relation routes independent of the cinematic bitmap"
-last_completed_item: C.5
+active_record_id: LW-026
+last_successful_command: "C.6 fresh Atlas content-life projection, focused subgraph and background-hidden natural interaction review"
+resume_action: "implement C.7 Node low-activity window light and distant-view adapter without disturbing reading width or 200 percent zoom"
+last_completed_item: C.6
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -1301,6 +1301,57 @@ commit: "dbd5a8376f10770c6277e87ebbaa480903a8e2b3 fix(world): 恢复入口电影
 next_item: C.6
 ```
 
+### Record LW-025：C.6 Atlas 内容生命星图
+
+```yaml
+record: LW-025
+checkpoint: C
+item: C.6
+status: passed
+started_at: 2026-07-12T17:02:00+08:00
+finished_at: 2026-07-12T17:14:42+08:00
+verified_facts:
+  - "Atlas 模型从公开节点引用携带 lifeStage/status/updatedAt/relationReasons，不在前端猜事实"
+  - "代表节点默认呈现为星体；亮度由生命周期、新鲜度、重要度、关系和最近访问确定投影"
+  - "Atlas adapter 复用唯一 coordinator，只缓存语义 node/link 并写 CSS/SVG 属性"
+  - "tech 聚焦子图有 2 条真实关系边，1.3 秒 offset 从 -46.684 推进到 -61.314"
+  - "background-hidden 下 8 区域、8 事实关系、4 技术节点、Inspector 和进入地点链接仍可操作"
+  - "六节点确定性轨道回归通过；自然 pointer click 不再被重叠节点拦截"
+hypothesis:
+  id: H-05
+  result: passed-for-atlas-only
+files_changed:
+  - "src/world/scenes/atlas/module.ts"
+  - "src/lib/scenes/build-atlas-model.ts"
+  - "src/components/atlas/AtlasExplorationStage.tsx"
+  - "src/components/atlas/AtlasSceneSvg.tsx"
+  - "src/components/atlas/AtlasInspector.tsx"
+  - "src/components/atlas/AtlasExplorationStage.module.css"
+commands:
+  - command: "Atlas projection/model/coordinator node:test, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "5 tests pass; engineering checks pass"
+  - command: "fresh build and natural Playwright Atlas area/node/background-hidden flow"
+    exit_code: 0
+    observed: "sourceDirty=false; Atlas 148 kB; node phase and focused link offsets change; natural node click opens Inspector"
+evidence:
+  - "c6-targeted-validation.log sha256=15bae6de89e4a36729030587a44a7000db335a25464646036648d853882aaae7"
+  - "c6-fresh-build-attempt-2.log sha256=fcaf995428988a9f1ed5c970038ba4e6bb17e317082e449ec239570c0f3201ea"
+  - "c6-browser-attempt-4.log sha256=4ab3a2679bf12f89b91612dd7fb21c55bd3b7a8f2f7142e7dcf7cebf160f4581"
+  - "c6-atlas-living-constellation.json sha256=946d9a447a887535a14515c3dbfc9137943bb9ce3ebe761c5a9353ef4b794b24"
+failures:
+  - "第 4 个代表节点复用了三项偏移中的第 1 项，按钮坐标重叠并拦截自然点击"
+  - "Inspector 固定声称 3 个入口，但真实事实投影为 4 个"
+  - "首个 active-link 探针把复合条件写成后代 Locator，错误得到零边"
+fixes:
+  - "扩充六个唯一节点轨道并添加回归；入口数量使用 areaNodes.length"
+  - "使用同元素复合 selector，tech 事实子图验证 2 条动态关系边"
+claim_boundary:
+  - "只证明当前 Atlas 语义子图；长时、全缩放、mobile/reduced 和跨路由清理留待 C.10-C.13"
+commit: "42eca2c06d257badc81822713c6295c2eee20499 fix(world): 消除星图节点轨道重叠"
+next_item: C.7
+```
+
 ## 10. 后续记录模板
 
 ```yaml
@@ -1343,6 +1394,8 @@ next_item: "A.1-H.16 or none"
 | 2026-07-12T16:04:00+08:00 | B.9 | 联系表并行显示 LAN 六图大面积黑块 | 审查显示链异常，不是原始 PNG 或 LAN 渲染 | 回算原图 hash/像素，逐张打开；四图逐字节一致，另两图仅动态区域不同 | B.9 raw screenshot audit | false-positive-resolved |
 | 2026-07-12T16:56:00+08:00 | C.5 | 第一版 Gateway 正常模式只剩线框结构，电影材质不可见 | spatial base 不透明背景层位于位图上方 | 健康位图时透明叠合；资源失败/background-hidden 时增强独立结构；fresh build 重拍 | C.5 browser visual attempt 2 | fixed |
 | 2026-07-12T17:03:00+08:00 | C.5 | 首次 hidden 探针有 0.006px 在途帧且状态字段为空 | 采样了继承变量的 WorldViewport，并在 pause 落稳前取基线 | 增加稳定 stage 标记，等待 paused 后采样；2.2 秒值完全不变 | C.5 browser runtime attempt 2 | fixed |
+| 2026-07-12T17:13:00+08:00 | C.6 | Atlas 聚焦后第一个节点无法自然点击 | 4 个代表节点复用 3 个偏移，第 4 个与第 1 个精确重叠 | 六个唯一确定性轨道、坐标回归与真实入口计数；fresh build 重测自然点击 | C.6 browser attempt 2 | fixed |
+| 2026-07-12T17:18:00+08:00 | C.6 | active relation probe 错报零边 | Playwright 在 line 元素下查后代而非同元素复合条件 | 改用复合 selector，并在 tech 星域验证两条 offset 持续变化的事实边 | C.6 browser attempt 4 | fixed |
 
 ## 12. 证据新鲜度
 
