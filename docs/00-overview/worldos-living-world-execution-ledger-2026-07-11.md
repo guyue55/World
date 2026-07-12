@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.8
+current_item: B.9
 task_state: in_progress
-active_record_id: LW-017
-last_successful_command: "B.7 exact before-checksum rollback and preserved export restore"
-resume_action: "implement B.8 process-only private canary fixture status hash and public artifact scans"
-last_completed_item: B.7
+active_record_id: LW-018
+last_successful_command: "B.8 clean-build private canary positive control and 630-surface leak scan"
+resume_action: "execute B.9 checkpoint B engineering and localhost LAN six-projection browser validation"
+last_completed_item: B.8
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.8
+next_item: B.9
 ```
 
 每完成一项立即：
@@ -963,6 +963,47 @@ failures: []
 fixes: []
 commit: "c10f2877074b0c7eae64df3d231b384a2f5471df fix(world): 回滚代表更新并保留版本导出"
 next_item: B.8
+```
+
+### Record LW-017：B.8 私密事实正向控制与泄漏扫描
+
+```yaml
+record: LW-017
+checkpoint: B
+item: B.8
+status: passed
+started_at: 2026-07-12T15:49:00+08:00
+finished_at: 2026-07-12T15:54:40+08:00
+verified_facts:
+  - "WORLDOS_PRIVATE_CANARY_FIXTURE 只由 Node 服务端动态读取，要求绝对普通文件、private visibility、六个唯一 token 和 16 KiB 上限"
+  - "/api/status/permission-canary 只返回排序 SHA-256、fixtureLoaded 与 build identity，不返回 token、fixture 路径或内容"
+  - "API 注册表更新为 28 条，canary route 是 no-store public-read 正向控制，不写事实"
+  - "clean build identity sourceCommit=41a9430d 且 sourceDirty=false"
+  - "第二次隔离 next start 注入六个冻结 canary，positive hash 6/6 匹配且响应无原 token"
+  - "扫描 630 个真实表面：HTML/RSC 14、search 6、AI context 1、build 380、default export 222、screenshots 5，leaks=0、non200=0"
+  - "服务与临时 fixture/截图已删除；终局 verifier 仍保留独立重启重扫责任"
+hypothesis:
+  id: H-01
+  result: passed
+files_changed:
+  - "src/server/permissions/private-canary.ts"
+  - "src/app/api/status/permission-canary/route.ts"
+  - "data/world-kernel/worldos-api-boundary-registry-v1.json"
+commands:
+  - command: "fresh production build from clean implementation commit and isolated next start private canary scan"
+    exit_code: 0
+    observed: "sourceDirty=false; fixture hashes matched; scannedSurfaces=630; leaks=0; non200=0"
+  - command: "api boundary, permission boundary, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "28 registered API routes; all targeted engineering gates pass"
+evidence:
+  - "b8-fresh-build.log sha256=3e9d3789761104a8f41aeb279236d21702821a7e0ff5a0e881fcfede36bfad86"
+  - "b8-live-canary-scan.log sha256=c274bc34e43e94fcc8b3965d0bb2b4b5f4266df5ca276e0fc177686c4784aba2"
+  - "b8-private-canary-scan.json sha256=240d9ee41af844dda5e5a7f4df0b87c45d1fc394523079c09b32c8a7e16794fd"
+failures: []
+fixes: []
+commit: "41a9430de0819a76a06cf89be53887686c43a378 feat(world): 建立私密事实正向控制"
+next_item: B.9
 ```
 
 ## 10. 后续记录模板

@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.8",
+    "currentItem": "B.9",
     "taskState": "in_progress",
-    "activeRecordId": "LW-017",
-    "resumeAction": "implement B.8 process-only private canary fixture status hash and public artifact scans"
+    "activeRecordId": "LW-018",
+    "resumeAction": "execute B.9 checkpoint B engineering and localhost LAN six-projection browser validation"
   },
   "completedItems": {
     "A.1": {
@@ -393,6 +393,29 @@
       ],
       "commitHash": "c10f2877074b0c7eae64df3d231b384a2f5471df",
       "commitSubject": "fix(world): 回滚代表更新并保留版本导出"
+    },
+    "B.8": {
+      "status": "passed",
+      "itemId": "B.8",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:49:00+08:00",
+      "finishedAt": "2026-07-12T15:54:40+08:00",
+      "commands": [
+        {
+          "command": "clean production build and isolated next start 630-surface private canary scan",
+          "exitCode": 0,
+          "outputSha256": "c274bc34e43e94fcc8b3965d0bb2b4b5f4266df5ca276e0fc177686c4784aba2",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b8-2026-07-12/logs/b8-live-canary-scan.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b8-2026-07-12/evidence/b8-private-canary-scan.json",
+          "sha256": "240d9ee41af844dda5e5a7f4df0b87c45d1fc394523079c09b32c8a7e16794fd"
+        }
+      ],
+      "commitHash": "41a9430de0819a76a06cf89be53887686c43a378",
+      "commitSubject": "feat(world): 建立私密事实正向控制"
     }
   },
   "failedAttempts": [],

@@ -135,7 +135,7 @@
 - [x] **B.5** 实现轻量 export：manifest、facts、content、assets registry、preservation objects / events / rights、`checksums.sha256` 和中文 README。
 - [x] **B.6** 实现并执行固定接口 `node scripts/world-export.mjs verify-restore --input <export-root> --output <empty-temp-dir>`，在独立临时目录验证 checksum、schema、引用、权限范围并完成最小恢复构建；禁止覆盖真实工作区。
 - [x] **B.7** rollback authoring 后，真实工作区 checksum 与更新前一致；导出包仍能解释其来源和版本。
-- [ ] **B.8** 支持仅进程环境可用的 `WORLDOS_PRIVATE_CANARY_FIXTURE` 与只返回 canary hash 的 `/api/status/permission-canary` 正向控制；在临时私密事实中注入冻结的六个非敏感 canary，扫描 public HTML、RSC、JSON、search、AI context、Canvas payload、截图和默认 export 的真实产物。终局 verifier 将亲自启动第二个 `next start` 注入并重扫，不能委托 helper 自报。
+- [x] **B.8** 支持仅进程环境可用的 `WORLDOS_PRIVATE_CANARY_FIXTURE` 与只返回 canary hash 的 `/api/status/permission-canary` 正向控制；在临时私密事实中注入冻结的六个非敏感 canary，扫描 public HTML、RSC、JSON、search、AI context、Canvas payload、截图和默认 export 的真实产物。终局 verifier 将亲自启动第二个 `next start` 注入并重扫，不能委托 helper 自报。
 - [ ] **B.9** 运行定向检查、typecheck、lint、fresh build、localhost / LAN 六投影浏览器验证和 `git diff --check`。
 - [ ] **B.10** 更新账本的“内容投影门”结论并提交 `feat(world): 打通事实投影与可移植恢复链`。
 
