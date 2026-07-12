@@ -79,7 +79,7 @@ try {
   await launch.browser.send('Target.activateTarget', { targetId: coverPage.targetId })
   await delay(500)
   await launch.browser.send('Target.activateTarget', { targetId: page.targetId })
-  await delay(500)
+  await waitForExpression(page.send, `window.__worldosAudioContexts?.[0]?.state==='running'`, 5_000)
   await coverPage.close()
   const visibilityCycle = await snapshot('visibility-cycle')
 

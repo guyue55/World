@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T10:20:31.836Z",
+  "generatedAt": "2026-07-12T10:24:43.362Z",
   "baseUrl": "http://127.0.0.1:3411",
   "snapshots": {
     "beforeGesture": {
@@ -42,37 +42,37 @@
       "events": [
         {
           "type": "construct",
-          "at": 1126.0999999046326,
+          "at": 593.3999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 595.7999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1132.6999998092651,
+          "at": 602.6999998092651,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1132.6999998092651,
+          "at": 603.6999998092651,
           "state": "running"
         }
       ],
@@ -100,47 +100,47 @@
       "events": [
         {
           "type": "construct",
-          "at": 1126.0999999046326,
+          "at": 593.3999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 595.7999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1132.6999998092651,
+          "at": 602.6999998092651,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1132.6999998092651,
+          "at": 603.6999998092651,
           "state": "running"
         },
         {
           "type": "suspend-request",
-          "at": 1346.6999998092651,
+          "at": 739,
           "state": "running"
         },
         {
           "type": "suspended",
-          "at": 1348.2999999523163,
+          "at": 740.2999999523163,
           "state": "suspended"
         }
       ],
@@ -168,77 +168,77 @@
       "events": [
         {
           "type": "construct",
-          "at": 1126.0999999046326,
+          "at": 593.3999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 595.7999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1132.6999998092651,
+          "at": 602.6999998092651,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1132.6999998092651,
+          "at": 603.6999998092651,
           "state": "running"
         },
         {
           "type": "suspend-request",
-          "at": 1346.6999998092651,
+          "at": 739,
           "state": "running"
         },
         {
           "type": "suspended",
-          "at": 1348.2999999523163,
+          "at": 740.2999999523163,
           "state": "suspended"
         },
         {
           "type": "resume-request",
-          "at": 1379,
+          "at": 743.2999999523163,
           "state": "suspended"
         },
         {
           "type": "resumed",
-          "at": 1382.7999999523163,
+          "at": 750.8999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1382.7999999523163,
+          "at": 750.8999998569489,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1382.8999998569489,
+          "at": 751,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1384.0999999046326,
+          "at": 752.2999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1384.0999999046326,
+          "at": 752.2999999523163,
           "state": "running"
         }
       ],
@@ -266,77 +266,77 @@
       "events": [
         {
           "type": "construct",
-          "at": 1126.0999999046326,
+          "at": 593.3999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 595.7999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1132.6999998092651,
+          "at": 602.6999998092651,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1132.6999998092651,
+          "at": 603.6999998092651,
           "state": "running"
         },
         {
           "type": "suspend-request",
-          "at": 1346.6999998092651,
+          "at": 739,
           "state": "running"
         },
         {
           "type": "suspended",
-          "at": 1348.2999999523163,
+          "at": 740.2999999523163,
           "state": "suspended"
         },
         {
           "type": "resume-request",
-          "at": 1379,
+          "at": 743.2999999523163,
           "state": "suspended"
         },
         {
           "type": "resumed",
-          "at": 1382.7999999523163,
+          "at": 750.8999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1382.7999999523163,
+          "at": 750.8999998569489,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1382.8999998569489,
+          "at": 751,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1384.0999999046326,
+          "at": 752.2999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1384.0999999046326,
+          "at": 752.2999999523163,
           "state": "running"
         }
       ],
@@ -364,97 +364,97 @@
       "events": [
         {
           "type": "construct",
-          "at": 1126.0999999046326,
+          "at": 593.3999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 595.7999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1127.1999998092651,
+          "at": 596.0999999046326,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1132.6999998092651,
+          "at": 602.6999998092651,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1132.6999998092651,
+          "at": 603.6999998092651,
           "state": "running"
         },
         {
           "type": "suspend-request",
-          "at": 1346.6999998092651,
+          "at": 739,
           "state": "running"
         },
         {
           "type": "suspended",
-          "at": 1348.2999999523163,
+          "at": 740.2999999523163,
           "state": "suspended"
         },
         {
           "type": "resume-request",
-          "at": 1379,
+          "at": 743.2999999523163,
           "state": "suspended"
         },
         {
           "type": "resumed",
-          "at": 1382.7999999523163,
+          "at": 750.8999998569489,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1382.7999999523163,
+          "at": 750.8999998569489,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1382.8999998569489,
+          "at": 751,
           "state": "running"
         },
         {
           "type": "resume-request",
-          "at": 1384.0999999046326,
+          "at": 752.2999999523163,
           "state": "running"
         },
         {
           "type": "resumed",
-          "at": 1384.0999999046326,
+          "at": 752.2999999523163,
           "state": "running"
         },
         {
           "type": "suspend-request",
-          "at": 2610.699999809265,
+          "at": 1988.5999999046326,
           "state": "running"
         },
         {
           "type": "suspended",
-          "at": 2610.7999999523163,
+          "at": 1988.6999998092651,
           "state": "suspended"
         },
         {
           "type": "resume-request",
-          "at": 3861.199999809265,
+          "at": 3255.0999999046326,
           "state": "suspended"
         },
         {
           "type": "resumed",
-          "at": 4372.599999904633,
+          "at": 3766.5,
           "state": "running"
         }
       ],
