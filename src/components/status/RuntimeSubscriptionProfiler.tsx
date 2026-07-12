@@ -37,7 +37,9 @@ const SlicedTimeConsumer = memo(function SlicedTimeConsumer({ store, renders }: 
 
 export function RuntimeSubscriptionProfiler() {
   const runtime = useWorldRuntime()
+  const runtimeRef = useRef(runtime)
   const started = useRef(false)
+  const completed = useRef(false)
   const legacyRenders = useRef(0)
   const slicedRenders = useRef(0)
   const store = useMemo(() => createWorldRuntimeStore({
@@ -46,16 +48,18 @@ export function RuntimeSubscriptionProfiler() {
     migration: { kind: 'idle' },
     sound: { mode: 'muted', volume: 0.35, sessionArmed: false },
   }), [])
+  runtimeRef.current = runtime
 
   useEffect(() => {
     if (started.current || new URLSearchParams(window.location.search).get('runtime-profile') !== '1') return
     started.current = true
     const timer = window.setTimeout(() => {
+      const currentRuntime = runtimeRef.current
       const legacyBefore = legacyRenders.current
       const slicedBefore = slicedRenders.current
-      const previousMotion = runtime.motionPreference
+      const previousMotion = currentRuntime.motionPreference
       store.dispatch({ type: 'sound/changed', preference: { mode: 'enabled', volume: 0.2, sessionArmed: true } })
-      runtime.setMotionPreference(previousMotion === 'off' ? 'reduced' : 'off')
+      currentRuntime.setMotionPreference(previousMotion === 'off' ? 'reduced' : 'off')
       window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
         const legacyDelta = legacyRenders.current - legacyBefore
         const slicedDelta = slicedRenders.current - slicedBefore
@@ -66,12 +70,16 @@ export function RuntimeSubscriptionProfiler() {
           unrelatedEvent: 'motion-and-sound',
           decision: legacyDelta > slicedDelta ? 'migrate-to-sliced-store' : 'retain-context',
         }
+        completed.current = true
         document.documentElement.dataset.runtimeProfileComplete = 'true'
-        runtime.setMotionPreference(previousMotion)
+        runtimeRef.current.setMotionPreference(previousMotion)
       }))
     }, 120)
-    return () => window.clearTimeout(timer)
-  }, [runtime, store])
+    return () => {
+      window.clearTimeout(timer)
+      if (!completed.current) started.current = false
+    }
+  }, [store])
 
   return <div hidden aria-hidden="true"><LegacyTimeConsumer renders={legacyRenders} /><SlicedTimeConsumer store={store} renders={slicedRenders} /></div>
 }
