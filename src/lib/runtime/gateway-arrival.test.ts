@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { isGatewayReturnArrival } from './build-gateway-model'
+import { isGatewayReturnArrival } from './gateway-arrival'
 
 test('同一会话从世界场景返回 Gateway 不重播关门仪式', () => {
   assert.equal(isGatewayReturnArrival({ hydrated: false, hasReturningJourney: true }), false)

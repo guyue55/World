@@ -27,10 +27,6 @@ export type GatewayViewModel = {
   onboardingPathIds: string[]
 }
 
-export function isGatewayReturnArrival(input: { hydrated: boolean; hasReturningJourney: boolean }) {
-  return input.hydrated && input.hasReturningJourney
-}
-
 export function buildGatewayModel(index: PublicWorldObjectIndex): GatewayViewModel {
   const curation = getPublicWorldCuration()
   const issues = getPublicWorldCurationIssues(index)
