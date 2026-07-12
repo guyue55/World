@@ -1,0 +1,467 @@
+{
+  "generatedAt": "2026-07-12T10:20:31.836Z",
+  "baseUrl": "http://127.0.0.1:3411",
+  "snapshots": {
+    "beforeGesture": {
+      "label": "before-gesture",
+      "path": "/",
+      "control": {
+        "armed": "false",
+        "context": "none",
+        "quiet": "false",
+        "loops": 0,
+        "cues": 0,
+        "scene": "gateway",
+        "soundMode": "muted",
+        "error": ""
+      },
+      "constructed": 0,
+      "contextStates": [],
+      "events": [],
+      "audioResources": [],
+      "engineResources": [],
+      "errors": []
+    },
+    "enabled": {
+      "label": "enabled",
+      "path": "/",
+      "control": {
+        "armed": "true",
+        "context": "running",
+        "quiet": "false",
+        "loops": 1,
+        "cues": 1,
+        "scene": "gateway",
+        "soundMode": "enabled",
+        "error": ""
+      },
+      "constructed": 1,
+      "contextStates": [
+        "running"
+      ],
+      "events": [
+        {
+          "type": "construct",
+          "at": 1126.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1132.6999998092651,
+          "state": "running"
+        }
+      ],
+      "audioResources": [],
+      "engineResources": [],
+      "errors": []
+    },
+    "muted": {
+      "label": "muted",
+      "path": "/",
+      "control": {
+        "armed": "false",
+        "context": "suspended",
+        "quiet": "false",
+        "loops": 0,
+        "cues": 0,
+        "scene": "gateway",
+        "soundMode": "muted",
+        "error": ""
+      },
+      "constructed": 1,
+      "contextStates": [
+        "suspended"
+      ],
+      "events": [
+        {
+          "type": "construct",
+          "at": 1126.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspend-request",
+          "at": 1346.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspended",
+          "at": 1348.2999999523163,
+          "state": "suspended"
+        }
+      ],
+      "audioResources": [],
+      "engineResources": [],
+      "errors": []
+    },
+    "reenabled": {
+      "label": "reenabled",
+      "path": "/",
+      "control": {
+        "armed": "true",
+        "context": "running",
+        "quiet": "false",
+        "loops": 1,
+        "cues": 1,
+        "scene": "gateway",
+        "soundMode": "enabled",
+        "error": ""
+      },
+      "constructed": 1,
+      "contextStates": [
+        "running"
+      ],
+      "events": [
+        {
+          "type": "construct",
+          "at": 1126.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspend-request",
+          "at": 1346.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspended",
+          "at": 1348.2999999523163,
+          "state": "suspended"
+        },
+        {
+          "type": "resume-request",
+          "at": 1379,
+          "state": "suspended"
+        },
+        {
+          "type": "resumed",
+          "at": 1382.7999999523163,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1382.7999999523163,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1382.8999998569489,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1384.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1384.0999999046326,
+          "state": "running"
+        }
+      ],
+      "audioResources": [],
+      "engineResources": [],
+      "errors": []
+    },
+    "switched": {
+      "label": "atlas-switched",
+      "path": "/atlas",
+      "control": {
+        "armed": "true",
+        "context": "running",
+        "quiet": "false",
+        "loops": 1,
+        "cues": 1,
+        "scene": "atlas",
+        "soundMode": "enabled",
+        "error": ""
+      },
+      "constructed": 1,
+      "contextStates": [
+        "running"
+      ],
+      "events": [
+        {
+          "type": "construct",
+          "at": 1126.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspend-request",
+          "at": 1346.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspended",
+          "at": 1348.2999999523163,
+          "state": "suspended"
+        },
+        {
+          "type": "resume-request",
+          "at": 1379,
+          "state": "suspended"
+        },
+        {
+          "type": "resumed",
+          "at": 1382.7999999523163,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1382.7999999523163,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1382.8999998569489,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1384.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1384.0999999046326,
+          "state": "running"
+        }
+      ],
+      "audioResources": [],
+      "engineResources": [],
+      "errors": []
+    },
+    "visibilityCycle": {
+      "label": "visibility-cycle",
+      "path": "/atlas",
+      "control": {
+        "armed": "true",
+        "context": "running",
+        "quiet": "false",
+        "loops": 1,
+        "cues": 1,
+        "scene": "atlas",
+        "soundMode": "enabled",
+        "error": ""
+      },
+      "constructed": 1,
+      "contextStates": [
+        "running"
+      ],
+      "events": [
+        {
+          "type": "construct",
+          "at": 1126.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1127.1999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1132.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspend-request",
+          "at": 1346.6999998092651,
+          "state": "running"
+        },
+        {
+          "type": "suspended",
+          "at": 1348.2999999523163,
+          "state": "suspended"
+        },
+        {
+          "type": "resume-request",
+          "at": 1379,
+          "state": "suspended"
+        },
+        {
+          "type": "resumed",
+          "at": 1382.7999999523163,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1382.7999999523163,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1382.8999998569489,
+          "state": "running"
+        },
+        {
+          "type": "resume-request",
+          "at": 1384.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "resumed",
+          "at": 1384.0999999046326,
+          "state": "running"
+        },
+        {
+          "type": "suspend-request",
+          "at": 2610.699999809265,
+          "state": "running"
+        },
+        {
+          "type": "suspended",
+          "at": 2610.7999999523163,
+          "state": "suspended"
+        },
+        {
+          "type": "resume-request",
+          "at": 3861.199999809265,
+          "state": "suspended"
+        },
+        {
+          "type": "resumed",
+          "at": 4372.599999904633,
+          "state": "running"
+        }
+      ],
+      "audioResources": [],
+      "engineResources": [],
+      "errors": []
+    }
+  },
+  "failures": []
+}

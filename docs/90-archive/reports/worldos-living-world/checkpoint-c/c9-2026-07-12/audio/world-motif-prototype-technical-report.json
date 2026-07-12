@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-07-12T10:18:03.890Z",
+  "prototype": {
+    "id": "moonlit-islands-world-motif-prototype-v1",
+    "durationSeconds": 90,
+    "source": "project-generated-procedural",
+    "license": "project-owned-runtime-synthesis",
+    "removable": true,
+    "ambientVoices": [
+      {
+        "frequencyHz": 49,
+        "gain": 0.038,
+        "oscillatorType": "sine"
+      },
+      {
+        "frequencyHz": 73.5,
+        "gain": 0.021,
+        "oscillatorType": "sine"
+      },
+      {
+        "frequencyHz": 98,
+        "gain": 0.008,
+        "oscillatorType": "sine"
+      },
+      {
+        "frequencyHz": 343,
+        "gain": 0.0025,
+        "oscillatorType": "sine"
+      }
+    ],
+    "gatewayMotif": {
+      "rootHz": 294,
+      "intervals": [
+        1,
+        1.25,
+        1.5
+      ]
+    },
+    "lighthouseMotif": {
+      "rootHz": 523,
+      "intervals": [
+        1,
+        1.25,
+        1.5
+      ]
+    }
+  },
+  "render": {
+    "durationSeconds": 600,
+    "loopSeconds": 90,
+    "sampleRate": 48000,
+    "channels": 1,
+    "bitsPerSample": 16,
+    "loopCount": 6.666666666666667,
+    "deterministic": true
+  },
+  "analysis": {
+    "durationSeconds": 90,
+    "sampleRate": 48000,
+    "sampleCount": 4320000,
+    "peakLinear": 0.06953804194927216,
+    "peakDbfs": -23.155550846710263,
+    "rmsLinear": 0.02008433068085715,
+    "dcOffset": 2.7338320091258235e-12,
+    "seamDelta": 0.0000033937394618988037,
+    "nonFiniteSamples": 0,
+    "truePeakDbfs": -23.2,
+    "loopBoundaryCount": 5,
+    "maximumBoundaryDelta": 0.0000033937394618988037,
+    "waveformFinding": "技术图已生成；不构成人类听感结论。",
+    "spectrumFinding": "技术图已生成；不构成人类听感结论。"
+  },
+  "lifecycleContract": {
+    "beforeUserGestureAudioNetworkBytes": 0,
+    "audioContextMax": 1,
+    "ambienceSourceMax": 1,
+    "cueGroupMax": 1,
+    "quiet": "suspend",
+    "hidden": "suspend",
+    "mute": "stop-sources-and-suspend",
+    "dispose": "stop-sources-and-close"
+  },
+  "assets": [
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/audio/world-motif-prototype-10m.flac",
+      "bytes": 7620626,
+      "sha256": "e33f9f5abc03201ba6eb05f010f93fd4f074cccc1e5620a9bda0ac8ac1ffa51e"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/audio/world-motif-prototype-waveform.png",
+      "bytes": 3453,
+      "sha256": "51eb3d41a2e7ba37d0b706d6ba7ad25264ac133126e4e47c346afeec87b3d1a1"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c9-2026-07-12/audio/world-motif-prototype-spectrum.png",
+      "bytes": 276116,
+      "sha256": "9d3f560ea580ef0734d0e571bd8ce3cd3241bd2a2318cafbac838045423ffeaf"
+    }
+  ],
+  "source": {
+    "path": "src/world/sensory/prototype.ts",
+    "sha256": "4decd5a45269614259042dfd0d6644a1987b961a8253e444c6ce94b09e7d359d",
+    "license": "project-owned-runtime-synthesis",
+    "generation": "project-generated-procedural"
+  },
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "flac",
+        "sample_rate": "48000",
+        "channels": 1,
+        "bits_per_raw_sample": "16"
+      }
+    ],
+    "format": {
+      "duration": "600.000000",
+      "size": "7620626"
+    }
+  },
+  "humanListening": {
+    "status": "HUMAN_AUDIO_PENDING",
+    "headphones": "not-reviewed-by-human",
+    "speakers": "not-reviewed-by-human"
+  }
+}
