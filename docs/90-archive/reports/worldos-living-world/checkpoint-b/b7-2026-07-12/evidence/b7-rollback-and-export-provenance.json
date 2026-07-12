@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "B.7",
+  "status": "pass",
+  "createdAt": "2026-07-12T07:48:24.457Z",
+  "claim": "author rollback 将真实工作区恢复到更新前逐文件 checksum；更新版公开导出仍以独立 root checksum、来源提交和正文 revision 可验证恢复。",
+  "backup": {
+    "id": "author-1783841103039-kavita-portable-checksum-2026-07-12",
+    "status": "rolled-back",
+    "rolledBackAt": "2026-07-12T07:47:22.166Z",
+    "manifestSha256": "f115c02a6eff1648acf1c244cb5b99c82671bd4f6eb70fcb86debc56cd6948b2",
+    "entries": [
+      {
+        "path": "data/domains/experience/nodes.json",
+        "expectedBeforeSha256": "a1e30db6a7171b990b5a79b194b2e84fc658f06ff5a8dbbfc886283d43bc9bf0",
+        "actualSha256": "a1e30db6a7171b990b5a79b194b2e84fc658f06ff5a8dbbfc886283d43bc9bf0",
+        "matched": true
+      },
+      {
+        "path": "data/core/world-events.json",
+        "expectedBeforeSha256": "cf3c3dee9410ab5520daed2c16322c9f3253e57823ad927d788a88e2ea392b3f",
+        "actualSha256": "cf3c3dee9410ab5520daed2c16322c9f3253e57823ad927d788a88e2ea392b3f",
+        "matched": true
+      },
+      {
+        "path": "content/articles/kavita-reader-txt-epub-pipeline.md",
+        "expectedBeforeSha256": "1f18b155a63fca16b3c5f9dde35b6891648fcc9fb0f7a95a8225383933b3ca9b",
+        "actualSha256": "1f18b155a63fca16b3c5f9dde35b6891648fcc9fb0f7a95a8225383933b3ca9b",
+        "matched": true
+      },
+      {
+        "path": "public/world-index.json",
+        "expectedBeforeSha256": "5305b9b103eac0f85f76392a84f1365d9136eccba79a7c85d5785806074f5e2d",
+        "actualSha256": "5305b9b103eac0f85f76392a84f1365d9136eccba79a7c85d5785806074f5e2d",
+        "matched": true
+      },
+      {
+        "path": "public/world-manifest.json",
+        "expectedBeforeSha256": "bdd7b35cb1fb2cd2e0ab85152c8b887479bebddb09dc9a9a2f8dcc64ffc11ae3",
+        "actualSha256": "bdd7b35cb1fb2cd2e0ab85152c8b887479bebddb09dc9a9a2f8dcc64ffc11ae3",
+        "matched": true
+      }
+    ]
+  },
+  "workspace": {
+    "updatePhrasePresent": false,
+    "updateEventPresent": false
+  },
+  "preservedExport": {
+    "worldCommit": "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3",
+    "rootChecksum": "5f7e4bd1feacbf2bda6674dfb068c465af319b8e67c6fd1a251843386b53c58d",
+    "contentPath": "content/articles/kavita-reader-txt-epub-pipeline.md",
+    "contentRevisionSha256": "64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3",
+    "verifyRestore": "pass"
+  },
+  "log": {
+    "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b7-2026-07-12/logs/b7-rollback-provenance.log",
+    "sha256": "d9f10dc72e1cdf7d899e250e1271030fc611482ac0323ddc0bbaacee70624dda"
+  }
+}
