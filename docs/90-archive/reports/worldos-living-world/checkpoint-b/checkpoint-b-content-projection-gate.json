@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "B",
+  "gate": "content-projection",
+  "status": "passed",
+  "generatedAt": "2026-07-12T16:08:00+08:00",
+  "productStatusAfterGate": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
+  "claim": "一份已有公开真实内容的小更新通过同一服务端事实投影进入适用场景、灯塔和公开导出；作者事务可原子回滚，历史导出仍可独立验证和恢复。",
+  "representativeFact": {
+    "nodeId": "node-kavita-reader-pipeline",
+    "slug": "kavita-reader-txt-epub-pipeline",
+    "contentPath": "content/articles/kavita-reader-txt-epub-pipeline.md",
+    "updateId": "kavita-portable-checksum-2026-07-12",
+    "beforeRevision": "1f18b155a63fca16b3c5f9dde35b6891648fcc9fb0f7a95a8225383933b3ca9b",
+    "appliedRevision": "64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3",
+    "currentWorkspaceState": "rolled-back-to-before",
+    "preservedExportState": "contains-applied-revision"
+  },
+  "temporalProof": [
+    {
+      "state": "failing-contract",
+      "fact": "B.2 在实现前报告七投影和源更新均缺失；测试与 fixture 的 hash 直接绑定机器状态。"
+    },
+    {
+      "state": "applied",
+      "fact": "B.4/B.5 期间 Atlas、Timeline、Archive、Paths、Node、Lighthouse、search 和 export 返回同一 applied revision。"
+    },
+    {
+      "state": "rolled-back",
+      "fact": "B.7 后真实工作区五个受管文件精确等于 before checksum，历史 export 仍恢复 applied revision。"
+    }
+  ],
+  "architectureProof": {
+    "projectionOwner": "src/lib/public-world-objects.ts",
+    "authoringTransaction": "src/server/authoring/author-transaction.ts",
+    "publicExport": "src/server/export/build-export.ts",
+    "verification": "src/server/export/verify-export.ts",
+    "restore": "src/server/export/restore-export.ts",
+    "sceneSpecificFactRegistration": false,
+    "secondPermissionModel": false,
+    "secondFactModel": false
+  },
+  "gateCriteria": {
+    "factUpdateWithoutSceneComponentEdit": "pass",
+    "rawFactsAndContentExported": "pass",
+    "independentChecksumSchemaReferencePermissionVerification": "pass",
+    "emptyDirectoryRestore": "pass",
+    "atomicRollback": "pass",
+    "privateCanaryExcluded": "pass",
+    "localhostLanProjectionReachability": "pass"
+  },
+  "evidence": [
+    "checkpoint-b/b1-2026-07-12/evidence/b1-representative-node-selection.json",
+    "data/fixtures/authoring/representative-node-update.json",
+    "scripts/check-worldos-living-world-content-projection.ts",
+    "checkpoint-b/b3-2026-07-12/evidence/b3-author-update-transaction.json",
+    "checkpoint-b/b4-2026-07-12/evidence/b4-unified-public-projection.json",
+    "checkpoint-b/b5-2026-07-12/evidence/b5-public-export.json",
+    "checkpoint-b/b6-2026-07-12/evidence/b6-public-export-restore.json",
+    "checkpoint-b/b7-2026-07-12/evidence/b7-rollback-and-export-provenance.json",
+    "checkpoint-b/b8-2026-07-12/evidence/b8-private-canary-scan.json",
+    "checkpoint-b/b9-2026-07-12/evidence/b9-checkpoint-b-gate.json"
+  ],
+  "knownOpenExperienceDefects": [
+    "静态 WebP 仍承担大部分场景主体。",
+    "统一持续世界 Clock/Signals/Scheduler 尚未通过 Gateway-Atlas-Node 十分钟纵向样板。",
+    "Timeline 河流、声景、迁移连续性和七场景长时生命仍属于 C-H。"
+  ],
+  "nextItem": "C.1"
+}
