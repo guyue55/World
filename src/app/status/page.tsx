@@ -5,6 +5,7 @@ import { getAllPaths } from '@/lib/paths'
 import { createPageMetadata } from '@/lib/metadata'
 import { getLivingWorldStatus } from '@/lib/living-world-status'
 import { RealityFirstBaselinePanel } from '@/components/status'
+import { RuntimeSubscriptionProfiler } from '@/components/status/RuntimeSubscriptionProfiler'
 
 export const metadata = createPageMetadata({
   title: '世界状态',
@@ -52,6 +53,7 @@ export default function StatusPage() {
 
   return (
     <main className="world-container space-y-10 py-16">
+      <RuntimeSubscriptionProfiler />
       <header className="border-b border-ink/15 pb-8">
         <p className="text-xs font-semibold text-moss">STATUS · {status.scope} 维护舱</p>
         <h1 className="mt-3 text-4xl font-semibold text-ink">世界状态</h1>
