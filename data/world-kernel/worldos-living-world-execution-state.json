@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.9",
+    "currentItem": "B.1",
     "taskState": "in_progress",
-    "activeRecordId": "LW-009",
-    "resumeAction": "retry fresh independent visual reviewer after provider usage reset; do not enter B before A.9 passes"
+    "activeRecordId": "LW-010",
+    "resumeAction": "start B.1 representative public fact selection and traceable update baseline"
   },
   "completedItems": {
     "A.1": {
@@ -199,6 +199,29 @@
       ],
       "commitHash": "bcde9ca5488353862b44e8731f7ddddc0b61a853",
       "commitSubject": "fix(world): 修复浏览器证据资源回算"
+    },
+    "A.9": {
+      "status": "passed",
+      "itemId": "A.9",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T15:02:00+08:00",
+      "finishedAt": "2026-07-12T15:06:50+08:00",
+      "commands": [
+        {
+          "command": "fresh independent reviewer image-first baseline audit and A.9 validation",
+          "exitCode": 0,
+          "outputSha256": "3575500deefb77ab92f72eeb741a1e78b55e55d67929f492a99fed8f2b62aac5",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/logs/a9-independent-review-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/evidence/a9-independent-review.md",
+          "sha256": "f5e5bbe39152d9a099bd2d00bb583d6307fcb5f769a386b347b8b1aacaae043c"
+        }
+      ],
+      "commitHash": "0c91f59ca2a3da97b9816404861a99554cc98d66",
+      "commitSubject": "test(world): 撤销继承式完成并建立生命世界基线"
     }
   },
   "failedAttempts": [],
@@ -240,7 +263,17 @@
       "evidence": []
     }
   ],
-  "independentReviews": [],
+  "independentReviews": [
+    {
+      "purpose": "checkpoint-a-failure-baseline",
+      "taskId": "019f5523-be1d-7030-8989-6786eb262c0b",
+      "forkContext": false,
+      "mode": "fresh-read-only",
+      "verdict": "pass-baseline-only",
+      "productStatus": "CINEMATIC_STATIC_WORLD_IN_PROGRESS",
+      "evidencePath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/evidence/a9-independent-review.md"
+    }
+  ],
   "humanAudioSignoff": {
     "status": "pending_external",
     "records": []

@@ -13,20 +13,20 @@ goal_started_at: 2026-07-12T00:28:14+08:00
 control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
-current_checkpoint: A
-current_item: A.9
+current_checkpoint: B
+current_item: B.1
 task_state: in_progress
-active_record_id: LW-009
-last_successful_command: "A.8 post-fix objective evidence, JSON and diff validation"
-resume_action: "retry A.9 fresh independent visual reviewer after provider usage reset; do not enter B before A.9 passes"
-last_completed_item: A.8
+active_record_id: LW-010
+last_successful_command: "A.9 fresh independent image-first baseline review"
+resume_action: "start B.1 representative public fact selection and traceable update baseline"
+last_completed_item: A.9
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
 long_lived_world: unproven_by_definition
-same_external_blocker_streak: 1
+same_external_blocker_streak: 0
 same_design_gate_failure_streak: 0
-blocker_kind: reviewer-provider-limit
+blocker_kind: none
 final_evidence_run: null
 final_source_commit: null
 final_build_hash: null
@@ -122,7 +122,7 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 
 | Checkpoint | 目标 | 状态 | Commit | Evidence |
 | --- | --- | --- | --- | --- |
-| A | 撤销继承式完成与新鲜基线 | in_progress | bcde9ca5 | `checkpoint-a/a8-2026-07-12/` |
+| A | 撤销继承式完成与新鲜基线 | passed | 0c91f59c | `checkpoint-a/a8-2026-07-12/` |
 | B | 一份事实长成整个世界 | pending | null | null |
 | C | 三场景生命纵向样板 | pending | null | null |
 | D | 唯一生命运行内核 | pending | null | null |
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: A.9
+next_item: B.1
 ```
 
 每完成一项立即：
@@ -625,6 +625,45 @@ commit: "bcde9ca5488353862b44e8731f7ddddc0b61a853 fix(world): 修复浏览器证
 next_item: A.9
 ```
 
+### Record LW-009：A.9 fresh 独立失败基线审查
+
+```yaml
+record: LW-009
+checkpoint: A
+item: A.9
+status: passed
+started_at: 2026-07-12T15:02:00+08:00
+finished_at: 2026-07-12T15:06:50+08:00
+verified_facts:
+  - "fresh reviewer context 019f5523-be1d-7030-8989-6786eb262c0b 未继承执行线程，工作区只读"
+  - "审查者先打开六张 contact sheet 与录屏时长，再读取 baseline 报告、manifest、矩阵和日志"
+  - "独立结论保留四类 P1：背景隐藏后空间主体失败、text-hidden 仍依赖 WebP、录屏过短、产品仍未完成"
+  - "审查确认 baseline 没有宣称空间世界已完成，也没有把不同位图等同独立世界"
+  - "Gate A 只以撤销继承式完成并建立可信失败基线的含义通过"
+hypothesis:
+  id: H-05
+  result: failed-revised
+files_changed:
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/evidence/a9-independent-review.md"
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/logs/a9-independent-review-validation.log"
+commands:
+  - command: "fresh read-only independent reviewer, image and duration first"
+    exit_code: 0
+    observed: "P0=0; P1 retained; Gate A pass-baseline-only; product remains incomplete"
+  - command: "A.9 independent review structure and conclusion validation"
+    exit_code: 0
+    observed: "A9_INDEPENDENT_BASELINE_REVIEW_PASS reviewer=019f5523-be1d-7030-8989-6786eb262c0b productCompletion=false"
+evidence:
+  - "a9-independent-review-validation.log sha256=3575500deefb77ab92f72eeb741a1e78b55e55d67929f492a99fed8f2b62aac5"
+  - "a9-independent-review.md sha256=f5e5bbe39152d9a099bd2d00bb583d6307fcb5f769a386b347b8b1aacaae043c"
+failures:
+  - "空间主体、持续生命、soak 与资源稳定性仍失败或未证明；这是 B-H 的实现输入"
+fixes:
+  - "不修饰产品结论；只封存独立失败基线并开放内容投影门 B"
+commit: "0c91f59ca2a3da97b9816404861a99554cc98d66 test(world): 撤销继承式完成并建立生命世界基线"
+next_item: B.1
+```
+
 ## 10. 后续记录模板
 
 ```yaml
@@ -662,6 +701,7 @@ next_item: "A.1-H.16 or none"
 | 2026-07-12T00:44:41+08:00 | A.2 | 五场景 background-hidden 主交互不可见，人工复核七场景均未达语义主体要求 | 静态 WebP 仍承担空间主体，资源失败 fallback 多为列表 | 保留为 fresh 反基线；C-E 渐进拆分语义对象、持续环境与位图层 | A.2 expected-defect validator | recorded |
 | 2026-07-12T01:30:25+08:00 | A.8 | fresh evidence 第一张图因浏览器资源正则非法而中止 | 模板字符串中的单层反斜杠在 Runtime.evaluate 前被 Node 消耗 | 先加红灯契约，再双层转义并完成 84 个本机/LAN 观察 | A.8 full evidence rerun | fixed |
 | 2026-07-12T14:47:00+08:00 | A.9 | Codex CLI 与 fresh subagent 在推理前命中用量上限；Claude CLI 未登录 | 当前独立视觉模型通道外部不可用，没有 reviewer 读到图片 | 保持 A.9 未勾选，不进入 B；额度恢复后重试 fresh 只读 reviewer | A.9 independent review | blocked_external_open |
+| 2026-07-12T15:06:30+08:00 | A.9 | 上次 reviewer 通道外部阻断 | fresh subagent 配额恢复 | reviewer 先看六图与时长后完成只读审查，P1 与未完成结论全部保留 | A.9 independent review | resolved |
 
 ## 12. 证据新鲜度
 
