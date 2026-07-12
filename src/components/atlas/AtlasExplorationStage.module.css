@@ -27,9 +27,9 @@
   position: absolute;
   z-index: 2;
   inset: 5% 8% 12%;
-  background: radial-gradient(circle at 50% 45%, rgba(84, 159, 174, 0.24), rgba(39, 91, 108, 0.08) 38%, transparent 68%);
+  background: radial-gradient(circle at 50% 45%, rgba(84, 159, 174, 0.65), rgba(39, 91, 108, 0.25) 38%, transparent 68%);
   content: '';
-  opacity: calc(0.05 + var(--atlas-field-breathe) * 0.45);
+  opacity: calc(0.1 + var(--atlas-field-breathe) * 0.85);
   pointer-events: none;
 }
 
