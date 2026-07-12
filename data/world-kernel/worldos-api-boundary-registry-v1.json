@@ -628,6 +628,30 @@
       }
     },
     {
+      "path": "/api/status/permission-canary",
+      "file": "src/app/api/status/permission-canary/route.ts",
+      "methods": [
+        "GET"
+      ],
+      "classification": "public-read",
+      "guard": "none",
+      "mutability": "read-only",
+      "productionWrite": false,
+      "cachePolicy": "no-store",
+      "publicPayload": "不可逆 canary hash 与构建身份，不返回 fixture 原文或路径",
+      "requiresDatabase": false,
+      "requiresRealAI": false,
+      "status": "active",
+      "description": "localhost/LAN 权限正向控制；仅证明服务端进程加载私密 fixture，公开响应只含 SHA-256。",
+      "expectedSignals": {
+        "ownerGuard": false,
+        "permissionGuard": false,
+        "forceStatic": false,
+        "noStore": true,
+        "usesRuntimeMemory": false
+      }
+    },
+    {
       "path": "/api/lighthouse/search",
       "file": "src/app/api/lighthouse/search/route.ts",
       "methods": [
@@ -677,10 +701,10 @@
     }
   ],
   "summary": {
-    "totalRoutes": 27,
+    "totalRoutes": 28,
     "ownerOnly": 5,
     "permissionGuarded": 5,
-    "publicRead": 10,
+    "publicRead": 11,
     "staticSafePublic": 6,
     "publicQuery": 1,
     "mutatingRoutes": 2
