@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.7",
+    "currentItem": "B.8",
     "taskState": "in_progress",
-    "activeRecordId": "LW-016",
-    "resumeAction": "execute B.7 author rollback and prove workspace before checksums while retaining export provenance"
+    "activeRecordId": "LW-017",
+    "resumeAction": "implement B.8 process-only private canary fixture status hash and public artifact scans"
   },
   "completedItems": {
     "A.1": {
@@ -370,6 +370,29 @@
       ],
       "commitHash": "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3",
       "commitSubject": "feat(world): 验证并重建公开世界导出"
+    },
+    "B.7": {
+      "status": "passed",
+      "itemId": "B.7",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:46:00+08:00",
+      "finishedAt": "2026-07-12T15:48:20+08:00",
+      "commands": [
+        {
+          "command": "atomic author rollback, exact before-checksum proof and preserved export restore",
+          "exitCode": 0,
+          "outputSha256": "d9f10dc72e1cdf7d899e250e1271030fc611482ac0323ddc0bbaacee70624dda",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b7-2026-07-12/logs/b7-rollback-provenance.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b7-2026-07-12/evidence/b7-rollback-and-export-provenance.json",
+          "sha256": "41fdb5ccce070e82a6200b9b185fad06b0c0ea9d3464f3bd6e53e240d552d283"
+        }
+      ],
+      "commitHash": "c10f2877074b0c7eae64df3d231b384a2f5471df",
+      "commitSubject": "fix(world): 回滚代表更新并保留版本导出"
     }
   },
   "failedAttempts": [],

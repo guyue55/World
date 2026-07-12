@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.7
+current_item: B.8
 task_state: in_progress
-active_record_id: LW-016
-last_successful_command: "B.6 isolated positive restore and five negative boundary cases"
-resume_action: "execute B.7 author rollback and prove workspace before checksums while retaining export provenance"
-last_completed_item: B.6
+active_record_id: LW-017
+last_successful_command: "B.7 exact before-checksum rollback and preserved export restore"
+resume_action: "implement B.8 process-only private canary fixture status hash and public artifact scans"
+last_completed_item: B.7
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.7
+next_item: B.8
 ```
 
 每完成一项立即：
@@ -926,6 +926,43 @@ fixes:
   - "区分区域创作默认策略与对象自身公开性；节点、路径、事件的公开约束保持冻结"
 commit: "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3 feat(world): 验证并重建公开世界导出"
 next_item: B.7
+```
+
+### Record LW-016：B.7 工作区回滚与历史导出保留
+
+```yaml
+record: LW-016
+checkpoint: B
+item: B.7
+status: passed
+started_at: 2026-07-12T15:46:00+08:00
+finished_at: 2026-07-12T15:48:20+08:00
+verified_facts:
+  - "rollback 前五个受管文件逐项等于 backup afterSha256，未覆盖 B.4 后的未知改动"
+  - "现有 author rollback 原子恢复五个文件，backup manifest 状态更新为 rolled-back"
+  - "真实工作区五个文件逐项等于 beforeSha256，新增短语和 node-updated 事件均不存在"
+  - "B.6 导出包保持 rootChecksum=5f7e4bd1...，来源提交 d27e77d2，未随工作区回滚被重写"
+  - "历史 export 仍在独立临时目录恢复更新版正文，revision=64c54289... 与 manifest 一致"
+  - "typecheck、lint、完整内容检查和 diff check 通过"
+hypothesis:
+  id: H-01
+  result: passed
+files_changed:
+  - "content/articles/kavita-reader-txt-epub-pipeline.md"
+  - "data/core/world-events.json"
+  - "data/domains/experience/nodes.json"
+  - "public/world-index.json"
+commands:
+  - command: "author rollback precondition, atomic rollback, before-checksum proof, preserved export verify-restore and content gates"
+    exit_code: 0
+    observed: "workspace before hashes=5/5; update phrase/event absent; export after revision restored; all gates pass"
+evidence:
+  - "b7-rollback-provenance.log sha256=d9f10dc72e1cdf7d899e250e1271030fc611482ac0323ddc0bbaacee70624dda"
+  - "b7-rollback-and-export-provenance.json sha256=41fdb5ccce070e82a6200b9b185fad06b0c0ea9d3464f3bd6e53e240d552d283"
+failures: []
+fixes: []
+commit: "c10f2877074b0c7eae64df3d231b384a2f5471df fix(world): 回滚代表更新并保留版本导出"
+next_item: B.8
 ```
 
 ## 10. 后续记录模板
