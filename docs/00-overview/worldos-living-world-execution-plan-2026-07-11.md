@@ -129,7 +129,7 @@
 - Produces: `WorldExportManifest`, one-source projection trace, temp-workspace restore proof.
 
 - [x] **B.1** 从仓库已有真实内容中选择一个公开代表节点和一次可追溯的小更新；不得编造作者经历，也不得用 RC / QA / WorldOS 自述节点。
-- [ ] **B.2** 为“节点变更 -> Atlas / Timeline / Archive / Paths / Node / Lighthouse / export”写一个失败的跨投影契约测试，明确“不适用”也必须有结构化原因。
+- [x] **B.2** 为“节点变更 -> Atlas / Timeline / Archive / Paths / Node / Lighthouse / export”写一个失败的跨投影契约测试，明确“不适用”也必须有结构化原因。
 - [ ] **B.3** 在临时工作区执行 authoring preview -> apply -> public projection rebuild；验证 visibility、slug、关系、路径、日期和资产错误在写入前阻止。
 - [ ] **B.4** 修复投影链，使场景 model builder、搜索与 Lighthouse 只消费同一 public projection；不在场景中手工追加节点。
 - [ ] **B.5** 实现轻量 export：manifest、facts、content、assets registry、preservation objects / events / rights、`checksums.sha256` 和中文 README。

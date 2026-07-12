@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.2
+current_item: B.3
 task_state: in_progress
-active_record_id: LW-011
-last_successful_command: "B.1 representative public node source and projection validation"
-resume_action: "write and observe B.2 failing one-source cross-projection contract"
-last_completed_item: B.1
+active_record_id: LW-012
+last_successful_command: "B.2 failing cross-projection contract structure and immutability validation"
+resume_action: "implement B.3 update-capable authoring preview and isolated apply validation"
+last_completed_item: B.2
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.2
+next_item: B.3
 ```
 
 每完成一项立即：
@@ -696,6 +696,47 @@ fixes:
   - "不先改正文；固定 before hash 与修改边界，让 B.2 先观察失败契约"
 commit: "dcd0c6da8519504bb0498dffc7aab505eb4d58ce test(world): 选择内容投影代表节点"
 next_item: B.2
+```
+
+### Record LW-011：B.2 一源七投影失败契约
+
+```yaml
+record: LW-011
+checkpoint: B
+item: B.2
+status: passed
+started_at: 2026-07-12T15:11:15+08:00
+finished_at: 2026-07-12T15:15:45+08:00
+verified_facts:
+  - "契约固定 Atlas、Timeline、Archive、Paths、Node、Lighthouse、export 七个投影"
+  - "每个 applicable=true 项都必须提供结构化 evidence；applicable=false 必须有 reasonCode 与 reason"
+  - "契约要求同一 contentRevisionSha256 贯穿七投影，不能只证明旧节点 ID 存在"
+  - "初始测试真实失败 8 项：七投影均缺修订证据，正文仍为 before hash"
+  - "测试通过 typecheck，真实正文未被 B.2 修改"
+hypothesis:
+  id: H-01
+  result: null
+files_changed:
+  - "data/fixtures/authoring/representative-node-update.json"
+  - "scripts/check-worldos-living-world-content-projection.ts"
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-b/b2-2026-07-12/logs/b2-failing-contract.log"
+commands:
+  - command: "tsx content projection contract before implementation"
+    exit_code: 1
+    observed: "CONTENT_PROJECTION_CONTRACT_FAIL findings=8"
+  - command: "typecheck, projection fixture structure and real source immutability validation"
+    exit_code: 0
+    observed: "B2_FAILING_CONTRACT_STRUCTURE_PASS projections=7 sourceUnchanged=true"
+evidence:
+  - "b2-failing-contract.log sha256=0dd4f22c409d99547078672aaf80fc9c8e3b603a9cbade11e61e3693c57b3ba9"
+  - "representative-node-update.json sha256=c18fadbc893908937e46ea172551caf09fe8a9240dad64d5f1c5971adb866a90"
+  - "check-worldos-living-world-content-projection.ts sha256=f56ee51cecadd0daf5f1e15e7a226680a598f3270ecd5478546f2920976f3320"
+failures:
+  - "Atlas 与 Timeline 真实模型未暴露代表节点更新；Archive/Paths/Node 只有旧节点存在；Lighthouse 不索引正文短语；新 export 尚不存在"
+fixes:
+  - "保留全部红灯，交由 B.3-B.6 在同一事实与权限边界内消除"
+commit: "908c6c34ab797337b9cb5b5cf76161451bd471f2 test(world): 固定内容跨投影失败契约"
+next_item: B.3
 ```
 
 ## 10. 后续记录模板

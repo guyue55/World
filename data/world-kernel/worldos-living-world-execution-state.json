@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.2",
+    "currentItem": "B.3",
     "taskState": "in_progress",
-    "activeRecordId": "LW-011",
-    "resumeAction": "write and observe B.2 failing one-source cross-projection contract"
+    "activeRecordId": "LW-012",
+    "resumeAction": "implement B.3 update-capable authoring preview and isolated apply validation"
   },
   "completedItems": {
     "A.1": {
@@ -245,6 +245,33 @@
       ],
       "commitHash": "dcd0c6da8519504bb0498dffc7aab505eb4d58ce",
       "commitSubject": "test(world): 选择内容投影代表节点"
+    },
+    "B.2": {
+      "status": "passed",
+      "itemId": "B.2",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:11:15+08:00",
+      "finishedAt": "2026-07-12T15:15:45+08:00",
+      "commands": [
+        {
+          "command": "B.2 failing contract observation, typecheck, fixture structure and source immutability validation",
+          "exitCode": 0,
+          "outputSha256": "0dd4f22c409d99547078672aaf80fc9c8e3b603a9cbade11e61e3693c57b3ba9",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b2-2026-07-12/logs/b2-failing-contract.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/fixtures/authoring/representative-node-update.json",
+          "sha256": "c18fadbc893908937e46ea172551caf09fe8a9240dad64d5f1c5971adb866a90"
+        },
+        {
+          "path": "scripts/check-worldos-living-world-content-projection.ts",
+          "sha256": "f56ee51cecadd0daf5f1e15e7a226680a598f3270ecd5478546f2920976f3320"
+        }
+      ],
+      "commitHash": "908c6c34ab797337b9cb5b5cf76161451bd471f2",
+      "commitSubject": "test(world): 固定内容跨投影失败契约"
     }
   },
   "failedAttempts": [],
