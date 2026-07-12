@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.11",
+    "currentItem": "C.12",
     "taskState": "in_progress",
-    "activeRecordId": "LW-030",
-    "resumeAction": "capture C.11 continuous 60-120 second Gateway Atlas Node recordings plus background-hidden text-hidden mobile reduced contact sheet and bound audio technical record"
+    "activeRecordId": "LW-031",
+    "resumeAction": "run C.12 fresh independent visual review in blind order and answer what keeps running, where change comes from and what remains usable with bitmap backgrounds hidden"
   },
   "completedItems": {
     "A.1": {
@@ -689,6 +689,22 @@
       ],
       "commitHash": "8a68402274d06f57ad2cb857615bfeb6e2936e6b",
       "commitSubject": "test(world): 回算十分钟样板资源稳定性"
+    },
+    "C.11": {
+      "status": "passed",
+      "itemId": "C.11",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T18:55:00+08:00",
+      "finishedAt": "2026-07-12T19:16:32+08:00",
+      "commands": [
+        { "command": "fresh 15-view contact sheet and three uninterrupted 65-second scene recordings", "exitCode": 0, "outputSha256": "b67a372bbaab21e2c7096e85c1414c027656547f747def986c222a5ac85403d1", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/logs/c11-formal-capture.log" },
+        { "command": "independent ffprobe PTS, frame uniqueness and frozen ROI media analysis", "exitCode": 0, "outputSha256": "0ccf83db9362212a19353c4875e1fa1eccbfb6a94c6ec2a6b47f9ec1e66771bd", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/logs/c11-independent-media-analysis.log" }
+      ],
+      "evidence": [
+        { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c11-2026-07-12/c11-vertical-evidence-summary.json", "sha256": "d81b763d3ed461352d8871b2e7737a624bd3d656a7704d2f91c34f0a27c6d234" }
+      ],
+      "commitHash": "71168b287582bb1144ae62f2bf9f4322e7e1d15e",
+      "commitSubject": "fix(world): 提高星域呼吸的视觉信号"
     }
   },
   "failedAttempts": [],
