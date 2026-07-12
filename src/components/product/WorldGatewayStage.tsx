@@ -183,6 +183,7 @@ export function WorldGatewayStage({ model }: { model: GatewayViewModel }) {
     <div
       ref={stageRef}
       className={styles.stage}
+      data-gateway-stage
       data-enhanced={enhanced ? 'true' : 'false'}
       data-entered={entered ? 'true' : 'false'}
       data-image-ready={imageReady ? 'true' : 'false'}
