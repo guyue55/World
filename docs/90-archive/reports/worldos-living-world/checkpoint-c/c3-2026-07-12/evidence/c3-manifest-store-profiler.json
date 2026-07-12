@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "C.3",
+  "status": "pass",
+  "createdAt": "2026-07-12T08:33:56.022Z",
+  "implementationCommits": [
+    "d747f8b5",
+    "e9e93206"
+  ],
+  "manifest": {
+    "sceneCount": 7,
+    "signals": [
+      "time",
+      "content",
+      "journey",
+      "runtime",
+      "lighthouse"
+    ],
+    "containsFrameParameters": false
+  },
+  "store": {
+    "unitTests": 4,
+    "selectorContract": "Object.is selected slice",
+    "unrelatedSoundTimeNotifications": 0
+  },
+  "profiler": {
+    "buildIdentity": {
+      "schemaVersion": "1.0.0",
+      "buildId": "5_Na0-4eWIn2IfGR8yHKR",
+      "sourceCommit": "e9e93206a54d3424a6b6f19bd5bb7694a0dc8726",
+      "sourceDirty": false,
+      "distDir": ".next",
+      "buildStartedAt": "2026-07-12T08:31:13.749Z",
+      "generatedAt": "2026-07-12T08:31:40.866Z",
+      "fileCount": 373,
+      "buildRootHash": "aa5d088d6553e57d4a5d426b299cd1fc0ebae5e8985ad2b54045b08d4d98832c"
+    },
+    "unrelatedEvent": "motion-and-sound",
+    "legacyContextRenderDelta": 1,
+    "slicedTimeRenderDelta": 0,
+    "decision": "migrate-to-sliced-store",
+    "ordinaryStatusRunsExperiment": false
+  },
+  "logs": [
+    {
+      "id": "build",
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c3-2026-07-12/logs/c3-profiler-build.log",
+      "sha256": "af2433e32a1d771b0672b3f5d60d1fe1594596535ad51e78ff8606b1dabf1c8f"
+    },
+    {
+      "id": "profiler",
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c3-2026-07-12/logs/c3-react-profiler.log",
+      "sha256": "6d352cc77b7d77c39347ab4f08f7563aab123119526d4e0f4c01bf722db5086a"
+    },
+    {
+      "id": "tests",
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c3-2026-07-12/logs/c3-store-validation.log",
+      "sha256": "0d0a2479c113395cf2dc42a816f15258467f87e516cfcb7e3a1e1806aa25046c"
+    },
+    {
+      "id": "failedProfiler",
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c3-2026-07-12/logs/c3-react-profiler-attempt-1.log",
+      "sha256": "efff57751d520a11b78419dff00c1f9d49158e4071c0f6cbb68ad0a3046791ba"
+    }
+  ],
+  "failureAndFix": {
+    "failure": "首次 production probe 在 Effect 兼容清理后未复位 started，10 秒超时",
+    "fix": "runtime ref + stable store effect + 未完成清理复位；fresh build 后重测通过"
+  },
+  "nextDecision": "C.4 采用 store 为低频事实源，useWorldRuntime 保留兼容 facade；每帧仍留在 adapter。"
+}
