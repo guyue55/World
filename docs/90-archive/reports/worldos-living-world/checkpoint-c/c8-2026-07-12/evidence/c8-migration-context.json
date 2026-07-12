@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "item": "C.8",
+  "status": "passed",
+  "generatedAt": "2026-07-12T17:54:00+08:00",
+  "implementation": {
+    "primaryCommit": "bdc6a0873d00a59299b1722de2aba3e1b5a88a0c",
+    "primarySubject": "feat(world): 保留场景迁移抵达与返回上下文",
+    "finalFixCommit": "5cc4276df0c38e2e12c8a12add8be97bf1996fa2",
+    "finalFixSubject": "fix(world): 隔离入口返回判断的客户端边界",
+    "context": ["source scene and object", "source geometry", "transit medium", "destination object", "arrival focus", "source scroll and focus return"],
+    "newRuntimeDependencies": []
+  },
+  "freshBuild": {
+    "buildId": "cvby01STm_i0AAU72b1nZ",
+    "sourceCommit": "5cc4276df0c38e2e12c8a12add8be97bf1996fa2",
+    "sourceDirty": false,
+    "buildRootHash": "b945e882ef516cc36bd1469df9362ed00d96bd203f4e1de76b570866c54031be",
+    "gatewayFirstLoadJs": "175 kB",
+    "sharedFirstLoadJs": "103 kB",
+    "logSha256": "ea1c9cc81f5dcd05388b87b0ccecd73a0157756ffa4cda8dd55208edd265be02"
+  },
+  "flows": {
+    "gatewayToAtlas": { "states": ["leaving", "inTransit", "arriving", "settled"], "object": "island", "arrivalObject": "atlas-center" },
+    "atlasToNode": { "states": ["leaving", "inTransit", "arriving", "settled"], "object": "star", "arrivalObject": "node-feishu-mcp" },
+    "nodeToGateway": { "states": ["leaving", "inTransit", "arriving", "settled"], "object": "door", "arrivalObject": "world-gate", "gatewayEntered": true, "enterButtonCount": 0, "returnDockCount": 1 },
+    "browserBack": { "nodeFocusId": "migration-source-node-feishu-mcp", "atlasFallbackArrival": "atlas-center", "returnPath": "/atlas", "scrollX": 0, "scrollY": 0, "sourceFocusIdRetained": "migration-source-node-feishu-mcp" },
+    "consoleErrors": [],
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c8-2026-07-12/logs/c8-browser-final.log",
+    "logSha256": "483ec983f0835ca21e8c575158ed4268e3101f481e72d5e42b01f75abd7424ad"
+  },
+  "visualReview": {
+    "finalGateway": "The moon gate is open after returning from Node and the continuing-journey dock is present.",
+    "finalScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c8-2026-07-12/raw/gateway-return-final.png", "sha256": "39e72713c1422fd2bebc76241218912f5cfc09049d63807fd399ec8c5eb1f33c" },
+    "failedScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c8-2026-07-12/raw/gateway-return-arrival.png", "sha256": "50b9ca23d68a5cec5c0bab2e5c967c5f1507678d5666ea3601c546303b22c661", "finding": "The first implementation returned to a closed moon gate because visitedCount measured provider mounts rather than a real return journey." }
+  },
+  "targetedValidation": { "tests": 3, "passed": 3, "typecheck": "passed", "lint": "passed", "diffCheck": "passed", "logSha256": "d3dc747d633e6e4b2d579914981af3f09788a7b81704bdf216bb6ce40e85f6f9" },
+  "failuresAndCorrections": [
+    "Return to Gateway replayed the closed-door ritual; returning now depends on a hydrated real journey rather than provider mount count.",
+    "Importing the server-oriented gateway model for a client predicate raised Gateway first-load JS to 178 kB; a client-safe runtime helper restored 175 kB.",
+    "Atlas ephemeral inspector state is not serialized, so browser-back restores scroll context and falls back to atlas-center when the source link no longer exists."
+  ],
+  "claimBoundary": [
+    "C.8 proves the representative vertical migration edges and honest fallback focus, not every edge in the final migration matrix.",
+    "Continuous 60-120 second recordings and 30-transition resource stability remain C.10-C.13.",
+    "Gate C remains pending."
+  ]
+}

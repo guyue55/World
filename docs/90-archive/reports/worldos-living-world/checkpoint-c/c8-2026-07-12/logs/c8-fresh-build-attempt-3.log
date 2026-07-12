@@ -1,0 +1,76 @@
+
+> word-life@0.1.0 build:production-ci
+> node scripts/run-worldos-production-ci-build.mjs
+
+   ▲ Next.js 15.5.20
+   - Environments: .env.local
+   - Experiments (use with caution):
+     · cpus: 2
+     ✓ mdxRs
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 20.7s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/259) ...
+   Generating static pages (64/259)
+   Generating static pages (129/259)
+   Generating static pages (194/259)
+ ✓ Generating static pages (259/259)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                          Size  First Load JS
+┌ ○ /                                             7.14 kB         175 kB
+├ ○ /_not-found                                     184 B         103 kB
+├ ○ /about                                        2.34 kB         136 kB
+├ ƒ /api/lighthouse/ask                             184 B         103 kB
+├ ○ /api/lighthouse/search                          184 B         103 kB
+├ ƒ /api/owner/summary                              184 B         103 kB
+├ ƒ /api/r6/audit                                   184 B         103 kB
+├ ƒ /api/r6/export-jobs                             184 B         103 kB
+├ ƒ /api/r6/nodes                                   184 B         103 kB
+├ ƒ /api/r6/service-health                          184 B         103 kB
+├ ƒ /api/r7/maintenance                             184 B         103 kB
+├ ƒ /api/r7/world-log                               184 B         103 kB
+├ ƒ /api/r7/world-state                             184 B         103 kB
+├ ƒ /api/status/build-identity                      184 B         103 kB
+├ ƒ /api/status/permission-canary                   184 B         103 kB
+├ ƒ /api/v2/ai/suggestions                          184 B         103 kB
+├ ƒ /api/v2/audit                                   184 B         103 kB
+├ ƒ /api/v2/content                                 184 B         103 kB
+├ ƒ /api/v2/export/jobs                             184 B         103 kB
+├ ƒ /api/v2/vault                                   184 B         103 kB
+├ ○ /archive                                      7.52 kB         176 kB
+├ ○ /ask                                          6.16 kB         174 kB
+├ ○ /atlas                                        8.79 kB         149 kB
+├ ○ /forbidden                                    2.51 kB         108 kB
+├ ○ /manifest.webmanifest                           184 B         103 kB
+├ ○ /manifesto                                    2.21 kB         136 kB
+├ ● /node/[slug]                                     8 kB         148 kB
+├   ├ /node/world-manifesto
+├   ├ /node/personal-digital-universe-definition
+├   ├ /node/ai-lighthouse-boundary
+├   └ [+197 more paths]
+├ ○ /paths                                          187 B         175 kB
+├ ● /paths/[id]                                     187 B         175 kB
+├   ├ /paths/first-visit
+├   ├ /paths/tech-ai
+├   ├ /paths/how-world-created
+├   └ [+26 more paths]
+├ ○ /robots.txt                                     184 B         103 kB
+├ ○ /sitemap.xml                                    184 B         103 kB
+├ ○ /status                                       3.86 kB         166 kB
+└ ○ /timeline                                     7.65 kB         148 kB
++ First Load JS shared by all                      103 kB
+  ├ chunks/1255-d90f22433f14e976.js               46.2 kB
+  ├ chunks/4bd1b696-f785427dddbba9fb.js           54.2 kB
+  └ other shared chunks (total)                   2.11 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+WorldOS build identity: buildId=cvby01STm_i0AAU72b1nZ files=373 root=b945e882ef516cc36bd1469df9362ed00d96bd203f4e1de76b570866c54031be

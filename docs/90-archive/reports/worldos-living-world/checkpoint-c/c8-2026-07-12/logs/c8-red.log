@@ -1,0 +1,32 @@
+✖ 迁移状态保持来源、途中、抵达和沉淀语义 (0.547916ms)
+✖ 返回上下文只允许恢复同一路径的滚动和焦点 (0.096459ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 459.113042
+
+✖ failing tests:
+
+test at src/lib/runtime/scene-migration.test.ts:2:1025
+✖ 迁移状态保持来源、途中、抵达和沉淀语义 (0.547916ms)
+  TypeError: (0 , import_scene_migration.buildArrivalSceneContext) is not a function
+      at TestContext.<anonymous> (/Users/guyue/GitProject/World/src/lib/runtime/scene-migration.test.ts:15:20)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+test at src/lib/runtime/scene-migration.test.ts:2:2106
+✖ 返回上下文只允许恢复同一路径的滚动和焦点 (0.096459ms)
+  TypeError: (0 , import_scene_migration.isMigrationReturnContextForPath) is not a function
+      at TestContext.<anonymous> (/Users/guyue/GitProject/World/src/lib/runtime/scene-migration.test.ts:20:16)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
