@@ -13,6 +13,22 @@ export type WorldTimeSnapshot = {
 
 export const WORLD_TIME_ZONE = 'Asia/Shanghai'
 
+type ClockVisibilitySource = {
+  hidden: boolean
+  addEventListener(type: 'visibilitychange', listener: () => void): void
+  removeEventListener(type: 'visibilitychange', listener: () => void): void
+}
+
+type WorldClockControllerOptions = {
+  timeZone: string
+  visibility: ClockVisibilitySource
+  now: () => number
+  setTimer: (callback: () => void, delayMs: number) => number
+  clearTimer: (id: number) => void
+  onSnapshot: (snapshot: WorldTimeSnapshot) => void
+  onVisibility: (state: 'visible' | 'hidden') => void
+}
+
 type ZonedDateParts = {
   year: number
   month: number
@@ -80,5 +96,69 @@ export function buildWorldTimeSnapshot(nowEpochMs: number, timeZone: string): Wo
     season: seasonWindow.season,
     seasonProgress: Math.min(1, Math.max(0, seasonProgress)),
     worldDateKey: `${parts.year}-${pad(parts.month)}-${pad(parts.day)}`,
+  }
+}
+
+export class WorldClockController {
+  private timerId: number | null = null
+  private started = false
+  private disposed = false
+  private listenerCount = 0
+  private readonly onVisibilityChange = () => this.syncVisibility()
+
+  constructor(private readonly options: WorldClockControllerOptions) {}
+
+  start() {
+    if (this.started || this.disposed) return
+    this.started = true
+    this.options.visibility.addEventListener('visibilitychange', this.onVisibilityChange)
+    this.listenerCount = 1
+    this.syncVisibility()
+  }
+
+  debugResources() {
+    return { timers: this.timerId === null ? 0 : 1, eventListeners: this.listenerCount }
+  }
+
+  dispose() {
+    if (this.disposed) return
+    this.disposed = true
+    this.clearTimer()
+    if (this.started) this.options.visibility.removeEventListener('visibilitychange', this.onVisibilityChange)
+    this.started = false
+    this.listenerCount = 0
+  }
+
+  private syncVisibility() {
+    const visibility = this.options.visibility.hidden ? 'hidden' : 'visible'
+    this.options.onVisibility(visibility)
+    if (visibility === 'hidden') {
+      this.clearTimer()
+      return
+    }
+    this.emitSnapshot()
+    this.schedule()
+  }
+
+  private emitSnapshot() {
+    this.options.onSnapshot(buildWorldTimeSnapshot(this.options.now(), this.options.timeZone))
+  }
+
+  private schedule() {
+    this.clearTimer()
+    const now = this.options.now()
+    const delayMs = Math.max(1, 60_000 - (now % 60_000))
+    this.timerId = this.options.setTimer(() => {
+      this.timerId = null
+      if (this.disposed || this.options.visibility.hidden) return
+      this.emitSnapshot()
+      this.schedule()
+    }, delayMs)
+  }
+
+  private clearTimer() {
+    if (this.timerId === null) return
+    this.options.clearTimer(this.timerId)
+    this.timerId = null
   }
 }
