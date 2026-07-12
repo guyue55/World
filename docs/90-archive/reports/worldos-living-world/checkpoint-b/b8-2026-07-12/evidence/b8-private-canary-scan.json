@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "B.8",
+  "status": "pass",
+  "createdAt": "2026-07-12T07:57:20.647Z",
+  "claim": "服务端进程加载六个冻结私密 canary，但公开响应、HTML/RSC、搜索、AI context、构建载荷、默认 export 和截图均不含原 token；专用状态端点只返回不可逆 hash。",
+  "implementationCommit": "41a9430de0819a76a06cf89be53887686c43a378",
+  "buildIdentity": {
+    "schemaVersion": "1.0.0",
+    "buildId": "X4oWltwfRJGKrKriKO8XU",
+    "sourceCommit": "41a9430de0819a76a06cf89be53887686c43a378",
+    "sourceDirty": false,
+    "distDir": ".next",
+    "buildStartedAt": "2026-07-12T07:54:52.588Z",
+    "generatedAt": "2026-07-12T07:55:24.526Z",
+    "fileCount": 373,
+    "buildRootHash": "be132b5267028f620701562b5eabd86eee2921405305f78f3082ca42f0b267a4"
+  },
+  "positiveControl": {
+    "fixtureLoaded": true,
+    "privateCanaryHashes": [
+      "22771a18957251962982a9c9e803480134ef1a4125cdb3b6f18717c1331c21c3",
+      "4741ce4c36903659ca8a322b65bbbf6a52c95792edd9c86064a3ef6c8d6d76a0",
+      "520ddc6a6768b9fbe7ae7c22ca438fef4e82f17b512b8c92c74260fd18f518fa",
+      "5460ee9222d1e671be0f38f9b1225e15b3b1ab0773511ed9d7ab859092e3edb5",
+      "9099db6e42f32694c8ee80008d2d4d735dae96b052ec3f607e6a07147739d5be",
+      "e45afc37c20e48be3dc4bb43021d158ac32c24ab5d4113b77017b3e798fa7740"
+    ],
+    "rawTokenReturned": false
+  },
+  "scan": {
+    "surfaceCount": 630,
+    "htmlRsc": 14,
+    "search": 6,
+    "aiContext": 1,
+    "buildFiles": 380,
+    "exportFiles": 222,
+    "screenshots": 5,
+    "non200": 0,
+    "leaks": 0
+  },
+  "screenshots": [
+    {
+      "name": "archive-mobile.png",
+      "sha256": "031c7d91d20605f0bdf31331ee51935f620b351a76b85f7f52ed2656f9dd4f35",
+      "bytes": 326129
+    },
+    {
+      "name": "atlas.png",
+      "sha256": "656d842083038b5b6b0db872ce2535ae4775c1b6695f407779820fe2b4b12009",
+      "bytes": 1539144
+    },
+    {
+      "name": "gateway.png",
+      "sha256": "55196bd4ed27efd758d3792c42c1a91e8b6cd16b9af764ce20d0f45dc21bef34",
+      "bytes": 1418383
+    },
+    {
+      "name": "node.png",
+      "sha256": "47eacbcefcbb5bb96c1b51496fc8a2b9538aba2da1aeba8359ff1322a110c75c",
+      "bytes": 1568236
+    },
+    {
+      "name": "timeline.png",
+      "sha256": "cfd6fc920c41047be196436279cb74b0a537914689f9a88398379c588f0959fd",
+      "bytes": 1873356
+    }
+  ],
+  "logs": [
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b8-2026-07-12/logs/b8-fresh-build.log",
+      "sha256": "3e9d3789761104a8f41aeb279236d21702821a7e0ff5a0e881fcfede36bfad86"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b8-2026-07-12/logs/b8-live-canary-scan.log",
+      "sha256": "c274bc34e43e94fcc8b3965d0bb2b4b5f4266df5ca276e0fc177686c4784aba2"
+    }
+  ],
+  "limitations": [
+    "截图只用于 canary 字节扫描，不作为视觉体验通过证据。",
+    "终局 verifier 仍必须自行启动第二个 next start 重新注入并重扫。"
+  ]
+}
