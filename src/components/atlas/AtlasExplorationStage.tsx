@@ -157,7 +157,7 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
   }))
 
   return (
-    <div ref={stageRef} className={styles.stage} data-atlas-stage data-enhanced={enhanced ? 'true' : 'false'} data-image-ready={imageReady ? 'true' : 'false'} data-image-failed={imageFailed ? 'true' : 'false'}>
+    <div ref={stageRef} className={styles.stage} data-atlas-stage data-arrival-scene="atlas" data-arrival-object="atlas-center" tabIndex={-1} data-enhanced={enhanced ? 'true' : 'false'} data-image-ready={imageReady ? 'true' : 'false'} data-image-failed={imageFailed ? 'true' : 'false'}>
       <WorldViewport
         sceneId="atlas"
         label="古月浮屿可探索星图"
@@ -182,6 +182,7 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
                 aria-label={`聚焦${area.title}，${area.publicNodeCount} 个公开地点`}
                 aria-pressed={focusedAreaId === area.id && !focusedNodeId}
                 data-atlas-area={area.id}
+                data-arrival-object={area.id}
               >
                 <span aria-hidden="true">{area.icon}</span>
                 <strong>{area.title}</strong>
@@ -202,6 +203,7 @@ export function AtlasExplorationStage({ model }: { model: AtlasViewModel }) {
                   tabIndex={visible ? 0 : -1}
                   data-visible={visible ? 'true' : 'false'}
                   data-atlas-node={node.id}
+                  data-arrival-object={node.id}
                   data-atlas-life-stage={node.lifeStage}
                   data-atlas-life-status={node.status}
                 >

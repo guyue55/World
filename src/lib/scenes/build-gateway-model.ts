@@ -50,6 +50,7 @@ export function buildGatewayModel(index: PublicWorldObjectIndex): GatewayViewMod
     {
       href: '/atlas',
       sceneId: 'atlas',
+      objectId: 'atlas-center',
       transitionObject: 'island',
       accessibleLabel: '进入星图，选择一座浮屿',
       title: '群岛星图',

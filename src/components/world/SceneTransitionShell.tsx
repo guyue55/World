@@ -6,7 +6,7 @@ import { getSceneTransitionForPathnames, type SceneTransitionMotion } from '@/li
 import type { WorldTransitionState } from '@/lib/world-runtime-state'
 import { useWorldRuntime } from './WorldRuntimeProvider'
 import { SceneMigrationLayer } from './migration/SceneMigrationLayer'
-import { beginSceneMigration, cancelSceneMigration, markSceneMigrationArriving, restoreSceneMigrationFocus, settleSceneMigration } from '@/lib/runtime/scene-migration'
+import { beginSceneMigration, cancelSceneMigration, markSceneMigrationArriving, restoreSceneMigrationArrivalFocus, restoreSceneMigrationReturnContext, settleSceneMigration } from '@/lib/runtime/scene-migration'
 import { createSceneContext } from '@/lib/scenes/scene-destination'
 import { getSceneForPathname } from '@/lib/scene-runtime'
 import type { SceneId } from '@/lib/scenes/scene-context'
@@ -44,7 +44,9 @@ export function SceneTransitionShell({ children }: { children: ReactNode }) {
     const context = createSceneContext(scene.id as SceneId, pathname)
     markSceneMigrationArriving()
     settleSceneMigration(context, runtime.motionMode !== 'full')
-    const focusTimer = window.setTimeout(restoreSceneMigrationFocus, 500)
+    const focusTimer = window.setTimeout(() => {
+      if (!restoreSceneMigrationReturnContext(pathname)) restoreSceneMigrationArrivalFocus(scene.id)
+    }, 500)
     return () => window.clearTimeout(focusTimer)
   }, [pathname, runtime.motionMode])
 

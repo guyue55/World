@@ -3,7 +3,7 @@
 import { getImageProps } from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState, type RefObject } from 'react'
-import { Archive, ArrowDown, BookOpen, Lightbulb, Map, Waves } from 'lucide-react'
+import { Archive, ArrowDown, BookOpen, Home, Lightbulb, Map, Waves } from 'lucide-react'
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { SceneTransitionLink } from '@/components/world/migration/SceneTransitionLink'
 import { WorldViewport } from '@/components/world/primitives/WorldViewport'
@@ -58,7 +58,7 @@ export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
     return () => { controller.abort(); leave() }
   }, [model.lifeSignal.relationCount, model.lifeSignal.status, model.node.lifeStage, runtime.registerAmbientScene])
   const fallbackItems = [{ id: 'reading', href: '#reading', title: '展开正文', description: model.summary }, ...model.relationDoors.map((door) => ({ id: door.id, href: door.href, title: door.title, description: door.reason }))]
-  return <div ref={roomRef} className={styles.stage} data-node-stage data-image-ready={imageReady} data-image-failed={imageFailed}>
+  return <div ref={roomRef} className={styles.stage} data-node-stage data-arrival-scene="node" data-arrival-object={model.node.id} tabIndex={-1} data-image-ready={imageReady} data-image-failed={imageFailed}>
     <WorldViewport sceneId="node" label={`${model.title}内容地点`} className={styles.viewport} background={<div className={styles.backgroundFallback} />} fallback={<AccessibleSceneList title={model.title} items={fallbackItems} className={styles.staticFallback} />}>
       <NodeBackdrop model={model} imageRef={imageRef} onLoad={() => { setImageReady(true); setImageFailed(false) }} onError={() => { setImageReady(false); setImageFailed(true) }} />
       <div className={styles.spatialRoom} data-node-spatial-room aria-hidden="true">
@@ -77,7 +77,7 @@ export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
       </div>
       <a href="#reading" className={styles.readingDoor} data-room-object><BookOpen size={17} /><span>展开这里的正文</span><small>{model.readingMinutes ? `约 ${model.readingMinutes} 分钟` : '轻量记录'}</small><ArrowDown size={16} /></a>
       {model.pathContext ? <div className={styles.journey}><NodeJourneyControls context={model.pathContext} /></div> : null}
-      <nav className={styles.exits} aria-label="地点出口"><Link href={`/atlas#${model.node.areaId}`} title="回所在星域"><Map size={17} /><span>星图</span></Link><Link href="/timeline" title="查看时间河"><Waves size={17} /><span>时间</span></Link><Link href="/archive" title="进入档案馆"><Archive size={17} /><span>档案</span></Link><SceneTransitionLink href={`/ask?fromNode=${model.node.slug}`} destination={{ href: `/ask?fromNode=${model.node.slug}`, sceneId: 'lighthouse', objectId: model.node.id, transitionObject: 'beam', accessibleLabel: `从 ${model.title} 向灯塔问路` }} sourceObjectId={model.node.id} title="询问灯塔"><Lightbulb size={17} /><span>灯塔</span></SceneTransitionLink></nav>
+      <nav className={styles.exits} aria-label="地点出口"><SceneTransitionLink href="/" destination={{ href: '/', sceneId: 'gateway', objectId: 'world-gate', transitionObject: 'door', accessibleLabel: '拉远回到世界入口' }} sourceObjectId={model.node.id} title="回到世界入口"><Home size={17} /><span>入口</span></SceneTransitionLink><Link href={`/atlas#${model.node.areaId}`} title="回所在星域"><Map size={17} /><span>星图</span></Link><Link href="/timeline" title="查看时间河"><Waves size={17} /><span>时间</span></Link><Link href="/archive" title="进入档案馆"><Archive size={17} /><span>档案</span></Link><SceneTransitionLink href={`/ask?fromNode=${model.node.slug}`} destination={{ href: `/ask?fromNode=${model.node.slug}`, sceneId: 'lighthouse', objectId: model.node.id, transitionObject: 'beam', accessibleLabel: `从 ${model.title} 向灯塔问路` }} sourceObjectId={model.node.id} title="询问灯塔"><Lightbulb size={17} /><span>灯塔</span></SceneTransitionLink></nav>
     </WorldViewport>
   </div>
 }
