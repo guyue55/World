@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12T15:21:00+08:00",
+  "item": "B.3",
+  "draftId": "kavita-portable-checksum-2026-07-12",
+  "preview": {
+    "valid": true,
+    "issues": [],
+    "writesSource": false,
+    "impactKeys": [
+      "atlas",
+      "timeline",
+      "archive",
+      "paths",
+      "node",
+      "lighthouse",
+      "export"
+    ]
+  },
+  "negativeCases": [
+    "visibility",
+    "slug",
+    "relations",
+    "path",
+    "date",
+    "asset"
+  ],
+  "temporaryApply": {
+    "changedFiles": [
+      "data/domains/experience/nodes.json",
+      "data/core/world-events.json",
+      "content/articles/kavita-reader-txt-epub-pipeline.md",
+      "public/world-index.json",
+      "public/world-manifest.json"
+    ],
+    "contentChanged": true,
+    "nodeUpdatedAtChanged": true,
+    "nodeUpdatedEventCreated": true,
+    "publicIndexRebuilt": true,
+    "backupChecksumsVerified": true,
+    "rollbackRestored": true,
+    "realWorkspaceUntouched": true
+  },
+  "createTransactionRegression": {
+    "passed": true,
+    "managedFileCount": 7,
+    "publicWorldManifestNowManaged": true,
+    "tamperRejected": true,
+    "realWorkspaceUntouched": true
+  },
+  "verdict": "AUTHOR_UPDATE_TRANSACTION_PASS"
+}

@@ -9,7 +9,7 @@ import { previewAuthorDraft } from './author-impact-preview'
 export type AuthorBackupEntry = { relativePath: string; existed: boolean; beforeSha256: string | null; afterSha256: string; backupPath: string | null }
 export type AuthorBackupManifest = { version: 1; backupId: string; createdAt: string; draftId: string; status: 'applied' | 'rolled-back'; entries: AuthorBackupEntry[] }
 
-const sourceFiles = ['data/domains/experience/nodes.json', 'data/core/relations.json', 'data/domains/experience/paths.json', 'data/core/world-events.json', 'public/world-index.json']
+const sourceFiles = ['data/domains/experience/nodes.json', 'data/core/relations.json', 'data/domains/experience/paths.json', 'data/core/world-events.json', 'public/world-index.json', 'public/world-manifest.json']
 
 export function sha256File(file: string) { return createHash('sha256').update(fs.readFileSync(file)).digest('hex') }
 export function atomicWrite(file: string, content: string) {
@@ -51,34 +51,62 @@ function restoreEntries(root: string, entries: AuthorBackupEntry[]) {
   }
 }
 
-export function applyAuthorDraft(root: string, draft: AuthorNodeDraft) {
-  const preview = previewAuthorDraft(root, draft)
-  if (!preview.valid) throw new Error(`草稿未通过预览：${preview.issues.join('；')}`)
-  const backupId = `author-${Date.now()}-${draft.id}`
-  const backupRoot = path.join(root, '.world-author-backups', backupId)
+export function applyAuthorTransaction(input: {
+  root: string
+  draftId: string
+  writes: Map<string, string>
+  managedPaths: string[]
+  afterWrite?: () => void
+}) {
+  if (!/^[a-z0-9][a-z0-9-]{2,99}$/.test(input.draftId)) throw new Error('事务 draft id 格式无效。')
+  const backupId = `author-${Date.now()}-${input.draftId}`
+  const backupRoot = path.join(input.root, '.world-author-backups', backupId)
   const manifestPath = path.join(backupRoot, 'manifest.json')
-  const writes = buildWrites(root, draft)
-  const relativePaths = [...new Set([...sourceFiles, ...writes.keys()])]
+  const relativePaths = [...new Set([...input.managedPaths, ...input.writes.keys()])]
   const entries: AuthorBackupEntry[] = relativePaths.map((relativePath, index) => {
-    const target = path.join(root, relativePath); const existed = fs.existsSync(target)
+    const target = path.join(input.root, relativePath)
+    const existed = fs.existsSync(target)
     const backupPath = existed ? path.join('.world-author-backups', backupId, 'files', `${String(index).padStart(2, '0')}.bak`) : null
-    if (existed && backupPath) { fs.mkdirSync(path.dirname(path.join(root, backupPath)), { recursive: true }); fs.copyFileSync(target, path.join(root, backupPath)) }
+    if (existed && backupPath) {
+      fs.mkdirSync(path.dirname(path.join(input.root, backupPath)), { recursive: true })
+      fs.copyFileSync(target, path.join(input.root, backupPath))
+    }
     return { relativePath, existed, beforeSha256: existed ? sha256File(target) : null, afterSha256: '', backupPath }
   })
 
   try {
-    for (const [relativePath, content] of writes) atomicWrite(path.join(root, relativePath), content)
-    for (const relativePath of writes.keys()) if (relativePath.endsWith('.json')) readJson(path.join(root, relativePath))
+    for (const [relativePath, content] of input.writes) atomicWrite(path.join(input.root, relativePath), content)
+    for (const relativePath of input.writes.keys()) if (relativePath.endsWith('.json')) readJson(path.join(input.root, relativePath))
+    input.afterWrite?.()
+    for (const entry of entries) {
+      const target = path.join(input.root, entry.relativePath)
+      if (!fs.existsSync(target)) throw new Error(`事务产物缺失：${entry.relativePath}`)
+      entry.afterSha256 = sha256File(target)
+    }
+    const manifest: AuthorBackupManifest = { version: 1, backupId, createdAt: new Date().toISOString(), draftId: input.draftId, status: 'applied', entries }
+    atomicWrite(manifestPath, json(manifest))
+    return { backupId, manifestPath, changedFiles: relativePaths }
+  } catch (error) {
+    restoreEntries(input.root, entries)
+    throw error
+  }
+}
+
+export function applyAuthorDraft(root: string, draft: AuthorNodeDraft) {
+  const preview = previewAuthorDraft(root, draft)
+  if (!preview.valid) throw new Error(`草稿未通过预览：${preview.issues.join('；')}`)
+  const writes = buildWrites(root, draft)
+  const transaction = applyAuthorTransaction({
+    root,
+    draftId: draft.id,
+    writes,
+    managedPaths: sourceFiles,
+    afterWrite: () => {
     const build = spawnSync(path.join(root, 'node_modules/.bin/tsx'), ['scripts/build-public-json.ts'], { cwd: root, encoding: 'utf8' })
     if (build.status !== 0) throw new Error(`公开索引构建失败：${build.stderr || build.stdout}`)
     const publicIndex = readJson<{ nodes: Array<{ slug: string }> }>(path.join(root, 'public/world-index.json'))
     if (!publicIndex.nodes.some((node) => node.slug === draft.slug)) throw new Error('公开索引未吸收新节点。')
-    for (const entry of entries) entry.afterSha256 = sha256File(path.join(root, entry.relativePath))
-    const manifest: AuthorBackupManifest = { version: 1, backupId, createdAt: new Date().toISOString(), draftId: draft.id, status: 'applied', entries }
-    atomicWrite(manifestPath, json(manifest))
-    return { backupId, manifestPath, preview, changedFiles: relativePaths }
-  } catch (error) {
-    restoreEntries(root, entries)
-    throw error
-  }
+    },
+  })
+  return { ...transaction, preview }
 }

@@ -1,0 +1,24 @@
+B.3 isolated author update validation
+
+RED
+command: tsx scripts/check-worldos-living-world-author-update.ts
+exit: 1
+finding: author-update-schema module missing
+
+GREEN
+command: tsx scripts/check-worldos-living-world-author-update.ts
+exit: 0
+output: AUTHOR_UPDATE_TRANSACTION_PASS negativeCases=6 rollback=true realWorkspaceUntouched=true
+
+command: tsx scripts/check-world-c8-authoring.ts
+exit: 0
+output: C8 authoring check passed; apply=7 rollback=7 tamperRejected=true realWorkspaceUntouched=true
+
+command: node --import tsx scripts/world-author.mjs --mode preview --draft data/fixtures/authoring/representative-node-update.json
+exit: 0
+output: valid=true issues=0; impacts=atlas,timeline,archive,paths,node,lighthouse,export
+
+command: npm run typecheck && npm run lint && git diff --check
+exit: 0
+
+result: preview blocks visibility, slug, relations, path, date and asset errors before writing; legal apply/rebuild/rollback runs only in a temporary workspace.
