@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.1",
+    "currentItem": "C.2",
     "taskState": "in_progress",
-    "activeRecordId": "LW-020",
-    "resumeAction": "start C.1 falsifiable world clock tests and pure buildWorldTimeSnapshot implementation"
+    "activeRecordId": "LW-021",
+    "resumeAction": "write C.2 scheduler lifecycle red tests and single active adapter cleanup implementation"
   },
   "completedItems": {
     "A.1": {
@@ -468,6 +468,29 @@
       ],
       "commitHash": "d8cc56f33c995253d804dc72822bc51287d5387a",
       "commitSubject": "feat(world): 打通事实投影与可移植恢复链"
+    },
+    "C.1": {
+      "status": "passed",
+      "itemId": "C.1",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T16:12:00+08:00",
+      "finishedAt": "2026-07-12T16:15:40+08:00",
+      "commands": [
+        {
+          "command": "deterministic world clock node:test suite and engineering checks",
+          "exitCode": 0,
+          "outputSha256": "6a1bef43e7cb3e2ed7fb3576d2a49dbd9bf27a0201afaa73cfd252c5ee1390db",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c1-2026-07-12/logs/c1-clock-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c1-2026-07-12/evidence/c1-world-clock.json",
+          "sha256": "6c179465a6787c59cfb910368323ca5558dc6cce1c0a840a4da15c6ec61c5934"
+        }
+      ],
+      "commitHash": "25f228db2ce5024b9bb077959fc1b00c570d01fb",
+      "commitSubject": "feat(world): 建立确定性世界时钟"
     }
   },
   "failedAttempts": [],

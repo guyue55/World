@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.1
+current_item: C.2
 task_state: in_progress
-active_record_id: LW-020
-last_successful_command: "B.10 content projection gate seal and portable restore verification"
-resume_action: "start C.1 falsifiable world clock tests and pure buildWorldTimeSnapshot implementation"
-last_completed_item: B.10
+active_record_id: LW-021
+last_successful_command: "C.1 deterministic world clock tests, typecheck and lint"
+resume_action: "write C.2 scheduler lifecycle red tests and single active adapter cleanup implementation"
+last_completed_item: C.1
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10, C.1]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: C.1
+next_item: C.2
 ```
 
 每完成一项立即：
@@ -1079,6 +1079,43 @@ failures: []
 fixes: []
 commit: "d8cc56f33c995253d804dc72822bc51287d5387a feat(world): 打通事实投影与可移植恢复链"
 next_item: C.1
+```
+
+### Record LW-020：C.1 确定性世界时钟
+
+```yaml
+record: LW-020
+checkpoint: C
+item: C.1
+status: passed
+started_at: 2026-07-12T16:12:00+08:00
+finished_at: 2026-07-12T16:15:40+08:00
+verified_facts:
+  - "纯 buildWorldTimeSnapshot 不含 timer、React、浏览器或 LAN 时区猜测"
+  - "项目默认时区固定 Asia/Shanghai；相同 epoch 在 UTC/Shanghai 投影可证伪"
+  - "dayProgress 使用本地墙上时间，dayPeriod 固定 05/09/17/21 边界"
+  - "四季从 3/6/9/12 月开始，seasonProgress 按真实日历区间含闰年计算"
+  - "hidden 两分钟场景以新 epoch 直接重算并跨越昼夜边界，不追补中间帧"
+  - "相同输入 snapshot/worldDateKey 完全确定，非法 epoch/timezone 被拒绝"
+hypothesis:
+  id: H-02
+  result: null
+files_changed:
+  - "src/world/runtime/clock.ts"
+  - "src/world/runtime/clock.test.ts"
+commands:
+  - command: "tsx node:test clock suite, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "6 tests pass; engineering checks pass"
+evidence:
+  - "c1-clock-validation.log sha256=6a1bef43e7cb3e2ed7fb3576d2a49dbd9bf27a0201afaa73cfd252c5ee1390db"
+  - "c1-world-clock.json sha256=6c179465a6787c59cfb910368323ca5558dc6cce1c0a840a4da15c6ec61c5934"
+failures:
+  - "红灯阶段 clock 模块不存在"
+fixes:
+  - "新增无状态 IANA 时区投影与昼夜/季节纯计算"
+commit: "25f228db2ce5024b9bb077959fc1b00c570d01fb feat(world): 建立确定性世界时钟"
+next_item: C.2
 ```
 
 ## 10. 后续记录模板
