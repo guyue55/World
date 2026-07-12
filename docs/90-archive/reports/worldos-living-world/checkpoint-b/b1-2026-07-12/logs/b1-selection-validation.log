@@ -1,0 +1,15 @@
+B.1 representative public node selection
+
+control: CONTROL_INTEGRITY_PASS next=B.1
+git: clean before selection
+candidate: node-kavita-reader-pipeline
+visibility: public
+content: content/articles/kavita-reader-txt-epub-pipeline.md
+excluded_claims: WorldOS/RC/QA self-description and unverified personal experience
+relations: 3
+public_paths: tech-ai
+public_events: evt-024
+content_life_absorption: atlas,timeline,archive,paths,lighthouse
+planned_update: content-only portable checksum and path-safety clarification
+source_mutated: false
+output: B1_REPRESENTATIVE_PUBLIC_NODE_SELECTED

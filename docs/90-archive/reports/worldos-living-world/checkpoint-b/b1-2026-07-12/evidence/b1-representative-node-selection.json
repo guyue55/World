@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-12T15:10:10+08:00",
+  "item": "B.1",
+  "selection": {
+    "id": "node-kavita-reader-pipeline",
+    "slug": "kavita-reader-txt-epub-pipeline",
+    "title": "小说书库与 TXT 转 EPUB 流水线",
+    "worldTitle": "卷宗转生",
+    "contentPath": "content/articles/kavita-reader-txt-epub-pipeline.md",
+    "visibility": "public",
+    "areaId": "tech",
+    "lifeStage": "sprout",
+    "layer": "fact",
+    "reviewed": true
+  },
+  "selectionReasons": [
+    "内容是可核验的文件整理与电子书转换技术说明，不是 WorldOS、RC、QA 或发布自述",
+    "本次更新只纠正跨平台命令与含空格路径安全性，不新增或推断作者经历",
+    "节点已有公开区域、三条关系、一条公开路径和一条公开时间事件，足以验证同一事实源跨投影传播",
+    "节点正文、摘要和关系理由可供灯塔只读解释，Provider 缺席时也不影响事实完整性"
+  ],
+  "before": {
+    "sourceFiles": {
+      "content/articles/kavita-reader-txt-epub-pipeline.md": "1f18b155a63fca16b3c5f9dde35b6891648fcc9fb0f7a95a8225383933b3ca9b",
+      "data/domains/experience/nodes.json": "a1e30db6a7171b990b5a79b194b2e84fc658f06ff5a8dbbfc886283d43bc9bf0",
+      "data/core/relations.json": "52b6ac4c5ad955c8ee80a905595fe8595959d623ec8669f4c6f46bb749f98c56",
+      "data/domains/experience/paths.json": "a5ffa77684e3cbf934e46b1a637a8a2c7921113a961da0849f672da62d42f4d1",
+      "data/core/world-events.json": "cf3c3dee9410ab5520daed2c16322c9f3253e57823ad927d788a88e2ea392b3f"
+    },
+    "subsets": {
+      "nodeRecordSha256": "75a6f4f3c0819f38ff26ed924bfff6632038f1ee67645d195e95b0617fc6bcb7",
+      "relationSubsetSha256": "d3481ece22bbfc0298c9781dd03acef2027e389e8c3dcb7529e61a3f7fc7aa6a",
+      "pathSubsetSha256": "ccd1a724ab374e88a11f0df881c6e1bfc7b5ad46edb7b6f3c8f571f9691942a6",
+      "eventSubsetSha256": "01c830af2b36434b70448a62715261acb214a5a21b6e6defd0d35aaddc14a2eb"
+    },
+    "counts": {
+      "relations": 3,
+      "publicPaths": 1,
+      "publicEvents": 1
+    }
+  },
+  "currentProjection": {
+    "atlas": "tech / 技术星域",
+    "timeline": "evt-024 / 技术星域节点补全",
+    "archive": "public + searchable summary",
+    "paths": "tech-ai / 技术与 AI 探索路径",
+    "node": "/node/kavita-reader-txt-epub-pipeline",
+    "lighthouse": "public aiReadableSummary + two reviewed relation reasons",
+    "contentLifeAbsorptionScenes": [
+      "atlas",
+      "timeline",
+      "archive",
+      "paths",
+      "lighthouse"
+    ]
+  },
+  "plannedUpdate": {
+    "scope": "content-only",
+    "target": "content/articles/kavita-reader-txt-epub-pipeline.md",
+    "intent": "增加跨平台与含空格路径安全说明，分别给出 macOS shasum 与 Linux sha256sum 示例，并明确哈希相同只形成重复候选、删除前仍需核验",
+    "forbiddenChanges": [
+      "不新增个人经历或设备使用断言",
+      "不改变 visibility、权限、区域、关系、路径或事件来迎合测试",
+      "不在 Atlas、Timeline、Archive、Paths、Node 或 Lighthouse 组件中手工追加该节点"
+    ],
+    "applyAfter": "B.2 failing cross-projection contract is observed"
+  },
+  "verdict": "B1_REPRESENTATIVE_PUBLIC_NODE_SELECTED"
+}
