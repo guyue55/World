@@ -1,0 +1,20 @@
+✔ 同一区域前六个代表节点使用不重复轨道 (0.578083ms)
+✔ Coordinator 接续挂载前注册，并且只拥有一个 active adapter 与 rAF (1.533166ms)
+✔ Coordinator 统一响应 quiet、hidden、signal update 和重新挂载 (0.649292ms)
+✔ Atlas 星体生命由真实生命周期、新鲜度、访问和重要度确定投影 (2.167625ms)
+✔ Atlas adapter 只更新缓存语义对象，pause/dispose 后清理状态 (0.510959ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 321.296416
+
+> word-life@0.1.0 typecheck
+> tsc --noEmit
+
+
+> word-life@0.1.0 lint
+> eslint . --max-warnings=0

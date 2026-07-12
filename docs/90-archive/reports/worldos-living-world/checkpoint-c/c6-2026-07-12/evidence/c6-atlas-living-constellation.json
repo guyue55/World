@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "item": "C.6",
+  "status": "passed",
+  "generatedAt": "2026-07-12T17:22:00+08:00",
+  "implementation": {
+    "primaryCommit": "4f7d5eebe7174ca638ccb02be5c9f907ddc09c99",
+    "primarySubject": "feat(world): 让星图节点按内容生命运行",
+    "finalFixCommit": "42eca2c06d257badc81822713c6295c2eee20499",
+    "finalFixSubject": "fix(world): 消除星图节点轨道重叠",
+    "factInputs": ["lifeStage", "status", "updatedAt", "importance", "relationReasons", "recentNodeIds", "dayProgress"],
+    "newRuntimeDependencies": []
+  },
+  "baseline": {
+    "finding": "Eight semantic regions and fact links survived background removal, but representative node stars were visually absent and all links were static.",
+    "normalScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/raw/baseline/atlas-normal.png", "sha256": "92b87d11559a184ff0eee4c08463de825fdb7433b83390ad67103dda4f08e7c8" },
+    "backgroundHiddenScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/raw/baseline/atlas-background-hidden.png", "sha256": "ad27349fca53551cf6c12712e57ac306a2bf923861ee2e9751cebf294305b5e4" }
+  },
+  "freshBuild": {
+    "buildId": "9Hj7RBjphFHXIZ7rWuQio",
+    "sourceCommit": "42eca2c06d257badc81822713c6295c2eee20499",
+    "sourceDirty": false,
+    "buildRootHash": "51ff0b6842d134a45b4c8d5d1d0634b3fae138563b5b569128e07bac256b9084",
+    "atlasFirstLoadJs": "148 kB",
+    "sharedFirstLoadJs": "103 kB",
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/logs/c6-fresh-build-attempt-2.log",
+    "logSha256": "fcaf995428988a9f1ed5c970038ba4e6bb17e317082e449ec239570c0f3201ea"
+  },
+  "browser": {
+    "ambient": { "state": "running", "nodeLife": "0.9791", "phaseBefore": "0.1164", "phaseAfter": "0.2996", "phaseChanged": true },
+    "focusedSubgraph": { "areaId": "tech", "activeReasonedLinks": 2, "offsetBefore": "-46.684", "offsetAfter": "-61.314", "offsetChanged": true },
+    "focusedNodes": ["远方信使接入灯塔", "命令行星桥", "磁盘裂缝修复", "给灯塔喂的干净食物"],
+    "backgroundHidden": { "areasVisible": 8, "factLinks": 8, "nodeInspectorVisible": true, "enterNodeLinks": 1 },
+    "consoleErrors": [],
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/logs/c6-browser-attempt-4.log",
+    "logSha256": "4ab3a2679bf12f89b91612dd7fb21c55bd3b7a8f2f7142e7dcf7cebf160f4581"
+  },
+  "visualReview": {
+    "normal": "Representative node stars are visible around each region without labels overwhelming the whole map; the cinematic archipelago remains the depth and material layer.",
+    "backgroundHidden": "The focused technical region, four named node stars, region orbits, relation lines, inspector, timeline route and map controls remain visually and operationally distinct.",
+    "normalScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/raw/final/atlas-normal-v2.png", "sha256": "bd56fe927466d0b20f1f31598f6549dd6f632b4a7c35bac0c2c840c24ca08b5d" },
+    "backgroundHiddenScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c6-2026-07-12/raw/final/atlas-background-hidden-tech-v4.png", "sha256": "d4f98ea83fa1de786394411d40fdc06daae73507e390a89b56b9507590fda1a7" }
+  },
+  "targetedValidation": {
+    "tests": 5,
+    "passed": 5,
+    "typecheck": "passed",
+    "lint": "passed",
+    "diffCheck": "passed",
+    "logSha256": "15bae6de89e4a36729030587a44a7000db335a25464646036648d853882aaae7"
+  },
+  "failuresAndCorrections": [
+    "A fourth representative node reused the first of three offsets and intercepted natural pointer input; six unique deterministic tracks and a regression test fixed it.",
+    "The inspector hard-coded three entrances while the fact projection supplied four; it now renders areaNodes.length.",
+    "The first active-link probe used a descendant locator against SVG line elements; the corrected compound selector verified two changing links in the tech subgraph."
+  ],
+  "claimBoundary": [
+    "C.6 proves the current Atlas semantic subgraph and ambient projection, not ten-minute stability or every region at every zoom.",
+    "Long recording, mobile/reduced contact sheets and resource cleanup across route migration remain C.10-C.13 work.",
+    "Gate C remains pending."
+  ]
+}
