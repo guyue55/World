@@ -1,0 +1,23 @@
+B.2 one-source cross-projection contract
+
+command: ./node_modules/.bin/tsx scripts/check-worldos-living-world-content-projection.ts
+exit: 1
+output: CONTENT_PROJECTION_CONTRACT_FAIL findings=8
+- atlas: 公开内容更新未提供 nodeId, areaId, contentRevisionSha256
+- timeline: 公开内容更新未提供 eventId, nodeId, contentRevisionSha256
+- archive: 公开内容更新未提供 nodeId, searchPhrase, contentRevisionSha256
+- paths: 公开内容更新未提供 pathId, nodeId, contentRevisionSha256
+- node: 公开内容更新未提供 nodeId, contentPath, contentRevisionSha256
+- lighthouse: 公开内容更新未提供 sourceId, searchPhrase, contentRevisionSha256
+- export: 公开内容更新未提供 manifestPath, contentPath, contentRevisionSha256
+- source: 代表内容更新尚未应用，正文 hash 与期望短语仍处于 before 状态
+
+command: npm run typecheck
+exit: 0
+output: tsc --noEmit
+
+command: B.2 fixture structure and real-source immutability validation
+exit: 0
+output: B2_FAILING_CONTRACT_STRUCTURE_PASS projections=7 sourceUnchanged=true
+
+interpretation: B.2 按计划完成“先写并观察失败测试”；八项红灯必须由 B.3-B.6 的真实实现消除，不能修改 fixture 或删除断言放行。
