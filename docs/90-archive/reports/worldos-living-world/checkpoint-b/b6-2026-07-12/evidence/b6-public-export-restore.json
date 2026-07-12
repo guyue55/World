@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "B.6",
+  "status": "pass",
+  "createdAt": "2026-07-12T07:45:57.738Z",
+  "claim": "固定 verify-restore 接口在独立空目录回算导出身份、验证 schema/引用/权限并重建标准事实、正文、资产与公开索引；不覆盖真实工作区。",
+  "implementationCommit": "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3",
+  "sourceExport": {
+    "manifestPath": "exports/living-world-current/manifest.json",
+    "worldCommit": "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3",
+    "rootChecksum": "5f7e4bd1feacbf2bda6674dfb068c465af319b8e67c6fd1a251843386b53c58d",
+    "counts": {
+      "nodes": 200,
+      "areas": 8,
+      "relations": 398,
+      "paths": 29,
+      "events": 52,
+      "assets": 9
+    },
+    "checksumEntries": 221
+  },
+  "positive": {
+    "command": "node scripts/world-export.mjs verify-restore --input exports/living-world-current --output <system-empty-temp-dir>",
+    "restoredFiles": 220,
+    "indexNodes": 200,
+    "representativeRevision": "64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3",
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b6-2026-07-12/logs/b6-positive-restore.log",
+    "logSha256": "f1ce6d864519a037e327a21fea14ab4d2067add2fb1a633506f4b91b825c3ca9"
+  },
+  "negative": {
+    "cases": [
+      "checksum-tamper",
+      "private-scope",
+      "broken-reference",
+      "private-node",
+      "nonempty-output"
+    ],
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b6-2026-07-12/logs/b6-negative-boundaries.log",
+    "logSha256": "672d31b69db0650cfaf9871e420c94b6f18aac7adf9d585615e83b6b60907d12"
+  },
+  "limitations": [
+    "这是轻量 public restore，不是私密加密备份、机构保存或完整源码恢复。",
+    "临时恢复目录已在验证后删除；原始导出包保留于 gitignored 本地目录供 B.7。"
+  ]
+}
