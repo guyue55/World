@@ -1,4 +1,11 @@
 .stage {
+  --gateway-star-pulse: 0.55;
+  --gateway-star-drift: 0px;
+  --gateway-fog-shift: 0px;
+  --gateway-fog-shift-far: 0px;
+  --gateway-island-lift: 0px;
+  --gateway-beacon-angle: -9deg;
+  --gateway-sky-light: 0.28;
   background: #071011;
 }
 
@@ -27,6 +34,162 @@
 
 .stage[data-image-failed="true"] .picture {
   display: none;
+}
+
+.spatialBase,
+.ambientLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.spatialBase {
+  z-index: -1;
+  background-color: #071315;
+  box-shadow: inset 0 -18rem 12rem rgba(2, 8, 9, 0.76), inset 0 8rem 10rem rgba(22, 46, 49, var(--gateway-sky-light));
+}
+
+.moon {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: clamp(5rem, 10vw, 9rem);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border: 1px solid rgba(247, 227, 178, 0.62);
+  border-radius: 50%;
+  background-color: rgba(230, 214, 172, 0.16);
+  box-shadow: 0 0 3rem rgba(223, 204, 157, 0.16);
+}
+
+.island {
+  position: absolute;
+  width: clamp(7rem, 15vw, 14rem);
+  height: clamp(2.6rem, 5vw, 4.5rem);
+  transform: translate3d(0, var(--gateway-island-lift), 0);
+  border: 1px solid rgba(154, 190, 175, 0.32);
+  border-radius: 48% 52% 42% 58% / 70% 68% 32% 30%;
+  background-color: rgba(22, 47, 43, 0.82);
+  box-shadow: inset 0 0.65rem rgba(108, 142, 118, 0.16), 0 2rem 3rem rgba(0, 0, 0, 0.42);
+}
+
+.island::after {
+  position: absolute;
+  top: 72%;
+  left: 22%;
+  width: 56%;
+  height: 85%;
+  transform: skewX(-12deg);
+  border-right: 1px solid rgba(133, 165, 153, 0.2);
+  border-bottom: 1px solid rgba(133, 165, 153, 0.14);
+  content: '';
+}
+
+.island i {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  width: 0.35rem;
+  height: 0.35rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #e6ca86;
+  box-shadow: 0 0 0.8rem rgba(230, 202, 134, 0.82);
+}
+
+.islandAtlas { top: 39%; left: 50%; transform: translate3d(-50%, var(--gateway-island-lift), 0) scale(1.12); }
+.islandPaths { bottom: 21%; left: 14%; }
+.islandArchive { right: 12%; bottom: 21%; }
+
+.lighthouse {
+  position: absolute;
+  z-index: 2;
+  top: 29%;
+  right: 13%;
+  width: 0.8rem;
+  height: 4.8rem;
+  border: 1px solid rgba(231, 216, 174, 0.34);
+  border-radius: 45% 45% 18% 18%;
+  background-color: rgba(21, 38, 36, 0.9);
+  box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.38);
+}
+
+.lighthouse i {
+  position: absolute;
+  top: -0.3rem;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #f0d18b;
+  box-shadow: 0 0 0.9rem #f0d18b;
+}
+
+.routeLine {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 47%;
+  height: 1px;
+  transform-origin: left center;
+  background-color: rgba(177, 203, 188, 0.2);
+  box-shadow: 0 0 0.5rem rgba(209, 187, 123, 0.14);
+}
+
+.routeAtlas { width: 12%; transform: rotate(-90deg); }
+.routePaths { width: 37%; transform: rotate(145deg); }
+.routeArchive { width: 36%; transform: rotate(35deg); }
+
+.ambientLayer {
+  z-index: 1;
+}
+
+.starField {
+  position: absolute;
+  inset: 0 0 34%;
+  transform: translate3d(var(--gateway-star-drift), 0, 0);
+  opacity: var(--gateway-star-pulse);
+}
+
+.starField i {
+  position: absolute;
+  top: var(--star-y);
+  left: var(--star-x);
+  width: var(--star-size);
+  height: var(--star-size);
+  border-radius: 50%;
+  background-color: rgba(229, 220, 188, 0.9);
+  box-shadow: 0 0 0.45rem rgba(222, 203, 157, 0.66);
+}
+
+.fogBand {
+  position: absolute;
+  left: -12%;
+  width: 124%;
+  height: 15%;
+  transform: translate3d(var(--gateway-fog-shift), 0, 0);
+  border-top: 1px solid rgba(137, 171, 166, 0.1);
+  border-radius: 50%;
+  background-color: rgba(88, 124, 121, 0.07);
+  filter: blur(14px);
+}
+
+.fogNear { bottom: 10%; }
+.fogFar { bottom: 34%; transform: translate3d(var(--gateway-fog-shift-far), 0, 0); opacity: 0.66; }
+
+.beaconBeam {
+  position: absolute;
+  z-index: 1;
+  top: calc(29% - 0.05rem);
+  right: calc(13% + 0.3rem);
+  width: min(28vw, 24rem);
+  height: 1px;
+  transform: rotate(var(--gateway-beacon-angle));
+  transform-origin: right center;
+  background-color: rgba(241, 214, 151, 0.32);
+  box-shadow: 0 0 0.75rem rgba(241, 214, 151, 0.2);
 }
 
 .atmosphere {
@@ -305,6 +468,12 @@
     width: 50.5%;
   }
 
+  .islandAtlas { top: 42%; width: 8.5rem; }
+  .islandPaths { bottom: 24%; left: 3%; width: 6.5rem; }
+  .islandArchive { right: 3%; bottom: 24%; width: 6.5rem; }
+  .lighthouse { top: 31%; right: 8%; transform: scale(0.8); }
+  .beaconBeam { top: 31%; right: 8%; width: 34vw; }
+
   .enterButton {
     bottom: 8rem;
   }
@@ -353,4 +522,18 @@
   .directionObject {
     transition: none;
   }
+
+  .starField,
+  .fogBand,
+  .island,
+  .beaconBeam {
+    transform: none;
+  }
+}
+
+.stage[data-gateway-ambient="paused"] .starField,
+.stage[data-gateway-ambient="paused"] .fogBand,
+.stage[data-gateway-ambient="paused"] .island,
+.stage[data-gateway-ambient="paused"] .beaconBeam {
+  transform: none;
 }

@@ -39,6 +39,9 @@ import { getExperienceForPathname } from '@/world/experience/manifest'
 import { WorldClockController, WORLD_TIME_ZONE, buildWorldTimeSnapshot, type WorldDayPeriod, type WorldSeason, type WorldTimeSnapshot } from '@/world/runtime/clock'
 import { buildWorldSignalSnapshot } from '@/world/runtime/signals'
 import { createWorldRuntimeStore, type WorldRuntimeSnapshot, type WorldRuntimeStore } from '@/world/runtime/store'
+import { WorldAmbientCoordinator } from '@/world/runtime/coordinator'
+import type { AmbientAdapter } from '@/world/runtime/scheduler'
+import type { WorldSignalSnapshot } from '@/world/runtime/signals'
 
 export type DayPeriod = WorldDayPeriod
 export type Season = WorldSeason
@@ -72,6 +75,7 @@ type WorldRuntime = {
   setMotionPreference: (value: MotionPreference) => void
   setSoundMode: (value: WorldSoundMode) => void
   setSoundVolume: (value: number) => void
+  registerAmbientScene: (id: string, adapter: AmbientAdapter<WorldSignalSnapshot>) => () => void
 }
 
 const WorldRuntimeContext = createContext<WorldRuntime | null>(null)
@@ -102,6 +106,7 @@ const selectWorldTime = (snapshot: WorldRuntimeSnapshot) => snapshot.signals.tim
 export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const [runtimeStore] = useState(createInitialRuntimeStore)
+  const [ambientCoordinator] = useState(() => new WorldAmbientCoordinator<WorldSignalSnapshot>())
   const worldTime = useStoreSelector(runtimeStore, selectWorldTime)
   const dayPeriod = worldTime.dayPeriod
   const season = worldTime.season
@@ -146,6 +151,16 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
       compactQuery.removeEventListener('change', onCompactChange)
     }
   }, [runtimeStore])
+
+  useEffect(() => {
+    ambientCoordinator.mount(document)
+    const unsubscribe = runtimeStore.subscribe(() => ambientCoordinator.updateSignals(runtimeStore.getSnapshot().signals))
+    ambientCoordinator.updateSignals(runtimeStore.getSnapshot().signals)
+    return () => {
+      unsubscribe()
+      ambientCoordinator.dispose()
+    }
+  }, [ambientCoordinator, runtimeStore])
 
   useEffect(() => {
     const controller = new WorldClockController({
@@ -212,6 +227,14 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     [aiStatus, compactMotion, hydrated, lastJourney?.path, motionPreference, pathname, reducedMotion, visitedCount]
   )
 
+  useEffect(() => {
+    ambientCoordinator.setQuiet(sceneRuntime.motionMode !== 'full' || sceneRuntime.sensoryMode !== 'full')
+  }, [ambientCoordinator, sceneRuntime.motionMode, sceneRuntime.sensoryMode])
+
+  const registerAmbientScene = useCallback((id: string, adapter: AmbientAdapter<WorldSignalSnapshot>) => (
+    ambientCoordinator.enterScene(id, adapter, runtimeStore.getSnapshot().signals)
+  ), [ambientCoordinator, runtimeStore])
+
   function setSoundMode(value: WorldSoundMode) {
     setSoundModeState(value)
     writeSoundMode(soundModeKey, value)
@@ -258,7 +281,8 @@ export function WorldRuntimeProvider({ children }: { children: ReactNode }) {
     setMotionPreference,
     setSoundMode,
     setSoundVolume,
-  }), [aiStatus, compactMotion, currentJourney, dayPeriod, hydrated, journeyHistory, lastJourney, motionPreference, reducedMotion, sceneRuntime, season, soundMode, soundVolume, visitedCount, worldTime])
+    registerAmbientScene,
+  }), [aiStatus, compactMotion, currentJourney, dayPeriod, hydrated, journeyHistory, lastJourney, motionPreference, reducedMotion, registerAmbientScene, sceneRuntime, season, soundMode, soundVolume, visitedCount, worldTime])
 
   return (
     <WorldRuntimeStoreContext.Provider value={runtimeStore}>

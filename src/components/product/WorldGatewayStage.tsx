@@ -10,6 +10,7 @@ import { SceneObjectButton } from '@/components/world/primitives/SceneObjectButt
 import { AccessibleSceneList } from '@/components/world/primitives/AccessibleSceneList'
 import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
 import type { GatewayDirection, GatewayViewModel } from '@/lib/scenes/build-gateway-model'
+import { createGatewayAmbientAdapter } from '@/world/scenes/gateway/module'
 import styles from './WorldGatewayStage.module.css'
 
 const directionIcons = {
@@ -17,6 +18,13 @@ const directionIcons = {
   paths: Route,
   archive: Archive,
 }
+
+const gatewayStars = Array.from({ length: 24 }, (_, index) => ({
+  id: index,
+  x: (index * 37 + 11) % 97,
+  y: (index * 53 + 7) % 62,
+  size: 1 + (index % 3),
+}))
 
 function GatewayBackdrop({
   model,
@@ -116,6 +124,18 @@ export function WorldGatewayStage({ model }: { model: GatewayViewModel }) {
     else setImageFailed(true)
   }, [])
 
+  useEffect(() => {
+    const host = stageRef.current
+    if (!host) return
+    const controller = new AbortController()
+    const adapter = createGatewayAmbientAdapter(host, model, { signal: controller.signal })
+    const leave = runtime.registerAmbientScene('gateway', adapter)
+    return () => {
+      controller.abort()
+      leave()
+    }
+  }, [model, runtime.registerAmbientScene])
+
   useLayoutEffect(() => {
     const root = stageRef.current
     if (!root) return
@@ -196,6 +216,28 @@ export function WorldGatewayStage({ model }: { model: GatewayViewModel }) {
           </div>
         )}
       >
+        <div className={styles.spatialBase} data-gateway-spatial-base aria-hidden="true">
+          <span className={styles.moon} />
+          <span className={`${styles.island} ${styles.islandAtlas}`}><i /></span>
+          <span className={`${styles.island} ${styles.islandPaths}`}><i /></span>
+          <span className={`${styles.island} ${styles.islandArchive}`}><i /></span>
+          <span className={styles.lighthouse}><i /></span>
+          <span className={`${styles.routeLine} ${styles.routeAtlas}`} />
+          <span className={`${styles.routeLine} ${styles.routePaths}`} />
+          <span className={`${styles.routeLine} ${styles.routeArchive}`} />
+        </div>
+
+        <div className={styles.ambientLayer} data-gateway-ambient-layer aria-hidden="true">
+          <span className={styles.starField}>
+            {gatewayStars.map((star) => (
+              <i key={star.id} style={{ '--star-x': `${star.x}%`, '--star-y': `${star.y}%`, '--star-size': `${star.size}px` } as React.CSSProperties} />
+            ))}
+          </span>
+          <span className={`${styles.fogBand} ${styles.fogNear}`} />
+          <span className={`${styles.fogBand} ${styles.fogFar}`} />
+          <span className={styles.beaconBeam} />
+        </div>
+
         <div className={styles.atmosphere} aria-hidden="true" />
 
         <div className={styles.arrival} data-gateway-arrival>
