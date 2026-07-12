@@ -1,0 +1,15 @@
+A.9 independent review validation
+
+reviewer_context_id: 019f5523-be1d-7030-8989-6786eb262c0b
+fork_context: false
+reviewer_mode: fresh-read-only
+repository_modified: false
+images_opened: 6
+duration_audit_opened_first: true
+reports_opened_after_initial_judgement: true
+p0_count: 0
+p1_count: 4
+product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
+gate_a_verdict: pass-baseline-only
+forbidden_completion_claim: absent
+output: A9_INDEPENDENT_BASELINE_REVIEW_PASS productCompletion=false
