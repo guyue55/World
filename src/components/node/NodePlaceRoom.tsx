@@ -11,6 +11,10 @@ import type { NodePlaceModel } from '@/lib/scenes/build-node-model'
 import { NodeJourneyControls } from './NodeJourneyControls'
 import { NodePassport } from './NodePassport'
 import styles from './NodePlaceRoom.module.css'
+import { useWorldRuntime } from '@/components/world/WorldRuntimeProvider'
+import { createNodeAmbientAdapter } from '@/world/scenes/node/module'
+
+const nodeDust = Array.from({ length: 10 }, (_, index) => ({ id: index, x: (index * 53 + 9) % 97, y: (index * 37 + 13) % 91 }))
 
 function NodeBackdrop({ model, imageRef, onLoad, onError }: { model: NodePlaceModel; imageRef: RefObject<HTMLImageElement | null>; onLoad: () => void; onError: () => void }) {
   const { props: desktop } = getImageProps({ src: model.asset.desktop.src, alt: '', width: model.asset.desktop.width, height: model.asset.desktop.height, sizes: '100vw', quality: 82, priority: true })
@@ -19,6 +23,7 @@ function NodeBackdrop({ model, imageRef, onLoad, onError }: { model: NodePlaceMo
 }
 
 export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
+  const runtime = useWorldRuntime()
   const imageRef = useRef<HTMLImageElement>(null)
   const roomRef = useRef<HTMLDivElement>(null)
   const [imageReady, setImageReady] = useState(false)
@@ -44,10 +49,23 @@ export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
       cleanup()
     }
   }, [])
+  useEffect(() => {
+    const host = roomRef.current
+    if (!host) return
+    const controller = new AbortController()
+    const adapter = createNodeAmbientAdapter(host, { status: model.lifeSignal.status, lifeStage: model.node.lifeStage, relationCount: model.lifeSignal.relationCount }, { signal: controller.signal })
+    const leave = runtime.registerAmbientScene('node', adapter)
+    return () => { controller.abort(); leave() }
+  }, [model.lifeSignal.relationCount, model.lifeSignal.status, model.node.lifeStage, runtime.registerAmbientScene])
   const fallbackItems = [{ id: 'reading', href: '#reading', title: '展开正文', description: model.summary }, ...model.relationDoors.map((door) => ({ id: door.id, href: door.href, title: door.title, description: door.reason }))]
-  return <div ref={roomRef} className={styles.stage} data-image-ready={imageReady} data-image-failed={imageFailed}>
+  return <div ref={roomRef} className={styles.stage} data-node-stage data-image-ready={imageReady} data-image-failed={imageFailed}>
     <WorldViewport sceneId="node" label={`${model.title}内容地点`} className={styles.viewport} background={<div className={styles.backgroundFallback} />} fallback={<AccessibleSceneList title={model.title} items={fallbackItems} className={styles.staticFallback} />}>
       <NodeBackdrop model={model} imageRef={imageRef} onLoad={() => { setImageReady(true); setImageFailed(false) }} onError={() => { setImageReady(false); setImageFailed(true) }} />
+      <div className={styles.spatialRoom} data-node-spatial-room aria-hidden="true">
+        <span className={styles.windowFrame}><i className={styles.distantIsland} /><i className={styles.windowGlow} /></span>
+        <span className={styles.dustField}>{nodeDust.map((dust) => <i key={dust.id} style={{ '--dust-x': `${dust.x}%`, '--dust-y': `${dust.y}%` } as React.CSSProperties} />)}</span>
+        <span className={styles.floorLight} />
+      </div>
       <div className={styles.veil} aria-hidden="true" />
       <header className={styles.arrival} data-room-object><p>NODE · {model.area?.worldName ?? model.node.areaId}</p><h1 className="world-scene-title">{model.title}</h1><span>{model.summary}</span></header>
       <NodePassport node={model.node} area={model.area} lifeSignal={model.lifeSignal} compact className={styles.passport} />
