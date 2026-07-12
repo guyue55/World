@@ -38,7 +38,7 @@ export function AtlasInspector({ area, node, areaNodes, relatedLinks, areaById, 
         <div className={styles.inspectorBody} data-testid="atlas-area-inspector">
           <p className={styles.inspectorKicker}>{area.icon} {area.realName}</p>
           <p>{area.description}</p>
-          <p className={styles.areaCount}>{area.publicNodeCount} 个公开地点，这里先点亮 3 个入口。</p>
+          <p className={styles.areaCount}>{area.publicNodeCount} 个公开地点，这里点亮 {areaNodes.length} 个入口。</p>
           <div className={styles.nodeChoices} aria-label={`${area.title}代表地点`}>
             {areaNodes.map((entry) => (
               <button key={entry.id} type="button" onClick={() => onSelectNode(entry.id)}>

@@ -67,9 +67,12 @@ const zoneAnchors: Record<string, { x: number; y: number }> = {
 
 const areaColors = ['#f0c979', '#92c9d0', '#e29a67', '#b8b4d8', '#87b7aa', '#e3c36d', '#cba36b', '#f2d98c']
 const nodeOffsets = [
-  { x: -4.2, y: 4.4 },
-  { x: 4.4, y: 4.1 },
-  { x: 0.3, y: -5.1 },
+  { x: -7, y: 5 },
+  { x: 7, y: 5 },
+  { x: 0, y: -7 },
+  { x: -8, y: -4 },
+  { x: 8, y: -4 },
+  { x: 0, y: 8 },
 ]
 
 function projectCoordinate(coordinate: SpatialCoordinate, viewport: AtlasViewport) {
@@ -87,6 +90,14 @@ function projectCoordinate(coordinate: SpatialCoordinate, viewport: AtlasViewpor
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value))
+}
+
+export function projectAtlasNodePosition(area: { x: number; y: number }, nodeIndex: number, viewport: AtlasViewport) {
+  const offset = nodeOffsets[nodeIndex % nodeOffsets.length]
+  return {
+    x: clamp(area.x + (offset.x / 100) * viewport.width, 4, viewport.width - 4),
+    y: clamp(area.y + (offset.y / 100) * viewport.height, 5, viewport.height - 5),
+  }
 }
 
 export function buildAtlasViewModel(
@@ -128,7 +139,7 @@ export function buildAtlasViewModel(
   const nodes = areas.flatMap((area) => area.representativeNodeIds.flatMap((nodeId, nodeIndex) => {
     const reference = index.nodeRefs.find((node) => node.id === nodeId)
     if (!reference) return []
-    const offset = nodeOffsets[nodeIndex % nodeOffsets.length]
+    const point = projectAtlasNodePosition(area, nodeIndex, viewport)
     return [{
       id: reference.id,
       slug: reference.slug,
@@ -136,8 +147,8 @@ export function buildAtlasViewModel(
       title: reference.title,
       summary: reference.aiReadableSummary,
       areaId: area.id,
-      x: clamp(area.x + (offset.x / 100) * viewport.width, 4, viewport.width - 4),
-      y: clamp(area.y + (offset.y / 100) * viewport.height, 5, viewport.height - 5),
+      x: point.x,
+      y: point.y,
       importance: nodeIndex === 0 ? 1 : nodeIndex === 1 ? 0.8 : 0.6,
       lifeStage: reference.lifeStage,
       status: reference.status,
