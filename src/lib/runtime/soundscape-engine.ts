@@ -1,21 +1,30 @@
 import type { SensorySoundscape } from '@/lib/sensory-audio'
+import { WORLD_SOUND_PROTOTYPE } from '@/world/sensory/prototype'
 
-type AudioGroup = { gain: GainNode; sources: OscillatorNode[] }
+type AudioGroup = { gain: GainNode; sources: OscillatorNode[]; nodes: AudioNode[] }
+
+type AmbientVoice = { frequencyHz: number; gain: number; oscillatorType: OscillatorType }
 
 export type ProceduralSoundscapePatch = {
   sceneId: string
   ambientFrequencies: [number, number]
   ambientGain: number
+  ambientVoices?: AmbientVoice[]
   motifFrequencies: number[]
 }
 
 export function buildProceduralSoundscapePatch(soundscape: SensorySoundscape): ProceduralSoundscapePatch {
   const registered = soundscape.proceduralPatch
+  const isWorldPrototypeScene = soundscape.sceneId === 'gateway' || soundscape.sceneId === 'lighthouse'
+  const motif = soundscape.sceneId === 'lighthouse' ? WORLD_SOUND_PROTOTYPE.lighthouseMotif : WORLD_SOUND_PROTOTYPE.gatewayMotif
   return {
     sceneId: soundscape.sceneId,
-    ambientFrequencies: [registered.ambientFrequenciesHz[0], registered.ambientFrequenciesHz[1]],
-    ambientGain: registered.peakGain,
-    motifFrequencies: [...registered.motifFrequenciesHz],
+    ambientFrequencies: isWorldPrototypeScene
+      ? [WORLD_SOUND_PROTOTYPE.ambientVoices[0].frequencyHz, WORLD_SOUND_PROTOTYPE.ambientVoices[1].frequencyHz]
+      : [registered.ambientFrequenciesHz[0], registered.ambientFrequenciesHz[1]],
+    ambientGain: isWorldPrototypeScene ? 1 : registered.peakGain,
+    ambientVoices: isWorldPrototypeScene ? WORLD_SOUND_PROTOTYPE.ambientVoices.map((voice) => ({ ...voice })) : undefined,
+    motifFrequencies: isWorldPrototypeScene ? motif.intervals.map((interval) => motif.rootHz * interval) : [...registered.motifFrequenciesHz],
   }
 }
 
@@ -25,13 +34,25 @@ export class SoundscapeEngine {
   private activeLoop: AudioGroup | null = null
   private activeCue: AudioGroup | null = null
   private armed = false
+  private quiet = false
   private volume = 0
   private currentScene: string | null = null
+  private lastError: string | null = null
 
   private readonly onVisibility = () => {
     if (!this.context || !this.armed) return
-    if (document.hidden) void this.context.suspend()
-    else void this.context.resume()
+    void this.syncSuspension()
+  }
+
+  private async syncSuspension() {
+    if (!this.context) return
+    try {
+      if (!this.armed || this.quiet || document.hidden) await this.context.suspend()
+      else await this.context.resume()
+    } catch (error) {
+      this.lastError = error instanceof Error ? error.message : 'audio-lifecycle-error'
+      await this.mute()
+    }
   }
 
   async arm(volume: number) {
@@ -44,9 +65,10 @@ export class SoundscapeEngine {
       this.master.connect(this.context.destination)
       document.addEventListener('visibilitychange', this.onVisibility)
     }
-    await this.context.resume()
     this.armed = true
+    this.lastError = null
     this.setVolume(volume)
+    await this.syncSuspension()
     return true
   }
 
@@ -59,7 +81,7 @@ export class SoundscapeEngine {
 
   async setScene(soundscape: SensorySoundscape, volume: number) {
     if (!this.context || !this.master || !this.armed) return false
-    if (this.context.state === 'suspended' && !document.hidden) await this.context.resume()
+    if (this.context.state === 'suspended' && !document.hidden && !this.quiet) await this.context.resume()
     this.setVolume(volume)
     const patch = buildProceduralSoundscapePatch(soundscape)
     const now = this.context.currentTime
@@ -67,17 +89,23 @@ export class SoundscapeEngine {
     nextGain.gain.setValueAtTime(.0001, now)
     nextGain.gain.exponentialRampToValueAtTime(Math.max(.0002, patch.ambientGain), now + .65)
     nextGain.connect(this.master)
-    const sources = patch.ambientFrequencies.map((frequency, index) => {
+    const voices = patch.ambientVoices ?? patch.ambientFrequencies.map((frequency, index) => ({ frequencyHz: frequency, gain: 1, oscillatorType: index === 0 ? 'sine' as const : 'triangle' as const }))
+    const nodes: AudioNode[] = []
+    const sources = voices.map((voice, index) => {
       const oscillator = this.context!.createOscillator()
-      oscillator.type = index === 0 ? 'sine' : 'triangle'
-      oscillator.frequency.setValueAtTime(frequency, now)
+      oscillator.type = voice.oscillatorType
+      oscillator.frequency.setValueAtTime(voice.frequencyHz, now)
       oscillator.detune.setValueAtTime(index === 0 ? -4 : 5, now)
-      oscillator.connect(nextGain)
+      const voiceGain = this.context!.createGain()
+      voiceGain.gain.setValueAtTime(voice.gain, now)
+      oscillator.connect(voiceGain)
+      voiceGain.connect(nextGain)
+      nodes.push(voiceGain)
       oscillator.start(now)
       return oscillator
     })
     const previous = this.activeLoop
-    this.activeLoop = { gain: nextGain, sources }
+    this.activeLoop = { gain: nextGain, sources, nodes }
     this.currentScene = soundscape.sceneId
     if (previous) {
       previous.gain.gain.cancelScheduledValues(now)
@@ -86,6 +114,11 @@ export class SoundscapeEngine {
     }
     this.playMotif(patch)
     return true
+  }
+
+  async setQuiet(value: boolean) {
+    this.quiet = value
+    await this.syncSuspension()
   }
 
   private playMotif(patch: ProceduralSoundscapePatch) {
@@ -108,10 +141,10 @@ export class SoundscapeEngine {
       oscillator.stop(start + .16)
       return oscillator
     })
-    this.activeCue = { gain: cueGain, sources }
+    this.activeCue = { gain: cueGain, sources, nodes: [] }
     window.setTimeout(() => {
       if (this.activeCue?.gain === cueGain) this.activeCue = null
-      this.stopGroup({ gain: cueGain, sources })
+      this.stopGroup({ gain: cueGain, sources, nodes: [] })
     }, 760)
   }
 
@@ -121,6 +154,7 @@ export class SoundscapeEngine {
       try { source.stop() } catch { /* 已自然结束的短音无需重复停止。 */ }
       source.disconnect()
     }
+    for (const node of group.nodes) node.disconnect()
     group.gain.disconnect()
   }
 
@@ -140,10 +174,21 @@ export class SoundscapeEngine {
     this.context = null
     this.master = null
     this.currentScene = null
+    this.quiet = false
   }
 
   getSnapshot() {
-    return { armed: this.armed, contextCreated: Boolean(this.context), sceneId: this.currentScene, loopCount: this.activeLoop ? 1 : 0, cueCount: this.activeCue ? 1 : 0, volume: this.volume }
+    return {
+      armed: this.armed,
+      quiet: this.quiet,
+      contextCreated: Boolean(this.context),
+      contextState: this.context?.state ?? 'none',
+      sceneId: this.currentScene,
+      loopCount: this.activeLoop ? 1 : 0,
+      cueCount: this.activeCue ? 1 : 0,
+      volume: this.volume,
+      lastError: this.lastError,
+    }
   }
 }
 

@@ -48,8 +48,8 @@ const audioLib = read('src/lib/sensory-audio.ts')
 const statusPanel = read('src/components/status/SceneRuntimeStatusPanel.tsx')
 
 assert(registry.name === 'WorldOS 场景声景注册表', 'M23 声景注册表名称不正确')
-assert(registry.version === '1.3.0', '场景声景注册表版本应为 1.3.0')
-assert(registry.updatedAt === '2026-07-10', 'M23 声景注册表更新时间不正确')
+assert(registry.version === '1.4.0', '场景声景注册表版本应为 1.4.0')
+assert(registry.updatedAt === '2026-07-12', '声景注册表更新时间不正确')
 assert(registry.source === 'docs/00-overview/worldos-m23-sensory-audio-production-spec-2026-07-10.md', 'M23 声景注册表 source 不正确')
 assert(registry.productionReadiness?.stage === 'M23', '缺少 M23 productionReadiness')
 assert(registry.productionReadiness?.unifiedWorldview === true, 'M23 必须声明统一世界观')
@@ -96,13 +96,16 @@ for (const sceneId of requiredScenes) {
   assert(patch?.peakGain > 0 && patch?.peakGain <= 0.008, `${sceneId} ambience 峰值未受控`)
   assert(Boolean(patch?.purpose), `${sceneId} 缺少声景用途`)
   assert(String(patch?.lifecycle ?? '').includes('one active ambience loop'), `${sceneId} 缺少单主 loop 生命周期`)
-  assert(patch?.listeningReview?.status === 'passed', `${sceneId} 缺少听感审查结论`)
-  assert(Boolean(patch?.listeningReview?.method) && Boolean(patch?.listeningReview?.finding), `${sceneId} 听感审查信息不完整`)
+  assert(patch?.technicalReview?.status === 'technical-verified-human-pending', `${sceneId} 缺少诚实的音频技术审查结论`)
+  assert(Boolean(patch?.technicalReview?.method) && Boolean(patch?.technicalReview?.finding), `${sceneId} 音频技术审查信息不完整`)
   if (soundscape.source && soundscape.license) licensedSoundscapes += 1
   if (Number.isFinite(soundscape.bytes) && soundscape.bytes <= 0) budgetedSoundscapes += 1
 }
 
 const assets = registry.assetInventory ?? []
+assert(registry.prototype?.durationSeconds >= 60 && registry.prototype?.durationSeconds <= 120, '世界声音样板必须为 60-120 秒')
+assert(registry.prototype?.offlineRenderSeconds === 600, '世界声音样板必须登记十分钟离线渲染')
+assert(registry.prototype?.humanListeningStatus === 'HUMAN_AUDIO_PENDING', '自动检查不得冒充人类听感签收')
 assert(assets.length > 0, 'M23 缺少资产清单')
 const totalAssetBytes = assets.reduce((sum, asset) => sum + Number(asset.bytes ?? 0), 0)
 for (const asset of assets) {
@@ -142,10 +145,9 @@ for (const token of ['Sensory Audio M23', 'licensedSoundscapeCount', 'totalAsset
 assert((performanceBudget.budgets ?? []).some((item) => item.id === 'audio-policy'), '性能预算缺少 audio-policy')
 assert((staticAssetPolicy.assetKinds ?? []).some((item) => item.id === 'audio-generated'), '静态资产策略缺少 audio-generated')
 assert(pkg.scripts?.['check:m23-sensory-audio-production'] === 'node scripts/check-worldos-m23-sensory-audio-production.mjs', 'package.json 缺少 check:m23-sensory-audio-production')
-assert(pkg.scripts?.['check:mainline']?.includes('check:m23-sensory-audio-production'), 'check:mainline 必须纳入 check:m23-sensory-audio-production')
-assert((scriptRegistry.activeEntrypoints ?? []).includes('check:m23-sensory-audio-production'), '脚本注册表缺少 M23 active entrypoint')
-assert((scriptRegistry.recommendedDailyCommands ?? []).includes('npm run check:m23-sensory-audio-production'), '脚本注册表缺少 M23 recommended command')
-assert((scriptRegistry.releaseCandidateCommands ?? []).includes('npm run check:m23-sensory-audio-production'), '脚本注册表缺少 M23 RC command')
+assert(!pkg.scripts?.['check:mainline']?.includes('check:m23-sensory-audio-production'), '历史 M23 检查不得重新进入当前 mainline')
+assert(!(scriptRegistry.activeEntrypoints ?? []).includes('check:m23-sensory-audio-production'), '历史 M23 检查不得冒充当前 active entrypoint')
+assert((scriptRegistry.historicalInvalidatedEntrypoints ?? []).some((item) => item.script === 'check:m23-sensory-audio-production'), '脚本注册表必须保留 M23 历史归档事实')
 
 const report = {
   generatedAt: new Date().toISOString(),

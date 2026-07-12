@@ -1,7 +1,7 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "name": "WorldOS 场景声景注册表",
-  "updatedAt": "2026-07-10",
+  "updatedAt": "2026-07-12",
   "source": "docs/00-overview/worldos-m23-sensory-audio-production-spec-2026-07-10.md",
   "legacySource": "docs/00-overview/worldos-m13-sensory-audio-asset-production-execution-plan-2026-07-09.md",
   "principle": "声音只作为用户主动开启后的空间反馈；首访默认静音，不读取私密层，不引入未知授权资产；每个公开场景的音频人格必须服务同一套世界观。",
@@ -67,6 +67,18 @@
       "bytes": 0
     }
   ],
+  "prototype": {
+    "id": "moonlit-islands-world-motif-prototype-v1",
+    "implementation": "src/world/sensory/prototype.ts",
+    "verification": "scripts/verify-world-c9-audio-prototype.ts",
+    "durationSeconds": 90,
+    "offlineRenderSeconds": 600,
+    "source": "project-generated-procedural",
+    "license": "project-owned-runtime-synthesis",
+    "removable": true,
+    "technicalStatus": "verified",
+    "humanListeningStatus": "HUMAN_AUDIO_PENDING"
+  },
   "sceneSoundscapes": [
     {
       "sceneId": "gateway",
@@ -108,11 +120,11 @@
         "cuePeakGain": 0.026,
         "purpose": "用于确认已经抵达世界入口。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -152,11 +164,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达关系网络被点亮。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -196,11 +208,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达时间流经过。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -240,11 +252,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达档案被打开。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -284,11 +296,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达旅程进入下一段。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -328,11 +340,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达旅程路线被锁定。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -372,11 +384,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达进入具体内容房间。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -420,11 +432,11 @@
         "cuePeakGain": 0.026,
         "purpose": "用于表达公开导览已响应。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     },
@@ -464,11 +476,11 @@
         "cuePeakGain": 0,
         "purpose": "用于表达运行状态可被审计。",
         "lifecycle": "one active ambience loop; 650-800ms crossfade; stop on mute, hidden page or scene replacement",
-        "listeningReview": {
-          "status": "passed",
-          "method": "offline frequency, envelope and peak-level review",
-          "reviewedAt": "2026-07-11",
-          "finding": "双音低增益稳定底色，无随机噪声与尖锐高频；短动机仅在入口或灯塔抵达时出现。"
+        "technicalReview": {
+          "status": "technical-verified-human-pending",
+          "method": "offline frequency, envelope and peak-level verification",
+          "reviewedAt": "2026-07-12",
+          "finding": "仅验证频率、包络与峰值边界，不构成人类耳机或扬声器听感结论。"
         }
       }
     }
@@ -482,7 +494,8 @@
     "defaultSilentVerifiedByScript": "check:m23-sensory-audio-production",
     "noExternalAudioFiles": true,
     "noRuntimeAudioDependency": true,
-    "nextEscalation": "Only evaluate Howler or Tone after native Web Audio cannot express scene cues within budget."
+    "nextEscalation": "Only evaluate Howler or Tone after native Web Audio cannot express scene cues within budget.",
+    "humanListeningStatus": "HUMAN_AUDIO_PENDING"
   },
   "assetInventory": [
     {
