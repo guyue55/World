@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "B.9",
+  "status": "pass",
+  "createdAt": "2026-07-12T08:07:32.878Z",
+  "claim": "检查点 B 工程门禁与 localhost/LAN 六投影浏览器可达性通过；只证明事实投影、权限、导出恢复与当前页面稳定，不声明生命场景已完成。",
+  "implementationCommits": [
+    "41a9430de0819a76a06cf89be53887686c43a378",
+    "d6008b164e4783c2dc8d2b837f015acea41be44b"
+  ],
+  "buildIdentity": {
+    "schemaVersion": "1.0.0",
+    "buildId": "UAZO6WJactCF0A3IAB236",
+    "sourceCommit": "d6008b164e4783c2dc8d2b837f015acea41be44b",
+    "sourceDirty": false,
+    "distDir": ".next",
+    "buildStartedAt": "2026-07-12T08:01:21.792Z",
+    "generatedAt": "2026-07-12T08:01:47.451Z",
+    "fileCount": 373,
+    "buildRootHash": "4a8d5c3bdf6a90dd02e875d6d7056219a34808821256c1eecdb25f5d6c0fa8c3"
+  },
+  "browser": {
+    "origins": [
+      "http://127.0.0.1:3318",
+      "http://192.168.1.200:3318"
+    ],
+    "routes": [
+      "/atlas",
+      "/timeline",
+      "/archive",
+      "/paths/tech-ai",
+      "/node/kavita-reader-txt-epub-pipeline",
+      "/ask"
+    ],
+    "results": 12,
+    "http200": 12,
+    "h1Present": 12,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "screenshots": [
+      {
+        "scene": "atlas",
+        "localhostSha256": "06d1f4d961544e755c18da13d4fba39ad370cd7bf93057173d1496dc159819e7",
+        "lanSha256": "06d1f4d961544e755c18da13d4fba39ad370cd7bf93057173d1496dc159819e7",
+        "byteIdentical": true,
+        "localhostBytes": 1336709,
+        "lanBytes": 1336709
+      },
+      {
+        "scene": "timeline",
+        "localhostSha256": "c0ab04e685d8fa681ca56bf5cb85e2a1df3eeea0b34c00e0078c3b9c5c1b2c0c",
+        "lanSha256": "c0ab04e685d8fa681ca56bf5cb85e2a1df3eeea0b34c00e0078c3b9c5c1b2c0c",
+        "byteIdentical": true,
+        "localhostBytes": 1657670,
+        "lanBytes": 1657670
+      },
+      {
+        "scene": "archive",
+        "localhostSha256": "6a69a4c7544a4b0b35a79b583d4b8012c61fa17434edbb7a816d982f523ad08f",
+        "lanSha256": "6a69a4c7544a4b0b35a79b583d4b8012c61fa17434edbb7a816d982f523ad08f",
+        "byteIdentical": true,
+        "localhostBytes": 1319297,
+        "lanBytes": 1319297
+      },
+      {
+        "scene": "paths",
+        "localhostSha256": "226d2650ce241515d72b72008397cc7629555a15785943afc9935115f3e52529",
+        "lanSha256": "28b291930516fed42e9b3619995eff30cf04e235957e221b23b3c496cf1441b9",
+        "byteIdentical": false,
+        "localhostBytes": 1603581,
+        "lanBytes": 1603581
+      },
+      {
+        "scene": "node",
+        "localhostSha256": "5da2f83536de28748597e842f53696624b64339b42c209ad2bc156bf5ec66545",
+        "lanSha256": "5da2f83536de28748597e842f53696624b64339b42c209ad2bc156bf5ec66545",
+        "byteIdentical": true,
+        "localhostBytes": 1380867,
+        "lanBytes": 1380867
+      },
+      {
+        "scene": "lighthouse",
+        "localhostSha256": "747f9d54458ef0dbf242b9863f2ccbe6660b1b4b212677458861aff7357af31c",
+        "lanSha256": "43a8c3f8ed8f57b61ec68d5d27a1a21921e5e40dc1da9ec6107e1867a135a72c",
+        "byteIdentical": false,
+        "localhostBytes": 1103202,
+        "lanBytes": 1103140
+      }
+    ],
+    "contactSheets": [
+      {
+        "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b9-2026-07-12/evidence/localhost-six-projection-contact-sheet.jpg",
+        "sha256": "d56a9485b837b3c74508ac3ac23867a066d70f6d16eb5b3028a25a072826b020"
+      },
+      {
+        "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b9-2026-07-12/evidence/lan-six-projection-contact-sheet.jpg",
+        "sha256": "56832b9395f92f01714cabc121f75aaa68a6540e639af2d6117924909ac721e9"
+      }
+    ]
+  },
+  "visualReview": {
+    "reviewedAt": "2026-07-12T08:07:32.881Z",
+    "p0": [],
+    "p1IntroducedByCheckpointB": [],
+    "observations": [
+      "六个页面均有可辨认场景图、中文 H1、导航和主体交互，无白屏或黑屏。",
+      "Atlas/Timeline/Archive/Node 两 origin PNG 逐字节相同；Paths/Lighthouse 仅局部动画帧不同。",
+      "联系表并行显示曾呈现黑块；原图 hash、像素统计和单图查看证明是审查显示链误报。",
+      "已知高优先体验债继续保留：静态 WebP 仍承担大部分空间主体，持续生命与 background-hidden 将由 C-H 修复。"
+    ]
+  },
+  "engineering": {
+    "attempt1": {
+      "status": "failed",
+      "reason": "world:export 未进入脚本治理注册表且 totalScripts 306/307",
+      "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b9-2026-07-12/logs/b9-engineering-gates-attempt-1.log",
+      "sha256": "cea003dd07733d674208688ff6ad4df5068fa42cd76b73e2362748475e59abd4"
+    },
+    "rerun": {
+      "status": "pass",
+      "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b9-2026-07-12/logs/b9-engineering-gates.log",
+      "sha256": "04c28e06292d2c56d563fdf78b72de8a6bbbd9be94c818048d315aeec2f69ae0"
+    },
+    "browserLog": {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b9-2026-07-12/logs/b9-localhost-lan-browser.log",
+      "sha256": "d3e51a4b335d96fa09c8bed85bf960d545f1f89366f7c6851fc83fce4bdb73cd"
+    }
+  },
+  "limitations": [
+    "B.9 不接受当前页面视觉作为生命世界完成证据。",
+    "正式长录屏、background-hidden、quiet/reduced 和资源 soak 属于后续冻结检查点。"
+  ]
+}
