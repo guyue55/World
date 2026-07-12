@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.3
+current_item: C.4
 task_state: in_progress
-active_record_id: LW-022
-last_successful_command: "C.2 scheduler lifecycle tests and resource cleanup"
-resume_action: "implement C.3 minimal experience manifest signal snapshot runtime store and profiler decision"
-last_completed_item: C.2
+active_record_id: LW-023
+last_successful_command: "C.3 clean production React profiler and sliced store tests"
+resume_action: "migrate C.4 low-frequency runtime facts to store while keeping useWorldRuntime compatibility facade"
+last_completed_item: C.3
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10, C.1, C.2]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10, C.1, C.2, C.3]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: C.3
+next_item: C.4
 ```
 
 每完成一项立即：
@@ -1154,6 +1154,54 @@ fixes:
   - "新增职责分离的 Scheduler 与 Lifecycle；全局 listener 不在每次 route leave 重建"
 commit: "a0a6c904d22fb724c29e519e278a7902c47eabc8 feat(world): 建立唯一环境调度生命周期"
 next_item: C.3
+```
+
+### Record LW-022：C.3 唯一体验清单、信号与分片 Store 决策
+
+```yaml
+record: LW-022
+checkpoint: C
+item: C.3
+status: passed
+started_at: 2026-07-12T16:22:00+08:00
+finished_at: 2026-07-12T16:30:50+08:00
+verified_facts:
+  - "唯一 Experience Manifest 覆盖七场景并匹配真实 route，只登记能力引用和 top-level accepted signals"
+  - "WorldSignalSnapshot 只含 time/content/journey/runtime/lighthouse，不含 riverSpeed/beamAngle/particleCount"
+  - "Runtime Store 归约 clock/visibility/scene/migration/journey/sound/lighthouse 低频事件"
+  - "subscribeSelector 以 Object.is 比较选中切片；声音更新不会通知时间 selector"
+  - "clean production Profiler 实测无关 motion/sound 更新：旧 Context 时间消费者 delta=1，分片时间消费者 delta=0"
+  - "决策为 migrate-to-sliced-store；C.4 保留 useWorldRuntime facade，不做全量组件重写"
+hypothesis:
+  id: H-04
+  result: passed
+files_changed:
+  - "src/world/experience/types.ts"
+  - "src/world/experience/manifest.ts"
+  - "src/world/runtime/signals.ts"
+  - "src/world/runtime/events.ts"
+  - "src/world/runtime/store.ts"
+  - "src/world/runtime/store.test.ts"
+  - "src/components/status/RuntimeSubscriptionProfiler.tsx"
+  - "src/app/status/page.tsx"
+commands:
+  - command: "manifest/store node:test, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "4 tests pass"
+  - command: "fresh production build and /status runtime React profiler"
+    exit_code: 0
+    observed: "legacy delta=1; sliced delta=0; sourceDirty=false; decision=migrate-to-sliced-store"
+evidence:
+  - "c3-profiler-build.log sha256=af2433e32a1d771b0672b3f5d60d1fe1594596535ad51e78ff8606b1dabf1c8f"
+  - "c3-react-profiler.log sha256=6d352cc77b7d77c39347ab4f08f7563aab123119526d4e0f4c01bf722db5086a"
+  - "c3-store-validation.log sha256=0d0a2479c113395cf2dc42a816f15258467f87e516cfcb7e3a1e1806aa25046c"
+  - "c3-manifest-store-profiler.json sha256=5b4a00173c38d0afc6b2e0952931e1119522368c4faae21988629f5aa02ab345"
+failures:
+  - "首次 Profiler effect 在兼容清理后未复位 started，生产探针超时"
+fixes:
+  - "改用 runtime ref 和稳定 store effect；未完成清理复位，fresh build 重测通过"
+commit: "e9e93206a54d3424a6b6f19bd5bb7694a0dc8726 fix(world): 稳定运行时订阅性能探针"
+next_item: C.4
 ```
 
 ## 10. 后续记录模板

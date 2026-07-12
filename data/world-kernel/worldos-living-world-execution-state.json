@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.3",
+    "currentItem": "C.4",
     "taskState": "in_progress",
-    "activeRecordId": "LW-022",
-    "resumeAction": "implement C.3 minimal experience manifest signal snapshot runtime store and profiler decision"
+    "activeRecordId": "LW-023",
+    "resumeAction": "migrate C.4 low-frequency runtime facts to store while keeping useWorldRuntime compatibility facade"
   },
   "completedItems": {
     "A.1": {
@@ -514,6 +514,29 @@
       ],
       "commitHash": "a0a6c904d22fb724c29e519e278a7902c47eabc8",
       "commitSubject": "feat(world): 建立唯一环境调度生命周期"
+    },
+    "C.3": {
+      "status": "passed",
+      "itemId": "C.3",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T16:22:00+08:00",
+      "finishedAt": "2026-07-12T16:30:50+08:00",
+      "commands": [
+        {
+          "command": "manifest store tests and clean production React subscription profiler",
+          "exitCode": 0,
+          "outputSha256": "6d352cc77b7d77c39347ab4f08f7563aab123119526d4e0f4c01bf722db5086a",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c3-2026-07-12/logs/c3-react-profiler.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c3-2026-07-12/evidence/c3-manifest-store-profiler.json",
+          "sha256": "5b4a00173c38d0afc6b2e0952931e1119522368c4faae21988629f5aa02ab345"
+        }
+      ],
+      "commitHash": "e9e93206a54d3424a6b6f19bd5bb7694a0dc8726",
+      "commitSubject": "fix(world): 稳定运行时订阅性能探针"
     }
   },
   "failedAttempts": [],
