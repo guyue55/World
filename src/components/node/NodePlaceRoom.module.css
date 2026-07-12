@@ -3,6 +3,12 @@
 .backgroundFallback { position:absolute; inset:0; background:#0d1312; }
 .picture,.image { position:absolute; z-index:0; inset:0; display:block; width:100%; height:100%; }.image { object-fit:cover; object-position:center; }
 .spatialRoom { position:absolute; z-index:1; inset:0; overflow:hidden; pointer-events:none; }
+.roomWall { position:absolute; inset:13% 7% 17%; border:1px solid rgba(216,189,132,.12); border-bottom:0; border-radius:44% 44% 0 0; box-shadow:inset 0 0 5rem rgba(29,48,42,.08); }
+.roomWall::before,.roomWall::after { position:absolute; top:13%; bottom:0; width:1px; background:rgba(216,189,132,.1); content:''; }.roomWall::before { left:31%; }.roomWall::after { right:31%; }
+.roomFloor { position:absolute; right:5%; bottom:0; left:5%; height:30%; transform:perspective(28rem) rotateX(62deg); transform-origin:bottom; border:1px solid rgba(216,189,132,.12); background-color:rgba(20,34,30,.16); }
+.deskSilhouette { position:absolute; right:27%; bottom:7%; left:27%; height:15%; transform:perspective(25rem) rotateX(58deg); transform-origin:bottom; border:1px solid rgba(218,184,113,.18); background-color:rgba(25,35,30,.26); box-shadow:0 1rem 2rem rgba(0,0,0,.2); }
+.stage[data-image-ready="true"]:not([data-background-hidden="true"]) .roomWall,.stage[data-image-ready="true"]:not([data-background-hidden="true"]) .roomFloor,.stage[data-image-ready="true"]:not([data-background-hidden="true"]) .deskSilhouette { opacity:.28; }
+.stage[data-background-hidden="true"] .roomWall,.stage[data-background-hidden="true"] .roomFloor,.stage[data-background-hidden="true"] .deskSilhouette { border-color:rgba(216,189,132,.28); opacity:1; }
 .windowFrame { position:absolute; top:17%; right:10%; width:clamp(9rem,18vw,17rem); aspect-ratio:1.35; overflow:hidden; border:1px solid rgba(233,205,145,.3); border-radius:48% 48% 8px 8px; background:rgba(14,30,30,.2); box-shadow:inset 0 0 2.5rem rgba(6,15,15,.6),0 0 calc(1rem + var(--node-window-light)*2rem) rgba(225,190,116,.12); opacity:calc(.3 + var(--node-window-light)*.45); }
 .windowFrame::before,.windowFrame::after { position:absolute; z-index:2; background:rgba(233,205,145,.25); content:''; }.windowFrame::before { top:0; bottom:0; left:50%; width:1px; }.windowFrame::after { top:50%; right:0; left:0; height:1px; }
 .distantIsland { position:absolute; right:18%; bottom:24%; width:48%; height:17%; transform:translate3d(var(--node-distant-drift),0,0); border:1px solid rgba(149,183,165,.32); border-radius:50%; background:rgba(37,68,59,.68); box-shadow:0 1.2rem 2rem rgba(0,0,0,.42); }

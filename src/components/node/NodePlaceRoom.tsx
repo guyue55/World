@@ -62,6 +62,9 @@ export function NodePlaceRoom({ model }: { model: NodePlaceModel }) {
     <WorldViewport sceneId="node" label={`${model.title}内容地点`} className={styles.viewport} background={<div className={styles.backgroundFallback} />} fallback={<AccessibleSceneList title={model.title} items={fallbackItems} className={styles.staticFallback} />}>
       <NodeBackdrop model={model} imageRef={imageRef} onLoad={() => { setImageReady(true); setImageFailed(false) }} onError={() => { setImageReady(false); setImageFailed(true) }} />
       <div className={styles.spatialRoom} data-node-spatial-room aria-hidden="true">
+        <span className={styles.roomWall} />
+        <span className={styles.roomFloor} />
+        <span className={styles.deskSilhouette} />
         <span className={styles.windowFrame}><i className={styles.distantIsland} /><i className={styles.windowGlow} /></span>
         <span className={styles.dustField}>{nodeDust.map((dust) => <i key={dust.id} style={{ '--dust-x': `${dust.x}%`, '--dust-y': `${dust.y}%` } as React.CSSProperties} />)}</span>
         <span className={styles.floorLight} />
