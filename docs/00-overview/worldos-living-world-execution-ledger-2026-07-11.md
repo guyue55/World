@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.1
+current_item: B.2
 task_state: in_progress
-active_record_id: LW-010
-last_successful_command: "A.9 fresh independent image-first baseline review"
-resume_action: "start B.1 representative public fact selection and traceable update baseline"
-last_completed_item: A.9
+active_record_id: LW-011
+last_successful_command: "B.1 representative public node source and projection validation"
+resume_action: "write and observe B.2 failing one-source cross-projection contract"
+last_completed_item: B.1
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.1
+next_item: B.2
 ```
 
 每完成一项立即：
@@ -662,6 +662,40 @@ fixes:
   - "不修饰产品结论；只封存独立失败基线并开放内容投影门 B"
 commit: "0c91f59ca2a3da97b9816404861a99554cc98d66 test(world): 撤销继承式完成并建立生命世界基线"
 next_item: B.1
+```
+
+### Record LW-010：B.1 公开代表节点与小更新选择
+
+```yaml
+record: LW-010
+checkpoint: B
+item: B.1
+status: passed
+started_at: 2026-07-12T15:07:05+08:00
+finished_at: 2026-07-12T15:11:05+08:00
+verified_facts:
+  - "选择 node-kavita-reader-pipeline / 小说书库与 TXT 转 EPUB 流水线"
+  - "节点 visibility=public、reviewed=true、layer=fact，不是 WorldOS、RC、QA 或发布自述"
+  - "节点已有 tech 区域、三条关系、tech-ai 路径和 evt-024 公开事件"
+  - "当前统一 ContentLife 派生显示节点被 Atlas、Timeline、Archive、Paths、Lighthouse 五场景吸收"
+  - "拟更新仅补跨平台 checksum 与含空格路径安全说明，不新增作者经历，不改权限和关系迎合测试"
+hypothesis:
+  id: H-01
+  result: null
+files_changed:
+  - "docs/90-archive/reports/worldos-living-world/checkpoint-b/b1-2026-07-12/"
+commands:
+  - command: "representative public node source hash, boundary and projection baseline validation"
+    exit_code: 0
+    observed: "B1_REPRESENTATIVE_PUBLIC_NODE_SELECTED projections=atlas,timeline,archive,paths,lighthouse"
+evidence:
+  - "b1-selection-validation.log sha256=0a8a05799270300f028f8d8bb453e63af35c87c2ea6953637510a24b64df2b16"
+  - "b1-representative-node-selection.json sha256=0e3292fa6cb5eed5e6088f94b0053bd4d0521bc5235eb02896d5b797ee925f93"
+failures: []
+fixes:
+  - "不先改正文；固定 before hash 与修改边界，让 B.2 先观察失败契约"
+commit: "dcd0c6da8519504bb0498dffc7aab505eb4d58ce test(world): 选择内容投影代表节点"
+next_item: B.2
 ```
 
 ## 10. 后续记录模板

@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.1",
+    "currentItem": "B.2",
     "taskState": "in_progress",
-    "activeRecordId": "LW-010",
-    "resumeAction": "start B.1 representative public fact selection and traceable update baseline"
+    "activeRecordId": "LW-011",
+    "resumeAction": "write and observe B.2 failing one-source cross-projection contract"
   },
   "completedItems": {
     "A.1": {
@@ -222,6 +222,29 @@
       ],
       "commitHash": "0c91f59ca2a3da97b9816404861a99554cc98d66",
       "commitSubject": "test(world): 撤销继承式完成并建立生命世界基线"
+    },
+    "B.1": {
+      "status": "passed",
+      "itemId": "B.1",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:07:05+08:00",
+      "finishedAt": "2026-07-12T15:11:05+08:00",
+      "commands": [
+        {
+          "command": "representative public node source hash, boundary and five-projection baseline validation",
+          "exitCode": 0,
+          "outputSha256": "0a8a05799270300f028f8d8bb453e63af35c87c2ea6953637510a24b64df2b16",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b1-2026-07-12/logs/b1-selection-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b1-2026-07-12/evidence/b1-representative-node-selection.json",
+          "sha256": "0e3292fa6cb5eed5e6088f94b0053bd4d0521bc5235eb02896d5b797ee925f93"
+        }
+      ],
+      "commitHash": "dcd0c6da8519504bb0498dffc7aab505eb4d58ce",
+      "commitSubject": "test(world): 选择内容投影代表节点"
     }
   },
   "failedAttempts": [],
