@@ -14,13 +14,13 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.8
-next_item: C.8
+current_item: C.9
+next_item: C.9
 task_state: in_progress
-active_record_id: LW-027
-last_successful_command: "C.7 fresh Node quiet room, background-hidden, reduced and 200 percent equivalent reading review"
-resume_action: "implement C.8 Gateway to Atlas to Node to Gateway migration source, transit, arrival, focus and return context"
-last_completed_item: C.7
+active_record_id: LW-028
+last_successful_command: "C.8 fresh Gateway Atlas Node Gateway migration state, arrival focus, return context and bundle review"
+resume_action: "implement C.9 removable world sound prototype with gesture-zero-byte, single AudioContext, suspension and technical evidence"
+last_completed_item: C.8
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -1398,6 +1398,47 @@ commit: "ce2dabd4ad8f80e691fc82f8419b5c132e947dad fix(world): 增强内容地点
 next_item: C.8
 ```
 
+### Record LW-027：C.8 纵向场景迁移上下文
+
+```yaml
+record: LW-027
+checkpoint: C
+item: C.8
+status: passed
+started_at: 2026-07-12T17:39:00+08:00
+finished_at: 2026-07-12T17:47:04+08:00
+verified_facts:
+  - "Gateway->Atlas、Atlas->Node、Node->Gateway 均观测 leaving/inTransit/arriving/settled"
+  - "三段分别携带 island/star/door，抵达聚焦 atlas-center、真实 node id 与 world-gate"
+  - "浏览器后退回 Node 恢复来源链接焦点；Atlas 来源 Inspector 不存在时诚实降级到 atlas-center"
+  - "Node 返回 Gateway 后 data-entered=true、进入按钮为 0、继续旅程坞为 1，不重播关门仪式"
+  - "客户端边界修正后 Gateway first-load 从错误的 178 kB 回落到 175 kB"
+hypothesis:
+  id: H-05
+  result: passed-for-vertical-migration
+commands:
+  - command: "migration/gateway return tests, typecheck, lint, diff check"
+    exit_code: 0
+    observed: "3 tests pass"
+  - command: "fresh vertical migration and browser-back context review"
+    exit_code: 0
+    observed: "three four-state edges and arrival focus pass; sourceDirty=false"
+evidence:
+  - "c8-targeted-validation.log sha256=d3dc747d633e6e4b2d579914981af3f09788a7b81704bdf216bb6ce40e85f6f9"
+  - "c8-fresh-build-attempt-3.log sha256=ea1c9cc81f5dcd05388b87b0ccecd73a0157756ffa4cda8dd55208edd265be02"
+  - "c8-browser-final.log sha256=483ec983f0835ca21e8c575158ed4268e3101f481e72d5e42b01f75abd7424ad"
+  - "c8-migration-context.json sha256=d2593ed17b16afa1a2ad55dbfc4565549105e1e1d85268a5907210eee577d80f"
+failures:
+  - "Node 返回 Gateway 重新关门，因为 visitedCount 误用为同会话返回条件"
+  - "客户端导入 server-oriented gateway model 使首页升至 178 kB"
+fixes:
+  - "真实 journey 即进入返回态；返回判断移动到 client-safe runtime helper，首页恢复 175 kB"
+claim_boundary:
+  - "Atlas 临时 Inspector 未序列化时聚焦回退中心；全边矩阵、长录屏和 30 次资源稳定仍未通过"
+commit: "5cc4276df0c38e2e12c8a12add8be97bf1996fa2 fix(world): 隔离入口返回判断的客户端边界"
+next_item: C.9
+```
+
 ## 10. 后续记录模板
 
 ```yaml
@@ -1443,6 +1484,8 @@ next_item: "A.1-H.16 or none"
 | 2026-07-12T17:13:00+08:00 | C.6 | Atlas 聚焦后第一个节点无法自然点击 | 4 个代表节点复用 3 个偏移，第 4 个与第 1 个精确重叠 | 六个唯一确定性轨道、坐标回归与真实入口计数；fresh build 重测自然点击 | C.6 browser attempt 2 | fixed |
 | 2026-07-12T17:18:00+08:00 | C.6 | active relation probe 错报零边 | Playwright 在 line 元素下查后代而非同元素复合条件 | 改用复合 selector，并在 tech 星域验证两条 offset 持续变化的事实边 | C.6 browser attempt 4 | fixed |
 | 2026-07-12T17:31:00+08:00 | C.7 | Node background-hidden 仍像黑底浮动标签 | 只有窗景和关系门，缺少房间边界与承载面 | 增加 DOM/CSS 拱墙、立柱、地面和书桌；fresh build 重拍 | C.7 browser attempt 4 | fixed |
+| 2026-07-12T17:45:00+08:00 | C.8 | Node 返回 Gateway 后月门重新关闭 | visitedCount 只统计 Provider 挂载，不代表同会话返回 | 改用 hydrated real journey，返回时直接抵达并显示继续旅程 | C.8 browser final | fixed |
+| 2026-07-12T17:47:00+08:00 | C.8 | Gateway first-load 升至 178 kB | 客户端为简单谓词导入 server-oriented build model | 抽离 client-safe runtime helper，fresh build 回落 175 kB | C.8 build attempt 3 | fixed |
 
 ## 12. 证据新鲜度
 

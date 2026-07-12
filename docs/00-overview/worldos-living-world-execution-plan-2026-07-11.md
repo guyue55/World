@@ -173,7 +173,7 @@
 - [x] **C.5** Gateway 分离空间底层、语义对象和环境层；入场结束后星点 / 雾 / 浮屿 / 灯塔至少两类持续运行，并能 quiet / hidden / background-hidden。
 - [x] **C.6** Atlas 将区域、节点、关系航线从位图中解耦；星体生命来自真实节点状态和关系，背景隐藏后仍可操作和辨认。
 - [x] **C.7** Node 建立低活动度窗光 / 远景 adapter；正文附近静止，day / season 不破坏 60-72ch 阅读和 200% zoom。
-- [ ] **C.8** 把 Gateway -> Atlas -> Node -> Gateway 的来源对象、途中介质、抵达对象、焦点和返回位置接入现有迁移协议。
+- [x] **C.8** 把 Gateway -> Atlas -> Node -> Gateway 的来源对象、途中介质、抵达对象、焦点和返回位置接入现有迁移协议。
 - [ ] **C.9** 制作一个可删除的世界声音样板：一个 ambience + Gateway / Lighthouse 动机草案；用户手势前 0 B，hidden / mute / quiet 后 suspend，并生成 peak、接缝、十分钟离线渲染、波形与频谱技术包。
 - [ ] **C.10** 运行十分钟样板：至少一次 minute tick、一次 hidden 2 分钟恢复、一次声音启停、一次关系 Node 往返、一次 memory clear；记录 frame、heap、listener、adapter、AudioContext 和错误。
 - [ ] **C.11** 生成 Gateway / Atlas / Node 连续、未剪辑、非重复拼接的 60-120 秒长录屏、background-hidden / text-hidden / mobile / reduced contact sheet 和音频技术记录；有真实人类参与时再附听感签收。

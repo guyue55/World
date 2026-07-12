@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.8",
+    "currentItem": "C.9",
     "taskState": "in_progress",
-    "activeRecordId": "LW-027",
-    "resumeAction": "implement C.8 Gateway to Atlas to Node to Gateway migration source, transit, arrival, focus and return context"
+    "activeRecordId": "LW-028",
+    "resumeAction": "implement C.9 removable world sound prototype with gesture-zero-byte, single AudioContext, suspension and technical evidence"
   },
   "completedItems": {
     "A.1": {
@@ -640,6 +640,22 @@
       ],
       "commitHash": "ce2dabd4ad8f80e691fc82f8419b5c132e947dad",
       "commitSubject": "fix(world): 增强内容地点静态空间骨架"
+    },
+    "C.8": {
+      "status": "passed",
+      "itemId": "C.8",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T17:39:00+08:00",
+      "finishedAt": "2026-07-12T17:47:04+08:00",
+      "commands": [
+        { "command": "migration context and gateway return tests", "exitCode": 0, "outputSha256": "d3dc747d633e6e4b2d579914981af3f09788a7b81704bdf216bb6ce40e85f6f9", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c8-2026-07-12/logs/c8-targeted-validation.log" },
+        { "command": "fresh vertical migration arrival and return browser review", "exitCode": 0, "outputSha256": "483ec983f0835ca21e8c575158ed4268e3101f481e72d5e42b01f75abd7424ad", "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c8-2026-07-12/logs/c8-browser-final.log" }
+      ],
+      "evidence": [
+        { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c8-2026-07-12/evidence/c8-migration-context.json", "sha256": "d2593ed17b16afa1a2ad55dbfc4565549105e1e1d85268a5907210eee577d80f" }
+      ],
+      "commitHash": "5cc4276df0c38e2e12c8a12add8be97bf1996fa2",
+      "commitSubject": "fix(world): 隔离入口返回判断的客户端边界"
     }
   },
   "failedAttempts": [],
