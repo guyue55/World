@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.3
+current_item: B.4
 task_state: in_progress
-active_record_id: LW-012
-last_successful_command: "B.2 failing cross-projection contract structure and immutability validation"
-resume_action: "implement B.3 update-capable authoring preview and isolated apply validation"
-last_completed_item: B.2
+active_record_id: LW-013
+last_successful_command: "B.3 isolated update preview, apply, rebuild and rollback validation"
+resume_action: "implement B.4 unified public projection revision facts and apply representative update"
+last_completed_item: B.3
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.3
+next_item: B.4
 ```
 
 每完成一项立即：
@@ -737,6 +737,53 @@ fixes:
   - "保留全部红灯，交由 B.3-B.6 在同一事实与权限边界内消除"
 commit: "908c6c34ab797337b9cb5b5cf76161451bd471f2 test(world): 固定内容跨投影失败契约"
 next_item: B.3
+```
+
+### Record LW-012：B.3 公开节点更新事务
+
+```yaml
+record: LW-012
+checkpoint: B
+item: B.3
+status: passed
+started_at: 2026-07-12T15:16:00+08:00
+finished_at: 2026-07-12T15:21:45+08:00
+verified_facts:
+  - "新增 update 专用 schema、preview 和 transaction，world-author CLI 依据 operation 路由"
+  - "visibility、slug、关系、路径、日期、资产六类错误均在 preview 阶段阻止"
+  - "合法更新仅在系统临时目录写入正文、节点 updatedAt、node-updated 事件并重建公开索引"
+  - "五个受管文件均有 before/after checksum，rollback 后与临时更新前完全一致"
+  - "共享事务核心同时回归旧 create 流程，并补管此前遗漏的 public/world-manifest.json"
+  - "真实工作区事实与正文 checksum 在整段测试前后不变"
+hypothesis:
+  id: H-01
+  result: null
+files_changed:
+  - "src/server/authoring/author-update-schema.ts"
+  - "src/server/authoring/author-update-preview.ts"
+  - "src/server/authoring/author-update-transaction.ts"
+  - "src/server/authoring/author-transaction.ts"
+  - "scripts/world-author.mjs"
+  - "scripts/check-worldos-living-world-author-update.ts"
+commands:
+  - command: "isolated author update transaction test"
+    exit_code: 0
+    observed: "AUTHOR_UPDATE_TRANSACTION_PASS negativeCases=6 rollback=true realWorkspaceUntouched=true"
+  - command: "existing create transaction regression"
+    exit_code: 0
+    observed: "apply=7 rollback=7 tamperRejected=true realWorkspaceUntouched=true"
+  - command: "world-author update preview, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "valid=true issues=0; all engineering checks pass"
+evidence:
+  - "b3-author-update-validation.log sha256=0af6d9794188b40f425d8ab220860d4896221b7efdca63db6bc185cc1d9d95c4"
+  - "b3-author-update-transaction.json sha256=d0a9f63841b5afc88f91c9aee048f4ccd255233e299243c570c73f3a05ca3108"
+failures:
+  - "原 create 事务未把 public/world-manifest.json 纳入备份与 rollback"
+fixes:
+  - "抽取统一 applyAuthorTransaction，并让 create/update 共用原子写与 checksum manifest"
+commit: "09f4ec0e7760563cbb2b13e67f4a8faa3d2db11a feat(world): 支持公开节点原子更新事务"
+next_item: B.4
 ```
 
 ## 10. 后续记录模板

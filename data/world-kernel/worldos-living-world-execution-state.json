@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.3",
+    "currentItem": "B.4",
     "taskState": "in_progress",
-    "activeRecordId": "LW-012",
-    "resumeAction": "implement B.3 update-capable authoring preview and isolated apply validation"
+    "activeRecordId": "LW-013",
+    "resumeAction": "implement B.4 unified public projection revision facts and apply representative update"
   },
   "completedItems": {
     "A.1": {
@@ -272,6 +272,29 @@
       ],
       "commitHash": "908c6c34ab797337b9cb5b5cf76161451bd471f2",
       "commitSubject": "test(world): 固定内容跨投影失败契约"
+    },
+    "B.3": {
+      "status": "passed",
+      "itemId": "B.3",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:16:00+08:00",
+      "finishedAt": "2026-07-12T15:21:45+08:00",
+      "commands": [
+        {
+          "command": "isolated author update negative cases, apply, public index rebuild, checksum rollback and create regression validation",
+          "exitCode": 0,
+          "outputSha256": "0af6d9794188b40f425d8ab220860d4896221b7efdca63db6bc185cc1d9d95c4",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b3-2026-07-12/logs/b3-author-update-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b3-2026-07-12/evidence/b3-author-update-transaction.json",
+          "sha256": "d0a9f63841b5afc88f91c9aee048f4ccd255233e299243c570c73f3a05ca3108"
+        }
+      ],
+      "commitHash": "09f4ec0e7760563cbb2b13e67f4a8faa3d2db11a",
+      "commitSubject": "feat(world): 支持公开节点原子更新事务"
     }
   },
   "failedAttempts": [],
