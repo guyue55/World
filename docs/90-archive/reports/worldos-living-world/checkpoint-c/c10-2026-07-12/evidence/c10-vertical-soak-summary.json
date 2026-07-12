@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-12T18:50:00+08:00",
+  "item": "C.10",
+  "status": "passed",
+  "runIdentity": {
+    "collectorCommit": "47384523df3e80a5a9ddab223dec3488eebc8006",
+    "collectorSubject": "test(world): 建立十分钟纵向样板采集器",
+    "verifierCommit": "8a68402274d06f57ad2cb857615bfeb6e2936e6b",
+    "verifierSubject": "test(world): 回算十分钟样板资源稳定性",
+    "buildId": "nCrPpcGxOaegVH9K0KfUN",
+    "buildRootHash": "3474474dac44f3eef81cd0a76a30424b18f76337bde5dde8ef0ae06a50bc9622",
+    "sourceDirty": false,
+    "localhostAndLanIdentityEqual": true
+  },
+  "duration": {
+    "startedAt": "2026-07-12T10:37:22.442Z",
+    "finishedAt": "2026-07-12T10:47:22.468Z",
+    "wallElapsedSeconds": 600.026,
+    "monotonicElapsedSeconds": 600.00903475,
+    "continuousWallClock": true,
+    "edited": false,
+    "repeatedAssembly": false
+  },
+  "requiredActions": {
+    "minuteTickObserved": true,
+    "hiddenElapsedSeconds": 120.008,
+    "hiddenResumed": true,
+    "relationNodeRoundTrip": [
+      "/node/world-manifesto",
+      "/node/personal-digital-universe-definition",
+      "/node/world-manifesto"
+    ],
+    "audioToggle": true,
+    "memoryClear": true
+  },
+  "runtime": {
+    "timeSeriesSamples": 100,
+    "frameCount": 28708,
+    "frameP95Ms": 17.4,
+    "frameMaxMs": 166.6,
+    "frameOver34Ms": 7,
+    "settledHeapGrowthBytes": -245176,
+    "settledListenerGrowth": 0,
+    "settledNodeGrowth": 0,
+    "audioContextCount": 1,
+    "sourceStarts": 20,
+    "sourceEnds": 16,
+    "activeOscillators": 4,
+    "finalAdapter": "gateway:running",
+    "browserErrors": 0
+  },
+  "artifacts": [
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/evidence/c10-vertical-soak-600s.json",
+      "sha256": "4a4286ed7bbc70bd23cb295667d2f1061ddbeb2bffc541e2dd9faab49cbfcdac"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/logs/c10-vertical-soak-600s.log",
+      "sha256": "1bb014f9df1c0dfa7eb2ea07a3dadc79e45d974155fd17ce93c7fb9620459e81"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/logs/c10-independent-recalculation.log",
+      "sha256": "7901869341f8e13d3b40d977afe0452fc08e0892ed280e3ed666f06fea8273a6"
+    },
+    {
+      "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c10-2026-07-12/evidence/c10-local-build-identity.json",
+      "sha256": "946b9fe8bd8ccc6714c4151bb51ceb2c991709e058346948ed8e288c1a9399d8"
+    }
+  ],
+  "claimBoundary": {
+    "verticalSliceSoak": "passed-for-C.10",
+    "tenMinuteVideo": "not-produced-by-C.10",
+    "longSceneRecordings": "pending-C.11",
+    "independentExperienceReview": "pending-C.12",
+    "gateC": "pending-C.11-C.13"
+  }
+}
