@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "item": "C.4",
+  "status": "passed",
+  "generatedAt": "2026-07-12T16:48:00+08:00",
+  "implementation": {
+    "commitHash": "fc8e1b23a24e36ae94b1bdd5ef9eddddf36b0be4",
+    "commitSubject": "feat(world): 将兼容运行时接入世界时钟",
+    "compatibilityBoundary": "useWorldRuntime remains available while low-frequency time, visibility, scene and sound facts enter the sliced store",
+    "perFrameReactState": false
+  },
+  "targetedValidation": {
+    "tests": 16,
+    "passed": 16,
+    "failed": 0,
+    "typecheck": "passed",
+    "lint": "passed",
+    "diffCheck": "passed",
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c4-2026-07-12/logs/c4-targeted-validation.log",
+    "logSha256": "eb06a33a4b1d739506e6849c0115c7408775c82971656d200c9d768f4e1d792c"
+  },
+  "freshBuild": {
+    "buildId": "-amfJjlfTofzk625NmIe4",
+    "sourceCommit": "fc8e1b23a24e36ae94b1bdd5ef9eddddf36b0be4",
+    "sourceDirty": false,
+    "buildRootHash": "7f604b09b4a87e29375e117d49036f7253baf7239b7b63df02418bdb87b47bdf",
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c4-2026-07-12/logs/c4-fresh-build.log",
+    "logSha256": "882322703409b25471b2940f2722cdcc77d65ab6935770596544993a3cd61174"
+  },
+  "liveBrowser": {
+    "route": "/atlas",
+    "heading": "古月浮屿星图",
+    "minuteTickObserved": true,
+    "minuteDeltaMs": 14245,
+    "hiddenClockPaused": true,
+    "resumeRebuiltFromCurrentEpoch": true,
+    "resumeDeltaMs": 2235,
+    "consoleErrors": [],
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c4-2026-07-12/logs/c4-live-clock-browser.log",
+    "logSha256": "7a19df93e2f040a8ff1cfe94bd4d9dd1399289c43af5ab19f752204fef218d0c"
+  },
+  "failedObservationAndCorrection": {
+    "observation": "CDP Page.setWebLifecycleState frozen/active did not dispatch the standard document visibilitychange event in this Chromium run.",
+    "correction": "The browser verification overrode document.hidden and dispatched visibilitychange, matching the controller's public browser contract; unit tests independently cover listener and timer cleanup.",
+    "claimBoundary": "No claim is made that CDP lifecycle commands are equivalent to browser visibility events."
+  },
+  "remainingBoundary": [
+    "C.4 proves a low-frequency clock and compatibility adapter, not a continuously living scene.",
+    "Gateway semantic layers, ambient adapters and quiet/background-hidden behavior begin at C.5.",
+    "The ten-minute vertical slice and resource stability remain open until C.10-C.13."
+  ]
+}

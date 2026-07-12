@@ -1,0 +1,31 @@
+✔ Clock Controller 每分钟更新，hidden 停止，visible 从当前时间重建 (89.235417ms)
+✔ minute timer 触发后重新排程，dispose 后资源归零 (0.421167ms)
+✔ 项目时区固定为 Asia/Shanghai，且同一 epoch 在不同时区产生不同墙上时间 (90.351667ms)
+✔ 昼夜边界在 05/09/17/21 点稳定切换 (0.552583ms)
+✔ 四季从 3/6/9/12 月开始，并按真实日历区间计算进度 (0.738625ms)
+✔ 页面隐藏后使用当前 epoch 直接重算，不追补中间帧 (0.235417ms)
+✔ worldDateKey 和完整 snapshot 对相同输入保持确定性 (1.626125ms)
+✔ 拒绝非法 epoch 与时区 (2.112708ms)
+✔ Scheduler 始终只有一个 active adapter，替换时先释放旧场景 (0.625416ms)
+✔ logical signal update 与 ambient 30fps tick 分离 (0.174667ms)
+✔ hidden 与 quiet 独立暂停，只有全部解除才恢复 (0.567417ms)
+✔ route leave、abort 与 unmount 均释放 adapter、frame 和 listener (0.659542ms)
+✔ 唯一 Experience Manifest 覆盖七场景且按真实路由匹配 (0.941541ms)
+✔ Signal Snapshot 只含低频可解释状态 (26.180708ms)
+✔ Store 归约时钟、场景、旅程、声音与灯塔事件 (1.679209ms)
+✔ 分片订阅不会被无关声音更新唤醒 (0.498083ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 366.472291
+
+> word-life@0.1.0 typecheck
+> tsc --noEmit
+
+
+> word-life@0.1.0 lint
+> eslint . --max-warnings=0
