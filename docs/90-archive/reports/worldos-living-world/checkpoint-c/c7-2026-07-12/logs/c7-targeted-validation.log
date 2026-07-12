@@ -1,0 +1,19 @@
+✔ Coordinator 接续挂载前注册，并且只拥有一个 active adapter 与 rAF (5.528041ms)
+✔ Coordinator 统一响应 quiet、hidden、signal update 和重新挂载 (0.624792ms)
+✔ Node 窗光和远景由时间、季节与内容生命确定投影 (4.281625ms)
+✔ Node adapter pause 后保持静态，dispose 清理属性 (0.98375ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 331.884375
+
+> word-life@0.1.0 typecheck
+> tsc --noEmit
+
+
+> word-life@0.1.0 lint
+> eslint . --max-warnings=0

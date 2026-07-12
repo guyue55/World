@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "item": "C.7",
+  "status": "passed",
+  "generatedAt": "2026-07-12T17:38:00+08:00",
+  "implementation": {
+    "primaryCommit": "56d3a48db1121b37bd05b42679bbe8470cd0dc48",
+    "primarySubject": "feat(world): 建立内容地点静谧窗景",
+    "finalFixCommit": "ce2dabd4ad8f80e691fc82f8419b5c132e947dad",
+    "finalFixSubject": "fix(world): 增强内容地点静态空间骨架",
+    "factInputs": ["dayProgress", "dayPeriod", "season", "seasonProgress", "lifeStage", "life status", "relation count"],
+    "animatedScope": "Node room window, distant island and dust only; reading DOM remains static",
+    "newRuntimeDependencies": []
+  },
+  "freshBuild": {
+    "buildId": "VNFID_L0uJ9nm6Skv7bGp",
+    "sourceCommit": "ce2dabd4ad8f80e691fc82f8419b5c132e947dad",
+    "sourceDirty": false,
+    "buildRootHash": "cfe101fa4d9ae5631d79972d9462361a2503358e0f6b3599d723b6273be610bd",
+    "nodeFirstLoadJs": "147 kB",
+    "sharedFirstLoadJs": "103 kB",
+    "logSha256": "61420025d91e4199884cc1f3714a3608fce8cb497e98153a97d7759dc237e718"
+  },
+  "runtime": {
+    "normal": { "state": "running", "windowLight": "0.6489", "driftBefore": "1.200px", "driftAfter": "1.399px", "season": "summer" },
+    "reduced": { "state": "paused", "driftBefore": "1.052px", "driftAfter": "1.052px", "unchanged": true },
+    "backgroundHidden": { "spatialRoomVisible": true, "roomWallVisible": true, "roomObjectsVisible": 8, "readingDoorVisible": true, "exitsVisible": 4 },
+    "consoleErrors": [],
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/logs/c7-browser-attempt-4.log",
+    "logSha256": "96553914b01297712828fec251e33c8e49d8247a4c1191497635dc4abf74b525"
+  },
+  "reading": {
+    "mode": "720 CSS px viewport as 200 percent desktop reflow equivalent",
+    "viewportWidth": 720,
+    "documentScrollWidth": 720,
+    "horizontalOverflow": false,
+    "articleWidth": 688,
+    "proseWidth": 688,
+    "configuredMaximum": "72ch",
+    "screenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/raw/node-reading-200pct-equivalent-v4.png", "sha256": "43b0f3470b56fe4778f818970f844b739d001acb264b5bfd754b24df7e3ad2f3" }
+  },
+  "visualReview": {
+    "normal": "The cinematic room remains primary; the added window and dust layer is low contrast and does not invade the desk or reading action.",
+    "backgroundHidden": "An arched wall boundary, columns, floor, desk silhouette, window, distant island, relation doors, reading door and exits remain spatially distinguishable.",
+    "normalScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/raw/node-normal-v4.png", "sha256": "a81d21f674fe92870559c369238064a80b3ba5fac454e9c49fb594c4b7a41fca" },
+    "backgroundHiddenScreenshot": { "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c7-2026-07-12/raw/node-background-hidden-v4.png", "sha256": "09818756d1906e08d058fd58e64f1652a2b8b7c642269b12be8559963f2eae98" }
+  },
+  "targetedValidation": { "tests": 4, "passed": 4, "typecheck": "passed", "lint": "passed", "diffCheck": "passed", "logSha256": "33e57d1ad723f1958d7b2f6b303cdc4b1f66dd94f82605ab7c70e41634b728ef" },
+  "failuresAndCorrections": [
+    "The first browser selector matched both the room reading door and the accessible fallback link; a data-room-object compound selector fixed strict mode.",
+    "The second probe requested build identity from a closed page context; the final run uses an independent request context before browser teardown.",
+    "The first background-hidden image still looked like floating labels; DOM room wall, floor and desk geometry were added and fresh evidence regenerated."
+  ],
+  "claimBoundary": [
+    "C.7 proves one representative Node room and reading reflow, not every content shape or a full accessibility audit.",
+    "Ten-minute resource stability, long recordings and route cleanup remain C.10-C.13.",
+    "Gate C remains pending."
+  ]
+}
