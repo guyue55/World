@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "B.5",
+  "status": "pass",
+  "createdAt": "2026-07-12T07:38:02.925Z",
+  "claim": "公开世界目录包包含事实、原始内容、资产注册、保存对象/事件/权利、中文说明与逐文件校验和；不声明恢复已通过。",
+  "commands": [
+    "node scripts/world-export.mjs create --output exports/living-world-current",
+    "npm run typecheck",
+    "npm run lint",
+    "npx tsx scripts/check-worldos-living-world-content-projection.ts",
+    "Node SHA-256 checksum and visibility validation",
+    "git diff --check"
+  ],
+  "output": {
+    "manifestPath": "exports/living-world-current/manifest.json",
+    "manifestSha256": "29a9ec25eb3f0f76727ee5d5b1cc8e135168288ce9e0a3ba6362e6ebcbeb229a",
+    "rootChecksum": "7cab3c6459d15032af4d5557146a079888d9672fbeb479f5aaa21b30da203d06",
+    "worldCommit": "4e2a6f6e9acba34a78bed691581de9bd050ab53e",
+    "counts": {
+      "nodes": 200,
+      "areas": 8,
+      "relations": 398,
+      "paths": 29,
+      "events": 52,
+      "assets": 9
+    },
+    "managedChecksumEntries": 221,
+    "representativeContent": {
+      "path": "content/articles/kavita-reader-txt-epub-pipeline.md",
+      "sha256": "64c542894f378d573b59a210fa4cddba6a17a2e2ace4da0b8e12bd4170d58fb3",
+      "bytes": 1936,
+      "kind": "content"
+    },
+    "assetFallbacks": [
+      {
+        "publicPath": "/covers/cover-archive.svg",
+        "sourcePath": "public/covers/cover-abstract-world.svg"
+      },
+      {
+        "publicPath": "/covers/cover-memory-lake.svg",
+        "sourcePath": "public/covers/cover-abstract-world.svg"
+      },
+      {
+        "publicPath": "/covers/cover-timeline.svg",
+        "sourcePath": "public/covers/cover-abstract-world.svg"
+      }
+    ],
+    "rightsRecords": 6
+  },
+  "log": {
+    "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b5-2026-07-12/logs/b5-targeted-validation.log",
+    "sha256": "ee7427abff1b7b9b36f466544ccfbc471c964b274b626219370d1f72133f7db2"
+  },
+  "limitations": [
+    "B.6 尚未执行 verify-restore。",
+    "资产许可缺失处保持 metadata-not-registered，不推断权利。",
+    "导出包位于 gitignored 本地目录，紧凑证据进入版本控制。"
+  ]
+}

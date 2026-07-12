@@ -280,6 +280,7 @@
     "check:worldos-script-legacy-registry": "node scripts/check-worldos-script-legacy-registry.mjs",
     "check:scripts": "npm run check:worldos-script-taxonomy && npm run check:worldos-script-legacy-registry",
     "world:author": "tsx scripts/world-author.mjs",
+    "world:export": "node scripts/world-export.mjs create",
     "audit:world-experience": "node scripts/audit-worldos-reality-first.mjs",
     "check:world-experience": "node scripts/check-worldos-reality-first.mjs",
     "evidence:world-experience": "node scripts/evidence-worldos-reality-first.mjs",
