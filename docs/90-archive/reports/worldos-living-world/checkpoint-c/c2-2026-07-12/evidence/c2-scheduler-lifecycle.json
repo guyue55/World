@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "checkpoint": "C.2",
+  "status": "pass",
+  "createdAt": "2026-07-12T08:21:03.094Z",
+  "redObservation": {
+    "exitCode": 1,
+    "observed": "Cannot find module './scheduler'"
+  },
+  "green": {
+    "tests": 4,
+    "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c2-2026-07-12/logs/c2-scheduler-lifecycle.log",
+    "logSha256": "84e58beb03b1c8e3533abb76a7132e5289dd2a053297f62143ebb6d82dc0f491"
+  },
+  "invariants": {
+    "activeAdaptersMax": 1,
+    "rafCallbacksMax": 1,
+    "ambientFpsMax": 30,
+    "logicalAmbientSeparated": true,
+    "pauseReasons": [
+      "hidden",
+      "quiet"
+    ],
+    "routeLeaveSceneResourcesZero": true,
+    "abortUnmountAllResourcesZero": true
+  },
+  "limitations": [
+    "Scheduler 尚未接入 React Provider 或真实场景 adapter；C.3-C.8 完成接线。"
+  ]
+}
