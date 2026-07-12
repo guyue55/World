@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "C.2",
+    "currentItem": "C.3",
     "taskState": "in_progress",
-    "activeRecordId": "LW-021",
-    "resumeAction": "write C.2 scheduler lifecycle red tests and single active adapter cleanup implementation"
+    "activeRecordId": "LW-022",
+    "resumeAction": "implement C.3 minimal experience manifest signal snapshot runtime store and profiler decision"
   },
   "completedItems": {
     "A.1": {
@@ -491,6 +491,29 @@
       ],
       "commitHash": "25f228db2ce5024b9bb077959fc1b00c570d01fb",
       "commitSubject": "feat(world): 建立确定性世界时钟"
+    },
+    "C.2": {
+      "status": "passed",
+      "itemId": "C.2",
+      "checkpoint": "C",
+      "startedAt": "2026-07-12T16:17:00+08:00",
+      "finishedAt": "2026-07-12T16:21:10+08:00",
+      "commands": [
+        {
+          "command": "scheduler lifecycle node:test suite and engineering checks",
+          "exitCode": 0,
+          "outputSha256": "84e58beb03b1c8e3533abb76a7132e5289dd2a053297f62143ebb6d82dc0f491",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c2-2026-07-12/logs/c2-scheduler-lifecycle.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-c/c2-2026-07-12/evidence/c2-scheduler-lifecycle.json",
+          "sha256": "094869552f3e92d32c088ea8873834f78e36e1f54c5cbe369b43defa8787a0bf"
+        }
+      ],
+      "commitHash": "a0a6c904d22fb724c29e519e278a7902c47eabc8",
+      "commitSubject": "feat(world): 建立唯一环境调度生命周期"
     }
   },
   "failedAttempts": [],

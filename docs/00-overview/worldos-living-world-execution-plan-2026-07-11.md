@@ -167,7 +167,7 @@
 **Interfaces:** Exact types and ownership follow the architecture contract. Existing components consume adapters; they do not create duplicate clock or scheduler.
 
 - [x] **C.1** 写 Clock 失败测试：时区、dayProgress、dayPeriod、seasonProgress、边界、hidden 恢复和确定性 worldDateKey；实现纯 `buildWorldTimeSnapshot()`。
-- [ ] **C.2** 写 Scheduler / Lifecycle 失败测试：只注册一个 active adapter，logical 与 ambient 分离，hidden / quiet / route leave / abort / unmount 后资源归零。
+- [x] **C.2** 写 Scheduler / Lifecycle 失败测试：只注册一个 active adapter，logical 与 ambient 分离，hidden / quiet / route leave / abort / unmount 后资源归零。
 - [ ] **C.3** 建立最小 manifest、Signal Snapshot 和 Runtime Store；用 React Profiler 记录现有 Context 与候选分片订阅的重渲染，再决定是否完整迁移 `useSyncExternalStore`。
 - [ ] **C.4** 让 `WorldRuntimeProvider` 成为兼容适配层：时间每分钟更新，页面恢复重新派生；每帧变化不进入 React state。
 - [ ] **C.5** Gateway 分离空间底层、语义对象和环境层；入场结束后星点 / 雾 / 浮屿 / 灯塔至少两类持续运行，并能 quiet / hidden / background-hidden。

@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: C
-current_item: C.2
+current_item: C.3
 task_state: in_progress
-active_record_id: LW-021
-last_successful_command: "C.1 deterministic world clock tests, typecheck and lint"
-resume_action: "write C.2 scheduler lifecycle red tests and single active adapter cleanup implementation"
-last_completed_item: C.1
+active_record_id: LW-022
+last_successful_command: "C.2 scheduler lifecycle tests and resource cleanup"
+resume_action: "implement C.3 minimal experience manifest signal snapshot runtime store and profiler decision"
+last_completed_item: C.2
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10, C.1]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6, B.7, B.8, B.9, B.10, C.1, C.2]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: C.2
+next_item: C.3
 ```
 
 每完成一项立即：
@@ -1116,6 +1116,44 @@ fixes:
   - "新增无状态 IANA 时区投影与昼夜/季节纯计算"
 commit: "25f228db2ce5024b9bb077959fc1b00c570d01fb feat(world): 建立确定性世界时钟"
 next_item: C.2
+```
+
+### Record LW-021：C.2 唯一环境调度与生命周期
+
+```yaml
+record: LW-021
+checkpoint: C
+item: C.2
+status: passed
+started_at: 2026-07-12T16:17:00+08:00
+finished_at: 2026-07-12T16:21:10+08:00
+verified_facts:
+  - "AmbientScheduler 同时最多一个 active adapter 和一个 rAF callback"
+  - "adapter 替换先 dispose 旧场景；route leave 释放 adapter/frame/animation"
+  - "logical signal update 只调用 update，不进入 ambient tick；ambient 节流上限 30fps"
+  - "hidden 与 quiet 使用独立 pause reason，全部解除后才 resume"
+  - "Lifecycle 只拥有唯一 visibility listener 与可选 abort listener，跨场景不重复拆装"
+  - "abort/unmount 后 adapter、rAF、listener 和八类资源计数归零，dispose 幂等"
+hypothesis:
+  id: H-04
+  result: null
+files_changed:
+  - "src/world/runtime/scheduler.ts"
+  - "src/world/runtime/lifecycle.ts"
+  - "src/world/runtime/scheduler.test.ts"
+commands:
+  - command: "tsx node:test scheduler lifecycle suite, typecheck, lint and diff check"
+    exit_code: 0
+    observed: "4 tests pass; engineering checks pass"
+evidence:
+  - "c2-scheduler-lifecycle.log sha256=84e58beb03b1c8e3533abb76a7132e5289dd2a053297f62143ebb6d82dc0f491"
+  - "c2-scheduler-lifecycle.json sha256=094869552f3e92d32c088ea8873834f78e36e1f54c5cbe369b43defa8787a0bf"
+failures:
+  - "红灯阶段 scheduler 模块不存在"
+fixes:
+  - "新增职责分离的 Scheduler 与 Lifecycle；全局 listener 不在每次 route leave 重建"
+commit: "a0a6c904d22fb724c29e519e278a7902c47eabc8 feat(world): 建立唯一环境调度生命周期"
+next_item: C.3
 ```
 
 ## 10. 后续记录模板
