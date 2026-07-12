@@ -10,7 +10,7 @@ type NodeAmbientModel = {
 
 const statusLight: Record<NodeAmbientModel['status'], number> = { emerging: 0.48, growing: 0.62, ready: 0.78, archived: 0.4, quiet: 0.3 }
 const stageLight: Record<NodeAmbientModel['lifeStage'], number> = { seed: 0.38, sprout: 0.5, growing: 0.64, bloom: 0.82, fruit: 0.76, archive: 0.38, relic: 0.3, dormant: 0.24, silent: 0.18 }
-const properties = ['--node-window-light', '--node-distant-drift', '--node-dust-light', '--node-season-warmth'] as const
+const properties = ['--node-window-light', '--node-window-breathe', '--node-distant-drift', '--node-dust-light', '--node-season-warmth'] as const
 
 export function buildNodeAmbientProjection(model: NodeAmbientModel, signals: WorldSignalSnapshot, elapsedMs: number) {
   const daylight = Math.sin(signals.time.dayProgress * Math.PI)
@@ -18,7 +18,8 @@ export function buildNodeAmbientProjection(model: NodeAmbientModel, signals: Wor
   const seasonalWarmth = signals.time.season === 'summer' ? 0.35 : signals.time.season === 'autumn' ? 0.72 : signals.time.season === 'winter' ? 0.82 : 0.55
   return {
     windowLight: Math.min(1, Math.max(0.2, periodFactor * 0.56 + daylight * 0.18 + statusLight[model.status] * 0.16 + stageLight[model.lifeStage] * 0.1)),
-    distantDrift: Math.sin(elapsedMs / 18_000 + signals.time.seasonProgress) * 2.4,
+    windowBreathe: 0.5 + Math.sin(elapsedMs / 2_400 + model.relationCount * 0.37) * 0.5,
+    distantDrift: Math.sin(elapsedMs / 9_000 + signals.time.seasonProgress) * 8,
     dustLight: Math.min(0.78, 0.18 + model.relationCount * 0.045 + statusLight[model.status] * 0.18),
     seasonalWarmth,
     season: signals.time.season,
@@ -33,6 +34,7 @@ export function createNodeAmbientAdapter(host: HTMLElement, model: NodeAmbientMo
   const apply = (signals: WorldSignalSnapshot) => {
     const value = buildNodeAmbientProjection(model, signals, elapsedMs)
     host.style.setProperty('--node-window-light', value.windowLight.toFixed(4))
+    host.style.setProperty('--node-window-breathe', value.windowBreathe.toFixed(4))
     host.style.setProperty('--node-distant-drift', `${value.distantDrift.toFixed(3)}px`)
     host.style.setProperty('--node-dust-light', value.dustLight.toFixed(4))
     host.style.setProperty('--node-season-warmth', value.seasonalWarmth.toFixed(4))

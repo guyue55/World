@@ -40,6 +40,7 @@ test('Gateway adapter 用世界信号确定性驱动视觉变量，不写 React 
   assert.ok(firstHost.style.values.has('--gateway-star-pulse'))
   assert.ok(firstHost.style.values.has('--gateway-fog-shift'))
   assert.ok(firstHost.style.values.has('--gateway-beacon-angle'))
+  assert.ok(firstHost.style.values.has('--gateway-atmosphere-breathe'))
 })
 
 test('Gateway adapter pause/resume/dispose 保留静态状态并清理资源', () => {

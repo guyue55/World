@@ -12,6 +12,7 @@ const visualProperties = [
   '--gateway-island-lift',
   '--gateway-beacon-angle',
   '--gateway-sky-light',
+  '--gateway-atmosphere-breathe',
 ] as const
 
 function placeCount(model: GatewayAmbientModel) {
@@ -40,11 +41,12 @@ export function createGatewayAmbientAdapter(
     const contentEnergy = Math.min(1, (signals.content.updatedNodeIds.length + signals.content.activePathIds.length) / 4)
     host.style.setProperty('--gateway-star-pulse', (0.5 + Math.sin(phase * 1.7) * 0.22 + contentEnergy * 0.12).toFixed(4))
     host.style.setProperty('--gateway-star-drift', `${(Math.sin(phase * 0.31) * 8).toFixed(3)}px`)
-    host.style.setProperty('--gateway-fog-shift', `${(Math.sin(phase * 0.19) * 16).toFixed(3)}px`)
-    host.style.setProperty('--gateway-fog-shift-far', `${(Math.sin(phase * 0.19) * -8.8).toFixed(3)}px`)
+    host.style.setProperty('--gateway-fog-shift', `${(Math.sin(phase * 0.75) * 72).toFixed(3)}px`)
+    host.style.setProperty('--gateway-fog-shift-far', `${(Math.sin(phase * 0.52) * -44).toFixed(3)}px`)
     host.style.setProperty('--gateway-island-lift', `${(Math.sin(phase * 0.43) * 3).toFixed(3)}px`)
     host.style.setProperty('--gateway-beacon-angle', `${(-9 + Math.sin(phase * 0.13) * 13).toFixed(3)}deg`)
     host.style.setProperty('--gateway-sky-light', (0.18 + Math.sin(signals.time.dayProgress * Math.PI) * 0.25).toFixed(4))
+    host.style.setProperty('--gateway-atmosphere-breathe', (0.5 + Math.sin(elapsedMs / 2_800 + seed * Math.PI * 2) * 0.5).toFixed(4))
   }
 
   const dispose = () => {

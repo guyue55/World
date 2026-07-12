@@ -16,6 +16,7 @@ const statusWeight: Record<AtlasNodeView['status'], number> = {
 }
 const nodeProperties = ['--atlas-node-life', '--atlas-node-phase'] as const
 const linkProperties = ['--atlas-link-offset'] as const
+const hostProperties = ['--atlas-field-breathe'] as const
 
 function hash(value: string) {
   let result = 0
@@ -62,6 +63,7 @@ export function createAtlasAmbientAdapter(
 
   const apply = (signals: WorldSignalSnapshot) => {
     const projection = buildAtlasAmbientProjection(model, signals, elapsedMs)
+    host.style.setProperty('--atlas-field-breathe', (0.5 + Math.sin(elapsedMs / 3_200 + signals.time.dayProgress * Math.PI * 2) * 0.5).toFixed(4))
     nodes.forEach((element) => {
       const id = element.getAttribute('data-atlas-node') ?? ''
       const life = projection.nodeLife[id]
@@ -88,6 +90,7 @@ export function createAtlasAmbientAdapter(
     nodes.forEach((element) => { nodeProperties.forEach((property) => element.style.removeProperty(property)); element.removeAttribute('data-atlas-life-source') })
     links.forEach((element) => { linkProperties.forEach((property) => element.style.removeProperty(property)); element.removeAttribute('data-atlas-reasoned') })
     host.removeAttribute('data-atlas-ambient')
+    hostProperties.forEach((property) => host.style.removeProperty(property))
     nodes = []
     links = []
   }

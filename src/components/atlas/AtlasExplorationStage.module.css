@@ -1,6 +1,7 @@
 .stage {
   --atlas-node-life: 0.5;
   --atlas-node-phase: 0;
+  --atlas-field-breathe: 0.5;
   background: #071116;
 }
 
@@ -43,6 +44,7 @@
   inset: 0;
   background-color: rgba(3, 10, 14, 0.08);
   box-shadow: inset 0 8rem 8rem rgba(2, 7, 10, 0.54), inset 0 -8rem 9rem rgba(2, 7, 10, 0.52);
+  opacity: calc(0.68 + var(--atlas-field-breathe) * 0.32);
   pointer-events: none;
 }
 
@@ -281,4 +283,8 @@
 
 .stage[data-atlas-ambient="paused"] .nodeHotspot i {
   transform: none;
+}
+
+.stage[data-atlas-ambient="paused"] .imageVeil {
+  opacity: 0.84;
 }

@@ -6,6 +6,7 @@
   --gateway-island-lift: 0px;
   --gateway-beacon-angle: -9deg;
   --gateway-sky-light: 0.28;
+  --gateway-atmosphere-breathe: 0.5;
   background: #071011;
 }
 
@@ -217,6 +218,7 @@
   z-index: 0;
   background-color: rgba(4, 11, 12, 0.2);
   box-shadow: inset 0 -12rem 10rem rgba(2, 8, 9, 0.7), inset 0 8rem 8rem rgba(2, 8, 9, 0.3);
+  opacity: calc(0.76 + var(--gateway-atmosphere-breathe) * 0.24);
   pointer-events: none;
 }
 
@@ -555,4 +557,8 @@
 .stage[data-gateway-ambient="paused"] .island,
 .stage[data-gateway-ambient="paused"] .beaconBeam {
   transform: none;
+}
+
+.stage[data-gateway-ambient="paused"] .atmosphere {
+  opacity: 0.88;
 }
