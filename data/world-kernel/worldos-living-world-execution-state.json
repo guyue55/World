@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "B.6",
+    "currentItem": "B.7",
     "taskState": "in_progress",
-    "activeRecordId": "LW-015",
-    "resumeAction": "implement B.6 isolated verify-restore checksum schema reference permission and minimal rebuild"
+    "activeRecordId": "LW-016",
+    "resumeAction": "execute B.7 author rollback and prove workspace before checksums while retaining export provenance"
   },
   "completedItems": {
     "A.1": {
@@ -341,6 +341,35 @@
       ],
       "commitHash": "d9d7fc8115fbd7135b1efac2c442fa40bb242875",
       "commitSubject": "feat(world): 建立公开世界可移植导出"
+    },
+    "B.6": {
+      "status": "passed",
+      "itemId": "B.6",
+      "checkpoint": "B",
+      "startedAt": "2026-07-12T15:39:00+08:00",
+      "finishedAt": "2026-07-12T15:44:40+08:00",
+      "commands": [
+        {
+          "command": "fixed verify-restore positive build and five negative boundary cases",
+          "exitCode": 0,
+          "outputSha256": "f1ce6d864519a037e327a21fea14ab4d2067add2fb1a633506f4b91b825c3ca9",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b6-2026-07-12/logs/b6-positive-restore.log"
+        },
+        {
+          "command": "tamper, scope, reference, permission and nonempty-output rejection",
+          "exitCode": 0,
+          "outputSha256": "672d31b69db0650cfaf9871e420c94b6f18aac7adf9d585615e83b6b60907d12",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b6-2026-07-12/logs/b6-negative-boundaries.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-b/b6-2026-07-12/evidence/b6-public-export-restore.json",
+          "sha256": "b001ab6966f428243e647497f2db03bd8ef3a4ca8995206d3b8f42fd167511eb"
+        }
+      ],
+      "commitHash": "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3",
+      "commitSubject": "feat(world): 验证并重建公开世界导出"
     }
   },
   "failedAttempts": [],

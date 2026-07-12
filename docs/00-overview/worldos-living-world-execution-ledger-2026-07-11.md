@@ -14,12 +14,12 @@ control_baseline_commit: 987d1a6deac7727253b7f3d85bc7b93ab5b7ca90
 product_status: CINEMATIC_STATIC_WORLD_IN_PROGRESS
 target_status: LOCAL_LIVING_WORLD_CANDIDATE_AI_PROVIDER_HUMAN_AUDIO_PENDING
 current_checkpoint: B
-current_item: B.6
+current_item: B.7
 task_state: in_progress
-active_record_id: LW-015
-last_successful_command: "B.5 public export create and checksum validation"
-resume_action: "implement B.6 isolated verify-restore checksum schema reference permission and minimal rebuild"
-last_completed_item: B.5
+active_record_id: LW-016
+last_successful_command: "B.6 isolated positive restore and five negative boundary cases"
+resume_action: "execute B.7 author rollback and prove workspace before checksums while retaining export provenance"
+last_completed_item: B.6
 live_ai_provider: ollama-qwen2.5:7b-verified-unintegrated
 external_preview: out_of_scope
 production: out_of_scope
@@ -138,12 +138,12 @@ execution_state_path: data/world-kernel/worldos-living-world-execution-state.jso
 ## 8. 逐项进度
 
 ```yaml
-completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5]
+completed_items: [A.1, A.2, A.3, A.4, A.5, A.6, A.7, A.8, A.9, B.1, B.2, B.3, B.4, B.5, B.6]
 failed_items: []
 blocked_items:
   - id: G.3-human-audio-signoff
     reason: "Codex 只完成音频技术验证；无真实人类签收时不阻塞自动 Goal，但最终状态必须保留 HUMAN_AUDIO_PENDING"
-next_item: B.6
+next_item: B.7
 ```
 
 每完成一项立即：
@@ -884,6 +884,48 @@ fixes:
   - "使用 Node crypto 逐项复算，不把外部命令环境故障误判为包损坏"
 commit: "d9d7fc8115fbd7135b1efac2c442fa40bb242875 feat(world): 建立公开世界可移植导出"
 next_item: B.6
+```
+
+### Record LW-015：B.6 独立校验与最小恢复
+
+```yaml
+record: LW-015
+checkpoint: B
+item: B.6
+status: passed
+started_at: 2026-07-12T15:39:00+08:00
+finished_at: 2026-07-12T15:44:40+08:00
+verified_facts:
+  - "固定 node scripts/world-export.mjs verify-restore 接口在系统空目录运行，不写真实工作区"
+  - "验证器独立回算 221 个 checksum、manifest payload/rootChecksum、Zod schema、对象计数和 preservation event"
+  - "节点/区域、关系端点、路径节点/后续路径、事件节点/区域、资产/权利引用均通过完整性校验"
+  - "恢复器重建标准事实路径、200 份正文、9 个公开资产别名和 public/world-index.json，共 220 个文件"
+  - "代表正文恢复 hash 与源正文一致，三个 configured-fallback 封面别名实际存在"
+  - "内容篡改、private scope、关系断链、private node 与非空输出五种反例均被拒绝"
+hypothesis:
+  id: H-01
+  result: null
+files_changed:
+  - "scripts/world-export.mjs"
+  - "src/server/export/verify-export.ts"
+  - "src/server/export/restore-export.ts"
+commands:
+  - command: "fresh create and fixed verify-restore in a system empty temp directory, then typecheck/lint/projection/diff"
+    exit_code: 0
+    observed: "source worldCommit=d27e77d2; checksums=221; restoredFiles=220; indexNodes=200; representative hash matched"
+  - command: "tampered checksum, private scope, broken relation, private node and nonempty output negative cases"
+    exit_code: 0
+    observed: "B6_NEGATIVE_BOUNDARIES_PASS cases=5"
+evidence:
+  - "b6-positive-restore.log sha256=f1ce6d864519a037e327a21fea14ab4d2067add2fb1a633506f4b91b825c3ca9"
+  - "b6-negative-boundaries.log sha256=672d31b69db0650cfaf9871e420c94b6f18aac7adf9d585615e83b6b60907d12"
+  - "b6-public-export-restore.json sha256=b001ab6966f428243e647497f2db03bd8ef3a4ca8995206d3b8f42fd167511eb"
+failures:
+  - "验证器初版把 Area.defaultVisibility=private 错当成区域私密泄漏"
+fixes:
+  - "区分区域创作默认策略与对象自身公开性；节点、路径、事件的公开约束保持冻结"
+commit: "d27e77d2f7a0416c0ce49803098edd2a7fbe5ab3 feat(world): 验证并重建公开世界导出"
+next_item: B.7
 ```
 
 ## 10. 后续记录模板
