@@ -6,10 +6,10 @@
     "status": "IN_PROGRESS",
     "id": "019f2cdf-f708-7ba1-8742-986b516c4421",
     "startedAt": "2026-07-12T00:28:14+08:00",
-    "currentItem": "A.8",
+    "currentItem": "A.9",
     "taskState": "in_progress",
-    "activeRecordId": "LW-008",
-    "resumeAction": "start A.8 checkpoint engineering and fresh baseline rerun"
+    "activeRecordId": "LW-009",
+    "resumeAction": "retry fresh independent visual reviewer after provider usage reset; do not enter B before A.9 passes"
   },
   "completedItems": {
     "A.1": {
@@ -172,6 +172,33 @@
       ],
       "commitHash": "280341e37d1868136894a47ad379829cff453252",
       "commitSubject": "refactor(world): 收束当前主线与历史脚本边界"
+    },
+    "A.8": {
+      "status": "passed",
+      "itemId": "A.8",
+      "checkpoint": "A",
+      "startedAt": "2026-07-12T01:23:15+08:00",
+      "finishedAt": "2026-07-12T14:59:00+08:00",
+      "commands": [
+        {
+          "command": "A.8 typecheck, lint, objective evidence regression, JSON and diff validation after fresh build and browser baseline",
+          "exitCode": 0,
+          "outputSha256": "e07401137015f252d0f59424271db41d5d379e39e74ce7527668902b5a7bce63",
+          "logPath": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/logs/a8-post-fix-validation.log"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/evidence/a8-visual-baseline-audit.json",
+          "sha256": "20d02da5bcab8bb2a8c5b06c2fab256bcbd9a364ea278c827d2d316b4b6ac91e"
+        },
+        {
+          "path": "docs/90-archive/reports/worldos-living-world/checkpoint-a/a8-2026-07-12/evidence/a8-recording-duration-audit.json",
+          "sha256": "a5ec30e9831b13136d3378dc53e83813d6362e82bc6c9d23a0e43be8b8625eb8"
+        }
+      ],
+      "commitHash": "bcde9ca5488353862b44e8731f7ddddc0b61a853",
+      "commitSubject": "fix(world): 修复浏览器证据资源回算"
     }
   },
   "failedAttempts": [],
